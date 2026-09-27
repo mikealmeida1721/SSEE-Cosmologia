@@ -118,13 +118,26 @@ the Poisson equation yields a growth factor
 $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$ (Paper~5), giving a mean
 $\fsig$ tension of $0.70\sigma$ across six RSD surveys --- statistically identical
 to $\Lambda$CDM ($0.73\sigma$), resolving the growth-rate sector.
-In the lensing amplitude, fitting the primordial amplitude to the $225$
-\emph{raw} KiDS-1000 $\xi_\pm$ data points with a \emph{single} unpartitioned
-matter sector and the background fixed by the algebra gives
-$\sigma_8=0.7446\pm0.0189$ and $S_8=0.7555\pm0.0192$\footnote{Updated 2026-09-20. Against the later \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points; Wright et al.\ 2025, arXiv:2503.19441 --- published sixteen months before this analysis, over which no temporal priority is claimed) the amplitude the shear asks for lies $0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic background, so $A_s$ need not be free either: fixed to that value the growth sector carries \emph{no} free cosmological parameter and predicts $S_8=0.8273$ against $0.8265\pm0.0176$ measured ($0.05\sigma$). The three $\chi^2$ compared span $1.0$ over 357 points, so the shear does \emph{not} discriminate between the models; what separates them is the parameter count.} (the $\Lambda$CDM control on the same raw data gives $0.7571\pm0.0194$), i.e.\ $0.11\sigma$ from
-KiDS-1000: \textbf{no $S_8$ tension} (\S\ref{sec:growth_raw}). A two-sector
-$\phi$-DM extension previously reported here is \emph{retracted} ---
-the deliberate cost of lowering $\sigma_8$ to resolve the lensing amplitude.
+In the lensing amplitude, against the $357$ \emph{raw} \textsc{KiDS-Legacy}
+$\xi_\pm$ points, with a \emph{single} unpartitioned matter sector, the
+background fixed by the algebra and $A_s$ fixed to the value the model's own
+CMB fit supplies --- \emph{no} free cosmological parameter --- the model predicts
+$S_8=0.8273$ against $0.8265\pm0.0176$ measured
+($0.05\sigma$).\footnote{Updated 2026-09-26. KiDS-Legacy (Wright et al.\ 2025,
+arXiv:2503.19441) was published sixteen months before this analysis; no temporal
+priority is claimed. Its recalibration of the source redshift distributions dissolves the
+Planck--shear disagreement in the data themselves: re-running the KiDS-1000
+analysis under blinding, the collaboration's Appendix~I finds
+$2.39\sigma\to1.42\sigma$ from the $n(z)$ calibration alone. With $A_s$ left free, the amplitude the shear asks for lies
+$0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic
+background. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear
+does \emph{not} discriminate between the models; what separates them is the
+parameter count.} The earlier fit to the $225$ raw KiDS-1000 $\xi_\pm$ points
+with $A_s$ free gave $\sigma_8=0.7446\pm0.0189$ and $S_8=0.7555\pm0.0192$ (the
+$\Lambda$CDM control on the same raw data gives $0.7571\pm0.0194$), i.e.\
+$0.11\sigma$ from KiDS-1000: \textbf{no $S_8$ tension} (\S\ref{sec:growth_raw}).
+A two-sector $\phi$-DM extension previously reported here, built to lower
+$\sigma_8$, is \emph{retracted}.
 
 An EFTCAMB validation at the Bellini-Sawicki level uses the fluid-approximation
 input $\alphaK^{\rm eff} = 0.403302$ ($\Delta = 0.005\%$), while the theoretical
@@ -195,7 +208,10 @@ We report four independent validation tiers:
 \item \textbf{Structure growth and $\sigma_8$} (\S\ref{sec:growth}): Israel-Stewart
   causal perturbation theory with a single matter sector. The $S_8$ ``tension''
   is shown to be an artefact of fixing $A_s$ to Planck: with $A_s$ free, the MCMC
-  against raw KiDS-1000 $\xi_\pm$ gives $S_8=0.7555\pm0.0192$, $0.11\sigma$. The
+  against raw KiDS-1000 $\xi_\pm$ gives $S_8=0.7555\pm0.0192$, $0.11\sigma$, and
+  against raw KiDS-Legacy $\xi_\pm$, with $A_s$ fixed by the model's own CMB fit
+  and no free cosmological parameter, it predicts $S_8=0.8273$ against
+  $0.8265\pm0.0176$. The
   earlier $\phi$-DM two-sector extension is retired (2026-08-01). (Formerly $\sim0.2\sigma$
   cost in $\fsig$, which rises to $0.93\sigma$).
 \item \textbf{EFT stability} (\S\ref{sec:eft}): EFTCAMB Bellini-Sawicki
@@ -1113,9 +1129,11 @@ across four observational tiers.
 \item \textbf{Structure growth.} The IS perturbation analysis
   ($\OmmCMB=0.308881$ in Poisson) gives $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$,
   with mean $f\sigma_8$ tension $0.70\sigma$ (Paper~5) --- statistically identical
-  to $\Lambda$CDM ($0.73\sigma$). In the lensing amplitude, fitting $A_s$ to raw
-  KiDS-1000 $\xi_\pm$ data with a single matter sector gives
-  $S_8 = 0.7555\pm0.0192$, matching the $\Lambda$CDM control on the same raw data ($0.7571\pm0.0194$) with four fewer free parameters, and on the raw $\xi_\pm$ themselves $\Delta\chi^2=2.65$ with $\Delta\mathrm{BIC}=-19.0$ in \SSEE{}'s favour (Paper~6); the
+  to $\Lambda$CDM ($0.73\sigma$). In the lensing amplitude, with $A_s$ fixed to the
+  value the model's own CMB fit supplies and no free cosmological parameter,
+  a single matter sector predicts $S_8=0.8273$ against $0.8265\pm0.0176$ from
+  raw KiDS-Legacy $\xi_\pm$ (Paper~6). Fitting $A_s$ to raw KiDS-1000 $\xi_\pm$
+  instead gives $S_8 = 0.7555\pm0.0192$, matching the $\Lambda$CDM control on the same raw data ($0.7571\pm0.0194$) with four fewer free parameters, and on the raw $\xi_\pm$ themselves $\Delta\chi^2=2.65$ with $\Delta\mathrm{BIC}=-19.0$ in \SSEE{}'s favour (Paper~6); the
   $\phi$DM two-sector extension previously reported here is retracted.
 
 \item \textbf{EFT stability.} EFTCAMB confirms ghost-freedom and gradient

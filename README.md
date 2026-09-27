@@ -34,22 +34,12 @@
 | αT (GW speed) | 0 exact | GW170817: \|αT\| < 10⁻¹⁵ | exact match | ✅ |
 | **S₈ (single sector, A_s FIXED by the CMB — no free cosmological parameter)** | **0.8273 predicted** | KiDS-Legacy: 0.8265±0.0176 | **0.05σ** | ✅ |
 | S₈ (single sector, A_s free, MCMC vs raw ξ±) | 0.7555 ± 0.0192 | KiDS-1000: 0.759±0.024 | 0.11σ | ✅ |
-| αK (kineticity, z=0) | 0.4033 algebraic | Euclid forecast: < 0.1 | testable 2026–2028 | ⏳ |
+| c_s² (dark-energy sound speed, Paper 7) | (M_v−T_r)/(5M_v+3T_r) = 0.021284 | not yet constrained | the falsifiable content of the EFT sector is c_s² and w₀; α_K is not observationally accessible (Paper 7) | ⏳ |
 | **(w₀, wₐ) vs DESI DR3** | **same fixed point (−0.840, −0.670)** | **DR3 w₀wₐCDM (2027)** — trajectory 0.05σ (DR1) → 0.24σ (DR2, errors −40%, still inside 68%); ~0.5σ expected if DR2 centrals persist; >3σ joint exclusion falsifies | **pre-registered** | ⏳ |
 
 **Future falsifiers:** r = φ⁻¹⁰ = 0.00813 (LiteBIRD ~2032).
 
-> 🔴 **Retracted 2026-08-01 — the φ-DM sector and its particle (m_φ = 40.70 eV,
-> k_fs = 0.754 h/Mpc).** Two independent reasons. (1) The subtraction defining its
-> density, Ω_φDM = Ω_m,CMB − Ω_m,dyn = 0.308881 − 0.160, mixed a measured density
-> with a number from the **equation of state** (0.160 = 1+w₀) — dimensionally well
-> formed, physically empty, so the particle had nothing to be made of. (2) The S₈
-> tension it was built to close does not exist in the raw data: it appeared only
-> against the *compressed* S₈ statistic (itself derived under ΛCDM) with A_s fixed
-> to Planck. Fitted directly to the 225 raw KiDS-1000 ξ± points with A_s free and a
-> **single** matter sector, SSEE gives S₈ = 0.7555 ± 0.0192 — **0.11σ**. See Paper 6.
->
-> **Closed 2026-09-20 against KiDS-Legacy** (357 raw ξ± points; Wright et al.
+> **S₈ against KiDS-Legacy (2026-09-20)** (357 raw ξ± points; Wright et al.
 > 2025, [arXiv:2503.19441](https://arxiv.org/abs/2503.19441) — published sixteen
 > months before this analysis, **no temporal priority is claimed**). The shear
 > asks for log(10¹⁰A_s) = 3.0255 ± 0.0396 against the 3.04483 the CMB fixes
@@ -62,9 +52,16 @@
 > **not** discriminate between these models — what separates them is the
 > parameter count; and KiDS-1000 had asked for log(10¹⁰A_s) = 2.863 ± 0.051,
 > 3.5σ away, with the two releases differing from each other by 2.5σ. What
-> changed is the data (the n(z) calibration, by the collaboration's own
-> Appendix I), not the model. A future release returning to the lower
-> amplitude would reopen the sector.
+> changed is the data, not the model: KiDS-Legacy recalibrated the source
+> redshift distributions n(z), and re-running the KiDS-1000 analysis under
+> blinding with the new calibration alone takes the Planck–shear disagreement
+> from 2.39σ to 1.42σ (Wright et al. 2025, A&A 703, A158, Appendix I). The
+> credit for finding and correcting that systematic is the KiDS collaboration's. A
+> future release returning to the lower amplitude would reopen the sector.
+
+Earlier versions of this project contained a second dark-matter sector and a light
+particle, and a Planck-normalised "3.5σ S₈ challenge". Both are retracted; the
+reasons are documented in [RETRACTIONS.md](RETRACTIONS.md).
 
 ---
 
@@ -210,66 +207,35 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | γ_IS | 0.5504 ± 0.001 | ≈ γ_ΛCDM = 0.55 |
 | G = D₁_SSEE/D₁_ΛCDM | 1.0032 ± 0.005 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.30889) |
 | σ₈_SSEE (single-sector ceiling) | 0.8149 ± 0.006 | ODE linear growth gives 0.8136 |
-| **S₈_SSEE (ceiling, A_s FIXED to Planck)** | **0.827** | the old "3.5σ KiDS challenge" — an artefact of fixing A_s (now 2.7σ). The two-sector answer is RETIRED (2026-08-01); with A_s free: 0.7555, 0.11σ |
-| Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | the two-sector variant (0.93σ) is RETIRED with the particle (2026-08-01); canonical fσ₈ vs raw BOSS is pending (R1/R2) |
-
-**Diagnostic:** with A_s *fixed* to Planck the model predicts an S₈ above weak-lensing surveys.
-That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of the model (k=2), and with A_s free the MCMC against raw KiDS-1000 ξ± gives S₈ = 0.7555 ± 0.0192 — **0.11σ, no tension**. The two-sector φ-DM extension that formerly closed it (S₈ = 0.758) is RETIRED. **Update 2026-09-20:** against KiDS-Legacy the amplitude the shear asks for lands 0.49σ from the one the CMB fixes under the same background, so A_s need not be free either — fixed, the sector predicts S₈ = 0.8273 against 0.8265 ± 0.0176 measured, with **no free cosmological parameter**.
+| S₈ with A_s fixed to **Planck** (ceiling, not a prediction) | 0.827 | imports the Planck–KiDS offset; the model's own prediction fixes A_s to its **own** CMB fit — see Paper 6 |
+| Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | ≈ ΛCDM (0.73σ); fσ₈ against raw BOSS multipoles is in progress |
 
 ### Paper 6 (Growth against raw data — single sector)
 
-> The two-sector φ-DM rows below are RETIRED (2026-08-01) and kept only as history.
-> The subtraction defining Ω_φDM mixed a measured density with a number from the
-> equation of state (0.160 = 1+w₀), so the particle had nothing to be made of.
-
 | Result | Value | Status |
 |---|---|---|
-| Ω_CDM | 0.160 | Active at all k |
-| ~~Ω_φDM = Ω_m,CMB − Ω_m,dyn~~ | ~~0.14889~~ | **RETRACTED 2026-08-01** — the subtraction mixed a measured density with 1+w₀, an equation-of-state number |
-| Ω_m = ωm/h² (~~two-sector total~~ — **single sector since 2026-08-01**) | 0.308881 = Ω_m,CMB | ωm-direct (OP-8 dissolved). The value stands; only the name «total of two sectors» is retracted — there is one sector |
+| Ω_m = ω_m/h² (one matter sector, no partition) | 0.308881 | ω_m-direct; the same value enters background and growth |
 | Σm_ν = R₂ × 0.9530 eV | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
-| ~~m_φ = Σm_ν × (SOLAR²·KRYSTOS_V)~~ | ~~40.70 eV~~ | **RETRACTED 2026-08-01** — the particle had nothing to be made of once the subtraction fell; also excluded by the raw shear (m_φ > 70.3 eV) |
-| ~~α (Viel fit to particle/cold P(k) ratio)~~ | ~~1.117 Mpc/h~~ | **RETIRED 2026-08-01** with the particle |
-| ~~k_fs (free-streaming)~~ | ~~0.754 h/Mpc~~ | **RETIRED 2026-08-01** with the particle |
-| σ₈_eff (two-sector particle) | 0.747 | RETIRED 2026-08-01 |
-| **σ₈, S₈ (single sector, A_s free, MCMC vs raw KiDS-1000 ξ±)** | **0.7446±0.0189, 0.7555±0.0192** | **0.11σ — no S₈ tension.** Converged Cobaya+CAMB run, R−1=0.019, N_eff=4.2×10⁴, χ²=265.4/216 dof |
-| Same background with A_s **fixed** to Planck | σ₈=0.8149, S₈=0.827 | the old "3.5σ challenge" — an artefact of fixing A_s, i.e. of importing the Planck–KiDS tension (2.7σ with the corrected ceiling) |
-> **Actualizado 2026-09-08.** Estos dos valores eran `σ₈=0.8335 / S₈=0.846`, con
-> tensiones 1.1σ / 3.5σ / 3.9σ. Salían de una corrida de CLASS **sin `.ini`**, fuera
-> del repositorio y **sin neutrinos masivos**; el fondo canónico sí los lleva
-> (Σm_ν=0.06849 eV) y sin ellos sobra un 2.3% de grumo. Re-corrido con
-> `config/class/techo_ssee_canonico.ini`; su control, con criterio escrito antes de
-> correr, exige que la línea base de Planck dé σ₈=0.8111±0.006 y da **0.810851**.
-> Log: `results/logs/p5_techo_sigma8_As_fijo.json`
+| **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.05σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
+| log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
+| σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7446 ± 0.0189, 0.7555 ± 0.0192 | 0.11σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
+| fσ₈ vs raw BOSS DR12 multipoles | in progress | single-sector baseline 0.70σ |
 
-| fσ₈ vs raw BOSS DR12 multipoles | pending (R1/R2) | single-sector baseline 0.70σ |
+> **Methodological point:** a published S₈ is the output of a fit that assumes a
+> ΛCDM background. Before treating a number with an error bar as a target, ask
+> whether it is a raw observable or a model-conditioned summary — the growth
+> sector here is tested against the raw ξ± themselves.
 
-> **Note (2026-08-01):** there is **one** matter sector, Ω_m = 0.308881, with no
-> partition — no second φ-DM sector and no particle. What closes S₈ is not extra
-> freedom but the opposite: the background is *more* constrained here than in
-> ΛCDM, and A_s — one of the model's two free CMB-level parameters — is the only
-> quantity allowed to move. Fixing it to Planck's preferred value, as earlier
-> versions did, imports the Planck–KiDS tension into a model that does not
-> otherwise have it; that, and not new physics, produced the "3.5σ challenge".
->
-> **Methodological point:** the earlier tension was measured against the
-> *compressed* S₈ statistic, whose data-reduction pipeline itself assumes a ΛCDM
-> background. A published number with an error bar can still be the output of
-> fitting a fiducial template — before treating one as a target, ask whether it is
-> a raw observable or a model-conditioned summary.
-
-### Paper 7 (Canonical EFT)
+### Paper 7 (EFT — two-term k-essence)
 
 | Result | Value | Status |
 |---|---|---|
-| Action | S = ∫d⁴x√(−g)[−X + V₀e^{β_c φ}] | Canonical, minimal coupling |
-| β_c | −AURA = −3.9978 | Algebraic exact |
-| ~~β_c (plateau test, 8 ICs)~~ | ~~−3.98991 ± 0.00001~~ | **RETRACTED 2026-09-07** — the «verified to <0.2%» was the saturation normalisation bug; the real value is −2.194210, and β_c itself left P7 with the potential |
-| αT | 0 exact | GW170817 \|αT\| < 10⁻¹⁵ satisfied ✓ |
-| αM | 0 exact | Euclid forecast < 0.05 satisfied ✓ |
-| αB | 0 exact | Euclid forecast < 0.05 satisfied ✓ |
-| αK(z=0) | 3·Ω_DE·Ω_m,dyn = 0.4033 | Algebraic (Euclid will constrain < 0.1) |
-| G₂_s (running) | 1.003 | ΛCDM-consistent linear growth @ Ω_m=0.30889 ✓ |
+| Kinetic function | K(X) = c₁X + c₂X², minimal coupling | no potential and no dark-sector coupling required |
+| u ≡ c₂X/c₁ | −(M_v+T_r)/(3T_r+M_v) = −0.522735 | fixed by w_φ = w₀ = −0.839950 |
+| c_s² | (M_v−T_r)/(5M_v+3T_r) = 0.021284 | ghost condensate (c₁<0, c₂>0) at X/X_min = 1.045471; no-ghost and gradient conditions hold |
+| α_T = α_B = α_M | 0 exact | GW170817 \|α_T\| < 10⁻¹⁵ ✓ |
+| α_K(z=0) | 15.591335 | hi_class reproduces it to 0.011% (c_s² to 0.000%); **not observationally accessible** |
+| s_K = 3(−w₀)(1+w₀) | 0.403302 | a different quantity: pure equation of state; it enters f_screen (Papers 9–10), not α_K |
 
 ### CLASS Boltzmann Validation (Fases 1–3)
 
@@ -281,8 +247,6 @@ That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of th
 | CMB peak 2 (ℓ) | **537** | 597 | 537 | full ω_m necessary |
 | CMB peak 3 (ℓ) | **814** | 922 | 814 | full ω_m necessary |
 | RMS vs ΛCDM | **0.14%** | 31.5% | — | ~220× degradation with bare Ω_m,dyn |
-| ~~α free-streaming (CLASS output, φ-DM particle)~~ | ~~**1.117 Mpc/h**~~ | — | — | **RETIRED 2026-08-01**: there is no canonical particle |
-| ~~S₈ (two-sector, canonical particle)~~ — RETIRED 2026-08-01 | ~~**0.758**~~ | — | ~0.83 | superseded: single sector gives 0.7555±0.0192 (0.11σ, KiDS-1000, A_s free) and 0.8273 predicted vs 0.8265±0.0176 (0.05σ, KiDS-Legacy, A_s fixed by the CMB) |
 | IS cs² effect on σ₈ | 0.03% | — | — | Negligible ✓ |
 
 *CLASS confirms the full algebraic matter density ω_m (Ω_m,CMB=0.30889) is physically necessary: using the bare dynamical Ω_m,dyn=0.160 instead, all three CMB peaks shift ~10% and the RMS residual jumps from 0.14% to 31.5% (~220×).*
@@ -332,7 +296,7 @@ That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of th
 | α-attractor parameter | φ⁴/3 = 2.285 | exact (0.00e+00) |
 | e-folds N | 2φ⁷ ≈ 58.07 | from n_s = 1 − φ⁻⁷ |
 | Kähler curvature R | −φ⁻⁴ ≈ −0.146 | R = −2/(3α) |
-| IS growth index γ_IS | 0.657 ± 0.002 | Paper 1 App.A (superseded by Paper 5: γ_IS = 0.554) |
+| IS growth index γ_IS | 0.5504 ± 0.0003 | Paper 5 (the 0.657 of Paper 1 App. A came from the viscous IS background and is superseded) |
 | IS relaxation time τ_Π H₀ | KAL₀/(3Ω_DE) ≈ 2.191 | algebraic |
 | MIRA algebraic identity | (3φ+π)/4 = 1.9989 | exact (0.00e+00) |
 
@@ -348,28 +312,11 @@ Disclosed honestly in the papers. Editorial limitations in [AUDIT.md](AUDIT.md).
 2. **Full causal IS** (Paper 5): IS growth index γ_IS=0.554 is derived analytically. Full Hiscock-Lindblom 1985 treatment for B-mode predictions remains a blocker for LiteBIRD forecasts.
 3. **CMB ΔBIC status:** The canonical full `plik` MCMC (TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) yields $\Delta\mathrm{BIC}=-32.9$ decisively favouring SSEE; cross-checked by the `plik_lite` point estimate ($-24.0$, N=613) and the diagonal approximation ($-35.0$, N=5914). All three agree (Paper 3 §BIC, canonical Σm_ν = 0.06849 eV; ΛCDM at baseline 0.06). The ΔBIC is parsimony-driven (best-fit χ² statistically indistinguishable from ΛCDM), not a claim of superior fit.
 
-### Open physics problems (see [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md))
-| ID | Problem | Status (2026-07-10) |
-|----|---------|---------------------|
-| OP-1 | Baryon density Ω_b h² | **Partial** — formula (π−φ)/(3Ω²) = 0.32σ Planck; ab-initio baryogenesis → Paper B |
-| OP-2 | n_s = 1−φ⁻⁷ exponent | **Resolved** (conditional) — α-attractor universality + N_*=2φ⁷; new prediction r=φ⁻¹⁰ |
-| OP-3 | Origin of the `5/2` in `M⁴ = 5φ⁸ρ_c` | **Partial** — reopened 2026-09-06; `KAL_eff` is solved FROM `M⁴`, not derived independently |
-| OP-4 | Solar Vainshtein radius | **Resolved** — k-mouflage (not Galileon) + αB=αM=αT=0 EFT suppression |
-| OP-5 | ~~S₈ weak-lensing tension~~ | **Dissolved (2026-08-01)** — there is no tension to resolve: with a single sector and A_s free, the MCMC against raw KiDS-1000 ξ± gives S₈ = 0.7555 ± 0.0192 (0.11σ). The 3.5σ was an artefact of fixing A_s to Planck; the two-sector answer is retracted. Full non-linear N-body remains desirable, but no longer as a rescue |
-| OP-6 | Screening form (mult. vs add.) | **Resolved** — separate-universe k-essence + identity 1+w₀=Ω_m,dyn |
-| OP-7 | QFT derivation of genesis role assignments | **Partial** |
-| OP-8 | MIRA/matter-factor mechanism | **Dissolved (2026-06-18)** — ωm-direct: Ω_m,CMB = ωm/h² = 0.30889 is the standard physical observable, no matter factor to derive; MIRA survives only in f_screen |
-| OP-9 | ~~UV origin of the mass multiplier~~ | **Closed by dissolution (2026-08-01)** — no multiplier to derive: the particle is retracted |
-| OP-10 | ~~Unification of φ and χ into a single field~~ | **Closed by dissolution (2026-08-01)** — there is no second field χ to unify |
-| OP-11 | ~~Free non-minimal coupling ξ~~ | **Closed by dissolution (2026-08-01)** — ξ lived in the retracted φ-DM sector |
-| OP-12 | ~~Relic abundance Ω_φDM h² ab initio~~ | **Closed by dissolution (2026-08-01)** — Ω_φDM came from a subtraction that mixed a density with an equation-of-state number; there is no relic abundance to derive |
-| OP-13 | Paper 8 internal consistency (√AURA vs B-S) | **Resolved (2026-05-23)** — Option A |
-| OP-14 | Σm_ν phenomenological derivation | **Resolved (2026-06-04)** — Σm_ν = 0.0685 eV self-consistent cascade (ν-closure C=93.14 demonstrated) |
-| OP-15 | Bullet-cluster offset κ(θ) from KAL(x) | **Open** — not yet computed (Paper 1) |
-| OP-16 | (π−φ)/(π+φ)=0.3201 vs proton mass-energy fraction | **Open / speculative** (genesis; retired from Paper 4, zero cosmological impact) |
-| OP-17 | ~~Canonical φ-DM particle SOLAR²·KRYSTOS_V~~ | **Closed by dissolution (2026-08-01)** — the particle is retracted; there is no canonical mass to adopt |
-| OP-18 | Primordial amplitude A_s from (φ,π) | **Open (2026-06-20)** — inflation-scale residue (Paper 3) |
-| OP-19 | Production mechanism behind ω_c = KAL₀·ω_b·n_s | **Open (2026-07-12)** — forward relation (0.4σ Planck) works; deriving why *this* combination = relic-abundance mechanism (links OP-1). n_s is the leading candidate, not a certainty (identity window [0.960, 0.979]) |
+### Open physics problems
+
+The single source is [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md): each entry carries its
+own status and severity, and its summary table is kept in step with the entries.
+A copy here used to drift out of date, so none is kept.
 
 **Foundational postulates (Paper 1 §2.4, Postulates D & S):** the dimensional scale of
 H₀ is an explicit anchor input (zero *dimensionless* fitted parameters, like ΛCDM); the
@@ -405,17 +352,11 @@ Mixing the last two is what used to pin the semaphore at amber for ever: "nobody
 derived H from first principles" is not the same kind of thing as "12 figures need
 regenerating".
 
-> The previous Status block, dated 2026-07-10, announced a canonical φ-DM particle
-> m_φ = 40.70 eV as a forward prediction. **That particle was retracted on
-> 2026-08-01** and this block was not updated with it — one of the leftovers the
-> 2026-09-19 audit found. See the retraction banner above.
-
 Full development history in [CHANGELOG.md](CHANGELOG.md).
 
 **Done**
 - [x] Papers 1–10 — algebraic framework, Bayesian MCMC, CMB confrontation, algebraic
-      CMB derivation, IS causal perturbations, growth against raw data (Paper 6 —
-      rewritten 2026-08-01; the ~~φ-DM two-sector~~ version it replaced is retracted),
+      CMB derivation, IS causal perturbations, growth against raw data (Paper 6),
       canonical EFT, strong-gravity regime, Hubble-tension screening, UV completion
 - [x] CLASS Boltzmann validation — MIRA necessity (RMS 1.4% vs 31.5%), σ₈, IS viscosity
 - [x] Multi-probe MCMC (corrected DESI DR2 + Planck + fσ8 + clusters, blind flat w0/wa) — SSEE algebraic point 1.31σ from joint w₀-wₐ posterior
@@ -424,27 +365,15 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
 - [x] Paper 1 Postulates D (dimensional anchor) & S (saturation correspondence)
 - [x] Hostile-referee overclaim sweep across all 10 papers
 - [x] Zenodo v6 — Papers 1–7 archived (DOI 10.5281/zenodo.20093447)
-- [x] ~~Canonical φ-DM particle (m_φ = 40.70 eV, forward prediction)~~ — **RETRACTED
-      2026-08-01**. What survives is the Hubble cascade, and with its direction
-      corrected on 2026-09-06 (SH0ES is the input, the global H is the output):
-      73.04 × (1 − f_screen^full = 0.069522) = 67.962142 km/s/Mpc, residual
-      +4.2e-06 against the pure number 3(φ+π)²; with the IR f_screen alone
-      (0.067253) it gives 68.13, 0.17σ. Propagated σ = ±0.970 dominates
 - [x] Internal hostile-referee audit — guardian fully green; figure-level
       pdftotext sweep across all compiled PDFs; arXiv source tarballs (10/10)
 
 **Pending**
-- [ ] Zenodo v7 — Papers 1–10 + Unified + Sealed + OPEN_PROBLEMS.md +
-      VERIFICATION_LEDGER.md + arXiv source tarballs (in progress, 2026-06-12)
+- [ ] New Zenodo version — Papers 1–10 + Unified + Sealed, after the page-by-page reading closes
 - [ ] Journal submission — Sealed Journal (late-DE core) → JCAP / Universe;
-      Papers 5–7 second wave; P6/P8/P9 upgrade pending DESI Y3 (the k_fs = 0.754 h/Mpc
-      target was retired on 2026-08-01 with the particle)
-- [ ] Paper B — ab-initio baryogenesis (OP-1 closure) + φ-DM relic abundance
-- [ ] OP-5 closure — full N-body S₈ (BAHAMAS / IllustrisTNG-SSEE)
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
-- [x] ~~OP-9 residual — UV origin of the multiplier 594.28 (SOLAR² · KRYSTOS_V)~~ —
-      **closed by dissolution 2026-08-01**: with the particle retracted there is no
-      multiplier left whose UV origin to derive.
+      Papers 5–7 second wave; P6/P8/P9 upgrade pending DESI Y3
+- [ ] Paper B — ab-initio baryogenesis (OP-1 closure)
+- [ ] Full non-linear N-body growth (BAHAMAS / IllustrisTNG-SSEE) — desirable, not a rescue
 
 ---
 

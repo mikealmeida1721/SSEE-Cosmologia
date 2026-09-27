@@ -6542,7 +6542,7 @@ try:
         for _i in _escanea_r54(_ls):
             _r54.append(f"{_f.relative_to(_REPO)}:{_i+1}")
 
-    _DEUDA_R54 = 48   # 55 -> 51 al eximir las fixtures del registro (R67); 51 -> 49 (2026-09-19): cuenta real medida tras archivar h0_cascade_audit.py y las anotaciones R65; 49 -> 48 (2026-09-26): G2/G3 corrigieron el mislabel de 0.403302 en Sealed Journal y Paper 1 (alpha_K^eff -> s_K)
+    _DEUDA_R54 = 47   # 55 -> 51 al eximir las fixtures del registro (R67); 51 -> 49 (2026-09-19): cuenta real medida tras archivar h0_cascade_audit.py y las anotaciones R65; 49 -> 48 (2026-09-26): G2/G3 corrigieron el mislabel de 0.403302 en Sealed Journal y Paper 1 (alpha_K^eff -> s_K); 48 -> 47 (2026-09-26): el README deja de rotular 0.4033 como kineticidad (P7: alpha_K=15.591335)
     check("R54 la deuda de etiquetas alpha_K/s_K no crece",
           len(_r54) <= _DEUDA_R54,
           f"{len(_r54)} sitios (tope {_DEUDA_R54}): "
