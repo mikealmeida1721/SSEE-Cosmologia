@@ -132,17 +132,13 @@ $2.39\sigma\to1.42\sigma$ from the $n(z)$ calibration alone. With $A_s$ left fre
 $0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic
 background. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear
 does \emph{not} discriminate between the models; what separates them is the
-parameter count.} The earlier fit to the $225$ raw KiDS-1000 $\xi_\pm$ points
-with $A_s$ free gave $\sigma_8=0.7446\pm0.0189$ and $S_8=0.7555\pm0.0192$ (the
-$\Lambda$CDM control on the same raw data gives $0.7571\pm0.0194$), i.e.\
-$0.11\sigma$ from KiDS-1000: \textbf{no $S_8$ tension} (\S\ref{sec:growth_raw}).
-A two-sector $\phi$-DM extension previously reported here, built to lower
-$\sigma_8$, is \emph{retracted}.
+parameter count.} \textbf{There is no $S_8$ tension}
+(\S\ref{sec:growth_raw}).
 
-An EFTCAMB validation at the Bellini-Sawicki level uses the fluid-approximation
-input $\alphaK^{\rm eff} = 0.403302$ ($\Delta = 0.005\%$), while the theoretical
-bare-field value is $\alphaK = 0.072567$ (Paper~7), with $\alphaT = \alphaM = \alphaB = 0$
-(GW170817 compatible) and strictly positive kinetic stability ($Q_s > 0$).
+At the Bellini-Sawicki level the sector is minimal Horndeski,
+$\alphaT = \alphaM = \alphaB = 0$ (GW170817 compatible), with kineticity
+$\alphaK = 15.591335$ and a ghost-free, gradient-stable sound speed
+$c_s^2 = 0.021284$ (Paper~7).
 
 We additionally summarise three theoretical extensions of the framework.
 In the strong-field regime Paper~8 analyses two limits: an alternative
@@ -206,16 +202,11 @@ We report four independent validation tiers:
   integration demonstrating that the full $\omega_m$-direct matter density
   ($\OmmCMB=0.308881$) is physically necessary for reproducing Planck~PR4 peak positions.
 \item \textbf{Structure growth and $\sigma_8$} (\S\ref{sec:growth}): Israel-Stewart
-  causal perturbation theory with a single matter sector. The $S_8$ ``tension''
-  is shown to be an artefact of fixing $A_s$ to Planck: with $A_s$ free, the MCMC
-  against raw KiDS-1000 $\xi_\pm$ gives $S_8=0.7555\pm0.0192$, $0.11\sigma$, and
-  against raw KiDS-Legacy $\xi_\pm$, with $A_s$ fixed by the model's own CMB fit
-  and no free cosmological parameter, it predicts $S_8=0.8273$ against
-  $0.8265\pm0.0176$. The
-  earlier $\phi$-DM two-sector extension is retired (2026-08-01). (Formerly $\sim0.2\sigma$
-  cost in $\fsig$, which rises to $0.93\sigma$).
-\item \textbf{EFT stability} (\S\ref{sec:eft}): EFTCAMB Bellini-Sawicki
-  validation of kinetic stability ($\alphaK$) and gravitational wave compatibility
+  causal perturbation theory with a single matter sector. Against raw
+  KiDS-Legacy $\xi_\pm$, with $A_s$ fixed by the model's own CMB fit and no free
+  cosmological parameter, it predicts $S_8=0.8273$ against $0.8265\pm0.0176$.
+\item \textbf{EFT stability} (\S\ref{sec:eft}): the Paper~7 ghost condensate,
+  gradient-stable with $c_s^2=0.021284$, and gravitational-wave compatibility
   ($\alphaT = \alphaM = \alphaB = 0$).
 \end{enumerate}
 Section~\ref{sec:extensions} then summarises three theoretical extensions of the
@@ -259,8 +250,9 @@ From these seven scalars, the dark energy equation of state is derived uniquely:
      = -\frac{P_{\rm sc}}{\pi+P_{\rm sc}} \simeq -0.66997.
   \label{eq:wde}
 \end{equation}
-The dark energy density fraction follows algebraically:
-$\Omde = |{\wz}| = T_r/M_v \simeq 0.8399$.
+The dark-energy saturation follows algebraically:
+$s_{\rm DE} = |{\wz}| = T_r/M_v \simeq 0.8399$ --- a number of the equation of
+state, not the density $\Omde = 1-\OmmCMB = 0.691119$.
 
 \subsection{Derived cosmological parameters}
 \label{sec:params}
@@ -280,9 +272,9 @@ with no adjustment.
 \subsection{The two-$\Omega_m$ structure and CMB matter density}
 \label{sec:mira}
 
-The framework predicts two independent matter densities.
-The dark energy EoS predicts $\Omde = |{\wz}| = 0.839950$, which implies a
-matter saturation $\sm = 1 - \Omde = 1 + w_0 = 0.160050$ --- a number of the
+The framework has a single matter density.
+The dark energy EoS fixes the saturation $s_{\rm DE} = |{\wz}| = 0.839950$, and
+with it $\sm = 1 - s_{\rm DE} = 1 + w_0 = 0.160050$ --- a number of the
 equation of state, \emph{not} a matter density.
 However, the CMB angular-diameter distance is sensitive to the
 \textit{total} matter density, which under the $\omega_m$-direct reframe
@@ -411,9 +403,9 @@ the free posterior $(w_0,w_a)=(-0.655,-1.104)$ \emph{excludes} the cosmological
 constant $(-1,0)$ at $3.22\sigma$, while the \SSEE\ algebraic point
 $(-0.840,-0.670)$ lies at only $1.31\sigma$ in the correlated ($\rho=-0.93$)
 $w_0$--$w_a$ plane --- more than twice as close as \LCDM.\footnote{The
-$\sigma_8=0.80$, $S_8=0.839950$ recovered here reflects $A_s$ held at the
-Planck value; fitting $A_s$ to raw shear data instead gives
-$S_8=0.7555\pm0.0192$ (\S\ref{sec:growth_raw}), and is not part of this fit.}
+$\sigma_8\approx0.80$, $S_8\approx0.84$ recovered here comes from this free-$(w_0,w_a)$
+fit and is not the model's growth amplitude, which is $S_8=0.8273$
+(\S\ref{sec:growth_raw}).}
 
 \begin{table}[htbp]
 \centering
@@ -602,79 +594,35 @@ $\gamma_{\Lambda\mathrm{CDM}} \simeq 0.55$ \citep{Lahav1991}, indicating that
 the SSEE perturbation growth rate tracks \LCDM\ at the percent level despite
 the different background.
 
-As a diagnostic, a CLASS run with $c_s^2 = 0.001$ (IS limit) in which the
-matter density input is set to $0.160$ yields
-$\sigma_8^{\mathrm{CLASS}} = 0.457$, far below the ODE result (0.8136).
-The run is retained only to show how badly that substitution fails: $0.160$ is
-$1+\wz$, an equation-of-state parameter, and is not a matter density at all
-(\S\ref{sec:growth_raw}). Feeding it to a Boltzmann code as one produces a
-transfer function that suppresses small-scale power for no physical reason; the
-ODE comparison additionally assumes
-$T_{\mathrm{SSEE}}(k) \approx T_{\Lambda\mathrm{CDM}}(k)$.
-The $\omega_m$-direct background ($\Omega_{m,\mathrm{CMB}} = 0.308881$) is the correct CLASS input for comparison
-with observations, as shown in \S\ref{sec:mira_test} and further examined in
-\S\ref{sec:growth_raw} below.
-
 \subsection{The growth amplitude, measured on raw shear data}
 \label{sec:growth_raw}
 
-Earlier versions of this document reported a $3.5\sigma$ $S_8$ tension at the
-single-sector level and proposed a two-sector $\phi$-dark-matter extension, with
-an algebraically fixed particle mass and a free-streaming scale $\kfs$, to
-resolve it. \textbf{Both the tension and the extension are withdrawn.} The
-reasons are independent, and either alone is sufficient.
+The growth sector has a single matter density, $\Omm=0.308881$, entering the
+background and the growth of structure alike, and it is tested against raw
+survey data rather than against compressed statistics whose reduction assumes a
+$\Lambda$CDM background.
 
-\paragraph{The subtraction was not physical.} The second sector was defined by
-$\Omega_{\phi\mathrm{DM}}=\OmmCMB-\sm$. The first term is a measured density
-fraction; the second is $1+w_0$, i.e.\ minus the dark-energy equation of state,
-an algebraic identity of the background sector. Both are dimensionless, so the
-subtraction is arithmetically well formed --- but subtracting an
-equation-of-state parameter from a density does not produce a density, and the
-resulting quantity had no physical content. The particle built on it had
-nothing to be made of.
-
-\paragraph{The tension was an artefact of the comparison.} Two separate issues
-% ACTUALIZADO 2026-09-08: era sigma_8=0.8335 / S_8=0.846 (tensiones 1.1/3.5/3.9
-% sigma). Ese numero salia de una corrida CLASS sin .ini, fuera del repo y SIN
-% neutrinos masivos; el fondo canonico si los lleva (Sum m_nu = 0.06849 eV) y sin
-% ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
-% control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
-% Log: results/logs/p5_techo_sigma8_As_fijo.json
-compounded. First, the quoted $S_8=0.827$ held the primordial amplitude $A_s$
-fixed at the Planck-preferred value; $A_s$ is one of the two free parameters
-this framework retains at CMB level, so that number reports the Planck--shear
-disagreement rather than a property of the model. That disagreement is real,
-persists at $3.4\sigma$ when $A_s$ is set by this framework's own CMB fit
-instead of borrowed, and is not claimed to be resolved. Second,
-the target was the published $S_8$, a compressed statistic whose
-data-reduction pipeline itself assumes a $\Lambda$CDM background --- so a
-non-$\Lambda$CDM model was being compared against a partly-$\Lambda$CDM number.
-
-\paragraph{The measurement, redone.} We fit instead to the $225$ unmasked
-\emph{raw} KiDS-1000 $\xi_\pm(\theta)$ data points \citep{Asgari2021}, with the
-background fixed entirely by the algebra ($\Omm=0.308881$; $\omega_b$,
-$\omega_c$, $h$, $n_s$, $w_0$, $w_a$ all determined, none fitted), a
-\emph{single} unpartitioned matter sector, and nine free parameters: $\log A$
-plus the eight official KiDS-1000 nuisance parameters. Four MPI chains
-(Cobaya, \textsc{camb} with HMcode-2015) reach a Gelman--Rubin convergence
-$R-1=0.019$, giving $4.2\times10^4$ effective samples after burn-in. The
-marginalized posterior is
+\paragraph{Cosmic shear.} Against the $357$ unmasked \emph{raw} $\xi_\pm$ points
+of \textsc{KiDS-Legacy} (Wright et al.\ 2025, arXiv:2503.19441), with the
+background fixed by the algebra and the amplitude free, the shear asks for
+$\log(10^{10}A_s)=3.0255\pm0.0396$, $0.49\sigma$ from the $3.04483$ that the
+model's own CMB fit supplies. Fixing $A_s$ to that CMB value leaves the growth
+sector with \emph{no} free cosmological parameter --- only the eight survey
+nuisance parameters --- and costs nothing: $\chi^2_{\rm min}=417.97$ against
+$418.34$ with $A_s$ free ($\Delta\mathrm{BIC}=6.24$ in favour of fixing it). The
+amplitude is then an output,
 \begin{equation}
-  \sigma_8 = 0.7446\pm0.0189,
+  S_8 \equiv \sigma_8\sqrt{\Omm/0.3} = 0.8273 ,
   \qquad
-  S_8 \equiv \sigma_8\sqrt{\Omm/0.3} = 0.7555\pm0.0192,
+  \text{measured } 0.8265\pm0.0176 \;(0.05\sigma),
   \label{eq:s8_raw}
 \end{equation}
-with $\chi^2_{\rm min}=265.4$ over $216$ degrees of freedom
-($\chi^2/\mathrm{dof}=1.23$). Against the KiDS-1000 published value
-$S_8=0.759\pm0.024$ this is a $0.11\sigma$ agreement; the like-for-like comparison, against $\Lambda$CDM run through the same pipeline on the same raw data, gives $\Delta S_8=0.0016$. The astrophysical
-nuisance parameters land in unremarkable places
-($A_{\rm baryon}=2.57\pm0.31$, $A_{\rm IA}=0.55\pm0.29$), so the fit is not
-being rescued by a nuisance parameter running to a prior edge.
-
-\textbf{There is no $S_8$ tension, and therefore nothing for a second sector to
-do.} What closes it is not extra freedom: the background here is \emph{more}
-constrained than in $\Lambda$CDM, and $A_s$ is the only quantity able to move.
+with no posterior width of its own. KiDS-Legacy predates this analysis by
+sixteen months, and no temporal priority is claimed: the result is a
+consistency of $A_s$ between the CMB and the growth epoch. The three $\chi^2$
+compared (fixed $A_s$, free $A_s$, Planck background) span less than $1.0$, so
+cosmic shear does not discriminate between the backgrounds; what separates
+them is the parameter count.
 
 \subsection{$f\sigma_8$}
 \label{sec:tension_table}
@@ -682,34 +630,15 @@ constrained than in $\Lambda$CDM, and $A_s$ is the only quantity able to move.
 At the single-sector level with the Poisson source at $\OmmCMB=0.308881$
 (Paper~5), the growth factor is $\mathcal{G}=1.0032$ and the mean $\fsig$
 tension across six RSD surveys is $0.70\sigma$ --- statistically
-indistinguishable from $\Lambda$CDM ($0.73\sigma$). The two-sector variant of
-this table (retired), which reported $0.93\sigma$ under free-streaming
-suppression, is withdrawn with the particle.
+indistinguishable from $\Lambda$CDM ($0.73\sigma$). Against the \emph{raw}
+BOSS DR12 redshift-space multipoles ($222$ points, one-loop LPT to
+$k_{\max}=0.20\,h\,$Mpc$^{-1}$, Alcock--Paczynski applied to the model), the
+algebraic background and the Planck background reach $\chi^2=207.64$ and
+$207.58$ with the same $37$ free parameters: a tie (Paper~6).
 
-A measurement of $\fsig$ against the \emph{raw} BOSS DR12 redshift-space
-multipoles, applying the Alcock--Paczynski deformation to the model rather
-than to the data, is in progress and is reported in Paper~6; the same
-methodological caution applies to $\fsig$ as to $S_8$, since the published
-$\fsig$ values are likewise obtained through a $\Lambda$CDM-conditioned
-template fit.
-
-\paragraph{What was lost and what was gained.} The retraction removes a
-genuinely falsifiable, pre-registered prediction: a free-streaming step in
-$P(k)$ that DESI~Y3 and Euclid would have confirmed or excluded. It was not
-refuted by data; it is withdrawn because the construction that generated it was
-not physical, and a bound on a particle whose defining subtraction is empty
-would grant it existence through the back door. Falsifiability is the minimum
-requirement for a hypothesis to be scientific --- not evidence that the entity
-it concerns exists. What is gained is one postulate fewer and four open
-problems (OP-9 through OP-12) closed by dissolution rather than resolution.
-The surviving pre-registered falsifiers of this framework are the
-tensor-to-scalar ratio $r=\varphi^{-10}=0.008131$ and the fixed $(w_0,w_a)$
-point against successive DESI releases.
-
-This analysis operates at the linear-growth level; non-linear effects
-(baryonic feedback beyond HMcode, halo bias) may modify the predictions at the
-$10\%$--$20\%$ level.
-
+This analysis operates at the linear-growth level for the growth index;
+non-linear effects (baryonic feedback beyond HMcode, halo bias) may modify the
+predictions at the $10\%$--$20\%$ level.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{EFT Stability Analysis}
@@ -719,101 +648,48 @@ $10\%$--$20\%$ level.
 \subsection{Bellini-Sawicki $\alpha$-functions}
 \label{sec:alphas}
 
-Paper~7 \citep{AlmeidaSSEE2026P7} demonstrates that the \SSEE\ action takes
-the form of a $k$-essence scalar field minimally coupled to gravity.
-In the Bellini-Sawicki parametrisation \citep{Bellini2015}, this yields:
+Paper~7 \citep{AlmeidaSSEE2026P7} writes the dark-energy sector as a $k$-essence
+scalar field with the two-term kinetic function $K(X)=c_1X+c_2X^2$, minimally
+coupled to gravity and to matter, with no potential. The ratio
+$u\equiv c_2X/c_1=-(M_v+T_r)/(3T_r+M_v)=-0.522735$ is fixed by the algebraic
+equation of state, and reproduces $w_\varphi=\wz=-0.839950$ exactly. In the
+Bellini-Sawicki parametrisation \citep{Bellini2015} this yields
 \begin{equation}
   \alphaT = \alphaM = \alphaB = 0 \quad (\text{exact}),
   \qquad
-  \alphaK = 3\,\Omde\,(1+w_{\varphi,\rm bare}) = 3\times0.839950\times0.028798 = 0.072567.
+  \alphaK = 3\,\Omega_{\rm DE}\,(5-3\wz) = 15.591335,
   \label{eq:alphas}
 \end{equation}
-Here $w_{\varphi,\rm bare} = -0.971$ is the scalar-field equation of state in the
-thawing regime (Paper~7 \S\,\textsc{alphak}); it differs from the effective fluid
-EoS $w_0 = -0.839950$ because the conformal coupling transfers part of the kinetic
-energy to dark matter.
-The two kineticities differ by a factor $\approx5.6$ and are \emph{not} a
-correct and an incorrect one: each is self-consistent in its own computational
-frame (Paper~7). $\alphaK^{\rm field} = 3\Omde(1+w_\varphi) = 0.072567$ uses the
-uncoupled-field equation of state $w_\varphi=-0.971202$, before the conformal
-coupling redistributes kinetic energy; $\alphaK^{\rm eff} = 3\Omde(1+w_0) =
-0.403302$ uses the \emph{observed} CPL parameter and is the one confirmed by the
-\textsc{hi\_class} cross-check and reproduced by the EFTCAMB runs below.
-The vanishing of $\alphaT$ (tensor speed excess), $\alphaM$ (Planck mass run rate),
-and $\alphaB$ (kinetic braiding) implies: (i) gravitational waves propagate at $c$
-(GW170817 compatible at $|\alphaT| < 10^{-15}$ \citep{GW170817,Monitor2017});
-(ii) no extra polarisation modes; (iii) standard light deflection.
-The non-zero $\alphaK$ encodes the kinetic energy of the scalar field.
+with the dark-energy \emph{density} $\Omega_{\rm DE}=1-\OmmCMB=0.691119$.
+The vanishing of $\alphaT$, $\alphaM$ and $\alphaB$ implies: (i) gravitational
+waves propagate at $c$ (GW170817 compatible at $|\alphaT| < 10^{-15}$
+\citep{GW170817,Monitor2017}); (ii) no extra polarisation modes; (iii) standard
+light deflection.
 
-\subsection{EFTCAMB validation}
+\subsection{Stability and what is observable}
 \label{sec:eftcamb}
 
-We validate \SSEE\ at the linear perturbation level using H-EFTCAMB~v1.6.5
-\citep{HuSawicki2014} with the Reparametrised Horndeski (RPH) parametrisation
-($\texttt{EFTflag}=2$, $\texttt{AltParEFTmodel}=1$).
-The ghost-free stability condition requires $Q_s > 0$:
+The solution requires $c_1<0$ and $c_2>0$: the field is a ghost condensate,
+stabilised at $X/X_{\min}=1.045471$, where the no-ghost condition
+$K_X+2XK_{XX}>0$ holds. Its sound speed is fixed by the same algebra,
 \begin{equation}
-  Q_s = \frac{\alphaK + \frac{3}{2}\alphaB^2}{2} = \frac{\alphaK}{2}
-  = \begin{cases} 0.037 & (\alphaK = 0.072567,\ \text{bare-field}) \\ 0.2016 & (\alphaK = 0.403302,\ \text{fluid approx.}) \end{cases} > 0.
+  c_s^2 = \frac{M_v-T_r}{5M_v+3T_r} = 0.021284 > 0,
   \label{eq:Qs}
 \end{equation}
-With $\alphaB = 0$, the gradient stability condition reduces to $c_s^2 = 1$ in the
-linear (IR) limit of $K(X)$, where braiding vanishes \citep{Bellini2015}; the full
-$K(X)=X/\KAL+X^2/M^4$ lowers the adiabatic value to $c_s^2 \in [0.60,\,0.95]$
-(Papers~7 and~10), still gradient-stable ($c_s^2>0$).
-EFTCAMB confirms both conditions are satisfied.
+so the sector is gradient-stable. An independent \textsc{hi\_class}
+integration reproduces $c_s^2$ to $0.000\%$ and $\alphaK$ to $0.011\%$, with
+the internal stability tests enabled (Paper~7). The kineticity itself is
+\emph{not} observationally accessible: a factor $100$ change moves $\sigma_8$ by
+$0.007\%$ and the TT spectrum only at $\ell<10$, seven times below cosmic
+variance. The falsifiable content of this sector is therefore $c_s^2$ and
+$\wz$, not $\alphaK$.
 
-\begin{table}[htbp]
-\centering
-\caption{EFTCAMB stability and perturbation results.
-         The GR run uses the full $\omega_m$-direct canonical matter density
-         $\OmmCMB = 0.308881$ (OP-8 dissolved, no matter factor) for a direct comparison.}
-\label{tab:eftcamb}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{p{0.6\textwidth} c c}
-\toprule
-Quantity & Value & Status \\
-\midrule
-$\alphaK$ Paper~7 bare-field ($w_\varphi=-0.971$) & $0.072567$ & theoretical \\
-$\alphaK$ fluid approx.\ (EFTCAMB input) & $0.4033$ & $\Delta = 0.005\%$ \\
-Ghost-free ($Q_s > 0$) & $Q_s = 0.2016$ & \checkmark\ passed \\
-Gradient-stable ($\alphaB = 0 \Rightarrow c_s^2 = 1$ IR; $[0.60,0.95]$ full) & $c_s^2>0$ & \checkmark\ passed \\
-$\alphaT = \alphaM = \alphaB$ & $0$ (exact) & \checkmark\ GW170817 compatible \\
-\midrule
-$\sigma_8$ GR ($\OmmCMB = 0.308881$) & $0.814$ & \\
-$\sigma_8$ SSEE RPH ($\alphaK = 0.403302$) & $1.026$ & ratio $= 1.26$ \\
-RMS $C_\ell$ SSEE/GR & $40.9\%$ & \\
-CMB peaks GR & $\ell = 220, 535, 811$ & correct ($\omega_m$-direct bg) \\
-CMB peaks SSEE RPH & $\ell = 242, 590, 893$ & $\sim 10\%$ shift from $\alphaK$ \\
-\bottomrule
-\end{tabular}%
-}
-\end{table}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{../results/figures/ssee_eftcamb_CMB_TT.pdf}
-\caption{CMB TT power spectrum from EFTCAMB\@. \textit{Black}: GR run with the
-         full $\omega_m$-direct canonical matter density $\OmmCMB = 0.308881$;
-         peaks at $\ell = 220, 535, 811$.
-         \textit{Red}: \SSEE\ RPH with $\alphaK = 0.403302$ (constant $w = w_0$);
-         peaks shift to $\ell = 242, 590, 893$, a $\sim 10\%$ imprint of the
-         kinetic EFT sector.
-         \textit{Lower panel}: ratio $D_\ell^{\rm SSEE}/D_\ell^{\rm GR}$;
-         the grey band marks $\pm1\%$.}
-\label{fig:eftcamb_cmb}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{../results/figures/ssee_eftcamb_Pk.pdf}
-\caption{Matter power spectrum $P(k)$ from EFTCAMB\@. \SSEE\ RPH
-         ($\alphaK = 0.403302$) amplifies $P(k)$ by a factor $\sim 1.59$ relative
-         to GR on all scales ($\sigma_8$ ratio $= 1.26$), motivating the
-         $\phi$DM suppression mechanism that was proposed in earlier versions
-         and is now retracted (\S\ref{sec:growth_raw}).}
-\label{fig:eftcamb_pk}
-\end{figure}
+The quantity $0.403302$ that appears elsewhere in this journal is not a
+kineticity: it is $s_K=-3\wz(1+\wz)=3\,s_{\rm DE}\,s_m$, the fractional
+dilution rate of the dark-energy pressure per e-fold, built from the
+saturations $s_{\rm DE}=|\wz|=0.839950$ and $s_m=1+\wz=0.160050$ (numbers of
+the equation of state, not densities). It enters $f_{\rm screen}$
+(\S\ref{sec:extensions}).
 
 \subsection{CPL phantom crossing and discriminating prediction}
 \label{sec:phantom}
@@ -841,14 +717,6 @@ rather than support it.  What was a discriminating prediction conditional on
 a two-sector picture --- an extension withdrawn on 2026-08-01 --- is now an
 unconditional one.
 
-A note on the kineticity is required here, because the label was wrong.  The
-constant $0.403302$ used as an EFTCAMB input is not $\alphaK$: it is
-$s_K = -3\wz(1+\wz)$, the fractional dilution rate of the dark-energy
-pressure per e-fold, which carries only the equation of state.  The
-Bellini--Sawicki kineticity of the revised action is
-$\alphaK = 3\,\Omega_{\rm DE}(5-3\wz) = 15.591335$, verified against an
-independent \textsc{hi\_class} integration to $0.011\%$.  The two are
-unrelated quantities; $f_{\rm screen}$ below uses $s_K$.
 
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -878,13 +746,7 @@ relativity (GR) that are algebraically fixed by $\phiG$ and $\pi$. In the
 quasi-static limit the scalar field equation closes as a gradient relation,
 $\nabla\phi = 2\KAL\,\AURA\,M_{\rm Pl}\,\nabla\Phi_N$, linking the scalar
 profile to the Newtonian potential through the structural coupling
-$\AURA = (3\phiG+\pi)/2 \approx 3.998$.  (Earlier versions of this section
-described $\AURA$ here as the magnitude of a conformal dark coupling
-$\beta_c = -\AURA$ carried by Paper~7.  That coupling was withdrawn in
-2026-09 --- its apparent $0.2\%$ agreement was an artefact of a normalisation
-error in the saturation, and the corrected value is $-2.194210$.  The
-disformal coefficient used here is a distinct quantity and does not depend
-on it.)
+$\AURA = (3\phiG+\pi)/2 \approx 3.998$.
 
 From the disformal null geodesic, the total photon deflection angle is amplified
 by $\sqrt{\AURA}$ relative to the GR prediction for the same baryonic mass,
@@ -925,7 +787,8 @@ imply a late-time \emph{local screening fraction}
       = \frac{\pi-\phiG}{(\phiG+\pi)^2}
       \approx 0.0673 ,
 \end{equation}
-where $\alphaK = 3\,\Omde(1+\wz)$ is the background-derived EFT kineticity and
+where $s_K = -3\wz(1+\wz) = 0.403302$ is the pressure dilution rate of
+\S\ref{sec:eftcamb} and
 $\MIRA = (3\phiG+\pi)/4$. The structural constant $\AURA = 2\MIRA$ cancels
 exactly in the ratio, leaving a pure function of $\phiG$ and $\pi$. Applied as a
 correction applied to the measured local rate. The only directly measured
@@ -1037,7 +900,7 @@ $H_0^{\rm glob} = H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $67.962142$ km/s/Mpc & 
 \midrule
 \multicolumn{4}{l}{\textit{Predictions (not yet observationally accessible)}} \\
 
-$\alphaK = 0.072567$ & $0.072567$ & Euclid WL null test ($\alphaK < 0.1$ threshold) & Prediction \\
+$c_s^2 = (M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & dark-energy clustering (Euclid, LSST) & Prediction \\
 $r = \phiG^{-10}$ & $0.008131$ & LiteBIRD $\sim$2032 & Prediction \\
 $\theta_E^{\rm SSEE}/\theta_E^{\rm GR}|_{\rm alt} = \sqrt{\AURA}$ & $1.9995$ (alt.\ MOND-like limit only) & HST/JWST strong lensing & Conditional prediction (not canonical; OP-13) \\
 \bottomrule
@@ -1065,27 +928,14 @@ now rests on $\omega_b$ (OP-1, partially resolved: the algebraic form is fixed,
 the BBN chain is not) and this $\omega_c$ identity being
 correct---a dependency chain, not an undetermined parameter.
 
-\textbf{(ii) $S_8$ and the dark-matter sector.}
-With $A_s$ held at the Planck value the Israel--Stewart ceiling gives
-$\sigma_8 = 0.8149$, $S_8 = 0.827$ --- but that configuration imports the
-Planck--KiDS discrepancy, since $A_s$ is free in this framework. Fitted to raw
-KiDS-1000 $\xi_\pm$ data with a single matter sector (Paper~6), the result is
-$\sigma_8=0.7446\pm0.0189$, $S_8=0.7555\pm0.0192$ ($\Lambda$CDM control: $0.7571\pm0.0194$) --- $0.11\sigma$ from
-KiDS-1000. The two-sector $\phi$-DM extension previously credited with
-resolving this is retracted. The open item is a precision question:
-a full N-body treatment of baryonic feedback (deferred for computational cost) is
-required to confirm the linear-theory $S_8$ at the non-linear level.
+\textbf{(ii) $S_8$ at the non-linear level.}
+The growth amplitude is fixed by the CMB and predicts $S_8=0.8273$ against
+raw KiDS-Legacy (\S\ref{sec:growth_raw}). The open item is a precision
+question: a full N-body treatment of baryonic feedback (deferred for
+computational cost) is required to confirm the linear-theory $S_8$ at the
+non-linear level.
 
-\textbf{(iii) $\phi$DM mass and Lyman-$\alpha$ constraints --- \emph{retracted}.}
-The discussion below concerned an algebraic $\phi$-DM mass in the warm
-dark-matter regime. It is retained only as a record: the particle is withdrawn
-(\S\ref{sec:growth_raw}), so no Lyman-$\alpha$ comparison is required.
-Current Lyman-$\alpha$ bounds on thermal WDM place constraints at
-$m_{\rm WDM} \gtrsim 5.3$~keV \citep{Irsic2017}, but the \SSEE\ $\phi$DM
-is a mixed sector (fraction $f_\phi = 0.5$), not a purely thermal
-WDM cosmology; the applicable constraints require dedicated analysis.
-
-\textbf{(iv) Quantum field theory completion.}
+\textbf{(iii) Quantum field theory completion.}
 The algebraic connection $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\phiG+\pi)^2$ is a successful numerical
 retrodiction but lacks a derivation from first-principles quantum field theory.
 Paper~10 supplies a UV completion at the EFT level --- the higher-derivative
@@ -1132,19 +982,16 @@ across four observational tiers.
   to $\Lambda$CDM ($0.73\sigma$). In the lensing amplitude, with $A_s$ fixed to the
   value the model's own CMB fit supplies and no free cosmological parameter,
   a single matter sector predicts $S_8=0.8273$ against $0.8265\pm0.0176$ from
-  raw KiDS-Legacy $\xi_\pm$ (Paper~6). Fitting $A_s$ to raw KiDS-1000 $\xi_\pm$
-  instead gives $S_8 = 0.7555\pm0.0192$, matching the $\Lambda$CDM control on the same raw data ($0.7571\pm0.0194$) with four fewer free parameters, and on the raw $\xi_\pm$ themselves $\Delta\chi^2=2.65$ with $\Delta\mathrm{BIC}=-19.0$ in \SSEE{}'s favour (Paper~6); the
-  $\phi$DM two-sector extension previously reported here is retracted.
+  raw KiDS-Legacy $\xi_\pm$ (Paper~6). Against raw BOSS DR12 multipoles the
+  algebraic and Planck backgrounds tie ($\chi^2=207.64$ vs $207.58$, same
+  freedom).
 
-\item \textbf{EFT stability.} EFTCAMB confirms ghost-freedom and gradient
-  stability using the fluid-approximation input $\alphaK^{\rm eff} = 0.403302$
-  ($\Delta = 0.005\%$); the bare-field theoretical value from Paper~7 is
-  $\alphaK = 0.072567$ (below Euclid sensitivity $\sigma(\alpha_{K,0}) < 0.1$).
-  $\alphaT = \alphaM = \alphaB = 0$ (exact); GW170817 compatibility is exact.
-  SSEE realises the CPL phantom crossing at $z \approx 0.31$ \emph{with}
-  $\alphaB = 0$ (no kinetic braiding), through the $k$-essence $X^2/M^4$ term
-  rather than braiding---a discriminating prediction against braiding-based
-  dark-energy models, testable by future weak-lensing surveys.
+\item \textbf{EFT stability.} The two-term $k$-essence of Paper~7 is a ghost
+  condensate, ghost-free and gradient-stable with $c_s^2 = 0.021284$;
+  $\alphaT = \alphaM = \alphaB = 0$ exactly (GW170817 compatible) and
+  $\alphaK = 15.591335$, which is not observationally accessible. A detection of
+  $\alphaB \neq 0$ would falsify the sector. The same action fixes $\wz$ but
+  does not produce $\wa$ (OP-24).
 
 \item \textbf{Theoretical extensions.} The disformal strong-field regime predicts
   an Einstein-radius amplification $\sqrt{\AURA}\approx\MIRA$, falsifiable with
@@ -1163,9 +1010,9 @@ across four observational tiers.
 
 The framework generates four near-term falsifiable predictions, under the stated
 assumptions (a fifth, a $\phi$-DM free-streaming scale in $P(k)$, is withdrawn
-with the particle; \S\ref{sec:growth_raw}): $\alphaK = 0.072567$ (Euclid WL null test; a detection $\alphaK > 0.1$ would
-falsify SSEE), $r = 0.008131$ (LiteBIRD), and a strong-lensing Einstein-radius
-amplification $\sqrt{\AURA}\approx\MIRA$ (HST/JWST).
+with the particle; \S\ref{sec:growth_raw}): the dark-energy sound speed $c_s^2 = 0.021284$, $\alphaB = 0$ (a detection
+would falsify the sector), $r = 0.008131$ (LiteBIRD), and $S_8 = 0.8273$ with no
+free cosmological parameter (Paper~6).
 All analytical scripts, CLASS configuration files, and EFTCAMB inputs are archived
 at Zenodo \citep{AlmeidaSSEE2026zenodo}.
 
@@ -1192,13 +1039,15 @@ $w_a$ & $-P_{\rm sc}/I_g$ & $-0.669975$ & $-0.631\pm0.226$ (DESI) \\
 $H_0$ & $3(\phiG+\pi)^2$ & $67.96214$ km/s/Mpc & $67.36\pm0.54$ (Planck) \\
 $n_s$ & $1-\phiG^{-7}$ & $0.965558$ & $0.9649\pm0.0042$ (Planck) \\
 $\OmmCMB$ & $\omega_m/h^2$ ($\omega_m$-direct) & $0.308881$ & $0.3153\pm0.0073$ (Planck) \\
-$\Omde$ & $T_r/M_v$ & $0.839950$ & $0.6847$ (\LCDM) \\
-$\sm$ & $1 - \Omde = 1+w_0$ (saturation, not a density) & $0.160$ & --- \\
+$\Omde$ & $1-\OmmCMB$ (density) & $0.691119$ & $0.6847$ (\LCDM) \\
+$s_{\rm DE}$ & $T_r/M_v = |w_0|$ (saturation, not a density) & $0.839950$ & --- \\
+$\sm$ & $1 - s_{\rm DE} = 1+w_0$ (saturation, not a density) & $0.160050$ & --- \\
 $\MIRA$ & $(3\phiG+\pi)/4$ (Mirror Ratio; enters $\fscr$) & $1.998924$ & --- \\
 \midrule
 $\KAL$ & $\beta + \pi = (\phiG+3\pi)/2$ & $5.521406$ & --- \\
-$\beta_c$ & $-(3\phiG+\pi)/2$ & $-3.997847$ & --- \\
-$\alphaK$ & $3\,\Omde(1+w_{\varphi,\rm bare})$ & $0.072567$ & $<0.1$ (Euclid threshold) \\
+$\alphaK$ & $3\,\Omde(5-3w_0)$ & $15.591335$ & not accessible \\
+$s_K$ & $-3w_0(1+w_0)$ & $0.403302$ & --- (enters $\fscr$) \\
+$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & --- \\
 $\alphaT = \alphaM = \alphaB$ & minimal coupling & $0$ & $|\alphaT|<10^{-15}$ (GW170817) \\
 \midrule
 $S_8$ & KiDS-Legacy, $A_s$ fixed by the CMB & $0.8273$ predicted & $0.8265\pm0.0176$ (KiDS-Legacy) \\

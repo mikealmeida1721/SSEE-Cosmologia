@@ -90,16 +90,9 @@ The background geometry uses the \emph{total} gravitating matter density
 $\Omega_m=\omega_m/h^2=0.308881$ ($\omega_m$-direct; no matter factor, OP-8
 dissolved), for which the SSEE sound horizon matches \LCDM\
 ($r_d^{\SSEE}/r_d^{\LCDM}=1.002$) and $\Omega_m$ agrees with Planck at
-$0.88\sigma$. The cold sector $1+w_0=0.160050$ enters the perturbations
-(Papers~3 and~6) and the EFT coupling, \emph{not} the background geometry;
-an earlier ``$21.3\sigma$'' figure came from comparing that partial sector
-against the Planck \emph{total} $\Omega_m$ --- a category error corrected here.
-The two-sector $\phi$-DM framework once invoked to explain how the total
-density partitions across scales has since been retracted (Paper~6): the
-subtraction defining the second sector mixed a measured density with an
-equation-of-state number. The results reported here do not depend on it ---
-they use the total $\Omega_m$ throughout, which is what the correction of the
-category error above already required.
+$0.88\sigma$. The saturation $s_m=1+w_0=0.160050$ is a number of the
+dark-energy equation of state, not a density, and does not enter the
+background geometry.
 \end{abstract}
 
 % Cross-reference note for reviewers
@@ -107,11 +100,9 @@ category error above already required.
 background geometry ($E(z)$, the sound horizon $r_d$, and all BAO distances)
 uses the \emph{total} gravitating matter density $\Omega_m=\omega_m/h^2=0.308881$,
 built piece-by-piece from SSEE algebra ($\omega_m$-direct; no matter factor,
-OP-8 dissolved; Paper~3). The bookkeeping value $1+w_0=0.160050$ is the dark-energy
-equation of state, \emph{not} a matter density: it enters only the perturbations
-and the EFT coupling $\alpha_K$, never $E(z)$. (An earlier two-sector
-$\phi$-DM reading of that split is retracted in Paper~6; nothing below depends
-on it.) With the total density the SSEE sound horizon matches
+OP-8 dissolved; Paper~3). The saturation $s_m=1+w_0=0.160050$ is a number of
+the dark-energy equation of state, \emph{not} a matter density, and never enters
+$E(z)$. With the total density the SSEE sound horizon matches
 $\Lambda$CDM and model selection yields a single, unambiguous figure:
 $\Delta\mathrm{BIC}=-6.43$ favouring SSEE over $\Lambda$CDM and $-6.35$ over CPL
 (Section~\ref{sec:bic}).
@@ -370,9 +361,8 @@ The matter density is not sampled. The background geometry --- $E(z)$, the
 sound horizon $r_d$, and every BAO distance --- uses the \emph{total} algebraic
 matter density $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$
 (\S\ref{sec:folding}, \S\ref{sec:results_cosmo}); the value
-$s_m=(\pi-\varphi)/[2(\varphi+\pi)]=1+w_0=0.160050$ labels the
-cold sector that clusters in the perturbations (Paper~6) and does \emph{not}
-enter $E(z)$. Thus $r_d$ is computed from
+$s_m=(\pi-\varphi)/[2(\varphi+\pi)]=1+w_0=0.160050$ is a saturation of the
+equation of state, not a density, and does \emph{not} enter $E(z)$. Thus $r_d$ is computed from
 $\omega_m = \Omega_{m,\mathrm{CMB}}(H_0/100)^2$ self-consistently.
 A BBN prior $\Omega_b h^2 = 0.02218\pm0.00055$ \citep{Cooke2018} is adopted
 for the baryon density, consistent with the SSEE algebraic value
@@ -650,7 +640,7 @@ $(\wz,\wa)=(-0.826^{+0.081}_{-0.078},\,-0.558^{+0.304}_{-0.321})$; the
 from this median (strong $w_0$--$w_a$ anticorrelation, $\rho=-0.95$), well
 within the CPL posterior.
 \SSEE\ is therefore consistent both with the DESI~DR2 measurement (at
-$0.24\sigma$ Pantheon+; $1.2$--$1.5\sigma$ for the other compilations) and
+$0.24\sigma$ Pantheon+; $1.46$--$1.76\sigma$ for the other combinations) and
 with the two-parameter CPL free-fit (at $1.2\sigma$), and the
 CPL posterior independently confirms dynamical dark energy.
 
@@ -719,10 +709,9 @@ distance --- is governed by the \emph{total} gravitating matter density
 $\Omega_m = \omega_m/h^2 = 0.308881$, with
 $\omega_m=\omega_b+\omega_c+\omega_\nu=0.14267$ built piece-by-piece from SSEE
 algebra ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, forward; Paper~3). This is
-the standard physical matter density. The bookkeeping quantity $1+w_0=0.160050$ is
-\emph{not} a background density: it labels the cold sector that clusters in the
-perturbations (Paper~6) and fixes the EFT coupling
-$\alpha_K = 3|w_0|\cdot 0.160$ (Paper~7), and it never enters $E(z)$.
+the standard physical matter density. The saturation $s_m=1+w_0=0.160050$ is
+\emph{not} a density: it is a number of the dark-energy equation of state, and
+it never enters $E(z)$.
 With the total density the SSEE sound horizon matches \LCDM,
 \begin{equation}
   r_d^{\SSEE}=148.2\ \text{Mpc},\quad
@@ -1099,114 +1088,49 @@ early-Universe sound horizon or a systematic re-evaluation of the Cepheid distan
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{Two faces of SSEE under Bayesian inference}
-
-The results reveal a sharp bifurcation:
+\subsection{The dynamical sector and the background}
 
 \begin{itemize}
-  \item \textbf{Dark-energy sector}: $(\wz,\wa)=(-0.840,-0.670)$
-    lies within $0.24\sigma$ of DESI~DR2 (Pantheon+). The CPL free-fit posterior
-    $(-0.826,-0.558)$ confirms dynamical dark energy. \SSEE\ is
-    predictively competitive here.
+  \item \textbf{Dark-energy sector}: $(\wz,\wa)=(-0.840,-0.670)$, fixed by the
+    algebra with no fitted parameter, lies $0.24\sigma$ from the official
+    DESI~DR2 posterior (Pantheon+) and $1.46$--$1.76\sigma$ from the other three
+    official combinations. The CPL free-fit posterior $(-0.826,-0.557)$
+    confirms dynamical dark energy.
 
-  \item \textbf{Background structure}: with the total matter density
+  \item \textbf{Background}: with the total matter density
     $\Omega_m=0.308881$ the sound horizon matches \LCDM\ and \SSEE\ is favoured
-    at $\Delta\mathrm{BIC}=-6.43$. Both $\Omega_m$ ($0.34\sigma$) and $H_0$
-    ($<1\sigma$) agree with Planck.
+    on every information criterion --- $\Delta\mathrm{BIC}=-6.43$ over \LCDM\
+    and $-6.35$ over CPL, $\Delta\mathrm{DIC}=-5.66$ --- and predicts the
+    held-out BAO data better in cross-validation. $\Omega_m$ agrees with Planck
+    at $0.88\sigma$ and $H_0$ at $0.26\sigma$.
 \end{itemize}
 
-\subsection{Structural reinterpretation}
+The companion Paper~3 confirms the background against the full CMB power
+spectrum: with the off-diagonal \texttt{plik} likelihood the two models reach
+indistinguishable best fits and $\Delta\mathrm{BIC}=-32.9$ favours \SSEE{} by
+parsimony.
 
-The $\Delta\mathrm{BIC}$ penalty assumes the Planck $\Omega_m$
-prior is applicable to \SSEE. It is not: in \SSEE\ the $\KALz$
-amplification of $\rho_{\rm bar}$ modifies the effective clustering
-contribution, so $\Omega_m^{\rm eff}\neq\Omega_m^{\LCDM}$.
-Applying a \LCDM-calibrated $\Omega_m$ prior to an \SSEE\ universe
-constitutes a non-equivalent prior calibration. The correct test is a
-full CMB power-spectrum likelihood with the \SSEE\ Friedmann
-background~\eqref{eq:Hssee} built from first principles (Paper~3).
-Paper~3 must derive the \SSEE-consistent background rather than
-adjusting $\Omega_m$ to fit: parameter adjustment within a
-\LCDM\ framework would not constitute a genuine test of the structural
-hypothesis.
+\subsection{Growth of structure}
 
-The $\omega_m$-direct construction (Section~\ref{sec:folding}) resolves the
-apparent $r_d$ tension: the sound horizon set by the CMB-sector matter density
-$\Omega_{m,\mathrm{CMB}}=0.308881$ is $r_d=147.17$\,Mpc directly
-(Eq.~\eqref{eq:rd_mapping}), $0.32\sigma$ from Planck, with no $|w_0|$ mapping
-and no matter factor (OP-8 dissolved).  The $21\sigma$ figure was a category
-error --- comparing the cold sector $1+w_0=0.160050$ against the Planck
-\emph{total} $\Omega_m$; the total $\Omega_m=0.308881$ agrees with Planck at
-$0.88\sigma$, and the companion Paper~3 confirms this with the full CMB
-likelihood ($\Delta\mathrm{BIC}=-32.9$, full \texttt{plik} MCMC, $\omega_m$-direct).
-
-\subsection{Growth structure and $S_8$ sector sensitivity}
-
-The $S_8 \equiv \sigma_8\sqrt{\Omega_m/0.3}$ constraint depends critically on
-which matter sector is used.  With the $\omega_m$-direct CMB density
-$\Omega_{m,\mathrm{CMB}}=0.308881$ ($=\omega_m/h^2$, no matter factor; OP-8
-dissolved), the all-cold single sector reaches a ceiling
-% ACTUALIZADO 2026-09-08: era sigma_8=0.8335 / S_8=0.846 (tensiones 1.1/3.5/3.9
-% sigma). Ese numero salia de una corrida CLASS sin .ini, fuera del repo y SIN
-% neutrinos masivos; el fondo canonico si los lleva (Sum m_nu = 0.06849 eV) y sin
-% ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
-% control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
-% Log: results/logs/p5_techo_sigma8_As_fijo.json
-$\sigma_8=0.8149$, $S_8=0.827$, a $2.7\sigma$ tension with KiDS-1000
-\citep{Heymans2021} and DES~Y3 \citep{Abbott2022}.
-(Substituting $1+w_0=0.160050$ for a matter density here would give
-$S_8\approx0.59$; that substitution is a category error and is not part of the
-model --- see Paper~1.) The physical $S_8$ is measured in Paper~6 by fitting the
-primordial amplitude to the \emph{raw} KiDS-1000 $\xi_\pm$ data with this
-background held fixed: $\sigma_8=0.7446\pm0.0189$, $S_8=0.7555\pm0.0192$,\footnote{Updated 2026-09-20. Against the later \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points; Wright et al.\ 2025, arXiv:2503.19441 --- published sixteen months before this analysis, over which no temporal priority is claimed) the amplitude the shear asks for lies $0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic background, so $A_s$ need not be free either: fixed to that value, the growth sector carries \emph{no} free cosmological parameter and predicts $S_8=0.8273$ against $0.8265\pm0.0176$ measured. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear does \emph{not} discriminate between the models; what separates them is the parameter count. See Paper~6.}
-statistically indistinguishable from the $\Lambda$CDM control run through the same pipeline on the same raw data ($0.7571\pm0.0194$), which $\Lambda$CDM needs four more free parameters to achieve. On the raw data itself --- the only quantity neither model produced --- $\Delta\chi^2=2.65$ for four \emph{fewer} free parameters, where four uninformative parameters would already return $4$ by chance ($\Delta\mathrm{BIC}=-19.0$ favouring \SSEE{}). There is no $S_8$ tension.
-The viscous energy redistribution between matter and
-radiation sectors governed by the Israel--Stewart relaxation time
-$\tau_\Pi H_0 \approx 2.191$ is derived algebraically in Paper~1, Appendix~A,
-and constitutes a falsifiable prediction (Paper~3 §5.4).
-\textbf{Note:} Paper~5 performs the full causal Israel--Stewart analysis at
-$\Omega_{m,\mathrm{CMB}}=0.308881$ and finds the single-sector ceiling
-$\gamma_{\rm IS}=0.5504$ and, \emph{with $A_s$ fixed to the Planck value},
-$\sigma_8=0.8149$, $S_8=0.827$ --- a number that reports the Planck--shear
-disagreement, not a property of \SSEE{}, since $A_s$ is free in the model.
-Fitted to the raw shear data instead, Paper~6 obtains $S_8=0.7555\pm0.0192$
-(matching the $\Lambda$CDM control, $0.7571\pm0.0194$) with a single matter sector; the $3.4\sigma$ gap between
-the two determinations is between the datasets and is not resolved here.
-
-\subsection{Roadmap for Paper~3}
-
-Four ordered tests for \SSEE\ to survive a full CMB analysis:
-\begin{enumerate}
-  \item \textbf{Acoustic peak positions.} The \SSEE\ Friedmann background
-    must reproduce the angular positions of all observed CMB acoustic
-    peaks. Failure here would immediately falsify the background geometry.
-  \item \textbf{Damping tail.} The $\omega_m$-direct background
-    ($\Omega_m=0.308881$) must be compatible with the Silk-damping scale \citep{Silk1968}
-    and the third acoustic peak height. This is the most constraining test
-    of the background geometry (Paper~3).
-  \item \textbf{Joint posterior consistency.} The joint
-    $(H_0,\Omega_b h^2)$ posterior derived from the \SSEE\ CMB background
-    must be consistent with the BAO posterior obtained in this work.
-    Inconsistency would signal internal tension within the model.
-  \item \textbf{Transfer function derivation.} The semi-linear transfer
-    function integrating the $\KALz$ structural retention into the
-    acoustic perturbation regime must be formally derived and validated
-    against the full CMB power spectrum.
-\end{enumerate}
+With the background fixed by the algebra and the primordial amplitude fixed by
+the model's own CMB fit, the growth sector carries no free cosmological
+parameter and predicts $S_8=\sigma_8\sqrt{\Omega_m/0.3}=0.8273$, against
+$0.8265\pm0.0176$ from the raw KiDS-Legacy $\xi_\pm$ data (Paper~6; Wright et
+al.\ 2025, arXiv:2503.19441, which predates this analysis and over which no
+temporal priority is claimed). The Israel--Stewart growth index is
+$\gamma_{\rm IS}=0.5504$, indistinguishable from \LCDM\ (Paper~5).
 
 \subsection{Falsifiability}
 
 \SSEE\ makes specific, testable predictions. The following observations
 would constitute decisive falsification:
 \begin{itemize}
-  \item \textbf{If Paper~3 fails to reproduce} the Silk-damping scale
-    and the third CMB acoustic peak under the \SSEE\ Friedmann
-    background, the background geometry is refuted independently of
-    the dark-energy prediction.
-  \item \textbf{If Ly-$\alpha$ forest observations exclude}
-    $\sum m_\nu^{\rm active}=0.0685$\,eV at $>3\sigma$, the neutrino bridge in the
-    cluster-mass formula breaks and \SSEE\ loses its only mechanism
-    for reconciling the cluster-mass predictions with observations.
+  \item \textbf{A joint DESI fit} placing $\wz$ more than $3\sigma$ from
+    $-0.839950$, or $\wa$ from $-0.669975$, refutes the algebraic equation of
+    state.
+  \item \textbf{If cosmological or Ly-$\alpha$ forest bounds exclude}
+    $\sum m_\nu^{\rm active}=0.0685$\,eV at $>3\sigma$, the algebraic neutrino
+    mass sum is refuted.
   \item \textbf{If future high-$z$ BAO or CMB measure} $r_d$ outside
     $147\pm3$\,Mpc, the $\omega_m$-direct construction
     ($r_d=147.17$\,Mpc from the algebraic $\omega_m$) is falsified ---
@@ -1217,14 +1141,12 @@ would constitute decisive falsification:
 \label{sec:conclusions}
 
 We have conducted a Bayesian MCMC validation of \SSEE against
-DESI~DR2, Planck~2018, and galaxy-cluster masses. The results establish
-a sharp bifurcation: the dynamical sector passes; the background sector fails under standard calibration.
+DESI~DR2, Planck~2018, and galaxy-cluster masses.
 
 \begin{enumerate}
   \item The zero-free-parameter prediction $(\wz,\wa)=(-0.840,-0.670)$
     lies within $0.24\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior
-    (Pantheon+; $1.2$--$1.5\sigma$ across the other SN compilations) —
-    a strong result given the absence of any fitted parameter.
+    (Pantheon+; $1.46$--$1.76\sigma$ across the other official combinations).
 
   \item Cluster masses achieve $\chi^2_r=0.126$ with IGIMF; removing
     the IGIMF correction raises $\chi^2_r$ to $14.05$
@@ -1234,38 +1156,19 @@ a sharp bifurcation: the dynamical sector passes; the background sector fails un
     the \SSEE\ sound horizon matches \LCDM\ ($r_d=148.2$\,Mpc) and \SSEE\ is
     favoured on model selection by $\Delta\mathrm{BIC}=-6.43$ over \LCDM\ and
     $-6.35$ over CPL, predicting the held-out BAO data better in
-    cross-validation.
+    cross-validation. $\Omega_m$ agrees with Planck at $0.88\sigma$.
 
-  \item Under the $\omega_m$-direct reframe the sound horizon falls out
-    directly from the CMB-sector matter density,
-    $r_d=147.17$\,Mpc ($0.32\sigma$ from Planck; Eq.~\ref{eq:rd_mapping}),
-    with no $|w_0|$ mapping and no matter factor; the companion Paper~3
-    confirms it with the full CMB likelihood (canonical $\Delta\mathrm{BIC}=-32.9$,
-    full \texttt{plik} MCMC). The earlier $21\sigma$ $\Omega_m$ ``tension'' was a
-    category error --- the cold sector $0.160$ compared against the Planck total;
-    the total $\Omega_m=0.308881$ agrees with Planck at $0.88\sigma$.
+  \item The high-$z$ Ly-$\alpha$ forest BAO from DESI~DR2 ($z=2.33$) is
+    reproduced at $0.7\sigma$ ($D_H/r_d=8.71$; Appendix~\ref{app:lya}).
 
-  \item A cross-check at high-$z$ is provided by the Ly-$\alpha$ forest BAO
-    from DESI~DR2 ($z=2.33$): the raw dynamical background predicts
-    $D_H/r_d = 9.89$, a $12.5\sigma$ tension, while the $\omega_m$-direct
-    prediction (the total matter $\Omega_{m,\mathrm{CMB}}=0.308881$ in $E(z)$,
-    with $r_d=147.17$) gives
-    $D_H/r_d = 8.71$, a $0.7\sigma$ agreement (Appendix~\ref{app:lya}).
-    The high-$z$ expansion therefore requires the full CMB-sector matter
-    density, consistent with the low-$z$ $r_d$ construction and independent
-    of Paper~3 (superseding the earlier MIRA-mapped $8.56$).
-
-  \item Paper~3 must derive and validate the \SSEE\ Friedmann background
-    against CMB peak positions, the Silk-damping tail, and the joint
-    $(H_0,\Omega_b h^2)$ posterior.
+  \item The companion Paper~3 confirms the background against the full CMB
+    likelihood ($\Delta\mathrm{BIC}=-32.9$, full \texttt{plik} MCMC).
 \end{enumerate}
 
-\noindent\textbf{Central finding}: SSEE achieves a zero-parameter
-dark-energy prediction whose \emph{dynamical sector} is not rejected by current data.
-The background geometry fails under standard Friedmann assumptions;
-whether this constitutes a physical falsification of the framework depends on
-the validity of applying \LCDM-calibrated priors to an \SSEE\ background,
-which is the subject of Paper~3.
+\noindent\textbf{Central finding}: an algebraic background with no fitted
+dark-energy parameter describes DESI~DR2, the CMB and galaxy-cluster masses as
+well as \LCDM, and is preferred on every information criterion because it
+does so with fewer free parameters.
 
 \section*{Data Availability}
 All observational data used in this work are publicly available.

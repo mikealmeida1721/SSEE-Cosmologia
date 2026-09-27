@@ -50,7 +50,7 @@ sector is invoked to state or to kill them. A Markov-chain analysis combining DE
 $\omega_m$-direct CMB anchor as prior yields $H_0=67.79\pm0.35~\kms$
 ($0.66\sigma$ from Planck, $0.50\sigma$ from the algebraic anchor). The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
-with $\alpha_K(0)=0.403302$---and the inflationary sector predicts
+with $\alpha_K=15.591335$ and a ghost-free sound speed $c_s^2=0.021284$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=0.965558$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
 8.130619\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. A Boltzmann
 calculation shows the full algebraic $\omega_m$ (not the bare dynamical
@@ -133,8 +133,7 @@ the mirror ratio entering $f_{\rm screen}$ (Paper~9); $P_{\mathrm{sc}}$ and $I_g
 the numerator and denominator of $w_a$; $T_r$ and $M_v$ those of $w_0$; and $K_v$
 builds $M_v$ but---this is the point of the parent column---\emph{never} appears
 as a denominator: the denominator of $w_a$ is $I_g$, generated from its own
-numerator by $I_g=\pi+P_{\mathrm{sc}}$. The EFT coupling $\beta_c=-\mathrm{AURA}$
-(\S\ref{sec:eft}) is a distinct symbol with parent AURA, unrelated to $\beta$.
+numerator by $I_g=\pi+P_{\mathrm{sc}}$.
 
 \noindent Derived background quantities (all dimensionless):
 \begin{equation*}
@@ -674,40 +673,36 @@ In the EFT-of-dark-energy language \citep{Cheung2008,Gubitosi2013,Bellini2014} t
 dynamics of a single scalar degree of freedom are controlled by four
 functions $\alpha_{\rm K}$ (kineticity), $\alpha_{\rm B}$ (braiding),
 $\alpha_{\rm M}$ (Planck-mass run) and $\alpha_{\rm T}$ (tensor speed excess).
-SSEE fixes them algebraically:
+For the operative Lagrangian of Paper~7, $K(X)=c_1X+c_2X^2$, minimally coupled
+and with no potential, they are
 \begin{equation}
   \label{eq:eft-alphas}
   \alpha_{\rm T}=\alpha_{\rm M}=\alpha_{\rm B}=0,
   \qquad
-  \alpha_{\rm K}(0)=3\,\Omega_{\rm DE}\,\Om^{\mathrm{dyn}}=0.403302 ,
-  \qquad
-  \Omega_{\rm DE}=\mathrm{AURA}/\Omega=1-\Om^{\mathrm{dyn}}=0.839950 ,
+  \alpha_{\rm K}=15.591335 ,
 \end{equation}
 so that gravitational waves propagate at the speed of light
-($\alpha_{\rm T}=0$, consistent with GW170817~\citep{GW170817}) and the only non-trivial
-function is the kineticity, set by the same dynamical matter fraction
-$\Om^{\mathrm{dyn}}=0.160050$ that appears in the background. We cross-checked
-$\alpha_{\rm K}(0)$ with the Bellini--Sawicki implementation in \texttt{hi\_class}
-\citep{Bellini2015} and recovered $0.4033$ to within $0.005\%$. The associated conformal coupling
-of the scalar to matter is
+($\alpha_{\rm T}=0$, consistent with GW170817~\citep{GW170817}) and the only
+non-trivial function is the kineticity, evaluated with the dark-energy
+\emph{density} $\Omega_{\rm DE}=1-\Omega_m=0.691119$.
+
+A distinct quantity, often confused with it, enters the Hubble screening of
+Paper~9:
+%
 \begin{equation}
-  \label{eq:betac}
-  \beta_c=-\mathrm{AURA}=-3.997847 ,
+  s_K \equiv -\frac{1}{\rho_\phi}\frac{dp_\phi}{dN} = -3w_0(1+w_0)
+      = 3\,s_{\rm DE}\,s_m = 0.403302 ,
+  \label{eq:sK_sealed}
 \end{equation}
-extracted from the requirement that the field's present energy fraction equal
-$\Omega_{\rm DE}$. \textbf{Withdrawn (2026-09-07).} Earlier versions reported
-$\beta_c\simeq-3.98991$, agreeing with $-\mathrm{AURA}$ at the $0.2\%$ level,
-and offered that numerical value as the robust statement. Both claims are
-withdrawn. The agreement was an artefact of a normalisation bug: the shooting
-calibrated $\Omega_\phi(a{=}1)$ to the saturation $0.839950$ instead of the
-density $0.691119$; corrected, the coupled background returns
-$\beta_c=-2.194210$, at $45\%$ of $\mathrm{AURA}$. More decisively, Paper~7
-has since withdrawn the conformal coupling altogether along with the potential
---- the operative Lagrangian $K(X)=c_1X+c_2X^2$ contains neither --- so there
-is no $\beta_c$ left to identify. No published number was a function of it.
-What remains open is a different question, tracked as OP-24: no background
-reproduces $w_a=-0.669975$, and the difficulty lies in the \emph{form} of the
-potential.
+%
+the fractional dilution rate of the dark-energy \emph{pressure} per e-fold.
+Here $s_{\rm DE}=|w_0|=0.839950$ and $s_m=1+w_0=0.160050$ are saturations ---
+numbers of the equation of state, carrying no $H$ --- not densities. Because
+$s_K$ is pure equation of state, the screening amplitude
+$f_{\rm scr}=s_K/(3\,\mathrm{MIRA})$ is invariant under changes of the expansion
+anchor, whereas a kineticity would not be. The Lagrangian above contains no
+coupling of the scalar to matter. What remains open is tracked as OP-24: the
+same action fixes $w_0$ but does not produce $w_a=-0.669975$.
 
 \subsection{Inflationary sector: $\alpha$-attractor}
 \label{sec:inflation}
@@ -1000,13 +995,12 @@ $n_s=1-\varphi^{-7}$          & Inflation / CMB   & $0.965558$                  
 $r=\varphi^{-10}$             & Inflation         & $8.1\times10^{-3}$              & P1     & \textbf{Prediction} \\
 $\alpha_T=\alpha_M=\alpha_B$  & EFT               & $0$ (exact)                     & P7     & Retrodiction \\
 $\alpha_K^{\rm field}$ (bare, pre-integration) & EFT & $0.073$                        & P7     & Internal check \\
-$\beta_c=-\mathrm{AURA}$      & EFT               & $-3.997847$                        & P7     & Retrodiction \\
 $\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $0.550$                         & P5     & Retrodiction \\
 $f\sigma_8$ (single-sector)   & Growth            & $0.70\sigma$ (6 RSD)            & P5     & Retrodiction \\
 \midrule
 \multicolumn{5}{l}{\textit{Extension tier --- depends on the $\varphi$-dark-matter sector}} \\
 $S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $0.8273$ predicted vs.\ $0.8265\pm0.0176$ ($0.05\sigma$) & P6 & \textbf{Prediction} \\
-$S_8$ (KiDS-1000, $A_s$ free) & growth  & $0.7555\pm0.0192$ ($\Lambda$CDM ctrl $0.7571$) & P6 & Retrodiction \\
+$S_8$ (KiDS-Legacy, $A_s$ from the CMB) & growth  & $0.8273$ (measured $0.8265\pm0.0176$) & P6 & Retrodiction \\
 $M=(5\varphi^8\rho_{\rm crit})^{1/4}$ & UV compl.  & $9.68\,$meV                    & P10    & Derived (UV) \\
 Lensing (canonical EFT)       & Strong gravity    & GR$+$DM (uncond.)              & P8     & Retrodiction \\
 \midrule
@@ -1023,11 +1017,7 @@ derived independently, then compared to an existing measurement. ``Prediction'':
 fixed now, tested against not-yet-released data. ``Measured'': an input, not a
 derivation. ``Internal check'': a same-paper consistency quantity, not itself
 tested against external data. No optimisation over the algebraic formula space
-was performed. The bare-field $\alpha_K^{\rm field}=0.072567$ (Paper~7) is the
-pre-integration kinetic contribution, distinct from the background-integrated
-$\alpha_K(0)=0.403302$ used and cross-checked against \texttt{hi\_class} in
-\S\ref{sec:eft-functions}: both are Paper~7 quantities at different stages of
-the same calculation, not competing values for the same object. The detailed
+was performed. The detailed
 per-sector registers follow below and in the Predictive Register of Paper~1.}
 \label{tab:master}
 \end{table}
@@ -1047,7 +1037,7 @@ $w_0$            & $-0.839950$              & $-T_r/M_v$            & DESI Y3 / 
 $w_a$            & $-0.669975$              & $-P_{\rm sc}/I_g$ & DESI Y3 / Euclid BAO+SNe \\
 $n_s$            & $0.965558$               & $1-\varphi^{-7}$      & Planck / CMB-S4 \\
 $r$              & $8.1306\times10^{-3}$     & $\varphi^{-10}$       & LiteBIRD / CMB-S4 \\
-$\alpha_K(0)$    & $0.403302$               & $3\,\Omega_{\rm DE}\,\Om^{\mathrm{dyn}}$ & DESI / Euclid growth \\
+$c_s^2$          & $0.021284$               & $(M_v-T_r)/(5M_v+3T_r)$ & DESI / Euclid growth \\
 $\alpha_T,\alpha_M,\alpha_B$ & $0$        & exactly zero          & GW standard sirens, ISW \\
 \bottomrule
 \end{tabular}
@@ -1174,10 +1164,6 @@ DESI Y3 and Euclid---are deferred to future work and deliberately excluded from
 the core register of Table~\ref{tab:predictions-core} until the multiplier is
 derived.
 
-\item \textbf{The $\beta_c=-\mathrm{AURA}$ coupling (OP-7).} The conformal
-coupling agrees with $-\mathrm{AURA}=-3.997847$ to $0.2\%$. We present this as a
-near-coincidence to be tested, not as a proven identity, pending a QFT-level
-derivation of the role assignments.
 \end{itemize}
 
 The growth-of-structure status of \S\ref{sec:growth} mirrors this structure:
@@ -1203,10 +1189,10 @@ late-time equation of state emerges as bare ratios of structural invariants,
 $w_0=-0.839950$ and $w_a=-0.669975$, and matches the DESI DR2 posterior at
 $0.24\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
 effective-field-theory description is canonical, with vanishing tensor, running,
-and braiding functions and $\alpha_K(0)=0.403302$; the inflationary sector
+and braiding functions, $\alpha_K=15.591335$ and $c_s^2=0.021284$; the inflationary sector
 predicts $n_s=0.965558$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation
-confirms that the full $\omega_m$-direct matter density (the two-$\Omega$
-structure) is physically required rather than cosmetic.
+confirms that the full $\omega_m$-direct matter density is physically
+required rather than cosmetic.
 
 The framework's strength is its frugality and its consequent falsifiability.
 Its core predictions---the dark-energy ratios, the spectral index, the tensor

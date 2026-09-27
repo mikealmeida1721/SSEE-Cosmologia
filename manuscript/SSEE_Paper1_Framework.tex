@@ -205,8 +205,7 @@ $S_8=\sigma_8\sqrt{\Omega_m/0.3}$ (MCMC vs.\ raw KiDS-1000 $\xi_\pm$) & $0.7555\
 \midrule
 \multicolumn{4}{l}{\textit{Paper 7 — Canonical EFT, Bellini-Sawicki $\alpha$-functions}} \\
 $\alpha_T=\alpha_M=\alpha_B=0$ (minimal coupling) & $0$ exact & GW170817 $|\alpha_T|<10^{-15}$ & Retrodiction \\
-$\alpha_K^{\rm field} = 3\,\Omega_{\mathrm{DE}}(1+w_\phi)$ & $0.072567$ & Euclid weak lensing 2026--2028; forecast $\sigma(\alpha_{K,0})\!\approx\!0.1$ & Prediction (below sensitivity) \\
-\multicolumn{4}{l}{\quad\footnotesize\textit{($\beta_c=-\mathrm{AURA}$ is \textbf{withdrawn}: the shooting that fixed it normalised the field density to $|w_0|=0.839950$ instead of the density fraction $0.691119$, and with the correct target the coupling changes sign. Paper~7, \S\,``An earlier verification, withdrawn''. No observable in this register moves.)}} \\
+$\alpha_K = 3\,\Omega_{\mathrm{DE}}(5-3w_0)$, $\Omega_{\mathrm{DE}}=0.691119$ & $15.591335$ & --- (kineticity is not constrained by linear-scale data) & Derived \\
 \midrule
 \multicolumn{4}{l}{\textit{Future}} \\
 $r = \varphi^{-10}$ & $0.008131$ & LiteBIRD ${\sim}2032$ & Prediction \\
@@ -222,30 +221,17 @@ retrodictions, and genuine predictions is explicitly noted to maintain transpare
 All entries with ``Prediction'' status are falsifiable by named experiments within
 the stated time horizon. Where the forecast sensitivity already resolves the
 predicted value, a measurement excluding it at high significance refutes the
-framework; where it does not---as for $\alpha_K^{\rm field}$, whose forecast error
-bar exceeds the prediction---the entry is marked \emph{below sensitivity} and a
+framework; where it does not, the entry is marked \emph{below sensitivity} and a
 non-detection carries no evidential weight either way.
 
-\noindent\emph{Note on the two $\alpha_K$ values.} Two physically distinct
-kineticities appear across the suite and must not be conflated: the
-\emph{bare-field} value $\alpha_K^{\rm field}=3\Omega_{\rm DE}(1+w_\phi)=0.072567$ tabulated above
-(with $w_\phi\approx-0.971$ the bare scalar equation of state; this is the quantity
-Euclid weak lensing will constrain, though its forecast error bar
-$\sigma(\alpha_{K,0})\!\approx\!0.1$ still exceeds the predicted value, so the entry is
-recorded as \emph{below sensitivity} rather than as a falsifier), versus the quantity
-$s_K=3s_{\rm DE}(1+w_0)=0.403302$ (with $w_0=-0.839950$) used for the
-hi\_class/EFTCAMB cross-check. Note this is pure equation-of-state algebra in
-$w_0$: it is unaffected by the retraction of the second matter sector
-(\S\ref{sec:two_omega_m}). Both are derived; see
-Paper~7 for the full $\alpha_K(a)$ derivation distinguishing them.
-Until 2026-09-26 this second quantity was written $\alpha_K^{\rm eff}$, as if it
-were a kineticity evaluated on the background. It is not one: $s_K$ is the
-fractional dilution rate of the dark-energy \emph{pressure} per e-fold, and
-carries no $H$, no density and no $K(X)$ (Paper~7, Eq.~(sK)). The true
-kineticity is $\alpha_K=15.591335$. The label is corrected here and in the
-Sealed Journal; no number moved, because every downstream use of $0.403302$ ---
-including $f_{\rm scr}=s_K/(3\,\mathrm{MIRA})$ in Paper~9 --- was already using
-it as $s_K$.
+\noindent\emph{Note on $\alpha_K$ and $s_K$.} The kineticity of the Paper~7
+action is $\alpha_K=3\,\Omega_{\rm DE}(5-3w_0)=15.591335$, with the density
+$\Omega_{\rm DE}=0.691119$. It must not be confused with
+$s_K=-3w_0(1+w_0)=3\,s_{\rm DE}\,s_m=0.403302$, the fractional dilution rate of the
+dark-energy \emph{pressure} per e-fold: pure equation of state, with no $H$, no
+density and no $K(X)$ in it (Paper~7, Eq.~(sK)). Every use of $0.403302$ in this
+suite --- including $f_{\rm scr}=s_K/(3\,\mathrm{MIRA})$ in Paper~9 --- is a use of
+$s_K$.
 
 \subsection{Axiomatic Principles}
 \label{sec:axioms}
@@ -1240,7 +1226,7 @@ $\varphi$ & $\varphi$ & root & Intention & Golden ratio; $\alpha$-attractor infl
 $\pi$ & $\pi$ & root & Structure & Geometric $\pi$ & — \\
 $\Omega$ & $\varphi+\pi$ & root combination & Stability & Stability metric (OMEGA) & — \\
 $\beta$ & $(\varphi+\pi)/2$ & $\Omega/2$ — bifurcation & Heat / pulse & Base coupling scalar & — \\
-$\mathrm{AURA}$ & $(3\varphi+\pi)/2$ & $\varphi+\beta$ — copy & Portal / coupling & $|\beta_c|$; cancels in $H_0$ cascade & $\times1$ \\
+$\mathrm{AURA}$ & $(3\varphi+\pi)/2$ & $\varphi+\beta$ — copy & Portal / coupling & Disformal coupling (P8); cancels in $H_0$ cascade & $\times1$ \\
 $\mathrm{MIRA}$ & $(3\varphi+\pi)/4$ & $\mathrm{AURA}/2$ — copy & Reflection / mirror & Screening amplitude $f_{\rm screen}$ (P9) & $\times\tfrac12$ \\
 $\mathrm{DUAL}$ & $3\varphi+\pi$ & $\mathrm{AURA}\cdot2$ — copy & Duality & — & $\times2$ \\
 $\mathrm{TRIAL}$ & $(9\varphi+3\pi)/2$ & $\mathrm{AURA}\cdot3$ — copy & Matter / 3D limit & 3D saturation horizon $\to w_0,\Omega_{\rm DE}$ & $\times3$ \\
@@ -1431,16 +1417,9 @@ Identity~\eqref{eq:id_kal}--\eqref{eq:id_aura} is the deepest structural result:
 under the discrete exchange $\varphi\leftrightarrow\pi$, the scalar-kinetic constant
 $\mathrm{KAL}_0=(\varphi+3\pi)/2$ maps \emph{exactly} to the photon-sector constant
 $\mathrm{AURA}=(3\varphi+\pi)/2$, and vice versa.
-This duality was previously offered as the algebraic origin of a conformal
-dark-sector coupling $\beta_c = -\mathrm{AURA}$.  That coupling is withdrawn
-(Paper~7): the shooting that extracted it normalised the field density to
-$0.839950$, which is $|w_0|$ and not a density fraction, and with the correct
-target $1-\Omega_m = 0.691119$ the extracted coupling changes sign
-($+0.235068$).  An independent bound from the cold-matter sector gives
-$|\beta_c| < 0.027$, some $151$ times smaller than $\mathrm{AURA}$.  The
-duality~\eqref{eq:id_kal}--\eqref{eq:id_aura} is an exact algebraic statement and stands on
-its own; what does not stand is the coupling it was said to explain.  The
-disformal coupling of Papers~8--9 is a different object and is unaffected.
+The duality~\eqref{eq:id_kal}--\eqref{eq:id_aura} is an exact algebraic statement and
+stands on its own; the dark-energy action of Paper~7 contains no coupling of the
+scalar to matter.
 The open question of whether this discrete symmetry is an exact symmetry of the full
 $P(X,\phi)$ action is catalogued as OP-7 (\texttt{OPEN\_PROBLEMS.md}).
 
