@@ -61,17 +61,35 @@ sys.path.insert(0, os.path.join(_R, "src"))
 sys.path.insert(0, os.path.join(_R, "src", "p03_cmb"))
 sys.path.insert(0, os.path.join(_R, "src", "p06_growth"))
 
-LOGA_CLAVO = 3.0448340130228546      # ORIGEN: CANONICAL_VALUES logA_cmb_ssee
+# ORIGEN: results/logs/cmb_dbic_tau_ajustado.json -> SSEE/mejor (el clavo y su tau).
+with open(os.path.join(_R, "results", "logs", "cmb_dbic_tau_ajustado.json")) as _fh:
+    _CMB = json.load(_fh)["SSEE"]["mejor"]
+LOGA_CLAVO = _CMB["logA"]
 OUT = os.path.join(_R, "results", "logs", "conjunta_perfil_logA.json")
 BOSS_JSON = os.path.join(_R, "results", "logs", "growth_2026-07",
                          "R1R2_boss_lpt_kmax0.200.json")
 
-# Punto de partida de los nuisance de KiDS: el mejor ajuste de la corrida
-# sseefijo (10157 muestras, chi2_min = 417.9706). Arrancar de ahi es lo que
-# hace viable el perfil: cada evaluacion cuesta 3.5 s.
-KIDS_X0 = np.array([7.983530, 1.493451, 0.021832, 0.000653,
-                    -0.007964, -0.007060, 0.017710, 0.052340])
-TAU_X0 = 0.0554590468914248
+# Punto de partida de los nuisance de KiDS: el mejor punto de las cadenas
+# sseefijo (chi2_min = 417.9706), LEIDO de las cadenas. Arrancar de ahi es lo
+# que hace viable el perfil: cada evaluacion cuesta 3.5 s.
+# ORIGEN: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.{1-4}.txt
+_NUIS = ["logT_AGN", "A_scale", "dz1", "dz2", "dz3", "dz4", "dz5", "dz6"]
+
+
+def _mejor_sseefijo():
+    base = "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo."
+    cab = open(base + "1.txt").readline().split()[1:]
+    mejor = None
+    for k in range(1, 5):
+        a = np.loadtxt(base + f"{k}.txt")
+        j = a[:, cab.index("chi2")].argmin()
+        if mejor is None or a[j, cab.index("chi2")] < mejor[0]:
+            mejor = (a[j, cab.index("chi2")], a[j])
+    return np.array([mejor[1][cab.index(n)] for n in _NUIS])
+
+
+KIDS_X0 = _mejor_sseefijo()
+TAU_X0 = _CMB["tau"]
 
 
 def piezas():
@@ -130,6 +148,7 @@ def main():
     # ── CONTROL (a): reproducir lo publicado en el clavo ────────────────────
     c_cmb_clavo, tau_clavo = perfil_cmb(chi2_y_s8, bg, w0, wa, LOGA_CLAVO)
     c_kids_clavo, xk_clavo = perfil_kids(K, LOGA_CLAVO, KIDS_X0)
+    # ORIGEN: 1003.586 = cmb_dbic_tau_ajustado.json SSEE/chi2_min; 417.971 = CANONICAL_VALUES chi2_min_ssee_unif
     ok_cmb = abs(c_cmb_clavo - 1003.586) < 0.5
     ok_kids = abs(c_kids_clavo - 417.971) < 1.0
     print(f"  CONTROL (a) en el clavo:")

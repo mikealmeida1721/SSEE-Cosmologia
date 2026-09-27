@@ -1,0 +1,31 @@
+{
+ "fecha": "2026-09-26",
+ "sonda": "ACT DR6 lensing",
+ "variante": "act_baseline",
+ "paquete": "act_dr6_lenslike 1.2.1 (oficial)",
+ "datos": "v1.2",
+ "lens_only": false,
+ "like_corrections": true,
+ "bandpowers": 10,
+ "libres": 0,
+ "logA_clavo": 3.0448340130228546,
+ "tau": 0.0554590468914248,
+ "chi2_en_el_clavo": 14.00503743341897,
+ "chi2_por_bandpower": 1.400503743341897,
+ "dof": 10,
+ "PTE": 0.1727619589382522,
+ "sigma_equivalente": 1.363382609582259,
+ "control_a_fondo_lcdm": {
+  "chi2": 14.546978821717403,
+  "diferencia": -0.541941388298433,
+  "PTE": 0.14947167317704027,
+  "nota": "se evalua LCDM con el MISMO logA clavado del CMB de SSEE, no con el suyo: la pregunta del control es si ACT da chi2 bueno con cualquier fondo."
+ },
+ "control_b_sensibilidad_As": {
+  "sigma_logA": 0.013125658689892638,
+  "chi2_menos": 18.632744872580474,
+  "chi2_mas": 14.876251706250656,
+  "mayor_salto": 4.6277074391615045,
+  "ve_As": true
+ }
+}

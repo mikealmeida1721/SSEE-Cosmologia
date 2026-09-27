@@ -37,6 +37,14 @@ MONTAJE
                                                    --
                                                    27 muestreados
 
+BAO queda FUERA del muestreador. No es un atajo: con cero libres su chi2 es una
+constante, y una constante en el log-verosimil no puede mover el posterior de
+nada. Cobaya ademas la rechaza («seems not to depend on any parameters»), y
+meterla habria exigido inventarle una dependencia falsa. Se suma al total al
+leer, declarada aparte. Es la unica sonda cuyo chi2 es identico sola o
+acompanada por construccion, y por la razon mas fuerte que existe: no depende de
+nada que se mueva.
+
 LO QUE YA SE SABIA DE BOSS, Y QUE NO HAY QUE VOLVER A DESCUBRIR
 BOSS casi no ve A_s. Medido el 2026-09-13 en `base_sin_particula.log`, que YA
 era una corrida conjunta con un solo A_s compartido (3 sondas, 1.01 h):
@@ -105,13 +113,14 @@ for _p in ("src", "src/p03_cmb", "src/p06_growth"):
     if _q not in sys.path:
         sys.path.insert(0, _q)
 
-LOGA_CLAVO = 3.0448340130228546      # ORIGEN: CANONICAL_VALUES logA_cmb_ssee
+LOGA_CLAVO = 3.0448340130228546      # ORIGEN: CANONICAL_VALUES.yaml (logA_cmb_ssee)
 CAD = "/mnt/datos/SSEE_data/chains_p6/conjunta"
 
 # Referencias individuales, con el MISMO logA clavado.
 #   CMB  : results/logs/cmb_dbic_tau_ajustado.json -> SSEE/chi2_min
 #   KiDS : CANONICAL_VALUES chi2_min_ssee_unif (corrida sseefijo)
 #   BAO  : results/logs/multisonda_fondo_clavado.json, cero libres
+# ORIGEN: results/logs/base_sin_particula.log  (la tabla de BOSS del docstring)
 REF = dict(cmb=1003.5860397789045, kids=417.971, bao=10.858822657229455)
 
 # ── el fondo, del nucleo. Nada de esto se ajusta en ningun sitio ────────────
@@ -157,10 +166,15 @@ def loglike_boss(**kw):
     return _boss.loglike_ssee(logA=LOGA_CLAVO, **kw)
 
 
-def loglike_bao():
-    """Cero libres y ningun A_s: constante. Entra para que su chi2 aparezca
-    en la salida y el total sea el total, no un total a medias."""
-    return -0.5 * REF["bao"]
+# BAO NO entra como pata del muestreador, y no es un atajo: es exacto.
+# Cobaya la rechaza —«Component 'bao' seems not to depend on any parameters»—
+# y tiene razon: con el fondo clavado por algebra, BAO tiene CERO libres, asi
+# que su chi2 es una CONSTANTE. Una constante en el log-verosimil no puede
+# mover el posterior de ningun otro parametro: desplaza el total y nada mas.
+# Incluirla habria exigido inventarle una dependencia falsa. Se suma al total
+# al leer el resultado, declarada aparte, y su chi2 es el mismo sola o
+# acompanada por la razon mas fuerte que hay: no depende de nada que se mueva.
+CHI2_BAO = REF["bao"]      # 10.858822657229455 · 13 puntos · 0 libres
 
 
 # ── parametros ──────────────────────────────────────────────────────────────
@@ -182,6 +196,16 @@ def _p_boss():
     return p
 
 
+# Matriz de PROPUESTA (no toca verosimilitud ni prior: no puede mover ningun
+# chi2). La construye covmat_conjunta.py. Sin ella la conjunta daba 1.8
+# muestras/min/cadena, porque con logA clavado la degeneracion A_s-tau esta
+# rota y el CMB fija tau a sigma=0.00077 --- cuarenta veces mas estrecho que
+# el ancho del prior --- y tau vive en el bloque LENTO, asi que cada propuesta
+# rechazada costaba un CAMB entero.
+COVMAT = f'{CAD}/propuesta_conjunta.covmat'
+COVMAT_BOSS = '/mnt/datos/SSEE_data/chains_p6/boss/ssee.covmat'
+
+
 def info_conjunta():
     pc, pk, pb = _p_cmb(), _p_kids(), _p_boss()
     todos = dict(pc); todos.update(pk); todos.update(pb)
@@ -195,11 +219,11 @@ def info_conjunta():
             'cmb':  dict(external=loglike_cmb,  input_params=list(pc.keys())),
             'kids': dict(external=loglike_kids, input_params=list(pk.keys())),
             'boss': dict(external=loglike_boss, input_params=list(pb.keys())),
-            'bao':  dict(external=loglike_bao,  input_params=[]),
         },
         params=todos,
         sampler={'mcmc': dict(Rminus1_stop=0.05, max_tries=20000,
                               oversample_power=0.7, measure_speeds=False,
+                              covmat=COVMAT,
                               blocking=[[1, lentos], [5, rapidos]])},
         output=f'{CAD}/conjunta', force=True, resume=False)
 
@@ -212,7 +236,8 @@ def info_boss_clavado():
         likelihood={'boss': dict(external=loglike_boss,
                                  input_params=list(pb.keys()))},
         params=pb,
-        sampler={'mcmc': dict(Rminus1_stop=0.05, max_tries=20000)},
+        sampler={'mcmc': dict(Rminus1_stop=0.05, max_tries=20000,
+                              covmat=COVMAT_BOSS)},
         output=f'{CAD}/boss_clavado', force=True, resume=False)
 
 
@@ -223,14 +248,23 @@ def control():
     NO minimiza: evalua en el mejor ajuste YA conocido de cada sonda. Minimizar
     los 8 nuisance de KiDS costaba mas de 45 min y no hacia falta --- lo que se
     comprueba es el CABLEADO, no el minimo. Medido 2026-09-26:
-        CMB  1003.5860 contra 1003.5860 publicado   dif +0.0000
-        KiDS  417.9705 contra  417.9710 publicado   dif -0.0005
+        CMB  1003.5860 contra 1003.5860 publicado
+        KiDS  417.9705 contra  417.9710 publicado
+    (log: results/logs/conjunta_control.json)
     """
     _carga()
-    c_cmb = -2 * loglike_cmb(0.0554590468914248)
-    # mejor ajuste de la corrida sseefijo (10157 muestras, chi2_min 417.9706)
-    x0 = (7.983530, 1.493451, 0.021832, 0.000653,
-          -0.007964, -0.007060, 0.017710, 0.052340)
+    # tau: el mejor ajuste del CMB (cmb_dbic_tau_ajustado.json -> SSEE/mejor)
+    with open(os.path.join(_R, 'results', 'logs', 'cmb_dbic_tau_ajustado.json')) as fh:
+        tau = json.load(fh)['SSEE']['mejor']['tau']
+    c_cmb = -2 * loglike_cmb(tau)
+    # nuisances de KiDS: el mejor ajuste de la corrida sseefijo, LEIDO de la cadena
+    base = '/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.'
+    cab = open(base + '1.txt').readline().split()[1:]
+    nuis = ['logT_AGN', 'A_scale', 'dz1', 'dz2', 'dz3', 'dz4', 'dz5', 'dz6']
+    filas = [np.atleast_2d(np.loadtxt(base + f'{k}.txt')) for k in range(1, 5)]
+    a = np.vstack(filas)
+    j = a[:, cab.index('chi2')].argmin()
+    x0 = tuple(float(a[j, cab.index(n)]) for n in nuis)
     c_kids = -2 * loglike_kids(*x0)
     ok_c = abs(c_cmb - REF['cmb']) < 0.5
     ok_k = abs(c_kids - REF['kids']) < 1.0

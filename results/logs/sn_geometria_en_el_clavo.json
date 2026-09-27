@@ -1,0 +1,35 @@
+{
+ "fecha": "2026-09-26",
+ "logA_clavo": 3.0448340130228546,
+ "M_B": "marginalizado analiticamente, prior plano (Goliath+2001)",
+ "sondas": {
+  "Pantheon+": {
+   "n_sne": 1580,
+   "dof": 1579,
+   "chi2": 1386.6236766651273,
+   "chi2_por_dof": 0.8781657230304796,
+   "PTE": 0.9998153790869082,
+   "sigma_equivalente": 0.0002313880024868086,
+   "control_a_lcdm": {
+    "chi2": 1387.3038856238127,
+    "diferencia": -0.6802089586853981
+   },
+   "control_b_cambio_con_As": 0.0,
+   "ve_As": false
+  },
+  "DES-SN5YR": {
+   "n_sne": 1820,
+   "dof": 1819,
+   "chi2": 1629.4396538848491,
+   "chi2_por_dof": 0.8957887047195432,
+   "PTE": 0.9994188499667673,
+   "sigma_equivalente": 0.0007283636169530009,
+   "control_a_lcdm": {
+    "chi2": 1632.3815866404707,
+    "diferencia": -2.941932755621565
+   },
+   "control_b_cambio_con_As": 0.0,
+   "ve_As": false
+  }
+ }
+}

@@ -622,23 +622,29 @@ contributions of $\varphi$ to the saturation horizon, while the common denominat
 $2(\varphi+\pi)$ is twice the Stability Metric $\Omega=\varphi+\pi$.
 
 \medskip
-\noindent\textbf{Asymptotic saturation and phantom crossing.}\ The values $w_0$ and $w_a$ are derived as Taylor coefficients of the full effective equation of state around $a=1$. While the CPL parametrisation yields $w_0+w_a=-1.510$, we employ it strictly within the low-redshift domain of validity $(z \le 2.3)$ for observational comparisons, noting that asymptotic stability at $a \to \infty$ requires the full non-linear saturation boundary $T_r/M_v$ rather than the linear CPL extrapolation.
+\noindent\textbf{Asymptotic saturation and phantom crossing.}\ The values $w_0$ and $w_a$ are fixed algebraically and compared with data through the CPL form. While it yields $w_0+w_a=-1.510$, we employ it strictly within the low-redshift domain of validity $(z \le 2.3)$ for observational comparisons, noting that asymptotic stability at $a \to \infty$ requires the full non-linear saturation boundary $T_r/M_v$ rather than the linear CPL extrapolation.
 
 The CPL form also predicts a \emph{phantom crossing}: setting $w(a_*)=-1$ gives
 \begin{equation}
-  a_* = 1 + \frac{1+\wz}{\wa} = 1 + \frac{1+(-0.840)}{-0.670} \approx 0.761
-  \quad (z_* \approx 0.31).
+  a_* = 1 + \frac{1+\wz}{\wa} = 0.761
+  \quad (z_* = 0.314).
   \label{eq:phantom_crossing}
 \end{equation}
-For $a < a_*$ (i.e.\ $z > 0.31$), the effective equation of state $w < -1$
-(phantom-like \citep{Caldwell2002}); for $a > a_*$, $w > -1$ (quintessence-like),
-reaching $w_0=-0.839950$ today.  This behaviour is inherent to the linear CPL
-approximation and does not signal a ghost or gradient instability in the SSEE action.
-However, the effective CPL equation of state implies NEC violation
-($\rho + p < 0$, equivalently $1 + w < 0$) for all $z > 0.31$ at the background
-level.  In the full SSEE action, the viscous pressure $\Pi$ partially compensates
-this violation at the perturbation level; a complete NEC analysis at the level of
-the Israel--Stewart stress tensor \citep{Israel1976,IsraelStewart1979} is deferred to Paper~4 (see App.~A, EFT embedding).
+For $z > z_*$ the effective equation of state has $w < -1$; for $z < z_*$,
+$w > -1$, reaching $w_0=-0.839950$ today. \emph{The scalar field cannot carry
+this crossing.} For the action of Paper~7, $K(X)=c_1X+c_2X^2$, the sound speed
+is $c_s^2=(1+w)/(5-3w)$ along the whole family of solutions, so any
+configuration of the field with $w<-1$ has $c_s^2<0$, a gradient instability
+(verified by direct differentiation of $K$, not from the closed form; log
+\texttt{cruce\_fantasma\_quien\_lo\_lleva.json}). The field itself sits at
+$w_\varphi=w_0>-1$, where $c_s^2=0.021284>0$. If the crossing is physical it
+must be carried by the viscous pressure $\Pi$ rather than by the field. With the
+enthalpy normalisation of the Israel--Stewart sector (Paper~5),
+$1+w_{\rm eff}=(1+w_0)(1-c)$ with $c=|\Pi|/(\rho+p)$, and reproducing the CPL
+form requires $c(a)=-w_a(1-a)/(1+w_0)=4.186\,(1-a)$: the viscous pressure
+equals the enthalpy exactly at $z_*$ and exceeds it at all $z>z_*$ ($c=2.09$ at
+$z=1$). Whether that regime lies within the validity of Israel--Stewart theory
+is the open question of how $w_a$ is produced (OP-24).
 
 DESI~DR2 \citep{AbdulKarim2025} analyses indicate an evolving preference for dynamical
 dark energy. The \SSEE\ algebraic point $(\wz,\wa)=(-0.840,-0.670)$ falls within the

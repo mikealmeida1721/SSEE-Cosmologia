@@ -64,15 +64,6 @@
    "nota": "triangulo empaquetado 1820*1821/2 = 1657110"
   },
   {
-   "grupo": "sn_ia",
-   "nombre": "Union3 mu binned",
-   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits",
-   "bytes": 8640,
-   "sha256": "ef98b7dde1025ee7134f3242aaea3f1f0ed3f2b29a718458c550a8e4e24d0349",
-   "origen": "https://github.com/rubind/union3_release",
-   "nota": "OJO: es el vector de mu BINEADO del marco UNITY, no fotometria cruda. El crudo de verdad es lcfit_Union3.tar.gz (70 MB) y NO se ha bajado"
-  },
-  {
    "grupo": "cmb_lensing",
    "nombre": "ACT DR6 lensing bandpowers",
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6/v1.2/clkk_bandpowers_act.txt",
@@ -89,6 +80,144 @@
    "sha256": "a47b449f5063471b7b659433c55efae4d9f38d8d87b0b18f83409a0a207e5849",
    "origen": "https://github.com/SouthPoleTelescope/spt_candl_data",
    "nota": "17 bandpowers en L, cov 17x17 CMBmarg; Omori et al. 2026"
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "DES Y3 cortes de escala — 1x2_like",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cortes_escala/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_1x2_like",
+   "bytes": 794,
+   "sha256": "b6b222145d9def4d6b4c2e742126b648998f03dbef9f935fe3aef99d6739e7f3",
+   "origen": "https://github.com/des-science/y3-3x2pt-ppd-postunblinding/blob/main/fiducial/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_1x2_like",
+   "nota": "cortes fiduciales 0.5/8/6 Mpc/h por par de bines, en arcmin. NO estan en el portal desdr-server (4 intentos, 404): viven en el repo de post-unblinding de la colaboracion. Sin ellos el chi2 de DES Y3 no es comparable con nada publicado."
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "DES Y3 cortes de escala — 2x2_like",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cortes_escala/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_2x2_like",
+   "bytes": 1060,
+   "sha256": "2c57f7c0ebf8384411346a61c4f3c63fa0679108c8e92c9c57ae125f792565b5",
+   "origen": "https://github.com/des-science/y3-3x2pt-ppd-postunblinding/blob/main/fiducial/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_2x2_like",
+   "nota": "cortes fiduciales 0.5/8/6 Mpc/h por par de bines, en arcmin. NO estan en el portal desdr-server (4 intentos, 404): viven en el repo de post-unblinding de la colaboracion. Sin ellos el chi2 de DES Y3 no es comparable con nada publicado."
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "DES Y3 cortes de escala — gammat_like",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cortes_escala/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_gammat_like",
+   "bytes": 852,
+   "sha256": "3c6359109b2c1970c8378f8f11871a1535d08fa237df0a6d18eac31b74c8d2b6",
+   "origen": "https://github.com/des-science/y3-3x2pt-ppd-postunblinding/blob/main/fiducial/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_gammat_like",
+   "nota": "cortes fiduciales 0.5/8/6 Mpc/h por par de bines, en arcmin. NO estan en el portal desdr-server (4 intentos, 404): viven en el repo de post-unblinding de la colaboracion. Sin ellos el chi2 de DES Y3 no es comparable con nada publicado."
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "DES Y3 cortes de escala — wtheta_like",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cortes_escala/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_wtheta_like",
+   "bytes": 230,
+   "sha256": "8f5566e0855720a97bd55f19f498f330931f7a747904f780472f8ae1c8b330a1",
+   "origen": "https://github.com/des-science/y3-3x2pt-ppd-postunblinding/blob/main/fiducial/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_wtheta_like",
+   "nota": "cortes fiduciales 0.5/8/6 Mpc/h por par de bines, en arcmin. NO estan en el portal desdr-server (4 intentos, 404): viven en el repo de post-unblinding de la colaboracion. Sin ellos el chi2 de DES Y3 no es comparable con nada publicado."
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "DES Y3 cortes de escala — xim_like",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cortes_escala/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_xim_like",
+   "bytes": 408,
+   "sha256": "31d7836a4816dedfd053ca31a0e808bc4d6d1cf90644dcd690e654c7871cc107",
+   "origen": "https://github.com/des-science/y3-3x2pt-ppd-postunblinding/blob/main/fiducial/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_xim_like",
+   "nota": "cortes fiduciales 0.5/8/6 Mpc/h por par de bines, en arcmin. NO estan en el portal desdr-server (4 intentos, 404): viven en el repo de post-unblinding de la colaboracion. Sin ellos el chi2 de DES Y3 no es comparable con nada publicado."
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "DES Y3 cortes de escala — xip_like",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cortes_escala/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_xip_like",
+   "bytes": 402,
+   "sha256": "010d5ca32511aa8993d235a13ec61f6b6f2cf309a92390280795619f562f920e",
+   "origen": "https://github.com/des-science/y3-3x2pt-ppd-postunblinding/blob/main/fiducial/scales_3x2pt_0.5_8_6_v0.4.ini_2pt_xip_like",
+   "nota": "cortes fiduciales 0.5/8/6 Mpc/h por par de bines, en arcmin. NO estan en el portal desdr-server (4 intentos, 404): viven en el repo de post-unblinding de la colaboracion. Sin ellos el chi2 de DES Y3 no es comparable con nada publicado."
+  },
+  {
+   "grupo": "sn_ia",
+   "nombre": "Union3 mu binned",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits",
+   "bytes": 8640,
+   "sha256": "ef98b7dde1025ee7134f3242aaea3f1f0ed3f2b29a718458c550a8e4e24d0349",
+   "origen": "https://github.com/rubind/union3_release",
+   "nota": "OJO: es el vector de mu BINEADO del marco UNITY, no fotometria cruda. El crudo es lcfit_Union3.tar.gz, bajado 2026-09-27 (entrada grupo union3)"
+  },
+  {
+   "grupo": "union3",
+   "nombre": "Union3 crudo: entradas, ajustes de curva de luz y SNe que pasan cortes",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/lcfit_Union3.tar.gz",
+   "bytes": 70704244,
+   "sha256": "ebd2b244cddff39c466bf164be989a30fb2c77b8dd4459bc044750a8e9829a77",
+   "origen": "https://github.com/rubind/union3_release (lcfit_Union3.tar.gz)",
+   "nota": "crudo de verdad; lo procesa UNITY1.5 (Stan)"
+  },
+  {
+   "grupo": "union3",
+   "nombre": "Union3 entradas UNITY (pickle)",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/inputs_Amanullah10_CNIa02_CSP_CalanTololo_CfA1_CfA2_CfA3_CfA4_DES3_Deep_DES3_Shallow_ESSENCE_Foundation_LOSS_MCT_NB99_Pan-STARRS_Riess07_SDSS_SNLS_SuzukiRubin_Tonry03_LSQ+LCO_LSQ_knop03_Krisciunas.pickle",
+   "bytes": 2236190,
+   "sha256": "e2337ceb757880071a316efd120b2a420af04fd22cdfcd8cd9c1dae60530ddf2",
+   "origen": "https://github.com/rubind/union3_release",
+   "nota": "entrada de read_and_sample.py"
+  },
+  {
+   "grupo": "union3",
+   "nombre": "UNITY1.5 driver",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/read_and_sample.py",
+   "bytes": 40568,
+   "sha256": "4760d6f00101189e8e7e3ad8c521f66eadf4fc08e13d89370367f1d1c9fab8f4",
+   "origen": "https://github.com/rubind/union3_release",
+   "nota": "cosmo_model 1=LCDM plano (calibrador), 5=w0wa"
+  },
+  {
+   "grupo": "union3",
+   "nombre": "UNITY1.5 modelo Stan (nominal)",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/stan_code_simple.txt",
+   "bytes": 17168,
+   "sha256": "e1c3f581055e189ea6a7af7be21ab1eb42c4c062393b7c8db5f87f06aef2b6a6",
+   "origen": "https://github.com/rubind/union3_release",
+   "nota": ""
+  },
+  {
+   "grupo": "union3",
+   "nombre": "UNITY1.5 modelo Stan (fixed, App. B)",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/stan_code_fixed.txt",
+   "bytes": 17471,
+   "sha256": "ed156b739f7bffd208f1dec48ddbe7039b1c88c8ac85ee3703195ae4e5f23c2d",
+   "origen": "https://github.com/rubind/union3_release",
+   "nota": ""
+  },
+  {
+   "grupo": "union3",
+   "nombre": "Cadenas publicadas, nodos spline (cosmo=2)",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/all_samples_union3_cosmo=2.npz",
+   "bytes": 100164320,
+   "sha256": "68418da0b1b061754b3f94603f41acfbce5bac2d5e47b5972b3cb7109579c541",
+   "origen": "https://github.com/rubind/union3_release",
+   "nota": "control: reproducir lo publicado"
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "eRASS1 catalogo cosmologico v1.1 (5259 cumulos)",
+   "ruta": "/mnt/datos/SSEE_data/erosita/erass1cl_cosmology_v1.1.fits.tgz",
+   "bytes": 529873,
+   "sha256": "79e68f3496b1a51a11f9c818773800351cdbc2530bac54f191a06726feb530c3",
+   "origen": "https://erosita.mpe.mpg.de/dr1/AllSkySurveyData_dr1/Catalogues_dr1/BulbulE_DR1/",
+   "nota": "catalogo solo; funcion de seleccion (Clerc+2024, arXiv:2402.08457) y verosimilitud (Ghirardini+2024, arXiv:2402.08458) NO publicas"
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "eRASS1 catalogo primario v3.2",
+   "ruta": "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.fits.tgz",
+   "bytes": 23764095,
+   "sha256": "f9e9e8f750a2831ac68dad1fb24a028b024c00d3b5879f7a5760af81fc9a40ca",
+   "origen": "https://erosita.mpe.mpg.de/dr1/AllSkySurveyData_dr1/Catalogues_dr1/BulbulE_DR1/",
+   "nota": ""
   }
- ]
+ ],
+ "notas": {
+  "des_y3_cortes": "Localizados 2026-09-26. Desbloquean la mitad del montaje de DES Y3; falta decidir CosmoSIS oficial vs adaptar kids_shear, y DES Y3 SOLO puede entrar como sonda individual contra el clavo: solapa cielo y galaxias con KiDS-Legacy y no hay covarianza cruzada publica."
+ }
 }

@@ -1,0 +1,34 @@
+{
+ "fecha": "2026-09-26",
+ "sonda": "SPT-3G D1 KK",
+ "variante": "GMV",
+ "paquete": "candl 2.2.0 + spt_candl_data (oficial)",
+ "bandpowers": 17,
+ "nuisance_libres": 7,
+ "nuisance_fijados_por_colaboracion": 7,
+ "dof": 10,
+ "logA_clavo": 3.0448340130228546,
+ "chi2_en_el_clavo": 17.763662338256836,
+ "PTE": 0.05908360995086155,
+ "sigma_equivalente": 1.8875706754536747,
+ "mejor_ajuste_nuisance": {
+  "Tcal_lens": 0.999107,
+  "Pcal_lens": 1.0074730002499999,
+  "Atsz": 0.9782,
+  "Acib150": 0.9732,
+  "Acib220": 0.9998,
+  "Arad90": 0.963,
+  "Arad150": 0.9502
+ },
+ "control_a_fondo_lcdm": {
+  "chi2": 18.482072830200195,
+  "diferencia": -0.7184104919433594
+ },
+ "control_b_sensibilidad_As": {
+  "sigma_logA": 0.013125658689892638,
+  "chi2_menos": 19.337268829345703,
+  "chi2_mas": 16.818500518798828,
+  "mayor_salto": 1.5736064910888672,
+  "ve_As": true
+ }
+}

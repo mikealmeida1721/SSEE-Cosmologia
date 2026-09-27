@@ -2533,6 +2533,22 @@ fondo. Investigación viva: `src/p07_eft/busca_lambda.py`,
 DESI DR2. Que el valor cuadre con el dato pero no salga de ningún fondo
 integrado es exactamente el tipo de cosa que un referee llama ajuste.
 
+**Acotado 2026-09-27 — quién puede llevar el cruce fantasma** (pregunta de
+Mike: P1 decía «el cruce no es inestable», P7 «c_s² cambia de signo»; ver cuál
+es cierta). Script `src/p07_eft/cruce_fantasma_quien_lo_lleva.py`, log
+`results/logs/cruce_fantasma_quien_lo_lleva.json`; los dos controles pasan
+(w(u0)=w0 y c_s²=0.021284 de P7 recuperados; c(a*)=1 exacto).
+- **El campo NO puede.** Con K = c1X + c2X², derivando K por diferencias
+  finitas, los 10 puntos del barrido con w < −1 tienen c_s² < 0 (0 de 10 con
+  c_s² > 0). P7 tenía razón; la frase de P1 estaba mal y se corrigió.
+- **Si el cruce es físico, lo lleva la viscosa Π.** Con la normalización de
+  OP-22 (Π ∝ ρ+p): 1+w_eff = (1+w0)(1−c), c = |Π|/(ρ+p), y el CPL exige
+  **c(a) = −wₐ(1−a)/(1+w0) = 4.186(1−a)**: c = 1 exacto en z* = 0.314,
+  2.09 en z = 1, 2.93 en z = 2.33.
+- **La prueba que decide:** si |Π| > ρ+p cae dentro de la validez de
+  Israel–Stewart. Si no cae, la vía viscosa también se cierra y wₐ tendría que
+  salir de otro sitio. Es la siguiente pregunta de este OP.
+
 ## OP-23 — Dentro del acoplamiento conformal, ningún $\beta_c$ da $w_0$ sin pasarse de energía oscura temprana — ⚫ CERRADO POR DISOLUCIÓN (2026-09-06)
 
 > ## ⚫ DISUELTO AL DÍA SIGUIENTE — cayó su premisa, y cayó entera
