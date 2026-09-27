@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-09-27",
+ "minimos": {
+  "bao": {
+   "weight": 1.0,
+   "minuslogpost": -2.9913315,
+   "ombh2": 0.021791902,
+   "omch2": 0.11572897,
+   "h0": 0.68208883,
+   "minuslogprior": -8.2662788,
+   "minuslogprior__0": -8.2662788,
+   "chi2": 10.549895,
+   "chi2__bao": 10.549895
+  },
+  "cmb": null,
+  "kids": null,
+  "conjunta": null
+ },
+ "calibrador_bao": {
+  "Om": 0.2969740405332504,
+  "publicado": {
+   "Om": 0.2975,
+   "Om_err": 0.0086,
+   "hrd": 101.54,
+   "hrd_err": 0.73,
+   "fuente": "arXiv:2503.14738"
+  },
+  "sigma": -0.061158077529023684,
+  "reproduce": true
+ },
+ "ssee": {
+  "cmb": 1003.5860397789045,
+  "kids": 417.9706,
+  "bao_camb": 11.406344898722075,
+  "total": 1432.9629846776265,
+  "libres_cosmologicos": 0
+ }
+}

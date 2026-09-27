@@ -28,8 +28,12 @@ LIB = ['ombh2', 'omch2', 'H0', 'ns', 'logA', 'tau']
 _M = {}          # cache por (w, wa)
 
 
-def modelo(w, wa, dneff=0.0, meffsterile=0.0):
+def modelo(w, wa, dneff=0.0, meffsterile=0.0, mnu=None):
     """w y wa son OBLIGATORIOS: sin defecto no se hereda el fondo ajeno.
+
+    `mnu=None` usa la masa de SSEE (el defecto de siempre, misma clave de cache
+    y mismo `info`). LCDM tiene que pasar la SUYA (lcdm_planck.LCDM_PLANCK):
+    darle la de SSEE es no dejarlo usar sus propios parametros (2026-09-27).
 
     `dneff`/`meffsterile` anaden una especie termica masiva extra (canal
     `meffsterile` de CAMB). Con los dos en 0 —el defecto— la CLAVE de cache y
@@ -41,6 +45,8 @@ def modelo(w, wa, dneff=0.0, meffsterile=0.0):
     cl = (round(float(w), 12), round(float(wa), 12))
     if meffsterile > 0.0:
         cl = cl + (round(float(dneff), 12), round(float(meffsterile), 12))
+    if mnu is not None:
+        cl = cl + ('mnu', round(float(mnu), 12))
     if cl not in _M:
         from cobaya.model import get_model
         info = {
@@ -61,7 +67,7 @@ def modelo(w, wa, dneff=0.0, meffsterile=0.0):
                 'As': {'value': lambda logA: 1e-10 * np.exp(logA),
                        'derived': False},
                 'tau':   {'prior': {'min': 0.010, 'max': 0.200}},
-                'mnu': _MNU, 'omk': 0.0,
+                'mnu': _MNU if mnu is None else float(mnu), 'omk': 0.0,
                 'w': cl[0], 'wa': cl[1],
                 'A_planck': 1.0,
                 'sigma8': None},
@@ -90,9 +96,9 @@ def chi2_particula(p, w, wa, dneff=0.0, meffsterile=0.0):
     return c, s8
 
 
-def chi2_y_s8(p, w, wa):
+def chi2_y_s8(p, w, wa, mnu=None):
     """p = dict con LIB; w y wa obligatorios. Devuelve (chi2, sigma8)."""
-    m = modelo(w, wa)
+    m = modelo(w, wa, mnu=mnu)
     try:
         ll, der = m.loglikes({k: float(p[k]) for k in LIB})
     except Exception:
