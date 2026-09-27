@@ -58,6 +58,38 @@ cerradas.
 
 ## Estado
 
+## 🔁🔁 TERCERA PASADA — desde Paper 1, página 1 (2026-09-26)
+
+Mike: la lectura **empieza de nuevo**, porque desde que se inició el modelo
+cambió (partícula retirada, dirección de la cascada, β_c, P7 sin potencial,
+KiDS-Legacy) y lo ya cerrado pudo quedar leído contra un modelo que no existe.
+Se lee sobre la rama `lectura-publico-2026-09-26`, **subida a GitHub**, para
+que Mike y Claude vean exactamente el mismo PDF y Mike pueda señalar errores
+por página. Las dos pasadas anteriores quedan abajo como histórico.
+
+Orden (acordado 2026-09-26): P1, P4, P5, P7, P8, P9, P10 sin riesgo; P2 y P3
+enteros dejando marcado dónde entran las sondas nuevas (SNe; ACT/SPT); **P6 y
+los consolidados al final**, porque dependen del veredicto de la conjunta.
+
+| Paper | Páginas (pdfinfo, 2026-09-26) | Estado |
+|---|---|---|
+| 1 — Framework | 35 | 🔵 siguiente: pág. 1 |
+| 4 — ToE | 19 | ⬜ |
+| 5 — IS | 33 | ⬜ |
+| 7 — EFT | 17 | ⬜ |
+| 8 — Strong gravity | 19 | ⬜ |
+| 9 — Hubble | 22 | ⬜ |
+| 10 — UV | 16 | ⬜ |
+| 2 — MCMC | 32 | ⬜ (dejar hueco: SNe nuevas) |
+| 3 — CMB | 26 | ⬜ (dejar hueco: ACT DR6 / SPT-3G) |
+| 6 — Growth | 17 | ⬜ al final (conjunta) |
+
+Pendiente anotado para cuando se llegue: `α_K(0)=0.403302` rotulado como
+kineticidad en P3, P8, Unified, Sealed y PRD, contra P7 (α_K=15.591335).
+
+### Histórico — tabla de estado de la segunda pasada
+
+
 | Paper | Páginas | Estado |
 |---|---|---|
 | **1 — Framework** | 33 | 🔵 EN CURSO |
