@@ -1,0 +1,49 @@
+{
+ "fecha": "2026-09-27",
+ "fuente_publicada": "Rubin et al. 2023, arXiv:2311.12098, tabla de constraints, Flat LCDM, fila SNe (leida de /mnt/datos/SSEE_data/sn_ia/union3/paper/merged.tex)",
+ "publicado": {
+  "chi2": 24.0,
+  "dof": 20,
+  "Om": 0.356,
+  "mas": 0.028,
+  "menos": 0.026,
+  "ogh2": 2.4729000000000003e-05,
+  "neff": 3.04,
+  "mangano": 0.2271
+ },
+ "sondas": {
+  "Union3": {
+   "nodos": 22,
+   "dof": 21,
+   "chi2": 23.847395291316378,
+   "PTE": 0.3005113026703577,
+   "sigma_equivalente": 1.0353375429714726,
+   "control_lcdm_planck": {
+    "chi2": 26.347049444908336,
+    "diferencia": -2.4996541535919583,
+    "chi2_integrador_propio": 26.54717856545439
+   }
+  },
+  "Union3.1": {
+   "nodos": 22,
+   "dof": 21,
+   "chi2": 26.598135524926136,
+   "PTE": 0.18455393697864342,
+   "sigma_equivalente": 1.3268632077872817,
+   "control_lcdm_planck": {
+    "chi2": 28.82025214368082,
+    "diferencia": -2.222116618754683,
+    "chi2_integrador_propio": 28.933565282242057
+   }
+  }
+ },
+ "calibrador_lcdm_union3": {
+  "Om": 0.35577226824210634,
+  "mas": 0.02759908474786338,
+  "menos": 0.02644414445501403,
+  "chi2": 23.959848114006327,
+  "dof": 20,
+  "sigma_vs_publicado": -0.008758913765140213,
+  "reproduce": true
+ }
+}

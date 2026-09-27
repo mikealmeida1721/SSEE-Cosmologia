@@ -215,9 +215,45 @@
    "sha256": "f9e9e8f750a2831ac68dad1fb24a028b024c00d3b5879f7a5760af81fc9a40ca",
    "origen": "https://erosita.mpe.mpg.de/dr1/AllSkySurveyData_dr1/Catalogues_dr1/BulbulE_DR1/",
    "nota": ""
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "cadena oficial 3x2pt LCDM maglim (fiducial)",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt",
+   "bytes": 16351854,
+   "sha256": "2ba4415560c8a02ccb8da0b7d5cf4552c088a1cc981c1ee96fda90bba31563ff",
+   "origen": "https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/",
+   "nota": "calibrador LCDM: max-post trae DATA_VECTOR--2PT_CHI2=517.979; S8 0.776+-0.018; la cabecera lleva el ini del pipeline"
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "cadena oficial 3x2pt LCDM maglim cortes optimizados",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim_opt.txt",
+   "bytes": 17309664,
+   "sha256": "ee8224e4f8e3763859cdbe102e3cbccbae74d933dd1d7b5b4a9308ff8f94c10a",
+   "origen": "https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/",
+   "nota": "variante de cortes de escala optimizados, NO es el optimizador"
+  },
+  {
+   "grupo": "des_y3",
+   "nombre": "lector oficial de cadenas",
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cadenas/read_chains_y3a2.py",
+   "bytes": 1322,
+   "sha256": "35bc04cefc39d3a216c50e0ffe247826b960508e004a04dbd9a6225ffbca5821",
+   "origen": "https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/",
+   "nota": ""
+  },
+  {
+   "grupo": "union3",
+   "nombre": "fuente arXiv de Rubin+2023 (Union3/UNITY1.5)",
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/paper/src.tgz",
+   "bytes": 5414745,
+   "sha256": "13d14b96ba72b0a548642c7d9e7c7cf6000de062cbc0dbe17bf30198ba1e1189",
+   "origen": "https://arxiv.org/e-print/2311.12098",
+   "nota": "de aqui se LEE el calibrador: Flat LCDM, SNe, chi2 24.0 (20), Om 0.356 +0.028 -0.026"
   }
  ],
  "notas": {
-  "des_y3_cortes": "Localizados 2026-09-26. Desbloquean la mitad del montaje de DES Y3; falta decidir CosmoSIS oficial vs adaptar kids_shear, y DES Y3 SOLO puede entrar como sonda individual contra el clavo: solapa cielo y galaxias con KiDS-Legacy y no hay covarianza cruzada publica."
+  "des_y3_cortes": "Localizados 2026-09-26. 2026-09-27: motor decidido = CosmoSIS oficial (entorno conda-forge en el HDD, sin root), calibrado contra la cadena publica (evaluar su max-post y reproducir DATA_VECTOR--2PT_CHI2). DES Y3 SOLO entra como sonda individual contra el clavo: solapa cielo y galaxias con KiDS-Legacy y no hay covarianza cruzada publica."
  }
 }
