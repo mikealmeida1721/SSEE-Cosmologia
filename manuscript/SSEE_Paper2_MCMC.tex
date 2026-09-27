@@ -64,8 +64,8 @@ Structural Self-Energy Expansion (\SSEE) framework
 \citep{DESI_DR2}, a compressed Planck~2018 prior \citep{Planck2018}, and
 galaxy-cluster dynamical masses derived under a variable IGIMF baryonic
 baseline \citep{Zhang2026}. Using geometric constants fixed algebraically
-by $\pi$ and the golden ratio $\varphi$ — with $H_0$ as the sole free
-parameter — we compare the model against \LCDM\ and a free CPL
+by $\pi$ and the golden ratio $\varphi$ — with $H_0$ and $\Omega_b h^2$ as the only
+sampled parameters — we compare the model against \LCDM\ and a free CPL
 parameterisation via posterior constraints, information criteria, and
 predictive checks, using \textsc{emcee} \citep{emcee,GoodmanWeare2010} with $N_{\rm walkers}=100$,
 $N_{\rm steps}=25{,}000$ ($2.5\times10^6$ total evaluations), and a same-bin correlated block-diagonal covariance approximation for the DESI~DR2 BAO measurements; convergence
@@ -271,7 +271,7 @@ parameter, and never was a density (Paper~1, \S1.4;
 the $\phi$-DM sector that once separated them is retracted in Paper~6).
 The falsifiable content therefore moves from the $|w_0|$ coincidence to the
 direct CMB fit of Paper~3 (canonical $\Delta\mathrm{BIC}=-32.9$ full \texttt{plik}
-MCMC; $-24.0$ \texttt{plik\_lite} TTTEEE point estimate): if that fit had yielded $\chi^2_r\gg1$ or excluded
+MCMC; $-26.21$ \texttt{plik\_lite} TTTEEE+low-$\ell$ point estimate): if that fit had yielded $\chi^2_r\gg1$ or excluded
 $r_d^{\,\omega_m\text{-direct}}$, the construction would be falsified.
 
 \begin{figure}[H]
@@ -739,7 +739,7 @@ $H_0=67.66\pm0.46$, $0.65\sigma$ from the anchor: the data are
 \emph{consistent} with the algebraic value rather than pulling against it,
 though they do not single it out. Under a common
 Planck prior the three-model run gives $H_0^{\SSEE}=67.53\pm0.35$
-($0.39\sigma$) versus $H_0^{\LCDM}=68.27\pm0.28$.
+($0.26\sigma$) versus $H_0^{\LCDM}=68.27\pm0.28$.
 
 \paragraph{The $\Omega_m$ comparison.}
 Compared on the same footing --- total against total --- the SSEE matter
@@ -877,7 +877,7 @@ $z$ & $H(z)$ [km\,s$^{-1}$\,Mpc$^{-1}$] & $\sigma_H$ \\
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.839950\textwidth]{fig8_bao_residuals.pdf}
+  \includegraphics[width=0.84\textwidth]{fig8_bao_residuals.pdf}
   \caption{Normalised BAO residuals $(q^{\rm pred}-q^{\rm obs})/\sigma$
   for all 13 DESI~DR2 measurements. \SSEE\ (red), \LCDM\ (blue),
   CPL (green). With the total matter density the \SSEE\ sound horizon
@@ -949,7 +949,7 @@ not contingent on specific choices of $\sigma_{M_{\rm obs}}$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.839950\textwidth]{fig2_cluster_sensitivity.pdf}
+  \includegraphics[width=0.84\textwidth]{fig2_cluster_sensitivity.pdf}
   \caption{Cluster mass predictions by scenario for seven clusters. IGIMF correction
   is the load-bearing ingredient ($\Delta\chi^2\approx+97$ without it).}
   \label{fig:cluster_sens}
@@ -1002,10 +1002,10 @@ predictive cross-validation on the high-redshift half of the BAO vector
 (CPL): \SSEE\ \emph{predicts} the held-out data better, while CPL over-fits the
 training half (Appendix~\ref{app:sddr_cv}). The sound horizon matches \LCDM\
 ($r_d=148.2$ vs $147.8$\,Mpc, ratio $1.002$) and the $H_0$ posterior sits
-$0.39\sigma$ from Planck, so no background-structure penalty arises. The full
+$0.26\sigma$ from Planck, so no background-structure penalty arises. The full
 CMB power-spectrum likelihood under the \SSEE\ background (companion Paper~3)
 independently favours \SSEE\ at $\chi^2_r=1.042$ (TT) and $\Delta\mathrm{BIC}=
--24.0$ (\texttt{plik\_lite} TTTEEE, $\omega_m$-direct). An earlier ``$+206$''
+-26.21$ (\texttt{plik\_lite} TTTEEE+low-$\ell$, $\omega_m$-direct). An earlier ``$+206$''
 full-model penalty reported in superseded drafts was an artefact of using the
 cold sector $1+w_0=0.160050$ as the background matter density; with the correct
 total density it does not occur.
@@ -1046,9 +1046,10 @@ sector; improvement here would be the highest-leverage target for
 future work.}
 
 \paragraph{BAO-only.}
-Running without the Planck $H_0$ prior gives
-$H_0=65.8^{+1.2}_{-1.1}$\,km\,s$^{-1}$\,Mpc$^{-1}$, consistent
-with the full posterior at $0.6\sigma$.
+Running without any $H_0$ prior (DESI~DR2 with only a BBN prior on
+$\omega_b$; \S\ref{sec:results_cosmo}) gives
+$H_0=67.66\pm0.46$\,km\,s$^{-1}$\,Mpc$^{-1}$, consistent
+with the full posterior ($67.79\pm0.35$) at $0.2\sigma$.
 \textit{The $H_0$ estimate is therefore essentially independent of
 Planck and rests entirely on the DESI~DR2 BAO geometry.}
 
@@ -1246,10 +1247,10 @@ a sharp bifurcation: the dynamical sector passes; the background sector fails un
 
   \item A cross-check at high-$z$ is provided by the Ly-$\alpha$ forest BAO
     from DESI~DR2 ($z=2.33$): the raw dynamical background predicts
-    $D_H/r_d = 9.89$, a $8.1\sigma$ tension, while the $\omega_m$-direct
-    prediction (CMB-sector matter $\Omega_{m,\mathrm{CMB}}=0.308881$ in $E(z)$,
-    where $\phi$-DM is non-relativistic, with $r_d=147.17$) gives
-    $D_H/r_d = 8.71$, a $1.1\sigma$ agreement (Appendix~\ref{app:lya}).
+    $D_H/r_d = 9.89$, a $12.5\sigma$ tension, while the $\omega_m$-direct
+    prediction (the total matter $\Omega_{m,\mathrm{CMB}}=0.308881$ in $E(z)$,
+    with $r_d=147.17$) gives
+    $D_H/r_d = 8.71$, a $0.7\sigma$ agreement (Appendix~\ref{app:lya}).
     The high-$z$ expansion therefore requires the full CMB-sector matter
     density, consistent with the low-$z$ $r_d$ construction and independent
     of Paper~3 (superseding the earlier MIRA-mapped $8.56$).
@@ -1274,7 +1275,7 @@ The compressed Planck~2018 prior is from \citet{Planck2018}.
 Cosmic Chronometer $H(z)$ measurements are from \citet{Moresco2022}.
 Galaxy-cluster dynamical masses are from \citet{Zhang2026}.
 The \textsc{ssee} analysis scripts are available at
-\url{https://github.com/mikealmeida1721/SSEE}.
+\url{https://github.com/mikealmeida1721/SSEE-Cosmologia}.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \appendix
@@ -1573,7 +1574,7 @@ Observational Evidence from Supernovae for an Accelerating Universe and a Cosmol
 \bibitem[Weinberg et al.(2013)]{Weinberg2013}
 Weinberg, D.~H., et al.\ (2013).
 Observational probes of cosmic acceleration.
-\textit{Phys.\ Rep.} \textbf{530}, 87. arXiv:1201.1084.
+\textit{Phys.\ Rep.} \textbf{530}, 87. arXiv:1201.2434.
 
 \bibitem[Clifton et al.(2012)]{Clifton2012}
 Clifton, T., et al.\ (2012).
@@ -1615,8 +1616,8 @@ DES Collaboration\ (2024).
 The Dark Energy Survey: Cosmology Results with 1500 deg$^2$ of Weak Gravitational Lensing and Galaxy Clustering (DES~Y5).
 \textit{arXiv:2401.02929}.
 
-\bibitem[Deffayet et al.(2010)]{Deffayet2010}
-Deffayet, C., Esposito-Farèse, G., \& Vikman, A.\ (2010).
+\bibitem[Deffayet et al.(2009)]{Deffayet2010}
+Deffayet, C., Esposito-Farèse, G., \& Vikman, A.\ (2009).
 Covariant Galileon.
 \textit{Phys.~Rev.~D}, 79, 084003.
 

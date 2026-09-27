@@ -3408,7 +3408,10 @@ try:
                 # "$ km" y dejaba pasar "40.70$~eV" y "73.04\\,\\kms" — probado
                 # contra texto real, no supuesto. Auto-test abajo.
                 _SEP = r"(?:[\s$~]|\\[,;:!\s]|\\quad|\\qquad)*"
-                _UNI = r"(?:km|Mpc|eV|meV|GeV|\\kms|\\hMpc)"
+                # 2026-09-26: una longitud LaTeX también es una unidad. Sin esto R37
+                # leía «width=0.84\\textwidth» como w₀=0.84 y obligaba a escribir
+                # anchos de figura de 0.839950 (Paper 2, dos figuras).
+                _UNI = r"(?:km|Mpc|eV|meV|GeV|\\kms|\\hMpc|\\textwidth|\\linewidth|\\columnwidth)"
                 _UNID = r"(?!" + _SEP + _UNI + r")"
                 if _re.search(r"=\s*(?:-|\\!-)?\s*" + _re.escape(_corto)
                               + r"(?![0-9])" + _UNID, _cont):
@@ -3416,18 +3419,19 @@ try:
     # Auto-test de la exclusión: si el patrón deja de distinguir dimensional
     # de adimensional, R37 se vuelve silenciosamente inútil (o destructivo).
     _S = r"(?:[\s$~]|\\[,;:!\s]|\\quad|\\qquad)*"
-    _U = r"(?:km|Mpc|eV|meV|GeV|\\kms|\\hMpc)"
+    _U = r"(?:km|Mpc|eV|meV|GeV|\\kms|\\hMpc|\\textwidth|\\linewidth|\\columnwidth)"
     _X = r"(?!" + _S + _U + r")"
     _CASOS = [(r"$H_0=67.962$ km\,s$^{-1}$", "67.962", False),
               (r"$m_\varphi=40.70$~eV", "40.70", False),
               (r"$H_0 = 73.04\,\kms$", "73.04", False),
               (r"$K_v=9.5193$", "9.5193", True),
-              (r"$w_a=-0.6700$,", "0.6700", True)]
+              (r"$w_a=-0.6700$,", "0.6700", True),
+              (r"[width=0.84\textwidth]", "0.84", False)]
     _bad = [c[0] for c in _CASOS
             if bool(_re.search(r"=\s*-?\s*" + _re.escape(c[1]) + r"(?![0-9])" + _X, c[0])) != c[2]]
     check("R37 la exclusión de cantidades CON UNIDADES funciona",
           not _bad, "; ".join(_bad) if _bad
-          else "5 casos LaTeX reales: dimensionales ignoradas, adimensionales marcadas")
+          else "6 casos LaTeX reales: dimensionales y anchos de figura ignorados, adimensionales marcadas")
     check("R37 ninguna igualdad de constante SSEE con menos de 6 decimales",
           not _mal37,
           "; ".join(_mal37[:6]) if _mal37

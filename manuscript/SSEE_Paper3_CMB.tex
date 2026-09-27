@@ -42,8 +42,8 @@ Acoustic Peak Reproduction via the $\omega_m$-Direct CMB Matter Density}}
 The Structural Self-Energy Expansion model (SSEE) proposes a minimal-parameter
 dark energy framework algebraically derived from the golden ratio $\varphi$ and $\pi$;
 the background sector $(w_0, w_a, s_m)$ carries zero fitted
-dimensionless parameters, while $H_0$ and $\Omega_b h^2$ are treated as $k=2$ in
-the BIC analysis below (\textit{``On the parameter count''} paragraph) following the
+dimensionless parameters, while the primordial amplitude and optical depth
+$\{A_s,\tau\}$ are treated as $k=2$ in the BIC analysis below (\textit{``On the parameter count''} paragraph) following the
 conservative accounting policy established in Paper~1 \S1.3.
 Previous work demonstrated that the SSEE dynamic sector
 ($s_m=0.160050$, $w_0=-0.839950$, $w_a=-0.669975$) fits DESI~DR2 BAO data
@@ -60,7 +60,7 @@ and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=0.119514$ are forward identities of 
   = \frac{\omega_m}{h^2}
   = \frac{0.14267}{0.6796^2} = 0.3089,
 \end{equation*}
-within $0.6\sigma$ of the Planck~2018 value ($0.3153\pm0.0073$). The dynamic value
+within $0.88\sigma$ of the Planck~2018 value ($0.3153\pm0.0073$). The dynamic value
 $s_m=0.160050$ (DESI EoS sector) and the CMB value $\Omega_{m,\mathrm{CMB}}=0.3089$
 are \emph{two independent predictions}; the earlier mapping
 $\Omega_{m,\mathrm{CMB}}=\Omega_{m,\mathrm{dyn}}\times\mathrm{MIRA}$ is retired (the open
@@ -81,7 +81,7 @@ best fits ($\chi^2_{\rm SSEE}=2771.3$ vs.\ $\chi^2_{\Lambda\rm CDM}=2773.1$ over
 $N=2354$ data points, $\Delta\chi^2_{\rm BF}=-1.8$), while the parameter-count economy
 yields $\Delta\mathrm{BIC}=-32.9$, decisively favouring SSEE on the Jeffreys scale.
 (A \texttt{plik\_lite} point-estimate cross-check gives a more conservative
-$\Delta\mathrm{BIC}=-24.0$.) The $\Delta\mathrm{BIC}$ is driven by parsimony, not by
+$\Delta\mathrm{BIC}=-26.21$.) The $\Delta\mathrm{BIC}$ is driven by parsimony, not by
 fit quality.
 SSEE is not falsified by the Planck~PR4 CMB power spectra.
 \end{abstract}
@@ -603,7 +603,7 @@ where $k$ is the number of free parameters and $N=5914$ for the combined TT, TE,
 \centering
 \caption{\textbf{Preliminary BIC comparison — diagonal approximation only.}
 Combined spectra (TT+TE+EE+PP, $N=5914$, independence approximation).
-SSEE has $k=2$ ($H_0$ + $\Omega_b h^2$ prior); $\Lambda$CDM has $k=6$.
+SSEE has $k=2$ ($\{A_s,\tau\}$); $\Lambda$CDM has $k=6$.
 \textit{This result uses diagonal covariance; see Eq.~\eqref{eq:bic_cobaya}
 (\S\ref{sec:cobaya}) for the definitive off-diagonal Cobaya evaluation.}}
 \label{tab:bic}
@@ -729,7 +729,7 @@ $\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=2354$) & $-17.3$ & (reference) \\
   \centering
   \includegraphics[width=0.72\textwidth]{fig_b1_h0_posterior.pdf}
   \caption{$H_0$ marginalised posterior for SSEE (blue) and $\Lambda$CDM (red)
-  from the B1 full \texttt{plik\_lite} MCMC. The dashed black curve shows
+  from the B1 full \texttt{plik} MCMC. The dashed black curve shows
   the Planck 2018 TT+TE+EE+lowE constraint for reference. The dotted
   green line marks the SSEE algebraic prediction $H_0^\mathrm{alg}=67.96214$\,km\,s$^{-1}$\,Mpc$^{-1}$.
   In the validation chain (where $H_0$ is floated) SSEE recovers the
@@ -746,7 +746,7 @@ $\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=2354$) & $-17.3$ & (reference) \\
   \includegraphics[width=0.82\textwidth]{fig_b1_corner_ssee.pdf}
   \caption{Full posterior triangle plot for the SSEE CMB sector
   ($H_0$, $\log A_s$, $\tau$, $A_\mathrm{Planck}$) from the B1
-  \texttt{plik\_lite} MCMC. The narrow $H_0$ constraint ($\pm0.03$\,km\,s$^{-1}$\,Mpc$^{-1}$)
+  full \texttt{plik} MCMC. The narrow $H_0$ constraint ($\pm0.03$\,km\,s$^{-1}$\,Mpc$^{-1}$)
   reflects the geometric constraint imposed by $\Omega_{m,\mathrm{CMB}} = 0.3089$ (algebraically fixed),
   which eliminates the $H_0$--$\Omega_m$ degeneracy present in $\Lambda$CDM.
   All other marginals are consistent with the $\Lambda$CDM posteriors.}
@@ -820,8 +820,8 @@ The full causal IS numerical solution (Paper~5) gives
 $\gamma_\mathrm{IS}=0.550\approx\gamma_\Lambda$, yielding a negligible IS
 correction and an IS linear-growth $S_8\approx0.8256$ ($0.5\sigma$ below Planck;
 conservative CLASS ceiling $S_8=0.827$),
-both predictions maintaining the $\sim 3\text{--}4\,\sigma$ tension with KiDS-1000
-and DES~Y3 that persists in $\Lambda$CDM; Paper~6 resolves this through the
+both predictions sitting $2.8\sigma$ above KiDS-1000 and $2.2\sigma$ above
+DES~Y3 with $A_s$ fixed to Planck, as $\Lambda$CDM does; Paper~6 resolves this through the
 two-sector $\varphi$-DM mechanism ($S_{8,\mathrm{eff}}=0.758$), \emph{now retracted} (Paper~6): with $A_s$ free the single sector gives $S_8=0.7555\pm0.0192$ against raw KiDS-1000 $\xi_\pm$.
 
 \begin{table}[ht]
@@ -961,7 +961,7 @@ functions $(\alpha_K,\alpha_B,\alpha_M,\alpha_T)$, validated against CLASS indep
 Note that the raw SSEE \emph{dynamical} background ($s_m=0.160050$)
 fed directly to CLASS gives $\chi^2_r=90.3$ against Planck PR4 TT.
 This is expected: the dynamical-sector fraction is not the CMB matter density.
-The good fit ($\chi^2_r\approx 1.06$, \S\ref{sec:stats}) is recovered with the
+The good fit ($\chi^2_r\approx 1.04$, \S\ref{sec:stats}) is recovered with the
 $\omega_m$-direct CMB matter density $\Omega_{m,\rm CMB}=\omega_m/h^2=0.3089$
 (no matter factor; OP-8 dissolved), as implemented with CAMB in
 \S\ref{sec:results}.
@@ -1033,7 +1033,7 @@ The key results are:
   \item \textbf{\texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ ($\omega_m$-direct):} $\chi^2_{\mathrm{eff}} = 1003.586$ with $\{A_s,\tau\}$ minimized, at $H_0 = 67.96214$ km\,s$^{-1}$\,Mpc$^{-1}$ (the CMB-minimising value with SSEE-fixed $\omega_b,\omega_c$); $\Lambda$CDM gives $1003.769$ with six free parameters.
   \item $\Delta\mathrm{BIC}=-26.21$ ($k=2$ vs $k=6$, $N=669$), decisively favouring SSEE over $\Lambda$CDM at equal fit quality ($\Delta\chi^2=-0.183$).
   \item $\Omega_{m,\mathrm{CMB}}=0.308881$ within $0.88\sigma$ of Planck 2018.
-  \item The sound horizon $r_d=147.17$ Mpc matches $\Lambda$CDM to $0.03\%$.
+  \item The sound horizon $r_d=147.17$ Mpc matches $\Lambda$CDM to $0.05\%$.
 \end{itemize}
 
 Combined with the Paper~2 results ($0.24\sigma$ on the DESI~DR2 $w_0w_a$CDM posterior,
@@ -1053,9 +1053,9 @@ $\omega_m$-direct reframe, which makes $H_0^{\rm alg}$ the global $H$.)
 
 \bigskip
 \noindent\textbf{Data Availability.}
-All analysis scripts (\texttt{src/ssee\_paper3\_cmb.py}), generated figures,
+All analysis scripts (\texttt{src/p03\_cmb/ssee\_paper3\_cmb.py}), generated figures,
 and reduced data products are publicly available at
-\url{https://github.com/mikealmeida1721/SSEE}.
+\url{https://github.com/mikealmeida1721/SSEE-Cosmologia}.
 The Planck PR4 TT and TE/EE power spectra are from the Planck Legacy Archive
 (\url{https://irsa.ipac.caltech.edu/data/Planck/}) \citep{Planck2020}.
 CAMB v1.6.6 was used for all theoretical power spectrum calculations
