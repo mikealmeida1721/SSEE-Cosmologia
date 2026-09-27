@@ -42,6 +42,7 @@ _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
 sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 from sn_geometria import mu_teo  # noqa: E402
+from lcdm_planck import LCDM_PLANCK, LOGA_PLANCK, TAU_PLANCK  # noqa: E402
 
 U3 = "/mnt/datos/SSEE_data/sn_ia/union3"
 TEX = f"{U3}/paper/merged.tex"          # fuente arXiv:2311.12098 (e-print)
@@ -108,10 +109,11 @@ def calibra_lcdm(z, mu, Ci, pub):
 
 def main():
     from scipy import stats
-    from ssee_core import H0_GLOBAL, N_S, OMEGA_B_H2, OMEGA_C_H2, W0, WA
-    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S)
-    # ORIGEN: Planck 2018 VI (arXiv:1807.06209), Tabla 2, TT,TE,EE+lowE+lensing
-    lcdm = dict(ombh2=0.02237, omch2=0.1200, H0=67.36, ns=0.9649)
+    from ssee_core import H0_GLOBAL, N_S, OMEGA_B_H2, OMEGA_C_H2, SUM_MNU_EV, W0, WA
+    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S,
+                mnu=SUM_MNU_EV)
+    # CONTROL (a): LCDM con SUS parametros completos (lcdm_planck.py), no los de SSEE
+    lcdm = dict(LCDM_PLANCK)
 
     pub = publicado()
     res = dict(fecha="2026-09-27",

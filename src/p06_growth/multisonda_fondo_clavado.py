@@ -235,8 +235,10 @@ def bao_en_el_clavo():
     import contextlib
     with contextlib.redirect_stdout(io.StringIO()):
         spec.loader.exec_module(mod)
-    from ssee_core import H0_ALG as H_ALG
-    c2, om = mod.chi2_bao(H_ALG, 0.02207)
+    from ssee_core import H0_ALG as H_ALG, OMEGA_B_H2
+    # 2026-09-27: antes llevaba obh2=0.02207 TECLEADO (el posterior viejo de P2),
+    # que no es el fondo clavado: daba chi2=10.8588 en vez de 10.9040.
+    c2, om = mod.chi2_bao(H_ALG, OMEGA_B_H2)
     return dict(sonda="BAO DESI DR2", chi2=float(c2), n_datos=13,
                 modo=f"fondo clavado H0={H_ALG:.6f}, Om derivado={om:.6f}",
                 exacto=True)

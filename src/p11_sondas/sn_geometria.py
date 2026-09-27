@@ -36,7 +36,9 @@ import numpy as np
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
+sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 from ssee_core import SUM_MNU_EV  # noqa: E402
+from lcdm_planck import LCDM_PLANCK, LOGA_PLANCK, TAU_PLANCK  # noqa: E402
 
 # ORIGEN: results/logs/cmb_dbic_tau_ajustado.json -> SSEE/mejor (plik_lite TTTEEE+lowT+lowE, N=669,
 # chi2=1003.586). Se LEE del log: un literal no se entera si la corrida del CMB cambia.
@@ -50,6 +52,47 @@ with open(os.path.join(_R, "results", "logs", "multisonda_fondo_clavado.json")) 
 PP = "/mnt/datos/SSEE_data/sn_ia/pantheon_plus"
 DS = "/mnt/datos/SSEE_data/sn_ia/des_sn5yr"
 OUT = os.path.join(_R, "results", "logs", "sn_geometria_en_el_clavo.json")
+PAP = "/mnt/datos/SSEE_data/sn_ia/papers"     # fuentes arXiv (e-print) de cada articulo
+# ORIGEN-VALOR: 2202.04077 — identificador arXiv de Brout+2022, nombre de la carpeta de su fuente
+# ORIGEN-VALOR: 2511.07517 — identificador arXiv de Popovic+2026, nombre de la carpeta de su fuente
+
+
+def publicado(nom):
+    """Om de LCDM plano, SOLO supernovas, LEIDO del .tex del articulo.
+      Pantheon+ : Brout+2022, arXiv:2202.04077, macro \\fLCDMOMPan (la vigente,
+                  no la comentada)
+      DES-SN5YR : Popovic+2026 (DES-Dovekie), arXiv:2511.07517, sec. Flat LCDM
+    Son medias posteriores de un MCMC; aqui se ajusta perfilando (chi2+1), asi
+    que se espera acuerdo a una fraccion de sigma, no al digito."""
+    import re
+    if nom == "Pantheon+":
+        t = open(f"{PAP}/2202.04077/main.tex").read()
+        m = re.search(r"^\\def\\fLCDMOMPan\{\$([\d.]+)\\pm([\d.]+)\$\}", t, re.M)
+        return float(m.group(1)), float(m.group(2)), "arXiv:2202.04077"
+    t = open(f"{PAP}/2511.07517/mnras_template.tex").read()
+    m = re.search(r"\$\$\\Omega_\{\\rm m\} = ([\d.]+) \\pm ([\d.]+)~\(\\rm SN~only\)", t)
+    return float(m.group(1)), float(m.group(2)), "arXiv:2511.07517"
+
+
+def mu_lcdm_plano(z, zhel, Om):
+    """LCDM plano sin radiacion (asi lo hace DES-Dovekie, ec. de H(z)); H0
+    arbitrario porque M_B se marginaliza."""
+    zz = np.linspace(0, z.max(), 20001)
+    E = np.sqrt(Om * (1 + zz) ** 3 + 1 - Om)
+    dc = np.concatenate([[0], np.cumsum(0.5 * (1 / E[1:] + 1 / E[:-1]) * np.diff(zz))])
+    return 5 * np.log10((1 + zhel) * np.interp(z, zz, dc)) + 25
+
+
+def calibra(z, zh, mu, C, inv):
+    """CALIBRADOR LCDM: Om libre, M_B marginalizado; intervalo donde chi2 sube 1."""
+    from scipy.optimize import brentq, minimize_scalar
+    if not inv:                                  # Cholesky una sola vez
+        C = np.linalg.inv(C); inv = True
+    f = lambda om: chi2_marg(mu, mu_lcdm_plano(z, zh, om), C, inv)
+    r = minimize_scalar(f, bounds=(0.05, 0.9), method="bounded", options=dict(xatol=1e-6))
+    hi = brentq(lambda x: f(x) - r.fun - 1, r.x, 0.9)
+    lo = brentq(lambda x: f(x) - r.fun - 1, 0.05, r.x)
+    return dict(Om=float(r.x), mas=float(hi - r.x), menos=float(r.x - lo), chi2=float(r.fun))
 
 
 def carga_pantheon():
@@ -85,7 +128,7 @@ def mu_teo(z, zhel, bg, w0, wa):
     """mu(z) del fondo, hasta una constante (M_B se marginaliza)."""
     import camb
     p = camb.set_params(ombh2=bg["ombh2"], omch2=bg["omch2"], H0=bg["H0"],
-                        ns=bg["ns"], tau=0.055, As=2e-9, mnu=SUM_MNU_EV,
+                        ns=bg["ns"], tau=0.055, As=2e-9, mnu=bg["mnu"],
                         dark_energy_model="ppf", w=w0, wa=wa)
     r = camb.get_background(p)
     dl = r.luminosity_distance(z) * (1.0 + zhel) / (1.0 + z)   # helio corr
@@ -113,9 +156,10 @@ def chi2_marg(mu_obs, mu_th, M, es_inversa=False):
 def main():
     from scipy import stats
     from ssee_core import H0_GLOBAL, N_S, OMEGA_B_H2, OMEGA_C_H2, W0, WA
-    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S)
-    # ORIGEN: Planck 2018 VI (arXiv:1807.06209), Tabla 2, TT,TE,EE+lowE+lensing
-    lcdm = dict(ombh2=0.02237, omch2=0.1200, H0=67.36, ns=0.9649)
+    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S,
+                mnu=SUM_MNU_EV)
+    # CONTROL (a): LCDM con SUS parametros completos (lcdm_planck.py), no los de SSEE
+    lcdm = dict(LCDM_PLANCK)
 
     res = {}
     for carga in (carga_pantheon, carga_des):
@@ -134,10 +178,23 @@ def main():
         b = abs(c - chi2_marg(mu, mu_teo(z, zh, ssee, W0, WA), C, inv))
         print(f"    CONTROL (b) logA +-1sigma: cambio = {b:.3e}   "
               f"{'OK, no ve A_s (es lo esperado)' if b < 1e-9 else 'FUGA de A_s'}")
+        # CALIBRADOR (R53, reproducir lo publicado): LCDM con Om libre
+        cal = calibra(z, zh, mu, C, inv)
+        om_p, s_p, ref = publicado(nom)
+        d_sig = (cal["Om"] - om_p) / s_p
+        cal.update(publicado=om_p, sigma_publicado=s_p, fuente=ref,
+                   sigma_vs_publicado=d_sig, reproduce=bool(abs(d_sig) < 0.5))
+        print(f"    CALIBRADOR LCDM libre: Om = {cal['Om']:.4f} +{cal['mas']:.4f} "
+              f"-{cal['menos']:.4f}  vs publicado {om_p} +- {s_p} ({ref})  "
+              f"{d_sig:+.2f} sigma  -> {'REPRODUCE' if cal['reproduce'] else 'NO REPRODUCE'}")
         res[nom] = dict(n_sne=n, dof=dof, chi2=c, chi2_por_dof=c / dof, PTE=pte,
                         sigma_equivalente=float(stats.norm.isf(pte / 2)),
                         control_a_lcdm=dict(chi2=ca, diferencia=c - ca),
-                        control_b_cambio_con_As=b, ve_As=bool(b > 1e-9))
+                        control_b_cambio_con_As=b, ve_As=bool(b > 1e-9),
+                        control_b_nota="TAUTOLOGICO: mu_teo no recibe logA, asi que da 0 por "
+                                       "construccion; no es un control. El control real es "
+                                       "el calibrador LCDM (2026-09-27).",
+                        calibrador_lcdm=cal)
 
     json.dump(dict(fecha="2026-09-26", logA_clavo=LOGA_CLAVO,
                    M_B="marginalizado analiticamente, prior plano (Goliath+2001)",

@@ -38,7 +38,9 @@ from scipy import stats
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
+sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 from ssee_core import SUM_MNU_EV  # noqa: E402
+from lcdm_planck import LCDM_PLANCK, LOGA_PLANCK, TAU_PLANCK  # noqa: E402
 
 # ORIGEN: results/logs/cmb_dbic_tau_ajustado.json -> SSEE/mejor (plik_lite TTTEEE+lowT+lowE, N=669,
 # chi2=1003.586). Se LEE del log: un literal no se entera si la corrida del CMB cambia.
@@ -72,7 +74,7 @@ def modelo(bg, w, wa):
                 logA={'prior': {'min': 1.0, 'max': 5.0}, 'drop': True},
                 As={'value': lambda logA: 1e-10 * np.exp(logA), 'derived': False},
                 tau={'prior': {'min': 0.010, 'max': 0.200}},
-                mnu=SUM_MNU_EV, omk=0.0, w=w, wa=wa),
+                omk=0.0, w=w, wa=wa),
             'debug': False})
     return _M[cl]
 
@@ -84,17 +86,17 @@ def chi2(bg, w, wa, logA, tau=TAU_CLAVO):
 
 def main():
     from ssee_core import H0_GLOBAL, N_S, OMEGA_B_H2, OMEGA_C_H2, W0, WA
-    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S)
-    # CONTROL (a): fondo LCDM-Planck 2018 TT,TE,EE+lowE+lensing
-    # ORIGEN: Planck 2018 VI (arXiv:1807.06209), Tabla 2, TT,TE,EE+lowE+lensing
-    lcdm = dict(ombh2=0.02237, omch2=0.1200, H0=67.36, ns=0.9649)
+    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S,
+                mnu=SUM_MNU_EV)
+    # CONTROL (a): LCDM con SUS parametros completos (lcdm_planck.py), no los de SSEE
+    lcdm = dict(LCDM_PLANCK)
 
     c = chi2(ssee, W0, WA, LOGA_CLAVO)
     n = 10                       # bandpowers de la variante act_baseline
     print(f"\n  ACT DR6 lensing (act_baseline, {n} bandpowers, CERO libres)")
     print(f"    fondo SSEE + logA clavado : chi2 = {c:8.3f}   chi2/n = {c/n:.3f}")
 
-    ca = chi2(lcdm, -1.0, 0.0, LOGA_CLAVO)
+    ca = chi2(lcdm, -1.0, 0.0, LOGA_PLANCK, TAU_PLANCK)
     print(f"\n  CONTROL (a) fondo LCDM-Planck : chi2 = {ca:8.3f}   "
           f"diferencia {c - ca:+.3f}")
 

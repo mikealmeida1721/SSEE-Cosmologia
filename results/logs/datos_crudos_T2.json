@@ -251,6 +251,60 @@
    "sha256": "13d14b96ba72b0a548642c7d9e7c7cf6000de062cbc0dbe17bf30198ba1e1189",
    "origen": "https://arxiv.org/e-print/2311.12098",
    "nota": "de aqui se LEE el calibrador: Flat LCDM, SNe, chi2 24.0 (20), Om 0.356 +0.028 -0.026"
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "eFEDS catalogo de cumulos (Liu+2022) V3.2",
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
+   "bytes": 107647,
+   "sha256": "53a2e07f55b3bc8c783fe071d8039c75f5682d04975ff310909abef37612789b",
+   "origen": "https://erosita.mpe.mpg.de/edr/eROSITAObservations/Catalogues/liuA/",
+   "nota": ""
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "eFEDS descripcion de columnas V3.2",
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.html",
+   "bytes": 13768,
+   "sha256": "0cd2ebc020edc0f49a50e3e29cab7630d91160afff010bb85d16b77652e87ef8",
+   "origen": "https://erosita.mpe.mpg.de/edr/eROSITAObservations/Catalogues/liuA/",
+   "nota": ""
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "eFEDS propiedades X (Bahar+2022) tabla 1",
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/Bahar2022_table1.dat",
+   "bytes": 59620,
+   "sha256": "e944525373233ae7bfd06050f2dcb4524f9eab40cf7b176cf43adcd02b5cf287",
+   "origen": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/661/A7/",
+   "nota": "542 cumulos: T, Lx, Lbol, Mgas, Yx en R500"
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "eFEDS propiedades X (Bahar+2022) tabla 2",
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/Bahar2022_table2.dat",
+   "bytes": 151760,
+   "sha256": "0f979d6b20528fb0061ed936e49e0575db513feb7910ad4f4d7dd2663df3e85d",
+   "origen": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/661/A7/",
+   "nota": ""
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "ReadMe CDS de Bahar+2022",
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/ReadMe_Bahar2022.txt",
+   "bytes": 10870,
+   "sha256": "05e91f13e18d088c2685338d155fd929044aeaad0b281b87957f5807ca35c3e0",
+   "origen": "https://cdsarc.cds.unistra.fr/ftp/J/A+A/661/A7/ReadMe",
+   "nota": ""
+  },
+  {
+   "grupo": "erosita",
+   "nombre": "fuente arXiv de Zhong+2026 (funcion de seleccion S(L,z), ecs. 10-12)",
+   "ruta": "/mnt/datos/SSEE_data/erosita/paper_2602.20483/src.tgz",
+   "bytes": 1033941,
+   "sha256": "49b84fbcd5eba2c1702fa8ea73f1df2279fc1255d0ee59320798d4fdf7c5e51c",
+   "origen": "https://arxiv.org/e-print/2602.20483",
+   "nota": "ecs. escritas con sigma_L en erg/s dentro de un erf en dex: inconsistencia de unidades"
   }
  ],
  "notas": {

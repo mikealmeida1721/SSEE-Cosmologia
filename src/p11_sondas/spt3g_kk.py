@@ -38,7 +38,9 @@ import numpy as np
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
+sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 from ssee_core import SUM_MNU_EV  # noqa: E402
+from lcdm_planck import LCDM_PLANCK, LOGA_PLANCK, TAU_PLANCK  # noqa: E402
 
 # ORIGEN: results/logs/cmb_dbic_tau_ajustado.json -> SSEE/mejor (plik_lite TTTEEE+lowT+lowE, N=669,
 # chi2=1003.586). Se LEE del log: un literal no se entera si la corrida del CMB cambia.
@@ -86,7 +88,7 @@ def modelo(bg, w, wa):
         pars.update(
             logA={'prior': {'min': 1.0, 'max': 5.0}, 'drop': True},
             As={'value': lambda logA: 1e-10 * np.exp(logA), 'derived': False},
-            tau=TAU_CLAVO, mnu=SUM_MNU_EV, omk=0.0, w=w, wa=wa)
+            omk=0.0, w=w, wa=wa)
         for k, (c, s) in LIBRES.items():
             pars[k] = {'prior': {'dist': 'norm', 'loc': c, 'scale': s},
                        'ref': c, 'proposal': s / 3.0}
@@ -135,9 +137,10 @@ def chi2(bg, w, wa, logA):
 def main():
     from scipy import stats
     from ssee_core import H0_GLOBAL, N_S, OMEGA_B_H2, OMEGA_C_H2, W0, WA
-    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S)
-    # ORIGEN: Planck 2018 VI (arXiv:1807.06209), Tabla 2, TT,TE,EE+lowE+lensing
-    lcdm = dict(ombh2=0.02237, omch2=0.1200, H0=67.36, ns=0.9649)
+    ssee = dict(ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2, H0=H0_GLOBAL, ns=N_S,
+                mnu=SUM_MNU_EV, tau=TAU_CLAVO)
+    # CONTROL (a): LCDM con SUS parametros completos (lcdm_planck.py), no los de SSEE
+    lcdm = dict(LCDM_PLANCK, tau=TAU_PLANCK)
     n, k = 17, 7
     dof = n - k
 
@@ -147,7 +150,7 @@ def main():
     print(f"    fondo SSEE + logA clavado : chi2 = {c:8.3f}/{dof} dof   "
           f"PTE = {pte:.4f}   {stats.norm.isf(pte/2):.2f} sigma")
 
-    ca, _ = chi2(lcdm, -1.0, 0.0, LOGA_CLAVO)
+    ca, _ = chi2(lcdm, -1.0, 0.0, LOGA_PLANCK)
     print(f"\n  CONTROL (a) fondo LCDM-Planck : chi2 = {ca:8.3f}   "
           f"diferencia {c - ca:+.3f}")
 
