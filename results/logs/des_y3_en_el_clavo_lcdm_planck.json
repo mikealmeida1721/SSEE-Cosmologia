@@ -1,0 +1,24 @@
+{
+ "fecha": "2026-09-27",
+ "caso": "lcdm_planck",
+ "cosmologia": {
+  "h0": 0.6736,
+  "ombh2": 0.02237,
+  "omch2": 0.12,
+  "n_s": 0.9649,
+  "a_s": 2.0989031673191437e-09,
+  "mnu": 0.06,
+  "w": -1.0,
+  "wa": 0.0
+ },
+ "chi2_2pt": 523.1695507886138,
+ "Omega_m": 0.31519398744052785,
+ "sigma_8": 0.8125694494935639,
+ "S8": 0.8328922572249731,
+ "lcdm_libre_chi2": 518.0961246556549,
+ "diferencia_vs_lcdm_libre": 5.073426132958957,
+ "mejor_ini": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_planck_mejor.ini",
+ "libres_cosmologicos": 0,
+ "convergido": false,
+ "nota": "nuisances minimizados con sus priors DES (max_posterior=T); el chi2 reportado es el del vector de datos"
+}

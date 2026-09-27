@@ -29,6 +29,7 @@ import configparser
 import json
 import math
 import os
+import shutil
 import subprocess
 import sys
 
@@ -52,9 +53,11 @@ def cosmologia(caso):
         return dict(h0=H0_GLOBAL / 100, ombh2=OMEGA_B_H2, omch2=OMEGA_C_H2,
                     n_s=N_S, a_s=math.exp(loga) * 1e-10, mnu=SUM_MNU_EV,
                     w=W0, wa=WA)
-    # ORIGEN: Planck 2018 VI (arXiv:1807.06209), Tabla 2, TT,TE,EE+lowE+lensing
-    return dict(h0=67.36 / 100, ombh2=0.02237, omch2=0.1200, n_s=0.9649,
-                a_s=math.exp(3.044) * 1e-10, mnu=0.06, w=-1.0, wa=0.0)  # Planck 2018
+    if caso == "lcdm_libre":
+        return {}            # la cosmologia de DES, con SUS rangos: nada se fija
+    from lcdm_planck import LCDM_PLANCK as P, LOGA_PLANCK
+    return dict(h0=P["H0"] / 100, ombh2=P["ombh2"], omch2=P["omch2"], n_s=P["ns"],
+                a_s=math.exp(LOGA_PLANCK) * 1e-10, mnu=P["mnu"], w=-1.0, wa=0.0)
 
 
 def values_nuisance(caso, cab, fila):
@@ -64,15 +67,19 @@ def values_nuisance(caso, cab, fila):
         txt = "".join(l for l in open(f"{CSL}/examples/{f}") if not l.startswith("%include"))
         cp.read_string(txt)
     sec = "cosmological_parameters"
-    for p in ("omega_m", "omega_b", "mnu", "a_s", "h0", "n_s"):
-        cp.remove_option(sec, p)
+    if caso != "lcdm_libre":
+        for p in ("omega_m", "omega_b", "mnu", "a_s", "h0", "n_s"):
+            cp.remove_option(sec, p)
     for p, v in cosmologia(caso).items():
         cp.set(sec, p, repr(float(v)))
     # nuisances: rango oficial, punto de partida = maximo de la cadena
     for k, col in enumerate(cab):
-        if "--" not in col or col.startswith("cosmological") or col.isupper():
+        if "--" not in col or col.isupper() or (
+                col.startswith("cosmological") and caso != "lcdm_libre"):
             continue
         s, p = col.split("--")
+        if not cp.has_option(s, p):
+            continue                      # derivado en la cadena, no parametro
         lo_ini_hi = cp.get(s, p).split()
         if len(lo_ini_hi) == 3:
             cp.set(s, p, f"{lo_ini_hi[0]} {float(fila[k])!r} {lo_ini_hi[2]}")
@@ -95,6 +102,18 @@ def cosmosis(args, nombre):
                            + (r.stdout + r.stderr)[-1500:])
 
 
+def sanea_ini(ruta):
+    import re
+    t = open(ruta).read()
+    open(ruta, "w").write(re.sub(r"np\.float64\(([^)]*)\)", r"\1", t))
+
+
+def convergio(caso):
+    """Nelder-Mead de CosmoSIS avisa si agota maxiter sin cumplir la tolerancia."""
+    return "Maximum number of iterations has been exceeded" not in open(
+        f"{TRABAJO}/clavo_{caso}_min.log").read()
+
+
 def lee_bloque(dirsal, seccion, clave):
     for l in open(f"{dirsal}/{seccion}/values.txt"):
         if l.split("=")[0].strip() == clave:
@@ -107,16 +126,29 @@ def main():
     if not json.load(open(CAL))["maxpost"]["reproduce"]:
         sys.exit("el calibrador NO reproduce la cadena de DES: no se evalua nada")
     os.makedirs(TRABAJO, exist_ok=True)
-    cab, a = lee_cadena()
-    j = a[:, cab.index("post")].argmax()
-    v = values_nuisance(caso, cab, a[j])
+    # modo: «nuevo» (defecto) arranca del max-post de la cadena DES; «continua»
+    # sigue minimizando desde el mejor punto guardado (la vuelta anterior agoto
+    # maxiter sin converger); «evalua» solo re-evalua el mejor punto guardado.
+    modo = sys.argv[2] if len(sys.argv) > 2 else "nuevo"
     mejor = f"{TRABAJO}/clavo_{caso}_mejor.ini"
-    # 1) minimizar nuisances (cosmologia fija)
-    cosmosis(f"pipeline.values={v} runtime.sampler=maxlike maxlike.method=Nelder-Mead "
-             f"maxlike.maxiter=6000 maxlike.tolerance=1e-4 maxlike.max_posterior=T "
-             f"maxlike.output_ini={mejor} pipeline.fast_slow=T "
-             f"pipeline.first_fast_module=fits_nz "
-             f"output.filename={TRABAJO}/clavo_{caso}_maxlike.txt", f"clavo_{caso}_min")
+    if modo == "nuevo":
+        cab, a = lee_cadena()
+        j = a[:, cab.index("post")].argmax()
+        v = values_nuisance(caso, cab, a[j])
+    elif modo == "continua":
+        sanea_ini(mejor)
+        v = f"{TRABAJO}/clavo_{caso}_arranque.ini"
+        shutil.copy(mejor, v)
+    if modo in ("nuevo", "continua"):
+        # 1) minimizar nuisances (cosmologia fija)
+        cosmosis(f"pipeline.values={v} runtime.sampler=maxlike maxlike.method=Nelder-Mead "
+                 f"maxlike.maxiter=6000 maxlike.tolerance=1e-4 maxlike.max_posterior=T "
+                 f"maxlike.output_ini={mejor} pipeline.fast_slow=T "
+                 f"pipeline.first_fast_module=fits_nz "
+                 f"output.filename={TRABAJO}/clavo_{caso}_maxlike.txt", f"clavo_{caso}_min")
+    # CosmoSIS 3.25.2 con numpy 2 escribe output_ini como «np.float64(x)» y
+    # luego no sabe leerlo (2026-09-27, tumbo el paso 2 tras 4 h). Se sanea.
+    sanea_ini(mejor)
     # 2) evaluar en el mejor punto: chi2 de datos y prior por separado
     sal = f"{TRABAJO}/clavo_{caso}_test"
     cosmosis(f"pipeline.values={mejor} runtime.sampler=test test.save_dir={sal}",
@@ -134,6 +166,7 @@ def main():
                    lcdm_libre_chi2=cal["chi2_nuestro"],
                    diferencia_vs_lcdm_libre=chi2 - cal["chi2_nuestro"],
                    mejor_ini=mejor, libres_cosmologicos=0,
+                   convergido=convergio(caso),
                    nota="nuisances minimizados con sus priors DES (max_posterior=T); "
                         "el chi2 reportado es el del vector de datos"),
               open(os.path.join(_R, "results", "logs", f"des_y3_en_el_clavo_{caso}.json"), "w"),

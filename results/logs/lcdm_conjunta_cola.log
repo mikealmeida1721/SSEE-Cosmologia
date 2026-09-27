@@ -1,0 +1,7 @@
+[2026-09-27 14:20:44] encolada: espera a UNITY (PID 159653); NÚCLEOS declarados por paso: 4
+[2026-09-27 16:35:44] lanza cmb — NÚCLEOS: 4 (mpirun -n 4), RAM 30%
+[2026-09-27 16:41:19] cmb terminó rc=0: [0 : minimize] Full set of minima: {'0': (503.1421176386849, True), '1': (506.4703597997401, True), '2': (508.6920839097369, True), '3': (503.05167568439276, True)} 
+[2026-09-27 16:41:19] lanza kids — NÚCLEOS: 4 (mpirun -n 4), RAM 30%
+[2026-09-27 17:31:46] kids terminó rc=0: [0 : minimize] Full set of minima: {'0': (209.43159373924965, True), '1': (208.78842109019894, True), '2': (208.63505108447092, True), '3': (208.66400343645728, True)} 
+[2026-09-27 17:31:46] lanza conjunta — NÚCLEOS: 4 (mpirun -n 4), RAM 30%
+[2026-09-27 19:19:36] DETENIDA por Claude: el minimo CMB de BOBYQA (chi2 1006.10) es PEOR que un punto conocido (1004.29 = mejor LCDM viejo re-evaluado con mnu 0.06). Minimizador no fiable; conjunta abortada. Espera decision de Mike.

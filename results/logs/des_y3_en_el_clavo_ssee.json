@@ -1,0 +1,24 @@
+{
+ "fecha": "2026-09-27",
+ "caso": "ssee",
+ "cosmologia": {
+  "h0": 0.6796213732340931,
+  "ombh2": 0.02241775678109985,
+  "omch2": 0.11951440843160877,
+  "n_s": 0.9655581462513669,
+  "a_s": 2.1006544100725195e-09,
+  "mnu": 0.06849,
+  "w": -0.839949771344779,
+  "wa": -0.6699748856723895
+ },
+ "chi2_2pt": 517.1037960538787,
+ "Omega_m": 0.3088831068232246,
+ "sigma_8": 0.8171156568768946,
+ "S8": 0.8291249483287166,
+ "lcdm_libre_chi2": 518.0961246556549,
+ "diferencia_vs_lcdm_libre": -0.9923286017761939,
+ "mejor_ini": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_ssee_mejor.ini",
+ "libres_cosmologicos": 0,
+ "convergido": false,
+ "nota": "nuisances minimizados con sus priors DES (max_posterior=T); el chi2 reportado es el del vector de datos"
+}
