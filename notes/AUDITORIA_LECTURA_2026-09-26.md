@@ -94,7 +94,7 @@ re-tecleadas en p11_sondas) — todos previos a esta noche. R68 se limpia con el
 - P4n L646-653 sección Hubble abre con H0+K=73.48 (0.5σ Riess) antes de decir "superseded"
 - P4o L659 f_scr=α_K^eff/(3MIRA) (→ s_K)
 - P4p L786 "δc prediction reserved for Paper 5" — δc ya está en este paper (§deltac)
-- P4q L820 script "src/ssee_paper4_toe.py (repository root)" — está en src/p04_toe/
+- P4q L820 script ssee_paper4_toe.py «en la raíz de src» (ruta sin carpeta) — está en src/p04_toe/
 - P4r L884 "disformal coupling β_c=−AURA" — era CONFORMAL (P1 L1435-1443, P7); el disformal de P8-9 es otro objeto
 - P4s L795 "Ω_b = 0.0495 (<0.4% from Planck)" — ver P4a (es −1.5%)
 ## Paper 5
@@ -119,7 +119,7 @@ re-tecleadas en p11_sondas) — todos previos a esta noche. R68 se limpia con el
 - ★P5s tabla falsables L1605-1611: fila S8 "S8>0.86 favours SSEE" (sin fila 0.8273); fila c²_s,eff=0 test |c_s²|<0.05 (la predicción del campo es 0.021284); fila MIRA "Ω_m direct measurement" (MIRA ya no toca Ω_m)
 - ★P5t conclusiones L1641-1646 "Q2 — MIRA factor ... discrepancy is 50%" — L882 del mismo paper dice que ese 50% "no es un resultado" (reencuadre 09-26 como cota |r|≤0.0175)
 - P5u L1545 fσ8(z=0.5)=0.4714 vs tabla z=0.51 → 0.478 (1.4% distinto)
-- P5v L1690 script "src/ssee_paper5_IS_perturbations.py" → src/p05_IS/; DOI 20093447 viejo; existen src/p05_is Y src/p05_IS (duplicado)
+- P5v L1690 script ssee_paper5_IS_perturbations.py sin carpeta → src/p05_IS/; DOI 20093447 viejo; existen src/p05_is Y src/p05_IS (duplicado)
 - P5w L1517 "inverts the result to a deficit" — ya era déficit; lo profundiza
 - P5x L1362 M̄2²/M_Pl² = Ω_DE (0.84 = s) — E1
 ## Paper 7
@@ -225,7 +225,7 @@ re-tecleadas en p11_sondas) — todos previos a esta noche. R68 se limpia con el
 - P3r Conclusión L1033-1034 titular −26.21 (plik_lite) vs tabla L770 "−32.9 canónico". Dos titulares.
 - P3s L1036 "r_d 147.17 coincide con ΛCDM al 0.03%": vs 147.09 es 0.054%.
 - P3t ★ L1044-1049 "68.13 aborda la tensión de Hubble al 0.17σ" — el 0.17σ es contra el número puro, no una resolución de la tensión; mismo mal rótulo que P9.
-- P3u L1056 ruta `src/ssee_paper3_cmb.py` → `src/p03_cmb/ssee_paper3_cmb.py`; URL repo L1058.
+- P3u L1056 ruta sin la carpeta p03_cmb → `src/p03_cmb/ssee_paper3_cmb.py`; URL repo L1058.
 - P3v L298-302 "el sector viscoso que sobrevive es ζ(a) de P1, que entrega w_a" — choca con X2 (w_a sin fuente física; la viscosidad IS no sale de la acción). Y "factor 9.5" sin fuente.
 - P3w L410 "satura en T_r/M_v cuando a→∞ (P1 §3.4)" — verificar que P1 §3.4 exista y lo diga.
 
