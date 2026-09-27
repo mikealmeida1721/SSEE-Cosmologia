@@ -19,8 +19,8 @@
    "PTE": 0.3005113026703577,
    "sigma_equivalente": 1.0353375429714726,
    "control_lcdm_planck": {
-    "chi2": 26.347049444908336,
-    "diferencia": -2.4996541535919583,
+    "chi2": 26.371696573390054,
+    "diferencia": -2.524301282073676,
     "chi2_integrador_propio": 26.54717856545439
    }
   },
@@ -31,8 +31,8 @@
    "PTE": 0.18455393697864342,
    "sigma_equivalente": 1.3268632077872817,
    "control_lcdm_planck": {
-    "chi2": 28.82025214368082,
-    "diferencia": -2.222116618754683,
+    "chi2": 28.833944489201883,
+    "diferencia": -2.2358089642757477,
     "chi2_integrador_propio": 28.933565282242057
    }
   }

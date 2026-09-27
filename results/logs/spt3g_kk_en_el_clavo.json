@@ -21,8 +21,8 @@
   "Arad150": 0.9502
  },
  "control_a_fondo_lcdm": {
-  "chi2": 18.482072830200195,
-  "diferencia": -0.7184104919433594
+  "chi2": 18.306447982788086,
+  "diferencia": -0.54278564453125
  },
  "control_b_sensibilidad_As": {
   "sigma_logA": 0.013125658689892638,

@@ -16,16 +16,16 @@
  "PTE": 0.1727619589382522,
  "sigma_equivalente": 1.363382609582259,
  "control_a_fondo_lcdm": {
-  "chi2": 14.546978821717403,
-  "diferencia": -0.541941388298433,
-  "PTE": 0.14947167317704027,
+  "chi2": 14.201008933304786,
+  "diferencia": -0.1959714998858164,
+  "PTE": 0.16401883650615157,
   "nota": "se evalua LCDM con el MISMO logA clavado del CMB de SSEE, no con el suyo: la pregunta del control es si ACT da chi2 bueno con cualquier fondo."
  },
  "control_b_sensibilidad_As": {
   "sigma_logA": 0.013125658689892638,
-  "chi2_menos": 18.632744872580474,
-  "chi2_mas": 14.876251706250656,
-  "mayor_salto": 4.6277074391615045,
+  "chi2_menos": 18.6327448740002,
+  "chi2_mas": 14.87625170517241,
+  "mayor_salto": 4.627707440581229,
   "ve_As": true
  }
 }
