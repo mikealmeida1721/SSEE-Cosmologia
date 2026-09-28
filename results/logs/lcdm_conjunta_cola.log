@@ -6,3 +6,4 @@
 [2026-09-27 17:31:46] lanza conjunta — NÚCLEOS: 4 (mpirun -n 4), RAM 30%
 [2026-09-27 19:19:36] DETENIDA por Claude: el minimo CMB de BOBYQA (chi2 1006.10) es PEOR que un punto conocido (1004.29 = mejor LCDM viejo re-evaluado con mnu 0.06). Minimizador no fiable; conjunta abortada. Espera decision de Mike.
 [2026-09-28 00:23:16] relanzada con Nelder-Mead (decision: avanzar lo pendiente, 28-sep). BOBYQA descartado movido a bobyqa_descartado/
+[2026-09-28 02:41:48] cmb rc=0
