@@ -29,7 +29,12 @@ import numpy as np
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 CAD = "/mnt/datos/SSEE_data/chains_p6/conjunta"
-OUT = os.path.join(_R, "results", "logs", "conjunta_vs_individual.json")
+# «preliminar»: lectura con la cadena AUN corriendo y sin converger (decision
+# de Mike 2026-09-28, opcion A+B). Va a otro archivo, para que el vigilante y
+# la lectura final no la confundan con el resultado convergido.
+PRELIMINAR = "preliminar" in sys.argv
+OUT = os.path.join(_R, "results", "logs",
+                   "conjunta_vs_individual" + ("_preliminar" if PRELIMINAR else "") + ".json")
 sys.path.insert(0, os.path.join(_R, "src"))
 
 
@@ -54,7 +59,8 @@ def carga(base):
 
 def rminus1(base):
     p = f"{CAD}/{base}.progress"
-    return float(open(p).read().split("\n")[-2].split()[-1]) if os.path.exists(p) else float("nan")
+    # columna «Rminus1» (la 4.a); la ultima es Rminus1_cl, que suele ser NaN
+    return float(open(p).read().split("\n")[-2].split()[3]) if os.path.exists(p) else float("nan")
 
 
 def main():
@@ -94,7 +100,8 @@ def main():
     t_ind = sum(ind.values()) + REF["bao"]
 
     res = dict(
-        fecha="2026-09-26",
+        fecha=__import__("datetime").date.today().isoformat(),
+        preliminar=PRELIMINAR,
         pregunta=("Corrida CONJUNTA con el fondo clavado por algebra y logA "
                   "clavado al del CMB: da a cada sonda el mismo chi2 que su "
                   "corrida individual?"),

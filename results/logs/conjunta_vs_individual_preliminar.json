@@ -1,0 +1,76 @@
+{
+ "fecha": "2026-09-28",
+ "preliminar": true,
+ "pregunta": "Corrida CONJUNTA con el fondo clavado por algebra y logA clavado al del CMB: da a cada sonda el mismo chi2 que su corrida individual?",
+ "logA_clavo": 3.0448340130228546,
+ "muestras_conjunta": 57688,
+ "cadenas_conjunta": 4,
+ "Rminus1_conjunta": 0.41079,
+ "muestras_boss": 138987,
+ "cadenas_boss": 4,
+ "Rminus1_boss": 0.042906,
+ "por_sonda": [
+  {
+   "sonda": "cmb",
+   "individual": 1003.5860397789045,
+   "conjunta": 1003.5945,
+   "delta": 0.008460221095560883,
+   "min_en_cadena_conjunta": 1003.586
+  },
+  {
+   "sonda": "kids",
+   "individual": 417.971,
+   "conjunta": 418.60406,
+   "delta": 0.6330600000000004,
+   "min_en_cadena_conjunta": 418.34319
+  },
+  {
+   "sonda": "boss",
+   "individual": 82.635627,
+   "conjunta": 85.382943,
+   "delta": 2.747315999999998,
+   "min_en_cadena_conjunta": 82.937348
+  }
+ ],
+ "control_arranque_comun": {
+  "nota": "las 4 cadenas salieron del mismo punto inicial; el control es que cada una de el mismo chi2 por sonda",
+  "por_cadena": [
+   {
+    "cadena": "conjunta.1.txt",
+    "muestras": 17177,
+    "cmb": 1003.596,
+    "kids": 420.54313,
+    "boss": 85.566999
+   },
+   {
+    "cadena": "conjunta.2.txt",
+    "muestras": 5431,
+    "cmb": 1003.7951,
+    "kids": 419.14347,
+    "boss": 88.178096
+   },
+   {
+    "cadena": "conjunta.3.txt",
+    "muestras": 17462,
+    "cmb": 1003.5945,
+    "kids": 418.60406,
+    "boss": 85.382943
+   },
+   {
+    "cadena": "conjunta.4.txt",
+    "muestras": 17618,
+    "cmb": 1003.6233,
+    "kids": 419.47236,
+    "boss": 85.522804
+   }
+  ]
+ },
+ "bao": {
+  "chi2": 11.406514867303027,
+  "libres": 0,
+  "nota": "constante: fuera del muestreador, no puede mover nada"
+ },
+ "total_conjunta": 1518.9880178673031,
+ "total_individual": 1515.5991816462074,
+ "total_delta": 3.388836221095744
+}
