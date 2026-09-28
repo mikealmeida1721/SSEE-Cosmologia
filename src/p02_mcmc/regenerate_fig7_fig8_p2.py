@@ -44,8 +44,13 @@ def E_lcdm(z, Om):
 def E_cpl(z, Om, w0, wa):
     return np.sqrt(Om * (1 + z) ** 3 + (1 - Om) * f_de_cpl(z, w0, wa))
 
+import os as _os_rd, sys as _sys_rd
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
+from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+
+
 def sound_horizon_rd(ob_h2, om_h2):
-    return 147.27 * (om_h2 / 0.1432) ** (-0.255) * (ob_h2 / 0.02237) ** (-0.134)
+    return _rd_camb(ob_h2, om_h2, mnu=None)  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 
 # ── Cosmic Chronometers (Jimenez–Loeb 2002; Moresco+ 2022 compilación) ──
 CC_DATA = np.array([

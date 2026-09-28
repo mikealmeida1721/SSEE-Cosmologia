@@ -1,0 +1,8 @@
+{
+ "fecha": "2026-09-28",
+ "error_max_rel": 6.772360450213455e-15,
+ "chi2_clavo": 11.406514867303027,
+ "ref_C3": 11.406663483677269,
+ "criterio": "(a) < 1e-5 relativo; (b) |chi2 - C3| < 1e-3 (declarado antes)",
+ "pasa": true
+}

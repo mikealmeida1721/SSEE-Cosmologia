@@ -72,8 +72,13 @@ def DC(z_max, Om, n=300):
     return np.trapezoid(1.0/E_ssee(zz, Om), zz)
 
 # ORIGEN-VALOR: 0.1432 — pivote omega_m h^2 de la eq. rd de Paper 2 (Planck 2018 TT,TE,EE+lowE); cita EH98 pendiente en FUENTES_PENDIENTES.md FP-7
+import os as _os_rd, sys as _sys_rd
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
+from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+
+
 def sound_horizon_rd(ob_h2, om_h2):
-    return 147.27 * (om_h2/0.1432)**(-0.255) * (ob_h2/0.02237)**(-0.134)
+    return _rd_camb(ob_h2, om_h2, mnu=None)  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 
 def predict_desi(H0, rd, Om):
     preds = []
@@ -85,9 +90,16 @@ def predict_desi(H0, rd, Om):
         else:                preds.append((z*dm**2*dh)**(1/3) / rd)
     return np.array(preds)
 
+from bao_camb import pred_desi as _pred_camb, en_rango as _en_rango  # D_M, D_H de CAMB (2026-09-28)
+
+
 def ll_bao(H0, om_h2, ob_h2, Om):
+    # D_M, D_H y r_d de CAMB, como el MCMC canonico de P2 (2026-09-28). Fuera de
+    # la tabla CAMB (H0 55-80) la verosimilitud es -inf (declarado).
+    if not _en_rango(H0):
+        return -np.inf
     rd = sound_horizon_rd(ob_h2, om_h2)
-    r  = predict_desi(H0, rd, Om) - DESI_OBS
+    r  = _pred_camb(H0, rd) - DESI_OBS
     return -0.5 * (r @ DESI_COV_INV @ r)
 
 def ll_clusters_const():

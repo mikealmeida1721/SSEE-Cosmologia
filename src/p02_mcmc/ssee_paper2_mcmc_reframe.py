@@ -118,8 +118,13 @@ def DC(z_max, Om, n=300):
     zz = np.linspace(0, z_max, n)
     return np.trapezoid(1.0/E_ssee(zz, Om), zz)
 
+import os as _os_rd, sys as _sys_rd
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
+from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+
+
 def sound_horizon_rd(ob_h2, om_h2):
-    return 147.27 * (om_h2/0.1432)**(-0.255) * (ob_h2/0.02237)**(-0.134)  # Planck 2018 pivote, eq. rd de Paper 2 (cita EH98 en FP-7)
+    return _rd_camb(ob_h2, om_h2, mnu=None)  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 
 def predict_desi(H0, rd, Om):
     preds = []
@@ -131,9 +136,14 @@ def predict_desi(H0, rd, Om):
         else:                preds.append((z*dm**2*dh)**(1/3)/rd)
     return np.array(preds)
 
+from bao_camb import pred_desi as _pred_camb, en_rango as _en_rango  # D_M, D_H de CAMB (2026-09-28)
+
+
 def ll_bao(H0, om_h2, ob_h2, Om):
+    # D_M, D_H y r_d de CAMB (bao_camb.py, rd_camb.py). Antes: E(z) analitico
+    # sin radiacion ni neutrinos y r_d por formula con normalizacion 0.15 % alta.
     rd = sound_horizon_rd(ob_h2, om_h2)
-    r  = predict_desi(H0, rd, Om) - DESI_OBS
+    r  = _pred_camb(H0, rd) - DESI_OBS
     return -0.5 * (r @ DESI_COV_INV @ r)
 
 LL_CLUSTERS = -0.5 * sum(((c["M_ig"]*KAL0*(1+FNU_SSEE) - c["M_obs"])/c["dM_obs"])**2
@@ -142,6 +152,7 @@ LL_CLUSTERS = -0.5 * sum(((c["M_ig"]*KAL0*(1+FNU_SSEE) - c["M_obs"])/c["dM_obs"]
 def lpost(theta):
     H0, ob_h2 = theta
     if not (40 < H0 < 100): return -np.inf
+    if not _en_rango(H0): return -np.inf   # tabla CAMB 55-80: >30 sigma del posterior (declarado)
     if not (0.015 < ob_h2 < 0.030): return -np.inf
     lp_H0  = -0.5*((H0-MIRA_H0[0])/MIRA_H0[1])**2
     lp_bbn = -0.5*((ob_h2-BBN_OBH2[0])/BBN_OBH2[1])**2
@@ -223,5 +234,11 @@ fig.suptitle(r"SSEE posterior — MCMC under the $H_{\rm alg}$ prior (DESI DR2, 
 fig.savefig(f"{OUT}/fig_corner_ssee_halg_prior.pdf", bbox_inches="tight")
 plt.close(fig)
 log(f"\nFigura: {OUT}/fig_corner_ssee_halg_prior.pdf")
+import json as _json
+_json.dump(dict(fecha=time.strftime("%Y-%m-%d"), H0_mediana=float(H0_med), H0_p16=float(H0_p16),
+                H0_p84=float(H0_p84), H0_std=float(H0_std), H0_MAP=float(H0_map),
+                obh2_mediana=float(ob_med), lnP_MAP=float(lp[idx]), BIC=float(BIC),
+                N_eff=float(n_eff), rd="CAMB (rd_camb.py)", distancias="CAMB (bao_camb.py)"),
+           open("results/logs/mcmc_paper2_reframe.json", "w"), indent=1)
 log(f"Cadena: {CKPT}")
 log(f"Tiempo total: {(time.time()-t0)/60:.1f} min")

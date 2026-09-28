@@ -70,8 +70,17 @@ RHO_H0_OM    = -0.85
 # ─────────────────────────────────────────────────────────────
 # 2. FUNCIONES DE APOYO
 # ─────────────────────────────────────────────────────────────
+import os as _os_rd, sys as _sys_rd
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), "..", "p11_sondas"))
+from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+from lcdm_planck import LCDM_PLANCK as _LCDM_RD
+# la masa de neutrinos de r_d va POR MODELO: SSEE la suya (None), LCDM y CPL la de LCDM
+_MNU_RD = [None]
+
+
 def sound_horizon_rd(ob_h2, om_h2):
-    return 147.27 * (om_h2/0.1432)**(-0.255) * (ob_h2/0.02237)**(-0.134)  # Planck 2018 pivote, eq. rd de Paper 2 (cita EH98 en FP-7)
+    return _rd_camb(ob_h2, om_h2, mnu=_MNU_RD[0])  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 
 def DC(z_max, E_func, n=500):
     zz = np.linspace(0, z_max, n)
@@ -271,6 +280,7 @@ def cross_validation():
         return np.array(preds)
 
     def nll_train(params, model):
+        _MNU_RD[0] = None if model == "ssee" else _LCDM_RD["mnu"]
         if model == "ssee":
             H0, = params
             om_h2 = WM_ALG                        # ω_m algebraico FIJO (R25)
@@ -291,6 +301,7 @@ def cross_validation():
         return 0.5 * (r @ INV_train @ r)
 
     def ll_test(params, model):
+        _MNU_RD[0] = None if model == "ssee" else _LCDM_RD["mnu"]
         if model == "ssee":
             H0, = params
             om_h2 = WM_ALG                        # ω_m algebraico FIJO (R25)

@@ -245,7 +245,68 @@ def control():
 
 
 # ── lectura ─────────────────────────────────────────────────────────────────
+# ── minimizador (2026-09-28) ────────────────────────────────────────────────
+# Cobaya-BOBYQA fallo: su minimo del CMB (1006.10) quedo PEOR que un punto ya
+# conocido (1004.29). Aqui: Nelder-Mead de scipy desde el mejor punto medido,
+# en coordenadas escaladas por la propuesta, con reinicios hasta que un
+# reinicio mejore < TOL. Controles declarados antes:
+#   CMB: el chi2 final <= chi2 del punto de arranque (1004.29 con mnu LCDM);
+#   todos: el ultimo reinicio mejora < TOL (si no, NO se reporta como minimo).
+TOL = 0.02                                   # ORIGEN-VALOR: 0.02 — tolerancia de convergencia entre reinicios, declarada antes
+PATAS = dict(cmb=["cmb"], kids=["kids"], bao=["bao"], conjunta=["cmb", "kids", "bao"])
+
+
+def minimiza(modo):
+    from scipy.optimize import minimize as _min
+    inf = info(modo)
+    pars = list(inf["params"])
+    x0 = np.array([inf["params"][p]["ref"]["loc"] for p in pars])
+    esc = np.array([inf["params"][p]["ref"]["scale"] for p in pars])
+    lo = np.array([inf["params"][p]["prior"].get("min", -np.inf) for p in pars])
+    hi = np.array([inf["params"][p]["prior"].get("max", np.inf) for p in pars])
+    likes = {k: (v["external"], v["input_params"]) for k, v in inf["likelihood"].items()}
+
+    def partes(x):
+        d = dict(zip(pars, x))
+        return {k: -2.0 * f(**{p: d[p] for p in ps}) for k, (f, ps) in likes.items()}
+
+    def obj(u):
+        x = x0 + u * esc
+        if np.any(x < lo) or np.any(x > hi):
+            return 1e30
+        c = sum(partes(x).values())
+        return c if np.isfinite(c) else 1e30
+
+    u, prev, hist = np.zeros(len(pars)), obj(np.zeros(len(pars))), []
+    arranque = prev
+    for k in range(12):                                     # ORIGEN-VALOR: 12 — tope de reinicios
+        r = _min(obj, u, method="Nelder-Mead",
+                 options=dict(maxiter=400 * len(pars), xatol=1e-4, fatol=1e-4, adaptive=True))
+        hist.append(float(r.fun))
+        mejora = prev - r.fun
+        u, prev = r.x, r.fun
+        print(f"  [{modo}] reinicio {k}: chi2 {r.fun:.4f}  mejora {mejora:+.4f}", flush=True)
+        if 0 <= mejora < TOL:
+            break
+    x = x0 + u * esc
+    p = partes(x)
+    conv = bool(len(hist) >= 2 and hist[-2] - hist[-1] < TOL)
+    res = dict(fecha="2026-09-28", modo=modo, chi2=float(sum(p.values())),
+               por_sonda={k: float(v) for k, v in p.items()}, params=dict(zip(pars, map(float, x))),
+               arranque=float(arranque), historia=hist, convergido=conv,
+               control_no_peor_que_arranque=bool(sum(p.values()) <= arranque + 1e-9))
+    json.dump(res, open(os.path.join(LOGS, f"lcdm_conjunta_{modo}.json"), "w"), indent=1)
+    print(f"  [{modo}] FINAL chi2 {res['chi2']:.4f} (arranque {arranque:.4f})  convergido={conv}")
+    return res
+
+
 def _minimo(modo):
+    j = os.path.join(LOGS, f"lcdm_conjunta_{modo}.json")
+    if os.path.exists(j):                    # el minimizador nuevo (Nelder-Mead)
+        r = json.load(open(j))
+        d = dict(r["params"], chi2=r["chi2"], convergido=r["convergido"])
+        d.update({f"chi2__{k}": v for k, v in r["por_sonda"].items()})
+        return d
     f = f"{CAD}/{modo}.bestfit.txt"
     if not os.path.exists(f):
         return None
@@ -309,5 +370,4 @@ if __name__ == "__main__":
     if modo == "lee":
         lee()
         sys.exit(0)
-    from cobaya.run import run
-    run(info(modo))
+    minimiza(modo)

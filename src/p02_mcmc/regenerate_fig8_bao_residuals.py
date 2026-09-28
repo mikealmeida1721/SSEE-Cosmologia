@@ -28,8 +28,13 @@ OUT = os.path.join(ROOT, "results", "figures")
 # ORIGEN-VALOR: 0.02187 — omega_b h^2 del MAP de SSEE, results/logs/mcmc_paper2_3models_wmfix.log linea 187
 # ORIGEN-VALOR: 0.02233 — omega_b h^2 del MAP de LCDM, results/logs/mcmc_paper2_3models_wmfix.log linea 195
 # ORIGEN-VALOR: 0.02238 — omega_b h^2 del MAP de CPL, results/logs/mcmc_paper2_3models_wmfix.log linea 202
+import os as _os_rd, sys as _sys_rd
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
+from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+
+
 def rd_EH(om_h2, ob_h2):                 # eq. 5 del paper
-    return 147.27 * (om_h2 / 0.1432) ** -0.255 * (ob_h2 / 0.02237) ** -0.134
+    return _rd_camb(ob_h2, om_h2, mnu=None)  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 
 def f_de(z, w0, wa):
     return (1 + z) ** (3 * (1 + w0 + wa)) * np.exp(-3 * wa * z / (1 + z))

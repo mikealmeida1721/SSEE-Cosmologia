@@ -45,8 +45,14 @@ def E_cpl(z,Om,w0,wa):
     return np.sqrt(Om*(1+z)**3+(1-Om)*f_de_cpl(z,w0,wa))
 def DC(zmax,Om,w0,wa,n=300):
     zz=np.linspace(0,zmax,n); return np.trapezoid(1.0/E_cpl(zz,Om,w0,wa),zz)
+import os as _os_rd, sys as _sys_rd
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
+from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), "..", "p11_sondas"))  # lcdm_planck: la mnu de LCDM
+
+
 def rd(ob_h2,om_h2):
-    return 147.27*(om_h2/0.1432)**(-0.255)*(ob_h2/0.02237)**(-0.134)
+    return _rd_camb(ob_h2, om_h2, mnu=__import__("lcdm_planck").LCDM_PLANCK["mnu"])  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 def predict(H0,Om,w0,wa,rdv):
     out=[]
     for z,q in zip(DESI_Z,DESI_TYPE):

@@ -5367,8 +5367,11 @@ try:
     def _DC(zm, Om, n=250):
         zz = _np.linspace(0, zm, n)
         return _np.trapezoid(1.0 / _E(zz, Om), zz)
+    import sys as _sys_rd
+    _sys_rd.path.insert(0, str(ROOT))          # ROOT = src/
+    from rd_camb import rd_mpc as _rd_camb   # r_d de CAMB, una sola funcion (2026-09-28)
     def _rd(obh2, omh2):
-        return 147.27 * (omh2 / 0.1432) ** -0.255 * (obh2 / 0.02237) ** -0.134
+        return _rd_camb(obh2, omh2)
     def _chi2_bao(Om, obh2=0.02237):
         best = 1e30
         for _H0 in _np.linspace(55, 80, 150):   # min sobre H0: ni su mejor H0 salva al sector
