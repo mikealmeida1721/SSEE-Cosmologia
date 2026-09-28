@@ -11,14 +11,14 @@
   "w": -1.0,
   "wa": 0.0
  },
- "chi2_2pt": 517.2856966043742,
+ "chi2_2pt": 517.2899287075871,
  "Omega_m": 0.31519398744052785,
  "sigma_8": 0.8125694494935639,
  "S8": 0.8328922572249731,
  "lcdm_libre_chi2": 518.0961246556549,
- "diferencia_vs_lcdm_libre": -0.8104280512807236,
+ "diferencia_vs_lcdm_libre": -0.8061959480677388,
  "mejor_ini": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_planck_mejor.ini",
  "libres_cosmologicos": 0,
- "convergido": false,
+ "convergido": true,
  "nota": "nuisances minimizados con sus priors DES (max_posterior=T); el chi2 reportado es el del vector de datos"
 }
