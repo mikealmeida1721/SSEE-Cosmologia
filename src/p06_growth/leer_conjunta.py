@@ -15,7 +15,10 @@ REFERENCIAS INDIVIDUALES
   BOSS DR12 P(k) LPT                 de boss_clavado, MISMA escala marginal
        (la escala REAL del optimizador es 197.438 -> 198.07 clavado = 0.63;
         son DOS escalas distintas y no se mezclan)
-  BAO  DESI DR2                       10.8588   constante, cero libres
+  BAO  DESI DR2                       constante, cero libres. Se CALCULA aqui
+       con r_d y distancias de CAMB (bao_camb.chi2_desi en el clavo: 11.406).
+       El literal viejo 10.8588 usaba la formula de r_d, 0.13 % larga
+       (control C3 de lcdm_conjunta, 2026-09-27).
 """
 import glob
 import json
@@ -27,7 +30,17 @@ import numpy as np
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 CAD = "/mnt/datos/SSEE_data/chains_p6/conjunta"
 OUT = os.path.join(_R, "results", "logs", "conjunta_vs_individual.json")
-REF = dict(cmb=1003.5860397789045, kids=417.971, bao=10.858822657229455)
+sys.path.insert(0, os.path.join(_R, "src"))
+
+
+def _chi2_bao_clavo():
+    from bao_camb import chi2_desi
+    from rd_camb import rd_mpc
+    from ssee_core import H0_GLOBAL, OMEGA_B_H2, OMEGA_M_H2
+    return chi2_desi(H0_GLOBAL, rd_mpc(OMEGA_B_H2, OMEGA_M_H2))
+
+
+REF = dict(cmb=1003.5860397789045, kids=417.971, bao=_chi2_bao_clavo())
 
 
 def carga(base):
