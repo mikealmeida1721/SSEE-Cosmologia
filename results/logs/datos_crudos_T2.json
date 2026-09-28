@@ -305,6 +305,22 @@
    "sha256": "49b84fbcd5eba2c1702fa8ea73f1df2279fc1255d0ee59320798d4fdf7c5e51c",
    "origen": "https://arxiv.org/e-print/2602.20483",
    "nota": "ecs. escritas con sigma_L en erg/s dentro de un erf en dex: inconsistencia de unidades"
+  },
+  {
+   "sonda": "eROSITA",
+   "descripcion": "Clerc+2024 fuente (seleccion eRASS1, NO publica)",
+   "ruta": "/mnt/datos/SSEE_data/erosita/paper_clerc2024/src.tgz",
+   "url": "https://arxiv.org/e-print/2402.08457",
+   "sha256": "bfbe8ba95b0fda32a778ebf614706d898a457a7ade4bea878a03f7ba106eff0d",
+   "fecha": "2026-09-27"
+  },
+  {
+   "sonda": "eROSITA",
+   "descripcion": "Ghirardini+2024 fuente (relacion CR-M, tabla de ajuste)",
+   "ruta": "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/src.tgz",
+   "url": "https://arxiv.org/e-print/2402.08458",
+   "sha256": "63e90cadb947b5c94bcb93198f1da6847cb9418d5645a60fb423f28798b127a0",
+   "fecha": "2026-09-27"
   }
  ],
  "notas": {
