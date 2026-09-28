@@ -1,0 +1,154 @@
+{
+ "fecha": "2026-09-28",
+ "masa": 0.997,
+ "chi2_corte": 551.125605486931,
+ "n_dentro": 8,
+ "n_fuera": 12,
+ "dif_max_abs_dentro": 0.8428500448401337,
+ "dif_max_abs_fuera": 71.65335052373803,
+ "peso_rel_max_fuera": 0.0032643830232253024,
+ "criterio": "|dif| < 1 (declarado en el calibrador), aplicado dentro del 99.7 % de la masa",
+ "pasa": true,
+ "filas": [
+  {
+   "indice": 12024,
+   "chi2_cadena": 555.564307345223,
+   "dif": 3.174027190595666,
+   "peso_rel": 0.0014034643257710322,
+   "dentro": false
+  },
+  {
+   "indice": 4442,
+   "chi2_cadena": 932.939455150314,
+   "dif": 19.054529336574888,
+   "peso_rel": 1.3499005641033678e-95,
+   "dentro": false
+  },
+  {
+   "indice": 20203,
+   "chi2_cadena": 520.8334539539347,
+   "dif": 0.17311251523085502,
+   "peso_rel": 0.22617047253989683,
+   "dentro": true
+  },
+  {
+   "indice": 20247,
+   "chi2_cadena": 520.521135118012,
+   "dif": 0.6706790210665758,
+   "peso_rel": 0.21830963723664887,
+   "dentro": true
+  },
+  {
+   "indice": 21007,
+   "chi2_cadena": 516.6266324417663,
+   "dif": 0.10555356963641316,
+   "peso_rel": 0.12750270286192714,
+   "dentro": true
+  },
+  {
+   "indice": 12260,
+   "chi2_cadena": 558.980816386877,
+   "dif": 1.643975020124003,
+   "peso_rel": 0.0032643830232253024,
+   "dentro": false
+  },
+  {
+   "indice": 11757,
+   "chi2_cadena": 555.733318575231,
+   "dif": -0.5575393266357196,
+   "peso_rel": 0.0004934751025873159,
+   "dentro": false
+  },
+  {
+   "indice": 9349,
+   "chi2_cadena": 578.929419742085,
+   "dif": -0.657889746194769,
+   "peso_rel": 1.6869129869557534e-11,
+   "dentro": false
+  },
+  {
+   "indice": 21221,
+   "chi2_cadena": 524.0524412205299,
+   "dif": 0.6966978602063136,
+   "peso_rel": 0.10471103070260777,
+   "dentro": true
+  },
+  {
+   "indice": 2793,
+   "chi2_cadena": 1567.25773359887,
+   "dif": 71.65335052373803,
+   "peso_rel": 3.8029027858225933e-240,
+   "dentro": false
+  },
+  {
+   "indice": 11457,
+   "chi2_cadena": 565.772513110618,
+   "dif": 0.9895980017889769,
+   "peso_rel": 0.00015883536954571715,
+   "dentro": false
+  },
+  {
+   "indice": 6698,
+   "chi2_cadena": 673.398427137934,
+   "dif": -6.668733472153349,
+   "peso_rel": 4.206221609403352e-36,
+   "dentro": false
+  },
+  {
+   "indice": 20035,
+   "chi2_cadena": 526.0603828510359,
+   "dif": 0.07061945473071773,
+   "peso_rel": 0.26345522215228157,
+   "dentro": true
+  },
+  {
+   "indice": 21916,
+   "chi2_cadena": 522.6657455351674,
+   "dif": -0.4414797790080911,
+   "peso_rel": 0.056866143484801256,
+   "dentro": true
+  },
+  {
+   "indice": 19096,
+   "chi2_cadena": 522.1405687249356,
+   "dif": -0.8428500448401337,
+   "peso_rel": 0.4885288084654152,
+   "dentro": true
+  },
+  {
+   "indice": 11079,
+   "chi2_cadena": 562.460203025016,
+   "dif": 2.6838756239864097,
+   "peso_rel": 2.4745890198217872e-05,
+   "dentro": false
+  },
+  {
+   "indice": 10517,
+   "chi2_cadena": 553.55791931577,
+   "dif": -0.2615639978303079,
+   "peso_rel": 7.535451046225634e-07,
+   "dentro": false
+  },
+  {
+   "indice": 9349,
+   "chi2_cadena": 578.929419742085,
+   "dif": -0.657889746194769,
+   "peso_rel": 1.6869129869557534e-11,
+   "dentro": false
+  },
+  {
+   "indice": 21983,
+   "chi2_cadena": 519.0420208883542,
+   "dif": 0.16312575830613696,
+   "peso_rel": 0.053084548314503245,
+   "dentro": true
+  },
+  {
+   "indice": 2372,
+   "chi2_cadena": 1632.2767038456,
+   "dif": 19.02771722566058,
+   "peso_rel": 1.322585605015e-311,
+   "dentro": false
+  }
+ ]
+}
