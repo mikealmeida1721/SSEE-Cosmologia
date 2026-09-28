@@ -57,7 +57,7 @@ ER = np.array([float(r['sigma']) for r in d])
 SV = [r['survey'] for r in d]
 
 p = camb.CAMBparams()
-p.set_cosmology(H0=S.H0_ALG, ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
+p.set_cosmology(H0=S.H0_GLOBAL, ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
                 mnu=S.SUM_MNU_EV, omk=0.0)
 p.set_dark_energy(w=S.W0, wa=S.WA, dark_energy_model='ppf')
 p.InitPower.set_params(As=AS, ns=S.N_S)
@@ -66,7 +66,7 @@ r = camb.get_results(p)
 s8_0 = r.get_sigma8_0()
 fs8_th = np.array(r.get_fsigma8())[::-1][1:]      # mismo orden que Z
 
-print(f'fondo SSEE:  H0={S.H0_ALG:.5f}  Om={S.OMEGA_M_CMB:.6f}  '
+print(f'fondo SSEE:  H0={S.H0_GLOBAL:.5f}  Om={S.OMEGA_M_CMB:.6f}  '
       f'w0={S.W0:.6f}  wa={S.WA:.6f}')
 print(f'A_s del CMB de SSEE: logA={LOGA_CMB:.6f}  ->  sigma8={s8_0:.5f}\n')
 print(f'{"z":>6} {"encuesta":16} {"fs8 obs":>9} {"fs8 teo":>9} '

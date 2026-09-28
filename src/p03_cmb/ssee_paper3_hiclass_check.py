@@ -50,7 +50,7 @@ wa_     = -(Omega_ + phi_) / Kv_ # -0.6699
 Om_DE   = Tr_ / Mv_              # 0.8400
 Om_dyn  = BUFFER_ / Mv_          # 0.1600
 Om_b    = 0.049                  # baryonic (Planck 2018)
-H0_     = 3*(phi_ + pi_)**2      # 67.96 km/s/Mpc
+H0_     = __import__("ssee_core").H0_GLOBAL  # H_glob, km/s/Mpc (3(φ+π)² es el blanco puro)
 # ORIGEN-VALOR: 0.6796 — H_alg/100 = 3(phi+pi)^2/100 = 0.679621, a 4 decimales
 h_      = H0_ / 100              # 0.6796 = H_alg/100 = 3(phi+pi)^2/100
 

@@ -42,7 +42,7 @@ from cmb_eval import chi2_y_s8                          # noqa: E402
 
 SALIDA = REPO / "results" / "logs" / "cmb_quien_mide_As.json"
 
-FONDO = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_ALG, ns=S.N_S)
+FONDO = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_GLOBAL, ns=S.N_S)
 W, WA = S.W0, S.WA
 
 # KiDS, medido sobre su cadena (D = 1.16); ver As_medido_o_producto.json

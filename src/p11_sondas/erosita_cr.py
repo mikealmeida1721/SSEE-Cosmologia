@@ -68,7 +68,7 @@ TEX_G = f"{E}/paper_ghirardini2024/48852corr.tex"
 LOGS = os.path.join(_R, "results", "logs")
 OUT = os.path.join(LOGS, "erosita_cr.json")
 Z_BORDES = np.round(np.arange(0.1, 0.8001, 0.1), 4)   # ORIGEN-VALOR: 0.1-0.8 — rango de la muestra de cosmologia (Ghirardini+2024 sec. 2)
-LCR_BORDES = np.arange(-2.0, 1.5001, 0.25)              # ORIGEN-VALOR: casillas en log10 CR, cubren el 99 % de la muestra
+LCR_BORDES = np.arange(-2.0, 1.5001, 0.25)              # ORIGEN-VALOR: 1.5001 — tope de arange para que 1.5 entre; casillas en log10 CR, cubren el 99 % de la muestra
 LNM = np.linspace(np.log(5e12), np.log(5e15), 70)       # ORIGEN-VALOR: 5e12-5e15 Msun — rango de integracion de Ghirardini+2024 (su sec. 4)
 NSUB = 6                                                # ORIGEN-VALOR: 6 — subpuntos de integracion por casilla
 

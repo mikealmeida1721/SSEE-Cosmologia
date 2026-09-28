@@ -7,7 +7,7 @@ o DESI realmente lo prefiere?
 
 Tres priors a comparar (50 walkers × 10000 steps cada uno, ~3-5 min total):
   (A) Planck 2018:    H₀ = 67.36 ± 0.54  (status quo Paper 2)
-  (B) SSEE algebraico: H₀ = 67.9621 ± 0.54  (predicción SSEE pura)
+  (B) SSEE: H_glob = SH0ES·(1−f_screen) ± σ propagado (ssee_core.H0_GLOBAL)
   (C) Plano amplio:   H₀ ∈ [50, 90], sin info externa  (DESI puro)
 
 Mide: posterior H₀, χ²_MAP, distancia entre los tres centroides.
@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 import os as _reloc_os, sys as _reloc_sys  # reloc: anclar src/
 _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__))))
 from ssee_core import (
-    PHI, PI, KAL0, W0, WA, OMEGA_M_TOTAL, OMEGA_M_H2, H0_ALG
+    PHI, PI, KAL0, W0, WA, OMEGA_M_TOTAL, OMEGA_M_H2, H0_ALG, H0_GLOBAL, SIG_H0_GLOBAL
 )
 
 # ───── Constantes ─────
@@ -110,7 +110,7 @@ LLC_CLUSTERS_CONST = ll_clusters_const()  # no depende de H0 ni ob_h2
 
 # ───── 3 log-posteriors según prior ─────
 PRIOR_PLANCK = (67.36, 0.54)
-PRIOR_SSEE   = (H0_ALG, 0.54)    # 67.962 ± 0.54
+PRIOR_SSEE   = (H0_GLOBAL, SIG_H0_GLOBAL)   # H_glob = SH0ES·(1−f_screen), σ propagado de SH0ES
 PRIOR_MIRA   = (67.08, 0.54)     # H₀ que sale de Planck con Ω_m,CMB=0.320 (Paper 3)
 
 def lpost_factory(prior_kind):
@@ -246,7 +246,7 @@ dist_from_ssee   = abs(flat_H0 - PRIOR_SSEE[0])
 
 if dist_from_planck < dist_from_ssee - 0.2:
     print(f"  → DESI puro prefiere H₀ ≈ {flat_H0:.2f}, MÁS CERCA de Planck que de SSEE-alg")
-    print(f"    El '67.96' algebraico está en tensión observacional ({dist_from_ssee/0.54:.1f}σ)")
+    print(f"    H_glob está en tensión observacional ({dist_from_ssee/SIG_H0_GLOBAL:.1f}σ)")
 elif dist_from_ssee < dist_from_planck - 0.2:
     print(f"  → DESI puro prefiere H₀ ≈ {flat_H0:.2f}, MÁS CERCA de SSEE-alg que de Planck")
     print(f"    SSEE-alg gana sin necesidad de prior — predicción robusta")
@@ -257,7 +257,7 @@ else:
 # Figura comparativa
 fig, ax = plt.subplots(figsize=(10, 5))
 colors = ["#1f77b4", "#ff7f0e", "#d62728", "#2ca02c"]
-labels_plot = [r"Prior Planck (67.36)", r"Prior MIRA (67.08)", r"Prior SSEE (67.96)", r"Prior plano"]
+labels_plot = [r"Prior Planck (67.36)", r"Prior MIRA (67.08)", r"Prior SSEE $H_{\rm glob}$", r"Prior plano"]
 for r, c, lab in zip(results, colors, labels_plot):
     ax.hist(r["flat"][:,0], bins=80, density=True, alpha=0.5, color=c, label=lab)
     ax.axvline(r["H0_med"], color=c, ls="--", lw=1.5)
@@ -281,3 +281,9 @@ np.savez("results/logs/h0_four_priors.npz",
          planck=res_planck["flat"], mira=res_mira["flat"], ssee=res_ssee["flat"], flat=res_flat["flat"],
          planck_lp=res_planck["lp"], mira_lp=res_mira["lp"], ssee_lp=res_ssee["lp"], flat_lp=res_flat["lp"])
 print("Cadenas: results/logs/h0_four_priors.npz")
+# El resultado con prior PLANO (DESI sola) lo LEE el MCMC de Paper 2; antes lo tecleaba.
+import json as _json
+_json.dump({k: dict(H0_mediana=float(r["H0_med"]), H0_std=float(r["H0_std"]))
+            for k, r in (("planck", res_planck), ("mira", res_mira), ("ssee_hglob", res_ssee), ("plano", res_flat))},
+           open("results/logs/h0_four_priors.json", "w"), indent=1)
+print("Resumen: results/logs/h0_four_priors.json")

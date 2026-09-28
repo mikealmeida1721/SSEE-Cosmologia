@@ -14,7 +14,7 @@ _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_o
 from ssee_core import (
     PHI as phi, PI as pi, OMEGA, BETA as BIAL, AURA, MIRA,
     KAL0 as KAL, P_SC as PYROS, K_V as KRYSTOS_V, M_V as SIGMA_SOV,
-    W0 as w0, WA as wa, H0_ALG as H0_alg, N_S as ns,
+    W0 as w0, WA as wa, H0_GLOBAL as H0_alg, N_S as ns,
     OMEGA_B_H2 as Omb_h2_alg, OMEGA_M_TOTAL as Om_m,   # canónico ω_m-directo 0.308881 (era GEOMETRIC 0.3201 superseded)
 )
 # Constantes intermedias (no presentes en ssee_core):

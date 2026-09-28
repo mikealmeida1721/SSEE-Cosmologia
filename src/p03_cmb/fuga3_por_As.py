@@ -61,7 +61,7 @@ import ssee_core as S                                   # noqa: E402
 from cmb_eval import chi2_y_s8                          # noqa: E402
 
 BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
-            H0=S.H0_ALG, ns=S.N_S, logA=3.044, tau=0.054)
+            H0=S.H0_GLOBAL, ns=S.N_S, logA=3.044, tau=0.054)
 W, WA = S.W0, S.WA
 ING = ["ombh2", "omch2", "H0", "ns"]
 

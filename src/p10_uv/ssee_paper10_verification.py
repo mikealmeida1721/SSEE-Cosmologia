@@ -39,7 +39,7 @@ from ssee_core import (
 # meV⁴ units — no implicit ρ_crit = 1 (which would leave them ambiguous to a
 # referee even though the observable chain is invariant). Anchor (reframe
 # ω_m-directo 2026-06-19): H_alg = 67.962 = global background H = CMB anchor.
-H_ANCHOR     = 67.962              # km/s/Mpc — H_alg = 3(φ+π)² (reframe; era H_MIRA 67.037)
+H_ANCHOR     = __import__("ssee_core").H0_GLOBAL   # km/s/Mpc — H_glob = SH0ES·(1−f_screen)
 M_PL_eV      = 2.435323e27         # reduced Planck mass [eV]
 # FIX 2026-08-10: decia 2.1331951e-33 (error relativo 3.54e-5 -> 7.07e-5 en
 # rho_crit, que va al cuadrado). DERIVADO, no copiado:
@@ -214,7 +214,7 @@ print(f"""
 
   The same α that fixes the inflationary tensor-to-scalar ratio r = 12α/N² ≈ 0.00813
   (testable by LiteBIRD 2032) also fixes the dark-energy UV cutoff M = φ²×5^(1/4)×ρ_crit^(1/4).
-  The reframe makes H_alg = 67.962 both the global background H and the CMB anchor
+  The reframe makes H_glob (SH0ES·(1−f_screen)) both the global background H and the CMB anchor
   (with ω_b,ω_c fixed by algebra, plik_lite minimises there). The cascade runs
   SH0ES IN, H_global OUT: the pure number is the TARGET the output is compared
   against, never the seed.

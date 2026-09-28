@@ -95,7 +95,7 @@ _LOG10_M = np.array([11.57762, 12.30926, 12.61513, 12.80061, 12.96842,
 IA_FORMA = _IA_A * _F_R * 10.0 ** (_IA_BETA * (_LOG10_M - _LOG10_M_PIV))
 
 # fondo SSEE, fijo, leido del nucleo algebraico
-SSEE_BG = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, h0=S.H0_ALG / 100.0,
+SSEE_BG = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, h0=S.H0_GLOBAL / 100.0,
                ns=S.N_S, mnu=S.SUM_MNU_EV, w0=S.W0, wa=S.WA)
 PLANCK_BG = dict(ombh2=0.02237, omch2=0.1200, h0=0.6736, ns=0.9649,
                  mnu=0.06, w0=-1.0, wa=0.0)

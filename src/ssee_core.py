@@ -98,8 +98,27 @@ MIRA = (3.0*PHI + PI) / 4.0     # ≈ 1.9989  (entidad; f_screen; = AURA/2)
 AURA = (3.0*PHI + PI) / 2.0     # ≈ 3.9978  (= 2*MIRA = PHI+BETA)
 
 # ── Observables algebraicos de fondo ─────────────────────────────────────────
-H0_ALG     = 3.0 * OMEGA**2          # ≈ 67.96 km/s/Mpc  = 3(phi+pi)^2
-H0_GLOBAL  = H0_ALG                  # CANÓNICO 2026-06-17: H global de fondo = H_alg
+# DOS H, DOS NOMBRES (Mike, 2026-09-06 / 2026-09-28). NO son lo mismo:
+#   H0_ALG    = 3(φ+π)² — NÚMERO PURO, sin unidades. Es el BLANCO contra el que
+#               se compara la salida de la cascada. Nunca entra como H.
+#   H0_GLOBAL = el H de SSEE (H global o geométrico), con unidades. SALE de la
+#               cascada: SH0ES ENTRA (es el único H medido) y f_screen COMPLETO
+#               (IR+UV, Paper 10) lo apantalla: H_glob = H_SH0ES·(1 − f_screen).
+# Hasta 2026-09-28 aquí ponía H0_GLOBAL = H0_ALG: la cascada al revés. Coinciden
+# a 4.2e-6, así que ningún número se movió, pero la ENTRADA estaba invertida.
+H0_ALG       = 3.0 * OMEGA**2        # ≈ 67.96214  puro, sin unidades — el BLANCO
+H0_SH0ES     = 73.04                 # km/s/Mpc  MEDIDO — Riess+2022 (ApJL 934 L7); ENTRADA
+SIG_H0_SH0ES = 1.04                  # km/s/Mpc  — la misma fuente
+ALPHA_ATT    = PHI**4 / 3.0          # α-attractor (Postulado I, Paper 1)
+# s_K COMPLETO (Paper 10): raíz de 4X²/M⁴ + 2X/KAL₀ − s_K/3 = 0 con M⁴ = 45α²
+# (unidades de ρ_crit), y s_K^full = s_K + 24X²/M⁴. Mismo cálculo que
+# p10_uv/ssee_paper10_figures.py, ahora en un solo sitio.
+_M4_UV       = 45.0 * ALPHA_ATT**2
+_X_UV        = (-2.0/KAL0 + (4.0/KAL0**2 + 16.0*(S_K/3.0)/_M4_UV)**0.5) / (8.0/_M4_UV)
+S_K_FULL     = S_K + 24.0 * _X_UV**2 / _M4_UV        # ≈ 0.41691
+F_SCREEN     = S_K_FULL / (3.0 * MIRA)               # ≈ 0.069522  (IR+UV)
+H0_GLOBAL    = H0_SH0ES * (1.0 - F_SCREEN)           # ≈ 67.962142 km/s/Mpc — EL H de SSEE
+SIG_H0_GLOBAL = SIG_H0_SH0ES * (1.0 - F_SCREEN)      # ≈ 0.970 km/s/Mpc, propagado de SH0ES
 H0_MIRA    = 67.037                  # ancla CMB-fit del escenario VIEJO (cascada pendiente re-run)
 N_S        = 1.0 - PHI**(-7)         # ≈ 0.96556
 R_TENSOR   = PHI**(-10)              # ≈ 0.00813
@@ -213,6 +232,9 @@ def _sanity_checks():
     assert OMEGA_M_DYN == OMEGA_CDM_SECTOR, "alias OMEGA_M_DYN roto"
     assert 0.0 < N_S < 1.0,         f"n_s no físico: {N_S}"
     assert 66.0 < H0_ALG < 69.0,    f"H0_alg fuera de rango: {H0_ALG}"
+    # la salida de la cascada contra el blanco puro (residuo publicado +4.2e-06)
+    assert abs(H0_GLOBAL - H0_ALG) < 1e-5, f"cascada vs blanco: {H0_GLOBAL - H0_ALG:+.3e}"
+    assert H0_GLOBAL is not H0_ALG, "H0_GLOBAL tiene que SALIR de la cascada, no ser el blanco"
     assert abs(friedmann_E2(1.0, OMEGA_CDM_SECTOR) - 1.0) < 1e-9, "E^2(a=1) != 1 (sector)"
     assert abs(friedmann_E2(1.0, OMEGA_M_TOTAL) - 1.0) < 1e-9, "E^2(a=1) != 1 (total)"
     assert round(OMEGA_M_TOTAL, 4) == 0.3089, f"Omega_m,total (ω_m/h²) fuera de rango: {OMEGA_M_TOTAL}"
@@ -245,7 +267,7 @@ def check():
                  'MIRA', 'AURA',
                  'OMEGA_B_H2', 'OMEGA_C_H2', 'OMEGA_NU_H2', 'OMEGA_M_H2',
                  'OMEGA_M_CMB', 'OMEGA_M_CMB_PIPHI', 'OMEGA_M_CMB_MIRA',
-                 'OMEGA_M_CMB_GEOMETRIC', 'H0_ALG', 'H0_GLOBAL', 'N_S',
+                 'OMEGA_M_CMB_GEOMETRIC', 'H0_ALG', 'H0_GLOBAL', 'SIG_H0_GLOBAL', 'H0_SH0ES', 'F_SCREEN', 'S_K_FULL', 'N_S',
                  'R_TENSOR', 'SUM_MNU_EV'):
         print(f"  {name:24s} = {globals()[name]:.10f}")
     fs = load_fsigma8()

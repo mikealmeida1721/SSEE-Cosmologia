@@ -91,7 +91,7 @@ if __name__=="__main__":
     SSEE=np.array([-0.840,-0.670])
     print(f"{'ancla H0':>10} | {'w0':>7} {'wa':>7} {'H0post':>7} {'Om':>6} | dist a SSEE | acc")
     print("-"*72)
-    for name,a in [("MIRA",67.037),("Planck",67.36),("H_alg",67.962),("H0*~68.8",68.8),("SH0ES",73.0)]:
+    for name,a in [("MIRA",67.037),("Planck",67.36),("H_glob",__import__("ssee_core").H0_GLOBAL),("H0*~68.8",68.8),("SH0ES",73.0)]:
         med,acc=run(a)
         d=np.hypot(med[2]-SSEE[0],med[3]-SSEE[1])
         print(f"{name:>10} | {med[2]:+.3f} {med[3]:+.3f} {med[0]:7.2f} {med[1]:6.3f} | "

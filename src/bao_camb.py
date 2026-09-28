@@ -27,7 +27,7 @@ import numpy as np
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 _TABLA = os.path.join(_R, "data", "processed", "bao_camb_ssee.json")
 _LOG = os.path.join(_R, "results", "logs", "bao_camb_control.json")
-H0_REJ = np.round(np.arange(55.0, 80.0001, 0.05), 4)   # ORIGEN-VALOR: 55-80 — contiene el posterior de P2 (67.8 +- 0.35) con > 30 sigma de margen
+H0_REJ = np.round(np.arange(55.0, 80.0001, 0.05), 4)   # ORIGEN-VALOR: 80.0001 — tope de arange para que 80.0 entre; 55-80 contiene el posterior de P2 (67.8 +- 0.35) con > 30 sigma de margen
 _T = None
 
 

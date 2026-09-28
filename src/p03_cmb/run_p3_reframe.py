@@ -1,6 +1,6 @@
 """
 Fase B / P3 CMB — evaluar el punto CANÓNICO del reframe omega_m-DIRECTO (2026-06-18).
-  H global = 67.962. NO hay factor materia (OP-8 cerrado): Omega_m,CMB = omega_m/h²
+  H global = H_glob = SH0ES·(1−f_screen) (ssee_core.H0_GLOBAL). NO hay factor materia (OP-8 cerrado): Omega_m,CMB = omega_m/h²
   con cada pieza algebraica de SSEE:
     omega_b = (pi-phi)/(3 Omega^2)   (OP-1)
     omega_c = KAL0 * omega_b * n_s   (forward, ya en Paper 1)
@@ -19,7 +19,7 @@ phi = (1+5**0.5)/2; pi = math.pi
 Omega = pi + phi
 KAL0  = (pi+phi)/2 + pi
 n_s   = 1 - phi**-7
-H0      = 3*Omega**2                 # 67.962  H global = H_alg
+H0      = __import__("ssee_core").H0_GLOBAL   # H_glob = SH0ES·(1−f_screen); 3Ω² es el blanco puro
 ombh2   = (pi-phi)/(3*Omega**2)      # 0.02242  SSEE algebraico (OP-1)
 omch2   = KAL0 * ombh2 * n_s         # 0.11951  forward (Paper 1)
 mnu     = _MNU                       # Sigma_m_nu activos del nucleo (C_nu=93.14)

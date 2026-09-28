@@ -98,7 +98,7 @@ BASE_JSON = LOGS / "base_sin_particula.json"
 KIDS_JSON = LOGS / "particula_que_prefiere_kids.json"
 SALIDA = LOGS / "precio_cmb_rejilla_extendida.json"
 
-BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_ALG, ns=S.N_S)
+BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_GLOBAL, ns=S.N_S)
 LIM_LOGA, LIM_TAU = (2.80, 3.30), (0.010, 0.200)
 X0 = np.array([3.044, 0.054])
 PASO = np.array([0.02, 0.005])
@@ -281,7 +281,7 @@ def main():
                                "del perfil de 9 puntos de la #28b; el CMB se "
                                "evalua de verdad"),
         fijos_por_algebra=dict(Om=float(S.OMEGA_M_TOTAL), w0=float(S.W0), wa=float(S.WA),
-                               H0=float(S.H0_ALG), ns=float(S.N_S),
+                               H0=float(S.H0_GLOBAL), ns=float(S.N_S),
                                omega_b=float(S.OMEGA_B_H2),
                                omega_c=float(S.OMEGA_C_H2)),
         libres_del_modelo=["logA", "tau"],

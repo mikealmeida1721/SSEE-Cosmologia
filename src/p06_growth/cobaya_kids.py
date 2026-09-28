@@ -50,7 +50,7 @@ SOM_INV = np.linalg.inv(SOM_COV)
 DELTA_C_SIG = 2.3e-4
 
 # fondo SSEE, fijo, leido del nucleo algebraico
-SSEE_BG = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, h0=S.H0_ALG / 100.0,
+SSEE_BG = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, h0=S.H0_GLOBAL / 100.0,
               ns=S.N_S, mnu=S.SUM_MNU_EV, w0=S.W0, wa=S.WA)
 
 _CACHE = {}
@@ -269,7 +269,7 @@ def info_ssee_wc_h(chains_dir, covmat=None):
     p = dict(
         omch2=dict(prior=dict(min=0.051, max=0.255), ref=float(S.OMEGA_C_H2),
                    proposal=0.005, latex=r'\Omega_c h^2'),
-        h0=dict(prior=dict(min=0.64, max=0.82), ref=float(S.H0_ALG / 100.0),
+        h0=dict(prior=dict(min=0.64, max=0.82), ref=float(S.H0_GLOBAL / 100.0),
                 proposal=0.02, latex='h'))
     p.update(NUISANCE_PARAMS)
     mcmc = {'Rminus1_stop': 0.03, 'max_tries': 10000,

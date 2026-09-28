@@ -61,7 +61,7 @@ C_NU = 94.0641
 LOGA_CMB, SIG_CMB = 3.04320, 0.01454
 LIMITE = 2.0 * SIG_CMB                     # fijado ANTES de mirar
 BG = dict(C.SSEE_BG)
-BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_ALG, ns=S.N_S)
+BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_GLOBAL, ns=S.N_S)
 
 REJILLA_LOGA = np.linspace(2.88, 3.10, 9)
 MASAS  = np.array([2.2, 4.0, 7.5, 15.0])

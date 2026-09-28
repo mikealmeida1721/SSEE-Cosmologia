@@ -8,7 +8,7 @@ from scipy.optimize import minimize
 sys.path.insert(0,'/tmp/claude-1000/-home-mike-Proyectos-SSEE/238cf748-10c3-466e-9be3-e8e03009063e/scratchpad')
 sys.path.insert(0,'/home/mike/Proyectos/SSEE/src')
 import kids_shear as K, ssee_core as S
-OMB,HH,NS,MNU,W0,WA = S.OMEGA_B_H2,S.H0_ALG/100,S.N_S,S.SUM_MNU_EV,S.W0,S.WA
+OMB,HH,NS,MNU,W0,WA = S.OMEGA_B_H2,S.H0_GLOBAL/100,S.N_S,S.SUM_MNU_EV,S.W0,S.WA
 OMNU = MNU/93.14
 SOM=np.loadtxt('/mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc')
 DZM=np.array([0.,-0.002,-0.013,-0.011,0.006]); SI=np.linalg.inv(SOM)

@@ -17,7 +17,7 @@ SSEE model parameters (k=2, with --k2):
   Full plik TTTEEE + lowl TT + lowl EE + lensing.native via clipy (no clik needed).
 
 SSEE fixed (algebraically — ω_m-directo reframe):
-  H0    = 3(φ+π)²  = 67.962   (SH0ES–f_screen inversion, Paper 9; derived)
+  H0    = H_glob = SH0ES·(1−f_screen)  (ssee_core.H0_GLOBAL; 3(φ+π)² es el blanco puro)
   w0    = -Tr/Mv   ≈ -0.8399
   wa    = -P_sc/IGNIS ≈ -0.6700   (IGNIS = π+PYROS; NO K_v)
   ns    = 1 − (1/φ)^7 ≈ 0.96556
@@ -104,7 +104,7 @@ ombh2_ssee = (pi - phi) / (3.0 * Omega_ssee**2)   # 0.022418 — ω_b directo (e
 omch2_ssee = KAL0 * ombh2_ssee * ns_ssee          # 0.11951 — ω_c forward (KAL₀·ω_b·n_s)
 mnu_ssee   = _MNU                      # Σm_ν canónico del nucleo (C_ν=93.14 PDG); ω_ν = Σm_ν/C_ν
 # Ω_m,CMB derivado: (ω_b+ω_c+ω_ν)/h² → 0.308881 @ H_alg=67.962 (era 0.31993 vía MIRA, retirado)
-Omm_cmb    = (ombh2_ssee + omch2_ssee + mnu_ssee/93.14) / (67.962/100.0)**2  # ≈0.308881 (diagnóstico)
+Omm_cmb    = (ombh2_ssee + omch2_ssee + mnu_ssee/93.14) / (__import__("ssee_core").H0_GLOBAL/100.0)**2  # ≈0.308881 (diagnóstico)
 
 # ΛCDM Planck 2018 best-fit (TT+TE+EE+lowE, Table 2, arXiv:1807.06209)
 H0_lcdm    = 67.36
@@ -161,13 +161,13 @@ def _ssee_info(output_prefix, Rminus1_stop=0.02, burn_in=300, h0_fixed=False):
     """Cobaya MCMC info for SSEE CMB analysis.
 
     h0_fixed=False  → k=3 validation chain: H0 floated on [64,72] (recovers anchor).
-    h0_fixed=True   → k=2 model chain: H0 fixed at 3(φ+π)²=67.962, only {logA,τ} free.
+    h0_fixed=True   → k=2 model chain: H0 fixed at H_glob = SH0ES·(1−f_screen) (ssee_core.H0_GLOBAL), only {logA,τ} free.
     """
     H0_block = (
-        67.962 if h0_fixed
+        __import__("ssee_core").H0_GLOBAL if h0_fixed
         else {
             "prior": {"min": 64.0, "max": 72.0},
-            "ref":  {"dist": "norm", "loc": 67.96, "scale": 0.4},   # ancla reframe H_alg=67.962
+            "ref":  {"dist": "norm", "loc": __import__("ssee_core").H0_GLOBAL, "scale": 0.4},   # arranque en H_glob
             "proposal": 0.3,
             "latex": r"H_0",
         }
@@ -484,7 +484,7 @@ def make_figures(ssee_prefix, lcdm_prefix, results):
             alpha=0.6, label="Planck 2018 TT+TE+EE+lowE")
 
     # SSEE algebraic prediction
-    ax.axvline(67.96, color="#1a9641", lw=1.5, ls=":", label=r"$H_0^{\rm alg}=67.96$")
+    ax.axvline(__import__("ssee_core").H0_GLOBAL, color="#1a9641", lw=1.5, ls=":", label=r"$H_0^{\rm glob}$ (SH0ES$\times$(1$-f_{\rm screen}$))")
 
     ax.set_xlabel(r"$H_0$ [km s$^{-1}$ Mpc$^{-1}$]", fontsize=13)
     ax.set_ylabel("Normalised posterior", fontsize=12)
@@ -605,7 +605,7 @@ def main():
     parser.add_argument("--fast", action="store_true",
                         help="Fast convergence (R−1<0.05) for debugging")
     parser.add_argument("--k2", action="store_true",
-                        help="k=2 model run: fix H0 at the algebraic anchor 67.962 "
+                        help="k=2 model run: fix H0 at H_glob = SH0ES·(1−f_screen) "
                              "(only {logA,τ} sampled). Default off = k=3 validation chain.")
     parser.add_argument("--no-plots", action="store_true",
                         help="Skip figure generation")

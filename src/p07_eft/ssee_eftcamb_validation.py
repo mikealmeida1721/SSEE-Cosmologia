@@ -36,7 +36,7 @@ phi   = (1 + 5**0.5) / 2
 pi    = np.pi
 w0    = -0.840
 wa    = -0.670
-H0    = 67.962     # km/s/Mpc (algebraico: 3(φ+π)²)
+H0    = __import__("ssee_core").H0_GLOBAL   # km/s/Mpc, H_glob = SH0ES·(1−f_screen)
 Omb   = _C.OMEGA_B_H2 / (H0/100)**2          # ω_b-direct: Ω_b = ω_b/h² = 0.04854
 Omm_dyn    = 0.160                      # sector dinámico (fija αK; 1+w0)
 Omm_CMB    = _C.OMEGA_M_TOTAL            # ω_m-direct canónico (OP-8 disuelto; SIN factor MIRA)

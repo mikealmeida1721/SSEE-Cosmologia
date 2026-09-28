@@ -31,7 +31,7 @@ import ssee_core as S  # noqa: E402
 
 SALIDA = REPO / "results" / "logs" / "h0_lente_fondo_ssee.log"   # JSON dentro
 OM = S.OMEGA_M_TOTAL
-H_GLOBAL = S.H0_ALG                      # 3(phi+pi)^2, el blanco de la cascada
+H_GLOBAL = S.H0_GLOBAL                   # H_glob = H_SH0ES*(1-f_screen): el H de SSEE (el blanco puro es S.H0_ALG)
 
 
 def _canon(clave):

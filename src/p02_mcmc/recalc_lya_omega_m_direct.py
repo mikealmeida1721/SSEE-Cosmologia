@@ -18,7 +18,7 @@ import ssee_core as _C
 C_KM_S = 299792.458
 PHI = (1+np.sqrt(5))/2; PI = np.pi
 w0, wa = -0.840, -0.670
-H0 = 3*(PHI+PI)**2            # 67.962 (ancla algebraica ω_m-directo)
+H0 = __import__("ssee_core").H0_GLOBAL   # H_glob = SH0ES·(1−f_screen)
 z = 2.33
 DESI_obs, DESI_err = 8.52, 0.17   # DESI DR2 Ly-α D_H/r_d
 

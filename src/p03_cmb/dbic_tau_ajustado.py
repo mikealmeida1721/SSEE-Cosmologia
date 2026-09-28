@@ -63,7 +63,7 @@ N_LOWE = 28                                # lowl.EE (SimAll), ell = 2..29
 N_DATOS = N_PLIK + N_LOWT + N_LOWE
 
 FONDO_SSEE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
-                  H0=S.H0_ALG, ns=S.N_S)
+                  H0=S.H0_GLOBAL, ns=S.N_S)
 W_SSEE, WA_SSEE = S.W0, S.WA
 
 PLANCK = dict(ombh2=(0.02237, 0.00015), omch2=(0.1200, 0.0012),

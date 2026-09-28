@@ -42,17 +42,17 @@ from lcdm_planck import TAU_PLANCK  # noqa: E402
 PAP = "/mnt/datos/SSEE_data/cmb_lensing/papers"
 CAD = "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador"
 OUT = os.path.join(_R, "results", "logs", "act_dr6_calibrador.json")
-MNU = 0.06   # ORIGEN: 2304.05203 L249, «fix the sum of neutrino masses ... 0.06 eV (one massive)»
+MNU = 0.06   # ORIGEN-VALOR: 0.06 — arXiv:2304.05203 main.tex L249, «fix the sum of neutrino masses ... 0.06 eV (one massive)»
 
 
 def blanco():
-    t = open(f"{PAP}/2304.05202/main.tex").read()
+    t = open(f"{PAP}/2304.05202/main.tex").read()   # ORIGEN-VALOR: 2304.05202 — carpeta del TeX de arXiv:2304.05202 (Qu+2024)
     m = re.search(r"S\^\{\\mathrm\{CMBL\}\}_8=\s*([0-9.]+)\\pm([0-9.]+)\$ from ACT DR6 CMB lensing alone", t)
     return float(m.group(1)), float(m.group(2))
 
 
 def priors():
-    t = open(f"{PAP}/2304.05203/priors.tex").read()
+    t = open(f"{PAP}/2304.05203/priors.tex").read()   # ORIGEN-VALOR: 2304.05203 — carpeta del TeX de arXiv:2304.05203 (Madhavacheril+2024)
     return {k: float(v) for k, v in re.findall(r"\\newcommand\{\s*\\(\w+)\s*\}\s*\{\s*([-0-9.]+)\s*\}", t)}
 
 
@@ -74,7 +74,7 @@ def info():
             'As': {'value': 'lambda logA: 1e-10*np.exp(logA)'},
             'ns': {'prior': {'dist': 'norm', 'loc': p['nsmean'], 'scale': p['nssigma']},
                    'ref': p['nsmean'], 'proposal': 0.01},
-            'theta_MC_100': {'prior': {'min': p['thetamin'], 'max': p['thetamax']}, 'ref': 1.0411,
+            'theta_MC_100': {'prior': {'min': p['thetamin'], 'max': p['thetamax']}, 'ref': 1.0411,  # ORIGEN-VALOR: 1.0411 — solo el ARRANQUE de la cadena (100θ_MC de Planck 2018); no entra en el resultado
                              'proposal': 0.002, 'drop': True},
             'cosmomc_theta': {'value': 'lambda theta_MC_100: 1.e-2*theta_MC_100', 'derived': False},
             'H0': {'min': p['hmin'], 'max': p['hmax']},

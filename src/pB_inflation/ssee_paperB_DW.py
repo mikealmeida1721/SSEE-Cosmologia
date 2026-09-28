@@ -256,7 +256,7 @@ g0_s        = 3.91
 dilution = (g0_s * T0_Mpl**3) / (g_rh * T_rh_Mpl**3)
 rho_phi_today = m_phi_Mpl * n_grav_Mpl3 * dilution
 
-rho_crit_Mpl4 = (67.96e3 / (3.086e22)) **2 * 3 / (8*pi) / (Mpl_GeV*1e9)**4
+rho_crit_Mpl4 = (__import__("ssee_core").H0_GLOBAL * 1e3 / (3.086e22)) **2 * 3 / (8*pi) / (Mpl_GeV*1e9)**4
 Omega_grav = rho_phi_today / rho_crit_Mpl4
 
 print(f"  H_end         = {H_end_Mpl:.3e} Mpl  ≈ {H_end_Mpl * Mpl_GeV*1e9:.3e} eV")

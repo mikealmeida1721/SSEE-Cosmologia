@@ -4,12 +4,13 @@ SSEE Paper 2 — MCMC PRODUCCIÓN bajo prior H_alg (reframe ω_m-directo)
 Variante de producción del MCMC de Paper 2 para el reframe ω_m-DIRECTO
 (2026-06-18, OP-8 cerrado; prior MIRA 67.037 RETIRADO):
 
-  Prior H₀:  H_MIRA (67.037, retirado)  →  H_alg = 3(φ+π)² = 67.962
+  Prior H₀:  H_MIRA (67.037, retirado)  →  H_glob = SH0ES·(1−f_screen) ± σ propagado
+             (2026-09-28; antes el número puro 3(φ+π)² con el σ de Planck 0.54)
 
-El ancla 67.962 NO es ad hoc: con ω_b=(π−φ)/(3Ω²) y ω_c=KAL₀·ω_b·n_s
+El centro NO es ad hoc: con ω_b=(π−φ)/(3Ω²) y ω_c=KAL₀·ω_b·n_s
 FIJOS por álgebra, la verosimilitud CMB plik_lite se MINIMIZA en
 H₀=67.962 (scan results/logs/p3_h0anchor_reframe.log; χ²=1005.41 mín).
-Es decir, el H global de fondo y el ancla CMB coinciden: 67.962.
+Es decir, H_glob (salida de la cascada SH0ES) y el ancla CMB coinciden; 3(φ+π)² es el blanco puro de ambos.
 
 Tamaño producción: 100 walkers × 25000 steps (= original Paper 2).
 Solo corre SSEE (no ΛCDM ni CPL — ya están bien establecidos).
@@ -19,7 +20,7 @@ PREGUNTA QUE CONTESTA ESTE SCRIPT (no confundir con otros MCMC del repo):
    DESI DR2, ¿donde queda H₀?»  El prior NO es una suposicion a soltar: es uno
    de los DOS datasets que se estan combinando. Soltar H₀ contestaria otra
    pregunta —«¿que prefiere DESI solo?»— que responde
-   src/p09_hubble/ssee_h0_prior_experiment.py (prior plano: 67.660 ± 0.465).
+   src/p09_hubble/ssee_h0_prior_experiment.py (prior plano; se lee de h0_four_priors.json).
 
 GEOMETRIA (corregido 2026-07-09 V-L4-DESI, docstring actualizado 2026-07-25):
   E(z), r_d y toda distancia BAO usan la materia TOTAL, y esta se construye
@@ -32,7 +33,7 @@ GEOMETRIA (corregido 2026-07-09 V-L4-DESI, docstring actualizado 2026-07-25):
    arreglo y contradecia al codigo; retirada.)
 """
 import numpy as np
-import time, os, sys, warnings
+import time, os, sys, warnings, json
 _SSEE_DATA = os.environ.get("SSEE_DATA_DIR") or ("/mnt/datos/SSEE_data" if os.path.isdir("/mnt/datos") else "results/data")  # portable: HDD si existe, si no results/ local
 warnings.filterwarnings("ignore")
 import emcee
@@ -44,7 +45,7 @@ _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_o
 from ssee_core import (
     PHI, PI, BETA, KAL0, P_SC, K_V, T_R, M_V,
     W0, WA, OMEGA_DE, OMEGA_M_TOTAL, OMEGA_CDM_SECTOR, OMEGA_M_H2,
-    OMEGA_M_CMB_MIRA, H0_ALG,
+    OMEGA_M_CMB_MIRA, H0_ALG, H0_GLOBAL, SIG_H0_GLOBAL,
 )
 
 t0 = time.time()
@@ -61,12 +62,12 @@ def log(msg):
     with open(LOG, "a") as f: f.write(line + "\n")
 
 log("=" * 70)
-log("SSEE — MCMC PRODUCCIÓN bajo prior H_alg (67.962, reframe ω_m-directo)")
+log("SSEE — MCMC PRODUCCIÓN bajo prior H_glob (cascada SH0ES, reframe ω_m-directo)")
 log("=" * 70)
 log(f"  Ω_m,total (geometría, ÚNICA densidad) = {OMEGA_M_TOTAL:.8f}  |  s_m = 1+w0 = {OMEGA_CDM_SECTOR:.8f} (ecuación de estado)")
 log(f"  Ω_m,CMB (ω_m/h², reframe) = 0.308881  (sin factor; OP-8 cerrado)")
 log(f"  w0 = {W0:.10f},  wa = {WA:.10f}")
-log(f"  H0_alg = {H0_ALG:.6f}")
+log(f"  H_glob = H_SH0ES·(1−f_screen) = {H0_GLOBAL:.6f} ± {SIG_H0_GLOBAL:.4f}   (blanco puro 3(φ+π)² = {H0_ALG:.6f})")
 
 C_KM = 2.998e5
 FNU_SSEE = 0.020
@@ -97,7 +98,7 @@ CLUSTERS = [
 # El H global de fondo y el ancla CMB coinciden — no son dos números.
 # σ = 0.54 (error Planck H₀ propagado, conservador).
 # (prior MIRA 67.037 RETIRADO: usaba Ω_m,CMB=MIRA×Ω_m,dyn, factor disuelto OP-8)
-MIRA_H0 = (67.962, 0.54)
+PRIOR_HGLOB = (H0_GLOBAL, SIG_H0_GLOBAL)   # H_glob = SH0ES·(1−f_screen) ± σ propagado (2026-09-28; era (67.962, 0.54) tecleado, con el número puro y el σ de Planck)
 BBN_OBH2 = (0.02218, 0.00055)  # prior BBN de DESI (Schöneberg 2024)
 
 def f_de_cpl(z, w0, wa):
@@ -154,7 +155,7 @@ def lpost(theta):
     if not (40 < H0 < 100): return -np.inf
     if not _en_rango(H0): return -np.inf   # tabla CAMB 55-80: >30 sigma del posterior (declarado)
     if not (0.015 < ob_h2 < 0.030): return -np.inf
-    lp_H0  = -0.5*((H0-MIRA_H0[0])/MIRA_H0[1])**2
+    lp_H0  = -0.5*((H0-PRIOR_HGLOB[0])/PRIOR_HGLOB[1])**2
     lp_bbn = -0.5*((ob_h2-BBN_OBH2[0])/BBN_OBH2[1])**2
     om_h2  = OMEGA_M_H2                  # ω_m ALGEBRAICO fijo — lo que SSEE predice
     Om     = OMEGA_M_H2/(H0/100)**2      # Ω_m DERIVADO por muestra (no congelado)
@@ -195,7 +196,7 @@ H0_map = flat[idx, 0]
 ob_med = np.median(flat[:,1])
 
 log("\n" + "=" * 70)
-log("RESULTADO MCMC PRODUCCIÓN — Prior H_alg (67.962, reframe)")
+log("RESULTADO MCMC PRODUCCIÓN — Prior H_glob (cascada SH0ES)")
 log("=" * 70)
 log(f"  H₀     = {H0_med:.4f}  +{H0_p84-H0_med:.4f} / -{H0_med-H0_p16:.4f}  km/s/Mpc")
 log(f"  H₀ MAP = {H0_map:.4f}")
@@ -212,7 +213,7 @@ log(f"\n  BIC (k=2, N={N_data}): {BIC:.3f}")
 # Comparación
 log(f"\nComparación con resultados previos:")
 log(f"  Retirado (prior MIRA 67.037, 100w×25k): H₀ = 66.53 ± 0.44")
-log(f"  ESTE (prior H_alg 67.962, 100w×25k):    H₀ = {H0_med:.3f} ± {H0_std:.3f}")
+log(f"  ESTE (prior H_glob {H0_GLOBAL:.3f}±{SIG_H0_GLOBAL:.3f}, 100w×25k): H₀ = {H0_med:.3f} ± {H0_std:.3f}")
 
 # Distancia al H0 que DESI prefiere SIN ningún prior informativo (prior plano
 # U(50,90)). MEDIDO, no exploratorio: 67.660 +0.462/-0.466 con la parametrización
@@ -220,9 +221,16 @@ log(f"  ESTE (prior H_alg 67.962, 100w×25k):    H₀ = {H0_med:.3f} ± {H0_std:
 # hardcodeado, nunca recalculado tras el reframe — misma familia de drift que R25
 # vigila. Fuente: src/p09_hubble/ssee_h0_prior_experiment.py (4 priors)
 #   → results/logs/h0_four_priors_wmfix.log
-desi_pure_H0 = 67.660
-delta = abs(H0_med - desi_pure_H0)
-log(f"\n  Distancia a DESI-puro (67.660, prior plano medido): {delta:.3f} km/s/Mpc")
+# 2026-09-28: se LEE de results/logs/h0_four_priors.json (lo escribe ese script;
+# corre DESPUÉS de este en la cola, así que es el de la corrida anterior). Si no
+# existe, se dice y no se inventa.
+_fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "results", "logs", "h0_four_priors.json")
+if os.path.exists(_fp):
+    desi_pure_H0 = json.load(open(_fp))["plano"]["H0_mediana"]
+    delta = abs(H0_med - desi_pure_H0)
+    log(f"\n  Distancia a DESI-puro ({desi_pure_H0:.3f}, prior plano, h0_four_priors.json): {delta:.3f} km/s/Mpc")
+else:
+    log("\n  DESI-puro: falta results/logs/h0_four_priors.json (correr ssee_h0_prior_experiment.py)")
 
 # Figura
 fig = corner.corner(flat,

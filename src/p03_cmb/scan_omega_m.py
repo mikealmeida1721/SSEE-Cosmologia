@@ -15,7 +15,7 @@ import ssee_paper3_cobaya_unified as P3
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".."))
 from ssee_core import (SUM_MNU_EV as _MNU, OMEGA_B_H2 as _OMB,   # noqa: E402
-                       OMEGA_M_CMB_PIPHI as _OM_PIPHI, H0_ALG as _H0)
+                       OMEGA_M_CMB_PIPHI as _OM_PIPHI, H0_GLOBAL as _H0)
 H0=_H0; ombh2=_OMB; mnu=_MNU
 phi=(1+5**0.5)/2; pi=math.pi
 f_piphi = pi/phi                 # 1.94161 -> 0.31076 (RETIRADO, control)

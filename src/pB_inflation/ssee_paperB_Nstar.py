@@ -89,7 +89,7 @@ print(f"  (comparar T_rh en eV con constantes del modelo)")
 T_eV = T_rh_solution * 1e12   # en eV
 
 # Constantes SSEE en eV (usando H₀_SSEE = 67.96 km/s/Mpc)
-H0_eV   = 67.96 * 3.241e-20 * 1.973e-7 * 1e9  # km/s/Mpc → eV
+H0_eV   = __import__("ssee_core").H0_GLOBAL * 3.241e-20 * 1.973e-7 * 1e9  # km/s/Mpc → eV
 Omega   = phi + pi
 beta    = Omega / 2
 KAL0    = beta + pi

@@ -47,7 +47,7 @@ from cmb_eval import chi2_y_s8                          # noqa: E402
 SALIDA = REPO / "results" / "logs" / "cmb_punto_de_fuga2.json"
 
 BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
-            H0=S.H0_ALG, ns=S.N_S, logA=3.044, tau=0.054)
+            H0=S.H0_GLOBAL, ns=S.N_S, logA=3.044, tau=0.054)
 W, WA = S.W0, S.WA
 
 # La amplitud que piden las sondas tardias. logA = ln(10^10 A_s).

@@ -65,7 +65,7 @@ def chi2_outer(logA, halo_A, refina=True):
     if key in CACHE:
         return CACHE[key]
     res, p, kh, zp, pk, gr = K.run_camb(
-        omch2=S.OMEGA_C_H2, ombh2=S.OMEGA_B_H2, h0=S.H0_ALG / 100, ns=S.N_S,
+        omch2=S.OMEGA_C_H2, ombh2=S.OMEGA_B_H2, h0=S.H0_GLOBAL / 100, ns=S.N_S,
         As=1e-10 * np.exp(logA), mnu=S.SUM_MNU_EV, w=S.W0, wa=S.WA,
         halo_A=halo_A)
     if MODO == '2sec':

@@ -1,6 +1,6 @@
 """
 Fase B / P3 — r_d y θ* en el punto CANÓNICO del reframe ω_m-DIRECTO (2026-06-18).
-  H global = H_alg = 67.962.  NO hay factor materia (OP-8 cerrado):
+  H global = H_glob = SH0ES·(1−f_screen) (ssee_core.H0_GLOBAL); 3(φ+π)² es el blanco.  NO hay factor materia (OP-8 cerrado):
   Ω_m,CMB = ω_m/h² = 0.308881 con cada pieza algebraica de SSEE.
 
 Reusa _run_camb de ssee_paper3_cmb.py. Reporta r_d, θ*, 100θ* y los compara
@@ -17,7 +17,7 @@ from ssee_paper3_cmb import _run_camb
 phi = (1 + 5**0.5) / 2
 pi  = np.pi
 Omega = pi + phi
-H0    = 3 * Omega**2                  # 67.962  H global = H_alg
+H0    = __import__("ssee_core").H0_GLOBAL    # H_glob = SH0ES·(1−f_screen); 3Ω² es el blanco puro
 ombh2 = (pi - phi) / (3 * Omega**2)   # 0.02242  SSEE algebraico (OP-1)
 ns    = 1 - phi**-7
 KAL0  = (pi + phi)/2 + pi             # 5.5214
@@ -42,7 +42,10 @@ t0 = time.time()
 print(f"\n--- RESULTADO ({0.0:.1f}s) ---")
 # Anchor (H_alg=67.962) y posterior MCMC (67.787, parametrización ω_m-fijo R25;
 # el 67.9475 previo congelaba Ω_m y sesgaba hacia el ancla): r_d y θ* (grados + 100θ*)
-for tag, H0v in (("anchor H_alg 67.962", 67.962), ("posterior MCMC 67.7869", 67.7869)):
+# ORIGEN: H_glob de ssee_core; posterior de results/logs/mcmc_paper2_reframe.json (leídos, no tecleados)
+import json as _j
+_HPOST = _j.load(open("results/logs/mcmc_paper2_reframe.json"))["H0_mediana"]
+for tag, H0v in ((f"H_glob {H0:.6f}", H0), (f"posterior MCMC {_HPOST:.4f}", _HPOST)):
     total, lens_p, derived = _run_camb(H0v, ombh2, omch2, mnu, w0, wa, As, ns, 2500)
     r_d = derived["rdrag"]
     th100 = derived["thetastar"]            # 100*theta_*

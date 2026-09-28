@@ -18,7 +18,7 @@ for s in ("src","src/p06_growth","src/p03_cmb"): sys.path.insert(0,str(REPO/s))
 import cobaya_kids as C, kids_shear as K, cmb_eval as E, ssee_core as S
 
 BG=dict(C.SSEE_BG); BASE=dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
-                              H0=S.H0_ALG, ns=S.N_S)
+                              H0=S.H0_GLOBAL, ns=S.N_S)
 _CA={}
 def chi2_kids(logA):
     def f(u):

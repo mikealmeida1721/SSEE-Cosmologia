@@ -27,7 +27,7 @@ M_SSEE = abs(w0)   # acoustic saturation factor (= |w0|)
 # Reframe ω_m-DIRECTO (OP-8 cerrado): NO hay factor materia. ω_b y ω_c son densidades
 # físicas FIJAS algebraicamente (forward); Ω_m,CMB = ω_m/h² es DERIVADO (= Omm_cmb, diagnóstico).
 
-H0       = 67.962  # ancla global H_alg = 3(φ+π)² (reframe 2026-06-17; era H_MIRA 67.04)
+H0       = __import__("ssee_core").H0_GLOBAL  # H_glob = SH0ES·(1−f_screen) (2026-09-28; era el literal 67.962)
 Omb_h2   = (pi - phi) / (3.0 * Omega**2)   # 0.02242 — ω_b directo (era 0.02237 Planck input)
 # n_s = 1 - phi^-7 = 0.96556 (predicción algebraica SSEE, Paper 4) — importado arriba
 ln_As    = 3.044

@@ -77,7 +77,7 @@ SALIDA = REPO / "results" / "logs" / "precio_cmb_de_la_particula.json"
 KIDS = REPO / "results" / "logs" / "growth_2026-07" / \
     "particula_que_prefiere_kids.json"
 
-BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_ALG, ns=S.N_S)
+BASE = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_GLOBAL, ns=S.N_S)
 LIM_LOGA, LIM_TAU = (1.0, 5.0), (0.010, 0.200)
 X0 = np.array([3.044, 0.054])
 PASO = np.array([0.02, 0.005])          # cabe holgado en las cotas

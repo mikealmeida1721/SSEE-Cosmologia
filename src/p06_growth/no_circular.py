@@ -26,7 +26,7 @@ SV = [r['survey'] for r in d]
 def g_of_z(As):
     """g(z) = f(z) D(z)/D(0) = fsigma8(z)/sigma8(0).  Sin amplitud dentro."""
     p = camb.CAMBparams()
-    p.set_cosmology(H0=S.H0_ALG, ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
+    p.set_cosmology(H0=S.H0_GLOBAL, ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2,
                     mnu=S.SUM_MNU_EV, omk=0.0)
     p.set_dark_energy(w=S.W0, wa=S.WA, dark_energy_model='ppf')
     p.InitPower.set_params(As=As, ns=S.N_S)

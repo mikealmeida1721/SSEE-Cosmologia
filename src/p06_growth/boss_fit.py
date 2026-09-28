@@ -43,7 +43,7 @@ OUT = '/home/mike/Proyectos/SSEE/results/logs/growth_2026-07'
 #  Las dos cosmologias de fondo. Ninguna se ajusta.
 # --------------------------------------------------------------
 COSMO = {
-    'SSEE': dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_ALG,
+    'SSEE': dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_GLOBAL,
                  ns=S.N_S, mnu=S.SUM_MNU_EV, w0=S.W0, wa=S.WA),
     'LCDM': dict(ombh2=0.02237, omch2=0.1200, H0=67.36,
                  ns=0.9649, mnu=0.06, w0=-1.0, wa=0.0),

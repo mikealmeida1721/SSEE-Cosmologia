@@ -95,7 +95,7 @@ def verifica():
             filas.append(dict(mnu=mnu, w_b=float(b), w_m=float(m), camb=float(c), error=float(e)))
     c_s = _camb(OMEGA_B_H2, OMEGA_M_H2, SUM_MNU_EV)
     e_s = rd_mpc(OMEGA_B_H2, OMEGA_M_H2) / c_s - 1
-    vieja = 147.27 * (OMEGA_M_H2 / 0.1432) ** -0.255 * (OMEGA_B_H2 / 0.02237) ** -0.134  # ORIGEN-VALOR: la formula VIEJA, solo para mostrar el cambio
+    vieja = 147.27 * (OMEGA_M_H2 / 0.1432) ** -0.255 * (OMEGA_B_H2 / 0.02237) ** -0.134  # ORIGEN-VALOR: 0.1432 — pivote de la formula VIEJA (147.27, 0.1432, 0.02237), solo para mostrar el cambio
     pasa = bool(peor < 1e-5 and abs(e_s) < 1e-5)
     res = dict(fecha="2026-09-28", tabla=_TABLA, puntos=filas, error_max=float(peor),
                ssee=dict(camb=float(c_s), interpolado=rd_mpc(OMEGA_B_H2, OMEGA_M_H2),

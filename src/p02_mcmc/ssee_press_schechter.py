@@ -97,7 +97,7 @@ gamma_L= 0.55
 #   gamma_S = 0.657  ->  0.5504
 #       Paper 5 mide gamma_IS = 0.5504 +/- 0.0003 (linea 978). El 0.657 no
 #       corresponde a ninguna medicion vigente.
-H0_S   = _C.H0_ALG
+H0_S   = _C.H0_GLOBAL
 Omm_S  = _C.OMEGA_M_TOTAL
 OmDE_S = 1 - Omm_S
 w0_S   = -0.8399

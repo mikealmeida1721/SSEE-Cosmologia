@@ -46,7 +46,7 @@ _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_o
 from ssee_core import (
     PHI as phi, PI as pi_, BETA as beta, KAL0, P_SC as P_sc,
     K_V as Kv, T_R as Tr, M_V as Mv, W0 as w0, WA as wa,
-    H0_ALG as H0_kms, S_M as s_M, S_DE as s_DE,
+    H0_GLOBAL as H0_kms, S_M as s_M, S_DE as s_DE,
     MIRA as MIRA_alg, OMEGA_M_TOTAL as Omm_CMB,   # 0.308881 materia total
 )
 

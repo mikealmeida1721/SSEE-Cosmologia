@@ -109,7 +109,7 @@ for ell, q, Pe in ((0, q0, P[0]), (2, q2, P[1]), (4, q4, P[2])):
 # ---------------- V5 ----------------
 print('\n V5 — deformacion Alcock-Paczynski contra el fiducial (Om=0.31)')
 import ssee_core as S
-h = S.H0_ALG / 100.0
+h = S.H0_GLOBAL / 100.0
 om_ssee = (S.OMEGA_B_H2 + S.OMEGA_C_H2 + S.SUM_MNU_EV / 93.14) / h ** 2
 om_lcdm = (0.02237 + 0.1200 + 0.06 / 93.14) / 0.6736 ** 2
 for z in (0.38, 0.51, 0.61):

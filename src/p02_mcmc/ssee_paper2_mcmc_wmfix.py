@@ -39,7 +39,7 @@ sys.path.insert(0, os.path.join(_HERE, ".."))
 
 import emcee  # noqa: E402
 from ssee_core import (W0, WA, KAL0, OMEGA_M_H2 as WM_ALG,  # noqa: E402
-                       OMEGA_M_TOTAL, H0_ALG)
+                       OMEGA_M_TOTAL, H0_ALG, H0_GLOBAL, SIG_H0_GLOBAL)
 from desi_dr2_data import load_desi_dr2, desi_covariance  # noqa: E402
 
 C_KM = 299792.458
@@ -55,7 +55,7 @@ args = ap.parse_args()
 
 # Prior en H₀. 'anchor' = el ancla algebraica (test de CONSISTENCIA: ¿tira DESI?).
 # 'planck' = independiente del ancla (¿hacia dónde empujan los datos por sí solos?).
-PRIOR_H0 = (H0_ALG, 0.54) if args.prior == "anchor" else (67.36, 0.54)
+PRIOR_H0 = (H0_GLOBAL, SIG_H0_GLOBAL) if args.prior == "anchor" else (67.36, 0.54)
 BBN_OBH2 = (0.02218, 0.00055)  # prior BBN de DESI (Schöneberg 2024)
 
 _d = load_desi_dr2()          # dict de arrays (fuente única data/raw/desi_dr2_bao.csv)

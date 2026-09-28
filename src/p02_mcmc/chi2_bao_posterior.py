@@ -16,7 +16,7 @@ ancla; ese fue el bug que R25 vigila.
 
 Se reportan tres puntos para que la comparación sea legible:
   · el posterior canónico (67.7869, ω_b h² = 0.02207)
-  · el ancla algebraica    (67.9621)
+  · H_glob = SH0ES·(1−f_screen)  (ssee_core.H0_GLOBAL)
   · el posterior superado  (67.9475, Ω_m congelado) — para ver que el χ² MEJORA
     al corregir la parametrización, no empeora.
 
@@ -92,12 +92,12 @@ log("")
 log(f"  {'escenario':34s} {'H₀':>9s} {'ω_b h²':>8s} {'Ω_m deriv':>10s} {'χ²_BAO':>8s}")
 # ORIGEN: results/logs/mcmc_paper2_reframe.json (el posterior, leido; antes estaba tecleado)
 import json as _json
-from ssee_core import H0_ALG as _HALG, OMEGA_B_H2 as _OBH2
+from ssee_core import H0_GLOBAL as _HALG, OMEGA_B_H2 as _OBH2
 _post = _json.load(open(os.path.join(_REPO, "results", "logs", "mcmc_paper2_reframe.json")))
 _filas = []
 for _etq, _H0, _ob in (
         ("posterior canónico (R25)", _post["H0_mediana"], _post["obh2_mediana"]),
-        ("ancla algebraica 3(φ+π)²", _HALG, _OBH2)):
+        ("H_glob (SH0ES·(1−f_screen))", _HALG, _OBH2)):
     _c, _Om = chi2_bao(_H0, _ob)
     _filas.append(_c)
     log(f"  {_etq:34s} {_H0:9.4f} {_ob:8.5f} {_Om:10.6f} {_c:8.2f}")
