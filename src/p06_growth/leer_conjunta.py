@@ -33,8 +33,10 @@ CAD = "/mnt/datos/SSEE_data/chains_p6/conjunta"
 # de Mike 2026-09-28, opcion A+B). Va a otro archivo, para que el vigilante y
 # la lectura final no la confundan con el resultado convergido.
 PRELIMINAR = "preliminar" in sys.argv
+# «b3»: la relanzada del 29-sep con el bloque rapido partido en KiDS | BOSS
+BASE = "conjunta_b3" if "b3" in sys.argv else "conjunta"
 OUT = os.path.join(_R, "results", "logs",
-                   "conjunta_vs_individual" + ("_preliminar" if PRELIMINAR else "") + ".json")
+                   BASE + "_vs_individual" + ("_preliminar" if PRELIMINAR else "") + ".json")
 sys.path.insert(0, os.path.join(_R, "src"))
 
 
@@ -64,7 +66,7 @@ def rminus1(base):
 
 
 def main():
-    cc, dc, nc = carga("conjunta")
+    cc, dc, nc = carga(BASE)
     i = {k: cc.index(k) for k in cc}
     tot = dc[:, i["chi2"]]
     j = int(tot.argmin())
@@ -79,7 +81,7 @@ def main():
     # control es exigir que CADA cadena, por separado, de el mismo chi2 por
     # sonda: si el arranque comun hubiera falseado algo, no coincidirian.
     por_cadena = []
-    for f in sorted(glob.glob(f"{CAD}/conjunta.[0-9]*.txt")):
+    for f in sorted(glob.glob(f"{CAD}/{BASE}.[0-9]*.txt")):
         dd = np.loadtxt(f, ndmin=2)
         k = int(dd[:, i["chi2"]].argmin())
         por_cadena.append(dict(
@@ -107,7 +109,7 @@ def main():
                   "corrida individual?"),
         logA_clavo=3.0448340130228546,
         muestras_conjunta=int(dc.shape[0]), cadenas_conjunta=nc,
-        Rminus1_conjunta=rminus1("conjunta"),
+        Rminus1_conjunta=rminus1(BASE),
         muestras_boss=int(db.shape[0]), cadenas_boss=nb,
         Rminus1_boss=rminus1("boss_clavado"),
         por_sonda=filas,

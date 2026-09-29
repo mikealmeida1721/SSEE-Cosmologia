@@ -206,7 +206,19 @@ COVMAT = f'{CAD}/propuesta_conjunta.covmat'
 COVMAT_BOSS = '/mnt/datos/SSEE_data/chains_p6/boss/ssee.covmat'
 
 
-def info_conjunta():
+def _velocidades(pk, pb, n=5):
+    """Segundos por evaluacion de KiDS y de BOSS en el punto de referencia, MEDIDOS aqui."""
+    import time
+    ref = lambda p: {k: (v['ref'] if not isinstance(v.get('ref'), dict) else v['ref'].get('loc'))
+                     for k, v in p.items() if isinstance(v, dict) and 'prior' in v}
+    rk, rb = ref(pk), ref(pb)
+    loglike_kids(**rk); loglike_boss(**rb)          # calentamiento (caches)
+    t0 = time.perf_counter(); [loglike_kids(**rk) for _ in range(n)]; tk = (time.perf_counter() - t0) / n
+    t0 = time.perf_counter(); [loglike_boss(**rb) for _ in range(n)]; tb = (time.perf_counter() - t0) / n
+    return tk, tb
+
+
+def info_conjunta(b3=False):
     pc, pk, pb = _p_cmb(), _p_kids(), _p_boss()
     todos = dict(pc); todos.update(pk); todos.update(pb)
     # Reparto rapido/lento medido en esta maquina: tau toca CAMB (0.33 s) y
@@ -214,6 +226,23 @@ def info_conjunta():
     # calculados (KiDS 0.69 s, BOSS 0.022 s).
     lentos = ['tau', 'logT_AGN']
     rapidos = [k for k in todos if k not in lentos]
+    bloques, covmat, salida = [[1, lentos], [5, rapidos]], COVMAT, 'conjunta'
+    if b3:
+        # RELANZADA 29-sep (decision de Mike). La conjunta de 3 dias se estanco en
+        # R-1 0.33: el bloque rapido juntaba KiDS (lento entre los rapidos) y BOSS
+        # (30x mas rapido), y cada paso de BOSS pagaba un KiDS. BOSS sola convergio
+        # en <2 h. Se parte el bloque en KiDS | BOSS y BOSS se sobremuestrea en la
+        # razon de tiempos MEDIDA al arrancar, para que cada bloque reciba el mismo
+        # tiempo. Solo cambia la PROPUESTA: ni verosimilitud ni prior.
+        # Propuesta de arranque: la covarianza que aprendio la corrida anterior.
+        tk, tb = _velocidades(pk, pb)
+        fb = max(5, int(round(5 * tk / tb)))
+        rk = [k for k in rapidos if k in pk]; rb = [k for k in rapidos if k in pb]
+        bloques, covmat, salida = [[1, lentos], [5, rk], [fb, rb]], f'{CAD}/conjunta.covmat', 'conjunta_b3'
+        json.dump(dict(fecha=str(__import__('datetime').date.today()), seg_kids=tk, seg_boss=tb,
+                       sobremuestreo=dict(lentos=1, kids=5, boss=fb), covmat=covmat),
+                  open(os.path.join(_R, 'results', 'logs', 'conjunta_b3_bloques.json'), 'w'), indent=1)
+        print(f'  bloques: KiDS {tk:.3f} s, BOSS {tb:.4f} s -> sobremuestreo BOSS {fb}')
     return dict(
         likelihood={
             'cmb':  dict(external=loglike_cmb,  input_params=list(pc.keys())),
@@ -223,9 +252,9 @@ def info_conjunta():
         params=todos,
         sampler={'mcmc': dict(Rminus1_stop=0.05, max_tries=20000,
                               oversample_power=0.7, measure_speeds=False,
-                              covmat=COVMAT,
-                              blocking=[[1, lentos], [5, rapidos]])},
-        output=f'{CAD}/conjunta', force=True, resume=False)
+                              covmat=covmat,
+                              blocking=bloques)},
+        output=f'{CAD}/{salida}', force=True, resume=False)
 
 
 def info_boss_clavado():
@@ -296,4 +325,5 @@ if __name__ == '__main__':
         print('  El cableado no reproduce lo publicado. NO se muestrea.')
         sys.exit(1)
     from cobaya.run import run
-    run(info_conjunta() if modo == 'conjunta' else info_boss_clavado())
+    run(info_conjunta() if modo == 'conjunta' else
+        info_conjunta(b3=True) if modo == 'conjunta_b3' else info_boss_clavado())

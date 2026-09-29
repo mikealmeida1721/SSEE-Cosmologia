@@ -1,0 +1,11 @@
+{
+ "fecha": "2026-09-29",
+ "seg_kids": 1.1090241194004193,
+ "seg_boss": 0.02659546780632809,
+ "sobremuestreo": {
+  "lentos": 1,
+  "kids": 5,
+  "boss": 208
+ },
+ "covmat": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.covmat"
+}
