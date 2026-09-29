@@ -169,7 +169,11 @@ log(f"  acceptance = {np.mean(sampler.acceptance_fraction):.3f}")
 N_data = 13 + 3  # 13 BAO + 3 Planck constraints
 BIC = 3 * np.log(N_data) - 2 * lp[idx]
 log(f"\n  BIC (k=3, N={N_data}): {BIC:.3f}")
-log(f"\n  Para ΔBIC vs SSEE-MIRA: SSEE_BIC = 253.435 (k=2, N=15)")
+# 2026-09-28: el BIC de SSEE se LEE del MCMC canónico (antes: 253.435 tecleado, de la
+# época MIRA, retirado). OJO: N distinto (SSEE 15 = 13 BAO + H0 + BBN; aquí 16).
+import json as _json
+_ss = _json.load(open("results/logs/mcmc_paper2_reframe.json"))["BIC"]
+log(f"\n  Para ΔBIC vs SSEE (mcmc_paper2_reframe.json): SSEE_BIC = {_ss:.3f} (k=2, N=15)")
 log(f"                          ΛCDM_BIC = {BIC:.3f} (k=3, N={N_data})")
-log(f"                          ΔBIC = {BIC - 253.435:+.3f}  (>0 favorece SSEE)")
+log(f"                          ΔBIC = {BIC - _ss:+.3f}  (>0 favorece SSEE; N distinto, orientativo)")
 log(f"\nTiempo total: {(time.time()-t0)/60:.1f} min")

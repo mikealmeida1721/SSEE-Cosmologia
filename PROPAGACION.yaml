@@ -27,7 +27,7 @@ logs:
   is_growth_gamma_bg:         src/p05_is/is_growth_gamma_bg.py
   datos_crudos_T2:            src/verificacion/manifiesto_datos_T2.py
   ssee_is_growth:             src/p05_is/ssee_is_growth.py
-  mcmc_paper2_3models_wmfix:  src/p02_mcmc/ssee_paper2_mcmc_wmfix.py
+  mcmc_paper2_3models_wmfix:  src/p02_mcmc/ssee_paper2_mcmc.py   # escribe mcmc_professional.log; se copia aquí (corregido 2026-09-28: antes apuntaba a wmfix)
   chi2_bao_posterior:         src/p02_mcmc/chi2_bao_posterior.py
 
   # ── Verificacion — pruebas que producen su propio log ───────────────────

@@ -159,7 +159,7 @@ print(f"  H₀    = {H0_med:.4f}  +{H0_hi-H0_med:.4f}/-{H0_med-H0_lo:.4f} km/s/M
 print(f"  Ω_b h²= {ob_med:.5f}")
 print(f"  Ω_m(H₀ post) = {om_of(H0_med):.5f}")
 _s = (H0_hi - H0_lo) / 2
-print(f"  distancia al ancla {H0_ALG:.3f}: {abs(H0_med-H0_ALG)/_s:.2f}σ")
+print(f"  distancia a H_glob {H0_GLOBAL:.3f}: {abs(H0_med-H0_GLOBAL)/_s:.2f}σ")
 _omh2_post = (OMEGA_M_TOTAL*(H0_med/100)**2 if args.param=="Om_fixed" else WM_ALG)
 print(f"  r_d = {sound_horizon_rd(ob_med, _omh2_post):.2f} Mpc")
 _r = predict_desi(H0_med, om_of(H0_med), sound_horizon_rd(ob_med, _omh2_post)) - DESI_OBS
