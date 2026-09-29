@@ -117,6 +117,65 @@ def ruido_medida():
     return np.array(cen), np.array(med)
 
 
+def zhong2026():
+    """El blanco CORRECTO del calibrador (Mike, 2026-09-29): el resultado de 2026,
+    ya con el sistematico arreglado, NO el 0.86 de Ghirardini+2024 (el de antes)."""
+    # sin las lineas comentadas (%): el .tex guarda una version vieja comentada (0.81 +- 0.01)
+    t = "\n".join(l for l in open(f"{E}/paper_2602.20483/AA_final.tex") if not l.lstrip().startswith("%"))
+    om = re.search(r"Omega_\\mathrm\{m\}=([\d.]+)\^\{\+([\d.]+)\}_\{-([\d.]+)\}", t)
+    sg = re.search(r"sigma_8=([\d.]+)\^\{\+([\d.]+)\}_\{-([\d.]+)\}", t)
+    return dict(Om=float(om.group(1)), Om_mas=float(om.group(2)), Om_menos=float(om.group(3)),
+                sigma8=float(sg.group(1)), sigma8_err=0.5 * (float(sg.group(2)) + float(sg.group(3))),
+                fuente="arXiv:2602.20483 (Zhong+2026), sec. de resultados")
+
+
+def calibra2026():
+    """Solo el calibrador LCDM libre, rejilla ampliada, contra Zhong+2026.
+    CRITERIO declarado ANTES de correr (2026-09-29): minimo DENTRO de la rejilla,
+    |sigma8 - 0.812| < 1 sigma combinado y |Omega_m - 0.30| < 1 sigma combinado
+    (error de Zhong del lado que toca)."""
+    from multiprocessing import Pool
+    zh = zhong2026()
+    G = tabla_ghirardini()
+    z, cr, _ = datos()
+    lcr, C, info = seleccion()
+    ru, pur = ruido_medida(), pureza()
+    _W.update(z=z, cr=cr, lcr=lcr, C=C, G=G, ru=ru, pur=pur)
+    oms = np.round(np.linspace(0.16, 0.44, 15), 4)   # ORIGEN-VALOR: 0.16-0.44 — rejilla ampliada; paso 0.02
+    las = np.round(np.linspace(2.60, 4.00, 15), 4)   # ORIGEN-VALOR: 2.60-4.00 — el tope 4.0 es el de los priors de ACT DR6; paso 0.1
+    with Pool(int(os.environ.get("NUCLEOS", "1"))) as pool:
+        rej = pool.map(_nodo_s8, [(om, la) for om in oms for la in las])
+    tot = np.array([x["total"] for x in rej]); k = int(tot.argmin()); m = rej[k]
+    dentro = tot - tot.min() <= 1.0
+    s8b = np.array([x["sigma8"] for x in rej])[dentro]; omb = np.array([x["Om"] for x in rej])[dentro]
+    sig_s8 = max(0.5 * (s8b.max() - s8b.min()), 0.5 * 0.1 * 0.8)   # piso: medio paso de logA en sigma8 (~5 %/0.1)
+    sig_om = max(0.5 * (omb.max() - omb.min()), 0.5 * 0.02)          # piso: medio paso de la rejilla en Om
+    borde = m["Om"] in (oms[0], oms[-1]) or m["logA"] in (las[0], las[-1])
+    e_om = zh["Om_mas"] if m["Om"] > zh["Om"] else zh["Om_menos"]
+    t_s8 = (m["sigma8"] - zh["sigma8"]) / math.hypot(sig_s8, zh["sigma8_err"])
+    t_om = (m["Om"] - zh["Om"]) / math.hypot(sig_om, e_om)
+    pasa = bool(not borde and abs(t_s8) < 1 and abs(t_om) < 1)
+    v3 = json.load(open(OUT))
+    res = dict(fecha="2026-09-29", blanco=zh, rejilla=rej, mejor=m, sigma_sigma8=sig_s8, sigma_Om=sig_om,
+               tiron_sigma8=t_s8, tiron_Om=t_om, en_borde=bool(borde), pasa=pasa,
+               criterio="minimo dentro; |sigma8-0.812|<1 sigma comb.; |Om-0.30|<1 sigma comb. (declarado antes)",
+               ssee=v3["casos"]["ssee"], lcdm_planck=v3["casos"]["lcdm_planck"])
+    for nom in ("ssee", "lcdm_planck"):
+        res[nom]["delta_total_vs_lcdm_libre"] = res[nom]["total"] - m["total"]
+    json.dump(res, open(os.path.join(LOGS, "erosita_cr_v3_cal2026.json"), "w"), indent=1, ensure_ascii=False, default=float)
+    print(f"  blanco Zhong+2026: sigma8 {zh['sigma8']} ± {zh['sigma8_err']}  Om {zh['Om']} +{zh['Om_mas']}/-{zh['Om_menos']}")
+    print(f"  LCDM libre: Om {m['Om']:.3f}  logA {m['logA']:.2f}  sigma8 {m['sigma8']:.3f}  S8 {m['S8']:.3f}  borde={borde}")
+    print(f"  tirones: sigma8 {t_s8:+.2f}  Om {t_om:+.2f}  -> {'PASA' if pasa else 'NO PASA'}")
+    for nom in ("ssee", "lcdm_planck"):
+        print(f"  {nom}: total - LCDM libre = {res[nom]['delta_total_vs_lcdm_libre']:+.2f}")
+
+
+def _nodo_s8(args):
+    r = _nodo(args)
+    r["sigma8"] = r["S8"] / math.sqrt(r["Om"] / 0.3)
+    return r
+
+
 def pureza():
     t = open(TEX_G).read()
     return float(re.search(r"purity of this sample is at the level of (\d+)\\%", t).group(1)) / 100
@@ -348,4 +407,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    calibra2026() if "calibra2026" in sys.argv else main()
