@@ -93,8 +93,8 @@ def lee():
     mu, sg = blanco()
     s = loadMCSamples(f"{CAD}/act_lcdm", settings={'ignore_rows': 0.3})
     m = float(s.mean('S8CMBL')); e = float(s.std('S8CMBL'))
-    prog = np.loadtxt(f"{CAD}/act_lcdm.progress", ndmin=2)
-    r1 = float(prog[-1, 3])
+    # la 2.a columna es una fecha: se lee la 4.a (Rminus1) de la ultima fila a mano
+    r1 = float(open(f"{CAD}/act_lcdm.progress").read().strip().split("\n")[-1].split()[3])
     pasa = bool(abs(m - mu) < 0.25 * sg and abs(e - sg) / sg < 0.15 and r1 < 0.02)
     res = dict(fecha="2026-09-28", sonda="ACT DR6 lensing, calibrador ΛCDM",
                blanco=dict(S8CMBL=mu, sigma=sg, fuente="arXiv:2304.05202, resumen"),
