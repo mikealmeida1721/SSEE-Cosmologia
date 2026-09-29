@@ -162,3 +162,85 @@ Comparación con resultados previos:
 Figura: results/figures/fig_corner_ssee_halg_prior.pdf
 [   6.8m] Cadena: /mnt/datos/SSEE_data/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz
 [   6.8m] Tiempo total: 6.8 min
+[   0.0m] ======================================================================
+[   0.0m] SSEE — MCMC PRODUCCIÓN bajo prior H_glob (cascada SH0ES, reframe ω_m-directo)
+[   0.0m] ======================================================================
+[   0.0m]   Ω_m,total (geometría, ÚNICA densidad) = 0.30888084  |  s_m = 1+w0 = 0.16005023 (ecuación de estado)
+[   0.0m]   Ω_m,CMB (ω_m/h², reframe) = 0.308881  (sin factor; OP-8 cerrado)
+[   0.0m]   w0 = -0.8399497713,  wa = -0.6699748857
+[   0.0m]   H_glob = H_SH0ES·(1−f_screen) = 67.962142 ± 0.9677   (blanco puro 3(φ+π)² = 67.962137)
+[   0.0m] 
+Burn-in 5000 steps...
+[   0.6m] Burn-in OK. Producción...
+[   0.7m]   500/25000 steps  accept=0.714
+[   0.7m]   1000/25000 steps  accept=0.715
+[   0.8m]   1500/25000 steps  accept=0.715
+[   0.8m]   2000/25000 steps  accept=0.715
+[   0.9m]   2500/25000 steps  accept=0.714
+[   1.0m]   3000/25000 steps  accept=0.714
+[   1.0m]   3500/25000 steps  accept=0.714
+[   1.1m]   4000/25000 steps  accept=0.714
+[   1.1m]   4500/25000 steps  accept=0.714
+[   1.2m]   5000/25000 steps  accept=0.714
+[   1.3m]   5500/25000 steps  accept=0.714
+[   1.3m]   6000/25000 steps  accept=0.714
+[   1.4m]   6500/25000 steps  accept=0.714
+[   1.5m]   7000/25000 steps  accept=0.714
+[   1.5m]   7500/25000 steps  accept=0.715
+[   1.6m]   8000/25000 steps  accept=0.715
+[   1.7m]   8500/25000 steps  accept=0.715
+[   1.8m]   9000/25000 steps  accept=0.715
+[   1.8m]   9500/25000 steps  accept=0.715
+[   1.9m]   10000/25000 steps  accept=0.715
+[   2.0m]   10500/25000 steps  accept=0.715
+[   2.1m]   11000/25000 steps  accept=0.715
+[   2.2m]   11500/25000 steps  accept=0.715
+[   2.3m]   12000/25000 steps  accept=0.714
+[   2.4m]   12500/25000 steps  accept=0.714
+[   2.5m]   13000/25000 steps  accept=0.714
+[   2.7m]   13500/25000 steps  accept=0.714
+[   2.8m]   14000/25000 steps  accept=0.714
+[   2.9m]   14500/25000 steps  accept=0.714
+[   3.1m]   15000/25000 steps  accept=0.714
+[   3.2m]   15500/25000 steps  accept=0.714
+[   3.4m]   16000/25000 steps  accept=0.714
+[   3.5m]   16500/25000 steps  accept=0.714
+[   3.7m]   17000/25000 steps  accept=0.714
+[   3.9m]   17500/25000 steps  accept=0.714
+[   4.1m]   18000/25000 steps  accept=0.714
+[   4.2m]   18500/25000 steps  accept=0.714
+[   4.4m]   19000/25000 steps  accept=0.714
+[   4.6m]   19500/25000 steps  accept=0.714
+[   4.8m]   20000/25000 steps  accept=0.714
+[   5.1m]   20500/25000 steps  accept=0.714
+[   5.4m]   21000/25000 steps  accept=0.714
+[   5.7m]   21500/25000 steps  accept=0.714
+[   6.0m]   22000/25000 steps  accept=0.714
+[   6.3m]   22500/25000 steps  accept=0.714
+[   6.5m]   23000/25000 steps  accept=0.714
+[   6.8m]   23500/25000 steps  accept=0.714
+[   7.1m]   24000/25000 steps  accept=0.714
+[   7.4m]   24500/25000 steps  accept=0.714
+[   7.8m]   25000/25000 steps  accept=0.714
+[   8.2m] 
+======================================================================
+[   8.2m] RESULTADO MCMC PRODUCCIÓN — Prior H_glob (cascada SH0ES)
+[   8.2m] ======================================================================
+[   8.2m]   H₀     = 67.8244  +0.4112 / -0.4111  km/s/Mpc
+[   8.2m]   H₀ MAP = 67.8200
+[   8.2m]   Ω_b·h² = 0.02198
+[   8.2m]   ln P_MAP = -5.539
+[   8.2m]   τ_max = 31.6    N_eff ≈ 79056
+[   8.2m]   acceptance = 0.714
+[   8.2m] 
+  BIC (k=2, N=15): 16.494
+[   8.2m] 
+Comparación con resultados previos:
+[   8.2m]   Retirado (prior MIRA 67.037, 100w×25k): H₀ = 66.53 ± 0.44
+[   8.2m]   ESTE (prior H_glob 67.962±0.968, 100w×25k): H₀ = 67.824 ± 0.413
+[   8.2m] 
+  DESI-puro: falta results/logs/h0_four_priors.json (correr ssee_h0_prior_experiment.py)
+[   8.2m] 
+Figura: results/figures/fig_corner_ssee_halg_prior.pdf
+[   8.2m] Cadena: /mnt/datos/SSEE_data/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz
+[   8.2m] Tiempo total: 8.2 min

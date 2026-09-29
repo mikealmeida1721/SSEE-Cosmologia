@@ -248,8 +248,8 @@ if dist_from_planck < dist_from_ssee - 0.2:
     print(f"  → DESI puro prefiere H₀ ≈ {flat_H0:.2f}, MÁS CERCA de Planck que de SSEE-alg")
     print(f"    H_glob está en tensión observacional ({dist_from_ssee/SIG_H0_GLOBAL:.1f}σ)")
 elif dist_from_ssee < dist_from_planck - 0.2:
-    print(f"  → DESI puro prefiere H₀ ≈ {flat_H0:.2f}, MÁS CERCA de SSEE-alg que de Planck")
-    print(f"    SSEE-alg gana sin necesidad de prior — predicción robusta")
+    print(f"  → DESI puro prefiere H₀ ≈ {flat_H0:.2f}, MÁS CERCA de H_glob que de Planck")
+    print(f"    H_glob de SSEE gana sin necesidad de prior — predicción robusta")
 else:
     print(f"  → DESI puro: H₀ ≈ {flat_H0:.2f}, ambiguo entre Planck y SSEE-alg")
     print(f"    Los datos no discriminan, el prior decide.")
