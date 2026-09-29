@@ -43,9 +43,20 @@ LIBRES
                |S8_nuestro - 0.86| < 2 sigma_nuestro, con sigma_nuestro del
                perfil (Delta = 1). Circularidad parcial declarada: la relacion
                CR-M se ajusto junto con SU cosmologia LCDM.
-NO modela: contaminacion (~6 %), variacion de N_H y fondo sobre el cielo,
-dispersion del z fotometrico. Se declaran.
-Salida: results/logs/erosita_cr.json
+TERCER INTENTO (2026-09-29, plan de Mike: arreglar el sistematico). Anade:
+  (a) RUIDO DE MEDIDA de la tasa de cuentas: sigma_med(lnCR), MEDIDO del
+      propio catalogo con CR500_L/H_NH0 (mediana por casilla de log CR); se
+      suma en cuadratura a sigma_X: sigma_tot(x) = sqrt(sigma_X^2 + sigma_med(x)^2).
+  (b) CONTAMINACION: la pureza de la muestra (94 %, LEIDA del .tex de
+      Ghirardini+2024) divide los conteos esperados. Simplificacion declarada:
+      los contaminantes se reparten como los cumulos (ellos usan un modelo de
+      mezcla con la riqueza, que no es publico).
+  CRITERIO, declarado ANTES de correr: el calibrador LCDM libre tiene que dar
+  |S8 - 0.86| < 1 sigma_nuestro y el minimo fuera del borde de la rejilla. Si
+  no, eROSITA queda BLOQUEADA (sin seleccion oficial no se puede) y se para.
+NO modela: variacion de N_H y fondo sobre el cielo, dispersion del z
+fotometrico. Se declaran.
+Salida: results/logs/erosita_cr_v3.json (el segundo intento sigue en erosita_cr.json)
 Uso: /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_cr.py
 """
 import json
@@ -66,7 +77,7 @@ import erosita_conteos as EC  # noqa: E402  (cosmologias y lectura de Ghirardini
 E = "/mnt/datos/SSEE_data/erosita"
 TEX_G = f"{E}/paper_ghirardini2024/48852corr.tex"
 LOGS = os.path.join(_R, "results", "logs")
-OUT = os.path.join(LOGS, "erosita_cr.json")
+OUT = os.path.join(LOGS, "erosita_cr_v3.json")
 Z_BORDES = np.round(np.arange(0.1, 0.8001, 0.1), 4)   # ORIGEN-VALOR: 0.1-0.8 — rango de la muestra de cosmologia (Ghirardini+2024 sec. 2)
 LCR_BORDES = np.arange(-2.0, 1.5001, 0.25)              # ORIGEN-VALOR: 1.5001 — tope de arange para que 1.5 entre; casillas en log10 CR, cubren el 99 % de la muestra
 LNM = np.linspace(np.log(5e12), np.log(5e15), 70)       # ORIGEN-VALOR: 5e12-5e15 Msun — rango de integracion de Ghirardini+2024 (su sec. 4)
@@ -88,6 +99,27 @@ def tabla_ghirardini():
     out["CRp"], out["Mp"], out["zp"] = float(piv.group(1)), float(piv.group(2)) * 10 ** int(piv.group(3)), float(piv.group(4))
     out["area"] = float(re.search(r"over an area of (\d+)~deg", t).group(1))
     return out
+
+
+def ruido_medida():
+    """sigma de ln CR medida, por casilla de log10 CR, del propio catalogo."""
+    from astropy.io import fits
+    c = fits.getdata(f"{E}/erass1/erass1cl_cosmology_v1.1.fits", 1)
+    cr, lo, hi = (c[k].astype(float) for k in ("CR500_NH0", "CR500_L_NH0", "CR500_H_NH0"))
+    m = (cr > 0) & (lo > 0) & (hi > lo)
+    s = 0.5 * (np.log(hi[m]) - np.log(lo[m]))
+    lc = np.log10(cr[m])
+    cen, med = [], []
+    for a, b in zip(LCR_BORDES[:-1], LCR_BORDES[1:]):
+        k = (lc >= a) & (lc < b)
+        if k.sum() >= 10:                                   # ORIGEN-VALOR: 10 — minimo de cumulos para una mediana estable
+            cen.append(0.5 * (a + b)); med.append(float(np.median(s[k])))
+    return np.array(cen), np.array(med)
+
+
+def pureza():
+    t = open(TEX_G).read()
+    return float(re.search(r"purity of this sample is at the level of (\d+)\\%", t).group(1)) / 100
 
 
 def datos():
@@ -152,8 +184,9 @@ def seleccion():
 
 # ── piezas por cosmologia ───────────────────────────────────────────────────
 class Modelo:
-    def __init__(self, cosmo, zobs, crobs, sel, G, area):
+    def __init__(self, cosmo, zobs, crobs, sel, G, area, ruido=None, pur=1.0):
         import pyccl as ccl
+        self.pur = pur
         lcr_s, C_s = sel
         zs = []
         for i in range(len(Z_BORDES) - 1):
@@ -179,6 +212,8 @@ class Modelo:
                              + 0.25 / NSUB / 2 for j in range(len(LCR_BORDES) - 1)])
         self.dlncr = 0.25 / NSUB * np.log(10)
         self.S = np.interp(self.lcr, lcr_s, C_s)
+        # ruido de medida en cada subpunto de CR observado (0 si no se da)
+        self.smed2 = (np.interp(self.lcr, *ruido) ** 2) if ruido is not None else np.zeros_like(self.lcr)
         self.omega = area * EC.DEG2_SR
         self.n = np.histogram2d(zobs, np.log10(crobs), bins=[Z_BORDES, LCR_BORDES])[0]
 
@@ -188,12 +223,13 @@ class Modelo:
         mu = (self.lnCRp + lnA + bX[..., None] * self.lnMM[None, None, :]
               - 2 * self.ldL[..., None] + 2 * self.lE[..., None] + Gx * self.l1z[..., None])
         x = self.lcr * np.log(10)                                        # (cb, cs) en ln
-        g = np.exp(-0.5 * ((x[None, None, :, :, None] - mu[:, :, None, None, :]) / sig) ** 2) \
-            / (math.sqrt(2 * math.pi) * sig)
+        st = np.sqrt(sig ** 2 + self.smed2)[None, None, :, :, None]           # sigma_X (+) medida
+        g = np.exp(-0.5 * ((x[None, None, :, :, None] - mu[:, :, None, None, :]) / st) ** 2) \
+            / (math.sqrt(2 * math.pi) * st)
         dlnM = LNM[1] - LNM[0]
         integ = (g * self.dndlnM[:, :, None, None, :]).sum(-1) * dlnM    # (zb,zs,cb,cs)
         integ = (integ * self.S[None, None]).sum(-1) * self.dlncr         # (zb,zs,cb)
-        return (integ * self.dVdz[:, :, None]).sum(1) * self.dz * self.omega
+        return (integ * self.dVdz[:, :, None]).sum(1) * self.dz * self.omega / self.pur
 
     def desviacion(self, th):
         mu = np.maximum(self.esperado(th), 1e-30)
@@ -230,21 +266,44 @@ def ajusta(mod, G, x0=None):
                 n_obs=float(mod.n.sum()), n_esp=float(mod.esperado(th).sum()), x=th)
 
 
+_W = {}
+
+
+def _nodo(args):
+    """un nodo de la rejilla LCDM libre (para repartir en procesos)."""
+    om, la = args
+    z, cr, lcr, C, G, ru, pur = (_W[k] for k in ("z", "cr", "lcr", "C", "G", "ru", "pur"))
+    cos = EC.cosmologia("lcdm_libre", Om=float(om), logA=float(la))
+    mod = Modelo(cos, z, cr, (lcr, C), G, G["area"], ruido=ru, pur=pur)
+    r = ajusta(mod, G)
+    s8 = float(__import__("pyccl").sigma8(cos)) * math.sqrt(om / 0.3)
+    print(f"    Om {om:.3f} logA {la:.3f} S8 {s8:.3f}  total {r['total']:9.2f}", flush=True)
+    return dict(Om=float(om), logA=float(la), S8=s8, total=r["total"], desviacion=r["desviacion"],
+                nuisance=r["nuisance"])
+
+
 def main():
+    from multiprocessing import Pool
     from scipy.stats import chi2 as chi2d, norm
     G = tabla_ghirardini()
     z, cr, _ = datos()
     lcr, C, info = seleccion()
+    ru, pur = ruido_medida(), pureza()
+    print(f"  ruido de medida sigma(lnCR): " + ", ".join(f"{10**a:.2g}:{b:.3f}" for a, b in zip(*ru))
+          + f"   pureza {pur:.2f}")
     print(f"  seleccion: nu50 = {info['nu50_fotones']:.1f} fotones, T0 = {info['T0']:.1f} s, "
           f"footprint {info['area_celdas']:.0f} deg2 en celdas (publicado {G['area']:.0f})")
     gh = EC.ghirardini()
     nb = (len(Z_BORDES) - 1) * (len(LCR_BORDES) - 1)
-    res = dict(fecha="2026-09-27", n_cumulos=int(len(z)), area_deg2=G["area"],
+    res = dict(fecha="2026-09-29", n_cumulos=int(len(z)), area_deg2=G["area"],
                seleccion=info, previos_ghirardini={k: G[k] for k in ("A", "B", "F", "G", "sig")},
-               casillas=nb, ghirardini=gh, casos={})
+               casillas=nb, ghirardini=gh, casos={},
+               ruido_medida=dict(log10CR=ru[0].tolist(), sigma_lnCR=ru[1].tolist(),
+                                 fuente="CR500_L/H_NH0 del catalogo de cosmologia"),
+               pureza=dict(valor=pur, fuente="Ghirardini+2024 .tex, «purity ... at the level of 94%»"))
 
     def caso(nombre, cosmo, libres):
-        mod = Modelo(cosmo, z, cr, (lcr, C), G, G["area"])
+        mod = Modelo(cosmo, z, cr, (lcr, C), G, G["area"], ruido=ru, pur=pur)
         r = ajusta(mod, G)
         gl = nb - libres
         pte = float(chi2d.sf(r["desviacion"], gl))
@@ -262,16 +321,10 @@ def main():
     # LCDM libre: rejilla (Omega_m, logA), nuisance minimizados en cada nodo
     oms = np.linspace(0.20, 0.44, 9)                 # ORIGEN-VALOR: rejilla de busqueda del calibrador
     las = np.linspace(2.70, 3.40, 9)                 # ORIGEN-VALOR: rejilla de busqueda del calibrador
-    rej = []
-    for om in oms:
-        for la in las:
-            cos = EC.cosmologia("lcdm_libre", Om=float(om), logA=float(la))
-            mod = Modelo(cos, z, cr, (lcr, C), G, G["area"])
-            r = ajusta(mod, G)
-            s8 = float(__import__("pyccl").sigma8(cos)) * math.sqrt(om / 0.3)
-            rej.append(dict(Om=float(om), logA=float(la), S8=s8, total=r["total"],
-                            desviacion=r["desviacion"]))
-            print(f"    Om {om:.3f} logA {la:.3f} S8 {s8:.3f}  total {r['total']:9.2f}", flush=True)
+    _W.update(z=z, cr=cr, lcr=lcr, C=C, G=G, ru=ru, pur=pur)
+    nproc = int(os.environ.get("NUCLEOS", "1"))
+    with Pool(nproc) as pool:                        # fork: los procesos heredan _W
+        rej = pool.map(_nodo, [(om, la) for om in oms for la in las])
     tot = np.array([x["total"] for x in rej])
     k = int(tot.argmin())
     s8s = np.array([x["S8"] for x in rej])
@@ -279,11 +332,11 @@ def main():
     lo, hi = float(s8s[dentro].min()), float(s8s[dentro].max())
     borde = rej[k]["Om"] in (oms[0], oms[-1]) or rej[k]["logA"] in (las[0], las[-1])
     sig_nuestro = max(0.5 * (hi - lo), 1e-3)
-    pasa = abs(rej[k]["S8"] - gh["S8"]) < 2 * sig_nuestro and not borde
+    pasa = abs(rej[k]["S8"] - gh["S8"]) < 1 * sig_nuestro and not borde     # 1 sigma: criterio del tercer intento
     res["lcdm_libre"] = dict(rejilla=rej, mejor=rej[k], S8_banda_1sigma=[lo, hi],
                              sigma_S8=sig_nuestro, en_borde=bool(borde),
                              calibrador_pasa=bool(pasa),
-                             criterio="|S8-0.86|<2 sigma_nuestro y minimo fuera del borde (declarado antes)")
+                             criterio="|S8-0.86|<1 sigma_nuestro y minimo fuera del borde (declarado antes, tercer intento)")
     print(f"  CALIBRADOR LCDM libre: S8 = {rej[k]['S8']:.3f} [{lo:.3f}, {hi:.3f}] vs Ghirardini "
           f"{gh['S8']}±{gh['S8_err']}  borde={borde}  -> {'PASA' if pasa else 'NO PASA'}")
     for nom in ("ssee", "lcdm_planck"):
