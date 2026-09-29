@@ -285,7 +285,7 @@ def cross_validation():
             H0, = params
             om_h2 = WM_ALG                        # ω_m algebraico FIJO (R25)
             Om, w0, wa = WM_ALG/(H0/100)**2, W0_SSEE, WA_SSEE   # Ω_m DERIVADO
-            ob_h2 = 0.02237
+            ob_h2 = _C.OMEGA_B_H2                 # ω_b ALGEBRAICO de SSEE (2026-09-28; era 0.02237 tecleado, el de Planck)
             pred  = predict_subset(H0, ob_h2, om_h2, E_cpl, (Om, w0, wa), idx_train)
         elif model == "lcdm":
             H0, Om = params
@@ -306,7 +306,7 @@ def cross_validation():
             H0, = params
             om_h2 = WM_ALG                        # ω_m algebraico FIJO (R25)
             Om, w0, wa = WM_ALG/(H0/100)**2, W0_SSEE, WA_SSEE   # Ω_m DERIVADO
-            ob_h2 = 0.02237
+            ob_h2 = _C.OMEGA_B_H2                 # ω_b ALGEBRAICO de SSEE (2026-09-28; era 0.02237 tecleado, el de Planck)
             pred  = predict_subset(H0, ob_h2, om_h2, E_cpl, (Om, w0, wa), idx_test)
         elif model == "lcdm":
             H0, Om = params

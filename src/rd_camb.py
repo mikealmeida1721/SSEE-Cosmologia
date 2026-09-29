@@ -37,7 +37,7 @@ _LOG_CTRL = os.path.join(_R, "results", "logs", "rd_camb_control.json")
 # canario R14 del guardian evalua el sector 0.160 (w_m ~ 0.05). Fuera de la
 # rejilla la funcion FALLA en voz alta: un spline no extrapola en silencio.
 WB = np.linspace(0.010, 0.035, 26)       # ORIGEN-VALOR: 0.010-0.035 — contiene el prior de w_b de los MCMC de P2 (0.015-0.030)
-WM = np.linspace(0.040, 0.260, 45)       # ORIGEN-VALOR: 0.040-0.260 — contiene el canario R14 y el recorrido LCDM de P2
+WM = np.linspace(0.030, 0.400, 75)       # ORIGEN-VALOR: 0.030-0.400 — paso 0.005 como antes; 2026-09-28 se amplió desde 0.040-0.260 porque el minimizador ΛCDM/CPL de savage_cv llega a w_m = 0.0375
 _SPL = {}
 
 
