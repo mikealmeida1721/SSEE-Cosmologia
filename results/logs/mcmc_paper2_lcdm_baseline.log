@@ -223,3 +223,151 @@ Burn-in 5000 steps...
 [  27.3m]                           ΔBIC = -230.028  (>0 favorece SSEE)
 [  27.3m] 
 Tiempo total: 27.3 min
+[   0.0m] ======================================================================
+[   0.0m] ΛCDM BASELINE — MCMC PRODUCCIÓN (para ΔBIC vs SSEE-MIRA)
+[   0.0m] ======================================================================
+[   0.0m] 
+Burn-in 5000 steps...
+[   6.5m] Producción...
+[   7.2m]   500/25000 steps  accept=0.645
+[   7.8m]   1000/25000 steps  accept=0.645
+[   8.5m]   1500/25000 steps  accept=0.646
+[   9.1m]   2000/25000 steps  accept=0.646
+[   9.8m]   2500/25000 steps  accept=0.647
+[  10.4m]   3000/25000 steps  accept=0.646
+[  11.1m]   3500/25000 steps  accept=0.646
+[  11.7m]   4000/25000 steps  accept=0.646
+[  12.4m]   4500/25000 steps  accept=0.647
+[  13.0m]   5000/25000 steps  accept=0.646
+[  13.7m]   5500/25000 steps  accept=0.646
+[  14.3m]   6000/25000 steps  accept=0.646
+[  15.0m]   6500/25000 steps  accept=0.646
+[  15.7m]   7000/25000 steps  accept=0.646
+[  16.3m]   7500/25000 steps  accept=0.646
+[  17.0m]   8000/25000 steps  accept=0.646
+[  17.7m]   8500/25000 steps  accept=0.646
+[  18.4m]   9000/25000 steps  accept=0.647
+[  19.1m]   9500/25000 steps  accept=0.646
+[  19.7m]   10000/25000 steps  accept=0.647
+[  20.4m]   10500/25000 steps  accept=0.646
+[  21.1m]   11000/25000 steps  accept=0.646
+[  21.8m]   11500/25000 steps  accept=0.646
+[  22.5m]   12000/25000 steps  accept=0.646
+[  23.0m]   12500/25000 steps  accept=0.646
+[  23.7m]   13000/25000 steps  accept=0.646
+[  24.4m]   13500/25000 steps  accept=0.646
+[  25.1m]   14000/25000 steps  accept=0.646
+[  25.9m]   14500/25000 steps  accept=0.646
+[  26.6m]   15000/25000 steps  accept=0.646
+[  27.3m]   15500/25000 steps  accept=0.646
+[  28.1m]   16000/25000 steps  accept=0.646
+[  28.8m]   16500/25000 steps  accept=0.646
+[  29.6m]   17000/25000 steps  accept=0.646
+[  30.4m]   17500/25000 steps  accept=0.646
+[  31.2m]   18000/25000 steps  accept=0.646
+[  32.0m]   18500/25000 steps  accept=0.646
+[  32.8m]   19000/25000 steps  accept=0.646
+[  33.6m]   19500/25000 steps  accept=0.646
+[  34.2m]   20000/25000 steps  accept=0.646
+[  35.0m]   20500/25000 steps  accept=0.646
+[  35.8m]   21000/25000 steps  accept=0.646
+[  36.5m]   21500/25000 steps  accept=0.646
+[  37.3m]   22000/25000 steps  accept=0.646
+[  38.2m]   22500/25000 steps  accept=0.646
+[  39.2m]   23000/25000 steps  accept=0.646
+[  40.1m]   23500/25000 steps  accept=0.646
+[  41.0m]   24000/25000 steps  accept=0.646
+[  42.0m]   24500/25000 steps  accept=0.646
+[  42.9m]   25000/25000 steps  accept=0.646
+[  43.2m] 
+======================================================================
+[  43.2m] ΛCDM BASELINE — RESULTADO
+[  43.2m] ======================================================================
+[  43.2m]   H₀     = 68.3867 ± 0.2772
+[  43.2m]   Ω_m    = 0.30213 ± 0.00426
+[  43.2m]   Ω_b·h² = 0.02232
+[  43.2m]   ln P_MAP = -8.001
+[  43.2m]   τ_max = 38.8    N_eff ≈ 64447
+[  43.2m]   acceptance = 0.646
+[  43.2m] 
+  BIC (k=3, N=16): 24.320
+[  43.2m] 
+  Para ΔBIC vs SSEE-MIRA: SSEE_BIC = 253.435 (k=2, N=15)
+[  43.2m]                           ΛCDM_BIC = 24.320 (k=3, N=16)
+[  43.2m]                           ΔBIC = -229.115  (>0 favorece SSEE)
+[  43.2m] 
+Tiempo total: 43.2 min
+[   0.0m] ======================================================================
+[   0.0m] ΛCDM BASELINE — MCMC PRODUCCIÓN (para ΔBIC vs SSEE-MIRA)
+[   0.0m] ======================================================================
+[   0.0m] 
+Burn-in 5000 steps...
+[   6.3m] Producción...
+[   7.0m]   500/25000 steps  accept=0.644
+[   7.6m]   1000/25000 steps  accept=0.645
+[   8.2m]   1500/25000 steps  accept=0.644
+[   8.9m]   2000/25000 steps  accept=0.644
+[   9.5m]   2500/25000 steps  accept=0.644
+[  10.1m]   3000/25000 steps  accept=0.645
+[  10.8m]   3500/25000 steps  accept=0.645
+[  11.4m]   4000/25000 steps  accept=0.645
+[  12.0m]   4500/25000 steps  accept=0.645
+[  12.7m]   5000/25000 steps  accept=0.646
+[  13.3m]   5500/25000 steps  accept=0.646
+[  14.0m]   6000/25000 steps  accept=0.646
+[  14.6m]   6500/25000 steps  accept=0.646
+[  15.3m]   7000/25000 steps  accept=0.646
+[  15.9m]   7500/25000 steps  accept=0.647
+[  16.6m]   8000/25000 steps  accept=0.647
+[  17.3m]   8500/25000 steps  accept=0.646
+[  17.9m]   9000/25000 steps  accept=0.646
+[  18.6m]   9500/25000 steps  accept=0.647
+[  19.3m]   10000/25000 steps  accept=0.646
+[  19.9m]   10500/25000 steps  accept=0.647
+[  20.6m]   11000/25000 steps  accept=0.646
+[  21.3m]   11500/25000 steps  accept=0.647
+[  22.0m]   12000/25000 steps  accept=0.647
+[  22.7m]   12500/25000 steps  accept=0.647
+[  23.4m]   13000/25000 steps  accept=0.647
+[  24.2m]   13500/25000 steps  accept=0.647
+[  24.9m]   14000/25000 steps  accept=0.647
+[  25.6m]   14500/25000 steps  accept=0.647
+[  26.3m]   15000/25000 steps  accept=0.647
+[  27.1m]   15500/25000 steps  accept=0.647
+[  27.8m]   16000/25000 steps  accept=0.647
+[  28.6m]   16500/25000 steps  accept=0.647
+[  29.4m]   17000/25000 steps  accept=0.647
+[  30.2m]   17500/25000 steps  accept=0.647
+[  31.0m]   18000/25000 steps  accept=0.647
+[  31.8m]   18500/25000 steps  accept=0.647
+[  32.6m]   19000/25000 steps  accept=0.647
+[  33.4m]   19500/25000 steps  accept=0.647
+[  34.2m]   20000/25000 steps  accept=0.647
+[  35.0m]   20500/25000 steps  accept=0.647
+[  35.9m]   21000/25000 steps  accept=0.647
+[  36.8m]   21500/25000 steps  accept=0.647
+[  37.5m]   22000/25000 steps  accept=0.647
+[  38.4m]   22500/25000 steps  accept=0.647
+[  39.2m]   23000/25000 steps  accept=0.647
+[  39.8m]   23500/25000 steps  accept=0.647
+[  40.5m]   24000/25000 steps  accept=0.647
+[  41.2m]   24500/25000 steps  accept=0.647
+[  41.9m]   25000/25000 steps  accept=0.647
+[  42.3m] 
+======================================================================
+[  42.3m] ΛCDM BASELINE — RESULTADO
+[  42.3m] ======================================================================
+[  42.3m]   H₀     = 68.3873 ± 0.2779
+[  42.3m]   Ω_m    = 0.30220 ± 0.00425
+[  42.3m]   Ω_b·h² = 0.02233
+[  42.3m]   ln P_MAP = -8.001
+[  42.3m]   τ_max = 38.7    N_eff ≈ 64674
+[  42.3m]   acceptance = 0.647
+[  42.3m] 
+  BIC (k=3, N=16): 24.320
+[  42.3m] 
+  Para ΔBIC vs SSEE (mcmc_paper2_reframe.json): SSEE_BIC = 16.494 (k=2, N=15)
+[  42.3m]                           ΛCDM_BIC = 24.320 (k=3, N=16)
+[  42.3m]                           ΔBIC = +7.827  (>0 favorece SSEE; N distinto, orientativo)
+[  42.3m] 
+Tiempo total: 42.3 min

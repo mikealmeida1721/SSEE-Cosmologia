@@ -97,8 +97,14 @@ _sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(
 from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
 
 
-def sound_horizon_rd(ob_h2, om_h2):
-    return _rd_camb(ob_h2, om_h2, mnu=None)  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
+def sound_horizon_rd(ob_h2, om_h2, mnu=None):
+    # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta. mnu=None = la de SSEE;
+    # LCDM y CPL pasan la SUYA (0.06, lcdm_planck.py) desde 2026-09-29: antes usaban la de SSEE.
+    return _rd_camb(ob_h2, om_h2, mnu=mnu)
+
+
+_reloc_sys.path.insert(0, _reloc_os.path.join(_reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__))), "p11_sondas"))
+_MNU_LCDM = __import__("lcdm_planck").LCDM_PLANCK["mnu"]
 
 # ─────────────────────────────────────────────────────────────
 # 3. DATOS
@@ -164,8 +170,8 @@ def predict_desi(H0, rd, E_func, *Eargs):
         else:                preds.append((z*dm**2*dh)**(1/3) / rd)
     return np.array(preds)
 
-def ll_bao_full(H0, om_h2, ob_h2, E_func, *Eargs):
-    rd = sound_horizon_rd(ob_h2, om_h2)
+def ll_bao_full(H0, om_h2, ob_h2, E_func, *Eargs, mnu=None):
+    rd = sound_horizon_rd(ob_h2, om_h2, mnu=mnu)
     r  = predict_desi(H0, rd, E_func, *Eargs) - DESI_OBS
     return -0.5 * (r @ DESI_COV_INV @ r)
 
@@ -199,7 +205,7 @@ def lpost_lcdm(theta):
     if not (0.15 < Om < 0.55): return -np.inf
     if not (0.015 < ob_h2 < 0.030): return -np.inf
     om_h2 = Om*(H0/100)**2
-    return ll_planck(H0, Om, ob_h2) + ll_bao_full(H0, om_h2, ob_h2, E_lcdm, Om)
+    return ll_planck(H0, Om, ob_h2) + ll_bao_full(H0, om_h2, ob_h2, E_lcdm, Om, mnu=_MNU_LCDM)
 
 def lpost_cpl(theta):
     H0, Om, w0, wa, ob_h2 = theta
@@ -211,7 +217,7 @@ def lpost_cpl(theta):
     om_h2 = Om*(H0/100)**2
     lp = ll_planck(H0, Om, ob_h2)
     lp += -0.5*((w0+1.0)/0.5)**2 - 0.5*(wa/1.0)**2
-    return lp + ll_bao_full(H0, om_h2, ob_h2, E_cpl, Om, w0, wa)
+    return lp + ll_bao_full(H0, om_h2, ob_h2, E_cpl, Om, w0, wa, mnu=_MNU_LCDM)
 
 # ─────────────────────────────────────────────────────────────
 # 6. MCMC CON GUARDADO INCREMENTAL
@@ -354,8 +360,9 @@ for r in models:
 # Tensiones
 def get_rd(r):
     H0 = r["medians"][0]; ob = r["medians"][-1]
-    Om = OM_GEOM if r["label"]=="SSEE" else r["medians"][1]
-    return sound_horizon_rd(ob, Om*(H0/100)**2)
+    if r["label"] == "SSEE":                       # ω_m algebraico (R25), no Ω_m congelado
+        return sound_horizon_rd(ob, WM_ALG)
+    return sound_horizon_rd(ob, r["medians"][1]*(H0/100)**2, mnu=_MNU_LCDM)
 
 rd_ssee = get_rd(res_ssee); rd_lcdm = get_rd(res_lcdm)
 H0_s    = res_ssee["medians"][0]; H0_s_std = res_ssee["stds"][0]
