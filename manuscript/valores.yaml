@@ -1,0 +1,12 @@
+# De que log y de que clave sale cada numero que citan los papers.
+# Lo lee src/valores_tex.py y escribe valores_generados.tex (\val{nombre}).
+# Solo se admiten logs de la cadena de procedencia (dvc.yaml, con lock y acta).
+S8_b1_ssee:        {fuente: "results/logs/s8_desde_b1.json#filas.SSEE.S8", formato: ".4f"}
+S8_b1_ssee_sigma:  {fuente: "results/logs/s8_desde_b1.json#filas.SSEE.S8_sigma", formato: ".4f"}
+logA_b1_ssee:      {fuente: "results/logs/s8_desde_b1.json#filas.SSEE.logA", formato: ".3f"}
+logA_b1_ssee_sigma: {fuente: "results/logs/s8_desde_b1.json#filas.SSEE.logA_sigma", formato: ".3f"}
+tension_b1_ssee:   {fuente: "results/logs/s8_desde_b1.json#filas.SSEE.tension_kids", formato: ".2f"}
+S8_b1_lcdm:        {fuente: "results/logs/s8_desde_b1.json#filas.LCDM.S8", formato: ".4f"}
+S8_b1_lcdm_sigma:  {fuente: "results/logs/s8_desde_b1.json#filas.LCDM.S8_sigma", formato: ".4f"}
+logA_b1_lcdm:      {fuente: "results/logs/s8_desde_b1.json#filas.LCDM.logA", formato: ".3f"}
+tension_b1_lcdm:   {fuente: "results/logs/s8_desde_b1.json#filas.LCDM.tension_kids", formato: ".2f"}

@@ -96,9 +96,10 @@ def con_acta(res, script, entradas=()):
     return out
 
 
-def cabecera(script, entradas=()):
-    """Primera linea de un log de texto: el acta en una sola linea JSON."""
-    return MARCA + json.dumps(acta(script, entradas), ensure_ascii=False)
+def cabecera(script, entradas=(), comentario="#"):
+    """Primera linea de un log de texto: el acta en una sola linea JSON.
+    `comentario="%"` para archivos LaTeX (un «#» suelto rompe la compilacion)."""
+    return comentario + MARCA[1:] + json.dumps(acta(script, entradas), ensure_ascii=False)
 
 
 def lee_acta(ruta):
@@ -108,7 +109,7 @@ def lee_acta(ruta):
         if p.suffix == ".json":
             return json.loads(p.read_text()).get("_procedencia")
         for ln in p.read_text(errors="ignore").splitlines()[:50]:
-            if ln.startswith(MARCA):
+            if ln.startswith(MARCA) or ln.startswith("%" + MARCA[1:]):
                 return json.loads(ln[len(MARCA):])
     except Exception:
         return None

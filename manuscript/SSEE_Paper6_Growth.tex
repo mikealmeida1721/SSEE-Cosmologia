@@ -49,6 +49,8 @@ on Raw Survey Data}}
 \date{July 2026 \quad (SSEE, Paper~6 of~10)}
 
 \sloppy
+% Numeros generados desde los logs de la cadena de procedencia (src/valores_tex.py)
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -385,9 +387,8 @@ $A_s$}, and the datasets do not agree with each other:
 $A_s$ determined by & $\log(10^{10}A_s)$ & $S_8$ & vs.\ published KiDS-1000$^\dagger$ \\
 \midrule
 raw KiDS-1000 $\xi_\pm$ (this work) & $2.863\pm0.051$ & $0.7555\pm0.0192$ & $0.11\sigma$ \\
-% ORIGEN: results/logs/s8_desde_b1.json (cadenas B1, full plik; filas SSEE y LCDM)
-\SSEE{} fit to raw Planck (full \texttt{plik}, B1 chains) & $3.042\pm0.013$ & $0.8261\pm0.0054$ & $2.73\sigma$ \\
-$\Lambda$CDM-fitted Planck value (borrowed) & $3.045$ & $0.8229\pm0.0059$ & $2.59\sigma$ \\
+\SSEE{} fit to raw Planck (full \texttt{plik}, B1 chains) & $\val{logA_b1_ssee}\pm\val{logA_b1_ssee_sigma}$ & $\val{S8_b1_ssee}\pm\val{S8_b1_ssee_sigma}$ & $\val{tension_b1_ssee}\sigma$ \\
+$\Lambda$CDM-fitted Planck value (borrowed) & $\val{logA_b1_lcdm}$ & $\val{S8_b1_lcdm}\pm\val{S8_b1_lcdm_sigma}$ & $\val{tension_b1_lcdm}\sigma$ \\
 \bottomrule
 \end{tabular}
 

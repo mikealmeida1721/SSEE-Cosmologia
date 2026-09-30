@@ -70,3 +70,23 @@ stages:
       hash: md5
       md5: ff35b27c1d223ec6f827d70f95215a47
       size: 1930
+  valores_tex:
+    cmd: .venv/bin/python3 src/valores_tex.py
+    deps:
+    - path: manuscript/valores.yaml
+      hash: md5
+      md5: 0a80d859a3b742d50e96c12c58e4904b
+      size: 1087
+    - path: results/logs/s8_desde_b1.json
+      hash: md5
+      md5: ff35b27c1d223ec6f827d70f95215a47
+      size: 1930
+    - path: src/valores_tex.py
+      hash: md5
+      md5: b755fbd8367ca4fb460492d29ba14fdd
+      size: 2641
+    outs:
+    - path: manuscript/valores_generados.tex
+      hash: md5
+      md5: fb74b1879bf26934acfc4c7eae82d75e
+      size: 1270

@@ -33,3 +33,12 @@ stages:
     outs:
       - results/logs/s8_desde_b1.json:
           cache: false
+  valores_tex:
+    cmd: .venv/bin/python3 src/valores_tex.py
+    deps:
+      - src/valores_tex.py
+      - manuscript/valores.yaml
+      - results/logs/s8_desde_b1.json
+    outs:
+      - manuscript/valores_generados.tex:
+          cache: false

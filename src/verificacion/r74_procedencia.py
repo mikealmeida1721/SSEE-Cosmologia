@@ -146,6 +146,8 @@ def barrido():
     pool = R.fuentes()
     res = {"logs": _logs_sin_script(), "canonical": _canonical_sin_fuente(), "papers": {}, "cajones": {}}
     for f in sorted((ROOT / "manuscript").glob("*.tex")) + sorted((ROOT / "submission_PRD").glob("*.tex")):
+        if f.name == "valores_generados.tex":
+            continue   # generado desde logs de la cadena: lo vigila R75 por hash y acta
         s = _sin_origen(f, pool, True)
         if s:
             res["papers"][str(f.relative_to(ROOT))] = s
