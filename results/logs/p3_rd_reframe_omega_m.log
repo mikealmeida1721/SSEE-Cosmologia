@@ -1,22 +1,9 @@
-preflight  [1/3] __pycache__ borrados: 56
-preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
-preflight  [3/3] ingredientes de esta corrida:
-             SUM_MNU_EV       = 0.068490000
-             OMEGA_B_H2       = 0.022417757
-             OMEGA_C_H2       = 0.119514408
-             OMEGA_NU_H2      = 0.000735345
-             OMEGA_M_H2       = 0.142667510
-             OMEGA_M_TOTAL    = 0.308880879
-             W0               = -0.839949771
-             WA               = -0.669974886
-             H0_ALG           = 67.962137323
-preflight  OK — luz verde para el cómputo
 === Fase B / P3 — r_d y θ* reframe ω_m-DIRECTO ===
 H0=67.9621  ombh2=0.02242  omch2=0.11951  mnu=0.06849
 -> omega_m=0.14267  Omega_m,CMB=0.30888  (sin factor; OP-8 cerrado)
 
 --- RESULTADO (0.0s) ---
-[anchor H_alg 67.962] r_d = 147.174 Mpc (0.32σ)  θ* = 0.59667° (100θ*=1.04139, 1.00σ)
-[posterior MCMC 67.7869] r_d = 147.174 Mpc (0.32σ)  θ* = 0.59638° (100θ*=1.04089, 0.68σ)
-(Planck: r_d=147.09±0.26 Mpc, 100θ*=1.04109±0.00030; 5.7s)
+[H_glob 67.962142] r_d = 147.174 Mpc (0.32σ)  θ* = 0.59667° (100θ*=1.04139, 1.00σ)
+[posterior MCMC 67.8244] r_d = 147.174 Mpc (0.32σ)  θ* = 0.59645° (100θ*=1.04099, 0.32σ)
+(Planck: r_d=147.09±0.26 Mpc, 100θ*=1.04109±0.00030; 42.5s)
 ___CORRIDA_OK___

@@ -43,31 +43,50 @@ def E(z, Om, w0, wa):
     de = 1.0 if (w0 == -1 and wa == 0) else f_de(z, w0, wa)
     return np.sqrt(Om * (1 + z) ** 3 + (1 - Om) * de)
 
-# ── MAP de las 3 cadenas ──────────────────────────────────────────────
-# FUENTE: results/logs/mcmc_paper2_3models_wmfix.log (2026-07-25).
-#
-# ACTUALIZADO 2026-09-08. Antes decia "jul-9" y usaba la cadena del 9 de
-# julio, que quedo SUPERADA el 25 por el fix R25 (Omega_m ya no se congela
-# dentro de E(z), se deriva por muestra). La figura llevaba 45 dias
-# construida sobre una cadena retirada. Solo la fila de SSEE se movia --- el
-# fix era de su prior---, pero se movia en dos sitios:
-#     H0  67.62   -> 67.52954     -0.13 %
-#     ob  0.02221 -> 0.02187      -1.5 %   (y ob entra en r_d)
-# LCDM y CPL cambian en el quinto decimal, o sea nada.
-#
-# Si estos numeros vuelven a moverse, la fuente es ese log: se leen de la
-# seccion final, no se re-teclean de memoria.
+# ── Punto de cada modelo: LEÍDO del log de la corrida de 3 modelos ─────────
+# FUENTE: results/logs/mcmc_paper2_3models_wmfix.log, sección «PARÁMETROS
+# POSTERIORES». (2026-09-29) Antes estos números iban TECLEADOS aquí y se
+# quedaron viejos cuando la corrida se rehizo con r_d de CAMB y la mν de cada
+# modelo (ΛCDM H0 68.27 → 68.39). Ahora se leen: un literal no se entera de
+# que su fuente cambió.
+# SSEE: ω_m ALGEBRAICO fijo y Ω_m = ω_m/h² DERIVADO (parametrización R25,
+# igual que lpost_ssee de ssee_paper2_mcmc.py). ΛCDM y CPL: su mν (0.06).
+from ssee_core import OMEGA_M_H2 as _WM_ALG, W0 as _W0, WA as _WA  # noqa: E402
+_sys_rd.path.insert(0, _os_rd.path.join(ROOT, "src", "p11_sondas"))
+_MNU_LCDM = __import__("lcdm_planck").LCDM_PLANCK["mnu"]
+
+
+def _lee_posteriores(ruta=os.path.join(ROOT, "results", "logs", "mcmc_paper2_3models_wmfix.log")):
+    import re
+    txt = open(ruta, encoding="utf-8").read().split("PARÁMETROS POSTERIORES")[1]
+    bloques = re.split(r"\[(SSEE|ΛCDM|CPL)\]", txt)
+    out = {}
+    for nom, cuerpo in zip(bloques[1::2], bloques[2::2]):
+        d = {}
+        for clave, pat in (("H0", r"H₀\s*=\s*([-0-9.]+)"), ("ob", r"Ω_b·h²\s*=\s*([-0-9.]+)"),
+                           ("Om", r"Ω_m\s+=\s*([-0-9.]+)"), ("w0", r"w₀\s+=\s*([-0-9.]+)"),
+                           ("wa", r"wₐ\s+=\s*([-0-9.]+)")):
+            m = re.search(pat, cuerpo)
+            if m:
+                d[clave] = float(m.group(1))
+        out[nom] = d
+    return out
+
+
+_P = _lee_posteriores()
 models = {
-    # R66-OK: no son constantes del nucleo sino el MAP de la cadena citada
-    # arriba; que Om coincida con el algebraico es RESULTADO del ajuste.
-    "SSEE":  dict(H0=67.52954, Om=0.30888, w0=-0.8399, wa=-0.6700,   # R66-OK
-                  ob=0.02187, c="#c0392b"),
-    r"$\Lambda$CDM": dict(H0=68.27099, Om=0.30338, w0=-1.0, wa=0.0, ob=0.02233, c="#2c6fbb"),
-    "CPL":   dict(H0=67.25676, Om=0.31664, w0=-0.82568, wa=-0.55689, ob=0.02238, c="#27ae60"),
+    "SSEE": dict(H0=_P["SSEE"]["H0"], Om=_WM_ALG / (_P["SSEE"]["H0"] / 100) ** 2, w0=_W0, wa=_WA,
+                 ob=_P["SSEE"]["ob"], wm=_WM_ALG, mnu=None, c="#c0392b"),
+    r"$\Lambda$CDM": dict(H0=_P["ΛCDM"]["H0"], Om=_P["ΛCDM"]["Om"], w0=-1.0, wa=0.0,
+                          ob=_P["ΛCDM"]["ob"], mnu=_MNU_LCDM, c="#2c6fbb"),
+    "CPL": dict(H0=_P["CPL"]["H0"], Om=_P["CPL"]["Om"], w0=_P["CPL"]["w0"], wa=_P["CPL"]["wa"],
+                ob=_P["CPL"]["ob"], mnu=_MNU_LCDM, c="#27ae60"),
 }
+print({k: {q: round(v, 5) for q, v in m.items() if q not in ("c",) and v is not None} for k, m in models.items()})
 
 def predict(z, quantity, m):
-    rd = rd_EH(m["Om"] * (m["H0"] / 100) ** 2, m["ob"])
+    wm = m.get("wm", m["Om"] * (m["H0"] / 100) ** 2)
+    rd = _rd_camb(m["ob"], wm, mnu=m["mnu"])
     DH = c / (m["H0"] * E(z, m["Om"], m["w0"], m["wa"]))
     DM = c * quad(lambda zz: 1 / (m["H0"] * E(zz, m["Om"], m["w0"], m["wa"])), 0, z)[0]
     if quantity.startswith("DV"):

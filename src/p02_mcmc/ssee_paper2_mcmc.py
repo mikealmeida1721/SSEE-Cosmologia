@@ -299,7 +299,10 @@ def load_ssee_from_checkpoint(label="SSEE"):
     }
 
 SSEE_CKPT = CHAIN_FILE.replace(".npz", "_SSEE_ckpt.npz")
-if os.path.exists(SSEE_CKPT):
+# (2026-09-29) La cadena guardada SOLO se reutiliza si se pide (REUSAR_SSEE=1). El 29-sep
+# la corrida cargó en silencio una cadena del 25 de julio (r_d por fórmula) y mezcló un
+# SSEE viejo con ΛCDM y CPL nuevos. Por defecto se re-corre.
+if os.path.exists(SSEE_CKPT) and os.environ.get("REUSAR_SSEE") == "1":
     log("Cadena SSEE encontrada. Cargando desde checkpoint...")
     res_ssee = load_ssee_from_checkpoint()
 else:

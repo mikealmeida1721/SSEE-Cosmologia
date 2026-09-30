@@ -4,8 +4,8 @@ Regenerador standalone de fig7_Hz_comparison y fig8_tension_summary (Paper 2).
 Lee las cadenas CORREGIDAS de 3 modelos (geometría total Ω_m=0.308881, ω_m-directo;
 el bug del sector frío 0.160 en E(z) quedó retirado, V-L4-DESI 2026-07-09) desde
 el .npz profesional en el HDD y reproduce las dos figuras con los valores canónicos:
-  fig7 : H(z) MAP vs Cosmic Chronometers  (χ²_r SSEE=0.482 ≈ ΛCDM 0.459)
-  fig8 : posteriores H0 (SSEE 67.95, 0.88σ Planck) + barras r_d MAP (148.2 ≈ ΛCDM)
+  fig7 : H(z) MAP vs Cosmic Chronometers  (los χ²_r se imprimen al correr)
+  fig8 : posteriores H0 de las 3 cadenas (prior Planck común) + barras r_d MAP (CAMB, mν de cada modelo)
 
 Uso: python src/p02_mcmc/regenerate_fig7_fig8_p2.py
 Salida: results/figures/fig7_Hz_comparison.{pdf,png}, fig8_tension_summary.{pdf,png}
@@ -35,8 +35,11 @@ def f_de_cpl(z, w0, wa):
     a = 1.0 / (1.0 + z)
     return (1 + z) ** (3 * (1 + w0 + wa)) * np.exp(-3 * wa * (1 - a))
 
-def E_ssee(z):
-    return np.sqrt(OM_GEOM * (1 + z) ** 3 + (1 - OM_GEOM) * f_de_cpl(z, W0_SSEE, WA_SSEE))
+def E_ssee(z, H0):
+    # R25 (corregido aquí 2026-09-29; el MCMC ya lo hacía desde el 07-25): ω_m algebraico
+    # FIJO y Ω_m = ω_m/h² DERIVADO por muestra, no congelado en 0.308881.
+    Om = WM_ALG / (H0 / 100) ** 2
+    return np.sqrt(Om * (1 + z) ** 3 + (1 - Om) * f_de_cpl(z, W0_SSEE, WA_SSEE))
 
 def E_lcdm(z, Om):
     return np.sqrt(Om * (1 + z) ** 3 + (1 - Om))
@@ -47,6 +50,8 @@ def E_cpl(z, Om, w0, wa):
 import os as _os_rd, sys as _sys_rd
 _sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), ".."))
 from rd_camb import rd_mpc as _rd_camb  # r_d de CAMB, una sola funcion (2026-09-28)
+_sys_rd.path.insert(0, _os_rd.path.join(_os_rd.path.dirname(_os_rd.path.abspath(__file__)), "..", "p11_sondas"))
+_MNU_LCDM = __import__("lcdm_planck").LCDM_PLANCK["mnu"]
 
 
 def sound_horizon_rd(ob_h2, om_h2):
@@ -71,7 +76,7 @@ map_ssee = ssee[np.argmax(ssee_lp)]   # [H0, ob_h2]
 map_lcdm = lcdm[np.argmax(lcdm_lp)]   # [H0, Om, ob_h2]
 map_cpl  = cpl[np.argmax(cpl_lp)]     # [H0, Om, w0, wa, ob_h2]
 
-def H_ssee(z): return map_ssee[0] * E_ssee(z)
+def H_ssee(z): return map_ssee[0] * E_ssee(z, map_ssee[0])
 def H_lcdm(z): return map_lcdm[0] * E_lcdm(z, map_lcdm[1])
 def H_cpl(z):  return map_cpl[0] * E_cpl(z, map_cpl[1], map_cpl[2], map_cpl[3])
 
@@ -98,7 +103,7 @@ for lab, Hf in [("SSEE", H_ssee), ("ΛCDM", H_lcdm), ("CPL", H_cpl)]:
 # banda 68% posterior SSEE
 rng = np.random.default_rng(0)
 idx_s = rng.integers(0, len(ssee), 400)
-H_band = np.array([ssee[i][0] * E_ssee(z_plot) for i in idx_s])
+H_band = np.array([ssee[i][0] * E_ssee(z_plot, ssee[i][0]) for i in idx_s])
 ax7.fill_between(z_plot, np.percentile(H_band, 16, 0), np.percentile(H_band, 84, 0),
                  color="#E6002B", alpha=0.15, label="SSEE 68% posterior")
 ax7.set_xlabel("Redshift $z$")
@@ -137,7 +142,8 @@ def rd_of(lab, m):
         H0, Om, ob = m[0], m[1], m[2]; om_h2 = Om * (H0 / 100) ** 2
     else:
         H0, Om, ob = m[0], m[1], m[4]; om_h2 = Om * (H0 / 100) ** 2
-    return sound_horizon_rd(ob, om_h2)
+    # cada modelo con SU mν (2026-09-29): SSEE la suya, ΛCDM y CPL la de Planck (0.06)
+    return _rd_camb(ob, om_h2, mnu=None if lab == "SSEE" else _MNU_LCDM)
 
 rd_vals = [rd_of(lab, m) for lab, _, m in chains]
 y_pos = np.arange(len(chains))

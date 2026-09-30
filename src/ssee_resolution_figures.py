@@ -31,16 +31,22 @@ os.makedirs(OUT, exist_ok=True)
 # Figure A — dual r_d
 # ════════════════════════════════════════════════════════════════════════════
 RD_BUG   = 175.6    # Mpc — CATEGORY ERROR: cold sector 1+w0=0.160 wrongly in geometry
-RD_CMB   = 147.17   # Mpc — SSEE physical value, total matter (Omega_m,CMB=0.308881, omega_m direct), CAMB
+# (2026-09-29) RD_CMB y RD_LCDM se CALCULAN con CAMB (rd_camb.py); antes iban tecleados
+# (147.17 y un 147.3 de Eisenstein-Hu). ΛCDM en los parámetros de Planck 2018 con SU mν.
+from ssee_core import OMEGA_B_H2 as _WB, OMEGA_M_H2 as _WM, SUM_MNU_EV as _SM, OMEGA_NU_H2 as _WNU  # noqa: E402
+from rd_camb import rd_mpc as _rd  # noqa: E402
+_s66.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'p11_sondas'))
+from lcdm_planck import LCDM_PLANCK as _LP  # noqa: E402
+RD_CMB   = _rd(_WB, _WM)   # Mpc — SSEE physical value, total matter (omega_m direct), CAMB
 RD_PLANCK, RD_PLANCK_ERR = 147.09, 0.26   # Mpc, Planck 2018
-RD_LCDM  = 147.3    # Mpc — LCDM Eisenstein-Hu at Omega_m = 0.315
+RD_LCDM  = _rd(_LP['ombh2'], _LP['ombh2'] + _LP['omch2'] + _LP['mnu'] * _WNU / _SM, mnu=_LP['mnu'])  # Mpc — ΛCDM-Planck, CAMB
 
 fig, ax = plt.subplots(figsize=(8.0, 4.2))
 
 bars = [
     (r'Category error' + '\n' + r'($1+w_0=0.160$ in geometry)', RD_BUG,  '#d6604d'),
     (r'SSEE physical' + '\n' + r'($\Omega_{m,\rm CMB}=0.308881$)',  RD_CMB,  '#1a9641'),
-    (r'$\Lambda$CDM (EH98,' + '\n' + r'$\Omega_m=0.315$)',            RD_LCDM,  '#4393c3'),
+    (r'$\Lambda$CDM (Planck 2018,' + '\n' + r'CAMB)',            RD_LCDM,  '#4393c3'),
 ]
 ypos = np.arange(len(bars))[::-1]
 for y, (lab, val, col) in zip(ypos, bars):

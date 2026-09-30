@@ -251,22 +251,26 @@ canonical:
   # ΔAIC=4.91 y H₀=67.62 — NO los valores de abajo. Los números eran correctos;
   # el puntero era el viejo, así que quien siguiera la fuente declarada habría
   # encontrado 5.68 y concluido que este archivo miente.
+  # ⚠ PROVISIONAL (2026-09-29): la corrida del 29 CARGÓ la cadena SSEE del 25 de julio (r_d por
+  # fórmula) en vez de re-correrla; ΛCDM y CPL sí son nuevos. Los valores de abajo NO se
+  # propagan hasta re-correr SSEE (en cola). Cadena vieja en superseded_ssee_ckpt_2026-07-25/.
   # RE-CORRIDO 2026-09-29 (commit 47614d2): r_d por CAMB y cada modelo con SU mν
   # (ΛCDM y CPL 0.06; antes usaban la de SSEE); r_d de SSEE con ω_m algebraico.
   #   H0: SSEE 67.53±0.35 (0.26σ Planck) · ΛCDM 68.39±0.28 · CPL 67.27±0.51
   #   ΔBIC(ΛCDM−SSEE)=+6.77, ΔBIC(CPL−SSEE)=+5.66 · ΔAIC +5.99/+3.35 (SSEE favorecido)
-  #   ΔDIC: PENDIENTE de re-correr dic_from_chains (su log es del 07-25, cadenas viejas)
-  #   Savage-Dickey B=18.15 (lnB=2.899, sin cambio; log phase_d_savage_cv_wmfix.log)
+  #   ΔDIC(SSEE−ΛCDM)=−5.49, ΔDIC(SSEE−CPL)=−2.81 (dic_from_chains.log, re-corrido 2026-09-29)
+  #   Savage-Dickey B=18.15 (lnB=2.899; ⚠ PROVISIONAL: leyó la cadena CPL de JULIO; se re-corre tras los 3 modelos)
   #   r_d(SSEE)=147.64 ≈ ΛCDM 147.59 (1.000)
   #   (lnB10=7.42 RETIRADO: era Laplace de una tabla huérfana, sin script vivo)
   #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35 (SSEE predice mejor).
   #   CPL: su ajuste de entrenamiento queda en el borde H0=50 — número NO válido, no se cita.
   H0_posterior_planckprior_km_s_Mpc: 67.53   # 3-modelos, prior Planck (para ΔBIC justo; R25)
-  deltaBIC_lcdm_minus_ssee: 6.77   # OJO: esta clave SI es LCDM − SSEE (lo dice
+  deltaBIC_lcdm_minus_ssee: 6.77   # ⚠ PROVISIONAL (SSEE de julio; ver arriba). OJO: esta clave SI es LCDM − SSEE (lo dice
                                    # su nombre), por eso >0 favorece SSEE. En los
                                    # papers se cita con la convencion comun:
                                    # Delta(SSEE−LCDM) = −6.77 (CPL: −5.66).
-  deltaDIC_ssee_minus_lcdm: -5.66  # <0 favorece SSEE (DIC 14.95 vs 20.61); log dic_from_chains.log
+  deltaDIC_ssee_minus_lcdm: -5.49  # ⚠ PROVISIONAL (SSEE de julio). <0 favorece SSEE (DIC 16.02 vs 21.51; CPL 18.83 → ΔDIC −2.81); log dic_from_chains.log
+                                   # re-corrido 2026-09-29 con las cadenas nuevas (era −5.66 / −4.02)
 
   # ── Fase B / B1 — likelihood COMPLETA de Planck ───────────────────────
   # plik TTTEEE full + lowl TT + lowl EE + lensing, con los ~20 nuisances
@@ -336,7 +340,8 @@ canonical:
   # log: results/logs/p3_rd_reframe_omega_m.log  (script run_p3_rd_reframe.py)
   # SALE DIRECTO sin mapping MIRA: la dicotomía vieja "175 puro / 147.6 mapped" se disuelve con OP-8.
   rd_reframe_Mpc:      147.17     # 0.32σ Planck (147.09±0.26); sin factor (era 147.6 MIRA-mapped)
-  theta_star_reframe:  1.04140    # 100θ* (Planck 1.04109±0.00030)
+  theta_star_reframe:  1.04139    # 100θ* en H_glob, 1.00σ (Planck 1.04109±0.00030); en el posterior 67.82: 1.04099, 0.32σ
+                                  # log p3_rd_reframe_omega_m.log re-corrido 2026-09-29 (era 1.04089/0.67σ en el posterior viejo)
   # Ancla CMB del reframe = H global. Con ω fijos, χ²_CMB se MINIMIZA en H_alg=67.962
   # log: results/logs/p3_h0anchor_reframe.log  (66.5→1214, 67.5→1021, 67.962→1005.5 mín, 68.5→1044)
   #      ↑ escaneo PREVIO (Σm_ν=0.06902 stale). La POSICIÓN del mínimo no se mueve
@@ -363,6 +368,11 @@ retired:
   - {pattern: "\\sigma=0.970",    reason: "σ de H_glob → 0.968"}
   - {pattern: "0.50\\sigma",       reason: "distancia vieja del posterior al ancla → 0.33σ de H_glob", requires: ["67.79", "anchor", "ancla", "h_alg", "h_{\\rm alg", "glob"]}
   - {pattern: "0.02207",          reason: "Ω_b h² posterior viejo → 0.02198"}
+  - {pattern: "1.04089",          reason: "100θ* en el posterior viejo 67.79 → 1.04099 (0.32σ) en 67.82"}
+  - {pattern: "5.66",             reason: "ΔDIC SSEE−ΛCDM viejo → −5.49 (OJO: 5.66 es hoy el ΔBIC de CPL)", requires: ["dic"]}
+  - {pattern: "4.02",             reason: "ΔDIC SSEE−CPL viejo → −2.81", requires: ["dic"]}
+  - {pattern: "14.95",            reason: "DIC SSEE viejo → 16.02", requires: ["dic"]}
+  - {pattern: "20.61",            reason: "DIC ΛCDM viejo → 21.51", requires: ["dic"]}
   - {pattern: "5.71 eV",   reason: "m_φ via Σm_ν×H_alg — dimensionalmente inválida"}
   - {pattern: "5.60 eV",   reason: "m_φ viejo (mismo ansatz retirado)"}
   - {pattern: "5.602",     reason: "m_φ viejo"}
