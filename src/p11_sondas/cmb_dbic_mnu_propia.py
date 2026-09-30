@@ -19,6 +19,9 @@ out = dict(fecha="2026-09-28", N=N, chi2_ssee=s["chi2_min"], k_ssee=s["k"],
            dchi2=s["chi2_min"] - l, dchi2_viejo=s["chi2_min"] - l_viejo["chi2_min"],
            dBIC=(s["chi2_min"] + s["k"] * math.log(N)) - (l + l_viejo["k"] * math.log(N)),
            dBIC_viejo=s["BIC"] - l_viejo["BIC"], params_lcdm=nuevo["params"])
+# Caso hiper-conservador que cita Paper 3: SSEE con k=4 (contando ω_b y H0 como si se ajustaran).
+out["dBIC_k4_conservador"] = out["dchi2"] + (4 - out["k_lcdm"]) * math.log(N)
+out["fecha"] = str(__import__("datetime").date.today())
 json.dump(out, open(f"{R}/results/logs/cmb_dbic_mnu_propia.json", "w"), indent=1)
-for k in ("N", "chi2_ssee", "chi2_lcdm_mnu006", "chi2_lcdm_viejo_mnu_ssee", "dchi2", "dchi2_viejo", "dBIC", "dBIC_viejo"):
+for k in ("N", "chi2_ssee", "chi2_lcdm_mnu006", "chi2_lcdm_viejo_mnu_ssee", "dchi2", "dchi2_viejo", "dBIC", "dBIC_viejo", "dBIC_k4_conservador"):
     print(f"  {k:26s} {out[k]}")

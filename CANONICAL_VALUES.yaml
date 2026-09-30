@@ -10,7 +10,7 @@
 # `memory_sync.py` revisa que ninguna memoria contradiga este archivo.
 # Correr:  .venv/bin/python3 src/verificacion/memory_sync.py
 #
-# Última actualización canónica: 2026-06-13
+# Última actualización canónica: 2026-09-29 (propagación H_glob / r_d CAMB / mν propia)
 #
 # ── CONVENCIÓN DE SIGNO DE LOS Δ (declarada UNA vez, vale para todo el archivo)
 #   Δ ≡ SSEE − ΛCDM.  NEGATIVO favorece a SSEE.
@@ -20,9 +20,9 @@
 #     delta_BIC_ssee_lcdm    = +2.65 − 4·ln(225)  = −19.01   (Δk = +4)
 #     delta_AIC_ssee_lcdm    = +2.65 − 2·4        = −5.35
 #     deltaBIC_cmb_plik_full = −2.474 − 3·ln(2354) = −25.766 (Δk = −3)
-#     Delta_BIC_CMB          = −0.183 − 4·ln(669)  = −26.21  (Δk = −4)
+#     Delta_BIC_CMB          = −0.0096 − 4·ln(669) = −26.03  (Δk = −4; ΛCDM con SU mν 0.06, 2026-09-28)
 #     Delta_BIC_CMB_fullplik = −1.81  − 4·ln(2354) = −32.9   (Δk = −4)
-#     deltaBIC_lcdm_minus_ssee = +6.43 ⟹ Δ(SSEE−ΛCDM) = −6.43
+#     deltaBIC_lcdm_minus_ssee = +6.77 ⟹ Δ(SSEE−ΛCDM) = −6.77
 #   Este archivo llevaba la convención declarada sólo junto a dos claves
 #   (2026-09-25); de ahí salieron los signos opuestos entre Paper 1/2 y
 #   Paper 6/Sealed/Unified. Ahora se declara aquí y no se repite invertida.
@@ -220,7 +220,8 @@ canonical:
                                   # (M→∞, Papers 1–9). Se conserva porque
                                   # Paper 9 razona en ese régimen y hay que
                                   # poder trazar su número.
-  sigma_glob_propagado: 0.970     # 1.04×(1−f) — DOMINA sobre el residuo UV
+  sigma_glob_propagado: 0.968     # 1.04×(1−f) = 0.96770 (ssee_core.SIG_H0_GLOBAL) — DOMINA sobre el residuo UV.
+                                  # El «0.970» anterior era redondeo de mano (2026-09-29)
   f_screen_IR:         0.06725    # (π−φ)/Ω² = αK/(3·MIRA)  [INVARIANTE]
   f_screen_UV:         0.06952    # αK_full/(3·MIRA)        [INVARIANTE]
   # Posterior MCMC reframe: prior H_alg=67.962 (ancla CMB ω_m-directo) + DESI DR2 REAL.
@@ -234,8 +235,15 @@ canonical:
   # PARAMETRIZACIÓN R25 (2026-07-25): ω_m algebraico FIJO, Ω_m=ω_m/h² DERIVADO.
   # El 67.9475/0.04σ previo congelaba Ω_m=0.308881 y sesgaba el posterior hacia el
   # ancla (era el ÚNICO H₀ donde el ω_m implícito coincidía con la predicción).
-  H0_posterior_km_s_Mpc: 67.79   # 67.7872 +0.352/-0.351 — 0.66σ Planck, 0.50σ H_alg
-  Omega_b_h2_posterior: 0.02207   # posterior Ω_b·h² ≈ BBN prior 0.02218 (R25; era 0.02221 con Ω_m congelado)
+  # PRIOR H_glob (2026-09-28): el prior es H_glob = SH0ES·(1−f_screen) ± 0.968, no el número
+  # puro 3(φ+π)² con el σ de Planck 0.54; y r_d y distancias por CAMB (rd_camb.py, bao_camb.py).
+  # log: results/logs/mcmc_paper2_reframe.json · distancias: results/logs/h0_distancias_hglob.json
+  # (script src/p02_mcmc/h0_distancias.py). Era 67.79±0.35 (0.50σ H_alg, 0.66σ Planck).
+  H0_posterior_km_s_Mpc: 67.82   # 67.8244 ± 0.4133 — 0.33σ de H_glob, 0.68σ de Planck
+  H0_desi_plano_km_s_Mpc: 67.79  # 67.7931 ± 0.4603 — DESI sola, prior plano: 0.37σ de H_glob, 0.61σ de Planck (era 67.66)
+  chi2_BAO_Hglob:      11.41      # 13 puntos DESI DR2 en H_glob, r_d CAMB (log chi2_bao_posterior.log)
+  chi2_BAO_posterior:  10.43      # en el posterior 67.8244 (mismo log)
+  Omega_b_h2_posterior: 0.02198   # posterior Ω_b·h² (mcmc_paper2_reframe.json, 2026-09-28; era 0.02207)
   # Comparación de modelos (3-modelos, prior Planck común, mismo setup).
   # log: results/logs/mcmc_paper2_3models_wmfix.log  (2026-07-25, parametrización
   # R25 ω_m fijo). CORREGIDO 2026-07-25: este bloque apuntaba a
@@ -243,16 +251,21 @@ canonical:
   # ΔAIC=4.91 y H₀=67.62 — NO los valores de abajo. Los números eran correctos;
   # el puntero era el viejo, así que quien siguiera la fuente declarada habría
   # encontrado 5.68 y concluido que este archivo miente.
-  #   H0: SSEE 67.53±0.35 (0.26σ Planck) · ΛCDM 68.27±0.28 · CPL 67.26±0.51
-  #   ΔBIC(ΛCDM−SSEE)=+6.43, ΔBIC(CPL−SSEE)=+6.35 · ΔAIC +5.65/+4.04 · ΔDIC −5.66 (SSEE favorecido)
-  #   Savage-Dickey B=18.15 (lnB=2.90) · r_d(SSEE)=148.34≈ΛCDM 147.78 (1.004)
+  # RE-CORRIDO 2026-09-29 (commit 47614d2): r_d por CAMB y cada modelo con SU mν
+  # (ΛCDM y CPL 0.06; antes usaban la de SSEE); r_d de SSEE con ω_m algebraico.
+  #   H0: SSEE 67.53±0.35 (0.26σ Planck) · ΛCDM 68.39±0.28 · CPL 67.27±0.51
+  #   ΔBIC(ΛCDM−SSEE)=+6.77, ΔBIC(CPL−SSEE)=+5.66 · ΔAIC +5.99/+3.35 (SSEE favorecido)
+  #   ΔDIC: PENDIENTE de re-correr dic_from_chains (su log es del 07-25, cadenas viejas)
+  #   Savage-Dickey B=18.15 (lnB=2.899, sin cambio; log phase_d_savage_cv_wmfix.log)
+  #   r_d(SSEE)=147.64 ≈ ΛCDM 147.59 (1.000)
   #   (lnB10=7.42 RETIRADO: era Laplace de una tabla huérfana, sin script vivo)
-  #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.197 < ΛCDM 0.711 < CPL 39.64 (SSEE predice mejor)
+  #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35 (SSEE predice mejor).
+  #   CPL: su ajuste de entrenamiento queda en el borde H0=50 — número NO válido, no se cita.
   H0_posterior_planckprior_km_s_Mpc: 67.53   # 3-modelos, prior Planck (para ΔBIC justo; R25)
-  deltaBIC_lcdm_minus_ssee: 6.43   # OJO: esta clave SI es LCDM − SSEE (lo dice
+  deltaBIC_lcdm_minus_ssee: 6.77   # OJO: esta clave SI es LCDM − SSEE (lo dice
                                    # su nombre), por eso >0 favorece SSEE. En los
                                    # papers se cita con la convencion comun:
-                                   # Delta(SSEE−LCDM) = −6.43 (CPL: −6.35).
+                                   # Delta(SSEE−LCDM) = −6.77 (CPL: −5.66).
   deltaDIC_ssee_minus_lcdm: -5.66  # <0 favorece SSEE (DIC 14.95 vs 20.61); log dic_from_chains.log
 
   # ── Fase B / B1 — likelihood COMPLETA de Planck ───────────────────────
@@ -303,7 +316,10 @@ canonical:
   # log: results/logs/p3_cmb_reframe_omega_m.log  (script run_p3_reframe.py)
   chi2_CMB_SSEE:       1005.41    # SSEE ω_m-directo (vs ΛCDM 1003.76; Δχ²=+1.65) — plik_lite point est.
                                  # re-corrido 2026-07-25 con Σm_ν=0.06849 (era 1005.50 con 0.06902)
-  Delta_BIC_CMB:       -26.21     # SSEE − ΛCDM. plik_lite TTTEEE+lowT+lowE, k2 vs k6, tau AJUSTADO y N=669 MEDIDO
+  Delta_BIC_CMB:       -26.03     # SSEE − ΛCDM. plik_lite TTTEEE+lowT+lowE, k2 vs k6, tau AJUSTADO y N=669 MEDIDO
+                                  # 2026-09-28: ΛCDM re-minimizado con SU mν=0.06 (antes con la de SSEE):
+                                  # χ² ΛCDM 1003.596 vs SSEE 1003.586 (Δχ²=−0.010). Era −26.21.
+                                  # Log: results/logs/cmb_dbic_mnu_propia.json
                                   # (2026-09-09). Historia: -24.02 tenia DOS defectos — A_s y tau se
                                   # contaban como libres (k=2) pero se CLAVABAN en Planck en vez de
                                   # ajustarse, y el BIC usaba N=613 (solo plik_lite) cuando el chi2
@@ -332,6 +348,21 @@ canonical:
 # memory_sync.py los encuentra SIN una marca de contexto (retirado, viejo,
 # Type-P, coincidencia, superado, previo, sin re-correr…) → DRIFT.
 retired:
+  # ── Propagación 2026-09-29: prior H_glob ± 0.968, r_d/distancias CAMB, cada modelo con SU mν ──
+  - {pattern: "67.79\\pm0.35",    reason: "H0 posterior viejo (prior número puro ±0.54, r_d fórmula) → 67.82±0.41 (0.33σ H_glob)"}
+  - {pattern: "67.79 \\pm 0.35",  reason: "H0 posterior viejo → 67.82±0.41"}
+  - {pattern: "67.79±0.35",       reason: "H0 posterior viejo → 67.82±0.41"}
+  - {pattern: "67.79 ± 0.35",     reason: "H0 posterior viejo → 67.82±0.41"}
+  - {pattern: "67.79^{+0.35}",    reason: "H0 posterior viejo → 67.82±0.41"}
+  - {pattern: "67.66",            reason: "H0 DESI sola, prior plano, viejo → 67.79±0.46 (0.37σ H_glob)"}
+  - {pattern: "26.21",            reason: "ΔBIC CMB viejo (ΛCDM con la mν de SSEE) → −26.03 (cmb_dbic_mnu_propia.json)"}
+  - {pattern: "6.43",             reason: "ΔBIC P2 ΛCDM−SSEE viejo → 6.77 (mcmc_paper2_3models_wmfix.log, 09-29)", requires: ["bic"]}
+  - {pattern: "6.35",             reason: "ΔBIC P2 CPL−SSEE viejo → 5.66", requires: ["bic", "cpl"]}
+  - {pattern: "\\pm0.970",        reason: "σ de H_glob redondeado a mano → ±0.968 (ssee_core.SIG_H0_GLOBAL)"}
+  - {pattern: "±0.970",           reason: "σ de H_glob → ±0.968"}
+  - {pattern: "\\sigma=0.970",    reason: "σ de H_glob → 0.968"}
+  - {pattern: "0.50\\sigma",       reason: "distancia vieja del posterior al ancla → 0.33σ de H_glob", requires: ["67.79", "anchor", "ancla", "h_alg", "h_{\\rm alg", "glob"]}
+  - {pattern: "0.02207",          reason: "Ω_b h² posterior viejo → 0.02198"}
   - {pattern: "5.71 eV",   reason: "m_φ via Σm_ν×H_alg — dimensionalmente inválida"}
   - {pattern: "5.60 eV",   reason: "m_φ viejo (mismo ansatz retirado)"}
   - {pattern: "5.602",     reason: "m_φ viejo"}
