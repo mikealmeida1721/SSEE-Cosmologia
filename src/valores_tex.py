@@ -4,7 +4,7 @@
 Es el patron `\\variable` de showyourwork (Luger et al.), sin la herramienta:
 un solo archivo declara de que log y de que clave sale cada numero que un paper
 cita (manuscript/valores.yaml) y este script escribe manuscript/valores_generados.tex
-con una macro por numero. El paper escribe \\val{S8_b1_ssee}, nunca 0.8261.
+con una macro por numero. El paper escribe \\val{S8_b1_ssee}, nunca el numero tecleado.
 Si el log cambia, el numero del paper cambia al regenerar; si alguien teclea el
 numero a mano, R74 lo cuenta como sin procedencia.
 

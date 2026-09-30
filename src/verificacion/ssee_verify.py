@@ -1923,8 +1923,17 @@ for _tex68 in sorted((ROOT.parent / "manuscript").glob("*.tex")):
                              timeout=20).stdout
         if not _viejo68:
             continue                      # el .tex no existia entonces
-        if (_tex_sin_comentarios(_viejo68)
-                != _tex_sin_comentarios(_tex68.read_text(errors="ignore"))):
+        _nuevo68 = _tex68.read_text(errors="ignore")
+        # Los numeros que entran por \val{} viven en valores_generados.tex:
+        # si cambian ahi, el PDF queda viejo aunque el .tex no se toque
+        # (2026-09-30). Se compara tambien ese archivo, sin su acta (fecha).
+        if "valores_generados.tex" in _nuevo68:
+            _vg68 = ROOT.parent / "manuscript" / "valores_generados.tex"
+            _viejo68 += _sp68.run(["git", "show", f"{_sha68}:manuscript/valores_generados.tex"],
+                                  cwd=ROOT.parent, capture_output=True, text=True,
+                                  timeout=20).stdout
+            _nuevo68 += _vg68.read_text(errors="ignore") if _vg68.exists() else ""
+        if _tex_sin_comentarios(_viejo68) != _tex_sin_comentarios(_nuevo68):
             _r68.append(_tex68.stem)
     except Exception as _e68:
         # No se traga el fallo: un except mudo aqui daria VERDE por vacio.
@@ -1953,13 +1962,20 @@ _c68 = [("\\section{A}\ntexto viejo\n", "\\section{A}\ntexto NUEVO\n", True),
         ("\\section{A}\ntexto viejo\n", "\\section{A}  % nota al margen\ntexto viejo\n",
          False),
         ("\\section{A}\n50\\%% de la muestra\n", "\\section{A}\n50\\%% de la muestra\n",
-         False)]
+         False),
+        # 2026-09-30: el .tex igual pero un numero de valores_generados.tex
+        # cambiado SE MARCA; el acta (comentario, lleva la fecha) no.
+        ("\\input{valores_generados.tex}\n\\def\\x{2.65}\n",
+         "\\input{valores_generados.tex}\n\\def\\x{2.69}\n", True),
+        ("\\input{valores_generados.tex}\n% ACTA-PROCEDENCIA {\"fecha\": \"1\"}\n\\def\\x{2.69}\n",
+         "\\input{valores_generados.tex}\n% ACTA-PROCEDENCIA {\"fecha\": \"2\"}\n\\def\\x{2.69}\n", False)]
 _f68 = [f"caso {_i}" for _i, (_a, _b, _esp) in enumerate(_c68)
         if (_tex_sin_comentarios(_a) != _tex_sin_comentarios(_b)) is not _esp]
 check("R68 el detector distingue el cambio de contenido del comentario LaTeX",
       not _f68, "; ".join(_f68) if _f68
-      else "4 casos: el texto cambiado se marca; el comentario anadido (en la "
-           "linea y como linea nueva) y el porcentaje escapado, exentos")
+      else "6 casos: el texto cambiado y el numero de valores_generados cambiado se "
+           "marcan; el comentario anadido (en la linea y como linea nueva), el "
+           "porcentaje escapado y el acta con otra fecha, exentos")
 
 # --- R69: los CAJONES no pueden declarar un titular que el canonico ya movio
 #
@@ -2332,7 +2348,7 @@ if _n73:
                "; ".join(f"{k.split('/')[-1]} L{v[0][0]} {v[0][1]}" for k, v in _sin73.items())
                + " — rastrear: log, \\cite en la frase o `% ORIGEN-VALOR: <n> — <razon>`")
 # TRINQUETE: la deuda medida al nacer la regla (2026-09-30). Solo puede bajar.
-_TOPE_R73 = 4    # 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
+_TOPE_R73 = 3    # 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
 _DEUDA_REAL["R73"] = _n73
 _DEUDA_MAX["R73"] = _TOPE_R73
 check("R73 la deuda de numeros-resultado sin origen en los papers no crece",
@@ -2367,7 +2383,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 89, "canonical": 13, "papers": 314, "cajones": 235}   # logs 94->89: orquestacion excluida con razon y la cadena DVC cuenta como script
+_TOPE_R74 = {"logs": 88, "canonical": 6, "papers": 302, "cajones": 223}   # logs 94->89: orquestacion excluida con razon y la cadena DVC cuenta como script
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -2443,7 +2459,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(("cola_", "vigilante_"))]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 170   # 2026-09-30: 172 logs de resultado, 2 ya en la cadena (mcmc_full_posteriores, s8_desde_b1)
+_TOPE_R75 = 169   # 2026-09-30: 172 logs de resultado, 2 ya en la cadena (mcmc_full_posteriores, s8_desde_b1)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",

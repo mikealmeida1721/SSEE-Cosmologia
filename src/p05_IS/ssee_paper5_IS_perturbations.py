@@ -49,6 +49,8 @@ from ssee_core import (
     H0_GLOBAL as H0_kms, S_M as s_M, S_DE as s_DE,
     MIRA as MIRA_alg, OMEGA_M_TOTAL as Omm_CMB,   # 0.308881 materia total
 )
+from procedencia import cabecera, con_acta  # noqa: E402
+print(cabecera(__file__))   # acta de procedencia: primera linea del log
 
 # IS relaxation time (dimensionless: τ_Π × H₀).
 # Usa la SATURACIÓN s_DE = |w₀| = 0.839950, que NO lleva H — por eso es
@@ -394,7 +396,7 @@ if results:
                              'p5_IS_perturbations_Q2.json')
         _os.makedirs(_os.path.dirname(_log), exist_ok=True)
         with open(_os.path.abspath(_log), 'w') as _fh:
-            _json.dump(dict(
+            _json.dump(con_acta(dict(
                 Omega_m=Omm, Omega_DE=OmDE,
                 filas=[dict(k=float(_k), delta_m=float(results[_k]['δm']),
                             r=float(results[_k]['r']),
@@ -405,7 +407,7 @@ if results:
                 nota=('R = Omega_m,eff/Omega_m con las DENSIDADES reales. '
                       'El blanco 1.998924 era el factor materia retirado el '
                       '2026-06-18 (OP-8); se conserva solo como registro.')),
-                _fh, indent=1)
+                __file__), _fh, indent=1)
         print(f"    -> log: {_os.path.abspath(_log)}")
         delta_MIRA = abs(MIRA_mean - MIRA_alg)
         frac_MIRA  = delta_MIRA / MIRA_alg * 100
@@ -603,11 +605,10 @@ else:
     import json as _json, os as _os, sys as _sys
     _src = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..')
     _sys.path.insert(0, _os.path.abspath(_src))
-    from procedencia import con_acta as _con_acta
-    _log3 = _os.path.abspath(_os.path.join(_src, '..', 'results', 'logs',
+        _log3 = _os.path.abspath(_os.path.join(_src, '..', 'results', 'logs',
                                            'p5_IS_perturbations_Q3.json'))
     with open(_log3, 'w') as _fh:
-        _json.dump(_con_acta(dict(
+        _json.dump(con_acta(dict(
             Omega_m=float(Omm_CMB), G=float(G_factor),
             gamma_IS=gamma_IS_val, gamma_IS_sigma=gamma_IS_err_val,
             gamma_LCDM=gamma_LCDM_val,

@@ -17,8 +17,8 @@
 #   Vale para Δχ², ΔAIC, ΔBIC y ΔDIC salvo que el NOMBRE de la clave diga lo
 #   contrario — sólo `deltaBIC_lcdm_minus_ssee` lo hace, y por eso su signo es
 #   el opuesto. Comprobado por aritmética, no por lectura, en las seis claves:
-#     delta_BIC_ssee_lcdm    = +2.65 − 4·ln(225)  = −19.01   (Δk = +4)
-#     delta_AIC_ssee_lcdm    = +2.65 − 2·4        = −5.35
+#     delta_BIC_ssee_lcdm    = +2.6937 − 4·ln(225) = −18.97  (Δk = +4)
+#     delta_AIC_ssee_lcdm    = +2.6937 − 2·4       = −5.31
 #     deltaBIC_cmb_plik_full = −2.474 − 3·ln(2354) = −25.766 (Δk = −3)
 #     Delta_BIC_CMB          = −0.0096 − 4·ln(669) = −26.03  (Δk = −4; ΛCDM con SU mν 0.06, 2026-09-28)
 #     Delta_BIC_CMB_fullplik = −1.81  − 4·ln(2354) = −32.9   (Δk = −4)
@@ -69,7 +69,7 @@ canonical:
   logA_cmb_ssee:       3.0448340130228546   # EL BLANCO, y aquí la ENTRADA.
   sigma8_ssee_unif:    0.8153     # predicción, sin barra propia
   S8_ssee_unif:        0.8273     # predicción → 0.05σ del dato oficial
-  S8_kids_legacy_dato: 0.8265     # ±0.0176 — posterior oficial ξ± fiducial,
+  S8_kids_legacy_dato: 0.8265     # FUENTE: results/logs/kids_publicados.json — ±0.0176 — posterior oficial ξ± fiducial,
                                   # calculado de sus muestras (σ8·√(Ωm/0.3))
   chi2_min_ssee_unif:  417.971   # 357 puntos, 8 libres (todos nuisance)
                                   # → 349 dof, χ²/dof = 1.1976
@@ -136,9 +136,9 @@ canonical:
   # NO en S8 — S8 es SALIDA de un ajuste, o sea producto del propio modelo;
   # comparar dos S8 es comparar dos productos. La prueba es la VEROSIMILITUD
   # de los 225 puntos ξ± CRUDOS, que ninguno de los dos modelos fabricó.
-  delta_chi2_ssee_lcdm:  2.65      # 265.40 − 262.75, con Δk=4 params MENOS
+  delta_chi2_ssee_lcdm:  2.6937    # FUENTE: results/logs/kids_publicados.json — 265.43987 − 262.7462 (logs R3/R4), con Δk=4 params MENOS. Era 2.65: el 265.40 estaba tecleado (2026-09-30)
   delta_k_ssee_lcdm:        4      # 4 params nulos ya darían ⟨Δχ²⟩=4 por azar
-  p_delta_chi2:          0.618     # p(Δχ²≥2.65 | los 4 no aportan nada)
+  p_delta_chi2:          0.610     # FUENTE: results/logs/kids_publicados.json — p(Δχ²≥2.69 | los 4 no aportan nada)
   # CONVENCION DE SIGNO, declarada una sola vez para TODA la suite
   # (2026-09-25): Delta = SSEE − LCDM.  NEGATIVO favorece a SSEE.
   # Estas dos claves llevaban el nombre de una direccion y el signo de la
@@ -146,15 +146,15 @@ canonical:
   # opuestos entre Paper 1/2 y Paper 6/Sealed/Unified. Comprobado por
   # aritmetica, no por lectura: con delta_chi2 = +2.65 y delta_k = 4 sobre
   # N=225 puntos,  AIC: 2.65 − 2·4 = −5.35  y  BIC: 2.65 − 4·ln(225) = −19.01.
-  delta_AIC_ssee_lcdm:  -5.35      # SSEE − LCDM, <0 favorece SSEE
-  delta_BIC_ssee_lcdm: -19.01      # SSEE − LCDM, <0 favorece SSEE — «fuerte» Jeffreys
+  delta_AIC_ssee_lcdm:  -5.31      # FUENTE: results/logs/kids_publicados.json — SSEE − LCDM, <0 favorece SSEE
+  delta_BIC_ssee_lcdm: -18.97      # FUENTE: results/logs/kids_publicados.json — SSEE − LCDM, <0 favorece SSEE — «fuerte» Jeffreys
   # ⟹ las 4 libertades extra de ΛCDM son indistinguibles de no existir.
   # ΔS8 = 0.0016 es el MISMO hecho redicho en cantidades derivadas.
   #
   # TENSIÓN REAL que sí hay que declarar (y es COMPARTIDA, no de SSEE):
-  PTE_kids_ssee:         0.0123    # χ²=265.40 vs 216±20.8 → 2.38σ alto
-  PTE_kids_lcdm:         0.0101    # χ²=262.75 vs 212±20.6 → 2.46σ alto
-  chi2_kids_publicado: 260.32      # el mejor ajuste PUBLICADO por KiDS da p~0.01–0.03
+  PTE_kids_ssee:         0.0122    # FUENTE: results/logs/kids_publicados.json — χ²=265.44 vs 216±20.8 → 2.38σ alto
+  PTE_kids_lcdm:         0.0101    # FUENTE: results/logs/kids_publicados.json — χ²=262.75 vs 212±20.6 → 2.46σ alto
+  chi2_kids_publicado: 260.31      # FUENTE: results/logs/kids_publicados.json — −2·like del maxpost oficial (−130.157350); era 260.32 tecleado. El mejor ajuste PUBLICADO por KiDS da p~0.01–0.03
   # ⟹ el exceso vive en el vector de datos ξ±, no en ninguna cosmología.
   # Nuestro control lo reproduce (262.75 vs 260.32, 0.9%): no lo introduce el código.
   sigma8_single_ceiling: 0.814854  # σ8 con A_s FIJADO a Planck (techo CLASS)
@@ -175,8 +175,8 @@ canonical:
   # Log: results/logs/p5_techo_sigma8_As_fijo.json · informe:
   # BANDEJA/2026-09-08_techo_sigma8_neutrinos.md
   # La barra ±0.006 viene de antes y NO se ha recomputado.
-  gamma_IS:             0.5504     # Paper 5 índice de crecimiento IS (fit ODE; ±0.0003; ≈ΛCDM 0.55)
-  G_growth:            1.0032     # D₁_SSEE/D₁_ΛCDM (Paper 5 ODE @ Ω_m,cosm=0.308881; era 1.011 @0.31983 — SÍ depende del fondo, que bajó en el reframe ω_m-directo)
+  gamma_IS:             0.5504     # FUENTE: results/logs/p5_IS_perturbations_Q3.json — Paper 5 índice de crecimiento IS (fit ODE; ±0.0003; ≈ΛCDM 0.55)
+  G_growth:            1.0032     # FUENTE: results/logs/p5_IS_perturbations_Q3.json — D₁_SSEE/D₁_ΛCDM (Paper 5 ODE @ Ω_m,cosm=0.308881; era 1.011 @0.31983 — SÍ depende del fondo, que bajó en el reframe ω_m-directo)
   fsigma8_single_sigma:     0.70  # P5 single-sector σ8=0.8136 SIN free-streaming
   # fsigma8 canónico un-sector contra BOSS crudo: PENDIENTE R1/R2
 
@@ -222,7 +222,7 @@ canonical:
                                   # poder trazar su número.
   sigma_glob_propagado: 0.968     # 1.04×(1−f) = 0.96770 (ssee_core.SIG_H0_GLOBAL) — DOMINA sobre el residuo UV.
                                   # El «0.970» anterior era redondeo de mano (2026-09-29)
-  f_screen_IR:         0.06725    # (π−φ)/Ω² = αK/(3·MIRA)  [INVARIANTE]
+  f_screen_IR:         0.06725    # FUENTE: ssee_core.F_SCREEN_IR — (π−φ)/Ω² = αK/(3·MIRA)  [INVARIANTE]
   f_screen_UV:         0.06952    # αK_full/(3·MIRA)        [INVARIANTE]
   # Posterior MCMC reframe: prior H_alg=67.962 (ancla CMB ω_m-directo) + DESI DR2 REAL.
   # GEOMETRÍA CORREGIDA 2026-07-09 (V-L4-DESI): la geometría de fondo E(z)/r_d usa la
@@ -337,7 +337,7 @@ canonical:
   # Cobaya+clipy, SSEE k=2 (H₀ FIJO 67.962) vs ΛCDM k=6. Chains: src/results/chains/ssee_cmb_k2.{1-4}, lcdm_cmb.{1-4}
   chi2_CMB_SSEE_fullplik: 2771.3  # SSEE k=2 best-fit (full likelihood)
   chi2_CMB_LCDM_fullplik: 2773.1  # ΛCDM k=6 best-fit; Δχ²_BF=−1.8 (indistinguible; NO se reclama mejor fit)
-  N_data_fullplik:        2354    # TTTEEE 2289 (VERIFICADO clipy data_bandpowers/siginv 2289×2289, 2026-06-28) + lowlTT 28 + lowlEE 28 + lensing 9. (Antes 2409 con high-ℓ≈2344 estimado; 6478 del script b1 era multipolos sin binnear — bug corregido)
+  N_data_fullplik:        2354    # FUENTE: results/logs/b1_analyse.log — TTTEEE 2289 (VERIFICADO clipy data_bandpowers/siginv 2289×2289, 2026-06-28) + lowlTT 28 + lowlEE 28 + lensing 9. (Antes 2409 con high-ℓ≈2344 estimado; 6478 del script b1 era multipolos sin binnear — bug corregido)
   # ⚠ SIN LOG (2026-09-30, R73): las cadenas k=2 del 23-jun que dieron 2771.30/2773.11 se
   # sobrescribieron el 27-jul con una corrida de H0 LIBRE (k=3 -> deltaBIC_cmb_plik_full -25.766,
   # que SI tiene log). EN RE-CORRIDA k=2 (decision de Mike): cola_b1_k2 -> results/logs/b1_k2_run.log.
@@ -594,6 +594,10 @@ coincidencias:
   - {pattern: "0.659", archivo: "Constantes/w0_wa.md", contexto: "0.659 ± 0.113", razon: "wa MEDIDO por DESI, no k_fs"}
   - {pattern: "0.659", archivo: "Constantes/w0_wa.md", contexto: "0.659±0.113", razon: "wa MEDIDO por DESI, no k_fs"}
   - {pattern: "0.659", archivo: "Papers/Unificado.md", contexto: "0.659 ± 0.113", razon: "wa MEDIDO por DESI, no k_fs"}
+  - {pattern: "0.618", archivo: "manuscript/SSEE_EFT_section.tex", contexto: "gamma_\\mathrm{alg}=0.618", razon: "γ_alg = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
+  - {pattern: "0.618", archivo: "manuscript/SSEE_Paper3_CMB.tex", contexto: "phi^{-1}", razon: "γ_alg = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
+  - {pattern: "0.618", archivo: "manuscript/SSEE_Paper3_CMB.tex", contexto: "gamma_\\mathrm{alg}", razon: "γ_alg = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
+  - {pattern: "0.618", archivo: "project_theoretical_directions.md", contexto: "φ⁻¹ = 0.618", razon: "γ = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
 
 historical_sections:
   # Encabezado que declara TODO lo que cuelga de él como registro histórico.

@@ -75,8 +75,12 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 0a80d859a3b742d50e96c12c58e4904b
-      size: 1087
+      md5: a9232e6017c99a3d1e49f80bf1d762a3
+      size: 2475
+    - path: results/logs/kids_publicados.json
+      hash: md5
+      md5: fafae20f92ccc2a645ae8f202596438f
+      size: 2372
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: 4262777d075779dfd50eab7dab2f0606
@@ -88,8 +92,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 3685c1e56f829d3aa2287b48f8bfd2a1
-      size: 2079
+      md5: aef50cd10b586c6e2694156c49ab6f88
+      size: 3762
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -120,3 +124,38 @@ stages:
       hash: md5
       md5: be2f7b7927cea0663aa69793ddfcbc6f
       size: 1240
+  kids_publicados:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/kids_publicados.py
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+      hash: md5
+      md5: 38506b7d67a77c4188f3f44971f463ac
+      size: 374768
+    - path: 
+        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+      hash: md5
+      md5: 14e13ea2c7f3286a0bf220cabdef1373
+      size: 105084314
+    - path: results/logs/growth_2026-07/R3_ssee_kids_S8.json
+      hash: md5
+      md5: 9211a986b6e29d54fb1605acdf2a8f57
+      size: 2353
+    - path: results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+      hash: md5
+      md5: 249e3a18057d6e59c4666da2f3ee2f20
+      size: 1001
+    - path: src/p06_growth/kids_publicados.py
+      hash: md5
+      md5: 3630a2d61c984dc77a145a4bfd74ba17
+      size: 6104
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/kids_publicados.json
+      hash: md5
+      md5: fafae20f92ccc2a645ae8f202596438f
+      size: 2372
