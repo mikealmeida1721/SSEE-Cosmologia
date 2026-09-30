@@ -39,6 +39,32 @@ stages:
       - src/valores_tex.py
       - manuscript/valores.yaml
       - results/logs/s8_desde_b1.json
+      - results/logs/kids_publicados.json
     outs:
       - manuscript/valores_generados.tex:
+          cache: false
+  p5_IS_perturbations:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_IS/ssee_paper5_IS_perturbations.py > results/logs/p5_IS_perturbations.log 2>&1
+    deps:
+      - src/p05_IS/ssee_paper5_IS_perturbations.py
+      - src/procedencia.py
+      - src/ssee_core.py
+    outs:
+      - results/logs/p5_IS_perturbations_Q2.json:
+          cache: false
+      - results/logs/p5_IS_perturbations_Q3.json:
+          cache: false
+      - results/logs/p5_IS_perturbations.log:
+          cache: false
+  kids_publicados:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_publicados.py
+    deps:
+      - src/p06_growth/kids_publicados.py
+      - src/procedencia.py
+      - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+      - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+      - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+      - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+    outs:
+      - results/logs/kids_publicados.json:
           cache: false
