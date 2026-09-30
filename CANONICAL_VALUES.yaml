@@ -319,8 +319,10 @@ canonical:
 
   # Estadística — CMB (Planck plik_lite TTTEEE, Fase B con ω_m-directo @ H=67.962)
   # log: results/logs/p3_cmb_reframe_omega_m.log  (script run_p3_reframe.py)
-  chi2_CMB_SSEE:       1005.41    # SSEE ω_m-directo (vs ΛCDM 1003.76; Δχ²=+1.65) — plik_lite point est.
-                                 # re-corrido 2026-07-25 con Σm_ν=0.06849 (era 1005.50 con 0.06902)
+  chi2_CMB_SSEE:       1003.586   # SSEE ω_m-directo, plik_lite+lowT+lowE, {A_s,τ} AJUSTADOS, N=669 —
+                                 # log results/logs/cmb_dbic_mnu_propia.json (chi2_ssee). 2026-09-30: la clave
+                                 # seguía en 1005.41 (Fase B con A_s,τ clavados, N=613), superado desde el −24.02;
+                                 # lo cazó memory_sync al leer el historial de `canonical:`.
   Delta_BIC_CMB:       -26.03     # SSEE − ΛCDM. plik_lite TTTEEE+lowT+lowE, k2 vs k6, tau AJUSTADO y N=669 MEDIDO
                                   # 2026-09-28: ΛCDM re-minimizado con SU mν=0.06 (antes con la de SSEE):
                                   # χ² ΛCDM 1003.596 vs SSEE 1003.586 (Δχ²=−0.010). Era −26.21.
@@ -519,7 +521,7 @@ context_markers:
   - anterior
   - antes
   - figuraba
-  - "fiteo"
+  # «fiteo» QUITADA 2026-09-30: eximía «40.70 eV (cero fiteo)», afirmación viva
   - "era Ω_m,dyn"
   - "ω_m,dyn"
   - "sin re-correr"
@@ -538,6 +540,14 @@ context_markers:
   - "was once"
   - "once proposed"
   - "once quoted"
+  - "provisional"
+  - "superseding"
+  - "replacing"
+  - "decía"
+  - "decia"
+  - " bug"
+  - "retract"
+  - "no canónico"
   - "withdrawn"
   # «ceiling»/«techo»: un valor calculado con A_s FIJADO a Planck no es la
   # predicción del modelo sino una cota superior bajo normalización importada.
@@ -568,6 +578,19 @@ context_markers:
 
 # Encabezados (## / ###) cuyas secciones son REGISTRO HISTÓRICO, no estado
 # vigente: todo lo que cuelga de ellos se omite (logs de sesión, POA, fases).
+# ── Coincidencias REVISADAS (2026-09-30) ────────────────────────────────
+# memory_sync saca del historial git de `canonical:` los valores que FUERON
+# canónicos y ya no lo son. Un número igual puede ser OTRA cantidad; cada caso
+# se revisa a mano y se anota aquí (archivo + trozo de la línea + razón).
+coincidencias:
+  - {pattern: "2.67", archivo: "manuscript/SSEE_Paper2_MCMC.tex", contexto: "A2142", razon: "masa bariónica de A2142 (Tchernin2016), no fσ8 en σ"}
+  - {pattern: "0.747", archivo: "manuscript/SSEE_Paper5_IS.tex", contexto: "0.5 & 0.588 & 0.747", razon: "f_SSEE(z=0.5) en la tabla de crecimiento, no σ8 two-sector"}
+  - {pattern: "0.351", archivo: "VERIFICATION_LEDGER.md", contexto: "67.7869 ± 0.351", razon: "σ del posterior H0 viejo (historia), no k_half"}
+  - {pattern: "24.02", archivo: "RIGOR_CHECKLIST.md", contexto: "evaluaba ssee con el", razon: "caso real que motiva la regla; narra el error"}
+  - {pattern: "0.659", archivo: "Constantes/w0_wa.md", contexto: "0.659 ± 0.113", razon: "wa MEDIDO por DESI, no k_fs"}
+  - {pattern: "0.659", archivo: "Constantes/w0_wa.md", contexto: "0.659±0.113", razon: "wa MEDIDO por DESI, no k_fs"}
+  - {pattern: "0.659", archivo: "Papers/Unificado.md", contexto: "0.659 ± 0.113", razon: "wa MEDIDO por DESI, no k_fs"}
+
 historical_sections:
   # Encabezado que declara TODO lo que cuelga de él como registro histórico.
   # Sirve para conservar íntegra una narración retirada (una nota del vault, una
@@ -586,6 +609,7 @@ historical_sections:
   # sumar OPEN_PROBLEMS.md al barrido): narra la partícula con sus números.
   - "CERRADO POR DISOLUCIÓN"
   - "✅ DISUELTO"
+  - "(histórico)"
 
 
 # ════════════════════════════════════════════════════════════════════════

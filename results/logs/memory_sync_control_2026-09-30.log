@@ -20,3 +20,50 @@ manuscript/SSEE_Paper1_Framework.tex:881
 memory_sync — 58 archivos de memoria escaneados
   DRIFT — 1 valor(es) retirado(s) sin marcar:
    [Papers (cajón)] manuscript/SSEE_Paper2_MCMC.tex:573  «0.02207»  →  & $0.02207^{+0.00045}_{-0.00045}$
+
+# CONTROL CAPAS NUEVAS 2026-09-30 12:20:54 — historial git, memoria de Claude con sello
+(a) sello: quito «0.06902» del sello de project_p6_canonical_particle.md → debe avisar:
+   [Memoria Claude] project_p6_canonical_particle.md:50  «0.06902»  →  Σm_ν = R₂ × 0.960318 eV          = 0.06902 eV
+(b) memoria de regla con 66.41 inyectado → debe avisar:
+   [Memoria Claude] feedback_emotional_bias.md:20  «66.41»  →  Control: el H0 posterior es 66.41.
+(c) valores del historial DESCARTADOS por los filtros (signo / redondeo / <3 cifras / vigentes):
+    Delta_BIC_CMB_fullplik: -33.0 (hoy -32.9) — redondeo del vigente
+    H0_glob_IR_km_s_Mpc: 68.13 (hoy None) — es vigente de otra clave
+    H0_glob_UV_km_s_Mpc: 67.96214 (hoy None) — es vigente de otra clave
+    H0_local_IR_km_s_Mpc: 71.87 (hoy None) — ya en retired:
+    H0_local_IR_km_s_Mpc: 72.86 (hoy None) — ya en retired:
+    H0_local_UV_km_s_Mpc: 72.05 (hoy None) — ya en retired:
+    H0_local_UV_km_s_Mpc: 73.04 (hoy None) — es vigente de otra clave
+    H0_posterior_km_s_Mpc: 66.53 (hoy 67.82) — ya en retired:
+    H0_posterior_km_s_Mpc: 67.16 (hoy 67.82) — ya en retired:
+    H0_posterior_km_s_Mpc: 67.79 (hoy 67.82) — es vigente de otra clave
+    H0_posterior_km_s_Mpc: 67.95 (hoy 67.82) — ya en retired:
+    H_MIRA_km_s_Mpc: 67.037 (hoy None) — ya en retired:
+    H_global_km_s_Mpc: 67.962 (hoy None) — es vigente de otra clave
+    Omega_b_h2_posterior: 0.02207 (hoy 0.02198) — ya en retired:
+    Omega_m_CMB: 0.30889 (hoy 0.308881) — redondeo del vigente
+    S8_two_sector: 0.758 (hoy None) — ya en retired:
+    S8_two_sector: 0.7593 (hoy None) — ya en retired:
+    S8_two_sector: 0.766 (hoy None) — ya en retired:
+    delta_AIC_ssee_lcdm: 5.35 (hoy -5.35) — cambio de signo (convencion)
+    delta_BIC_ssee_lcdm: 19.01 (hoy -19.01) — cambio de signo (convencion)
+    fsigma8_two_sector_sigma: 0.7 (hoy None) — es vigente de otra clave
+    fsigma8_two_sector_sigma: 0.76 (hoy None) — <3 cifras
+    fsigma8_two_sector_sigma: 0.93 (hoy None) — <3 cifras
+    m_phi_eV: 36.95 (hoy None) — ya en retired:
+    m_phi_eV: 41.02 (hoy None) — ya en retired:
+    m_phi_eV: 42.47 (hoy None) — ya en retired:
+    omega_nu_h2: 0.000741 (hoy 0.000735) — ya en retired:
+    sigma8_single: 0.82 (hoy None) — <3 cifras
+    sigma8_two_sector: 0.742 (hoy None) — ya en retired:
+    sigma8_two_sector: 0.7483 (hoy None) — ya en retired:
+    sigma8_two_sector: 0.7536 (hoy None) — ya en retired:
+    sigma_glob_propagado: 0.97 (hoy 0.968) — <3 cifras
+    theta_star_reframe: 1.0414 (hoy 1.04139) — redondeo del vigente
+(d) control 26.21 sobre d23a954^:
+    15 de 17
+# arbol actual completo:
+memory_sync — 226 archivos de memoria escaneados
+  DRIFT — 1 valor(es) retirado(s) sin marcar:
+   [Papers (cajón)] manuscript/SSEE_Paper2_MCMC.tex:573  «0.02207»  →  & $0.02207^{+0.00045}_{-0.00045}$
+(e) tolerancia de redondeo reducida a <1 unidad de la ultima cifra tras ver −33.0→−32.9 descartado en (c); re-barrido:   DRIFT — 1 valor(es) retirado(s) sin marcar:

@@ -32,11 +32,88 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 # Si no existe, el sync de vault se omite con gracia (no rompe en otra PC).
 VAULT = pathlib.Path(os.environ.get("SSEE_VAULT", pathlib.Path.home() / "SSEE-Vault"))
 CANON = ROOT / "CANONICAL_VALUES.yaml"
+# Memoria de Claude Code para este proyecto; configurable con SSEE_MEMCLAUDE.
+MEMCLAUDE = pathlib.Path(os.environ.get(
+    "SSEE_MEMCLAUDE", pathlib.Path.home() / ".claude/projects/-home-mike-Proyectos-SSEE/memory"))
+
+
+SELLO = "> **Registro fechado**"
+_SELLO_RE = re.compile(r"«([^»]+)»")
+
+
+def _estricta(label, path):
+    """En la memoria de Claude, el indice y las reglas (feedback_/user_) son
+    ESTADO VIVO: se barren sin sello. Las project_* son registros fechados."""
+    return not label.startswith("Memoria") or path.name == "MEMORY.md" or \
+        path.name.startswith(("feedback_", "user_"))
 
 
 def _load():
     with open(CANON, encoding="utf-8") as fh:
         return yaml.safe_load(fh)
+
+
+def _retirados_por_historia(cfg):
+    """Valores que FUERON canonicos y ya no lo son, sacados del historial git de
+    CANONICAL_VALUES.yaml (2026-09-30). La lista `retired:` solo cubre lo que
+    alguien declaro retirado; esto cubre lo que se cambio en `canonical:` sin
+    declararlo. Filtros: se ignoran los cambios de signo por convencion
+    (5.35 -> -5.35), los refinamientos de redondeo (0.30889 -> 0.308881, el
+    vigente redondeado da el viejo), los valores de menos de 3 cifras
+    significativas y los que hoy son el valor vigente de alguna clave."""
+    import subprocess
+    try:
+        revs = subprocess.run(["git", "-C", str(ROOT), "log", "--format=%h %ad", "--date=short",
+                               "--", CANON.name], capture_output=True, text=True, timeout=60).stdout.split()
+    except Exception:
+        return []
+    # cache: el historial solo cambia con un commit nuevo del YAML o con el YAML
+    # actual (que decide los filtros); la clave es ambos.
+    import hashlib
+    import json
+    clave = hashlib.sha256((" ".join(revs) + CANON.read_text(encoding="utf-8")).encode()).hexdigest()
+    cache = pathlib.Path.home() / ".cache" / "ssee_memory_sync_historial.json"
+    try:
+        c = json.loads(cache.read_text())
+        if c.get("clave") == clave:
+            return c["out"]
+    except Exception:
+        pass
+    cur = cfg["canonical"]
+    vigentes = {str(v) for v in cur.values()}
+    ya = {r["pattern"] for r in cfg["retired"]}
+    hist = {}
+    for h, fecha in zip(revs[::2], revs[1::2]):
+        txt = subprocess.run(["git", "-C", str(ROOT), "show", f"{h}:{CANON.name}"],
+                             capture_output=True, text=True).stdout
+        try:
+            viejo = (yaml.safe_load(txt) or {}).get("canonical") or {}
+        except yaml.YAMLError:
+            continue
+        for k, v in viejo.items():
+            if isinstance(v, (int, float)) and not isinstance(v, bool):
+                hist.setdefault((k, str(v)), fecha)
+    out = []
+    for (k, sv), fecha in sorted(hist.items()):
+        ahora = cur.get(k)
+        cifras = re.sub(r"[^0-9]", "", sv.lstrip("-0."))
+        if sv in vigentes or sv in ya or len(cifras) < 3:
+            continue
+        if isinstance(ahora, (int, float)):
+            dec = len(sv.split(".")[1]) if "." in sv else 0
+            if (abs(float(sv)) == abs(ahora) or round(ahora, dec) == float(sv)
+                    or abs(abs(float(sv)) - abs(ahora)) < 0.999 * 10 ** -dec):   # a menos de una unidad de su ultima cifra
+                # (con 1.5 unidades pasaba −33.0→−32.9 del ΔBIC plik completo, que
+                # es un cambio REAL: N 2409→2354. Visto en el control del 2026-09-30.)
+                continue
+        out.append({"pattern": sv.lstrip("-"), "auto": True,
+                    "reason": f"historial git: {k} valia {sv} (visto {fecha}); hoy {ahora}"})
+    try:
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_text(json.dumps({"clave": clave, "out": out}))
+    except Exception:
+        pass
+    return out
 
 
 def _targets(vault_only=False):
@@ -63,6 +140,11 @@ def _targets(vault_only=False):
         # —open_problems, mira_attempts— movido a archive/codigo/investigacion/ el 2026-06-24).
         estado = [ROOT / "README.md", ROOT / "RIGOR_CHECKLIST.md", ROOT / "OPEN_PROBLEMS.md"]
         out.append(("Estado raíz", [p for p in estado if p.exists()]))
+    if not vault_only and MEMCLAUDE.exists():
+        # La memoria de Claude (2026-09-30): el indice MEMORY.md se carga en
+        # CADA sesion y las memorias guian lo que Claude afirma. Un valor
+        # retirado ahi se repite en la conversacion aunque los papers esten bien.
+        out.append(("Memoria Claude", sorted(MEMCLAUDE.glob("*.md"))))
     if VAULT.exists():
         # `Archivo/` es el cajón de retirados del vault — el equivalente exacto
         # del `archive/` del repo, que ya se excluye arriba. Una nota archivada
@@ -159,7 +241,8 @@ def _frase(lines, lines_low, i, col):
 def scan(vault_only=False):
     """Devuelve (drifts, scanned). drifts = lista de (memoria, archivo, lineno, patrón, texto)."""
     cfg = _load()
-    retired = cfg["retired"]
+    retired = cfg["retired"] + _retirados_por_historia(cfg)
+    coincid = cfg.get("coincidencias") or []
     markers = [m.lower() for m in cfg["context_markers"]]
     hist_heads = [h.lower() for h in cfg.get("historical_sections", [])]
     drifts = []
@@ -172,6 +255,14 @@ def scan(vault_only=False):
             scanned += 1
             lines = path.read_text(encoding="utf-8").splitlines()
             low = [ln.lower() for ln in lines]
+            # REGISTRO FECHADO (memoria project_* de Claude): su sello lista los
+            # numeros superados que contiene A PROPOSITO. Solo esos quedan
+            # exentos; uno retirado despues vuelve a avisar hasta re-sellar.
+            sellados = set()
+            if not _estricta(label, path):
+                for ln in lines:
+                    if ln.startswith(SELLO):
+                        sellados = set(_SELLO_RE.findall(ln))
             in_hist = False
             hist_level = 0
             for i, raw in enumerate(lines):
@@ -198,11 +289,26 @@ def scan(vault_only=False):
                 # que no se llevo el arreglo. Aqui la unidad es el PARRAFO:
                 # un .tex justificado parte las frases por ancho de columna,
                 # asi que la linea no significa nada, pero el parrafo si.
-                if in_hist:
+                if in_hist or raw.startswith(SELLO):
                     continue
                 for item in retired:
                     pat = item["pattern"]
-                    cols = [k for k in range(len(low[i])) if low[i].startswith(pat.lower(), k)]
+                    pl = pat.lower()
+                    if pl not in low[i]:
+                        continue
+                    cols = [m.start() for m in re.finditer(re.escape(pl), low[i])]
+                    if item.get("auto"):
+                        # un numero sacado del historial se compara ENTERO:
+                        # «0.337» no debe casar dentro de «0.3371»
+                        # (ceros finales permitidos: «40.7» casa con «40.70»)
+                        def _fin(k):
+                            e = k + len(pat)
+                            if "." in pat:
+                                while e < len(low[i]) and low[i][e] == "0":
+                                    e += 1
+                            return e
+                        cols = [k for k in cols if not (k > 0 and (low[i][k - 1].isdigit() or low[i][k - 1] == "."))
+                                and not (_fin(k) < len(low[i]) and low[i][_fin(k)].isdigit())]
                     req = [r.lower() for r in item.get("requires", [])]
                     exc = [e.lower() for e in item.get("excludes", [])]
 
@@ -215,13 +321,22 @@ def scan(vault_only=False):
                                 or (req and not any(t in fr for t in req))
                                 or (exc and any(t in fr for t in exc)))
                     # basta UNA aparicion no exenta en su frase para que sea drift
+                    if pat in sellados:
+                        continue
                     if not cols or all(exenta(_frase(lines, low, i, k)) for k in cols):
+                        continue
+                    # COINCIDENCIA REVISADA: el mismo numero pero OTRA cantidad
+                    # (p. ej. wa = -0.659 medido por DESI frente a k_fs = 0.659 de
+                    # la particula). Cada una se anota en `coincidencias:` del
+                    # YAML con archivo, contexto y razon — nunca se exime en silencio.
+                    if any(c["pattern"] == pat and str(path).endswith(c["archivo"])
+                           and c["contexto"].lower() in low[i] for c in coincid):
                         continue
                     # Discriminador de cantidad (opcional): un decimal pelado como
                     # «0.766» puede ser un S₈ retirado O un χ²/N legitimo. El patron
                     # declara tokens: `requires` → solo es drift si ALGUNO esta en
                     # la frase; `excludes` → NO es drift si alguno esta (arriba).
-                    rel = path.relative_to(VAULT if label.startswith("Obsidian") else ROOT)
+                    rel = path.relative_to(VAULT if label.startswith("Obsidian") else MEMCLAUDE if label.startswith("Memoria") else ROOT)
                     drifts.append((label, str(rel), i + 1, pat, raw.strip()[:90]))
     return drifts, scanned
 
@@ -240,6 +355,39 @@ def run(vault_only=False, verbose=True):
     return drifts
 
 
+def sellar_memorias():
+    """Escribe/actualiza el sello de cada memoria project_* con avisos: la lista
+    se CALCULA del barrido, no se teclea. Las estrictas no se sellan: se corrigen."""
+    import datetime
+    drifts, _ = scan()
+    por = {}
+    for label, rel, _ln, pat, _t in drifts:
+        if label.startswith("Memoria") and not _estricta(label, MEMCLAUDE / rel):
+            por.setdefault(rel, set()).add(pat)
+    for rel, pats in sorted(por.items()):
+        p = MEMCLAUDE / rel
+        L = p.read_text(encoding="utf-8").split("\n")
+        viejo = next((i for i, l in enumerate(L) if l.startswith(SELLO)), None)
+        if viejo is not None:
+            pats |= set(_SELLO_RE.findall(L[viejo]))
+            del L[viejo]
+            if viejo < len(L) and not L[viejo].strip():
+                del L[viejo]
+        lista = " · ".join(f"«{x}»" for x in sorted(pats))
+        sello = (f"{SELLO} (sellado {datetime.date.today()} por memory_sync). Los numeros "
+                 f"son los de su fecha; los vigentes estan en CANONICAL_VALUES.yaml. "
+                 f"Superados en esta nota: {lista}")
+        fin = 0
+        if L and L[0].strip() == "---":
+            fin = next(i for i in range(1, len(L)) if L[i].strip() == "---") + 1
+        L[fin:fin] = ["", sello, ""] if fin else [sello, ""]
+        p.write_text("\n".join(L), encoding="utf-8")
+        print(f"  sellada {rel}: {len(pats)} valor(es)")
+
+
 if __name__ == "__main__":
+    if "--sellar-memorias" in sys.argv:
+        sellar_memorias()
+        sys.exit(0)
     vo = "--vault" in sys.argv
     sys.exit(1 if run(vault_only=vo) else 0)
