@@ -26,12 +26,12 @@ stages:
       size: 2907
     - path: src/procedencia.py
       hash: md5
-      md5: e00eb4f5bb9d7be418d056f8dc6cbba9
-      size: 5272
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 43afea97cc15f34588abffae8b3459d3
+      md5: 8777eb437d8c03f416836daae03ce082
       size: 2546
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
@@ -59,8 +59,8 @@ stages:
       size: 3144
     - path: src/procedencia.py
       hash: md5
-      md5: e00eb4f5bb9d7be418d056f8dc6cbba9
-      size: 5272
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
     - path: src/ssee_core.py
       hash: md5
       md5: e8093ec4aeaf2e5d9582e0646587ba54
@@ -68,7 +68,7 @@ stages:
     outs:
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: ff35b27c1d223ec6f827d70f95215a47
+      md5: 979a59c7d3a91f4481d2742f54c56099
       size: 1930
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
@@ -79,14 +79,14 @@ stages:
       size: 1087
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: ff35b27c1d223ec6f827d70f95215a47
+      md5: 979a59c7d3a91f4481d2742f54c56099
       size: 1930
     - path: src/valores_tex.py
       hash: md5
-      md5: b755fbd8367ca4fb460492d29ba14fdd
-      size: 2641
+      md5: 9e705da0983a7021ba7ed30553ec4e26
+      size: 2910
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: fb74b1879bf26934acfc4c7eae82d75e
-      size: 1270
+      md5: 42a19065c4e0c6d77f318a6e6d3666bc
+      size: 2080

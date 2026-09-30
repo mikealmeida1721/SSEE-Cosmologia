@@ -59,8 +59,14 @@ def _logs_sin_script():
                 w(x)
     w(P)
     hist = set(P.get("historicos") or [])
+    st = (yaml.safe_load((ROOT / "dvc.yaml").read_text()) or {}).get("stages") or {} \
+        if (ROOT / "dvc.yaml").exists() else {}
+    cadena = {o if isinstance(o, str) else list(o)[0] for d in st.values() for o in (d.get("outs") or [])}
+    # orquestacion (cola_*, vigilante_*): horas y PIDs, no resultados (mismo criterio que R75)
     return sorted(str(p.relative_to(ROOT)) for p in (ROOT / "results/logs").rglob("*")
                   if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
+                  and not p.name.startswith(("cola_", "vigilante_"))
+                  and str(p.relative_to(ROOT)) not in cadena
                   and p.stem not in mapa and p.stem not in hist)
 
 

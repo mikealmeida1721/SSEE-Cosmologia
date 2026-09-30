@@ -2367,7 +2367,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 94, "canonical": 13, "papers": 314, "cajones": 235}
+_TOPE_R74 = {"logs": 89, "canonical": 13, "papers": 314, "cajones": 235}   # logs 94->89: orquestacion excluida con razon y la cadena DVC cuenta como script
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
