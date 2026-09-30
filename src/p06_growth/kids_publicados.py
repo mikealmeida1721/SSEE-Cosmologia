@@ -15,10 +15,13 @@ Aqui se recalculan de su fuente primaria:
     (CosmoSIS reporta like = -chi2/2 sin normalizacion; ver control_kids.py).
   - PTE: distribucion chi2 con el chi2_min y los dof de los logs R3/R4.
 
-CONTROL (R53): S8 de Legacy se calcula DOS veces — del parametro muestreado
-s_8_input y de sigma8·sqrt(Om/0.3) derivado — y tienen que coincidir a 1e-4;
-si no, las columnas no son lo que se dice. (La columna derivada S_8 del
-release viene toda en NaN, por eso no se usa.)
+CONTROL (R53): el parametro muestreado s_8_input tiene que ser, muestra a
+muestra, sigma8·sqrt((Om − Om_nu)/0.3) — medido 2026-09-30: KiDS-Legacy
+muestrea S8 con la materia SIN neutrinos. Si esa identidad no se cumple a
+1e-9, las columnas no son lo que se dice. El S8 que se reporta usa Om TOTAL
+(con nu), la MISMA definicion que el S8 de SSEE (Omega_m = 0.308881 incluye
+omega_nu); con Om sin nu el posterior daria la media de s_8_input, que
+tambien se guarda. (La columna derivada S_8 del release viene toda en NaN.)
 
 Salida: results/logs/kids_publicados.json
 """
@@ -65,6 +68,9 @@ s8calc = X[:, c["COSMOLOGICAL_PARAMETERS--SIGMA_8"]] * np.sqrt(X[:, c["COSMOLOGI
 media = float(np.sum(w * s8calc))
 sig = float(math.sqrt(np.sum(w * (s8calc - media) ** 2)))
 media_col = float(np.sum(w * s8col))
+s8cb = X[:, c["COSMOLOGICAL_PARAMETERS--SIGMA_8"]] * np.sqrt(
+    (X[:, c["COSMOLOGICAL_PARAMETERS--OMEGA_M"]] - X[:, c["COSMOLOGICAL_PARAMETERS--OMEGA_NU"]]) / 0.3)
+desvio_identidad = float(np.max(np.abs(s8col / s8cb - 1.0)))
 
 # KiDS-1000: maximo posterior publicado
 col1, Y = _tabla(K1K)
@@ -73,9 +79,9 @@ like = float(Y[-1, col1.index("like")])
 r3, r4 = json.load(open(R3)), json.load(open(R4))
 out = dict(
     fecha=str(__import__("datetime").date.today()),
-    kids_legacy=dict(S8=media, S8_sigma=sig, S8_columna=media_col,
+    kids_legacy=dict(S8=media, S8_sigma=sig, S8_sin_nu_s8_input=media_col, desvio_max_identidad=desvio_identidad,
                      n_muestras=int(len(w)), n_eff=float(1.0 / np.sum(w ** 2)),
-                     control_pasa=bool(abs(media - media_col) < 1e-4),
+                     control_pasa=bool(desvio_identidad < 1e-9),
                      fuente="Wright+2025 (arXiv:2503.19441), cadena nautilus oficial"),
     kids1000_maxpost=dict(like=like, chi2=-2.0 * like, fuente="Asgari+2021, maxpost_multinest_start_C"),
     PTE=dict(ssee=dict(chi2=r3["chi2_min"], dof=r3["dof"], PTE=float(_chi2.sf(r3["chi2_min"], r3["dof"])),
@@ -85,7 +91,7 @@ out = dict(
 json.dump(con_acta(out, __file__, entradas=[LEG, K1K, R3, R4]),
           open(os.path.join(R, "results/logs/kids_publicados.json"), "w"), indent=1)
 L, P = out["kids_legacy"], out["PTE"]
-print(f"  KiDS-Legacy S8 {L['S8']:.4f} ± {L['S8_sigma']:.4f}  (columna {L['S8_columna']:.4f}) control {L['control_pasa']}")
+print(f"  KiDS-Legacy S8 {L['S8']:.4f} ± {L['S8_sigma']:.4f}  (sin nu {L['S8_sin_nu_s8_input']:.4f}; identidad {L['desvio_max_identidad']:.1e}) control {L['control_pasa']}")
 print(f"  KiDS-1000 maxpost chi2 {out['kids1000_maxpost']['chi2']:.2f}")
 for k in ("ssee", "lcdm"):
     print(f"  PTE {k}: chi2 {P[k]['chi2']:.2f}/{P[k]['dof']}  PTE {P[k]['PTE']:.4f}  {P[k]['z']:.2f}σ")
