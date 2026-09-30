@@ -44,7 +44,7 @@ using DESI~DR2, Planck~2018, and Galaxy-Cluster Mass Data}
 }
 \date{April 2026}
 
-% Posterior H0 del MCMC reframe (prior H_alg=67.962, DESI DR2, geometría total 0.308881).
+% Posterior H0 del MCMC reframe (prior H_glob=67.962±0.968, DESI DR2, geometría total 0.308881).
 % 66.41 SUPERSEDED (V-L4-DESI 2026-07-09): el sector 0.160 estaba en E(z); con la
 % materia total el posterior sube a 67.79 (0.50sigma del anchor). 67.16 era DR1.
 % CORREGIDO 2026-08-07: el 67.95/0.04sigma previo congelaba Om=0.308881 dentro de
@@ -587,7 +587,7 @@ under the algebraic prior (Eq.~\ref{eq:H0_prior_alg}) the reframe run gives the
 headline $H_0=\HZeroPosterior$ ($0.68\sigma$ from Planck, $0.33\sigma$ from the
 prediction $H_0^{\rm glob}=67.962$). With the total matter density
 $\Omega_m=0.308881$ in the background geometry, the DESI~DR2 posterior
-\emph{coincides} with the algebraic anchor rather than pulling away from it: the
+\emph{coincides} with $H_0^{\rm glob}$ rather than pulling away from it: the
 earlier ``$2.9\sigma$ below anchor'' reading was the cold sector $0.160$
 misplaced in $E(z)$, now corrected. Marginalised posteriors are shown in
 Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
@@ -595,7 +595,7 @@ Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.60\textwidth]{fig_corner_ssee_halg_prior.pdf}
-  \caption{Marginalised \SSEE\ posteriors ($\omega_m$-direct $H_0^{\rm alg}$ prior,
+  \caption{Marginalised \SSEE\ posteriors ($H_0^{\rm glob}$ prior,
   $100\times25000$). Blue lines: prior central values
   ($H_0^{\rm glob}=67.962$, $\Omega_b h^2=0.02218$). With the total matter density
   $\Omega_m=0.308881$ in $E(z)$, the $H_0$ posterior ($\HZeroPosterior$) is
@@ -753,12 +753,13 @@ favours SSEE by $\Delta\mathrm{BIC}=-6.43$ over \LCDM\ and $-6.35$ over CPL, wit
 SSEE the most economical model (Section~\ref{sec:bic}).
 
 
-\paragraph{H$_0$: the algebraic anchor and the MCMC posterior.}
-Under the $\omega_m$-direct reframe the algebraic background value
-$H_0^{\rm alg}/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = 67.962$ is not a
+\paragraph{H$_0$: the global rate and the MCMC posterior.}
+The global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962$~km\,s$^{-1}$\,Mpc$^{-1}$
+returned by the screening cascade (Papers~9--10), whose central value reproduces the
+dimensionless target $3(\varphi+\pi)^2$, is not a
 mere coincidence: with the baryon and cold-matter densities fixed by SSEE
 algebra, the Planck~\texttt{plik\_lite} likelihood is minimised exactly at
-$H_0^{\rm alg}$ (Paper~3, \S\ref{sec:prior_mira}). The background $H$ and the
+that value (Paper~3, \S\ref{sec:prior_mira}). The background $H$ and the
 CMB anchor therefore coincide --- they are the same number, $H_0^{\rm glob}=67.962\pm0.968$ ---
 superseding the earlier MIRA-mapped anchor $H_0^{\rm MIRA}=67.037$.
 With the \emph{total} matter density $\Omega_m=0.308881$ in the background
@@ -766,7 +767,7 @@ geometry, the MCMC posterior reported above,
 $H_0^{\rm MCMC}=\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-1}$, \emph{coincides}
 with the anchor: it lies $0.33\sigma$ from $H_0^{\rm glob}$ and $0.68\sigma$
 from the $\Lambda$CDM-calibrated Planck value. The DESI~DR2 data are therefore
-\emph{consistent} with the algebraic anchor rather than pulling against it. The earlier
+\emph{consistent} with $H_0^{\rm glob}$ rather than pulling against it. The earlier
 reading --- a $2.9\sigma$ downward shift ``compensating an enlarged $r_d$'' ---
 was an artefact of the cold sector $0.160$ misplaced in $E(z)$: with the correct
 total density there is no enlarged $r_d$
@@ -1076,19 +1077,19 @@ replacement of the compressed prior by the complete likelihood.
 \end{figure}
 
 \paragraph{Hubble tension.}
-The \SSEE\ algebraic value $H_0^{\rm alg}/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = 67.962$
---- the global dimensional anchor of Postulate~D (Paper~1, \S1.4), at which the
+The \SSEE\ global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$
+--- the output of the screening cascade of Papers~9--10, whose central value reproduces
+the dimensionless target $3(\varphi+\pi)^2$ and at which the
 Planck \texttt{plik\_lite} likelihood is minimised under the $\omega_m$-direct
-reframe (not a mere coincidence; \S\ref{sec:results_cosmo}) ---
+reframe (\S\ref{sec:results_cosmo}) ---
 lies within $1.1\sigma$ of Planck~2018 and is consistent with the DESI~DR2+CMB joint inference
 \citep[$H_0\approx68$\,km\,s$^{-1}$\,Mpc$^{-1}$;][]{DESI_DR2}.
-The model does not resolve the SH0ES distance-ladder tension
-\citep[$H_0\approx73$\,km\,s$^{-1}$\,Mpc$^{-1}$;][]{Riess2022}; this is a known
-open problem shared by all smooth dark-energy models including \LCDM\ \citep{Verde2019,Kamionkowski2023}, and lies outside
-the scope of this paper's DESI~BAO + cluster validation.
-\textit{The algebraic $H_0$ coincidence is CMB-consistent but not distance-ladder consistent;
-resolving the full $5\sigma$ Hubble tension requires either a modification of the
-early-Universe sound horizon or a systematic re-evaluation of the Cepheid distance scale.}
+The SH0ES distance-ladder rate
+\citep[$H_0=73.04\pm1.04$\,km\,s$^{-1}$\,Mpc$^{-1}$;][]{Riess2022} is the \emph{input} of that
+cascade, not a competing value: the screening fraction $f_{\rm screen}$ maps the local rate to
+the global one (Papers~9--10). This paper does not test the screening mechanism itself ---
+that is the subject of Paper~9 --- only that the DESI~DR2 BAO geometry, with $H_0^{\rm glob}$ as prior,
+does not pull away from it ($0.33\sigma$).
 
 \section{Discussion}
 \label{sec:discussion}

@@ -22,7 +22,7 @@
 #     deltaBIC_cmb_plik_full = −2.474 − 3·ln(2354) = −25.766 (Δk = −3)
 #     Delta_BIC_CMB          = −0.0096 − 4·ln(669) = −26.03  (Δk = −4; ΛCDM con SU mν 0.06, 2026-09-28)
 #     Delta_BIC_CMB_fullplik = −1.81  − 4·ln(2354) = −32.9   (Δk = −4)
-#     deltaBIC_lcdm_minus_ssee = +6.77 ⟹ Δ(SSEE−ΛCDM) = −6.77
+#     deltaBIC_lcdm_minus_ssee = +6.43 ⟹ Δ(SSEE−ΛCDM) = −6.43
 #   Este archivo llevaba la convención declarada sólo junto a dos claves
 #   (2026-09-25); de ahí salieron los signos opuestos entre Paper 1/2 y
 #   Paper 6/Sealed/Unified. Ahora se declara aquí y no se repite invertida.
@@ -265,12 +265,13 @@ canonical:
   #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35 (SSEE predice mejor).
   #   CPL: su ajuste de entrenamiento queda en el borde H0=50 — número NO válido, no se cita.
   H0_posterior_planckprior_km_s_Mpc: 67.53   # 3-modelos, prior Planck (para ΔBIC justo; R25)
-  deltaBIC_lcdm_minus_ssee: 6.77   # ⚠ PROVISIONAL (SSEE de julio; ver arriba). OJO: esta clave SI es LCDM − SSEE (lo dice
+  deltaBIC_lcdm_minus_ssee: 6.43   # VIGENTE (07-25) hasta cerrar la re-corrida de 3 modelos; la del 29-sep
+                                   # (+6.77 / CPL +5.66) mezcló SSEE de julio y NO se cita. OJO: esta clave SI es LCDM − SSEE (lo dice
                                    # su nombre), por eso >0 favorece SSEE. En los
                                    # papers se cita con la convencion comun:
-                                   # Delta(SSEE−LCDM) = −6.77 (CPL: −5.66).
-  deltaDIC_ssee_minus_lcdm: -5.49  # ⚠ PROVISIONAL (SSEE de julio). <0 favorece SSEE (DIC 16.02 vs 21.51; CPL 18.83 → ΔDIC −2.81); log dic_from_chains.log
-                                   # re-corrido 2026-09-29 con las cadenas nuevas (era −5.66 / −4.02)
+                                   # Delta(SSEE−LCDM) = −6.43 (CPL: −6.35).
+  deltaDIC_ssee_minus_lcdm: -5.66  # VIGENTE (07-25) hasta cerrar la re-corrida; el −5.49/−2.81 del 29-sep usó
+                                   # la cadena SSEE de julio con ΛCDM/CPL nuevos: NO se cita. log dic_from_chains.log
 
   # ── Fase B / B1 — likelihood COMPLETA de Planck ───────────────────────
   # plik TTTEEE full + lowl TT + lowl EE + lensing, con los ~20 nuisances
@@ -361,18 +362,12 @@ retired:
   - {pattern: "67.79^{+0.35}",    reason: "H0 posterior viejo → 67.82±0.41"}
   - {pattern: "67.66",            reason: "H0 DESI sola, prior plano, viejo → 67.79±0.46 (0.37σ H_glob)"}
   - {pattern: "26.21",            reason: "ΔBIC CMB viejo (ΛCDM con la mν de SSEE) → −26.03 (cmb_dbic_mnu_propia.json)"}
-  - {pattern: "6.43",             reason: "ΔBIC P2 ΛCDM−SSEE viejo → 6.77 (mcmc_paper2_3models_wmfix.log, 09-29)", requires: ["bic"]}
-  - {pattern: "6.35",             reason: "ΔBIC P2 CPL−SSEE viejo → 5.66", requires: ["bic", "cpl"]}
   - {pattern: "\\pm0.970",        reason: "σ de H_glob redondeado a mano → ±0.968 (ssee_core.SIG_H0_GLOBAL)", excludes: ["ir regime", "infrared", "68.13", "glob,ir", "(ir"]}
   - {pattern: "±0.970",           reason: "σ de H_glob → ±0.968", excludes: ["ir regime", "infrared", "68.13", "glob,ir", "(ir"]}
   - {pattern: "\\sigma=0.970",    reason: "σ de H_glob → 0.968", excludes: ["ir regime", "infrared", "68.13", "glob,ir", "(ir"]}
   - {pattern: "0.50\\sigma",       reason: "distancia vieja del posterior al ancla → 0.33σ de H_glob", requires: ["67.79", "anchor", "ancla", "h_alg", "h_{\\rm alg", "glob"]}
   - {pattern: "0.02207",          reason: "Ω_b h² posterior viejo → 0.02198"}
   - {pattern: "1.04089",          reason: "100θ* en el posterior viejo 67.79 → 1.04099 (0.32σ) en 67.82"}
-  - {pattern: "5.66",             reason: "ΔDIC SSEE−ΛCDM viejo → −5.49 (OJO: 5.66 es hoy el ΔBIC de CPL)", requires: ["dic"]}
-  - {pattern: "4.02",             reason: "ΔDIC SSEE−CPL viejo → −2.81", requires: ["dic"]}
-  - {pattern: "14.95",            reason: "DIC SSEE viejo → 16.02", requires: ["dic"]}
-  - {pattern: "20.61",            reason: "DIC ΛCDM viejo → 21.51", requires: ["dic"]}
   - {pattern: "5.71 eV",   reason: "m_φ via Σm_ν×H_alg — dimensionalmente inválida"}
   - {pattern: "5.60 eV",   reason: "m_φ viejo (mismo ansatz retirado)"}
   - {pattern: "5.602",     reason: "m_φ viejo"}
@@ -401,7 +396,7 @@ retired:
   - {pattern: "66.53",     reason: "H0 posterior MCMC con prior MIRA 67.037 — dos veces superseded (→67.16 DR1, →66.41 DR2)"}
   # ── vector DESI DR2 real (V-L4-DESI, 2026-07-02) — era DR1 mal etiquetado ──
   - {pattern: "67.16",     reason: "H0 posterior con datos DR1 mal etiquetados → 67.79±0.35 vigente (DR2 + geometría total + ω_m fijo R25; el 67.95 intermedio congelaba Ω_m)"}
-  - {pattern: "0.05\\sigma", excludes: ["dr1", "legacy"], reason: "titular w0wa DR1+SN → 0.24σ Pantheon+ / rango 0.2-1.8σ (ecs. 25-28 DR2). Legítimo SÓLO si se atribuye a DR1 explícitamente (Paper 1 §Predictive Register, Sealed abstract): el punto sí estaba a 0.05σ de DR1 y a 0.24σ de DR2 — es evidencia honesta de dos releases, no el titular retirado. Drift únicamente si '0.05σ' se presenta como claim actual/DR2."}
+  - {pattern: "0.05\\sigma", excludes: ["dr1", "legacy", "full posterior"], reason: "titular w0wa DR1+SN → 0.24σ Pantheon+ / rango 0.2-1.8σ (ecs. 25-28 DR2). Legítimo SÓLO si se atribuye a DR1 explícitamente (Paper 1 §Predictive Register, Sealed abstract): el punto sí estaba a 0.05σ de DR1 y a 0.24σ de DR2 — es evidencia honesta de dos releases, no el titular retirado. Drift únicamente si '0.05σ' se presenta como claim actual/DR2."}
   # Mismo criterio que 94.07 y que "0.05\\sigma": el valor DR1 no es incorrecto,
   # es el de OTRA release. Citarlo CON su atribución es correcto y necesario
   # (Paper 1 §Predictive Register lo usa para mostrar cuánto se estrechó el

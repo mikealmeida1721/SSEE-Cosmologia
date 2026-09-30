@@ -170,9 +170,9 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | χ²_2D (w₀-wₐ vs DESI DR2+CMB+Pantheon+) | 0.42 → 0.24σ (2D); 1.47σ DESY5, 1.77σ Union3 (ρ medidos de cadenas oficiales) |
 | χ²_r clusters (7 clusters, analytic) | 0.126 |
 | χ²_r clusters (4 clusters, MCMC) | 0.122 |
-| H₀ SSEE (MCMC, prior H_alg 67.962, ωm-direct, DESI DR2) | 67.79 ± 0.35 km/s/Mpc (0.66σ Planck, **0.50σ del anchor** — DR2 compatible con la predicción; ω_m algebraico fijo, R25) |
+| H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ Planck, **0.33σ de H_glob** — DR2 compatible con la predicción; ω_m algebraico fijo, r_d CAMB) |
 | ΔBIC (SSEE k=2 vs ΛCDM k=3) | −6.43 (SSEE favoured; CPL −6.35; ΔDIC −5.66; cross-val SSEE predice mejor) |
-| r_d SSEE / χ²_r(H(z)) | 148.2 Mpc ≈ ΛCDM 147.8 (1.002×) / 0.482 ≈ ΛCDM 0.459 |
+| r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.482 ≈ ΛCDM 0.459 (3 modelos: en re-corrida) |
 
 ### Paper 3 (Planck PR4 CMB)
 

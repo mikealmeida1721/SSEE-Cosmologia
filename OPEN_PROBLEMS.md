@@ -233,7 +233,7 @@ mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducí
 
 ## OP-3 — Separabilidad UV-IR / el origen del `5/2` en `M⁴ = 5φ⁸ρ_c` (Paper 10) — 🟡 **PARCIAL (reabierto 2026-09-06, alineado con el Registro)**
 
-**Severidad: Media.** No mueve ningún número publicado —la cascada UV ya declara que no mide M⁴, con σ propagado ±0.970— pero deja sin fundamentar el corte sobre el que se reformuló el Postulado C.1.
+**Severidad: Media.** No mueve ningún número publicado —la cascada UV ya declara que no mide M⁴, con σ propagado ±0.968— pero deja sin fundamentar el corte sobre el que se reformuló el Postulado C.1.
 
 **Location:** Paper 10, Postulate C.1 / Conditional Theorem C.1.
 
@@ -270,7 +270,7 @@ derivación.
 |---|---|---|
 | **A** — el atractor produce `M⁴` vía `K_DE(X)=K_α(X/N)` | **sobredeterminada**: 2 condiciones, 1 botón | lineal pide `N=KAL ⟹ M⁴=417.91`; cuadrática pide `M⁴=5φ⁸ ⟹ N=4.139475=KAL_eff`, y entonces el término lineal pide `0.241577` donde el paper usa `0.181113`, razón `1.333842` |
 | **C** — aterrizaje sobre la acción de Paper 7 | **subdeterminada Y la serie no trunca** | con `A=0.206293212819` fijo y `N` libre: `M⁴ = 66.45 / 910.91 / 6645 / 664500` según `N`; y `X₃/X₂ = −0.6970` independiente de `N` |
-| **Hubble** — que la cascada *mida* el corte | **sin poder de restricción** | σ propagado de SH0ES `±0.970` km/s/Mpc vs residuo `+4.2e-06`: `M⁴` compatible de `0.2×` a `∞` (sólo se excluye `0.1×`). Degeneración: `+1% KAL ↔ +2.01% M⁴` |
+| **Hubble** — que la cascada *mida* el corte | **sin poder de restricción** | σ propagado de SH0ES `±0.968` km/s/Mpc vs residuo `+4.2e-06`: `M⁴` compatible de `0.2×` a `∞` (sólo se excluye `0.1×`). Degeneración: `+1% KAL ↔ +2.01% M⁴` |
 
 Consecuencia para el método de ingredientes: `c₂ = 1/M⁴` es un ingrediente
 **libre que ningún dato disponible determina**. Tiene que venir de la teoría
@@ -493,7 +493,7 @@ peculiar (Δv/c), no a una corrección de densidad de energía oscura — físic
 - H₀,glob con el `f_screen` **IR solo** (0.067253) = 68.13 km/s/Mpc — 0.17σ,
   resultado **parcial**. El enunciado canónico usa el `f_screen` **completo**
   (IR+UV, 0.069522): 73.04 × (1 − 0.069522) = **67.962142**, residuo **+4.2e-06**
-- Con la corrección UV (Paper 10, condicional a Postulate C.1): 67.962142, residuo +4.2e-06 — pero σ propagado ±0.970 lo domina
+- Con la corrección UV (Paper 10, condicional a Postulate C.1): 67.962142, residuo +4.2e-06 — pero σ propagado ±0.968 lo domina
 
 **Cambios aplicados en Paper 9:**
 - §3: Derivación desde universo separado k-essence (primer principios)
@@ -647,7 +647,7 @@ desde primeros principios (necesario para aspirar a nivel de premio).
 > independientes**, ya no ligadas por ningún factor (ni MIRA ni π/φ).
 > Verificación CMB Fase B (Planck plik_lite, $H=67.962$, $\Omega_m=0.30889$):
 > $\chi^2_{\rm SSEE}=1005.41$ vs $\chi^2_{\Lambda{\rm CDM}}=1003.76$,
-> $\Delta\mathrm{BIC}=-26.21$ → SSEE favorecido (era −24.02 con $A_s,\tau$ clavados y $N=613$; corregido 2026-09-09)
+> $\Delta\mathrm{BIC}=-26.03$ → SSEE favorecido (ΛCDM con su mν 0.06, 2026-09-29; era −26.21, y antes −24.02 con $A_s,\tau$ clavados y $N=613$; corregido 2026-09-09)
 > (`results/logs/p3_cmb_reframe_omega_m.log`).
 >
 > **Residuo honesto (no es perilla nueva):** $\Omega_{m,{\rm CMB}}$ ahora descansa
@@ -2697,7 +2697,7 @@ sin premisa nombrada no se puede disolver, sólo se puede chocar contra él.
 >                                    -51.6%
 > ```
 > La vara es **la propia predicción de SSEE**: $\omega_m=\omega_b+\omega_c+\omega_\nu
-> =0.14267$, la que da $\chi^2_{\rm CMB}=1003.586$ y $\Delta$BIC$=-26.21$ en Paper 3.
+> =0.14267$, la que da $\chi^2_{\rm CMB}=1003.586$ y $\Delta$BIC$=-26.03$ en Paper 3.
 > Medido sobre `results/logs/fondo_acoplado.npz` en $a=0.001$:
 > $\rho_m/\rho_{c,0}$ acoplado $=1.4939\times10^8$ vs estándar $3.0888\times10^8$,
 > razón $0.4837$. Equivalente: $E(z{=}999)$ va **−30.5 %** por debajo.
