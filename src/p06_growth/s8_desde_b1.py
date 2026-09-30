@@ -28,6 +28,7 @@ import yaml  # noqa: E402
 from getdist import loadMCSamples  # noqa: E402
 
 import ssee_core as S  # noqa: E402
+from procedencia import con_acta  # noqa: E402
 
 KIDS = yaml.safe_load(open(os.path.join(R, "CANONICAL_VALUES.yaml")))["canonical"]["obs_KiDS_S8"]
 KIDS_SIG = 0.024   # ORIGEN-VALOR: 0.024 — sigma de KiDS-1000 S8 (Asgari+2021), el mismo que CANONICAL anota junto a obs_KiDS_S8
@@ -46,4 +47,6 @@ for lab, pref in (("SSEE", "ssee_cmb"), ("LCDM", "lcdm_cmb")):
     f = out["filas"][lab]
     print(f"  {lab:4s} logA {f['logA']:.3f}±{f['logA_sigma']:.3f}  S8 {S8:.4f}±{S8e:.4f}  "
           f"{f['tension_kids']:.2f}σ KiDS · control σ8 {m:.4f} vs log {esperado.get(lab)} -> {f['control_pasa']}")
-json.dump(out, open(os.path.join(R, "results/logs/s8_desde_b1.json"), "w"), indent=1)
+json.dump(con_acta(out, __file__, entradas=[os.path.join(R, "results/chains", f"{p}_cmb.1.txt") for p in ("ssee", "lcdm")]
+                   + [os.path.join(R, "results/logs/b1_analyse.log"), os.path.join(R, "CANONICAL_VALUES.yaml")]),
+          open(os.path.join(R, "results/logs/s8_desde_b1.json"), "w"), indent=1)

@@ -34,6 +34,7 @@ import yaml  # noqa: E402
 import cobaya_kids_legacy as L  # noqa: E402
 import kids_shear as K  # noqa: E402
 import ssee_core as S  # noqa: E402
+from procedencia import con_acta  # noqa: E402
 
 C = yaml.safe_load(open(os.path.join(R, "CANONICAL_VALUES.yaml")))["canonical"]
 TXT = open(os.path.join(R, "CANONICAL_VALUES.yaml")).read()
@@ -62,7 +63,8 @@ out = dict(fecha=str(__import__("datetime").date.today()), fondo="SSEE_BG (cobay
            unif=dict(logA=L.LOGA_CMB_SSEE, sigma8=sg_u, S8=S8_u),
            libre=dict(logA=la, logA_sigma=sla, sigma8=sg_c, sigma8_sigma=(sg_hi - sg_lo) / 2,
                       S8=S8_c, S8_sigma=(S8_hi - S8_lo) / 2))
-json.dump(out, open(os.path.join(R, "results/logs/s8_kids_legacy_camb.json"), "w"), indent=1)
+json.dump(con_acta(out, __file__, entradas=[os.path.join(R, "CANONICAL_VALUES.yaml"), L.__file__, K.__file__]),
+          open(os.path.join(R, "results/logs/s8_kids_legacy_camb.json"), "w"), indent=1)
 print(f"  Omega_m CAMB {om:.6f} (nucleo {S.OMEGA_M_TOTAL:.6f}) control {out['control_Omega_m']['pasa']}")
 print(f"  unif : sigma8 {sg_u:.4f}  S8 {S8_u:.4f}")
 print(f"  libre: sigma8 {sg_c:.4f} ± {out['libre']['sigma8_sigma']:.4f}  S8 {S8_c:.4f} ± {out['libre']['S8_sigma']:.4f}")

@@ -1,0 +1,35 @@
+# dvc.yaml — la CADENA DE PROCEDENCIA del modelo (2026-09-30, decision de Mike).
+# Cada etapa: el comando que produce un resultado, TODO lo que lee (script,
+# modulos, datos, cadenas) y lo que escribe. `dvc.lock` guarda el sha de cada
+# cosa: `dvc status` dice que resultado ya no corresponde a su codigo o a sus
+# datos, y `dvc repro` rehace solo lo afectado. Un log editado a mano no cuadra
+# con su hash. Las salidas llevan `cache: false`: se hashean, no se duplican
+# (siguen en git como siempre). Cada salida lleva ademas su ACTA dentro
+# (src/procedencia.py): commit, hashes, argumentos, nucleos.
+# Se migra aqui, etapa por etapa, lo que hoy vive en PROPAGACION.yaml.
+stages:
+  mcmc_full_posteriores:
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/mcmc_full/leer_mcmc_full.py
+    deps:
+      - src/mcmc_full/leer_mcmc_full.py
+      - src/procedencia.py
+      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
+      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt
+      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt
+      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt
+    outs:
+      - results/logs/mcmc_full_posteriores.json:
+          cache: false
+  s8_desde_b1:
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/p06_growth/s8_desde_b1.py
+    deps:
+      - src/p06_growth/s8_desde_b1.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - results/chains/ssee_cmb.1.txt
+      - results/chains/lcdm_cmb.1.txt
+      - results/logs/b1_analyse.log
+      - CANONICAL_VALUES.yaml
+    outs:
+      - results/logs/s8_desde_b1.json:
+          cache: false

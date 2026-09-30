@@ -22,6 +22,10 @@ import os
 
 import numpy as np
 
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from procedencia import con_acta  # noqa: E402
+
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 BASE = "/mnt/datos/SSEE_data/mcmc/mcmc_full"
 PAR = ["ombh2", "omch2", "rdrag", "H0", "omegam", "w", "wa", "sigma8", "S8"]
@@ -50,7 +54,8 @@ ctrl = {p: dict(tabla=v, lector=res[p]["media"],
 out = dict(fecha=str(__import__("datetime").date.today()), cadenas=f"{BASE}/c1..c4",
            filas_tras_corte=int(len(d)), corte="30 % inicial por cadena",
            posteriores=res, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
-json.dump(out, open(os.path.join(R, "results/logs/mcmc_full_posteriores.json"), "w"), indent=1)
+json.dump(con_acta(out, __file__, entradas=[f"{BASE}/c{i}/ssee_full.1.txt" for i in (1, 2, 3, 4)]),
+          open(os.path.join(R, "results/logs/mcmc_full_posteriores.json"), "w"), indent=1)
 for p in PAR:
     print(f"  {p:7s} {res[p]['media']:.5f} ± {res[p]['sigma']:.5f}")
 print("  control:", {p: (c["tabla"], round(c["lector"], 5), c["coincide"]) for p, c in ctrl.items()})

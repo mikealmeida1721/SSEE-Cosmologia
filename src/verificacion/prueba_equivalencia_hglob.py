@@ -27,6 +27,7 @@ R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 for d in ("src", "src/p03_cmb", "src/p02_mcmc", "src/p06_growth"):
     sys.path.insert(0, os.path.join(R, d))
 import ssee_core as S  # noqa: E402
+from procedencia import con_acta  # noqa: E402
 
 H_VIEJO, H_NUEVO = S.H0_ALG, S.H0_GLOBAL
 SALTO = 1000 * (H_NUEVO - H_VIEJO)
@@ -63,5 +64,7 @@ for nom, f in (("CMB", cmb), ("BAO", bao), ("KiDS", kids)):
                               control_ve_H=bool(abs(c - a) > abs(b - a)))
     print(f"  {nom:5s} chi2 {a:.6f} -> {b:.6f}  d={b - a:+.2e}   control x1000 d={c - a:+.2e}")
 res["pasa"] = all(abs(v["dchi2"]) < 1e-3 and v["control_ve_H"] for v in res["sondas"].values())
-json.dump(res, open(os.path.join(R, "results/logs/prueba_equivalencia_hglob.json"), "w"), indent=1)
+mods = [sys.modules[m].__file__ for m in ("cmb_eval", "chi2_bao_posterior", "cobaya_kids_legacy") if m in sys.modules]
+json.dump(con_acta(res, __file__, entradas=[os.path.join(R, "results/logs/cmb_dbic_tau_ajustado.json")] + mods),
+          open(os.path.join(R, "results/logs/prueba_equivalencia_hglob.json"), "w"), indent=1)
 print("  ->", "PASA" if res["pasa"] else "NO PASA")
