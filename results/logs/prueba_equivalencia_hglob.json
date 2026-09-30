@@ -1,0 +1,64 @@
+{
+ "fecha": "2026-09-30",
+ "H_viejo": 67.96213732340931,
+ "H_nuevo": 67.96214152203791,
+ "dH": 4.198628602125609e-06,
+ "criterio": "|dchi2| < 1e-3 en CMB, BAO y KiDS (declarado antes)",
+ "sondas": {
+  "CMB": {
+   "chi2_viejo": 1003.5860397789045,
+   "chi2_nuevo": 1003.5861181208386,
+   "dchi2": 7.834193411326851e-05,
+   "dchi2_control_salto_x1000": 0.08022638092097623,
+   "control_ve_H": true
+  },
+  "BAO": {
+   "chi2_viejo": 11.406514867303152,
+   "chi2_nuevo": 11.406503768936682,
+   "dchi2": -1.1098366469397547e-05,
+   "dchi2_control_salto_x1000": -0.010920669848729858,
+   "control_ve_H": true
+  },
+  "KiDS": {
+   "chi2_viejo": 476.41566302550734,
+   "chi2_nuevo": 476.4156601025561,
+   "dchi2": -2.9229512392703327e-06,
+   "dchi2_control_salto_x1000": -0.008767061630010176,
+   "control_ve_H": true
+  }
+ },
+ "pasa": true,
+ "_procedencia": {
+  "commit": "85cacbdf0907270917c622af3a5a5f23bbec9f9c",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/verificacion/prueba_equivalencia_hglob.py",
+  "script_sha256": "4635285452671e4b8538371749b21adb21309408624dfc36d065535dc5fc21dc",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "src/p03_cmb/cmb_eval.py": "36b480f0db20d8da770a75ca588618f41ae749a9036ec70c1637075b0c729365",
+   "src/p02_mcmc/chi2_bao_posterior.py": "003258bbc8b2052d9c026cddfdb5ee53176121304f1a2c8a2d2e1e9bcfceeb14",
+   "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21"
+  },
+  "argv": [
+   "src/verificacion/prueba_equivalencia_hglob.py"
+  ],
+  "fecha": "2026-09-30T19:35:55",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5",
+   "cobaya": "3.6.2",
+   "getdist": "1.7.6"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

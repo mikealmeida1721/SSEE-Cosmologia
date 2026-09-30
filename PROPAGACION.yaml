@@ -207,6 +207,18 @@ figuras_verificadas:
 #   lcdm_cmb  R−1=0.0187 · 95760 muestras · χ² coherente 1.5e-4 · mínimo al 75%
 # El resultado del análisis vigente vive en b1_analyse.log, que SÍ vigila R35.
 muestreo_certificado:
+  # 2026-09-30 — c8d1566 (09-28) cambio H0_ALG (67.962137) por H0_GLOBAL
+  # (67.962142) en los scripts de abajo, y NADA MAS: revisado diff por diff
+  # (H, comentarios, rotulos de figura y el punto de ARRANQUE del MCMC, que no
+  # mueve el posterior). La prueba results/logs/prueba_equivalencia_hglob.json
+  # (acta valida, criterio |dchi2|<1e-3 declarado antes) da CMB 7.8e-5,
+  # BAO 1.1e-5, KiDS 2.9e-6; su control (salto x1000 en H) SI se ve en las
+  # tres. Fuera a proposito: multisonda y h0_lente (otras sondas u otros
+  # commits sin revisar), b1_analyse (su codigo de analisis cambio de verdad).
+  paper3_cmb_reframe: 2026-09-30
+  kids_legacy_ssee: 2026-09-30
+  kids_legacy_sseefijo: 2026-09-30
+  kids_legacy_lcdmfijo: 2026-09-30
   # 2026-09-19: R35 ahora respeta la FECHA del certificado (antes eximia para
   # siempre). Eso destapo dos cambios posteriores al 07-27 en
   # ssee_paper3_b1_mcmc.py, y se revisaron:
@@ -215,8 +227,8 @@ muestreo_certificado:
   #           nucleo, mas las 2 lineas de sys.path para importarlo.
   #           SUM_MNU_EV == 0.06849 da True (mismo float, bit a bit).
   # Ninguno cambia un numero de la cadena: se renueva la fecha.
-  b1_full_run: 2026-09-19
-  b1_lcdm_run: 2026-09-19
+  b1_full_run: 2026-09-30   # ver bloque H0_GLOBAL abajo
+  b1_lcdm_run: 2026-09-30   # ver bloque H0_GLOBAL abajo
   # 2026-09-08: cobaya_kids.py cambio, pero SOLO por adicion — se anadieron
   # loglike_lcdm_fijo/info_lcdm_fijo y una rama de despacho para el variante
   # 'lcdmfijo'. Las rutas 'ssee' y 'lcdm' quedan identicas (la unica linea
@@ -227,7 +239,7 @@ muestreo_certificado:
   # 3). Probado por EJECUCION de loglike_lcdm, version del log vs hoy:
   # src/verificacion/prueba_equivalencia_kids_cache.py -> 0.000e+00 en 9
   # evaluaciones (con desalojo y vuelta), y una cache ROTA si se detecta (4.6).
-  R4_lcdm_resume_20260805: 2026-09-19
+  R4_lcdm_resume_20260805: 2026-09-30   # ver bloque H0_GLOBAL abajo
   # 2026-09-19: el commit 8f49b48 volvio a tocar `cobaya_kids.py`, esta vez SI
   # dentro del camino de LCDM fondo-fijo: `bg_key_to_dict` gano una guarda de
   # retorno temprano `if bg_key[0] == 'SSEEwch'`. R35 hizo bien en marcarlo.

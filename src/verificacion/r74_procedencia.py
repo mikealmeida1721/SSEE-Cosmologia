@@ -38,6 +38,13 @@ NUMALL = re.compile(r"(?<![\w.])(\d+\.\d+)(?![\w.])")
 CAJONES = ["VERIFICATION_LEDGER.md", "README.md", "OPEN_PROBLEMS.md", "CLAUDE.md"]
 
 
+
+# Logs de ORQUESTACION: colas y vigilantes. Registran horas, PIDs y la
+# convergencia (R-1) de corridas ajenas, no resultados del modelo. UNA sola
+# definicion: la usan R74, R75 y R33 (2026-09-30; antes la tupla estaba
+# tecleada en dos sitios).
+ORQUESTACION = ("cola_", "vigilante_")
+
 def _fmt(v):
     s = repr(float(v))
     return s if "." in s and "e" not in s else f"{float(v):.6f}"
@@ -65,7 +72,7 @@ def _logs_sin_script():
     # orquestacion (cola_*, vigilante_*): horas y PIDs, no resultados (mismo criterio que R75)
     return sorted(str(p.relative_to(ROOT)) for p in (ROOT / "results/logs").rglob("*")
                   if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
-                  and not p.name.startswith(("cola_", "vigilante_"))
+                  and not p.name.startswith(ORQUESTACION)
                   and str(p.relative_to(ROOT)) not in cadena
                   and p.stem not in mapa and p.stem not in hist)
 

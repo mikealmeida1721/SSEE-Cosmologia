@@ -78,3 +78,16 @@ stages:
     outs:
       - results/logs/p10_uv_fscreen.json:
           cache: false
+  prueba_equivalencia_hglob:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/prueba_equivalencia_hglob.py
+    deps:
+      - src/verificacion/prueba_equivalencia_hglob.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - results/logs/cmb_dbic_tau_ajustado.json
+      - src/p03_cmb/cmb_eval.py
+      - src/p02_mcmc/chi2_bao_posterior.py
+      - src/p06_growth/cobaya_kids_legacy.py
+    outs:
+      - results/logs/prueba_equivalencia_hglob.json:
+          cache: false

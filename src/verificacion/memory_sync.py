@@ -99,13 +99,23 @@ def _retirados_por_historia(cfg):
         cifras = re.sub(r"[^0-9]", "", sv.lstrip("-0."))
         if sv in vigentes or sv in ya or len(cifras) < 3:
             continue
+        dec = len(sv.split(".")[1]) if "." in sv else 0
+
+        def _redondeo(x):
+            return (abs(float(sv)) == abs(x) or round(x, dec) == float(sv)
+                    or abs(abs(float(sv)) - abs(x)) < 0.999 * 10 ** -dec)   # a menos de una unidad de su ultima cifra
+            # (con 1.5 unidades pasaba −33.0→−32.9 del ΔBIC plik completo, que
+            # es un cambio REAL: N 2409→2354. Visto en el control del 2026-09-30.)
         if isinstance(ahora, (int, float)):
-            dec = len(sv.split(".")[1]) if "." in sv else 0
-            if (abs(float(sv)) == abs(ahora) or round(ahora, dec) == float(sv)
-                    or abs(abs(float(sv)) - abs(ahora)) < 0.999 * 10 ** -dec):   # a menos de una unidad de su ultima cifra
-                # (con 1.5 unidades pasaba −33.0→−32.9 del ΔBIC plik completo, que
-                # es un cambio REAL: N 2409→2354. Visto en el control del 2026-09-30.)
+            if _redondeo(ahora):
                 continue
+        elif k not in cur and any(_redondeo(x) for x in cur.values()
+                                  if isinstance(x, (int, float)) and not isinstance(x, bool)):
+            # CLAVE RENOMBRADA (2026-09-30: alpha_K_full -> s_K_full,
+            # f_screen_UV -> f_screen): su valor viejo es el redondeo de uno
+            # vigente con otro nombre, no un retirado. Solo para claves que ya
+            # no existen; una clave viva se juzga contra SU valor.
+            continue
         out.append({"pattern": sv.lstrip("-"), "auto": True,
                     "reason": f"historial git: {k} valia {sv} (visto {fecha}); hoy {ahora}"})
     try:

@@ -184,3 +184,40 @@ stages:
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
       size: 1356
+  prueba_equivalencia_hglob:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/verificacion/prueba_equivalencia_hglob.py
+    deps:
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/p02_mcmc/chi2_bao_posterior.py
+      hash: md5
+      md5: b00675001accb4ac1296749de33ecbca
+      size: 4525
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    - path: src/verificacion/prueba_equivalencia_hglob.py
+      hash: md5
+      md5: 337a097aec8e8d4ea2df0facc38638f5
+      size: 3242
+    outs:
+    - path: results/logs/prueba_equivalencia_hglob.json
+      hash: md5
+      md5: 987cdc83c3d1193ba4b283be1d4f77b4
+      size: 2093

@@ -1888,6 +1888,13 @@ def _tex_sin_comentarios(_t):
     return "\n".join(_out)
 
 
+def _macros68(_tex, _vg):
+    """Las definiciones de valores_generados.tex que `_tex` usa con \\val{}."""
+    _usa = set(re.findall(r"\\val\{([^}]+)\}", _tex))
+    return "\n".join(_l for _l in _vg.split("\n")
+                     if any(f"ssee@val@{_n}\\endcsname" in _l for _n in _usa))
+
+
 def _ts68(_rel):
     try:
         _o = _sp68.run(["git", "log", "-1", "--format=%at", "--", _rel],
@@ -1927,12 +1934,14 @@ for _tex68 in sorted((ROOT.parent / "manuscript").glob("*.tex")):
         # Los numeros que entran por \val{} viven en valores_generados.tex:
         # si cambian ahi, el PDF queda viejo aunque el .tex no se toque
         # (2026-09-30). Se compara tambien ese archivo, sin su acta (fecha).
+        # Solo las macros que ESE .tex usa: una macro nueva para otro paper no
+        # deja viejo este PDF (lo marco de mas la primera version, mismo dia).
         if "valores_generados.tex" in _nuevo68:
             _vg68 = ROOT.parent / "manuscript" / "valores_generados.tex"
-            _viejo68 += _sp68.run(["git", "show", f"{_sha68}:manuscript/valores_generados.tex"],
-                                  cwd=ROOT.parent, capture_output=True, text=True,
-                                  timeout=20).stdout
-            _nuevo68 += _vg68.read_text(errors="ignore") if _vg68.exists() else ""
+            _viejo68 += _macros68(_nuevo68, _sp68.run(
+                ["git", "show", f"{_sha68}:manuscript/valores_generados.tex"],
+                cwd=ROOT.parent, capture_output=True, text=True, timeout=20).stdout)
+            _nuevo68 += _macros68(_nuevo68, _vg68.read_text(errors="ignore") if _vg68.exists() else "")
         if _tex_sin_comentarios(_viejo68) != _tex_sin_comentarios(_nuevo68):
             _r68.append(_tex68.stem)
     except Exception as _e68:
@@ -1962,20 +1971,22 @@ _c68 = [("\\section{A}\ntexto viejo\n", "\\section{A}\ntexto NUEVO\n", True),
         ("\\section{A}\ntexto viejo\n", "\\section{A}  % nota al margen\ntexto viejo\n",
          False),
         ("\\section{A}\n50\\%% de la muestra\n", "\\section{A}\n50\\%% de la muestra\n",
-         False),
-        # 2026-09-30: el .tex igual pero un numero de valores_generados.tex
-        # cambiado SE MARCA; el acta (comentario, lleva la fecha) no.
-        ("\\input{valores_generados.tex}\n\\def\\x{2.65}\n",
-         "\\input{valores_generados.tex}\n\\def\\x{2.69}\n", True),
-        ("\\input{valores_generados.tex}\n% ACTA-PROCEDENCIA {\"fecha\": \"1\"}\n\\def\\x{2.69}\n",
-         "\\input{valores_generados.tex}\n% ACTA-PROCEDENCIA {\"fecha\": \"2\"}\n\\def\\x{2.69}\n", False)]
+         False)]
+# 2026-09-30: el .tex igual pero una macro QUE USA cambiada en
+# valores_generados.tex SE MARCA; una macro que no usa, o el acta, no.
+_T68 = "\\input{valores_generados.tex}\nda $\\val{x}$\n"
+_V68 = lambda _x, _y, _f: (f"% ACTA-PROCEDENCIA {{\"fecha\": \"{_f}\"}}\n"
+                          f"\\expandafter\\def\\csname ssee@val@x\\endcsname{{{_x}}}\n"
+                          f"\\expandafter\\def\\csname ssee@val@y\\endcsname{{{_y}}}\n")
+_c68 += [(_T68 + _macros68(_T68, _V68("2.65", "1", "1")), _T68 + _macros68(_T68, _V68("2.69", "1", "1")), True),
+         (_T68 + _macros68(_T68, _V68("2.69", "1", "1")), _T68 + _macros68(_T68, _V68("2.69", "7", "2")), False)]
 _f68 = [f"caso {_i}" for _i, (_a, _b, _esp) in enumerate(_c68)
         if (_tex_sin_comentarios(_a) != _tex_sin_comentarios(_b)) is not _esp]
 check("R68 el detector distingue el cambio de contenido del comentario LaTeX",
       not _f68, "; ".join(_f68) if _f68
-      else "6 casos: el texto cambiado y el numero de valores_generados cambiado se "
-           "marcan; el comentario anadido (en la linea y como linea nueva), el "
-           "porcentaje escapado y el acta con otra fecha, exentos")
+      else "6 casos: el texto cambiado y la macro USADA cambiada se marcan; el "
+           "comentario anadido (en la linea y como linea nueva), el porcentaje "
+           "escapado y una macro que el .tex no usa (con otra acta), exentos")
 
 # --- R69: los CAJONES no pueden declarar un titular que el canonico ya movio
 #
@@ -2383,7 +2394,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 88, "canonical": 6, "papers": 302, "cajones": 223}   # logs 94->89: orquestacion excluida con razon y la cadena DVC cuenta como script
+_TOPE_R74 = {"logs": 88, "canonical": 6, "papers": 294, "cajones": 214}   # logs 94->89: orquestacion excluida con razon y la cadena DVC cuenta como script
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -2457,7 +2468,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 # Fuera de la cuenta, declarado: los logs de ORQUESTACION (cola_*, vigilante_*)
 # registran horas y PIDs de las colas, no resultados; ningun numero sale de ellos.
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
-          and not p.name.startswith(("cola_", "vigilante_"))]
+          and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
 _TOPE_R75 = 169   # 2026-09-30: 172 logs de resultado, 2 ya en la cadena (mcmc_full_posteriores, s8_desde_b1)
 _DEUDA_REAL["R75"] = _fuera75
@@ -3488,9 +3499,16 @@ _RETIRADAS = {"0.06902": "Σm_ν retirado (vigente 0.06849)",
 try:
     _logdir = _REPO / "results" / "logs"
     _sucios, _hist = [], []
+    # Los de ORQUESTACION quedan fuera, con razon: imprimen el R-1 de otras
+    # corridas, y un R-1 = 0.069028 contiene la huella «0.06902» sin tener
+    # nada que ver con Σm_ν (falsa alarma del 2026-09-30, vigilante_conjunta).
+    def _huellas33(_nombre, _txt):
+        if _nombre.startswith(_r74.ORQUESTACION):
+            return []
+        return [f"{_k} ({_v})" for _k, _v in _RETIRADAS.items() if _k in _txt]
     for _lg in sorted(_logdir.glob("*.log")):
         _txt = _lg.read_text(errors="ignore")
-        _hit33 = [f"{_k} ({_v})" for _k, _v in _RETIRADAS.items() if _k in _txt]
+        _hit33 = _huellas33(_lg.name, _txt)
         if not _hit33:
             continue
         (_hist if _lg.name in _LOGS_HISTORICOS else _sucios).append(
@@ -3500,6 +3518,14 @@ try:
           "; ".join(_sucios) if _sucios
           else f"{len(list(_logdir.glob('*.log')))} logs barridos, "
                f"{len(_hist)} históricos declarados")
+    # CONTROL (R53): la huella en un log de resultados se caza; el R-1 de un
+    # vigilante, no.
+    _c33 = [("resultado.log", "Sum_mnu = 0.06902 eV", True),
+            ("vigilante_x.log", "b3 viva — R-1 58558.000000 0.069028", False)]
+    _f33 = [_n for _n, _s, _esp in _c33 if bool(_huellas33(_n, _s)) is not _esp]
+    check("R33 el detector distingue la constante rancia del R-1 de un vigilante",
+          not _f33, ", ".join(_f33) if _f33 else
+          "2 casos: Σm_ν rancio en un log de resultados se marca; R-1 0.069028 en un vigilante, exento")
     if _hist:
         track_archivo(f"R33 {len(_hist)} logs históricos con constante retirada",
                       "; ".join(_hist) + "  (conservados: reescribirlos "
