@@ -221,3 +221,49 @@ stages:
       hash: md5
       md5: 987cdc83c3d1193ba4b283be1d4f77b4
       size: 2093
+  spt3g_calibrador:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/spt3g_calibra.py lee
+    deps:
+    - path: /mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex
+      hash: md5
+      md5: 3f44f27af911b034a72ab7b9c1fe2146
+      size: 6606
+    - path: 
+        /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
+      hash: md5
+      md5: c667721e4ad556d5c9f669ac08f8f77f
+      size: 486
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt
+      hash: md5
+      md5: f9b215d8f54e829e12ac553125becb20
+      size: 3644451
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt
+      hash: md5
+      md5: 650ffdb99d26a4468aebedc69213ff4b
+      size: 3584295
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt
+      hash: md5
+      md5: d5392e43ada58094daf358b4aa9b077c
+      size: 3636653
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt
+      hash: md5
+      md5: 984e75c0976fb11389a5c894e6359922
+      size: 3565357
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.progress
+      hash: md5
+      md5: efb362c726504e7d1a93f5530d933999
+      size: 2142
+    - path: src/p11_sondas/spt3g_calibra.py
+      hash: md5
+      md5: ef14160c7c153ea32b57c9e1ce6308ff
+      size: 4112
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/spt3g_calibrador.json
+      hash: md5
+      md5: 8a2a918ac4edc054004c55d37bbc9a5b
+      size: 2240

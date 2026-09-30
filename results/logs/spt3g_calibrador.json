@@ -1,0 +1,55 @@
+{
+ "fecha": "2026-09-30",
+ "sonda": "SPT-3G D1 lente κκ GMV, calibrador ΛCDM",
+ "blanco": {
+  "s8omegamp25": 0.6046,
+  "sigma": 0.0096,
+  "fuente": "arXiv:2608.31136 sec8_summary.tex"
+ },
+ "configuracion": "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml",
+ "nuestro": {
+  "s8omegamp25": 0.6047753662954766,
+  "sigma": 0.009686026338023922,
+  "Rminus1": 0.008172,
+  "filas": 18133
+ },
+ "tiron_sigma": 0.018267322445473154,
+ "razon_sigmas": 1.008961076877492,
+ "criterio": "|dmedia| < 0.25 sigma; |dsigma|/sigma < 15 %; R-1 < 0.01 (declarado antes)",
+ "pasa": true,
+ "_procedencia": {
+  "commit": "ca64d6338acb99255bc66ef9f209c3cf3299d77b",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/spt3g_calibra.py",
+  "script_sha256": "b83e57b619660295ce79f0bd96e00ce5bdcf6cbb0edf7af4cf0177c985f6968d",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt": "2aa2346d40fdc7a900bbe8f12652047f4a59b055ba0ad30606ab9d7820835504",
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt": "9bc5d3601bc2e8b5d4500081f05ff936eea9e30b06bcfa80e88d917e28abdf74",
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt": "b3a07b53442fb23301274309d947fdf69597bad7ec2de8204535ba5eb7c267fb",
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt": "0ae5ba6c1f2a113b2a71ee257804a7f9044a084e20c77956ffe1025fd56854e1",
+   "/mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex": "0361153fa402794a7e8ba14448187a3e8f5a9ba8258d4c0633c67a63b5f8e9ef",
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml": "7fbbc2dbfe5df3e0e857c9a47773906a55c4a871b4fd3e1ee16c2f41006c48d8"
+  },
+  "argv": [
+   "src/p11_sondas/spt3g_calibra.py",
+   "lee"
+  ],
+  "fecha": "2026-09-30T19:43:39",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "cobaya": "3.6.2",
+   "getdist": "1.7.6"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

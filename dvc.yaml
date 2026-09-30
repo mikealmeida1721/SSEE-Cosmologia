@@ -91,3 +91,18 @@ stages:
     outs:
       - results/logs/prueba_equivalencia_hglob.json:
           cache: false
+  spt3g_calibrador:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/spt3g_calibra.py lee
+    deps:
+      - src/p11_sondas/spt3g_calibra.py
+      - src/procedencia.py
+      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt
+      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt
+      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt
+      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt
+      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.progress
+      - /mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex
+      - /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
+    outs:
+      - results/logs/spt3g_calibrador.json:
+          cache: false
