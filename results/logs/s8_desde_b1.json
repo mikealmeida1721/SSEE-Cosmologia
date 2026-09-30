@@ -28,5 +28,36 @@
    "control_sigma8_log": 0.811,
    "control_pasa": true
   }
+ },
+ "_procedencia": {
+  "commit": "cb030b4b892294b89881e25fd3e9bba9be8926af",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/s8_desde_b1.py",
+  "script_sha256": "89245fac6f72699c43d779868edee8501527b0fb8fbfafcc5ff703027d15de21",
+  "nucleo_sha256": "65d0f34deb641f145458802e8a718b2bfb17c58fefc0c4ac2fe1bb941a3676e5",
+  "entradas": {
+   "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d",
+   "results/chains/lcdm_cmb.1.txt": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285",
+   "results/logs/b1_analyse.log": "f9c92f50dafcea375e1ea0dd257ba96229faf6ee5c6a8ead83ad8b6ed7e945e1",
+   "CANONICAL_VALUES.yaml": "1ee73476780d4aab39fc351a3fb1cac07b554deba2f1bcd1813ba4f5185ccb0a"
+  },
+  "argv": [
+   "src/p06_growth/s8_desde_b1.py"
+  ],
+  "fecha": "2026-09-30T17:46:29",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "getdist": "1.7.6"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

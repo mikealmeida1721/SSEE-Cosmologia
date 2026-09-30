@@ -1,0 +1,72 @@
+schema: '2.0'
+stages:
+  mcmc_full_posteriores:
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
+      src/mcmc_full/leer_mcmc_full.py
+    deps:
+    - path: /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
+      hash: md5
+      md5: bccf2493113bb3f5886af1503a61c6fb
+      size: 7631371
+    - path: /mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt
+      hash: md5
+      md5: 894ff39a42555637350bf67d5c59cfa9
+      size: 6657211
+    - path: /mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt
+      hash: md5
+      md5: 625929be505707b969ae24094df7570e
+      size: 7956091
+    - path: /mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt
+      hash: md5
+      md5: e7d8b7fb03956b974b46042372d25873
+      size: 11979011
+    - path: src/mcmc_full/leer_mcmc_full.py
+      hash: md5
+      md5: a68c669f4482f6b98d439d674664f18c
+      size: 2907
+    - path: src/procedencia.py
+      hash: md5
+      md5: e00eb4f5bb9d7be418d056f8dc6cbba9
+      size: 5272
+    outs:
+    - path: results/logs/mcmc_full_posteriores.json
+      hash: md5
+      md5: 43afea97cc15f34588abffae8b3459d3
+      size: 2546
+  s8_desde_b1:
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
+      src/p06_growth/s8_desde_b1.py
+    deps:
+    - path: CANONICAL_VALUES.yaml
+      hash: md5
+      md5: 1ce91e7d5085a8450f7b9ebf5488e2b9
+      size: 66439
+    - path: results/chains/lcdm_cmb.1.txt
+      hash: md5
+      md5: 881ecb1f5d40784f62c8798473d1affe
+      size: 94529491
+    - path: results/chains/ssee_cmb.1.txt
+      hash: md5
+      md5: 155b55672adc4aaa597437c0875a4706
+      size: 49485923
+    - path: results/logs/b1_analyse.log
+      hash: md5
+      md5: ecd8af59b981448982e3ecda9178b2e9
+      size: 2627
+    - path: src/p06_growth/s8_desde_b1.py
+      hash: md5
+      md5: 52ad5d30bb24b430f4262cb7a03a2989
+      size: 3144
+    - path: src/procedencia.py
+      hash: md5
+      md5: e00eb4f5bb9d7be418d056f8dc6cbba9
+      size: 5272
+    - path: src/ssee_core.py
+      hash: md5
+      md5: e8093ec4aeaf2e5d9582e0646587ba54
+      size: 17171
+    outs:
+    - path: results/logs/s8_desde_b1.json
+      hash: md5
+      md5: ff35b27c1d223ec6f827d70f95215a47
+      size: 1930

@@ -2390,6 +2390,82 @@ check("R74 el detector marca solo el numero sin fuente",
       _s74 == ["67.47"], f"marcados {_s74} (esperado ['67.47']: log a su redondeo, cita y "
       "declaracion pasan)")
 
+# --- R75: CADENA DE PROCEDENCIA (dvc.lock + acta) -----------------------------
+# Decision de Mike (2026-09-30): DVC + macros + acta. R74 casa por VALOR (red
+# minima); R75 exige el ENLACE: cada resultado declarado en dvc.yaml tiene que
+# ser, byte a byte, el que su lock dice (nadie lo edito a mano), con sus
+# dependencias intactas, y traer su acta (commit + sha del script en ese commit).
+# La verificacion de hashes es propia (md5 de contenido, como DVC 3): el
+# guardian no depende de tener dvc instalado.
+import hashlib as _h75
+import yaml as _y75
+sys.path.insert(0, str(ROOT))
+import procedencia as _pr75  # noqa: E402
+
+
+def _md5_75(p):
+    _h = _h75.md5()
+    with open(p, "rb") as _f:
+        for _b in iter(lambda: _f.read(1 << 20), b""):
+            _h.update(_b)
+    return _h.hexdigest()
+
+
+def _lock_75(lock_txt, base):
+    """-> lista de problemas del lock contra el disco (vacia = todo cuadra)."""
+    _mal = []
+    for _st, _d in ((_y75.safe_load(lock_txt) or {}).get("stages") or {}).items():
+        for _tipo in ("deps", "outs"):
+            for _e in _d.get(_tipo) or []:
+                _p = pathlib.Path(_e["path"])
+                _p = _p if _p.is_absolute() else base / _p
+                if not _p.is_file():
+                    _mal.append(f"{_st}: falta {_e['path']}")
+                elif "md5" in _e and _md5_75(_p) != _e["md5"]:
+                    _mal.append(f"{_st}: {_tipo[:-1]} cambiado {_e['path']}")
+    return _mal
+
+
+_REPO75 = ROOT.parent
+_lk75 = (_REPO75 / "dvc.lock")
+_mal75 = _lock_75(_lk75.read_text(), _REPO75) if _lk75.exists() else ["no hay dvc.lock"]
+check("R75 cada resultado de la cadena es el que su lock dice (nadie lo edito, sus entradas intactas)",
+      not _mal75, "; ".join(_mal75[:6]) if _mal75 else "dvc.lock cuadra byte a byte con el disco")
+_outs75 = [o if isinstance(o, str) else list(o)[0]
+           for _d in ((_y75.safe_load((_REPO75 / "dvc.yaml").read_text()) or {}).get("stages") or {}).values()
+           for o in (_d.get("outs") or [])] if (_REPO75 / "dvc.yaml").exists() else []
+_sinacta75 = [f"{o}: {m}" for o in _outs75 for ok, m in [_pr75.verifica(_REPO75 / o)] if not ok]
+check("R75 cada resultado de la cadena trae acta valida (commit y sha del script coinciden)",
+      not _sinacta75, "; ".join(_sinacta75) if _sinacta75 else f"{len(_outs75)} actas verificadas")
+# Cobertura: logs que TODAVIA no estan en la cadena. Trinquete: solo baja.
+# Fuera de la cuenta, declarado: los logs de ORQUESTACION (cola_*, vigilante_*)
+# registran horas y PIDs de las colas, no resultados; ningun numero sale de ellos.
+_tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
+          and not p.name.startswith(("cola_", "vigilante_"))]
+_fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
+_TOPE_R75 = 170   # 2026-09-30: 172 logs de resultado, 2 ya en la cadena (mcmc_full_posteriores, s8_desde_b1)
+_DEUDA_REAL["R75"] = _fuera75
+_DEUDA_MAX["R75"] = _TOPE_R75
+check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",
+      _fuera75 <= _TOPE_R75, f"{_fuera75} de {len(_tod75)} (tope {_TOPE_R75})")
+# CONTROL (R53): un lock sintetico sobre archivos temporales: el intacto pasa,
+# el editado a mano y la entrada cambiada se marcan.
+with _tf74.TemporaryDirectory() as _d75:
+    _b75 = pathlib.Path(_d75)
+    (_b75 / "in.txt").write_text("dato 1\n")
+    (_b75 / "out.json").write_text('{"S8": 0.8261}\n')
+    _lk = (f"stages:\n  s:\n    deps:\n    - path: in.txt\n      md5: {_md5_75(_b75 / 'in.txt')}\n"
+           f"    outs:\n    - path: out.json\n      md5: {_md5_75(_b75 / 'out.json')}\n")
+    _c75 = [not _lock_75(_lk, _b75)]
+    (_b75 / "out.json").write_text('{"S8": 0.8273}\n')
+    _c75.append(bool(_lock_75(_lk, _b75)))
+    (_b75 / "out.json").write_text('{"S8": 0.8261}\n')
+    (_b75 / "in.txt").write_text("dato 2\n")
+    _c75.append(bool(_lock_75(_lk, _b75)))
+check("R75 el detector distingue lo intacto de lo editado a mano y de la entrada cambiada",
+      all(_c75), "3 casos: intacto pasa; salida editada y entrada cambiada, marcadas" if all(_c75)
+      else f"fallos {_c75}")
+
 # --- R64: nadie clava la ecuacion de estado de SSEE en un evaluador ----
 # POR QUE EXISTE (2026-09-08). El evaluador del CMB traia dentro del modelo
 #     'w': -0.840015, 'wa': -0.670141
