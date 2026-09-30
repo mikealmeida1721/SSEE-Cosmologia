@@ -2356,6 +2356,40 @@ check("R73 el detector distingue numero con origen de numero sin origen",
       "8 casos: log a su redondeo, cita en la frase, declaracion con razon y "
       "comentario pasan; el ausente, la cita de otra frase y la razon vacia, NO")
 
+# --- R74: PROCEDENCIA UNIVERSAL — ningun numero, en ningun lado, sin fuente ----
+# Regla de Mike (2026-09-30), general: no solo scripts (R65) ni solo una parte
+# de los papers (R73): logs, CANONICAL, papers y cajones. Logica en
+# r74_procedencia.py. Casar por valor es la RED MINIMA (declarado ahi); la meta
+# es el enlace explicito. Trinquete por superficie en la cuenta del dia en que
+# nace: desde aqui la deuda solo puede BAJAR, en ninguna superficie crece.
+_sp74 = _ilu73.spec_from_file_location("_r74", ROOT / "verificacion" / "r74_procedencia.py")
+_r74 = _ilu73.module_from_spec(_sp74)
+_sp74.loader.exec_module(_r74)
+_res74 = _r74.barrido()
+_n74 = _r74.cuentas(_res74)
+_TOPE_R74 = {"logs": 94, "canonical": 13, "papers": 314, "cajones": 235}
+for _k74, _v74 in _n74.items():
+    _DEUDA_REAL[f"R74-{_k74}"] = _v74
+    _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
+if sum(_n74.values()):
+    track_open(f"R74 {sum(_n74.values())} numeros/logs sin procedencia",
+               ", ".join(f"{k} {v}" for k, v in _n74.items())
+               + " — detalle: python3 src/verificacion/r74_procedencia.py detalle")
+check("R74 ninguna superficie gana numeros sin procedencia",
+      all(_n74[k] <= _TOPE_R74[k] for k in _n74),
+      " · ".join(f"{k} {_n74[k]} (tope {_TOPE_R74[k]})" for k in _n74))
+# CONTROL (R53): archivo temporal con un numero del pool, uno ausente, uno con
+# cita en su frase y uno declarado con razon; solo el ausente cuenta.
+import tempfile as _tf74
+with _tf74.TemporaryDirectory() as _d74:
+    _f74 = pathlib.Path(_d74) / "x.tex"
+    _f74.write_text("H0 = 67.82 bien. H0 = 67.47 mal. Dato 0.8265 \\citep{K}.\n"
+                    "% ORIGEN-VALOR: 1.234 — prueba\nvalor 1.234\n")
+    _s74 = [s for _, s in _r74._sin_origen(_f74, sorted([67.8244]), True)]
+check("R74 el detector marca solo el numero sin fuente",
+      _s74 == ["67.47"], f"marcados {_s74} (esperado ['67.47']: log a su redondeo, cita y "
+      "declaracion pasan)")
+
 # --- R64: nadie clava la ecuacion de estado de SSEE en un evaluador ----
 # POR QUE EXISTE (2026-09-08). El evaluador del CMB traia dentro del modelo
 #     'w': -0.840015, 'wa': -0.670141
