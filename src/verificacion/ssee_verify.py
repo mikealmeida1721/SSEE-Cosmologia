@@ -2312,6 +2312,50 @@ check("R65 el detector distingue el numero rancio del vigente",
            "no declara fuente, el que solo aparece en un comentario y un "
            "identificador de arXiv, exentos; y el log inexistente marcado")
 
+# --- R73: de donde sale CADA numero-resultado de los PAPERS ----------------
+# POR QUE EXISTE (2026-09-30). R65 exige origen en los scripts; nada lo exigia
+# en los .tex. Al construirla aparecio que el TITULAR CMB de P1/P3,
+# ΔBIC = −32.9 (χ²_BF 2771.3 vs 2773.1), no sale de ningun log: vino de las
+# cadenas del 23-jun, que la corrida del 27-jul (H0 LIBRE, k=3) sobrescribio.
+# Y la tabla B1 de P3 conserva la columna ΛCDM de aquellas cadenas (67.35,
+# 0.9651) contra el log vigente (67.39, 0.9654). Logica en r73_papers.py (la
+# misma que usa el lector de linea de comandos: no hay copia).
+import importlib.util as _ilu73
+_sp73 = _ilu73.spec_from_file_location("_r73", ROOT / "verificacion" / "r73_papers.py")
+_r73 = _ilu73.module_from_spec(_sp73)
+_sp73.loader.exec_module(_r73)
+_pool73 = _r73.fuentes()
+_sin73, _nover73 = _r73.barrido(_pool73)
+_n73 = sum(len(_v) for _v in _sin73.values())
+if _n73:
+    track_open(f"R73 {_n73} numeros-resultado sin origen en {len(_sin73)} papers",
+               "; ".join(f"{k.split('/')[-1]} L{v[0][0]} {v[0][1]}" for k, v in _sin73.items())
+               + " — rastrear: log, \\cite en la frase o `% ORIGEN-VALOR: <n> — <razon>`")
+# TRINQUETE: la deuda medida al nacer la regla (2026-09-30). Solo puede bajar.
+_TOPE_R73 = 4    # 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
+_DEUDA_REAL["R73"] = _n73
+_DEUDA_MAX["R73"] = _TOPE_R73
+check("R73 la deuda de numeros-resultado sin origen en los papers no crece",
+      _n73 <= _TOPE_R73,
+      f"{_n73} (tope {_TOPE_R73}) en {len(_sin73)} papers · {_nover73} de <3 cifras "
+      f"no verificables por valor")
+# CONTROL (R53), sin disco: pool simulado.
+_poolc73 = sorted([0.8273, 67.8244, 0.4133])
+_c73 = [("$67.82\\pm0.41$", 0),                                   # redondeo de un log
+        ("$67.47\\pm0.41$", 1),                                   # ausente: marcado
+        ("$0.8262\\pm0.0054$ \\citep{KiDS}", 0),                   # cita en la frase
+        ("$0.8262\\pm0.0054$. Otra frase \\citep{X}", 1),          # cita en OTRA frase
+        ("% ORIGEN-VALOR: 0.8262 — S8 de la cadena X\n$0.8262\\pm0.0054$", 0),
+        ("% ORIGEN-VALOR: 0.8262 —  \n$0.8262\\pm0.0054$", 1),     # razon vacia
+        ("% dice $0.8262\\pm0.0054$ en un comentario", 0),
+        ("$0.33\\sigma$", 0)]                                     # <3 cifras: no se juzga
+_f73 = [t[:40].replace("\n", " ") for t, esp in _c73
+        if len(_r73.revisa(t, _poolc73)[0]) != esp]
+check("R73 el detector distingue numero con origen de numero sin origen",
+      not _f73, "; ".join(_f73) if _f73 else
+      "8 casos: log a su redondeo, cita en la frase, declaracion con razon y "
+      "comentario pasan; el ausente, la cita de otra frase y la razon vacia, NO")
+
 # --- R64: nadie clava la ecuacion de estado de SSEE en un evaluador ----
 # POR QUE EXISTE (2026-09-08). El evaluador del CMB traia dentro del modelo
 #     'w': -0.840015, 'wa': -0.670141

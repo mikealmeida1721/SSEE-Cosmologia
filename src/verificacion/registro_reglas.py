@@ -634,7 +634,7 @@ REGLAS = {
         archivo="src/p02_mcmc/regenerate_fig8_bao_residuals.py",
         exenciones=[("identificadores de arXiv y DOI, que no son resultados", None)],
         mutacion=[("un numero que el log declarado como fuente no contiene",
-                   "H0=67.52954", "H0=67.51111")],
+                   "H0=67.52954", "H0=67.51111")],   # ORIGEN-VALOR: 67.52954 — numero de PRUEBA de la mutacion, no un resultado
     ),
     "R36": dict(
         capa="R36 — figura del PRD vs el script que la produce",

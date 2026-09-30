@@ -5,7 +5,7 @@ QUÉ PREGUNTA (R53). spt3g_kk.py da el χ² de SSEE contra SPT-3G D1 GMV. Falta 
 control del otro lado: que NUESTRO montaje de la verosimilitud oficial reproduzca
 el resultado de la colaboración. SPT-3G D1 lente sola publica (Omori, Wu et al.
 2026, arXiv:2608.31136, sec8_summary.tex L7):
-    σ8 Ωm^0.25 = 0.6046 ± 0.0096.
+    σ8 Ωm^0.25 = 0.6046 ± 0.0096   (arXiv:2608.31136, sec8_summary.tex L7).
 
 MONTAJE: la configuración OFICIAL de la colaboración, sin tocar nada:
   cobaya/SPT3G_D1_KK/base_lens/gmv.yaml (teoría CAMB, priors cosmo_base,
@@ -15,7 +15,7 @@ MONTAJE: la configuración OFICIAL de la colaboración, sin tocar nada:
 TODO SE LEE DE LA FUENTE: el blanco, del TeX del paper; la configuración, del yaml.
 
 CRITERIO, declarado antes de correr (el mismo que ACT DR6):
-  |media − 0.6046| < 0.25 σ_publicada  y  |σ − 0.0096| / 0.0096 < 15 %,
+  |media − blanco| < 0.25 σ_publicada  y  |σ − σ_publicada| / σ_publicada < 15 %,
   con la cadena convergida según el propio criterio del yaml (R−1 < 0.01).
 
 Uso:  mpirun -n 4 .venv/bin/python3 src/p11_sondas/spt3g_calibra.py corre
@@ -29,7 +29,7 @@ import sys
 from datetime import date
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-PAP = "/mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136"
+PAP = "/mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136"   # ORIGEN-VALOR: 2608.31136 — carpeta del TeX de arXiv:2608.31136 (Omori, Wu et al. 2026)
 YML = "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml"
 CAD = "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador"
 OUT = os.path.join(_R, "results", "logs", "spt3g_calibrador.json")

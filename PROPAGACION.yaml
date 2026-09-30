@@ -32,6 +32,9 @@ logs:
   h0_distancias_hglob:        src/p02_mcmc/h0_distancias.py
   rd_dual:                    src/ssee_resolution_figures.py
   mcmc_paper2_reframe_obh2:   src/p02_mcmc/reframe_obh2.py
+  mcmc_full_posteriores:      src/mcmc_full/leer_mcmc_full.py
+  prueba_equivalencia_hglob:  src/verificacion/prueba_equivalencia_hglob.py
+  s8_desde_b1:                src/p06_growth/s8_desde_b1.py
 
   # ── Verificacion — pruebas que producen su propio log ───────────────────
   # Prueba de equivalencia por EJECUCION del camino LCDM de cobaya_kids.py
@@ -116,6 +119,9 @@ logs:
   multisonda_fondo_clavado:   src/p06_growth/multisonda_fondo_clavado.py
 
 historicos:
+  # ── Control de memory_sync (2026-09-30): LISTA valores retirados a proposito
+  #    (es su trabajo: probar que el comprobador los caza). No es un computo.
+  - memory_sync_control_2026-09-30
   # ── Corte del 2026-09-19 — la maquina se reinicio por el driver NVIDIA y
   #    las dos corridas vivas se reanudaron con KIDS_REANUDAR=1. Lo de antes
   #    del corte queda congelado: no se re-corre, se conserva como registro
