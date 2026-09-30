@@ -227,3 +227,31 @@ print(f"""
     Ruta C: Full P(X,φ) Lagrangian from Paper 1 → determines M algebraically at 2nd order
 """)
 print(sep)
+
+# ── LOG con acta (2026-09-30) ───────────────────────────────────────────────
+# Hasta hoy este script solo imprimia: por eso Paper 9 llevaba a mano
+# «s_K^full = s_K^IR + 0.013608 = 0.416910», 5e-6 corrido de lo que este
+# calculo da (0.013603 / 0.416905). f_screen tiene TRES piezas y se guardan
+# las tres con su nombre: el termino IR, la correccion UV y el COMPLETO
+# (IR+UV), que es el unico canonico — la cascada usa el completo.
+# CONTROL (R53): el nucleo calcula s_K_full por otra via (en unidades de
+# rho_crit, sin anclar meV); los dos tienen que coincidir a 1e-12.
+import json as _json
+import ssee_core as _S
+from procedencia import con_acta as _con_acta
+_log = _reloc_os.path.join(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__)),
+                           "..", "..", "results", "logs", "p10_uv_fscreen.json")
+_res = dict(
+    s_K_IR=float(s_K_IR), s_K_UV_corr=float(s_K_UV - s_K_IR), s_K_full=float(s_K_UV),
+    f_screen_IR=float(f_screen_IR), f_screen_UV_corr=float(f_screen_UV - f_screen_IR),
+    f_screen_full=float(f_screen_UV),
+    H0_SH0ES=H0_SH0ES, sigma_SH0ES=sigma_SH0ES,
+    H0_glob=float(H0_glob_UV), sigma_H0_glob=float(sigma_glob),
+    H0_glob_IR_historico=float(H0_glob_IR),
+    residuo_vs_numero_puro=float(H0_glob_UV - H0_alg),
+    control_nucleo=dict(s_K_full_nucleo=float(_S.S_K_FULL),
+                        pasa=bool(abs(s_K_UV - _S.S_K_FULL) < 1e-12)),
+    nota="f_screen COMPLETO = IR + correccion UV; es el canonico. El IR solo es el regimen M->inf (Papers 1-9).")
+with open(_reloc_os.path.abspath(_log), "w") as _fh:
+    _json.dump(_con_acta(_res, __file__), _fh, indent=1)
+print(f"  -> log: {_reloc_os.path.abspath(_log)}  (control nucleo: {_res['control_nucleo']['pasa']})")
