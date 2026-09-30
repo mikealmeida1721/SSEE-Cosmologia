@@ -77,6 +77,15 @@ col1, Y = _tabla(K1K)
 like = float(Y[-1, col1.index("like")])
 
 r3, r4 = json.load(open(R3)), json.load(open(R4))
+# Seleccion de modelos SSEE vs LCDM en KiDS-1000 (convencion: SSEE − LCDM,
+# negativo favorece a SSEE). N = dof + libres, y tiene que dar lo mismo en los
+# dos logs (mismo vector de datos): es el control de que se comparan igual.
+N3, N4 = r3["dof"] + r3["n_parametros_libres"], r4["dof"] + r4["n_parametros_libres"]
+dchi2 = r3["chi2_min"] - r4["chi2_min"]
+dk = r4["n_parametros_libres"] - r3["n_parametros_libres"]
+seleccion = dict(N=N3, control_N_pasa=bool(N3 == N4), delta_chi2=dchi2, delta_k=dk,
+                 delta_AIC=dchi2 - 2 * dk, delta_BIC=dchi2 - dk * math.log(N3),
+                 p_delta_chi2=float(_chi2.sf(dchi2, dk)))
 out = dict(
     fecha=str(__import__("datetime").date.today()),
     kids_legacy=dict(S8=media, S8_sigma=sig, S8_sin_nu_s8_input=media_col, desvio_max_identidad=desvio_identidad,
@@ -84,6 +93,7 @@ out = dict(
                      control_pasa=bool(desvio_identidad < 1e-9),
                      fuente="Wright+2025 (arXiv:2503.19441), cadena nautilus oficial"),
     kids1000_maxpost=dict(like=like, chi2=-2.0 * like, fuente="Asgari+2021, maxpost_multinest_start_C"),
+    seleccion_kids1000=seleccion,
     PTE=dict(ssee=dict(chi2=r3["chi2_min"], dof=r3["dof"], PTE=float(_chi2.sf(r3["chi2_min"], r3["dof"])),
                        z=(r3["chi2_min"] - r3["dof"]) / math.sqrt(2 * r3["dof"])),
              lcdm=dict(chi2=r4["chi2_min"], dof=r4["dof"], PTE=float(_chi2.sf(r4["chi2_min"], r4["dof"])),
@@ -95,3 +105,6 @@ print(f"  KiDS-Legacy S8 {L['S8']:.4f} ± {L['S8_sigma']:.4f}  (sin nu {L['S8_si
 print(f"  KiDS-1000 maxpost chi2 {out['kids1000_maxpost']['chi2']:.2f}")
 for k in ("ssee", "lcdm"):
     print(f"  PTE {k}: chi2 {P[k]['chi2']:.2f}/{P[k]['dof']}  PTE {P[k]['PTE']:.4f}  {P[k]['z']:.2f}σ")
+S = out["seleccion_kids1000"]
+print(f"  KiDS-1000 SSEE−LCDM: N {S['N']} (control {S['control_N_pasa']})  Δχ² {S['delta_chi2']:.4f}  Δk {S['delta_k']}"
+      f"  ΔAIC {S['delta_AIC']:.2f}  ΔBIC {S['delta_BIC']:.2f}  p {S['p_delta_chi2']:.3f}")
