@@ -1,0 +1,39 @@
+{
+ "Omega_m": 0.30888084061409116,
+ "G": 1.003209121012418,
+ "gamma_IS": 0.5504439459387428,
+ "gamma_IS_sigma": 0.0002661861798265374,
+ "gamma_LCDM": 0.5515980152490515,
+ "sigma8_SSEE": 0.8136025971410711,
+ "sigma8_SSEE_sigma": 0.006019254726074509,
+ "S8_SSEE": 0.8255572280558255,
+ "S8_SSEE_sigma": 0.006107698357996244,
+ "fsigma8_z05_SSEE": 0.47141007206904284,
+ "fsigma8_z05_LCDM": 0.4747620360646262,
+ "nota": "sigma8 con A_s FIJADO a Planck (techo); no es el S8 de Paper 6.",
+ "_procedencia": {
+  "commit": "81382ed15b66abb74866e042957ed1f1c221a564",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p05_IS/ssee_paper5_IS_perturbations.py",
+  "script_sha256": "26b676cbb624a136f8b422acd89670aa1829bccbbd941a6143014b67beb2db35",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p05_IS/ssee_paper5_IS_perturbations.py"
+  ],
+  "fecha": "2026-09-30T18:15:49",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

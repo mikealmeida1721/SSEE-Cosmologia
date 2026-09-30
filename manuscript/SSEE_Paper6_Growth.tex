@@ -74,10 +74,10 @@ $A_s$ between epochs. We state against our own interest that the three
 $\chi^2$ values compared span less than $1.0$: cosmic shear does not
 discriminate between these backgrounds, and what separates them is the
 parameter count. On the earlier KiDS-1000 release (225 raw points, amplitude
-free), \SSEE{} gives $\chi^2_{\rm min}=265.40$ against $262.75$ for
+free), \SSEE{} gives $\chi^2_{\rm min}=\val{chi2_k1000_ssee}$ against $\val{chi2_k1000_lcdm}$ for
 $\Lambda$CDM run through the identical pipeline with its background free: four
-extra parameters buy $\Delta\chi^2=2.65$, less than the $4$ they would return
-by chance ($\Delta\mathrm{BIC}=-19.0$ in favour of \SSEE{}). Against the raw
+extra parameters buy $\Delta\chi^2=\val{dchi2_k1000}$, less than the $4$ they would return
+by chance ($\Delta\mathrm{BIC}=\val{dBIC_k1000}$ in favour of \SSEE{}). Against the raw
 BOSS DR12 multipoles (222 points, one-loop LPT) the algebraic and Planck
 backgrounds tie, $\Delta\chi^2=+0.06$ at equal freedom; clustering does not
 constrain the amplitude. This paper also retracts a second matter sector and
@@ -273,7 +273,7 @@ matter power spectrum (Mead et al.~2015 \citep{Mead2015}) with the one-parameter
 feedback prescription used in the official KiDS-1000 analysis, and the
 official redshift-distribution SOM covariance and $\delta_c$ priors. The
 pipeline reproduces the published maximum-posterior likelihood to 0.4\%
-(negative control: $\chi^2=261.27$ vs.\ 260.32 official, the latter from the
+(negative control: $\chi^2=261.27$ vs.\ \val{chi2_k1000_publicado} official, the latter from the
 public nested-sampling chain, MultiNest \citep{Feroz2009}).
 
 Eight nuisance parameters (baryon feedback amplitude, intrinsic alignment
@@ -338,18 +338,18 @@ through the same pipeline, same mask, same covariance and same nuisance
 treatment,
 \begin{equation}
 \Delta\chi^2 \;\equiv\; \chi^2_{\SSEE{}}-\chi^2_{\Lambda\rm CDM}
-\;=\; 265.40-262.75 \;=\; 2.65 ,
+\;=\; \val{chi2_k1000_ssee}-\val{chi2_k1000_lcdm} \;=\; \val{dchi2_k1000} ,
 \qquad \Delta k = 4 ,
 \label{eq:dchi2}
 \end{equation}
 where $\Delta k$ counts the parameters $\Lambda$CDM has and \SSEE{} does not.
 Four additional free parameters that carried no information would still
 lower $\chi^2$ by $\langle\Delta\chi^2\rangle=\Delta k=4$ on average; here
-they lower it by $2.65$, and $p(\Delta\chi^2\ge 2.65\,|\,\Delta k=4)=0.62$.
+they lower it by $\val{dchi2_k1000}$, and $p(\Delta\chi^2\ge \val{dchi2_k1000}\,|\,\Delta k=4)=\val{p_dchi2_k1000}$.
 The extra background freedom of $\Lambda$CDM is therefore not merely
 unnecessary on this dataset --- it is statistically indistinguishable from
-absent. Penalising it explicitly gives $\Delta\mathrm{AIC}=-5.35$ and
-$\Delta\mathrm{BIC}=-19.0$, both favouring \SSEE{}, the latter in the
+absent. Penalising it explicitly gives $\Delta\mathrm{AIC}=\val{dAIC_k1000}$ and
+$\Delta\mathrm{BIC}=\val{dBIC_k1000}$, both favouring \SSEE{}, the latter in the
 \emph{strong} range on the Jeffreys scale.
 
 The derived amplitudes are then a consequence rather than the test:
@@ -360,17 +360,17 @@ this second comparison is informative about the pipeline rather than about
 the cosmology, and we do not rest any claim on it.
 
 \paragraph{The one tension we do report, and it is shared.} Both fits are
-formally poor in absolute terms: $\chi^2=265.40$ against an expectation of
-$216\pm20.8$ for \SSEE{} and $262.75$ against $212\pm20.6$ for
-$\Lambda$CDM, i.e.\ $2.4\sigma$ and $2.5\sigma$ high, with probabilities to
-exceed of $0.012$ and $0.010$. This is not a feature of either cosmology:
+formally poor in absolute terms: $\chi^2=\val{chi2_k1000_ssee}$ against an expectation of
+$216\pm20.8$ for \SSEE{} and $\val{chi2_k1000_lcdm}$ against $212\pm20.6$ for
+$\Lambda$CDM, i.e.\ $\val{z_k1000_ssee}\sigma$ and $\val{z_k1000_lcdm}\sigma$ high, with probabilities to
+exceed of $\val{PTE_k1000_ssee}$ and $\val{PTE_k1000_lcdm}$. This is not a feature of either cosmology:
 the KiDS-1000 published best fit on these same points has
-$\chi^2=260.32$, which under any of the plausible effective-parameter counts
+$\chi^2=\val{chi2_k1000_publicado}$, which under any of the plausible effective-parameter counts
 gives a comparable $p\sim0.01$--$0.03$. The excess is a property of the
 $\xi_\pm$ data vector --- plausibly residual small-scale modelling or
 covariance calibration --- and it is inherited identically by every model
 fitted to it. We flag it rather than absorb it, and note that our control's
-reproduction of the official value ($262.75$ vs.\ $260.32$, $0.9\%$) is what
+reproduction of the official value ($\val{chi2_k1000_lcdm}$ vs.\ $\val{chi2_k1000_publicado}$, $0.9\%$) is what
 demonstrates the excess is not introduced by our implementation.
 
 \paragraph{What this does and does not claim.} It would be wrong to read this
@@ -529,13 +529,13 @@ probability to exceed of $\chi^2_{\rm min}$ at the stated dof.}
 \toprule
  & $k$ & dof & $\chi^2_{\rm min}$ & $\chi^2/$dof & $p$ & $\sigma_8$ & $S_8$ \\
 \midrule
-$\Lambda$CDM (background free)  & 13 & 212 & $262.75$ & $1.239$ & $0.010$ & $0.875\pm0.089$ & $0.7571\pm0.0194$ \\
-\SSEE{} (background fixed)      &  9 & 216 & $265.40$ & $1.229$ & $0.012$ & $0.7446\pm0.0189$ & $0.7555\pm0.0192$ \\
+$\Lambda$CDM (background free)  & 13 & 212 & $\val{chi2_k1000_lcdm}$ & $1.239$ & $\val{PTE_k1000_lcdm}$ & $0.875\pm0.089$ & $0.7571\pm0.0194$ \\
+\SSEE{} (background fixed)      &  9 & 216 & $\val{chi2_k1000_ssee}$ & $1.229$ & $\val{PTE_k1000_ssee}$ & $0.7446\pm0.0189$ & $0.7555\pm0.0192$ \\
 \midrule
-\multicolumn{8}{l}{\footnotesize $\Delta\chi^2=2.65$ for $\Delta k=4$ (expected $4$ if the extra parameters carry no information, $p=0.62$);} \\
-\multicolumn{8}{l}{\footnotesize $\Delta\mathrm{AIC}=-5.35$, $\Delta\mathrm{BIC}=-19.0$, both favouring \SSEE{}.} \\
+\multicolumn{8}{l}{\footnotesize $\Delta\chi^2=\val{dchi2_k1000}$ for $\Delta k=4$ (expected $4$ if the extra parameters carry no information, $p=\val{p_dchi2_k1000}$);} \\
+\multicolumn{8}{l}{\footnotesize $\Delta\mathrm{AIC}=\val{dAIC_k1000}$, $\Delta\mathrm{BIC}=\val{dBIC_k1000}$, both favouring \SSEE{}.} \\
 \midrule
-KiDS-1000 published & --- & --- & $260.32$ & --- & --- & --- & $0.759\pm0.024$ \\
+KiDS-1000 published & --- & --- & $\val{chi2_k1000_publicado}$ & --- & --- & --- & $0.759\pm0.024$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -556,7 +556,7 @@ reproducing it tests the code path, not the cosmology. Reading it as a
 What the control licenses is the comparison in Table~\ref{tab:s8} between the
 two rows above the rule, which is like for like: identical data, identical
 code, identical nuisance treatment. The comparison that carries the weight is
-the $\chi^2$ block, Eq.~\eqref{eq:dchi2}: \SSEE{} pays $2.65$ in $\chi^2$ for
+the $\chi^2$ block, Eq.~\eqref{eq:dchi2}: \SSEE{} pays $\val{dchi2_k1000}$ in $\chi^2$ for
 giving up four parameters, where four uninformative parameters would have been
 worth $4$. The $\Delta S_8 = 0.0016$ in the right-hand block is a restatement
 of the same fact in derived quantities --- under a tenth of either error bar,
@@ -758,7 +758,7 @@ has no free cosmological parameter, the fit costs nothing
 ($\chi^2_{\rm min}=417.97$ against $418.34$), and $S_8=0.8273$ is predicted
 against $0.8265\pm0.0176$ measured. On the earlier KiDS-1000 release the
 algebraic background matches $\Lambda$CDM run through the same pipeline with
-four more free parameters ($\Delta\chi^2=2.65$, $\Delta\mathrm{BIC}=-19.0$).
+four more free parameters ($\Delta\chi^2=\val{dchi2_k1000}$, $\Delta\mathrm{BIC}=\val{dBIC_k1000}$).
 Against raw BOSS DR12 clustering the two backgrounds tie ($\Delta\chi^2=+0.06$
 at equal freedom), and clustering is consistent with the CMB amplitude
 without constraining it. The primordial amplitude is therefore counted once, at

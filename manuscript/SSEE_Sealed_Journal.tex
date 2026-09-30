@@ -39,6 +39,7 @@ A Falsifiable, Parameter-Frugal Test Against DESI DR2 and Planck PR4}
 % ----------------------------------------------------------------------------
 
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -73,7 +74,7 @@ as a single measured input, and the algebraic origin of the CMB matter density
 ($\omega_b$, $\omega_c$) remains an open problem. The growth amplitude $S_8$,
 previously reported here as a standing tension with weak lensing, is not one:
 measured against raw KiDS-1000 $\xi_\pm$ data with a single matter sector it
-gives $0.7555\pm0.0192$, statistically indistinguishable from the $\Lambda$CDM control on the same raw data ($0.7571\pm0.0194$) despite four fewer free parameters. On the raw data itself --- the only quantity neither model produced --- $\Delta\chi^2=2.65$ for four \emph{fewer} free parameters, where four uninformative parameters would already return $4$ by chance ($\Delta\mathrm{BIC}=-19.0$ favouring SSEE). Against the later KiDS-Legacy release (357 points) the sector closes further: the
+gives $0.7555\pm0.0192$, statistically indistinguishable from the $\Lambda$CDM control on the same raw data ($0.7571\pm0.0194$) despite four fewer free parameters. On the raw data itself --- the only quantity neither model produced --- $\Delta\chi^2=\val{dchi2_k1000}$ for four \emph{fewer} free parameters, where four uninformative parameters would already return $4$ by chance ($\Delta\mathrm{BIC}=\val{dBIC_k1000}$ favouring SSEE). Against the later KiDS-Legacy release (357 points) the sector closes further: the
 amplitude the shear asks for sits $0.49\sigma$ from the one the CMB fixes under
 the same background, so fixing it leaves \emph{no} free cosmological parameter
 and still predicts $S_8=0.8273$ against $0.8265\pm0.0176$ measured. The $\varphi$-dark-matter

@@ -39,8 +39,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: 1ce91e7d5085a8450f7b9ebf5488e2b9
-      size: 66439
+      md5: de68cbf0ff15bb170811273a9a2399b9
+      size: 67740
     - path: results/chains/lcdm_cmb.1.txt
       hash: md5
       md5: 881ecb1f5d40784f62c8798473d1affe
@@ -68,7 +68,7 @@ stages:
     outs:
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: 4262777d075779dfd50eab7dab2f0606
+      md5: f8757becaeabc2101c90f7a6c37344cf
       size: 1930
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
@@ -83,17 +83,17 @@ stages:
       size: 2372
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: 4262777d075779dfd50eab7dab2f0606
+      md5: f8757becaeabc2101c90f7a6c37344cf
       size: 1930
     - path: src/valores_tex.py
       hash: md5
-      md5: 9e705da0983a7021ba7ed30553ec4e26
-      size: 2910
+      md5: 1f5c766594c7c7ab5887dbc8f6b01e8d
+      size: 2922
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: aef50cd10b586c6e2694156c49ab6f88
-      size: 3762
+      md5: 0d6315a49fad13ba51bc0f8f06430918
+      size: 3761
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -101,8 +101,8 @@ stages:
     deps:
     - path: src/p05_IS/ssee_paper5_IS_perturbations.py
       hash: md5
-      md5: 83b144c406a9fa4353bee8099cd2bebf
-      size: 43036
+      md5: 2788a6cf22640091e63f272f88fcf48b
+      size: 43135
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -114,15 +114,15 @@ stages:
     outs:
     - path: results/logs/p5_IS_perturbations.log
       hash: md5
-      md5: 34b615086fc2bfd623911a5492c54eef
-      size: 10139
+      md5: bc6c10476aba9067717042ef6595166d
+      size: 10837
     - path: results/logs/p5_IS_perturbations_Q2.json
       hash: md5
-      md5: 5df4e57cb36c4617091ac735ecde75e8
-      size: 1391
+      md5: 04ea226c08eb23272e18c01e57d76f64
+      size: 2150
     - path: results/logs/p5_IS_perturbations_Q3.json
       hash: md5
-      md5: be2f7b7927cea0663aa69793ddfcbc6f
+      md5: df92ec6e230ade2f4725a63eda0a11ad
       size: 1240
   kids_publicados:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

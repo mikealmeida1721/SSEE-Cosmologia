@@ -1,0 +1,71 @@
+{
+ "fecha": "2026-09-30",
+ "kids_legacy": {
+  "S8": 0.8265382678450317,
+  "S8_sigma": 0.017560626824937125,
+  "S8_sin_nu_s8_input": 0.824696586490606,
+  "desvio_max_identidad": 5.551115123125783e-16,
+  "n_muestras": 127091,
+  "n_eff": 100132.28605908647,
+  "control_pasa": true,
+  "fuente": "Wright+2025 (arXiv:2503.19441), cadena nautilus oficial"
+ },
+ "kids1000_maxpost": {
+  "like": -130.15735,
+  "chi2": 260.3147,
+  "fuente": "Asgari+2021, maxpost_multinest_start_C"
+ },
+ "seleccion_kids1000": {
+  "N": 225,
+  "control_N_pasa": true,
+  "delta_chi2": 2.6936699999999973,
+  "delta_k": 4,
+  "delta_AIC": -5.306330000000003,
+  "delta_BIC": -18.970731608817683,
+  "p_delta_chi2": 0.6103227349012326
+ },
+ "PTE": {
+  "ssee": {
+   "chi2": 265.43987,
+   "dof": 216,
+   "PTE": 0.012235714335910162,
+   "z": 2.378676854433341
+  },
+  "lcdm": {
+   "chi2": 262.7462,
+   "dof": 212,
+   "PTE": 0.010084671002078566,
+   "z": 2.464453331417709
+  }
+ },
+ "_procedencia": {
+  "commit": "3a4d486dd785c156b17fcdbb724103fb7a643841",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/kids_publicados.py",
+  "script_sha256": "3c266e456ef3996137f585a2951815f75a4e38eeccea94c951ef3caab0d60d43",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
+   "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568",
+   "results/logs/growth_2026-07/R3_ssee_kids_S8.json": "38bebb99e3b6721bd7c9bd99595e85cce636c4eb66849f55eb3e3121937b6477",
+   "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "c61de328cfd4a95bb843d4e3447410b902ec9cec028684d1ba89c3aba3ede85d"
+  },
+  "argv": [
+   "src/p06_growth/kids_publicados.py"
+  ],
+  "fecha": "2026-09-30T18:10:53",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
