@@ -63,12 +63,12 @@ stages:
       size: 5420
     - path: src/ssee_core.py
       hash: md5
-      md5: e8093ec4aeaf2e5d9582e0646587ba54
-      size: 17171
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
     outs:
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: 979a59c7d3a91f4481d2742f54c56099
+      md5: 4262777d075779dfd50eab7dab2f0606
       size: 1930
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
@@ -79,7 +79,7 @@ stages:
       size: 1087
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: 979a59c7d3a91f4481d2742f54c56099
+      md5: 4262777d075779dfd50eab7dab2f0606
       size: 1930
     - path: src/valores_tex.py
       hash: md5
@@ -88,5 +88,35 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 42a19065c4e0c6d77f318a6e6d3666bc
-      size: 2080
+      md5: 3685c1e56f829d3aa2287b48f8bfd2a1
+      size: 2079
+  p5_IS_perturbations:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p05_IS/ssee_paper5_IS_perturbations.py > 
+      results/logs/p5_IS_perturbations.log 2>&1
+    deps:
+    - path: src/p05_IS/ssee_paper5_IS_perturbations.py
+      hash: md5
+      md5: 83b144c406a9fa4353bee8099cd2bebf
+      size: 43036
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p5_IS_perturbations.log
+      hash: md5
+      md5: 34b615086fc2bfd623911a5492c54eef
+      size: 10139
+    - path: results/logs/p5_IS_perturbations_Q2.json
+      hash: md5
+      md5: 5df4e57cb36c4617091ac735ecde75e8
+      size: 1391
+    - path: results/logs/p5_IS_perturbations_Q3.json
+      hash: md5
+      md5: be2f7b7927cea0663aa69793ddfcbc6f
+      size: 1240
