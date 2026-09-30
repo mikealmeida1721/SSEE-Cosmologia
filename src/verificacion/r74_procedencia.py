@@ -39,11 +39,12 @@ CAJONES = ["VERIFICATION_LEDGER.md", "README.md", "OPEN_PROBLEMS.md", "CLAUDE.md
 
 
 
-# Logs de ORQUESTACION: colas y vigilantes. Registran horas, PIDs y la
-# convergencia (R-1) de corridas ajenas, no resultados del modelo. UNA sola
+# Logs de ORQUESTACION: colas, vigilantes y reportes del guardian. Registran
+# horas, PIDs, la convergencia (R-1) de corridas ajenas o el veredicto del
+# guardian, no resultados del modelo. UNA sola
 # definicion: la usan R74, R75 y R33 (2026-09-30; antes la tupla estaba
 # tecleada en dos sitios).
-ORQUESTACION = ("cola_", "vigilante_")
+ORQUESTACION = ("cola_", "vigilante_", "guardian_")
 
 def _fmt(v):
     s = repr(float(v))
@@ -83,7 +84,7 @@ def _canonical_sin_fuente():
     core = (ROOT / "src" / "ssee_core.py").read_text()
     logs = []
     for p in (ROOT / "results/logs").rglob("*"):
-        if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv"):
+        if p.suffix in (".log", ".json", ".txt", ".csv") and R.es_fuente(p):
             logs += [abs(float(x)) for x in R.NUM.findall(p.read_text(errors="ignore"))]
     logs = sorted(set(logs))
     lineas = {m.group(1): m.group(0) for m in re.finditer(r"^\s{2}(\w+):.*$", txt, re.M)}

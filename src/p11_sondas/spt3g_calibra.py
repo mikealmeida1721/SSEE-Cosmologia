@@ -70,7 +70,11 @@ def lee():
                tiron_sigma=(m - mu) / sg, razon_sigmas=e / sg,
                criterio=f"|dmedia| < 0.25 sigma; |dsigma|/sigma < 15 %; R-1 < {rstop} (declarado antes)",
                pasa=pasa)
-    json.dump(res, open(OUT, "w"), indent=1, ensure_ascii=False)
+    sys.path.insert(0, os.path.join(_R, "src"))
+    from procedencia import con_acta
+    import glob
+    ent = sorted(glob.glob(f"{CAD}/spt_lcdm.*.txt")) + [f"{PAP}/sec8_summary.tex", YML]
+    json.dump(con_acta(res, __file__, entradas=ent), open(OUT, "w"), indent=1, ensure_ascii=False)
     print(f"  publicado σ8Ωm^0.25 = {mu} ± {sg}")
     print(f"  nuestro   σ8Ωm^0.25 = {m:.4f} ± {e:.4f}   tirón {(m-mu)/sg:+.2f}σ   R−1 {r1:.3f}")
     print(f"  -> {'PASA' if pasa else 'NO PASA'}   ({OUT})")

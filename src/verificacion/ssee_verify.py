@@ -2416,6 +2416,19 @@ with _tf74.TemporaryDirectory() as _d74:
 check("R74 el detector marca solo el numero sin fuente",
       _s74 == ["67.47"], f"marcados {_s74} (esperado ['67.47']: log a su redondeo, cita y "
       "declaracion pasan)")
+# CONTROL (R53), 2026-09-30: un REPORTE del guardian (o una cola) en
+# results/logs no es fuente — cita los numeros sin fuente al denunciarlos, y
+# contarlo hizo que la deuda de papers «bajara» 294->190 sin arreglar nada.
+with _tf74.TemporaryDirectory() as _d74b:
+    _g74 = pathlib.Path(_d74b) / "guardian_2026-09-29.txt"
+    _l74 = pathlib.Path(_d74b) / "kids_publicados.json"
+    _c74 = pathlib.Path(_d74b) / "cola_n8.log"
+    for _p74 in (_g74, _l74, _c74):
+        _p74.write_text("0.2471\n")
+    _e74 = [_r74.R.es_fuente(_p74) for _p74 in (_g74, _l74, _c74)]
+check("R74 el detector no toma un reporte del guardian ni una cola como fuente",
+      _e74 == [False, True, False],
+      f"guardian/log/cola -> {_e74} (esperado [False, True, False])")
 
 # --- R75: CADENA DE PROCEDENCIA (dvc.lock + acta) -----------------------------
 # Decision de Mike (2026-09-30): DVC + macros + acta. R74 casa por VALOR (red
@@ -6820,7 +6833,7 @@ try:
     # 31 al abrir la capa (2026-09-05). Baja a 28 el mismo día con los
     # controles de R17, R25 y R30 — las tres que vigilan números
     # canónicos, por eso primero. SÓLO puede BAJAR.
-    _DEUDA_R53 = 26   # 27 -> 26: R35 gano control al ensancharse (2026-09-08)
+    _DEUDA_R53 = 25   # 26 -> 25: R33 y R68 ganaron control (2026-09-30)
     _lista53 = " ".join("R%d" % _r for _r in sorted(_sin53))
 
     check("R53 la deuda de reglas sin control no crece",

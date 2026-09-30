@@ -37,6 +37,10 @@ logs:
   s8_desde_b1:                src/p06_growth/s8_desde_b1.py
   b1_k2_run:                  src/p03_cmb/ssee_paper3_b1_mcmc.py
   s8_kids_legacy_camb:        src/p06_growth/s8_kids_legacy_camb.py
+  bao_lcdm_planck:            src/p11_sondas/lcdm_conjunta.py
+  bao_lcdm_libre:             src/p11_sondas/lcdm_conjunta.py
+  spt3g_calibrador:           src/p11_sondas/spt3g_calibra.py
+  spt3g_kk_en_el_clavo:       src/p11_sondas/spt3g_kk.py
 
   # ── Verificacion — pruebas que producen su propio log ───────────────────
   # Prueba de equivalencia por EJECUCION del camino LCDM de cobaya_kids.py

@@ -35,6 +35,20 @@ CITA = re.compile(r"\\cite[pt]?\*?\{")
 _CORTE = re.compile(r"(?<!\d)\.\s|\\\\")   # fin de frase o de fila .tex
 
 
+
+# NO SON FUENTE aunque vivan en results/logs (2026-09-30): colas y vigilantes
+# (horas, PIDs, R-1 y el eco de resultados que viven en su propio log) y los
+# REPORTES DEL GUARDIAN. Estos ultimos listan los numeros SIN fuente al
+# denunciarlos; contarlos como fuente hizo que el guardian se diera la razon
+# a si mismo: la deuda de papers «bajo» de 294 a 190 sin arreglar nada, en
+# cuanto la cola N8 dejo su reporte en results/logs.
+NO_SON_FUENTE = ("cola_", "vigilante_", "guardian_")
+
+
+def es_fuente(p):
+    """Un archivo de results/logs o data/raw puede aportar numeros como fuente."""
+    return p.is_file() and p.stat().st_size <= 50e6 and not p.name.startswith(NO_SON_FUENTE)
+
 def cifras(s):
     return len(re.sub(r"[^0-9]", "", s.lstrip("0.").replace(".", "")))
 
@@ -55,7 +69,7 @@ def fuentes():
 
     rutas = [p for d in ("results/logs", "data/raw") for p in (ROOT / d).rglob("*")]
     for p in rutas:
-        if not p.is_file() or p.stat().st_size > 50e6:
+        if not es_fuente(p):
             continue
         if p.suffix == ".json":
             try:
