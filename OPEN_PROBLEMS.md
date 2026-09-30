@@ -1441,7 +1441,7 @@ Mejor candidato: $\mathcal{R} \approx 1/[3(\text{KAL}-\varphi)] = 2/[3(3\pi-\var
 con error de **−0.27%**. Más limpio que "$4\text{KAL}-22$" pero sigue siendo
 aproximación numérica, no identidad. Si fuera estructural el error sería 0%.
 
-### Conclusión: OP-14 colapsa con OP-9
+### Conclusión: OP-14 colapsa con OP-9 — CONTENIDO HISTÓRICO (m_φ y su multiplicador retirados 2026-08-01)
 
 Reformulación crítica: $\Sigma m_\nu$ y $m_\varphi$ comparten el **mismo grado de
 libertad fenomenológico** vía la identidad canónica de Paper 6:
@@ -1457,7 +1457,7 @@ problema**. Atacar OP-14 directamente no produce derivación porque no hay
 ataque local: la única salida es derivar $m_\varphi$ desde la curvatura
 de un potencial $V(\varphi)$ fundamental.
 
-### Cadena de dependencias (post-resolución 2026-06-04)
+### Cadena de dependencias (post-resolución 2026-06-04) — CONTENIDO HISTÓRICO (la rama OP-9/m_φ se retiró 2026-08-01)
 
 ```
 OP-14  Σm_ν = R₂·0.9530 eV = 0.0685 eV    ✅ RESUELTO (R₂=Ω_DNAV/(KAL·TRIAL), sin offset 22)
@@ -2068,12 +2068,12 @@ Abordar SOLO después de las auditorías. Relacionado con la advertencia [[proje
 |----|-------|---------|----------|--------------------|
 | OP-1 | P4 | ~~Factor 200 in Ω_b h²~~ | ✅ PARCIAL | (π−φ)/H₀_SSEE=0.32σ Planck; BBN derivation → Paper B/C; script op1 |
 | OP-2 | P4 | ~~n_s exponent 7 not derived from V(φ)~~ | ✅ RESUELTO | α-attractor universality + N_*=2φ⁷; r=φ⁻¹⁰ nueva predicción; script op2 |
-| OP-3 | P10 | Origen del `5/2` en `M⁴ = 5φ⁸ρ_c` | 🟡 PARCIAL | Reabierto 2026-09-06 (Registro V-L3-OP3). `KAL_eff` se despeja DE `M⁴`, no al revés. **3 rutas cerradas por medición**: A sobredeterminada, C subdeterminada + serie no trunca, y la cascada de Hubble NO mide `M⁴` (banda ±0.970 vs residuo 4.2e-06). Falta el `5/2` sin usar `M⁴` ni SH0ES |
+| OP-3 | P10 | Origen del `5/2` en `M⁴ = 5φ⁸ρ_c` | 🟡 PARCIAL | Reabierto 2026-09-06 (Registro V-L3-OP3). `KAL_eff` se despeja DE `M⁴`, no al revés. **3 rutas cerradas por medición**: A sobredeterminada, C subdeterminada + serie no trunca, y la cascada de Hubble NO mide `M⁴` (banda ±0.968 vs residuo 4.2e-06). Falta el `5/2` sin usar `M⁴` ni SH0ES |
 | OP-4 | P8 | r_V > r_Hubble para Vainshtein | 🔴 **REABIERTO 2026-09-19** | El cierre de 2026-05-15 (k-mouflage + αB=αM=αT=0) sigue en pie para la *selección del límite*, pero la auditoría externa (Max, commit 17acccd) encontró que `eq:rkm` **no cierra dimensiones**: evaluada en GeV da r☉=1.44e4 m y en eV 1.44e7 m — un factor 1000 según la unidad elegida. Ver la ficha completa arriba. NO entra en la predicción de lensing del límite canónico, que descansa en ω_c (OP-8) y α_B=α_M=0 (P7) |
 | OP-5 | P5-6 | ~~S₈ weak-lensing tension~~ | ✅ **DISUELTO 2026-08-01, confirmado 2026-09-20** | No hay tensión. Contra KiDS-1000 con A_s libre: S₈=0.7555±0.0192 (0.11σ). Contra **KiDS-Legacy con A_s CLAVADO al del CMB** (cero libres cosmológicos): S₈=0.8273 predicho vs 0.8265±0.0176 medido = **0.05σ**, χ²=417.97/357. El 3.5σ era artefacto de fijar A_s a Planck, o sea de importar la tensión Planck–KiDS |
 | OP-6 | P9 | ~~Screening form ambiguity~~ | ✅ RESUELTO | Universo separado k-essence + identidad 1+w₀=Ω_m; Paper 9 §3 revisado |
 | OP-7 | P4/7/8 | QFT derivation of Genesis role assignments | ✅ PARCIAL | EFT uniqueness formalizado P7 §5.2 + P1 §5.3; QFT desde primeros principios → largo plazo |
-| OP-8 | Transv. | ~~MIRA dynamical mechanism~~ → factor-materia DISUELTO | ✅ DISUELTO 2026-06-18 | Reframe ω_m-directo: Ω_m,CMB=ω_m/h²=0.30889 sin factor (ω_c=KAL₀·ω_b·n_s forward); MIRA persiste solo en f_screen; CMB χ²=1003.586/ΔBIC=−26.21 |
+| OP-8 | Transv. | ~~MIRA dynamical mechanism~~ → factor-materia DISUELTO | ✅ DISUELTO 2026-06-18 | Reframe ω_m-directo: Ω_m,CMB=ω_m/h²=0.30889 sin factor (ω_c=KAL₀·ω_b·n_s forward); MIRA persiste solo en f_screen; CMB χ²=1003.586/ΔBIC=−26.03 (ΛCDM con su mν 0.06, 2026-09-29) |
 | OP-9 | P6 | ~~UV origin of mass multiplier~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | La partícula fue retirada (la resta que definía Ω_φDM mezclaba densidad con ecuación de estado); no queda multiplicador que derivar. No resuelto: dejó de ser pregunta |
 | OP-10 | P6/P7 | ~~Unify χ into φ via richer V(φ)~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | No hay segundo campo χ que unificar |
 | OP-11 | P6 | ~~ξ (non-minimal coupling) is free parameter~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | ξ vivía en el sector φ-DM retirado |
@@ -2163,7 +2163,7 @@ hypotheses. The resolution of OP-1 through OP-6 constitutes the research agenda 
 SSEE-V4.0; OP-8 through OP-13 constitute the agenda for SSEE-V5.0 (full unification
 of the dark sector).
 
-## Parameter-Count Status (2026-05-22)
+## Parameter-Count Status (2026-05-22) — CONTENIDO HISTÓRICO (conteo vigente: P1 §1.3)
 
 SSEE-V3.6 currently has **~2 effective free parameters** vs **6 for $\Lambda$CDM**
 (tras DISOLVER OP-8 el 2026-06-18: el factor-materia ya no es input — Ω_m,CMB sale

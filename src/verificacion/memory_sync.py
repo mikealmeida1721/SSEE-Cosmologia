@@ -61,7 +61,7 @@ def _targets(vault_only=False):
         # MEMORY_PROTOCOL.md (usa valores viejos como ejemplos del drift) ni
         # archive/ (incluye HALG_PIFI_CHANGEMAP.md y el material de investigación
         # —open_problems, mira_attempts— movido a archive/codigo/investigacion/ el 2026-06-24).
-        estado = [ROOT / "README.md", ROOT / "RIGOR_CHECKLIST.md"]
+        estado = [ROOT / "README.md", ROOT / "RIGOR_CHECKLIST.md", ROOT / "OPEN_PROBLEMS.md"]
         out.append(("Estado raíz", [p for p in estado if p.exists()]))
     if VAULT.exists():
         # `Archivo/` es el cajón de retirados del vault — el equivalente exacto
@@ -121,15 +121,16 @@ def _marked_parrafo(lines, lines_low, i, markers):
 # lineas en blanco, asi que el parrafo era el banner ENTERO o la tabla ENTERA, y
 # un solo «retirado» en cualquier fila eximia a todas las demas. Con eso el
 # ΔBIC −26.21 retirado se vio en 1 de 16 sitios. Ahora la marca tiene que estar
-# en la MISMA frase que el valor: se corta en «. », «; », « · » y en los
-# limites del parrafo. El decimal «0.968» no corta (no lleva
+# en la MISMA frase que el valor: se corta en «. », «; » y en los
+# limites del parrafo. (« · » NO corta: separa los items de una lista
+# «RETIRADOS: a · b · c», que cuelgan todos de la misma marca.) El decimal «0.968» no corta (no lleva
 # espacio tras el punto). Una FILA de tabla es un registro (como un item de
 # lista): su unidad es la fila, cortada solo por frases dentro de ella; en .tex
 # la fila termina en «\\\\».
-_CORTE = re.compile(r"\.\s|;\s|\s·\s|\\\\")   # «\\\\» = fin de fila de tabla .tex
+_CORTE = re.compile(r"\.\s|;\s|\\\\")   # «\\\\» = fin de fila de tabla .tex
 
 
-def _marked_frase(lines, lines_low, i, col, markers):
+def _frase(lines, lines_low, i, col):
     if re.match(r"^\s*(?:>\s*)?\|", lines[i]):
         a = b = i
     else:
@@ -138,7 +139,7 @@ def _marked_frase(lines, lines_low, i, col, markers):
     # un item de lista es UNA afirmacion (p. ej. una entrada de la historia de
     # H0 con su «Superado por…» al final): ahi la unidad es el item entero.
     if re.match(r"^\s*(?:>\s*)?(?:[-*+]\s|\d+[.)]\s)", lines[a]):
-        return any(mk in texto for mk in markers)
+        return texto
     p = sum(len(lines_low[j]) + 1 for j in range(a, i)) + col
     # un corte DENTRO de un parentesis no cierra la frase: «(era X; Y DR1)» es
     # una sola acotacion historica y su marca vale para todo lo de adentro.
@@ -152,8 +153,7 @@ def _marked_frase(lines, lines_low, i, col, markers):
     # (Se probo tambien lo inverso —que una marca en un parentesis mas hondo no
     # exima al valor de afuera— y se descarto: rompe el giro mas comun,
     # «20.98 (DR1, retirado)», donde el parentesis anota al valor.)
-    frase = " " + texto[ini:fin]   # « era» al inicio de frase
-    return any(mk in frase for mk in markers)
+    return " " + texto[ini:fin]   # « era» al inicio de frase
 
 
 def scan(vault_only=False):
@@ -203,24 +203,24 @@ def scan(vault_only=False):
                 for item in retired:
                     pat = item["pattern"]
                     cols = [k for k in range(len(low[i])) if low[i].startswith(pat.lower(), k)]
-                    # basta UNA aparicion sin marca en su frase para que sea drift
-                    if not cols or all(_marked_frase(lines, low, i, k, markers) for k in cols):
+                    req = [r.lower() for r in item.get("requires", [])]
+                    exc = [e.lower() for e in item.get("excludes", [])]
+
+                    def exenta(fr):
+                        # marca de contexto, `requires` y `excludes` se miden en la
+                        # MISMA unidad (la frase). Antes requires/excludes miraban
+                        # ±1 linea y un «68.13» de la linea de Paper 9 eximia el
+                        # «±0.970» de la de Paper 10 en CLAUDE.md (2026-09-30).
+                        return (any(mk in fr for mk in markers)
+                                or (req and not any(t in fr for t in req))
+                                or (exc and any(t in fr for t in exc)))
+                    # basta UNA aparicion no exenta en su frase para que sea drift
+                    if not cols or all(exenta(_frase(lines, low, i, k)) for k in cols):
                         continue
                     # Discriminador de cantidad (opcional): un decimal pelado como
-                    # «0.766» puede ser un S₈ retirado O un χ²/N legítimo. El
-                    # patrón puede declarar tokens de desambiguación que se buscan
-                    # en la ventana ±1 (igual que los context_markers):
-                    #   `requires`  → sólo es drift si ALGÚN token co-ocurre.
-                    #   `excludes`  → NO es drift si ALGÚN token co-ocurre
-                    #                 (p. ej. «χ²» marca un goodness-of-fit, no un S₈).
-                    # Sin ninguno → comportamiento previo (substring puro).
-                    win = [low[j] for j in (i - 1, i, i + 1) if 0 <= j < len(low)]
-                    req = [r.lower() for r in item.get("requires", [])]
-                    if req and not any(tok in l for l in win for tok in req):
-                        continue
-                    exc = [e.lower() for e in item.get("excludes", [])]
-                    if exc and any(tok in l for l in win for tok in exc):
-                        continue
+                    # «0.766» puede ser un S₈ retirado O un χ²/N legitimo. El patron
+                    # declara tokens: `requires` → solo es drift si ALGUNO esta en
+                    # la frase; `excludes` → NO es drift si alguno esta (arriba).
                     rel = path.relative_to(VAULT if label.startswith("Obsidian") else ROOT)
                     drifts.append((label, str(rel), i + 1, pat, raw.strip()[:90]))
     return drifts, scanned

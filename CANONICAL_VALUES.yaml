@@ -535,6 +535,9 @@ context_markers:
   # ellas y 1/17 con la unidad parrafo; cero falsos positivos nuevos en el arbol
   # actual. Log: results/logs/memory_sync_control_2026-09-30.log
   - "rancio"
+  - "was once"
+  - "once proposed"
+  - "once quoted"
   - "withdrawn"
   # «ceiling»/«techo»: un valor calculado con A_s FIJADO a Planck no es la
   # predicción del modelo sino una cota superior bajo normalización importada.
@@ -579,6 +582,10 @@ historical_sections:
   - "Historia"
   - "Roadmap"
   - "Resultado Fase"
+  # Un OP cerrado es el REGISTRO de un problema que ya no existe (2026-09-30, al
+  # sumar OPEN_PROBLEMS.md al barrido): narra la partícula con sus números.
+  - "CERRADO POR DISOLUCIÓN"
+  - "✅ DISUELTO"
 
 
 # ════════════════════════════════════════════════════════════════════════

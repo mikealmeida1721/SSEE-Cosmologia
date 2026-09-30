@@ -10,3 +10,13 @@ manuscript/SSEE_Paper1_Framework.tex:881
 memory_sync — 57 archivos de memoria escaneados
   DRIFT — 1 valor(es) retirado(s) sin marcar:
    [Papers (cajón)] manuscript/SSEE_Paper2_MCMC.tex:573  «0.02207»  →  & $0.02207^{+0.00045}_{-0.00045}$
+
+# RE-CONTROL 2026-09-30 08:33:14 — version final (requires/excludes en la frase, sin corte « · », OPEN_PROBLEMS barrido, OP cerrados = historicos)
+version FRASE final: 15 de 17 detectados
+# no detectados:
+manuscript/SSEE_Paper1_Framework.tex:1330
+manuscript/SSEE_Paper1_Framework.tex:881
+# arbol actual (con vault):
+memory_sync — 58 archivos de memoria escaneados
+  DRIFT — 1 valor(es) retirado(s) sin marcar:
+   [Papers (cajón)] manuscript/SSEE_Paper2_MCMC.tex:573  «0.02207»  →  & $0.02207^{+0.00045}_{-0.00045}$
