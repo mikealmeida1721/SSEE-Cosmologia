@@ -39,8 +39,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: de68cbf0ff15bb170811273a9a2399b9
-      size: 67740
+      md5: 089f4ad6d744382735d763231f3630aa
+      size: 68400
     - path: results/chains/lcdm_cmb.1.txt
       hash: md5
       md5: 881ecb1f5d40784f62c8798473d1affe
@@ -68,22 +68,26 @@ stages:
     outs:
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: f8757becaeabc2101c90f7a6c37344cf
+      md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
       size: 1930
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: a9232e6017c99a3d1e49f80bf1d762a3
-      size: 2475
+      md5: 17af6784ad4f4e2a0f00f68eae5508d1
+      size: 3188
     - path: results/logs/kids_publicados.json
       hash: md5
       md5: fafae20f92ccc2a645ae8f202596438f
       size: 2372
+    - path: results/logs/p10_uv_fscreen.json
+      hash: md5
+      md5: 5623ac27b395376ad895c0455ef668af
+      size: 1356
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: f8757becaeabc2101c90f7a6c37344cf
+      md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
       size: 1930
     - path: src/valores_tex.py
       hash: md5
@@ -92,8 +96,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 0d6315a49fad13ba51bc0f8f06430918
-      size: 3761
+      md5: 134b8f62cd62e068bcaa609edcf5753f
+      size: 4642
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -159,3 +163,24 @@ stages:
       hash: md5
       md5: fafae20f92ccc2a645ae8f202596438f
       size: 2372
+  p10_uv_fscreen:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p10_uv/ssee_paper10_verification.py > /dev/null
+    deps:
+    - path: src/p10_uv/ssee_paper10_verification.py
+      hash: md5
+      md5: 44c0d46f874ab7fc172667c19b7b9d7b
+      size: 16275
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p10_uv_fscreen.json
+      hash: md5
+      md5: 5623ac27b395376ad895c0455ef668af
+      size: 1356

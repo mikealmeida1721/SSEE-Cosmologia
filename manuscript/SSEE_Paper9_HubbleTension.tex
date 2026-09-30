@@ -42,6 +42,7 @@
 \date{May 2026 --- Paper 9 of the SSEE series}
 
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -81,9 +82,9 @@ i.e.\ $0.17\sigma$, with \emph{zero free parameters}.
 in the \emph{infrared} regime ($M\to\infty$), where $\sK=\sK^{\rm IR}=0.403302$
 and hence $\fsc=0.06725$.  The screening fraction of the full theory is not a
 separate quantity but the \emph{sum} of this term and the ultraviolet
-correction supplied by Paper~10, $\sK^{\rm full}=\sK^{\rm IR}+0.013608=0.416910$,
-giving $\fsc^{\rm full}=0.069522$ and the single model value
-$H_0^{\rm glob}=73.04\times(1-0.069522)=67.96214$~km/s/Mpc.  There is
+correction supplied by Paper~10, $\sK^{\rm full}=\sK^{\rm IR}+\val{sK_UV_corr}=\val{sK_full}$,
+giving $\fsc^{\rm full}=\fsc+\val{fscreen_UV_corr}=\val{fscreen_full}$ and the single model value
+$H_0^{\rm glob}=73.04\times(1-\val{fscreen_full})=\val{H0_glob}$~km/s/Mpc.  There is
 therefore \emph{one} $H_0^{\rm glob}$, not an infrared one and an ultraviolet
 one: the $68.13$ used throughout this paper is the same cascade evaluated with
 the infrared term alone, and it is superseded by the complete value once the
