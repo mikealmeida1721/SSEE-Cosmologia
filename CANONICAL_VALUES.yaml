@@ -207,7 +207,7 @@ canonical:
   #
   # f_screen NO se aplica por regímenes separados: el s_K completo es la SUMA
   # del IR más la corrección UV (Paper 10, eq:sKfullform):
-  #     s_K^full = s_K^IR + UV_corr = 0.40330 + 0.01361 = 0.41691
+  #     s_K^full = s_K^IR + UV_corr = 0.40330 + 0.01360 = 0.41691   (log p10_uv_fscreen.json)
   #     f_screen = s_K^full/(3·MIRA) = 0.41691/(3×1.99892) = 0.069522
   #     H_glob   = H_SH0ES·(1−f_screen) = 73.04×(1−0.069522) = 67.96214
   # Aplicar sólo el IR da 68.13, que NO es «el H_global IR» sino esta misma
@@ -223,7 +223,10 @@ canonical:
   sigma_glob_propagado: 0.968     # 1.04×(1−f) = 0.96770 (ssee_core.SIG_H0_GLOBAL) — DOMINA sobre el residuo UV.
                                   # El «0.970» anterior era redondeo de mano (2026-09-29)
   f_screen_IR:         0.06725    # FUENTE: ssee_core.F_SCREEN_IR — (π−φ)/Ω² = αK/(3·MIRA)  [INVARIANTE]
-  f_screen_UV:         0.06952    # αK_full/(3·MIRA)        [INVARIANTE]
+  f_screen_UV_corr:    0.002268   # FUENTE: results/logs/p10_uv_fscreen.json — SOLO la corrección UV: Δs_K/(3·MIRA) = 0.013603/(3·MIRA)
+  f_screen:            0.069522   # FUENTE: results/logs/p10_uv_fscreen.json — COMPLETO = IR + UV = s_K_full/(3·MIRA)  [INVARIANTE] — EL CANÓNICO
+  # (2026-09-30) Esta clave se llamaba `f_screen_UV` pero valía el COMPLETO, no la
+  # parte UV: el nombre decía una pieza y el número era la suma. Mike lo señaló.
   # Posterior MCMC reframe: prior H_alg=67.962 (ancla CMB ω_m-directo) + DESI DR2 REAL.
   # GEOMETRÍA CORREGIDA 2026-07-09 (V-L4-DESI): la geometría de fondo E(z)/r_d usa la
   # materia TOTAL Ω_m=ω_m/h²=0.308881, NO el sector frío 0.160 (=1+w0). El χ²_BAO=726
@@ -292,7 +295,8 @@ canonical:
   # depende del K(X) elegido. Verificado 2026-09-06, dif 0.00e+00.
   s_K:                 0.403302   # entra en f_screen (Paper 9)
   alpha_K:             0.4033     # [ETIQUETA HEREDADA] = s_K; ver R54
-  alpha_K_full:        0.41691    # Paper 10 (con corrección UV)
+  s_K_UV_corr:         0.013603   # FUENTE: results/logs/p10_uv_fscreen.json — corrección UV (Paper 10); Paper 9 decía 0.013608 tecleado
+  s_K_full:            0.416905   # FUENTE: results/logs/p10_uv_fscreen.json — s_K^IR + corrección UV (Paper 10); era `alpha_K_full` 0.41691: s_K NO es alpha_K (R54)
   M_cutoff_meV:        9.68       # Λ_SSEE = (5φ⁸ρ_crit)^(1/4) @ ρ_crit(H_alg=67.962)
   # reframe: ρ_crit=3H²M_Pl² usa H_alg=67.962 (H de fondo del modelo) → M=9.6811 meV.
   # ρ_crit=37.40 meV⁴, M⁴=8784.13 meV⁴, M/ρ_crit^(1/4)=φ²·5^(1/4)=3.91487 (anchor-free).

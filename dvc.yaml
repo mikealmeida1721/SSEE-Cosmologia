@@ -40,6 +40,7 @@ stages:
       - manuscript/valores.yaml
       - results/logs/s8_desde_b1.json
       - results/logs/kids_publicados.json
+      - results/logs/p10_uv_fscreen.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -67,4 +68,13 @@ stages:
       - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
     outs:
       - results/logs/kids_publicados.json:
+          cache: false
+  p10_uv_fscreen:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/ssee_paper10_verification.py > /dev/null
+    deps:
+      - src/p10_uv/ssee_paper10_verification.py
+      - src/procedencia.py
+      - src/ssee_core.py
+    outs:
+      - results/logs/p10_uv_fscreen.json:
           cache: false
