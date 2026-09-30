@@ -338,6 +338,10 @@ canonical:
   chi2_CMB_SSEE_fullplik: 2771.3  # SSEE k=2 best-fit (full likelihood)
   chi2_CMB_LCDM_fullplik: 2773.1  # ΛCDM k=6 best-fit; Δχ²_BF=−1.8 (indistinguible; NO se reclama mejor fit)
   N_data_fullplik:        2354    # TTTEEE 2289 (VERIFICADO clipy data_bandpowers/siginv 2289×2289, 2026-06-28) + lowlTT 28 + lowlEE 28 + lensing 9. (Antes 2409 con high-ℓ≈2344 estimado; 6478 del script b1 era multipolos sin binnear — bug corregido)
+  # ⚠ SIN LOG (2026-09-30, R73): las cadenas k=2 del 23-jun que dieron 2771.30/2773.11 se
+  # sobrescribieron el 27-jul con una corrida de H0 LIBRE (k=3 -> deltaBIC_cmb_plik_full -25.766,
+  # que SI tiene log). EN RE-CORRIDA k=2 (decision de Mike): cola_b1_k2 -> results/logs/b1_k2_run.log.
+  # Hasta cerrar, -32.9 NO se cita como cerrado.
   Delta_BIC_CMB_fullplik: -32.9   # SSEE − ΛCDM. = −1.81 + (2−6)ln(2354) → TITULAR (parsimonia, Jeffreys decisivo). Δχ²=−1.81 de cadenas reales (χ²_SSEE=2771.30, χ²_LCDM=2773.11). Robusto: con N∈[2289,2409] da −32.7..−33.0
   # r_d / θ* — CAMB en el punto reframe (ω_b,ω_c algebraicos FIJOS, H=67.962).
   # log: results/logs/p3_rd_reframe_omega_m.log  (script run_p3_rd_reframe.py)
