@@ -1,0 +1,9 @@
+{
+ "rd_ssee_camb": 147.17434822164017,
+ "rd_lcdm_planck_camb": 147.10124805814726,
+ "rd_planck_medido": [
+  147.09,
+  0.26
+ ],
+ "script": "src/ssee_resolution_figures.py"
+}

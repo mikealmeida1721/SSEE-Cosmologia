@@ -18,5 +18,6 @@
   "sigmas_a_Hglob": 0.3672600869532833,
   "sigmas_a_Planck": 0.6103302671084389
  },
- "script": "src/p02_mcmc/h0_distancias.py"
+ "script": "src/p02_mcmc/h0_distancias.py",
+ "plano_vs_posterior_sigmas": 0.05059872401309686
 }

@@ -43,7 +43,7 @@ fscreen_IR = alphaK_IR / (3*MIRA)    # 0.06725
 fscreen_UV = alphaK_UV / (3*MIRA)    # 0.06952
 # SH0ES ENTRA, H_global SALE
 H0_UV    = H0_SHOES * (1 - fscreen_UV)   # ≈ 67.96214
-SIG_GLOB = SIG_SHOES * (1 - fscreen_UV)  # ≈ 0.970
+SIG_GLOB = SIG_SHOES * (1 - fscreen_UV)  # ≈ 0.968 (con f completo; 0.970 es el del régimen IR)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Figure 1: K(X)/X vs X/M^4

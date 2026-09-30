@@ -59,8 +59,8 @@ Crucially, the two forward predictions that can \emph{refute} the core framework
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand \emph{independent}
 of the $\varphi$-dark-matter extension: neither the Hubble resolution nor the growth
 sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
-$\omega_m$-direct CMB anchor as prior yields $H_0=67.79\pm0.35~\kms$
-($0.66\sigma$ from Planck, $0.50\sigma$ from the algebraic anchor). The
+global rate of the screening cascade as prior ($H_0^{\rm glob}=67.962\pm0.968~\kms$) yields $H_0=67.82\pm0.41~\kms$
+($0.68\sigma$ from Planck, $0.33\sigma$ from $H_0^{\rm glob}$). The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
 with $\alpha_K=15.591335$ and a ghost-free sound speed $c_s^2=0.021284$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=0.965558$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
@@ -501,8 +501,8 @@ Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
 $\omega_m$ is $147.17$~Mpc at $\Om^{\mathrm{cosm}}=0.308881$
 ($\omega_m$-direct), consistent with the Planck-inferred
-$147.09\pm0.26$~Mpc ($0.32\sigma$), and the BAO-distance run gives
-$148.2$~Mpc, matching $\Lambda$CDM to $0.2\%$. The $175.6$~Mpc value that
+$147.09\pm0.26$~Mpc ($0.32\sigma$), and matching $\Lambda$CDM at the
+Planck~2018 parameters ($147.10$~Mpc, same code) to $0.05\%$. The $175.6$~Mpc value that
 appears if the cold sector $\Om^{\mathrm{dyn}}=0.160050$ is (incorrectly) used as
 the background density is a category error, not a physical scale.
 
@@ -511,9 +511,8 @@ the background density is a category error, not a physical scale.
   \includegraphics[width=0.82\textwidth]{fig_rd_dual.pdf}
   \caption{The physical sound horizon. Set by the full algebraic $\omega_m$
   (green, $147.17$~Mpc at $\Om^{\mathrm{cosm}}=0.308881$, $\omega_m$-direct), in
-  agreement with Planck 2018 ($147.09\pm0.26$~Mpc, grey band) and the
-  $\Lambda$CDM Eisenstein--Hu value (blue, $147.3$~Mpc); the BAO-distance run
-  gives $148.2$~Mpc. This is the visual counterpart of the Boltzmann test above:
+  agreement with Planck 2018 ($147.09\pm0.26$~Mpc, grey band) and with
+  $\Lambda$CDM at the Planck~2018 parameters (blue, $147.10$~Mpc, CAMB). This is the visual counterpart of the Boltzmann test above:
   the full matter density that restores the acoustic peaks also restores the BAO
   standard ruler. The $175.6$~Mpc scale (red) is the category error of using the
   cold sector $\Om^{\mathrm{dyn}}=0.160050$ as the background density.}
@@ -533,9 +532,9 @@ walkers $\times\,25{,}000$ steps (seed $42$).
 \paragraph{$H_0$ as one quantity in two stages.} We first anchor the
 early-time geometry at the CMB-optimal value
 \begin{equation}
-  H_0^{\mathrm{anchor}} = H_0^{\rm alg} = 67.962~\kms ,
+  H_0^{\mathrm{anchor}} = H_0^{\rm glob} = H_{\rm SH0ES}(1-f_{\rm screen}) = 67.962\pm0.968~\kms ,
   \qquad
-  \frac{H_0^{\rm alg}}{\kms} = 3(\varphi+\pi)^2 ,
+  \frac{H_0^{\rm glob}}{\kms} \simeq 3(\varphi+\pi)^2 ,
   \label{eq:h0anchor}
 \end{equation}
 which (with $\omega_b,\omega_c$ fixed by SSEE algebra) is the $H_0$ that
@@ -546,9 +545,9 @@ $\theta_\ast = 0.59667^\circ$ ($1.00\sigma$). Letting the MCMC then correct
 $H_0$ against the low-redshift BAO (corrected DESI~DR2 vector, block-diagonal
 covariance with the official $r_{M,H}$ correlations) yields the posterior
 \begin{equation}
-  H_0^{\mathrm{post}} = 67.79 \pm 0.35~\kms ,
+  H_0^{\mathrm{post}} = 67.82 \pm 0.41~\kms ,
   \qquad
-  \Omega_b h^2 = 0.02207 \pm 0.00045 ,
+  \Omega_b h^2 = 0.02198 \pm 0.00048 ,
   \label{eq:h0post}
 \end{equation}
 with $r_d = 147.17~\mathrm{Mpc}$ ($0.32\sigma$, $\omega_m$-set, $H_0$-invariant)
@@ -593,11 +592,11 @@ input---but its two variants are one datum under two prescriptions, not two
 independent measurements. The CMB/BAO chain, which never touches SH0ES, adopts
 the anchor as its prior, so its posterior is a \emph{consistency} test rather
 than a third confirmation: its content is that DESI DR2 does not pull the value
-away ($\chi^2_{\rm BAO}\simeq10.3$ over 13 points, against $\simeq726$ for the
-incorrect background geometry), leaving a residual displacement of
-$0.50\sigma$. Replacing the anchor prior with a Planck one removes even that
+away ($\chi^2_{\rm BAO}=10.43$ over 13 points at the posterior, $11.41$ at the
+anchor, against $\simeq726$ for the incorrect background geometry), leaving a
+residual displacement of $0.33\sigma$. Replacing the anchor prior with a Planck one removes even that
 dependence: the data then pull $H_0$ \emph{upward} from $67.36$ to
-$67.53\pm0.35$, towards the anchor rather than away from it. That
+$67.61\pm0.35$, towards the anchor rather than away from it. That
 pattern---one external datum and two independent-prior checks that decline to
 move the value---is the anchor's physical content, not a claim that
 $3(\varphi+\pi)^2$ literally equals a dimensionful rate. In Planck units
@@ -610,11 +609,11 @@ undermine it.
 
 \paragraph{Anchor and posterior agree.} With the total gravitating matter
 density $\Om^{\mathrm{cosm}}=0.308881$ in $E(z)$ and $r_d$, the BAO-corrected
-posterior ($67.79$) and the CMB anchor ($67.962$) agree to $0.50\sigma$: DESI
+posterior ($67.82$) and the CMB anchor ($67.962$) agree to $0.33\sigma$: DESI
 DR2 is \emph{consistent with} the algebraic value rather than pulling against
 it. All early-time observables are simultaneously healthy---$r_d=147.17$~Mpc
 ($0.32\sigma$) and, evaluating the acoustic scale at the posterior,
-$100\,\theta_\ast=1.04089$ ($0.67\sigma$). The apparent $2.9\sigma$
+$100\,\theta_\ast=1.04099$ ($0.32\sigma$). The apparent $2.9\sigma$
 ``BAO--CMB split'' and the $13.9\sigma$ $\theta_\ast$ figure reported in earlier
 drafts were the footprint of a single error---placing the cold dynamical sector
 $\Om^{\mathrm{dyn}}=0.160050$ in the background geometry, where the total density
@@ -655,9 +654,9 @@ not use.
   \caption{Marginalised posterior from the MCMC analysis ($100$ walkers
   $\times\,25{,}000$ steps). With the entire dark-energy sector fixed by
   $\varphi$ and $\pi$, the chain samples only $H_0$ and $\Omega_b h^2$ against
-  DESI DR2 BAO with the $\omega_m$-direct CMB anchor as prior. The posterior is
-  $H_0=67.79\pm0.35~\kms$ and $\Omega_b h^2 = 0.02207\pm0.00045$
-  (Eq.~\ref{eq:h0post}), agreeing with the anchor to $0.50\sigma$. Dashed lines
+  DESI DR2 BAO with $H_0^{\rm glob}$ as prior. The posterior is
+  $H_0=67.82\pm0.41~\kms$ and $\Omega_b h^2 = 0.02198\pm0.00048$
+  (Eq.~\ref{eq:h0post}), agreeing with the anchor to $0.33\sigma$. Dashed lines
   mark the anchor inputs $(H_0=67.962~\kms,\ \Omega_b h^2 = 0.02218)$; the
   $16/50/84\%$ quantiles are indicated.}
   \label{fig:corner}
@@ -787,12 +786,12 @@ evaluate the compressed Planck likelihood \texttt{plik\_lite}
 (TT+TE+EE, $613$ bandpowers, nuisance parameters marginalised by the Planck
 Collaboration) together with the low-$\ell$ TT and EE likelihoods, for $N=669$
 data points, which gives $\chi^2_{\rm SSEE}=1003.586$ against
-$\chi^2_{\Lambda\rm CDM}=1003.769$ with $\{A_s,\tau\}$ minimized in both---an
-equal fit ($\Delta\chi^2=-0.183$, statistically zero) for four fewer free
+$\chi^2_{\Lambda\rm CDM}=1003.596$ (with its own $\sum m_\nu=0.06$~eV) with $\{A_s,\tau\}$ minimized in both---an
+equal fit ($\Delta\chi^2=-0.010$, statistically zero) for four fewer free
 parameters---and
 \begin{equation}
   \label{eq:dbic-cmb}
-  \Delta\mathrm{BIC}(\text{SSEE}-\Lambda\text{CDM}) = -26.21 \qquad
+  \Delta\mathrm{BIC}(\text{SSEE}-\Lambda\text{CDM}) = -26.03 \qquad
   (\texttt{plik\_lite}, k=2 \text{ vs } 6) .
 \end{equation}
 This is the number the model comparison rests on; the diagonal $-35.0$ is

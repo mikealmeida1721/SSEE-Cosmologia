@@ -363,9 +363,9 @@ retired:
   - {pattern: "26.21",            reason: "ΔBIC CMB viejo (ΛCDM con la mν de SSEE) → −26.03 (cmb_dbic_mnu_propia.json)"}
   - {pattern: "6.43",             reason: "ΔBIC P2 ΛCDM−SSEE viejo → 6.77 (mcmc_paper2_3models_wmfix.log, 09-29)", requires: ["bic"]}
   - {pattern: "6.35",             reason: "ΔBIC P2 CPL−SSEE viejo → 5.66", requires: ["bic", "cpl"]}
-  - {pattern: "\\pm0.970",        reason: "σ de H_glob redondeado a mano → ±0.968 (ssee_core.SIG_H0_GLOBAL)"}
-  - {pattern: "±0.970",           reason: "σ de H_glob → ±0.968"}
-  - {pattern: "\\sigma=0.970",    reason: "σ de H_glob → 0.968"}
+  - {pattern: "\\pm0.970",        reason: "σ de H_glob redondeado a mano → ±0.968 (ssee_core.SIG_H0_GLOBAL)", excludes: ["ir regime", "infrared", "68.13", "glob,ir", "(ir"]}
+  - {pattern: "±0.970",           reason: "σ de H_glob → ±0.968", excludes: ["ir regime", "infrared", "68.13", "glob,ir", "(ir"]}
+  - {pattern: "\\sigma=0.970",    reason: "σ de H_glob → 0.968", excludes: ["ir regime", "infrared", "68.13", "glob,ir", "(ir"]}
   - {pattern: "0.50\\sigma",       reason: "distancia vieja del posterior al ancla → 0.33σ de H_glob", requires: ["67.79", "anchor", "ancla", "h_alg", "h_{\\rm alg", "glob"]}
   - {pattern: "0.02207",          reason: "Ω_b h² posterior viejo → 0.02198"}
   - {pattern: "1.04089",          reason: "100θ* en el posterior viejo 67.79 → 1.04099 (0.32σ) en 67.82"}

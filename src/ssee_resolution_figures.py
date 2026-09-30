@@ -40,6 +40,11 @@ from lcdm_planck import LCDM_PLANCK as _LP  # noqa: E402
 RD_CMB   = _rd(_WB, _WM)   # Mpc — SSEE physical value, total matter (omega_m direct), CAMB
 RD_PLANCK, RD_PLANCK_ERR = 147.09, 0.26   # Mpc, Planck 2018
 RD_LCDM  = _rd(_LP['ombh2'], _LP['ombh2'] + _LP['omch2'] + _LP['mnu'] * _WNU / _SM, mnu=_LP['mnu'])  # Mpc — ΛCDM-Planck, CAMB
+import json as _json  # noqa: E402
+_json.dump(dict(rd_ssee_camb=RD_CMB, rd_lcdm_planck_camb=RD_LCDM, rd_planck_medido=[RD_PLANCK, RD_PLANCK_ERR] if 'RD_PLANCK' in dir() else None,
+                script='src/ssee_resolution_figures.py'),
+           open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'results', 'logs', 'rd_dual.json'), 'w'), indent=1)
+print(f'r_d SSEE {RD_CMB:.3f}  ΛCDM-Planck {RD_LCDM:.3f}')
 
 fig, ax = plt.subplots(figsize=(8.0, 4.2))
 

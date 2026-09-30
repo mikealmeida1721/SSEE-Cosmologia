@@ -33,7 +33,11 @@ def fila(h, s):
 res = dict(fecha=str(__import__("datetime").date.today()), H_glob=H0_GLOBAL, sig_H_glob=SIG_H0_GLOBAL,
            Planck=dict(H0=HP, sd=SP), posterior=fila(post["H0_mediana"], post["H0_std"]),
            desi_plano=fila(plano["H0_mediana"], plano["H0_std"]), script="src/p02_mcmc/h0_distancias.py")
+# DESI sola frente al posterior completo (dos estimaciones del mismo dato; σ en cuadratura, orientativo)
+res["plano_vs_posterior_sigmas"] = abs(res["desi_plano"]["H0"] - res["posterior"]["H0"]) / (
+    res["desi_plano"]["sd"] ** 2 + res["posterior"]["sd"] ** 2) ** 0.5
 json.dump(res, open(os.path.join(L, "h0_distancias_hglob.json"), "w"), indent=1)
 for k in ("posterior", "desi_plano"):
     f = res[k]
     print(f"  {k:11s} H0 = {f['H0']:.3f} ± {f['sd']:.3f}   a H_glob {f['sigmas_a_Hglob']:.2f}σ   a Planck {f['sigmas_a_Planck']:.2f}σ")
+print(f"  DESI sola vs posterior: {res['plano_vs_posterior_sigmas']:.2f}σ")
