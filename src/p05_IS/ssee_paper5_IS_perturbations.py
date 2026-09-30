@@ -598,6 +598,25 @@ else:
     print(f"  S₈ tension  ΛCDM vs KiDS    = {tens_KIDS_LC:.2f}σ")
     print(f"\n  fσ₈(z=0.5):  SSEE = {fσ8_SSEE_05:.4f}")
     print(f"               ΛCDM = {fσ8_LCDM_05:.4f}")
+    # 2026-09-30: gamma_IS y G de CANONICAL no tenian log (R74). Q3 lo deja,
+    # con acta de procedencia, igual que Q2.
+    import json as _json, os as _os, sys as _sys
+    _src = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..')
+    _sys.path.insert(0, _os.path.abspath(_src))
+    from procedencia import con_acta as _con_acta
+    _log3 = _os.path.abspath(_os.path.join(_src, '..', 'results', 'logs',
+                                           'p5_IS_perturbations_Q3.json'))
+    with open(_log3, 'w') as _fh:
+        _json.dump(_con_acta(dict(
+            Omega_m=float(Omm_CMB), G=float(G_factor),
+            gamma_IS=gamma_IS_val, gamma_IS_sigma=gamma_IS_err_val,
+            gamma_LCDM=gamma_LCDM_val,
+            sigma8_SSEE=float(sigma8_SSEE), sigma8_SSEE_sigma=float(sigma8_SSEE_err),
+            S8_SSEE=float(S8_SSEE_val), S8_SSEE_sigma=float(S8_SSEE_err_val),
+            fsigma8_z05_SSEE=float(fσ8_SSEE_05), fsigma8_z05_LCDM=float(fσ8_LCDM_05),
+            nota='sigma8 con A_s FIJADO a Planck (techo); no es el S8 de Paper 6.'),
+            __file__), _fh, indent=1)
+    print(f"    -> log: {_log3}")
 
     # ── fσ₈(z) full array
     fsig8_ssee_arr = f_ssee * sigma8_SSEE * D1_ssee_n

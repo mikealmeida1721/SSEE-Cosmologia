@@ -117,6 +117,7 @@ _M4_UV       = 45.0 * ALPHA_ATT**2
 _X_UV        = (-2.0/KAL0 + (4.0/KAL0**2 + 16.0*(S_K/3.0)/_M4_UV)**0.5) / (8.0/_M4_UV)
 S_K_FULL     = S_K + 24.0 * _X_UV**2 / _M4_UV        # ≈ 0.41691
 F_SCREEN     = S_K_FULL / (3.0 * MIRA)               # ≈ 0.069522  (IR+UV)
+F_SCREEN_IR  = S_K / (3.0 * MIRA)                    # ≈ 0.06725   solo el término IR (régimen M→∞, Papers 1–9; NO canónico)
 H0_GLOBAL    = H0_SH0ES * (1.0 - F_SCREEN)           # ≈ 67.962142 km/s/Mpc — EL H de SSEE
 SIG_H0_GLOBAL = SIG_H0_SH0ES * (1.0 - F_SCREEN)      # ≈ 0.970 km/s/Mpc, propagado de SH0ES
 H0_MIRA    = 67.037                  # ancla CMB-fit del escenario VIEJO (cascada pendiente re-run)
