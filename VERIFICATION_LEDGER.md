@@ -1036,13 +1036,14 @@ de Paper 3 es reproducible. Verificado.**
 ## V-L4-rd — horizonte de sonido r_d — **r_d sano en ambos anclajes**
 
 Re-corrido con CAMB en el reframe ω_m-directo (2026-06-19). Con los H₀
-canónicos actuales (anchor H_alg 67.962, posterior DR2 66.412; el 67.159
-previo usaba el vector DR1 mal etiquetado, superado):
+de entonces (anchor H_alg 67.962, posterior DR2 66.412 —hoy superado por
+67.82±0.41, que da el mismo r_d = 147.174 Mpc: `run_p3_rd_reframe.py`,
+re-corrido 2026-09-29—; el 67.159 previo usaba el vector DR1 mal etiquetado, superado):
 
 | H₀ usado | r_d resultante | tensión Planck (147.09±0.26) |
 |---|---|---|
 | 67.962 (anchor H_alg, CMB-óptimo ω_m-directo) | 147.17 Mpc | **0.32σ ✓** |
-| 67.159 (posterior MCMC reframe) | 147.17 Mpc | **0.32σ ✓** (r_d es H₀-invariante a ω fijo) |
+| 67.159 (posterior MCMC reframe con DR1 mal etiquetado, superado) | 147.17 Mpc | **0.32σ ✓** (r_d es H₀-invariante a ω fijo) |
 | 67.037 / 66.533 (anchor/posterior MIRA viejo) | 146.73 / 147.30 Mpc | *superado por reframe* |
 
 **Mecanismo (ω_m-directo):** la parametrización SSEE fija la densidad física

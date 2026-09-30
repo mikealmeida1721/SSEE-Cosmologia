@@ -9,7 +9,7 @@ Las 3 memorias deben concordar SIEMPRE (regla de Mike):
 
 Este script lee CANONICAL_VALUES.yaml (fuente única de verdad) y revisa que
 NINGUNA memoria presente un valor RETIRADO como vigente. Un valor retirado
-sólo se permite si en su misma línea hay una marca de contexto
+sólo se permite si en su misma FRASE hay una marca de contexto
 (retirado, viejo, Type-P, coincidencia, sin re-correr…).
 
     .venv/bin/python3 src/verificacion/memory_sync.py            # las 3 memorias
@@ -89,7 +89,7 @@ def _parrafo(lines, i):
     blanco). Para .md se respetan ademas los items de lista: un item es una
     afirmacion propia y no lo exonera su vecino."""
     import re as _r
-    _item = _r.compile(r"^\s*(?:[-*+]\s|\d+[.)]\s)")
+    _item = _r.compile(r"^\s*(?:>\s*)?(?:[-*+]\s|\d+[.)]\s)")
     ini = i
     while ini > 0:
         if _item.match(lines[ini]):
@@ -114,6 +114,46 @@ def _marked_parrafo(lines, lines_low, i, markers):
     a, b = _parrafo(lines, i)
     ventana = " ".join(lines_low[a:b + 1])
     return any(mk in ventana for mk in markers)
+
+
+# LA UNIDAD ES LA FRASE, NO EL PARRAFO (2026-09-30). El parrafo seguia siendo
+# demasiado ancho: en CLAUDE.md un banner «> ...» o una tabla markdown no tienen
+# lineas en blanco, asi que el parrafo era el banner ENTERO o la tabla ENTERA, y
+# un solo «retirado» en cualquier fila eximia a todas las demas. Con eso el
+# ΔBIC −26.21 retirado se vio en 1 de 16 sitios. Ahora la marca tiene que estar
+# en la MISMA frase que el valor: se corta en «. », «; », « · » y en los
+# limites del parrafo. El decimal «0.968» no corta (no lleva
+# espacio tras el punto). Una FILA de tabla es un registro (como un item de
+# lista): su unidad es la fila, cortada solo por frases dentro de ella; en .tex
+# la fila termina en «\\\\».
+_CORTE = re.compile(r"\.\s|;\s|\s·\s|\\\\")   # «\\\\» = fin de fila de tabla .tex
+
+
+def _marked_frase(lines, lines_low, i, col, markers):
+    if re.match(r"^\s*(?:>\s*)?\|", lines[i]):
+        a = b = i
+    else:
+        a, b = _parrafo(lines, i)
+    texto = " ".join(lines_low[a:b + 1])
+    # un item de lista es UNA afirmacion (p. ej. una entrada de la historia de
+    # H0 con su «Superado por…» al final): ahi la unidad es el item entero.
+    if re.match(r"^\s*(?:>\s*)?(?:[-*+]\s|\d+[.)]\s)", lines[a]):
+        return any(mk in texto for mk in markers)
+    p = sum(len(lines_low[j]) + 1 for j in range(a, i)) + col
+    # un corte DENTRO de un parentesis no cierra la frase: «(era X; Y DR1)» es
+    # una sola acotacion historica y su marca vale para todo lo de adentro.
+    prof, nivel = 0, []
+    for ch in texto:
+        prof += (ch == "(") - (ch == ")")
+        nivel.append(max(prof, 0))
+    cortes = [m for m in _CORTE.finditer(texto) if nivel[m.start()] == 0 or nivel[m.start()] < nivel[p]]
+    ini = max([m.end() for m in cortes if m.end() <= p], default=0)
+    fin = min([m.start() for m in cortes if m.start() >= p], default=len(texto))
+    # (Se probo tambien lo inverso —que una marca en un parentesis mas hondo no
+    # exima al valor de afuera— y se descarto: rompe el giro mas comun,
+    # «20.98 (DR1, retirado)», donde el parentesis anota al valor.)
+    frase = " " + texto[ini:fin]   # « era» al inicio de frase
+    return any(mk in frase for mk in markers)
 
 
 def scan(vault_only=False):
@@ -158,11 +198,13 @@ def scan(vault_only=False):
                 # que no se llevo el arreglo. Aqui la unidad es el PARRAFO:
                 # un .tex justificado parte las frases por ancho de columna,
                 # asi que la linea no significa nada, pero el parrafo si.
-                if in_hist or _marked_parrafo(lines, low, i, markers):
+                if in_hist:
                     continue
                 for item in retired:
                     pat = item["pattern"]
-                    if pat.lower() not in low[i]:
+                    cols = [k for k in range(len(low[i])) if low[i].startswith(pat.lower(), k)]
+                    # basta UNA aparicion sin marca en su frase para que sea drift
+                    if not cols or all(_marked_frase(lines, low, i, k, markers) for k in cols):
                         continue
                     # Discriminador de cantidad (opcional): un decimal pelado como
                     # «0.766» puede ser un S₈ retirado O un χ²/N legítimo. El

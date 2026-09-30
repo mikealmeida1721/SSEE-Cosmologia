@@ -1,0 +1,12 @@
+# Control R53 de memory_sync (unidad frase), 2026-09-30 08:15:33
+# Arbol de prueba: git archive d23a954^ (VERIFICATION_LEDGER, manuscript, submission_PRD, README, RIGOR_CHECKLIST) + CANONICAL_VALUES.yaml actual; sin vault. La version PARRAFO se corre con script+yaml de HEAD; la FRASE con los de este commit.
+# Sitios reales de 26.21 en ese commit (git grep): 17
+version PARRAFO (HEAD): 1 detectados
+version FRASE (esta): 15 detectados
+# no detectados (limite conocido):
+manuscript/SSEE_Paper1_Framework.tex:1330
+manuscript/SSEE_Paper1_Framework.tex:881
+# arbol actual (con vault):
+memory_sync — 57 archivos de memoria escaneados
+  DRIFT — 1 valor(es) retirado(s) sin marcar:
+   [Papers (cajón)] manuscript/SSEE_Paper2_MCMC.tex:573  «0.02207»  →  & $0.02207^{+0.00045}_{-0.00045}$

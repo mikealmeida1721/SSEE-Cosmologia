@@ -396,7 +396,7 @@ retired:
   - {pattern: "66.53",     reason: "H0 posterior MCMC con prior MIRA 67.037 — dos veces superseded (→67.16 DR1, →66.41 DR2)"}
   # ── vector DESI DR2 real (V-L4-DESI, 2026-07-02) — era DR1 mal etiquetado ──
   - {pattern: "67.16",     reason: "H0 posterior con datos DR1 mal etiquetados → 67.79±0.35 vigente (DR2 + geometría total + ω_m fijo R25; el 67.95 intermedio congelaba Ω_m)"}
-  - {pattern: "0.05\\sigma", excludes: ["dr1", "legacy", "full posterior"], reason: "titular w0wa DR1+SN → 0.24σ Pantheon+ / rango 0.2-1.8σ (ecs. 25-28 DR2). Legítimo SÓLO si se atribuye a DR1 explícitamente (Paper 1 §Predictive Register, Sealed abstract): el punto sí estaba a 0.05σ de DR1 y a 0.24σ de DR2 — es evidencia honesta de dos releases, no el titular retirado. Drift únicamente si '0.05σ' se presenta como claim actual/DR2."}
+  - {pattern: "0.05\\sigma", excludes: ["dr1", "legacy", "full posterior", "0.8265"], reason: "titular w0wa DR1+SN → 0.24σ Pantheon+ / rango 0.2-1.8σ (ecs. 25-28 DR2). Legítimo SÓLO si se atribuye a DR1 explícitamente (Paper 1 §Predictive Register, Sealed abstract): el punto sí estaba a 0.05σ de DR1 y a 0.24σ de DR2 — es evidencia honesta de dos releases, no el titular retirado. Drift únicamente si '0.05σ' se presenta como claim actual/DR2."}
   # Mismo criterio que 94.07 y que "0.05\\sigma": el valor DR1 no es incorrecto,
   # es el de OTRA release. Citarlo CON su atribución es correcto y necesario
   # (Paper 1 §Predictive Register lo usa para mostrar cuánto se estrechó el
@@ -519,12 +519,23 @@ context_markers:
   - anterior
   - antes
   - figuraba
-  - "fit "
   - "fiteo"
   - "era Ω_m,dyn"
   - "ω_m,dyn"
   - "sin re-correr"
   - "sin recorrer"
+  # «era X» / «supersede X» nombran el valor viejo en la misma frase (2026-09-30,
+  # al pasar la unidad de parrafo a frase)
+  - " era "
+  - "(era "
+  - "supersede"
+  # «fit », «rather than», «instead of» QUITADAS (2026-09-30): con la unidad
+  # frase siguen eximiendo frases vivas en ingles («−26.21 … with A_s fitted
+  # rather than held»). Control: 15/17 sitios de −26.21 vistos (con el corte «\\\\») vs 7 con
+  # ellas y 1/17 con la unidad parrafo; cero falsos positivos nuevos en el arbol
+  # actual. Log: results/logs/memory_sync_control_2026-09-30.log
+  - "rancio"
+  - "withdrawn"
   # «ceiling»/«techo»: un valor calculado con A_s FIJADO a Planck no es la
   # predicción del modelo sino una cota superior bajo normalización importada.
   # Anotar así un número no lo revive; lo declara cota. Añadido 2026-09-06.
@@ -540,8 +551,6 @@ context_markers:
   - "no longer"
   - previously
   - "was retired"
-  - "rather than"
-  - "instead of"
   - "legacy"        # corridas CLASS/EFTCAMB con fondo MIRA viejo (validación histórica)
   - "MIRA-background"
   - "MIRA bg"
