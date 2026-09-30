@@ -36,6 +36,7 @@ logs:
   prueba_equivalencia_hglob:  src/verificacion/prueba_equivalencia_hglob.py
   s8_desde_b1:                src/p06_growth/s8_desde_b1.py
   b1_k2_run:                  src/p03_cmb/ssee_paper3_b1_mcmc.py
+  s8_kids_legacy_camb:        src/p06_growth/s8_kids_legacy_camb.py
 
   # ── Verificacion — pruebas que producen su propio log ───────────────────
   # Prueba de equivalencia por EJECUCION del camino LCDM de cobaya_kids.py

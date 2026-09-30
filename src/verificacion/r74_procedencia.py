@@ -36,7 +36,6 @@ import r73_papers as R  # noqa: E402  (misma maquinaria de fuentes y cifras: sin
 
 NUMALL = re.compile(r"(?<![\w.])(\d+\.\d+)(?![\w.])")
 CAJONES = ["VERIFICATION_LEDGER.md", "README.md", "OPEN_PROBLEMS.md", "CLAUDE.md"]
-FUENTE_LINEA = re.compile(r"#\s*FUENTE:|ORIGEN-VALOR:|ORIGEN:")
 
 
 def _fmt(v):
@@ -82,10 +81,42 @@ def _canonical_sin_fuente():
         s = _fmt(abs(v))
         if R.cifras(s) < 3 or R.en_fuente(s, logs) or str(v) in core:
             continue
-        if FUENTE_LINEA.search(lineas.get(k, "")):
+        if fuente_verificada(lineas.get(k, ""), v):
             continue
         out.append((k, v))
     return out
+
+
+FUENTE_REF = re.compile(r"#\s*FUENTE:\s*(\S+)")
+
+
+def fuente_verificada(linea, v):
+    """Una `# FUENTE: <ref>` NO vale por estar escrita: se abre y se comprueba.
+      <ruta>              el valor, a su redondeo, aparece en ese archivo
+      ssee_core.<NOMBRE>  el nucleo, importado, da ese valor a su redondeo
+    Sin ref, ref ilegible o valor ausente: no hay fuente."""
+    m = FUENTE_REF.search(linea)
+    if not m:
+        return False
+    ref = m.group(1).rstrip(".,;)")
+    s = _fmt(abs(v)) if not float(v).is_integer() else str(int(abs(v)))
+    if ref.startswith("ssee_core."):
+        import importlib.util
+        sp = importlib.util.spec_from_file_location("_core74", ROOT / "src" / "ssee_core.py")
+        core = importlib.util.module_from_spec(sp)
+        sp.loader.exec_module(core)
+        x = getattr(core, ref.split(".", 1)[1], None)
+        if not isinstance(x, (int, float)):
+            return False
+        dec = len(s.split(".")[1]) if "." in s else 0
+        return round(abs(x), dec) == abs(float(s))
+    f = ROOT / ref.split("#")[0]
+    if not f.is_file():
+        return False
+    t = f.read_text(errors="ignore")
+    if "." not in s:
+        return re.search(rf"(?<![\d.]){s}(?![\d.])", t) is not None
+    return R.en_fuente(s, sorted({abs(float(x)) for x in R.NUM.findall(t)}))
 
 
 def _texto(f, sin_comentarios):
