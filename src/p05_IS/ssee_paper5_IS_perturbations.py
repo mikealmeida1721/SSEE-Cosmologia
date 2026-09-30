@@ -605,7 +605,7 @@ else:
     import json as _json, os as _os, sys as _sys
     _src = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..')
     _sys.path.insert(0, _os.path.abspath(_src))
-        _log3 = _os.path.abspath(_os.path.join(_src, '..', 'results', 'logs',
+    _log3 = _os.path.abspath(_os.path.join(_src, '..', 'results', 'logs',
                                            'p5_IS_perturbations_Q3.json'))
     with open(_log3, 'w') as _fh:
         _json.dump(con_acta(dict(
