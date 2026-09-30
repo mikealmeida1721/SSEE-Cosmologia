@@ -15,9 +15,10 @@ Aqui se recalculan de su fuente primaria:
     (CosmoSIS reporta like = -chi2/2 sin normalizacion; ver control_kids.py).
   - PTE: distribucion chi2 con el chi2_min y los dof de los logs R3/R4.
 
-CONTROL (R53): S8 de Legacy se calcula DOS veces — de la columna S_8 de la
-cadena y de sigma8·sqrt(Om/0.3) — y tienen que coincidir a 1e-4; si no, las
-columnas no son lo que se dice.
+CONTROL (R53): S8 de Legacy se calcula DOS veces — del parametro muestreado
+s_8_input y de sigma8·sqrt(Om/0.3) derivado — y tienen que coincidir a 1e-4;
+si no, las columnas no son lo que se dice. (La columna derivada S_8 del
+release viene toda en NaN, por eso no se usa.)
 
 Salida: results/logs/kids_publicados.json
 """
@@ -52,9 +53,14 @@ def _tabla(ruta):
 # KiDS-Legacy: posterior pesado
 col, X = _tabla(LEG)
 c = {n: i for i, n in enumerate(col)}
+# 1069 filas tienen log_weight = -inf (peso cero) y sigma8 NaN: fuera.
+ok = np.isfinite(X[:, c["log_weight"]]) & np.isfinite(X[:, c["COSMOLOGICAL_PARAMETERS--SIGMA_8"]])
+X = X[ok]
 w = np.exp(X[:, c["log_weight"]] - X[:, c["log_weight"]].max())
 w /= w.sum()
-s8col = X[:, c["COSMOLOGICAL_PARAMETERS--S_8"]]
+# La columna derivada S_8 del release viene TODA en NaN; el control usa
+# s_8_input, que es el S8 que el muestreador varia directamente.
+s8col = X[:, c["cosmological_parameters--s_8_input"]]
 s8calc = X[:, c["COSMOLOGICAL_PARAMETERS--SIGMA_8"]] * np.sqrt(X[:, c["COSMOLOGICAL_PARAMETERS--OMEGA_M"]] / 0.3)
 media = float(np.sum(w * s8calc))
 sig = float(math.sqrt(np.sum(w * (s8calc - media) ** 2)))
