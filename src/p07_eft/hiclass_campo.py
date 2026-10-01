@@ -181,7 +181,8 @@ def pct(j):
                 TT_alphaK={L: 100 * v for L, v in tt.items()},
                 TT_cs2={L: 100 * v for L, v in tc.items()},
                 var_cosmica={L: 100 * v for L, v in pred["var_cosmica"].items()},
-                ruido_sobre_senal_l2=pred["var_cosmica"][2] / abs(tt[2]))
+                ruido_sobre_senal_l2=pred["var_cosmica"][2] / abs(tt[2]),
+                ruido_sobre_senal_cs2_l2=pred["var_cosmica"][2] / abs(tc[2]))
 
 
 can["pct"] = pct(can)

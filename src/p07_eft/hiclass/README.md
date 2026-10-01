@@ -1,5 +1,11 @@
 # Corrida hi_class del sector campo
 
+> **2026-09-30 — los números vigentes NO son los de este README.** La corrida se
+> rehizo con log y acta: `src/p07_eft/hiclass_campo.py` →
+> `results/logs/hiclass_campo.json` (etapa DVC `hiclass_campo`), y Paper 7 los
+> imprime con `\val`. Este README queda como registro de la sesión del
+> 2026-09-06; el juego «historico» del script reproduce sus σ₈ exactos.
+
 `hi_class` v3.0 (CLASS v3.3.4), repo oficial
 miguelzuma/hi_class_public, commit 0009f51
 (2026-08-25), en `/mnt/datos/hi_class`.
