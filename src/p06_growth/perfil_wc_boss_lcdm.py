@@ -45,7 +45,8 @@ LOGA_CMB = _json.load(open(f'{_LOGS}/cmb_ajuste_conjunto_wc_ns_LCDM.json'))['log
 # logA que LCDM mismo prefiere en BOSS: medido en R1/R2
 LOGA_BOSS = _json.load(open(f'{_LOGS}/growth_2026-07/R1R2_boss_lpt_cobaya.json'))['lcdm']['logA']
 
-WB = B.COSMO['LCDM']['ombh2']     # Planck 2018 LCDM, el mismo fondo que R1/R2
+NS = B.COSMO['LCDM']['ns']        # Planck 2018 LCDM, el mismo fondo que R1/R2 (se lee antes de que sets_con lo limpie)
+WB = B.COSMO['LCDM']['ombh2']
 H = B.COSMO['LCDM']['h']
 WNU = B.MNU['LCDM'] / 93.14       # ORIGEN-VALOR: 93.14 — la misma conversion que el nucleo
 WC_REF = 0.1200       # ORIGEN-VALOR: 0.1200 — w_c de Planck 2018 LCDM (Tabla 2), la referencia de este perfil
@@ -61,7 +62,7 @@ def sets_con(wc):
     B.COSMO.clear()
     B.COSMO['LCDM'] = dict(
         Om=Om, h=H, ombh2=WB,
-        ns=0.9649, w0=-1.0, wa=0.0)
+        ns=NS, w0=-1.0, wa=0.0, mnu=B.MNU['LCDM'])
     return B.build(), Om
 
 

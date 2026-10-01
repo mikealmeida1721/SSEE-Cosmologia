@@ -53,7 +53,7 @@ def sets_con(wc):
     B.COSMO.clear()
     B.COSMO['SSEE'] = dict(
         Om=Om, h=H, ombh2=WB,
-        ns=B.S.N_S, w0=B.S.W0, wa=B.S.WA)
+        ns=B.S.N_S, w0=B.S.W0, wa=B.S.WA, mnu=B.MNU['SSEE'])
     return B.build(), Om
 
 
