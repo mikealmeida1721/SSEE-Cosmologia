@@ -459,10 +459,15 @@ def main():
                     naive=dict(omch2=omch2_n, chi2_TT=c2n, chi2r_TT=c2rn, N=nn,
                                dchi2_vs_lcdm=c2n - chi2_results["TT"][2]),
                     espectros={k: dict(chi2_ssee=v[0], chi2r_ssee=v[1], chi2_lcdm=v[2],
-                                       chi2r_lcdm=v[3], N=v[4], dchi2=v[0] - v[2])
+                                       chi2r_lcdm=v[3], N=v[4], dchi2=v[0] - v[2],
+                                       dchi2r=v[1] - v[3])
                                for k, v in chi2_results.items()},
                     total=dict(chi2_ssee=total_chi2_s, chi2_lcdm=total_chi2_l, N=total_N,
-                               k_ssee=k_ssee, k_lcdm=k_lcdm, dBIC=float(dBIC)))
+                               chi2r_ssee=total_chi2_s / total_N, chi2r_lcdm=total_chi2_l / total_N,
+                               dchi2r=(total_chi2_s - total_chi2_l) / total_N,
+                               k_ssee=k_ssee, k_lcdm=k_lcdm,
+                               penalizacion_dk_lnN=float((k_ssee - k_lcdm) * np.log(total_N)),
+                               dBIC=float(dBIC)))
         _json.dump(_con_acta(_out, __file__),
                    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
                                      "results", "logs", "paper3_cmb_chi2.json"), "w"), indent=1)
