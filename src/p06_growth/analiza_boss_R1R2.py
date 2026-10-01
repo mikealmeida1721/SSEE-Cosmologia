@@ -48,7 +48,7 @@ CAD = "/mnt/datos/SSEE_data/chains_p6/boss"
 LOGS = os.path.join(_R, "results", "logs", "growth_2026-07")
 RSD = os.path.join(_R, "data", "raw", "fsigma8_rsd.csv")
 AISLA = os.path.join(LOGS, "boss_aisla_neutrinos.json")
-VIEJO = os.path.join.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
+VIEJO = os.path.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
 QUEMA = float(re.search(r"^_QUEMA\s*=\s*([0-9.]+)", open(os.path.join(_R, "src", "p06_growth", "multisonda_fondo_clavado.py")).read(), re.M).group(1))
 TOL_SIGMA = 0.05   # ORIGEN-VALOR: 0.05 — cinco veces lo que mueve el burn-in (0.01 sigma, medido)
 PL = CB.plantilla_fsigma8()
