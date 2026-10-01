@@ -75,13 +75,38 @@ for n in ("ssee", "naive"):
     r = tt[n][sel] / tt["lcdm"][sel] - 1
     res[n]["rms_vs_lcdm"] = float(np.sqrt(np.mean(r ** 2)))
 res["degradacion_rms_naive_sobre_ssee"] = res["naive"]["rms_vs_lcdm"] / res["ssee"]["rms_vs_lcdm"]
+
+# CONTROL de la receta (2026-10-01): el caso naive de mayo, con su .ini tal cual
+# (class_ssee/ssee_v36_nomira.ini), por la MISMA receta de RMS. Si da su 31.5 %
+# la diferencia esta en las entradas; si no, en la receta.
+INI_VIEJO = os.path.join(_R, "class_ssee", "ssee_v36_nomira.ini")
+pv = {}
+for ln in open(INI_VIEJO):
+    ln = ln.split("#")[0].strip()
+    if "=" in ln:
+        k, v = (x.strip() for x in ln.split("=", 1))
+        if k not in ("root", "overwrite_root", "output", "P_k_max_h/Mpc"):
+            pv[k] = v
+pv.update(output="tCl,pCl,lCl", lensing="yes", l_max_scalars=LMAX)
+c = Class()
+c.set(pv)
+c.compute()
+cl = c.lensed_cl(LMAX)
+dl_v = cl["ell"] * (cl["ell"] + 1) * cl["tt"]
+iv = argrelmax(dl_v[50:1500], order=60)[0] + 50
+res["naive_ini_mayo"] = dict(picos=[int(cl["ell"][j]) for j in iv[:3]],
+                              rms_vs_lcdm=float(np.sqrt(np.mean((dl_v[30:LMAX + 1] / tt["lcdm"][30:LMAX + 1] - 1) ** 2))),
+                              rms_publicado_pct=31.5)   # ORIGEN-VALOR: 31.5 — el RMS que cita Unified de esa corrida de mayo (sin log)
+c.struct_cleanup()
+c.empty()
 camb = json.load(open(os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json")))["picos_TT"]["ssee"]
 pasa = all(abs(a - b) <= 2 for a, b in zip(res["ssee"]["picos"], camb))
 out = dict(fecha=str(__import__("datetime").date.today()), modelos=res,
            control=dict(picos_ssee_camb=camb, picos_ssee_class=res["ssee"]["picos"], pasa=bool(pasa)))
-json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "CANONICAL_VALUES.yaml"),
+json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "CANONICAL_VALUES.yaml"), INI_VIEJO,
                                              os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json")]),
           open(os.path.join(_R, "results", "logs", "class_picos.json"), "w"), indent=1)
 for n in MODELOS:
     print(f"  {n:5s} picos {res[n]['picos']}  " + (f"RMS {100 * res[n]['rms_vs_lcdm']:.2f}%" if n != "lcdm" else ""))
+print(f"  naive .ini de mayo: picos {res['naive_ini_mayo']['picos']}  RMS {100 * res['naive_ini_mayo']['rms_vs_lcdm']:.2f}% (publicado 31.5%)")
 print(f"  degradacion {res['degradacion_rms_naive_sobre_ssee']:.1f}x   control CLASS vs CAMB: {'PASA' if pasa else 'NO PASA'}")

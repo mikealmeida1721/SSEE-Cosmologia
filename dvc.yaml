@@ -275,6 +275,7 @@ stages:
       - src/p11_sondas/lcdm_planck.py
       - CANONICAL_VALUES.yaml
       - results/logs/paper3_cmb_chi2.json
+      - class_ssee/ssee_v36_nomira.ini
     outs:
       - results/logs/class_picos.json:
           cache: false
