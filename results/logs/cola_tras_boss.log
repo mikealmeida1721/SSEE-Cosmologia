@@ -1,0 +1,17 @@
+[2026-10-01 10:13:11] esperando a BOSS SSEE (cola_boss_ssee_mnu.log)
+[2026-10-01 10:53:11] BOSS SSEE rc=0; ocupados: 5
+[2026-10-01 10:53:11] NUCLEOS: 1 — analiza_boss_R1R2
+[2026-10-01 10:54:54] analiza_boss_R1R2 rc=0
+[2026-10-01 10:54:54] NUCLEOS: 1 — multisonda_fondo_clavado
+[2026-10-01 10:55:00] multisonda rc=0
+[2026-10-01 10:55:00] NUCLEOS: 2 — ajuste_conjunto SSEE y LCDM en paralelo (1 c/u); ocupados antes: 5
+[2026-10-01 11:56:47] ajuste SSEE rc=0  LCDM rc=0
+Updating lock file 'dvc.lock'
+Updating lock file 'dvc.lock'
+[2026-10-01 11:56:49] NUCLEOS: 2 — perfiles w_c SSEE y LCDM en paralelo (1 c/u); ocupados antes: 5
+[2026-10-01 12:42:37] perfil SSEE rc=0  LCDM rc=0
+Updating lock file 'dvc.lock'
+Updating lock file 'dvc.lock'
+[2026-10-01 12:42:39] NUCLEOS: 1 — ganancia_wc_libre
+[2026-10-01 12:42:41] ganancia rc=0
+[2026-10-01 12:42:41] COLA TRAS BOSS TERMINADA

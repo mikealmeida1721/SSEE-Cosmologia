@@ -961,20 +961,24 @@ stages:
     deps:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
       hash: md5
-      md5: d9131519e13409e7be731b91792ede9d
+      md5: e2907d18fca530726a62505761c98947
       size: 1547
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 43edfe16597ddba003bb1a127c89fbbd
-      size: 809
+      md5: e4bfee3faab97bf6fb728a1569ea7afe
+      size: 3003
     - path: src/p06_growth/boss_lpt_R1R2.py
       hash: md5
       md5: 74a053a1b6cee380a21210864b74e19b
       size: 21274
+    - path: src/p06_growth/minimo_sesgos.py
+      hash: md5
+      md5: 25fb322e3b83df858c6666979cb05afe
+      size: 4825
     - path: src/p06_growth/perfil_wc_boss.py
       hash: md5
-      md5: f995beda435d08422476ecf204a814ef
-      size: 5714
+      md5: 8ff812b52e207a231158cfbf865b41c9
+      size: 4631
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -982,12 +986,12 @@ stages:
     outs:
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: f96e6a280810748ff101bfa414539672
-      size: 2797
+      md5: 3b5a70794eefd64b83cee5acb0e6e433
+      size: 4016
     - path: results/logs/perfil_wc_boss.log
       hash: md5
-      md5: f7dc701a4f38c139f84a2060eab97b02
-      size: 5878
+      md5: 0084cfa26f092b021f706707cded8788
+      size: 6894
   perfil_wc_boss_lcdm:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/perfil_wc_boss_lcdm.py > 
@@ -995,20 +999,24 @@ stages:
     deps:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
       hash: md5
-      md5: fcdcb860c7b2a0ca5d58baf113a98f07
+      md5: 57578590a07a455a6ff5e110afbeec30
       size: 1409
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 43edfe16597ddba003bb1a127c89fbbd
-      size: 809
+      md5: e4bfee3faab97bf6fb728a1569ea7afe
+      size: 3003
     - path: src/p06_growth/boss_lpt_R1R2.py
       hash: md5
       md5: 74a053a1b6cee380a21210864b74e19b
       size: 21274
+    - path: src/p06_growth/minimo_sesgos.py
+      hash: md5
+      md5: 25fb322e3b83df858c6666979cb05afe
+      size: 4825
     - path: src/p06_growth/perfil_wc_boss_lcdm.py
       hash: md5
-      md5: fad53f964456af19ae03d5230e5ec1ef
-      size: 6249
+      md5: a20b674faae87f2d043afe117e05b1fd
+      size: 5166
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1016,32 +1024,32 @@ stages:
     outs:
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: aeadc780168fbed092eeff8610f646c2
-      size: 2802
+      md5: 39f807adf966fc7b296dcbed5cfd1182
+      size: 4019
     - path: results/logs/perfil_wc_boss_lcdm.log
       hash: md5
-      md5: 437458cb7f5e99bebfc7067cbb485050
-      size: 5897
+      md5: 14f6ba99e973f99704bc7b1eae8327bd
+      size: 6946
   ganancia_wc_libre:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/ganancia_wc_libre.py
     deps:
     - path: results/logs/multisonda_fondo_clavado.log
       hash: md5
-      md5: 5a91cccc7f2413aba4bc63dc1a78aecb
-      size: 9843
+      md5: a362a2b0f44308d761f69dcf6c5335d1
+      size: 10546
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: f96e6a280810748ff101bfa414539672
-      size: 2797
+      md5: 3b5a70794eefd64b83cee5acb0e6e433
+      size: 4016
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: aeadc780168fbed092eeff8610f646c2
-      size: 2802
+      md5: 39f807adf966fc7b296dcbed5cfd1182
+      size: 4019
     - path: src/p06_growth/ganancia_wc_libre.py
       hash: md5
-      md5: 226502bb7cc7eafddf1c7c42082788cd
-      size: 3296
+      md5: cc7eae17b8cd54403eca2fdaa50981ff
+      size: 3377
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1049,8 +1057,8 @@ stages:
     outs:
     - path: results/logs/ganancia_wc_libre.json
       hash: md5
-      md5: 0b5b10bf647abd140dcb69440b66b9d3
-      size: 2487
+      md5: 9decfd9f74cdcab74edb9cc85a64899f
+      size: 2486
   s8_kids_legacy_camb:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/s8_kids_legacy_camb.py
