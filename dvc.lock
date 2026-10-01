@@ -1111,8 +1111,8 @@ stages:
       size: 15879
     - path: src/p02_mcmc/cumulos_zhang2026.py
       hash: md5
-      md5: 042d392b4b7ab9811ac6e430a6f40309
-      size: 6419
+      md5: 73230a404fc2a15bf664e0e8f30b5e8b
+      size: 6637
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -1128,9 +1128,9 @@ stages:
     outs:
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
-      md5: 7e4e0fbc725424706c0b33c83446d7f8
-      size: 47041
+      md5: 1fd467e5470f75b8d8325ad4650cdf85
+      size: 48953
     - path: results/logs/cumulos_zhang2026.log
       hash: md5
-      md5: bdfd92be815f4279ae310a1f3d76d3fe
-      size: 1362
+      md5: 29b68fa52eca34f3b943dd3c07310a8e
+      size: 1485

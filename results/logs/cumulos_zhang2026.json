@@ -20,6 +20,7 @@
  },
  "piso_redondeo": 0.002886751345948129,
  "K_SSEE": 5.63183409425483,
+ "f_nu_cosmico": 0.005154254414478269,
  "K_LCDM": 6.393124342405801,
  "f_nu": 0.02,
  "modelos": {
@@ -182,6 +183,87 @@
      "obs": 11.45,
      "pull": -0.7311993551814036,
      "razon": 0.8535273864912278
+    }
+   ]
+  },
+  "ssee_fnu_cosmico": {
+   "columna_bar": "M_tot_IG",
+   "factor": 5.549864705879169,
+   "chi2": 65.36688013899186,
+   "N": 46,
+   "chi2r": 1.4210191334563447,
+   "p_valor": 0.03163470715774468,
+   "sigma_equiv": 2.148996124515987,
+   "razon_media": 0.9425149374676217,
+   "razon_mediana": 0.9187491828564482,
+   "razon_dispersion": 0.23712232355419266,
+   "pulls_mayores_3": 1,
+   "peores": [
+    {
+     "nombre": "A1060",
+     "tabla": "III_2MASS",
+     "pred": 0.8324797058818753,
+     "obs": 1.69,
+     "pull": -3.2673285108065806,
+     "razon": 0.49259154194193805
+    },
+    {
+     "nombre": "A3581",
+     "tabla": "III_2MASS",
+     "pred": 0.554986470587917,
+     "obs": 0.92,
+     "pull": -2.892890424979169,
+     "razon": 0.6032461636825184
+    },
+    {
+     "nombre": "AWM7",
+     "tabla": "III_2MASS",
+     "pred": 1.8314553529401258,
+     "obs": 3.05,
+     "pull": -2.8459726879969236,
+     "razon": 0.600477164898402
+    },
+    {
+     "nombre": "A0496",
+     "tabla": "III_2MASS",
+     "pred": 5.050376882350044,
+     "obs": 4.01,
+     "pull": 2.296540410315387,
+     "razon": 1.2594456065710833
+    },
+    {
+     "nombre": "A1367",
+     "tabla": "III_2MASS",
+     "pred": 2.219945882351668,
+     "obs": 3.19,
+     "pull": -2.1727772000092007,
+     "razon": 0.6959078001102407
+    }
+   ],
+   "sub_P2": [
+    {
+     "nombre": "A2029",
+     "tabla": "III_2MASS",
+     "pred": 10.933233470581962,
+     "obs": 12.77,
+     "pull": -1.1409148961358044,
+     "razon": 0.8561655027863714
+    },
+    {
+     "nombre": "A2142",
+     "tabla": "III_2MASS",
+     "pred": 15.373125235285297,
+     "obs": 15.92,
+     "pull": -0.2217051585830344,
+     "razon": 0.9656485700556091
+    },
+    {
+     "nombre": "A0478",
+     "tabla": "III_2MASS",
+     "pred": 9.823260529406129,
+     "obs": 11.45,
+     "pull": -0.7081169697669607,
+     "razon": 0.8579266837909284
     }
    ]
   },
@@ -2134,11 +2216,11 @@
   }
  ],
  "_procedencia": {
-  "commit": "d74e531e6306bfeb47f2ec39bb6311f1db508f59",
+  "commit": "18e2a1504c7175e820ee313452b730a9a427cf99",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/cumulos_zhang2026.py",
-  "script_sha256": "5722396065e8b0b2741ab6db3f5d67b1f50656324020c3fed838139383020268",
+  "script_sha256": "bdd194859e8adb43498a89104fc9a410a4afdb63d95467e792dcd548bdba83d4",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/zhang2026/tablas_II_III.tex": "1a3d9a42ba75920c6bfff05e3482f12b3acf829ab52e6918a7d7ffddc6c71377"
@@ -2146,7 +2228,7 @@
   "argv": [
    "src/p02_mcmc/cumulos_zhang2026.py"
   ],
-  "fecha": "2026-10-01T09:52:44",
+  "fecha": "2026-10-01T09:57:38",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -2154,7 +2236,7 @@
    "scipy": "1.17.1"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
