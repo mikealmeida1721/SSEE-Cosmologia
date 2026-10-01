@@ -346,3 +346,17 @@ stages:
     outs:
       - results/logs/ganancia_wc_libre.json:
           cache: false
+  fondos_exponenciales:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondos_exponenciales.py > results/logs/fondos_exponenciales.log 2>&1
+    deps:
+      - src/p07_eft/fondos_exponenciales.py
+      - src/p07_eft/fondo_disparo.py
+      - src/p07_eft/busca_lambda.py
+      - archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
+      - src/ssee_core.py
+      - src/procedencia.py
+    outs:
+      - results/logs/fondos_exponenciales.json:
+          cache: false
+      - results/logs/fondos_exponenciales.log:
+          cache: false
