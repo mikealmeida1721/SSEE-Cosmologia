@@ -42,6 +42,7 @@ LMAX = 2500
 T_CMB = 2.7255   # ORIGEN-VALOR: 2.7255 — T_cmb en K, el valor por defecto de CLASS (Fixsen 2009)
 COMUN = dict(output="tCl,pCl,lCl", lensing="yes", l_max_scalars=LMAX, tau_reio=TAU_PLANCK,
              N_ur=2.0328, N_ncdm=1, T_ncdm=0.71611)   # ORIGEN-VALOR: 2.0328, 0.71611 — CLASS, 1 neutrino masivo y N_eff 3.044 (explanatory.ini)
+# ORIGEN-VALOR: 0.71611 — T_ncdm de CLASS para un neutrino masivo con N_eff 3.044, el de su ini explicativo
 
 
 def ssee(omch2):

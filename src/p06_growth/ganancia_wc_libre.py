@@ -16,6 +16,7 @@ COMO, para cada fondo (SSEE, LCDM):
 CONTROL (R53): el como_es leido aqui tiene que ser el que imprime
 results/logs/multisonda_fondo_clavado.log («min libre»), a la precision
 impresa (0.0005).
+# ORIGEN-VALOR: 0.0005 — media unidad de la ultima cifra impresa (4 decimales)
 
 Salida: results/logs/ganancia_wc_libre.json
 """

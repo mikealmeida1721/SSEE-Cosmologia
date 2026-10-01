@@ -76,6 +76,7 @@ h = S.H0_GLOBAL / 100
 A = fondo(S.H0_GLOBAL, S.OMEGA_B_H2, S.S_M * h ** 2 - S.OMEGA_B_H2 - S.OMEGA_NU_H2,
           S.SUM_MNU_EV, S.W0, S.WA)
 om_A = S.S_M * h ** 2
+# ORIGEN-VALOR: 0.1432 — omega_m de referencia de la formula retirada de r_d (solo informativa)
 A["rd_formula_vieja"] = 147.27 * (om_A / 0.1432) ** -0.255 * (S.OMEGA_B_H2 / 0.02237) ** -0.134  # ORIGEN-VALOR: 147.27, 0.1432, 0.02237 — la formula retirada (rd_camb.py), solo informativa
 A["DH_rd_lya_formula_vieja"] = A["DH_lya"] / A["rd_formula_vieja"]
 B = fondo(S.H0_GLOBAL, S.OMEGA_B_H2, S.OMEGA_C_H2, S.SUM_MNU_EV, S.W0, S.WA)

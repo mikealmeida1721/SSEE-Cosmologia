@@ -67,6 +67,7 @@ def nelder_mead(x0):
     return minimize(obj, x0, method="Nelder-Mead",
                     options=dict(xatol=1e-6, fatol=1e-4, maxiter=1500,
                                  initial_simplex=[x0,
+# ORIGEN-VALOR: 0.0005 — paso inicial del simplex en w_c (unas 0.4 sigma de Planck), no entra en el resultado
                                                   [x0[0] + 0.0005] + x0[1:],
                                                   x0[:1] + [x0[1] + 0.004] + x0[2:],
                                                   x0[:2] + [x0[2] + 0.01, x0[3]],

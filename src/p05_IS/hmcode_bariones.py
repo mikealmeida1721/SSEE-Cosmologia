@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ORIGEN-VALOR: 0.9956 — el B_sigma8 que Paper 5 citaba (corrida de mayo, sin log); el rehecho es 0.99545
 """hmcode_bariones.py — la supresion barionica (HMcode-2020) que cita Paper 5, con log.
 
 POR QUE (2026-10-01). Paper 5 (§S8) cita B_eff = 0.9447 (supresion de P(k) en el

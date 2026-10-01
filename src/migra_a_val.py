@@ -35,6 +35,7 @@ NO_USAR = {"OMEGA_CDM_SECTOR", "OMEGA_M_DYN", "OMEGA_M_CMB_MIRA", "OMEGA_M_CMB_P
            "OMEGA_M_CMB", "cs2_condensado_TM", "sK_con_KX_de_P7_c1", "Omega_b_alg_cerrada"}   # alias de OMEGA_M_TOTAL (ssee_core L165): se usa el canonico
 # errores de la ultima cifra hallados al armar algebra_derivada (2026-09-30)
 # Cada uno es el valor MAL escrito que se encontro (no un resultado):
+# ORIGEN-VALOR: 1.999462 — sqrt(AURA) evaluado por el algebra (algebra_derivada), el valor correcto
 CORRIGE = {("sqrt_AURA", "1.99947"),      # ORIGEN-VALOR: 1.99947 — mal escrito en Paper 8 (el algebra da 1.999462)
            ("pi_mas_KAL", "8.663001"),    # ORIGEN-VALOR: 8.663001 — mal escrito en la tabla de Paper 4
            ("phi_pi_KAL", "10.281034"),   # ORIGEN-VALOR: 10.281034 — mal escrito en la tabla de Paper 4
