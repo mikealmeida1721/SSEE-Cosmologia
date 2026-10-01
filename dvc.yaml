@@ -49,9 +49,6 @@ stages:
       - results/logs/resumen_3modelos.json
       - results/logs/savage_cv.json
       - results/logs/dic_from_chains.json
-      - results/logs/press_schechter.json
-      - results/logs/edad_universo.json
-      - results/logs/class_picos.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false

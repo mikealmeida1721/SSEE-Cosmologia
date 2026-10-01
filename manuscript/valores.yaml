@@ -316,3 +316,5 @@ cs2_condensado_d12: {fuente: "results/logs/algebra_derivada.json#algebra.cs2_con
 cs2_condensado_d6:  {fuente: "results/logs/algebra_derivada.json#algebra.cs2_condensado.valor", formato: ".6f"}
 alpha_K_z0_d1:      {fuente: "results/logs/algebra_derivada.json#algebra.alpha_K_z0.valor", formato: ".1f"}
 horizonte_cs_d0: {fuente: "results/logs/algebra_derivada.json#algebra.horizonte_cs_Mpc.valor", formato: ".0f"}
+sK_con_KX_de_P7_d3: {fuente: "results/logs/algebra_derivada.json#algebra.sK_con_KX_de_P7.valor", formato: ".3f"}
+factor_dos_KX_d1:   {fuente: "results/logs/algebra_derivada.json#algebra.factor_dos_KX.valor", formato: ".1f"}

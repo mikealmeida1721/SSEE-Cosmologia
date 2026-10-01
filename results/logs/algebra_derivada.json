@@ -221,6 +221,21 @@
    "valor": 0.021283701570524605,
    "uso": "la misma c_s^2 por T_r, M_v (control)"
   },
+  "sK_con_KX_de_P7": {
+   "formula": "3*(5-3*W0)*S_DE",
+   "valor": 18.948887135611002,
+   "uso": "6(XK_X+2X^2K_XX) con la K(X) de Paper 7 y rho_phi = S_DE (Paper 10, las dos K(X))"
+  },
+  "sK_con_KX_de_P7_c1": {
+   "formula": "6*S_DE/(1+3*(1-W0)/(3*W0-1))*(1+6*(1-W0)/(3*W0-1))",
+   "valor": 18.948887135611002,
+   "uso": "lo mismo desde c1 X y u (control)"
+  },
+  "factor_dos_KX": {
+   "formula": "3*(5-3*W0)*S_DE/S_K_FULL",
+   "valor": 45.45131143413338,
+   "uso": "cociente contra s_K completo de Paper 10"
+  },
   "horizonte_cs_Mpc": {
    "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
    "valor": 643.5424922781127,
@@ -285,6 +300,7 @@
    "u dos formas": 0.0,
    "n dos formas": 0.0,
    "AURA = 2 MIRA": 0.0,
+   "s_K con K(X) de P7, dos formas": 0.0,
    "c_s^2 dos formas": 0.0
   },
   "pasa": true,
@@ -292,17 +308,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "43c35b6941f72c789e7b65d4e2d9c2db45a6186e",
+  "commit": "c2d8a621ba832533d5747e3cfe8532ffc0694965",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "bc1232ba35a2ff37d587fde77704218c191eabfbf7400f06f05a33f6f9e4620d",
+  "script_sha256": "386e56d977a7d67ad1e5d2ddd0dec1cf878b6333cc3de48361c8de9b19b4b2b8",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T22:04:21",
+  "fecha": "2026-09-30T22:52:58",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
