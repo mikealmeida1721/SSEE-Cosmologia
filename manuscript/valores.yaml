@@ -292,5 +292,5 @@ p2_dBIC_cpl_abs:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.dBIC_
 p2_neff_ssee:     {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.N_eff_del_log", formato: ",d"}
 p2_neff_lcdm:     {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.N_eff_del_log", formato: ",d"}
 p2_neff_cpl:      {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.N_eff_del_log", formato: ",d"}
-p2_ssee_H0_std_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.posterior.H0.std", formato: ".2f"}
-p2_ssee_H0_std_cpl:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.posterior.H0.std", formato: ".2f"}
+p2_lcdm_H0_std: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.posterior.H0.std", formato: ".2f"}
+p2_cpl_H0_std:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.posterior.H0.std", formato: ".2f"}

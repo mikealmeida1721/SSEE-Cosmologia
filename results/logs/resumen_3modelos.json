@@ -24,7 +24,8 @@
    "dBIC_vs_ssee": 0.0,
    "dAIC_vs_ssee": 0.0,
    "dBIC_ssee_menos": 0.0,
-   "dAIC_ssee_menos": 0.0
+   "dAIC_ssee_menos": 0.0,
+   "N_eff_del_log": 76806
   },
   "lcdm": {
    "k": 3,
@@ -54,7 +55,8 @@
    "dBIC_vs_ssee": 6.765400020570542,
    "dAIC_vs_ssee": 5.992811298330761,
    "dBIC_ssee_menos": -6.765400020570542,
-   "dAIC_ssee_menos": -5.992811298330761
+   "dAIC_ssee_menos": -5.992811298330761,
+   "N_eff_del_log": 65282
   },
   "cpl": {
    "k": 5,
@@ -96,7 +98,8 @@
    "dBIC_vs_ssee": 5.653241076199883,
    "dAIC_vs_ssee": 3.335474909480542,
    "dBIC_ssee_menos": -5.653241076199883,
-   "dAIC_ssee_menos": -3.335474909480542
+   "dAIC_ssee_menos": -3.335474909480542,
+   "N_eff_del_log": 45375
   }
  },
  "tension_H0_ssee_planck": 0.39650569901526317,
@@ -127,11 +130,11 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "327db4bbaeaed66feee531f3ed719a797db698db",
+  "commit": "43f2bee9718e274ec4548744ecb5b5ad5944bbad",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/resumen_3modelos.py",
-  "script_sha256": "0c09e817e36afd9f5bb554f496bbcaf25b339db551594e72c172575f465bc05c",
+  "script_sha256": "f7f87d55ecdf995b6c5f35c8c11e9478ee0e50872d33b670e0a1ce57b486c14e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "b1c6d5c10d06316629cec68d7feeaa7cf1272ccacb3826f587e2932565a0d22a",
@@ -140,7 +143,7 @@
   "argv": [
    "src/p02_mcmc/resumen_3modelos.py"
   ],
-  "fecha": "2026-09-30T21:55:11",
+  "fecha": "2026-09-30T21:58:48",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

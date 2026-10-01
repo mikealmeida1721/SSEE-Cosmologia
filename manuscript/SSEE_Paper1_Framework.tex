@@ -79,7 +79,7 @@ fixes the cold dark matter density via the forward identity
 $\omega_c = \KALz\,\omega_b\,n_s$, reproducing the observed cosmic
 dark-to-baryonic matter density ratio.
 These foundational parameters are tested against data in subsequent papers: a full Bayesian MCMC validation against DESI~DR2 \citep{AbdulKarim2025},
-Planck~2018 \citep{PlanckVI2020}, and galaxy-cluster mass data ($\Delta\mathrm{BIC}=-6.43$ for the dynamic
+Planck~2018 \citep{PlanckVI2020}, and galaxy-cluster mass data ($\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ for the dynamic
 sector relative to $\Lambda$CDM) is presented in the companion Paper~2 \citep{SSEE_paperII}, while CMB perturbations and phenomenological extensions are explored in Papers~3--10.
 The framework is falsifiable: a B-mode polarisation tensor-to-scalar ratio
 $r = \varphi^{-10} = 0.008131$ is predicted for LiteBIRD \citep{LiteBIRD2023} ($\sim$2032).
@@ -810,7 +810,7 @@ applies uniformly to Papers~1--4.
   EoS-sector identity, not a density).
   Validated against: DESI~DR2 BAO (13 measurements, $0.295\leq z\leq2.33$),
   galaxy-cluster mass data (IGIMF baseline, Paper~2).
-  \textit{Result}: $\Delta\mathrm{BIC}=-6.43$ favouring SSEE (Paper~2),
+  \textit{Result}: $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring SSEE (Paper~2),
   $0.24\sigma$ from the official DESI~DR2 $w_0w_a$CDM posterior (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) in the $w_0$--$w_a$ plane.
   With the total gravitating matter density in the background geometry the
   Cosmic-Chronometer check gives $\chi^2_r(H(z))=0.482$, comparable to
@@ -877,8 +877,8 @@ No BIC result outside this table is claimed as a model-selection outcome.
 \toprule
 Dataset & $N$ & Background & $k_{\rm SSEE}$ & $k_{\Lambda}$ & $\Delta$BIC & Hypothesis \\
 \midrule
-DESI DR2 + Planck prior & 16 & $\omega_m$-direct & 2 & 3 & $\mathbf{-6.43}$ &
-  Total matter density in geometry; SSEE favoured (CPL $-6.35$; DIC $-5.66$) \\[3pt]
+DESI DR2 + Planck prior & 16 & $\omega_m$-direct & 2 & 3 & $\mathbf{\val{p2_dBIC_lcdm}}$ &
+  Total matter density in geometry; SSEE favoured (CPL $\val{p2_dBIC_cpl}$; DIC $\val{p2_dDIC_lcdm}$) \\[3pt]
 % Titular canonico: full plik MCMC off-diag TTTEEE+lowl+lensing (Cobaya+clipy), chi2_BF SSEE 2771.3 vs LCDM 2773.1, N=2354 -> DeltaBIC=-32.9 (Paper 3 b1). plik_lite TTTEEE+lowl N=669 point est, A_s y tau ajustados -> -26.03 cross-check (ΛCDM con su mnu 0.06, 2026-09-29; era -26.21) (era -24.0 con N=613 y A_s,tau clavados). Diagonal N=5914 -> -35.0. Cobaya MIRA legacy -32.2 superseded.
 Full \texttt{plik} MCMC & 2354 & $\omega_m$-direct & 2 & 6 & $\mathbf{-32.9}$ &
   CMB parsimony, \textbf{canonical} (off-diag.\ TTTEEE+lowl+lensing, Paper~3 §b1) \\[3pt]
@@ -894,7 +894,7 @@ Planck PR4 diagonal & 5914 & $\omega_m$-direct & 2 & 6 & $-35.0$ &
 
 \noindent\textbf{Reading guide.}
 With the total gravitating matter density in the background geometry, the DESI
-DR2 comparison gives a single figure, $\Delta\mathrm{BIC}=-6.43$ favouring SSEE
+DR2 comparison gives a single figure, $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring SSEE
 (the earlier ``$+206$'' penalty was an artefact of using the cold sector
 $1+w_0=\val{S_M_d6}$ as the background density).
 The canonical CMB result is the full \texttt{plik} MCMC row, $\Delta\mathrm{BIC}=-32.9$
@@ -996,7 +996,7 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
   $n_s \neq 1-\varphi^{-7}$ (Planck~PR4) or $r \neq \varphi^{-10}$ (LiteBIRD) &
   Any tension arising from unit-convention mismatch \\[4pt]
 \textbf{Dynamic} &
-  DESI~DR2 $\Delta\mathrm{BIC}=-6.43$; $w_0,w_a$ within $0.24\sigma$ (Pantheon+) &
+  DESI~DR2 $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$; $w_0,w_a$ within $0.24\sigma$ (Pantheon+) &
   DESI~DR5+ excludes $(-0.840,-0.670)$; or $\chi^2_r(H(z))>2.5$ with full cov. &
   A $\chi^2>1$ from \LCDM-calibrated priors the model does not assume \\[4pt]
 \textbf{Observational} &
@@ -1008,7 +1008,7 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
 \end{table}
 
 \paragraph{On cross-sector BIC comparisons.}
-The $\Delta\mathrm{BIC}=-6.43$ (DESI dynamic) and $-32.9$ (CMB $\omega_m$-direct)
+The $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ (DESI dynamic) and $-32.9$ (CMB $\omega_m$-direct)
 are not directly comparable (different $N$, backgrounds, and $\Lambda$CDM $k$ counts).
 The canonical CMB value is the $\omega_m$-direct $\Delta\mathrm{BIC}=-32.9$
 (full \texttt{plik} MCMC, $k=2$, $N=2354$), with the \texttt{plik\_lite} point
@@ -1324,7 +1324,7 @@ categories (see also Table~\ref{tab:derivation_chain}, column ``Type''):
 
 The distinction is particularly important for the $\Delta\mathrm{BIC}$
 comparisons in Papers~2 and~3.
-In Paper~2, the $\Delta\mathrm{BIC}=-6.43$ (dynamic sector) is a
+In Paper~2, the $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ (dynamic sector) is a
 Type~M result: it reflects the MCMC posterior relative to $\Lambda$CDM
 under identical priors.
 In Paper~3, the canonical $\Delta\mathrm{BIC}=-32.9$ ($\omega_m$-direct, full

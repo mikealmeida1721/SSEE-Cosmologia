@@ -634,17 +634,17 @@ steps). $\Delta\equiv\mathrm{SSEE}-\mathrm{model}$; negative $\Delta$ favours SS
 \toprule
 Model & $k$ & $\ln P_{\rm MAP}$ & BIC & $\Delta$BIC & $\Delta$AIC \\
 \midrule
-SSEE          & 2 & $-5.47$ & $16.49$ & $0.00$  & $0.00$  \\
-$\Lambda$CDM  & 3 & $-7.30$ & $22.92$ & $-6.43$ & $-5.65$ \\
-CPL           & 5 & $-4.49$ & $22.85$ & $-6.35$ & $-4.04$ \\
+SSEE          & 2 & $\val{p2_lnP_ssee}$ & $\val{p2_BIC_ssee}$ & $0.00$  & $0.00$  \\
+$\Lambda$CDM  & 3 & $\val{p2_lnP_lcdm}$ & $\val{p2_BIC_lcdm}$ & $\val{p2_dBIC_lcdm}$ & $\val{p2_dAIC_lcdm}$ \\
+CPL           & 5 & $\val{p2_lnP_cpl}$ & $\val{p2_BIC_cpl}$ & $\val{p2_dBIC_cpl}$ & $\val{p2_dAIC_cpl}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-SSEE is favoured over both $\Lambda$CDM ($\Delta\mathrm{BIC}=-6.43$) and CPL
-($-6.35$) by parsimony, with $\Delta\mathrm{DIC}=-5.66$ and a Savage--Dickey factor
-$\ln B=2.90$ (substantial on the Jeffreys scale); a leave-one-out
-cross-validation at $z\ge1$ ranks SSEE ahead of both ($\chi^2_r=0.21$ versus
-$0.71$ for $\Lambda$CDM and $39.6$ for CPL). The preference is driven by fewer
+SSEE is favoured over both $\Lambda$CDM ($\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$) and CPL
+($\val{p2_dBIC_cpl}$) by parsimony, with $\Delta\mathrm{DIC}=\val{p2_dDIC_lcdm}$ and a Savage--Dickey factor
+$\ln B=\val{p2_lnB}$ (substantial on the Jeffreys scale); a leave-one-out
+cross-validation at $z\ge1$ ranks SSEE ahead of $\Lambda$CDM ($\chi^2_r=\val{p2_cvchi2r_ssee}$ versus
+$\val{p2_cvchi2r_lcdm}$; CPL's training fit runs to the edge of the $H_0$ prior and is not quoted). The preference is driven by fewer
 parameters at equal fit, not by a superior $\chi^2$: the competitor that
 \emph{can} bend to the data (CPL, $k=5$) is penalised for the freedom SSEE does
 not use.

@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 84a5e3094fcd8b04d4fdba40317ceefc
-      size: 27468
+      md5: 0cb5974ec541bdc3f47b25cf80dcafed
+      size: 28554
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 157babb56050d778d3b857857417be60
@@ -111,8 +111,8 @@ stages:
       size: 2381
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 0539ee6d0c65ef70917d59521bf9e5de
-      size: 3974
+      md5: 9e12af535aa2f1edc2b39472cc53ce7a
+      size: 4055
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
@@ -128,8 +128,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: fd6c89c9922b7e8057c053f26ad23180
-      size: 35524
+      md5: b965beff2b07b4e152064418c41b3785
+      size: 36831
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -490,8 +490,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/resumen_3modelos.py
       hash: md5
-      md5: 3e92bf8c9b0348ecbe92d43ce9426610
-      size: 4391
+      md5: 53ba66db45e2453a886728780c49f40f
+      size: 4538
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -499,8 +499,8 @@ stages:
     outs:
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 0539ee6d0c65ef70917d59521bf9e5de
-      size: 3974
+      md5: 9e12af535aa2f1edc2b39472cc53ce7a
+      size: 4055
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/estadistica/ssee_phase_d_savage_cv.py > 
