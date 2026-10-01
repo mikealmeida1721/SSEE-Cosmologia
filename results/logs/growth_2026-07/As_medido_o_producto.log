@@ -1,0 +1,36 @@
+# ACTA-PROCEDENCIA {"commit": "50386a5e45db2c227a6e3ff1f12850d31ffdb7ee", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/mide_As_o_producto.py", "script_sha256": "d0e5e8f4433b573855002a93a017ff407829d9fab18c0e2fc4f4e3e9c8cd668d", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/mide_As_o_producto.py"], "fecha": "2026-10-01T13:13:45", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+=== CONTROL (va primero): gaussiana con degeneracion puesta a mano
+    D enredados = 7.08 y 7.08   (debe ser 7.09)
+    D libre     = 1.00          (debe ser 1.00)
+    -> PASA
+
+== KiDS (SSEE)   (8666 muestras, 9 parametros)
+   param          marginal condicional       D  mas enredado con
+   logA             0.0500      0.0431    1.16  halo_A (r=-0.39)
+   combinacion mejor medida: +1.00·delta_c -0.00·dz1 +0.00·dz3   (sigma 0.0002)
+   >>> logA: D = 1.16  -> MEDIDO por si mismo
+
+== BOSS (SSEE)   (55232 muestras, 19 parametros)
+   param          marginal condicional       D  mas enredado con
+   logA             0.1000      0.0242    4.13  b1_z1NGC (r=-0.90)
+   b1_z1NGC         0.1387      0.0546    2.54  logA (r=-0.90)
+   b1_z2NGC         0.1548      0.0724    2.14  logA (r=-0.87)
+   combinacion mejor medida: +0.95·logA +0.26·b1_z1NGC +0.12·b1_z2NGC   (sigma 0.0230)
+   >>> logA: D = 4.13  -> NO lo mide solo: ve una COMBINACION
+
+== KiDS (LCDM, fondo libre)   (33552 muestras, 13 parametros)
+   param          marginal condicional       D  mas enredado con
+   omch2            0.0253      0.0049    5.20  logA (r=-0.95)
+   logA             0.4905      0.1038    4.73  omch2 (r=-0.95)
+   combinacion mejor medida: +1.00·delta_c -0.00·ombh2 +0.00·dz3   (sigma 0.0002)
+   >>> logA: D = 4.73  -> NO lo mide solo: ve una COMBINACION
+
+== BOSS (LCDM, fondo libre)   (79375 muestras, 19 parametros)
+   param          marginal condicional       D  mas enredado con
+   logA             0.0944      0.0240    3.94  b1_z1NGC (r=-0.88)
+   b1_z1NGC         0.1324      0.0566    2.34  logA (r=-0.88)
+   b1_z2NGC         0.1501      0.0736    2.04  logA (r=-0.86)
+   combinacion mejor medida: +0.95·logA +0.21·b1_z1NGC +0.13·b1_z2NGC   (sigma 0.0229)
+   >>> logA: D = 3.94  -> NO lo mide solo: ve una COMBINACION
+
+escrito -> results/logs/growth_2026-07/As_medido_o_producto.json

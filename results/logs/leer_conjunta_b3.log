@@ -1,0 +1,20 @@
+# ACTA-PROCEDENCIA {"commit": "23925cf5aa99169360080f39f3bef6046acf8eab", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/leer_conjunta.py", "script_sha256": "d8fa691b4e1dc18e5da158fc0ab38fca08a0876710ba1159f6df0c1e60c1a741", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/leer_conjunta.py", "b3"], "fecha": "2026-10-01T13:56:29", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+
+  conjunta: 81290 muestras, 4 cadenas, R-1 = 0.0288
+  boss_clavado: 138987 muestras, 4 cadenas, R-1 = 0.0429
+
+   sonda   individual    conjunta     delta
+     cmb     1003.586    1003.795    +0.209
+    kids      417.971     419.490    +1.520
+    boss       82.636      83.026    +0.390
+     BAO       11.407      11.407    +0.000
+   TOTAL     1515.599    1517.717    +2.118
+
+  CONTROL arranque comun --- chi2 por sonda, cadena a cadena:
+          cadena       N        CMB      KiDS      BOSS
+  conjunta_b3.1.txt   19550   1003.623   420.213    83.113
+  conjunta_b3.2.txt   19440   1003.795   419.490    83.026
+  conjunta_b3.3.txt   20158   1003.628   418.793    85.082
+  conjunta_b3.4.txt   22142   1004.033   418.956    83.401
+
+  -> /home/mike/Proyectos/SSEE/results/logs/conjunta_b3_vs_individual.json

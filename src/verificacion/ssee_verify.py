@@ -2554,7 +2554,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 167   # 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
+_TOPE_R75 = 162   # 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",

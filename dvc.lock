@@ -1399,3 +1399,77 @@ stages:
       hash: md5
       md5: c84380d793a691fe0057433b1a557aff
       size: 2550
+  leer_conjunta_b3:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 
+      2>&1
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
+      hash: md5
+      md5: bfcce5489bffd77ce13b69e4fd45bd0e
+      size: 10256785
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
+      hash: md5
+      md5: 53ec6f3776ffa5a67b48199fdb63cacc
+      size: 11070675
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
+      hash: md5
+      md5: 28e57c11bfc401f506b4a2732c2311bc
+      size: 14593810
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
+      hash: md5
+      md5: ff37d781ae00949b2fbeb2234465c32e
+      size: 17590265
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt
+      hash: md5
+      md5: 42a4cda10cc580029f85940f025b028d
+      size: 10968111
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt
+      hash: md5
+      md5: 88c3868bccecfad33774354a2c3f07dd
+      size: 10906401
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt
+      hash: md5
+      md5: f4718b3cf804569f10c51814e6823b67
+      size: 11309199
+    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt
+      hash: md5
+      md5: 8d59cc0a136ca082f2b459c9078e9e73
+      size: 12422223
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: results/logs/multisonda_fondo_clavado.json
+      hash: md5
+      md5: 4ebd2b93f756b364ed3b2db028070b3e
+      size: 9082
+    - path: src/bao_camb.py
+      hash: md5
+      md5: 17e888f2a53c3953da7563d6c7a37e57
+      size: 4547
+    - path: src/p06_growth/leer_conjunta.py
+      hash: md5
+      md5: 666ed92668f00278dca96300fbcc3bec
+      size: 7202
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/rd_camb.py
+      hash: md5
+      md5: b415ae755ec1f801122eb920e7faa797
+      size: 5764
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/conjunta_b3_vs_individual.json
+      hash: md5
+      md5: ca5bc2a304c16017702f5b045d05cb03
+      size: 3871
+    - path: results/logs/leer_conjunta_b3.log
+      hash: md5
+      md5: 925bce991bea53d115c41a363d2e795c
+      size: 1488

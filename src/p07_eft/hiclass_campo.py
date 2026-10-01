@@ -50,7 +50,8 @@ T_NCDM = 0.71611   # ORIGEN-VALOR: 0.71611 — T_ncdm de CLASS que da m/omega = 
 N_UR_SIN_NCDM = 3.044  # ORIGEN-VALOR: 3.044 — N_eff estandar, el fluido CLP se corrio sin neutrino masivo
 PKMAX = 1.0        # ORIGEN-VALOR: 1.0 — P_k_max_h/Mpc de la receta del 2026-09-06 (sigma8 de hi_class)
 ELLS = (2, 5, 10, 30)
-HISTORICO = dict(h=0.67962, omega_b=0.02242, omega_cdm=0.11951)  # ORIGEN-VALOR: 0.67962, 0.02242, 0.11951 — el ini del 2026-09-06 (ssee_ak.ini), a 5 decimales
+# el ini del 2026-09-06 (ssee_ak.ini) llevaba el nucleo REDONDEADO a 5 decimales; se reconstruye asi, no tecleado
+HISTORICO = dict(h=round(S.H0_GLOBAL / 100.0, 5), omega_b=round(S.OMEGA_B_H2, 5), omega_cdm=round(S.OMEGA_C_H2, 5))
 HISTORICO_W = ("-0.839949771345", "-0.669974885673")  # ORIGEN-VALOR: w0, w_a tecleados a 12 decimales en los ini del 2026-09-06 (mueven sigma8 del CLP en 1e-6)
 CANONICO = dict(h=S.H0_GLOBAL / 100, omega_b=S.OMEGA_B_H2, omega_cdm=S.OMEGA_C_H2)
 CANONICO_W = (repr(S.W0), repr(S.WA))

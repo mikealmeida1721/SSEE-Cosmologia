@@ -1,0 +1,113 @@
+{
+ "fecha": "2026-10-01",
+ "preliminar": false,
+ "pregunta": "Corrida CONJUNTA con el fondo clavado por algebra y logA clavado al del CMB: da a cada sonda el mismo chi2 que su corrida individual?",
+ "logA_clavo": 3.0448340130228546,
+ "muestras_conjunta": 81290,
+ "cadenas_conjunta": 4,
+ "Rminus1_conjunta": 0.02881,
+ "muestras_boss": 138987,
+ "cadenas_boss": 4,
+ "Rminus1_boss": 0.042906,
+ "por_sonda": [
+  {
+   "sonda": "cmb",
+   "individual": 1003.5860397789045,
+   "conjunta": 1003.7948,
+   "delta": 0.20876022109553105,
+   "min_en_cadena_conjunta": 1003.5861
+  },
+  {
+   "sonda": "kids",
+   "individual": 417.9706,
+   "conjunta": 419.49027,
+   "delta": 1.5196700000000192,
+   "min_en_cadena_conjunta": 418.10205
+  },
+  {
+   "sonda": "boss",
+   "individual": 82.635627,
+   "conjunta": 83.025602,
+   "delta": 0.38997500000000684,
+   "min_en_cadena_conjunta": 82.827767
+  }
+ ],
+ "control_arranque_comun": {
+  "nota": "las 4 cadenas salieron del mismo punto inicial; el control es que cada una de el mismo chi2 por sonda",
+  "por_cadena": [
+   {
+    "cadena": "conjunta_b3.1.txt",
+    "muestras": 19550,
+    "cmb": 1003.6229,
+    "kids": 420.21304,
+    "boss": 83.113386
+   },
+   {
+    "cadena": "conjunta_b3.2.txt",
+    "muestras": 19440,
+    "cmb": 1003.7948,
+    "kids": 419.49027,
+    "boss": 83.025602
+   },
+   {
+    "cadena": "conjunta_b3.3.txt",
+    "muestras": 20158,
+    "cmb": 1003.6278,
+    "kids": 418.79265,
+    "boss": 85.082259
+   },
+   {
+    "cadena": "conjunta_b3.4.txt",
+    "muestras": 22142,
+    "cmb": 1004.033,
+    "kids": 418.95565,
+    "boss": 83.400896
+   }
+  ]
+ },
+ "bao": {
+  "chi2": 11.406503768936682,
+  "libres": 0,
+  "nota": "constante: fuera del muestreador, no puede mover nada"
+ },
+ "total_conjunta": 1517.7171757689368,
+ "total_individual": 1515.5987705478412,
+ "total_delta": 2.1184052210955997,
+ "_procedencia": {
+  "commit": "23925cf5aa99169360080f39f3bef6046acf8eab",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/leer_conjunta.py",
+  "script_sha256": "d8fa691b4e1dc18e5da158fc0ab38fca08a0876710ba1159f6df0c1e60c1a741",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "results/logs/multisonda_fondo_clavado.json": "542d6008e8101859df39ada642732b8e852106cb4208eff4970c45f9aad4cc92",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt": "9c21d624eb7e69c1388311d0e64bec0bf31275cf9b29a06a117537dc82e17781",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt": "27def7ed764798d78bfce4db0d4d301485c49b5a933041e57c867f6b32755735",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt": "cdfd6dbf4451867fe9a52946676c4ee55bab2c6c636c5f9bf495e4e780b8511e",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt": "823bd98707479d3c968495eefb6f03a2445b0e02ade9386e9ea16fb6c8240b1b",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt": "3989696c4513d8f0a0e83919eee5abb0426256d49e26dfacced8b0696f718021",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt": "679789c840e6b23bdc0aab5221c1414e01140f5d7b60ca3a53eb82b8c305fbcf",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt": "fd1dfd287bc5f48742f3e9cd9bb771db6443fd9932efcce894f60ca009f64fbc",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt": "cb2ecd3752ea98919788b13f3c22b78e94768e9500d0df33c46646b1ff5abf8d"
+  },
+  "argv": [
+   "src/p06_growth/leer_conjunta.py",
+   "b3"
+  ],
+  "fecha": "2026-10-01T13:56:30",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
