@@ -74,7 +74,7 @@ def corre(nombre, p):
 
 
 def cl_tt(nombre):
-    d = np.loadtxt(os.path.join(DIR, nombre + "_cl.dat"))
+    d = np.loadtxt(os.path.join(DIR, nombre + "__cl.dat"))
     return {int(L): float(v) for L, v in zip(d[:, 0], d[:, 1])}
 
 
