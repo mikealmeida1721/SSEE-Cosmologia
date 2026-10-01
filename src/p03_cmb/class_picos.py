@@ -39,6 +39,7 @@ from procedencia import con_acta  # noqa: E402
 
 C = yaml.safe_load(open(os.path.join(_R, "CANONICAL_VALUES.yaml")))["canonical"]
 LMAX = 2500
+T_CMB = 2.7255   # ORIGEN-VALOR: 2.7255 — T_cmb en K, el valor por defecto de CLASS (Fixsen 2009)
 COMUN = dict(output="tCl,pCl,lCl", lensing="yes", l_max_scalars=LMAX, tau_reio=TAU_PLANCK,
              N_ur=2.0328, N_ncdm=1, T_ncdm=0.71611)   # ORIGEN-VALOR: 2.0328, 0.71611 — CLASS, 1 neutrino masivo y N_eff 3.044 (explanatory.ini)
 
@@ -108,6 +109,23 @@ out = dict(fecha=str(__import__("datetime").date.today()), modelos=res,
 json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "CANONICAL_VALUES.yaml"), INI_VIEJO,
                                              os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json")]),
           open(os.path.join(_R, "results", "logs", "class_picos.json"), "w"), indent=1)
+# Figura de Unified (fig:cmb_tt): D_l TT lensado de los tres modelos, desde ESTA corrida.
+import matplotlib  # noqa: E402
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+ell_p = np.arange(LMAX + 1)
+fig, ax = plt.subplots(figsize=(8, 4.5))
+for n, est, lab in (("lcdm", "b--", r"$\Lambda$CDM (Planck 2018)"), ("ssee", "r-", r"SSEE (total $\Omega_m$)"),
+                    ("naive", "0.5", "SSEE with $s_m$ as matter (naive)")):
+    ax.plot(ell_p[2:], 1e12 * T_CMB ** 2 * tt[n][2:] / (2 * np.pi), est if n != "naive" else "-",
+            color=None if n != "naive" else "0.55", lw=1.2, label=lab)
+ax.set_xlim(2, LMAX)
+ax.set_xlabel(r"$\ell$")
+ax.set_ylabel(r"$D_\ell^{TT}$ [$\mu$K$^2$]")
+ax.legend(frameon=False)
+fig.tight_layout()
+FIG = os.path.join(_R, "results", "figures", "fig_class_tt.pdf")
+fig.savefig(FIG)
 for n in MODELOS:
     print(f"  {n:5s} picos {res[n]['picos']}  " + (f"RMS {100 * res[n]['rms_vs_lcdm']:.2f}%" if n != "lcdm" else ""))
 print(f"  naive .ini de mayo: picos {res['naive_ini_mayo']['picos']}  RMS {100 * res['naive_ini_mayo']['rms_vs_lcdm']:.2f}% (publicado 31.5%)")

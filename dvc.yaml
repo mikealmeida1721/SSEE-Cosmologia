@@ -283,6 +283,8 @@ stages:
     outs:
       - results/logs/class_picos.json:
           cache: false
+      - results/figures/fig_class_tt.pdf:
+          cache: false
   R3_rehecho:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_ssee_R3.py
     deps:
