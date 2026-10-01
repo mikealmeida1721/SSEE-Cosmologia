@@ -112,7 +112,7 @@ the DESI BAO equation of state and is not a density at all.
 Full-sky CLASS Boltzmann runs confirm that the \emph{full} matter density is
 physically necessary: using only $\sm=\val{S_M_d6}$ as the CMB matter density
 shifts the peak positions by $\sim 10\%$ and raises the RMS residual
-from $1.4\%$ to $31.5\%$.
+from $\val{cl_ssee_rms}\%$ to $\val{cl_naive_rms}\%$.
 
 A linear Israel-Stewart perturbation analysis with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in
 the Poisson equation yields a growth factor
@@ -484,16 +484,16 @@ retained only as an internal consistency check, not as a presented result.)
 \subsection{CLASS implementation}
 \label{sec:class_setup}
 
-We run the CLASS Boltzmann code \citep{Lesgourgues2011} (v3.2) with two
+We run the CLASS Boltzmann code \citep{Lesgourgues2011} (v3.3, \texttt{src/p03\_cmb/class\_picos.py}) with two
 configurations to isolate the effect of the full CMB matter density.
 \begin{description}[itemsep=1pt]
-  \item[SSEE full-$\Omega_m$ ($\omega_m$-direct canonical):] $\Omega_b = 0.04854$
-    ($=\omega_b/h^2$), $\Omega_{\rm cdm} = 0.26035$
+  \item[SSEE full-$\Omega_m$ ($\omega_m$-direct canonical):] $\omega_b = \val{OMEGA_B_H2_d5}$,
+    $\omega_c = \val{OMEGA_C_H2_d5}$ and one massive neutrino at $\sum m_\nu = \val{SUM_MNU_EV_d5}$~eV
     (total $\OmmCMB = \val{OMEGA_M_TOTAL_d6}$; OP-8 dissolved, no matter factor), $w_0 = \val{W0_d6}$,
-    $w_a = \val{WA_d6}$, $n_s = \val{N_S_d6}$, $h = 0.67962$. The full matter density is
+    $w_a = \val{WA_d6}$, $n_s = \val{N_S_d6}$, $h = H_0^{\rm glob}/100$. The full matter density is
     set directly as a CLASS background input.
-  \item[SSEE dynamical-only:] same EoS and $h$, but $\Omega_b = 0.048432$,
-    $\Omega_{\rm cdm} = 0.111568$ (total $\sm = \val{S_M_d6}$), using only the
+  \item[SSEE dynamical-only:] same EoS, $h$, $\omega_b$ and neutrino, but $\omega_c$ lowered
+    so that the total is $\sm = \val{S_M_d6}$, using only the
     dynamical sector as CMB matter.
 \end{description}
 A fiducial \LCDM\ run with Planck~2018 best-fit parameters serves as reference.
@@ -514,21 +514,21 @@ RMS residual $\Delta C_\ell/C_\ell^{\Lambda\rm CDM}$ across $\ell = 30$--$2500$.
 \toprule
 Model & $\ell_1$ & $\ell_2$ & $\ell_3$ & RMS residual \\
 \midrule
-\LCDM\ (Planck 2018)    & 221 & 537 & 814 & reference \\
-\textbf{SSEE ($\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$)}    & \textbf{221} & \textbf{537} & \textbf{814} & \textbf{0.14\%} \\
-SSEE ($s_m=\val{S_M_d6}$)             & 240 & 597 & 922 & 31.5\% \\
+\LCDM\ (Planck 2018)    & \val{cl_lcdm_l1} & \val{cl_lcdm_l2} & \val{cl_lcdm_l3} & reference \\
+\textbf{SSEE ($\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$)}    & \textbf{\val{cl_ssee_l1}} & \textbf{\val{cl_ssee_l2}} & \textbf{\val{cl_ssee_l3}} & \textbf{\val{cl_ssee_rms}\%} \\
+SSEE ($s_m=\val{S_M_d6}$)             & \val{cl_naive_l1} & \val{cl_naive_l2} & \val{cl_naive_l3} & \val{cl_naive_rms}\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 With the dynamical density $\Omm=\val{S_M_d6}$ alone, all three acoustic peaks shift by
-$\sim 10\%$ toward higher $\ell$ and the RMS residual increases by a factor of 22.
+$\sim 10\%$ toward higher $\ell$ and the RMS residual increases by a factor of \val{cl_degrada}.
 This demonstrates the \emph{two-$\Omega_m$ structure}: the CMB requires the full
 $\omega_m$-direct matter density $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$ (built from
 $\omega_b+\omega_c+\omega_\nu$, no matter factor; OP-8 dissolved), and cannot be
 reproduced with $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone.
 With $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$, the peak positions agree with \LCDM\ to within $\Delta\ell \le 1$
-($\ell = 221, 537, 814$) and the RMS residual is $0.14\%$, consistent with the $\chi^2_r \simeq 1.06$
+($\ell = \val{cl_ssee_l1}, \val{cl_ssee_l2}, \val{cl_ssee_l3}$) and the RMS residual is $\val{cl_ssee_rms}\%$, consistent with the $\chi^2_r \simeq 1.06$
 reported in the CAMB-based Planck~PR4 likelihood analysis of Paper~3
 \citep{AlmeidaSSEE2026P3}. This is an independent-code cross-check: two Boltzmann
 solvers (CLASS here, CAMB in Paper~3) reproduce the acoustic peaks from the same
@@ -539,14 +539,14 @@ and \LCDM.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.82\textwidth]{../class_ssee/output/ssee_v36_CMB_TT_comparison.png}
+\includegraphics[width=0.82\textwidth]{../results/figures/fig_class_tt.pdf}
 \caption{CMB TT power spectrum from CLASS\@. \textit{Blue dashed}: \LCDM\ Planck~2018.
          \textit{Red solid}: SSEE with the full $\omega_m$-direct canonical matter density
          $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ ($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) --- peaks at
-         $\ell = 221, 537, 814$, agreeing with \LCDM\ to within $\Delta\ell \le 1$
-         (RMS $= 0.14\%$). Grey points: Planck~2018 binned TT (approximate).
-         The SSEE dynamical-only run ($\OmmCMB = \val{S_M_d6}$) is omitted from this panel;
-         it produces peaks at $\ell = 240, 597, 922$ with RMS $= 31.5\%$
+         $\ell = \val{cl_ssee_l1}, \val{cl_ssee_l2}, \val{cl_ssee_l3}$, agreeing with \LCDM\ to within $\Delta\ell \le 1$
+         (RMS $= \val{cl_ssee_rms}\%$).
+         \textit{Grey}: the SSEE dynamical-only run ($\OmmCMB = \val{S_M_d6}$);
+         it produces peaks at $\ell = \val{cl_naive_l1}, \val{cl_naive_l2}, \val{cl_naive_l3}$ with RMS $= \val{cl_naive_rms}\%$
          relative to \LCDM, confirming that the \emph{full} matter density
          (not the dynamical $\sm = \val{S_M_d6}$) is needed to reproduce the acoustic scale.}
 \label{fig:cmb_tt}
@@ -972,10 +972,10 @@ across four observational tiers.
 
 \item \textbf{CMB Boltzmann.} CLASS confirms that the full $\omega_m$-direct
   matter density ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$) is physically necessary: with only the
-  dynamical $\sm=\val{S_M_d6}$, the CMB RMS residual jumps by a factor of 22 and
+  dynamical $\sm=\val{S_M_d6}$, the CMB RMS residual jumps by a factor of \val{cl_degrada} and
   all three acoustic peaks shift by $\sim 10\%$.
   With the full $\omega_m$-direct density, peak positions agree with \LCDM\ to
-  within $\Delta\ell \le 1$ (RMS $= 0.14\%$).
+  within $\Delta\ell \le 1$ (RMS $= \val{cl_ssee_rms}\%$).
 
 \item \textbf{Structure growth.} The IS perturbation analysis
   ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ in Poisson) gives $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$,

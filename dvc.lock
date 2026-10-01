@@ -75,12 +75,16 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: f85cf6df2e70ac2497143d6237fe3361
-      size: 40491
+      md5: 70063060cbd1ffeaed9fe21739bbdbdf
+      size: 41604
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: b2dbbef397d0f75c88064d60261115fd
       size: 9817
+    - path: results/logs/class_picos.json
+      hash: md5
+      md5: 833cd321d2fcc6111c6ad9f9052af990
+      size: 1875
     - path: results/logs/cumulos_7.json
       hash: md5
       md5: be2a1998e045c84c3e6443e95c4f8de7
@@ -144,8 +148,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: bb5eab7739d7ee9722eb19e5e67a4829
-      size: 51843
+      md5: 92bb78f0bfeb86ae599954e3c6fcfede
+      size: 53332
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -711,14 +715,18 @@ stages:
       hash: md5
       md5: d8475742bc2f533c20dbeeb42b98fbd4
       size: 68026
+    - path: class_ssee/ssee_v36_nomira.ini
+      hash: md5
+      md5: 1603f5fb77dbfc3722fd3614daed2fae
+      size: 861
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
-      md5: 76b195c6ba3561dd1f5cc49f908eaa3f
+      md5: 520462e625e6b0b487c9039c531d1811
       size: 2381
     - path: src/p03_cmb/class_picos.py
       hash: md5
-      md5: a922514205e73d00dd320cc8daf80436
-      size: 4057
+      md5: aed559527ca28397d7909a3ad4adf39c
+      size: 6621
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -732,10 +740,14 @@ stages:
       md5: d6ef8a580870ee72a5de7ca4b2a18632
       size: 17307
     outs:
+    - path: results/figures/fig_class_tt.pdf
+      hash: md5
+      md5: addb4ab3ea524621bffc9486a2aed0ea
+      size: 24191
     - path: results/logs/class_picos.json
       hash: md5
-      md5: a5a7e847691fc7a62d8f76d05cda90e9
-      size: 1528
+      md5: 833cd321d2fcc6111c6ad9f9052af990
+      size: 1875
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1

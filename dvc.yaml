@@ -53,6 +53,7 @@ stages:
       - results/logs/press_schechter.json
       - results/logs/edad_universo.json
       - results/logs/fondos_exponenciales.json
+      - results/logs/class_picos.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false

@@ -411,3 +411,15 @@ p7_lambda_cal:  {fuente: "results/logs/fondos_exponenciales.json#fondos.lambda.l
 p7_wa_lambda:   {fuente: "results/logs/fondos_exponenciales.json#fondos.lambda.cpl.wa", formato: ".3f"}
 p7_wa_acoplado: {fuente: "results/logs/fondos_exponenciales.json#fondos.acoplado.cpl_w_eff.wa", formato: "+.3f"}
 p7_beta_c_ok:   {fuente: "results/logs/fondos_exponenciales.json#fondos.acoplado.beta_c", formato: "+.6f"}
+cl_lcdm_l1:  {fuente: "results/logs/class_picos.json#modelos.lcdm.picos.0", formato: "d"}
+cl_lcdm_l2:  {fuente: "results/logs/class_picos.json#modelos.lcdm.picos.1", formato: "d"}
+cl_lcdm_l3:  {fuente: "results/logs/class_picos.json#modelos.lcdm.picos.2", formato: "d"}
+cl_ssee_l1:  {fuente: "results/logs/class_picos.json#modelos.ssee.picos.0", formato: "d"}
+cl_ssee_l2:  {fuente: "results/logs/class_picos.json#modelos.ssee.picos.1", formato: "d"}
+cl_ssee_l3:  {fuente: "results/logs/class_picos.json#modelos.ssee.picos.2", formato: "d"}
+cl_naive_l1: {fuente: "results/logs/class_picos.json#modelos.naive.picos.0", formato: "d"}
+cl_naive_l2: {fuente: "results/logs/class_picos.json#modelos.naive.picos.1", formato: "d"}
+cl_naive_l3: {fuente: "results/logs/class_picos.json#modelos.naive.picos.2", formato: "d"}
+cl_ssee_rms:  {fuente: "results/logs/class_picos.json#modelos.ssee.rms_pct", formato: ".2f"}
+cl_naive_rms: {fuente: "results/logs/class_picos.json#modelos.naive.rms_pct", formato: ".1f"}
+cl_degrada:   {fuente: "results/logs/class_picos.json#modelos.degradacion_rms_naive_sobre_ssee", formato: ".0f"}

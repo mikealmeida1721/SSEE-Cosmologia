@@ -16,7 +16,8 @@
     813
    ],
    "omega_cdm": 0.11951440843160877,
-   "rms_vs_lcdm": 0.001814641512104397
+   "rms_vs_lcdm": 0.001814641512104397,
+   "rms_pct": 0.18146415121043968
   },
   "naive": {
    "picos": [
@@ -25,9 +26,20 @@
     921
    ],
    "omega_cdm": 0.050771741336489956,
-   "rms_vs_lcdm": 0.589307365009494
+   "rms_vs_lcdm": 0.589307365009494,
+   "rms_pct": 58.9307365009494
   },
-  "degradacion_rms_naive_sobre_ssee": 324.7513963934883
+  "degradacion_rms_naive_sobre_ssee": 324.7513963934883,
+  "naive_ini_mayo": {
+   "picos": [
+    240,
+    597,
+    922
+   ],
+   "rms_vs_lcdm": 0.5367104751199198,
+   "rms_publicado_pct": 31.5,
+   "rms_pct": 53.67104751199198
+  }
  },
  "control": {
   "picos_ssee_camb": [
@@ -43,20 +55,21 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "commit": "e2a932b6fe33e1aeed9d3d570e5e8fa50c2be933",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/class_picos.py",
-  "script_sha256": "ab17dc97e12ac0feac856a8fb0805fa5fa069aa68ec05faf5b016ddde33eeb20",
+  "script_sha256": "3eaae11aba616422b5730dcc62438522ce52bf0950a75d07c7173de4d75b38c6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "CANONICAL_VALUES.yaml": "1e1c3ea50463360873f68f9db2f9c3d16408373a82be0192894f9a185597a2a9",
-   "results/logs/paper3_cmb_chi2.json": "a92c2065efd4dfc9e8ea10f78165640989414525f5387d660cd8402b86f8c873"
+   "class_ssee/ssee_v36_nomira.ini": "c0a47ae802d880f79d16e3b15dfcf9f2b68fce476e95390afd87f4c2a57ba98a",
+   "results/logs/paper3_cmb_chi2.json": "c239594870f3c761981a5092d8a5ac88523f0d0b8623e72fd0e455f94726e7c0"
   },
   "argv": [
    "src/p03_cmb/class_picos.py"
   ],
-  "fecha": "2026-10-01T00:02:10",
+  "fecha": "2026-10-01T00:16:41",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -65,8 +78,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
