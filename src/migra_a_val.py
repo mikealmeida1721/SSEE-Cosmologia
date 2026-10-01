@@ -2,8 +2,8 @@
 """migra_a_val.py — pasa a \\val{} los numeros ALGEBRAICOS escritos a mano en los .tex.
 
 POR QUE (2026-09-30). Regla de Mike: ningun numero sin fuente. Los papers
-escriben a mano constantes del nucleo (K_V = 9.519253) y algebra derivada
-(2 phi^7 = 58.068884). Su fuente es results/logs/algebra_derivada.json (con
+escriben a mano constantes del nucleo (K_V) y algebra derivada (2 phi^7).
+Su fuente es results/logs/algebra_derivada.json (con
 acta); este script cambia cada aparicion por \\val{nombre_dN}, la macro que
 valores_tex.py genera desde ese log, y anota en manuscript/valores.yaml las
 entradas que hagan falta.
@@ -34,8 +34,11 @@ NO_USAR = {"OMEGA_CDM_SECTOR", "OMEGA_M_DYN", "OMEGA_M_CMB_MIRA", "OMEGA_M_CMB_P
            "LCDM_SIGMA8", "OMEGA_DE", "u_condensado_TM", "n_ssee_TM", "inv_S_M",
            "OMEGA_M_CMB"}   # alias de OMEGA_M_TOTAL (ssee_core L165): se usa el canonico
 # errores de la ultima cifra hallados al armar algebra_derivada (2026-09-30)
-CORRIGE = {("sqrt_AURA", "1.99947"), ("pi_mas_KAL", "8.663001"),
-           ("phi_pi_KAL", "10.281034"), ("alpha_K_z0", "15.591335")}
+# Cada uno es el valor MAL escrito que se encontro (no un resultado):
+CORRIGE = {("sqrt_AURA", "1.99947"),      # ORIGEN-VALOR: 1.99947 — mal escrito en Paper 8 (el algebra da 1.999462)
+           ("pi_mas_KAL", "8.663001"),    # ORIGEN-VALOR: 8.663001 — mal escrito en la tabla de Paper 4
+           ("phi_pi_KAL", "10.281034"),   # ORIGEN-VALOR: 10.281034 — mal escrito en la tabla de Paper 4
+           ("alpha_K_z0", "15.591335")}   # ORIGEN-VALOR: 15.591335 — alpha_K calculado con H0_ALG (22 sitios)
 NUM = re.compile(r"(?<![\w.])(-?)(\d+\.\d+)(?![\w.])")
 PROHIBIDO = re.compile(r"\\(?:label|ref|eqref|cite\w*|href|url)\{[^}]*$")
 
@@ -76,7 +79,8 @@ def desempata(nombres, frase, signo):
 
 def candidato(signo, s, F, frase=""):
     """Un solo nombre o ninguno. Si el valor casa con DOS entidades distintas
-    (67.962 es H0_ALG y H0_GLOBAL), no se elige: se lista para decidir a mano."""
+    (el H redondeado a 3 decimales es H0_ALG y H0_GLOBAL), no se elige: se
+    lista para decidir a mano."""
     d = len(s.split(".")[1])
     hits = []
     for k, (sec, v) in F.items():

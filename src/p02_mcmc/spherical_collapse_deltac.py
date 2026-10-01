@@ -48,10 +48,14 @@ def make_bg(Om, w0, wa):
         return -1.5 * (1 + w * (1 - Om_a(a)))
     return Om_a, HoverH
 
+import os as _os0, sys as _sys0
+_sys0.path.insert(0, _os0.path.dirname(_os0.path.dirname(_os0.path.abspath(__file__))))
+import ssee_core as _S  # noqa: E402
+
 BG = {
     "EdS":   make_bg(1.0, -1.0, 0.0),
     "LCDM":  make_bg(0.3153, -1.0, 0.0),          # Planck 2018
-    "SSEE":  make_bg(0.308881, -0.83995, -0.66997),  # canónico algebraico
+    "SSEE":  make_bg(_S.OMEGA_M_TOTAL, _S.W0, _S.WA),  # canónico algebraico, del núcleo (2026-09-30: antes tecleado a 5-6 cifras)
 }
 
 A_I = 1.0 / 501.0          # a inicial, dominación de materia profunda

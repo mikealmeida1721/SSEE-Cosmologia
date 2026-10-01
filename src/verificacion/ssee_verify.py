@@ -23,6 +23,43 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
+# LOS PAPERS SE LEEN COMO LOS VE EL LECTOR (2026-09-30). Desde que los numeros
+# entran por \val{nombre} (macro generada desde los logs), el .tex ya no trae
+# el digito: una regla que busca «9.519253» en Paper 1 no lo veria y quedaria
+# ciega en silencio (R29 y R49 lo cazaron al fallar). Toda lectura de un .tex
+# de manuscript/ o submission_PRD/ con Path.read_text devuelve el texto con
+# cada \val{} sustituido por su valor de manuscript/valores_generados.tex.
+# La regla que necesita el texto CRUDO (R68: compara macros) pide crudo=True.
+_VALGEN = ROOT.parent / "manuscript" / "valores_generados.tex"
+_RT_ORIG = pathlib.Path.read_text
+
+
+def _vals_generados():
+    try:
+        _t = _RT_ORIG(_VALGEN, errors="ignore")
+    except OSError:
+        return {}
+    return dict(re.findall(r"ssee@val@([^\\]+)\\endcsname\{([^}]*)\}", _t))
+
+
+_VALS = _vals_generados()
+
+
+def expande_val(_txt, _vals=None):
+    _v = _VALS if _vals is None else _vals
+    return re.sub(r"\\val\{([^}]+)\}", lambda _m: _v.get(_m.group(1), _m.group(0)), _txt)
+
+
+def _read_text_expandido(self, *a, crudo=False, **k):
+    _t = _RT_ORIG(self, *a, **k)
+    if (not crudo and self.suffix == ".tex" and self.name != "valores_generados.tex"
+            and self.resolve().parent.name in ("manuscript", "submission_PRD")):
+        return expande_val(_t)
+    return _t
+
+
+pathlib.Path.read_text = _read_text_expandido
+
 # LA INFRAESTRUCTURA DE VERIFICACIÓN, en un solo sitio. Estos ficheros llevan
 # los defectos A PROPÓSITO: son las fixtures con que se prueba al guardián, las
 # mutaciones del registro y los valores retirados que hay que reconocer. Toda
@@ -1930,7 +1967,7 @@ for _tex68 in sorted((ROOT.parent / "manuscript").glob("*.tex")):
                              timeout=20).stdout
         if not _viejo68:
             continue                      # el .tex no existia entonces
-        _nuevo68 = _tex68.read_text(errors="ignore")
+        _nuevo68 = _tex68.read_text(errors="ignore", crudo=True)
         # Los numeros que entran por \val{} viven en valores_generados.tex:
         # si cambian ahi, el PDF queda viejo aunque el .tex no se toque
         # (2026-09-30). Se compara tambien ese archivo, sin su acta (fecha).
@@ -1987,6 +2024,29 @@ check("R68 el detector distingue el cambio de contenido del comentario LaTeX",
       else "6 casos: el texto cambiado y la macro USADA cambiada se marcan; el "
            "comentario anadido (en la linea y como linea nueva), el porcentaje "
            "escapado y una macro que el .tex no usa (con otra acta), exentos")
+
+# CONTROL (R53) de la lectura expandida (2026-09-30): la macro conocida se
+# vuelve su valor, la desconocida queda VISIBLE (nunca desaparece en
+# silencio), y la lectura cruda no toca nada.
+import tempfile as _tfx
+_cx = [expande_val("K = $\\val{K}$", {"K": "9.519253"}) == "K = $9.519253$",
+       expande_val("K = $\\val{NO}$", {"K": "9.519253"}) == "K = $\\val{NO}$"]
+with _tfx.TemporaryDirectory() as _dx:
+    _mx = pathlib.Path(_dx) / "manuscript"
+    _mx.mkdir()
+    (_mx / "p.tex").write_text("x \\val{__prueba__} y")
+    _VALS["__prueba__"] = "1.234567"
+    _cx += [(_mx / "p.tex").read_text() == "x 1.234567 y",
+            (_mx / "p.tex").read_text(crudo=True) == "x \\val{__prueba__} y"]
+    _VALS.pop("__prueba__")
+check("lectura de papers: \\val{} se expande, el desconocido queda visible, crudo no toca",
+      all(_cx), f"casos {_cx}")
+_sin_def = sorted({_n for _f in list((ROOT.parent / "manuscript").glob("*.tex"))
+                   + list((ROOT.parent / "submission_PRD").glob("*.tex"))
+                   for _n in re.findall(r"\\val\{([^}]+)\}", _f.read_text(errors="ignore", crudo=True))
+                   if _n not in _VALS})
+check("todo \\val{} de los papers tiene valor generado (si no, LaTeX imprime NADA)",
+      not _sin_def, ", ".join(_sin_def[:10]) or f"{len(_VALS)} macros, ninguna huerfana")
 
 # --- R69: los CAJONES no pueden declarar un titular que el canonico ya movio
 #

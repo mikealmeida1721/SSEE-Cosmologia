@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """algebra_derivada.py — el ALGEBRA que los papers imprimen y el nucleo no nombra.
 
-POR QUE (2026-09-30). Los papers escriben combinaciones de phi y pi (2 phi^7 =
-58.068884, phi^-10 = 8.130619e-3, sqrt(AURA), 3 Omega_DE (5 - 3 w0), ...) a mano.
-Tienen fuente —el algebra—, pero nada las calculaba en un sitio que alguien
-pudiera abrir, y a mano se cuelan errores: al armar esta tabla salieron
-sqrt(AURA) = 1.99947 en Paper 8 (es 1.999462), 8.663001 y 10.281034 en la tabla
-de Paper 4 (son 8.662999 y 10.281033) y alpha_K = 15.591335 en 22 sitios (con
-el H de hoy es 15.591336: Omega_m = omega_m / h^2 y h cambio el 09-28).
+POR QUE (2026-09-30). Los papers escriben combinaciones de phi y pi (2 phi^7,
+phi^-10, sqrt(AURA), 3 Omega_DE (5 - 3 w0), ...) a mano. Tienen fuente —el
+algebra—, pero nada las calculaba en un sitio que alguien pudiera abrir, y a
+mano se cuelan errores: al armar esta tabla salieron mal la ultima cifra de
+sqrt(AURA) en Paper 8, dos celdas de la tabla de Paper 4 (pi+KAL y
+phi+pi+KAL) y alpha_K en 22 sitios (calculado con el H viejo: Omega_m =
+omega_m / h^2 y h cambio el 09-28). Los valores buenos estan en el log; los
+malos, en migra_a_val.CORRIGE.
 
 Cada entrada: nombre, formula sobre ssee_core y para que se usa. Este script
 evalua todas y escribe results/logs/algebra_derivada.json (con acta); los
@@ -86,7 +87,7 @@ try:
     roto = False
 except ZeroDivisionError:
     roto = True
-# El nucleo tambien, evaluado: los papers imprimen K_V = 9.519253, no la formula.
+# El nucleo tambien, evaluado: los papers imprimen el valor de K_V, no la formula.
 nucleo = {k: float(v) for k, v in N.items()
           if k.isupper() and isinstance(v, (int, float)) and not isinstance(v, bool)}
 out = dict(fecha=str(__import__("datetime").date.today()), algebra=res, nucleo=nucleo,
