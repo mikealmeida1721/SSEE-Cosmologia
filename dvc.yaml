@@ -335,6 +335,17 @@ stages:
     outs:
       - results/logs/p5_techo_sigma8_As_fijo.json:
           cache: false
+  fnu_tremaine_gunn:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 2>&1
+    deps:
+      - src/p02_mcmc/fnu_tremaine_gunn.py
+      - src/procedencia.py
+      - src/ssee_core.py
+    outs:
+      - results/logs/fnu_tremaine_gunn.json:
+          cache: false
+      - results/logs/fnu_tremaine_gunn.log:
+          cache: false
   cumulos_zhang2026:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 2>&1
     deps:
