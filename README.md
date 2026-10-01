@@ -171,8 +171,8 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | χ²_r clusters (7 clusters, analytic) | 0.126 |
 | χ²_r clusters (4 clusters, MCMC) | 0.122 |
 | H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ Planck, **0.33σ de H_glob** — DR2 compatible con la predicción; ω_m algebraico fijo, r_d CAMB) |
-| ΔBIC (SSEE k=2 vs ΛCDM k=3) | −6.43 (SSEE favoured; CPL −6.35; ΔDIC −5.66; cross-val SSEE predice mejor) |
-| r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.482 ≈ ΛCDM 0.459 (3 modelos: en re-corrida) |
+| ΔBIC (SSEE k=2 vs ΛCDM k=3) | −6.77 (SSEE favoured; CPL −5.65; ΔDIC −6.00; Savage-Dickey ln B = 2.34; cross-val SSEE predice mejor que ΛCDM) — `results/logs/resumen_3modelos.json` |
+| r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.479 ≈ ΛCDM 0.459 (3 modelos, `mcmc_paper2_3models_wmfix.log`) |
 
 ### Paper 3 (Planck PR4 CMB)
 
