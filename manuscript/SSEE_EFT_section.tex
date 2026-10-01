@@ -460,14 +460,14 @@ is well described by a power law over $0.1 \leq a \leq 1$ with
 %
 This is the CDM growth index on the IS background, i.e.\ Eq.~(\ref{eq:growth_IS})
 without viscous perturbation feedback in the $\delta$ equation.
-It differs by 6\% from the algebraic prediction $\gamma = \varphi^{-1} = \val{inv_phi_d6}$.
-Paper~3 \S5.4 reports both values: $\gamma_\mathrm{alg}=0.618$ and $\gamma_\mathrm{bg}=0.657$.
 The full IS-coupled perturbation theory of Paper~5, which includes viscous
 feedback in the growth equation, yields
-$\gamma_{\mathrm{IS}} = 0.5504 \pm 0.001$ — consistent with $\gamma_{\Lambda\mathrm{CDM}} \approx 0.55$
-and lower than the background-only estimate here.
-Whether $\gamma = \varphi^{-1}$ is the true attractor of the IS boundary conditions
-remains a target prediction for Stage-IV weak-lensing surveys (LSST, Euclid).
+$\gamma_{\mathrm{IS}} = \val{p3_gamma_IS} \pm \val{p3_gamma_IS_sigma}$ — consistent with $\gamma_{\Lambda\mathrm{CDM}} \approx 0.55$
+and lower than the background-only estimate here; $\gamma_\mathrm{IS}$ is the
+growth index the suite uses (Paper~3 \S5.4), and the target for Stage-IV
+weak-lensing surveys (LSST, Euclid). An early dimensional-analysis value
+$\gamma=\varphi^{-1}=\val{inv_phi_d6}$ was never derived from the growth
+equation and is superseded.
 Note that the direct IS background growth-factor integral (this Appendix) yields
 $S_8=0.823$\footnote{Corrected 2026-09-26. The previously quoted $S_8=0.837$ evaluated
 $\sigma_8\sqrt{\Omega_m/0.3}$ at $\Omega_{m}=\Omega_{m,\mathrm{dyn}}\times\mathrm{MIRA}=0.3199$;
@@ -475,11 +475,10 @@ the MIRA matter factor was withdrawn on 2026-06-18 when OP-8 closed and
 $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ became the derived quantity. Re-running the
 same integral with the canonical density gives $0.823$ at an unchanged $\sigma_8=0.811$. The
 growth index is untouched by either substitution.},
-while Paper~3's CAMB post-processing method with $\gamma_\mathrm{bg}=0.657$
-gives $S_8=0.818$; both are consistent with Planck 2018 ($0.832\pm0.013$) within $1\sigma$.
+consistent with Planck 2018 ($0.832\pm0.013$) within $1\sigma$.
 Paper~5's full IS-coupled perturbation theory (including viscous feedback in $\delta$),
 with $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ in the Poisson source,
-yields $\sigma_8=0.8136$ and an IS linear-growth $S_8=0.8256$ at the
+yields $\sigma_8=\val{p3_sigma8_IS}$ and an IS linear-growth $S_8=\val{p3_S8_IS}$ at the
 \emph{single-sector linear} level ($2.7\sigma$ KiDS; the conservative CLASS
 % ACTUALIZADO 2026-09-08: era sigma_8=0.8335 / S_8=0.846 (tensiones 1.1/3.5/3.9
 % sigma). Ese numero salia de una corrida CLASS sin .ini, fuera del repo y SIN
@@ -487,7 +486,7 @@ yields $\sigma_8=0.8136$ and an IS linear-growth $S_8=0.8256$ at the
 % ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
 % control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
 % Log: results/logs/p5_techo_sigma8_As_fijo.json
-amplitude ceiling is $S_8=0.827$, $2.7\sigma$).  These figures hold $A_s$ fixed at the Planck value, which imports the
+amplitude ceiling is $S_8=\val{p3_S8_techo}$, $2.7\sigma$).  These figures hold $A_s$ fixed at the Planck value, which imports the
 Planck--KiDS tension; $A_s$ is a free parameter of the model. Fitting it to
 the raw KiDS-1000 $\xi_\pm$ data with a single matter sector (Paper~6) gives
 $\sigma_8=0.7446\pm0.0189$, $S_8=0.7555\pm0.0192$\footnote{Updated 2026-09-20. Against the later \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points; Wright et al.\ 2025, arXiv:2503.19441 --- published sixteen months before this analysis, over which no temporal priority is claimed) the amplitude the shear asks for lies $0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic background, so $A_s$ need not be free either: fixed to that value the growth sector carries \emph{no} free cosmological parameter and predicts $S_8=0.8273$ against $0.8265\pm0.0176$ measured ($0.05\sigma$). The three $\chi^2$ compared span $1.0$ over 357 points, so the shear does \emph{not} discriminate between the models; what separates them is the parameter count.} (the $\Lambda$CDM control on the same raw data through the same pipeline gives $0.7571\pm0.0194$) --- $0.11\sigma$ from
@@ -681,12 +680,11 @@ Four aspects require further development:
 \begin{enumerate}
   \item \textbf{Growth index.}
         The background IS growth index $\gamma_{\mathrm{bg}} = 0.657$
-        (\S\ref{sec:eft:IS}) differs by 6\% from the algebraic prediction
-        $\varphi^{-1} = \val{inv_phi_d6}$.  The full IS-coupled result (Paper~5)
-        gives $\gamma_{\mathrm{IS}} = 0.5504$, closer to $\Lambda$CDM.
-        A mechanism selecting $\gamma = \varphi^{-1}$ from IS boundary
-        conditions is not yet identified; this constitutes a near-prediction
-        testable by LSST/Euclid Stage-IV weak lensing.
+        (\S\ref{sec:eft:IS}) omits viscous feedback on $\delta$; the full
+        IS-coupled result (Paper~5) gives $\gamma_{\mathrm{IS}} = \val{p3_gamma_IS}$,
+        close to $\Lambda$CDM, and is the value testable by LSST/Euclid
+        Stage-IV weak lensing. The growth index is set by $w(a)$; no mechanism
+        selects $\gamma=\varphi^{-1}$, and that early estimate is superseded.
 
   \item \textbf{Full perturbation spectrum.}
         The IS growth ODE~(\ref{eq:growth_IS}) governs sub-Hubble dark-matter

@@ -720,42 +720,25 @@ Beyond the CMB, the SSEE viscous dark-energy background modifies the growth
 of large-scale structure. In the Israel--Stewart dissipative framework, the
 linear growth rate takes the form $f(z) = \Omega_m(z)^\gamma$, where the
 growth index $\gamma$ is modified by the bulk-viscosity coupling.
-Dimensional analysis of the IS transport equations suggests the algebraic
-prediction $\gamma_\mathrm{alg} = \phi^{-1} = 0.618$.  A full numerical
-solution of the causal IS growth ODE (Paper~5, \S3) yields
-$\gamma_{\mathrm{IS}} = 0.5504\pm0.001$, numerically indistinguishable from
-$\gamma_\Lambda=0.55$ for $\Lambda$CDM (earlier estimates from Paper~1,
-Appendix~A gave 0.657; Paper~5 supersedes that result).
+The full numerical solution of the causal IS growth ODE (Paper~5, \S3) yields
+$\gamma_{\mathrm{IS}} = \val{p3_gamma_IS}\pm\val{p3_gamma_IS_sigma}$, numerically indistinguishable from
+$\gamma_\Lambda=0.55$ for $\Lambda$CDM. This is the growth index used throughout.
+Two earlier estimates are superseded by it: a dimensional-analysis value
+$\gamma=\phi^{-1}=0.618$, which was never derived from the growth equation, and
+the background-only estimate of Paper~1, Appendix~A, which omitted the viscous
+feedback on $\delta$. The growth index is set by $w(a)$, not by a constant of
+the algebra.
 
-We compute the linear matter power spectrum from CAMB with the SSEE parameters
-($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$, $H_0=67.96214$ km\,s$^{-1}$\,Mpc$^{-1}$,
-$\Omega_m=\val{OMEGA_M_TOTAL_d6}$) and apply the IS growth-index correction post-processing:
-\begin{equation}
-  \sigma_{8,\mathrm{IS}} = \sigma_{8,\mathrm{CAMB}} \times
-    \frac{D(\gamma=\phi^{-1})}{D(\gamma_\mathrm{eff})} ,
-  \qquad
-  \frac{D(\gamma_1)}{D(\gamma_2)} = \exp\!\left[
-    \int_0^{z_\mathrm{hi}} \frac{\Omega_m(z)^{\gamma_1} - \Omega_m(z)^{\gamma_2}}{1+z}\,dz
-  \right] ,
-\end{equation}
-with $z_\mathrm{hi}=3$ (matter-dominated epoch, both solutions coincide there).
-The effective CAMB growth index for $w_0/w_a$ dark energy is
-$\gamma_\mathrm{eff} \approx 0.55 + 0.05\,[1+w(z{=}1)] = 0.542$
-(Linder formula), where $w(z{=}1)=w_0+w_a/2=-1.175$ is the CPL equation of
-state at the pivot redshift.
-The IS correction factor is $D(\phi^{-1})/D(\gamma_\mathrm{eff}) = 0.9778$,
-reducing $\sigma_8$ by 2.2\%.
-
+The SSEE background ($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$, $H_0=67.96214$ km\,s$^{-1}$\,Mpc$^{-1}$,
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$) enters the growth ODE directly; no
+growth-index correction is applied after the fact.
 Table~\ref{tab:sigma8} summarises the results alongside observational constraints.
-Using the algebraic prediction $\gamma_\mathrm{alg}=\phi^{-1}=0.618$,
-$S_8=0.828$ (consistent with Planck 2018 at $0.3\sigma$).
-The full causal IS numerical solution (Paper~5) gives
-$\gamma_\mathrm{IS}=0.550\approx\gamma_\Lambda$, yielding a negligible IS
-correction and an IS linear-growth $S_8\approx0.8256$ ($0.5\sigma$ below Planck;
-conservative CLASS ceiling $S_8=0.827$),
-both with $A_s$ fixed to the Planck value. With $A_s$ fixed instead to the
+The IS linear-growth solution gives $S_8=\val{p3_S8_IS}$, and the CLASS
+ceiling, with massive neutrinos, $S_8=\val{p3_S8_techo}$; the same CLASS
+integration on the Planck~2018 baseline returns $\sigma_8=\val{p3_sigma8_lcdm_ref}$,
+the published value. These three use $A_s$ fixed to the Planck value. With $A_s$ fixed instead to the
 model's own CMB fit, the growth sector has no free cosmological parameter and
-predicts $S_8=0.8273$ against $0.8265\pm0.0176$ from the raw KiDS-Legacy
+predicts $S_8=\val{p3_S8_unif}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ from the raw KiDS-Legacy
 $\xi_\pm$ data (Paper~6).
 
 \begin{table}[ht]
@@ -766,21 +749,19 @@ $\xi_\pm$ data (Paper~6).
 \hline
 Model / Dataset & $\sigma_8$ & $S_8$ \\
 \hline
-$\Lambda$CDM (CAMB, best-fit) & 0.811 & 0.830 \\
-SSEE (CAMB, $\gamma_\mathrm{eff}$) & 0.823 & 0.850 \\
-SSEE+IS ($\gamma_\mathrm{alg}=\phi^{-1}=0.618$) & 0.802 & 0.828 \\
-SSEE+IS (linear growth, $\gamma_\mathrm{IS}=0.550$, Paper~5) & 0.8136 & 0.8256 \\
+$\Lambda$CDM (CLASS, Planck 2018 baseline; control) & \val{p3_sigma8_lcdm_ref} & --- \\
+SSEE+IS (linear growth, $\gamma_\mathrm{IS}=\val{p3_gamma_IS}$, Paper~5) & \val{p3_sigma8_IS} & \val{p3_S8_IS} \\
 % ACTUALIZADO 2026-09-08: era sigma_8=0.8335 / S_8=0.846 (tensiones 1.1/3.5/3.9
 % sigma). Ese numero salia de una corrida CLASS sin .ini, fuera del repo y SIN
 % neutrinos masivos; el fondo canonico si los lleva (Sum m_nu = 0.06849 eV) y sin
 % ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
 % control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
 % Log: results/logs/p5_techo_sigma8_As_fijo.json
-SSEE+IS (single-sector ceiling, CLASS, Paper~5) & 0.8149 & 0.827 \\
-SSEE, $A_s$ from its own CMB fit (Paper~6) & --- & $\mathbf{0.8273}$ \\
+SSEE+IS (single-sector ceiling, CLASS, Paper~5) & \val{p3_sigma8_techo} & \val{p3_S8_techo} \\
+SSEE, $A_s$ from its own CMB fit (Paper~6) & \val{p3_sigma8_unif} & $\mathbf{\val{p3_S8_unif}}$ \\
 \hline
 Planck 2018 \citep{Planck2020} & $0.812\pm0.008$ & $0.832\pm0.013$ \\
-KiDS-Legacy (raw $\xi_\pm$, Paper~6) & --- & $0.8265\pm0.0176$ \\
+KiDS-Legacy (raw $\xi_\pm$, Paper~6) & --- & $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ \\
 KiDS-1000 \citep{Asgari2021} & --- & $0.759\pm0.024$ \\
 DES Y3 \citep{DES2022} & --- & $0.773\pm0.025$ \\
 \hline
@@ -790,7 +771,7 @@ DES Y3 \citep{DES2022} & --- & $0.773\pm0.025$ \\
 \subsection{\texorpdfstring{$f\sigma_8(z)$}{fsig8} comparison with RSD surveys}
 \label{sec:fsig8}
 
-The growth-index prediction $\gamma=\phi^{-1}$ is directly testable through
+The growth-index prediction $\gamma_\mathrm{IS}$ is directly testable through
 redshift-space distortions.  We compute $f\sigma_8(z) = \Omega_m(z)^\gamma \times
 \sigma_8 \times D(z)/D(0)$ using the proper integral
 $D(z)/D(0) = \exp\!\left[-\int_0^z \Omega_m(z')^\gamma/(1+z')\,dz'\right]$
@@ -916,12 +897,10 @@ each of which would \textbf{falsify} the framework if violated:
     shear measurement placing $S_8$ more than $3\sigma$ from this value would
     falsify the growth sector.
 
-  \item \textbf{Growth index:} The algebraic prediction is $\gamma_\mathrm{alg}=\phi^{-1}=0.618$
-    ($S_8=0.828$, Table~\ref{tab:sigma8}).
-    The background-only IS estimate (Paper~1, App.~A, without viscous feedback in $\delta$)
-    gives $\gamma_\mathrm{bg}=0.657\pm0.002$;
-    the full causal IS solution (Paper~5) gives $\gamma_\mathrm{IS}=0.550\approx\gamma_\Lambda$,
-    yielding a single-sector ceiling $S_8=0.827$ in the CMB observational sector (Table~\ref{tab:sigma8}).
+  \item \textbf{Growth index:} the full causal IS solution (Paper~5) gives
+    $\gamma_\mathrm{IS}=\val{p3_gamma_IS}\pm\val{p3_gamma_IS_sigma}\approx\gamma_\Lambda$
+    (the earlier estimates $\phi^{-1}$ and the background-only value of Paper~1, App.~A, are superseded),
+    yielding a single-sector ceiling $S_8=\val{p3_S8_techo}$ in the CMB observational sector (Table~\ref{tab:sigma8}).
     The RSD comparison (Table~\ref{tab:fsig8}) shows $\chi^2/N=0.766$
     consistently below $\Lambda$CDM (0.860) across the six canonical RSD surveys.
     A direct measurement of $\gamma<0.50$ or $\gamma>0.70$ at $>3\sigma$

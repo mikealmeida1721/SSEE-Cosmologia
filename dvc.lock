@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 4ea1606929dc6cd829c4d47579456d5a
-      size: 42189
+      md5: dec7ff32c4c0ca59a365855caffc6637
+      size: 43199
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: b2dbbef397d0f75c88064d60261115fd
@@ -125,6 +125,14 @@ stages:
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
       size: 1356
+    - path: results/logs/p5_IS_perturbations_Q3.json
+      hash: md5
+      md5: df92ec6e230ade2f4725a63eda0a11ad
+      size: 1240
+    - path: results/logs/p5_techo_sigma8_As_fijo.json
+      hash: md5
+      md5: 4155ea4fe3083b2928d6e91749c55153
+      size: 3444
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
       md5: 520462e625e6b0b487c9039c531d1811
@@ -141,6 +149,10 @@ stages:
       hash: md5
       md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
       size: 1930
+    - path: results/logs/s8_kids_legacy_camb.json
+      hash: md5
+      md5: 997cfd0685b673986f39e45831a73c4d
+      size: 1867
     - path: results/logs/savage_cv.json
       hash: md5
       md5: 6bd2c0a9ac675850ee7207ea4ce76c69
@@ -152,8 +164,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: b0ee28df22bc8699c65673c7cd28bbde
-      size: 54142
+      md5: 87163f5c3b813085425678a75c513743
+      size: 55558
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1044,3 +1056,47 @@ stages:
       hash: md5
       md5: 997cfd0685b673986f39e45831a73c4d
       size: 1867
+  techo_sigma8_As_fijo:
+    cmd: .venv/bin/python3 src/p05_IS/techo_sigma8_As_fijo.py
+    deps:
+    - path: config/class/techo_lcdm_referencia.ini
+      hash: md5
+      md5: f9b7d941fa9aca9c66dfcaac2b5986d2
+      size: 1475
+    - path: config/class/techo_ssee_canonico.ini
+      hash: md5
+      md5: 94304d78571144ec8cfbabd3184be886
+      size: 2483
+    - path: results/logs/p5_techo_evidencia/can_cold__pk.dat
+      hash: md5
+      md5: 3c35320f7acaa009e57fffe9eb520b0d
+      size: 6360
+    - path: results/logs/p5_techo_evidencia/lcdm_planck2018__pk.dat
+      hash: md5
+      md5: 6165b9a90caafcf1e4782bec45802599
+      size: 29084
+    - path: results/logs/p5_techo_evidencia/techo_lcdm_referencia__pk.dat
+      hash: md5
+      md5: 62e79b0e3395df045e45df7b48c7b1a8
+      size: 16864
+    - path: results/logs/p5_techo_evidencia/techo_ssee_canonico__pk.dat
+      hash: md5
+      md5: b154e3e5ebc821038544a6051d578279
+      size: 16864
+    - path: src/p05_IS/techo_sigma8_As_fijo.py
+      hash: md5
+      md5: 8c997e0d3ad897cd35257c5c929e2da7
+      size: 8114
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p5_techo_sigma8_As_fijo.json
+      hash: md5
+      md5: 4155ea4fe3083b2928d6e91749c55153
+      size: 3444

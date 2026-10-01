@@ -6,12 +6,12 @@
  "metodo": "top-hat R=8 Mpc/h, Peebles 1980; interp log-log a 4000 puntos",
  "lleva_neutrinos_masivos": "si \u2014 Sum m_nu = 0.06849 eV",
  "sigma8_techo": 0.8148536973812308,
- "Omega_m_CMB": 0.3088808787787524,
- "S8_techo": 0.8268267623581046,
+ "Omega_m_CMB": 0.30888084061409116,
+ "S8_techo": 0.826826711277629,
  "tensiones_S8_sigmas": {
-  "KiDS-1000": 2.7417343671189527,
-  "DES-Y3": 2.819361505353369,
-  "Planck 2018": 0.3613145896315297
+  "KiDS-1000": 2.7417323023131055,
+  "DES-Y3": 2.819358671918384,
+  "Planck 2018": 0.3613181572466997
  },
  "control": {
   "criterio": "el mismo integrador sobre la baseline de Planck 2018 debe dar sigma8 = 0.8111 +/- 0.006; escrito en el .ini ANTES de correr",
@@ -42,5 +42,36 @@
   "valor": "S8 = 0.7555 +/- 0.0192 (0.11 sigma vs KiDS-1000)",
   "log": "results/logs/growth_2026-07/R3_ssee_kids_S8.json",
   "razon": "A_s libre contra el dato crudo; el 3.5 sigma del techo era artefacto de fijar A_s"
+ },
+ "_procedencia": {
+  "commit": "6b8ecc7ea07f36d637d39598f70ef623720e9649",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p05_IS/techo_sigma8_As_fijo.py",
+  "script_sha256": "ad060b34274893f0d03a975b0970af8db5cb3cc0d7ce14d6b170e53d73ed95f6",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/p5_techo_evidencia/techo_ssee_canonico__pk.dat": "bdeacff72e17bc49aff596a35f05b266e1d42a4495be11eada58a311718a9854",
+   "results/logs/p5_techo_evidencia/techo_lcdm_referencia__pk.dat": "fda7ecf4d30f572968e4b65b67e7a25f3581767f43b7965c7b1c8f73b2f557bd",
+   "results/logs/p5_techo_evidencia/can_cold__pk.dat": "cb83c08c0ea2be5da3469b0f9e5f23eebfe23bdadced33ab0ca102b7babf25a0",
+   "results/logs/p5_techo_evidencia/lcdm_planck2018__pk.dat": "3135ac140763a70753498ec5d47063b06a85e9f9aa82e91841653f7e93b27ced",
+   "config/class/techo_ssee_canonico.ini": "0610f56ec1727556bc5971bd89974a9ed289dc5a419149b0ca4b2b5ee5fc1772",
+   "config/class/techo_lcdm_referencia.ini": "0380dbc5c274baaca19f811081e13a87bcfc57e22fa595b4d469c870abf2ac84"
+  },
+  "argv": [
+   "src/p05_IS/techo_sigma8_As_fijo.py"
+  ],
+  "fecha": "2026-10-01T09:43:29",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

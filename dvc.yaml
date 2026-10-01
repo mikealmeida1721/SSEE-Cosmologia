@@ -55,6 +55,9 @@ stages:
       - results/logs/fondos_exponenciales.json
       - results/logs/class_picos.json
       - results/logs/hmcode_bariones.json
+      - results/logs/p5_IS_perturbations_Q3.json
+      - results/logs/p5_techo_sigma8_As_fijo.json
+      - results/logs/s8_kids_legacy_camb.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -310,6 +313,21 @@ stages:
       - src/p06_growth/kids_shear.py
     outs:
       - results/logs/s8_kids_legacy_camb.json:
+          cache: false
+  techo_sigma8_As_fijo:
+    cmd: .venv/bin/python3 src/p05_IS/techo_sigma8_As_fijo.py
+    deps:
+      - src/p05_IS/techo_sigma8_As_fijo.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - results/logs/p5_techo_evidencia/techo_ssee_canonico__pk.dat
+      - results/logs/p5_techo_evidencia/techo_lcdm_referencia__pk.dat
+      - results/logs/p5_techo_evidencia/can_cold__pk.dat
+      - results/logs/p5_techo_evidencia/lcdm_planck2018__pk.dat
+      - config/class/techo_ssee_canonico.ini
+      - config/class/techo_lcdm_referencia.ini
+    outs:
+      - results/logs/p5_techo_sigma8_As_fijo.json:
           cache: false
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1

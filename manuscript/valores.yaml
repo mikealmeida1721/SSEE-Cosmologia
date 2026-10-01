@@ -429,3 +429,13 @@ p5_Beff_mayo_pct: {fuente: "results/logs/hmcode_bariones.json#mayo.pct_P", forma
 p5_Bs8:           {fuente: "results/logs/hmcode_bariones.json#canonico.B_sigma8", formato: ".4f"}
 p5_Bs8_pct:       {fuente: "results/logs/hmcode_bariones.json#canonico.pct_sigma8", formato: ".2f"}
 p5_S8_techo_bar:  {fuente: "results/logs/hmcode_bariones.json#S8_techo_bar", formato: ".3f"}
+# P3 §sigma8 (2026-10-01): gamma_IS y sigma8 de la ODE causal IS (P5), techo CLASS y control LCDM, prediccion P6
+p3_gamma_IS:       {fuente: "results/logs/p5_IS_perturbations_Q3.json#gamma_IS", formato: ".4f"}
+p3_gamma_IS_sigma: {fuente: "results/logs/p5_IS_perturbations_Q3.json#gamma_IS_sigma", formato: ".4f"}
+p3_sigma8_IS:      {fuente: "results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE", formato: ".4f"}
+p3_S8_IS:          {fuente: "results/logs/p5_IS_perturbations_Q3.json#S8_SSEE", formato: ".4f"}
+p3_sigma8_techo:   {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#sigma8_techo", formato: ".4f"}
+p3_S8_techo:       {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#S8_techo", formato: ".3f"}
+p3_sigma8_lcdm_ref: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#control.sigma8_LCDM", formato: ".4f"}
+p3_sigma8_unif:    {fuente: "results/logs/s8_kids_legacy_camb.json#unif.sigma8", formato: ".4f"}
+p3_S8_unif:        {fuente: "results/logs/s8_kids_legacy_camb.json#unif.S8", formato: ".4f"}
