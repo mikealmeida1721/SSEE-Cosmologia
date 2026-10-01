@@ -21,10 +21,10 @@ import ssee_core as _C
 
 
 PHI = (1+np.sqrt(5))/2; PI = np.pi
-w0, wa = -0.8399, -0.6699
+w0, wa = _C.W0, _C.WA   # del nucleo (2026-10-01: estaban tecleados a 4 decimales, -0.8399/-0.6699)
 Omm_CMB = _C.OMEGA_M_TOTAL  # ω_m-directo (fondo gravitacional + fuente Poisson)
-Omm_LCDM = 0.3153
-sigma8_LCDM = 0.811        # Planck 2018
+Omm_LCDM = 0.3153          # ORIGEN-VALOR: 0.3153 — Omega_m de Planck 2018 VI, Tabla 2
+sigma8_LCDM = 0.811        # ORIGEN-VALOR: 0.811 — sigma8 de Planck 2018 VI, Tabla 2 (A_s heredado de Planck: diagnostico, no prediccion)
 
 def H_ssee(a):
     rDE = a**(-3.0*(1.0+w0+wa))*np.exp(-3.0*wa*(1.0-a))
@@ -75,13 +75,24 @@ data = [
  (1.480,0.462,0.045,"eBOSS DR16 (Hou+2021)"),
 ]
 print(f"\n  {'survey':34s} {'z':5s} {'obs':13s} {'SSEE':6s} {'t_S':5s} {'ΛCDM':6s} {'t_L':5s}")
-tS=[]; tL=[]; chiS=0; chiL=0
+tS=[]; tL=[]; chiS=0; chiL=0; filas=[]
 for z,o,e,lab in data:
     i = np.argmin(np.abs(z_g-z))
     s = fs8_s[i]; l = fs8_l[i]
     ts = abs(s-o)/e; tl = abs(l-o)/e
     tS.append(ts); tL.append(tl); chiS += ((s-o)/e)**2; chiL += ((l-o)/e)**2
+    filas.append(dict(survey=lab, z=z, obs=o, err=e, ssee=float(s), lcdm=float(l), pull_ssee=float((s-o)/e), pull_lcdm=float((l-o)/e)))
     print(f"  {lab:34s} {z:.3f} {o:.3f}±{e:.3f} {s:.3f}  {ts:.2f}σ  {l:.3f}  {tl:.2f}σ")
 N=len(data)
 print(f"\n  χ²/N  SSEE={chiS/N:.3f}   ΛCDM={chiL/N:.3f}   (N={N})")
 print(f"  tensión media  SSEE={np.mean(tS):.2f}σ   ΛCDM={np.mean(tL):.2f}σ")
+
+# ── Salida con acta (2026-10-01; antes solo se imprimia) ──
+import json as _json  # noqa: E402
+from procedencia import con_acta as _acta  # noqa: E402
+_R0 = _o66.path.dirname(_o66.path.dirname(_o66.path.dirname(_o66.path.abspath(__file__))))
+_json.dump(_acta(dict(G=float(G), sigma8_ssee=float(sigma8_SSEE), gamma_IS=float(gam), filas=filas,
+                      chi2N_ssee=float(chiS / N), chi2N_lcdm=float(chiL / N),
+                      tension_media_ssee=float(np.mean(tS)), tension_media_lcdm=float(np.mean(tL)),
+                      max_pull_ssee=float(max(tS))), __file__),
+           open(_o66.path.join(_R0, "results", "logs", "fsigma8_canonico.json"), "w"), indent=1)
