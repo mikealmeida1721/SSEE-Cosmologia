@@ -61,7 +61,10 @@ def fondo(H0, ombh2, omch2, mnu, w0, wa):
     k = int(np.argmax(np.abs(pull)))
     E = r.hubble_parameter(Z_LYA) / H0
     f_de = float(r.get_Omega("de", Z_LYA))
+    # rho_DE(z)/rho_DE(0) de CPL (lo que el apendice llama f_DE)
+    rho_de = (1 + Z_LYA) ** (3 * (1 + w0 + wa)) * np.exp(-3 * wa * Z_LYA / (1 + Z_LYA))
     return dict(rd=float(rd), E_lya=float(E), DH_lya=float(C_KMS / (H0 * E)), f_DE_lya=f_de,
+                rhoDE_z_sobre_rhoDE_0_lya=float(rho_de),
                 DH_rd_lya=float(pred[i_lya]), pull_lya=float(pull[i_lya]),
                 Om=float((ombh2 + omch2 + mnu / 93.14) / (H0 / 100) ** 2),  # ORIGEN-VALOR: 93.14 — conversion de CAMB m_nu -> omega_nu que usa omch2 aqui
                 chi2_diag=float(np.sum(pull ** 2)), chi2_cov=float(res @ Cinv @ res),
