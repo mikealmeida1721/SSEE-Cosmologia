@@ -831,14 +831,13 @@ $\Lambda$CDM posterior on the same data, as the parameter economy predicts.
 
 \paragraph{The CMB density is physically required, not cosmetic.}
 This is decisively tested by the CMB. Running the Boltzmann
-solver at the cosmological matter fraction $\Om^{\mathrm{cosm}}\approx0.31$ (a
-CLASS validation at $0.320$; the $\omega_m$-direct canonical $\val{OMEGA_M_TOTAL_d6}$ lies
-within $3.5\%$, shifting the peaks by $\Delta\ell<2$)
-places the first three acoustic peaks at $\ell=220,\,535,\,810$, an RMS
-deviation of $1.4\%$ from $\Lambda$CDM. Running it instead with the bare
+solver (CLASS) at the $\omega_m$-direct canonical matter fraction
+$\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
+places the first three acoustic peaks at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$, an RMS
+deviation of $\val{cl_ssee_rms}\%$ from $\Lambda$CDM. Running it instead with the bare
 dynamical fraction $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ shifts all
-three peaks by ${\sim}10\%$ ($\ell=240,\,597,\,922$) and raises the RMS to
-$31.5\%$---a factor of ${\sim}22$ worse. The sound horizon at recombination
+three peaks by ${\sim}10\%$ ($\ell=\val{cl_naive_l1},\,\val{cl_naive_l2},\,\val{cl_naive_l3}$) and raises the RMS to
+$\val{cl_naive_rms}\%$---a factor of ${\sim}\val{cl_degrada}$ worse. The sound horizon at recombination
 therefore \emph{demands} $\Om^{\mathrm{cosm}}\approx0.31$: the CMB matter density
 is not a fit applied
 to the data but a structural feature without which the model fails the CMB
