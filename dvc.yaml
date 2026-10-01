@@ -250,6 +250,7 @@ stages:
       - CANONICAL_VALUES.yaml
       - results/logs/deltac_spherical_collapse.json
       - results/logs/p5_IS_perturbations_Q3.json
+      - results/logs/growth_2026-07/R3_ssee_kids_S8.json
     outs:
       - results/logs/press_schechter.json:
           cache: false

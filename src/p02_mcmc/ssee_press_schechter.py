@@ -292,11 +292,27 @@ print(f"\nFigure → {outpath}")
 # Log con acta (2026-09-30): la tabla de Paper 5 (z = 10, 12, 15) y los puntos citados
 from procedencia import con_acta as _acta
 _rej = {f"z{z}": {f"{M:.0e}": float(ps_ratio(M, z)) for M in (1e11, 1e12, 3e12)} for z in (10, 12, 15)}
+# Inversion por convencion de amplitud (P5 «The amplitude convention is not a
+# detail»): SSEE con el sigma_8 de la cizalla cruda KiDS-1000 (R3) y LCDM con el
+# de Planck. Como sigma_M escala lineal con sigma_8, basta reescalar sig_s.
+_R3 = _o66.path.join(_RAIZ, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8.json")
+sig8_R3 = float(_json66.load(open(_R3))["sigma8"]["media"])
+
+
+def ps_ratio_s8(M, z, s8):
+    nu_s = dc_SSEE / (sigma_Mz_S(M, z) * s8 / sig8_S)
+    nu_l = dc_LCDM / sigma_Mz_L(M, z)
+    return (nu_s / nu_l) * np.exp(-(nu_s**2 - nu_l**2) / 2)
+
+
+_inv = dict(sigma8_ssee=sig8_R3, sigma8_lcdm=sig8_L,
+            z10={f"{M:.0e}": float(ps_ratio_s8(M, 10, sig8_R3)) for M in (1e11, 1e12, 3e12)})
+print(f"  inversion (SSEE sigma8={sig8_R3:.4f} de R3, LCDM {sig8_L}): {_inv['z10']}")
 _out = dict(fecha=__import__("time").strftime("%Y-%m-%d"), umbral="postulado" if USE_POSTULADO else "derivado",
             delta_c=dict(ssee=float(dc_SSEE), lcdm=float(dc_LCDM)), sigma8=dict(ssee=sig8_S, lcdm=sig8_L),
             gamma=dict(ssee=gamma_S, lcdm=gamma_L), ps_ratio=_rej,
-            ps_ratio_jwst_z10=float(ps_ratio(10**10.8, 10)), ps_ratio_3e10_z10=float(ps_ratio(3e10, 10)))
+            ps_ratio_jwst_z10=float(ps_ratio(10**10.8, 10)), ps_ratio_3e10_z10=float(ps_ratio(3e10, 10)), inversion_amplitud=_inv)
 _json66.dump(_acta(_out, __file__, entradas=[_LOG66, _o66.path.join(_RAIZ, "CANONICAL_VALUES.yaml"),
-                                             _o66.path.join(_RAIZ, "results", "logs", "p5_IS_perturbations_Q3.json")]),
+                                             _o66.path.join(_RAIZ, "results", "logs", "p5_IS_perturbations_Q3.json"), _R3]),
              open(_o66.path.join(_RAIZ, "results", "logs", "press_schechter.json"), "w"), indent=1)
 print("Done.")
