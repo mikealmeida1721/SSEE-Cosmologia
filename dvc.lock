@@ -583,3 +583,40 @@ stages:
       hash: md5
       md5: 3f7b7a1c23c896370627eb23238e272c
       size: 7718
+  R3_rehecho:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/analiza_ssee_R3.py
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
+      hash: md5
+      md5: 191988b7f996f2e0dbe6411042eb2f68
+      size: 1137687
+    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
+      hash: md5
+      md5: 5f6f7c6282118c4e1b43c80b0e05a1e5
+      size: 1171863
+    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
+      hash: md5
+      md5: 3b4c279ee579b7fe9f9400e368571cf0
+      size: 1153707
+    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+      hash: md5
+      md5: a2d11872a162a9ace0cb3a6c91ced64e
+      size: 1165455
+    - path: results/logs/growth_2026-07/R3_ssee_kids_S8.json
+      hash: md5
+      md5: 9211a986b6e29d54fb1605acdf2a8f57
+      size: 2353
+    - path: src/p06_growth/analiza_ssee_R3.py
+      hash: md5
+      md5: 4c5b8765d831a40aef9e916c8adacfb0
+      size: 5752
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
+      hash: md5
+      md5: dde3519abf4948db21b7afdd623882ea
+      size: 5454

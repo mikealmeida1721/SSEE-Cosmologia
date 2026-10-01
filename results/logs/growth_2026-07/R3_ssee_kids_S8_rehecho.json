@@ -1,0 +1,164 @@
+{
+ "corrida": "R3 \u2014 S8 KiDS-1000, SSEE fondo fijo, un sector",
+ "fecha_analisis": "2026-09-30T21:07:35",
+ "muestreador": "Cobaya mcmc, 4 cadenas MPI, CAMB 1.6.5 + HMcode-2015",
+ "datos": "KiDS-1000 xi_pm crudo, 225 puntos tras mascara de escalas (270 totales)",
+ "n_parametros_libres": 9,
+ "parametros_libres": [
+  "logA",
+  "halo_A",
+  "A_IA",
+  "dz1",
+  "dz2",
+  "dz3",
+  "dz4",
+  "dz5",
+  "delta_c"
+ ],
+ "fondo_fijo": {
+  "Omega_m": 0.3088825088809709,
+  "nota": "omega_b, omega_c, h, n_s, w0, wa fijados por algebra SSEE; ninguno ajustado"
+ },
+ "convergencia": {
+  "Rminus1_final": 0.0189529230864604,
+  "Rminus1_stop": 0.03,
+  "converged": true
+ },
+ "lineas_por_cadena": [
+  4260,
+  4388,
+  4320,
+  4364
+ ],
+ "burn_in_frac": 0.3,
+ "n_filas_post_burnin": 12133,
+ "n_efectivas": 42711.0,
+ "logA": {
+  "media": 2.8636678493268715,
+  "sigma": 0.04992161344169711
+ },
+ "sigma8": {
+  "media": 0.7449404348016989,
+  "sigma": 0.018589948816848344
+ },
+ "S8": {
+  "media": 0.7558882227821322,
+  "sigma": 0.01886315028196701
+ },
+ "chi2": {
+  "media": 273.2682425281543,
+  "sigma": 3.8657065834789894
+ },
+ "halo_A": {
+  "media": 2.568735194554096,
+  "sigma": 0.30627261536786415
+ },
+ "A_IA": {
+  "media": 0.5422179581972616,
+  "sigma": 0.2883730343249875
+ },
+ "dz1": {
+  "media": 0.0014421072072108682,
+  "sigma": 0.010382100700524725
+ },
+ "dz2": {
+  "media": 0.004867725416673175,
+  "sigma": 0.008398406427952653
+ },
+ "dz3": {
+  "media": -0.020211425100959027,
+  "sigma": 0.009393608359972236
+ },
+ "dz4": {
+  "media": -0.013687238733426848,
+  "sigma": 0.008464206539855648
+ },
+ "dz5": {
+  "media": 0.007016668150317529,
+  "sigma": 0.00969856511380239
+ },
+ "delta_c": {
+  "media": 2.1801646026203043e-06,
+  "sigma": 0.00016421099245338366
+ },
+ "chi2_min": 265.43987,
+ "dof": 216,
+ "chi2_min_por_dof": 1.228888287037037,
+ "comparacion_KiDS": {
+  "S8_publicado": 0.759,
+  "err_publicado": 0.024,
+  "tension_sigma": -0.1019395816479749,
+  "fuente": "Asgari et al. 2021, KiDS-1000 cosmic shear band powers"
+ },
+ "sigma8_ref_calibracion": {
+  "sigma8_ref": 0.8151891026303626,
+  "As_ref": 2.1e-09,
+  "nota": "sigma8 escalado como sqrt(As) desde una corrida CAMB de referencia; valido porque el fondo es fijo"
+ },
+ "control_contra_log_viejo": {
+  "pasa": false,
+  "fallos": [
+   "logA.media: viejo 2.8627107488616086 nuevo 2.8636678493268715",
+   "logA.sigma: viejo 0.0507836451061848 nuevo 0.04992161344169711",
+   "chi2.media: viejo 273.31629881688195 nuevo 273.2682425281543",
+   "chi2.sigma: viejo 3.8685572605917193 nuevo 3.8657065834789894",
+   "halo_A.media: viejo 2.5721489747055886 nuevo 2.568735194554096",
+   "halo_A.sigma: viejo 0.30615246729974654 nuevo 0.30627261536786415",
+   "A_IA.media: viejo 0.5495113593393629 nuevo 0.5422179581972616",
+   "A_IA.sigma: viejo 0.29286218229359295 nuevo 0.2883730343249875",
+   "dz1.media: viejo 0.0010522543533882068 nuevo 0.0014421072072108682",
+   "dz1.sigma: viejo 0.010362299216703171 nuevo 0.010382100700524725",
+   "dz2.media: viejo 0.004836953501814719 nuevo 0.004867725416673175",
+   "dz2.sigma: viejo 0.008475904140688044 nuevo 0.008398406427952653",
+   "dz3.media: viejo -0.020218013210659577 nuevo -0.020211425100959027",
+   "dz3.sigma: viejo 0.009387669047184907 nuevo 0.009393608359972236",
+   "dz4.media: viejo -0.013613180370462899 nuevo -0.013687238733426848",
+   "dz4.sigma: viejo 0.00832432446099071 nuevo 0.008464206539855648",
+   "dz5.media: viejo 0.006965665684438633 nuevo 0.007016668150317529",
+   "dz5.sigma: viejo 0.009509861176856656 nuevo 0.00969856511380239",
+   "delta_c.media: viejo -3.945981565672686e-06 nuevo 2.1801646026203043e-06",
+   "delta_c.sigma: viejo 0.00016566675219512194 nuevo 0.00016421099245338366",
+   "sigma8.media: viejo 0.7445921790951743 nuevo 0.7449404348016989",
+   "sigma8.sigma: viejo 0.01891242416693503 nuevo 0.018589948816848344",
+   "S8.media: viejo 0.7555328554033626 nuevo 0.7558882227821322",
+   "S8.sigma: viejo 0.019190314153994838 nuevo 0.01886315028196701",
+   "n_efectivas: viejo 42033.0 nuevo 42711.0"
+  ],
+  "tolerancias": {
+   "cadena": 1e-06,
+   "camb": 0.0001
+  }
+ },
+ "_procedencia": {
+  "commit": "597a025b4a81b5da6cba2a9d17342025b77b04dd",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/analiza_ssee_R3.py",
+  "script_sha256": "0431158a7422a2e4788f95a0e5ae45bd460a0e47a5ce02d2afbbe01cd08bb892",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt": "ed4d0c1d818775d439726e51a4f38445066ee896d3a2b12a3a436bd393d351d0",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt": "680990c1342bfb000f29b7ef25370a05adba2ee3e97848605ea14c91dbd3841a",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt": "2fe41d979a46279acb23dfa438c6176eb4ef72a3c3f0d248934c82d17281eeb9",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt": "595a26fa0d75fceab3885437b0c3992b7cc1813ece925937ef78e3c84872581b",
+   "results/logs/growth_2026-07/R3_ssee_kids_S8.json": "38bebb99e3b6721bd7c9bd99595e85cce636c4eb66849f55eb3e3121937b6477"
+  },
+  "argv": [
+   "src/p06_growth/analiza_ssee_R3.py"
+  ],
+  "fecha": "2026-09-30T21:07:35",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

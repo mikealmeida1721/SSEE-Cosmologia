@@ -277,3 +277,27 @@ stages:
     outs:
       - results/logs/class_picos.json:
           cache: false
+  R3_rehecho:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_ssee_R3.py
+    deps:
+      - src/p06_growth/analiza_ssee_R3.py
+      - src/procedencia.py
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+      - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    outs:
+      - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json:
+          cache: false
+  s8_kids_legacy_camb:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/s8_kids_legacy_camb.py
+    deps:
+      - src/p06_growth/s8_kids_legacy_camb.py
+      - src/procedencia.py
+      - CANONICAL_VALUES.yaml
+      - src/p06_growth/cobaya_kids_legacy.py
+      - src/p06_growth/kids_shear.py
+    outs:
+      - results/logs/s8_kids_legacy_camb.json:
+          cache: false
