@@ -35,6 +35,9 @@ CAD = "/mnt/datos/SSEE_data/chains_p6/boss"
 LOGS = os.path.join(_R, "results", "logs")
 PERFIL = {"SSEE": "perfil_wc_boss.json", "LCDM": "perfil_wc_boss_lcdm.json"}
 
+# La MISMA lectura que multisonda: descarta el burn-in de cada cadena con su
+# fraccion, leida de su fuente (la primera version la omitio y el control fallo).
+QUEMA = float(re.search(r"^_QUEMA\s*=\s*([0-9.]+)", open(os.path.join(_R, "src", "p06_growth", "multisonda_fondo_clavado.py")).read(), re.M).group(1))
 res, entradas = {}, []
 impreso = open(os.path.join(LOGS, "multisonda_fondo_clavado.log")).read()
 for m, fp in PERFIL.items():
@@ -42,7 +45,8 @@ for m, fp in PERFIL.items():
     entradas += rutas + [os.path.join(LOGS, fp)]
     with open(rutas[0]) as f:
         col = f.readline().lstrip("#").split()
-    como_es = float(min(np.loadtxt(r, usecols=col.index("chi2"), ndmin=1).min() for r in rutas))
+    como_es = float(min(_y[int(len(_y) * QUEMA):].min()
+                        for _y in (np.loadtxt(r, usecols=col.index("chi2"), ndmin=1) for r in rutas)))
     libre = json.load(open(os.path.join(LOGS, fp)))["control_amplitud_boss"]["chi2_min"]
     log_min = float(re.search(rf"BOSS con fondo {m}\s*: min libre\s+([0-9.]+)", impreso).group(1))
     res[m] = dict(chi2_como_es=como_es, chi2_wc_libre=libre, ganancia=como_es - libre,
