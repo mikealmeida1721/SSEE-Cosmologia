@@ -112,7 +112,7 @@ def juego(tag, ent, w):
     a = np.loadtxt(bg)
     z0 = a[np.argmin(a[:, cols["z"]])]
     om = {m.group(1).strip(): float(m.group(2)) for m in
-          re.finditer(r"-> ?([A-Za-z][A-Za-z \-]+?)\s+Omega = ([0-9.e+-]+)", r["txt"])}
+          re.finditer(r"^\s*(?:-> ?)?([A-Za-z][A-Za-z \-]+?)\s+Omega = ([0-9.e+-]+)", r["txt"], re.M)}
     out["campo"] = dict(rechaza=r["rechaza"], alpha_K_z0=float(z0[cols["kineticity_smg"]]),
                         cs2_z0=float(z0[cols["c_s^2"]]),
                         Omega_smg=om.get("Scalar Modified Gravity"),
