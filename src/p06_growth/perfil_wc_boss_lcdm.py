@@ -37,17 +37,18 @@ sys.path.insert(0, '/home/mike/Proyectos/SSEE/src/p06_growth')
 
 import boss_lpt_R1R2 as B
 
-# logA de Planck para LCDM: del ajuste conjunto del 2026-09-08
-# (results/logs/cmb_ajuste_conjunto_wc_ns.json, bloque LCDM).
-LOGA_CMB = 3.0453
+import json as _json  # noqa: E402
+_LOGS = '/home/mike/Proyectos/SSEE/results/logs'
+# logA de Planck para LCDM: del ajuste conjunto, rehecho el 2026-10-01
+# (antes 3.0453 tecleado del log del 2026-09-08, cuya fila LCDM era el bug R64).
+LOGA_CMB = _json.load(open(f'{_LOGS}/cmb_ajuste_conjunto_wc_ns_LCDM.json'))['logA']
 # logA que LCDM mismo prefiere en BOSS: medido en R1/R2
-# (results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json, lcdm/logA).
-LOGA_BOSS = 2.7898
+LOGA_BOSS = _json.load(open(f'{_LOGS}/growth_2026-07/R1R2_boss_lpt_cobaya.json'))['lcdm']['logA']
 
-WB = 0.02237          # Planck 2018 LCDM
-H = 0.6736            # Planck 2018 LCDM
-WNU = B.MNU / 93.14
-WC_REF = 0.1200       # w_c de Planck para LCDM — la referencia de este perfil
+WB = B.COSMO['LCDM']['ombh2']     # Planck 2018 LCDM, el mismo fondo que R1/R2
+H = B.COSMO['LCDM']['h']
+WNU = B.MNU['LCDM'] / 93.14       # ORIGEN-VALOR: 93.14 — la misma conversion que el nucleo
+WC_REF = 0.1200       # ORIGEN-VALOR: 0.1200 — w_c de Planck 2018 LCDM (Tabla 2), la referencia de este perfil
 
 ESC = np.array([1.0, 1.0, 1.0])
 P0 = np.array([2.0, 0.0, 0.0])
@@ -125,4 +126,4 @@ if __name__ == '__main__':
     r_cmb = perfil(rej, LOGA_CMB, 'A_s de Planck')
     r_boss = perfil(rej, LOGA_BOSS, 'CONTROL: A_s de BOSS')
     json.dump(con_acta(dict(fecha=time.strftime('%Y-%m-%d'), amplitud_cmb=r_cmb, control_amplitud_boss=r_boss),
-                       __file__), open('/home/mike/Proyectos/SSEE/results/logs/perfil_wc_boss_lcdm.json', 'w'), indent=1)
+                       __file__, entradas=[f'{_LOGS}/cmb_ajuste_conjunto_wc_ns_LCDM.json', f'{_LOGS}/growth_2026-07/R1R2_boss_lpt_cobaya.json']), open('/home/mike/Proyectos/SSEE/results/logs/perfil_wc_boss_lcdm.json', 'w'), indent=1)

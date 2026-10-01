@@ -816,3 +816,69 @@ stages:
       hash: md5
       md5: 25689daad318277117e2488ccd79f69d
       size: 1645
+  ajuste_conjunto_SSEE:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
+    deps:
+    - path: results/logs/cmb_ajuste_conjunto_wc_ns.json
+      hash: md5
+      md5: 0f46e10a33132baef682cc331021fde5
+      size: 441
+    - path: src/p03_cmb/ajuste_conjunto_wc_ns.py
+      hash: md5
+      md5: bae14b229abb4b4853818bf504d8629d
+      size: 4793
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
+      hash: md5
+      md5: d9131519e13409e7be731b91792ede9d
+      size: 1547
+  ajuste_conjunto_LCDM:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
+    deps:
+    - path: results/logs/cmb_ajuste_conjunto_wc_ns.json
+      hash: md5
+      md5: 0f46e10a33132baef682cc331021fde5
+      size: 441
+    - path: src/p03_cmb/ajuste_conjunto_wc_ns.py
+      hash: md5
+      md5: bae14b229abb4b4853818bf504d8629d
+      size: 4793
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
+      hash: md5
+      md5: fcdcb860c7b2a0ca5d58baf113a98f07
+      size: 1409

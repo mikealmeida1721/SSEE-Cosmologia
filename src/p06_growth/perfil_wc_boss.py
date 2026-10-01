@@ -27,11 +27,17 @@ sys.path.insert(0, '/home/mike/Proyectos/SSEE/src/p06_growth')
 
 import boss_lpt_R1R2 as B
 
-LOGA_CMB = 3.0438          # A_s medido por SSEE sobre Planck crudo
-LOGA_BOSS = 2.7636         # control: el que BOSS mismo prefiere
+import json as _json  # noqa: E402
+_LOGS = '/home/mike/Proyectos/SSEE/results/logs'
+# A_s del CMB del modelo: el ajuste conjunto (w_c, n_s, A_s, tau) sobre Planck
+# crudo, el mismo bloque que usa el perfil LCDM (2026-10-01; antes 3.0438
+# tecleado, que ni coincidia con el 3.0439 del log de entonces).
+LOGA_CMB = _json.load(open(f'{_LOGS}/cmb_ajuste_conjunto_wc_ns_SSEE.json'))['logA']
+# control: el logA que BOSS mismo prefiere (R1/R2)
+LOGA_BOSS = _json.load(open(f'{_LOGS}/growth_2026-07/R1R2_boss_lpt_cobaya.json'))['ssee']['logA']
 WB = B.COSMO['SSEE']['ombh2']
 H = B.COSMO['SSEE']['h']
-WNU = B.MNU / 93.14
+WNU = B.MNU['SSEE'] / 93.14   # ORIGEN-VALOR: 93.14 — clausura nu del nucleo (omega_nu = Sum m_nu / 93.14)
 WC_ID = 0.119514           # R66-OK: centro de la rejilla del barrido, no una
 # constante que entre en el calculo. Redondeado a proposito para que la
 # rejilla siga siendo la de la corrida ya hecha (ver perfil_wc_cmb.py).
@@ -111,4 +117,4 @@ if __name__ == '__main__':
     r_cmb = perfil(rej, LOGA_CMB, 'A_s del CMB')
     r_boss = perfil(rej, LOGA_BOSS, 'CONTROL: A_s de BOSS')
     json.dump(con_acta(dict(fecha=time.strftime('%Y-%m-%d'), amplitud_cmb=r_cmb, control_amplitud_boss=r_boss),
-                       __file__), open('/home/mike/Proyectos/SSEE/results/logs/perfil_wc_boss.json', 'w'), indent=1)
+                       __file__, entradas=[f'{_LOGS}/cmb_ajuste_conjunto_wc_ns_SSEE.json', f'{_LOGS}/growth_2026-07/R1R2_boss_lpt_cobaya.json']), open('/home/mike/Proyectos/SSEE/results/logs/perfil_wc_boss.json', 'w'), indent=1)

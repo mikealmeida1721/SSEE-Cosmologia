@@ -7,20 +7,29 @@
  "logA": 3.0429115117128527,
  "tau": 0.05494811036122096,
  "chi2": 1002.7850223480671,
- "n_eval": 266,
+ "n_eval": 436,
  "convergio": true,
  "w_c_predicho": 0.11970115370115379,
  "control": {
-  "w_c_log_viejo": 0.11933158235887054,
-  "dif_en_sigma": -0.032278594283225014,
+  "convergencia": {
+   "w_c_rearranque": 0.11932339543034305,
+   "chi2_rearranque": 1002.7849710964733,
+   "dif_en_sigma": -0.0010016029829716159,
+   "pasa": true
+  },
+  "log_viejo": {
+   "w_c": 0.11933158235887054,
+   "dif_en_sigma": -0.032278594283225014,
+   "pasa": true
+  },
   "pasa": true
  },
  "_procedencia": {
-  "commit": "6d7cf1599656ec94f78bcdfc62b1857f793c3966",
+  "commit": "f9237ab9df901267ccd546e18a7ef77b88c00ab9",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/ajuste_conjunto_wc_ns.py",
-  "script_sha256": "2b6f83d09c8367ad8b5cd4e6a17f049ed2f16926b7e3ff789b18aaaf50585e83",
+  "script_sha256": "6ec166c859eda330e71950469927467771b869d89f8ea039f53b156cbe7fd8f6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_ajuste_conjunto_wc_ns.json": "0f786cb32bc625526afc082712125cc5e586f4807a68968a0e891ddfc91abc16"
@@ -29,7 +38,7 @@
    "src/p03_cmb/ajuste_conjunto_wc_ns.py",
    "SSEE"
   ],
-  "fecha": "2026-09-30T21:45:15",
+  "fecha": "2026-09-30T23:05:08",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
