@@ -2577,6 +2577,23 @@ check("R75 el detector distingue lo intacto de lo editado a mano y de la entrada
       all(_c75), "3 casos: intacto pasa; salida editada y entrada cambiada, marcadas" if all(_c75)
       else f"fallos {_c75}")
 
+# R75b (2026-10-01): toda fuente de manuscript/valores.yaml es dependencia de la
+# etapa valores_tex. Si no, DVC no regenera las macros cuando ese log cambia y
+# el paper cita un valor viejo con acta vieja (paso con ganancia_wc_libre.json).
+def _r75b(vals, deps):
+    return sorted({v["fuente"].split("#")[0] for v in (vals or {}).values()} - set(deps or []))
+
+
+_val75b = (_REPO75 / "manuscript" / "valores.yaml")
+_dep75b = ((_y75.safe_load((_REPO75 / "dvc.yaml").read_text()) or {}).get("stages") or {}).get("valores_tex", {}).get("deps")
+_falta75b = _r75b(_y75.safe_load(_val75b.read_text()), _dep75b) if _val75b.exists() else []
+check("R75b toda fuente de valores.yaml es dependencia de valores_tex",
+      not _falta75b, ", ".join(_falta75b) if _falta75b else "todas declaradas")
+_c75b = [_r75b({"a": {"fuente": "x.json#k"}}, ["x.json"]) == [],
+         _r75b({"a": {"fuente": "x.json#k"}, "b": {"fuente": "y.json#k"}}, ["x.json"]) == ["y.json"]]
+check("R75b el detector marca la fuente no declarada y deja pasar la declarada",
+      all(_c75b), "2 casos correctos" if all(_c75b) else f"fallos {_c75b}")
+
 # --- R76: DATO CRUDO COTEJADO CONTRA SU FUENTE (2026-10-01) -------------------
 # POR QUE EXISTE. Los cumulos de Paper 2 se citaron cinco meses a Zhang+2026;
 # leida la fuente, Coma y el Bullet no estan y A2029/A478 traen otros numeros.

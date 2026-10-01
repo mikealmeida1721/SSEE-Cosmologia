@@ -64,6 +64,11 @@ stages:
       - results/logs/cumulos_zhang2026.json
       - results/logs/mcmc_full_posteriores.json
       - results/logs/fsigma8_canonico.json
+      - results/logs/ganancia_wc_libre.json
+      - results/logs/growth_2026-07/As_medido_o_producto.json
+      - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      - results/logs/perfil_wc_boss.json
+      - results/logs/perfil_wc_boss_lcdm.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
