@@ -81,7 +81,7 @@ for z,o,e,lab in data:
     s = fs8_s[i]; l = fs8_l[i]
     ts = abs(s-o)/e; tl = abs(l-o)/e
     tS.append(ts); tL.append(tl); chiS += ((s-o)/e)**2; chiL += ((l-o)/e)**2
-    filas.append(dict(survey=lab, z=z, obs=o, err=e, ssee=float(s), lcdm=float(l), pull_ssee=float((s-o)/e), pull_lcdm=float((l-o)/e)))
+    filas.append(dict(survey=lab, z=z, obs=o, err=e, ssee=float(s), lcdm=float(l), pull_ssee=float((s-o)/e), pull_lcdm=float((l-o)/e), t_ssee=float(ts), t_lcdm=float(tl)))
     print(f"  {lab:34s} {z:.3f} {o:.3f}±{e:.3f} {s:.3f}  {ts:.2f}σ  {l:.3f}  {tl:.2f}σ")
 N=len(data)
 print(f"\n  χ²/N  SSEE={chiS/N:.3f}   ΛCDM={chiL/N:.3f}   (N={N})")
