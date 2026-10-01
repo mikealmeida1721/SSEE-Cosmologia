@@ -84,21 +84,29 @@ def perfil(rej, logA, etiq):
               f'   [{time.time()-t0:.0f}s]', flush=True)
     a = np.asarray(out)
     i = int(np.argmin(a))
+    res = dict(logA=float(logA), etiqueta=etiq, w_c=[float(x) for x in rej],
+               chi2=[float(x) for x in a], w_c_min_rejilla=float(rej[i]), chi2_min=float(a[i]))
     print(f'  minimo en w_c = {rej[i]:.6f}'
           f'   chi2 = {a[i]:.3f}', flush=True)
     if 0 < i < len(rej) - 1:
         cf = np.polyfit(rej[i - 1:i + 2], a[i - 1:i + 2], 2)
         wc0 = -cf[1] / (2 * cf[0])
         sg = np.sqrt(1.0 / cf[0]) if cf[0] > 0 else np.nan
+        res.update(w_c_parabola=float(wc0), sigma_parabola=float(sg),
+                   referencia=float(WC_ID), dist_sigma=float(abs(wc0 - WC_ID) / sg))
         print(f'  parabola: w_c = {wc0:.6f} +- {sg:.6f}',
               flush=True)
         print(f'  identidad {WC_ID:.6f}  ->  '
               f'{abs(wc0-WC_ID)/sg:.2f} sigma', flush=True)
-    return a
+    return res
 
 
 if __name__ == '__main__':
     os.environ['OMP_NUM_THREADS'] = '1'
     rej = np.linspace(0.090, 0.155, 9)
-    perfil(rej, LOGA_CMB, 'A_s del CMB')
-    perfil(rej, LOGA_BOSS, 'CONTROL: A_s de BOSS')
+    import json
+    from procedencia import con_acta
+    r_cmb = perfil(rej, LOGA_CMB, 'A_s del CMB')
+    r_boss = perfil(rej, LOGA_BOSS, 'CONTROL: A_s de BOSS')
+    json.dump(con_acta(dict(fecha=time.strftime('%Y-%m-%d'), amplitud_cmb=r_cmb, control_amplitud_boss=r_boss),
+                       __file__), open('/home/mike/Proyectos/SSEE/results/logs/perfil_wc_boss.json', 'w'), indent=1)
