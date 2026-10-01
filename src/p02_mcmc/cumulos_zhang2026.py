@@ -102,13 +102,13 @@ def chi2_fila(f, col, k):
 res = {}
 for m, (col, k) in MODELOS.items():
     filas = [dict(nombre=f["nombre"], tabla=f["tabla"], pred=k * f[col], obs=f["M_N_dyn"],
-                  pull=chi2_fila(f, col, k)[1], razon=chi2_fila(f, col, k)[2]) for f in F]
+                  pull=float(chi2_fila(f, col, k)[1]), razon=float(chi2_fila(f, col, k)[2])) for f in F]
     c = sum(r["pull"] ** 2 for r in filas)
     rz = np.array([r["razon"] for r in filas])
     res[m] = dict(columna_bar=col, factor=k, chi2=float(c), N=len(F), chi2r=float(c / len(F)),
                   razon_media=float(rz.mean()), razon_mediana=float(np.median(rz)),
                   razon_dispersion=float(rz.std(ddof=1)),
-                  pulls_mayores_3=sum(abs(r["pull"]) > 3 for r in filas),
+                  pulls_mayores_3=int(sum(abs(r["pull"]) > 3 for r in filas)),
                   peores=sorted(filas, key=lambda r: -abs(r["pull"]))[:5],
                   sub_P2=[r for r in filas if r["nombre"] in ("A2029", "A0478", "A2142")])
     print(f"  {m:11s} k={k:6.3f}  chi2/N = {c:9.2f}/{len(F)} = {c / len(F):7.2f}   "
