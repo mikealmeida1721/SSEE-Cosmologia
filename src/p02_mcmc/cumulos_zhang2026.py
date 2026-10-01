@@ -87,7 +87,9 @@ if not lectura_pasa:
 om_lcdm = LP["ombh2"] + LP["omch2"] + LP["mnu"] / C_NU
 K_LCDM = om_lcdm / LP["ombh2"]
 K_SSEE = S.KAL0 * (1 + F_NU)
-MODELOS = {"ssee": ("M_tot_IG", K_SSEE), "ssee_fnu0": ("M_tot_IG", S.KAL0), "ssee_imf": ("M_tot_IMF", K_SSEE),
+F_NU_COSMICO = S.OMEGA_NU_H2 / S.OMEGA_M_H2   # lo que P2 dice que es f_nu: la fraccion cosmica de masa en neutrinos
+MODELOS = {"ssee": ("M_tot_IG", K_SSEE), "ssee_fnu0": ("M_tot_IG", S.KAL0),
+           "ssee_fnu_cosmico": ("M_tot_IG", S.KAL0 * (1 + F_NU_COSMICO)), "ssee_imf": ("M_tot_IMF", K_SSEE),
            "lcdm": ("M_tot_IMF", K_LCDM), "lcdm_igimf": ("M_tot_IG", K_LCDM)}
 
 
@@ -121,7 +123,7 @@ out = dict(fecha=str(__import__("datetime").date.today()),
            fuente="Zhang, Hasani Zonoozi & Kroupa 2026, arXiv:2602.06082v1, Tablas II y III",
            no_estan_en_la_fuente=["Coma", "Bullet", "Perseus", "A2744"],
            control_lectura=dict(ctl, pasa=lectura_pasa),
-           piso_redondeo=SIG_RED, K_SSEE=K_SSEE, K_LCDM=K_LCDM, f_nu=F_NU, modelos=res,
+           piso_redondeo=SIG_RED, K_SSEE=K_SSEE, f_nu_cosmico=F_NU_COSMICO, K_LCDM=K_LCDM, f_nu=F_NU, modelos=res,
            filas=F)
 json.dump(con_acta(out, __file__, entradas=[FUENTE]),
           open(os.path.join(_R, "results", "logs", "cumulos_zhang2026.json"), "w"), indent=1)
