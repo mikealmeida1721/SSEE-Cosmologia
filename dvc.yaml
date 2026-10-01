@@ -409,6 +409,20 @@ stages:
           cache: false
       - results/logs/perfil_wc_boss_lcdm.log:
           cache: false
+  multisonda_fondo_clavado:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/multisonda_fondo_clavado.py
+    deps:
+      - src/p06_growth/multisonda_fondo_clavado.py
+      - src/procedencia.py
+      - CANONICAL_VALUES.yaml
+      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
+      - results/chains/ssee_cmb.1.txt
+    outs:
+      - results/logs/multisonda_fondo_clavado.json:
+          cache: false
+      - results/logs/multisonda_fondo_clavado.log:
+          cache: false
   ganancia_wc_libre:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/ganancia_wc_libre.py
     deps:

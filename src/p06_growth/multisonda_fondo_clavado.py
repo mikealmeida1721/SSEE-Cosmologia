@@ -607,11 +607,15 @@ def main():
                control_lcdm=est_c, control_disponible=ctrl_ok,
                control_positivo=ctrlA, control_positivo_ve=bool(_sube))
     os.makedirs(os.path.dirname(_LOG), exist_ok=True)
+    # acta de procedencia (2026-10-01): el json la lleva dentro y el .log en su primera linea
+    sys.path.insert(0, os.path.join(_REPO, "src"))
+    from procedencia import cabecera, con_acta
+    ent = sorted(f_ for p_ in PATRONES for f_ in glob.glob(p_)) + [os.path.join(_REPO, "CANONICAL_VALUES.yaml")]
     with open(_LOG, "w") as f:
-        json.dump(res, f, indent=2)
+        json.dump(con_acta(res, __file__, entradas=ent), f, indent=2)
     di(f"Log -> {_LOG}")
     with open(_LOG.replace(".json", ".log"), "w") as f:
-        f.write("\n".join(_lineas) + "\n")
+        f.write(cabecera(__file__) + "\n" + "\n".join(_lineas) + "\n")
     return res
 
 
