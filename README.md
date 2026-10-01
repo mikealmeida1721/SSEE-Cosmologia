@@ -234,7 +234,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | u ≡ c₂X/c₁ | −(M_v+T_r)/(3T_r+M_v) = −0.522735 | fixed by w_φ = w₀ = −0.839950 |
 | c_s² | (M_v−T_r)/(5M_v+3T_r) = 0.021284 | ghost condensate (c₁<0, c₂>0) at X/X_min = 1.045471; no-ghost and gradient conditions hold |
 | α_T = α_B = α_M | 0 exact | GW170817 \|α_T\| < 10⁻¹⁵ ✓ |
-| α_K(z=0) | 15.591336 (era 15.591335 con H0_ALG; `algebra_derivada.json`) | hi_class reproduces it to 0.011% (c_s² to 0.000%); **not observationally accessible** |
+| α_K(z=0) | 15.591336 (`algebra_derivada.json#algebra.alpha_K_z0`) | hi_class reproduces it to 0.011% (c_s² to 0.000%); **not observationally accessible** |
 | s_K = 3(−w₀)(1+w₀) | 0.403302 | a different quantity: pure equation of state; it enters f_screen (Papers 9–10), not α_K |
 
 ### CLASS Boltzmann Validation (Fases 1–3)
