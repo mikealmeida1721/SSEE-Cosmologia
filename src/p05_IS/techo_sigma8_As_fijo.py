@@ -43,9 +43,13 @@ FUENTE: results/logs/p5_techo_sigma8_As_fijo.json
 import json
 import pathlib
 
+import sys
+
 import numpy as np
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "src"))
+from procedencia import con_acta  # noqa: E402
 EVID = REPO / "results" / "logs" / "p5_techo_evidencia"
 # CANONICO desde 2026-09-08: .ini versionado y con neutrinos masivos
 PK_SSEE = EVID / "techo_ssee_canonico__pk.dat"    # config/class/techo_ssee_canonico.ini
@@ -134,7 +138,10 @@ def main():
         },
     }
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
-    SALIDA.write_text(json.dumps(out, indent=1))
+    INI = REPO / "config" / "class"
+    SALIDA.write_text(json.dumps(con_acta(out, __file__, entradas=[
+        str(p) for p in (PK_SSEE, PK_LCDM, PK_SSEE_VIEJO, PK_LCDM_VIEJO,
+                         INI / "techo_ssee_canonico.ini", INI / "techo_lcdm_referencia.ini")]), indent=1))
     print("sigma8 techo (A_s fijo) = %.6f    [retirado: 0.8335]" % s_ssee)
     print("S8 techo                = %.6f    [retirado: 0.846]" % S8)
     print("tensiones S8: " + " · ".join("%s %.2f sig" % (k, v)
