@@ -36,6 +36,7 @@ ALGEBRA = {
     "alpha_K_z0":     ("3*OMDE_DENS*(5-3*W0)", "kineticidad hoy, Paper 7 y resumenes"),
     "x_K":            ("3*(5-3*W0)", "alpha_K(a) = x_K Omega_DE(a), Paper 7"),
     "r_tensor":       ("PHI**-10", "tensor-escalar r = phi^-10"),
+    "r_tensor_mil":   ("1e3*PHI**-10", "r en unidades de 10^-3 (como lo escriben los papers)"),
     "r_staro":        ("3/PHI**14", "r de Starobinsky con N = 2 phi^7"),
     "dos_phi6":       ("2*PHI**6", "ventana de e-folds, Paper 1"),
     "dos_phi7":       ("2*PHI**7", "N_* = 2 phi^7"),
@@ -85,7 +86,10 @@ try:
     roto = False
 except ZeroDivisionError:
     roto = True
-out = dict(fecha=str(__import__("datetime").date.today()), algebra=res,
+# El nucleo tambien, evaluado: los papers imprimen K_V = 9.519253, no la formula.
+nucleo = {k: float(v) for k, v in N.items()
+          if k.isupper() and isinstance(v, (int, float)) and not isinstance(v, bool)}
+out = dict(fecha=str(__import__("datetime").date.today()), algebra=res, nucleo=nucleo,
            control=dict(identidades=ctl, pasa=bool(all(v < 1e-12 for v in ctl.values()) and roto and not errores),
                         formula_rota_falla=roto, errores=errores))
 json.dump(con_acta(out, __file__), open(os.path.join(_R, "results", "logs", "algebra_derivada.json"), "w"), indent=1)
