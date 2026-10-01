@@ -21,6 +21,12 @@
  "piso_redondeo": 0.002886751345948129,
  "K_SSEE": 5.63183409425483,
  "K_SSEE_RG": 6.364040401021017,
+ "descomposicion_RG": {
+  "bariones": 1.0,
+  "materia_oscura_fria": 5.331238517690137,
+  "kal0_por_ns": 5.331238517690137,
+  "neutrinos": 0.03280188333088063
+ },
  "f_nu_cosmico": 0.005154254414478269,
  "K_LCDM": 6.393124342405801,
  "f_nu": 0.02,
@@ -2379,11 +2385,11 @@
   }
  ],
  "_procedencia": {
-  "commit": "9e76da49403246f9527cd49de8594e1754691fed",
+  "commit": "299399619d8f8ae8b073240930467d86ae15c201",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/cumulos_zhang2026.py",
-  "script_sha256": "e1f9c0d6dd028bacfdb0e36ede0b355542cdedadfa33fdf805ea98210a5f359e",
+  "script_sha256": "c8f35aa9301ecc15123b731b70d810fb99dde8da8bb6f751ba9bfc40f3b055c7",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/zhang2026/tablas_II_III.tex": "1a3d9a42ba75920c6bfff05e3482f12b3acf829ab52e6918a7d7ffddc6c71377"
@@ -2391,7 +2397,7 @@
   "argv": [
    "src/p02_mcmc/cumulos_zhang2026.py"
   ],
-  "fecha": "2026-10-01T18:51:34",
+  "fecha": "2026-10-01T19:29:21",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

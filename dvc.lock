@@ -1,7 +1,8 @@
 schema: '2.0'
 stages:
   mcmc_full_posteriores:
-    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/mcmc_full/leer_mcmc_full.py
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
+      src/mcmc_full/leer_mcmc_full.py
     deps:
     - path: /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
       hash: md5
@@ -41,7 +42,8 @@ stages:
       md5: b0e55d7f04463551100f6c2cab7ce9f5
       size: 3798
   s8_desde_b1:
-    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/p06_growth/s8_desde_b1.py
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
+      src/p06_growth/s8_desde_b1.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -81,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 9f9333e28e645cc5d3d50aa9239bd1f8
-      size: 56879
+      md5: 5c6882003ddfc2715885fc03c7c6bd91
+      size: 54382
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -91,14 +93,10 @@ stages:
       hash: md5
       md5: d83e1992028bea800c841e0479c6d099
       size: 1875
-    - path: results/logs/cumulos_7.json
-      hash: md5
-      md5: 57f3431046f1a424f0945c40d7497bfc
-      size: 4826
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
-      md5: ceb42473822e44a599410b6bae737890
-      size: 52715
+      md5: c1aa77efd32461abaf5a76b45c6aacbe
+      size: 52877
     - path: results/logs/dic_from_chains.json
       hash: md5
       md5: bb166f311eb519a319a73349317170b6
@@ -206,11 +204,12 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: a959ee5dde11e38eb018472bd95b95a2
-      size: 72563
+      md5: 36b8e9e61596e9bc2fb37db739a546a9
+      size: 69363
   p5_IS_perturbations:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_IS/ssee_paper5_IS_perturbations.py
-      > results/logs/p5_IS_perturbations.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p05_IS/ssee_paper5_IS_perturbations.py > 
+      results/logs/p5_IS_perturbations.log 2>&1
     deps:
     - path: src/p05_IS/ssee_paper5_IS_perturbations.py
       hash: md5
@@ -238,13 +237,16 @@ stages:
       md5: df92ec6e230ade2f4725a63eda0a11ad
       size: 1240
   kids_publicados:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_publicados.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/kids_publicados.py
     deps:
-    - path: /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+    - path: 
+        /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
       hash: md5
       md5: 38506b7d67a77c4188f3f44971f463ac
       size: 374768
-    - path: /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    - path: 
+        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
       hash: md5
       md5: 14e13ea2c7f3286a0bf220cabdef1373
       size: 105084314
@@ -270,8 +272,8 @@ stages:
       md5: fafae20f92ccc2a645ae8f202596438f
       size: 2372
   p10_uv_fscreen:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/ssee_paper10_verification.py
-      > /dev/null
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p10_uv/ssee_paper10_verification.py > /dev/null
     deps:
     - path: src/p10_uv/ssee_paper10_verification.py
       hash: md5
@@ -291,7 +293,8 @@ stages:
       md5: 5623ac27b395376ad895c0455ef668af
       size: 1356
   prueba_equivalencia_hglob:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/prueba_equivalencia_hglob.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/verificacion/prueba_equivalencia_hglob.py
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -327,14 +330,15 @@ stages:
       md5: 987cdc83c3d1193ba4b283be1d4f77b4
       size: 2093
   spt3g_calibrador:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/spt3g_calibra.py
-      lee
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/spt3g_calibra.py lee
     deps:
     - path: /mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex
       hash: md5
       md5: 3f44f27af911b034a72ab7b9c1fe2146
       size: 6606
-    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
+    - path: 
+        /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
       hash: md5
       md5: c667721e4ad556d5c9f669ac08f8f77f
       size: 486
@@ -392,7 +396,8 @@ stages:
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
       size: 10900
   kids_legacy_bic:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_legacy_bic.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/kids_legacy_bic.py
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -460,9 +465,9 @@ stages:
       md5: 4a679c16f0138a04575279d23bbab3de
       size: 3419
   paper3_cmb:
-    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 src/verificacion/preflight.py
-      && nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log
-      2>&1
+    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 
+      src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
     deps:
     - path: data/raw/planck_pr4_EE.txt
       hash: md5
@@ -502,7 +507,8 @@ stages:
       md5: 3547b2ea7c02f91347e4401b77c72638
       size: 3502
   lya_auditoria:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/lya_auditoria.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/lya_auditoria.py
     deps:
     - path: data/raw/desi_dr2_bao.csv
       hash: md5
@@ -542,9 +548,11 @@ stages:
       md5: a477034fa06e33d33d9ecb7811def962
       size: 6064
   resumen_3modelos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/resumen_3modelos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/resumen_3modelos.py
     deps:
-    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 64ec098f62a1bb188720f86b25bf11f5
       size: 260001506
@@ -570,10 +578,12 @@ stages:
       md5: 9e12af535aa2f1edc2b39472cc53ce7a
       size: 4055
   savage_cv:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/estadistica/ssee_phase_d_savage_cv.py
-      > results/logs/phase_d_savage_cv_wmfix.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/estadistica/ssee_phase_d_savage_cv.py > 
+      results/logs/phase_d_savage_cv_wmfix.log 2>&1
     deps:
-    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 64ec098f62a1bb188720f86b25bf11f5
       size: 260001506
@@ -601,7 +611,8 @@ stages:
   dic_from_chains:
     cmd: .venv/bin/python3 src/estadistica/ssee_dic_from_chains.py
     deps:
-    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 64ec098f62a1bb188720f86b25bf11f5
       size: 260001506
@@ -623,7 +634,8 @@ stages:
       md5: 1a028b28e6bec7edf0afb8252daab161
       size: 1241
   hiclass_campo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/hiclass_campo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/hiclass_campo.py
     deps:
     - path: /mnt/datos/hi_class/class
       hash: md5
@@ -648,7 +660,8 @@ stages:
       md5: 191482341f91d3ecc18f7d00602bf42e
       size: 7817
   R3_rehecho:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_ssee_R3.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/analiza_ssee_R3.py
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
       hash: md5
@@ -684,8 +697,9 @@ stages:
       md5: dde3519abf4948db21b7afdd623882ea
       size: 5454
   press_schechter:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_press_schechter.py
-      > results/logs/press_schechter.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/ssee_press_schechter.py > results/logs/press_schechter.log 
+      2>&1
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -725,7 +739,8 @@ stages:
       md5: 59f5c44c063990ca8b39799bed53dbce
       size: 2412
   edad_universo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/edad_universo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p09_hubble/edad_universo.py
     deps:
     - path: src/p09_hubble/edad_universo.py
       hash: md5
@@ -749,7 +764,8 @@ stages:
       md5: 8d287577eefaeaf4f778ba3e1a8769ad
       size: 1187
   class_picos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/class_picos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/class_picos.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -789,10 +805,12 @@ stages:
       md5: d83e1992028bea800c841e0479c6d099
       size: 1875
   fondos_exponenciales:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondos_exponenciales.py
-      > results/logs/fondos_exponenciales.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/fondos_exponenciales.py > 
+      results/logs/fondos_exponenciales.log 2>&1
     deps:
-    - path: archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
+    - path: 
+        archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
       hash: md5
       md5: 0e38f1db82e8932f760cc9cc5f7bb67b
       size: 6796
@@ -826,8 +844,8 @@ stages:
       md5: 25689daad318277117e2488ccd79f69d
       size: 1645
   ajuste_conjunto_SSEE:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py
-      SSEE
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
     deps:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns.json
       hash: md5
@@ -859,8 +877,8 @@ stages:
       md5: e2907d18fca530726a62505761c98947
       size: 1547
   ajuste_conjunto_LCDM:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py
-      LCDM
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
     deps:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns.json
       hash: md5
@@ -892,8 +910,8 @@ stages:
       md5: 57578590a07a455a6ff5e110afbeec30
       size: 1409
   hmcode_bariones:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_IS/hmcode_bariones.py
-      > results/logs/hmcode_bariones.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
     deps:
     - path: archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py
       hash: md5
@@ -925,8 +943,8 @@ stages:
       md5: 82444c4ce6ae7e4e4dfb2551843fa10c
       size: 847
   perfil_wc_boss:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss.py
-      > results/logs/perfil_wc_boss.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
     deps:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
       hash: md5
@@ -962,8 +980,9 @@ stages:
       md5: 2d215b43b9ad8fa9de35ae8391d5cf09
       size: 6894
   perfil_wc_boss_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss_lcdm.py
-      > results/logs/perfil_wc_boss_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/perfil_wc_boss_lcdm.py > 
+      results/logs/perfil_wc_boss_lcdm.log 2>&1
     deps:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
       hash: md5
@@ -999,7 +1018,8 @@ stages:
       md5: 0e0da2b1a5553510837c88f7fba33718
       size: 6946
   ganancia_wc_libre:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/ganancia_wc_libre.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/ganancia_wc_libre.py
     deps:
     - path: results/logs/multisonda_fondo_clavado.log
       hash: md5
@@ -1027,7 +1047,8 @@ stages:
       md5: ff07d32e731b48970bf9cc44d76389f6
       size: 2487
   s8_kids_legacy_camb:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/s8_kids_legacy_camb.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/s8_kids_legacy_camb.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -1099,8 +1120,9 @@ stages:
       md5: 4155ea4fe3083b2928d6e91749c55153
       size: 3444
   cumulos_zhang2026:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_zhang2026.py
-      > results/logs/cumulos_zhang2026.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 
+      2>&1
     deps:
     - path: data/raw/zhang2026/tablas_II_III.tex
       hash: md5
@@ -1108,8 +1130,8 @@ stages:
       size: 15879
     - path: src/p02_mcmc/cumulos_zhang2026.py
       hash: md5
-      md5: 998beffefa02c52529680321b470c1f2
-      size: 7503
+      md5: 1c9f82199efa1e2c2950b5d5f4c95910
+      size: 7522
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -1125,15 +1147,15 @@ stages:
     outs:
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
-      md5: 35a5a8b667505d9cd17273edc2860f9a
+      md5: c1aa77efd32461abaf5a76b45c6aacbe
       size: 52877
     - path: results/logs/cumulos_zhang2026.log
       hash: md5
-      md5: 052d774213c56c2e0105b1e4eb237f44
+      md5: e519a0c3d63fa961da168d35fd7fed7c
       size: 1727
   paper2_w0wa:
-    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py > results/logs/paper2_analysis.log
-      2>&1
+    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py >
+      results/logs/paper2_analysis.log 2>&1
     deps:
     - path: src/p02_mcmc/ssee_paper2_analysis.py
       hash: md5
@@ -1153,7 +1175,8 @@ stages:
       md5: 46714dc2bee740037010df3cf89bf560
       size: 1376
   fsigma8_canonico:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/recalc_fsigma8_canonical.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/recalc_fsigma8_canonical.py
     deps:
     - path: src/p03_cmb/recalc_fsigma8_canonical.py
       hash: md5
@@ -1173,8 +1196,9 @@ stages:
       md5: cb16041849cc21c934dc84da77f6ddbf
       size: 2861
   analiza_boss_R1R2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_boss_R1R2.py
-      ambos > results/logs/analiza_boss_R1R2.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/analiza_boss_R1R2.py ambos > 
+      results/logs/analiza_boss_R1R2.log 2>&1
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
       hash: md5
@@ -1214,7 +1238,8 @@ stages:
       md5: 1de0cce05ee34da34fe8f16d8f9f5f69
       size: 4421
   multisonda_fondo_clavado:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/multisonda_fondo_clavado.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/multisonda_fondo_clavado.py
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
       hash: md5
@@ -1250,8 +1275,9 @@ stages:
       md5: a362a2b0f44308d761f69dcf6c5335d1
       size: 10546
   fnu_tremaine_gunn:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/fnu_tremaine_gunn.py
-      > results/logs/fnu_tremaine_gunn.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 
+      2>&1
     deps:
     - path: src/p02_mcmc/fnu_tremaine_gunn.py
       hash: md5
@@ -1275,8 +1301,9 @@ stages:
       md5: e9f4b769f82d625525f6cb7d17f917de
       size: 1471
   mide_As_o_producto:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/mide_As_o_producto.py
-      > results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/mide_As_o_producto.py > 
+      results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
       hash: md5
@@ -1360,8 +1387,9 @@ stages:
       md5: c84380d793a691fe0057433b1a557aff
       size: 2550
   leer_conjunta_b3:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/leer_conjunta.py
-      b3 > results/logs/leer_conjunta_b3.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 
+      2>&1
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
       hash: md5

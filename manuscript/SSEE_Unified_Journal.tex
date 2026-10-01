@@ -317,8 +317,8 @@ The likelihood combines:
   \item Planck~2018 compressed Gaussian prior:
     $H_0=67.36\pm0.54$, $\Omm = 0.3153\pm0.0073$,
     $\Omega_b h^2 = 0.02237\pm0.00015$, $\rho(H_0,\Omm)=-0.85$;
-  \item galaxy-cluster dynamical masses for four clusters (Coma, A2029, A478,
-    Bullet) with IGIMF-corrected baryonic baselines \citep{Zhang2026}.
+  \item as a separate consistency test outside the likelihood, the dynamical
+    masses of all $\val{clz_rgimf_N}$ clusters in Tables~II--III of \citet{Zhang2026}.
 \end{itemize}
 For \SSEE, $H_0$ is the sole free parameter; $(\wz,\wa)$ are fixed algebraically.
 For \LCDM, $(H_0, \Omm)$ are free. For CPL, $(H_0,\Omm,\wz,\wa)$ are free.
@@ -344,10 +344,9 @@ Free parameters $k$ & 2 & 3 & 5 \\
 $N_{\rm eff}$ & \val{p2_neff_ssee} & \val{p2_neff_lcdm} & \val{p2_neff_cpl} \\
 $\Delta\mathrm{BIC}$ & ref & $\val{p2_dBIC_lcdm}$ & $\val{p2_dBIC_cpl}$ \\
 $\Delta\mathrm{DIC}$ & ref & $\val{p2_dDIC_lcdm}$ & $\val{p2_dDIC_cpl}$ \\
-% 2026-10-01: el 0.081 de LCDM no tenia fuente (ningun script lo produce); queda «---» hasta
-% rehacer la prueba de cumulos sobre las tablas reales de Zhang+2026 (cumulos_zhang2026.py).
-% El 0.7 sigma de LCDM en el plano w0wa contradecia al script de P2 (2.58 sigma): ahora por \val.
-$\chi^2_r$ clusters & $\val{p2_clVII_chi2r_ssee}$ & --- & — \\
+% 2026-10-01: cumulos sobre las tablas reales de Zhang+2026 (cumulos_zhang2026.py), en RG,
+% con el control LCDM por el mismo camino. El 0.7 sigma de LCDM en w0wa era 2.58: por \val.
+Clusters, $\chi^2/N$ (IGIMF, $N=\val{clz_rgig_N}$) & $\val{clz_rgig_chi2}$ ($\val{clz_rgig_sig}\sigma$) & $\val{clz_lcig_chi2}$ ($\val{clz_lcig_sig}\sigma$) & — \\
 $(w_0, w_a)$ vs DESI DR2 $w_0w_a$CDM (Pantheon+) & $\val{p2_w0wa_ssee_ec26}\sigma$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ & — \\
 \bottomrule
 \end{tabular}
@@ -368,15 +367,16 @@ the background tension, validated in \S\ref{sec:cmb} below.
 \subsection{Galaxy-cluster mass sector}
 \label{sec:clusters}
 
-The four-cluster analytic forward model --- baryon fraction
-$f_b = \Omega_b/\Omega_{m,\mathrm{CMB}}$ corrected by IGIMF
-baryonic masses \citep{Zhang2026} --- achieves $\chi^2_r = \val{p2_clIV_chi2r_ssee}$
-(four-cluster MCMC subset) and $\chi^2_r = \val{p2_clVII_chi2r_ssee}$ (seven-cluster analytic).
-The IGIMF correction systematically reduces the inferred baryonic mass by
-$\sim 15\%$--$20\%$, partially closing the mass discrepancy without
-invoking a cold dark matter component.
-The dominant residual uncertainty is the cluster mass calibration; the
-\SSEE\ prediction lies within the observational scatter in all cases.
+\SSEE\ does not modify gravity ($\alpha_T=\alpha_M=\alpha_B=0$, Paper~VII), so a
+cluster weighs its whole matter content: $M_{\rm dyn}=(\omega_m/\omega_b)\,M_{\rm bar}
+=\val{clz_K_rg}\,M_{\rm bar}$, where the cold dark matter enters through the forward
+identity $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$ and no parameter is fitted. Against all
+$\val{clz_rgig_N}$ systems of \citet{Zhang2026}, with baryons that include the stellar
+remnants of a variable initial mass function (IGIMF), \SSEE\ is consistent at
+$\val{clz_rgig_sig}\sigma$ and \LCDM\ at $\val{clz_lcig_sig}\sigma$; with the canonical IMF both
+fail ($\val{clz_rgimf_sig}\sigma$ and $\val{clz_lcimf_sig}\sigma$). The two backgrounds differ in
+$M_{\rm dyn}/M_{\rm bar}$ by under one per cent: clusters test the baryon census and
+the matter content, not the background (Paper~II).
 
 \subsection{Multi-probe MCMC validation: two complementary tests}
 \label{sec:mcmc_fase4}
@@ -469,7 +469,7 @@ Both tests share a defining feature: the \SSEE\ background carries \emph{the
 same fixed values into every probe}. The pair $w_0=\val{W0_d6},\,w_a=\val{WA_d6}$
 confronts DESI (Paper~II, $0.24\sigma$ Pantheon+), the Planck PR4 CMB
 (Paper~III, $\Delta\mathrm{BIC}=-32.9$), the $f\sigma_8$ compilation
-($0.93\sigma$) and the cluster masses ($\chi^2_r=0.122$) without ever being
+($\val{fs8_tmedia_ssee}\sigma$) and the cluster masses ($\val{clz_rgig_sig}\sigma$) without ever being
 re-tuned per data set. A free CPL fit lands on a \emph{different} point for each
 probe; \SSEE\ uses \emph{one} point throughout and does not break on any of
 them. Fixing the model should have made it fragile --- it does not. (A faster

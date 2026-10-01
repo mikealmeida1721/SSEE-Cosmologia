@@ -658,74 +658,40 @@ dark energy. The \SSEE\ algebraic point $(\wz,\wa)=(-0.840,-0.670)$ falls within
 \label{sec:clusters}
 %--------------------------------------------------------------------
 
-\subsection{The Cluster Mass Discrepancy and IGIMF}
+\subsection{Cluster masses in general relativity}
 
-In rich galaxy clusters, the Newtonian-equivalent dynamical mass typically exceeds
-the visible baryonic mass by a factor of $\sim$5--6. Recent literature incorporating
-a variable integrated galaxy-wide initial mass function (IGIMF)
-\citep{Kroupa2003,Zhang2026} demonstrates that baryonic masses have been systematically
-underestimated: heavy stellar remnants raise the effective baryonic baseline so that,
-\emph{within MOND}, baryons account for at least $88^{+5}_{-4}\%$ of the
-\emph{MOND-inferred} (hydrostatic) dynamical mass \citep{Zhang2026} --- nearly removing
-the residual cluster discrepancy under modified gravity. The MOND-inferred mass is the
-mass required by the Milgromian field equation and is substantially smaller than the
-Newtonian-equivalent total. \SSEE\ adopts the same enhanced IGIMF baryonic baseline but
-maps it directly to the Newtonian-equivalent dynamical mass through the structural
-amplifier $\KALz \approx \val{KAL0_d4}$, whose value plays the role of the full Milgromian
-enhancement; the two statements refer to different mass definitions and are not composed.
-This reproduces the observed cluster masses (Table~\ref{tab:clusters}) without cold dark
-matter.
-
-\subsection{Structural Retention and the Neutrino Bridge}
-
-At the cluster scale, the total effective dynamical mass $M_{\rm dyn}$ within radius $R$ is:
+\SSEE\ does not modify gravity: its effective-field-theory functions are
+$\alpha_T=\alpha_M=\alpha_B=0$ (Paper~7), so the effective gravitational coupling is
+Newton's ($\mu=1$; Paper~8, canonical limit). The mass that rich clusters show
+beyond their baryons is the cold dark matter the model predicts, with density
+$\omega_c=\KALz\,\omega_b\,n_s$ (\S\ref{sec:scope}). A
+virialised cluster therefore weighs the whole matter content, and its dynamical
+mass follows from the baryonic one by the cosmic matter-to-baryon ratio:
 \begin{equation}
-  M_{\rm dyn}(R) = \Migimf(R)\cdot\KALz\cdot\left[1+f_\nu\right],
+  M_{\rm dyn} = \frac{\omega_m}{\omega_b}\,M_{\rm bar}
+  = \Bigl(1+\KALz\,n_s+\frac{\omega_\nu}{\omega_b}\Bigr)M_{\rm bar}
+  = \val{clz_K_rg}\,M_{\rm bar},
   \label{eq:mdyn}
 \end{equation}
-where $f_\nu$ quantifies the fractional mass contribution of trapped relic
-neutrinos. Here $\KALz$ denotes the deep-MOND asymptotic value of the
-environment-dependent amplifier $\mathrm{KAL}(x)$ (Eq.~\ref{eq:KAL}), adopted as
-a constant effective enclosed-mass amplifier within $R_{200}$; a full
-$\mathrm{KAL}(x)$-weighted projection of the enclosed mass is deferred to future work.
-Using $\sum m_\nu^{\rm active}=0.0685$\,eV (the SSEE-derived value, Paper~4) the
-cosmological neutrino energy density is
-$\rho_\nu = n_\nu^{\rm species}\sum m_\nu^{\rm active}\approx 7.7$\,eV\,cm$^{-3}$
-(with $n_\nu^{\rm species}\simeq112$\,cm$^{-3}$ per flavour, counting
-$\nu+\bar\nu$).
-For a cluster with escape velocity $v_{\rm esc}\approx2000$\,km\,s$^{-1}$, integration
-of the Fermi–Dirac distribution \citep{Tremaine1979} yields a trapped fraction
-$f_\nu\approx0.018$--$0.022$. This structurally consistent $\sim$2\% correction provides
-the final macroscopic bridge.
+with no free parameter. Here $\KALz$ is not an amplifier of gravity: it sets how
+much cold dark matter accompanies each unit of baryons.
 
-\subsection{Quantitative Cluster Analysis}
+\subsection{Quantitative cluster test}
 
-Applying Eq.~\eqref{eq:mdyn} to four well-documented clusters demonstrates predictive
-accuracy against observed dynamical masses (Table~\ref{tab:clusters}).
-
-\begin{table}[H]
-\centering
-\caption{Cluster mass predictions. All masses within $R_{200}$ in units of
-  $10^{14}\,M_\odot$. $M_{\SSEE} = \Migimf \times \val{KAL0_d4} \times 1.02$.
-  IGIMF baselines and observed masses from \citet{Zhang2026}; Bullet lensing
-  mass from \citealt{Clowe2006}.}
-\label{tab:clusters}
-\footnotesize
-\begin{tabularx}{\textwidth}{lXXX}
-\toprule
-Cluster & $M_{\rm bar}^{\rm IGIMF}$ & $M_{\rm SSEE}$ & $M_{\rm obs}$ \\
- & \multicolumn{3}{c}{[$10^{14}\,M_\odot$]} \\
-\midrule
-Coma          & $1.8\pm0.2$ & $10.1\pm1.1$ & $9.8\pm1.0$  \\
-A2029         & $2.2\pm0.2$ & $12.4\pm1.1$ & $12.0\pm1.2$ \\
-A478          & $1.5\pm0.2$ & $8.4\pm1.1$  & $8.0\pm1.0$  \\
-Bullet (main) & $1.2\pm0.2$ & $6.7\pm1.1$  & $6.5\pm1.0$  \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-All four predictions agree with observed masses at the $1\sigma$ level ($\chi^2_r=0.122$;
-full analysis in Paper~2 \citep{SSEE_paperII}).
+Against all $\val{clz_rgimf_N}$ systems of the cluster compilation of \citet{Zhang2026}
+(their Tables~II and~III, without selection), Eq.~\eqref{eq:mdyn} reproduces the
+Newtonian dynamical masses at $\val{clz_rgig_sig}\sigma$ when the baryons include the
+stellar remnants of a variable initial mass function (IGIMF; \citealt{Kroupa2003}),
+and fails ($\val{clz_rgimf_sig}\sigma$) with the canonical IMF. \LCDM\ run through the identical
+comparison gives $\val{clz_lcig_sig}\sigma$ and $\val{clz_lcimf_sig}\sigma$: the two backgrounds differ in
+$M_{\rm dyn}/M_{\rm bar}$ by under one per cent, so clusters test the baryon census and
+the matter-to-baryon ratio, not the background (full analysis in Paper~2,
+\citealt{SSEE_paperII}).
+%
+% 2026-10-01: esta seccion usaba M_dyn = M_bar KAL0 (1+f_nu), «sin materia oscura fria», con
+% 4 cumulos atribuidos a Zhang+2026 que no estan en sus tablas (Coma, Bullet) o con otros
+% numeros (A2029, A478). Era la lectura de gravedad modificada (limite tipo MOND de Paper 8),
+% que A1689 excluye. Retirada; f_nu calculado como se declaraba da <2e-6 (fnu_tremaine_gunn.json).
 
 \subsection{Gravitational Lensing and the Newtonian Limit}
 \label{sec:lensing}
@@ -743,8 +709,8 @@ convergence $\kappa(\vec{\theta})$ from the $\mathrm{KAL}(x)$-weighted surface d
 --- has \emph{not} been carried out and is an explicit open problem
 (OP-15 in \texttt{OPEN\_PROBLEMS.md}). This open item concerns the spatial
 \emph{distribution} of the effective lensing mass in a merging cluster; it is distinct
-from the cluster mass \emph{magnitude} of §\ref{sec:clusters}, which is reproduced
-(Table~\ref{tab:clusters}), and from the lensing amplitude of Paper~8.
+from the cluster mass \emph{magnitude} of §\ref{sec:clusters}, and from the lensing
+amplitude of Paper~8.
 
 The structural retention acts as an environment-dependent scalar field. Defining
 $x = |\nabla\Phi|/a_0$, \SSEE\ adopts an interpolation function analogous to the
@@ -1494,11 +1460,6 @@ On the proof of dark matter, the law of gravity, and the mass of neutrinos.
 Clowe, D., et al.\ (2006).
 A direct empirical proof of the existence of dark matter.
 \textit{ApJL} \textbf{648}, L109.
-
-\bibitem[Tremaine \& Gunn(1979)]{Tremaine1979}
-Tremaine, S., \& Gunn, J.~E.\ (1979).
-Dynamical role of light neutral leptons in cosmology.
-\textit{Phys.\ Rev.\ Lett.} \textbf{42}, 407.
 
 \bibitem[Zhang et al.(2026)]{Zhang2026}
 Zhang, D., Zonoozi, A.~H., \& Kroupa, P.\ (2026).

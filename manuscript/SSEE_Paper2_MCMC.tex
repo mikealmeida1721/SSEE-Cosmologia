@@ -64,9 +64,8 @@ using DESI~DR2, Planck~2018, and Galaxy-Cluster Mass Data}
 We present a Bayesian validation of the dynamical sector of the
 Structural Self-Energy Expansion (\SSEE) framework
 \citep{SSEE_paperI} against DESI~DR2 baryon acoustic oscillation data
-\citep{DESI_DR2}, a compressed Planck~2018 prior \citep{Planck2018}, and
-galaxy-cluster dynamical masses derived under a variable IGIMF baryonic
-baseline \citep{Zhang2026}. Using geometric constants fixed algebraically
+\citep{DESI_DR2} and a compressed Planck~2018 prior \citep{Planck2018}, with
+galaxy-cluster dynamical masses \citep{Zhang2026} as a separate consistency test. Using geometric constants fixed algebraically
 by $\pi$ and the golden ratio $\varphi$ — with $H_0$ and $\Omega_b h^2$ as the only
 sampled parameters — we compare the model against \LCDM\ and a free CPL
 parameterisation via posterior constraints, information criteria, and
@@ -84,8 +83,11 @@ The $H_0$ posterior is $\HZeroPosterior$~km\,s$^{-1}$\,Mpc$^{-1}$,
 obtained with the global rate of the screening cascade as the $H_0$ prior
 ($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
 $0.33\sigma$ from that prediction.
-The cluster-mass sector achieves $\chi^2_r=\val{p2_clIV_chi2r_ssee}$ in the primary four-cluster sample
-(analytic forward-model), with the IGIMF correction as the essential ingredient.
+Against all $\val{clz_rgimf_N}$ cluster dynamical masses of \citet{Zhang2026}, the
+\SSEE\ matter content in general relativity, $M_{\rm dyn}=(\omega_m/\omega_b)\,M_{\rm bar}$
+with no free parameter, is consistent at $\val{clz_rgig_sig}\sigma$ with the IGIMF
+baryon baseline --- as is \LCDM\ ($\val{clz_lcig_sig}\sigma$): clusters test the matter
+content but do not discriminate between the two backgrounds.
 With $(w_0,w_a)$ fixed algebraically and one free parameter $H_0$, SSEE is
 favoured by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and $\val{p2_dBIC_cpl}$ over CPL, and
 predicts the DESI~DR2 test set better in leave-one-out cross-validation ---
@@ -151,7 +153,8 @@ full Bayesian MCMC evaluation with four aims:
 \begin{enumerate}
   \item Quantify whether \SSEE\ remains competitive under formal
     Bayesian inference against \LCDM\ and free CPL alternatives.
-  \item Identify which physical ingredients reproduce cluster masses.
+  \item Test, symmetrically against \LCDM, whether galaxy-cluster dynamical
+    masses are consistent with the \SSEE\ matter content.
   \item Document why the naive $\OmDE^{\SSEE}\approx0.840$ vs
     $\Omega_\Lambda\approx0.685$ comparison is a category error
     ($s_{\rm DE}$ vs.\ density fraction) and localise its origin in the
@@ -230,11 +233,28 @@ densities (see \S\ref{sec:folding}).
 
 \subsection{Cluster mass formula}
 
+\SSEE\ does not modify gravity: its effective-field-theory functions are
+$\alpha_T=\alpha_M=\alpha_B=0$ (Paper~7), so gravitational waves travel at the
+speed of light and the effective gravitational coupling is Newton's ($\mu=1$,
+Paper~8). A virialised cluster therefore weighs its whole matter content, as in
+\LCDM, and the dynamical mass follows from the baryonic one by the cosmic
+matter-to-baryon ratio of the model:
 \begin{equation}
-  \Mssee(R) = \Migimf(R)\cdot\KALz\cdot(1+f_\nu),\quad
-  f_\nu\approx0.020.
+  \Mssee = \frac{\omega_m}{\omega_b}\,M_{\rm bar}
+  = \Bigl(1+\mathrm{KAL_0}\,n_s+\frac{\omega_\nu}{\omega_b}\Bigr)M_{\rm bar}
+  = (1+\val{clz_cdm}+\val{clz_nu})\,M_{\rm bar}=\val{clz_K_rg}\,M_{\rm bar},
   \label{eq:Mcluster}
 \end{equation}
+where the second form uses the forward identity $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$
+(Paper~1). There is no free parameter. The \LCDM\ control uses its own ratio,
+$\Omega_m/\Omega_b=\val{clz_K_lcdm}$ from Planck~2018.
+An earlier version of this analysis used
+$M=M_{\rm bar}\,\mathrm{KAL_0}\,(1+f_\nu)$ with $f_\nu=0.020$; that form belonged
+to a modified-gravity reading of the framework (the ``MOND-like'' limit of
+Paper~8, which the cluster lens A1689 excludes) and is withdrawn, together with
+$f_\nu$: computed as the paper declared it --- relic neutrinos bound to a cluster
+--- that fraction is below $10^{-5}$.%
+% ORIGEN: f_nu <= 2e-6 (techo Tremaine-Gunn), results/logs/fnu_tremaine_gunn.json
 
 \subsection{The sound horizon under the $\omega_m$-direct reframe}
 \label{sec:folding}
@@ -269,16 +289,8 @@ direct CMB fit of Paper~3 (canonical $\Delta\mathrm{BIC}=-32.9$ full \texttt{pli
 MCMC; $-26.03$ \texttt{plik\_lite} TTTEEE+low-$\ell$ point estimate): if that fit had yielded $\chi^2_r\gg1$ or excluded
 $r_d^{\,\omega_m\text{-direct}}$, the construction would be falsified.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.80\textwidth]{fig4_KAL_interpolation.pdf}
-  \caption{$\kal(x)$ interpolation between the Newtonian limit ($x\gg1$)
-  and the MONDian limit ($x\ll1$). The fixed point $\KALz\approx5.521$
-  marks the structural retention at $x=0$, which enters both the cluster
-  mass formula~\eqref{eq:Mcluster} and the acoustic-scale mapping
-  hypothesis~\eqref{eq:rd_mapping} (Section~\ref{sec:folding}).}
-  \label{fig:kal_interp}
-\end{figure}
+%% 2026-10-01: retirada la figura de la interpolacion KAL(x) Newton-MOND (fig4_KAL_interpolation):
+%% describia la lectura de gravedad modificada que el modelo vigente (alpha_T=alpha_M=alpha_B=0) no usa.
 
 \section{Datasets and Likelihoods}
 \label{sec:data}
@@ -384,70 +396,25 @@ uses the total density and is unaffected.
 
 \subsection{Galaxy-cluster masses}
 
-The primary dataset for the MCMC consists of four massive clusters
-with IGIMF-corrected baryonic baselines from \citet{Zhang2026}:
-Coma, A2029, A478, and the Bullet cluster.
-\citet{Zhang2026} apply the integrated galaxy stellar initial mass
-function (IGIMF) correction to re-derive the stellar-plus-gas baryon
-masses within $R_{500}$; this correction increases the
-standard-IMF baryon mass by a factor of $\approx1.71$ for clusters in
-the mass range $M_{500}\sim6$--$12\times10^{14}\,M_\odot$.
+We use every system in Tables~II and~III of \citet{Zhang2026}:
+$\val{clz_nII}$ WINGS clusters (with NGC\,5044) and $\val{clz_nIII}$ 2MASS clusters,
+without selection. For each, the tables give the Newtonian dynamical mass
+within the virial radius, $M_{\rm N,dyn}$, and the total baryonic mass under
+two stellar initial mass functions: the canonical IMF and the integrated
+galaxy-wide IMF (IGIMF), whose additional stellar remnants raise the baryonic
+budget. Each predicted mass is compared with $M_{\rm N,dyn}$, with the
+uncertainties of both masses added in quadrature (using the side of each
+asymmetric error bar that faces the prediction, and a floor equal to the
+rounding of the tables).
 
-For a qualitative consistency check, we extend the analytic forward-model
-to three additional clusters: Perseus \citep{Simionescu2011},
-A2142 \citep{Tchernin2016}, and A2744 \citep{Merten2011,Owers2011}.
-For these clusters an independent IGIMF re-analysis is not available;
-we therefore estimate $M_{\rm bar}^{\rm IGIMF} = f_b \times M_{200}$
-using the mean baryon fraction $f_b=\val{p2_cl_fb}$ of the Zhang~2026 primary sample.
-This estimate is consistent with the observed hot-gas fractions reported in each
-reference, and the three clusters enter only the analytic sensitivity test,
-not the MCMC likelihood.
-Table~\ref{tab:cluster_data} lists the observational inputs for all seven clusters.
-
-\begin{table}[H]
-\centering
-\caption{Observational inputs for the seven-cluster sample
-($10^{14}\,M_\odot$, within $R_{200}$).
-$M_{\rm bar}^{\rm IGIMF}$: IGIMF-corrected baryonic baseline.
-$M_{\rm obs}$: total observed mass within $R_{200}$.
-First four from \citet{Zhang2026} (independent IGIMF re-analysis).
-For the three additional clusters, $M_{\rm bar}^{\rm IGIMF}$ is estimated
-as $f_b \times M_{200}$ with $f_b=\val{p2_cl_fb}$ (mean of Zhang~2026 primary sample);
-this is a qualitative consistency check, not an independent IGIMF test.}
-\label{tab:cluster_data}
-\small
-\begin{tabular}{llrrr}
-\toprule
-Cluster & Reference & $M_{\rm bar}^{\rm IGIMF}$ & $M_{\rm obs}$ & $\sigma_{M_{\rm obs}}$ \\
-\midrule
-Coma          & \citet{Zhang2026}      & 1.80 & 9.8  & 1.0 \\
-A2029         & \citet{Zhang2026}      & 2.20 & 12.0 & 1.2 \\
-A478          & \citet{Zhang2026}      & 1.50 & 8.0  & 1.0 \\
-Bullet (main) & \citet{Zhang2026}      & 1.20 & 6.5  & 1.0 \\
-Perseus       & \citet{Simionescu2011} & \val{p2_cl_perseus_migimf} & 6.65 & 0.45 \\
-A2142         & \citet{Tchernin2016}   & \val{p2_cl_aMMCXLII_migimf} & 14.5 & 1.5  \\
-A2744         & \citet{Merten2011}     & \val{p2_cl_aMMDCCXLIV_migimf} & 18.0 & 4.0  \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textit{Note on the Bullet Cluster.}
-The Bullet Cluster (1E\,0657$-$558) is included via the
-\citet{Zhang2026} IGIMF-corrected baryonic and total mass within $R_{200}$.
-The SSEE comparison is a \emph{projected total-mass} consistency check;
-it does not constitute a fit to the lensing convergence profile $\kappa(\theta)$,
-which would require weak-lensing maps (e.g., \citealt{Clowe2006}) and
-is beyond the scope of this paper.
-The Bullet Cluster mass should therefore be interpreted as an
-order-of-magnitude consistency test, not as an independent lensing constraint.
-
-The \SSEE\ prediction for each cluster is
-$M_{\rm SSEE}=M_{\rm bar}^{\rm IGIMF}\times\KALz\times(1+f_\nu)$,
-where $\KALz\approx5.521$ is the algebraic Structural Retention constant
-and $f_\nu=0.020$ is the cosmological neutrino mass fraction.
-Only the four Zhang~2026 clusters enter the MCMC likelihood;
-the full seven-cluster set is used solely for the analytic
-sensitivity test of Table~\ref{tab:cluster_sensitivity}.
+The cluster test is \emph{not} part of the MCMC likelihood. Neither model has a
+free parameter in it, so it cannot move any posterior; it is reported
+separately, in \S\ref{sec:results_clusters}, with \LCDM\ run through the
+identical comparison.%
+% 2026-10-01: la version anterior usaba Coma, A2029, A478 y el Bullet atribuidos a
+% Zhang+2026; Coma y el Bullet no estan en sus tablas y A2029/A478 tenian otros
+% numeros. Esa muestra y la de extension (masa barionica = f_b*M_obs, circular)
+% quedan retiradas. Fuente unica: data/raw/zhang2026/tablas_II_III.tex (con sha).
 
 \section{Bayesian Framework and Priors}
 \label{sec:bayes}
@@ -885,71 +852,45 @@ $z$ & $H(z)$ [km\,s$^{-1}$\,Mpc$^{-1}$] & $\sigma_H$ \\
 \section{Results: Galaxy-Cluster Sector}
 \label{sec:results_clusters}
 
-\noindent\textbf{Summary:} IGIMF correction is essential; neutrino bridge is secondary; $\KALz$ alone is insufficient.
+\noindent\textbf{Summary:} with the baryon baseline that includes stellar
+remnants (IGIMF), the \SSEE\ matter content reproduces cluster dynamical masses
+without free parameters, and so does \LCDM; with the canonical IMF both fail.
+Clusters constrain the baryonic census, not the background.
 
 \begin{table}[H]
 \centering
-\caption{Cluster mass sensitivity ($10^{14}\,M_\odot$, within $R_{200}$).
-First four clusters from \citet{Zhang2026}; Perseus from \citet{Simionescu2011};
-A2142 from \citet{Tchernin2016}; A2744 from \citet{Merten2011}.}
+\caption{Cluster dynamical masses against all $\val{clz_rgimf_N}$ systems of
+\citet{Zhang2026}. $K=M_{\rm dyn}/M_{\rm bar}$ is fixed by each model's matter-to-baryon
+ratio; no parameter is fitted. ``Distance'' converts the $\chi^2$ probability for
+$N$ points into Gaussian standard deviations.}
 \label{tab:cluster_sensitivity}
 \small
-\begin{tabular}{lrrrrrc}
+\begin{tabular}{llccccc}
 \toprule
-Cluster & SSEE & $f_\nu{=}0$ & Std IMF & $\KALz$ only & $\Mobs$ & $\chi^2$ \\
+Model & Baryons & $K$ & $\chi^2/N$ & Distance & median pred/obs & $|{\rm pull}|>3$ \\
 \midrule
-Coma          & \val{p2_cl_coma_ssee} & \val{p2_cl_coma_fnu0} & \val{p2_cl_coma_std_imf} & \val{p2_cl_coma_kal0_solo} & $9.8\pm1.0$ & \val{p2_cl_coma_chi2_ssee} \\
-A2029         & \val{p2_cl_aIIXXIX_ssee} & \val{p2_cl_aIIXXIX_fnu0} & \val{p2_cl_aIIXXIX_std_imf} & \val{p2_cl_aIIXXIX_kal0_solo} & $12.0\pm1.2$ & \val{p2_cl_aIIXXIX_chi2_ssee} \\
-A478          & \val{p2_cl_aCDLXXVIII_ssee} & \val{p2_cl_aCDLXXVIII_fnu0} & \val{p2_cl_aCDLXXVIII_std_imf} & \val{p2_cl_aCDLXXVIII_kal0_solo} & $8.0\pm1.0$ & \val{p2_cl_aCDLXXVIII_chi2_ssee} \\
-Bullet (main) & \val{p2_cl_bullet_ssee} & \val{p2_cl_bullet_fnu0} & \val{p2_cl_bullet_std_imf} & \val{p2_cl_bullet_kal0_solo} & $6.5\pm1.0$ & \val{p2_cl_bullet_chi2_ssee} \\
-Perseus       & \val{p2_cl_perseus_ssee} & \val{p2_cl_perseus_fnu0} & \val{p2_cl_perseus_std_imf} & \val{p2_cl_perseus_kal0_solo} & $6.65\pm0.45$ & \val{p2_cl_perseus_chi2_ssee} \\
-A2142         & \val{p2_cl_aMMCXLII_ssee} & \val{p2_cl_aMMCXLII_fnu0} & \val{p2_cl_aMMCXLII_std_imf} & \val{p2_cl_aMMCXLII_kal0_solo} & $14.5\pm1.5$ & \val{p2_cl_aMMCXLII_chi2_ssee} \\
-A2744         & \val{p2_cl_aMMDCCXLIV_ssee} & \val{p2_cl_aMMDCCXLIV_fnu0} & \val{p2_cl_aMMDCCXLIV_std_imf} & \val{p2_cl_aMMDCCXLIV_kal0_solo} & $18.0\pm4.0$ & \val{p2_cl_aMMDCCXLIV_chi2_ssee} \\
-\midrule
-\multicolumn{7}{l}{$\chi^2_r$: SSEE\,$=\val{p2_clVII_chi2r_ssee}$ \;|\; $f_\nu{=}0$:\,$\val{p2_clVII_chi2r_fnu0}$ \;|\;
-  Std IMF:\,$\val{p2_clVII_chi2r_std}$ \;|\; $\KALz$ only:\,$\val{p2_clVII_chi2r_kal}$} \\
-\multicolumn{7}{l}{$\Delta\chi^2$ vs SSEE: $\val{p2_clVII_dchi2_fnu0}$ \;|\; $\val{p2_clVII_dchi2_std}$ \;|\; $\val{p2_clVII_dchi2_kal}$} \\
-\multicolumn{7}{l}{\textit{Uncertainty sensitivity}: halving $\sigma_{M_{\rm obs}}$ to 50\%
-  raises $\chi^2_r(\mathrm{SSEE})$ to $\val{p2_clVII_s0p5} < 1$; the fit remains good.} \\
+\SSEE\ & IGIMF & $\val{clz_rgig_K}$ & $\val{clz_rgig_chi2}/\val{clz_rgig_N}$ & $\val{clz_rgig_sig}\sigma$ & $\val{clz_rgig_razon}$ & $\val{clz_rgig_p3}$ \\
+\LCDM\ & IGIMF & $\val{clz_lcig_K}$ & $\val{clz_lcig_chi2}/\val{clz_lcig_N}$ & $\val{clz_lcig_sig}\sigma$ & $\val{clz_lcig_razon}$ & $\val{clz_lcig_p3}$ \\
+\SSEE\ & IMF & $\val{clz_rgimf_K}$ & $\val{clz_rgimf_chi2}/\val{clz_rgimf_N}$ & $\val{clz_rgimf_sig}\sigma$ & $\val{clz_rgimf_razon}$ & $\val{clz_rgimf_p3}$ \\
+\LCDM\ & IMF & $\val{clz_lcimf_K}$ & $\val{clz_lcimf_chi2}/\val{clz_lcimf_N}$ & $\val{clz_lcimf_sig}\sigma$ & $\val{clz_lcimf_razon}$ & $\val{clz_lcimf_p3}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{IGIMF is essential.}
-Without the IGIMF correction $\Delta\chi^2\approx\val{p2_clVII_dchi2_std_r}$ across seven clusters;
-\SSEE\ under-predicts masses by $\sim\val{p2_clVII_subpred}\times$.
+\paragraph{The baryon census decides, not the background.}
+The two backgrounds differ in $K$ by less than one per cent, so they give almost
+the same answer on every row. What separates an acceptable fit from an excluded
+one is the stellar initial mass function: with the canonical IMF the predicted
+masses fall short by about a fifth (median ratio $\val{clz_rgimf_razon}$), with the
+IGIMF they bracket the data. This is a statement about how many stellar remnants
+clusters hold, and we inherit its systematic uncertainty from \citet{Zhang2026}.
 
-\paragraph{Neutrino bridge.}
-$f_\nu=0$ lowers $\chi^2_r$ to $\val{p2_clVII_chi2r_fnu0}$: the seven $R_{200}$ clusters
-do not require the neutrino bridge, but it maintains self-consistency
-with the cosmological $\sum m_\nu^{\rm active}=0.0685$\,eV.
-
-\paragraph{$\KALz$ alone insufficient.}
-$\chi^2_r=\val{p2_clVII_chi2r_kal}$ without IGIMF. Geometric amplification requires
-the corrected baryonic baseline.
-
-\paragraph{Robustness to observational uncertainties.}
-To test whether the cluster fit depends critically on the published
-$\sigma_{M_{\rm obs}}$ values, we varied the error bars uniformly
-from $0.5\times$ to $1.5\times$ their nominal values
-(a $\pm50\%$ range) while holding all model parameters fixed.
-With the four-cluster analytic subset, the nominal $\chi^2_r=\val{p2_clIV_chi2r_ssee}$
-(all residuals $<0.5\sigma$); $\chi^2_r$ reaches $1.0$ only when
-errors are reduced by $\val{p2_clIV_pct1}\%$, and reaches $2.0$ only at $-\val{p2_clIV_pct2}\%$
-(well beyond the test range).
-For the full 7-cluster analytic set ($(\chi^2_r)_{\rm nom}=\val{p2_clVII_chi2r_ssee}$),
-the scaling behaviour is similar: the fit quality is not sensitive
-to moderate changes in the assumed observational uncertainties.
-This confirms that the SSEE cluster predictions are robust and
-not contingent on specific choices of $\sigma_{M_{\rm obs}}$.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.84\textwidth]{fig2_cluster_sensitivity.pdf}
-  \caption{Cluster mass predictions by scenario for seven clusters. IGIMF correction
-  is the load-bearing ingredient ($\Delta\chi^2\approx\val{p2_clVII_dchi2_std_r}$ without it).}
-  \label{fig:cluster_sens}
-\end{figure}
+\paragraph{What the test does establish.}
+The \SSEE\ cold dark matter density is not fitted: it is the algebraic identity
+$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, already consistent with Planck (Paper~1) and
+with the BOSS galaxy clustering (Paper~6). Virialised clusters confirm, at a
+third and independent scale, that the matter-to-baryon ratio it implies is the
+one structures actually carry.
 
 \section{Model Comparison}
 \label{sec:model_comparison}
@@ -1017,32 +958,9 @@ $<0.3\sigma$. The BAO data dominate the $H_0$ constraint.
 \textit{This confirms that the quoted posteriors are driven by the BAO
 geometry rather than the CMB prior, making them robust to prior choice.}
 
-\paragraph{Neutrino mass.}
-Varying $\sum m_\nu\in[0.060,0.120]$\,eV shifts $\chi^2_r$ for
-clusters by $\Delta\chi^2_r<0.05$. The cluster fit is insensitive
-to the specific neutrino mass.
-\textit{The cluster constraint is therefore stable against current
-neutrino-mass uncertainties. The adopted $\sum m_\nu^{\rm active}=0.0685$\,eV
-is the SSEE-derived value (Paper~4, Neutrino Mass Sum), not a fitted
-quantity.}%
-% 2026-09-07: se retira de aqui la referencia a la relacion de masa del
-% phi-DM, m_phi = Sum m_nu x (SOLAR^2 . KRYSTOS_V). No se retira por los
-% nombres --- SOLAR = beta + KAL_0 y KRYSTOS_V = phi + pi + Omega siguen
-% siendo entidades algebraicas vigentes del registro (Paper 1) --- sino
-% porque la PARTICULA fue retirada el 2026-08-01 (Registro linea 128:
-% "historico, no citar"): su densidad salia de restar Omega_m,CMB menos
-% 0.160, y ese 0.160 es 1+w_0, un numero de la ecuacion de estado, no una
-% densidad. Lo que la frase afirma de Sum m_nu (derivado, no ajustado)
-% sigue siendo cierto y se conserva.
-
-\paragraph{IGIMF systematics.}
-The $^{+5}_{-4}\%$ systematic uncertainty in the IGIMF factor
-\citep{Zhang2026} propagates to $\sim8\%$ in $\sigma_M$, keeping
-all four clusters within $1\sigma$.
-\textit{IGIMF systematics are the dominant uncertainty in the cluster
-sector; improvement here would be the highest-leverage target for
-future work.}
-
+%% 2026-10-01: retirado el parrafo «Neutrino mass» de cumulos: su numero no tenia log y
+%% describia la formula con f_nu, retirada. Los neutrinos entran ahora en omega_m/omega_b
+%% (su aporte es omega_nu/omega_b, eq. Mcluster).
 \paragraph{BAO-only.}
 Running without any $H_0$ prior (DESI~DR2 with only a BBN prior on
 $\omega_b$; \S\ref{sec:results_cosmo}) gives
@@ -1150,16 +1068,18 @@ would constitute decisive falsification:
 \label{sec:conclusions}
 
 We have conducted a Bayesian MCMC validation of \SSEE against
-DESI~DR2, Planck~2018, and galaxy-cluster masses.
+DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency test.
 
 \begin{enumerate}
   \item The zero-free-parameter prediction $(\wz,\wa)=(-0.840,-0.670)$
     lies within $0.24\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior
     (Pantheon+; $1.46$--$1.76\sigma$ across the other official combinations).
 
-  \item Cluster masses achieve $\chi^2_r=\val{p2_clVII_chi2r_ssee}$ with IGIMF; removing
-    the IGIMF correction raises $\chi^2_r$ to $\val{p2_clVII_chi2r_std}$
-    ($\Delta\chi^2\approx\val{p2_clVII_dchi2_std_r}$), confirming its essential role.
+  \item Against all $\val{clz_rgimf_N}$ cluster dynamical masses of \citet{Zhang2026}, the
+    \SSEE\ matter content in general relativity is consistent at $\val{clz_rgig_sig}\sigma$
+    with the IGIMF baryon baseline, as is \LCDM\ ($\val{clz_lcig_sig}\sigma$); with the
+    canonical IMF both are excluded. Clusters test the baryon census and the
+    matter-to-baryon ratio, not the background.
 
   \item With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background,
     the \SSEE\ sound horizon matches \LCDM\ ($r_d=147.17$ vs $147.10$\,Mpc, CAMB) and \SSEE\ is
@@ -1416,31 +1336,6 @@ Almeida Vallejo, M.~E.\ (2026).
 Zenodo. \url{https://doi.org/10.5281/zenodo.20684908}
 Closed algebraic constant dictionary; parameter-free postdiction, no claim of
 temporal priority over public data.
-
-\bibitem[Clowe et al.(2006)]{Clowe2006}
-Clowe, D., et al.\ (2006).
-A direct empirical proof of the existence of dark matter.
-\textit{ApJL} \textbf{648}, L109.
-
-\bibitem[Simionescu et al.(2011)]{Simionescu2011}
-Simionescu, A., et al.\ (2011).
-Baryons at the Edge of the X-ray-brightest Galaxy Cluster.
-\textit{Science} \textbf{331}, 1576.
-
-\bibitem[Tchernin et al.(2016)]{Tchernin2016}
-Tchernin, C., et al.\ (2016).
-An exploration of the X-ray and SZ properties of galaxy clusters in the 0.1--0.4 redshift range.
-\textit{A\&A} \textbf{595}, A42.
-
-\bibitem[Merten et al.(2011)]{Merten2011}
-Merten, J., et al.\ (2011).
-Creation of cosmic structure in the complex galaxy cluster merger Abell~2744.
-\textit{MNRAS} \textbf{417}, 333.
-
-\bibitem[Owers et al.(2011)]{Owers2011}
-Owers, M.~S., et al.\ (2011).
-The Dissection of Abell 2744: A Rich Cluster Growing Through Major and Minor Mergers.
-\textit{ApJ} \textbf{728}, 27.
 
 \bibitem[Spiegelhalter et al.(2002)]{Spiegelhalter2002}
 Spiegelhalter, D.~J., Best, N.~G., Carlin, B.~P., \& van der Linde, A.\ (2002).
