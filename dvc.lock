@@ -83,11 +83,11 @@ stages:
       size: 10900
     - path: results/logs/class_picos.json
       hash: md5
-      md5: 833cd321d2fcc6111c6ad9f9052af990
+      md5: d83e1992028bea800c841e0479c6d099
       size: 1875
     - path: results/logs/cumulos_7.json
       hash: md5
-      md5: be2a1998e045c84c3e6443e95c4f8de7
+      md5: 57f3431046f1a424f0945c40d7497bfc
       size: 4826
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
@@ -111,11 +111,11 @@ stages:
       size: 7815
     - path: results/logs/hmcode_bariones.json
       hash: md5
-      md5: 60307f8b60ebd747cf9bf991aaca7021
-      size: 1600
+      md5: 2ed5244d861d5ea0194df051a5caeff3
+      size: 1599
     - path: results/logs/kids_legacy_bic.json
       hash: md5
-      md5: 0481b4f9324f6f413d1aa09ce9a76f37
+      md5: 4a679c16f0138a04575279d23bbab3de
       size: 3419
     - path: results/logs/kids_publicados.json
       hash: md5
@@ -123,7 +123,7 @@ stages:
       size: 2372
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 42f5b0b71a5f1103e96fa91269602d5c
+      md5: a477034fa06e33d33d9ecb7811def962
       size: 6064
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
@@ -139,7 +139,7 @@ stages:
       size: 3444
     - path: results/logs/paper2_w0wa.json
       hash: md5
-      md5: 65f97881b99514d0ca4814526ad83806
+      md5: 46714dc2bee740037010df3cf89bf560
       size: 1376
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
@@ -147,7 +147,7 @@ stages:
       size: 2381
     - path: results/logs/press_schechter.json
       hash: md5
-      md5: f744d36e34a89466365c2498ced4cbd8
+      md5: ee91c48f06ed35ea541845424a768d49
       size: 2073
     - path: results/logs/resumen_3modelos.json
       hash: md5
@@ -172,7 +172,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: da0aa93b6d2ca168212c4893d568393f
+      md5: 94c03f7b39204e8169fe75d90be75177
       size: 57015
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
