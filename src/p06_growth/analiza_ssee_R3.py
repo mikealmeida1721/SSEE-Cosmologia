@@ -21,7 +21,7 @@ ademas de CAMB en el fondo, que cambio de H0_ALG a H0_GLOBAL el 09-28 (4e-6),
 asi que se les pide 1e-4 relativo. Si algo no pasa, se escribe igual el log
 pero con `control.pasa = false` y se dice.
 
-Salida: results/logs/growth_2026-07/R3_ssee_kids_S8.json (misma estructura).
+Salida: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json (misma estructura que el viejo).
 """
 import glob
 import json
@@ -39,12 +39,15 @@ import kids_shear as K  # noqa: E402
 from procedencia import con_acta  # noqa: E402
 
 CAD = "/mnt/datos/SSEE_data/chains_p6/kids"
-OUT = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8.json")
+VIEJO = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8.json")
+# Mientras Mike decide (2026-09-30): el viejo NO se reproduce (ver control), asi
+# que la lectura rehecha va a un archivo aparte y el paper sigue citando el viejo.
+OUT = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8_rehecho.json")
 BURN = 0.30
 N_DATOS = 225   # ORIGEN-VALOR: 225 — puntos xi+- de KiDS-1000 tras la mascara de escalas (el log viejo, campo "datos")
 AS_REF = 2.1e-9  # ORIGEN-VALOR: 2.1e-9 — A_s de referencia de la calibracion sqrt(A_s), el que declara el log viejo
 
-viejo = json.load(open(OUT))
+viejo = json.load(open(VIEJO))
 rutas = sorted(glob.glob(f"{CAD}/ssee.[1-4].txt"))
 with open(rutas[0]) as f:
     col = f.readline().lstrip("#").split()
@@ -102,7 +105,7 @@ if viejo["lineas_por_cadena"] != lineas:
 nuevo["control_contra_log_viejo"] = dict(pasa=not fallos, fallos=fallos,
                                          tolerancias=dict(cadena=tol_cadena, camb=tol_camb))
 nuevo["fecha_analisis"] = str(__import__("datetime").datetime.now().isoformat(timespec="seconds"))
-json.dump(con_acta(nuevo, __file__, entradas=rutas), open(OUT, "w"), indent=1)
+json.dump(con_acta(nuevo, __file__, entradas=rutas + [VIEJO]), open(OUT, "w"), indent=1)
 print(f"  S8 {nuevo['S8']['media']:.4f} ± {nuevo['S8']['sigma']:.4f}  sigma8 {nuevo['sigma8']['media']:.4f}"
       f"  chi2_min {nuevo['chi2_min']:.5f}  N_eff {nuevo['n_efectivas']:.0f}")
 print(f"  control contra el log viejo: {'PASA' if not fallos else 'NO PASA'}")
