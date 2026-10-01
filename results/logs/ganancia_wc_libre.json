@@ -3,14 +3,14 @@
  "modelos": {
   "SSEE": {
    "chi2_como_es": 73.413456,
-   "chi2_wc_libre": 72.23619163867761,
-   "ganancia": 1.1772643613223863,
+   "chi2_wc_libre": 72.23619163872235,
+   "ganancia": 1.1772643612776506,
    "control_min_libre_multisonda": 73.413
   },
   "LCDM": {
    "chi2_como_es": 73.677763,
-   "chi2_wc_libre": 68.8001555453603,
-   "ganancia": 4.877607454639701,
+   "chi2_wc_libre": 68.80015554536166,
+   "ganancia": 4.877607454638337,
    "control_min_libre_multisonda": 73.678
   }
  },
@@ -19,7 +19,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "3f0de334f62da0725b4554edd5e32592b4e0f2c4",
+  "commit": "2246eea898e77ef404fe9a899e36a9a7c78e2a68",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/ganancia_wc_libre.py",
@@ -30,18 +30,18 @@
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
-   "results/logs/perfil_wc_boss.json": "2072c6980e8f71c29a309de073c81a54cde05cb1d895b1b23a6bb1bad9b4d7b6",
+   "results/logs/perfil_wc_boss.json": "93cc450a10693c81ee565cbe571d9205a30c7a3bf4120e109f1949e65678e45b",
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt": "fe26a3506e693d18cf6604843bcdc477d33c33f8ab5d61d4afb21056dec58275",
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt": "4ce61f10dc45fbd2262601e36bb174aa967bc2c02b5378800d7012a7dad8e094",
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef",
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157",
-   "results/logs/perfil_wc_boss_lcdm.json": "e9911845ca545a9da1cf18449ffa94a28d73f3a81cf01bd8b32c39a65dd99283",
+   "results/logs/perfil_wc_boss_lcdm.json": "44af7ac266ab585a79e3b8d1d6102a7cf9842f5814e098d1604ad2341dfe07b8",
    "results/logs/multisonda_fondo_clavado.log": "d0e658d3dd36ea110a642f537377939d1b4b59adfe669f5a66c31ac37cf2e049"
   },
   "argv": [
    "src/p06_growth/ganancia_wc_libre.py"
   ],
-  "fecha": "2026-10-01T13:50:59",
+  "fecha": "2026-10-01T15:00:41",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

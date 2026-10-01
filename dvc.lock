@@ -965,8 +965,8 @@ stages:
       size: 1547
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 250f26b69524ae6490331d32040f4156
-      size: 4424
+      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
+      size: 4421
     - path: src/p06_growth/boss_lpt_R1R2.py
       hash: md5
       md5: 74a053a1b6cee380a21210864b74e19b
@@ -986,11 +986,11 @@ stages:
     outs:
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: a5f8f038ed22b8c879eacba3f8ecd6fc
+      md5: fe57de8653a0ed64fd1a9f67f900231e
       size: 4018
     - path: results/logs/perfil_wc_boss.log
       hash: md5
-      md5: bb6a8b7ec80eeda8299c16d2d46696da
+      md5: 2d215b43b9ad8fa9de35ae8391d5cf09
       size: 6894
   perfil_wc_boss_lcdm:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1003,8 +1003,8 @@ stages:
       size: 1409
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 250f26b69524ae6490331d32040f4156
-      size: 4424
+      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
+      size: 4421
     - path: src/p06_growth/boss_lpt_R1R2.py
       hash: md5
       md5: 74a053a1b6cee380a21210864b74e19b
@@ -1024,11 +1024,11 @@ stages:
     outs:
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: 3e35286b680f103641dda307954ee1d3
-      size: 4019
+      md5: 6170b02ac6f99d6998ecfccaad20d177
+      size: 4020
     - path: results/logs/perfil_wc_boss_lcdm.log
       hash: md5
-      md5: 4be356ad4e29d45b8241cdea2cacb374
+      md5: 0e0da2b1a5553510837c88f7fba33718
       size: 6946
   ganancia_wc_libre:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1040,12 +1040,12 @@ stages:
       size: 10546
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: a5f8f038ed22b8c879eacba3f8ecd6fc
+      md5: fe57de8653a0ed64fd1a9f67f900231e
       size: 4018
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: 3e35286b680f103641dda307954ee1d3
-      size: 4019
+      md5: 6170b02ac6f99d6998ecfccaad20d177
+      size: 4020
     - path: src/p06_growth/ganancia_wc_libre.py
       hash: md5
       md5: cc7eae17b8cd54403eca2fdaa50981ff
@@ -1057,8 +1057,8 @@ stages:
     outs:
     - path: results/logs/ganancia_wc_libre.json
       hash: md5
-      md5: 46b812f3c1fe00a39fac1ddc189fb194
-      size: 2486
+      md5: ff07d32e731b48970bf9cc44d76389f6
+      size: 2487
   s8_kids_legacy_camb:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/s8_kids_legacy_camb.py
@@ -1235,8 +1235,8 @@ stages:
       size: 21274
     - path: src/p06_growth/cobaya_boss.py
       hash: md5
-      md5: a39f652e02b782e1e0df511232ee5211
-      size: 10829
+      md5: a807fca6bddc23c975f923f69e59c7d4
+      size: 10979
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1244,12 +1244,12 @@ stages:
     outs:
     - path: results/logs/analiza_boss_R1R2.log
       hash: md5
-      md5: 996bb47252b3d637ae64372f8da8280d
-      size: 1504
+      md5: 3e339c6bd18d28994f161a6527a8e1d8
+      size: 1502
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 250f26b69524ae6490331d32040f4156
-      size: 4424
+      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
+      size: 4421
   multisonda_fondo_clavado:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/multisonda_fondo_clavado.py
