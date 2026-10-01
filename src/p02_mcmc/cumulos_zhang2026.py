@@ -93,6 +93,10 @@ F_NU_COSMICO = S.OMEGA_NU_H2 / S.OMEGA_M_H2   # lo que P2 dice que es f_nu: la f
 # entonces la materia total de SSEE, como en LCDM: M_dyn = (omega_m/omega_b) M_bar,
 # con omega_m y omega_b del nucleo. La formula con KAL0 viene del marco MOND de abril.
 K_SSEE_RG = S.OMEGA_M_H2 / S.OMEGA_B_H2
+DESC_RG = dict(bariones=1.0, materia_oscura_fria=S.OMEGA_C_H2 / S.OMEGA_B_H2,
+               kal0_por_ns=S.KAL0 * S.N_S, neutrinos=S.OMEGA_NU_H2 / S.OMEGA_B_H2)
+assert abs(sum(DESC_RG[k] for k in ("bariones", "materia_oscura_fria", "neutrinos")) - K_SSEE_RG) < 1e-12
+assert abs(DESC_RG["materia_oscura_fria"] - DESC_RG["kal0_por_ns"]) < 1e-12   # omega_c = KAL0 omega_b n_s
 MODELOS = {"ssee": ("M_tot_IG", K_SSEE), "ssee_rg": ("M_tot_IMF", K_SSEE_RG), "ssee_rg_igimf": ("M_tot_IG", K_SSEE_RG), "ssee_fnu0": ("M_tot_IG", S.KAL0),
            "ssee_fnu_cosmico": ("M_tot_IG", S.KAL0 * (1 + F_NU_COSMICO)), "ssee_imf": ("M_tot_IMF", K_SSEE),
            "lcdm": ("M_tot_IMF", K_LCDM), "lcdm_igimf": ("M_tot_IG", K_LCDM)}
@@ -128,7 +132,7 @@ out = dict(fecha=str(__import__("datetime").date.today()),
            fuente="Zhang, Hasani Zonoozi & Kroupa 2026, arXiv:2602.06082v1, Tablas II y III",
            no_estan_en_la_fuente=["Coma", "Bullet", "Perseus", "A2744"],
            control_lectura=dict(ctl, pasa=lectura_pasa),
-           piso_redondeo=SIG_RED, K_SSEE=K_SSEE, K_SSEE_RG=K_SSEE_RG, f_nu_cosmico=F_NU_COSMICO, K_LCDM=K_LCDM, f_nu=F_NU, modelos=res,
+           piso_redondeo=SIG_RED, K_SSEE=K_SSEE, K_SSEE_RG=K_SSEE_RG, descomposicion_RG=DESC_RG, f_nu_cosmico=F_NU_COSMICO, K_LCDM=K_LCDM, f_nu=F_NU, modelos=res,
            filas=F)
 json.dump(con_acta(out, __file__, entradas=[FUENTE]),
           open(os.path.join(_R, "results", "logs", "cumulos_zhang2026.json"), "w"), indent=1)
