@@ -956,10 +956,10 @@ state \citep{Chevallier2001,Linder2003} $(w_0, w_a) = (-0.840, -0.670)$:
 where $f_{\rm DE}(z) = (1+z)^{3(1+w_0+w_a)}\exp\!\bigl(-3w_a z/(1+z)\bigr)$.
 Numerical integration gives
 \begin{equation}
-  t_0^{\rm SSEE} = 13.733\;\text{Gyr}
-  \qquad (\Lambda\text{CDM at Planck parameters}: 13.796\;\text{Gyr})\,.
+  t_0^{\rm SSEE} = \val{t0_ssee}\;\text{Gyr}
+  \qquad (\Lambda\text{CDM at Planck parameters}: \val{t0_lcdm}\;\text{Gyr})\,.
 \end{equation}
-The two are indistinguishable: $0.063$\,Gyr apart, well inside the uncertainty
+The two are indistinguishable: $\val{t0_dif}$\,Gyr apart, well inside the uncertainty
 of any current age determination. Both sit comfortably above the oldest
 globular clusters and halo stars ($t_{\rm GC} \gtrsim 12.5$\,Gyr,
 e.g.\ \citealt{Valcin2021,Bond2013}) and above the \citet{Cimatti2023}
@@ -976,11 +976,11 @@ a matter density, but that number is $1+w_0$, a quantity of the equation of
 state, and never was a density (Paper~1); it used the \emph{local}
 $H_0^{\rm SH0ES}=73.04$ for a global quantity; and it cited the Two-$\Omega_m$
 Criterion as its justification, which Paper~1 has since withdrawn. Correcting
-only the density gives $12.78$\,Gyr and correcting both gives the value above;
+only the density gives $\val{t0_ret_densidad}$\,Gyr and correcting both gives the value above;
 the intermediate number is a diagnostic, not a prediction. The stated $15.52$
 is not even reproducible from the recipe printed alongside it, which returns
-$15.28$. The falsification criterion built on it is withdrawn with it: the
-model predicts $13.733$\,Gyr, so a measurement of $t_0>14$\,Gyr would count
+$\val{t0_ret_receta}$. The falsification criterion built on it is withdrawn with it: the
+model predicts $\val{t0_ssee}$\,Gyr, so a measurement of $t_0>14$\,Gyr would count
 \emph{against} SSEE, not for it.
 
 %% ─────────────────────────────────────────────────────────────────────────────

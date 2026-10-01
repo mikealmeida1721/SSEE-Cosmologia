@@ -1485,28 +1485,28 @@ redone (\texttt{src/p02\_mcmc/ssee\_press\_schechter.py}, 2026-09-07) with
 $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, the measured growth index $\gamma_{\rm IS}=0.5504$
 (\S\ref{subsec:gamma_IS}) and the global rate $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$. With both
 cosmologies evaluated at their \emph{own} CMB-fitted amplitude
-($\sigma_8=0.81530$ for SSEE, $0.811$ for $\Lambda$CDM) and with the
+($\sigma_8=\val{ps_s8_ssee}$ for SSEE, $\val{ps_s8_lcdm}$ for $\Lambda$CDM) and with the
 \emph{derived} collapse threshold:
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
 $z$ & $M=10^{11}M_\odot$ & $M=10^{12}M_\odot$ \\
 \midrule
-10 & 0.990 & 0.945 \\
-12 & 0.984 & 0.921 \\
-15 & 0.972 & 0.878 \\
+10 & \val{ps_z10_m11} & \val{ps_z10_m12} \\
+12 & \val{ps_z12_m11} & \val{ps_z12_m12} \\
+15 & \val{ps_z15_m11} & \val{ps_z15_m12} \\
 \bottomrule
 \end{tabular}
 \end{center}
 \textbf{There is no enhancement, and the sign is the opposite of what earlier
 versions claimed.} With the threshold the model actually produces, \SSEE\
 forms marginally \emph{fewer} massive early haloes than $\Lambda$CDM. The
-deficit grows with mass and redshift, reaching $0.892$ at
-$3\times10^{12}M_\odot$, $z=10$ and $0.778$ at the same mass at $z=15$, and it
+deficit grows with mass and redshift, reaching $\val{ps_z10_m3e12}$ at
+$3\times10^{12}M_\odot$, $z=10$ and $\val{ps_z15_m3e12}$ at the same mass at $z=15$, and it
 is not an amplitude effect: \SSEE\ carries the \emph{larger} $\sigma_8$. It is
 the growth history --- a smaller $\Omega_m$ ($\val{OMEGA_M_TOTAL_d6}$ against $0.3153$) and
 the CPL background grow less between $z\sim10$ and today. At the masses JWST
-actually probes ($M\sim10^{10.8}M_\odot$) the ratio is $0.99$: indistinguishable
+actually probes ($M\sim10^{10.8}M_\odot$) the ratio is $\val{ps_jwst}$: indistinguishable
 from $\Lambda$CDM. \SSEE\ offers no account of the JWST excess, and the
 $1.4$--$2.0$ of earlier versions was an artefact of the withdrawn
 $\delta_c$.
@@ -1514,8 +1514,8 @@ $\delta_c$.
 \paragraph{The amplitude convention is not a detail.} This ratio compares two
 cosmologies and is only meaningful if both are evaluated at the same epoch's
 amplitude. Giving SSEE the amplitude it prefers when fitted to raw KiDS-1000
-shear ($\sigma_8=0.7446$, Paper~6) while leaving $\Lambda$CDM at Planck's
-$0.811$ inverts the result to a deficit ($0.887$ and $0.517$ at $z=10$). That
+shear ($\sigma_8=\val{ps_inv_s8}$, Paper~6) while leaving $\Lambda$CDM at Planck's
+$0.811$ inverts the result to a deficit ($\val{ps_inv_m11}$ at $10^{11}M_\odot$ and $\val{ps_inv_m12}$ at $10^{12}M_\odot$, $z=10$). That
 inversion is not a statement about collapse physics: it is the
 CMB-versus-late-time amplitude disagreement entering through the back door,
 and it would affect $\Lambda$CDM identically if the same mismatch were imposed
