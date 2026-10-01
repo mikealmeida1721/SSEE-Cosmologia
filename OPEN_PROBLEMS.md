@@ -2318,8 +2318,10 @@ encuesta de galaxias a `z≈0.5`? Con cada modelo en su propia amplitud:
 
 | modelo | `ω_c` que pide BOSS | su referencia | distancia |
 |---|---|---|---|
-| SSEE | 0.117524 ± 0.003933 | `KAL₀·ω_b·n_s` = 0.119514 | **0.51σ** |
-| ΛCDM | 0.114726 ± 0.003714 | Planck 0.1200 | 1.42σ |
+| SSEE | 0.117450 ± 0.004079 | `KAL₀·ω_b·n_s` = 0.119514 | **0.51σ** |
+| ΛCDM | 0.114346 ± 0.004041 | Planck 0.1200 | 1.40σ |
+
+*(Re-corrido 2026-10-01 con minimización robusta; fuente `results/logs/perfil_wc_boss*.json`.)*
 
 **El `ω_c` que sale de φ y π queda más cerca de lo que pide el dato de
 estructura que el que Planck ajusta dentro de ΛCDM.** No estaba buscado, y es

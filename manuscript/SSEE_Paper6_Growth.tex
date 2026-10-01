@@ -79,7 +79,7 @@ $\Lambda$CDM run through the identical pipeline with its background free: four
 extra parameters buy $\Delta\chi^2=\val{dchi2_k1000}$, less than the $4$ they would return
 by chance ($\Delta\mathrm{BIC}=\val{dBIC_k1000}$ in favour of \SSEE{}). Against the raw
 BOSS DR12 multipoles (222 points, one-loop LPT) the algebraic and Planck
-backgrounds tie, $\Delta\chi^2=+0.06$ at equal freedom; clustering does not
+backgrounds fit equally well within noise, $\Delta\chi^2=\val{bossR_dchi2}$ for \SSEE{} at equal freedom; clustering does not
 constrain the amplitude. This paper also retracts a second matter sector and
 an associated particle ($m_\phi=40.70$~eV) proposed in an earlier version: the
 sector was defined by subtracting $1+w_0\approx0.160$ --- a number of the
@@ -581,7 +581,8 @@ tested directly against raw KiDS-1000 data with the now-retracted particle mass
 $m_\phi=40.70$~eV. Free-streaming suppresses $\sigma_8$ by 10.4\% at that
 mass, against a raw-data uncertainty of 3.16\%; the amplitude $A_s$ cannot
 compensate because free-streaming changes the \emph{shape} of $P(k)$, not its
-overall scale. A measured suppression law,
+overall scale. A measured suppression law,%
+% ORIGEN-VALOR: 2.283 — exponente de la ley de supresion de la PARTICULA RETIRADA (julio 2026); el script que la ajusto no se guardo. Parrafo historico: se cita como registro de la retractacion, no como resultado vigente
 $\Delta\sigma_8(\%)=52088\cdot m_\phi^{-2.283}$, places a lower bound
 $m_\phi>70.3$~eV for consistency with the shear data --- 1.73$\times$ the
 canonical mass, and outside the maximal mass reachable by the model's own
@@ -625,37 +626,43 @@ BOSS DR12 consensus of \citet{Alam2017}.}
 \toprule
  & $z=0.38$ & $z=0.51$ & $z=0.61$ \\
 \midrule
-\SSEE{}                    & $0.4114\pm0.0201$ & $0.4129\pm0.0202$ & $0.4106\pm0.0201$ \\
-$\Lambda$CDM               & $0.4208\pm0.0198$ & $0.4191\pm0.0197$ & $0.4145\pm0.0195$ \\
+\SSEE{}                    & $\val{bossR_fs8_ssee_z1}\pm\val{bossR_fs8_ssee_z1_sigma}$ & $\val{bossR_fs8_ssee_z2}\pm\val{bossR_fs8_ssee_z2_sigma}$ & $\val{bossR_fs8_ssee_z3}\pm\val{bossR_fs8_ssee_z3_sigma}$ \\
+$\Lambda$CDM               & $\val{bossR_fs8_lcdm_z1}\pm\val{bossR_fs8_lcdm_z1_sigma}$ & $\val{bossR_fs8_lcdm_z2}\pm\val{bossR_fs8_lcdm_z2_sigma}$ & $\val{bossR_fs8_lcdm_z3}\pm\val{bossR_fs8_lcdm_z3_sigma}$ \\
 \citet{Alam2017}           & $0.497\pm0.045$   & $0.458\pm0.038$   & $0.436\pm0.034$ \\
 \midrule
-\SSEE{} vs.\ published     & $1.74\sigma$ & $1.05\sigma$ & $0.64\sigma$ \\
-$\Lambda$CDM vs.\ published& $1.55\sigma$ & $0.91\sigma$ & $0.55\sigma$ \\
+\SSEE{} vs.\ published     & $\val{bossR_pub_ssee_z1}\sigma$ & $\val{bossR_pub_ssee_z2}\sigma$ & $\val{bossR_pub_ssee_z3}\sigma$ \\
+$\Lambda$CDM vs.\ published& $\val{bossR_pub_lcdm_z1}\sigma$ & $\val{bossR_pub_lcdm_z2}\sigma$ & $\val{bossR_pub_lcdm_z3}\sigma$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The fit quality is the headline, and it is a tie:
+The fit quality is the headline:
 \begin{center}
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \toprule
- & $\ln(10^{10}A_s)$ & $\chi^2$ & $\chi^2/{\rm dof}$ \\
+ & $\ln(10^{10}A_s)$ & $\chi^2$ \\
 \midrule
-$\Lambda$CDM & $2.7898\pm0.0943$ & $207.58$ & $1.122$ \\
-\SSEE{}      & $2.7636\pm0.0981$ & $207.64$ & $1.122$ \\
+$\Lambda$CDM & $\val{bossR_logA_lcdm}\pm\val{bossR_logA_lcdm_sigma}$ & $\val{bossR_chi2_lcdm}$ \\
+\SSEE{}      & $\val{bossR_logA_ssee}\pm\val{bossR_logA_ssee_sigma}$ & $\val{bossR_chi2_ssee}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-$\Delta\chi^2 = +0.06$ in favour of $\Lambda$CDM over $222$ points with the
-same $37$ free parameters. That is not a marginal preference; it is
-indistinguishable from zero. The algebraic background describes raw galaxy
-clustering exactly as well as Planck's fitted one.
+$\Delta\chi^2_{\SSEE-\Lambda{\rm CDM}} = \val{bossR_dchi2}$ over $222$ points
+with the same $37$ free parameters, i.e.\ a mild preference for the algebraic
+background, not a decisive one. Each model carries its own neutrino mass
+($\sum m_\nu=\val{SUM_MNU_EV_d5}$\,eV in \SSEE{}, $0.06$\,eV in $\Lambda$CDM); an
+earlier version of these chains ran \SSEE{} with the $\Lambda$CDM value and
+found $\Delta\chi^2=+0.06$, so the correction%
+% ORIGEN-VALOR: +0.06 = 207.638-207.576, archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
+ moved the comparison towards
+\SSEE{}, not away from it. The algebraic background describes raw galaxy
+clustering at least as well as Planck's fitted one.
 
 \paragraph{Method control.} Our own $\Lambda$CDM row is the control: if the
 pipeline is sound, it must reproduce what BOSS published. It does, within
-$1.55\sigma$, $0.91\sigma$ and $0.55\sigma$ at the three redshifts. We flag
+$\val{bossR_pub_lcdm_z1}\sigma$, $\val{bossR_pub_lcdm_z2}\sigma$ and $\val{bossR_pub_lcdm_z3}\sigma$ at the three redshifts. We flag
 two caveats rather than let the reader infer agreement we have not earned.
-First, $z=0.38$ at $1.55\sigma$ is the weakest of the three and we do not
+First, $z=0.38$ at $\val{bossR_pub_lcdm_z1}\sigma$ is the weakest of the three and we do not
 claim it as clean. Second, our uncertainties ($\pm0.020$) are less than half
 the published ones ($\pm0.034$ to $\pm0.045$), because we hold the background
 \emph{fixed} whereas \citet{Alam2017} marginalise over it: the smaller error
@@ -664,25 +671,22 @@ not the same quantity. A $\Lambda$CDM run with the background free --- the
 version that would make the error bars comparable --- is the outstanding item
 for this section.
 
-% FUENTES (2026-09-27), cada numero con su log:
-%   D=4.0145 (BOSS), 1.1585 (KiDS), r=-0.890: results/logs/growth_2026-07/As_medido_o_producto.json
-%     (src/p06_growth/mide_As_o_producto.py; control: recupera D=7.083 puesto a mano)
-%   perfil 2.9448+/-0.1238, chi2 197.4378; marginal 2.7636+/-0.0981; 98% metodo:
-%     results/logs/growth_2026-07/boss_aisla_neutrinos.json (src/p06_growth/boss_aisla_neutrinos.py)
-%   1.85 sigma = (2.9448-2.7636)/0.0981
+% FUENTES (2026-10-01): D y r por \val (mide_As_o_producto, etapa DVC); perfil,
+%   marginal y su distancia por \val (analiza_boss_R1R2, que lee boss_aisla_neutrinos.json).
 %   chi2 BOSS con A_s del CMB = 198.07: results/logs/base_sin_particula.log, linea 75
+%   (rejilla con el m_nu de SSEE, conjunta_tres_sondas.py)
 \paragraph{Clustering does not measure the amplitude.} The marginal means
-above, $2.7636\pm0.0981$ (\SSEE{}) and $2.7898\pm0.0943$ ($\Lambda$CDM), are
+above, $\val{bossR_logA_ssee}\pm\val{bossR_logA_ssee_sigma}$ (\SSEE{}) and $\val{bossR_logA_lcdm}\pm\val{bossR_logA_lcdm_sigma}$ ($\Lambda$CDM), are
 not a measurement of $A_s$, and we do not compare them with the CMB. Three
 measurements show it. First, the marginal and conditional widths of
-$\log(10^{10}A_s)$ differ by a factor $D=\sigma_{\rm marg}/\sigma_{\rm cond}=4.01$,
-the amplitude being degenerate with the linear bias ($r=-0.89$); for KiDS on the
-same fixed background $D=1.16$. Second, the central value moves with the
+$\log(10^{10}A_s)$ differ by a factor $D=\sigma_{\rm marg}/\sigma_{\rm cond}=\val{bossR_D_ssee}$,
+the amplitude being degenerate with the linear bias ($r=\val{bossR_r_ssee}$); for KiDS on the
+same fixed background $D=\val{kidsR_D_ssee}$. Second, the central value moves with the
 estimator: the profile minimum of the same data, same $k_{\max}$ and same
-model sits at $2.9448\pm0.1238$, $1.85\sigma$ from the marginal mean --- a
+model sits at $\val{bossR_perfil_logA}\pm\val{bossR_perfil_logA_sigma}$, $\val{bossR_perfil_vs_marg}\sigma$ from the marginal mean --- a
 volume effect of marginalising over the nuisance parameters, which biases the
 amplitude low. Third, fixing the amplitude to the CMB value costs the
-clustering $\chi^2$ only $0.63$ ($197.44\to198.07$ in the profile). Galaxy
+clustering $\chi^2$ only $0.63$ ($\val{bossR_perfil_chi2}\to198.07$ in the profile). Galaxy
 clustering is therefore consistent with the CMB amplitude and does not vote on
 it.
 
@@ -694,31 +698,36 @@ $\ln(10^{10}A_s)$ above is really a low $\omega_c$ wearing another name. We
 answer with the symmetric experiment. Holding the amplitude \emph{fixed} at
 the CMB value and profiling $\omega_c$ instead --- everything else in the
 background still fixed, only the galaxy biases fitted --- BOSS asks for
-$\omega_c = 0.114108\pm0.003099$, which is $1.74\sigma$ from the algebraic
+$\omega_c = \val{pwc_ssee_cmb}\pm\val{pwc_ssee_cmb_sigma}$, which is $\val{pwc_ssee_cmb_dist}\sigma$ from the algebraic
 $\mathrm{KAL_0}\,\omega_b\,n_s = \val{OMEGA_C_H2_d6}$. Returning the amplitude BOSS
-itself prefers, $\omega_c$ comes back to $0.117524\pm0.003933$, i.e.\
-$0.51\sigma$ from the algebraic value. The pre-registered control is that
+itself prefers, $\omega_c$ comes back to $\val{pwc_ssee_boss}\pm\val{pwc_ssee_boss_sigma}$, i.e.\
+$\val{pwc_ssee_boss_dist}\sigma$ from the algebraic value. Each point of these
+profiles minimises the galaxy biases from five starting points and is swept
+along the grid in both directions; ten independent random starts at the
+minimum and at both ends of the grid fail to lower $\chi^2$ by more than
+$0.01$. The pre-registered control is that
 second profile: if $\omega_c$ had not returned, the first would have been
 measuring the edge of the parametrisation rather than the data. It returns.
 
 The same profile run on the $\Lambda$CDM background, with identical rigidity,
 displaces in the same direction and by a comparable amount
-($0.114726\rightarrow0.112169$, $-2.2\%$, against $-2.9\%$ for \SSEE{}), so
+($\val{pwc_lcdm_boss}\rightarrow\val{pwc_lcdm_cmb}$, i.e.\ $\val{pwc_lcdm_cmb_dist}\sigma$ from
+Planck's $\omega_c=\val{pwc_lcdm_ref}$ once the CMB amplitude is imposed), so
 the displacement is a property of the data and not manufactured by either
 background. Two consequences follow. First, the low clustering amplitude is
 not a disguised matter density. Second --- and this was not sought --- the
 algebraic $\omega_c$ sits \emph{closer} to what a structure survey at
-$z\simeq0.5$ asks for ($0.51\sigma$) than Planck's fitted $\Lambda$CDM value
-does ($1.42\sigma$).
+$z\simeq0.5$ asks for ($\val{pwc_ssee_boss_dist}\sigma$) than Planck's fitted $\Lambda$CDM value
+does ($\val{pwc_lcdm_boss_dist}\sigma$).
 
 We deliberately do not quote a $\chi^2$ comparison between models with
 $\omega_c$ free. In \SSEE{} that parameter is fixed by algebra: releasing it
 takes the model outside itself, so such a number would not describe \SSEE{}
 and cannot arbitrate between the two frameworks. The profile is a diagnostic
 of where the data pulls, not a fit. What it does license is the statement
-that $\Lambda$CDM gains $4.873$ in $\chi^2$ from that (equally illegitimate)
-freedom against $2.805$ for \SSEE{} --- Planck's $\omega_c$ needs almost twice
-the correction. The legitimate model comparison remains the one in the table
+that $\Lambda$CDM gains $\val{gan_wc_lcdm}$ in $\chi^2$ from that (equally illegitimate)
+freedom against $\val{gan_wc_ssee}$ for \SSEE{} --- Planck's $\omega_c$ needs the
+larger correction. The legitimate model comparison remains the one in the table
 above, each framework run as itself.
 
 \subsection{Why the exploratory linear-Kaiser stage does not publish}
@@ -759,8 +768,9 @@ has no free cosmological parameter, the fit costs nothing
 against $0.8265\pm0.0176$ measured. On the earlier KiDS-1000 release the
 algebraic background matches $\Lambda$CDM run through the same pipeline with
 four more free parameters ($\Delta\chi^2=\val{dchi2_k1000}$, $\Delta\mathrm{BIC}=\val{dBIC_k1000}$).
-Against raw BOSS DR12 clustering the two backgrounds tie ($\Delta\chi^2=+0.06$
-at equal freedom), and clustering is consistent with the CMB amplitude
+Against raw BOSS DR12 clustering the algebraic background fits marginally
+better ($\Delta\chi^2=\val{bossR_dchi2}$ at equal freedom, not a decisive
+difference), and clustering is consistent with the CMB amplitude
 without constraining it. The primordial amplitude is therefore counted once, at
 the CMB, and carried unchanged to every late-time probe. Cosmic shear and
 clustering do not discriminate between the backgrounds; what separates them is

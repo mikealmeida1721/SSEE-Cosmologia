@@ -518,3 +518,51 @@ fs8_4_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.4.t_ssee", form
 fs8_4_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.4.t_lcdm", formato: ".1f"}
 fs8_5_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.5.t_ssee", formato: ".1f"}
 fs8_5_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.5.t_lcdm", formato: ".1f"}
+# BOSS DR12 R1/R2 (Paper 6 §fsigma8) — src/p06_growth/analiza_boss_R1R2.py, perfil_wc_boss*.py, ganancia_wc_libre.py, mide_As_o_producto.py
+bossR_fs8_ssee_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z1.1", formato: ".4f"}
+bossR_fs8_ssee_z1_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z1.2", formato: ".4f"}
+bossR_pub_ssee_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.ssee.z1.sigma", formato: ".2f"}
+bossR_fs8_ssee_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z2.1", formato: ".4f"}
+bossR_fs8_ssee_z2_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z2.2", formato: ".4f"}
+bossR_pub_ssee_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.ssee.z2.sigma", formato: ".2f"}
+bossR_fs8_ssee_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z3.1", formato: ".4f"}
+bossR_fs8_ssee_z3_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z3.2", formato: ".4f"}
+bossR_pub_ssee_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.ssee.z3.sigma", formato: ".2f"}
+bossR_logA_ssee: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.logA", formato: ".4f"}
+bossR_logA_ssee_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.logA_sig", formato: ".4f"}
+bossR_chi2_ssee: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.chi2_real_min", formato: ".2f"}
+bossR_fs8_lcdm_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z1.1", formato: ".4f"}
+bossR_fs8_lcdm_z1_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z1.2", formato: ".4f"}
+bossR_pub_lcdm_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.lcdm.z1.sigma", formato: ".2f"}
+bossR_fs8_lcdm_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z2.1", formato: ".4f"}
+bossR_fs8_lcdm_z2_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z2.2", formato: ".4f"}
+bossR_pub_lcdm_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.lcdm.z2.sigma", formato: ".2f"}
+bossR_fs8_lcdm_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z3.1", formato: ".4f"}
+bossR_fs8_lcdm_z3_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z3.2", formato: ".4f"}
+bossR_pub_lcdm_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.lcdm.z3.sigma", formato: ".2f"}
+bossR_logA_lcdm: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.logA", formato: ".4f"}
+bossR_logA_lcdm_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.logA_sig", formato: ".4f"}
+bossR_chi2_lcdm: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.chi2_real_min", formato: ".2f"}
+bossR_dchi2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#dchi2_real", formato: "+.2f"}
+bossR_perfil_logA: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.perfil_logA", formato: ".4f"}
+bossR_perfil_logA_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.perfil_sigma", formato: ".4f"}
+bossR_perfil_vs_marg: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.sigmas", formato: ".2f"}
+bossR_perfil_chi2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.perfil_chi2", formato: ".2f"}
+bossR_D_ssee: {fuente: "results/logs/growth_2026-07/As_medido_o_producto.json#fuentes.BOSS (SSEE).parametros.logA.D", formato: ".2f"}
+bossR_r_ssee: {fuente: "results/logs/growth_2026-07/As_medido_o_producto.json#fuentes.BOSS (SSEE).parametros.logA.correlacion", formato: ".2f"}
+kidsR_D_ssee: {fuente: "results/logs/growth_2026-07/As_medido_o_producto.json#fuentes.KiDS (SSEE).parametros.logA.D", formato: ".2f"}
+pwc_ssee_cmb: {fuente: "results/logs/perfil_wc_boss.json#amplitud_cmb.w_c_parabola", formato: ".6f"}
+pwc_ssee_cmb_sigma: {fuente: "results/logs/perfil_wc_boss.json#amplitud_cmb.sigma_parabola", formato: ".6f"}
+pwc_ssee_cmb_dist: {fuente: "results/logs/perfil_wc_boss.json#amplitud_cmb.dist_sigma", formato: ".2f"}
+pwc_ssee_boss: {fuente: "results/logs/perfil_wc_boss.json#control_amplitud_boss.w_c_parabola", formato: ".6f"}
+pwc_ssee_boss_sigma: {fuente: "results/logs/perfil_wc_boss.json#control_amplitud_boss.sigma_parabola", formato: ".6f"}
+pwc_ssee_boss_dist: {fuente: "results/logs/perfil_wc_boss.json#control_amplitud_boss.dist_sigma", formato: ".2f"}
+pwc_lcdm_cmb: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.w_c_parabola", formato: ".6f"}
+pwc_lcdm_cmb_sigma: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.sigma_parabola", formato: ".6f"}
+pwc_lcdm_cmb_dist: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.dist_sigma", formato: ".2f"}
+pwc_lcdm_boss: {fuente: "results/logs/perfil_wc_boss_lcdm.json#control_amplitud_boss.w_c_parabola", formato: ".6f"}
+pwc_lcdm_boss_sigma: {fuente: "results/logs/perfil_wc_boss_lcdm.json#control_amplitud_boss.sigma_parabola", formato: ".6f"}
+pwc_lcdm_boss_dist: {fuente: "results/logs/perfil_wc_boss_lcdm.json#control_amplitud_boss.dist_sigma", formato: ".2f"}
+pwc_lcdm_ref: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.referencia", formato: ".4f"}
+gan_wc_ssee: {fuente: "results/logs/ganancia_wc_libre.json#modelos.SSEE.ganancia", formato: ".3f"}
+gan_wc_lcdm: {fuente: "results/logs/ganancia_wc_libre.json#modelos.LCDM.ganancia", formato: ".3f"}
