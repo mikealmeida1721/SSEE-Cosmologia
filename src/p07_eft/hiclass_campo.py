@@ -138,6 +138,8 @@ def juego(tag, ent, w):
                             ("xk1_wa", 1.0, "wowa", w_cpl)):
         r = corre(f"{tag}_ctl_{nom}", campo(ent, xk, em, ep, "mPk"))
         ctl[nom] = {k: r[k] for k in ("rechaza", "cs2_min", "z_cs2_min", "mensaje")}
+        # orden de magnitud de z: el minimo cae al arrancar la integracion (z ~ 1e13-1e14)
+        ctl[nom]["log10_z_cs2_min"] = round(float(np.log10(r["z_cs2_min"]))) if r["z_cs2_min"] else None
     out["controles"] = ctl
     # 4. fluido CLP, c_s^2
     s8c, ttc = {}, {}
