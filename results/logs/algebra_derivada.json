@@ -236,6 +236,31 @@
    "valor": 45.45131143413338,
    "uso": "cociente contra s_K completo de Paper 10"
   },
+  "wc_estatico_planck": {
+   "formula": "KAL0*0.02237",
+   "valor": 0.12351385165537308,
+   "uso": "Omega_c h^2 = KAL0 * omega_b(Planck), relacion estatica de Paper 4"
+  },
+  "wc_estatico_sigma": {
+   "formula": "(KAL0*0.02237-0.1200)/0.0012",
+   "valor": 2.9282097128109066,
+   "uso": "distancia a Planck 0.1200 +- 0.0012, Paper 4"
+  },
+  "Yp_ssee": {
+   "formula": "0.2471+0.96*(OMEGA_B_H2-0.02237)",
+   "valor": 0.24714584650985583,
+   "uso": "Y_p lineal, Paper 4"
+  },
+  "Omega_b_alg": {
+   "formula": "OMEGA_B_H2/(H0_ALG/100)**2",
+   "valor": 0.04853534222208849,
+   "uso": "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"
+  },
+  "Omega_b_alg_cerrada": {
+   "formula": "1e4*(PI-PHI)/(27*OMEGA**6)",
+   "valor": 0.04853534222208848,
+   "uso": "la misma en forma cerrada (control)"
+  },
   "horizonte_cs_Mpc": {
    "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
    "valor": 643.5424922781127,
@@ -301,6 +326,7 @@
    "n dos formas": 0.0,
    "AURA = 2 MIRA": 0.0,
    "s_K con K(X) de P7, dos formas": 0.0,
+   "Omega_b dos formas": 6.938893903907228e-18,
    "c_s^2 dos formas": 0.0
   },
   "pasa": true,
@@ -308,17 +334,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "c2d8a621ba832533d5747e3cfe8532ffc0694965",
+  "commit": "7bd0e96ce7c386913d3b7d1393f8bf80c10ea031",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "386e56d977a7d67ad1e5d2ddd0dec1cf878b6333cc3de48361c8de9b19b4b2b8",
+  "script_sha256": "58a6e461c032f3823d0fdac41735545647f9c6bcedddef17ee2ba3372e13f4f2",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T22:52:58",
+  "fecha": "2026-09-30T22:54:19",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
