@@ -81,6 +81,11 @@ ALGEBRA = {
     "sK_con_KX_de_P7": ("3*(5-3*W0)*S_DE", "6(XK_X+2X^2K_XX) con la K(X) de Paper 7 y rho_phi = S_DE (Paper 10, las dos K(X))"),
     "sK_con_KX_de_P7_c1": ("6*S_DE/(1+3*(1-W0)/(3*W0-1))*(1+6*(1-W0)/(3*W0-1))", "lo mismo desde c1 X y u (control)"),
     "factor_dos_KX":  ("3*(5-3*W0)*S_DE/S_K_FULL", "cociente contra s_K completo de Paper 10"),
+    "wc_estatico_planck": ("KAL0*0.02237", "Omega_c h^2 = KAL0 * omega_b(Planck), relacion estatica de Paper 4"),   # ORIGEN-VALOR: 0.02237 — omega_b de Planck 2018 VI Tabla 2, la entrada que declara Paper 4
+    "wc_estatico_sigma": ("(KAL0*0.02237-0.1200)/0.0012", "distancia a Planck 0.1200 +- 0.0012, Paper 4"),   # ORIGEN-VALOR: 0.02237, 0.1200, 0.0012 — Planck 2018 VI Tabla 2
+    "Yp_ssee":        ("0.2471+0.96*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — ancla Planck 2018; 0.96 — dY_p/d(omega_b) de AlterBBN (Pisanti 2008)
+    "Omega_b_alg":    ("OMEGA_B_H2/(H0_ALG/100)**2", "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"),
+    "Omega_b_alg_cerrada": ("1e4*(PI-PHI)/(27*OMEGA**6)", "la misma en forma cerrada (control)"),
     "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
 }
 
@@ -95,6 +100,7 @@ ctl = {
     "n dos formas": abs(res["n_ssee"]["valor"] - res["n_ssee_TM"]["valor"]),
     "AURA = 2 MIRA": abs(S.AURA - 2 * S.MIRA),
     "s_K con K(X) de P7, dos formas": abs(res["sK_con_KX_de_P7"]["valor"] - res["sK_con_KX_de_P7_c1"]["valor"]),
+    "Omega_b dos formas": abs(res["Omega_b_alg"]["valor"] - res["Omega_b_alg_cerrada"]["valor"]),
     "c_s^2 dos formas": abs(res["cs2_condensado"]["valor"] - res["cs2_condensado_TM"]["valor"]),
 }
 try:

@@ -32,7 +32,7 @@ VAL = ROOT / "manuscript" / "valores.yaml"
 NO_USAR = {"OMEGA_CDM_SECTOR", "OMEGA_M_DYN", "OMEGA_M_CMB_MIRA", "OMEGA_M_CMB_PIPHI",
            "OMEGA_M_CMB_GEOMETRIC", "H0_MIRA", "LCDM_H0", "LCDM_NS", "LCDM_OMEGA_M",
            "LCDM_SIGMA8", "OMEGA_DE", "u_condensado_TM", "n_ssee_TM", "inv_S_M",
-           "OMEGA_M_CMB", "cs2_condensado_TM", "sK_con_KX_de_P7_c1"}   # alias de OMEGA_M_TOTAL (ssee_core L165): se usa el canonico
+           "OMEGA_M_CMB", "cs2_condensado_TM", "sK_con_KX_de_P7_c1", "Omega_b_alg_cerrada"}   # alias de OMEGA_M_TOTAL (ssee_core L165): se usa el canonico
 # errores de la ultima cifra hallados al armar algebra_derivada (2026-09-30)
 # Cada uno es el valor MAL escrito que se encontro (no un resultado):
 CORRIGE = {("sqrt_AURA", "1.99947"),      # ORIGEN-VALOR: 1.99947 — mal escrito en Paper 8 (el algebra da 1.999462)
