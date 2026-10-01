@@ -29,6 +29,7 @@ import re
 import sys
 
 import numpy as np
+from scipy import stats
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
@@ -105,14 +106,16 @@ for m, (col, k) in MODELOS.items():
                   pull=float(chi2_fila(f, col, k)[1]), razon=float(chi2_fila(f, col, k)[2])) for f in F]
     c = sum(r["pull"] ** 2 for r in filas)
     rz = np.array([r["razon"] for r in filas])
+    pv = float(stats.chi2.sf(c, len(F)))
     res[m] = dict(columna_bar=col, factor=k, chi2=float(c), N=len(F), chi2r=float(c / len(F)),
+                  p_valor=pv, sigma_equiv=float(stats.norm.isf(pv / 2)),
                   razon_media=float(rz.mean()), razon_mediana=float(np.median(rz)),
                   razon_dispersion=float(rz.std(ddof=1)),
                   pulls_mayores_3=int(sum(abs(r["pull"]) > 3 for r in filas)),
                   peores=sorted(filas, key=lambda r: -abs(r["pull"]))[:5],
                   sub_P2=[r for r in filas if r["nombre"] in ("A2029", "A0478", "A2142")])
     print(f"  {m:11s} k={k:6.3f}  chi2/N = {c:9.2f}/{len(F)} = {c / len(F):7.2f}   "
-          f"pred/obs mediana {np.median(rz):.3f} (disp {rz.std(ddof=1):.3f})   |pull|>3: {res[m]['pulls_mayores_3']}")
+          f"p {res[m]['p_valor']:.3g} ({res[m]['sigma_equiv']:.2f} sigma)   pred/obs mediana {np.median(rz):.3f}   |pull|>3: {res[m]['pulls_mayores_3']}")
 
 out = dict(fecha=str(__import__("datetime").date.today()),
            fuente="Zhang, Hasani Zonoozi & Kroupa 2026, arXiv:2602.06082v1, Tablas II y III",
