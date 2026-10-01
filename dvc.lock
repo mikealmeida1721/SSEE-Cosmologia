@@ -866,8 +866,8 @@ stages:
       size: 441
     - path: src/p03_cmb/ajuste_conjunto_wc_ns.py
       hash: md5
-      md5: bae14b229abb4b4853818bf504d8629d
-      size: 4793
+      md5: fab05739ba4b765c2dbf77d09c0da19b
+      size: 4905
     - path: src/p03_cmb/cmb_eval.py
       hash: md5
       md5: 706a9d0e3384cce04dc5fcbf0c2fb522
@@ -887,7 +887,7 @@ stages:
     outs:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
       hash: md5
-      md5: d9131519e13409e7be731b91792ede9d
+      md5: e2907d18fca530726a62505761c98947
       size: 1547
   ajuste_conjunto_LCDM:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -899,8 +899,8 @@ stages:
       size: 441
     - path: src/p03_cmb/ajuste_conjunto_wc_ns.py
       hash: md5
-      md5: bae14b229abb4b4853818bf504d8629d
-      size: 4793
+      md5: fab05739ba4b765c2dbf77d09c0da19b
+      size: 4905
     - path: src/p03_cmb/cmb_eval.py
       hash: md5
       md5: 706a9d0e3384cce04dc5fcbf0c2fb522
@@ -920,7 +920,7 @@ stages:
     outs:
     - path: results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
       hash: md5
-      md5: fcdcb860c7b2a0ca5d58baf113a98f07
+      md5: 57578590a07a455a6ff5e110afbeec30
       size: 1409
   hmcode_bariones:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

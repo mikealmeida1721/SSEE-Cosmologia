@@ -25,11 +25,11 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "f9237ab9df901267ccd546e18a7ef77b88c00ab9",
+  "commit": "9a3d3f1a378e5a8b448abed013f35a2d5c642779",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/ajuste_conjunto_wc_ns.py",
-  "script_sha256": "6ec166c859eda330e71950469927467771b869d89f8ea039f53b156cbe7fd8f6",
+  "script_sha256": "f4010e7c83422d099327c71225c243f883ac4f58fb05f02803c9ea6063670b50",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_ajuste_conjunto_wc_ns.json": "0f786cb32bc625526afc082712125cc5e586f4807a68968a0e891ddfc91abc16"
@@ -38,7 +38,7 @@
    "src/p03_cmb/ajuste_conjunto_wc_ns.py",
    "SSEE"
   ],
-  "fecha": "2026-09-30T23:05:08",
+  "fecha": "2026-10-01T11:50:03",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
