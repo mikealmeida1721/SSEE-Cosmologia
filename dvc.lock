@@ -79,7 +79,7 @@ stages:
       size: 13589
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: ff3851651ac109468fc06dfabcb08fd8
+      md5: 330796d16c1a0566d0d4f97e7a5ee922
       size: 6907
     - path: results/logs/kids_publicados.json
       hash: md5
@@ -100,7 +100,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 7eb4206e8a352701a904230310d8da9f
+      md5: 56a685c355ce6d19c71bcbeb51fbce7a
       size: 18197
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
