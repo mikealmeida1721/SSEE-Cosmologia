@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-30",
+ "fecha": "2026-10-01",
  "prediccion": {
   "x_k": 22.55954794210301,
   "cs2": 0.021283701570524605,
@@ -132,6 +132,7 @@
     "30": 18.107149208503706
    },
    "ruido_sobre_senal_l2": 6.917475669019284,
+   "ruido_sobre_senal_cs2_l2": 20.42107594927992,
    "alpha_K_dif": 0.011324305523729983,
    "cs2_dif": 1.2142908900614202e-07
   }
@@ -254,7 +255,8 @@
     "10": 30.860669992418384,
     "30": 18.107149208503706
    },
-   "ruido_sobre_senal_l2": 6.917392471977814
+   "ruido_sobre_senal_l2": 6.917392471977814,
+   "ruido_sobre_senal_cs2_l2": 20.41991579545704
   }
  },
  "control": {
@@ -275,11 +277,11 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "80f84a6be1b24f92c08e65dad50de4912c6d8fc3",
+  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p07_eft/hiclass_campo.py",
-  "script_sha256": "150a065680b77215ab99b00cf0564366f4f11b11e2be2178303a7cf3e6b4a69e",
+  "script_sha256": "71f26393a2edfac4bc105e5d114743ec76e2cb02dfdb8548e97fce2d8594379c",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/hi_class/class": "c811fd5d8e7a4f9e92412c048c6d975c223cb55108b19dab41192a22f7499fc1"
@@ -287,16 +289,16 @@
   "argv": [
    "src/p07_eft/hiclass_campo.py"
   ],
-  "fecha": "2026-09-30T22:03:13",
+  "fecha": "2026-10-01T00:03:45",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
    "numpy": "2.4.4"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": null,
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

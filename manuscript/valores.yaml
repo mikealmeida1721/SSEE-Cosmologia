@@ -423,3 +423,4 @@ cl_naive_l3: {fuente: "results/logs/class_picos.json#modelos.naive.picos.2", for
 cl_ssee_rms:  {fuente: "results/logs/class_picos.json#modelos.ssee.rms_pct", formato: ".2f"}
 cl_naive_rms: {fuente: "results/logs/class_picos.json#modelos.naive.rms_pct", formato: ".1f"}
 cl_degrada:   {fuente: "results/logs/class_picos.json#modelos.degradacion_rms_naive_sobre_ssee", formato: ".0f"}
+p7_hc_rs_cs2: {fuente: "results/logs/hiclass_campo.json#canonico.pct.ruido_sobre_senal_cs2_l2", formato: ".0f"}

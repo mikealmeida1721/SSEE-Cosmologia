@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 70063060cbd1ffeaed9fe21739bbdbdf
-      size: 41604
+      md5: 8fda4d0e4fe8dd3ef3b2b48af2c46cb1
+      size: 41716
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: b2dbbef397d0f75c88064d60261115fd
@@ -148,8 +148,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 92bb78f0bfeb86ae599954e3c6fcfede
-      size: 53332
+      md5: 5515d55ac1c6b58ffc5779d472c39bf5
+      size: 53465
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -588,8 +588,8 @@ stages:
       isexec: true
     - path: src/p07_eft/hiclass_campo.py
       hash: md5
-      md5: 0cc5f8f1aa26ed34635ca4e20a35caf5
-      size: 10919
+      md5: c5ea8e8e2049f974fb6c0fd4df43df94
+      size: 10997
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -601,8 +601,8 @@ stages:
     outs:
     - path: results/logs/hiclass_campo.json
       hash: md5
-      md5: 3f7b7a1c23c896370627eb23238e272c
-      size: 7718
+      md5: 31c9fbd99fb8b84d43ef38a32bd4b520
+      size: 7815
   R3_rehecho:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/analiza_ssee_R3.py
