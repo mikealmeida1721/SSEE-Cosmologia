@@ -30,7 +30,9 @@ sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 import camb  # noqa: E402
 import ssee_core as S  # noqa: E402
 from lcdm_planck import LCDM_PLANCK as LP  # noqa: E402
-from procedencia import con_acta  # noqa: E402
+from procedencia import cabecera, con_acta  # noqa: E402
+
+print(cabecera(__file__), flush=True)   # acta de procedencia: primera linea del log
 
 MPC_KM = 3.0856775814913673e19   # ORIGEN-VALOR: 3.0856775814913673e19 — km por Mpc (IAU 2015)
 GYR_S = 3.15576e16               # ORIGEN-VALOR: 3.15576e16 — s por Gyr (ano juliano)
@@ -53,9 +55,14 @@ ssee = dict(integral=t0_integral(S.H0_GLOBAL, S.OMEGA_M_TOTAL, S.W0, S.WA),
                          w=S.W0, wa=S.WA, dark_energy_model="ppf"))
 lcdm = dict(integral=t0_integral(LP["H0"], OM_PLANCK, -1.0, 0.0),
             camb=t0_camb(H0=LP["H0"], ombh2=LP["ombh2"], omch2=LP["omch2"], mnu=LP["mnu"]))
+# Diagnostico de la version RETIRADA de Paper 9 (15.52 Gyr): la misma integral
+# con sus entradas equivocadas — s_m = 1+w0 como densidad y el H0 LOCAL de SH0ES —
+# y corrigiendo solo la densidad. No son predicciones: muestran de donde salia.
+retirado = dict(receta_vieja=t0_integral(S.H0_SH0ES, S.S_M, S.W0, S.WA),
+                solo_densidad_corregida=t0_integral(S.H0_SH0ES, S.OMEGA_M_TOTAL, S.W0, S.WA))
 pasa = all(abs(m["integral"] - m["camb"]) < 0.01 for m in (ssee, lcdm))
 out = dict(fecha=str(__import__("datetime").date.today()), ssee=ssee, lcdm=lcdm,
-           diferencia_lcdm_menos_ssee=lcdm["integral"] - ssee["integral"],
+           diferencia_lcdm_menos_ssee=lcdm["integral"] - ssee["integral"], retirado=retirado,
            control=dict(criterio="integral sin radiacion a < 0.01 Gyr de CAMB", pasa=bool(pasa)))
 json.dump(con_acta(out, __file__), open(os.path.join(_R, "results", "logs", "edad_universo.json"), "w"), indent=1)
 print(f"  SSEE t0 = {ssee['integral']:.4f} Gyr (CAMB {ssee['camb']:.4f})")
