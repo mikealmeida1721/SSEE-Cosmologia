@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 88, "canonical": 6, "papers": 294, "cajones": 214}   # logs 94->89: orquestacion excluida con razon y la cadena DVC cuenta como script
+_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 27, "cajones": 165}   # 2026-09-30 noche: bajado a la cuenta real tras la migracion a \val y las etapas con acta (era 88/6/294/214)
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -2554,7 +2554,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 169   # 2026-09-30: 172 logs de resultado, 2 ya en la cadena (mcmc_full_posteriores, s8_desde_b1)
+_TOPE_R75 = 167   # 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",
