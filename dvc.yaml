@@ -217,3 +217,27 @@ stages:
           cache: false
       - results/logs/dic_from_chains.log:
           cache: false
+  ajuste_conjunto_SSEE:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
+    deps:
+      - src/p03_cmb/ajuste_conjunto_wc_ns.py
+      - src/p03_cmb/cmb_eval.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+      - results/logs/cmb_ajuste_conjunto_wc_ns.json
+    outs:
+      - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json:
+          cache: false
+  ajuste_conjunto_LCDM:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
+    deps:
+      - src/p03_cmb/ajuste_conjunto_wc_ns.py
+      - src/p03_cmb/cmb_eval.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+      - results/logs/cmb_ajuste_conjunto_wc_ns.json
+    outs:
+      - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json:
+          cache: false
