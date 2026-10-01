@@ -51,7 +51,9 @@ N_UR_SIN_NCDM = 3.044  # ORIGEN-VALOR: 3.044 — N_eff estandar, el fluido CLP s
 PKMAX = 1.0        # ORIGEN-VALOR: 1.0 — P_k_max_h/Mpc de la receta del 2026-09-06 (sigma8 de hi_class)
 ELLS = (2, 5, 10, 30)
 HISTORICO = dict(h=0.67962, omega_b=0.02242, omega_cdm=0.11951)  # ORIGEN-VALOR: 0.67962, 0.02242, 0.11951 — el ini del 2026-09-06 (ssee_ak.ini), a 5 decimales
+HISTORICO_W = ("-0.839949771345", "-0.669974885673")  # ORIGEN-VALOR: w0, w_a tecleados a 12 decimales en los ini del 2026-09-06 (mueven sigma8 del CLP en 1e-6)
 CANONICO = dict(h=S.H0_GLOBAL / 100, omega_b=S.OMEGA_B_H2, omega_cdm=S.OMEGA_C_H2)
+CANONICO_W = (repr(S.W0), repr(S.WA))
 
 
 def corre(nombre, p):
@@ -98,10 +100,10 @@ def campo(ent, xk, exp_model, exp_par, output, extra=None):
     return p
 
 
-def juego(tag, ent):
+def juego(tag, ent, w):
     out = {}
-    w_campo = f"0.5, {S.W0!r}, 0.0"
-    w_cpl = f"0.5, {S.W0!r}, {S.WA!r}"
+    w_campo = f"0.5, {w[0]}, 0.0"
+    w_cpl = f"0.5, {w[0]}, {w[1]}"
     # 1. campo
     r = corre(f"{tag}_campo", campo(ent, XK, "wowa", w_campo, "mPk", {"write background": "yes"}))
     bg = os.path.join(DIR, f"{tag}_campo__background.dat")
@@ -142,7 +144,7 @@ def juego(tag, ent):
     for nom, cs in (("1", 1.0), ("modelo", CS2), ("0", 0.0)):
         p = base(ent, mnu=False)
         p.update(output="tCl,mPk", Omega_Lambda=0, Omega_smg=0,
-                 fluid_equation_of_state="CLP", w0_fld=repr(S.W0), wa_fld=repr(S.WA),
+                 fluid_equation_of_state="CLP", w0_fld=w[0], wa_fld=w[1],
                  cs2_fld=repr(cs), **{"P_k_max_h/Mpc": PKMAX}, fourier_verbose=1)
         s8c[nom] = corre(f"{tag}_clp{nom}", p)["sigma8"]
         ttc[nom] = cl_tt(f"{tag}_clp{nom}")
@@ -156,8 +158,8 @@ def juego(tag, ent):
 os.makedirs(DIR, exist_ok=True)
 pred = dict(x_k=XK, cs2=CS2, alpha_K_z0=XK * (1 - S.OMEGA_M_TOTAL),
             var_cosmica={L: (2 / (2 * L + 1)) ** 0.5 for L in ELLS})
-can = juego("can", CANONICO)
-his = juego("his", HISTORICO)
+can = juego("can", CANONICO, CANONICO_W)
+his = juego("his", HISTORICO, HISTORICO_W)
 # CONTROL R53: lo que Paper 7 imprime hoy, copiado del README del 2026-09-06
 PAPER = {"sigma8_xk1": 0.769916, "sigma8_xk100": 0.769973,   # ORIGEN-VALOR: los sigma8 que imprime Paper 7 L572-573 (blanco del control, no un resultado)
          "sigma8_clp1": 0.828445, "sigma8_clp_modelo": 0.828453}  # ORIGEN-VALOR: Paper 7 L742-743 (blanco del control)
