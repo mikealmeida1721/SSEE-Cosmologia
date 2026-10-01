@@ -50,6 +50,7 @@ stages:
       - results/logs/savage_cv.json
       - results/logs/dic_from_chains.json
       - results/logs/press_schechter.json
+      - results/logs/edad_universo.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -255,4 +256,14 @@ stages:
       - results/logs/press_schechter.json:
           cache: false
       - results/logs/press_schechter.log:
+          cache: false
+  edad_universo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/edad_universo.py
+    deps:
+      - src/p09_hubble/edad_universo.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+    outs:
+      - results/logs/edad_universo.json:
           cache: false
