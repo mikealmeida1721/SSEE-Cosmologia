@@ -12,7 +12,7 @@ de Paper 5, que crece como k^2, NO por c_s^2=0, que haria lo contrario) da:
     z_c = 10  ->  dc_SSEE = 1.68647   (LCDM 1.68646)
 
 o sea indistinguible de LCDM. Control: EdS reproduce 3/20 (12pi)^(2/3).
-Script: notes/2026-09-25_crecimiento_alto_z/spherical_collapse_deltac.py
+Script: src/p02_mcmc/spherical_collapse_deltac.py
 ORIGEN: results/logs/deltac_spherical_collapse.json   (de ahi se LEEN, abajo)
 
 CONSECUENCIA, y no es que el efecto se anule — se INVIERTE. Con el delta_c
@@ -44,7 +44,7 @@ dc_EdS = (3/20) * (12*np.pi)**(2/3)   # EdS collapse threshold ≈ 1.6865
 # Los dos delta_c NO se teclean: se LEEN del log del colapso esferico, que es
 # su origen. Si ese calculo cambia, este script se entera; un literal no.
 #   ORIGEN: results/logs/deltac_spherical_collapse.json
-#   lo produce notes/2026-09-25_crecimiento_alto_z/spherical_collapse_deltac.py
+#   lo produce src/p02_mcmc/spherical_collapse_deltac.py
 import json as _json66
 _LOG66 = _o66.path.join(_o66.path.dirname(_o66.path.dirname(_o66.path.dirname(
          _o66.path.abspath(__file__)))), "results", "logs",

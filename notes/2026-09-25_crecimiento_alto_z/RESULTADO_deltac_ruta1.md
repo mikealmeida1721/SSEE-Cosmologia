@@ -1,6 +1,6 @@
 # Ruta 1 — δc desde la dinámica (colapso esférico): RESULTADO
 
-Fecha: 2026-09-25. Script: `spherical_collapse_deltac.py` (este directorio).
+Fecha: 2026-09-25. Script: `src/p02_mcmc/spherical_collapse_deltac.py` (movido desde este directorio el 2026-09-30).
 
 ## Pregunta
 

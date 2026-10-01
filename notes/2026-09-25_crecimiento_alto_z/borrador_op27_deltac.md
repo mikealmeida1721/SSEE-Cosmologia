@@ -18,7 +18,7 @@ con DE suave en GR — las hipótesis de perturbaciones de los propios Papers
 5 y 6: c²_s,eff = 0, γ_IS = 0.5504) **no produce ese valor**: da
 δc_SSEE = 1.67634 (z=0) → 1.68647 (z=10), esencialmente idéntico a ΛCDM
 (1.67599 → 1.68646). Validación: EdS → 1.68646 vs 1.68647 exacto.
-Script: `notes/2026-09-25_crecimiento_alto_z/spherical_collapse_deltac.py`.
+Script: `src/p02_mcmc/spherical_collapse_deltac.py`.
 
 **Por qué es conjetura MOTIVADA y no ocurrencia.** En SSEE n_s no es solo la
 inclinación primordial: es cantidad algebraica del sector materia,

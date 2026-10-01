@@ -124,7 +124,106 @@ logs:
   cola_kids_legacy:           src/p06_growth/lanzar_kids_legacy.sh
   multisonda_fondo_clavado:   src/p06_growth/multisonda_fondo_clavado.py
 
+  # ── 2026-09-30: logs que tenian script pero nadie lo habia declarado ──────
+  #    (cada escritor confirmado en la linea que abre el archivo en 'w')
+  act_dr6_calibrador:         src/p11_sondas/act_dr6_calibra.py
+  act_dr6_en_el_clavo:        src/p11_sondas/act_dr6_lensing.py
+  auditoria_pdfs_zenodo:      src/verificacion/audita_pdfs_zenodo.py
+  bao_camb_control:           src/bao_camb.py
+  rd_camb_control:            src/rd_camb.py
+  cmb_dbic_mnu_propia:        src/p11_sondas/cmb_dbic_mnu_propia.py
+  cmb_dbic_tau_ajustado:      src/p03_cmb/dbic_tau_ajustado.py
+  cmb_fuga2_combinaciones:    src/p03_cmb/fuga2_combinaciones.py
+  cmb_fuga3_kids:             src/p03_cmb/fuga3_por_As.py
+  cmb_fuga3_fondo:            src/p03_cmb/fuga3_por_As.py
+  cmb_fuga3_kids_3sig_rehecho: src/p03_cmb/fuga3_rehace_3sig.py
+  cmb_punto_de_fuga2:         src/p03_cmb/punto_de_fuga2.py
+  cmb_quien_mide_As:          src/p03_cmb/quien_mide_As.py
+  cmb_ajuste_conjunto_wc_ns_SSEE: src/p03_cmb/ajuste_conjunto_wc_ns.py
+  cmb_ajuste_conjunto_wc_ns_LCDM: src/p03_cmb/ajuste_conjunto_wc_ns.py
+  conjunta_b3_bloques:        src/p06_growth/cobaya_conjunta.py
+  conjunta_control:           src/p06_growth/cobaya_conjunta.py
+  conjunta_vs_individual:     src/p06_growth/leer_conjunta.py
+  cruce_fantasma_quien_lo_lleva: src/p07_eft/cruce_fantasma_quien_lo_lleva.py
+  deltac_spherical_collapse:  src/p02_mcmc/spherical_collapse_deltac.py
+  des_y3_barrido:             src/p11_sondas/des_y3_barrido.py
+  des_y3_barrido_masa:        src/p11_sondas/des_y3_barrido_en_masa.py
+  des_y3_calibrador:          src/p11_sondas/des_y3_calibra.py
+  des_y3_en_el_clavo_lcdm_libre:  src/p11_sondas/des_y3_en_el_clavo.py
+  des_y3_en_el_clavo_lcdm_planck: src/p11_sondas/des_y3_en_el_clavo.py
+  des_y3_en_el_clavo_ssee:    src/p11_sondas/des_y3_en_el_clavo.py
+  eft_barrido_potenciales_wa: src/p07_eft/barrido_potenciales_wa.py
+  eft_dos_campos_acoplados:   src/p07_eft/dos_campos_acoplados.py
+  eft_dos_campos_genericos:   src/p07_eft/dos_campos_genericos.py
+  eft_dos_campos_phi_pi:      src/p07_eft/dos_campos_phi_pi.py
+  erosita_completitud:        src/p11_sondas/erosita_completitud.py
+  erosita_conteos_efeds:      src/p11_sondas/erosita_conteos.py
+  erosita_conteos_erass1:     src/p11_sondas/erosita_conteos.py
+  erosita_cr:                 src/p11_sondas/erosita_cr.py
+  erosita_cr_v3:              src/p11_sondas/erosita_cr.py
+  erosita_extlike:            src/p11_sondas/erosita_extlike.py
+  As_medido_o_producto:       src/p06_growth/mide_As_o_producto.py
+  R1R2_boss_lpt_kmax0.200:    src/p06_growth/boss_lpt_R1R2.py
+  R4_lcdm_kids_S8:            src/p06_growth/analiza_lcdm_R4.py
+  R3_ssee_kids_S8_rehecho:    src/p06_growth/analiza_ssee_R3.py
+  boss_aisla_neutrinos:       src/p06_growth/boss_aisla_neutrinos.py
+  boss_control_kmax0.060:     src/p06_growth/boss_control.py
+  boss_control_kmax0.080:     src/p06_growth/boss_control.py
+  boss_control_kmax0.100:     src/p06_growth/boss_control.py
+  boss_control_kmax0.120:     src/p06_growth/boss_control.py
+  boss_fit_kmax0.060:         src/p06_growth/boss_fit.py
+  boss_fit_kmax0.080:         src/p06_growth/boss_fit.py
+  boss_fit_kmax0.100:         src/p06_growth/boss_fit.py
+  boss_fit_kmax0.120:         src/p06_growth/boss_fit.py
+  barrido_kmax_20260808:      src/p06_growth/barrido_kmax.sh
+  conjunta_tres_sondas:       src/p06_growth/conjunta_tres_sondas.py
+  marginal_vs_perfil:         src/p06_growth/marginal_vs_perfil.py
+  quien_mide_As:              src/p06_growth/quien_mide_As.py
+  ssee_om_libre:              src/p06_growth/ssee_om_libre.py
+  termino_volumen_boss:       src/p06_growth/mide_termino_volumen.py
+  vara_As_libre_perfil:       src/p06_growth/vara_As_libre_perfil.py
+  vara_lcdm_fondo_fijo:       src/p06_growth/vara_lcdm_fondo_fijo.py
+  h0_four_priors:             src/p09_hubble/ssee_h0_prior_experiment.py
+  lcdm_conjunta:              src/p11_sondas/lcdm_conjunta.py
+  lcdm_conjunta_bao:          src/p11_sondas/lcdm_conjunta.py
+  lcdm_conjunta_cmb:          src/p11_sondas/lcdm_conjunta.py
+  lcdm_conjunta_kids:         src/p11_sondas/lcdm_conjunta.py
+  lcdm_conjunta_control:      src/p11_sondas/lcdm_conjunta.py
+  p5_techo_sigma8_As_fijo:    src/p05_IS/techo_sigma8_As_fijo.py
+  sn_geometria_en_el_clavo:   src/p11_sondas/sn_geometria.py
+  union3_en_el_clavo:         src/p11_sondas/union3_binned.py
+  union3_repro_compara:       src/p11_sondas/union3_repro_compara.py
+
 historicos:
+
+  # ── 2026-09-30: logs SIN script recuperable. Entraron en un commit sin el
+  #    codigo que los produjo (lectura o calculo suelto, perdido) o su script
+  #    esta archivado con la entidad retirada. NINGUN documento los cita por
+  #    nombre (comprobado con grep en papers, PRD, CANONICAL y cajones) y no
+  #    son fuente de ningun numero vigente. Se conservan como registro; si
+  #    algun dia hicieran falta, se rehacen con script (como R3 y el ajuste
+  #    conjunto w_c,n_s), no se citan.
+  - INVENTARIO_two_sector          # dos sectores: retirado 2026-08-01
+  - particula_que_prefiere_kids    # particula: retirada 2026-08-01
+  - precio_cmb_de_la_particula     # particula: retirada 2026-08-01
+  - ssee_kids_results              # script en archive/.../particula_RETIRADA_2026-08-01
+  - lcdm_kids_results              # script en archive/.../sondeos_p6_2026-07
+  - s8_barra_kids                  # script en archive/codigo/p06_kids1000_SUPERADO_2026-09-20
+  - mcmc_run_20260420              # corrida de abril, anterior a todo reframe
+  - test_hueco                     # fc3b594, sin script
+  - conjunta_vs_individual_preliminar  # lectura previa a la conjunta cerrada
+  - multisonda_un_solo_As          # 3ea99aa: RETRACTADO el +12.45 de BOSS
+  - cmb_punto_de_fuga              # v1; superado por cmb_punto_de_fuga2 (con script)
+  - cmb_As_perfil                  # 01d4369, sin script
+  - cmb_combinacion_s8             # 01d4369, sin script
+  - cmb_ns_forzado                 # 01d4369, sin script
+  - cmb_wb_forzado                 # 01d4369, sin script
+  - cmb_tau_flotado                # 01d4369, marcado «NO USAR» (EoS clavada, R64)
+  - cmb_tau_flotado_lcdm           # 01d4369, sin script
+  - cmb_ajuste_conjunto_wc_ns      # 01d4369, sin script; REHECHO con script en cmb_ajuste_conjunto_wc_ns_{SSEE,LCDM}
+  - R1R2_boss_lpt_cobaya           # sin script; el R1R2 vigente es R1R2_boss_lpt_kmax0.200 (boss_lpt_R1R2.py)
+  - R1R2_cobaya_lcdm_20260907      # salida de consola de una corrida Cobaya, sin script propio
+  - R1R2_lpt_20260907              # idem
   # ── Control de memory_sync (2026-09-30): LISTA valores retirados a proposito
   #    (es su trabajo: probar que el comprobador los caza). No es un computo.
   - memory_sync_control_2026-09-30

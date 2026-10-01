@@ -3004,7 +3004,7 @@ función de masa de halos a z ≳ 10.
 
 Control del otro lado (R53): EdS reproduce el analítico 3/20·(12π)^(2/3) = 1.68647 a una
 parte en 10⁵. El postulado 1.6284 está a 2.9 % y **la dinámica del modelo no lo produce**.
-Script: `notes/2026-09-25_crecimiento_alto_z/spherical_collapse_deltac.py`.
+Script: `src/p02_mcmc/spherical_collapse_deltac.py`.
 
 **El supuesto, y por qué se sostiene por la puerta correcta.** El cálculo asume DE suave.
 La justificación NO es c²_s,eff = 0 —un horizonte sonoro nulo es justamente la condición

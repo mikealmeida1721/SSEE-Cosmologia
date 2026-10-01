@@ -137,7 +137,7 @@ _os.makedirs(_os.path.dirname(_log), exist_ok=True)
 with open(_log, "w") as _f:
     _json.dump({
         "fecha": _dt.date.today().isoformat(),
-        "script": "notes/2026-09-25_crecimiento_alto_z/spherical_collapse_deltac.py",
+        "script": "src/p02_mcmc/spherical_collapse_deltac.py",
         "metodo": "top-hat esferico, ec. no lineal exacta, shooting sobre delta_i, DE suave",
         "supuesto_DE_suave_justificado_por": "friccion viscosa IS de Paper 5 (F ~ k^2), NO por c_s^2=0",
         "control_EdS_analitico": 3/20 * (12*np.pi)**(2/3),
