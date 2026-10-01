@@ -67,7 +67,7 @@ $s_m=1+w_0=\val{S_M_d6}$ is a number of the equation of state, not a density, an
 the scalar $\mathrm{MIRA}=(3\varphi+\pi)/4$ enters only the Hubble screening of
 Paper~9.
 Running CAMB with this single-sector background reproduces acoustic peaks at
-$\ell=220,\,536,\,813$ (Planck: $220,\,{\sim}540,\,{\sim}810$).
+$\ell=\val{p3_pico1_ssee},\,\val{p3_pico2_ssee},\,\val{p3_pico3_ssee}$ (Planck: $220,\,{\sim}540,\,{\sim}810$).
 In a full posterior evaluation with the official off-diagonal \texttt{plik} TTTEEE
 + low-$\ell$ + lensing likelihood via Cobaya, sampling the $k=2=\{A_s,\tau\}$ SSEE
 parameters (with $H_0$, $\omega_b$, $\omega_c$ and $n_s$ algebraically fixed) against
@@ -186,8 +186,8 @@ This inflates $D_A(z_*)$ by $\sim32\%$, shifting all peaks to higher multipoles.
 
 Running CAMB with the SSEE dynamic background directly gives:
 \begin{equation}
-(\ell_1,\ell_2,\ell_3)_{\mathrm{SSEE,naive}} = (242,\,601,\,930),
-\quad \chi^2_r = 97.7.
+(\ell_1,\ell_2,\ell_3)_{\mathrm{SSEE,naive}} = (\val{p3_pico1_naive},\,\val{p3_pico2_naive},\,\val{p3_pico3_naive}),
+\quad \chi^2_r = \val{p3_naive_chi2r_TT}.
 \end{equation}
 This constitutes a prima facie falsification.
 
@@ -376,9 +376,9 @@ Table~\ref{tab:peaks} compares the first three acoustic peak positions.
 Model & $\ell_1$ & $\ell_2$ & $\ell_3$ \\
 \midrule
 Planck PR4 (observed) & $\sim220$ & $\sim540$ & $\sim810$ \\
-$\Lambda$CDM ($\Omega_m=0.315$) & 220 & 538 & 812 \\
-SSEE naive ($s_m=\val{S_M_d6}$) & 242 & 601 & 930 \\
-\textbf{SSEE} ($\Omega_{m,\mathrm{CMB}}=0.309$) & \textbf{220} & \textbf{536} & \textbf{812} \\
+$\Lambda$CDM ($\Omega_m=0.315$) & \val{p3_pico1_lcdm} & \val{p3_pico2_lcdm} & \val{p3_pico3_lcdm} \\
+SSEE naive ($s_m=\val{S_M_d6}$) & \val{p3_pico1_naive} & \val{p3_pico2_naive} & \val{p3_pico3_naive} \\
+\textbf{SSEE} ($\Omega_{m,\mathrm{CMB}}=0.309$) & \textbf{\val{p3_pico1_ssee}} & \textbf{\val{p3_pico2_ssee}} & \textbf{\val{p3_pico3_ssee}} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -441,8 +441,8 @@ Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck PR4 EE data.}
 $[L(L+1)]^2 C_L^{\phi\phi}/(2\pi)$.
 Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck PR4
 lensing (9 MV bandpowers). Lower panel: residuals normalised by $\sigma_L$.
-SSEE achieves $\chi^2_r=0.720$ over the 9 bandpowers
-(\S\ref{sec:bic}; $\Lambda$CDM: $0.757$), both indicating a good fit
+SSEE achieves $\chi^2_r=\val{p3_chi2r_PP_ssee}$ over the \val{p3_N_PP} bandpowers
+(\S\ref{sec:bic}; $\Lambda$CDM: $\val{p3_chi2r_PP_lcdm}$), both indicating a good fit
 ($\chi^2_r<1$).}
 \label{fig:pp}
 \end{figure}
@@ -463,15 +463,15 @@ using the published uncertainties:
 
 \begin{table}[ht]
 \centering
-\caption{$\chi^2$ comparison vs.\ Planck PR4 TT ($\ell=30$--$2000$, $N=1971$).}
+\caption{$\chi^2$ comparison vs.\ Planck PR4 TT ($\ell=30$--$2000$, $N=\val{p3_N_TT}$).}
 \label{tab:chi2}
 \begin{tabular}{lccc}
 \toprule
 Model & $\chi^2$ & $\chi^2_r$ & $\Delta\chi^2$ \\
 \midrule
-$\Lambda$CDM (Planck 2018) & 2054.9 & 1.043 & 0 \\
-SSEE & 2054.6 & 1.042 & $-0.3$ \\
-SSEE naive & 192{,}447 & 97.7 & $+190{,}392$ \\
+$\Lambda$CDM (Planck 2018) & \val{p3_chi2_TT_lcdm} & \val{p3_chi2r_TT_lcdm} & 0 \\
+SSEE & \val{p3_chi2_TT_ssee} & \val{p3_chi2r_TT_ssee} & $\val{p3_dchi2_TT}$ \\
+SSEE naive & \val{p3_naive_chi2_TT} & \val{p3_naive_chi2r_TT} & \val{p3_naive_dchi2} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -491,12 +491,12 @@ $\chi^2_r$ comparisons use diagonal covariance; for BIC see \S\ref{sec:bic} ($k=
 \toprule
 Spectrum & $N$ & SSEE $\chi^2_r$ & $\Lambda$CDM $\chi^2_r$ & $\Delta\chi^2_r$ \\
 \midrule
-TT & 1971 & 1.042 & 1.043 & $-0.001$ \\
-TE & 1967 & 1.040 & 1.040 & $0.000$ \\
-EE & 1967 & 1.040 & 1.039 & $+0.001$ \\
-PP & 9    & 0.720 & 0.757 & $-0.037$ \\
+TT & \val{p3_N_TT} & \val{p3_chi2r_TT_ssee} & \val{p3_chi2r_TT_lcdm} & $\val{p3_dchi2r_TT}$ \\
+TE & \val{p3_N_TE} & \val{p3_chi2r_TE_ssee} & \val{p3_chi2r_TE_lcdm} & $\val{p3_dchi2r_TE}$ \\
+EE & \val{p3_N_EE} & \val{p3_chi2r_EE_ssee} & \val{p3_chi2r_EE_lcdm} & $\val{p3_dchi2r_EE}$ \\
+PP & \val{p3_N_PP}    & \val{p3_chi2r_PP_ssee} & \val{p3_chi2r_PP_lcdm} & $\val{p3_dchi2r_PP}$ \\
 \midrule
-Combined$^{\dagger}$ & 5914 & 1.040 & 1.040 & $0.000$ \\
+Combined$^{\dagger}$ & \val{p3_N_tot} & \val{p3_chi2r_tot_ssee} & \val{p3_chi2r_tot_lcdm} & $\val{p3_dchi2r_tot}$ \\
 \bottomrule
 \end{tabular}
 {\footnotesize $^{\dagger}$Combined under independence approximation (upper bound; see \S\ref{sec:bic}).}
@@ -505,10 +505,10 @@ Combined$^{\dagger}$ & 5914 & 1.040 & 1.040 & $0.000$ \\
 The TE and EE spectra show the smallest discrepancies ($|\Delta\chi^2_r|\le0.001$
 each), indicating that SSEE reproduces the polarization anisotropies
 almost identically to $\Lambda$CDM.
-TT is marginally better than $\Lambda$CDM ($\Delta\chi^2_r=-0.001$).
+TT is marginally better than $\Lambda$CDM ($\Delta\chi^2_r=\val{p3_dchi2r_TT_d4}$).
 In the lensing potential sector (PP, Fig.~\ref{fig:pp}), SSEE achieves
-$\chi^2_r=0.720$ vs.\ $0.757$ for $\Lambda$CDM --- slightly \emph{better} agreement
-with the 9 Planck MV bandpowers, both $\chi^2_r<1$ indicating a good fit.
+$\chi^2_r=\val{p3_chi2r_PP_ssee}$ vs.\ $\val{p3_chi2r_PP_lcdm}$ for $\Lambda$CDM --- slightly \emph{better} agreement
+with the \val{p3_N_PP} Planck MV bandpowers, both $\chi^2_r<1$ indicating a good fit.
 All residuals are consistent with a non-parametric model.
 
 \subsection{Interpretation of residuals}
@@ -530,12 +530,12 @@ For model comparison we compute:
 \begin{equation}
 \mathrm{BIC} = \chi^2 + k\ln N,
 \end{equation}
-where $k$ is the number of free parameters and $N=5914$ for the combined TT, TE, EE, and lensing data points.
+where $k$ is the number of free parameters and $N=\val{p3_N_tot}$ for the combined TT, TE, EE, and lensing data points.
 
 \begin{table}[ht]
 \centering
 \caption{\textbf{Preliminary BIC comparison — diagonal approximation only.}
-Combined spectra (TT+TE+EE+PP, $N=5914$, independence approximation).
+Combined spectra (TT+TE+EE+PP, $N=\val{p3_N_tot}$, independence approximation).
 SSEE has $k=2$ ($\{A_s,\tau\}$); $\Lambda$CDM has $k=6$.
 \textit{This result uses diagonal covariance; see Eq.~\eqref{eq:bic_cobaya}
 (\S\ref{sec:cobaya}) for the definitive off-diagonal Cobaya evaluation.}}
@@ -544,15 +544,15 @@ SSEE has $k=2$ ($\{A_s,\tau\}$); $\Lambda$CDM has $k=6$.
 \toprule
 Model & $k$ & $\chi^2_r$ & $\Delta$BIC (diagonal) \\
 \midrule
-$\Lambda$CDM & 6 & 1.040 & Baseline ($0.0$) \\
-SSEE & 2 & 1.040 & $-35.0$ \\
+$\Lambda$CDM & 6 & \val{p3_chi2r_tot_lcdm} & Baseline ($0.0$) \\
+SSEE & 2 & \val{p3_chi2r_tot_ssee} & $\val{p3_dBIC_diag}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Under the diagonal approximation, SSEE is favoured ($\Delta\mathrm{BIC}=-35.0$):
-the combined $\chi^2_r=1.040$ matches $\Lambda$CDM's $1.040$, so the
-parameter-count term ($\Delta k\,\ln N=-34.7$) dominates and rewards SSEE's
+Under the diagonal approximation, SSEE is favoured ($\Delta\mathrm{BIC}=\val{p3_dBIC_diag}$):
+the combined $\chi^2_r=\val{p3_chi2r_tot_ssee}$ matches $\Lambda$CDM's $\val{p3_chi2r_tot_lcdm}$, so the
+parameter-count term ($\Delta k\,\ln N=\val{p3_pen_dklnN}$) dominates and rewards SSEE's
 smaller parameter set. This diagonal cross-check is evaluated at the global
 anchor $H_0=67.96214$ ($\omega_m$-direct, $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$),
 consistent with the canonical \texttt{plik\_lite} evaluation
@@ -698,7 +698,7 @@ $H_0=67.96214$, $\omega_m$-direct) is the canonical result.}
 \toprule
 Method & Spectra & $N$ & $k_{\rm SSEE}$ & $k_{\Lambda\rm CDM}$ & $\Delta\mathrm{BIC}$ \\
 \midrule
-Diagonal (approx.)        & TT+TE+EE+PP          & 5914 & 2 & 6 & $-35.0$ (SSEE favoured) \\
+Diagonal (approx.)        & TT+TE+EE+PP          & \val{p3_N_tot} & 2 & 6 & $\val{p3_dBIC_diag}$ (SSEE favoured) \\
 \texttt{plik\_lite} point est. & TTTEEE+lowl     & 669  & 2 & 6 & $-26.03$ (SSEE decisively favoured) \\
 Full \texttt{plik} MCMC   & TTTEEE+lowl+lensing  & 2354 & 2 & 6 & $\mathbf{-32.9}$ \emph{(canonical)} \\
 Full \texttt{plik} (conserv.) & TTTEEE+lowl+lensing & 2354 & 4 & 6 & $-17.3$ (SSEE strongly favoured) \\
@@ -892,7 +892,7 @@ SSEE makes the following testable predictions,
 each of which would \textbf{falsify} the framework if violated:
 
 \begin{enumerate}
-  \item \textbf{Peak positions:} $\ell_1=220\pm3$, $\ell_2=536\pm5$, $\ell_3=812\pm8$.
+  \item \textbf{Peak positions:} $\ell_1=\val{p3_pico1_ssee}\pm3$, $\ell_2=\val{p3_pico2_ssee}\pm5$, $\ell_3=\val{p3_pico3_ssee}\pm8$.
     A measurement placing $\ell_1$ outside this range by more than $2\sigma$
     would falsify the $\omega_m$-direct CMB matter density.
 
@@ -941,10 +941,10 @@ dimensionless parameters.
 The key results are:
 
 \begin{itemize}
-  \item Acoustic peaks at $\ell=220,\,536,\,813$, within $\Delta\ell\leq5$ of Planck PR4.
-  \item TT: $\chi^2_r=1.042$ over 1971 multipoles ($\Lambda$CDM: $1.043$).
-  \item TE/EE: $\chi^2_r=1.040/1.040$, essentially matching $\Lambda$CDM.
-  \item Lensing (PP): $\chi^2_r=0.720$ vs.\ $0.757$ for $\Lambda$CDM — SSEE marginally better (both $\chi^2_r<1$).
+  \item Acoustic peaks at $\ell=\val{p3_pico1_ssee},\,\val{p3_pico2_ssee},\,\val{p3_pico3_ssee}$, within $\Delta\ell\leq5$ of Planck PR4.
+  \item TT: $\chi^2_r=\val{p3_chi2r_TT_ssee}$ over \val{p3_N_TT} multipoles ($\Lambda$CDM: $\val{p3_chi2r_TT_lcdm}$).
+  \item TE/EE: $\chi^2_r=\val{p3_chi2r_TE_ssee}/\val{p3_chi2r_EE_ssee}$, essentially matching $\Lambda$CDM.
+  \item Lensing (PP): $\chi^2_r=\val{p3_chi2r_PP_ssee}$ vs.\ $\val{p3_chi2r_PP_lcdm}$ for $\Lambda$CDM — SSEE marginally better (both $\chi^2_r<1$).
   \item \textbf{\texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ ($\omega_m$-direct):} $\chi^2_{\mathrm{eff}} = 1003.586$ with $\{A_s,\tau\}$ minimized, at $H_0 = 67.96214$ km\,s$^{-1}$\,Mpc$^{-1}$ (the CMB-minimising value with SSEE-fixed $\omega_b,\omega_c$); $\Lambda$CDM gives $1003.596$ with six free parameters (its own $\sum m_\nu=0.06$~eV).
   \item $\Delta\mathrm{BIC}=-26.03$ ($k=2$ vs $k=6$, $N=669$), decisively favouring SSEE over $\Lambda$CDM at equal fit quality ($\Delta\chi^2=-0.010$).
   \item \textbf{Full off-diagonal \texttt{plik} MCMC (canonical):} $\chi^2_{\rm BF}=2771.3$ vs $2773.1$ for $\Lambda$CDM over $N=2354$ points, $\Delta\mathrm{BIC}=-32.9$ ($k=2$ vs $k=6$); $-17.3$ under the conservative $k=4$.

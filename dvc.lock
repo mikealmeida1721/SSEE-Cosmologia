@@ -75,12 +75,16 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: e18756233daf1b507e8b77739b6e76ca
-      size: 15228
+      md5: 7d92c8fd68d0137419fa5ce3b6d9a30e
+      size: 19099
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 157babb56050d778d3b857857417be60
       size: 7909
+    - path: results/logs/hiclass_campo.json
+      hash: md5
+      md5: 11c0b317e9988b1538a895a52c1cde96
+      size: 6195
     - path: results/logs/kids_legacy_bic.json
       hash: md5
       md5: 0481b4f9324f6f413d1aa09ce9a76f37
@@ -89,10 +93,18 @@ stages:
       hash: md5
       md5: fafae20f92ccc2a645ae8f202596438f
       size: 2372
+    - path: results/logs/lya_auditoria.json
+      hash: md5
+      md5: 7d5855900488d2817ecc39cc650c72d4
+      size: 6024
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
       size: 1356
+    - path: results/logs/paper3_cmb_chi2.json
+      hash: md5
+      md5: 76b195c6ba3561dd1f5cc49f908eaa3f
+      size: 2381
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
@@ -104,8 +116,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: df729df510b937a2caf49d3f2a0dc0fb
-      size: 20225
+      md5: 33b9f7d9c08c805c86ff0ea7cb143407
+      size: 24867
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -364,3 +376,86 @@ stages:
       hash: md5
       md5: 0481b4f9324f6f413d1aa09ce9a76f37
       size: 3419
+  paper3_cmb:
+    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 
+      src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
+    deps:
+    - path: data/raw/planck_pr4_EE.txt
+      hash: md5
+      md5: f81229611d039f90b6eea76a0fe5b713
+      size: 135731
+    - path: data/raw/planck_pr4_TE.txt
+      hash: md5
+      md5: d6a684fc7d5ff76ff2125691de5995b9
+      size: 135731
+    - path: data/raw/planck_pr4_TT.txt
+      hash: md5
+      md5: 953f333fa17483d3e2143dc82ddfa874
+      size: 170547
+    - path: data/raw/planck_pr4_lensing.txt
+      hash: md5
+      md5: f2804b8f2fa134071a94a5e4c7a2fa82
+      size: 1083
+    - path: src/p03_cmb/ssee_paper3_cmb.py
+      hash: md5
+      md5: 6e12e3490c843a13e0077d80d9c66e8e
+      size: 21081
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/paper3_cmb_chi2.json
+      hash: md5
+      md5: 76b195c6ba3561dd1f5cc49f908eaa3f
+      size: 2381
+    - path: results/logs/paper3_cmb_reframe.log
+      hash: md5
+      md5: a4dbb3aaa54b2a1b0a73a5fe3e47a471
+      size: 2873
+  lya_auditoria:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/lya_auditoria.py
+    deps:
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/bao_lcdm_planck.json
+      hash: md5
+      md5: 2361bbdc5543a591c2d15644665ccbda
+      size: 230
+    - path: src/bao_camb.py
+      hash: md5
+      md5: 17e888f2a53c3953da7563d6c7a37e57
+      size: 4547
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p02_mcmc/lya_auditoria.py
+      hash: md5
+      md5: 573a7161a8076c0d7a412853e6bf7f4c
+      size: 5587
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/lya_auditoria.json
+      hash: md5
+      md5: 7d5855900488d2817ecc39cc650c72d4
+      size: 6024
