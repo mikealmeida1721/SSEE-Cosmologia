@@ -53,16 +53,14 @@ log("  DIC = -2·lnL(θ̂) + 2·p_D ,  p_D = 2·[lnL(θ̂) − <lnL>]")
 log("")
 log(f"  {'modelo':6s} {'k':>2s} {'lnP_max':>10s} {'<lnP>':>10s} {'p_D':>7s} {'DIC':>9s}")
 
-_dic = {}
+_dic, _fil = {}, {}
 for _m, _k in _K.items():
     _lp = _d[f"{_m}_lp"]
     _lp = _lp[np.isfinite(_lp)]
     _mx, _mn = _lp.max(), _lp.mean()
     _pD = 2.0 * (_mx - _mn)
     _dic[_m] = -2.0 * _mx + 2.0 * _pD
-    _fil = getattr(sys.modules[__name__], "_fil", {})
     _fil[_m] = dict(k=_k, lnP_max=float(_mx), lnP_media=float(_mn), p_D=float(_pD), DIC=float(_dic[_m]))
-    sys.modules[__name__]._fil = _fil
     _flag = "" if abs(_pD - _k) < 0.5 else "   ⚠ p_D lejos de k"
     log(f"  {_m.upper():6s} {_k:2d} {_mx:10.3f} {_mn:10.3f} {_pD:7.3f} {_dic[_m]:9.3f}{_flag}")
 
