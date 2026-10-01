@@ -417,8 +417,8 @@ stages:
       size: 929058
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: 089f4ad6d744382735d763231f3630aa
-      size: 68400
+      md5: 1faf7bfc1eba3582184cdc6558c987e1
+      size: 68171
     - path: src/p06_growth/kids_legacy_bic.py
       hash: md5
       md5: 4a8c337fe70ba2f14f8312ed393053f8
@@ -430,7 +430,7 @@ stages:
     outs:
     - path: results/logs/kids_legacy_bic.json
       hash: md5
-      md5: 0481b4f9324f6f413d1aa09ce9a76f37
+      md5: 4a679c16f0138a04575279d23bbab3de
       size: 3419
   paper3_cmb:
     cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 
@@ -671,8 +671,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: d8475742bc2f533c20dbeeb42b98fbd4
-      size: 68026
+      md5: 1faf7bfc1eba3582184cdc6558c987e1
+      size: 68171
     - path: results/logs/deltac_spherical_collapse.json
       hash: md5
       md5: 92cca1715441a663061db471bdb82e2c
@@ -700,11 +700,11 @@ stages:
     outs:
     - path: results/logs/press_schechter.json
       hash: md5
-      md5: f744d36e34a89466365c2498ced4cbd8
+      md5: ee91c48f06ed35ea541845424a768d49
       size: 2073
     - path: results/logs/press_schechter.log
       hash: md5
-      md5: d11edd219e5bc9d2035ec5d892333b4a
+      md5: 59f5c44c063990ca8b39799bed53dbce
       size: 2412
   edad_universo:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -782,8 +782,8 @@ stages:
       size: 5992
     - path: src/p02_mcmc/ssee_paper2_analysis.py
       hash: md5
-      md5: 7cd0f327e8f780d4735a85af59c7d3b6
-      size: 16148
+      md5: ec9f73e44aa937598e65876ea4d56cb8
+      size: 16855
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -795,11 +795,11 @@ stages:
     outs:
     - path: results/logs/cumulos_7.json
       hash: md5
-      md5: be2a1998e045c84c3e6443e95c4f8de7
+      md5: bb0f935d0cc61a5317073b48a685f69f
       size: 4826
     - path: results/logs/cumulos_7.log
       hash: md5
-      md5: c4bfa830e0e6f65a1e30e1debb26400d
+      md5: 2f47acf22834acebf5076dfaeb53a82d
       size: 2073
   fondos_exponenciales:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

@@ -90,7 +90,7 @@ r4, r7 = resumen(list(ZHANG)), resumen(list(datos))
 r7["subprediccion_std_imf_media"] = float(np.mean([datos[n]["M_obs"] / datos[n]["std_imf"] for n in datos]))
 
 # Control: el script original (4 cumulos)
-sal = subprocess.run([sys.executable, os.path.join(_R, "src", "p02_mcmc", "ssee_paper2_analysis.py")],
+sal = subprocess.run([sys.executable, os.path.join(_R, "src", "p02_mcmc", "ssee_paper2_analysis.py"), "--sin-salida"],
                      capture_output=True, text=True, cwd=_R, env=dict(os.environ, MPLBACKEND="Agg")).stdout
 m = re.search(r"SSEE completo\s+([0-9.]+)\s+([0-9.]+)", sal)
 orig = dict(chi2=float(m.group(1)), chi2r=float(m.group(2)))

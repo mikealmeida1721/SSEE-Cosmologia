@@ -401,5 +401,6 @@ import sys as _sys
 _R = _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..", ".."))
 _sys.path.insert(0, _os.path.join(_R, "src"))
 from procedencia import con_acta as _acta  # noqa: E402
-_json.dump(_acta(dict(w0wa_ssee_vs_lcdm=TABLA_W0WA), __file__),
-           open(_os.path.join(_R, "results", "logs", "paper2_w0wa.json"), "w"), indent=1)
+if "--sin-salida" not in _sys.argv:   # cumulos_7 lo corre como control y no debe reescribir este log
+    _json.dump(_acta(dict(w0wa_ssee_vs_lcdm=TABLA_W0WA), __file__),
+               open(_os.path.join(_R, "results", "logs", "paper2_w0wa.json"), "w"), indent=1)
