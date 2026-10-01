@@ -496,8 +496,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/lya_auditoria.py
       hash: md5
-      md5: a68e644ecce8bed39dfcf115fe040a04
-      size: 5623
+      md5: b09b37e1c23004bdc841a5cd86dd864e
+      size: 5721
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -513,7 +513,7 @@ stages:
     outs:
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 42f5b0b71a5f1103e96fa91269602d5c
+      md5: a477034fa06e33d33d9ecb7811def962
       size: 6064
   resumen_3modelos:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -737,8 +737,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: d8475742bc2f533c20dbeeb42b98fbd4
-      size: 68026
+      md5: 1faf7bfc1eba3582184cdc6558c987e1
+      size: 68171
     - path: class_ssee/ssee_v36_nomira.ini
       hash: md5
       md5: 1603f5fb77dbfc3722fd3614daed2fae
@@ -749,8 +749,8 @@ stages:
       size: 2381
     - path: src/p03_cmb/class_picos.py
       hash: md5
-      md5: aed559527ca28397d7909a3ad4adf39c
-      size: 6621
+      md5: 1e5c0c8d901505d2ecc989f3d09b08fa
+      size: 6731
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -766,11 +766,11 @@ stages:
     outs:
     - path: results/figures/fig_class_tt.pdf
       hash: md5
-      md5: addb4ab3ea524621bffc9486a2aed0ea
+      md5: d41a28766252d30fe02b4278f49b54f2
       size: 24191
     - path: results/logs/class_picos.json
       hash: md5
-      md5: 833cd321d2fcc6111c6ad9f9052af990
+      md5: d83e1992028bea800c841e0479c6d099
       size: 1875
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -920,12 +920,12 @@ stages:
       size: 2483
     - path: results/logs/p5_techo_sigma8_As_fijo.json
       hash: md5
-      md5: f5352a1d801f30ec4870908d61a06e43
-      size: 1973
+      md5: 4155ea4fe3083b2928d6e91749c55153
+      size: 3444
     - path: src/p05_IS/hmcode_bariones.py
       hash: md5
-      md5: 10d062d2e6f2ba72d067fa124ac25813
-      size: 4612
+      md5: 4ecb13284beffc97b8d4262a879f7db5
+      size: 4720
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -933,11 +933,11 @@ stages:
     outs:
     - path: results/logs/hmcode_bariones.json
       hash: md5
-      md5: 60307f8b60ebd747cf9bf991aaca7021
-      size: 1600
+      md5: 2ed5244d861d5ea0194df051a5caeff3
+      size: 1599
     - path: results/logs/hmcode_bariones.log
       hash: md5
-      md5: 0d657b0dff42d314cb4957a27b02c72a
+      md5: 82444c4ce6ae7e4e4dfb2551843fa10c
       size: 847
   perfil_wc_boss:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
