@@ -78,6 +78,9 @@ ALGEBRA = {
     "X_bg_IR":        ("S_K*KAL0/6", "X_bg IR en rho_crit = 1, Paper 10"),
     "cs2_condensado": ("(1+W0)/(5-3*W0)", "c_s^2 del condensado, Paper 7"),
     "cs2_condensado_TM": ("(M_V-T_R)/(5*M_V+3*T_R)", "la misma c_s^2 por T_r, M_v (control)"),
+    "sK_con_KX_de_P7": ("3*(5-3*W0)*S_DE", "6(XK_X+2X^2K_XX) con la K(X) de Paper 7 y rho_phi = S_DE (Paper 10, las dos K(X))"),
+    "sK_con_KX_de_P7_c1": ("6*S_DE/(1+3*(1-W0)/(3*W0-1))*(1+6*(1-W0)/(3*W0-1))", "lo mismo desde c1 X y u (control)"),
+    "factor_dos_KX":  ("3*(5-3*W0)*S_DE/S_K_FULL", "cociente contra s_K completo de Paper 10"),
     "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
 }
 
@@ -91,6 +94,7 @@ ctl = {
     "u dos formas": abs(res["u_condensado"]["valor"] - res["u_condensado_TM"]["valor"]),
     "n dos formas": abs(res["n_ssee"]["valor"] - res["n_ssee_TM"]["valor"]),
     "AURA = 2 MIRA": abs(S.AURA - 2 * S.MIRA),
+    "s_K con K(X) de P7, dos formas": abs(res["sK_con_KX_de_P7"]["valor"] - res["sK_con_KX_de_P7_c1"]["valor"]),
     "c_s^2 dos formas": abs(res["cs2_condensado"]["valor"] - res["cs2_condensado_TM"]["valor"]),
 }
 try:
