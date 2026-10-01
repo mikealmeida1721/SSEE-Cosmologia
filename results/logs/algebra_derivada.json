@@ -210,6 +210,21 @@
    "formula": "S_K*KAL0/6",
    "valor": 0.371132767689815,
    "uso": "X_bg IR en rho_crit = 1, Paper 10"
+  },
+  "cs2_condensado": {
+   "formula": "(1+W0)/(5-3*W0)",
+   "valor": 0.021283701570524605,
+   "uso": "c_s^2 del condensado, Paper 7"
+  },
+  "cs2_condensado_TM": {
+   "formula": "(M_V-T_R)/(5*M_V+3*T_R)",
+   "valor": 0.021283701570524605,
+   "uso": "la misma c_s^2 por T_r, M_v (control)"
+  },
+  "horizonte_cs_Mpc": {
+   "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
+   "valor": 643.5424922781127,
+   "uso": "horizonte sonoro c_s c/H0 del condensado, Paper 7"
   }
  },
  "nucleo": {
@@ -269,24 +284,25 @@
   "identidades": {
    "u dos formas": 0.0,
    "n dos formas": 0.0,
-   "AURA = 2 MIRA": 0.0
+   "AURA = 2 MIRA": 0.0,
+   "c_s^2 dos formas": 0.0
   },
   "pasa": true,
   "formula_rota_falla": true,
   "errores": []
  },
  "_procedencia": {
-  "commit": "9fd1bd996df72119c8d20a907fe875e46cf7c6b5",
+  "commit": "43c35b6941f72c789e7b65d4e2d9c2db45a6186e",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "f88dc0ed600ffa01b95b9585057fd6d1c31e9de2244ce0484db0cda64182a3fe",
+  "script_sha256": "bc1232ba35a2ff37d587fde77704218c191eabfbf7400f06f05a33f6f9e4620d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T21:32:06",
+  "fecha": "2026-09-30T22:04:21",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

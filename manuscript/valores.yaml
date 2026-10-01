@@ -294,3 +294,25 @@ p2_neff_lcdm:     {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.N_ef
 p2_neff_cpl:      {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.N_eff_del_log", formato: ",d"}
 p2_lcdm_H0_std: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.posterior.H0.std", formato: ".2f"}
 p2_cpl_H0_std:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.posterior.H0.std", formato: ".2f"}
+# Paper 7: corrida hi_class del sector campo — src/p07_eft/hiclass_campo.py (2026-09-30)
+p7_hc_alphaK:      {fuente: "results/logs/hiclass_campo.json#canonico.campo.alpha_K_z0", formato: ".6f"}
+p7_hc_alphaK_pct:  {fuente: "results/logs/hiclass_campo.json#canonico.pct.alpha_K_dif", formato: ".3f"}
+p7_hc_cs2:         {fuente: "results/logs/hiclass_campo.json#canonico.campo.cs2_z0", formato: ".6f"}
+p7_hc_cs2_pct:     {fuente: "results/logs/hiclass_campo.json#canonico.pct.cs2_dif", formato: ".3f"}
+p7_hc_Omsmg:       {fuente: "results/logs/hiclass_campo.json#canonico.campo.Omega_smg", formato: ".6f"}
+p7_hc_Omm:         {fuente: "results/logs/hiclass_campo.json#canonico.campo.Omega_m_presupuesto", formato: ".6f"}
+p7_hc_s8_xk1:      {fuente: "results/logs/hiclass_campo.json#canonico.alpha_K_sigma8.1", formato: ".6f"}
+p7_hc_s8_xk100:    {fuente: "results/logs/hiclass_campo.json#canonico.alpha_K_sigma8.100", formato: ".6f"}
+p7_hc_s8_xk_pct:   {fuente: "results/logs/hiclass_campo.json#canonico.pct.sigma8_xk1_a_100", formato: ".3f"}
+p7_hc_TTak_l2:     {fuente: "results/logs/hiclass_campo.json#canonico.pct.TT_alphaK.2", formato: ".2f"}
+p7_hc_vc_l2:       {fuente: "results/logs/hiclass_campo.json#canonico.pct.var_cosmica.2", formato: ".1f"}
+p7_hc_s8_cs2_1:    {fuente: "results/logs/hiclass_campo.json#canonico.cs2_sigma8.1", formato: ".6f"}
+p7_hc_s8_cs2_mod:  {fuente: "results/logs/hiclass_campo.json#canonico.cs2_sigma8.modelo", formato: ".6f"}
+p7_hc_s8_cs2_pct:  {fuente: "results/logs/hiclass_campo.json#canonico.pct.sigma8_cs2_1_a_modelo", formato: ".3f"}
+p7_hc_TTcs2_l2:    {fuente: "results/logs/hiclass_campo.json#canonico.pct.TT_cs2.2", formato: "+.2f"}
+p7_hc_cs2min_wa:   {fuente: "results/logs/hiclass_campo.json#canonico.controles.xk_modelo_wa.cs2_min", formato: ".4f"}
+p7_hc_log10z_wa:   {fuente: "results/logs/hiclass_campo.json#canonico.controles.xk_modelo_wa.log10_z_cs2_min", formato: "d"}
+cs2_condensado_d12: {fuente: "results/logs/algebra_derivada.json#algebra.cs2_condensado.valor", formato: ".12f"}
+cs2_condensado_d6:  {fuente: "results/logs/algebra_derivada.json#algebra.cs2_condensado.valor", formato: ".6f"}
+alpha_K_z0_d1:      {fuente: "results/logs/algebra_derivada.json#algebra.alpha_K_z0.valor", formato: ".1f"}
+horizonte_cs_d0: {fuente: "results/logs/algebra_derivada.json#algebra.horizonte_cs_Mpc.valor", formato: ".0f"}

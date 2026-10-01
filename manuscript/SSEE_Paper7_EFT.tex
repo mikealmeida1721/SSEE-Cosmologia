@@ -62,7 +62,7 @@ both necessary and sufficient.
 The ratio $u \equiv c_2 X/c_1$ is then fixed with no freedom by the
 algebraic equation of state: $u = -(M_v+T_r)/(3T_r+M_v) = \val{u_condensado_d6}$,
 which reproduces $w_\phi = w_0 = \val{W0_d6}$ exactly and yields the
-sound speed $c_s^2 = (M_v-T_r)/(5M_v+3T_r) = 0.021284$.
+sound speed $c_s^2 = (M_v-T_r)/(5M_v+3T_r) = \val{cs2_condensado_d6}$.
 The solution requires $c_1 < 0$ and $c_2 > 0$: the field is a
 \emph{ghost condensate}, stabilised at $X/X_{\min} = \val{X_sobre_Xmin_d6}$, where
 the no-ghost condition $K_X + 2XK_{XX} > 0$ and the gradient condition
@@ -229,7 +229,7 @@ $M_v = \phiG+\pi+K_v = \val{M_V_d6}$.  Substituting back,
   \boxed{
   c_s^{2} = \frac{-w_0-1}{3w_0-5}
           = \frac{M_v-T_r}{5M_v+3T_r}
-          = 0.021283701571.}
+          = \val{cs2_condensado_d12}.}
   \label{eq:cs2_alg}
 \end{equation}
 %
@@ -367,11 +367,11 @@ scalar mode carries positive kinetic energy: the theory is ghost-free at
 the background point, notwithstanding $c_1<0$.
 
 \paragraph{Gradient stability.}
-From Eq.~(\ref{eq:cs2_alg}), $c_s^2 = +0.021284 > 0$: no gradient
+From Eq.~(\ref{eq:cs2_alg}), $c_s^2 = +\val{cs2_condensado_d6} > 0$: no gradient
 instability.  The value is small but strictly positive, and it is not a
 free choice --- it is what $w_0$ implies through Eq.~(\ref{eq:w_cs_of_u}).
 A dark-energy sound speed of this size makes the field clustered rather
-than smooth, with a sound horizon $c_s/H_0 \approx 600$~Mpc.
+than smooth, with a sound horizon $c_s/H_0 \approx \val{horizonte_cs_d0}$~Mpc.
 
 \paragraph{Null energy condition.}
 $\rho_\phi + p_\phi = 2XK_X = 2Xc_1(1+2u)$.  With $c_1<0$ and
@@ -379,12 +379,12 @@ $1+2u=\val{uno_mas_2u_d6}$ this is positive: the NEC holds, and the field is not
 phantom.  Since the present action has no coupling, $\weff = \wphi = w_0
 = \val{W0_d6} > -1$ at all times, and no phantom crossing is claimed.
 
-\paragraph{Is $c_s^2 = 0.021284$ excluded?}
+\paragraph{Is $c_s^2 = \val{cs2_condensado_d6}$ excluded?}
 No.  Running \textsc{hi\_class} with this sound speed against a smooth
 dark-energy reference, the largest difference in the temperature spectrum
-is $3.10\%$ at $\ell = 2$, where cosmic variance is $\sqrt{2/(2\ell+1)} =
-63.2\%$ --- a factor of $20$ below the noise floor.  The clustering leaves
-$\sigma_8$ unchanged at the $0.001\%$ level.  The prediction is
+is $\val{p7_hc_TTcs2_l2}\%$ at $\ell = 2$, where cosmic variance is $\sqrt{2/(2\ell+1)} =
+\val{p7_hc_vc_l2}\%$ --- a factor of $20$ below the noise floor.  The clustering leaves
+$\sigma_8$ unchanged at the $\val{p7_hc_s8_cs2_pct}\%$ level.  The prediction is
 consistent with present data and remains untested rather than confirmed.
 % ─── §6 Background Equations ─────────────────────────────────────────────────
 \section{Background Equations}
@@ -482,8 +482,8 @@ statistically indistinguishable from the $\Lambda$CDM control on the same
 raw data ($0.7571\pm0.0194$) with four fewer free parameters.
 
 \paragraph{Clustering of the dark-energy sector.}
-Because $c_s^2 = 0.021284$ rather than $1$, the field is not smooth below
-its sound horizon $c_s/H_0 \approx 600$~Mpc.  This is the one
+Because $c_s^2 = \val{cs2_condensado_d6}$ rather than $1$, the field is not smooth below
+its sound horizon $c_s/H_0 \approx \val{horizonte_cs_d0}$~Mpc.  This is the one
 perturbative feature that distinguishes the sector from a cosmological
 constant; §\ref{sec:numerics} quantifies its observability.
 % ─── §8 Bellini-Sawicki Dictionary ──────────────────────────────────────────
@@ -502,7 +502,7 @@ Parameter & Expression & SSEE value & Status \\
 $\alpha_T$ (tensor speed excess)  & $0$ & $0$ & GW-safe \\
 $\alpha_B$ (braiding)             & $0$ & $0$ & ($G_3 = 0$) \\
 $\alpha_M$ (Planck-mass running)  & $0$ & $0$ & ($G_4 = \Mpl^2/2$) \\
-$c_s^2$ (scalar sound speed)     & $(M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & §\ref{sec:stability} \\
+$c_s^2$ (scalar sound speed)     & $(M_v-T_r)/(5M_v+3T_r)$ & $\val{cs2_condensado_d6}$ & §\ref{sec:stability} \\
 $\alpha_K$ (kineticity)          & $3\Omde(5-3w_0)$ & $\val{alpha_K_z0_d6}$ & §\ref{sec:alphak} \\
 \bottomrule
 \end{tabular}
@@ -569,18 +569,18 @@ $s_K$; this section is the only place $\alpha_K$ enters.
     \emph{falsify} the minimal-coupling sector.
   \item $\alpha_K$ is \emph{not} observationally accessible, and we state
     this rather than quote a forecast.  Changing $\alpha_K$ by a factor
-    of $100$ in \textsc{hi\_class} moves $\sigma_8$ from $0.769916$
-    ($x_K=1$) to $0.769973$ ($x_K=100$), a shift of $0.007\%$.  In the
+    of $100$ in \textsc{hi\_class} moves $\sigma_8$ from $\val{p7_hc_s8_xk1}$
+    ($x_K=1$) to $\val{p7_hc_s8_xk100}$ ($x_K=100$), a shift of $\val{p7_hc_s8_xk_pct}\%$.  In the
     temperature spectrum the effect exists but only at $\ell < 10$:
-    $-9.14\%$ at $\ell=2$ against a cosmic variance
-    $\sqrt{2/(2\ell+1)} = 63.2\%$, and below $0.1\%$ for
+    $\val{p7_hc_TTak_l2}\%$ at $\ell=2$ against a cosmic variance
+    $\sqrt{2/(2\ell+1)} = \val{p7_hc_vc_l2}\%$, and below $0.1\%$ for
     $\ell \geq 30$.  The irreducible noise is about seven times the
     signal, so no survey of the Euclid or CMB-S4 era can distinguish
-    $\alpha_K = 15.6$ from $\alpha_K = \val{S_M_d6}$.
+    $\alpha_K = \val{alpha_K_z0_d1}$ from $\alpha_K = \val{S_M_d6}$.
   \item The falsifiable content of this sector is therefore $c_s^2$ and
     $w_0$, not $\alpha_K$.  $w_0 = \val{W0_d6}$ is already measured, at
     $0.24\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
-    will tighten it.  $c_s^2 = 0.021284$ is a prediction awaiting a
+    will tighten it.  $c_s^2 = \val{cs2_condensado_d6}$ is a prediction awaiting a
     probe of dark-energy clustering.
 \end{itemize}
 
@@ -588,7 +588,7 @@ $s_K$; this section is the only place $\alpha_K$ enters.
 The three quantities required for numerical implementation are:
 \begin{enumerate}
   \item $w_\phi = w_0 = \val{W0_d6}$ (constant at the condensate point);
-  \item $c_s^2 = 0.021284$ from Eq.~(\ref{eq:cs2_alg});
+  \item $c_s^2 = \val{cs2_condensado_d6}$ from Eq.~(\ref{eq:cs2_alg});
   \item $\alpha_K = \val{alpha_K_z0_d6}$ from Eq.~(\ref{eq:alphak}), entered as
     $\alpha_K(a) = x_K\,\Omde(a)$ with $x_K = 3(5-3w_0) = \val{x_K_d6}$.
 \end{enumerate}
@@ -617,7 +617,7 @@ $\Omde$  & $1-\Omm$                  & —        & $\val{OMDE_DENS_d6}$ & \chec
 $s_{\rm DE}$ & $T_r/M_v$             & —        & $\val{S_DE_d6}$ & \checkmark \\
 \midrule
 $u$      & $-(M_v+T_r)/(3T_r+M_v)$   & —        & $\val{u_condensado_d6}$ & \checkmark \\
-$c_s^2$  & $(M_v-T_r)/(5M_v+3T_r)$   & —        & $0.021284$ & \checkmark \\
+$c_s^2$  & $(M_v-T_r)/(5M_v+3T_r)$   & —        & $\val{cs2_condensado_d6}$ & \checkmark \\
 $\alpha_K$ & $3\Omde(5-3w_0)$        & —        & $\val{alpha_K_z0_d6}$ & \checkmark \\
 $s_K$    & $-3w_0(1+w_0)$            & —        & $\val{S_K_d6}$ & \checkmark \\
 \midrule
@@ -671,8 +671,8 @@ machinery, not from the closed forms of §\ref{sec:action}.
 \toprule
 Quantity & Predicted (§\ref{sec:action}) & \textsc{hi\_class} & Difference \\
 \midrule
-$c_s^2(z{=}0)$      & $0.021284$  & $0.021284$  & $0.000\%$ \\
-$\alpha_K(z{=}0)$   & $\val{alpha_K_z0_d6}$ & $15.589549$ & $0.011\%$ \\
+$c_s^2(z{=}0)$      & $\val{cs2_condensado_d6}$  & $\val{p7_hc_cs2}$  & $\val{p7_hc_cs2_pct}\%$ \\
+$\alpha_K(z{=}0)$   & $\val{alpha_K_z0_d6}$ & $\val{p7_hc_alphaK}$ & $\val{p7_hc_alphaK_pct}\%$ \\
 $\alpha_B,\alpha_M,\alpha_T$ & $0$ & $0$ & exact \\
 Ghost test          & pass & pass & — \\
 Gradient test       & pass & pass & — \\
@@ -680,11 +680,11 @@ Gradient test       & pass & pass & — \\
 \end{tabular}
 \end{center}
 
-The residual $0.011\%$ in $\alpha_K$ is accounted for by the massive
+The residual $\val{p7_hc_alphaK_pct}\%$ in $\alpha_K$ is accounted for by the massive
 neutrino: \textsc{hi\_class} builds $\Omde$ from its own budget, which
-gives $\Omega_{\rm smg} = 0.691040$ rather than the $1-\Omm = \val{OMDE_DENS_d6}$
+gives $\Omega_{\rm smg} = \val{p7_hc_Omsmg}$ rather than the $1-\Omm = \val{OMDE_DENS_d6}$
 of Eq.~(\ref{eq:norm}).  The same budget returns
-$\Omm = 0.308882$, reproducing the algebraic $\val{OMEGA_M_TOTAL_d6}$ of Paper~1 to
+$\Omm = \val{p7_hc_Omm}$, reproducing the algebraic $\val{OMEGA_M_TOTAL_d6}$ of Paper~1 to
 $6$ decimals --- an independent check of the background, obtained from a
 code that was given $\omega_b$, $\omega_c$ and $h$, never $\Omm$.
 
@@ -711,8 +711,8 @@ The code rejects what should be rejected, so its acceptance of the SSEE
 field configuration carries information.  The controls also identify the
 cause of every rejection: it is $w_a$, not $\alpha_K$ --- with
 $\alpha_K$ made small the rejection is worse, not better.  Feeding the
-\emph{effective} CPL equation of state gives $c_s^2 = -0.0678$ at
-$z \sim 4\times10^{13}$, which is the expected behaviour rather than a
+\emph{effective} CPL equation of state gives $c_s^2 = \val{p7_hc_cs2min_wa}$ at
+$z \sim 10^{\val{p7_hc_log10z_wa}}$, which is the expected behaviour rather than a
 failure: $c_s^2 = (1+w)/(5-3w)$ changes sign at the phantom crossing
 ($z = 0.31$), and beyond that point the field is no longer what carries
 the equation of state.
@@ -736,11 +736,11 @@ confront the model with data.  Specifically:
     sector, not the complete model.
   \item $\alpha_K = \val{alpha_K_z0_d6}$ is unobservable (§\ref{sec:alphak}) and
     the run cannot make it otherwise.
-  \item $c_s^2 = 0.021284$ leaves a maximum TT residual of $+3.10\%$ at
+  \item $c_s^2 = \val{cs2_condensado_d6}$ leaves a maximum TT residual of $\val{p7_hc_TTcs2_l2}\%$ at
     $\ell = 2$ against a smooth-dark-energy reference, with a
-    cosmic-variance floor of $63.2\%$ at that multipole, and below
-    $0.03\%$ for $\ell \geq 30$; $\sigma_8$ moves from $0.828445$ to
-    $0.828453$, a shift of $0.001\%$.  The prediction is untested, not
+    cosmic-variance floor of $\val{p7_hc_vc_l2}\%$ at that multipole, and below
+    $0.03\%$ for $\ell \geq 30$; $\sigma_8$ moves from $\val{p7_hc_s8_cs2_1}$ to
+    $\val{p7_hc_s8_cs2_mod}$, a shift of $\val{p7_hc_s8_cs2_pct}\%$.  The prediction is untested, not
     confirmed.
   \item The equation of state was \emph{entered}, not derived by the
     solver.  Its confrontation with data is Paper~2's, at $0.24\sigma$.
@@ -764,7 +764,7 @@ not reproduced here, because they do not describe this model.
 \begin{itemize}
   \item \textbf{Kinetic sector:} $K(X) = c_1X + c_2X^2$ with the ratio
     $u = -(M_v+T_r)/(3T_r+M_v)$ fixed by $w_0$ alone, and
-    $c_s^2 = (M_v-T_r)/(5M_v+3T_r) = 0.021284$ following from it.  Both
+    $c_s^2 = (M_v-T_r)/(5M_v+3T_r) = \val{cs2_condensado_d6}$ following from it.  Both
     closed forms agree with the direct solution to machine zero.
   \item \textbf{Why two terms:} a single power $K \propto X^n$ forces
     $w_\phi = c_s^2 = 1/(2n-1)$, so acceleration and gradient stability
@@ -830,8 +830,8 @@ is lost.  No published SSEE observable moves.
   \item \textbf{Equation of state:} $w_0 = \val{W0_d6}$, currently at
     $0.24\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
     is the sharpest near-term test of this paper's central input.
-  \item \textbf{Sound speed:} $c_s^2 = 0.021284$, a clustered rather than
-    smooth dark-energy sector with a sound horizon of $\approx 600$~Mpc.
+  \item \textbf{Sound speed:} $c_s^2 = \val{cs2_condensado_d6}$, a clustered rather than
+    smooth dark-energy sector with a sound horizon of $\approx \val{horizonte_cs_d0}$~Mpc.
     Not excluded by present data, and not yet reachable by it.
 \end{enumerate}
 
@@ -860,7 +860,7 @@ function and nothing else:
 Two terms are not a choice but a theorem: one term forces
 $w_\phi = c_s^2 = 1/(2n-1)$, making acceleration and gradient stability
 incompatible.  With two terms the ratio is fixed by $w_0$ with no
-freedom, and delivers $c_s^2 = 0.021284$ and $\alpha_K = \val{alpha_K_z0_d6}$, both
+freedom, and delivers $c_s^2 = \val{cs2_condensado_d6}$ and $\alpha_K = \val{alpha_K_z0_d6}$, both
 reproduced by an independent \textsc{hi\_class} integration that accepts
 the model and rejects its controls.  The signs require a ghost
 condensate: a wrong-sign linear term with the field stabilised $4.5\%$
