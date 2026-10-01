@@ -78,6 +78,10 @@ def resumen(nombres):
                          reduccion_para_chi2r_1=1 - np.sqrt(c0 / 1.0),
                          reduccion_para_chi2r_2=1 - np.sqrt(c0 / 2.0),
                          max_residuo_sigma=max(np.sqrt(datos[n]["chi2_ssee"]) for n in nombres))
+    # en porcentaje (x100): el macro no puede llevar «%» (comentaria la linea en LaTeX)
+    r["robustez"]["pct_reduccion_chi2r_1"] = 100 * r["robustez"]["reduccion_para_chi2r_1"]
+    r["robustez"]["pct_reduccion_chi2r_2"] = 100 * r["robustez"]["reduccion_para_chi2r_2"]
+    r["robustez"] = {k: float(v) for k, v in r["robustez"].items()}
     r["N"] = len(nombres)
     return r
 
