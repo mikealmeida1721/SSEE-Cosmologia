@@ -49,6 +49,7 @@ stages:
       - results/logs/resumen_3modelos.json
       - results/logs/savage_cv.json
       - results/logs/dic_from_chains.json
+      - results/logs/press_schechter.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -240,4 +241,18 @@ stages:
       - results/logs/cmb_ajuste_conjunto_wc_ns.json
     outs:
       - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json:
+          cache: false
+  press_schechter:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_press_schechter.py > results/logs/press_schechter.log 2>&1
+    deps:
+      - src/p02_mcmc/ssee_press_schechter.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - CANONICAL_VALUES.yaml
+      - results/logs/deltac_spherical_collapse.json
+      - results/logs/p5_IS_perturbations_Q3.json
+    outs:
+      - results/logs/press_schechter.json:
+          cache: false
+      - results/logs/press_schechter.log:
           cache: false

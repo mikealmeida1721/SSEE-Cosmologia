@@ -66,12 +66,12 @@ print(f"Δδc/δc    = {(dc_LCDM - dc_SSEE)/dc_LCDM*100:.2f}%")
 
 # ── Cosmological parameters ───────────────────────────────────────────────────
 # LCDM Parameters (Planck 2018)
-H0_L   = 67.36
+H0_L   = 67.36    # ORIGEN-VALOR: 67.36, 0.3153, 0.811 — Planck 2018 VI Tabla 2 (TT,TE,EE+lowE+lensing): H0, Omega_m, sigma8
 Omm_L  = 0.3153
 OmL_L  = 1 - Omm_L
 h_L    = H0_L / 100
 sig8_L = 0.811
-gamma_L= 0.55
+gamma_L= 0.55     # ORIGEN-VALOR: 0.55 — indice de crecimiento de LCDM (Linder 2005)
 
 # SSEE Parameters
 # ── CORRECCION 2026-09-07 ────────────────────────────────────────────────
@@ -100,8 +100,8 @@ gamma_L= 0.55
 H0_S   = _C.H0_GLOBAL
 Omm_S  = _C.OMEGA_M_TOTAL
 OmDE_S = 1 - Omm_S
-w0_S   = -0.8399
-wa_S   = -0.6699
+w0_S   = _C.W0       # (2026-09-30: eran -0.8399/-0.6699 tecleados)
+wa_S   = _C.WA
 h_S    = H0_S / 100
 # ── CORRECCION 2026-09-25 ────────────────────────────────────────────────
 # sig8_S = 0.7446  ->  0.8153
@@ -114,8 +114,12 @@ h_S    = H0_S / 100
 #     pregunta "¿acomoda SSEE halos masivos tempranos?" el ancla correcta
 #     es la prediccion propia del modelo, no lo que preferia un dato
 #     ya recalibrado. (Con A_s libre en Legacy: 0.8075 ± 0.0160.)
-sig8_S = 0.8153  # prediccion unificada, A_s fijado al CMB (canonico)
-gamma_S= 0.5504  # gamma_IS medido en Paper 5
+# (2026-09-30) se LEEN de su fuente, no se teclean: sigma8 del modelo unificado
+# (CANONICAL sigma8_ssee_unif) y gamma_IS del log de Paper 5 (Q3).
+import yaml as _yaml
+_RAIZ = _o66.path.dirname(_o66.path.dirname(_o66.path.dirname(_o66.path.abspath(__file__))))
+sig8_S = float(_yaml.safe_load(open(_o66.path.join(_RAIZ, "CANONICAL_VALUES.yaml")))["canonical"]["sigma8_ssee_unif"])
+gamma_S = float(_json66.load(open(_o66.path.join(_RAIZ, "results", "logs", "p5_IS_perturbations_Q3.json")))["gamma_IS"])
 
 # ── Linear growth factor D(z) — IS and LCDM integrations ──────────────────────
 def D_gamma(z, gamma, Omm, OmDE, w0, wa):
@@ -146,10 +150,10 @@ for z in [0, 5, 8, 10, 12, 15]:
 
 # ── σ_M(M, z=0) via power-law fit ─────────────────────────────────────────────
 # We compute M8_L to anchor the power law.
-rho_crit0_L = 2.775e11 * h_L**2     # M☉/Mpc³
+rho_crit0_L = 2.775e11 * h_L**2     # M☉/Mpc³   ORIGEN-VALOR: 2.775e11 — rho_crit/h^2 en M_sol/Mpc^3
 rho_m0_L    = Omm_L * rho_crit0_L
 M8_L        = (4*np.pi/3) * rho_m0_L * (8/h_L)**3  # ≈ 2.8e14 M☉
-alpha       = 0.30                 # effective slope d ln σ / d ln M^{-1}
+alpha       = 0.30                 # effective slope d ln σ / d ln M^{-1}   ORIGEN-VALOR: 0.30 — pendiente efectiva de la ley de potencias sigma(M) a esas masas (eleccion del modelo, la misma para los dos)
 
 # For a fair comparison at the SAME physical mass M, we anchor both 
 # to their respective sigma8 and M8. 
@@ -283,4 +287,14 @@ outpath = 'results/figures/fig_press_schechter.pdf'
 plt.savefig(outpath, dpi=150, bbox_inches='tight')
 plt.savefig(outpath.replace('.pdf', '.png'), dpi=150, bbox_inches='tight')
 print(f"\nFigure → {outpath}")
+# Log con acta (2026-09-30): la tabla de Paper 5 (z = 10, 12, 15) y los puntos citados
+from procedencia import con_acta as _acta
+_rej = {f"z{z}": {f"{M:.0e}": float(ps_ratio(M, z)) for M in (1e11, 1e12, 3e12)} for z in (10, 12, 15)}
+_out = dict(fecha=__import__("time").strftime("%Y-%m-%d"), umbral="postulado" if USE_POSTULADO else "derivado",
+            delta_c=dict(ssee=float(dc_SSEE), lcdm=float(dc_LCDM)), sigma8=dict(ssee=sig8_S, lcdm=sig8_L),
+            gamma=dict(ssee=gamma_S, lcdm=gamma_L), ps_ratio=_rej,
+            ps_ratio_jwst_z10=float(ps_ratio(10**10.8, 10)), ps_ratio_3e10_z10=float(ps_ratio(3e10, 10)))
+_json66.dump(_acta(_out, __file__, entradas=[_LOG66, _o66.path.join(_RAIZ, "CANONICAL_VALUES.yaml"),
+                                             _o66.path.join(_RAIZ, "results", "logs", "p5_IS_perturbations_Q3.json")]),
+             open(_o66.path.join(_RAIZ, "results", "logs", "press_schechter.json"), "w"), indent=1)
 print("Done.")
