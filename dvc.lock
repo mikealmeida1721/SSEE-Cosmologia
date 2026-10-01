@@ -1100,3 +1100,37 @@ stages:
       hash: md5
       md5: 4155ea4fe3083b2928d6e91749c55153
       size: 3444
+  cumulos_zhang2026:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 
+      2>&1
+    deps:
+    - path: data/raw/zhang2026/tablas_II_III.tex
+      hash: md5
+      md5: 3c43e3de937476fafe25c1d3bfd11490
+      size: 15879
+    - path: src/p02_mcmc/cumulos_zhang2026.py
+      hash: md5
+      md5: 042d392b4b7ab9811ac6e430a6f40309
+      size: 6419
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cumulos_zhang2026.json
+      hash: md5
+      md5: 7e4e0fbc725424706c0b33c83446d7f8
+      size: 47041
+    - path: results/logs/cumulos_zhang2026.log
+      hash: md5
+      md5: bdfd92be815f4279ae310a1f3d76d3fe
+      size: 1362

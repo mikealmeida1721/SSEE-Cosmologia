@@ -329,6 +329,19 @@ stages:
     outs:
       - results/logs/p5_techo_sigma8_As_fijo.json:
           cache: false
+  cumulos_zhang2026:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 2>&1
+    deps:
+      - src/p02_mcmc/cumulos_zhang2026.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+      - data/raw/zhang2026/tablas_II_III.tex
+    outs:
+      - results/logs/cumulos_zhang2026.json:
+          cache: false
+      - results/logs/cumulos_zhang2026.log:
+          cache: false
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1
     deps:
