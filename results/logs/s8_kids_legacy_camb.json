@@ -1,0 +1,62 @@
+{
+ "fecha": "2026-10-01",
+ "fondo": "SSEE_BG (cobaya_kids_legacy)",
+ "Omega_m_camb": 0.3088825088809709,
+ "control_Omega_m": {
+  "nucleo": 0.30888084061409116,
+  "diferencia": 1.668266879750746e-06,
+  "de_neutrino": 1.6682668797061972e-06,
+  "C_nu_camb": 93.04250326053935,
+  "C_nu_nucleo": 93.14,
+  "pasa": true,
+  "impacto": {
+   "mnu_equivalente": 0.06841830629497894,
+   "Omega_m": 0.30888084061409116,
+   "d_sigma8": -1.573363190632282e-05,
+   "d_S8": -1.3730701712955096e-05
+  }
+ },
+ "unif": {
+  "logA": 3.0448340130228546,
+  "sigma8": 0.8153161089174845,
+  "S8": 0.8272981513472748
+ },
+ "libre": {
+  "logA": 3.0255,
+  "logA_sigma": 0.0396,
+  "sigma8": 0.8074724163804458,
+  "sigma8_sigma": 0.015988998517714514,
+  "S8": 0.8193391863953321,
+  "S8_sigma": 0.016223975916730304
+ },
+ "_procedencia": {
+  "commit": "6b8ecc7ea07f36d637d39598f70ef623720e9649",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/s8_kids_legacy_camb.py",
+  "script_sha256": "0ddf9da141bdae553fd75b9aae458cd8d18bf133f846df37273729ca59d58653",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "CANONICAL_VALUES.yaml": "11af9f9e4b69522a0df0ffaf40f05c6f97978e5fb4e20a562af3754968fa0a5a",
+   "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21",
+   "src/p06_growth/kids_shear.py": "02f1d23d74c1f6a8e76e8d6e0d73aec4b777a617c54adaf4d6a0aff69c047063"
+  },
+  "argv": [
+   "src/p06_growth/s8_kids_legacy_camb.py"
+  ],
+  "fecha": "2026-10-01T09:44:03",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

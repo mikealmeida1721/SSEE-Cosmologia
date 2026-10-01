@@ -1015,3 +1015,32 @@ stages:
       hash: md5
       md5: 0b5b10bf647abd140dcb69440b66b9d3
       size: 2487
+  s8_kids_legacy_camb:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/s8_kids_legacy_camb.py
+    deps:
+    - path: CANONICAL_VALUES.yaml
+      hash: md5
+      md5: 1faf7bfc1eba3582184cdc6558c987e1
+      size: 68171
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/p06_growth/kids_shear.py
+      hash: md5
+      md5: f9d3dcd78f647eccfc69497ac8b411d6
+      size: 12385
+    - path: src/p06_growth/s8_kids_legacy_camb.py
+      hash: md5
+      md5: 2b8526f6f916cfb2612dc7a5d127a8cc
+      size: 4960
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/s8_kids_legacy_camb.json
+      hash: md5
+      md5: 997cfd0685b673986f39e45831a73c4d
+      size: 1867
