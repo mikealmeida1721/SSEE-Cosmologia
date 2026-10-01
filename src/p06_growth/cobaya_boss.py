@@ -65,6 +65,7 @@ import numpy as np
 
 sys.path.insert(0, '/home/mike/Proyectos/SSEE/src')
 sys.path.insert(0, '/home/mike/Proyectos/SSEE/src/p06_growth')
+sys.path.insert(0, '/home/mike/Proyectos/SSEE/src/p11_sondas')
 
 np.seterr(all='ignore')
 
@@ -228,6 +229,20 @@ if __name__ == '__main__':
     os.makedirs(chains, exist_ok=True)
     print(f'  R1/R2 BOSS LPT — {nombre.upper()}  k_max={KMAX}')
     print(f'  {NSET} conjuntos, {NPTS} puntos, {NFREE} libres')
+    # INGREDIENTES (regla de Mike, 2026-10-01): cada modelo con los SUYOS. Se
+    # imprimen los que de verdad entran y se comparan contra su fuente; si uno
+    # no cuadra, no se corre (R1/R2 del 2026-09-07 corrio SSEE con el m_nu de LCDM).
+    import ssee_core as _S
+    from lcdm_planck import LCDM_PLANCK as _LP
+    _fuente = {'SSEE': dict(Om=_S.OMEGA_M_TOTAL, h=_S.H0_GLOBAL / 100, ombh2=_S.OMEGA_B_H2, ns=_S.N_S,
+                            w0=_S.W0, wa=_S.WA, mnu=_S.SUM_MNU_EV),
+               'LCDM': dict(h=_LP['H0'] / 100, ombh2=_LP['ombh2'], mnu=_LP['mnu'], w0=-1.0, wa=0.0)}[nombre.upper()]
+    _usa = R.COSMO[nombre.upper()]
+    print('  INGREDIENTES ' + nombre.upper() + ': ' + '  '.join(f'{k}={_usa[k]!r}' for k in sorted(_usa)), flush=True)
+    _mal = [k for k, v in _fuente.items() if abs(_usa[k] - v) > 1e-9]
+    if _mal:
+        sys.exit(f'  INGREDIENTES QUE NO CUADRAN con su fuente: {_mal} -> no se corre')
+    print('  ingredientes verificados contra su fuente: OK', flush=True)
     info = info_ssee(chains) if nombre == 'ssee' else info_lcdm(chains)
     t0 = time.time()
     run(info)
