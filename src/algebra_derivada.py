@@ -76,6 +76,8 @@ ALGEBRA = {
     "inv_S_M":        ("1/S_M", "agrupamiento pleno 1/Omega_m,dyn, Paper 5"),
     "sK_tercio":      ("S_K/3", "rho_phi(1+w0) en rho_crit = 1, Paper 10"),
     "X_bg_IR":        ("S_K*KAL0/6", "X_bg IR en rho_crit = 1, Paper 10"),
+    "cs2_condensado": ("(1+W0)/(5-3*W0)", "c_s^2 del condensado, Paper 7"),
+    "cs2_condensado_TM": ("(M_V-T_R)/(5*M_V+3*T_R)", "la misma c_s^2 por T_r, M_v (control)"),
 }
 
 res, errores = {}, []
@@ -88,6 +90,7 @@ ctl = {
     "u dos formas": abs(res["u_condensado"]["valor"] - res["u_condensado_TM"]["valor"]),
     "n dos formas": abs(res["n_ssee"]["valor"] - res["n_ssee_TM"]["valor"]),
     "AURA = 2 MIRA": abs(S.AURA - 2 * S.MIRA),
+    "c_s^2 dos formas": abs(res["cs2_condensado"]["valor"] - res["cs2_condensado_TM"]["valor"]),
 }
 try:
     eval("1/(1+W0-1-W0)", {}, N)
