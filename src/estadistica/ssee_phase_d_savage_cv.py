@@ -227,6 +227,7 @@ def savage_dickey():
         "post_density": post_density,
         "w0_med": w0_med, "w0_std": w0_std,
         "wa_med": wa_med, "wa_std": wa_std,
+        "Z_trunc_w0": Z_w0, "Z_trunc_wa": Z_wa,
     }
 
 
