@@ -51,10 +51,18 @@ for p in PAR:
 ctrl = {p: dict(tabla=v, lector=res[p]["media"],
                 coincide=bool(f"{res[p]['media']:.{len(v.split('.')[1])}f}" == v))
         for p, v in CONTROL.items()}
+# Tensiones frente al valor ALGEBRAICO de SSEE (2026-10-01; la tabla del Unified
+# las traia tecleadas). r_d: CAMB con los ingredientes del nucleo (lya_auditoria, escenario B).
+import ssee_core as _S  # noqa: E402
+LYA = os.path.join(R, "results/logs/lya_auditoria.json")
+ALG = dict(ombh2=_S.OMEGA_B_H2, omch2=_S.OMEGA_C_H2, rdrag=json.load(open(LYA))["escenario_B"]["rd"],
+           H0=_S.H0_GLOBAL, omegam=_S.OMEGA_M_TOTAL, w=_S.W0, wa=_S.WA)
+tens = {p: dict(algebraico=v, tension_sigma=(res[p]["media"] - v) / res[p]["sigma"],
+                tension_abs=abs(res[p]["media"] - v) / res[p]["sigma"]) for p, v in ALG.items()}
 out = dict(fecha=str(__import__("datetime").date.today()), cadenas=f"{BASE}/c1..c4",
            filas_tras_corte=int(len(d)), corte="30 % inicial por cadena",
-           posteriores=res, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
-json.dump(con_acta(out, __file__, entradas=[f"{BASE}/c{i}/ssee_full.1.txt" for i in (1, 2, 3, 4)]),
+           posteriores=res, tensiones=tens, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
+json.dump(con_acta(out, __file__, entradas=[f"{BASE}/c{i}/ssee_full.1.txt" for i in (1, 2, 3, 4)] + [LYA]),
           open(os.path.join(R, "results/logs/mcmc_full_posteriores.json"), "w"), indent=1)
 for p in PAR:
     print(f"  {p:7s} {res[p]['media']:.5f} ± {res[p]['sigma']:.5f}")

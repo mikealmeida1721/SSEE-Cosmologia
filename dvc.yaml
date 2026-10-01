@@ -12,6 +12,8 @@ stages:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/mcmc_full/leer_mcmc_full.py
     deps:
       - src/mcmc_full/leer_mcmc_full.py
+      - src/ssee_core.py
+      - results/logs/lya_auditoria.json
       - src/procedencia.py
       - /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
       - /mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt
