@@ -120,8 +120,11 @@ def unidad(texto, pos):
 def es_arxiv(texto, pos, s):
     """Un identificador de arXiv (NNNN.NNNN o NNNN.NNNNN) junto a «arXiv»,
     «abs/» o «eprint» es una referencia, no un resultado (2026-09-30)."""
-    return (re.fullmatch(r"\d{4}\.\d{4,5}", s) is not None
-            and re.search(r"arxiv|abs/|eprint", texto[max(0, pos - 30):pos], re.I) is not None)
+    arx = (re.fullmatch(r"\d{4}\.\d{4,5}", s) is not None
+           and re.search(r"arxiv|abs/|eprint", texto[max(0, pos - 30):pos], re.I) is not None)
+    # prefijo de DOI: 10.NNNN seguido de «/» (doi:10.1103/PhysRevD...)
+    doi = re.fullmatch(r"10\.\d{4,5}", s) is not None and texto[pos + len(s):pos + len(s) + 1] == "/"
+    return arx or doi
 
 
 def revisa(texto, pool):

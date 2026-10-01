@@ -2492,9 +2492,10 @@ with _tf74.TemporaryDirectory() as _d74b:
 with _tf74.TemporaryDirectory() as _d74c:
     _x74 = pathlib.Path(_d74c) / "x.tex"
     _x74.write_text("Data from arXiv:2503.19441 are used. Much later in a separate "
-                    "sentence we count 2503.19441 events here. K is 9.519253 here.\n")
+                    "sentence we count 2503.19441 events here. K is 9.519253 here. "
+                    "See doi:10.1103/PhysRevD.90.023507 for it.\n")
     _a74 = [s for _, s in _r74._sin_origen(_x74, sorted(_r74.R.nucleo_evaluado()), True)]
-check("R74 el detector exime el nucleo evaluado y la referencia arXiv, no el numero suelto",
+check("R74 el detector exime el nucleo evaluado y las referencias arXiv/DOI, no el numero suelto",
       _a74 == ["2503.19441"], f"marcados {_a74} (esperado ['2503.19441'] solo la 2a aparicion)")
 check("R74 el detector no toma un reporte del guardian ni una cola como fuente",
       _e74 == [False, True, False],

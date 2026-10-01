@@ -50,6 +50,9 @@ ALGEBRA = {
     "tres_MIRA":      ("3*MIRA", "3 MIRA = 3 AURA/2, Paper 9"),
     "sqrtAURA_MIRA":  ("math.sqrt(AURA)/MIRA", "sqrt(beta_c)/MIRA con beta_c = AURA, Paper 8"),
     "seis_alfa_KAL2": ("6*ALPHA_ATT*KAL0**2", "M^4 de la Ruta A en rho_crit, Paper 10"),
+    "X_UV_sobre_IR":  ("_X_UV/(S_K*KAL0/6)", "X_bg UV / IR, Paper 10"),
+    "c2X_c1_KX":      ("_X_UV*KAL0/_M4_UV", "c2 X / c1 del K(X) de Paper 10 (1/KAL0, 1/M^4)"),
+    "M_meV_rhoLambda": ("(5*PHI**8)**0.25*2.25", "M con la escala LCDM rho_Lambda^(1/4) = 2.25 meV: la INCONSISTENTE que Paper 10 descarta"),   # ORIGEN-VALOR: 2.25 — rho_Lambda^(1/4) en meV de LCDM, el valor que Paper 10 cita para descartarlo
     "inv_1pw0":       ("1/(1+W0)", "entalpia rho+p en unidades de rho_DE(1+w0)"),
     "inv_1pw0_m1":    ("1/(1+W0)-1", "c_s^2 efectivo del intento descartado, Paper 5"),
     "MIRA_m1":        ("MIRA-1", "Paper 5 Q2"),
