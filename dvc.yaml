@@ -301,3 +301,48 @@ stages:
     outs:
       - results/logs/s8_kids_legacy_camb.json:
           cache: false
+  cumulos_7:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1
+    deps:
+      - src/p02_mcmc/cumulos_7.py
+      - src/p02_mcmc/ssee_paper2_analysis.py
+      - src/ssee_core.py
+      - src/procedencia.py
+    outs:
+      - results/logs/cumulos_7.json:
+          cache: false
+      - results/logs/cumulos_7.log:
+          cache: false
+  perfil_wc_boss:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
+    deps:
+      - src/p06_growth/perfil_wc_boss.py
+      - src/p06_growth/boss_lpt_R1R2.py
+      - src/procedencia.py
+    outs:
+      - results/logs/perfil_wc_boss.json:
+          cache: false
+      - results/logs/perfil_wc_boss.log:
+          cache: false
+  perfil_wc_boss_lcdm:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss_lcdm.py > results/logs/perfil_wc_boss_lcdm.log 2>&1
+    deps:
+      - src/p06_growth/perfil_wc_boss_lcdm.py
+      - src/p06_growth/boss_lpt_R1R2.py
+      - src/procedencia.py
+    outs:
+      - results/logs/perfil_wc_boss_lcdm.json:
+          cache: false
+      - results/logs/perfil_wc_boss_lcdm.log:
+          cache: false
+  ganancia_wc_libre:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/ganancia_wc_libre.py
+    deps:
+      - src/p06_growth/ganancia_wc_libre.py
+      - src/procedencia.py
+      - results/logs/perfil_wc_boss.json
+      - results/logs/perfil_wc_boss_lcdm.json
+      - results/logs/multisonda_fondo_clavado.log
+    outs:
+      - results/logs/ganancia_wc_libre.json:
+          cache: false

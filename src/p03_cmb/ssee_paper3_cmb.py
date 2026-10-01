@@ -491,4 +491,6 @@ def main():
 
 
 if __name__ == "__main__":
+    from procedencia import cabecera as _cab
+    print(_cab(__file__), flush=True)   # acta de procedencia: primera linea del log
     main()

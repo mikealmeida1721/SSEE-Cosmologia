@@ -71,7 +71,9 @@ log("")
 log("  Cordura: p_D ≈ k en los tres ⇒ posteriors casi gaussianos, DIC ≈ AIC.")
 
 with open(LOG, "w", encoding="utf-8") as _fh:
-    _fh.write("\n".join(_out) + "\n")
+    sys.path.insert(0, os.path.join(_REPO, "src"))
+    from procedencia import cabecera as _cab
+    _fh.write(_cab(__file__) + "\n" + "\n".join(_out) + "\n")
 print(f"\nlog: {os.path.relpath(LOG, _REPO)}")
 # JSON con acta (2026-09-30): lo que cita el apendice DIC de Paper 2
 import json  # noqa: E402

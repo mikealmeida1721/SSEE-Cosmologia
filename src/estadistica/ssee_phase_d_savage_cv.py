@@ -475,6 +475,8 @@ improvement in the dynamic BIC is not driven by overfitting.
 if __name__ == "__main__":
     import os
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from procedencia import cabecera as _cab
+    print(_cab(__file__), flush=True)   # acta de procedencia: primera linea del log
 
     sddr_res = savage_dickey()
     cv_res   = cross_validation()

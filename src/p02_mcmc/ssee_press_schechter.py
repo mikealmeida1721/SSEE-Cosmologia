@@ -30,6 +30,8 @@ from scipy.integrate import quad
 import os as _o66, sys as _s66
 _s66.path.insert(0, _o66.path.dirname(_o66.path.dirname(_o66.path.abspath(__file__))))
 import ssee_core as _C
+from procedencia import cabecera as _cab
+print(_cab(__file__), flush=True)   # acta de procedencia: primera linea del log
 
 import matplotlib
 matplotlib.use('Agg')

@@ -36,7 +36,9 @@ import numpy as np
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
 from ssee_core import KAL0  # noqa: E402
-from procedencia import con_acta  # noqa: E402
+from procedencia import cabecera, con_acta  # noqa: E402
+
+print(cabecera(__file__), flush=True)   # acta de procedencia: primera linea del log
 
 # ORIGEN-VALOR: Zhang+2026 arXiv:2602.06082 — (M_bar_IGIMF, error, M_bar_std, M_obs, error)
 ZHANG = {

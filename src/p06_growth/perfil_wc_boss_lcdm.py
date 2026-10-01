@@ -117,6 +117,8 @@ def perfil(rej, logA, etiq):
 
 if __name__ == '__main__':
     os.environ['OMP_NUM_THREADS'] = '1'
+    from procedencia import cabecera as _cab
+    print(_cab(__file__), flush=True)   # acta de procedencia: primera linea del log
     rej = np.linspace(0.090, 0.155, 9)
     import json
     from procedencia import con_acta
