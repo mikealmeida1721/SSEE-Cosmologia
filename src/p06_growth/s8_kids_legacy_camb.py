@@ -75,7 +75,7 @@ out = dict(fecha=str(__import__("datetime").date.today()), fondo="SSEE_BG (cobay
                nucleo=S.OMEGA_M_TOTAL, diferencia=om - S.OMEGA_M_TOTAL, de_neutrino=gap_nu,
                C_nu_camb=fac_camb, C_nu_nucleo=bg["mnu"] / S.OMEGA_NU_H2,
                pasa=bool(abs(om - S.OMEGA_M_TOTAL - gap_nu) < 1e-9),
-               impacto=dict(mnu_equivalente=mnu_eq, Omega_m=om_e, d_sigma8=sg_u - sg_e, d_S8=S8_u - S8_e))),
+               impacto=dict(mnu_equivalente=mnu_eq, Omega_m=om_e, d_sigma8=sg_u - sg_e, d_S8=S8_u - S8_e)),
            unif=dict(logA=L.LOGA_CMB_SSEE, sigma8=sg_u, S8=S8_u),
            libre=dict(logA=la, logA_sigma=sla, sigma8=sg_c, sigma8_sigma=(sg_hi - sg_lo) / 2,
                       S8=S8_c, S8_sigma=(S8_hi - S8_lo) / 2))
