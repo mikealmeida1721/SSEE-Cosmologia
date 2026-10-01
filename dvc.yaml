@@ -345,6 +345,7 @@ stages:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
     deps:
       - src/p06_growth/perfil_wc_boss.py
+      - src/p06_growth/minimo_sesgos.py
       - src/p06_growth/boss_lpt_R1R2.py
       - src/procedencia.py
       - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
@@ -358,6 +359,7 @@ stages:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss_lcdm.py > results/logs/perfil_wc_boss_lcdm.log 2>&1
     deps:
       - src/p06_growth/perfil_wc_boss_lcdm.py
+      - src/p06_growth/minimo_sesgos.py
       - src/p06_growth/boss_lpt_R1R2.py
       - src/procedencia.py
       - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
