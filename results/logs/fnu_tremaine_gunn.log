@@ -1,0 +1,9 @@
+# ACTA-PROCEDENCIA {"commit": "e9b1c72fc371e03a135982b447ea8207188ab0f1", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/fnu_tremaine_gunn.py", "script_sha256": "c63ff825c1644fefd16b306b980304f7c7ae1e91261f7a587cb4963bd414b288", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p02_mcmc/fnu_tremaine_gunn.py"], "fecha": "2026-10-01T13:05:41", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+  nucleo_degeneradas   f_nu lentos 1.473e-07  techo TG 2.186e-07  (todo el fondo 3.153e-06)  -> 0.020 es 9.15e+04 veces el techo
+  nucleo_normal        f_nu lentos 6.653e-07  techo TG 1.765e-06  (todo el fondo 3.153e-06)  -> 0.020 es 1.13e+04 veces el techo
+  abril_degeneradas    f_nu lentos 3.134e-07  techo TG 5.185e-07  (todo el fondo 3.913e-06)  -> 0.020 es 3.86e+04 veces el techo
+  abril_normal         f_nu lentos 7.596e-07  techo TG 2.060e-06  (todo el fondo 3.913e-06)  -> 0.020 es 9.71e+03 veces el techo
+  control lectura: rho_nu 7.6720 vs convencion 7.7481 eV/cm3 (-0.0098), n/sabor 112.0 /cm3 -> PASA
+  abril citaba 28.6 eV/cm3 para 0.085 eV; correcto 9.52 (x3.004)
+  control otro lado: esteril 11 eV, techo TG 3.93e+03 -> PASA
+  escrito -> results/logs/fnu_tremaine_gunn.json

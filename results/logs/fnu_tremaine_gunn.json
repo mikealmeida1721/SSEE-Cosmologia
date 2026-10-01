@@ -1,0 +1,142 @@
+{
+ "fecha": "2026-10-01",
+ "que": "f_nu de la formula de cumulos, rehecho con el metodo que declara el Paper I de abril (\u00a73.2)",
+ "T_nu_eV": 0.00016763891604964202,
+ "rho_crit_eV_cm3": 4866.7574634095035,
+ "rho_cumulo_eV_cm3": 2433378.731704752,
+ "v_esc_km_s": 2000.0,
+ "delta": 500.0,
+ "f_nu_paper2": 0.02,
+ "casos": {
+  "nucleo_degeneradas": {
+   "sum_mnu": 0.06849,
+   "orden": "degeneradas",
+   "masas_eV": [
+    0.02283,
+    0.02283,
+    0.02283
+   ],
+   "p_max_sobre_T": [
+    0.9085322755390213,
+    0.9085322755390213,
+    0.9085322755390213
+   ],
+   "rho_cosmica": 7.6720041311925335,
+   "rho_lentos": 0.3584539160926857,
+   "rho_techo_TG": 0.5318171916313363,
+   "f_nu_lentos": 1.4730708024293597e-07,
+   "f_nu_techo_TG": 2.18550932784212e-07,
+   "f_nu_si_todo_el_fondo": 3.1528195883497996e-06,
+   "veces_bajo_0020_techo": 91511.84918413118
+  },
+  "nucleo_normal": {
+   "sum_mnu": 0.06849,
+   "orden": "normal",
+   "masas_eV": [
+    0.006860804447292032,
+    0.011012294840948554,
+    0.050616900711758145
+   ],
+   "p_max_sobre_T": [
+    0.27302944706642435,
+    0.43824026678728056,
+    2.0143271127633087
+   ],
+   "rho_cosmica": 7.6720041311925335,
+   "rho_lentos": 1.6190229186015783,
+   "rho_techo_TG": 4.294551550316631,
+   "f_nu_lentos": 6.653394712081418e-07,
+   "f_nu_techo_TG": 1.7648512721683883e-06,
+   "f_nu_si_todo_el_fondo": 3.1528195883497996e-06,
+   "veces_bajo_0020_techo": 11332.399684550732
+  },
+  "abril_degeneradas": {
+   "sum_mnu": 0.085,
+   "orden": "degeneradas",
+   "masas_eV": [
+    0.028333333333333335,
+    0.028333333333333335,
+    0.028333333333333335
+   ],
+   "p_max_sobre_T": [
+    1.1275404208032824,
+    1.1275404208032824,
+    1.1275404208032824
+   ],
+   "rho_cosmica": 9.521395110985042,
+   "rho_lentos": 0.7625926905100839,
+   "rho_techo_TG": 1.26162245542983,
+   "f_nu_lentos": 3.1338840952876845e-07,
+   "f_nu_techo_TG": 5.184653087462367e-07,
+   "f_nu_si_todo_el_fondo": 3.912829099280669e-06,
+   "veces_bajo_0020_techo": 38575.387133161144
+  },
+  "abril_normal": {
+   "sum_mnu": 0.085,
+   "orden": "normal",
+   "masas_eV": [
+    0.015165830229554438,
+    0.0174413992142737,
+    0.05239277055617184
+   ],
+   "p_max_sobre_T": [
+    0.6035324681951629,
+    0.6940899744515366,
+    2.084998819763147
+   ],
+   "rho_cosmica": 9.521395110985042,
+   "rho_lentos": 1.8483380880287157,
+   "rho_techo_TG": 5.011938636200178,
+   "f_nu_lentos": 7.595768237580616e-07,
+   "f_nu_techo_TG": 2.0596623825543853e-06,
+   "f_nu_si_todo_el_fondo": 3.912829099280669e-06,
+   "veces_bajo_0020_techo": 9710.32930901815
+  }
+ },
+ "rho_nu_abril": {
+  "cita_eV_cm3": 28.6,
+  "correcto_eV_cm3": 9.521395110985042,
+  "cociente": 3.00376149362855,
+  "causa": "336/cm^3 (tres sabores) por la SUMA de masas: masa contada tres veces"
+ },
+ "control_lectura": {
+  "rho_cosmica_aqui": 7.6720041311925335,
+  "rho_cosmica_convencion_nucleo": 7.7481233429043455,
+  "desvio_rel": -0.009824212695519474,
+  "n_por_sabor_cm3": 112.01641307041224,
+  "pasa": true
+ },
+ "control_otro_lado": {
+  "m_eV": 11.0,
+  "p_max_sobre_T": 437.75098690009787,
+  "f_lentos": 0.0005063661187304393,
+  "f_techo_TG": 3926.255017148713,
+  "criterio": "con un esteril de 11 eV el techo TG debe superar el 0.020; si no, el metodo no distingue",
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "e9b1c72fc371e03a135982b447ea8207188ab0f1",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/fnu_tremaine_gunn.py",
+  "script_sha256": "c63ff825c1644fefd16b306b980304f7c7ae1e91261f7a587cb4963bd414b288",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p02_mcmc/fnu_tremaine_gunn.py"
+  ],
+  "fecha": "2026-10-01T13:05:41",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

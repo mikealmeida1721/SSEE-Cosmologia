@@ -1287,3 +1287,29 @@ stages:
       hash: md5
       md5: a362a2b0f44308d761f69dcf6c5335d1
       size: 10546
+  fnu_tremaine_gunn:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 
+      2>&1
+    deps:
+    - path: src/p02_mcmc/fnu_tremaine_gunn.py
+      hash: md5
+      md5: dd901a2d7d64d5707b982d33eb9b244b
+      size: 7834
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/fnu_tremaine_gunn.json
+      hash: md5
+      md5: c52ac3c81c4156e51fec5d4623f67e8e
+      size: 3997
+    - path: results/logs/fnu_tremaine_gunn.log
+      hash: md5
+      md5: e9f4b769f82d625525f6cb7d17f917de
+      size: 1471
