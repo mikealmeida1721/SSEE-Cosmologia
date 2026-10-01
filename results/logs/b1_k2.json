@@ -1,0 +1,126 @@
+{
+ "SSEE": {
+  "k": 2,
+  "libres": [
+   "logA",
+   "tau"
+  ],
+  "chi2_min": 2768.448775601234,
+  "chi2_mejor_muestreado": 2769.8974,
+  "n_muestras": 221429,
+  "posterior": {
+   "logA": {
+    "media": 3.045892505789981,
+    "p16": 3.0320351,
+    "p84": 3.0596037
+   },
+   "tau": {
+    "media": 0.05554618555234595,
+    "p16": 0.048651185,
+    "p84": 0.061907916
+   },
+   "sigma8": {
+    "media": 0.8158985048330669,
+    "p16": 0.81024633,
+    "p84": 0.82148664
+   }
+  }
+ },
+ "LCDM": {
+  "k": 6,
+  "libres": [
+   "H0",
+   "ombh2",
+   "omch2",
+   "ns",
+   "logA",
+   "tau"
+  ],
+  "chi2_min": 2771.227219545251,
+  "chi2_mejor_muestreado": 2772.9172,
+  "n_muestras": 95760,
+  "posterior": {
+   "H0": {
+    "media": 67.39376024017236,
+    "p16": 66.875148,
+    "p84": 67.931961
+   },
+   "ombh2": {
+    "media": 0.022388829731576524,
+    "p16": 0.022247262,
+    "p84": 0.0225269
+   },
+   "omch2": {
+    "media": 0.11990036435356169,
+    "p16": 0.11871785,
+    "p84": 0.12107039
+   },
+   "ns": {
+    "media": 0.9654357848919606,
+    "p16": 0.96131025,
+    "p84": 0.96954182
+   },
+   "logA": {
+    "media": 3.044516707712593,
+    "p16": 3.0306374,
+    "p84": 3.0584275
+   },
+   "tau": {
+    "media": 0.05435470240601362,
+    "p16": 0.047268699,
+    "p84": 0.061711702
+   },
+   "sigma8": {
+    "media": 0.8109512560202389,
+    "p16": 0.80505406,
+    "p84": 0.81663334
+   }
+  }
+ },
+ "N_DATA": 2354,
+ "penal_por_parametro": 7.763871287820222,
+ "dk": -4,
+ "dchi2": -2.778443944016999,
+ "dBIC": -33.83392909529789,
+ "penal_BIC": -31.055485151280887,
+ "dchi2_muestreado": -3.019800000000032,
+ "dBIC_muestreado": -34.07528515128092,
+ "control": {
+  "criterio": "el DeltaBIC con el mejor muestreado queda del mismo lado que con el minimo",
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "d0816e0b9a7b9e12baef1fb15a94ecbc7bce04c6",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/b1_k2_lee.py",
+  "script_sha256": "f36a9be9c210a43fb8a63323ebcfbe565e617d8c41f4106b66ad39cd62c4de1c",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/chains/ssee_cmb_k2.1.txt": "413fa67a3fde0d5c1158da88563ad9c34de2403398eac9a4a2df1866670583c6",
+   "results/chains/ssee_cmb_k2.2.txt": "1b96b062248abc3056c4c529afde8c1deb8b1ffdaaece2deda67b6e7b7506173",
+   "results/chains/ssee_cmb_k2.3.txt": "744e71cab137fb9a822e858262aa201d90acacf140c1f268cb303a188e9c985d",
+   "results/chains/ssee_cmb_k2.4.txt": "057a1c038019ea308d00109bbb0404891f266b5d77c3b0c2735302b7c78205f3",
+   "results/chains/ssee_cmb_k2.input.yaml": "56a0247855abd57a606e531123beb143af3041505303ad9dcf0521e044e5565d",
+   "results/logs/b1_min_ssee.json": "38e5e1d5a4eade9a728e1e350c7284e3e52967b71558d33ff38ad50ba7dfcc96",
+   "results/chains/lcdm_cmb.1.txt": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285",
+   "results/chains/lcdm_cmb.input.yaml": "24ab7828a275793ef161aa62e22f5c67d6746e8fdbc8c2dbce9e9c35fc6b7c36",
+   "results/logs/b1_min_lcdm.json": "f7f6423a3ad42bde4ceae6cf1990b21dc9bba9aab46224ea0f6b7174184d7ab5"
+  },
+  "argv": [
+   "src/p03_cmb/b1_k2_lee.py"
+  ],
+  "fecha": "2026-10-01T19:32:16",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

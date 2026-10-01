@@ -1,0 +1,101 @@
+{
+ "modelo": "ssee",
+ "cadenas": [
+  "/home/mike/Proyectos/SSEE/results/chains/ssee_cmb_k2.1.txt",
+  "/home/mike/Proyectos/SSEE/results/chains/ssee_cmb_k2.2.txt",
+  "/home/mike/Proyectos/SSEE/results/chains/ssee_cmb_k2.3.txt",
+  "/home/mike/Proyectos/SSEE/results/chains/ssee_cmb_k2.4.txt"
+ ],
+ "libres": [
+  "logA",
+  "tau",
+  "A_planck",
+  "calib_100T",
+  "calib_217T",
+  "A_cib_217",
+  "xi_sz_cib",
+  "A_sz",
+  "ksz_norm",
+  "gal545_A_100",
+  "gal545_A_143",
+  "gal545_A_143_217",
+  "gal545_A_217",
+  "ps_A_100_100",
+  "ps_A_143_143",
+  "ps_A_143_217",
+  "ps_A_217_217",
+  "galf_TE_A_100",
+  "galf_TE_A_100_143",
+  "galf_TE_A_100_217",
+  "galf_TE_A_143",
+  "galf_TE_A_143_217",
+  "galf_TE_A_217"
+ ],
+ "n_libres": 23,
+ "chi2_mejor_muestreado": 2769.8974,
+ "chi2_min": 2768.448775601234,
+ "punto_min": {
+  "logA": 3.041623580204679,
+  "tau": 0.052980105195172746,
+  "A_planck": 1.0014375020650623,
+  "calib_100T": 0.9991792036837058,
+  "calib_217T": 0.999033246621688,
+  "A_cib_217": 50.30684671473714,
+  "xi_sz_cib": 0.0493353978181799,
+  "A_sz": 8.40510885981759,
+  "ksz_norm": 3.4857043306529665,
+  "gal545_A_100": 8.30020824968201,
+  "gal545_A_143": 12.675419637459212,
+  "gal545_A_143_217": 21.544365781170505,
+  "gal545_A_217": 98.41590016762822,
+  "ps_A_100_100": 233.95864176505097,
+  "ps_A_143_143": 30.366999863803525,
+  "ps_A_143_217": 28.77902054974754,
+  "ps_A_217_217": 106.25653708818263,
+  "galf_TE_A_100": -0.03279102835698304,
+  "galf_TE_A_100_143": 0.10756600958655375,
+  "galf_TE_A_100_217": 0.4625488378380987,
+  "galf_TE_A_143": 0.2848164195885604,
+  "galf_TE_A_143_217": 0.6064929092879845,
+  "galf_TE_A_217": 2.0417669271190433
+ },
+ "control": {
+  "criterio": "chi2_min <= mejor muestreado",
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "299399619d8f8ae8b073240930467d86ae15c201",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/b1_minimiza.py",
+  "script_sha256": "22f2c34e97e5bd30b07abcd8e6208d4d62041370b19cd92cf6f98c1ac533733c",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/chains/ssee_cmb_k2.1.txt": "413fa67a3fde0d5c1158da88563ad9c34de2403398eac9a4a2df1866670583c6",
+   "results/chains/ssee_cmb_k2.2.txt": "1b96b062248abc3056c4c529afde8c1deb8b1ffdaaece2deda67b6e7b7506173",
+   "results/chains/ssee_cmb_k2.3.txt": "744e71cab137fb9a822e858262aa201d90acacf140c1f268cb303a188e9c985d",
+   "results/chains/ssee_cmb_k2.4.txt": "057a1c038019ea308d00109bbb0404891f266b5d77c3b0c2735302b7c78205f3",
+   "results/chains/ssee_cmb_k2.updated.yaml": "7f3a08add1f0cb8a2c46d5c02e969884f718bb37d39f658623fa0c229ec6a992"
+  },
+  "argv": [
+   "src/p03_cmb/b1_minimiza.py",
+   "ssee"
+  ],
+  "fecha": "2026-10-01T19:29:24",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5",
+   "cobaya": "3.6.2",
+   "getdist": "1.7.6"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

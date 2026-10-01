@@ -1460,3 +1460,150 @@ stages:
       hash: md5
       md5: 925bce991bea53d115c41a363d2e795c
       size: 1488
+  b1_min_ssee:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
+    deps:
+    - path: results/chains/ssee_cmb_k2.1.txt
+      hash: md5
+      md5: 76ebdc49e0f64e52d999b187b2ef903c
+      size: 48984375
+    - path: results/chains/ssee_cmb_k2.2.txt
+      hash: md5
+      md5: d03510ecddb1f3f4a05118170af7e4a7
+      size: 49358067
+    - path: results/chains/ssee_cmb_k2.3.txt
+      hash: md5
+      md5: c460f9f58d02cdff7f96afa3b2b3a2f5
+      size: 50297313
+    - path: results/chains/ssee_cmb_k2.4.txt
+      hash: md5
+      md5: b2e4c280e9708afeb42c90e99feddcf7
+      size: 49699155
+    - path: results/chains/ssee_cmb_k2.updated.yaml
+      hash: md5
+      md5: 249256e68c8016a4f4fa716261d50208
+      size: 10878
+    - path: src/p03_cmb/b1_minimiza.py
+      hash: md5
+      md5: e866779da586f988351642153ce0a03e
+      size: 4498
+    - path: src/p03_cmb/ssee_paper3_b1_mcmc.py
+      hash: md5
+      md5: 048c0826217f3ee14f2cefb70bf48f73
+      size: 27401
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/b1_min_ssee.json
+      hash: md5
+      md5: 00d797baa3426e519aa7df3b6605ec81
+      size: 3081
+    - path: results/logs/b1_min_ssee.log
+      hash: md5
+      md5: 15c1ea0ac24a151c44d130fa49bc66a9
+      size: 4563
+  b1_min_lcdm:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
+    deps:
+    - path: results/chains/lcdm_cmb.1.txt
+      hash: md5
+      md5: 881ecb1f5d40784f62c8798473d1affe
+      size: 94529491
+    - path: results/chains/lcdm_cmb.updated.yaml
+      hash: md5
+      md5: c3c96ffca704a76aa5c9892660f0237e
+      size: 11346
+    - path: src/p03_cmb/b1_minimiza.py
+      hash: md5
+      md5: e866779da586f988351642153ce0a03e
+      size: 4498
+    - path: src/p03_cmb/ssee_paper3_b1_mcmc.py
+      hash: md5
+      md5: 048c0826217f3ee14f2cefb70bf48f73
+      size: 27401
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/b1_min_lcdm.json
+      hash: md5
+      md5: af4ef7e8dad412fa7d27c166056b84eb
+      size: 2715
+    - path: results/logs/b1_min_lcdm.log
+      hash: md5
+      md5: 515b9e476895d0b40d69600e158cdefe
+      size: 4616
+  b1_k2:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py
+      > results/logs/b1_k2.log 2>&1
+    deps:
+    - path: results/chains/lcdm_cmb.1.txt
+      hash: md5
+      md5: 881ecb1f5d40784f62c8798473d1affe
+      size: 94529491
+    - path: results/chains/lcdm_cmb.input.yaml
+      hash: md5
+      md5: 5ad944fa1192e2cda6752517334a0857
+      size: 1562
+    - path: results/chains/ssee_cmb_k2.1.txt
+      hash: md5
+      md5: 76ebdc49e0f64e52d999b187b2ef903c
+      size: 48984375
+    - path: results/chains/ssee_cmb_k2.2.txt
+      hash: md5
+      md5: d03510ecddb1f3f4a05118170af7e4a7
+      size: 49358067
+    - path: results/chains/ssee_cmb_k2.3.txt
+      hash: md5
+      md5: c460f9f58d02cdff7f96afa3b2b3a2f5
+      size: 50297313
+    - path: results/chains/ssee_cmb_k2.4.txt
+      hash: md5
+      md5: b2e4c280e9708afeb42c90e99feddcf7
+      size: 49699155
+    - path: results/chains/ssee_cmb_k2.input.yaml
+      hash: md5
+      md5: 9605fea0e2da10e08eea828a2c806dd5
+      size: 1108
+    - path: results/logs/b1_min_lcdm.json
+      hash: md5
+      md5: af4ef7e8dad412fa7d27c166056b84eb
+      size: 2715
+    - path: results/logs/b1_min_ssee.json
+      hash: md5
+      md5: 00d797baa3426e519aa7df3b6605ec81
+      size: 3081
+    - path: src/p03_cmb/b1_k2_lee.py
+      hash: md5
+      md5: 40318f383a2632955c3ff9316226ead2
+      size: 3989
+    - path: src/p03_cmb/ssee_paper3_b1_mcmc.py
+      hash: md5
+      md5: 048c0826217f3ee14f2cefb70bf48f73
+      size: 27401
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/b1_k2.json
+      hash: md5
+      md5: 95db485151b4e4242ad7343d9ef1b8e3
+      size: 3406
+    - path: results/logs/b1_k2.log
+      hash: md5
+      md5: 7b3850e0b5e1f75a1ab1b113fba95df5
+      size: 891

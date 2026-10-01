@@ -1,0 +1,103 @@
+{
+ "modelo": "lcdm",
+ "cadenas": [
+  "/home/mike/Proyectos/SSEE/results/chains/lcdm_cmb.1.txt"
+ ],
+ "libres": [
+  "H0",
+  "ombh2",
+  "omch2",
+  "ns",
+  "logA",
+  "tau",
+  "A_planck",
+  "calib_100T",
+  "calib_217T",
+  "A_cib_217",
+  "xi_sz_cib",
+  "A_sz",
+  "ksz_norm",
+  "gal545_A_100",
+  "gal545_A_143",
+  "gal545_A_143_217",
+  "gal545_A_217",
+  "ps_A_100_100",
+  "ps_A_143_143",
+  "ps_A_143_217",
+  "ps_A_217_217",
+  "galf_TE_A_100",
+  "galf_TE_A_100_143",
+  "galf_TE_A_100_217",
+  "galf_TE_A_143",
+  "galf_TE_A_143_217",
+  "galf_TE_A_217"
+ ],
+ "n_libres": 27,
+ "chi2_mejor_muestreado": 2772.9172,
+ "chi2_min": 2771.227219545251,
+ "punto_min": {
+  "H0": 67.26067701245586,
+  "ombh2": 0.02232437236560911,
+  "omch2": 0.11999899938934508,
+  "ns": 0.9657498078125195,
+  "logA": 3.039442706341552,
+  "tau": 0.05582325855377614,
+  "A_planck": 0.9969690890312846,
+  "calib_100T": 0.9983564578745576,
+  "calib_217T": 0.9986725961660858,
+  "A_cib_217": 42.92407088778035,
+  "xi_sz_cib": 0.9233168847755844,
+  "A_sz": 6.625081008322056,
+  "ksz_norm": 2.2926003210135466,
+  "gal545_A_100": 8.336940304932277,
+  "gal545_A_143": 15.790419891203708,
+  "gal545_A_143_217": 24.548349972187292,
+  "gal545_A_217": 102.2625059657299,
+  "ps_A_100_100": 239.58365444924607,
+  "ps_A_143_143": 45.93949493123706,
+  "ps_A_143_217": 52.76073373952031,
+  "ps_A_217_217": 120.79389964444752,
+  "galf_TE_A_100": 0.10690917712786836,
+  "galf_TE_A_100_143": 0.16621389815490292,
+  "galf_TE_A_100_217": 0.5264365698963969,
+  "galf_TE_A_143": 0.2825080169657005,
+  "galf_TE_A_143_217": 0.7407227013817317,
+  "galf_TE_A_217": 2.248417293308992
+ },
+ "control": {
+  "criterio": "chi2_min <= mejor muestreado",
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "f1b5e3eb2311a382aa4d49eb9f4428c126a4fde4",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/b1_minimiza.py",
+  "script_sha256": "22f2c34e97e5bd30b07abcd8e6208d4d62041370b19cd92cf6f98c1ac533733c",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/chains/lcdm_cmb.1.txt": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285",
+   "results/chains/lcdm_cmb.updated.yaml": "1f0a51d8fb62c305defe9b2dd560c3eb7bebcdbac702f3c2f1394c248711ff9e"
+  },
+  "argv": [
+   "src/p03_cmb/b1_minimiza.py",
+   "lcdm"
+  ],
+  "fecha": "2026-10-01T19:29:51",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5",
+   "cobaya": "3.6.2",
+   "getdist": "1.7.6"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

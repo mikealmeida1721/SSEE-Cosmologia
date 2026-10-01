@@ -1,0 +1,25 @@
+# ACTA-PROCEDENCIA {"commit": "03c83ce4be14a04f7c88350e38f8970c6aa04201", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/b1_minimiza.py", "script_sha256": "22f2c34e97e5bd30b07abcd8e6208d4d62041370b19cd92cf6f98c1ac533733c", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p03_cmb/b1_minimiza.py", "ssee"], "fecha": "2026-10-01T19:22:10", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+  ingredientes fijos: {'H0': 67.96214152203791, 'ombh2': 0.02241775678109985, 'omch2': 0.11951440843160878, 'ns': 0.965558146251367, 'w': -0.839949771344779, 'wa': -0.6699748856723895, 'mnu': 0.06849, 'omk': 0.0}
+  ssee: 23 libres (con nuisance), 4 cadenas; mejor muestreado chi2 = 2769.897
+[output] Output to be read-from/written-into folder '/home/mike/Proyectos/SSEE/results/chains', with prefix 'ssee_cmb_k2_min'
+[output] Found existing info files with the requested output prefix: '/home/mike/Proyectos/SSEE/results/chains/ssee_cmb_k2_min'
+[output] Will delete previous products ('force' was requested).
+[prior] *WARNING* External prior 'SZ' loaded. Mind that it might not be normalized!
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik/plik_rd12_HM_v22b_TTTEEE.clik' on test data. got -1172.47 expected -1172.47 (diff 4.00569e-06)
+----
+[minimize] Initializing
+[minimize] Run 1/1 will start from random initial point:
+[minimize] {'logA': np.float64(3.0418126), 'tau': np.float64(0.052705588), 'A_planck': np.float64(1.0014519), 'calib_100T': np.float64(0.9991644), 'calib_217T': np.float64(0.99904099), 'A_cib_217': np.float64(50.223814), 'xi_sz_cib': np.float64(0.049120697), 'A_sz': np.float64(8.3927994), 'ksz_norm': np.float64(3.4827134), 'gal545_A_100': np.float64(8.2958776), 'gal545_A_143': np.float64(12.703035), 'gal545_A_143_217': np.float64(21.56089), 'gal545_A_217': np.float64(98.420036), 'ps_A_100_100': np.float64(233.49331), 'ps_A_143_143': np.float64(30.150865), 'ps_A_143_217': np.float64(28.78137), 'ps_A_217_217': np.float64(106.22926), 'galf_TE_A_100': np.float64(0.048777475), 'galf_TE_A_100_143': np.float64(0.10967278), 'galf_TE_A_100_217': np.float64(0.46597847), 'galf_TE_A_143': np.float64(0.28747407), 'galf_TE_A_143_217': np.float64(0.61036258), 'galf_TE_A_217': np.float64(2.0317489)}
+[prior] *WARNING* There are unbounded parameters (['A_planck', 'calib_100T', 'calib_217T', 'gal545_A_100', 'gal545_A_143', 'gal545_A_143_217', 'gal545_A_217', 'galf_TE_A_100', 'galf_TE_A_100_143', 'galf_TE_A_100_217', 'galf_TE_A_143', 'galf_TE_A_143_217', 'galf_TE_A_217']). Prior bounds are given at 0.9999995 confidence level. Beware of likelihood modes at the edge of the prior
+[prior] *WARNING* Reference pdf not defined or improper for some parameters. Using prior's sigma instead for them.
+[minimize] Starting run 1/1
+[minimize] Run 1/1 converged.
+[minimize] -log(likelihood) minimized to 1384.22
+[minimize] Parameter values at minimum:
+   weight  minuslogpost      logA      tau  A_planck  calib_100T  calib_217T  A_cib_217  xi_sz_cib      A_sz  ksz_norm  gal545_A_100  gal545_A_143  gal545_A_143_217  gal545_A_217  ps_A_100_100  ps_A_143_143  ps_A_143_217  ps_A_217_217  galf_TE_A_100  galf_TE_A_100_143  galf_TE_A_100_217  galf_TE_A_143  galf_TE_A_143_217  galf_TE_A_217    sigma8    chi2__CMB  minuslogprior  minuslogprior__0  minuslogprior__SZ         chi2  chi2__planck_2018_highl_plik.TTTEEE  chi2__planck_2018_lowl.TT  chi2__planck_2018_lowl.EE  chi2__planck_2018_lensing.native
+0     1.0    1415.13775  3.041624  0.05298  1.001438    0.999179    0.999033  50.306847   0.049335  8.405109  3.485704      8.300208      12.67542         21.544366       98.4159    233.958642        30.367     28.779021    106.256537      -0.032791           0.107566           0.462549       0.284816           0.606493       2.041767  0.814138  2768.448776      30.913362          25.82567           5.087692  2768.448776                          2341.064312                  23.045869                 395.811531                          8.527065
+  ssee: chi2 minimo = 2768.449 (mejor muestreado 2769.897) -> control PASA
