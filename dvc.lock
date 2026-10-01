@@ -340,8 +340,8 @@ stages:
     deps:
     - path: src/algebra_derivada.py
       hash: md5
-      md5: 2a71a5855e1d9d5e3f95895db5d0c991
-      size: 7986
+      md5: d77aa41497bc5485722b76740d08094a
+      size: 8466
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -353,8 +353,8 @@ stages:
     outs:
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: b2dbbef397d0f75c88064d60261115fd
-      size: 9817
+      md5: 560c3e2f1195a51318552d26e58ebcf6
+      size: 10350
   kids_legacy_bic:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_legacy_bic.py
