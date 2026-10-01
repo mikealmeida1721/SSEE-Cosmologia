@@ -66,8 +66,10 @@ tension_H0 = abs(h["mediana"] - PLANCK_H0[0]) / np.hypot(h["std"], PLANCK_H0[1])
 txt = open(LOG).read()
 impreso = {}
 for m, e in ETIQ.items():
-    f = re.search(rf"{e}\s+(\d)\s+(-?[0-9.]+)\s+([0-9.]+)\s+([0-9.]+)\s+([0-9.]+)\s+([0-9.]+)", txt)
+    f = re.search(rf"{e}\s+(\d)\s+(-?[0-9.]+)\s+([0-9.]+)\s+([0-9.]+)\s+([0-9.]+)\s+([0-9.]+)\s+(\d+)", txt)
     impreso[m] = dict(lnP_MAP=float(f.group(2)), BIC=float(f.group(3)), AIC=float(f.group(5)))
+    # N_eff: lo calcula el MCMC con el tiempo de autocorrelacion de emcee; se toma de su log
+    res[m]["N_eff_del_log"] = int(f.group(7))
 pasa = all(abs(res[m][q] - impreso[m][q]) <= 0.005 + 1e-9 for m in res for q in ("lnP_MAP", "BIC", "AIC"))
 out = dict(fecha=str(__import__("datetime").date.today()), N=N, modelos=res,
            tension_H0_ssee_planck=float(tension_H0), rho_w0_wa_cpl=rho_cpl,

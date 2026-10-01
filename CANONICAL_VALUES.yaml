@@ -22,7 +22,7 @@
 #     deltaBIC_cmb_plik_full = −2.474 − 3·ln(2354) = −25.766 (Δk = −3)
 #     Delta_BIC_CMB          = −0.0096 − 4·ln(669) = −26.03  (Δk = −4; ΛCDM con SU mν 0.06, 2026-09-28)
 #     Delta_BIC_CMB_fullplik = −1.81  − 4·ln(2354) = −32.9   (Δk = −4)
-#     deltaBIC_lcdm_minus_ssee = +6.43 ⟹ Δ(SSEE−ΛCDM) = −6.43
+#     deltaBIC_lcdm_minus_ssee = +6.77 ⟹ Δ(SSEE−ΛCDM) = −6.77
 #   Este archivo llevaba la convención declarada sólo junto a dos claves
 #   (2026-09-25); de ahí salieron los signos opuestos entre Paper 1/2 y
 #   Paper 6/Sealed/Unified. Ahora se declara aquí y no se repite invertida.
@@ -254,27 +254,23 @@ canonical:
   # ΔAIC=4.91 y H₀=67.62 — NO los valores de abajo. Los números eran correctos;
   # el puntero era el viejo, así que quien siguiera la fuente declarada habría
   # encontrado 5.68 y concluido que este archivo miente.
-  # ⚠ PROVISIONAL (2026-09-29): la corrida del 29 CARGÓ la cadena SSEE del 25 de julio (r_d por
-  # fórmula) en vez de re-correrla; ΛCDM y CPL sí son nuevos. Los valores de abajo NO se
-  # propagan hasta re-correr SSEE (en cola). Cadena vieja en superseded_ssee_ckpt_2026-07-25/.
-  # RE-CORRIDO 2026-09-29 (commit 47614d2): r_d por CAMB y cada modelo con SU mν
-  # (ΛCDM y CPL 0.06; antes usaban la de SSEE); r_d de SSEE con ω_m algebraico.
-  #   H0: SSEE 67.53±0.35 (0.26σ Planck) · ΛCDM 68.39±0.28 · CPL 67.27±0.51
-  #   ΔBIC(ΛCDM−SSEE)=+6.77, ΔBIC(CPL−SSEE)=+5.66 · ΔAIC +5.99/+3.35 (SSEE favorecido)
-  #   ΔDIC(SSEE−ΛCDM)=−5.49, ΔDIC(SSEE−CPL)=−2.81 (dic_from_chains.log, re-corrido 2026-09-29)
-  #   Savage-Dickey B=18.15 (lnB=2.899; ⚠ PROVISIONAL: leyó la cadena CPL de JULIO; se re-corre tras los 3 modelos)
-  #   r_d(SSEE)=147.64 ≈ ΛCDM 147.59 (1.000)
+  # CERRADO 2026-09-30: la re-corrida de 3 modelos terminó con SSEE re-corrido (no la cadena
+  # de julio), r_d por CAMB y cada modelo con SU mν. Valores de las cadenas, con acta:
+  #   resumen_3modelos.json (src/p02_mcmc/resumen_3modelos.py; control contra la tabla del log),
+  #   dic_from_chains.json, savage_cv.json, lya_auditoria.json.
+  #   H0: SSEE 67.61±0.35 (0.40σ Planck) · ΛCDM 68.39±0.28 · CPL 67.27±0.51
+  #   ΔBIC(SSEE−CPL) = −5.65 · ΔAIC −5.99 (ΛCDM) / −3.34 (CPL) · ΔDIC(SSEE−CPL) = −3.34
+  #   Savage-Dickey B=10.37 (lnB=2.339; era 18.34/2.91 con la cadena CPL de julio) — sigue > 2.3
+  #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35.
+  #   CPL: su ajuste de entrenamiento queda en el borde H0=50 (savage_cv.json, alguno_en_borde) —
+  #   número NO válido, no se cita.
   #   (lnB10=7.42 RETIRADO: era Laplace de una tabla huérfana, sin script vivo)
-  #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35 (SSEE predice mejor).
-  #   CPL: su ajuste de entrenamiento queda en el borde H0=50 — número NO válido, no se cita.
-  H0_posterior_planckprior_km_s_Mpc: 67.53   # 3-modelos, prior Planck (para ΔBIC justo; R25)
-  deltaBIC_lcdm_minus_ssee: 6.43   # VIGENTE (07-25) hasta cerrar la re-corrida de 3 modelos; la del 29-sep
-                                   # (+6.77 / CPL +5.66) mezcló SSEE de julio y NO se cita. OJO: esta clave SI es LCDM − SSEE (lo dice
-                                   # su nombre), por eso >0 favorece SSEE. En los
-                                   # papers se cita con la convencion comun:
-                                   # Delta(SSEE−LCDM) = −6.43 (CPL: −6.35).
-  deltaDIC_ssee_minus_lcdm: -5.66  # VIGENTE (07-25) hasta cerrar la re-corrida; el −5.49/−2.81 del 29-sep usó
-                                   # la cadena SSEE de julio con ΛCDM/CPL nuevos: NO se cita. log dic_from_chains.log
+  H0_posterior_planckprior_km_s_Mpc: 67.61   # FUENTE: results/logs/resumen_3modelos.json — 67.615 ± 0.349, 3-modelos prior Planck (era 67.53)
+  deltaBIC_lcdm_minus_ssee: 6.77   # FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
+                                   # su nombre), por eso >0 favorece SSEE. En los papers se cita con la
+                                   # convención común: Δ(SSEE−LCDM) = −6.77 (CPL: −5.65). Era 6.43 (07-25).
+  deltaDIC_ssee_minus_lcdm: -6.00  # FUENTE: results/logs/dic_from_chains.json — era −5.66 (07-25)
+  lnB_savage_dickey: 2.34          # FUENTE: results/logs/savage_cv.json — 2.3393; B = 10.37
 
   # ── Fase B / B1 — likelihood COMPLETA de Planck ───────────────────────
   # plik TTTEEE full + lowl TT + lowl EE + lensing, con los ~20 nuisances

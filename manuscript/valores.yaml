@@ -220,7 +220,6 @@ p2_BIC_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.BIC", forma
 p2_AIC_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.AIC", formato: ".2f"}
 p2_pD_cpl: {fuente: "results/logs/dic_from_chains.json#modelos.cpl.p_D", formato: ".2f"}
 p2_DIC_cpl: {fuente: "results/logs/dic_from_chains.json#modelos.cpl.DIC", formato: ".2f"}
-p2_cvchi2r_cpl: {fuente: "results/logs/savage_cv.json#cross_validation.cpl.chi2r_test", formato: ".2f"}
 p2_dBIC_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.dBIC_ssee_menos", formato: ".2f"}
 p2_dAIC_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.dAIC_ssee_menos", formato: ".2f"}
 p2_dBIC_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.dBIC_ssee_menos", formato: ".2f"}
@@ -284,3 +283,14 @@ p2_lyaB_pullmax: {fuente: "results/logs/lya_auditoria.json#escenario_B.pull_max.
 p2_lyaB_pullmax_z: {fuente: "results/logs/lya_auditoria.json#escenario_B.pull_max.z", formato: ".2f"}
 p2_rd_lcdm: {fuente: "results/logs/lya_auditoria.json#lcdm_planck.rd", formato: ".2f"}
 p2_rd_ratio: {fuente: "results/logs/lya_auditoria.json#rd_B_sobre_lcdm", formato: ".4f"}
+p2_dBIC_lcdm_mas: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.dBIC_vs_ssee", formato: "+.2f"}
+p2_dBIC_cpl_mas:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.dBIC_vs_ssee", formato: "+.2f"}
+p2_dAIC_lcdm_mas: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.dAIC_vs_ssee", formato: "+.2f"}
+p2_dAIC_cpl_mas:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.dAIC_vs_ssee", formato: "+.2f"}
+p2_dBIC_lcdm_abs: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.dBIC_vs_ssee", formato: ".2f"}
+p2_dBIC_cpl_abs:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.dBIC_vs_ssee", formato: ".2f"}
+p2_neff_ssee:     {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.N_eff_del_log", formato: ",d"}
+p2_neff_lcdm:     {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.N_eff_del_log", formato: ",d"}
+p2_neff_cpl:      {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.N_eff_del_log", formato: ",d"}
+p2_ssee_H0_std_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.posterior.H0.std", formato: ".2f"}
+p2_ssee_H0_std_cpl:  {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.posterior.H0.std", formato: ".2f"}
