@@ -16,7 +16,8 @@ contra M_N,dyn (masa dinamica newtoniana dentro del radio virial, Brownstein &
 Moffat 2006, segun el pie de las tablas). Variantes: SSEE con f_nu = 0, SSEE
 con IMF canonica, ΛCDM con IGIMF.
 ERROR: sigma^2 = sigma_dyn^2 + (k sigma_bar)^2, con el lado de la barra
-asimetrica que mira hacia la prediccion.
+asimetrica que mira hacia la prediccion; cada barra con piso 0.01/sqrt(12), el
+error de redondeo de una tabla a dos decimales (algunas barras salen «0.00»).
 CONTROL de lectura: el parser tiene que leer 13 + 33 filas y reproducir, de la
 tabla, A2029 (1.71, 1.97, 12.77) y A0478 (11.45) tal como estan en el PDF.
 
@@ -41,6 +42,7 @@ print(cabecera(__file__), flush=True)
 FUENTE = os.path.join(_R, "data", "raw", "zhang2026", "tablas_II_III.tex")
 F_NU = 0.020   # ORIGEN-VALOR: 0.020 — f_nu de Paper 2 (ec. M_SSEE), el mismo que cumulos_7.py; su origen esta en revision
 C_NU = 93.14   # ORIGEN-VALOR: 93.14 — clausura nu del nucleo (omega_nu = Sum m_nu / 93.14)
+SIG_RED = 0.01 / np.sqrt(12)   # piso: la tabla redondea a 2 decimales (uniforme en +-0.005); hay barras impresas «0.00»
 COLS = ["z", "M_gas", "M_g_IMF", "M_g_IG", "M_I_IMF", "M_I_IG", "M_tot_IMF", "M_tot_IG", "M_M_dyn", "M_N_dyn", "f_ICL"]
 
 _num = re.compile(r"\$?([0-9.]+)(?:\^\{([0-9.]+)\}_\{([0-9.]+)\})?\$?")
@@ -91,8 +93,8 @@ MODELOS = {"ssee": ("M_tot_IG", K_SSEE), "ssee_fnu0": ("M_tot_IG", S.KAL0), "sse
 def chi2_fila(f, col, k):
     pred, obs = k * f[col], f["M_N_dyn"]
     arriba = pred > obs   # la barra que mira hacia la prediccion
-    s_obs = f["M_N_dyn_mas"] if arriba else f["M_N_dyn_menos"]
-    s_bar = f[col + "_menos"] if arriba else f[col + "_mas"]
+    s_obs = max(f["M_N_dyn_mas"] if arriba else f["M_N_dyn_menos"], SIG_RED)
+    s_bar = max(f[col + "_menos"] if arriba else f[col + "_mas"], SIG_RED)
     s2 = s_obs ** 2 + (k * s_bar) ** 2
     return (pred - obs) ** 2 / s2, (pred - obs) / np.sqrt(s2), pred / obs
 
@@ -116,7 +118,7 @@ out = dict(fecha=str(__import__("datetime").date.today()),
            fuente="Zhang, Hasani Zonoozi & Kroupa 2026, arXiv:2602.06082v1, Tablas II y III",
            no_estan_en_la_fuente=["Coma", "Bullet", "Perseus", "A2744"],
            control_lectura=dict(ctl, pasa=lectura_pasa),
-           K_SSEE=K_SSEE, K_LCDM=K_LCDM, f_nu=F_NU, modelos=res,
+           piso_redondeo=SIG_RED, K_SSEE=K_SSEE, K_LCDM=K_LCDM, f_nu=F_NU, modelos=res,
            filas=F)
 json.dump(con_acta(out, __file__, entradas=[FUENTE]),
           open(os.path.join(_R, "results", "logs", "cumulos_zhang2026.json"), "w"), indent=1)
