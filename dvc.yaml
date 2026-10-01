@@ -422,6 +422,57 @@ stages:
           cache: false
       - results/logs/leer_conjunta_b3.log:
           cache: false
+  b1_min_ssee:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
+    deps:
+      - src/p03_cmb/b1_minimiza.py
+      - src/p03_cmb/ssee_paper3_b1_mcmc.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - results/chains/ssee_cmb_k2.updated.yaml
+      - results/chains/ssee_cmb_k2.1.txt
+      - results/chains/ssee_cmb_k2.2.txt
+      - results/chains/ssee_cmb_k2.3.txt
+      - results/chains/ssee_cmb_k2.4.txt
+    outs:
+      - results/logs/b1_min_ssee.json:
+          cache: false
+      - results/logs/b1_min_ssee.log:
+          cache: false
+  b1_min_lcdm:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
+    deps:
+      - src/p03_cmb/b1_minimiza.py
+      - src/p03_cmb/ssee_paper3_b1_mcmc.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - results/chains/lcdm_cmb.updated.yaml
+      - results/chains/lcdm_cmb.1.txt
+    outs:
+      - results/logs/b1_min_lcdm.json:
+          cache: false
+      - results/logs/b1_min_lcdm.log:
+          cache: false
+  b1_k2:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py > results/logs/b1_k2.log 2>&1
+    deps:
+      - src/p03_cmb/b1_k2_lee.py
+      - src/p03_cmb/ssee_paper3_b1_mcmc.py
+      - src/procedencia.py
+      - results/logs/b1_min_ssee.json
+      - results/logs/b1_min_lcdm.json
+      - results/chains/ssee_cmb_k2.input.yaml
+      - results/chains/lcdm_cmb.input.yaml
+      - results/chains/ssee_cmb_k2.1.txt
+      - results/chains/ssee_cmb_k2.2.txt
+      - results/chains/ssee_cmb_k2.3.txt
+      - results/chains/ssee_cmb_k2.4.txt
+      - results/chains/lcdm_cmb.1.txt
+    outs:
+      - results/logs/b1_k2.json:
+          cache: false
+      - results/logs/b1_k2.log:
+          cache: false
   analiza_boss_R1R2:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_boss_R1R2.py ambos > results/logs/analiza_boss_R1R2.log 2>&1
     deps:
