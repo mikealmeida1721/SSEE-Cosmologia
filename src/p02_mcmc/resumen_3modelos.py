@@ -50,6 +50,10 @@ for m, nom in NOMBRES.items():
 for m in res:
     res[m]["dBIC_vs_ssee"] = res[m]["BIC"] - res["ssee"]["BIC"]
     res[m]["dAIC_vs_ssee"] = res[m]["AIC"] - res["ssee"]["AIC"]
+    # con el signo de Paper 2: Delta = SSEE - modelo (negativo favorece a SSEE)
+    res[m]["dBIC_ssee_menos"] = res["ssee"]["BIC"] - res[m]["BIC"]
+    res[m]["dAIC_ssee_menos"] = res["ssee"]["AIC"] - res[m]["AIC"]
+rho_cpl = float(np.corrcoef(d["cpl_flat"][:, 2], d["cpl_flat"][:, 3])[0, 1])
 h = res["ssee"]["posterior"]["H0"]
 tension_H0 = abs(h["mediana"] - PLANCK_H0[0]) / np.hypot(h["std"], PLANCK_H0[1])
 
@@ -61,7 +65,7 @@ for m, e in ETIQ.items():
     impreso[m] = dict(lnP_MAP=float(f.group(2)), BIC=float(f.group(3)), AIC=float(f.group(5)))
 pasa = all(abs(res[m][q] - impreso[m][q]) <= 0.005 + 1e-9 for m in res for q in ("lnP_MAP", "BIC", "AIC"))
 out = dict(fecha=str(__import__("datetime").date.today()), N=N, modelos=res,
-           tension_H0_ssee_planck=float(tension_H0),
+           tension_H0_ssee_planck=float(tension_H0), rho_w0_wa_cpl=rho_cpl,
            control=dict(log=os.path.relpath(LOG, _R), impreso=impreso, pasa=bool(pasa)))
 json.dump(con_acta(out, __file__, entradas=[NPZ, LOG]),
           open(os.path.join(_R, "results", "logs", "resumen_3modelos.json"), "w"), indent=1)
