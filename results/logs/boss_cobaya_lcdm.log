@@ -1053,3 +1053,9 @@ TERMINADO en 1.81 h
 TERMINADO en 1.81 h
 
 TERMINADO en 1.81 h
+
+# ==== 2026-10-01 1399de9: verificacion de ingredientes con el script actual, SIN re-correr cadenas ====
+# Por que no se re-corren: analiza_boss_R1R2 re-evalua el chi2 de estas cadenas con el codigo actual y coincide (control_lcdm en growth_2026-07/R1R2_boss_lpt_cobaya.json)
+  INGREDIENTES LCDM: Om=0.3153  h=0.6736  mnu=0.06  ns=0.9649  ombh2=0.02237  w0=-1.0  wa=0.0
+  ingredientes verificados contra su fuente: OK
+# rc=0
