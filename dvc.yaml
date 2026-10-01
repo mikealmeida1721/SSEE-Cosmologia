@@ -46,6 +46,9 @@ stages:
       - results/logs/paper3_cmb_chi2.json
       - results/logs/lya_auditoria.json
       - results/logs/hiclass_campo.json
+      - results/logs/resumen_3modelos.json
+      - results/logs/savage_cv.json
+      - results/logs/dic_from_chains.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -179,4 +182,38 @@ stages:
       - /mnt/datos/hi_class/class
     outs:
       - results/logs/hiclass_campo.json:
+          cache: false
+  resumen_3modelos:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/resumen_3modelos.py
+    deps:
+      - src/p02_mcmc/resumen_3modelos.py
+      - src/procedencia.py
+      - src/desi_dr2_data.py
+      - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      - results/logs/mcmc_paper2_3models_wmfix.log
+    outs:
+      - results/logs/resumen_3modelos.json:
+          cache: false
+  savage_cv:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/estadistica/ssee_phase_d_savage_cv.py > results/logs/phase_d_savage_cv_wmfix.log 2>&1
+    deps:
+      - src/estadistica/ssee_phase_d_savage_cv.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    outs:
+      - results/logs/savage_cv.json:
+          cache: false
+      - results/logs/phase_d_savage_cv_wmfix.log:
+          cache: false
+  dic_from_chains:
+    cmd: .venv/bin/python3 src/estadistica/ssee_dic_from_chains.py
+    deps:
+      - src/estadistica/ssee_dic_from_chains.py
+      - src/procedencia.py
+      - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    outs:
+      - results/logs/dic_from_chains.json:
+          cache: false
+      - results/logs/dic_from_chains.log:
           cache: false
