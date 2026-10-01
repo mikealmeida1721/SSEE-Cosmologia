@@ -1,9 +1,0 @@
-[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
-[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
-----
-clipy_0.15
-Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
-----
-before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
-after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
-SSEE: w_c 0.119324  n_s 0.96707  logA 3.0429  tau 0.0549  chi2 1002.7850  (436 eval)  controles {'convergencia': {'w_c_rearranque': 0.11932339543034305, 'chi2_rearranque': 1002.7849710964733, 'dif_en_sigma': -0.0010016029829716159, 'pasa': True}, 'log_viejo': {'w_c': 0.11933158235887054, 'dif_en_sigma': -0.032278594283225014, 'pasa': True}, 'pasa': True}

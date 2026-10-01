@@ -150,3 +150,9 @@ ser preguntas al retirarse el objeto del que trataban. Ver el README del cajón.
   `ssee_paper6_canonical_particle.py`, `ssee_paper6_particle_scan.py`,
   `ssee_paper6_mcmc_v2.py`, `ssee_paper6_mcmc_grid.py`, `p6_canonical_table.py`,
   `p6_complete_matrix.py` → toda la cadena m_φ → k_fs → α → σ₈/S₈ del sector retirado.
+
+### `logs_superados/` — logs de resultado reemplazados por una re-corrida (2026-10-01)
+- `R1R2_boss_lpt_cobaya_20260908_mnu006.json`: resumen R1/R2 de BOSS DR12 del 2026-09-08. Su bloque SSEE salió de
+  cadenas corridas con el Σm_ν de ΛCDM (0.06 en vez de 0.06849). Lo reemplaza `results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json`,
+  que escribe `src/p06_growth/analiza_boss_R1R2.py`. Se conserva porque es el CONTROL de ese script (el bloque ΛCDM,
+  con cadenas que no se rehicieron, tiene que reproducirse) y porque P6 cita su Δχ² = +0.06 como registro de la corrección.

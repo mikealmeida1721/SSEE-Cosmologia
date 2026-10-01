@@ -9,9 +9,10 @@ problema esta en las sondas, no en el modelo.
 NO se suma nada a mano. Cada chi2 se LEE de la cadena conjunta, en su punto de
 mejor ajuste conjunto.
 
-REFERENCIAS INDIVIDUALES
-  CMB  plik_lite TTTEEE+lowT+lowE   1003.5860   (cmb_dbic_tau_ajustado.json)
-  KiDS KiDS-Legacy xi_pm             417.9710   (corrida sseefijo)
+REFERENCIAS INDIVIDUALES (leidas de su log, 2026-10-01; antes tecleadas)
+  CMB  plik_lite TTTEEE+lowT+lowE   cmb_dbic_tau_ajustado.json  SSEE.chi2_min
+  KiDS KiDS-Legacy xi_pm             multisonda_fondo_clavado.json  bondad_en_el_clavo (KiDS)
+  logA del clavo                     cmb_dbic_tau_ajustado.json  SSEE.mejor.logA
   BOSS DR12 P(k) LPT                 de boss_clavado, MISMA escala marginal
        (la escala REAL del optimizador es 197.438 -> 198.07 clavado = 0.63;
         son DOS escalas distintas y no se mezclan)
@@ -38,6 +39,12 @@ BASE = "conjunta_b3" if "b3" in sys.argv else "conjunta"
 OUT = os.path.join(_R, "results", "logs",
                    BASE + "_vs_individual" + ("_preliminar" if PRELIMINAR else "") + ".json")
 sys.path.insert(0, os.path.join(_R, "src"))
+from procedencia import cabecera, con_acta  # noqa: E402
+_CMB = os.path.join(_R, "results", "logs", "cmb_dbic_tau_ajustado.json")
+_MS = os.path.join(_R, "results", "logs", "multisonda_fondo_clavado.json")
+_cmb = json.load(open(_CMB))["SSEE"]
+_kids = [b for b in json.load(open(_MS))["bondad_en_el_clavo"] if "KiDS" in b["sonda"]]
+assert len(_kids) == 1, "multisonda no trae una sola fila KiDS"
 
 
 def _chi2_bao_clavo():
@@ -47,7 +54,8 @@ def _chi2_bao_clavo():
     return chi2_desi(H0_GLOBAL, rd_mpc(OMEGA_B_H2, OMEGA_M_H2))
 
 
-REF = dict(cmb=1003.5860397789045, kids=417.971, bao=_chi2_bao_clavo())
+REF = dict(cmb=_cmb["chi2_min"], kids=_kids[0]["chi2"], bao=_chi2_bao_clavo())
+LOGA_CLAVO = _cmb["mejor"]["logA"]
 
 
 def carga(base):
@@ -66,6 +74,7 @@ def rminus1(base):
 
 
 def main():
+    print(cabecera(__file__), flush=True)
     cc, dc, nc = carga(BASE)
     i = {k: cc.index(k) for k in cc}
     tot = dc[:, i["chi2"]]
@@ -107,7 +116,7 @@ def main():
         pregunta=("Corrida CONJUNTA con el fondo clavado por algebra y logA "
                   "clavado al del CMB: da a cada sonda el mismo chi2 que su "
                   "corrida individual?"),
-        logA_clavo=3.0448340130228546,
+        logA_clavo=LOGA_CLAVO,
         muestras_conjunta=int(dc.shape[0]), cadenas_conjunta=nc,
         Rminus1_conjunta=rminus1(BASE),
         muestras_boss=int(db.shape[0]), cadenas_boss=nb,
@@ -121,7 +130,8 @@ def main():
                  nota="constante: fuera del muestreador, no puede mover nada"),
         total_conjunta=t_conj, total_individual=t_ind,
         total_delta=t_conj - t_ind)
-    json.dump(res, open(OUT, "w"), indent=1, ensure_ascii=False)
+    _ent = [_CMB, _MS] + sorted(glob.glob(f"{CAD}/{BASE}.[0-9]*.txt")) + sorted(glob.glob(f"{CAD}/boss_clavado.[0-9]*.txt"))
+    json.dump(con_acta(res, __file__, entradas=_ent), open(OUT, "w"), indent=1, ensure_ascii=False)
 
     print(f"\n  conjunta: {dc.shape[0]} muestras, {nc} cadenas, "
           f"R-1 = {res['Rminus1_conjunta']:.4f}")

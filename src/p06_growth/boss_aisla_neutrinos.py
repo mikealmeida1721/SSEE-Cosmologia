@@ -41,6 +41,7 @@ import boss_lpt_R1R2 as B                              # noqa: E402
 SALIDA = REPO / "results" / "logs" / "growth_2026-07" / "boss_aisla_neutrinos.json"
 
 # El valor que traia la version con el prestamo, y el de la cadena MCMC vieja.
+# ORIGEN-VALOR: 0.0981 — sigma marginal de logA de la cadena SSEE con m_nu 0.06, archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json (hoy 0.1010)
 MNU_PRESTADA = 0.06
 # ORIGEN: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json      (el viejo, 2.7636 +- 0.0981)
 # ORIGEN: results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json   (el nuevo, 2.9448 +- 0.1238)

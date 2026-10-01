@@ -2419,7 +2419,7 @@ if _n73:
                "; ".join(f"{k.split('/')[-1]} L{v[0][0]} {v[0][1]}" for k, v in _sin73.items())
                + " — rastrear: log, \\cite en la frase o `% ORIGEN-VALOR: <n> — <razon>`")
 # TRINQUETE: la deuda medida al nacer la regla (2026-09-30). Solo puede bajar.
-_TOPE_R73 = 3    # 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
+_TOPE_R73 = 1    # 2026-10-01: 3 -> 1 (P6 BOSS por \val; queda 0.9651 de la tabla B1, que espera la re-corrida k=2). Antes: 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
 _DEUDA_REAL["R73"] = _n73
 _DEUDA_MAX["R73"] = _TOPE_R73
 check("R73 la deuda de numeros-resultado sin origen en los papers no crece",
@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 12, "cajones": 159}   # 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
+_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 6, "cajones": 147}   # 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]

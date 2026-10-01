@@ -395,6 +395,29 @@ stages:
           cache: false
       - results/logs/growth_2026-07/As_medido_o_producto.log:
           cache: false
+  leer_conjunta_b3:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 2>&1
+    deps:
+      - src/p06_growth/leer_conjunta.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/bao_camb.py
+      - src/rd_camb.py
+      - results/logs/cmb_dbic_tau_ajustado.json
+      - results/logs/multisonda_fondo_clavado.json
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
+    outs:
+      - results/logs/conjunta_b3_vs_individual.json:
+          cache: false
+      - results/logs/leer_conjunta_b3.log:
+          cache: false
   analiza_boss_R1R2:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_boss_R1R2.py ambos > results/logs/analiza_boss_R1R2.log 2>&1
     deps:

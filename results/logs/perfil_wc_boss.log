@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "9a3d3f1a378e5a8b448abed013f35a2d5c642779", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/perfil_wc_boss.py", "script_sha256": "43cba6f2a98901bb8057649c610ba9343e3191015a6cab2acd94cbd9ff3974a0", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/perfil_wc_boss.py"], "fecha": "2026-10-01T11:56:50", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1", "camb": "1.6.5"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "50386a5e45db2c227a6e3ff1f12850d31ffdb7ee", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/perfil_wc_boss.py", "script_sha256": "43cba6f2a98901bb8057649c610ba9343e3191015a6cab2acd94cbd9ff3974a0", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/perfil_wc_boss.py"], "fecha": "2026-10-01T13:14:10", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1", "camb": "1.6.5"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
 
 === perfil w_c  |  logA fijo = 3.0429  (A_s del CMB) ===
   z1 NGC: 37 puntos  Hartlap=0.9814
@@ -58,14 +58,14 @@
 /home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/mcfit.py:130: UserWarning: use backend='jax' if desired
   warnings.warn("use backend='jax' if desired")
   [A_s del CMB] 0.090000  P0    106.380  arranques    100.009  [38s]
-  [A_s del CMB] 0.098125  P0    109.804  arranques     83.406  [38s]
-  [A_s del CMB] 0.106250  P0     83.283  arranques     75.511  [40s]
-  [A_s del CMB] 0.114375  P0     78.471  arranques     75.893  [37s]
+  [A_s del CMB] 0.098125  P0    109.804  arranques     83.406  [36s]
+  [A_s del CMB] 0.106250  P0     83.283  arranques     75.511  [36s]
+  [A_s del CMB] 0.114375  P0     78.471  arranques     75.893  [36s]
   [A_s del CMB] 0.122500  P0     83.717  arranques     83.304  [36s]
   [A_s del CMB] 0.130625  P0     98.029  arranques     96.395  [34s]
-  [A_s del CMB] 0.138750  P0    116.739  arranques    115.117  [33s]
+  [A_s del CMB] 0.138750  P0    116.739  arranques    115.117  [34s]
   [A_s del CMB] 0.146875  P0    140.399  arranques    138.455  [33s]
-  [A_s del CMB] 0.155000  P0    167.359  arranques    165.480  [44s]
+  [A_s del CMB] 0.155000  P0    167.359  arranques    165.480  [32s]
   [A_s del CMB] barrido 1: mejora maxima 0.0000
   [A_s del CMB] control azar en 0.090000: baja 0.0000
   [A_s del CMB] control azar en 0.106250: baja 0.0000
@@ -129,14 +129,14 @@
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-  [CONTROL: A_s de BOSS] 0.090000  P0    124.619  arranques    116.116  [59s]
-  [CONTROL: A_s de BOSS] 0.098125  P0    117.629  arranques     93.897  [57s]
-  [CONTROL: A_s de BOSS] 0.106250  P0     80.284  arranques     79.206  [58s]
-  [CONTROL: A_s de BOSS] 0.114375  P0     72.834  arranques     72.236  [57s]
-  [CONTROL: A_s de BOSS] 0.122500  P0     73.200  arranques     73.200  [55s]
-  [CONTROL: A_s de BOSS] 0.130625  P0     81.597  arranques     81.576  [34s]
-  [CONTROL: A_s de BOSS] 0.138750  P0     96.358  arranques     96.358  [31s]
-  [CONTROL: A_s de BOSS] 0.146875  P0    116.700  arranques    116.700  [30s]
+  [CONTROL: A_s de BOSS] 0.090000  P0    124.619  arranques    116.116  [36s]
+  [CONTROL: A_s de BOSS] 0.098125  P0    117.629  arranques     93.897  [36s]
+  [CONTROL: A_s de BOSS] 0.106250  P0     80.284  arranques     79.206  [36s]
+  [CONTROL: A_s de BOSS] 0.114375  P0     72.834  arranques     72.236  [36s]
+  [CONTROL: A_s de BOSS] 0.122500  P0     73.200  arranques     73.200  [34s]
+  [CONTROL: A_s de BOSS] 0.130625  P0     81.597  arranques     81.576  [32s]
+  [CONTROL: A_s de BOSS] 0.138750  P0     96.358  arranques     96.358  [32s]
+  [CONTROL: A_s de BOSS] 0.146875  P0    116.700  arranques    116.700  [31s]
   [CONTROL: A_s de BOSS] 0.155000  P0    141.799  arranques    141.799  [31s]
   [CONTROL: A_s de BOSS] barrido 1: mejora maxima 0.0000
   [CONTROL: A_s de BOSS] control azar en 0.090000: baja 0.0000

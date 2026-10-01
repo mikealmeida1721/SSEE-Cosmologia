@@ -3,8 +3,8 @@
   "logA": 2.790181344523827,
   "logA_sig": 0.09453956171572275,
   "chi2_marg_min": 73.677763,
-  "chi2_marg_reevaluado": 73.67776119796346,
-  "chi2_real_min": 207.57605622600255,
+  "chi2_marg_reevaluado": 73.67776119804367,
+  "chi2_real_min": 207.57605622607946,
   "n": 111125,
   "fs8": {
    "z1": [
@@ -28,8 +28,8 @@
   "logA": 2.7614232200495397,
   "logA_sig": 0.10100907523901899,
   "chi2_marg_min": 73.413456,
-  "chi2_marg_reevaluado": 73.4134576774431,
-  "chi2_real_min": 205.54906179217627,
+  "chi2_marg_reevaluado": 73.41345767751542,
+  "chi2_real_min": 205.54906179223332,
   "n": 77326,
   "fs8": {
    "z1": [
@@ -55,12 +55,67 @@
   "d_fs8_sigma_max": 0.0037860054792400507,
   "pasa": true
  },
+ "vs_publicado": {
+  "fuente": "Alam et al. 2017 (data/raw/fsigma8_rsd.csv)",
+  "modelos": {
+   "ssee": {
+    "z1": {
+     "z": 0.38,
+     "publicado": 0.497,
+     "publicado_sigma": 0.045,
+     "sigma": 1.7581512391026013
+    },
+    "z2": {
+     "z": 0.51,
+     "publicado": 0.458,
+     "publicado_sigma": 0.038,
+     "sigma": 1.07650661901747
+    },
+    "z3": {
+     "z": 0.61,
+     "publicado": 0.436,
+     "publicado_sigma": 0.034,
+     "sigma": 0.6761407220782125
+    }
+   },
+   "lcdm": {
+    "z1": {
+     "z": 0.38,
+     "publicado": 0.497,
+     "publicado_sigma": 0.045,
+     "sigma": 1.5481386440819966
+    },
+    "z2": {
+     "z": 0.51,
+     "publicado": 0.458,
+     "publicado_sigma": 0.038,
+     "sigma": 0.9054208408306675
+    },
+    "z3": {
+     "z": 0.61,
+     "publicado": 0.436,
+     "publicado_sigma": 0.034,
+     "sigma": 0.5468931541222417
+    }
+   }
+  }
+ },
+ "dchi2_real": -2.0269944338461414,
+ "perfil_vs_marginal": {
+  "perfil_logA": 2.9447867806062953,
+  "perfil_sigma": 0.12384982819806273,
+  "perfil_chi2": 197.4378444134644,
+  "mnu_perfil": 0.06849,
+  "marginal_logA": 2.7614232200495397,
+  "marginal_sigma": 0.10100907523901899,
+  "sigmas": 1.8153176843056946
+ },
  "_procedencia": {
-  "commit": "ec761380c51d945bf6596c1239a00c74d2ac7186",
+  "commit": "50386a5e45db2c227a6e3ff1f12850d31ffdb7ee",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/analiza_boss_R1R2.py",
-  "script_sha256": "37ed277fd82ee6d6bce9b180a745753b26267596ad7f3cbd39091e5fa5b4eff0",
+  "script_sha256": "2331bb4bf8ae069fb86b8eca7ee16b6ade9d4b8d7a8afa3a9d0f9b96a5554121",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json": "5b8ea2afaeac8c701580fce7bab57623b76d3cbccda31a127343c0dc7a04bee8",
@@ -71,12 +126,14 @@
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da"
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
+   "data/raw/fsigma8_rsd.csv": "84dfd1ad69de6e9399a83777720cbca5e0c9d2805c42fd3529c192d176d6fb06",
+   "results/logs/growth_2026-07/boss_aisla_neutrinos.json": "e6abee98b34a54f98b5feb94198f70fa618a3c2c06b14b209a3fad5bd5bc4ef4"
   },
   "argv": [
    "src/p06_growth/analiza_boss_R1R2.py"
   ],
-  "fecha": "2026-10-01T10:54:54",
+  "fecha": "2026-10-01T13:13:43",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -86,8 +143,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
