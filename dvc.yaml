@@ -373,3 +373,16 @@ stages:
           cache: false
       - results/logs/fondos_exponenciales.log:
           cache: false
+  hmcode_bariones:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
+    deps:
+      - src/p05_IS/hmcode_bariones.py
+      - src/procedencia.py
+      - config/class/techo_ssee_canonico.ini
+      - results/logs/p5_techo_sigma8_As_fijo.json
+      - archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py
+    outs:
+      - results/logs/hmcode_bariones.json:
+          cache: false
+      - results/logs/hmcode_bariones.log:
+          cache: false
