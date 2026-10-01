@@ -2426,6 +2426,16 @@ with _tf74.TemporaryDirectory() as _d74b:
     for _p74 in (_g74, _l74, _c74):
         _p74.write_text("0.2471\n")
     _e74 = [_r74.R.es_fuente(_p74) for _p74 in (_g74, _l74, _c74)]
+# CONTROL (R53), 2026-09-30: el NUCLEO EVALUADO es fuente (K_V = 9.519253 no
+# esta escrito como numero en ssee_core.py, se calcula); un identificador de
+# arXiv junto a «arXiv:» no es un resultado, pero el mismo numero suelto si.
+with _tf74.TemporaryDirectory() as _d74c:
+    _x74 = pathlib.Path(_d74c) / "x.tex"
+    _x74.write_text("Data from arXiv:2503.19441 are used. Much later in a separate "
+                    "sentence we count 2503.19441 events here. K is 9.519253 here.\n")
+    _a74 = [s for _, s in _r74._sin_origen(_x74, sorted(_r74.R.nucleo_evaluado()), True)]
+check("R74 el detector exime el nucleo evaluado y la referencia arXiv, no el numero suelto",
+      _a74 == ["2503.19441"], f"marcados {_a74} (esperado ['2503.19441'] solo la 2a aparicion)")
 check("R74 el detector no toma un reporte del guardian ni una cola como fuente",
       _e74 == [False, True, False],
       f"guardian/log/cola -> {_e74} (esperado [False, True, False])")

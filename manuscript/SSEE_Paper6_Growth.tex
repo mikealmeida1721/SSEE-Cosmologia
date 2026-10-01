@@ -58,7 +58,7 @@ on Raw Survey Data}}
 We test the growth-of-structure sector of \SSEE{} against \emph{raw} survey
 data rather than against compressed statistics whose reduction assumes a
 $\Lambda$CDM background. The model has a single matter density,
-$\Omega_m=0.308881$, entering the background and the growth of structure
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$, entering the background and the growth of structure
 alike; the background is fixed by the algebra. Against the 357 raw
 $\xi_\pm$ points of KiDS-Legacy \citep{Wright2025}, with the amplitude free, the
 shear prefers $\log(10^{10}A_s)=3.0255\pm0.0396$, $0.49\sigma$ from the
@@ -116,7 +116,7 @@ Both official pipelines assumed $\Lambda$CDM calibrated to Planck
 \citep{Planck2020}. Comparing a $\Lambda$CDM-conditioned number against a
 background that is \emph{not} $\Lambda$CDM (\SSEE{} has a
 Chevallier--Polarski--Linder \citep{ChevallierPolarski2001,Linder2003}
-equation of state $w_0=-0.839950$, not $-1$) imports part of the $\Lambda$CDM
+equation of state $w_0=\val{W0_d6}$, not $-1$) imports part of the $\Lambda$CDM
 background into the comparison itself.
 
 This paper re-does both measurements on the raw data products --- KiDS-1000
@@ -140,7 +140,7 @@ The two-sector construction, retired here, rested on
   \Omega_{\phi\rm DM} \;=\; \Omega_{m,\rm CMB} - \Omega_{m,\rm dyn},
   \qquad \Omega_{m,\rm dyn}\equiv 1+w_0.
 \end{equation}
-$\Omega_{m,\rm CMB}=\omega_m/h^2=0.308881$ is a measured density fraction, fixed
+$\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ is a measured density fraction, fixed
 by the CMB-calibrated background. $\Omega_{m,\rm dyn}=1+w_0\approx0.160050$ is,
 by construction, minus the dark-energy equation of state --- an algebraic
 identity of the background sector's $w_0=-T_R/M_V$, entering the Friedmann
@@ -192,7 +192,7 @@ partition via the algebraic constant MIRA, retired 2026-07-09):
 \end{itemize}
 
 No new open problem is created by this retraction: what remains is
-$\Omega_m=0.308881$, a single measured quantity, entering both the background
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$, a single measured quantity, entering both the background
 and the growth-of-structure sector with no partition.
 
 % ============================================================================
@@ -313,7 +313,7 @@ feedback amplitude $A_{\rm baryon}$, the intrinsic-alignment amplitude
 $A_{\rm IA}$, five photometric-redshift shifts $\delta z_i$, and the
 additive shear term $\delta_c$) --- against the 225 unmasked
 $\xi_\pm$ data points, with the background held fixed by the algebra
-($\Omega_m=0.308881$, $\omega_b$, $\omega_c$, $h$, $n_s$, $w_0$, $w_a$ all
+($\Omega_m=\val{OMEGA_M_TOTAL_d6}$, $\omega_b$, $\omega_c$, $h$, $n_s$, $w_0$, $w_a$ all
 determined, none of them fitted). Four independent MPI chains were run to a
 Gelman--Rubin convergence of $R-1=0.019$, well inside the stopping criterion
 $R-1<0.03$, giving $4.2\times10^4$ effective samples after a 30\% burn-in.
@@ -695,7 +695,7 @@ answer with the symmetric experiment. Holding the amplitude \emph{fixed} at
 the CMB value and profiling $\omega_c$ instead --- everything else in the
 background still fixed, only the galaxy biases fitted --- BOSS asks for
 $\omega_c = 0.114108\pm0.003099$, which is $1.74\sigma$ from the algebraic
-$\mathrm{KAL_0}\,\omega_b\,n_s = 0.119514$. Returning the amplitude BOSS
+$\mathrm{KAL_0}\,\omega_b\,n_s = \val{OMEGA_C_H2_d6}$. Returning the amplitude BOSS
 itself prefers, $\omega_c$ comes back to $0.117524\pm0.003933$, i.e.\
 $0.51\sigma$ from the algebraic value. The pre-registered control is that
 second profile: if $\omega_c$ had not returned, the first would have been
@@ -748,7 +748,7 @@ not the linear-theory exploratory result.
 % ============================================================================
 
 The growth sector of \SSEE{} has a single matter density,
-$\Omega_m=0.308881$, entering both the background and the growth of structure
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$, entering both the background and the growth of structure
 with no partition, no additional particle, and no non-minimal coupling
 parameter. Measured against raw survey data --- rather than against
 $\Lambda$CDM-conditioned summary statistics --- it has no $S_8$ tension. On

@@ -86,7 +86,7 @@ def _canonical_sin_fuente():
     for p in (ROOT / "results/logs").rglob("*"):
         if p.suffix in (".log", ".json", ".txt", ".csv") and R.es_fuente(p):
             logs += [abs(float(x)) for x in R.NUM.findall(p.read_text(errors="ignore"))]
-    logs = sorted(set(logs))
+    logs = sorted(set(logs + R.nucleo_evaluado()))
     lineas = {m.group(1): m.group(0) for m in re.finditer(r"^\s{2}(\w+):.*$", txt, re.M)}
     out = []
     for k, v in c.items():
@@ -149,7 +149,7 @@ def _sin_origen(f, pool, tex):
         s = m.group(1)
         if R.cifras(s) < 3 or s in decl or R.en_fuente(s, pool):
             continue
-        if R.CITA.search(R.unidad(t, m.start())):
+        if R.CITA.search(R.unidad(t, m.start())) or R.es_arxiv(t, m.start(), s):
             continue
         ln = t.count("\n", 0, m.start()) + 1
         out.append((ln, s))

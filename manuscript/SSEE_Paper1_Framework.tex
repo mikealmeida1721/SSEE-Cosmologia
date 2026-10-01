@@ -45,6 +45,7 @@ Structural Self-Energy Expansion (SSEE)}}
 
 \sloppy
 \renewcommand{\labelitemi}{$\bullet$}
+\input{valores_generados.tex}
 \begin{document}
 
 \maketitle
@@ -57,7 +58,7 @@ The background sector $(w_0,w_a,\Omega_{\rm DE})$ is fully algebraic
 (zero fitted dimensionless parameters). Phenomenological extensions in the
 dark-matter sector, proposed in an earlier version of Paper~6, have been
 \emph{retracted}: the matter sector is a single unpartitioned component
-$\Omega_m=0.308881$, and the four register entries those extensions carried
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$, and the four register entries those extensions carried
 (OP-9 through OP-12) close by dissolution --- not solved, but no longer
 questions, since the object they concerned was withdrawn
 (\texttt{OPEN\_PROBLEMS.md}; \S\ref{sec:two_omega_m}).
@@ -68,12 +69,12 @@ culminating in the dark-energy equation of state
   \qquad
   w_a = -\frac{P}{I_g} = -\frac{2\varphi+\pi}{2(\varphi+\pi)} \approx -0.670.
 \end{equation*}
-Both reduced forms carry the same denominator $2(\varphi+\pi)=9.519253$, but they descend
-from \emph{distinct registers}: $w_0$ from $M_v=\varphi+\pi+K_v=14.278880$ and $w_a$ from
-$I_g=\pi+P=9.519253$. It is the lineage, not the reduced form, that fixes each ratio.
+Both reduced forms carry the same denominator $2(\varphi+\pi)=\val{K_V_d6}$, but they descend
+from \emph{distinct registers}: $w_0$ from $M_v=\varphi+\pi+K_v=\val{M_V_d6}$ and $w_a$ from
+$I_g=\pi+P=\val{K_V_d6}$. It is the lineage, not the reduced form, that fixes each ratio.
 No fitting procedure is involved: $w_0$ and $w_a$ are uniquely fixed by the geometry of
 $\varphi$ and $\pi$.
-The asymptotic structural retention factor $\KALz = \beta + \pi \approx 5.5214$
+The asymptotic structural retention factor $\KALz = \beta + \pi \approx \val{KAL0_d4}$
 fixes the cold dark matter density via the forward identity
 $\omega_c = \KALz\,\omega_b\,n_s$, reproducing the observed cosmic
 dark-to-baryonic matter density ratio.
@@ -103,9 +104,9 @@ identity is defined by a closed set of geometric invariants derived exclusively 
 $\pi$ and $\varphi$. These fundamental scales dictate the macroscopic behaviour of spacetime:
 
 \begin{itemize}
-  \item $\boldsymbol{\Omega} = \pi+\varphi \approx 4.7596$: Stability Metric.
-  \item $\boldsymbol{\beta} = (\pi+\varphi)/2 \approx 2.3798$: Base Coupling Scalar.
-  \item $\boldsymbol{\KALz} = \beta+\pi \approx 5.5214$: Asymptotic Structural
+  \item $\boldsymbol{\Omega} = \pi+\varphi \approx \val{OMEGA_d4}$: Stability Metric.
+  \item $\boldsymbol{\beta} = (\pi+\varphi)/2 \approx \val{BETA_d4}$: Base Coupling Scalar.
+  \item $\boldsymbol{\KALz} = \beta+\pi \approx \val{KAL0_d4}$: Asymptotic Structural
   Retention. Its law is to \emph{retain}: raising $\KALz$ holds more cold matter
   ($\omega_c = \KALz\omega_b n_s$), lengthens the relaxation time
   ($\tau_\Pi H_0 = \KALz/3\OmDE$), lowers the departure ratio
@@ -117,19 +118,19 @@ $\pi$ and $\varphi$. These fundamental scales dictate the macroscopic behaviour 
   after its fluid instance --- the one use in which $\KALz$ cancels out of the
   observable. ``Retention'' is the name the algebra already carried, in the
   EFT appendix and in the lineage law of the $\pi$ branch.)}
-  \item $\boldsymbol{P} = \Omega+\varphi \approx 6.3777$: Dynamical Evolution Scalar.
-  \item $\boldsymbol{K_v} = \varphi+\pi+\Omega \approx 9.5193$: Structural Constraint Invariant.
-  \item $\boldsymbol{T_r} = 3(\varphi+\beta) \approx 11.9935$: 3D Saturation Horizon.
-  \item $\boldsymbol{M_v} = \varphi+\pi+K_v \approx 14.2789$: Maximal Dimensional Invariant.
+  \item $\boldsymbol{P} = \Omega+\varphi \approx \val{P_SC_d4}$: Dynamical Evolution Scalar.
+  \item $\boldsymbol{K_v} = \varphi+\pi+\Omega \approx \val{K_V_d4}$: Structural Constraint Invariant.
+  \item $\boldsymbol{T_r} = 3(\varphi+\beta) \approx \val{T_R_d4}$: 3D Saturation Horizon.
+  \item $\boldsymbol{M_v} = \varphi+\pi+K_v \approx \val{M_V_d4}$: Maximal Dimensional Invariant.
 \end{itemize}
 
-Throughout this work $=$ separates a register from its \emph{exact} definition, while $\approx$ introduces only a truncated decimal: $\Omega$ \emph{is} $\pi+\varphi$ with no approximation involved, and it is the four-digit $4.7596$ that is approximate, the irrational value having no last digit.
+Throughout this work $=$ separates a register from its \emph{exact} definition, while $\approx$ introduces only a truncated decimal: $\Omega$ \emph{is} $\pi+\varphi$ with no approximation involved, and it is the four-digit $\val{OMEGA_d4}$ that is approximate, the irrational value having no last digit.
 
 These seven are the structural registers proper. One further register is needed
 below and is introduced here so that no symbol appears before its definition:
 $\boldsymbol{I_g}=\pi+P\approx9.5193$ (exactly $\pi+P$; the decimal is truncated), the \emph{saturation partner} of the
 dynamical scalar $P$, which is the denominator of $w_a$. It carries the same
-\emph{value} as $K_v$ ($9.519253$) while descending from a different
+\emph{value} as $K_v$ ($\val{K_V_d6}$) while descending from a different
 construction, and the two are not interchangeable --- $K_v$ is a constraint
 invariant, $I_g$ a saturation partner. Sharing a value is not being the same
 object, and throughout this work the lineage, not the number, identifies a
@@ -186,12 +187,12 @@ No optimisation over the algebraic formula space was performed.}
 Quantity (algebraic formula) & Value & Test / Falsifier & Status \\
 \midrule
 \multicolumn{4}{l}{\textit{Background sector (algebraic dictionary)}} \\
-$w_0 = -T_r/M_v$ & $-0.839950$ & DESI DR2 (2025) & Postdiction \\
-$w_a = -(\Omega+\varphi)/I_g$ & $-0.669975$ & DESI DR2 (2025) & Postdiction \\
+$w_0 = -T_r/M_v$ & $\val{W0_d6}$ & DESI DR2 (2025) & Postdiction \\
+$w_a = -(\Omega+\varphi)/I_g$ & $\val{WA_d6}$ & DESI DR2 (2025) & Postdiction \\
 $(w_0,w_a)$ vs DESI DR3 & same fixed point & DR3 $w_0w_a$CDM (2027); ${>}3\sigma$ joint excl.\ falsifies & \textbf{Prediction (pre-registered)} \\
-$\omega_c = \mathrm{KAL}_0\,\omega_b\,n_s$ & $0.119514$ & Planck 2018 & Retrodiction \\
-$\Omega_{m,\mathrm{CMB}} = \omega_m/h^2$ & $0.308881$ & Planck 2018 & Retrodiction \\
-$n_s = 1-\varphi^{-7}$ & $0.965558$ & Planck 2018 & Retrodiction \\
+$\omega_c = \mathrm{KAL}_0\,\omega_b\,n_s$ & $\val{OMEGA_C_H2_d6}$ & Planck 2018 & Retrodiction \\
+$\Omega_{m,\mathrm{CMB}} = \omega_m/h^2$ & $\val{OMEGA_M_TOTAL_d6}$ & Planck 2018 & Retrodiction \\
+$n_s = 1-\varphi^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & Retrodiction \\
 $H_0/\kmsu = 3(\varphi+\pi)^2$ & $67.962\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ & Planck 2018 & Global background anchor (Post.~D) \\
 \midrule
 \multicolumn{4}{l}{\textit{Paper 5 — IS causal perturbation theory}} \\
@@ -205,7 +206,7 @@ $S_8=\sigma_8\sqrt{\Omega_m/0.3}$ (MCMC vs.\ raw KiDS-1000 $\xi_\pm$) & $0.7555\
 \midrule
 \multicolumn{4}{l}{\textit{Paper 7 — Canonical EFT, Bellini-Sawicki $\alpha$-functions}} \\
 $\alpha_T=\alpha_M=\alpha_B=0$ (minimal coupling) & $0$ exact & GW170817 $|\alpha_T|<10^{-15}$ & Retrodiction \\
-$\alpha_K = 3\,\Omega_{\mathrm{DE}}(5-3w_0)$, $\Omega_{\mathrm{DE}}=0.691119$ & $15.591335$ & --- (kineticity is not constrained by linear-scale data) & Derived \\
+$\alpha_K = 3\,\Omega_{\mathrm{DE}}(5-3w_0)$, $\Omega_{\mathrm{DE}}=\val{OMDE_DENS_d6}$ & $\val{alpha_K_z0_d6}$ & --- (kineticity is not constrained by linear-scale data) & Derived \\
 \midrule
 \multicolumn{4}{l}{\textit{Future}} \\
 $r = \varphi^{-10}$ & $0.008131$ & LiteBIRD ${\sim}2032$ & Prediction \\
@@ -225,11 +226,11 @@ framework; where it does not, the entry is marked \emph{below sensitivity} and a
 non-detection carries no evidential weight either way.
 
 \noindent\emph{Note on $\alpha_K$ and $s_K$.} The kineticity of the Paper~7
-action is $\alpha_K=3\,\Omega_{\rm DE}(5-3w_0)=15.591335$, with the density
-$\Omega_{\rm DE}=0.691119$. It must not be confused with
-$s_K=-3w_0(1+w_0)=3\,s_{\rm DE}\,s_m=0.403302$, the fractional dilution rate of the
+action is $\alpha_K=3\,\Omega_{\rm DE}(5-3w_0)=\val{alpha_K_z0_d6}$, with the density
+$\Omega_{\rm DE}=\val{OMDE_DENS_d6}$. It must not be confused with
+$s_K=-3w_0(1+w_0)=3\,s_{\rm DE}\,s_m=\val{S_K_d6}$, the fractional dilution rate of the
 dark-energy \emph{pressure} per e-fold: pure equation of state, with no $H$, no
-density and no $K(X)$ in it (Paper~7, Eq.~(sK)). Every use of $0.403302$ in this
+density and no $K(X)$ in it (Paper~7, Eq.~(sK)). Every use of $\val{S_K_d6}$ in this
 suite --- including $f_{\rm scr}=s_K/(3\,\mathrm{MIRA})$ in Paper~9 --- is a use of
 $s_K$.
 
@@ -263,7 +264,7 @@ these geometric invariants:
 
   \item \textbf{Asymmetric Equivalence:} Energy states can possess identical geometric
   values but divergent dynamic functions. (This is the principle behind $I_g$ and $K_v$
-  sharing the value $9.519253$ while remaining distinct registers: what identifies a
+  sharing the value $\val{K_V_d6}$ while remaining distinct registers: what identifies a
   register is its construction, not its number --- Appendix~\ref{app:lineage}.) The macroscopic geometric response must inversely
   mirror the physical source:
   \begin{equation}
@@ -321,7 +322,7 @@ level \SSEE\ retains exactly two dimensionless fitted parameters --- the primord
 amplitude $A_s$ and the optical depth $\tau$, which no algebraic relation yet fixes ---
 so the honest comparison there is $k=2$ against $\Lambda$CDM's $k=6$, as set out in the
 effective-parameter accounting at the end of this section.
-The algebraic combination $3(\varphi+\pi)^2 \approx 67.962$ supplies $H_0$ in
+The algebraic combination $3(\varphi+\pi)^2 \approx \val{H0_ALG_d3}$ supplies $H_0$ in
 $\mathrm{km\,s^{-1}\,Mpc^{-1}}$ and serves as the single \emph{dimensional anchor}
 of Postulate~D (\S\ref{app:result_types}): the \emph{dimensionless} value is fixed
 algebraically, while the \emph{absolute} scale is not claimed to be derived from a
@@ -378,15 +379,15 @@ is auditable rather than silent:
         matter factor. The CMB-sector matter density is the standard physical
         observable $\omega_m=\Omega_{m,\rm CMB}h^2=\omega_b+\omega_c+\omega_\nu$,
         with each piece an algebraic register quantity,
-        $\omega_b=(\pi-\varphi)/(3\Omega^2)=0.022418$ (OP-1),
-        $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=0.119514$ (a forward identity,
+        $\omega_b=(\pi-\varphi)/(3\Omega^2)=\val{OMEGA_B_H2_d6}$ (OP-1),
+        $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ (a forward identity,
         matching Planck at $0.41\sigma$), and $\omega_\nu=\Sigma m_\nu/93.14$.
         The CMB matter fraction is then \emph{derived},
-        $\Omega_{m,\rm CMB}=\omega_m/h^2=0.308881$ at the global anchor
+        $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ at the global anchor
         $H_0/\kmsu=3(\varphi+\pi)^2\simeq67.962$ (no matter factor; OP-8
         dissolved; the former two-$\Omega_m$ criterion is withdrawn,
         \S\ref{sec:two_omega_m}). The equation-of-state-sector identity
-        $s_m=1+w_0=0.160050$ is not a density. This \textbf{closes OP-8}:
+        $s_m=1+w_0=\val{S_M_d6}$ is not a density. This \textbf{closes OP-8}:
         there is no factor whose dynamical mechanism
         must be derived. The structural quantity
         $\mathrm{MIRA}=(3\varphi+\pi)/4=\mathrm{AURA}/2\simeq1.9989$ persists in
@@ -406,8 +407,8 @@ is auditable rather than silent:
         not the integer~$n$ itself. The value $n=7$ is a corollary, not an
         assumption: among integer exponents, $N_*=2\varphi^n$ falls inside
         the canonical inflation window $[50,60]$ uniquely for $n=7$
-        ($2\varphi^6=35.888544$, $2\varphi^7=58.068884$,
-        $2\varphi^8=93.957428$; the first falls below the window, the third
+        ($2\varphi^6=\val{dos_phi6_d6}$, $2\varphi^7=\val{dos_phi7_d6}$,
+        $2\varphi^8=\val{dos_phi8_d6}$; the first falls below the window, the third
         above it).
         Equivalently, the exponent is selected by an observational
         constraint external to SSEE (the standard inflation duration),
@@ -474,8 +475,8 @@ the dependency chain.
 \label{sec:two_omega_m}
 
 Earlier versions of this suite presented a ``Two-$\Omega_m$ criterion'': the
-claim that two distinct matter densities, $\Omega_{m,\rm dyn}=0.160050$ and
-$\Omega_{m,\rm CMB}=0.308881$, each entered different observables, with the
+claim that two distinct matter densities, $\Omega_{m,\rm dyn}=\val{S_M_d6}$ and
+$\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$, each entered different observables, with the
 selection rule given by a free-streaming scale $k_{\rm fs}$ derived from the
 $\varphi$-DM particle of Paper~6. \textbf{That criterion is withdrawn.} Two
 independent failures, either one sufficient:
@@ -501,10 +502,10 @@ The corrected statement is simpler, and has one fewer moving part:
 
 \begin{quote}
 \textbf{There is one matter density,}
-$\Omega_m = \omega_m/h^2 = 0.308881$, entering every observable that requires a
+$\Omega_m = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, entering every observable that requires a
 matter density --- background geometry $E(z)$, the sound horizon $r_d$, the CMB
 acoustic scale, the Poisson source of linear growth, and lensing alike.
-\textbf{There is separately one equation-of-state parameter,} $w_0=-0.839950$,
+\textbf{There is separately one equation-of-state parameter,} $w_0=\val{W0_d6}$,
 entering wherever an equation of state enters, and nowhere else.
 \end{quote}
 
@@ -604,14 +605,14 @@ $P_{sc} = 2\varphi+\pi$, and
 $K_v = 2(\varphi+\pi)$, both
 dark-energy observables collapse to closed forms in $\varphi$ and $\pi$ alone:
 \begin{equation}
-  \boxed{w_0 = -\frac{T_r}{M_v} = -\frac{3\varphi+\pi}{2(\varphi+\pi)} = -0.839950},
+  \boxed{w_0 = -\frac{T_r}{M_v} = -\frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{W0_d6}},
   \qquad
-  \boxed{w_a = -\frac{P}{I_g} = -\frac{2\varphi+\pi}{2(\varphi+\pi)} = -0.669975}.
+  \boxed{w_a = -\frac{P}{I_g} = -\frac{2\varphi+\pi}{2(\varphi+\pi)} = \val{WA_d6}}.
   \label{eq:w0wa_explicit}
 \end{equation}
 Each value is shown with its \emph{lineage} first and its reduction in
 $\varphi,\pi$ second, in that order and never the reduction alone. The two
-denominators reduce to the same number, $2(\varphi+\pi)=9.519253$, but they are
+denominators reduce to the same number, $2(\varphi+\pi)=\val{K_V_d6}$, but they are
 \emph{different entities}: $M_v=\varphi+\pi+K_v$ is the maximal dimensional
 invariant, while $I_g=\pi+P$ (IGNIS) is the saturation partner of the dynamical
 scalar. No numerical check can tell them apart---only the construction can---so
@@ -631,7 +632,7 @@ The CPL form also predicts a \emph{phantom crossing}: setting $w(a_*)=-1$ gives
   \label{eq:phantom_crossing}
 \end{equation}
 For $z > z_*$ the effective equation of state has $w < -1$; for $z < z_*$,
-$w > -1$, reaching $w_0=-0.839950$ today. \emph{The scalar field cannot carry
+$w > -1$, reaching $w_0=\val{W0_d6}$ today. \emph{The scalar field cannot carry
 this crossing.} For the action of Paper~7, $K(X)=c_1X+c_2X^2$, the sound speed
 is $c_s^2=(1+w)/(5-3w)$ along the whole family of solutions, so any
 configuration of the field with $w<-1$ has $c_s^2<0$, a gradient instability
@@ -670,7 +671,7 @@ the residual cluster discrepancy under modified gravity. The MOND-inferred mass 
 mass required by the Milgromian field equation and is substantially smaller than the
 Newtonian-equivalent total. \SSEE\ adopts the same enhanced IGIMF baryonic baseline but
 maps it directly to the Newtonian-equivalent dynamical mass through the structural
-amplifier $\KALz \approx 5.5214$, whose value plays the role of the full Milgromian
+amplifier $\KALz \approx \val{KAL0_d4}$, whose value plays the role of the full Milgromian
 enhancement; the two statements refer to different mass definitions and are not composed.
 This reproduces the observed cluster masses (Table~\ref{tab:clusters}) without cold dark
 matter.
@@ -705,7 +706,7 @@ accuracy against observed dynamical masses (Table~\ref{tab:clusters}).
 \begin{table}[H]
 \centering
 \caption{Cluster mass predictions. All masses within $R_{200}$ in units of
-  $10^{14}\,M_\odot$. $M_{\SSEE} = \Migimf \times 5.5214 \times 1.02$.
+  $10^{14}\,M_\odot$. $M_{\SSEE} = \Migimf \times \val{KAL0_d4} \times 1.02$.
   IGIMF baselines and observed masses from \citet{Zhang2026}; Bullet lensing
   mass from \citealt{Clowe2006}.}
 \label{tab:clusters}
@@ -777,7 +778,7 @@ This allows lensing peaks to track galaxies, consistent with QUMOND simulations
 \citep{Angus2007}.
 
 \paragraph{Open problem: dimensional connection to fundamental scales.}
-The algebraic prediction $H_0/\kmsu = 3(\varphi+\pi)^2 \approx 67.962$
+The algebraic prediction $H_0/\kmsu = 3(\varphi+\pi)^2 \approx \val{H0_ALG_d3}$
 fixes the \emph{dimensionless} Hubble value and serves as the single dimensional
 anchor of Postulate~D (see Appendix~\ref{app:derivation_chain}, footnote~$\dagger$);
 what is \emph{not} claimed is a derivation of its \emph{absolute} scale, since no
@@ -805,7 +806,7 @@ applies uniformly to Papers~1--4.
 \begin{description}
 
   \item[\textbf{Dynamic sector} (low redshift, $z\lesssim2.3$).]
-  Governed by $w_0=-0.839950$, $w_a=-0.669975$ ($s_m=1+w_0=0.160050$ is an
+  Governed by $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$ ($s_m=1+w_0=\val{S_M_d6}$ is an
   EoS-sector identity, not a density).
   Validated against: DESI~DR2 BAO (13 measurements, $0.295\leq z\leq2.33$),
   galaxy-cluster mass data (IGIMF baseline, Paper~2).
@@ -814,11 +815,11 @@ applies uniformly to Papers~1--4.
   With the total gravitating matter density in the background geometry the
   Cosmic-Chronometer check gives $\chi^2_r(H(z))=0.482$, comparable to
   $\Lambda$CDM ($0.459$); the earlier $1.861$ was an artefact of the cold sector
-  $0.160050$ in $E(z)$ (Paper~2, \S``Posterior predictive check: $H(z)$'').
+  $\val{S_M_d6}$ in $E(z)$ (Paper~2, \S``Posterior predictive check: $H(z)$'').
 
   \item[\textbf{Observational sector} (high redshift, CMB).]
-  Governed by $\Omega_{m,\rm CMB}=\omega_m/h^2=0.308881$, where
-  $\omega_m=\omega_b+\omega_c+\omega_\nu=0.14267$ is the algebraic physical
+  Governed by $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, where
+  $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$ is the algebraic physical
   matter density (no matter factor; Postulate~M retired, OP-8 closed)
   (Structural Constant Dictionary,
   \href{https://doi.org/10.5281/zenodo.20684908}{Zenodo~10.5281/zenodo.20684908}).
@@ -827,7 +828,7 @@ applies uniformly to Papers~1--4.
   \textit{Result}: $\chi^2_r=1.044$ (TT, 1971 multipoles);
   the canonical $\omega_m$-direct CMB fit gives $\Delta\mathrm{BIC}=-32.9$
   (full \texttt{plik} MCMC, $N=2354$) at the global rate
-  $H_0^{\rm glob}=67.962$~km\,s$^{-1}$\,Mpc$^{-1}$ ($k=2$ vs $k=6$), with the
+  $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($k=2$ vs $k=6$), with the
   \texttt{plik\_lite}${}+{}$low-$\ell$ point estimate at $-26.03$ ($\chi^2_{\rm SSEE}=1003.586$). The
   earlier legacy Cobaya scan gave $\Delta\mathrm{BIC}=-32.2$ at the superseded
   MIRA anchor $H_0=67.037$.
@@ -842,7 +843,7 @@ applies uniformly to Papers~1--4.
   \textit{Result}: most Type~A predictions in Appendix~B,
   Table~\ref{tab:derivation_chain} are within $2\sigma$ of published
   observational values (see Paper~4 for full compilation).
-  The baryon density $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = 0.022418$
+  The baryon density $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$
   ($0.32\sigma$ from Planck~2018, $0.02237\pm0.00015$) is classified as a
   \emph{retrodiction}: its structural algebraic form was identified after the
   data, superseding the preliminary placeholder $3(\pi-\varphi)/200$
@@ -882,7 +883,7 @@ DESI DR2 + Planck prior & 16 & $\omega_m$-direct & 2 & 3 & $\mathbf{-6.43}$ &
 Full \texttt{plik} MCMC & 2354 & $\omega_m$-direct & 2 & 6 & $\mathbf{-32.9}$ &
   CMB parsimony, \textbf{canonical} (off-diag.\ TTTEEE+lowl+lensing, Paper~3 §b1) \\[3pt]
 \texttt{plik\_lite} TTTEEE${}+{}$lowl & 669 & $\omega_m$-direct & 2 & 6 & $-26.03$ &
-  Compressed-nuisance point est., $\{A_s,\tau\}$ fitted (cross-check; $\Omega_m{=}0.308881$) \\[3pt]
+  Compressed-nuisance point est., $\{A_s,\tau\}$ fitted (cross-check; $\Omega_m{=}\val{OMEGA_M_TOTAL_d6}$) \\[3pt]
 Planck PR4 diagonal & 5914 & $\omega_m$-direct & 2 & 6 & $-35.0$ &
   CMB spectra, diagonal cov.\ (cross-check; $H_0{=}67.962$) \\[3pt]
 \texttt{plik\_lite} TTTEEE & 613 & MIRA bg (legacy) & 2 & 6 & $-32.2$ &
@@ -895,7 +896,7 @@ Planck PR4 diagonal & 5914 & $\omega_m$-direct & 2 & 6 & $-35.0$ &
 With the total gravitating matter density in the background geometry, the DESI
 DR2 comparison gives a single figure, $\Delta\mathrm{BIC}=-6.43$ favouring SSEE
 (the earlier ``$+206$'' penalty was an artefact of using the cold sector
-$1+w_0=0.160050$ as the background density).
+$1+w_0=\val{S_M_d6}$ as the background density).
 The canonical CMB result is the full \texttt{plik} MCMC row, $\Delta\mathrm{BIC}=-32.9$
 ($k=2$ vs $k=6$, $N=2354$, off-diagonal TTTEEE\,$+$\,lowl\,$+$\,lensing), with a
 best-fit $\chi^2$ statistically indistinguishable from $\Lambda$CDM
@@ -925,7 +926,7 @@ change the predictions in all other sectors simultaneously.\\[4pt]
 \textbf{Corollary:} the sector-specific structure (dynamic / observational /
 algebraic) exists to delineate which datasets test which part of the
 framework, not to create rescue mechanisms.  If DESI~DR5+ excludes
-$w_0=-0.839950$ at $>3\sigma$, SSEE is rejected; the observational or
+$w_0=\val{W0_d6}$ at $>3\sigma$, SSEE is rejected; the observational or
 algebraic sectors do not save it.
 \end{tcolorbox}
 
@@ -945,7 +946,7 @@ all four papers and cannot be re-interpreted post-hoc.
 \begin{itemize}[nosep,leftmargin=*]
   \item DESI~DR5+ posterior excludes $(-0.840,-0.670)$ at $>3\sigma$; or
   \item $\chi^2_r(H(z)) > 2.5$ with full systematic covariance and the
-        background matter density $\Omega_m=0.308881$ (the geometry takes the
+        background matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ (the geometry takes the
         \emph{total} matter density; $1+w_0$ enters as an equation of state,
         never in $E(z)$ --- see \S\ref{sec:two_omega_m}).
 \end{itemize}
@@ -953,7 +954,7 @@ all four papers and cannot be re-interpreted post-hoc.
 \begin{itemize}[nosep,leftmargin=*]
   \item Euclid/KiDS/DES require $\Omega_m<0.25$ or $\Omega_m>0.36$ at $z<1$,
         excluding the single algebraic matter density
-        $\Omega_m=\omega_m/h^2=0.308881$; or
+        $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; or
   \item cosmic shear places $S_8$ more than $3\sigma$ from $0.8273$, the value
         the growth sector predicts once the primordial amplitude is \emph{fixed}
         to what the CMB gives under the same algebraic background --- leaving no
@@ -971,7 +972,7 @@ all four papers and cannot be re-interpreted post-hoc.
 \begin{itemize}[nosep,leftmargin=*]
   \item A $\chi^2_r > 1$ under a non-equivalent cosmological background
         (i.e.\ evaluating SSEE with $\Lambda$CDM-calibrated priors it does not assume).
-  \item Invoking the withdrawn two-$\Omega_m$ criterion: $\Omega_{m,\rm dyn}=0.160050$
+  \item Invoking the withdrawn two-$\Omega_m$ criterion: $\Omega_{m,\rm dyn}=\val{S_M_d6}$
         ($=1+w_0$, i.e.\ $s_m$) was never a matter density, and the free-streaming
         scale $k_{\rm fs}$ belonged to the retracted $\varphi$-DM sector; neither is
         a live prediction (see \S\ref{sec:two_omega_m}).
@@ -1062,8 +1063,8 @@ Each intermediate constant is labelled as either a \textit{primary register}
   Result types: \textbf{A} = pure algebraic (no data input),
   \textbf{M} = MCMC-validated (data-constrained posterior),
   \textbf{P} = prior-dependent (requires external dataset anchor).
-  $\varphi = (1+\sqrt{5})/2 \approx 1.61803$;
-  $\pi \approx 3.14159$.}
+  $\varphi = (1+\sqrt{5})/2 \approx \val{PHI_d5}$;
+  $\pi \approx \val{PI_d5}$.}
 \label{tab:derivation_chain}
 \footnotesize
 \begin{tabularx}{\textwidth}{p{2.2cm}p{3.8cm}p{2.4cm}Xc}
@@ -1071,40 +1072,40 @@ Each intermediate constant is labelled as either a \textit{primary register}
 Symbol & Definition & Value & Observable link & Type \\
 \midrule
 \multicolumn{5}{l}{\textit{Level 0 — Axioms}} \\
-$\varphi$ & $(1+\sqrt{5})/2$ & $1.618034$ & All & A \\
-$\pi$     & Archimedes constant & $3.141593$ & All & A \\
+$\varphi$ & $(1+\sqrt{5})/2$ & $\val{PHI_d6}$ & All & A \\
+$\pi$     & Archimedes constant & $\val{PI_d6}$ & All & A \\
 \midrule
 \multicolumn{5}{l}{\textit{Level 1 — Primary Registers}} \\
-$\Omega$ & $\varphi + \pi$ & $4.759627$ & Stability metric & A \\
-$\beta$   & $(\varphi+\pi)/2$ & $2.379813$ & Base coupling & A \\
-$P_{sc}$  & $\Omega+\varphi$ & $6.377661$ & Dyn.\ evolution & A \\
-AURA      & $\varphi+\beta$ & $3.997847$ & Resonance limit & A \\
+$\Omega$ & $\varphi + \pi$ & $\val{OMEGA_d6}$ & Stability metric & A \\
+$\beta$   & $(\varphi+\pi)/2$ & $\val{BETA_d6}$ & Base coupling & A \\
+$P_{sc}$  & $\Omega+\varphi$ & $\val{P_SC_d6}$ & Dyn.\ evolution & A \\
+AURA      & $\varphi+\beta$ & $\val{AURA_d6}$ & Resonance limit & A \\
 \midrule
 \multicolumn{5}{l}{\textit{Level 2 — Secondary Registers}} \\
-$\mathrm{KAL}_0$ & $\beta+\pi$ & $5.521406$ & Viscosity; $M_{\rm cluster}$ & A \\
-$K_v$     & $\varphi+\pi+\Omega$ & $9.519253$ & Struct.\ constraint (entity KRYSTOS$_V$) & A \\
-$I_g$     & $\pi+P_{sc}$ & $9.519253$ & $w_a$ denominator (entity IGNIS; same value as $K_v$, distinct entity) & A \\
-$T_r$     & $3(\varphi+\beta)$ & $11.993542$ & Saturation horizon & A \\
-MIRA      & $\mathrm{AURA}/2 = (\varphi+\beta)/2$ & $1.998924$ & Screening amplitude (P9) & A$^*$ \\
-$M_v$     & $\varphi+\pi+K_v$ & $14.278880$ & Max.\ dim.\ invariant & A \\
+$\mathrm{KAL}_0$ & $\beta+\pi$ & $\val{KAL0_d6}$ & Viscosity; $M_{\rm cluster}$ & A \\
+$K_v$     & $\varphi+\pi+\Omega$ & $\val{K_V_d6}$ & Struct.\ constraint (entity KRYSTOS$_V$) & A \\
+$I_g$     & $\pi+P_{sc}$ & $\val{IGNIS_d6}$ & $w_a$ denominator (entity IGNIS; same value as $K_v$, distinct entity) & A \\
+$T_r$     & $3(\varphi+\beta)$ & $\val{T_R_d6}$ & Saturation horizon & A \\
+MIRA      & $\mathrm{AURA}/2 = (\varphi+\beta)/2$ & $\val{MIRA_d6}$ & Screening amplitude (P9) & A$^*$ \\
+$M_v$     & $\varphi+\pi+K_v$ & $\val{M_V_d6}$ & Max.\ dim.\ invariant & A \\
 \midrule
 \multicolumn{5}{l}{\textit{Level 3 — Cosmological Observables}} \\
-$w_0$     & $-T_r/M_v$ & $-0.839950$ & DESI DR2 & A \\
-$w_a$     & $-P_{sc}/I_g$ & $-0.669975$ & DESI DR2 & A \\
-$H_0^{\rm alg}$ & $3(\varphi+\pi)^2$ & $67.962$ km/s/Mpc & Planck 2018 & P$^\dagger$ \\
+$w_0$     & $-T_r/M_v$ & $\val{W0_d6}$ & DESI DR2 & A \\
+$w_a$     & $-P_{sc}/I_g$ & $\val{WA_d6}$ & DESI DR2 & A \\
+$H_0^{\rm alg}$ & $3(\varphi+\pi)^2$ & $\val{H0_ALG_d3}$ km/s/Mpc & Planck 2018 & P$^\dagger$ \\
 $H_0^{\rm MCMC}$ & CMB fit at fixed anchor (Paper~3) & $67.962$ (anchor, fixed) & Planck PR4 & M \\
-$s_m$ & $(\pi-\varphi)/[2(\varphi+\pi)]$ & $0.160050$ & EoS sector; $1+w_0$ exact & A \\
-$\Omega_m^{\rm CMB}$ & $\omega_m/h^2=(\Omega_b h^2{+}\Omega_c h^2{+}\omega_\nu)/h^2$ & $0.308881^\S$ & Planck 2018 & A \\
-$n_s$     & $1-\varphi^{-7}$ & $0.965558$ & Planck 2018 & A \\
-$\Omega_b h^2$ & $(\pi-\varphi)/[3(\varphi+\pi)^2]$ & $0.022418$ ($0.32\sigma$) & Planck 2018 & A$^\ddagger$ \\
-$\Omega_c h^2$ & $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ & $0.119514$ ($0.4\sigma$) & Planck 2018 & A \\
+$s_m$ & $(\pi-\varphi)/[2(\varphi+\pi)]$ & $\val{S_M_d6}$ & EoS sector; $1+w_0$ exact & A \\
+$\Omega_m^{\rm CMB}$ & $\omega_m/h^2=(\Omega_b h^2{+}\Omega_c h^2{+}\omega_\nu)/h^2$ & $\val{OMEGA_M_TOTAL_d6}^\S$ & Planck 2018 & A \\
+$n_s$     & $1-\varphi^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & A \\
+$\Omega_b h^2$ & $(\pi-\varphi)/[3(\varphi+\pi)^2]$ & $\val{OMEGA_B_H2_d6}$ ($0.32\sigma$) & Planck 2018 & A$^\ddagger$ \\
+$\Omega_c h^2$ & $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ & $\val{OMEGA_C_H2_d6}$ ($0.4\sigma$) & Planck 2018 & A \\
 $r$       & $\varphi^{-10}$ & $0.008131$ & LiteBIRD 2032 & A \\
 $\sum m_\nu^{\rm active}$ & $\mathcal{R}_2\,\Omega_b h^2\cdot93.14/(\tau_\Pi H_0)$ (Paper~4) & $0.0685$ eV & Planck+BBN & A \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\noindent\footnotesize $^*$ MIRA $= (\varphi+\beta)/2 = (3\varphi+\pi)/4 = 1.998924\ldots$
+\noindent\footnotesize $^*$ MIRA $= (\varphi+\beta)/2 = (3\varphi+\pi)/4 = \val{MIRA_d6}\ldots$
 is the canonical value of the structural constant.
 Following the 2026 reframe, MIRA serves as the \textit{screening amplitude}
 (algebraically fixed from $\{\varphi,\pi\}$ via $\beta=(\varphi+\pi)/2$; it
@@ -1112,23 +1113,23 @@ enters $f_{\rm screen}=\alpha_K^{\rm eff}/(3\,\mathrm{MIRA})$, Paper~9), consist
 its name (Mirror Ratio). It is no longer the sector-mapping operator: after the
 2026 $\omega_m$-direct reframe there is \emph{no} matter factor. The CMB matter
 density is the algebraic physical $\omega_m=\Omega_b h^2+\Omega_c h^2+\omega_\nu$,
-giving $\Omega_{m,\rm CMB}=\omega_m/h^2=0.308881$; the EoS-sector identity
-$s_m=0.160050$ ($=1+w_0$) is not a density (OP-8 closed; the former
+giving $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the EoS-sector identity
+$s_m=\val{S_M_d6}$ ($=1+w_0$) is not a density (OP-8 closed; the former
 two-$\Omega_m$ criterion is withdrawn, \S\ref{sec:two_omega_m}).
 Similarly, $\mathrm{KAL}_0$ is both a derived constant (Level~2) and
 a dynamical viscosity operator scaling cluster masses.
 
-\footnotesize $^\ddagger$ $\Omega_b h^2=(\pi-\varphi)/[3(\varphi+\pi)^2]=0.022418$ is at $0.32\sigma$ from Planck 2018 ($0.02237\pm0.00015$).
+\footnotesize $^\ddagger$ $\Omega_b h^2=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ is at $0.32\sigma$ from Planck 2018 ($0.02237\pm0.00015$).
 This is a \emph{retrodiction}: the structural form was identified after the data (OP-1, \texttt{OPEN\_PROBLEMS.md}),
 superseding the preliminary placeholder $3(\pi-\varphi)/200=0.02285$ ($3.2\sigma$), whose factor $200$ was not an
 algebraic $\{\varphi,\pi\}$ quantity.
-Using the algebraic input $\Omega_b h^2=0.022418$, the formula
+Using the algebraic input $\Omega_b h^2=\val{OMEGA_B_H2_d6}$, the formula
 $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ gives
-$\Omega_c h^2 = 5.521406\times0.02242\times0.96556 = 0.119514$ ($0.41\sigma$ from Planck $0.1200\pm0.0012$).
+$\Omega_c h^2 = \val{KAL0_d6}\times0.02242\times0.96556 = \val{OMEGA_C_H2_d6}$ ($0.41\sigma$ from Planck $0.1200\pm0.0012$).
 
 \footnotesize $^\S$ Canonical CMB-sector matter density ($\omega_m$-direct reframe, 2026):
-$\Omega_{m,\rm CMB}=\omega_m/h^2=0.308881$ with $\omega_m=\Omega_b h^2+\Omega_c h^2
-+\omega_\nu=0.14267$ algebraic, at the single global anchor
+$\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with $\omega_m=\Omega_b h^2+\Omega_c h^2
++\omega_\nu=\val{OMEGA_M_H2_d5}$ algebraic, at the single global anchor
 $H_0/\kmsu=3(\varphi+\pi)^2\simeq67.962$. No matter factor (OP-8 closed). A Planck
 \texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ evaluation gives $\chi^2_{\rm SSEE}=1003.586$ vs
 $\chi^2_{\Lambda\rm CDM}=1003.596$, $\Delta\mathrm{BIC}=-26.03$ (the full
@@ -1171,7 +1172,7 @@ it.
 
 \paragraph{The \texorpdfstring{$\beta$}{beta} (BIAL) bifurcation.}
 All non-root nodes branch from the base coupling
-$\beta=(\varphi+\pi)/2=\Omega/2=2.379813$. Two routes follow, each obeying its
+$\beta=(\varphi+\pi)/2=\Omega/2=\val{BETA_d6}$. Two routes follow, each obeying its
 own scaling law:
 \begin{itemize}
   \item \textbf{Route $\varphi$ (copy law).} $\varphi+\beta=\mathrm{AURA}=(3\varphi+\pi)/2$
@@ -1193,7 +1194,7 @@ Two nodes may share a numerical value yet remain distinct entities with
 different lineage and function: the value is the carrier, the function is the
 property. The model-relevant instance is
 $\mathrm{MAR}=\Omega+\pi$ versus $\mathrm{SOLAR}=\beta+\mathrm{KAL}_0$, both equal
-to $7.901219$ but reached by different parents; this is the node that enters the
+to $\val{phi_mas_2pi_d6}$ but reached by different parents; this is the node that enters the
 $\Sigma m_\nu$ chain of Paper~4. Numerical coincidence is therefore structural
 information, not redundancy.
 
@@ -1241,7 +1242,7 @@ $\mathrm{KAL}_0$ & $(\varphi+3\pi)/2$ & $\beta+\pi$ — non-self-add & Retention
 $P_{sc}$ & $2\varphi+\pi$ & $\Omega+\varphi$ — non-self-add & Forge / processing & Dynamical evolution scalar $\to w_a$ & — \\
 $K_v$ & $2(\varphi+\pi)$ & $\varphi+\pi+\Omega$ — non-self-add & Crystal / order & Structural constraint $\to w_a$ & — \\
 $M_v$ & $3(\varphi+\pi)$ & $\varphi+\pi+K_v$ — non-self-add & Maximal / dominant & Maximal dim. invariant $\to w_0,w_a$ & — \\
-$\mathrm{MAR}/\mathrm{SOLAR}$ & $\varphi+2\pi$ & $\Omega+\pi$ \emph{vs} $\beta+\mathrm{KAL}_0$ & Tide / radiative & Chain node in $\Sigma m_\nu$ ($7.901219$) & — \\
+$\mathrm{MAR}/\mathrm{SOLAR}$ & $\varphi+2\pi$ & $\Omega+\pi$ \emph{vs} $\beta+\mathrm{KAL}_0$ & Tide / radiative & Chain node in $\Sigma m_\nu$ ($\val{phi_mas_2pi_d6}$) & — \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -1250,7 +1251,7 @@ $\mathrm{MAR}/\mathrm{SOLAR}$ & $\varphi+2\pi$ & $\Omega+\pi$ \emph{vs} $\beta+\
 Each named register equals its pure $(\varphi,\pi)$ expression exactly; the name
 is a label for that combination, retained because it tracks which construction
 lineage a shared value belongs to --- e.g.\ $\mathrm{MAR}=\Omega+\pi$ versus
-$\mathrm{SOLAR}=\beta+\mathrm{KAL}_0$, both $7.901219$ but distinct registers.
+$\mathrm{SOLAR}=\beta+\mathrm{KAL}_0$, both $\val{phi_mas_2pi_d6}$ but distinct registers.
 This is the same convention by which ``up'' and ``down'' label quark flavours
 without implying spatial direction. All quantitative results in this series use
 the bare $(\varphi,\pi)$ forms; the named forms are an equivalent, more legible
@@ -1359,14 +1360,14 @@ are Level~2 — using Level~1 constants ($\Omega$, $\beta$) as intermediates:
 \toprule
 Symbol & Name & Definition & Value & Layer\\
 \midrule
-$\Omega$ & OMEGA / Stability Metric & $\varphi+\pi$ & 4.759627 & L1\\
-$\beta$  & BIAL / Base Coupling     & $(\varphi+\pi)/2$ & 2.379813 & L1\\
-$K_v$    & KRYSTOS$_V$ / Structural Constraint & $\varphi+\pi+\Omega$ & 9.519253 & L1\\
-$M_v$    & ATLAS / Maximal Invariant & $\varphi+\pi+K_v$ & 14.278880 & L1\\
+$\Omega$ & OMEGA / Stability Metric & $\varphi+\pi$ & \val{OMEGA_d6} & L1\\
+$\beta$  & BIAL / Base Coupling     & $(\varphi+\pi)/2$ & \val{BETA_d6} & L1\\
+$K_v$    & KRYSTOS$_V$ / Structural Constraint & $\varphi+\pi+\Omega$ & \val{K_V_d6} & L1\\
+$M_v$    & ATLAS / Maximal Invariant & $\varphi+\pi+K_v$ & \val{M_V_d6} & L1\\
 \midrule
-$\mathrm{KAL}_0$ & Structural Retention & $\beta+\pi$ & 5.521406 & L2\\
-$P_{sc}$ & PYROS / Dynamical Scalar & $\Omega+\varphi$ & 6.377661 & L2\\
-$T_r$    & TRIAL / Saturation Horizon & $3(\varphi+\beta)$ & 11.993542 & L2\\
+$\mathrm{KAL}_0$ & Structural Retention & $\beta+\pi$ & \val{KAL0_d6} & L2\\
+$P_{sc}$ & PYROS / Dynamical Scalar & $\Omega+\varphi$ & \val{P_SC_d6} & L2\\
+$T_r$    & TRIAL / Saturation Horizon & $3(\varphi+\beta)$ & \val{T_R_d6} & L2\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1392,14 +1393,14 @@ register; they would introduce additional structure beyond the stated axioms.
   \mathrm{MIRA} = \frac{\beta+\varphi}{2} = \frac{3\varphi+\pi}{4} \approx 1.9989.
 \]
 Both were defined algebraically before any comparison with Planck 2018 data.
-MIRA's value $1.9989$ is fixed by the algebraic construction
+MIRA's value $\val{MIRA_d4}$ is fixed by the algebraic construction
 \citep{AlmeidaSSEE2026genesis}, independently of any Planck measurement. Under
 the 2026 $\omega_m$-direct reframe MIRA is the \emph{screening amplitude}
 (entering $f_{\rm screen}=\alpha_K^{\rm eff}/(3\,\mathrm{MIRA})$, Paper~9), consistent with
 its name (Mirror Ratio). There is no longer any CMB/dynamical matter ratio: the
 CMB matter density is the algebraic physical $\omega_m$, giving
-$\Omega_{m,\rm CMB}=\omega_m/h^2=0.308881$; the EoS-sector identity
-$s_m=0.160050$ ($=1+w_0$) is not a density (OP-8 closed; the former
+$\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the EoS-sector identity
+$s_m=\val{S_M_d6}$ ($=1+w_0$) is not a density (OP-8 closed; the former
 two-$\Omega_m$ criterion is withdrawn, \S\ref{sec:two_omega_m}).
 The earlier near-equality
 $\mathrm{MIRA}\approx\Omega_{m,\rm CMB}/s_m\approx2$ (and the

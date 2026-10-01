@@ -41,6 +41,7 @@ Algebraic Derivation of the CMB Background from~$\varphi$ and~$\pi$}\\[0.5em]
 \renewenvironment{abstract}
   {\begin{center}\textbf{\abstractname}\end{center}\par\small\noindent\ignorespaces}
   {\par\medskip}
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -53,23 +54,23 @@ a theorem rather than an independent axiom; no free parameter is introduced at t
 Phenomenological extensions (notably the neutrino mass sum $\Sigma m_\nu$, classified as Type~P later in the paper) were tracked as open problem OP-14 in \texttt{OPEN\_PROBLEMS.md}, resolved on 2026-06-04.
 From these two axioms alone we derive, without fitting:
 \begin{enumerate}
-\item[(i)] $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = 67.962137$ ($1.1\sigma$ from Planck~2018),
+\item[(i)] $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ ($1.1\sigma$ from Planck~2018),
 where $M_v=3\Omega$ is the maximal structural invariant of the dictionary, reached by twenty distinct additive routes under the no-self-sum construction law (Appendix~\ref{app:independence}); this multiplicity is consistent with, but does not by itself prove, the absence of post-hoc tuning;
 \item[(ii)] the physical baryon density
-$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = 0.022418$ ($0.32\sigma$ from Planck~2018);
+$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018);
 \item[(iii)] the primordial spectral index
-$n_s = 1-\varphi^{-7} = 0.965558$ ($0.16\sigma$ from Planck~2018),
+$n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck~2018),
 where the exponent~7 equals the number of primary structural registers in the \SSEE\ hierarchy;
 \item[(iv)] a local Hubble constant from the screening mechanism of Paper~9,
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = 68.13$~km\,s$^{-1}$\,Mpc$^{-1}$
-($0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=67.962137$),
+($0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$),
 taking \citet{Riess2022} as the input (2026 reframe); the earlier
 CMB-mapped register (via $H_0^{\rm MIRA}=67.037$) is superseded;
 see Section~\ref{sec:hubble_tension}).
 \end{enumerate}
 These background predictions are number-to-number comparisons with zero adjustable parameters in their respective sectors.
 The same two axioms fix the cosmological background --- including the
-dark-energy parameters $w_0=-0.839950$, $w_a=-0.669975$ derived in the
+dark-energy parameters $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$ derived in the
 companion Papers~1--3.
 In the static (Eckart) regime $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = 0.1235$ ($+2.9\sigma$);
 modulated by the IS inflationary factor $n_s = 1-\varphi^{-7}$ this becomes
@@ -140,7 +141,7 @@ measurement.
 The \SSEE\ structural constant $\Omega$ is \textbf{not} an independent axiom.
 It is the unique combination that encodes the sum of the two geometric axioms:
 \begin{equation}
-\Omega \equiv \varphi + \pi = 4.759626642\ldots
+\Omega \equiv \varphi + \pi = \val{OMEGA_d9}\ldots
 \label{eq:omega}
 \end{equation}
 This single expression generates the entire hierarchy of \SSEE\ constants
@@ -151,7 +152,7 @@ This single expression generates the entire hierarchy of \SSEE\ constants
 
 The value
 \begin{equation}
-M_v \equiv \varphi+\pi+K_v = 3\,\Omega = 14.278879927\ldots
+M_v \equiv \varphi+\pi+K_v = 3\,\Omega = \val{M_V_d9}\ldots
 \label{eq:sigma9}
 \end{equation}
 is the \emph{maximal structural invariant} of the constant dictionary. Under the
@@ -180,19 +181,19 @@ and $\pi$ only; no empirical input is used.}
 \toprule
 Name & Formula in $\varphi,\pi$ & Simplified & Value \\
 \midrule
-$\Omega$ & $\varphi+\pi$                           & —              & 4.759627 \\
-$\beta$ & $(\varphi+\pi)/2$                       & $\Omega/2$     & 2.379813 \\
-AURA  & $(3\varphi+\pi)/2$                      & —              & 3.997847 \\
-MIRA  & $(3\varphi+\pi)/4$                      & $\mathrm{AURA}/2$ & 1.998924 \\
-KAL   & $(\varphi+3\pi)/2$                      & —              & 5.521406 \\
-$P_{sc}$ & $2\varphi+\pi$                       & $\Omega+\varphi$ & 6.377661 \\
-$\Omega+\pi$ & $\varphi+2\pi$                   & —              & 7.901219 \\
-$K_v$ & $2\varphi+2\pi$                          & $\varphi+\pi+\Omega$ & 9.519253 \\
-$\pi+\mathrm{KAL}$ & $(\varphi+5\pi)/2$         & —              & 8.663001 \\
-$\varphi+\pi+\mathrm{KAL}$ & $(3\varphi+5\pi)/2$ & —             & 10.281034 \\
-$2\Omega+\varphi$ & $3\varphi+2\pi$              & —              & 11.137287 \\
+$\Omega$ & $\varphi+\pi$                           & —              & \val{OMEGA_d6} \\
+$\beta$ & $(\varphi+\pi)/2$                       & $\Omega/2$     & \val{BETA_d6} \\
+AURA  & $(3\varphi+\pi)/2$                      & —              & \val{AURA_d6} \\
+MIRA  & $(3\varphi+\pi)/4$                      & $\mathrm{AURA}/2$ & \val{MIRA_d6} \\
+KAL   & $(\varphi+3\pi)/2$                      & —              & \val{KAL0_d6} \\
+$P_{sc}$ & $2\varphi+\pi$                       & $\Omega+\varphi$ & \val{P_SC_d6} \\
+$\Omega+\pi$ & $\varphi+2\pi$                   & —              & \val{phi_mas_2pi_d6} \\
+$K_v$ & $2\varphi+2\pi$                          & $\varphi+\pi+\Omega$ & \val{K_V_d6} \\
+$\pi+\mathrm{KAL}$ & $(\varphi+5\pi)/2$         & —              & \val{pi_mas_KAL_d6} \\
+$\varphi+\pi+\mathrm{KAL}$ & $(3\varphi+5\pi)/2$ & —             & \val{phi_pi_KAL_d6} \\
+$2\Omega+\varphi$ & $3\varphi+2\pi$              & —              & \val{dos_Omega_phi_d6} \\
 $\Omega_b h^2$ (BBN) & $(\pi-\varphi)/[3(\varphi+\pi)^2]$      & —              & 0.022420 \\
-$M_v$ & $3(\varphi+\pi)$           & $\varphi+\pi+K_v$ & 14.278880 \\
+$M_v$ & $3(\varphi+\pi)$           & $\varphi+\pi+K_v$ & \val{M_V_d6} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -245,14 +246,14 @@ are introduced.}
 Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \midrule
 \textbf{Cosmology} & & & & \\
-\quad $H_0$ [km/s/Mpc] & $3(\varphi+\pi)^2$ & 67.962137 & $67.4\pm0.5$ & $1.1\sigma$ \\
+\quad $H_0$ [km/s/Mpc] & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
 \quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & 68.13  & $3(\varphi+\pi)^2$ & $0.17\sigma$ \\
 \quad $\Omega_b$ & $\frac{100(\pi-\varphi)}{6(\varphi+\pi)^4}$ & 0.0495 & $0.0493\pm0.0004$ & $0.53\sigma$ \\
-\quad $n_s$ (inflation) & $1-\varphi^{-7}$ & 0.965558 & $0.9649\pm0.0042$ & $0.16\sigma$ \\
+\quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $0.16\sigma$ \\
 \textbf{Hubble tension} & & & & \\
 \quad Fractional correction & $K/H_0 = \frac{\varphi+3\pi}{6(\varphi+\pi)^2}$ & $8.12\%$ & $\approx 8\%$ & — \\
 \bottomrule
-\multicolumn{5}{l}{\footnotesize $^{\rm P}$~Canonical IR-cascade value (2026 reframe): $f_{\rm scr}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $68.13$, i.e.\ $0.17\sigma$ from $3(\varphi+\pi)^2=67.962137$; the full UV cascade closes to $67.96214$ (Paper~10).}\\
+\multicolumn{5}{l}{\footnotesize $^{\rm P}$~Canonical IR-cascade value (2026 reframe): $f_{\rm scr}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $68.13$, i.e.\ $0.17\sigma$ from $3(\varphi+\pi)^2=\val{H0_ALG_d6}$; the full UV cascade closes to $\val{H0_ALG_d5}$ (Paper~10).}\\
 \multicolumn{5}{l}{\footnotesize The earlier CMB-mapped register ($H_0^{\rm MIRA}=67.037$) is superseded.}\\
 \multicolumn{5}{l}{\footnotesize Consistent with Paper~1 / Paper~9 policy (single anchor shared by every sector).}\\
 \end{tabular}%
@@ -277,27 +278,27 @@ From Section~\ref{sec:sovereigns}, the maximal structural invariant is $M_v = 3(
 The Hubble constant is the product of this convergent sum and the base unit
 $\Omega = \varphi+\pi$:
 \begin{equation}
-\boxed{\frac{H_0}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} = M_v \times \Omega = 3(\varphi+\pi)^2 = 67.962137}
+\boxed{\frac{H_0}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} = M_v \times \Omega = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}}
 \label{eq:H0}
 \end{equation}
-\textbf{Dimensional note.} The number 67.962137 is compared to $H_0$ as measured
+\textbf{Dimensional note.} The number \val{H0_ALG_d6} is compared to $H_0$ as measured
 in km~s$^{-1}$~Mpc$^{-1}$.  \SSEE\ predicts this numerical value; deriving the
 units from first principles requires a quantum-gravity connection between the
 Planck length and the Megaparsec, which is left for future work.
 
 \textbf{Algebraic prediction vs.\ observational posterior.}
-The value $H_0^{\rm alg}=67.962137$ is a pure geometric prediction.
+The value $H_0^{\rm alg}=\val{H0_ALG_d6}$ is a pure geometric prediction.
 Baryon acoustic oscillations \citep{Eisenstein2005} provide a standard ruler;
 independent Bayesian inference against DESI~DR2 BAO data \citep{desidr2_2025} yields
 $H_0^{\rm MCMC}=67.82\pm0.41$~km\,s$^{-1}$\,Mpc$^{-1}$ (Paper~2, under
-the global rate of the screening cascade as prior, $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962\pm0.968$, Papers~9--10).
-With the total gravitating matter density $\Omega_m=\omega_m/h^2=0.308881$ in the
+the global rate of the screening cascade as prior, $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$, Papers~9--10).
+With the total gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ in the
 background geometry, the BAO-corrected posterior is consistent with the algebraic
 anchor at $0.33\sigma$, and the \SSEE\ sound horizon matches \LCDM\
 ($r_d^{\rm SSEE}=147.17$~Mpc vs.\ $r_d^{\rm \Lambda CDM}=147.10$~Mpc, CAMB): DESI~DR2
 is consistent with the algebraic value without singling it out. The $\sim$0.8~km\,s$^{-1}$\,Mpc$^{-1}$ downshift
 reported in earlier drafts was an artefact of using the cold sector
-$1+w_0=0.160050$ as the background density, now corrected.
+$1+w_0=\val{S_M_d6}$ as the background density, now corrected.
 $H_0^{\rm alg}$ is thus the theoretical prediction of the \SSEE\ background;
 $H_0^{\rm MCMC}$ is the same quantity after the observational calibration
 correction is applied, and the two agree to $0.33\sigma$.
@@ -310,7 +311,7 @@ the CP asymmetry $(\pi-\varphi)$ normalized to the pure algebraic combination
 $3\Omega^2 = 3(\varphi+\pi)^2$, whose value read in km\,s$^{-1}$\,Mpc$^{-1}$ is
 the SSEE Hubble anchor:
 \begin{align}
-\Omega_b h^2 &= \frac{\pi-\varphi}{3\Omega^2} = \frac{\pi-\varphi}{3(\varphi+\pi)^2} = 0.022418
+\Omega_b h^2 &= \frac{\pi-\varphi}{3\Omega^2} = \frac{\pi-\varphi}{3(\varphi+\pi)^2} = \val{OMEGA_B_H2_d6}
 \label{eq:Obh2} \\[4pt]
 \Omega_b     &= \frac{\Omega_b h^2}{h^2}
               = \frac{100(\pi-\varphi)}{6(\varphi+\pi)^4}
@@ -337,7 +338,7 @@ The Sakharov scaling $\eta_B \propto \delta_{\rm CP}/(\text{expansion rate})$
 motivates the \emph{shape} $\Omega_b h^2 \sim (\pi-\varphi)/(3\Omega^2)$, with
 $(\pi-\varphi)$ as the CP-asymmetry numerator and $3\Omega^2$ as the
 normalising denominator. Two caveats are stated openly. First, $3\Omega^2$
-enters as the dimensionless value $67.962137$, i.e.\ $H_0^{\rm SSEE}$ expressed in
+enters as the dimensionless value $\val{H0_ALG_d6}$, i.e.\ $H_0^{\rm SSEE}$ expressed in
 $\mathrm{km\,s^{-1}\,Mpc^{-1}}$; this is a Type-P numerical coincidence in the
 sense of Postulate~D of Paper~1, not a dimensional identity. Second,
 $\eta_B$ and $\Omega_b h^2$ differ by the standard photon-entropy factor
@@ -364,19 +365,19 @@ OP-8 dissolved):
 \begin{equation}
 \Omega_{m,\rm CMB} = \frac{\omega_m}{h^2}
   = \frac{\omega_b+\omega_c+\omega_\nu}{h^2}
-  = \frac{0.14267}{(0.67962)^2} = 0.308881,
+  = \frac{\val{OMEGA_M_H2_d5}}{(0.67962)^2} = \val{OMEGA_M_TOTAL_d6},
 \end{equation}
 with $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]$ and
 $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$ (forward; Paper~3), in $0.88\sigma$
 agreement with Planck~2018 ($\Omega_m = 0.3153\pm0.007$). There is one matter
-density, $\Omega_m=\omega_m/h^2=0.308881$ (no matter factor; OP-8 dissolved;
+density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (no matter factor; OP-8 dissolved;
 the former Two-$\Omega_m$ criterion is withdrawn, cf.\ Paper~1, Sec.~1.4).
 The quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]\approx 0.160$ ($=1+w_0$) is an
 equation-of-state-sector identity, not a density. (The earlier MIRA mapping
 $\mathrm{MIRA}\times s_m=0.31993$ and the geometric route
 $(\pi-\varphi)/(\pi+\varphi)=0.3201$ are both superseded.)
 The cold dark matter density can be related to the baryon density through the
-structural retention $K_{\rm AL} = \beta + \pi \approx 5.5214$:
+structural retention $K_{\rm AL} = \beta + \pi \approx \val{KAL0_d4}$:
 \begin{equation}
 \Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = 0.12351 \quad (+2.9\sigma\text{ Eckart static}).
 \label{eq:omch2_static}
@@ -385,13 +386,13 @@ When the Israel--Stewart inflationary correction is applied, the primordial spec
 factor $n_s = 1-\varphi^{-7}$ modulates the dark-matter density:
 \begin{equation}
 \boxed{\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s
-      = 5.521406\times 0.02242\times 0.96556 = 0.119514}
+      = \val{KAL0_d6}\times 0.02242\times \val{N_S_d5} = \val{OMEGA_C_H2_d6}}
 \label{eq:omch2_IS}
 \end{equation}
 \textbf{Note on $\Omega_b h^2$ input.}
 Both the static (Eq.~\ref{eq:omch2_static}) and IS formulas use the Planck~2018
 \emph{observed} value $\Omega_b h^2 = 0.02237\pm0.00015$.
-The \SSEE\ algebraic prediction $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = 0.022418$
+The \SSEE\ algebraic prediction $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$
 ($0.32\sigma$ from Planck) can also be substituted: the IS formula gives
 $K_{\rm AL}\times0.02242\times n_s = 0.11952$ ($-0.4\sigma$), consistent with Planck.
 For transparency, the baseline calculation uses the Planck observed value.
@@ -422,13 +423,13 @@ Each level is derived from the previous; none is adjustable.}
 \toprule
 Level & Register & Formula & Value \\
 \midrule
-1 & $\varphi$ & $(1+\sqrt5)/2$ & 1.61803\ldots \\
-2 & $\pi$     & (circle constant) & 3.14159\ldots \\
-3 & $\beta$    & $(\varphi+\pi)/2$         & 2.37981\ldots \\
-4 & $\Omega$   & $\varphi+\pi$             & 4.75963\ldots \\
-5 & AURA      & $(3\varphi+\pi)/2$         & 3.99785\ldots \\
-6 & KAL       & $(\varphi+3\pi)/2$         & 5.52141\ldots \\
-7 & MIRA      & $(3\varphi+\pi)/4$         & 1.99892\ldots \\
+1 & $\varphi$ & $(1+\sqrt5)/2$ & \val{PHI_d5}\ldots \\
+2 & $\pi$     & (circle constant) & \val{PI_d5}\ldots \\
+3 & $\beta$    & $(\varphi+\pi)/2$         & \val{BETA_d5}\ldots \\
+4 & $\Omega$   & $\varphi+\pi$             & \val{OMEGA_d5}\ldots \\
+5 & AURA      & $(3\varphi+\pi)/2$         & \val{AURA_d5}\ldots \\
+6 & KAL       & $(\varphi+3\pi)/2$         & \val{KAL0_d5}\ldots \\
+7 & MIRA      & $(3\varphi+\pi)/4$         & \val{MIRA_d5}\ldots \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -439,7 +440,7 @@ The inflationary suppression of the primordial spectrum is governed by
 the golden-ratio harmonic at the depth of this seven-level hierarchy:
 
 \begin{equation}
-\boxed{n_s = 1 - \varphi^{-7} = 1 - \frac{1}{\varphi^7} = 0.965558}
+\boxed{n_s = 1 - \varphi^{-7} = 1 - \frac{1}{\varphi^7} = \val{N_S_d6}}
 \label{eq:ns}
 \end{equation}
 
@@ -462,12 +463,12 @@ temperature $T_{\rm rh} \approx (30/\pi^2 g_*)^{1/4}\,V_{\rm end}^{1/4}
 \end{conjecture}
 
 Conjecture~B.1 is an open postulate, not yet derived from $V(\varphi_{\rm inf})$.
-Its value, $N_\ast = 58.068884$, lies within the standard window $[50, 65]$ for
+Its value, $N_\ast = \val{dos_phi7_d6}$, lies within the standard window $[50, 65]$ for
 inflation with reheating (consistent with, but not proven by, the framework).
 Numerically, the condition $\rho_{\rm end}/\rho_{\rm rh} = 3$ — which follows from
 $\rho_{\rm end}=3V_{\rm end}$ (at $\varepsilon=1$) together with
-$\rho_{\rm rh}=V_{\rm end}$ — gives $N_\ast = 58.25 - \ln(3)/6 = 58.067$,
-matching $2\varphi^7 = 58.068884$ to within $O(1/N_\ast)\approx 0.002$ e-folds.
+$\rho_{\rm rh}=V_{\rm end}$ — gives $N_\ast = 58.25 - \ln(3)/6 = \val{N_star_rh_d3}$,
+matching $2\varphi^7 = \val{dos_phi7_d6}$ to within $O(1/N_\ast)\approx 0.002$ e-folds.
 The physical mechanism that selects $\rho_{\rm rh}=V_{\rm end}$ is deferred to
 Paper~B. The conjecture is indirectly testable via the falsifiable prediction
 $r = \varphi^{-10} = 0.008131$ (Sec.~\ref{sec:r}): a CMB-S4 or LiteBIRD detection
@@ -528,7 +529,7 @@ quantitative mass function is in Paper~5.
 \subsection{Big Bang Nucleosynthesis: Helium-4 Fraction}
 \label{sec:bbn}
 
-The physical baryon density $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = 0.022418$ derived in
+The physical baryon density $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ derived in
 Section~\ref{sec:baryons} provides an independent BBN prediction.
 Using the linearised sensitivity from AlterBBN \citep{Pisanti2008},
 $dY_p/d(\Omega_b h^2) \approx 0.96$, and the Planck~2018 anchor
@@ -549,10 +550,10 @@ The SSEE framework also fixes the CPL dark-energy parameters $w_0$ and $w_a$
 algebraically from $\varphi$ and $\pi$.
 Define the four structural constants (Table~\ref{tab:constants}):
 \begin{align}
-  T_r    &= \tfrac{3(3\varphi+\pi)}{2} \approx 11.9935 \quad \text{(3D Saturation Horizon)}, \\
-  M_v    &= \varphi+\pi+K_v            \approx 14.2789 \quad \text{(Maximal Dimensional Invariant $= M_v$)}, \\
-  P_{sc} &= 2\varphi+\pi               \approx  6.3777 \quad \text{(Dynamical Evolution Scalar)}, \\
-  K_v    &= \varphi+\pi+\Omega         \approx  9.5193 \quad \text{(Structural Constraint)}.
+  T_r    &= \tfrac{3(3\varphi+\pi)}{2} \approx \val{T_R_d4} \quad \text{(3D Saturation Horizon)}, \\
+  M_v    &= \varphi+\pi+K_v            \approx \val{M_V_d4} \quad \text{(Maximal Dimensional Invariant $= M_v$)}, \\
+  P_{sc} &= 2\varphi+\pi               \approx  \val{P_SC_d4} \quad \text{(Dynamical Evolution Scalar)}, \\
+  K_v    &= \varphi+\pi+\Omega         \approx  \val{K_V_d4} \quad \text{(Structural Constraint)}.
 \end{align}
 The CPL parameters follow as:
 \begin{equation}
@@ -560,9 +561,9 @@ The CPL parameters follow as:
 \end{equation}
 Substituting the explicit $\varphi,\pi$ expressions yields the closed-form predictions:
 \begin{equation}
-  \boxed{w_0 = -\frac{3\varphi+\pi}{2(\varphi+\pi)} = -0.839950},
+  \boxed{w_0 = -\frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{W0_d6}},
   \qquad
-  \boxed{w_a = -\frac{2\varphi+\pi}{2(\varphi+\pi)} = -0.669975}.
+  \boxed{w_a = -\frac{2\varphi+\pi}{2(\varphi+\pi)} = \val{WA_d6}}.
   \label{eq:w0wa_p4}
 \end{equation}
 Both values are uniquely determined; no free parameters enter.
@@ -593,14 +594,14 @@ Planck~2018 \citep{PlanckCollaboration2020a} error bars.}
 \toprule
 Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 \midrule
-$H_0^{\rm alg}$ [km/s/Mpc]     & 67.962137 & $67.4\pm0.5$  & $1.1\sigma$ & algebraic (Type~P$^\dagger$) \\
-$H_0^{\rm glob}$ [km/s/Mpc]  & 67.962137 & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
+$H_0^{\rm alg}$ [km/s/Mpc]     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & algebraic (Type~P$^\dagger$) \\
+$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_ALG_d6} & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
 $\Omega_b$          & 0.0495 & $0.0493\pm0.0004$    & $0.53\sigma$ & algebraic \\
 $\Omega_b h^2$      & 0.02242& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
-$\Omega_{m,\rm CMB}$ & 0.308881 & $0.3153\pm0.0073$   & $0.88\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
-$\Omega_c h^2$ (IS) & 0.11951& $0.1200\pm0.0012$   & $0.41\sigma$ & algebraic (forward) \\
+$\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $0.88\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
+$\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $0.41\sigma$ & algebraic (forward) \\
 $Y_p$               & 0.2472 & $0.2471\pm0.0003$   & $0.2\sigma$ & BBN (no fit) \\
-$n_s$               & 0.965558& $0.9649\pm0.0042$   & $0.16\sigma$& algebraic \\
+$n_s$               & \val{N_S_d6}& $0.9649\pm0.0042$   & $0.16\sigma$& algebraic \\
 $A_s$               & $2.1\times10^{-9}$ & $2.10\times10^{-9}$ & $<0.5\sigma$ & standard \\
 $\tau$              & 0.054  & $0.054\pm0.007$     & $0\sigma$   & standard \\
 \midrule
@@ -608,7 +609,7 @@ $\tau$              & 0.054  & $0.054\pm0.007$     & $0\sigma$   & standard \\
 \multicolumn{5}{l}{\footnotesize IS = Israel--Stewart modulation by $n_s=1-\varphi^{-7}$; reduces tension from $+2.9\sigma$ (Eckart) to $-0.6\sigma$.}\\
 \multicolumn{5}{l}{\footnotesize $^\dagger$~Type~P: dimensionless combination matches observed value in km\,s$^{-1}$\,Mpc$^{-1}$ units;}\\
 \multicolumn{5}{l}{\footnotesize no dimensional derivation from first principles. Consistent with Paper~1 App.~B policy.}\\
-\multicolumn{5}{l}{\footnotesize $^\ddagger$~CMB sector: $\Omega_{m,\rm CMB}=\omega_m/h^2$ with $\omega_m=\omega_b+\omega_c+\omega_\nu=0.14267$,}\\
+\multicolumn{5}{l}{\footnotesize $^\ddagger$~CMB sector: $\Omega_{m,\rm CMB}=\omega_m/h^2$ with $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$,}\\
 \multicolumn{5}{l}{\footnotesize each piece algebraic ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, forward; Paper~3). \emph{No} matter factor.}\\
 \multicolumn{5}{l}{\footnotesize The equation-of-state-sector quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]\approx 0.160$ ($=1+w_0$)}\\
 \multicolumn{5}{l}{\footnotesize is not a density; there is one matter density $\Omega_{m,\rm CMB}=\omega_m/h^2$ (the former Two-$\Omega_m$}\\
@@ -661,11 +662,11 @@ is applied multiplicatively to the measured local rate
 $H_0^{\rm SH0ES}=73.04\pm1.04$~km\,s$^{-1}$\,Mpc$^{-1}$ \citep{Riess2022} ---
 the only directly measured expansion rate --- yielding the canonical global value
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = 68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-$0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=67.962137$, which
+$0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$, which
 the $\omega_m$-direct reframe (Paper~3) independently finds preferred by the
 CMB. (The earlier MIRA register $H_0^{\rm MIRA}=67.037$ is superseded.)
 Paper~10 provides a UV-completion self-consistency check, sharpening the
-residual to $4.2\times10^{-6}$ ($H_0^{\rm glob,UV} = 67.962137$),
+residual to $4.2\times10^{-6}$ ($H_0^{\rm glob,UV} = \val{H0_ALG_d6}$),
 conditional on the UV--IR separability postulate.
 
 % ===========================================================================
@@ -703,12 +704,12 @@ from CMB+BBN joint analysis would falsify this prediction.
 \subsection{Neutrino Mass Sum}
 
 The active neutrino mass sum follows from the stability ratio
-$\mathcal{R}_2 = \Omega/(\mathrm{KAL}\cdot\mathrm{TRIAL}) = 0.071875$
-(with $\Omega=\pi+\varphi=4.759627$, $\mathrm{KAL}=5.521406$, $\mathrm{TRIAL}=11.993542$),
+$\mathcal{R}_2 = \Omega/(\mathrm{KAL}\cdot\mathrm{TRIAL}) = \val{R2_STABILITY_d6}$
+(with $\Omega=\pi+\varphi=\val{OMEGA_d6}$, $\mathrm{KAL}=\val{KAL0_d6}$, $\mathrm{TRIAL}=\val{T_R_d6}$),
 combined with the Israel--Stewart relaxation time
 $\tau_\Pi H_0 = \mathrm{KAL}/(3\,|w_0|) = 2.191$ (the saturation
-ratio $|w_0|=T_r/M_v=0.839950$, an equation-of-state quantity carrying no
-$H$, \emph{not} the density fraction $\Omega_{\rm DE}=0.691119$):
+ratio $|w_0|=T_r/M_v=\val{S_DE_d6}$, an equation-of-state quantity carrying no
+$H$, \emph{not} the density fraction $\Omega_{\rm DE}=\val{OMDE_DENS_d6}$):
 \begin{equation}
   \Sigma m_\nu^{\rm active}
     = \mathcal{R}_2\,\Omega_b h^2\,\frac{93.14~\mathrm{eV}}{\tau_\Pi H_0}
@@ -771,7 +772,7 @@ with gravitational reheating is reserved for Paper~B.
 \paragraph{Objection B-3 — Factor of~200 in the original formula.}
 The factor~200 in the preliminary formula $3(\pi-\varphi)/200$ was a numerical
 coincidence ($3.2\sigma$ from Planck) that has been superseded.
-The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = 0.022418$ ($0.32\sigma$ from Planck~2018).
+The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018).
 The denominator is the pure algebraic combination whose value, read in
 km\,s$^{-1}$\,Mpc$^{-1}$, is the SSEE Hubble anchor; no free numerical factor
 remains; the physical baryon density $\Omega_b = 0.0495$ is a pure $\varphi,\pi$
@@ -791,10 +792,10 @@ The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
 
 We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 \begin{itemize}
-  \item $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = 67.962137$ ($1.1\sigma$ from Planck)
+  \item $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ ($1.1\sigma$ from Planck)
   \item $\Omega_b = 0.0495$ ($<0.4\%$ from Planck)
-  \item $n_s = 1-\varphi^{-7} = 0.965558$ ($0.16\sigma$ from Planck)
-  \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = 0.119514$ ($0.41\sigma$ from Planck, forward)
+  \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck)
+  \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($0.41\sigma$ from Planck, forward)
   \item $Y_p = 0.2472$ ($0.2\sigma$ from Planck CMB, $0.6\sigma$ from HII — no fit)
   \item $\delta_c^{\rm SSEE} = 1.67634$ ($z_c{=}0$) from spherical collapse on the
         model background, i.e.\ $\Lambda$CDM-like to $0.02\%$; the earlier
@@ -857,7 +858,7 @@ post-hoc tuning.
 
 \paragraph{Verification.}
 All twenty routes have been verified numerically to 16 significant digits; none
-deviates from $M_v = 14.278879927019064$ by more than floating-point
+deviates from $M_v = \val{M_V_d15}$ by more than floating-point
 rounding ($<10^{-14}$). All constants are derived algebraically from $\varphi$
 and $\pi$; no external data file is required.
 

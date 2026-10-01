@@ -55,6 +55,7 @@ and the Amplitude Ceiling}}
 \date{May 2026 \quad (SSEE, Paper~5 of~10)}
 
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -81,7 +82,7 @@ addressing three interconnected questions:
 relevant modes?
 \emph{(Q2)}~Do linear IS perturbations dynamically source the factor
 $\approx2$ that earlier drafts read between $\Omega_{m,\mathrm{CMB}}$ and the
-number $s_m=0.160050$, or is there nothing to source (the former interpretation
+number $s_m=\val{S_M_d6}$, or is there nothing to source (the former interpretation
 as a ``$\mathrm{MIRA}$ factor'' having been retired in the $\omega_m$-direct
 reframe, OP-8 dissolved, and $s_m$ being a quantity of the equation of state
 rather than a second matter sector)?
@@ -116,11 +117,11 @@ sector for them to link to.
 A background IS viscous calculation also fails to generate the factor (yielding
 $\approx3.04$, not $\approx2$). The CMB-to-dynamical ratio $\approx1.93$ is therefore
 not a fluid-dynamical effect.  Nor is it a ratio of two matter densities, as
-earlier versions of this abstract stated: $\Omega_{m,\mathrm{dyn}}=0.160050$ is
+earlier versions of this abstract stated: $\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$ is
 not a density but $1+w_0$, a quantity of the equation of state, so the
-difference $0.308881-0.160$ that once defined a second sector subtracts
+difference $\val{OMEGA_M_TOTAL_d6}-0.160$ that once defined a second sector subtracts
 objects of different kinds.  That construction is retracted (Paper~6).  The
-matter content is a single sector, $\Omega_m = \omega_m/h^2 = 0.308881$, and
+matter content is a single sector, $\Omega_m = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, and
 the algebraic number $\mathrm{MIRA}=(3\varphi+\pi)/4\simeq1.999$ survives only
 as the Hubble-screening amplitude of Paper~9, no longer as a matter factor.
 
@@ -128,9 +129,9 @@ For Q3, we compute the IS growth index $\gamma_{\mathrm{IS}} = 0.5504 \pm 0.0003
 (consistent with $\gamma_{\Lambda\mathrm{CDM}} \simeq 0.55$), the growth
 factor $\mathcal{G} = D_1^{\mathrm{SSEE}}/D_1^{\Lambda\mathrm{CDM}} = 1.0032$
 (growth essentially identical to $\Lambda$CDM once the correct cosmological
-background $\Omega_{m,\mathrm{cosm}} = 0.308881$ is used in the Poisson source;
+background $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ is used in the Poisson source;
 see Paper~1, \S``$\omega_m$-direct'' --- the Two-$\Omega_m$ Criterion that
-once stated this rule is itself \emph{withdrawn}, because $s_m=0.160050$ was
+once stated this rule is itself \emph{withdrawn}, because $s_m=\val{S_M_d6}$ was
 never a density that could compete for the slot),
 and the predicted $S_8 = \sigma_8(\Omega_{m,\mathrm{CMB}}/0.3)^{0.5}$.
 The amplitude is a separate matter and is not this paper's result.  Fixing
@@ -157,7 +158,7 @@ paper establishes is the growth \emph{shape}, $\mathcal{G}$ and
 $\gamma_{\mathrm{IS}}$, which are amplitude-independent.
 The $f\sigma_8$ mean tension is $0.70\sigma$, essentially identical to $\Lambda$CDM
 ($0.73\sigma$): SSEE does not suppress or enhance structure formation relative to
-$\Lambda$CDM once $\Omega_{m,\mathrm{cosm}}=0.308881$ governs the growth equation.
+$\Lambda$CDM once $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ governs the growth equation.
 
 Finally, we map the SSEE IS parameters to the EFT-of-dark-energy operator basis
 \citep{Gubitosi2013,Bellini2015}, show that IS viscosity generates a unique
@@ -186,7 +187,7 @@ in the background sector; see Paper~1 \S1.3) whose equation-of-state parameters
   w_0 = -\frac{T_r}{M_v}
   = -\frac{3(\varphi+\beta)}{\varphi+\pi+K_v}
   \simeq -0.8399, \qquad
-  w_a = -\frac{P_{sc}}{I_g} \simeq -0.66997,
+  w_a = -\frac{P_{sc}}{I_g} \simeq \val{WA_d5},
   \label{eq:w0_wa}
 \end{equation}
 are derived algebraically from the golden ratio $\varphi=(1+\sqrt{5})/2$ and $\pi$,
@@ -199,14 +200,14 @@ $\chi^2_r \leq 1.062$ \citep{SSEE_Paper3}.
 
 Paper~4 \citep{SSEE_Paper4} identifies the algebraic structure constants
 \begin{align}
-  \KALz &\equiv \beta + \pi \simeq 5.5214
+  \KALz &\equiv \beta + \pi \simeq \val{KAL0_d4}
   \quad\text{(Structural Retention)}, \\
-  \mathrm{MIRA} &\equiv \frac{3\varphi+\pi}{4} \simeq 1.9989
+  \mathrm{MIRA} &\equiv \frac{3\varphi+\pi}{4} \simeq \val{MIRA_d4}
   \quad\text{(MIRA factor)},
 \end{align}
 and (under the $\omega_m$-direct reframe; OP-8 dissolved) the CMB matter
 density is the standard physical $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2
-\simeq 0.308881$, built from the algebraic
+\simeq \val{OMEGA_M_TOTAL_d6}$, built from the algebraic
 $\omega_m=\omega_b+\omega_c+\omega_\nu$, in $0.88\sigma$ agreement with
 Planck 2018. (The earlier MIRA mapping $\Omega_{m,\mathrm{dyn}}\times\mathrm{MIRA}\simeq0.3199$
 is superseded.)
@@ -240,7 +241,7 @@ inconsistent with data \citep{Calabrese2011}.
 We stress that this bare instability is an artefact of the \emph{effective-fluid}
 (constant-$w$) closure $c^2_s = w$, \emph{not} a property of the fundamental SSEE
 field. The dark-energy action is the ghost condensate of Paper~7,
-$K = c_1X + c_2X^2$ with $c_2X/c_1 = -0.522735$, which is independently
+$K = c_1X + c_2X^2$ with $c_2X/c_1 = \val{u_condensado_d6}$, which is independently
 ghost-free and gradient-stable with adiabatic sound speed
 \begin{equation}
   c^2_{s,\mathrm{ad}} = \frac{1+2u}{1+6u} = \frac{M_v-T_r}{5M_v+3T_r}
@@ -253,7 +254,7 @@ a clustered rather than smooth dark energy.
 $c^2_{s,\mathrm{ad}}\in[0.60,1]$ and attributed the Lagrangian to ``Papers~7
 and~10''. That value was computed from $K(X)=X/\KALz+X^2/M^4$, which is
 Paper~10's \emph{screening} functional and not the dark-energy action: the two
-carry different coefficient ratios ($+0.008577$ against $-0.522735$) and do
+carry different coefficient ratios ($+0.008577$ against $\val{u_condensado_d6}$) and do
 different jobs \citep{SSEE_Paper10}. The sound speed of the dark-energy sector
 is the one above.
 The IS analysis below addresses the \emph{hydrodynamic} (fluid) description used
@@ -421,9 +422,9 @@ depending on the divisor:
 \toprule
 divisor & $\zeta/(\rho\,\tauPi)$ \\
 \midrule
-$\rho_{\rm crit}$ (total)         & $0.691119$ \\
+$\rho_{\rm crit}$ (total)         & $\val{OMDE_DENS_d6}$ \\
 $\rho_{\rm DE}$                   & $1.000000$ \\
-$\rho_{\rm DE}+p_{\rm DE}$ (enthalpy) & $6.248039$ \\
+$\rho_{\rm DE}+p_{\rm DE}$ (enthalpy) & $\val{inv_1pw0_d6}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -624,7 +625,7 @@ standard Runge-Kutta methods.
 \centering
 \caption{Background cosmology and IS relaxation parameters across cosmic history.
   $H/H_0$ is computed from the SSEE CPL Friedmann equation with the matter
-  density $\Omega_m=0.308881$ and CPL dark energy.%
+  density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ and CPL dark energy.%
 % 2026-09-07: esta tabla se calculaba con Omega_m,dyn = 0.160050 en la ranura
 % de DENSIDAD de la ecuacion de Friedmann. Ese numero es 1+w_0, la ecuacion de
 % estado, y entra por la presion, nunca como densidad de materia (Paper 1
@@ -859,11 +860,11 @@ Poisson equation is
 \begin{equation}
   \Omega_{m,\mathrm{eff}} = \Omega_m + \Omega_{\mathrm{DE}}\,r,
   \quad r \equiv \frac{\delta_{\mathrm{DE}}}{\delta_m}\bigg|_{z=0},
-  \qquad \Omega_m = 0.308881,\ \ \Omega_{\mathrm{DE}} = 0.691119,
+  \qquad \Omega_m = \val{OMEGA_M_TOTAL_d6},\ \ \Omega_{\mathrm{DE}} = \val{OMDE_DENS_d6},
   \label{eq:Omeff}
 \end{equation}
 with the \emph{densities} in both slots. Until 2026-09-26 this equation carried
-$\Omega_{m,\mathrm{dyn}}=0.160050$ and $\Omega_{\mathrm{DE}}=0.839950$, which are the
+$\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$ and $\Omega_{\mathrm{DE}}=\val{S_DE_d6}$, which are the
 saturations $s_m=1+w_0$ and $s_{\rm DE}=|w_0|$ --- equation-of-state numbers in a
 density slot, inside a Poisson source. The substitution does not move the
 measured $r$, which is the output of the perturbation integration and never
@@ -873,10 +874,10 @@ enhancement this clustering would produce.
 
 \paragraph{What this section does and does not test (reframed 2026-09-26).}
 Earlier versions posed $\mathcal{R}$ as a test of whether the perturbations
-\emph{reproduce} the algebraic $\mathrm{MIRA}=1.9989$, under the mapping
+\emph{reproduce} the algebraic $\mathrm{MIRA}=\val{MIRA_d4}$, under the mapping
 $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}} = 0.3199$ then in force.
 That mapping was withdrawn on 2026-06-18 when OP-8 closed: there is no matter
-factor in the model, $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=0.308881$ is derived, and
+factor in the model, $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ is derived, and
 $\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation rather than a density. So there is no
 longer a factor of two for the perturbations to supply, and a
 ``$50\%$ discrepancy'' from a withdrawn target is not a result.
@@ -886,7 +887,7 @@ $r^*=0.4464$ is retained only as the scale that a two-fold enhancement would
 have demanded, which is what makes the smallness of the measured $r$ meaningful:
 \begin{equation}
   r^* = \frac{(\mathrm{MIRA}-1)\,\Omega_m}{\Omega_{\mathrm{DE}}}
-  = \frac{0.998924 \times 0.308881}{0.691119}
+  = \frac{\val{MIRA_m1_d6} \times \val{OMEGA_M_TOTAL_d6}}{\val{OMDE_DENS_d6}}
   \simeq 0.4464.
   \label{eq:r_required}
 \end{equation}
@@ -926,7 +927,7 @@ $k\,[H_0/c]$ & $\delta_m(z=0)$ & $r = \delta_{\mathrm{DE}}/\delta_m$
 \multicolumn{4}{l}{Mean ($k \geq 10\,H_0/c$, IS-stabilised):}
   & $0.9897 \pm 0.0167$ & \\
 \multicolumn{4}{l}{Would require ($r = r^* = 0.4464$):}
-  & $1.9989$ & \\
+  & $\val{MIRA_d4}$ & \\
 \multicolumn{4}{l}{$\Rightarrow$ bound: $|r| \leq 0.0175$ for $k\geq10$, i.e.\ $3.9\%$ of $r^*$}
   &  & \\
 \bottomrule
@@ -984,9 +985,9 @@ confirming the power-law decrease seen in Table~\ref{tab:MIRA}.
   would require DE clustering at the $19\%$ level — \emph{not} produced by IS dynamics.
   The conclusion stands: MIRA is \emph{not} reproduced by IS dynamics, at either
   level --- linear perturbations give $\mathcal{R}\approx1$ and the background
-  IS Friedmann integration a ratio $\approx3.04$, neither of them $1.9989$.
+  IS Friedmann integration a ratio $\approx3.04$, neither of them $\val{MIRA_d4}$.
   Both figures are recorded here as the \emph{historical} closing of a route
-  that is no longer open: the target $1.9989$ was the matter factor
+  that is no longer open: the target $\val{MIRA_d4}$ was the matter factor
   $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}$, withdrawn on
   2026-06-18 when OP-8 closed. MIRA survives as the screening entity of
   Paper~9, where it is not a matter factor and nothing here bears on it.
@@ -1010,7 +1011,7 @@ IS-suppressed DE perturbations ($\delta_{\mathrm{DE}} \approx 0$):
   \label{eq:D1_ode}
 \end{equation}
 where $\Omega_m(a) = \Omega_{m,\mathrm{cosm}}H_0^2/(H^2 a^3)$,
-$\Omega_{m,\mathrm{cosm}} = 0.308881$ is the gravitational background density
+$\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ is the gravitational background density
 ($\omega_m$-direct $=\omega_m/h^2$, the CMB-inferred value; the earlier
 MIRA-enhanced $0.3199$ is superseded), and primes
 denote $d/d\ln a$.
@@ -1035,14 +1036,14 @@ $\chi^2 = \sum_{a}[f(a) - \Omega_m(a)^\gamma]^2$ over $a \in [0.3, 1]$
   \label{eq:gamma_IS}
 \end{equation}
 consistent with $\gamma_{\Lambda\mathrm{CDM}} = 0.55 \pm 0.01$ \citep{Linder2005}.
-The growth index is indistinguishable from $\Lambda$CDM; with $\Omega_{m,\mathrm{cosm}}=0.308881$
+The growth index is indistinguishable from $\Lambda$CDM; with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 governing the Poisson source, the growth rate $f(z)$ itself is also very close to
 $\Lambda$CDM across all redshifts (Table~\ref{tab:growth}).
 
 \begin{table}[h!]
 \centering
 \caption{Growth rate $f = d\ln D_1/d\ln a$ at selected redshifts,
-  comparing SSEE (IS dynamics, $\Omega_{m,\mathrm{cosm}}=0.308881$) with
+  comparing SSEE (IS dynamics, $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$) with
   $\Lambda$CDM ($\Omega_m=0.315$).
   The growth index fit gives $\gamma_{\rm IS} = 0.5504$.}
 \label{tab:growth}
@@ -1059,7 +1060,7 @@ $z$ & $\Omega_m^{\mathrm{SSEE}}(a)$ & $f_{\mathrm{SSEE}}$ & $f_{\Lambda\mathrm{C
 
 The SSEE and $\Lambda$CDM growth rates are essentially identical at all redshifts,
 with differences of $\lesssim 2\%$ (and $\lesssim 1.6\%$ at $z=0.5$).
-With $\Omega_{m,\mathrm{cosm}} = 0.308881$ in the Poisson source, the gravitational
+With $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ in the Poisson source, the gravitational
 clustering environment is close to $\Lambda$CDM ($\Omega_{m,\Lambda\mathrm{CDM}}=0.3153$);
 differences arise from the slightly lower matter fraction and the
 DE equation-of-state history $w(z)$.
@@ -1083,10 +1084,10 @@ We find
 \end{equation}
 SSEE grows \emph{marginally faster} than $\Lambda$CDM ($\sim$0.3\%).
 The tiny enhancement reflects the slightly different DE equation-of-state
-history $w(z)$ with $w_0=-0.839950$, $w_a=-0.669975$: the energy density transferred
+history $w(z)$ with $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$: the energy density transferred
 from DE to matter-like perturbations at intermediate redshifts slightly boosts
 $D_1$ relative to a $\Lambda$CDM universe with the same $\Omega_{m,\mathrm{cosm}}$.
-The $\omega_m$-direct background $\Omega_{m,\mathrm{cosm}}=0.308881$ is slightly
+The $\omega_m$-direct background $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ is slightly
 \emph{below} $\Omega_{m,\Lambda\mathrm{CDM}}=0.3153$, so the net enhancement
 ($0.3\%$) is smaller than under the superseded $\Omega_{m}=0.3199$ background
 ($1.1\%$), and lies below near-term weak-lensing growth sensitivity.
@@ -1109,7 +1110,7 @@ Using $\sigma_{8,\Lambda\mathrm{CDM}} = 0.811$ \citep{Planck2018}:
   \sigma_8^{\mathrm{SSEE}} = 0.811 \times 1.0032 = 0.8136 \pm 0.006.
   \label{eq:sigma8_SSEE}
 \end{equation}
-This IS linear-growth amplitude gives $S_8^{\mathrm{IS}} = 0.8136\sqrt{0.308881/0.3}
+This IS linear-growth amplitude gives $S_8^{\mathrm{IS}} = 0.8136\sqrt{\val{OMEGA_M_TOTAL_d6}/0.3}
 = 0.8256$ ($2.7\sigma$ KiDS-1000), milder than the conservative CLASS amplitude
 ceiling derived below.
 
@@ -1129,7 +1130,7 @@ The Planck–lensing tension is $2.4\sigma$ with KiDS and $2.7\sigma$ with DES,
 representing one of the most persistent $\Lambda$CDM discrepancies \citep{Weinberg2013}.
 
 For SSEE, the all-cold single sector uses the $\omega_m$-direct CMB density
-$\Omega_{m,\mathrm{CMB}} = 0.308881$ ($=\omega_m/h^2$, no matter factor; the
+$\Omega_{m,\mathrm{CMB}} = \val{OMEGA_M_TOTAL_d6}$ ($=\omega_m/h^2$, no matter factor; the
 earlier MIRA value $0.3199$ is superseded) and the CLASS amplitude ceiling
 $\sigma_8^{\mathrm{SSEE}} = 0.8149$:
 % VALOR ACTUALIZADO 2026-09-08. Aqui decia sigma_8 = 0.8335 -> S_8 = 0.846, con
@@ -1148,7 +1149,7 @@ $\sigma_8^{\mathrm{SSEE}} = 0.8149$:
 % La barra +/- 0.006 viene de antes y NO se ha recomputado.
 \begin{equation}
   \boxed{S_8^{\mathrm{SSEE,\,ceiling}}
-    = 0.8149 \times \sqrt{\frac{0.308881}{0.3}}
+    = 0.8149 \times \sqrt{\frac{\val{OMEGA_M_TOTAL_d6}}{0.3}}
     = 0.8149 \times 1.0147
     = 0.827 \pm 0.006.}
   \label{eq:S8_SSEE}
@@ -1167,7 +1168,7 @@ resolve.
 \centering
 \caption{$S_8$ comparison: SSEE prediction versus observations.
   Tensions are quoted in units of $\sigma$.
-  SSEE single-sector ceiling uses $\Omega_{m,\mathrm{CMB}} = 0.308881$
+  SSEE single-sector ceiling uses $\Omega_{m,\mathrm{CMB}} = \val{OMEGA_M_TOTAL_d6}$
   ($\omega_m$-direct) and $\sigma_8 = 0.8149$.
   Tensions use combined uncertainties $\sigma_{\rm tot} = \sqrt{\sigma_{\rm obs}^2 + \sigma_{\rm SSEE}^2}$.}
 \label{tab:S8}
@@ -1190,7 +1191,7 @@ The SSEE single-sector ceiling $S_8 = 0.827$ is $0.4\sigma$ above Planck 2018 an
 $2.7\sigma$/$2.8\sigma$ tension with KiDS-1000/DES-Y3.
 This places SSEE in a similar position to $\Lambda$CDM ($S_8^{\Lambda\mathrm{CDM}}=0.831$,
 tensions $3.0\sigma$/$3.3\sigma$), marginally worse.
-The IS growth sector with the correct cosmological background $\Omega_{m,\mathrm{cosm}}=0.308881$
+The IS growth sector with the correct cosmological background $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 neither resolves nor worsens the $S_8$ tension beyond the $\Lambda$CDM baseline.
 A confirmed measurement of $S_8 > 0.86$ would be \emph{favoured} by SSEE over $\Lambda$CDM;
 conversely, $S_8 < 0.80$ would disfavour both SSEE and $\Lambda$CDM at comparable
@@ -1246,7 +1247,7 @@ $f\sigma_8(z) \equiv f(z)\,\sigma_8\,D_1(z)/D_1(0)$
 provides the most direct test of the linear growth rate and is independent
 of galaxy bias at leading order.
 SSEE predicts $f\sigma_8(z)$ values essentially identical to $\Lambda$CDM at all
-redshifts, because with $\Omega_{m,\mathrm{cosm}}=0.308881$ in the growth equation
+redshifts, because with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in the growth equation
 both models share the same gravitational clustering environment (Fig.~\ref{fig:fsigma8}).
 
 \begin{figure}[h!]
@@ -1256,7 +1257,7 @@ both models share the same gravitational clustering environment (Fig.~\ref{fig:f
     (dashed red) versus RSD measurements from 6dFGRS \citep{Beutler2012},
     SDSS MGS \citep{Howlett2015}, BOSS DR12 \citep{Alam2017}, and
     eBOSS DR16 \citep{Hou2021}.
-    The SSEE prediction ($\Omega_{m,\mathrm{cosm}}=0.308881$ in growth equation)
+    The SSEE prediction ($\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in growth equation)
     is essentially identical to $\Lambda$CDM at $z < 1$, with a mean tension
     of $0.70\sigma$ across six data points (vs.\ $0.73\sigma$ for $\Lambda$CDM).}
   \label{fig:fsigma8}
@@ -1293,7 +1294,7 @@ eBOSS DR16 & \citet{Hou2021}      & 1.480 & $0.462\pm0.045$ & 0.385 & $1.7\sigma
 The mean tension of $0.70\sigma$ across six surveys is indistinguishable
 from the $\Lambda$CDM baseline ($0.73\sigma$).
 SSEE and $\Lambda$CDM produce virtually identical $f\sigma_8(z)$ curves when
-$\Omega_{m,\mathrm{cosm}}=0.308881$ governs the Poisson source.
+$\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ governs the Poisson source.
 The tiny $\sim$1\% difference in $\mathcal{G}$ propagates to at most $0.01\sigma$
 extra tension — well below the precision of current surveys.
 
@@ -1425,14 +1426,14 @@ equations as \citep{Zimdahl1996,Maartens1996}:
 where in the SSEE steady state $\Pi_{\mathrm{bulk}} = -3\zeta H = -\KALz\,\rho_{\mathrm{DE}}H$.
 This viscous term effectively shifts the observed matter density. However, numerical integration of the background IS transport equations reveals that fitting an effective $\Omega_m$ to the resulting $H(z)$ evolution yields $\Omega_{m,\mathrm{fit}} / \Omega_{m,\mathrm{dyn}} \approx 3.04$ when using the SSEE viscous constant $\zeta = \KALz/3$. 
 
-This is $52\%$ higher than the algebraic MIRA factor ($1.9989$). We therefore establish that $\mathrm{MIRA}$ \emph{cannot} be derived from the background Israel--Stewart viscous pressure; the classical IS route is ruled out at both the linear-perturbation and background levels. \textbf{Historical note (2026-09-26).} The quantity being chased here, the matter factor $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}=0.3199$, was withdrawn on 2026-06-18 when OP-8 closed: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=0.308881$ is derived with no factor, and $\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation, not a density. The $3.04$ and the $52\%$ are therefore the record of a route closing, not a live tension --- there is no longer a factor of two to derive. The negative result is kept because it is what shut the route.
+This is $52\%$ higher than the algebraic MIRA factor ($\val{MIRA_d4}$). We therefore establish that $\mathrm{MIRA}$ \emph{cannot} be derived from the background Israel--Stewart viscous pressure; the classical IS route is ruled out at both the linear-perturbation and background levels. \textbf{Historical note (2026-09-26).} The quantity being chased here, the matter factor $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}=0.3199$, was withdrawn on 2026-06-18 when OP-8 closed: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ is derived with no factor, and $\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation, not a density. The $3.04$ and the $52\%$ are therefore the record of a route closing, not a live tension --- there is no longer a factor of two to derive. The negative result is kept because it is what shut the route.
 
 The physical basis once attributed to Paper~6 is withdrawn, and the reason is
 worth recording because it is a result rather than a change of opinion.
 That construction defined a second matter sector by the difference
 $\Omega_{\phi\text{-DM}} = \Omega_{m,\mathrm{CMB}} - \Omega_{m,\mathrm{dyn}}
-= 0.308881 - 0.160050$, and drew from it an algebraically fixed particle mass and
-a free-streaming cutoff.  But $\Omega_{m,\mathrm{dyn}} = 0.160050$ is not a
+= \val{OMEGA_M_TOTAL_d6} - \val{S_M_d6}$, and drew from it an algebraically fixed particle mass and
+a free-streaming cutoff.  But $\Omega_{m,\mathrm{dyn}} = \val{S_M_d6}$ is not a
 density: it is $1+w_0$, a quantity of the equation of state.  The subtraction
 is dimensionally well formed and physically empty --- it takes a measured
 density minus a number belonging to the equation of state --- so the sector it
@@ -1449,7 +1450,7 @@ KiDS-1000 $\xi_\pm$ with a single matter sector gives
 $S_8 = 0.7555\pm0.0192$, $0.11\sigma$ from KiDS-1000 (Paper~6).
 
 The consequence for this paper is confined to \S\ref{subsec:MIRA_background}:
-$\mathrm{MIRA}$ retains its algebraic value $(3\varphi+\pi)/4 = 1.998924$ and
+$\mathrm{MIRA}$ retains its algebraic value $(3\varphi+\pi)/4 = \val{MIRA_d6}$ and
 its role in the screening fraction $f_{\rm screen}$ of Paper~9, but it has
 \emph{no proposed physical carrier at present}.  We state that as an open gap
 rather than fill it.  The Q1, Q2 and Q3 results of this paper are unaffected:
@@ -1469,8 +1470,8 @@ against $\Lambda$CDM's $1.67599 \to 1.68646$: the two are the same to
 $0.02\%$. The value $\delta_c^{\mathrm{SSEE}}=1.6284$ carried by earlier
 versions was a postulate of Paper~4, now \textbf{withdrawn} (OP-27); the
 model's own dynamics do not produce it. Matter
-clusters in a background with $\Omega_m = 0.308881$ --- the one matter density
-of the model; the number $0.160050$ that earlier versions of this subsection
+clusters in a background with $\Omega_m = \val{OMEGA_M_TOTAL_d6}$ --- the one matter density
+of the model; the number $\val{S_M_d6}$ that earlier versions of this subsection
 placed here is $1+w_0$, an equation-of-state parameter, and never was a
 density (Paper~1, \S\emph{One matter density}).
 
@@ -1478,11 +1479,11 @@ density (Paper~1, \S\emph{One matter density}).
 Earlier versions of this subsection reported
 $n_{\mathrm{SSEE}}/n_{\Lambda\mathrm{CDM}}\approx1.4$--$2.0$ for
 $M>10^{11}\,M_\odot$ at $z>10$ from a Press--Schechter calculation whose
-growth factor was fed $\Omega_m=0.160050$ as a matter density. That input was a
-category error --- $0.160050$ is $1+w_0$ --- and the calculation has been
+growth factor was fed $\Omega_m=\val{S_M_d6}$ as a matter density. That input was a
+category error --- $\val{S_M_d6}$ is $1+w_0$ --- and the calculation has been
 redone (\texttt{src/p02\_mcmc/ssee\_press\_schechter.py}, 2026-09-07) with
-$\Omega_m=0.308881$, the measured growth index $\gamma_{\rm IS}=0.5504$
-(\S\ref{subsec:gamma_IS}) and the global rate $H_0^{\rm glob}=67.962$. With both
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$, the measured growth index $\gamma_{\rm IS}=0.5504$
+(\S\ref{subsec:gamma_IS}) and the global rate $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$. With both
 cosmologies evaluated at their \emph{own} CMB-fitted amplitude
 ($\sigma_8=0.81530$ for SSEE, $0.811$ for $\Lambda$CDM) and with the
 \emph{derived} collapse threshold:
@@ -1503,7 +1504,7 @@ forms marginally \emph{fewer} massive early haloes than $\Lambda$CDM. The
 deficit grows with mass and redshift, reaching $0.892$ at
 $3\times10^{12}M_\odot$, $z=10$ and $0.778$ at the same mass at $z=15$, and it
 is not an amplitude effect: \SSEE\ carries the \emph{larger} $\sigma_8$. It is
-the growth history --- a smaller $\Omega_m$ ($0.308881$ against $0.3153$) and
+the growth history --- a smaller $\Omega_m$ ($\val{OMEGA_M_TOTAL_d6}$ against $0.3153$) and
 the CPL background grow less between $z\sim10$ and today. At the masses JWST
 actually probes ($M\sim10^{10.8}M_\odot$) the ratio is $0.99$: indistinguishable
 from $\Lambda$CDM. \SSEE\ offers no account of the JWST excess, and the
@@ -1525,7 +1526,7 @@ above.
 \subsection{The $S_8$--$f\sigma_8$ alignment and the role of $\Omega_{m,\mathrm{cosm}}$}
 \label{subsec:S8_fsigma8_split}
 
-With the correct cosmological background $\Omega_{m,\mathrm{cosm}} = 0.308881$
+With the correct cosmological background $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$
 governing the Poisson source in the growth equation, both $S_8$ and
 $f\sigma_8$ predictions align closely with $\Lambda$CDM:
 
@@ -1548,10 +1549,10 @@ $f\sigma_8$ predictions align closely with $\Lambda$CDM:
         identical to $\Lambda$CDM ($0.73\sigma$).
 \end{itemize}
 
-The two observables are consistent: once $\Omega_{m,\mathrm{cosm}}=0.308881$
+The two observables are consistent: once $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 sets the gravitational background, SSEE differs from $\Lambda$CDM only
 through the slightly lower matter fraction and the DE equation-of-state history
-$w(z)$ with $w_0=-0.839950$, $w_a=-0.669975$.
+$w(z)$ with $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$.
 This drives a $\sim$0.3\% enhancement of $\mathcal{G}$ and $\sigma_8$, which
 translates to a marginally different $S_8$.
 
@@ -1565,7 +1566,7 @@ $S_8 = 0.7555\pm0.0192$.
 \subsection{The $H_0$ tension and SSEE}
 \label{subsec:H0}
 
-SSEE predicts $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 \simeq 67.962$ \citep{SSEE_Paper4},
+SSEE predicts $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 \simeq \val{H0_ALG_d3}$ \citep{SSEE_Paper4},
 consistent with Planck 2018 ($67.36 \pm 0.54$) at $1.1\sigma$ and with DESI DR2.
 The IS mechanism does not modify $H_0$ directly, since the viscous pressure
 $\Pi_{\mathrm{bulk}}$ averages to zero at early times ($z > 5$) when
@@ -1608,7 +1609,7 @@ $\gamma_{\rm IS} = 0.5504$ & $0.5504 \pm 0.0003$ & $\gamma$ degenerate with $\La
 $f\sigma_8(z=0.5) = 0.4714$ & $0.4714 \pm 0.010$ & $0.3\sigma$ BOSS; mean $0.70\sigma$ (6 surveys) & DESI full-shape / 2026 \\
 $D_1$ ratio $\mathcal{G} = 1.0032$ & $1.0032 \pm 0.005$ & $0.3\%$ enhancement; below near-term ($\gtrsim 1\%$) sensitivity & Euclid weak lensing / 2027 \\
 No DE clustering ($|\delta_{\mathrm{DE}}/\delta_m| < 10^{-3}$) & $< 10^{-3}$ at $k > 20\,H_0/c$ & cosmic variance & Future 21cm surveys / 2030+ \\
-MIRA $= (3\varphi+\pi)/4$ (algebraic; the two-sector basis is retracted, Paper~6 --- see OP-8) & $1.998924$ & $\Omega_m$ direct measurement & Stage IV CMB / 2030 \\
+MIRA $= (3\varphi+\pi)/4$ (algebraic; the two-sector basis is retracted, Paper~6 --- see OP-8) & $\val{MIRA_d6}$ & $\Omega_m$ direct measurement & Stage IV CMB / 2030 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1641,7 +1642,7 @@ consistent with thermodynamic stability.
 \paragraph{Q2 — MIRA factor (pure algebraic axiom).}
 Linear IS perturbations yield
 $\mathcal{R} = 0.9897 \pm 0.0167$ versus the former target
-$\mathrm{MIRA}_{\mathrm{alg}} = 1.9989$ at all sub-horizon scales.
+$\mathrm{MIRA}_{\mathrm{alg}} = \val{MIRA_d4}$ at all sub-horizon scales.
 The discrepancy is $50\%$, establishing that the MIRA factor is not a
 perturbative phenomenon.
 Furthermore, numerical integration of the background IS Friedmann equations yields an effective ratio of $3.04$, failing to reproduce the matter factor at the background level --- a figure retained as the historical record of that route closing, since the factor it targeted was itself withdrawn in 2026-06 (OP-8).
@@ -1650,7 +1651,7 @@ We conclude that the MIRA factor does not emerge from classical Israel--Stewart 
 \paragraph{Q3 — Growth rate and $S_8$ (SSEE tracks $\Lambda$CDM closely).}
 The IS growth index $\gamma_{\mathrm{IS}} = 0.5504 \pm 0.0003$
 is numerically indistinguishable from $\gamma_{\Lambda\mathrm{CDM}} \simeq 0.55$.
-With $\Omega_{m,\mathrm{cosm}} = 0.308881$ governing the Poisson source,
+With $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ governing the Poisson source,
 the growth factor ratio is $\mathcal{G} = 1.0032$, giving
 $\sigma_8^{\mathrm{SSEE}} = 0.8136 \pm 0.006$ and an IS linear-growth
 $S_8^{\mathrm{IS}} = 0.8256 \pm 0.006$ ($2.7\sigma$ above KiDS-1000, slightly
@@ -1673,7 +1674,7 @@ resolution is retracted with the particle.
 Together, these results establish that SSEE dark energy is:
 (i) causally and thermodynamically stable (Q1),
 (ii) predictive of a growth history essentially identical to $\Lambda$CDM
-    once $\Omega_{m,\mathrm{cosm}}=0.308881$ governs the growth equation (Q3),
+    once $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ governs the growth equation (Q3),
     with $f\sigma_8$ tension of $0.70\sigma$ (vs.\ $0.73\sigma$ for $\Lambda$CDM), and
 (iii) strictly bounded: the MIRA factor cannot be derived from IS dynamics (Q2); the physical basis previously attributed to Paper~6's two-sector $\phi$-dark matter construction is \textbf{withdrawn}: that construction and its particle are retracted (Paper~6). MIRA's algebraic value $(3\varphi+\pi)/4$ is unchanged and it survives in the model only through the screening fraction $f_{\rm screen}$ (Paper~9); \textbf{what remains open is what, if anything, provides its physical basis} --- an explicitly declared gap, not a filled one.
 The primary falsifiable prediction in the growth sector is

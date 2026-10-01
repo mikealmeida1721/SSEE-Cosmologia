@@ -56,6 +56,7 @@ using DESI~DR2, Planck~2018, and Galaxy-Cluster Mass Data}
 \newcommand{\HZeroPosterior}{67.82^{+0.41}_{-0.41}}
 
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -81,7 +82,7 @@ within $1.2$--$1.5\sigma$ of the DESY5/Union3/no-SN combinations
 (a parameter-free postdiction).
 The $H_0$ posterior is $\HZeroPosterior$~km\,s$^{-1}$\,Mpc$^{-1}$,
 obtained with the global rate of the screening cascade as the $H_0$ prior
-($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962\pm0.968$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
+($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
 $0.33\sigma$ from that prediction.
 The cluster-mass sector achieves $\chi^2_r=0.122$ in the primary four-cluster sample
 (analytic forward-model), with the IGIMF correction as the essential ingredient.
@@ -90,10 +91,10 @@ favoured by $\Delta\mathrm{BIC}=-6.43$ over \LCDM\ and $-6.35$ over CPL, and
 predicts the DESI~DR2 test set better in leave-one-out cross-validation ---
 so the $\wz$--$\wa$ prediction is genuinely preferred by current BAO data.
 The background geometry uses the \emph{total} gravitating matter density
-$\Omega_m=\omega_m/h^2=0.308881$ ($\omega_m$-direct; no matter factor, OP-8
+$\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct; no matter factor, OP-8
 dissolved), for which the SSEE sound horizon matches \LCDM\
 ($r_d^{\SSEE}/r_d^{\LCDM}=1.002$) and $\Omega_m$ agrees with Planck at
-$0.88\sigma$. The saturation $s_m=1+w_0=0.160050$ is a number of the
+$0.88\sigma$. The saturation $s_m=1+w_0=\val{S_M_d6}$ is a number of the
 dark-energy equation of state, not a density, and does not enter the
 background geometry.
 \end{abstract}
@@ -101,9 +102,9 @@ background geometry.
 % Cross-reference note for reviewers
 \noindent\textbf{Note on the background matter density:} Throughout, the
 background geometry ($E(z)$, the sound horizon $r_d$, and all BAO distances)
-uses the \emph{total} gravitating matter density $\Omega_m=\omega_m/h^2=0.308881$,
+uses the \emph{total} gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$,
 built piece-by-piece from SSEE algebra ($\omega_m$-direct; no matter factor,
-OP-8 dissolved; Paper~3). The saturation $s_m=1+w_0=0.160050$ is a number of
+OP-8 dissolved; Paper~3). The saturation $s_m=1+w_0=\val{S_M_d6}$ is a number of
 the dark-energy equation of state, \emph{not} a matter density, and never enters
 $E(z)$. With the total density the SSEE sound horizon matches
 $\Lambda$CDM and model selection yields a single, unambiguous figure:
@@ -173,7 +174,7 @@ treatment.
 From $\pi$ and $\varphi=(1+\sqrt{5})/2$, the framework defines the
 structural retention $\KALz$ and the CPL \citep{Chevallier2001,Linder2003} parameters as:
 \begin{align}
-  \KALz &= \frac{\pi+\varphi}{2}+\pi \approx 5.5214, \label{eq:kal0} \\
+  \KALz &= \frac{\pi+\varphi}{2}+\pi \approx \val{KAL0_d4}, \label{eq:kal0} \\
   \wz^{\SSEE} &= -\frac{T_r}{M_v}\approx-0.840, \quad
   \wa^{\SSEE} = -\frac{P_{sc}}{I_g}\approx-0.670.
   \label{eq:ssee_pars}
@@ -205,9 +206,9 @@ level; only $H_0$ and $\Omega_b h^2$ are inferred from data.
 where $f_{\rm DE}(z)=(1+z)^{3(1+\wz+\wa)}\exp[-3\wa z/(1+z)]$ is the
 standard CPL dark-energy evolution, here used solely to translate the
 fixed \SSEE\ geometric parameters into observable distances.
-There is one matter density, $\Omega_m=\omega_m/h^2=0.308881$
+There is one matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$
 (\S\ref{sec:folding}; no matter factor, OP-8 dissolved), hence
-$\Omega_{\rm DE}=1-\Omega_m=0.691119$.
+$\Omega_{\rm DE}=1-\Omega_m=\val{OMDE_DENS_d6}$.
 The only sampled cosmological parameter is $H_0$; the algebraic
 quantities ($\wz,\wa,s_{\rm DE}^{\SSEE},\KALz$) are fixed by geometry
 as described in Section~\ref{sec:model}. The equation-of-state-sector
@@ -220,7 +221,7 @@ densities (see \S\ref{sec:folding}).
   \includegraphics[width=0.82\textwidth]{fig3_omega_de.pdf}
   \caption{\textit{Left}: $s_{\rm DE}^{\SSEE}=T_r/M_v\approx0.840$ (red line),
   the equation-of-state-sector saturation quantity (not a density fraction;
-  the physical density is $\Omega_{\rm DE}=0.691119$), shown against
+  the physical density is $\Omega_{\rm DE}=\val{OMDE_DENS_d6}$), shown against
   Planck~2018 $\Omega_\Lambda\approx0.685$ (blue) and
   DESI~DR2 $1\sigma$/$2\sigma$ bands for scale. \textit{Right}: Structural context
   showing the algebraic origin of $s_{\rm DE}$ from the $\pi$--$\varphi$ invariants.}
@@ -238,15 +239,15 @@ densities (see \S\ref{sec:folding}).
 \subsection{The sound horizon under the $\omega_m$-direct reframe}
 \label{sec:folding}
 
-Placing the cold sector alone ($1+w_0=0.160050$) in the background geometry would
+Placing the cold sector alone ($1+w_0=\val{S_M_d6}$) in the background geometry would
 give a drag scale $\rdSSEE \approx 175.6$\,Mpc, far from the Planck-inferred
 $r_d=147.09\pm0.26$\,Mpc \citep{Planck2018}. That figure is a category error:
 $0.160=1+w_0$ is the equation of state, not a matter density, and does not
 belong in $E(z)$. The physical sound horizon is set by the CMB-sector matter
 density, with \emph{no} $|w_0|$ rescaling. The recombination matter budget is the standard physical
-$\omega_m=\omega_b+\omega_c+\omega_\nu=0.14267$, built piece-by-piece from
+$\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$, built piece-by-piece from
 SSEE algebra ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, forward; Paper~3), so
-that $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$ and a CAMB integration of
+that $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ and a CAMB integration of
 the recombination physics gives
 \begin{equation}
   r_d^{\,\omega_m\text{-direct}} = 147.17\;\text{Mpc}
@@ -257,10 +258,10 @@ with \emph{no} matter factor.
 The earlier post-hoc mapping $\rdSSEE\times|w_0|\approx147.5$\,Mpc, and the
 structural ratio $\Omega_{m,\mathrm{CMB}}/\Omega_{m,\mathrm{dyn}}\approx
 \mathrm{MIRA}\approx1.999$, are \emph{superseded} by this direct construction
-(OP-8 dissolved; the actual ratio is $0.308881/0.160=1.93$, not a fixed factor).
+(OP-8 dissolved; the actual ratio is $\val{OMEGA_M_TOTAL_d6}/0.160=1.93$, not a fixed factor).
 MIRA survives only as the Hubble screening amplitude of Paper~9.
-There is one matter density, $\Omega_m=\omega_m/h^2=0.308881$; the quantity
-formerly written $\Omega_{m,\rm dyn}=0.160050$ is $1+w_0$, an equation-of-state
+There is one matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the quantity
+formerly written $\Omega_{m,\rm dyn}=\val{S_M_d6}$ is $1+w_0$, an equation-of-state
 parameter, and never was a density (Paper~1, \S1.4;
 the $\phi$-DM sector that once separated them is retracted in Paper~6).
 The falsifiable content therefore moves from the $|w_0|$ coincidence to the
@@ -340,19 +341,19 @@ $\Lambda$CDM-calibrated Planck~2018 value
 ($67.36\pm0.54$~km\,s$^{-1}$\,Mpc$^{-1}$, \citealt{Planck2018}),
 but the $H_0$ that the Planck~\texttt{plik\_lite} TTTEEE likelihood itself
 prefers under the SSEE background. With the baryon and cold-matter densities
-fixed by SSEE algebra ($\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=0.022418$,
-$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=0.119514$; Paper~3, $\omega_m$-direct),
+fixed by SSEE algebra ($\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$,
+$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$; Paper~3, $\omega_m$-direct),
 the CMB $\chi^2$ is minimised at the global rate returned by the SSEE
 screening cascade (Papers~9--10), which takes the measured SH0ES rate as input:
 \begin{equation}
-  H_0^{\rm prior,SSEE} \;=\; H_0^{\rm glob} \;=\; H_{\rm SH0ES}\,(1-f_{\rm screen}) \;=\; 67.962\pm0.968 \;\text{km\,s}^{-1}\,\text{Mpc}^{-1},
+  H_0^{\rm prior,SSEE} \;=\; H_0^{\rm glob} \;=\; H_{\rm SH0ES}\,(1-f_{\rm screen}) \;=\; \val{H0_GLOBAL_d3}\pm0.968 \;\text{km\,s}^{-1}\,\text{Mpc}^{-1},
   \label{eq:H0_prior_alg}
 \end{equation}
 where the uncertainty is the SH0ES error propagated through the (multiplicative)
 screening factor, and the central value reproduces the dimensionless algebraic
 target $3(\varphi+\pi)^2$ to $4.2\times10^{-6}$. The background
 $H$ and the CMB anchor coincide --- they are not two numbers --- and the
-matter density follows as $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$,
+matter density follows as $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$,
 with \emph{no} matter factor (the earlier MIRA mapping
 $\Omega_{m,\mathrm{CMB}}=\mathrm{MIRA}\,\Omega_{m,\mathrm{dyn}}=0.31993$ is
 superseded; OP-8 dissolved). Adopting this prior eliminates the otherwise unavoidable
@@ -364,18 +365,18 @@ but reduced under the cosmological model actually being tested.
 The only sampled parameters in the SSEE chain are $H_0$ and $\Omega_b h^2$.
 The matter density is not sampled. The background geometry --- $E(z)$, the
 sound horizon $r_d$, and every BAO distance --- uses the \emph{total} algebraic
-matter density $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$
+matter density $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$
 (\S\ref{sec:folding}, \S\ref{sec:results_cosmo}); the value
-$s_m=(\pi-\varphi)/[2(\varphi+\pi)]=1+w_0=0.160050$ is a saturation of the
+$s_m=(\pi-\varphi)/[2(\varphi+\pi)]=1+w_0=\val{S_M_d6}$ is a saturation of the
 equation of state, not a density, and does \emph{not} enter $E(z)$. Thus $r_d$ is computed from
 $\omega_m = \Omega_{m,\mathrm{CMB}}(H_0/100)^2$ self-consistently.
 A BBN prior $\Omega_b h^2 = 0.02218\pm0.00055$ \citep{Cooke2018} is adopted
 for the baryon density, consistent with the SSEE algebraic value
-$\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = 0.022418$ (Paper~4)
+$\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ (Paper~4)
 at $0.4\sigma$.
 Compared on the same footing --- total against total --- the SSEE matter
 density agrees with the $\Lambda$CDM-Planck value
-$\Omega_m = 0.3153\pm0.0073$ at $0.88\sigma$ ($\Omega_m=0.308881$).
+$\Omega_m = 0.3153\pm0.0073$ at $0.88\sigma$ ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$).
 A two-sector $\phi$-DM construction was previously invoked to describe how
 this total partitions across scales; it is retracted in Paper~6, which finds a
 single matter sector sufficient against raw shear data. The comparison above
@@ -558,7 +559,7 @@ $H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]
   & $68.27^{+0.28}_{-0.28}$
   & $67.26^{+0.51}_{-0.51}$ \\[3pt]
 $\Omega_m$
-  & $0.308881\ [\mathrm{total}]$
+  & $\val{OMEGA_M_TOTAL_d6}\ [\mathrm{total}]$
   & $0.303^{+0.004}_{-0.004}$
   & $0.317^{+0.007}_{-0.007}$ \\[3pt]
 $\wz$
@@ -578,15 +579,15 @@ $\Omega_b h^2$
 \end{table}
 
 Note that $\wz$, $\wa$, and the equation-of-state combination
-$T_r/M_v=0.839950$ (which is $|w_0|$, \emph{not} a density) are algebraically
+$T_r/M_v=\val{S_DE_d6}$ (which is $|w_0|$, \emph{not} a density) are algebraically
 fixed and do not appear as sampled columns in the \SSEE\ posterior; their
 values in Table~\ref{tab:posteriors} are listed for comparison only.
 Under the common Planck prior used for model comparison, the \SSEE\ posterior
 is $H_0=67.53\pm0.35$\,km\,s$^{-1}$\,Mpc$^{-1}$ ($0.26\sigma$ from Planck);
 under the algebraic prior (Eq.~\ref{eq:H0_prior_alg}) the reframe run gives the
 headline $H_0=\HZeroPosterior$ ($0.68\sigma$ from Planck, $0.33\sigma$ from the
-prediction $H_0^{\rm glob}=67.962$). With the total matter density
-$\Omega_m=0.308881$ in the background geometry, the DESI~DR2 posterior
+prediction $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$). With the total matter density
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry, the DESI~DR2 posterior
 \emph{coincides} with $H_0^{\rm glob}$ rather than pulling away from it: the
 earlier ``$2.9\sigma$ below anchor'' reading was the cold sector $0.160$
 misplaced in $E(z)$, now corrected. Marginalised posteriors are shown in
@@ -597,8 +598,8 @@ Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
   \includegraphics[width=0.60\textwidth]{fig_corner_ssee_halg_prior.pdf}
   \caption{Marginalised \SSEE\ posteriors ($H_0^{\rm glob}$ prior,
   $100\times25000$). Blue lines: prior central values
-  ($H_0^{\rm glob}=67.962$, $\Omega_b h^2=0.02218$). With the total matter density
-  $\Omega_m=0.308881$ in $E(z)$, the $H_0$ posterior ($\HZeroPosterior$) is
+  ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}$, $\Omega_b h^2=0.02218$). With the total matter density
+  $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$, the $H_0$ posterior ($\HZeroPosterior$) is
   consistent with $H_0^{\rm glob}$ ($0.33\sigma$) and lies $0.68\sigma$ from
   Planck; the earlier ``$2.9\sigma$ below anchor'' reading was the cold sector
   $0.160$ misplaced in $E(z)$, now corrected.}
@@ -692,12 +693,12 @@ same measurement.
 \paragraph{CMB-only constraint on $w_0$.}
 The Planck~2018 CMB-alone posterior yields $w_0 = -1.03\pm0.03$
 (68\%~CL, \citealt{Planck2018}), which differs from the \SSEE\
-prediction $w_0=-0.839950$ by $\sim6.3\sigma$ \emph{when evaluated against the
+prediction $w_0=\val{W0_d6}$ by $\sim6.3\sigma$ \emph{when evaluated against the
 CMB-only contour}.  This is not a failure of the model: the CMB-alone
 constraint on $w_0$ is driven by the acoustic-scale degeneracy
 $\theta_\ast \propto r_d/D_A$, which trades off against the full expansion
 history.  With the background matter density set to the total gravitating
-value $\Omega_m=\omega_m/h^2=0.308881$ (see below), \SSEE\ yields
+value $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (see below), \SSEE\ yields
 $r_d^{\mathrm{SSEE}}=147.17\ \mathrm{Mpc}$ (CAMB; $0.32\sigma$ from Planck's $147.09\pm0.26$)
 and $100\theta_\ast=1.04099$ at the posterior ($0.32\sigma$ from Planck): the sound horizon and
 acoustic scale are standard, so the CMB-only $w_0$ tension is the usual
@@ -711,10 +712,10 @@ context would constitute a misuse of the likelihood \citep{Verde2019}.
 
 The background geometry --- $E(z)$, the sound horizon $r_d$, and every BAO
 distance --- is governed by the \emph{total} gravitating matter density
-$\Omega_m = \omega_m/h^2 = 0.308881$, with
-$\omega_m=\omega_b+\omega_c+\omega_\nu=0.14267$ built piece-by-piece from SSEE
+$\Omega_m = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, with
+$\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$ built piece-by-piece from SSEE
 algebra ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, forward; Paper~3). This is
-the standard physical matter density. The saturation $s_m=1+w_0=0.160050$ is
+the standard physical matter density. The saturation $s_m=1+w_0=\val{S_M_d6}$ is
 \emph{not} a density: it is a number of the dark-energy equation of state, and
 it never enters $E(z)$.
 With the total density the SSEE sound horizon (computed with CAMB at the
@@ -727,7 +728,7 @@ algebraic $\omega_b$, $\omega_m$ and $\sum m_\nu$) matches the Planck measuremen
 so there is no enlarged sound horizon and no background discrepancy to
 compensate. The $H_0$ posterior sits at $\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-1}$
 under the $H_0^{\rm glob}$ prior --- $0.68\sigma$ from Planck and $0.33\sigma$
-from the prediction $H_0^{\rm glob}=67.962$. Removing the $H_0$ prior
+from the prediction $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$. Removing the $H_0$ prior
 altogether leaves DESI~DR2 alone (with only a BBN prior on $\omega_b$) at
 $H_0=67.79\pm0.46$, $0.37\sigma$ from $H_0^{\rm glob}$: the data are
 \emph{consistent} with the algebraic value rather than pulling against it,
@@ -738,14 +739,14 @@ Planck prior the three-model run gives $H_0^{\SSEE}=67.53\pm0.35$
 \paragraph{The $\Omega_m$ comparison.}
 Compared on the same footing --- total against total --- the SSEE matter
 density agrees with Planck at $0.88\sigma$
-($\Omega_m=0.308881$ vs $0.3153\pm0.0073$). An earlier ``$21.3\sigma$ tension''
-arose only from comparing the cold \emph{sector} ($1+w_0=0.160050$) against the
+($\Omega_m=\val{OMEGA_M_TOTAL_d6}$ vs $0.3153\pm0.0073$). An earlier ``$21.3\sigma$ tension''
+arose only from comparing the cold \emph{sector} ($1+w_0=\val{S_M_d6}$) against the
 Planck \emph{total} $\Omega_m$ --- a category error of matching a partial
 density to a full one, traced to the dynamical value being used in the
 background geometry where the total belongs (corrected here). There is no
 background discrepancy to resolve. The two-sector split formerly attributed to
 Paper~6 is \emph{retracted}: the subtraction defining it mixed the measured
-density $\Omega_m=0.308881$ with $1+w_0$, an equation-of-state number, so it
+density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ with $1+w_0$, an equation-of-state number, so it
 never partitioned anything. The matter density is single and unpartitioned.
 With OP-8 dissolved (no matter factor to derive; the residue is only that
 $\omega_b$ and the forward identity for $\omega_c$ hold), model selection
@@ -754,15 +755,15 @@ SSEE the most economical model (Section~\ref{sec:bic}).
 
 
 \paragraph{H$_0$: the global rate and the MCMC posterior.}
-The global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962$~km\,s$^{-1}$\,Mpc$^{-1}$
+The global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}$~km\,s$^{-1}$\,Mpc$^{-1}$
 returned by the screening cascade (Papers~9--10), whose central value reproduces the
 dimensionless target $3(\varphi+\pi)^2$, is not a
 mere coincidence: with the baryon and cold-matter densities fixed by SSEE
 algebra, the Planck~\texttt{plik\_lite} likelihood is minimised exactly at
 that value (Paper~3, \S\ref{sec:prior_mira}). The background $H$ and the
-CMB anchor therefore coincide --- they are the same number, $H_0^{\rm glob}=67.962\pm0.968$ ---
+CMB anchor therefore coincide --- they are the same number, $H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968$ ---
 superseding the earlier MIRA-mapped anchor $H_0^{\rm MIRA}=67.037$.
-With the \emph{total} matter density $\Omega_m=0.308881$ in the background
+With the \emph{total} matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background
 geometry, the MCMC posterior reported above,
 $H_0^{\rm MCMC}=\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-1}$, \emph{coincides}
 with the anchor: it lies $0.33\sigma$ from $H_0^{\rm glob}$ and $0.68\sigma$
@@ -782,7 +783,7 @@ total density there is no enlarged $r_d$
   \SSEE\ posterior sits at $67.53\pm0.35$, $0.26\sigma$ from Planck~2018 and
   fully consistent with the titular algebraic-anchor-prior value
   $67.82\pm0.41$ ($0.68\sigma$ Planck, $0.33\sigma$ from
-  $H_0^{\rm glob}=67.962$). \textit{Right}: MAP $r_d$ values; the \SSEE\ sound
+  $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$). \textit{Right}: MAP $r_d$ values; the \SSEE\ sound
   horizon ($148.2$\,Mpc) matches \LCDM\ ($147.8$\,Mpc, ratio $1.002$).}
   \label{fig:tension}
 \end{figure}
@@ -791,14 +792,14 @@ total density there is no enlarged $r_d$
   \centering
   \includegraphics[width=0.82\textwidth]{fig_rd_dual.pdf}
   \caption{The physical sound horizon. Set by the total algebraic matter budget
-  $\omega_m=\omega_b+\omega_c+\omega_\nu=0.14267$
-  ($\Omega_m=\omega_m/h^2=0.308881$, $\omega_m$-direct, no matter factor), the
+  $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$
+  ($\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, $\omega_m$-direct, no matter factor), the
   \SSEE\ drag scale is $r_d = 147.17$\,Mpc (CAMB; log
   \texttt{p3\_rd\_reframe\_omega\_m}), consistent with the Planck-inferred
   $147.09\pm0.26$\,Mpc (grey band, $0.32\sigma$) and with \LCDM\ at the
   Planck~2018 parameters ($147.10$\,Mpc, same code; log \texttt{rd\_dual}),
   a $0.05\%$ difference. The $175.6$\,Mpc value that appears
-  if the cold sector $1+w_0=0.160050$ is (incorrectly) used as the background
+  if the cold sector $1+w_0=\val{S_M_d6}$ is (incorrectly) used as the background
   density is a category error, not a physical scale.}
   \label{fig:rd_dual}
 \end{figure}
@@ -808,12 +809,12 @@ total density there is no enlarged $r_d$
 \begin{equation}
   \chi^2_r(H(z)):\quad \SSEE=0.482,\quad\LCDM=0.459,\quad\mathrm{CPL}=0.471.
 \end{equation}
-With the total matter density $\Omega_m=0.308881$ in the background, the \SSEE\
+With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background, the \SSEE\
 Hubble rate predicts the model-independent Cosmic Chronometer measurements as
 well as $\Lambda$CDM: $\chi^2_r=0.482$ versus $0.459$ ($\Lambda$CDM) and $0.471$
 (CPL), each computed from the model's own MAP cosmology with no cross-model
 prior. The apparent $\chi^2_r\approx1.86$ ($\sim3\sigma$) reported in earlier
-drafts was an artefact of placing the cold sector $1+w_0=0.160050$ in the
+drafts was an artefact of placing the cold sector $1+w_0=\val{S_M_d6}$ in the
 background geometry: with that spuriously low density the matter-dominated
 deceleration was too weak and the matter-to-dark-energy transition occurred too
 early ($0.5\lesssim z\lesssim1.5$). With the correct total density the strain
@@ -958,7 +959,7 @@ not contingent on specific choices of $\sigma_{M_{\rm obs}}$.
 \centering
 \caption{BIC \citep{Schwarz1978}, AIC, and DIC at MAP ($N_{\rm data}=16$), from
 the joint three-model MCMC (DESI~DR2 + common Planck prior, total matter density
-$\Omega_m=0.308881$ in the background geometry). Jeffreys scale
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry). Jeffreys scale
 \citep{Jeffreys1961}. $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours \SSEE.
 Every entry comes from the same run, \texttt{mcmc\_paper2\_3models\_wmfix.log}
 ($\omega_m$ algebraic and fixed, R25), with the DIC column from
@@ -1002,7 +1003,7 @@ CMB power-spectrum likelihood under the \SSEE\ background (companion Paper~3)
 independently favours \SSEE\ at $\chi^2_r=1.042$ (TT) and $\Delta\mathrm{BIC}=
 -26.03$ (\texttt{plik\_lite} TTTEEE+low-$\ell$, $\omega_m$-direct). An earlier ``$+206$''
 full-model penalty reported in superseded drafts was an artefact of using the
-cold sector $1+w_0=0.160050$ as the background matter density; with the correct
+cold sector $1+w_0=\val{S_M_d6}$ as the background matter density; with the correct
 total density it does not occur.
 
 \section{Robustness Checks}
@@ -1077,7 +1078,7 @@ replacement of the compressed prior by the complete likelihood.
 \end{figure}
 
 \paragraph{Hubble tension.}
-The \SSEE\ global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$
+The \SSEE\ global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$
 --- the output of the screening cascade of Papers~9--10, whose central value reproduces
 the dimensionless target $3(\varphi+\pi)^2$ and at which the
 Planck \texttt{plik\_lite} likelihood is minimised under the $\omega_m$-direct
@@ -1104,7 +1105,7 @@ does not pull away from it ($0.33\sigma$).
     confirms dynamical dark energy.
 
   \item \textbf{Background}: with the total matter density
-    $\Omega_m=0.308881$ the sound horizon matches \LCDM\ and \SSEE\ is favoured
+    $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ the sound horizon matches \LCDM\ and \SSEE\ is favoured
     on every information criterion --- $\Delta\mathrm{BIC}=-6.43$ over \LCDM\
     and $-6.35$ over CPL, $\Delta\mathrm{DIC}=-5.66$ --- and predicts the
     held-out BAO data better in cross-validation. $\Omega_m$ agrees with Planck
@@ -1132,7 +1133,7 @@ $\gamma_{\rm IS}=0.5504$, indistinguishable from \LCDM\ (Paper~5).
 would constitute decisive falsification:
 \begin{itemize}
   \item \textbf{A joint DESI fit} placing $\wz$ more than $3\sigma$ from
-    $-0.839950$, or $\wa$ from $-0.669975$, refutes the algebraic equation of
+    $\val{W0_d6}$, or $\wa$ from $\val{WA_d6}$, refutes the algebraic equation of
     state.
   \item \textbf{If cosmological or Ly-$\alpha$ forest bounds exclude}
     $\sum m_\nu^{\rm active}=0.0685$\,eV at $>3\sigma$, the algebraic neutrino
@@ -1158,7 +1159,7 @@ DESI~DR2, Planck~2018, and galaxy-cluster masses.
     the IGIMF correction raises $\chi^2_r$ to $14.05$
     ($\Delta\chi^2\approx+97$), confirming its essential role.
 
-  \item With the total matter density $\Omega_m=0.308881$ in the background,
+  \item With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background,
     the \SSEE\ sound horizon matches \LCDM\ ($r_d=147.17$ vs $147.10$\,Mpc, CAMB) and \SSEE\ is
     favoured on model selection by $\Delta\mathrm{BIC}=-6.43$ over \LCDM\ and
     $-6.35$ over CPL, predicting the held-out BAO data better in
@@ -1194,7 +1195,7 @@ The \textsc{ssee} analysis scripts are available at
 \noindent
 This appendix computes the Deviance Information Criterion and the BIC directly
 from the three-model MCMC chains stored in the public repository, with the total
-gravitating matter density $\Omega_m=\omega_m/h^2=0.308881$ in the background
+gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ in the background
 geometry (§\ref{sec:bic}).
 
 \subsection*{Deviance Information Criterion (DIC)}
@@ -1302,9 +1303,9 @@ product $H_0\,E(z)\,r_d$.  We evaluate this quantity under two
 $D_H/r_d = 8.632\pm0.101$ (Table~\ref{tab:bao_data}).
 
 \paragraph{Scenario A — raw \SSEE\ background
-($s_m=0.160050$, $r_d=175.6$\,Mpc).}
+($s_m=\val{S_M_d6}$, $r_d=175.6$\,Mpc).}
 With the algebraic $H_0=67.962$\,km\,s$^{-1}$\,Mpc$^{-1}$ and
-$s_m=0.160050$, the CPL dark-energy fraction at $z=2.33$ is
+$s_m=\val{S_M_d6}$, the CPL dark-energy fraction at $z=2.33$ is
 $f_{\rm DE}(2.33)=0.648$, giving $E(2.33)=2.540$ and
 $D_H(2.33)=1737$\,Mpc.  The predicted ratio is:
 \begin{equation}
@@ -1314,16 +1315,16 @@ $D_H(2.33)=1737$\,Mpc.  The predicted ratio is:
   \label{eq:lya_raw}
 \end{equation}
 demonstrating the category error directly: using the cold sector
-$s_m=0.160050$ in $E(z)$ reduces matter domination at high $z$, lowers
+$s_m=\val{S_M_d6}$ in $E(z)$ reduces matter domination at high $z$, lowers
 $H(z)$, and enlarges $D_H$ to a $12.5\sigma$ discrepancy. This is the same
 misplacement that produced the spurious background tensions in superseded
 drafts; the correct total density (Scenario~B) resolves it.
 
 \paragraph{Scenario B — $\omega_m$-direct CMB-sector background
-($\Omega_{m,\mathrm{CMB}}=0.308881$, $r_d=147.17$\,Mpc).}
+($\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$, $r_d=147.17$\,Mpc).}
 At $z=2.33$ the full matter density sets the expansion, so
 $E(z)$ takes the algebraic value
-$\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$ (free-streaming suppresses
+$\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (free-streaming suppresses
 small-scale clustering, not the homogeneous density). Taking the sound horizon
 $r_d=147.17$\,Mpc directly from $\omega_m$ (CAMB; no $|w_0|$ mapping) gives
 $E(2.33)=3.443$, $D_H(2.33)=1281$\,Mpc, and:
@@ -1344,9 +1345,9 @@ the residual pattern is a DESI~DR2 feature rather than an \SSEE-specific failure
 
 \paragraph{Implication.}
 Eqs.~\eqref{eq:lya_raw}--\eqref{eq:lya_mira} show that the high-$z$ expansion
-requires the full CMB-sector matter density $\Omega_{m,\mathrm{CMB}}=0.308881$,
+requires the full CMB-sector matter density $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$,
 where the cold sector counts as non-relativistic matter, rather than the
-EoS-sector value $s_m=0.160050$: retaining it in $E(z)$ with $r_d=147.17$ would predict
+EoS-sector value $s_m=\val{S_M_d6}$: retaining it in $E(z)$ with $r_d=147.17$ would predict
 $D_H/r_d=11.8$ (a $31\sigma$ discrepancy).  This is the same total-versus-
 dynamical distinction that sets the low-$z$ sound horizon
 (\S\ref{sec:folding}), now with \emph{no} matter factor (OP-8 dissolved) and

@@ -82,7 +82,24 @@ def fuentes():
     import yaml
     walk(yaml.safe_load((ROOT / "CANONICAL_VALUES.yaml").read_text()))
     out += [abs(float(x)) for x in NUM.findall((ROOT / "src" / "ssee_core.py").read_text())]
+    out += nucleo_evaluado()
     return sorted(set(out))
+
+
+def nucleo_evaluado():
+    """Los valores que el nucleo CALCULA (no solo los literales de su texto).
+
+    El texto de ssee_core.py tiene K_V = PHI + PI + OMEGA, no 9.519253: leer
+    solo el texto dejaba sin fuente toda constante algebraica que un paper
+    imprime (9.519253, 14.278880, 2.379813...), aunque su fuente sea
+    exactamente el nucleo. Se importa el modulo y se toma cada constante
+    numerica de nivel superior (2026-09-30)."""
+    import importlib.util
+    sp = importlib.util.spec_from_file_location("_core73", ROOT / "src" / "ssee_core.py")
+    m = importlib.util.module_from_spec(sp)
+    sp.loader.exec_module(m)
+    return [abs(float(v)) for k, v in vars(m).items()
+            if not k.startswith("__") and isinstance(v, (int, float)) and not isinstance(v, bool)]
 
 
 def en_fuente(s, pool):
@@ -100,6 +117,13 @@ def unidad(texto, pos):
     return texto[ini:m.start() if m else len(texto)]
 
 
+def es_arxiv(texto, pos, s):
+    """Un identificador de arXiv (NNNN.NNNN o NNNN.NNNNN) junto a «arXiv»,
+    «abs/» o «eprint» es una referencia, no un resultado (2026-09-30)."""
+    return (re.fullmatch(r"\d{4}\.\d{4,5}", s) is not None
+            and re.search(r"arxiv|abs/|eprint", texto[max(0, pos - 30):pos], re.I) is not None)
+
+
 def revisa(texto, pool):
     """Devuelve (sin_origen, no_verificables) para un .tex dado como texto."""
     decl = {m.group(1) for m in DECL.finditer(texto) if m.group(2).strip()}
@@ -113,6 +137,8 @@ def revisa(texto, pool):
             nover += 1
             continue
         if s in decl or en_fuente(s, pool) or CITA.search(unidad(lim, m.start())):
+            continue
+        if es_arxiv(lim, m.start(), s):
             continue
         ln = lim.count("\n", 0, m.start()) + 1
         sin.append((ln, s, lim.split("\n")[ln - 1].strip()[:110]))

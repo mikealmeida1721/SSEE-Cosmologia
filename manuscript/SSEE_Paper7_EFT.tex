@@ -44,6 +44,7 @@
 
 % ─────────────────────────────────────────────────────────────────────────────
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -59,16 +60,16 @@ at all --- it forces $w_\phi = c_s^2 = 1/(2n-1)$ identically, so any
 accelerating solution is gradient-unstable --- and that two terms are
 both necessary and sufficient.
 The ratio $u \equiv c_2 X/c_1$ is then fixed with no freedom by the
-algebraic equation of state: $u = -(M_v+T_r)/(3T_r+M_v) = -0.522735$,
-which reproduces $w_\phi = w_0 = -0.839950$ exactly and yields the
+algebraic equation of state: $u = -(M_v+T_r)/(3T_r+M_v) = \val{u_condensado_d6}$,
+which reproduces $w_\phi = w_0 = \val{W0_d6}$ exactly and yields the
 sound speed $c_s^2 = (M_v-T_r)/(5M_v+3T_r) = 0.021284$.
 The solution requires $c_1 < 0$ and $c_2 > 0$: the field is a
-\emph{ghost condensate}, stabilised at $X/X_{\min} = 1.045471$, where
+\emph{ghost condensate}, stabilised at $X/X_{\min} = \val{X_sobre_Xmin_d6}$, where
 the no-ghost condition $K_X + 2XK_{XX} > 0$ and the gradient condition
 $c_s^2 > 0$ both hold.
 Within the Bellini--Sawicki classification the sector is minimal Horndeski
 ($\alpha_T = \alpha_B = \alpha_M = 0$) with kineticity
-$\alpha_K(z{=}0) = 15.591335$.
+$\alpha_K(z{=}0) = \val{alpha_K_z0_d6}$.
 An independent \textsc{hi\_class} integration reproduces $c_s^2$ to $0.000\%$
 and $\alpha_K(z{=}0)$ to $0.011\%$, and passes the internal stability
 tests.
@@ -217,12 +218,12 @@ Imposing $w_\phi = w_0 = -T_r/M_v$ inverts to a single value,
   \boxed{
   u = \frac{1-w_0}{3w_0-1}
     = -\frac{M_v+T_r}{3T_r+M_v}
-    = -0.522735380747,}
+    = \val{u_condensado_d12},}
   \label{eq:u_alg}
 \end{equation}
 %
-with $T_r = 3(\phiG+\beta) = 11.993542$ and
-$M_v = \phiG+\pi+K_v = 14.278880$.  Substituting back,
+with $T_r = 3(\phiG+\beta) = \val{T_R_d6}$ and
+$M_v = \phiG+\pi+K_v = \val{M_V_d6}$.  Substituting back,
 %
 \begin{equation}
   \boxed{
@@ -242,9 +243,9 @@ Equation~(\ref{eq:u_alg}) gives $u<0$, so $c_1$ and $c_2$ carry opposite
 signs.  Reading off the three sign-bearing combinations,
 %
 \begin{equation}
-  1+3u = -0.568206,\quad
-  1+6u = -2.136412,\quad
-  1+2u = -0.045471,
+  1+3u = \val{uno_mas_3u_d6},\quad
+  1+6u = \val{uno_mas_6u_d6},\quad
+  1+2u = \val{uno_mas_2u_d6},
 \end{equation}
 %
 the no-ghost condition $K_X+2XK_{XX} = c_1(1+6u) > 0$ and the requirement
@@ -260,7 +261,7 @@ kinetic term is wrong-sign, but the field does not sit at $X=0$.  It sits
 at
 %
 \begin{equation}
-  \frac{X_{\rm bg}}{X_{\min}} = -2u = 1.045471,
+  \frac{X_{\rm bg}}{X_{\min}} = -2u = \val{X_sobre_Xmin_d6},
   \qquad X_{\min} = -\frac{c_1}{2c_2},
   \label{eq:condensate}
 \end{equation}
@@ -276,17 +277,17 @@ any single-term theory.
 The overall scale of $K$ is fixed by the present dark-energy density,
 %
 \begin{equation}
-  \rho_{\mathrm{DE},0} = \Omde\,\rhocrit = 0.691119\,\rhocrit,
+  \rho_{\mathrm{DE},0} = \Omde\,\rhocrit = \val{OMDE_DENS_d6}\,\rhocrit,
   \qquad \Omde \equiv 1 - \Omm,
   \label{eq:norm}
 \end{equation}
 %
-with $\Omm = \omega_m/h^2 = 0.308881$ (Paper~1).  This is a density
+with $\Omm = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (Paper~1).  This is a density
 fraction and must not be confused with the saturation $T_r/M_v =
-0.839950$.  The latter is a quantity of the equation of state --- it is
+\val{S_DE_d6}$.  The latter is a quantity of the equation of state --- it is
 $|w_0|$ itself --- and carries no factor of $H$; the former is a density
 fraction and does.  Earlier
-versions of this paper normalised $K$ to $0.839950$; the amplitude error
+versions of this paper normalised $K$ to $\val{S_DE_d6}$; the amplitude error
 is $21.5\%$ and it is corrected here.  No observable of Papers~1--3
 depends on this normalisation, which only sets $c_1$ and $c_2$
 separately once $u$ is known.
@@ -316,7 +317,7 @@ substituting $\lambda$ back returns $w_0$ with a difference of exactly
 $0.000\times10^{0}$ for \emph{any} input $w_0$.  The equation cannot fail,
 and an equation that cannot fail determines nothing.  The value
 $\alpha = 0.2948$ was a restatement of $w_0$, not a derivation from it.
-Independently, no exponential background reaches $w_a = -0.669975$:
+Independently, no exponential background reaches $w_a = \val{WA_d6}$:
 the tracker attractor gives $w_a = -0.093$, the calibrated
 $\lambda = 1.0205$ gives $-0.211$, and the coupled background gives
 $+0.406$, of the wrong sign.  The failure is in the \emph{form} of the
@@ -325,8 +326,8 @@ potential, and removing the potential removes the failure.
 \paragraph{The coupling was an artefact of a mis-normalised shooting.}
 The value $\bc \approx -3.990$, quoted as agreeing with $-\AURA$ to
 $0.199\%$, came from a shooting procedure that calibrated
-$\Omega_\phi(a{=}1)$ to $0.839950$ --- the saturation --- where the
-density fraction $0.691119$ belongs (§\ref{sec:action}).  Repeating the
+$\Omega_\phi(a{=}1)$ to $\val{S_DE_d6}$ --- the saturation --- where the
+density fraction $\val{OMDE_DENS_d6}$ belongs (§\ref{sec:action}).  Repeating the
 shooting with the correct target gives $\bc = +0.235068$: opposite sign,
 and a factor of $17$ in magnitude.  The $0.199\%$ agreement was a
 property of the wrong normalisation.
@@ -347,7 +348,7 @@ it was introduced to reproduce (previous paragraph).
 
 \paragraph{What this does not touch.}
 The disformal coupling of Papers~8 and~9 is a different object with a
-different sign convention ($\sqrt{\bc}=1.9995$ there) and is unaffected.
+different sign convention ($\sqrt{\bc}=\val{sqrt_AURA_d4}$ there) and is unaffected.
 So is $w_0$ itself, which is measured, not postulated: the algebraic
 point $(w_0,w_a)$ sits at $0.24\sigma$ of DESI~DR2 + Pantheon+
 \citep{desidr2_2025,ssee_paper2}.  What is lost with the coupling is one
@@ -361,7 +362,7 @@ error.
 
 \paragraph{No-ghost condition.}
 The kinetic matrix of the scalar perturbation is $K_X + 2XK_{XX} =
-c_1(1+6u)$.  With $c_1<0$ and $1+6u = -2.136412$ this is positive, so the
+c_1(1+6u)$.  With $c_1<0$ and $1+6u = \val{uno_mas_6u_d6}$ this is positive, so the
 scalar mode carries positive kinetic energy: the theory is ghost-free at
 the background point, notwithstanding $c_1<0$.
 
@@ -374,9 +375,9 @@ than smooth, with a sound horizon $c_s/H_0 \approx 600$~Mpc.
 
 \paragraph{Null energy condition.}
 $\rho_\phi + p_\phi = 2XK_X = 2Xc_1(1+2u)$.  With $c_1<0$ and
-$1+2u=-0.045471$ this is positive: the NEC holds, and the field is not
+$1+2u=\val{uno_mas_2u_d6}$ this is positive: the NEC holds, and the field is not
 phantom.  Since the present action has no coupling, $\weff = \wphi = w_0
-= -0.839950 > -1$ at all times, and no phantom crossing is claimed.
+= \val{W0_d6} > -1$ at all times, and no phantom crossing is claimed.
 
 \paragraph{Is $c_s^2 = 0.021284$ excluded?}
 No.  Running \textsc{hi\_class} with this sound speed against a smooth
@@ -467,7 +468,7 @@ equation is the $\Lambda$CDM one evaluated on the SSEE background.
 
 \paragraph{Sub-horizon growth.}
 The linear growth at $a=1$ is captured by the ratio
-$G_{2s} \equiv D_1^{\rm SSEE}(\Omm{=}0.308881) /
+$G_{2s} \equiv D_1^{\rm SSEE}(\Omm{=}\val{OMEGA_M_TOTAL_d6}) /
 D_1^{\Lambda\rm CDM}(\Omm{=}0.315) = 1.003$
 derived in Paper~6 from the background alone (not from a perturbative
 $G_{\rm eff}$ formula): the linear growth amplitude is
@@ -502,7 +503,7 @@ $\alpha_T$ (tensor speed excess)  & $0$ & $0$ & GW-safe \\
 $\alpha_B$ (braiding)             & $0$ & $0$ & ($G_3 = 0$) \\
 $\alpha_M$ (Planck-mass running)  & $0$ & $0$ & ($G_4 = \Mpl^2/2$) \\
 $c_s^2$ (scalar sound speed)     & $(M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & §\ref{sec:stability} \\
-$\alpha_K$ (kineticity)          & $3\Omde(5-3w_0)$ & $15.591335$ & §\ref{sec:alphak} \\
+$\alpha_K$ (kineticity)          & $3\Omde(5-3w_0)$ & $\val{alpha_K_z0_d6}$ & §\ref{sec:alphak} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -535,15 +536,15 @@ $2XK_X+4X^2K_{XX} = 2c_1X(1+6u)$ and $\rho_\phi = c_1X(1+3u)$, so
 Both numerator and denominator are negative, so $\alpha_K > 0$ as
 required.
 
-\paragraph{$\alpha_K$ is not the constant $0.403302$.}
-A quantity numerically equal to $3\,s_{\rm DE}\,s_m = 0.403302458888$,
+\paragraph{$\alpha_K$ is not the constant $\val{S_K_d6}$.}
+A quantity numerically equal to $3\,s_{\rm DE}\,s_m = \val{S_K_d12}$,
 with $s_{\rm DE} = T_r/M_v$ and $s_m = 1+w_0$, has circulated in this
 series under the label $\alpha_K$.  It is a different object and the
 label was wrong.  Writing $s_K$ for it,
 %
 \begin{equation}
   s_K \equiv -\frac{1}{\rho_\phi}\frac{dp_\phi}{dN}
-      = -3w_0(1+w_0) = 0.403302458888,
+      = -3w_0(1+w_0) = \val{S_K_d12},
   \label{eq:sK}
 \end{equation}
 %
@@ -553,8 +554,8 @@ pure equation of state, with no $H$, no density and no $K(X)$ in it.
 That is why the screening amplitude of Paper~9,
 $f_{\rm scr} = s_K/(3\,\MIRA)$, is invariant under changes of the
 expansion anchor, whereas a genuine $\alpha_K$ would not be.
-The two are unrelated: $\alpha_K = 15.591335$ carries the kinetic
-function, $s_K = 0.403302$ carries only $w_0$.  Papers~9 and~10 use
+The two are unrelated: $\alpha_K = \val{alpha_K_z0_d6}$ carries the kinetic
+function, $s_K = \val{S_K_d6}$ carries only $w_0$.  Papers~9 and~10 use
 $s_K$; this section is the only place $\alpha_K$ enters.
 
 \paragraph{Observational status.}
@@ -575,9 +576,9 @@ $s_K$; this section is the only place $\alpha_K$ enters.
     $\sqrt{2/(2\ell+1)} = 63.2\%$, and below $0.1\%$ for
     $\ell \geq 30$.  The irreducible noise is about seven times the
     signal, so no survey of the Euclid or CMB-S4 era can distinguish
-    $\alpha_K = 15.6$ from $\alpha_K = 0.160050$.
+    $\alpha_K = 15.6$ from $\alpha_K = \val{S_M_d6}$.
   \item The falsifiable content of this sector is therefore $c_s^2$ and
-    $w_0$, not $\alpha_K$.  $w_0 = -0.839950$ is already measured, at
+    $w_0$, not $\alpha_K$.  $w_0 = \val{W0_d6}$ is already measured, at
     $0.24\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
     will tighten it.  $c_s^2 = 0.021284$ is a prediction awaiting a
     probe of dark-energy clustering.
@@ -586,10 +587,10 @@ $s_K$; this section is the only place $\alpha_K$ enters.
 \paragraph{Inputs for \textsc{hi\_class}/\textsc{eftcamb}.}
 The three quantities required for numerical implementation are:
 \begin{enumerate}
-  \item $w_\phi = w_0 = -0.839950$ (constant at the condensate point);
+  \item $w_\phi = w_0 = \val{W0_d6}$ (constant at the condensate point);
   \item $c_s^2 = 0.021284$ from Eq.~(\ref{eq:cs2_alg});
-  \item $\alpha_K = 15.591335$ from Eq.~(\ref{eq:alphak}), entered as
-    $\alpha_K(a) = x_K\,\Omde(a)$ with $x_K = 3(5-3w_0) = 22.559548$.
+  \item $\alpha_K = \val{alpha_K_z0_d6}$ from Eq.~(\ref{eq:alphak}), entered as
+    $\alpha_K(a) = x_K\,\Omde(a)$ with $x_K = 3(5-3w_0) = \val{x_K_d6}$.
 \end{enumerate}
 All three are fixed by $w_0$ alone; no additional parameters enter.
 % ─── §9 Constants Table ──────────────────────────────────────────────────────
@@ -601,27 +602,27 @@ All three are fixed by $w_0$ alone; no additional parameters enter.
 \toprule
 Quantity & SSEE expression & SSEE name & Numerical value & Closed \\
 \midrule
-$\phiG$  & $(1+\sqrt{5})/2$          & PHI      & $1.618034$ & \checkmark \\
-$\beta$  & $(\pi+\phiG)/2$           & BIAL     & $2.379813$ & \checkmark \\
-$\KAL$   & $\beta+\pi$               & KAL$_0$  & $5.521406$ & \checkmark \\
-$K_v$    & $\phiG+\pi+(\pi+\phiG)$  & KRYSTOS$_V$  & $9.519253$ & \checkmark \\
-$T_r$    & $3(\phiG+\beta)$          & TRIAL    & $11.993542$ & \checkmark \\
-$M_v$    & $\phiG+\pi+K_v$           & ATLAS & $14.278880$ & \checkmark \\
-$\MIRA$  & $\AURA/2$                 & MIRA     & $1.998924$ & \checkmark \\
-$\AURA$  & $(3\phiG+\pi)/2$          & AURA     & $3.997847$ & \checkmark \\
+$\phiG$  & $(1+\sqrt{5})/2$          & PHI      & $\val{PHI_d6}$ & \checkmark \\
+$\beta$  & $(\pi+\phiG)/2$           & BIAL     & $\val{BETA_d6}$ & \checkmark \\
+$\KAL$   & $\beta+\pi$               & KAL$_0$  & $\val{KAL0_d6}$ & \checkmark \\
+$K_v$    & $\phiG+\pi+(\pi+\phiG)$  & KRYSTOS$_V$  & $\val{K_V_d6}$ & \checkmark \\
+$T_r$    & $3(\phiG+\beta)$          & TRIAL    & $\val{T_R_d6}$ & \checkmark \\
+$M_v$    & $\phiG+\pi+K_v$           & ATLAS & $\val{M_V_d6}$ & \checkmark \\
+$\MIRA$  & $\AURA/2$                 & MIRA     & $\val{MIRA_d6}$ & \checkmark \\
+$\AURA$  & $(3\phiG+\pi)/2$          & AURA     & $\val{AURA_d6}$ & \checkmark \\
 \midrule
-$w_0$    & $-T_r/M_v$                & —        & $-0.839950$ & \checkmark \\
-$w_a$    & $-P_{sc}/I_g$             & —        & $-0.669975$ & \checkmark \\
-$\Omde$  & $1-\Omm$                  & —        & $0.691119$ & \checkmark \\
-$s_{\rm DE}$ & $T_r/M_v$             & —        & $0.839950$ & \checkmark \\
+$w_0$    & $-T_r/M_v$                & —        & $\val{W0_d6}$ & \checkmark \\
+$w_a$    & $-P_{sc}/I_g$             & —        & $\val{WA_d6}$ & \checkmark \\
+$\Omde$  & $1-\Omm$                  & —        & $\val{OMDE_DENS_d6}$ & \checkmark \\
+$s_{\rm DE}$ & $T_r/M_v$             & —        & $\val{S_DE_d6}$ & \checkmark \\
 \midrule
-$u$      & $-(M_v+T_r)/(3T_r+M_v)$   & —        & $-0.522735$ & \checkmark \\
+$u$      & $-(M_v+T_r)/(3T_r+M_v)$   & —        & $\val{u_condensado_d6}$ & \checkmark \\
 $c_s^2$  & $(M_v-T_r)/(5M_v+3T_r)$   & —        & $0.021284$ & \checkmark \\
-$\alpha_K$ & $3\Omde(5-3w_0)$        & —        & $15.591335$ & \checkmark \\
-$s_K$    & $-3w_0(1+w_0)$            & —        & $0.403302$ & \checkmark \\
+$\alpha_K$ & $3\Omde(5-3w_0)$        & —        & $\val{alpha_K_z0_d6}$ & \checkmark \\
+$s_K$    & $-3w_0(1+w_0)$            & —        & $\val{S_K_d6}$ & \checkmark \\
 \midrule
 DUAL     & $2\AURA$                  & DUAL     & $7.995695$ & unidentified \\
-CUARTAL  & $4\AURA$                  & CUARTAL  & $15.991389$ & unidentified \\
+CUARTAL  & $4\AURA$                  & CUARTAL  & $\val{cuatro_AURA_d6}$ & unidentified \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -632,9 +633,9 @@ belonged to the potential and coupling withdrawn in
 §\ref{sec:withdrawn} and no longer appear in the action.
 
 \paragraph{A failed identification, recorded.}
-CUARTAL $= 4\AURA = 15.991389$ was predicted in earlier versions to
+CUARTAL $= 4\AURA = \val{cuatro_AURA_d6}$ was predicted in earlier versions to
 appear in the $\alpha_K$ profile.  Now that $\alpha_K$ is computed rather
-than assumed, the comparison can be made: $\alpha_K = 15.591335$ differs
+than assumed, the comparison can be made: $\alpha_K = \val{alpha_K_z0_d6}$ differs
 from CUARTAL by $2.50\%$.  Given that every closed SSEE identity in this
 table holds to machine precision, a $2.50\%$ near-miss is a failure, not
 a match.  DUAL and CUARTAL remain unidentified.
@@ -647,13 +648,13 @@ a match.  DUAL and CUARTAL remain unidentified.
 The sector is integrated with \textsc{hi\_class} \citep{hiclass2017},
 the Horndeski extension of \textsc{class} \citep{Blas2011}, at commit
 \texttt{0009f51d} of the public repository.  The background is entered
-as $w_\phi = w_0 = -0.839950$ with $w_a = 0$ (the field sits at the
+as $w_\phi = w_0 = \val{W0_d6}$ with $w_a = 0$ (the field sits at the
 condensate point, §\ref{sec:action}), and the $\alpha$-functions through
 the \texttt{propto\_omega} parametrisation
 $\alpha_i(a) = x_i\,\Omde(a)$ with
-$x_K = 22.559548$ and $x_B = x_M = x_T = 0$.
+$x_K = \val{x_K_d6}$ and $x_B = x_M = x_T = 0$.
 Cosmological parameters are the SSEE algebraic values:
-$h = 0.67962$, $\omega_b = 0.022418$, $\omega_c = 0.119514$,
+$h = 0.67962$, $\omega_b = \val{OMEGA_B_H2_d6}$, $\omega_c = \val{OMEGA_C_H2_d6}$,
 $N_{\rm ur} = 2.0328$ with one massive neutrino at $0.06849$~eV.
 The internal stability tests are left enabled
 (\texttt{skip\_stability\_tests\_smg = no}), so a ghost or gradient
@@ -671,7 +672,7 @@ machinery, not from the closed forms of §\ref{sec:action}.
 Quantity & Predicted (§\ref{sec:action}) & \textsc{hi\_class} & Difference \\
 \midrule
 $c_s^2(z{=}0)$      & $0.021284$  & $0.021284$  & $0.000\%$ \\
-$\alpha_K(z{=}0)$   & $15.591335$ & $15.589549$ & $0.011\%$ \\
+$\alpha_K(z{=}0)$   & $\val{alpha_K_z0_d6}$ & $15.589549$ & $0.011\%$ \\
 $\alpha_B,\alpha_M,\alpha_T$ & $0$ & $0$ & exact \\
 Ghost test          & pass & pass & — \\
 Gradient test       & pass & pass & — \\
@@ -681,9 +682,9 @@ Gradient test       & pass & pass & — \\
 
 The residual $0.011\%$ in $\alpha_K$ is accounted for by the massive
 neutrino: \textsc{hi\_class} builds $\Omde$ from its own budget, which
-gives $\Omega_{\rm smg} = 0.691040$ rather than the $1-\Omm = 0.691119$
+gives $\Omega_{\rm smg} = 0.691040$ rather than the $1-\Omm = \val{OMDE_DENS_d6}$
 of Eq.~(\ref{eq:norm}).  The same budget returns
-$\Omm = 0.308882$, reproducing the algebraic $0.308881$ of Paper~1 to
+$\Omm = 0.308882$, reproducing the algebraic $\val{OMEGA_M_TOTAL_d6}$ of Paper~1 to
 $6$ decimals --- an independent check of the background, obtained from a
 code that was given $\omega_b$, $\omega_c$ and $h$, never $\Omm$.
 
@@ -697,11 +698,11 @@ input is rejected.  Five configurations were run:
 \toprule
 $x_K$ & background & outcome \\
 \midrule
-$22.559548$ & $w_a = -0.669975$ & rejected \\
-$22.559548$ & $w_a = 0$ (field)  & accepted \\
-$22.559548$ & $\Lambda$CDM      & accepted \\
-$0$         & $w_a = -0.669975$ & rejected \\
-$1$         & $w_a = -0.669975$ & rejected (worse) \\
+$\val{x_K_d6}$ & $w_a = \val{WA_d6}$ & rejected \\
+$\val{x_K_d6}$ & $w_a = 0$ (field)  & accepted \\
+$\val{x_K_d6}$ & $\Lambda$CDM      & accepted \\
+$0$         & $w_a = \val{WA_d6}$ & rejected \\
+$1$         & $w_a = \val{WA_d6}$ & rejected (worse) \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -721,7 +722,7 @@ the equation of state.
 \paragraph{Established.}
 The two-term $K(X)$ of §\ref{sec:action} is a viable Horndeski model:
 ghost-free, gradient-stable, and internally consistent with
-$w_0 = -0.839950$.  Its $c_s^2$ and $\alpha_K$ are reproduced by an
+$w_0 = \val{W0_d6}$.  Its $c_s^2$ and $\alpha_K$ are reproduced by an
 independent implementation.
 
 \paragraph{Not established.}
@@ -733,7 +734,7 @@ confront the model with data.  Specifically:
     $w_a$.  \textsc{hi\_class} admits no viscous background, so no CMB
     $\chi^2$ can be obtained from it.  What is validated is the field
     sector, not the complete model.
-  \item $\alpha_K = 15.591335$ is unobservable (§\ref{sec:alphak}) and
+  \item $\alpha_K = \val{alpha_K_z0_d6}$ is unobservable (§\ref{sec:alphak}) and
     the run cannot make it otherwise.
   \item $c_s^2 = 0.021284$ leaves a maximum TT residual of $+3.10\%$ at
     $\ell = 2$ against a smooth-dark-energy reference, with a
@@ -751,7 +752,7 @@ coupled background, yielding $w_\phi(a{=}1)=-0.971$,
 $c_s^2 \in [0.60,\,0.95]$ and $\bc = -3.990$ in $0.199\%$ agreement with
 $-\AURA$.  Those numbers describe the action withdrawn in
 §\ref{sec:withdrawn}: the shooting normalised $\Omega_\phi$ to the
-saturation $0.839950$ instead of the density fraction $0.691119$, and
+saturation $\val{S_DE_d6}$ instead of the density fraction $\val{OMDE_DENS_d6}$, and
 with the correct target the extracted coupling changes sign.  They are
 not reproduced here, because they do not describe this model.
 % ─── §11 Synthesis ───────────────────────────────────────────────────────────
@@ -769,15 +770,15 @@ not reproduced here, because they do not describe this model.
     $w_\phi = c_s^2 = 1/(2n-1)$, so acceleration and gradient stability
     are mutually exclusive.  Two terms are necessary and sufficient.
   \item \textbf{Stability:} ghost-free and gradient-stable at the
-    condensate point $X/X_{\min} = 1.045471$, with the NEC satisfied and
+    condensate point $X/X_{\min} = \val{X_sobre_Xmin_d6}$, with the NEC satisfied and
     no phantom character in the field.
   \item \textbf{Bellini-Sawicki classification:}
     $\alpha_T = \alpha_B = \alpha_M = 0$ exactly, hence
-    $G_{\rm eff} = G_N$; $\alpha_K = 3\Omde(5-3w_0) = 15.591335$.
+    $G_{\rm eff} = G_N$; $\alpha_K = 3\Omde(5-3w_0) = \val{alpha_K_z0_d6}$.
   \item \textbf{Independent verification:} \textsc{hi\_class} reproduces
     $c_s^2$ to $0.000\%$ and $\alpha_K$ to $0.011\%$ and accepts the
     model, while rejecting the four control configurations.
-  \item \textbf{Label correction:} the constant $0.403302458888$ is
+  \item \textbf{Label correction:} the constant $\val{S_K_d12}$ is
     $s_K = -3w_0(1+w_0)$, a pressure dilution rate, not $\alpha_K$.
 \end{itemize}
 
@@ -787,8 +788,8 @@ The exponential potential and the conformal dark coupling
 (§\ref{sec:withdrawn}), and with them the quantities $V_0$,
 $\alpha = 0.2948$, $M^4 = \rhocrit$ and $\bc = -\AURA$.  The matching
 condition that fixed $\alpha$ was an identity that cannot fail; the
-shooting that fixed $\bc$ normalised to the saturation $0.839950$ where
-the density fraction $0.691119$ belongs.  One algebraic identification
+shooting that fixed $\bc$ normalised to the saturation $\val{S_DE_d6}$ where
+the density fraction $\val{OMDE_DENS_d6}$ belongs.  One algebraic identification
 is lost.  No published SSEE observable moves.
 
 \subsection{Open directions}
@@ -797,7 +798,7 @@ is lost.  No published SSEE observable moves.
   \item \textbf{The origin of $w_a$ --- the principal gap.}
     At the condensate point the field has constant $w_\phi = w_0$, so the
     action of §\ref{sec:action} predicts $w_a = 0$, not the algebraic
-    $w_a = -P_{sc}/I_g = -0.669975$.  The evolution must come from the
+    $w_a = -P_{sc}/I_g = \val{WA_d6}$.  The evolution must come from the
     Israel-Stewart viscosity of Paper~5, which no Horndeski solver
     currently admits.  Until that is implemented, this paper accounts for
     $w_0$ and leaves $w_a$ to Paper~5.  The failure of the withdrawn
@@ -826,7 +827,7 @@ is lost.  No published SSEE observable moves.
   \item \textbf{Minimal coupling:} $\alpha_B = \alpha_M = 0$ exactly; a
     Euclid detection above $2\sigma$ ($\sigma \approx 0.05$) falsifies
     the sector \citep{euclid2024}.
-  \item \textbf{Equation of state:} $w_0 = -0.839950$, currently at
+  \item \textbf{Equation of state:} $w_0 = \val{W0_d6}$, currently at
     $0.24\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
     is the sharpest near-term test of this paper's central input.
   \item \textbf{Sound speed:} $c_s^2 = 0.021284$, a clustered rather than
@@ -859,7 +860,7 @@ function and nothing else:
 Two terms are not a choice but a theorem: one term forces
 $w_\phi = c_s^2 = 1/(2n-1)$, making acceleration and gradient stability
 incompatible.  With two terms the ratio is fixed by $w_0$ with no
-freedom, and delivers $c_s^2 = 0.021284$ and $\alpha_K = 15.591335$, both
+freedom, and delivers $c_s^2 = 0.021284$ and $\alpha_K = \val{alpha_K_z0_d6}$, both
 reproduced by an independent \textsc{hi\_class} integration that accepts
 the model and rejects its controls.  The signs require a ghost
 condensate: a wrong-sign linear term with the field stabilised $4.5\%$
@@ -869,8 +870,8 @@ The exponential potential and the conformal dark coupling
 $\bc = -\AURA$ carried by earlier versions are withdrawn.  The condition
 that fixed the tracker exponent returns $w_0$ for any input $w_0$ and so
 determines nothing; the shooting that fixed $\bc$ normalised the field
-density to $0.839950$, which is $|w_0|$ and not a density fraction, and
-with the correct target $0.691119$ the coupling changes sign.  The
+density to $\val{S_DE_d6}$, which is $|w_0|$ and not a density fraction, and
+with the correct target $\val{OMDE_DENS_d6}$ the coupling changes sign.  The
 action is shorter by two structures and no published SSEE observable
 moves.
 

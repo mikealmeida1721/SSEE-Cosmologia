@@ -101,12 +101,12 @@ dark-energy density equals the SSEE prediction:
 \begin{equation}
   \rho_{\mathrm{DE},0}
     = \frac{3H_{0}^{2}}{8\pi G}\,\bigl(1-\Omega_m\bigr),
-  \qquad 1-\Omega_m = 0.691119,
+  \qquad 1-\Omega_m = \val{OMDE_DENS_d6},
   \label{eq:rho_de0}
 \end{equation}
 %
-where $\Omega_m = \omega_m/h^2 = 0.308881$.  Earlier versions of this
-equation carried the saturation $T_{r}/M_{v} = 0.839950$ in this slot.  That
+where $\Omega_m = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$.  Earlier versions of this
+equation carried the saturation $T_{r}/M_{v} = \val{S_DE_d6}$ in this slot.  That
 quantity is $|w_0|$, a number belonging to the equation of state, and it does
 not multiply a critical density; the amplitude error is $21.5\%$.  Since
 $\rho_{\mathrm{DE},0}$ enters only the overall normalisation
@@ -225,7 +225,7 @@ yielding the unique SSEE-admissible viscosity:
 %
 Earlier versions set $\Gamma = -P_{sc}/I_g$, that is $\Gamma = w_a$ rather
 than $-w_a/3$.  Propagated through $\Pi = -3\zeta H$ that choice returns
-$w_a = +2.009925$: wrong in sign and by a factor of three.  The
+$w_a = +\val{wa_viejo_d6}$: wrong in sign and by a factor of three.  The
 \emph{identification} of the ratio $P_{sc}/I_g$ is unaffected --- it is
 Eq.~(\ref{eq:wa_ssee}) that the construction fixes, and it is unchanged ---
 but the intermediate amplitude was misreported, and with the corrected
@@ -442,8 +442,8 @@ equation~(\ref{eq:continuity}) and the linear-growth ODE
 %
 we solve the system numerically (\texttt{ssee\_is\_growth.py}) with
 the IS background $\tilde{h}^{2}(a) = \Omega_{m}\,a^{-3}+\rho_{\mathrm{DE}}(a)$,
-with the \emph{total} matter density $\Omega_{m}=\omega_m/h^{2}=0.308881$.
-Both slots previously carried $\Omega_{m,\mathrm{dyn}}=0.160050$, which is
+with the \emph{total} matter density $\Omega_{m}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$.
+Both slots previously carried $\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$, which is
 $s_m = 1+w_0$ --- a number of the equation of state, not a density. Re-running
 the integration with the correct density (\texttt{src/p05\_is/ssee\_is\_growth.py})
 moves the growth index by $2\times10^{-4}$: $\gamma$ is set by $w(a)$, not by
@@ -460,7 +460,7 @@ is well described by a power law over $0.1 \leq a \leq 1$ with
 %
 This is the CDM growth index on the IS background, i.e.\ Eq.~(\ref{eq:growth_IS})
 without viscous perturbation feedback in the $\delta$ equation.
-It differs by 6\% from the algebraic prediction $\gamma = \varphi^{-1} = 0.618034$.
+It differs by 6\% from the algebraic prediction $\gamma = \varphi^{-1} = \val{inv_phi_d6}$.
 Paper~3 \S5.4 reports both values: $\gamma_\mathrm{alg}=0.618$ and $\gamma_\mathrm{bg}=0.657$.
 The full IS-coupled perturbation theory of Paper~5, which includes viscous
 feedback in the growth equation, yields
@@ -472,13 +472,13 @@ Note that the direct IS background growth-factor integral (this Appendix) yields
 $S_8=0.823$\footnote{Corrected 2026-09-26. The previously quoted $S_8=0.837$ evaluated
 $\sigma_8\sqrt{\Omega_m/0.3}$ at $\Omega_{m}=\Omega_{m,\mathrm{dyn}}\times\mathrm{MIRA}=0.3199$;
 the MIRA matter factor was withdrawn on 2026-06-18 when OP-8 closed and
-$\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=0.308881$ became the derived quantity. Re-running the
+$\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ became the derived quantity. Re-running the
 same integral with the canonical density gives $0.823$ at an unchanged $\sigma_8=0.811$. The
 growth index is untouched by either substitution.},
 while Paper~3's CAMB post-processing method with $\gamma_\mathrm{bg}=0.657$
 gives $S_8=0.818$; both are consistent with Planck 2018 ($0.832\pm0.013$) within $1\sigma$.
 Paper~5's full IS-coupled perturbation theory (including viscous feedback in $\delta$),
-with $\Omega_{m,\mathrm{CMB}}=0.308881$ in the Poisson source,
+with $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ in the Poisson source,
 yields $\sigma_8=0.8136$ and an IS linear-growth $S_8=0.8256$ at the
 \emph{single-sector linear} level ($2.7\sigma$ KiDS; the conservative CLASS
 % ACTUALIZADO 2026-09-08: era sigma_8=0.8335 / S_8=0.846 (tensiones 1.1/3.5/3.9
@@ -496,7 +496,7 @@ retracted.
 
 \paragraph{$S_{8}$ constraint.}
 Using the IS growth factor $D_{\mathrm{IS}}(a)$ and the CMB-sector matter
-density $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = 0.308881$
+density $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$
 ($\omega_m$-direct, Paper~3; the earlier MIRA mapping $0.3199$ is superseded),
 %
 \begin{equation}
@@ -508,12 +508,12 @@ density $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = 0.308881$
 \end{equation}
 %
 the all-cold single-sector ceiling, $1.1\sigma$ above the Planck-2018 value $0.832 \pm 0.013$~\citep{PlanckVI2020}.
-Substituting $0.160050$ into the Poisson source instead would give
+Substituting $\val{S_M_d6}$ into the Poisson source instead would give
 $S_{8}\approx0.59$ (a $6\sigma$ tension), but that substitution is not a
-choice the model ever had: $0.160050$ is $1+w_0$, minus the dark-energy
+choice the model ever had: $\val{S_M_d6}$ is $1+w_0$, minus the dark-energy
 equation of state, and an equation-of-state parameter enters the Friedmann
 equations through the \emph{pressure} term, never as a matter density. There
-is one matter density, $\Omega_m=\omega_m/h^2=0.308881$, and it enters every
+is one matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, and it enters every
 observable that requires one --- $E(z)$, $r_d$, the acoustic scale, the
 Poisson source of linear growth, and lensing alike (Paper~1
 \S\ref{sec:two_omega_m}). The full
@@ -552,11 +552,11 @@ $9\,\mathrm{KAL}_{0}H^{3}/8\pi G$ acts as a dissipative source in
 Eq.~(\ref{eq:continuity}), injecting energy into the dark-energy fluid
 and modifying its effective equation of state.  The matter density that
 sets the CMB acoustic scale is the $\omega_m$-direct value
-$\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = 0.308881$ (Paper~3), built from the
+$\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (Paper~3), built from the
 algebraic pieces $\omega_b$, $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ and
 $\omega_\nu$, with $\phi$-DM already non-relativistic and contributing to the
 matter budget at recombination. The earlier mapping of the dynamical
-$s_m=0.160050$ to the CMB scale through a MIRA factor
+$s_m=\val{S_M_d6}$ to the CMB scale through a MIRA factor
 $\approx1.999$ is superseded: there is no matter factor (OP-8 closed; Paper~1
 \S\ref{sec:two_omega_m}).
 
@@ -682,7 +682,7 @@ Four aspects require further development:
   \item \textbf{Growth index.}
         The background IS growth index $\gamma_{\mathrm{bg}} = 0.657$
         (\S\ref{sec:eft:IS}) differs by 6\% from the algebraic prediction
-        $\varphi^{-1} = 0.618034$.  The full IS-coupled result (Paper~5)
+        $\varphi^{-1} = \val{inv_phi_d6}$.  The full IS-coupled result (Paper~5)
         gives $\gamma_{\mathrm{IS}} = 0.5504$, closer to $\Lambda$CDM.
         A mechanism selecting $\gamma = \varphi^{-1}$ from IS boundary
         conditions is not yet identified; this constitutes a near-prediction

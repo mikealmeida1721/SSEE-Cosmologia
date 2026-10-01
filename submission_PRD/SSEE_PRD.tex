@@ -22,6 +22,7 @@
 \newcommand{\Mpl}{M_{\mathrm{Pl}}}
 \newcommand{\Om}{\Omega_{\mathrm{m}}}
 
+\input{../manuscript/valores_generados.tex}
 \begin{document}
 
 \title{Fixing the Dark-Energy Equation of State with Two Dimensionless Constants,
@@ -36,8 +37,8 @@ We present a minimal-parameter framework for the dark sector in which the
 \emph{shape} of late-time cosmic acceleration is fixed algebraically by two
 dimensionless constants, the golden ratio $\varphi=(1+\sqrt5)/2$ and $\pi$,
 rather than by tuned cosmological parameters. The equation of state follows as
-bare ratios of structural invariants, $w_0=-T_r/M_v=-0.839950$ and
-$w_a=-P_{\rm sc}/I_g=-0.669975$, with no fitted amplitude. The point was fixed in
+bare ratios of structural invariants, $w_0=-T_r/M_v=\val{W0_d6}$ and
+$w_a=-P_{\rm sc}/I_g=\val{WA_d6}$, with no fitted amplitude. The point was fixed in
 advance and survives \emph{two independent} DESI releases: it sits at
 $0.05\sigma$ from the DESI~DR1 $w_0w_a$CDM posterior and, after the uncertainties
 tightened, at $0.24\sigma$ from the newer DESI~DR2 posterior
@@ -47,14 +48,14 @@ Crucially, the two forward predictions that can \emph{refute} the core framework
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand \emph{independent}
 of the $\varphi$-dark-matter extension: neither the Hubble resolution nor the growth
 sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
-global rate of the screening cascade as prior ($H_0^{\rm glob}=67.962\pm0.968~\kms$) yields $H_0=67.82\pm0.41~\kms$
+global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=67.82\pm0.41~\kms$
 ($0.68\sigma$ from Planck, $0.33\sigma$ from $H_0^{\rm glob}$). The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
-with $\alpha_K=15.591335$ and a ghost-free sound speed $c_s^2=0.021284$---and the inflationary sector predicts
-$n_s=1-\varphi^{-7}=0.965558$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
-8.130619\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. A Boltzmann
+with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=0.021284$---and the inflationary sector predicts
+$n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
+\val{r_tensor_mil_d6}\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. A Boltzmann
 calculation shows the full algebraic $\omega_m$ (not the bare dynamical
-$\Omega_{m,\rm dyn}=0.160050$) is physically required for the CMB:
+$\Omega_{m,\rm dyn}=\val{S_M_d6}$) is physically required for the CMB:
 without it the acoustic-peak structure degrades by a factor of $\sim22$ in RMS.
 We are explicit about the framework's limits: the absolute vacuum scale enters
 as a single measured input, and the growth amplitude $S_8$ shows no tension
@@ -63,7 +64,7 @@ kept outside the core register), and the algebraic origin of the CMB matter
 density ($\omega_b$, $\omega_c$) together with the $\varphi$-dark-matter mass
 coefficient are open problems. Both core forward predictions bear on
 \emph{unreleased} data: the $(w_0,w_a)$ point is pre-registered to be excluded at
-$>3\sigma$ if DESI~DR3 shifts it, and $r=\varphi^{-10}=8.130619\times10^{-3}$ is
+$>3\sigma$ if DESI~DR3 shifts it, and $r=\varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3}$ is
 testable by LiteBIRD---either alone can refute the framework without touching
 the extension sector. The result is a falsifiable,
 parameter-frugal description of dark energy whose core predictions rest on
@@ -103,7 +104,7 @@ Symbols are in one-to-one correspondence with entities: no symbol denotes two
 entities and no entity carries two symbols. The two columns are not redundant---
 they are the point. $I_g$ and $K_v$ have \emph{different parents} but reduce to
 the \emph{same} expression $2(\varphi+\pi)$, which is why they share the value
-$9.519253$ while remaining structurally distinct. The value therefore cannot
+$\val{K_V_d6}$ while remaining structurally distinct. The value therefore cannot
 identify which one an equation uses; only the symbol can.
 
 \begin{center}
@@ -111,18 +112,18 @@ identify which one an equation uses; only the symbol can.
 \toprule
 Symbol & Name & Parents & Reduced form in $\varphi,\pi$ & Value \\
 \midrule
-$\varphi$   & ---               & seed (UV)              & $(1+\sqrt5)/2$              & $1.618034$  \\
-$\pi$       & ---               & seed (IR)              & $\pi$                       & $3.141593$  \\
-$\Omega$    & OMEGA             & $\varphi,\pi$          & $\varphi+\pi$               & $4.759627$  \\
-$\beta$     & BIAL              & $\varphi,\pi$          & $(\varphi+\pi)/2$           & $2.379813$  \\
-$\mathrm{KAL}$  & KAL           & $\beta,\pi$            & $(\varphi+3\pi)/2$          & $5.521406$  \\
-$\mathrm{AURA}$ & AURA          & $\beta,\varphi$        & $(3\varphi+\pi)/2$          & $3.997847$  \\
-$\mathrm{MIRA}$ & MIRA          & AURA                   & $(3\varphi+\pi)/4$          & $1.998924$  \\
-$P_{\mathrm{sc}}$ & PYROS       & $\Omega,\varphi$       & $2\varphi+\pi$              & $6.377661$  \\
-$I_g$       & IGNIS             & $\pi,\mathrm{PYROS}$   & $2(\varphi+\pi)$            & $9.519253$  \\
-$K_v$       & KRYSTOS$_V$       & $\varphi,\pi,\Omega$   & $2(\varphi+\pi)$            & $9.519253$  \\
-$T_r$       & TRIAL             & AURA                   & $3(3\varphi+\pi)/2$         & $11.993542$ \\
-$M_v$       & ATLAS             & $\varphi,\pi,K_v$      & $3(\varphi+\pi)$            & $14.278880$ \\
+$\varphi$   & ---               & seed (UV)              & $(1+\sqrt5)/2$              & $\val{PHI_d6}$  \\
+$\pi$       & ---               & seed (IR)              & $\pi$                       & $\val{PI_d6}$  \\
+$\Omega$    & OMEGA             & $\varphi,\pi$          & $\varphi+\pi$               & $\val{OMEGA_d6}$  \\
+$\beta$     & BIAL              & $\varphi,\pi$          & $(\varphi+\pi)/2$           & $\val{BETA_d6}$  \\
+$\mathrm{KAL}$  & KAL           & $\beta,\pi$            & $(\varphi+3\pi)/2$          & $\val{KAL0_d6}$  \\
+$\mathrm{AURA}$ & AURA          & $\beta,\varphi$        & $(3\varphi+\pi)/2$          & $\val{AURA_d6}$  \\
+$\mathrm{MIRA}$ & MIRA          & AURA                   & $(3\varphi+\pi)/4$          & $\val{MIRA_d6}$  \\
+$P_{\mathrm{sc}}$ & PYROS       & $\Omega,\varphi$       & $2\varphi+\pi$              & $\val{P_SC_d6}$  \\
+$I_g$       & IGNIS             & $\pi,\mathrm{PYROS}$   & $2(\varphi+\pi)$            & $\val{IGNIS_d6}$  \\
+$K_v$       & KRYSTOS$_V$       & $\varphi,\pi,\Omega$   & $2(\varphi+\pi)$            & $\val{K_V_d6}$  \\
+$T_r$       & TRIAL             & AURA                   & $3(3\varphi+\pi)/2$         & $\val{T_R_d6}$ \\
+$M_v$       & ATLAS             & $\varphi,\pi,K_v$      & $3(\varphi+\pi)$            & $\val{M_V_d6}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -137,9 +138,9 @@ numerator by $I_g=\pi+P_{\mathrm{sc}}$.
 
 \noindent Derived background quantities (all dimensionless):
 \begin{equation*}
-w_0=-\frac{T_r}{M_v}=-0.839950,\qquad
-w_a=-\frac{P_{\mathrm{sc}}}{I_g}=-0.669975,\qquad
-\Om^{\mathrm{dyn}}=1+w_0=0.160050 .
+w_0=-\frac{T_r}{M_v}=\val{W0_d6},\qquad
+w_a=-\frac{P_{\mathrm{sc}}}{I_g}=\val{WA_d6},\qquad
+\Om^{\mathrm{dyn}}=1+w_0=\val{S_M_d6} .
 \end{equation*}
 
 % ============================================================================
@@ -181,12 +182,12 @@ The paper is organised as a single coherent argument rather than a collection of
 results. Section~\ref{sec:core} constructs the equation of state from the
 algebraic invariants and confronts it with DESI DR2, derives the two-$\Omega$
 structure that distinguishes the dynamical matter fraction
-$\Om^{\mathrm{dyn}}=0.160050$ from the cosmological $\Om^{\mathrm{cosm}}=\omega_m/h^2=0.308881$, and
+$\Om^{\mathrm{dyn}}=\val{S_M_d6}$ from the cosmological $\Om^{\mathrm{cosm}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, and
 reports the Hubble-constant inference. Section~\ref{sec:eft} gives the canonical
 effective-field-theory description, the inflationary predictions, and the
 confrontation with Planck PR4, including a Boltzmann test demonstrating that the
-full CMB-sector matter density ($\omega_m$-direct, $\Omega_{m,\rm CMB}=0.308881$) is
-physically necessary---the dynamical $\Omega_{m,\rm dyn}=0.160050$ alone cannot
+full CMB-sector matter density ($\omega_m$-direct, $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$) is
+physically necessary---the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone cannot
 reproduce the acoustic scale. Section~\ref{sec:growth} treats
 the growth of structure honestly, including the residual $S_8$ tension.
 Section~\ref{sec:falsifiability} sets out the pre-committed prediction register,
@@ -207,10 +208,10 @@ invariants of Table~\ref{sec:notation}. Concretely,
 \begin{gathered}
   w_0 \;=\; -\,\frac{T_r}{M_v}
         \;=\; -\,\frac{3(\varphi+\beta)}{\varphi+\pi+K_v}
-        \;=\; -0.839950, \\[3pt]
+        \;=\; \val{W0_d6}, \\[3pt]
   w_a \;=\; -\,\frac{P_{\mathrm{sc}}}{I_g}
         \;=\; -\,\frac{P_{\mathrm{sc}}}{\pi+P_{\mathrm{sc}}}
-        \;=\; -0.66997 .
+        \;=\; \val{WA_d5} .
 \end{gathered}
   \label{eq:w0wa}
 \end{equation}
@@ -325,7 +326,7 @@ The $55$ names collapse to $25$ distinct numbers (e.g.\ $\mathrm{IGNIS}$ and
 $\mathrm{KRYSTOS}$ coincide, $\mathrm{SOLAR}=\mathrm{MAR}$), so the count
 deduplicates by value.} The honest question is therefore: among
 \emph{all} ratios $A/B$ of named invariants in this fixed dictionary, how many
-land on $|w_0|=0.839950$ and on $|w_a|=0.669975$?
+land on $|w_0|=\val{S_DE_d6}$ and on $|w_a|=0.669975$?
 
 Enumerating every ordered pair over the complete dictionary yields $490$ distinct
 ratios in the interval $(0,5]$. We then count how many fall within a tolerance of
@@ -336,7 +337,7 @@ $|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=P_{\rm sc}/(\pi+P_{\rm sc})$, both to machi
 ($\pm0.0005$, $|d|=0$), not an arbitrary band. At that precision each target is
 unique:
 \begin{equation}
-  |w_0|=0.839950:\ \text{1 of 490},\qquad
+  |w_0|=\val{S_DE_d6}:\ \text{1 of 490},\qquad
   |w_a|=0.669975:\ \text{1 of 490}\quad(\pm0.0005).
   \label{eq:lookelsewhere}
 \end{equation}
@@ -360,7 +361,7 @@ within $\pm0.0005$ of either target.}
 \label{tab:lookelsewhere-tol}
 \begin{tabular}{lcc}
 \toprule
-Tolerance & hits on $|w_0|=0.839950$ & hits on $|w_a|=0.669975$ \\
+Tolerance & hits on $|w_0|=\val{S_DE_d6}$ & hits on $|w_a|=0.669975$ \\
 \midrule
 $\pm0.0005$ & 1 & 1 \\
 $\pm0.001$  & 1 & 2 \\
@@ -386,7 +387,7 @@ two lineage laws) remains the open mechanism tracked in \S\ref{sec:open}.
 \paragraph{The single near-value, and why it is not a rival.} Honesty requires
 naming the one entry that turns the $|w_a|$ count from $1$ to $2$ as the band is
 loosened from $\pm0.0005$ to $\pm0.001$ (Table~\ref{tab:lookelsewhere-tol}): it is
-$\mathrm{SOLAR}/\mathrm{NYX}=0.66933$, which sits $|d|=6.4\times10^{-4}$ from
+$\mathrm{SOLAR}/\mathrm{NYX}=\val{SOLAR_NYX_d5}$, which sits $|d|=6.4\times10^{-4}$ from
 $|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=0.669975$. Two independent facts demote it from
 rival to shadow. \emph{First, construction:} the canonical ratio
 $\mathrm{PYROS}/\mathrm{IGNIS}$ is intra-lineage---the denominator is generated
@@ -425,7 +426,7 @@ predictive register.
 The equation of state~\eqref{eq:w0wa} fixes the \emph{dynamical} matter
 fraction through the closure relation of a single rolling field,
 \begin{equation}
-  \Om^{\mathrm{dyn}} \;=\; 1+w_0 \;=\; 0.160050 ,
+  \Om^{\mathrm{dyn}} \;=\; 1+w_0 \;=\; \val{S_M_d6} ,
   \label{eq:omdyn}
 \end{equation}
 which is the fraction that controls the late-time acceleration. This value is
@@ -437,20 +438,20 @@ standard physical observable, built piece-by-piece from SSEE algebra with
 \begin{equation}
   \Om^{\mathrm{cosm}} \;=\; \frac{\omega_m}{h^2}
         \;=\; \frac{\omega_b+\omega_c+\omega_\nu}{h^2}
-        \;=\; \frac{0.14267}{0.67962^2} \;=\; 0.308881 ,
+        \;=\; \frac{\val{OMEGA_M_H2_d5}}{0.67962^2} \;=\; \val{OMEGA_M_TOTAL_d6} ,
   \qquad \omega_c=\mathrm{KAL_0}\,\omega_b\,n_s ,
   \label{eq:omcosm}
 \end{equation}
 the matter fraction that enters the background expansion $E(z)$, the Poisson
-equation, and the CMB. The dynamical fraction $\Om^{\mathrm{dyn}}=0.160050$ (DESI)
+equation, and the CMB. The dynamical fraction $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ (DESI)
 and $\omega_m$ (CMB) are two independent SSEE predictions, no longer tied by a
 factor. We are deliberately precise about the epistemic status of this
 accounting, which is now withdrawn.
 
 \paragraph{No bridging factor: the CMB density is built from algebra.} Each
 piece of $\omega_m$ is an SSEE algebraic value with no fit: the baryon density
-$\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=0.022418$ and the cold-matter density
-$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=0.119514$ (a forward identity, already in
+$\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ and the cold-matter density
+$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ (a forward identity, already in
 Paper~1; $0.41\sigma$ from Planck). The neutrino term completes the total,
 $\omega_\nu=\Sigma m_\nu^{\rm active}/C_\nu=0.06849/93.14=0.000735$, using the
 same active-neutrino sum $\Sigma m_\nu^{\rm active}=0.06849$~eV and the same
@@ -462,9 +463,9 @@ $R_2=\Omega/(\mathrm{KAL_0}T_r)$ (Paper~6). It is quoted here so that the
 neutrino term and the $\varphi$-dark-matter mass are manifestly the same
 number; no independent neutrino parameter is introduced.} so that
 \begin{equation}
-  \omega_m=\omega_b+\omega_c+\omega_\nu=0.14267,
+  \omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5},
   \qquad
-  \Om^{\mathrm{cosm}}=\frac{\omega_m}{h^2}=0.308881
+  \Om^{\mathrm{cosm}}=\frac{\omega_m}{h^2}=\val{OMEGA_M_TOTAL_d6}
   \quad (h=H_0^{\rm glob}/100=0.67962).
   \label{eq:omcosm_breakdown}
 \end{equation}
@@ -472,7 +473,7 @@ The neutrino piece is not optional: dropping it returns $0.30729$, a $0.6\%$
 shift, so a reader who reproduces the number must include all three terms
 (a three-second check ships in \texttt{ssee\_core.py}). The earlier presentation tied
 $\Om^{\mathrm{cosm}}$ to $\Om^{\mathrm{dyn}}$ through a factor-of-two bridge
-$\mathrm{MIRA}=\mathrm{AURA}/2=1.99892$, tracked as open problem OP-8; that
+$\mathrm{MIRA}=\mathrm{AURA}/2=\val{MIRA_d5}$, tracked as open problem OP-8; that
 bridge is now \emph{dissolved}---there is no matter factor to derive. The
 residual honest open question is only the UV origin of the $\omega_c$ identity.
 $\mathrm{MIRA}$ survives elsewhere, in the late-time Hubble screening fraction
@@ -482,7 +483,7 @@ $f_{\rm scr}=\alpha_K^{\rm eff}/(3\,\mathrm{MIRA})$ (Paper~9), where it is the `
 Independently of its derivation, a Boltzmann analysis (the full \texttt{CLASS}
 methodology and peak-by-peak numbers are given in
 \S\ref{sec:cmb-confront}) shows the full $\omega_m$ is not optional: replacing
-it with the bare dynamical value $\Om^{\mathrm{dyn}}=0.160050$ degrades the
+it with the bare dynamical value $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ degrades the
 acoustic-peak fit by a factor of $\sim22$ in RMS. The sound horizon at
 recombination demands the full matter density; SSEE's two-$\Om$ structure is
 the statement that the sector driving late-time acceleration
@@ -492,23 +493,23 @@ predictions rather than two free numbers.
 
 Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
-$\omega_m$ is $147.17$~Mpc at $\Om^{\mathrm{cosm}}=0.308881$
+$\omega_m$ is $147.17$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 ($\omega_m$-direct), consistent with the Planck-inferred
 $147.09\pm0.26$~Mpc ($0.32\sigma$), and matching $\Lambda$CDM at the
 Planck~2018 parameters ($147.10$~Mpc, same code) to $0.05\%$. The $175.6$~Mpc value that
-appears if the cold sector $\Om^{\mathrm{dyn}}=0.160050$ is (incorrectly) used as
+appears if the cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ is (incorrectly) used as
 the background density is a category error, not a physical scale.
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.82\textwidth]{fig_rd_dual.pdf}
   \caption{The physical sound horizon. Set by the full algebraic $\omega_m$
-  (green, $147.17$~Mpc at $\Om^{\mathrm{cosm}}=0.308881$, $\omega_m$-direct), in
+  (green, $147.17$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$, $\omega_m$-direct), in
   agreement with Planck 2018 ($147.09\pm0.26$~Mpc, grey band) and with
   $\Lambda$CDM at the Planck~2018 parameters (blue, $147.10$~Mpc, CAMB). This is the visual counterpart of the Boltzmann test above:
   the full matter density that restores the acoustic peaks also restores the BAO
   standard ruler. The $175.6$~Mpc scale (red) is the category error of using the
-  cold sector $\Om^{\mathrm{dyn}}=0.160050$ as the background density.}
+  cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ as the background density.}
   \label{fig:rd_dual}
 \end{figure}
 
@@ -525,7 +526,7 @@ walkers $\times\,25{,}000$ steps (seed $42$).
 \paragraph{$H_0$ as one quantity in two stages.} We first anchor the
 early-time geometry at the CMB-optimal value
 \begin{equation}
-  H_0^{\mathrm{anchor}} = H_0^{\rm glob} = H_{\rm SH0ES}(1-f_{\rm screen}) = 67.962\pm0.968~\kms ,
+  H_0^{\mathrm{anchor}} = H_0^{\rm glob} = H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d3}\pm0.968~\kms ,
   \qquad
   \frac{H_0^{\rm glob}}{\kms} \simeq 3(\varphi+\pi)^2 ,
   \label{eq:h0anchor}
@@ -553,7 +554,7 @@ superseded.)
 
 \paragraph{Status of the algebraic anchor.} We are explicit about how a
 dimensionful value is obtained from Eq.~\eqref{eq:h0anchor}, and about which
-observable is the input. On its own, $3(\varphi+\pi)^2=67.962$ is a pure
+observable is the input. On its own, $3(\varphi+\pi)^2=\val{H0_ALG_d3}$ is a pure
 number with no units; deriving the absolute scale of $H_0$ from first
 principles is an open problem for every cosmological model, not only ours,
 and we make no claim to have solved it. We therefore do not assert the pure
@@ -562,13 +563,13 @@ from the measured SH0ES \emph{local} rate,
 $H_0^{\rm SH0ES}=73.04\pm1.04~\kms$~\citep{Riess2022}, and de-screen it with
 the algebraically-derived (not fit) fraction $f_{\rm scr}=\alpha_K^{\rm eff}/(3\,\mathrm{MIRA})=(\pi-\varphi)/\Om^2=0.06725$
 (Paper~9): $H_0^{\rm SH0ES}(1-f_{\rm scr})=68.13~\kms$, within $0.17\sigma$ of
-the pure number $67.962$---the model-independent floor, using only the IR
+the pure number $\val{H0_ALG_d3}$---the model-independent floor, using only the IR
 screening term and no free parameter. Paper~10 sharpens this: with the
-UV-completed fraction $f_{\rm scr}^{\rm UV}=\alpha_K^{\rm full}/(3\,\mathrm{MIRA})=0.069522$
+UV-completed fraction $f_{\rm scr}^{\rm UV}=\alpha_K^{\rm full}/(3\,\mathrm{MIRA})=\val{F_SCREEN_d6}$
 (conditional on the derivation of $M^4=5\varphi^8\rho_{\rm crit}$ from UV--IR
 $\varphi/\pi$ separability, Postulate~C.1), the identical inversion gives
-$H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm UV})=73.04\times(1-0.069522)=67.9621~\kms$,
-reproducing the anchor $3(\varphi+\pi)^2=67.9621$ to four decimals. We quote the
+$H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm UV})=73.04\times(1-\val{F_SCREEN_d6})=67.9621~\kms$,
+reproducing the anchor $3(\varphi+\pi)^2=\val{H0_ALG_d4}$ to four decimals. We quote the
 comparison at four decimals and not further because the input is quoted at two:
 $H_0^{\rm SH0ES}=73.04$. We do not quote the reverse operation $3(\varphi+\pi)^2/(1-f_{\rm scr}^{\rm UV})$ as a prediction, because $3(\varphi+\pi)^2$
 is a pure number and carries no units, so it cannot serve as the input of a
@@ -601,7 +602,7 @@ rate that moves the unconditional IR floor outside $\sim1\sigma$, would
 undermine it.
 
 \paragraph{Anchor and posterior agree.} With the total gravitating matter
-density $\Om^{\mathrm{cosm}}=0.308881$ in $E(z)$ and $r_d$, the BAO-corrected
+density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$ and $r_d$, the BAO-corrected
 posterior ($67.82$) and the CMB anchor ($67.962$) agree to $0.33\sigma$: DESI
 DR2 is \emph{consistent with} the algebraic value rather than pulling against
 it. All early-time observables are simultaneously healthy---$r_d=147.17$~Mpc
@@ -609,7 +610,7 @@ it. All early-time observables are simultaneously healthy---$r_d=147.17$~Mpc
 $100\,\theta_\ast=1.04099$ ($0.32\sigma$). The apparent $2.9\sigma$
 ``BAO--CMB split'' and the $13.9\sigma$ $\theta_\ast$ figure reported in earlier
 drafts were the footprint of a single error---placing the cold dynamical sector
-$\Om^{\mathrm{dyn}}=0.160050$ in the background geometry, where the total density
+$\Om^{\mathrm{dyn}}=\val{S_M_d6}$ in the background geometry, where the total density
 belongs. With that corrected, there is no split to report: the late-time BAO and
 the early-time acoustic geometry point to the same $H_0$.
 
@@ -678,30 +679,30 @@ and with no potential, they are
   \label{eq:eft-alphas}
   \alpha_{\rm T}=\alpha_{\rm M}=\alpha_{\rm B}=0,
   \qquad
-  \alpha_{\rm K}=15.591335 ,
+  \alpha_{\rm K}=\val{alpha_K_z0_d6} ,
 \end{equation}
 so that gravitational waves propagate at the speed of light
 ($\alpha_{\rm T}=0$, consistent with GW170817~\citep{GW170817}) and the only
 non-trivial function is the kineticity, evaluated with the dark-energy
-\emph{density} $\Omega_{\rm DE}=1-\Omega_m=0.691119$.
+\emph{density} $\Omega_{\rm DE}=1-\Omega_m=\val{OMDE_DENS_d6}$.
 
 A distinct quantity, often confused with it, enters the Hubble screening of
 Paper~9:
 %
 \begin{equation}
   s_K \equiv -\frac{1}{\rho_\phi}\frac{dp_\phi}{dN} = -3w_0(1+w_0)
-      = 3\,s_{\rm DE}\,s_m = 0.403302 ,
+      = 3\,s_{\rm DE}\,s_m = \val{S_K_d6} ,
   \label{eq:sK_sealed}
 \end{equation}
 %
 the fractional dilution rate of the dark-energy \emph{pressure} per e-fold.
-Here $s_{\rm DE}=|w_0|=0.839950$ and $s_m=1+w_0=0.160050$ are saturations ---
+Here $s_{\rm DE}=|w_0|=\val{S_DE_d6}$ and $s_m=1+w_0=\val{S_M_d6}$ are saturations ---
 numbers of the equation of state, carrying no $H$ --- not densities. Because
 $s_K$ is pure equation of state, the screening amplitude
 $f_{\rm scr}=s_K/(3\,\mathrm{MIRA})$ is invariant under changes of the expansion
 anchor, whereas a kineticity would not be. The Lagrangian above contains no
 coupling of the scalar to matter. What remains open is tracked as OP-24: the
-same action fixes $w_0$ but does not produce $w_a=-0.669975$.
+same action fixes $w_0$ but does not produce $w_a=\val{WA_d6}$.
 
 \subsection{Inflationary sector: $\alpha$-attractor}
 \label{sec:inflation}
@@ -709,11 +710,11 @@ The primordial perturbations are described by an $\alpha$-attractor
 \citep{Kallosh2013} with curvature
 \begin{equation}
   \label{eq:alpha-attractor}
-  \alpha=\frac{\varphi^4}{3}=2.284701 .
+  \alpha=\frac{\varphi^4}{3}=\val{ALPHA_ATT_d6} .
 \end{equation}
 For the attractor universality class, $n_s=1-2/N_\ast$ and
 $r=12\alpha/N_\ast^2$. We take the number of $e$-folds to be
-$N_\ast=2\varphi^7=58.068884$. The coefficient $2$ is not a free choice. Within
+$N_\ast=2\varphi^7=\val{dos_phi7_d6}$. The coefficient $2$ is not a free choice. Within
 the observationally allowed window $[50,60]$ the products $m\varphi^n$ with
 small integer $m$ are $2\varphi^7$, $3\varphi^6$, $5\varphi^5$ and $8\varphi^4$;
 of these, $m=2$ is the only one for which the spectral index comes out as a pure
@@ -725,9 +726,9 @@ which \emph{both} observables reduce to pure powers of $\varphi$, and the two
 resulting identities are exact:
 \begin{equation}
   \label{eq:ns-r}
-  n_s = 1-\varphi^{-7}=0.965558 ,
+  n_s = 1-\varphi^{-7}=\val{N_S_d6} ,
   \qquad
-  r   = \varphi^{-10}=8.130619\times10^{-3} .
+  r   = \varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3} .
 \end{equation}
 The spectral index sits squarely on the Planck~2018 measurement
 ($n_s=0.9649\pm0.0042$;~\citealp{Planck2018}); the tensor-to-scalar ratio
@@ -804,7 +805,7 @@ With the nuisance parameters free, SSEE attains a \emph{better} fit than
 $\Lambda$CDM---by $\Delta\chi^2=-2.47$---using three fewer free parameters,
 where under \texttt{plik\_lite} it paid $+1.65$. Sampling $H_0$ freely in the
 same chain returns $H_0=67.88\pm0.10~\kms$, within $0.81\sigma$ of the algebraic
-anchor $3(\varphi+\pi)^2=67.962$: the chain \emph{recovers} the anchor rather
+anchor $3(\varphi+\pi)^2=\val{H0_ALG_d3}$: the chain \emph{recovers} the anchor rather
 than assuming it, and its uncertainty is $5.3\times$ tighter than the
 $\Lambda$CDM posterior on the same data, as the parameter economy predicts.
 
@@ -816,8 +817,8 @@ $\Lambda$CDM posterior on the same data, as the parameter economy predicts.
   against Planck PR4. With the dark-energy sector fixed by $\varphi$ and $\pi$,
   SSEE reproduces the acoustic peaks at $\ell=220,\,535,\,810$ at a quality
   indistinguishable from $\Lambda$CDM (Table~\ref{tab:cmb}). The two-$\Om$
-  structure is essential: replacing $\Om^{\mathrm{cosm}}=0.308881$ with the bare
-  $\Om^{\mathrm{dyn}}=0.160050$ shifts every peak by ${\sim}10\%$.}
+  structure is essential: replacing $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ with the bare
+  $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ shifts every peak by ${\sim}10\%$.}
   \label{fig:cmb}
 \end{figure}
 
@@ -825,11 +826,11 @@ $\Lambda$CDM posterior on the same data, as the parameter economy predicts.
 The two-$\Om$ structure
 of \S\ref{sec:two-omega} is decisively tested by the CMB. Running the Boltzmann
 solver at the cosmological matter fraction $\Om^{\mathrm{cosm}}\approx0.31$ (a
-CLASS validation at $0.320$; the $\omega_m$-direct canonical $0.308881$ lies
+CLASS validation at $0.320$; the $\omega_m$-direct canonical $\val{OMEGA_M_TOTAL_d6}$ lies
 within $3.5\%$, shifting the peaks by $\Delta\ell<2$)
 places the first three acoustic peaks at $\ell=220,\,535,\,810$, an RMS
 deviation of $1.4\%$ from $\Lambda$CDM. Running it instead with the bare
-dynamical fraction $\Om^{\mathrm{dyn}}=0.160050$ shifts all
+dynamical fraction $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ shifts all
 three peaks by ${\sim}10\%$ ($\ell=240,\,597,\,922$) and raises the RMS to
 $31.5\%$---a factor of ${\sim}22$ worse. The sound horizon at recombination
 therefore \emph{demands} $\Om^{\mathrm{cosm}}\approx0.31$: the CMB matter density
@@ -845,7 +846,7 @@ The same linear EFT predicts the growth of structure, and here we report the
 situation honestly: a genuine challenge in the minimal (single-sector)
 treatment, resolved only by an extension sector that we deliberately keep
 outside the core register. With the Poisson source evaluated at the
-CMB-calibrated density $\Om^{\mathrm{cosm}}=0.308881$ ($\omega_m$-direct, the
+CMB-calibrated density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct, the
 structure that the Boltzmann test of \S\ref{sec:eft} shows is
 physically required), the growth factor is essentially that of $\Lambda$CDM,
 $G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=1.0032\pm0.005$, and the
@@ -878,7 +879,7 @@ partly-$\Lambda$CDM number.
 
 Measured instead against the 225 \emph{raw} KiDS-1000 $\xi_\pm$ data points,
 with the background fixed entirely by the algebra, a \emph{single}
-unpartitioned matter sector $\Omega_m=0.308881$, and only $A_s$ and the eight
+unpartitioned matter sector $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, and only $A_s$ and the eight
 official nuisance parameters free, a converged MCMC ($R-1=0.019$,
 $4.2\times10^4$ effective samples) gives
 \begin{equation}
@@ -984,13 +985,13 @@ Paper~1.
 Observable & Sector & Value & Paper & Status \\
 \midrule
 \multicolumn{5}{l}{\textit{Core tier --- clean from $\varphi,\pi$ (no fitted coefficient)}} \\
-$w_0=-T_r/M_v$                & Background (DE)   & $-0.839950$                         & P1,2,4 & Postdiction \\
-$w_a=-P_{\rm sc}/I_g$ & Background (DE)   & $-0.669975$                      & P1,2,4 & Postdiction \\
+$w_0=-T_r/M_v$                & Background (DE)   & $\val{W0_d6}$                         & P1,2,4 & Postdiction \\
+$w_a=-P_{\rm sc}/I_g$ & Background (DE)   & $\val{WA_d6}$                      & P1,2,4 & Postdiction \\
 $(w_0,w_a)$ vs DESI DR3       & Background (DE)   & same fixed point                & P1,2   & \textbf{Prediction (pre-reg.)} \\
 $H_0/\kms=3(\varphi+\pi)^2$   & Background (DE)   & $67.962\,\kms$                   & P1,2,9 & Global anchor (Post.~D) \\
-$\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ & CMB      & $0.119514$                       & P1,3   & Retrodiction \\
-$\Om^{\rm cosm}=\omega_m/h^2$ & CMB               & $0.308881$                       & P1,3   & Retrodiction \\
-$n_s=1-\varphi^{-7}$          & Inflation / CMB   & $0.965558$                       & P1,3   & Retrodiction \\
+$\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ & CMB      & $\val{OMEGA_C_H2_d6}$                       & P1,3   & Retrodiction \\
+$\Om^{\rm cosm}=\omega_m/h^2$ & CMB               & $\val{OMEGA_M_TOTAL_d6}$                       & P1,3   & Retrodiction \\
+$n_s=1-\varphi^{-7}$          & Inflation / CMB   & $\val{N_S_d6}$                       & P1,3   & Retrodiction \\
 $r=\varphi^{-10}$             & Inflation         & $8.1\times10^{-3}$              & P1     & \textbf{Prediction} \\
 $\alpha_T=\alpha_M=\alpha_B$  & EFT               & $0$ (exact)                     & P7     & Retrodiction \\
 $\alpha_K^{\rm field}$ (bare, pre-integration) & EFT & $0.073$                        & P7     & Internal check \\
@@ -1032,10 +1033,10 @@ golden mean and $\pi$, and they cannot be adjusted to accommodate data.
 \toprule
 Observable & SSEE value & Algebraic form & Falsifying probe \\
 \midrule
-$w_0$            & $-0.839950$              & $-T_r/M_v$            & DESI Y3 / Euclid BAO+SNe \\
-$w_a$            & $-0.669975$              & $-P_{\rm sc}/I_g$ & DESI Y3 / Euclid BAO+SNe \\
-$n_s$            & $0.965558$               & $1-\varphi^{-7}$      & Planck / CMB-S4 \\
-$r$              & $8.1306\times10^{-3}$     & $\varphi^{-10}$       & LiteBIRD / CMB-S4 \\
+$w_0$            & $\val{W0_d6}$              & $-T_r/M_v$            & DESI Y3 / Euclid BAO+SNe \\
+$w_a$            & $\val{WA_d6}$              & $-P_{\rm sc}/I_g$ & DESI Y3 / Euclid BAO+SNe \\
+$n_s$            & $\val{N_S_d6}$               & $1-\varphi^{-7}$      & Planck / CMB-S4 \\
+$r$              & $\val{r_tensor_mil_d4}\times10^{-3}$     & $\varphi^{-10}$       & LiteBIRD / CMB-S4 \\
 $c_s^2$          & $0.021284$               & $(M_v-T_r)/(5M_v+3T_r)$ & DESI / Euclid growth \\
 $\alpha_T,\alpha_M,\alpha_B$ & $0$        & exactly zero          & GW standard sirens, ISW \\
 \bottomrule
@@ -1141,12 +1142,12 @@ theory.
 \item \textbf{The CMB matter density's algebraic origin (OP-1).} With the
 former MIRA matter bridge \emph{dissolved} (the $\omega_m$-direct reframe,
 \S\ref{sec:two-omega}; OP-8 retired), the CMB matter fraction
-$\Omega_{m,\rm CMB}=0.308881$ now rests directly on two algebraic inputs: the
-baryon density $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=0.022418$ and the forward
-identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=0.119514$ ($0.41\sigma$ from
+$\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$ now rests directly on two algebraic inputs: the
+baryon density $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ and the forward
+identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ ($0.41\sigma$ from
 Planck). The CLASS Boltzmann test of \S\ref{sec:eft} confirms this full density
 is \emph{numerically necessary}---the acoustic peaks degrade by a factor of
-$\sim22$ in RMS with the dynamical $\Omega_{m,\rm dyn}=0.160050$ alone. What remains
+$\sim22$ in RMS with the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone. What remains
 open is a first-principles derivation of these algebraic forms from the field
 action; the burden has moved from ``derive MIRA'' to ``ground $\omega_b$ and the
 $\omega_c$ identity.'' The values are not fitted, but their UV origin is open.
@@ -1185,11 +1186,11 @@ the dimensionless invariants alone and are falsifiable today.
 We have presented a minimal-parameter framework in which the shape of the dark
 sector is fixed by the two dimensionless constants $\varphi$ and $\pi$. The
 late-time equation of state emerges as bare ratios of structural invariants,
-$w_0=-0.839950$ and $w_a=-0.669975$, and matches the DESI DR2 posterior at
+$w_0=\val{W0_d6}$ and $w_a=\val{WA_d6}$, and matches the DESI DR2 posterior at
 $0.24\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
 effective-field-theory description is canonical, with vanishing tensor, running,
-and braiding functions, $\alpha_K=15.591335$ and $c_s^2=0.021284$; the inflationary sector
-predicts $n_s=0.965558$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation
+and braiding functions, $\alpha_K=\val{alpha_K_z0_d6}$ and $c_s^2=0.021284$; the inflationary sector
+predicts $n_s=\val{N_S_d6}$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation
 confirms that the full $\omega_m$-direct matter density is physically
 required rather than cosmetic.
 
@@ -1228,13 +1229,13 @@ from an assertion into a checkable construction.
 
 \paragraph{Seeds and scaffold.} Everything descends from two dimensionless
 seeds, $\varphi=(1+\sqrt5)/2$ (UV) and $\pi$ (IR). Their sum is the scaffold
-$\Omega=\varphi+\pi=4.759627$, and their mean is the bifurcation point
-$\beta\equiv\mathrm{BIAL}=(\varphi+\pi)/2=2.379813$ at which the dictionary splits
+$\Omega=\varphi+\pi=\val{OMEGA_d6}$, and their mean is the bifurcation point
+$\beta\equiv\mathrm{BIAL}=(\varphi+\pi)/2=\val{BETA_d6}$ at which the dictionary splits
 into two branches.
 
 \paragraph{Law I --- the copy law ($\varphi$-branch).} The $\varphi$-branch is
 generated by a single root, the screening amplitude
-$\mathrm{AURA}=\beta+\varphi=3.997847$, which propagates \emph{only} by integer
+$\mathrm{AURA}=\beta+\varphi=\val{AURA_d6}$, which propagates \emph{only} by integer
 multiples and the dyadic half. These are the dimensional ceilings:
 \begin{equation}
 \begin{gathered}
@@ -1252,7 +1253,7 @@ value} with $3\Omega$ but is not the scaffold tripled---the construction, not th
 magnitude, is what fixes its identity. With the copy-law wall
 $T_r=\mathrm{TRIAL}=3\,\mathrm{AURA}$ as numerator,
 \begin{equation}
-  |w_0|=\frac{T_r}{M_v}=\frac{\mathrm{TRIAL}}{\varphi+\pi+\mathrm{KRYSTOS}}=0.839950 ,
+  |w_0|=\frac{T_r}{M_v}=\frac{\mathrm{TRIAL}}{\varphi+\pi+\mathrm{KRYSTOS}}=\val{S_DE_d6} ,
 \end{equation}
 which reduces \emph{numerically} to $\mathrm{AURA}/\Omega$---an identity of value
 between distinct named entities, not a construction by scaffold multiples. So
@@ -1267,8 +1268,8 @@ $\mathrm{IGNIS}=\pi+P_{\rm sc}$, and so on, building up to the convergences. A
 corollary is that two distinct lineages may land on the \emph{same value}
 without being the same entity: $\mathrm{IGNIS}=\pi+\mathrm{PYROS}$ (disruptive,
 $\pi$-branch) and $K_v\,(\mathrm{KRYSTOS})=\varphi+\pi+\Omega$ (structural) both
-equal $9.51925$, yet are distinct nodes; likewise
-$\mathrm{SOLAR}=\mathrm{MAR}=7.90122$. The look-elsewhere count of
+equal $\val{K_V_d5}$, yet are distinct nodes; likewise
+$\mathrm{SOLAR}=\mathrm{MAR}=\val{phi_mas_2pi_d5}$. The look-elsewhere count of
 \S\ref{sec:look-elsewhere} treats these honestly, deduplicating by value so the
 $55$ named nodes collapse to $25$ distinct numbers. The second
 equation-of-state ratio lives entirely on this branch, with the denominator the
@@ -1278,7 +1279,7 @@ $\pi$-branch node IGNIS (not the structural $K_v$, though the two coincide in va
 \end{equation}
 
 \paragraph{Closure.} The set is finite because both laws terminate at the
-four-dimensional integration invariant $M_v=\varphi+\pi+K_v=14.278880$ (a Sovereign
+four-dimensional integration invariant $M_v=\varphi+\pi+K_v=\val{M_V_d6}$ (a Sovereign
 convergence coinciding in value with $3\Omega$), the maximal dimensional
 invariant; no node exceeds it. This termination---not a
 choice made to fit data---is what bounds the dictionary to a fixed, enumerable

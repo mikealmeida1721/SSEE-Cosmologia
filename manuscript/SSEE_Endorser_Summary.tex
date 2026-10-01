@@ -12,6 +12,7 @@
 \newcommand{\phiDM}{\varphi\text{-DM}}
 
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 
 \begin{center}
@@ -40,12 +41,12 @@ EFT proposal, subject to full Boltzmann validation. The dark-sector ans\"atze th
 \textbf{Quantity} & \textbf{SSEE algebraic value} & \textbf{Observed / constraint} & \textbf{Agreement} \\
 \midrule
 $w_0$ & $-T_r/M_v = -0.8400$ & DESI DR2: $-0.838\pm0.055$ & $0.24\sigma$ \\
-$w_a$ & $-P_{sc}/I_g = -0.669975$ & DESI DR2: $-0.631\pm0.226$ & $0.17\sigma$ \\
-$H_0^{\rm alg}$ & $3(\varphi+\pi)^2 = 67.96214$ km/s/Mpc & Planck 2018: $67.36\pm0.54$ & $1.11\sigma$ \\
-$\Omega_{m,\rm CMB}$ & $\omega_m/h^2 = 0.308881$ ($\omega_m$-direct) & Planck 2018: $0.3153\pm0.0073$ & $0.88\sigma$ \\
+$w_a$ & $-P_{sc}/I_g = \val{WA_d6}$ & DESI DR2: $-0.631\pm0.226$ & $0.17\sigma$ \\
+$H_0^{\rm alg}$ & $3(\varphi+\pi)^2 = \val{H0_ALG_d5}$ km/s/Mpc & Planck 2018: $67.36\pm0.54$ & $1.11\sigma$ \\
+$\Omega_{m,\rm CMB}$ & $\omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct) & Planck 2018: $0.3153\pm0.0073$ & $0.88\sigma$ \\
 $r_d$ & CAMB ($\omega_m$-direct): $147.17$ Mpc & Planck 2018: $147.09\pm0.26$ Mpc & $0.32\sigma$ \\
-$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-f_{\rm scr}) = 67.962142$ km/s/Mpc & $3(\varphi+\pi)^2 = 67.96214$ & residual $+4.2\times10^{-6}$ ($\sigma=0.968$) \\
-$n_s$ & $1-\varphi^{-7} = 0.965558$ & Planck PR4: $0.9649\pm0.0042$ & $0.16\sigma$ \\
+$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-f_{\rm scr}) = \val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\varphi+\pi)^2 = 67.96214$ & residual $+4.2\times10^{-6}$ ($\sigma=0.968$) \\
+$n_s$ & $1-\varphi^{-7} = \val{N_S_d6}$ & Planck PR4: $0.9649\pm0.0042$ & $0.16\sigma$ \\
 $r$ & $\varphi^{-10} = 0.008131$ & BK18: $r<0.036$ & Prediction \\
 $c_s^2$ & $(M_v-T_r)/(5M_v+3T_r) = 0.021284$ & dark-energy clustering (Euclid) & Prediction \\
 $S_8$ & $0.8273$ (predicted; \emph{no} free cosmological parameter) & KiDS-Legacy: $0.8265\pm0.0176$ & $0.05\sigma$ \\
@@ -64,7 +65,7 @@ $S_8$ & $0.8273$ (predicted; \emph{no} free cosmological parameter) & KiDS-Legac
 \subsubsection*{II. Tested Against Data}
 \begin{itemize}
   \item \textbf{Paper 2 (MCMC)}: 100 walkers $\times$ 25\,000 steps vs.\ DESI DR2 + Planck + 7 clusters; $\Delta\text{BIC}=-6.43$ (SSEE favoured, $k_{\rm SSEE}=2$ vs.\ $k_{\Lambda\rm CDM}=3$), total matter density in the background geometry. [31 pp] Convention throughout this summary: $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours SSEE.
-  \item \textbf{Paper 3 (CMB Confrontation)}: CAMB $\omega_m$-direct ($\Omega_m=0.308881$); Cobaya full \texttt{plik} MCMC; $\Delta\mathrm{BIC}=-32.9$ (canonical; $-26.03$ in the \texttt{plik\_lite} point estimate with $\{A_s,\tau\}$ fitted and $N=669$ measured from the likelihood), SSEE favoured under $k=2$ vs $k=6$ model comparison. [26 pp]
+  \item \textbf{Paper 3 (CMB Confrontation)}: CAMB $\omega_m$-direct ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$); Cobaya full \texttt{plik} MCMC; $\Delta\mathrm{BIC}=-32.9$ (canonical; $-26.03$ in the \texttt{plik\_lite} point estimate with $\{A_s,\tau\}$ fitted and $N=669$ measured from the likelihood), SSEE favoured under $k=2$ vs $k=6$ model comparison. [26 pp]
   \item \textbf{Paper 6 (Growth sector, against raw $\xi_\pm$)}: retracts an
   earlier two-sector $\varphi$-DM proposal and its particle --- the subtraction
   defining the second sector mixed a measured density with an
@@ -92,7 +93,7 @@ $S_8$ & $0.8273$ (predicted; \emph{no} free cosmological parameter) & KiDS-Legac
   \item \textbf{Paper 5 (Israel--Stewart Perturbations)}: Causal bulk viscosity; $c_s^2=0$ as the minimal-viscosity solution (OP-21); $\gamma_{\rm IS}=0.5504\approx\gamma_{\Lambda\rm CDM}$. [31 pp]
   \item \textbf{Paper 7 (Canonical EFT Proposal)}: the action is a minimally
   coupled ghost condensate, $K(X)=c_1X+c_2X^2$, with no potential and no dark
-  coupling; $\alpha_T=\alpha_M=\alpha_B=0$, $\alpha_K=15.591335$ (not
+  coupling; $\alpha_T=\alpha_M=\alpha_B=0$, $\alpha_K=\val{alpha_K_z0_d6}$ (not
   observationally accessible) and sound speed $c_s^2=0.021284$. The same action
   fixes $w_0$ but not $w_a$ (OP-24). [17 pp]
 \end{itemize}
@@ -100,7 +101,7 @@ $S_8$ & $0.8273$ (predicted; \emph{no} free cosmological parameter) & KiDS-Legac
 \subsubsection*{IV. Strong-Field Regime, Hubble Tension \& UV Completion}
 \begin{itemize}
   \item \textbf{Paper 8 (Strong Gravity)} [\emph{draft; its canonical lensing prediction rests on $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ and $\alpha_B=\alpha_M=0$ (Paper~7), and is unconditional}]: Disformal null geodesic analysed in
-  two limits: alternative MOND-like (deflection $\sqrt{\text{AURA}}\approx 1.9995$,
+  two limits: alternative MOND-like (deflection $\sqrt{\text{AURA}}\approx \val{sqrt_AURA_d4}$,
   numerically close to $\mathcal{M}=\text{AURA}/2$ at $0.03\%$ but algebraically
   distinct) and the canonical limit with EFT $\alpha_B=\alpha_M=\alpha_T=0$
   (residual fifth-force $\sim 10^{-15}$ at kpc, observable lensing recovers GR);
@@ -113,7 +114,7 @@ $S_8$ & $0.8273$ (predicted; \emph{no} free cosmological parameter) & KiDS-Legac
   $f_{\rm scr}=(\pi-\varphi)/(\varphi+\pi)^2\approx0.067$ applied to the
   measured SH0ES rate $73.04\pm1.04$ returns a global background
   $H_0^{\rm glob}=68.13$ km/s/Mpc, $0.17\sigma$ from the pure algebraic number
-  $3(\varphi+\pi)^2=67.96214$ --- an algebraic
+  $3(\varphi+\pi)^2=\val{H0_ALG_d5}$ --- an algebraic
   prediction with no fitted parameters (2026 reframe; the earlier CMB-mapped
   $H_0^{\rm MIRA}=67.04$ is superseded). [20 pp]
   \item \textbf{Paper 10 (UV Completion)}: Higher-derivative operator

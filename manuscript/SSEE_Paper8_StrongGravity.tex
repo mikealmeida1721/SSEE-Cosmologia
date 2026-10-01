@@ -45,6 +45,7 @@
 \date{June 2026 --- Paper 8 of the SSEE series}
 
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 \maketitle
 
@@ -64,7 +65,7 @@ of them was ever supplied by the particle}:
 
 \begin{enumerate}\itemsep2pt
   \item \textbf{That the model carries real, clustering cold dark matter.} It
-        does: $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=0.119514$, an algebraic
+        does: $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$, an algebraic
         forward identity closed under OP-8 in the $\omega_m$-direct reframe.
         This is ordinary cold dark matter and has no connection to the
         retracted $\phi$-DM sector, which was always an \emph{additional} layer
@@ -127,11 +128,11 @@ predictions using the SSEE algebraic constants. We work explicitly in two
 limits: (a) an \emph{alternative MOND-like limit} (\S\ref{sec:geodesic}--
 \ref{sec:mira}) in which the dark-matter distribution is taken to be sourced
 entirely by the baryonic seed via the scalar force — here the lensing factor
-is $\sqrt{\AURA}\approx 1.9995$, derived directly from the disformal null
+is $\sqrt{\AURA}\approx \val{sqrt_AURA_d4}$, derived directly from the disformal null
 geodesic; and (b) the \emph{canonical limit}
 (\S\ref{sec:vainshtein}, \S\ref{sec:double_protection}) corresponding to the
 actual SSEE model: a single unpartitioned matter component
-$\Omega_m=\omega_m/h^2=0.308881$, of which the cold dark matter is
+$\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, of which the cold dark matter is
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ (an algebraic forward identity,
 OP-8), together with the EFT
 Bellini--Sawicki structure $\alpha_B=\alpha_M=\alpha_T=0$, in which the
@@ -154,7 +155,7 @@ where $\bc \equiv \AURA = (3\phiG+\pi)/2$ is the disformal coupling
 constant fixed in Paper~7. Following the 2026 $\omega_m$-direct reframe
 (OP-8 dissolved), $\MIRA$ is realised physically as the Hubble \emph{screening
 amplitude} of Paper~9 ($f_{\rm screen}=\alpha_K^{\rm eff}/(3\,\MIRA)$). A ratio
-$\Omega_m/(1+w_0)=0.308881/0.160\approx1.93$ was also noted here as
+$\Omega_m/(1+w_0)=\val{OMEGA_M_TOTAL_d6}/0.160\approx1.93$ was also noted here as
 \emph{numerically close} to $\MIRA$, and was explicitly \emph{not} identified
 with it. It is now withdrawn as a comparison altogether: the denominator
 $1+w_0$ is an equation-of-state parameter, not a second matter density, so the
@@ -220,7 +221,7 @@ The algebraic constants fixed by $\phiG$ and $\pi$ (Paper~7) are:
               \label{eq:KAL}\\
   \bc \equiv \AURA &= \frac{3\phiG+\pi}{2} \approx 3.998\,,
               \label{eq:bc}\\
-  \MIRA   &= \frac{\bc}{2} = \frac{3\phiG+\pi}{4} \approx 1.9989\,,
+  \MIRA   &= \frac{\bc}{2} = \frac{3\phiG+\pi}{4} \approx \val{MIRA_d4}\,,
               \label{eq:MIRA}\\
   M       &\approx \Mpl\quad\text{(free EFT parameter; we adopt $M=\Mpl$ as reference)}\,.
               \label{eq:M}
@@ -231,11 +232,11 @@ this paper, and it is now the only $\bc$ in the series.
 conformal-sector coupling $\bc = -\AURA$ in Paper~7, presenting the two as
 sign conventions of one constant.  That conformal coupling is withdrawn
 (Paper~7): the shooting that extracted it normalised the field density to the
-saturation $0.839950 = |w_0|$ rather than the density fraction
-$1-\Omm = 0.691119$, and with the correct target it changes sign.  There is
+saturation $\val{S_DE_d6} = |w_0|$ rather than the density fraction
+$1-\Omm = \val{OMDE_DENS_d6}$, and with the correct target it changes sign.  There is
 therefore no longer a second $\bc$ to reconcile, and the disformal coupling
 used here stands on its own.  We adopt $\bc \equiv +\AURA > 0$, of which only
-the magnitude $|\bc| = \AURA = 3.997847$ enters the deflection angle and the
+the magnitude $|\bc| = \AURA = \val{AURA_d6}$ enters the deflection angle and the
 k-mouflage radius.
 
 For the purposes of this paper, we work in the quasi-static, non-relativistic
@@ -333,7 +334,7 @@ The derivation in \S\ref{sec:geodesic}--\ref{sec:mira} assumes the
 sourced entirely by a scalar-force enhancement of the baryonic seed
 ($M_{\rm DM,eff}\propto\bc\cdot M_{\rm bary}$, no independent DM
 component). This is \emph{not} the canonical SSEE model. The canonical
-canonical limit (single matter component $\Omega_m=0.308881$, plus EFT
+canonical limit (single matter component $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, plus EFT
 $\alpha_B=\alpha_M=\alpha_T=0$) is treated in
 \S\ref{sec:vainshtein}--\S\ref{sec:double_protection} and yields
 $\thetaE^{\rm SSEE}\approx\thetaE^{\rm GR-with-DM}$ (no $\sqrt{\AURA}$ or
@@ -377,14 +378,14 @@ where $\rho_{\mathrm{DM,eff}}$ is the dark matter density redistributed
 under the scalar force.
 
 The effective lensing mass fraction is the full algebraic matter density,
-$\Omega_{m,\mathrm{eff}} = \Omega_m = \omega_m/h^2 = 0.308881$, at every
+$\Omega_{m,\mathrm{eff}} = \Omega_m = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, at every
 scale --- within $2\%$ of the $\Lambda$CDM value $0.315$. \emph{(Earlier
 versions split this between a CDM and a $\phi$-DM sector on either side of a
 free-streaming scale; that split is retracted with the particle, Paper~6, and
 the density is single and unpartitioned.)}
 (An earlier version justified this split by the ``Two-$\Omega_m$ Criterion''
 of Paper~1. That criterion is itself withdrawn --- $1+w_0$ was never a matter
-density --- so there is no split: the full $\Omega_m=0.308881$ lenses at every
+density --- so there is no split: the full $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ lenses at every
 scale.)
 The Einstein radius matches the GR-with-dark-matter prediction on all scales.
 The effective gravitational source for photons is then suppressed by the
@@ -439,8 +440,8 @@ pedagogical limit~(a) and the canonical limit~(b) remain as analytic statements
 
 \begin{tcolorbox}[colback=yellow!8,colframe=orange!60,title=Naming clarification]
 The quantity derived in this section as the lensing factor is
-$\sqrt{\bc}=\sqrt{\AURA}\approx 1.99947$ (an exact algebraic expression).
-This is \emph{not} the same as $\MIRA=\AURA/2\approx 1.9989$, which uses a
+$\sqrt{\bc}=\sqrt{\AURA}\approx \val{sqrt_AURA_d5}$ (an exact algebraic expression).
+This is \emph{not} the same as $\MIRA=\AURA/2\approx \val{MIRA_d4}$, which uses a
 different algebraic operation (division by 2 rather than square root). The
 two quantities agree to $0.03\%$ because $\AURA\approx 4$, which makes both
 $\sqrt{\AURA}$ and $\AURA/2$ land near $2$. We retain the comparison below
@@ -475,7 +476,7 @@ D_{\mathrm{LS}}/(c^2 D_L D_S)$, we obtain
   \boxed{\frac{\thetaE^{\mathrm{SSEE}}}{\thetaE^{\mathrm{GR}}}
          \;=\; \sqrt{\bc}
          \;=\; \sqrt{\AURA}
-         \;\approx\; 1.9995\,.}
+         \;\approx\; \val{sqrt_AURA_d4}\,.}
   \label{eq:thetaE_ratio}
 \end{equation}
 
@@ -483,16 +484,16 @@ D_{\mathrm{LS}}/(c^2 D_L D_S)$, we obtain
 
 The structural constant $\MIRA$ is defined in equation~\eqref{eq:mira_def}:
 \begin{equation}
-  \MIRA \;=\; \frac{3\phiG+\pi}{4} \;=\; \frac{\bc}{2} \approx 1.9989\,.
+  \MIRA \;=\; \frac{3\phiG+\pi}{4} \;=\; \frac{\bc}{2} \approx \val{MIRA_d4}\,.
 \end{equation}
 Meanwhile, $\sqrt{\bc} = \sqrt{2\MIRA}$.
 At the specific value $\MIRA \approx 2$, we have
 $\sqrt{2\MIRA} \approx \sqrt{4} = 2 \approx \MIRA$, and
 more precisely:
 \begin{equation}
-  \sqrt{\bc} \;=\; \sqrt{2\MIRA} \;\approx\; 1.9995\,,
+  \sqrt{\bc} \;=\; \sqrt{2\MIRA} \;\approx\; \val{sqrt_AURA_d4}\,,
   \qquad
-  \MIRA \;\approx\; 1.9989\,,
+  \MIRA \;\approx\; \val{MIRA_d4}\,,
   \label{eq:mira_approx}
 \end{equation}
 so $\sqrt{\bc}/\MIRA = 1.00030$ (agreement to $0.03\%$).
@@ -505,7 +506,7 @@ Concretely:
   \MIRA = 2 \;\Longleftrightarrow\; \bc = 4 \;\Longleftrightarrow\;
   \sqrt{\bc} = 2 = \MIRA\,.
 \end{equation}
-The algebraic values give $\MIRA = 1.9989$ and $\bc = 3.997847$, both
+The algebraic values give $\MIRA = \val{MIRA_d4}$ and $\bc = \val{AURA_d6}$, both
 differing from the integer approximation by $<0.06\%$.
 
 Therefore, to within $0.03\%$, the lensing amplification factor coincides
@@ -520,7 +521,7 @@ where the same $\MIRA$ (the ``Mirror Ratio'') appears in:
   \item This paper: $\thetaE^{\mathrm{SSEE}} \approx \MIRA \times \thetaE^{\mathrm{GR}}$
 \end{itemize}
 (Under the $\omega_m$-direct reframe, OP-8 dissolved, $\MIRA$ no longer enters
-the CMB matter sector: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$ with no
+the CMB matter sector: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with no
 matter factor, and $r_d=147.2$\,Mpc follows directly from $\omega_m$, both
 superseding the earlier MIRA-mapped forms.)
 
@@ -654,7 +655,7 @@ Paper~7 established that SSEE has~\citep{ssee_paper7}
   \alpha_B \;=\; \alpha_M \;=\; \alpha_T \;=\; 0\,,
   \label{eq:bs_zero}
 \end{equation}
-with $\alpha_K = 15.591335$ as the sole non-vanishing EFT parameter.
+with $\alpha_K = \val{alpha_K_z0_d6}$ as the sole non-vanishing EFT parameter.
 The Bellini-Sawicki effective Newton constant is~\citep{Bellini2015}
 \begin{equation}
   \mu - 1 \;=\; \frac{(\alpha_B + \alpha_M)^2}{\alpha_K} \;=\; 0\,,
@@ -727,7 +728,7 @@ profile near $\ell_{\rm fs}$, and a suppression in galaxy--galaxy shear on
 partition of Paper~6, which is retracted: the subtraction defining the second
 sector's density took a measured density minus $1+w_0$, a number from the
 equation of state, and so defined nothing. With a \emph{single} unpartitioned
-matter component, $\Omega_m=\omega_m/h^2=0.308881$, there is no free-streaming
+matter component, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, there is no free-streaming
 scale, no step in $f_{\rm lens}(k)$, and therefore no scale-dependent lensing
 signature to predict. $f_{\rm lens}(k)=1$ at every $k$.
 
@@ -794,11 +795,11 @@ and $c = 2.998\times10^5\,\mathrm{km/s}$:
   \hatalf_{\rm GR}^{\rm bary} &= \frac{4GM_{\rm bary}}{c^2\,b}
     \approx 2.9\times10^{-5}\,\mathrm{rad} = 6.0'', \\[4pt]
   \hatalf_{\rm alt} &= \bc\,\hatalf_{\rm GR}^{\rm bary}
-    = 3.997847 \times 2.9\times10^{-5}
+    = \val{AURA_d6} \times 2.9\times10^{-5}
     \approx 1.16\times10^{-4}\,\mathrm{rad} = 24.0''.
 \end{align}
 The canonical limit (EFT B--S suppression, lensing sourced by the full
-matter density $\Omega_m=0.308881$, \S\ref{sec:double_protection}) reproduces the
+matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, \S\ref{sec:double_protection}) reproduces the
 observation: $\hatalf_{\rm canonical} = 42.6''$ versus the observed
 $\thetaE \approx 45''$, agreement at the $5\%$ level (the small residual
 is absorbed by the projection geometry and the mass-profile modelling of
@@ -948,11 +949,11 @@ falsify the corresponding sector of the SSEE framework.
 
 \subsection{Where $\MIRA$ does and does not appear}
 
-$\MIRA = (3\phiG+\pi)/4 = 1.998924$ appears in exactly one place in the
+$\MIRA = (3\phiG+\pi)/4 = \val{MIRA_d6}$ appears in exactly one place in the
 current framework: the Hubble-screening amplitude of Paper~9,
 \begin{equation}
   f_{\rm screen} = \frac{s_K}{3\,\MIRA}, \qquad
-  s_K = -3w_0(1+w_0) = 0.403302,
+  s_K = -3w_0(1+w_0) = \val{S_K_d6},
 \end{equation}
 where $s_K$ is a pressure-dilution rate carrying only the equation of
 state.  Earlier versions of this subsection listed two further
@@ -960,10 +961,10 @@ appearances, and both are withdrawn:
 \begin{itemize}
   \item $r_{d,\mathrm{eff}} = r_{d,\mathrm{SSEE}}/\MIRA$.  This mapping
     existed to reconcile $r_d = 175.6$~Mpc with the Planck-inferred $147.09$~Mpc.
-    That $175.6$ was an artefact of putting $\Omega_{m,\mathrm{dyn}}=0.160050$
+    That $175.6$ was an artefact of putting $\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$
     --- which is $1+w_0$, a quantity of the equation of state --- into the
     background geometry, where the total matter density belongs.  With
-    $\Omm = \omega_m/h^2 = 0.308881$ the model gives $r_d = 147.17$~Mpc
+    $\Omm = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ the model gives $r_d = 147.17$~Mpc
     directly (CAMB), $1.0005\times$ the $\Lambda$CDM value at the Planck~2018 parameters, and there is nothing
     left for $\MIRA$ to correct.
   \item $\Omega_{m,\mathrm{CMB}} = \MIRA\,\Omega_{m,\mathrm{dyn}}$.  There
@@ -975,7 +976,7 @@ appearances, and both are withdrawn:
 \end{itemize}
 
 In the alternative MOND-like lensing limit (\S\ref{sec:geodesic}--\ref{sec:mira})
-the cantidad that emerges is $\sqrt{\AURA}\approx 1.99947$, which is
+the cantidad that emerges is $\sqrt{\AURA}\approx \val{sqrt_AURA_d5}$, which is
 \emph{numerically close} to $\MIRA$ to within $0.03\%$ but is a different
 algebraic operation on $\AURA$ ($\sqrt{\AURA}$ vs $\AURA/2$). The
 near-coincidence is a consequence of $\AURA \approx 4$, which makes both
@@ -1065,7 +1066,7 @@ coupling and found:
         times the GR Einstein radius.
 
   \item \textbf{MIRA emergence}: The structural constant
-        $\MIRA = (3\phiG+\pi)/4 \approx 1.9989$, which enters the Hubble
+        $\MIRA = (3\phiG+\pi)/4 \approx \val{MIRA_d4}$, which enters the Hubble
         screening amplitude of Paper~9, also matches the lensing
         amplification of the alternative limit to within $0.03\%$ (via the
         near-coincidence $\sqrt{\bc} \approx \MIRA$). The former ``two-sector

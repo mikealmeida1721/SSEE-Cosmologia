@@ -1,0 +1,265 @@
+{
+ "fecha": "2026-09-30",
+ "algebra": {
+  "alpha_K_z0": {
+   "formula": "3*OMDE_DENS*(5-3*W0)",
+   "valor": 15.591335809872342,
+   "uso": "kineticidad hoy, Paper 7 y resumenes"
+  },
+  "x_K": {
+   "formula": "3*(5-3*W0)",
+   "valor": 22.55954794210301,
+   "uso": "alpha_K(a) = x_K Omega_DE(a), Paper 7"
+  },
+  "r_tensor": {
+   "formula": "PHI**-10",
+   "valor": 0.008130618755783347,
+   "uso": "tensor-escalar r = phi^-10"
+  },
+  "r_tensor_mil": {
+   "formula": "1e3*PHI**-10",
+   "valor": 8.130618755783347,
+   "uso": "r en unidades de 10^-3 (como lo escriben los papers)"
+  },
+  "r_staro": {
+   "formula": "3/PHI**14",
+   "valor": 0.003558723868926679,
+   "uso": "r de Starobinsky con N = 2 phi^7"
+  },
+  "dos_phi6": {
+   "formula": "2*PHI**6",
+   "valor": 35.888543819998326,
+   "uso": "ventana de e-folds, Paper 1"
+  },
+  "dos_phi7": {
+   "formula": "2*PHI**7",
+   "valor": 58.06888370749728,
+   "uso": "N_* = 2 phi^7"
+  },
+  "dos_phi8": {
+   "formula": "2*PHI**8",
+   "valor": 93.95742752749561,
+   "uso": "ventana de e-folds, Paper 1"
+  },
+  "N_star_rh": {
+   "formula": "58.25-math.log(3)/6",
+   "valor": 58.06689795188865,
+   "uso": "N_* con rho_rh = V_end, Paper 4"
+  },
+  "sqrt_AURA": {
+   "formula": "math.sqrt(AURA)",
+   "valor": 1.999461755053029,
+   "uso": "deflexion del limite MOND-like, Paper 8"
+  },
+  "cuatro_AURA": {
+   "formula": "4*AURA",
+   "valor": 15.991389239678956,
+   "uso": "CUARTAL, tabla de Paper 7"
+  },
+  "inv_phi": {
+   "formula": "1/PHI",
+   "valor": 0.6180339887498948,
+   "uso": "gamma algebraico = phi^-1"
+  },
+  "inv_1pw0": {
+   "formula": "1/(1+W0)",
+   "valor": 6.248038558908856,
+   "uso": "entalpia rho+p en unidades de rho_DE(1+w0)"
+  },
+  "inv_1pw0_m1": {
+   "formula": "1/(1+W0)-1",
+   "valor": 5.248038558908856,
+   "uso": "c_s^2 efectivo del intento descartado, Paper 5"
+  },
+  "MIRA_m1": {
+   "formula": "MIRA-1",
+   "valor": 0.9989236549598695,
+   "uso": "Paper 5 Q2"
+  },
+  "n_ssee": {
+   "formula": "(1+W0)/(2*W0)",
+   "valor": -0.095273690234463,
+   "uso": "exponente n, seccion EFT"
+  },
+  "n_ssee_TM": {
+   "formula": "(T_R-M_V)/(2*T_R)",
+   "valor": -0.095273690234463,
+   "uso": "la misma n por T_r, M_v (control)"
+  },
+  "wa_viejo": {
+   "formula": "-3*WA",
+   "valor": 2.0099246570171685,
+   "uso": "w_a con Gamma = w_a (version retirada), seccion EFT"
+  },
+  "u_condensado": {
+   "formula": "(1-W0)/(3*W0-1)",
+   "valor": -0.5227353807472764,
+   "uso": "u del condensado, Paper 7"
+  },
+  "u_condensado_TM": {
+   "formula": "-(M_V+T_R)/(3*T_R+M_V)",
+   "valor": -0.5227353807472764,
+   "uso": "la misma u por T_r, M_v (control)"
+  },
+  "uno_mas_3u": {
+   "formula": "1+3*(1-W0)/(3*W0-1)",
+   "valor": -0.5682061422418294,
+   "uso": "Paper 7"
+  },
+  "uno_mas_6u": {
+   "formula": "1+6*(1-W0)/(3*W0-1)",
+   "valor": -2.136412284483659,
+   "uso": "Paper 7 (no-ghost)"
+  },
+  "uno_mas_2u": {
+   "formula": "1+2*(1-W0)/(3*W0-1)",
+   "valor": -0.04547076149455287,
+   "uso": "Paper 7 (NEC)"
+  },
+  "X_sobre_Xmin": {
+   "formula": "-2*(1-W0)/(3*W0-1)",
+   "valor": 1.0454707614945529,
+   "uso": "punto del condensado, Paper 7"
+  },
+  "phi_mas_2pi": {
+   "formula": "PHI+2*PI",
+   "valor": 7.901219295929481,
+   "uso": "SOLAR = MAR, Papers 1 y 4"
+  },
+  "pi_mas_KAL": {
+   "formula": "PI+KAL0",
+   "valor": 8.662998628349431,
+   "uso": "tabla de Paper 4"
+  },
+  "phi_pi_KAL": {
+   "formula": "PHI+PI+KAL0",
+   "valor": 10.281032617099324,
+   "uso": "tabla de Paper 4"
+  },
+  "dos_Omega_phi": {
+   "formula": "2*OMEGA+PHI",
+   "valor": 11.137287273429271,
+   "uso": "tabla de Paper 4"
+  },
+  "dos_phi_": {
+   "formula": "2*PHI",
+   "valor": 3.23606797749979,
+   "uso": "Sealed / PRD"
+  },
+  "SOLAR_NYX": {
+   "formula": "(PHI+2*PI)/((PHI+7*PI)/2)",
+   "valor": 0.6693344231255325,
+   "uso": "Sealed / PRD"
+  },
+  "KAL_KALeff": {
+   "formula": "KAL0/(PHI**2*math.sqrt(5/2))",
+   "valor": 1.3338420235743256,
+   "uso": "Paper 10, Ruta A"
+  },
+  "KAL_KALeff2": {
+   "formula": "(KAL0/(PHI**2*math.sqrt(5/2)))**2",
+   "valor": 1.7791345438528516,
+   "uso": "Paper 10, Ruta A"
+  },
+  "inv_S_M": {
+   "formula": "1/S_M",
+   "valor": 6.248038558908856,
+   "uso": "agrupamiento pleno 1/Omega_m,dyn, Paper 5"
+  },
+  "sK_tercio": {
+   "formula": "S_K/3",
+   "valor": 0.13443415296263247,
+   "uso": "rho_phi(1+w0) en rho_crit = 1, Paper 10"
+  },
+  "X_bg_IR": {
+   "formula": "S_K*KAL0/6",
+   "valor": 0.371132767689815,
+   "uso": "X_bg IR en rho_crit = 1, Paper 10"
+  }
+ },
+ "nucleo": {
+  "ALPHA_ATT": 2.284700655416562,
+  "AURA": 3.997847309919739,
+  "BETA": 2.379813321169844,
+  "F_SCREEN": 0.06952161114405928,
+  "F_SCREEN_IR": 0.06725327034329952,
+  "H0_ALG": 67.96213732340931,
+  "H0_GLOBAL": 67.96214152203791,
+  "H0_MIRA": 67.037,
+  "H0_SH0ES": 73.04,
+  "IGNIS": 9.519253284679376,
+  "KAL0": 5.521405974759637,
+  "K_V": 9.519253284679376,
+  "LCDM_H0": 67.36,
+  "LCDM_NS": 0.9649,
+  "LCDM_OMEGA_M": 0.3153,
+  "LCDM_SIGMA8": 0.8111,
+  "MIRA": 1.9989236549598695,
+  "M_V": 14.278879927019064,
+  "N_S": 0.9655581462513669,
+  "OMEGA": 4.759626642339688,
+  "OMEGA_B_H2": 0.02241775678109985,
+  "OMEGA_CDM_SECTOR": 0.160050228655221,
+  "OMEGA_C_H2": 0.11951440843160877,
+  "OMEGA_DE": 0.839949771344779,
+  "OMEGA_M_CMB": 0.30888084061409116,
+  "OMEGA_M_CMB_GEOMETRIC": 0.3201004573104421,
+  "OMEGA_M_CMB_MIRA": 0.3199281880406572,
+  "OMEGA_M_CMB_PIPHI": 0.31075529070751207,
+  "OMEGA_M_DYN": 0.160050228655221,
+  "OMEGA_M_H2": 0.1426675098551823,
+  "OMEGA_M_TOTAL": 0.30888084061409116,
+  "OMEGA_NU_H2": 0.0007353446424736954,
+  "PHI": 1.618033988749895,
+  "PI": 3.141592653589793,
+  "P_SC": 6.377660631089583,
+  "R2_STABILITY": 0.07187465088369115,
+  "R_TENSOR": 0.008130618755783347,
+  "SIG_H0_GLOBAL": 0.9676975244101783,
+  "SIG_H0_SH0ES": 1.04,
+  "SUM_MNU_EV": 0.06849,
+  "S_DE": 0.839949771344779,
+  "S_K": 0.40330245888789745,
+  "S_K_FULL": 0.4169051791403453,
+  "S_M": 0.160050228655221,
+  "TAU_PI_H0": 2.191165139918521,
+  "T_R": 11.993541929759218,
+  "W0": -0.839949771344779,
+  "WA": -0.6699748856723895,
+  "_M4_UV": 234.89356881873903,
+  "_X_UV": 0.3648739226169096,
+  "OMDE_DENS": 0.6911191593859088
+ },
+ "control": {
+  "identidades": {
+   "u dos formas": 0.0,
+   "n dos formas": 0.0,
+   "AURA = 2 MIRA": 0.0
+  },
+  "pasa": true,
+  "formula_rota_falla": true,
+  "errores": []
+ },
+ "_procedencia": {
+  "commit": "494529a88cf1a01e9268892f80f49c8cf643f824",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/algebra_derivada.py",
+  "script_sha256": "9c52f092f2e83e98963a5af29988179f57b1556deae887e93f817b0c09b73928",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/algebra_derivada.py"
+  ],
+  "fecha": "2026-09-30T21:15:06",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

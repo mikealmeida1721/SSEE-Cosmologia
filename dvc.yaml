@@ -41,6 +41,7 @@ stages:
       - results/logs/s8_desde_b1.json
       - results/logs/kids_publicados.json
       - results/logs/p10_uv_fscreen.json
+      - results/logs/algebra_derivada.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -105,4 +106,13 @@ stages:
       - /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
     outs:
       - results/logs/spt3g_calibrador.json:
+          cache: false
+  algebra_derivada:
+    cmd: .venv/bin/python3 src/algebra_derivada.py
+    deps:
+      - src/algebra_derivada.py
+      - src/procedencia.py
+      - src/ssee_core.py
+    outs:
+      - results/logs/algebra_derivada.json:
           cache: false

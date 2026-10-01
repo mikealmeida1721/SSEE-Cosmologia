@@ -67,6 +67,7 @@ Effective Field Theory Stability Analysis}}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \sloppy
+\input{valores_generados.tex}
 \begin{document}
 
 \maketitle
@@ -92,7 +93,7 @@ official DESI~DR2 $w_0w_a$CDM posterior within $0.24\sigma$ (Pantheon+;
 $0.2$--$1.8\sigma$ across SN compilations)---a parameter-free postdiction, with no
 claim of temporal priority over DESI~DR2.
 A Bayesian MCMC analysis under the global rate $H_0^{\rm glob}$ as prior
-($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.962\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$, which is also
+($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$, which is also
 the value at which Planck~\texttt{plik\_lite} is minimised with SSEE-fixed $\omega_b,\omega_c$; Papers~3, 9--10) yields
 $H_0 = 67.82^{+0.41}_{-0.41}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($0.68\sigma$ from Planck,
 $0.33\sigma$ from $H_0^{\rm glob}$) and $\Delta\mathrm{BIC}=-6.43$ favouring
@@ -104,16 +105,16 @@ plane, where \LCDM\ is excluded at $3.22\sigma$; under this uncompressed CMB
 likelihood $H_0$ relaxes to $65.87\pm1.17$ ($1.79\sigma$ below the anchor).
 
 The CMB-sector matter density is the standard physical observable
-$\OmmCMB = \omega_m/h^2 = 0.308881$ (Planck: $0.3153\pm 0.0073$), built
+$\OmmCMB = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (Planck: $0.3153\pm 0.0073$), built
 piece-by-piece from SSEE algebra ($\omega_m$-direct; OP-8 dissolved, no matter
-factor) and distinct from the saturation $\sm = 1+w_0 = 0.160050$, which fixes
+factor) and distinct from the saturation $\sm = 1+w_0 = \val{S_M_d6}$, which fixes
 the DESI BAO equation of state and is not a density at all.
 Full-sky CLASS Boltzmann runs confirm that the \emph{full} matter density is
-physically necessary: using only $\sm=0.160050$ as the CMB matter density
+physically necessary: using only $\sm=\val{S_M_d6}$ as the CMB matter density
 shifts the peak positions by $\sim 10\%$ and raises the RMS residual
 from $1.4\%$ to $31.5\%$.
 
-A linear Israel-Stewart perturbation analysis with $\Omega_{m,\mathrm{cosm}}=0.308881$ in
+A linear Israel-Stewart perturbation analysis with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in
 the Poisson equation yields a growth factor
 $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$ (Paper~5), giving a mean
 $\fsig$ tension of $0.70\sigma$ across six RSD surveys --- statistically identical
@@ -137,13 +138,13 @@ parameter count.} \textbf{There is no $S_8$ tension}
 
 At the Bellini-Sawicki level the sector is minimal Horndeski,
 $\alphaT = \alphaM = \alphaB = 0$ (GW170817 compatible), with kineticity
-$\alphaK = 15.591335$ and a ghost-free, gradient-stable sound speed
+$\alphaK = \val{alpha_K_z0_d6}$ and a ghost-free, gradient-stable sound speed
 $c_s^2 = 0.021284$ (Paper~7).
 
 We additionally summarise three theoretical extensions of the framework.
 In the strong-field regime Paper~8 analyses two limits: an alternative
 MOND-like limit in which the photon deflection is amplified by
-$\sqrt{\AURA}\approx 1.9995$ (numerically close to $\MIRA$ at $0.03\%$ but
+$\sqrt{\AURA}\approx \val{sqrt_AURA_d4}$ (numerically close to $\MIRA$ at $0.03\%$ but
 algebraically distinct), and the canonical limit with EFT
 $\alpha_B=\alpha_M=\alpha_T=0$ in which the residual fifth-force is
 suppressed to $F_\phi/F_N\sim 10^{-15}$ and the observable lensing recovers
@@ -153,9 +154,9 @@ $f_{\rm scr}^{\rm IR}=\alphaK/(3\MIRA)=(\pi-\phiG)/(\phiG+\pi)^2\simeq0.067$ rel
 the locally measured rate to the global background. The measured datum is the
 input and the global rate is the output:
 $H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})=68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-which sits $0.17\sigma$ from the pure number $3(\phiG+\pi)^2=67.96214$; with the
-full infrared-plus-ultraviolet fraction $f_{\rm scr}^{\rm full}=0.069522$ the same
-operation returns $67.962142$, a residual of $+4.2\times10^{-6}$ against that
+which sits $0.17\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$; with the
+full infrared-plus-ultraviolet fraction $f_{\rm scr}^{\rm full}=\val{F_SCREEN_d6}$ the same
+operation returns $\val{H0_GLOBAL_d6}$, a residual of $+4.2\times10^{-6}$ against that
 number, in both cases with zero free parameters (Papers~9 and~10).
 A UV completion $K(X)=X/\KAL+X^2/M^4$ with algebraic cutoff $M=9.68$~meV
 connects the dark-energy EFT to the inflationary $\alpha$-attractor (Paper~10).
@@ -181,7 +182,7 @@ the dark energy equation of state from theoretical principles rather than fittin
 The \SSEE framework proposes that the macroscopic universe obeys an
 algebraic closure condition: all cosmological background parameters are uniquely
 determined by two dimensionless geometric constants, the golden ratio
-$\phiG = (1+\sqrt{5})/2 \simeq 1.6180$ and $\pi \simeq 3.1416$.
+$\phiG = (1+\sqrt{5})/2 \simeq \val{PHI_d4}$ and $\pi \simeq \val{PI_d4}$.
 No optimisation over formula space was performed: the parameter values are fixed
 by the algebraic construction \citep{AlmeidaSSEE2026genesis}, not adjusted to the
 data. We make no claim of temporal priority over DESI~DR2 (public from 2025 March);
@@ -200,7 +201,7 @@ We report four independent validation tiers:
   dynamical masses.
 \item \textbf{CMB angular spectrum} (\S\ref{sec:cmb}): Full-sky CLASS Boltzmann
   integration demonstrating that the full $\omega_m$-direct matter density
-  ($\OmmCMB=0.308881$) is physically necessary for reproducing Planck~PR4 peak positions.
+  ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$) is physically necessary for reproducing Planck~PR4 peak positions.
 \item \textbf{Structure growth and $\sigma_8$} (\S\ref{sec:growth}): Israel-Stewart
   causal perturbation theory with a single matter sector. Against raw
   KiDS-Legacy $\xi_\pm$, with $A_s$ fixed by the model's own CMB fit and no free
@@ -232,19 +233,19 @@ Table~\ref{tab:register} in \S\ref{sec:falsify} lists all entries explicitly.
 The \SSEE\ framework postulates a closed algebraic system of seven structural
 registers derived from $\phiG$ and $\pi$:
 \begin{align}
-  \Omega   &= \pi + \phiG                   \simeq 4.7596 \quad (\text{Stability Metric})  \nonumber\\
-  \beta    &= (\pi + \phiG)/2               \simeq 2.3798 \quad (\text{Base Coupling Scalar}) \nonumber\\
-  \KAL     &= \beta + \pi                   \simeq 5.5214 \quad (\text{Structural Retention}) \nonumber\\
-  P_{\rm sc} &= \Omega + \phiG             \simeq 6.3777 \quad (\text{Dynamical Evolution Scalar}) \nonumber\\
-  K_v      &= \phiG + \pi + \Omega         \simeq 9.5193 \quad (\text{Structural Constraint}) \nonumber\\
-  T_r      &= 3(\phiG + \beta)             \simeq 11.9935\quad (\text{3D Saturation Horizon}) \nonumber\\
-  M_v      &= \phiG + \pi + K_v           \simeq 14.2789\quad (\text{Maximal Dimensional Invariant})
+  \Omega   &= \pi + \phiG                   \simeq \val{OMEGA_d4} \quad (\text{Stability Metric})  \nonumber\\
+  \beta    &= (\pi + \phiG)/2               \simeq \val{BETA_d4} \quad (\text{Base Coupling Scalar}) \nonumber\\
+  \KAL     &= \beta + \pi                   \simeq \val{KAL0_d4} \quad (\text{Structural Retention}) \nonumber\\
+  P_{\rm sc} &= \Omega + \phiG             \simeq \val{P_SC_d4} \quad (\text{Dynamical Evolution Scalar}) \nonumber\\
+  K_v      &= \phiG + \pi + \Omega         \simeq \val{K_V_d4} \quad (\text{Structural Constraint}) \nonumber\\
+  T_r      &= 3(\phiG + \beta)             \simeq \val{T_R_d4}\quad (\text{3D Saturation Horizon}) \nonumber\\
+  M_v      &= \phiG + \pi + K_v           \simeq \val{M_V_d4}\quad (\text{Maximal Dimensional Invariant})
   \label{eq:registers}
 \end{align}
 From these seven scalars, the dark energy equation of state is derived uniquely:
 \begin{equation}
   \wz = -\frac{T_r}{M_v}
-     = -\frac{3\phiG+\pi}{2(\phiG+\pi)} \simeq -0.83995,
+     = -\frac{3\phiG+\pi}{2(\phiG+\pi)} \simeq \val{W0_d5},
   \qquad
   \wa = -\frac{P_{\rm sc}}{I_g}
      = -\frac{P_{\rm sc}}{\pi+P_{\rm sc}} \simeq -0.66997.
@@ -252,7 +253,7 @@ From these seven scalars, the dark energy equation of state is derived uniquely:
 \end{equation}
 The dark-energy saturation follows algebraically:
 $s_{\rm DE} = |{\wz}| = T_r/M_v \simeq 0.8399$ --- a number of the equation of
-state, not the density $\Omde = 1-\OmmCMB = 0.691119$.
+state, not the density $\Omde = 1-\OmmCMB = \val{OMDE_DENS_d6}$.
 
 \subsection{Derived cosmological parameters}
 \label{sec:params}
@@ -260,8 +261,8 @@ state, not the density $\Omde = 1-\OmmCMB = 0.691119$.
 All primary observational inputs are retrodicted without fitting:
 \begin{alignat}{3}
   \frac{H_0}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} &= 3(\phiG+\pi)^2        &&\simeq 67.96214,  \label{eq:H0}\\
-  n_s   &= 1 - \phiG^{-7}        &&\simeq 0.96556,  \label{eq:ns}\\
-  \OmmCMB &= \omega_m/h^2 &&\simeq 0.308881 \quad (\omega_m\text{-direct, CMB sector}).
+  n_s   &= 1 - \phiG^{-7}        &&\simeq \val{N_S_d5},  \label{eq:ns}\\
+  \OmmCMB &= \omega_m/h^2 &&\simeq \val{OMEGA_M_TOTAL_d6} \quad (\omega_m\text{-direct, CMB sector}).
   \label{eq:Omm}
 \end{alignat}
 Planck~2018 measurements: $H_0 = 67.36\pm 0.54$, $n_s = 0.9649\pm 0.0042$,
@@ -273,20 +274,20 @@ with no adjustment.
 \label{sec:mira}
 
 The framework has a single matter density.
-The dark energy EoS fixes the saturation $s_{\rm DE} = |{\wz}| = 0.839950$, and
-with it $\sm = 1 - s_{\rm DE} = 1 + w_0 = 0.160050$ --- a number of the
+The dark energy EoS fixes the saturation $s_{\rm DE} = |{\wz}| = \val{S_DE_d6}$, and
+with it $\sm = 1 - s_{\rm DE} = 1 + w_0 = \val{S_M_d6}$ --- a number of the
 equation of state, \emph{not} a matter density.
 However, the CMB angular-diameter distance is sensitive to the
 \textit{total} matter density, which under the $\omega_m$-direct reframe
 (OP-8 dissolved) is the standard physical observable built from SSEE algebra:
 \begin{equation}
   \OmmCMB = \frac{\omega_m}{h^2}
-          = \frac{\omega_b+\omega_c+\omega_\nu}{h^2} = 0.308881,
+          = \frac{\omega_b+\omega_c+\omega_\nu}{h^2} = \val{OMEGA_M_TOTAL_d6},
   \qquad \omega_c=\mathrm{KAL_0}\,\omega_b\,n_s,
   \label{eq:omega_m_direct}
 \end{equation}
 in agreement with Planck~2018 ($0.3153\pm 0.0073$) at $0.88\sigma$. There is
-\emph{no} matter factor: $\sm=0.160050$ (DESI) and $\omega_m$ (CMB) are two
+\emph{no} matter factor: $\sm=\val{S_M_d6}$ (DESI) and $\omega_m$ (CMB) are two
 independent SSEE predictions. (The earlier, now superseded MIRA mapping
 $\MIRA=(3\phiG+\pi)/4\simeq1.9989$ gave $\OmmCMB=\MIRA\times\sm=0.3199$, superseded;
 $\MIRA$ now enters only the Hubble screening fraction, Paper~9.)
@@ -349,14 +350,14 @@ $(w_0, w_a)$ vs DESI DR2 $w_0w_a$CDM (Pantheon+) & $0.24\sigma$ & $0.7\sigma$ & 
 \end{tabular}
 \end{table}
 
-With the total gravitating matter density $\Omega_m=\omega_m/h^2=0.308881$ in the
+With the total gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ in the
 background geometry, \SSEE\ is favoured on every information criterion:
 $\Delta\mathrm{BIC}=-6.43$ over \LCDM\ and $-6.35$ over CPL, $\Delta\mathrm{DIC}=
 -5.66$ and $-4.02$. The \SSEE\ sound horizon then matches \LCDM\
 ($r_d=147.17$ vs $147.10$~Mpc, CAMB) and the $H_0$ posterior sits $0.39\sigma$ from
 Planck, so no background-structure penalty arises. An earlier ``$+206$''
 full-background penalty was an artefact of placing the cold sector
-$1+w_0=0.160050$ in $E(z)$ where the total density belongs; with the correct total
+$1+w_0=\val{S_M_d6}$ in $E(z)$ where the total density belongs; with the correct total
 density it does not occur.
 The $\omega_m$-direct two-$\Omega_m$ construction (\S\ref{sec:mira}) resolves
 the background tension, validated in \S\ref{sec:cmb} below.
@@ -420,12 +421,12 @@ $\sim7\times10^4$ effective samples. DESI~DR2-corrected vector (V-L4-DESI).}
 Parameter & Posterior (mean $\pm1\sigma$) & Algebraic SSEE & Tension \\
 \midrule
 $\Omega_b h^2$                     & $0.02243 \pm 0.00013$ & $0.02242$ & $0.08\sigma$ \\
-$\Omega_c h^2$                     & $0.11935 \pm 0.00082$ & $0.11951$ & $0.20\sigma$ \\
+$\Omega_c h^2$                     & $0.11935 \pm 0.00082$ & $\val{OMEGA_C_H2_d5}$ & $0.20\sigma$ \\
 $r_{\rm drag}$ [Mpc]               & $147.20  \pm 0.21$    & $147.17$  & $0.14\sigma$ \\
-$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]   & $65.87   \pm 1.17$    & $67.962137$   & $1.79\sigma$ \\
-$\Omega_m$                         & $0.3288  \pm 0.0118$  & $0.308881$ & $1.69\sigma$ \\
-$w_0$                              & $-0.655  \pm 0.107$   & $-0.839950$  & $1.73\sigma$ \\
-$w_a$                              & $-1.104  \pm 0.304$   & $-0.669975$  & $1.43\sigma$ \\
+$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]   & $65.87   \pm 1.17$    & $\val{H0_ALG_d6}$   & $1.79\sigma$ \\
+$\Omega_m$                         & $0.3288  \pm 0.0118$  & $\val{OMEGA_M_TOTAL_d6}$ & $1.69\sigma$ \\
+$w_0$                              & $-0.655  \pm 0.107$   & $\val{W0_d6}$  & $1.73\sigma$ \\
+$w_a$                              & $-1.104  \pm 0.304$   & $\val{WA_d6}$  & $1.43\sigma$ \\
 \midrule
 \multicolumn{3}{l}{\textbf{Joint $w_0$--$w_a$ distance:} SSEE $1.31\sigma$ / \LCDM\ excluded $3.22\sigma$} \\
 \bottomrule
@@ -435,7 +436,7 @@ $w_a$                              & $-1.104  \pm 0.304$   & $-0.669975$  & $1.4
 Under the \emph{full} Planck $C_\ell$ likelihood --- with $H_0$ free under a
 flat prior rather than fixed to a compressed distance prior --- the posterior
 sits at $H_0=65.87\pm1.17$, some $1.79\sigma$ below the global rate
-$H_0^{\rm glob}=67.96214$. This mild downward pull is a known feature of
+$H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. This mild downward pull is a known feature of
 $w_0w_a$CDM under the uncompressed CMB likelihood and is stated openly. The key
 model-comparison statement is unchanged and in fact sharper: the fixed
 algebraic point $(-0.840,-0.670)$ lies $1.31\sigma$ from the joint $w_0$--$w_a$
@@ -462,7 +463,7 @@ a substantial parsimony advantage.
 
 \paragraph{The same fixed values in every reading.}
 Both tests share a defining feature: the \SSEE\ background carries \emph{the
-same fixed values into every probe}. The pair $w_0=-0.839950,\,w_a=-0.669975$
+same fixed values into every probe}. The pair $w_0=\val{W0_d6},\,w_a=\val{WA_d6}$
 confronts DESI (Paper~II, $0.24\sigma$ Pantheon+), the Planck PR4 CMB
 (Paper~III, $\Delta\mathrm{BIC}=-32.9$), the $f\sigma_8$ compilation
 ($0.93\sigma$) and the cluster masses ($\chi^2_r=0.122$) without ever being
@@ -488,11 +489,11 @@ configurations to isolate the effect of the full CMB matter density.
 \begin{description}[itemsep=1pt]
   \item[SSEE full-$\Omega_m$ ($\omega_m$-direct canonical):] $\Omega_b = 0.04854$
     ($=\omega_b/h^2$), $\Omega_{\rm cdm} = 0.26035$
-    (total $\OmmCMB = 0.308881$; OP-8 dissolved, no matter factor), $w_0 = -0.839950$,
-    $w_a = -0.669975$, $n_s = 0.965558$, $h = 0.67962$. The full matter density is
+    (total $\OmmCMB = \val{OMEGA_M_TOTAL_d6}$; OP-8 dissolved, no matter factor), $w_0 = \val{W0_d6}$,
+    $w_a = \val{WA_d6}$, $n_s = \val{N_S_d6}$, $h = 0.67962$. The full matter density is
     set directly as a CLASS background input.
   \item[SSEE dynamical-only:] same EoS and $h$, but $\Omega_b = 0.048432$,
-    $\Omega_{\rm cdm} = 0.111568$ (total $\sm = 0.160050$), using only the
+    $\Omega_{\rm cdm} = 0.111568$ (total $\sm = \val{S_M_d6}$), using only the
     dynamical sector as CMB matter.
 \end{description}
 A fiducial \LCDM\ run with Planck~2018 best-fit parameters serves as reference.
@@ -514,19 +515,19 @@ RMS residual $\Delta C_\ell/C_\ell^{\Lambda\rm CDM}$ across $\ell = 30$--$2500$.
 Model & $\ell_1$ & $\ell_2$ & $\ell_3$ & RMS residual \\
 \midrule
 \LCDM\ (Planck 2018)    & 221 & 537 & 814 & reference \\
-\textbf{SSEE ($\Omega_{m,\rm CMB}=0.308881$)}    & \textbf{221} & \textbf{537} & \textbf{814} & \textbf{0.14\%} \\
-SSEE ($s_m=0.160050$)             & 240 & 597 & 922 & 31.5\% \\
+\textbf{SSEE ($\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$)}    & \textbf{221} & \textbf{537} & \textbf{814} & \textbf{0.14\%} \\
+SSEE ($s_m=\val{S_M_d6}$)             & 240 & 597 & 922 & 31.5\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-With the dynamical density $\Omm=0.160050$ alone, all three acoustic peaks shift by
+With the dynamical density $\Omm=\val{S_M_d6}$ alone, all three acoustic peaks shift by
 $\sim 10\%$ toward higher $\ell$ and the RMS residual increases by a factor of 22.
 This demonstrates the \emph{two-$\Omega_m$ structure}: the CMB requires the full
-$\omega_m$-direct matter density $\Omega_{m,\rm CMB}=0.308881$ (built from
+$\omega_m$-direct matter density $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$ (built from
 $\omega_b+\omega_c+\omega_\nu$, no matter factor; OP-8 dissolved), and cannot be
-reproduced with $\Omega_{m,\rm dyn}=0.160050$ alone.
-With $\Omega_{m,\rm CMB}=0.308881$, the peak positions agree with \LCDM\ to within $\Delta\ell \le 1$
+reproduced with $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone.
+With $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$, the peak positions agree with \LCDM\ to within $\Delta\ell \le 1$
 ($\ell = 221, 537, 814$) and the RMS residual is $0.14\%$, consistent with the $\chi^2_r \simeq 1.06$
 reported in the CAMB-based Planck~PR4 likelihood analysis of Paper~3
 \citep{AlmeidaSSEE2026P3}. This is an independent-code cross-check: two Boltzmann
@@ -541,13 +542,13 @@ and \LCDM.
 \includegraphics[width=0.82\textwidth]{../class_ssee/output/ssee_v36_CMB_TT_comparison.png}
 \caption{CMB TT power spectrum from CLASS\@. \textit{Blue dashed}: \LCDM\ Planck~2018.
          \textit{Red solid}: SSEE with the full $\omega_m$-direct canonical matter density
-         $\OmmCMB=0.308881$ ($w_0=-0.839950$, $w_a=-0.669975$) --- peaks at
+         $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ ($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) --- peaks at
          $\ell = 221, 537, 814$, agreeing with \LCDM\ to within $\Delta\ell \le 1$
          (RMS $= 0.14\%$). Grey points: Planck~2018 binned TT (approximate).
-         The SSEE dynamical-only run ($\OmmCMB = 0.160050$) is omitted from this panel;
+         The SSEE dynamical-only run ($\OmmCMB = \val{S_M_d6}$) is omitted from this panel;
          it produces peaks at $\ell = 240, 597, 922$ with RMS $= 31.5\%$
          relative to \LCDM, confirming that the \emph{full} matter density
-         (not the dynamical $\sm = 0.160050$) is needed to reproduce the acoustic scale.}
+         (not the dynamical $\sm = \val{S_M_d6}$) is needed to reproduce the acoustic scale.}
 \label{fig:cmb_tt}
 \end{figure}
 
@@ -555,7 +556,7 @@ and \LCDM.
 \label{sec:rd}
 
 The CAMB-based analysis of Paper~3 computes the \SSEE\ drag horizon from the
-full $\omega_m$-direct CMB density $\OmmCMB=0.308881$ (OP-8 dissolved, no matter
+full $\omega_m$-direct CMB density $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ (OP-8 dissolved, no matter
 factor): the physical drag horizon is
 $r_d = 147.17$~Mpc, within $1\sigma$ of the Planck~2018 measurement
 $r_d = 147.09\pm0.26$~Mpc \citep{Planck2018} (TT,TE,EE+lowE, Table~2; no BAO prior).
@@ -572,7 +573,7 @@ interpretation as a $|\wz|$ mapping of the geometric scale is superseded.
 \subsection{Israel-Stewart causal perturbations: single-sector}
 \label{sec:IS}
 
-Because $\wz = -0.839950 < -1/3$, a naive $k$-essence interpretation yields
+Because $\wz = \val{W0_d6} < -1/3$, a naive $k$-essence interpretation yields
 a bare sound speed $c_{s,\mathrm{bare}}^2 = \wz \simeq -0.840$, implying
 catastrophic gradient instability on all sub-horizon scales.
 Paper~5 \citep{AlmeidaSSEE2026P5} performs a causal Israel-Stewart (IS)
@@ -582,7 +583,7 @@ effective IS sound speed to zero:
 $c_{s,\mathrm{eff}}^2(k\to\infty) = 0$, to floating-point precision.
 
 Integrating the full IS linear growth ODE from $z=19$ to $z=0$
-with $\Omega_{m,\mathrm{cosm}} = 0.308881$ in the Poisson source:
+with $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ in the Poisson source:
 \begin{equation}
   \mathcal{G} = D_1^{\mathrm{SSEE}}/D_1^{\Lambda\mathrm{CDM}} = 1.0032,
   \qquad
@@ -597,7 +598,7 @@ the different background.
 \subsection{The growth amplitude, measured on raw shear data}
 \label{sec:growth_raw}
 
-The growth sector has a single matter density, $\Omm=0.308881$, entering the
+The growth sector has a single matter density, $\Omm=\val{OMEGA_M_TOTAL_d6}$, entering the
 background and the growth of structure alike, and it is tested against raw
 survey data rather than against compressed statistics whose reduction assumes a
 $\Lambda$CDM background.
@@ -627,7 +628,7 @@ them is the parameter count.
 \subsection{$f\sigma_8$}
 \label{sec:tension_table}
 
-At the single-sector level with the Poisson source at $\OmmCMB=0.308881$
+At the single-sector level with the Poisson source at $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$
 (Paper~5), the growth factor is $\mathcal{G}=1.0032$ and the mean $\fsig$
 tension across six RSD surveys is $0.70\sigma$ --- statistically
 indistinguishable from $\Lambda$CDM ($0.73\sigma$). Against the \emph{raw}
@@ -651,16 +652,16 @@ predictions at the $10\%$--$20\%$ level.
 Paper~7 \citep{AlmeidaSSEE2026P7} writes the dark-energy sector as a $k$-essence
 scalar field with the two-term kinetic function $K(X)=c_1X+c_2X^2$, minimally
 coupled to gravity and to matter, with no potential. The ratio
-$u\equiv c_2X/c_1=-(M_v+T_r)/(3T_r+M_v)=-0.522735$ is fixed by the algebraic
-equation of state, and reproduces $w_\varphi=\wz=-0.839950$ exactly. In the
+$u\equiv c_2X/c_1=-(M_v+T_r)/(3T_r+M_v)=\val{u_condensado_d6}$ is fixed by the algebraic
+equation of state, and reproduces $w_\varphi=\wz=\val{W0_d6}$ exactly. In the
 Bellini-Sawicki parametrisation \citep{Bellini2015} this yields
 \begin{equation}
   \alphaT = \alphaM = \alphaB = 0 \quad (\text{exact}),
   \qquad
-  \alphaK = 3\,\Omega_{\rm DE}\,(5-3\wz) = 15.591335,
+  \alphaK = 3\,\Omega_{\rm DE}\,(5-3\wz) = \val{alpha_K_z0_d6},
   \label{eq:alphas}
 \end{equation}
-with the dark-energy \emph{density} $\Omega_{\rm DE}=1-\OmmCMB=0.691119$.
+with the dark-energy \emph{density} $\Omega_{\rm DE}=1-\OmmCMB=\val{OMDE_DENS_d6}$.
 The vanishing of $\alphaT$, $\alphaM$ and $\alphaB$ implies: (i) gravitational
 waves propagate at $c$ (GW170817 compatible at $|\alphaT| < 10^{-15}$
 \citep{GW170817,Monitor2017}); (ii) no extra polarisation modes; (iii) standard
@@ -670,7 +671,7 @@ light deflection.
 \label{sec:eftcamb}
 
 The solution requires $c_1<0$ and $c_2>0$: the field is a ghost condensate,
-stabilised at $X/X_{\min}=1.045471$, where the no-ghost condition
+stabilised at $X/X_{\min}=\val{X_sobre_Xmin_d6}$, where the no-ghost condition
 $K_X+2XK_{XX}>0$ holds. Its sound speed is fixed by the same algebra,
 \begin{equation}
   c_s^2 = \frac{M_v-T_r}{5M_v+3T_r} = 0.021284 > 0,
@@ -684,10 +685,10 @@ $0.007\%$ and the TT spectrum only at $\ell<10$, seven times below cosmic
 variance. The falsifiable content of this sector is therefore $c_s^2$ and
 $\wz$, not $\alphaK$.
 
-The quantity $0.403302$ that appears elsewhere in this journal is not a
+The quantity $\val{S_K_d6}$ that appears elsewhere in this journal is not a
 kineticity: it is $s_K=-3\wz(1+\wz)=3\,s_{\rm DE}\,s_m$, the fractional
 dilution rate of the dark-energy pressure per e-fold, built from the
-saturations $s_{\rm DE}=|\wz|=0.839950$ and $s_m=1+\wz=0.160050$ (numbers of
+saturations $s_{\rm DE}=|\wz|=\val{S_DE_d6}$ and $s_m=1+\wz=\val{S_M_d6}$ (numbers of
 the equation of state, not densities). It enters $f_{\rm screen}$
 (\S\ref{sec:extensions}).
 
@@ -704,7 +705,7 @@ phantom regime requires $\alphaB \neq 0$, to supply a degree of freedom able
 to absorb the null-energy-condition violation.  That reading is superseded,
 and the reason is that the phantom regime itself is gone.  In the revised
 action of Paper~7 the field is minimally coupled and its equation of state is
-constant at $\wz = -0.839950 > -1$: the null energy condition holds at all
+constant at $\wz = \val{W0_d6} > -1$: the null energy condition holds at all
 times and there is no crossing for $\alphaB$ to absorb.  The phantom crossing
 of earlier versions was produced by the conformal dark-sector coupling, which
 is withdrawn.
@@ -753,10 +754,10 @@ by $\sqrt{\AURA}$ relative to the GR prediction for the same baryonic mass,
 giving an algebraic Einstein-radius ratio
 \begin{equation}
 \left.\frac{\theta_E^{\rm SSEE}}{\theta_E^{\rm GR}}\right|_{\rm alt}
-   = \sqrt{\AURA}\approx 1.9995
+   = \sqrt{\AURA}\approx \val{sqrt_AURA_d4}
    \qquad\text{(alternative MOND-like limit only).}
 \end{equation}
-The quantity $\sqrt{\AURA}$ is numerically close to $\MIRA=\AURA/2\approx 1.9989$
+The quantity $\sqrt{\AURA}$ is numerically close to $\MIRA=\AURA/2\approx \val{MIRA_d4}$
 at $0.03\%$ because $\AURA\approx 4$ makes both round to $2$; the two are
 distinct algebraic operations on $\AURA$ and the closeness is not a structural
 identity. Solar-system gravitational tests are automatically satisfied: the
@@ -787,7 +788,7 @@ imply a late-time \emph{local screening fraction}
       = \frac{\pi-\phiG}{(\phiG+\pi)^2}
       \approx 0.0673 ,
 \end{equation}
-where $s_K = -3\wz(1+\wz) = 0.403302$ is the pressure dilution rate of
+where $s_K = -3\wz(1+\wz) = \val{S_K_d6}$ is the pressure dilution rate of
 \S\ref{sec:eftcamb} and
 $\MIRA = (3\phiG+\pi)/4$. The structural constant $\AURA = 2\MIRA$ cancels
 exactly in the ratio, leaving a pure function of $\phiG$ and $\pi$. Applied as a
@@ -824,9 +825,9 @@ M^4 = 45\,\alpha^2\,\rho_c = 5\,\phiG^8\,\rho_c \approx 234.9\,\rho_c ,
 \end{equation}
 where the identity $45\alpha^2 = 5\phiG^8$ follows exactly from
 $\alpha=\phiG^4/3$. With this cutoff the full Bellini-Sawicki kineticity becomes
-$\alphaK^{\rm full}=0.41691$ ($+3.37\%$ over the IR value). Applied to the
+$\alphaK^{\rm full}=\val{S_K_FULL_d5}$ ($+3.37\%$ over the IR value). Applied to the
 measured SH0ES rate this gives the canonical UV value
-$H_0^{\rm glob,UV}=73.04\times(1-0.069522)=67.96214$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+4.2{\times}10^{-6}$ against $3(\varphi+\pi)^2$, $\sigma=0.968$;
+$H_0^{\rm glob,UV}=73.04\times(1-\val{F_SCREEN_d6})=67.96214$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+4.2{\times}10^{-6}$ against $3(\varphi+\pi)^2$, $\sigma=0.968$;
 the earlier MIRA-anchored $72.05$ at $0.96\sigma$ is superseded by the reframe).
 
 We state the epistemic status of these figures plainly: the UV value is
@@ -859,7 +860,7 @@ predictions.
 falsified at the theory level if \textit{any} of the following were established:
 (i) $(\wz, \wa)$ is inconsistent with the DESI~DR2 posterior at $>3\sigma$;
 (ii) a future CLASS MCMC with Planck+DESI likelihoods requires
-$\Omega_{m,\mathrm{CMB}} \neq 0.308881$ at $>3\sigma$;
+$\Omega_{m,\mathrm{CMB}} \neq \val{OMEGA_M_TOTAL_d6}$ at $>3\sigma$;
 (iii) cosmic shear places $S_8$ more than $3\sigma$ from $0.8273$ --- the value predicted once $A_s$ is \emph{fixed} to what the CMB gives under the same background, leaving no free cosmological parameter and nowhere to absorb the discrepancy (superseding the weaker earlier form, $3\sigma$ from $0.7555\pm0.0192$ with $A_s$ fitted)
 when the primordial amplitude is fitted to raw $\xi_\pm$ data with the \SSEE\
 background held fixed;
@@ -881,28 +882,28 @@ $\sqrt{\AURA}\approx\MIRA$ at $>3\sigma$ in HST/JWST surveys.
 Quantity (algebraic formula) & Value & Test / Instrument & Status \\
 \midrule
 \multicolumn{4}{l}{\textit{Background sector (algebraic dictionary)}} \\
-$w_0 = -T_r/M_v$ & $-0.839950$ & DESI DR2 CPL posterior & Postdiction \\
-$w_a = -P_{\rm sc}/I_g$ & $-0.669975$ & DESI DR2 CPL posterior & Postdiction \\
-$\MIRA = (3\phiG+\pi)/4$ & $1.998924$ & $\fscr=\alphaK/(3\MIRA)$ (Papers 8, 9) & Postdiction \\
+$w_0 = -T_r/M_v$ & $\val{W0_d6}$ & DESI DR2 CPL posterior & Postdiction \\
+$w_a = -P_{\rm sc}/I_g$ & $\val{WA_d6}$ & DESI DR2 CPL posterior & Postdiction \\
+$\MIRA = (3\phiG+\pi)/4$ & $\val{MIRA_d6}$ & $\fscr=\alphaK/(3\MIRA)$ (Papers 8, 9) & Postdiction \\
 \midrule
 \multicolumn{4}{l}{\textit{Retrodictions (derived independently, compared to existing data)}} \\
 $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\phiG+\pi)^2$ & $67.96214$ km/s/Mpc & Planck 2018 & Retrodiction \\
-$n_s = 1-\phiG^{-7}$ & $0.965558$ & Planck 2018 & Retrodiction \\
-$\OmmCMB = \omega_m/h^2$ ($\omega_m$-direct) & $0.308881$ & Planck 2018 & Retrodiction \\
+$n_s = 1-\phiG^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & Retrodiction \\
+$\OmmCMB = \omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & Planck 2018 & Retrodiction \\
 $r_d$ (CAMB, $\omega_m$-direct) & $147.17$ Mpc & Planck 2018 $r_d$ ($0.32\sigma$) & Retrodiction \\
 $\gamma_{\rm IS} = 0.5504$ & $\approx \gamma_{\Lambda\rm CDM} = 0.55$ & RSD surveys & Retrodiction \\
 $\alphaT = \alphaM = \alphaB = 0$ & exact & GW170817 $|\alphaT|<10^{-15}$ & Retrodiction \\
 $S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $0.8273$ predicted & measured $0.8265\pm0.0176$ ($0.05\sigma$) & \textbf{Prediction} \\
 $S_8$ (MCMC vs.\ raw KiDS-1000 $\xi_\pm$) & $0.7555\pm0.0192$ & $\Lambda$CDM control: $0.7571\pm0.0194$ & Retrodiction \\
 $\sigma_8$ ($A_s$ fixed to Planck; ceiling) & $0.8149$ & convention, not a prediction & --- \\
-$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-\fscr^{\rm IR})$ & $68.13$ km/s/Mpc & $3(\phiG+\pi)^2=67.96214$ ($0.17\sigma$; IR only, partial) & Retrodiction \\
-$H_0^{\rm glob} = H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $67.962142$ km/s/Mpc & $3(\phiG+\pi)^2$ (residual $+4.2{\times}10^{-6}$) & Retrodiction \\
+$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-\fscr^{\rm IR})$ & $68.13$ km/s/Mpc & $3(\phiG+\pi)^2=\val{H0_GLOBAL_d5}$ ($0.17\sigma$; IR only, partial) & Retrodiction \\
+$H_0^{\rm glob} = H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$ (residual $+4.2{\times}10^{-6}$) & Retrodiction \\
 \midrule
 \multicolumn{4}{l}{\textit{Predictions (not yet observationally accessible)}} \\
 
 $c_s^2 = (M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & dark-energy clustering (Euclid, LSST) & Prediction \\
 $r = \phiG^{-10}$ & $0.008131$ & LiteBIRD $\sim$2032 & Prediction \\
-$\theta_E^{\rm SSEE}/\theta_E^{\rm GR}|_{\rm alt} = \sqrt{\AURA}$ & $1.9995$ (alt.\ MOND-like limit only) & HST/JWST strong lensing & Conditional prediction (not canonical; OP-13) \\
+$\theta_E^{\rm SSEE}/\theta_E^{\rm GR}|_{\rm alt} = \sqrt{\AURA}$ & $\val{sqrt_AURA_d4}$ (alt.\ MOND-like limit only) & HST/JWST strong lensing & Conditional prediction (not canonical; OP-13) \\
 \bottomrule
 \end{tabular}%
 }
@@ -920,7 +921,7 @@ The most significant open challenges are:
 
 \textbf{(i) $\omega_m$-direct residual dependencies.}
 The CLASS tests confirm that the full $\omega_m$-direct density
-$\OmmCMB = \omega_m/h^2 = 0.308881$ (built from $\omega_b+\omega_c+\omega_\nu$,
+$\OmmCMB = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (built from $\omega_b+\omega_c+\omega_\nu$,
 no matter factor; OP-8 dissolved) is physically necessary for CMB peak
 reproduction, and it is \emph{not} a free knob: $\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s$
 is a forward algebraic identity (Paper~1). The honest residual is that $\OmmCMB$
@@ -942,7 +943,7 @@ Paper~10 supplies a UV completion at the EFT level --- the higher-derivative
 operator $X^2/M^4$ with algebraic cutoff $M = 9.68$~meV --- but a derivation of
 the full $P(X,\phi)$ Lagrangian from $\phiG$ and $\pi$ alone remains open.
 Under the $\omega_m$-direct reframe (OP-8 dissolved) the CMB matter density is
-the standard $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = 0.308881$, with no matter
+the standard $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, with no matter
 factor; the earlier MIRA-mapped $0.31993$ and geometric
 $(\pi-\phiG)/(\pi+\phiG)=0.32010$ forms are superseded. The residual open
 problem is now only the UV origin of the algebraic $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$
@@ -970,14 +971,14 @@ across four observational tiers.
   $1.31\sigma$ in the $w_0$--$w_a$ plane, where \LCDM\ is excluded at $3.22\sigma$.
 
 \item \textbf{CMB Boltzmann.} CLASS confirms that the full $\omega_m$-direct
-  matter density ($\OmmCMB=0.308881$) is physically necessary: with only the
-  dynamical $\sm=0.160050$, the CMB RMS residual jumps by a factor of 22 and
+  matter density ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$) is physically necessary: with only the
+  dynamical $\sm=\val{S_M_d6}$, the CMB RMS residual jumps by a factor of 22 and
   all three acoustic peaks shift by $\sim 10\%$.
   With the full $\omega_m$-direct density, peak positions agree with \LCDM\ to
   within $\Delta\ell \le 1$ (RMS $= 0.14\%$).
 
 \item \textbf{Structure growth.} The IS perturbation analysis
-  ($\OmmCMB=0.308881$ in Poisson) gives $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$,
+  ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ in Poisson) gives $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$,
   with mean $f\sigma_8$ tension $0.70\sigma$ (Paper~5) --- statistically identical
   to $\Lambda$CDM ($0.73\sigma$). In the lensing amplitude, with $A_s$ fixed to the
   value the model's own CMB fit supplies and no free cosmological parameter,
@@ -989,7 +990,7 @@ across four observational tiers.
 \item \textbf{EFT stability.} The two-term $k$-essence of Paper~7 is a ghost
   condensate, ghost-free and gradient-stable with $c_s^2 = 0.021284$;
   $\alphaT = \alphaM = \alphaB = 0$ exactly (GW170817 compatible) and
-  $\alphaK = 15.591335$, which is not observationally accessible. A detection of
+  $\alphaK = \val{alpha_K_z0_d6}$, which is not observationally accessible. A detection of
   $\alphaB \neq 0$ would falsify the sector. The same action fixes $\wz$ but
   does not produce $\wa$ (OP-24).
 
@@ -999,10 +1000,10 @@ across four observational tiers.
   $\fscr^{\rm IR}=(\pi-\phiG)/(\phiG+\pi)^2\approx0.067$ takes the measured SH0ES
   rate as input and returns the global background
   $H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-\fscr^{\rm IR})=68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-  $0.17\sigma$ from the pure number $3(\phiG+\pi)^2=67.96214$, with
+  $0.17\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$, with
   zero free parameters (Paper~9). A UV completion $K(X)=X/\KAL+X^2/M^4$ with
   algebraic cutoff $M=9.68$~meV connects the dark-energy EFT to the inflationary
-  $\alpha$-attractor; the associated $H_0^{\rm glob,UV}=67.96214$~km\,s$^{-1}$\,Mpc$^{-1}$
+  $\alpha$-attractor; the associated $H_0^{\rm glob,UV}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$
   ($4.3{\times}10^{-6}\sigma$ from $3(\varphi+\pi)^2$; the earlier MIRA-anchored $72.05$ at $0.96\sigma$ is superseded)
   is a self-consistency check conditional on a separability postulate, not an
   independent prediction (Paper~10).
@@ -1034,19 +1035,19 @@ at Zenodo \citep{AlmeidaSSEE2026zenodo}.
 \toprule
 Parameter & Formula & SSEE value & Observed \\
 \midrule
-$w_0$ & $-T_r/M_v = -(3\phiG+\pi)/[2(\phiG+\pi)]$ & $-0.839950$ & $-0.838\pm0.057$ (DESI) \\
-$w_a$ & $-P_{\rm sc}/I_g$ & $-0.669975$ & $-0.631\pm0.226$ (DESI) \\
+$w_0$ & $-T_r/M_v = -(3\phiG+\pi)/[2(\phiG+\pi)]$ & $\val{W0_d6}$ & $-0.838\pm0.057$ (DESI) \\
+$w_a$ & $-P_{\rm sc}/I_g$ & $\val{WA_d6}$ & $-0.631\pm0.226$ (DESI) \\
 $H_0$ & $3(\phiG+\pi)^2$ & $67.96214$ km/s/Mpc & $67.36\pm0.54$ (Planck) \\
-$n_s$ & $1-\phiG^{-7}$ & $0.965558$ & $0.9649\pm0.0042$ (Planck) \\
-$\OmmCMB$ & $\omega_m/h^2$ ($\omega_m$-direct) & $0.308881$ & $0.3153\pm0.0073$ (Planck) \\
-$\Omde$ & $1-\OmmCMB$ (density) & $0.691119$ & $0.6847$ (\LCDM) \\
-$s_{\rm DE}$ & $T_r/M_v = |w_0|$ (saturation, not a density) & $0.839950$ & --- \\
-$\sm$ & $1 - s_{\rm DE} = 1+w_0$ (saturation, not a density) & $0.160050$ & --- \\
-$\MIRA$ & $(3\phiG+\pi)/4$ (Mirror Ratio; enters $\fscr$) & $1.998924$ & --- \\
+$n_s$ & $1-\phiG^{-7}$ & $\val{N_S_d6}$ & $0.9649\pm0.0042$ (Planck) \\
+$\OmmCMB$ & $\omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & $0.3153\pm0.0073$ (Planck) \\
+$\Omde$ & $1-\OmmCMB$ (density) & $\val{OMDE_DENS_d6}$ & $0.6847$ (\LCDM) \\
+$s_{\rm DE}$ & $T_r/M_v = |w_0|$ (saturation, not a density) & $\val{S_DE_d6}$ & --- \\
+$\sm$ & $1 - s_{\rm DE} = 1+w_0$ (saturation, not a density) & $\val{S_M_d6}$ & --- \\
+$\MIRA$ & $(3\phiG+\pi)/4$ (Mirror Ratio; enters $\fscr$) & $\val{MIRA_d6}$ & --- \\
 \midrule
-$\KAL$ & $\beta + \pi = (\phiG+3\pi)/2$ & $5.521406$ & --- \\
-$\alphaK$ & $3\,\Omde(5-3w_0)$ & $15.591335$ & not accessible \\
-$s_K$ & $-3w_0(1+w_0)$ & $0.403302$ & --- (enters $\fscr$) \\
+$\KAL$ & $\beta + \pi = (\phiG+3\pi)/2$ & $\val{KAL0_d6}$ & --- \\
+$\alphaK$ & $3\,\Omde(5-3w_0)$ & $\val{alpha_K_z0_d6}$ & not accessible \\
+$s_K$ & $-3w_0(1+w_0)$ & $\val{S_K_d6}$ & --- (enters $\fscr$) \\
 $c_s^2$ & $(M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & --- \\
 $\alphaT = \alphaM = \alphaB$ & minimal coupling & $0$ & $|\alphaT|<10^{-15}$ (GW170817) \\
 \midrule
@@ -1055,7 +1056,7 @@ $S_8$ & MCMC vs.\ raw KiDS-1000 $\xi_\pm$ & $0.7555\pm0.0192$ & $0.759\pm0.024$ 
 $r$ & $\phiG^{-10}$ & $0.008131$ & $<0.036$ (BK18) \\
 \midrule
 $\fscr$ & $(\pi-\phiG)/(\phiG+\pi)^2$ & $0.0673$ & --- \\
-$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $67.962142$ km/s/Mpc & $3(\phiG+\pi)^2$, residual $+4.2{\times}10^{-6}$ \\
+$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$, residual $+4.2{\times}10^{-6}$ \\
 $M$ (UV cutoff) & $(5\phiG^8\rho_c)^{1/4}$ & $9.68$ meV & --- \\
 \bottomrule
 \end{tabular}%
