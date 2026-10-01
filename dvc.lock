@@ -117,6 +117,18 @@ stages:
       hash: md5
       md5: cb16041849cc21c934dc84da77f6ddbf
       size: 2861
+    - path: results/logs/ganancia_wc_libre.json
+      hash: md5
+      md5: ff07d32e731b48970bf9cc44d76389f6
+      size: 2487
+    - path: results/logs/growth_2026-07/As_medido_o_producto.json
+      hash: md5
+      md5: ec3810fe92d496c154f6342a7a400ce8
+      size: 16117
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      hash: md5
+      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
+      size: 4421
     - path: results/logs/hiclass_campo.json
       hash: md5
       md5: 191482341f91d3ecc18f7d00602bf42e
@@ -161,6 +173,14 @@ stages:
       hash: md5
       md5: 520462e625e6b0b487c9039c531d1811
       size: 2381
+    - path: results/logs/perfil_wc_boss.json
+      hash: md5
+      md5: fe57de8653a0ed64fd1a9f67f900231e
+      size: 4018
+    - path: results/logs/perfil_wc_boss_lcdm.json
+      hash: md5
+      md5: 6170b02ac6f99d6998ecfccaad20d177
+      size: 4020
     - path: results/logs/press_schechter.json
       hash: md5
       md5: ee91c48f06ed35ea541845424a768d49
@@ -188,7 +208,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 393c13e88fa30782fa2ee532ba005b24
+      md5: b628660cf48445b84e9833bb3b0f60da
       size: 72563
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
