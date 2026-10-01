@@ -99,8 +99,8 @@ stages:
       size: 4826
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
-      md5: 1fd467e5470f75b8d8325ad4650cdf85
-      size: 48953
+      md5: ceb42473822e44a599410b6bae737890
+      size: 52715
     - path: results/logs/dic_from_chains.json
       hash: md5
       md5: bb166f311eb519a319a73349317170b6
@@ -208,7 +208,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: b628660cf48445b84e9833bb3b0f60da
+      md5: a959ee5dde11e38eb018472bd95b95a2
       size: 72563
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -1163,8 +1163,8 @@ stages:
       size: 15879
     - path: src/p02_mcmc/cumulos_zhang2026.py
       hash: md5
-      md5: 73230a404fc2a15bf664e0e8f30b5e8b
-      size: 6637
+      md5: dc8f978888fd6574c25f4ec4ffd27966
+      size: 7102
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -1180,12 +1180,12 @@ stages:
     outs:
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
-      md5: 1fd467e5470f75b8d8325ad4650cdf85
-      size: 48953
+      md5: ceb42473822e44a599410b6bae737890
+      size: 52715
     - path: results/logs/cumulos_zhang2026.log
       hash: md5
-      md5: 29b68fa52eca34f3b943dd3c07310a8e
-      size: 1485
+      md5: 124852b905c3fb18b0467e3c114cd302
+      size: 1727
   paper2_w0wa:
     cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py >
       results/logs/paper2_analysis.log 2>&1

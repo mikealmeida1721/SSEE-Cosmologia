@@ -20,6 +20,7 @@
  },
  "piso_redondeo": 0.002886751345948129,
  "K_SSEE": 5.63183409425483,
+ "K_SSEE_RG": 6.364040401021017,
  "f_nu_cosmico": 0.005154254414478269,
  "K_LCDM": 6.393124342405801,
  "f_nu": 0.02,
@@ -102,6 +103,168 @@
      "obs": 11.45,
      "pull": -0.6420188805658452,
      "razon": 0.8705979342210525
+    }
+   ]
+  },
+  "ssee_rg": {
+   "columna_bar": "M_tot_IMF",
+   "factor": 6.364040401021017,
+   "chi2": 181.26755062311054,
+   "N": 46,
+   "chi2r": 3.9405989265893595,
+   "p_valor": 5.843432191236552e-18,
+   "sigma_equiv": 8.63557118280066,
+   "razon_media": 0.8005956614682433,
+   "razon_mediana": 0.7906984951154319,
+   "razon_dispersion": 0.1925394744122997,
+   "pulls_mayores_3": 3,
+   "peores": [
+    {
+     "nombre": "NGC 5044",
+     "tabla": "II_WINGS",
+     "pred": 0.1909212120306305,
+     "obs": 0.3,
+     "pull": -5.865453449197398,
+     "razon": 0.6364040401021017
+    },
+    {
+     "nombre": "A1060",
+     "tabla": "III_2MASS",
+     "pred": 0.6364040401021018,
+     "obs": 1.69,
+     "pull": -5.568396249338614,
+     "razon": 0.37657043793023776
+    },
+    {
+     "nombre": "AWM7",
+     "tabla": "III_2MASS",
+     "pred": 1.6546505042654647,
+     "obs": 3.05,
+     "pull": -3.8167561570996207,
+     "razon": 0.5425083620542508
+    },
+    {
+     "nombre": "A1367",
+     "tabla": "III_2MASS",
+     "pred": 2.0364929283267257,
+     "obs": 3.19,
+     "pull": -2.981798116691361,
+     "razon": 0.6383990370930175
+    },
+    {
+     "nombre": "AWM4",
+     "tabla": "III_2MASS",
+     "pred": 0.5091232320816814,
+     "obs": 0.74,
+     "pull": -2.63965184035988,
+     "razon": 0.6880043676779479
+    }
+   ],
+   "sub_P2": [
+    {
+     "nombre": "A2029",
+     "tabla": "III_2MASS",
+     "pred": 10.882509085745939,
+     "obs": 12.77,
+     "pull": -1.131651144400593,
+     "razon": 0.8521933504891104
+    },
+    {
+     "nombre": "A2142",
+     "tabla": "III_2MASS",
+     "pred": 16.228303022603594,
+     "obs": 15.92,
+     "pull": 0.09875629341622043,
+     "razon": 1.019365767751482
+    },
+    {
+     "nombre": "A0478",
+     "tabla": "III_2MASS",
+     "pred": 9.482420197521316,
+     "obs": 11.45,
+     "pull": -0.9335702406711164,
+     "razon": 0.8281589692158355
+    }
+   ]
+  },
+  "ssee_rg_igimf": {
+   "columna_bar": "M_tot_IG",
+   "factor": 6.364040401021017,
+   "chi2": 67.6352541521635,
+   "N": 46,
+   "chi2r": 1.4703316120035543,
+   "p_valor": 0.020538866079346615,
+   "sigma_equiv": 2.316355504785173,
+   "razon_media": 1.0807836692407355,
+   "razon_mediana": 1.0535314332815344,
+   "razon_dispersion": 0.2719086188685398,
+   "pulls_mayores_3": 1,
+   "peores": [
+    {
+     "nombre": "A0496",
+     "tabla": "III_2MASS",
+     "pred": 5.791276764929126,
+     "obs": 4.01,
+     "pull": 3.445297042288756,
+     "razon": 1.4442086695583856
+    },
+    {
+     "nombre": "A1060",
+     "tabla": "III_2MASS",
+     "pred": 0.9546060601531525,
+     "obs": 1.69,
+     "pull": -2.531306094484038,
+     "razon": 0.5648556568953566
+    },
+    {
+     "nombre": "A85",
+     "tabla": "II_WINGS",
+     "pred": 11.391632317827622,
+     "obs": 9.02,
+     "pull": 2.0660214444868163,
+     "razon": 1.2629304121760112
+    },
+    {
+     "nombre": "A2319",
+     "tabla": "III_2MASS",
+     "pred": 20.746771707328516,
+     "obs": 15.07,
+     "pull": 2.036711403948941,
+     "razon": 1.3766935439501338
+    },
+    {
+     "nombre": "A2052",
+     "tabla": "III_2MASS",
+     "pred": 3.054739392490088,
+     "obs": 2.4,
+     "pull": 2.0326805543188864,
+     "razon": 1.2728080802042034
+    }
+   ],
+   "sub_P2": [
+    {
+     "nombre": "A2029",
+     "tabla": "III_2MASS",
+     "pred": 12.537159590011404,
+     "obs": 12.77,
+     "pull": -0.13960020386663988,
+     "razon": 0.981766608458215
+    },
+    {
+     "nombre": "A2142",
+     "tabla": "III_2MASS",
+     "pred": 17.628391910828217,
+     "obs": 15.92,
+     "pull": 0.540428867972505,
+     "razon": 1.1073110496751393
+    },
+    {
+     "nombre": "A0478",
+     "tabla": "III_2MASS",
+     "pred": 11.2643515098072,
+     "obs": 11.45,
+     "pull": -0.0771488593873741,
+     "razon": 0.9837861580617643
     }
    ]
   },
@@ -2216,11 +2379,11 @@
   }
  ],
  "_procedencia": {
-  "commit": "18e2a1504c7175e820ee313452b730a9a427cf99",
+  "commit": "9e76da49403246f9527cd49de8594e1754691fed",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/cumulos_zhang2026.py",
-  "script_sha256": "bdd194859e8adb43498a89104fc9a410a4afdb63d95467e792dcd548bdba83d4",
+  "script_sha256": "e1f9c0d6dd028bacfdb0e36ede0b355542cdedadfa33fdf805ea98210a5f359e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/zhang2026/tablas_II_III.tex": "1a3d9a42ba75920c6bfff05e3482f12b3acf829ab52e6918a7d7ffddc6c71377"
@@ -2228,7 +2391,7 @@
   "argv": [
    "src/p02_mcmc/cumulos_zhang2026.py"
   ],
-  "fecha": "2026-10-01T09:57:38",
+  "fecha": "2026-10-01T18:51:34",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
