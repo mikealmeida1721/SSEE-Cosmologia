@@ -61,6 +61,26 @@
    "valor": 0.6180339887498948,
    "uso": "gamma algebraico = phi^-1"
   },
+  "dos_AURA": {
+   "formula": "2*AURA",
+   "valor": 7.995694619839478,
+   "uso": "DUAL, tabla de Paper 7"
+  },
+  "tres_MIRA": {
+   "formula": "3*MIRA",
+   "valor": 5.996770964879609,
+   "uso": "3 MIRA = 3 AURA/2, Paper 9"
+  },
+  "sqrtAURA_MIRA": {
+   "formula": "math.sqrt(AURA)/MIRA",
+   "valor": 1.000269194919888,
+   "uso": "sqrt(beta_c)/MIRA con beta_c = AURA, Paper 8"
+  },
+  "seis_alfa_KAL2": {
+   "formula": "6*ALPHA_ATT*KAL0**2",
+   "valor": 417.9072624142957,
+   "uso": "M^4 de la Ruta A en rho_crit, Paper 10"
+  },
   "inv_1pw0": {
    "formula": "1/(1+W0)",
    "valor": 6.248038558908856,
@@ -241,17 +261,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "9fa24a90a70f22365dba7d9082038eac5e43e729",
+  "commit": "ba928fd4cf11136471252f1094d6194efbbd7648",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "977e45db2399c8958b49572752b1e211849c699ba7aca35d7578a9bc6843b2e6",
+  "script_sha256": "35786f439ed5c424d2affc7303c1e0ac87f1693b6cd790e951306704506a339b",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T21:23:06",
+  "fecha": "2026-09-30T21:30:24",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
