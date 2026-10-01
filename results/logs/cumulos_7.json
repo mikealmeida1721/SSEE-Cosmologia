@@ -116,7 +116,9 @@
    "chi2r_s1p5": 0.054062774809199104,
    "reduccion_para_chi2r_1": 0.6512289528634896,
    "reduccion_para_chi2r_2": 0.7533816274882404,
-   "max_residuo_sigma": 0.4477511413822448
+   "max_residuo_sigma": 0.4477511413822448,
+   "pct_reduccion_chi2r_1": 65.12289528634896,
+   "pct_reduccion_chi2r_2": 75.33816274882405
   },
   "N": 4
  },
@@ -146,7 +148,9 @@
    "chi2r_s1p5": 0.06573892693594925,
    "reduccion_para_chi2r_1": 0.615405946996205,
    "reduccion_para_chi2r_2": 0.7280509371169981,
-   "max_residuo_sigma": 0.6007666689837047
+   "max_residuo_sigma": 0.6007666689837047,
+   "pct_reduccion_chi2r_1": 61.5405946996205,
+   "pct_reduccion_chi2r_2": 72.80509371169981
   },
   "N": 7,
   "subprediccion_std_imf_media": 1.651403998759611
@@ -165,17 +169,17 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "commit": "8ed9dc55dd83df53721b21fab80c1fb52476b04d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/cumulos_7.py",
-  "script_sha256": "43ea388b671ab75a54b4c8a68587d49a51e4784ee19b245cc4e1bd96cbf63d67",
+  "script_sha256": "88331c7fb14d228d26c8e7db31ec4aeb646e2b6ce53d92f828a9254f26816c91",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p02_mcmc/cumulos_7.py"
   ],
-  "fecha": "2026-10-01T00:04:01",
+  "fecha": "2026-10-01T00:09:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

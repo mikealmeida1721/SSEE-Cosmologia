@@ -84,7 +84,7 @@ The $H_0$ posterior is $\HZeroPosterior$~km\,s$^{-1}$\,Mpc$^{-1}$,
 obtained with the global rate of the screening cascade as the $H_0$ prior
 ($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
 $0.33\sigma$ from that prediction.
-The cluster-mass sector achieves $\chi^2_r=0.122$ in the primary four-cluster sample
+The cluster-mass sector achieves $\chi^2_r=\val{p2_clIV_chi2r_ssee}$ in the primary four-cluster sample
 (analytic forward-model), with the IGIMF correction as the essential ingredient.
 With $(w_0,w_a)$ fixed algebraically and one free parameter $H_0$, SSEE is
 favoured by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and $\val{p2_dBIC_cpl}$ over CPL, and
@@ -398,7 +398,7 @@ to three additional clusters: Perseus \citep{Simionescu2011},
 A2142 \citep{Tchernin2016}, and A2744 \citep{Merten2011,Owers2011}.
 For these clusters an independent IGIMF re-analysis is not available;
 we therefore estimate $M_{\rm bar}^{\rm IGIMF} = f_b \times M_{200}$
-using the mean baryon fraction $f_b=0.184$ of the Zhang~2026 primary sample.
+using the mean baryon fraction $f_b=\val{p2_cl_fb}$ of the Zhang~2026 primary sample.
 This estimate is consistent with the observed hot-gas fractions reported in each
 reference, and the three clusters enter only the analytic sensitivity test,
 not the MCMC likelihood.
@@ -412,7 +412,7 @@ $M_{\rm bar}^{\rm IGIMF}$: IGIMF-corrected baryonic baseline.
 $M_{\rm obs}$: total observed mass within $R_{200}$.
 First four from \citet{Zhang2026} (independent IGIMF re-analysis).
 For the three additional clusters, $M_{\rm bar}^{\rm IGIMF}$ is estimated
-as $f_b \times M_{200}$ with $f_b=0.184$ (mean of Zhang~2026 primary sample);
+as $f_b \times M_{200}$ with $f_b=\val{p2_cl_fb}$ (mean of Zhang~2026 primary sample);
 this is a qualitative consistency check, not an independent IGIMF test.}
 \label{tab:cluster_data}
 \small
@@ -424,9 +424,9 @@ Coma          & \citet{Zhang2026}      & 1.80 & 9.8  & 1.0 \\
 A2029         & \citet{Zhang2026}      & 2.20 & 12.0 & 1.2 \\
 A478          & \citet{Zhang2026}      & 1.50 & 8.0  & 1.0 \\
 Bullet (main) & \citet{Zhang2026}      & 1.20 & 6.5  & 1.0 \\
-Perseus       & \citet{Simionescu2011} & 1.22 & 6.65 & 0.45 \\
-A2142         & \citet{Tchernin2016}   & 2.67 & 14.5 & 1.5  \\
-A2744         & \citet{Merten2011}     & 3.31 & 18.0 & 4.0  \\
+Perseus       & \citet{Simionescu2011} & \val{p2_cl_perseus_migimf} & 6.65 & 0.45 \\
+A2142         & \citet{Tchernin2016}   & \val{p2_cl_aMMCXLII_migimf} & 14.5 & 1.5  \\
+A2744         & \citet{Merten2011}     & \val{p2_cl_aMMDCCXLIV_migimf} & 18.0 & 4.0  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -898,34 +898,34 @@ A2142 from \citet{Tchernin2016}; A2744 from \citet{Merten2011}.}
 \toprule
 Cluster & SSEE & $f_\nu{=}0$ & Std IMF & $\KALz$ only & $\Mobs$ & $\chi^2$ \\
 \midrule
-Coma          & 10.14 &  9.94 & 5.63 & 5.52 & $9.8\pm1.0$   & 0.114 \\
-A2029         & 12.39 & 12.15 & 7.32 & 7.18 & $12.0\pm1.2$  & 0.106 \\
-A478          &  8.45 &  8.28 & 5.07 & 4.97 & $8.0\pm1.0$   & 0.200 \\
-Bullet (main) &  6.76 &  6.63 & 3.94 & 3.86 & $6.5\pm1.0$   & 0.067 \\
-Perseus       &  6.87 &  6.74 & 4.02 & 3.94 & $6.65\pm0.45$ & 0.241 \\
-A2142         & 15.04 & 14.74 & 8.79 & 8.62 & $14.5\pm1.5$  & 0.128 \\
-A2744         & 18.64 & 18.28 &10.90 &10.69 & $18.0\pm4.0$  & 0.026 \\
+Coma          & \val{p2_cl_coma_ssee} & \val{p2_cl_coma_fnu0} & \val{p2_cl_coma_std_imf} & \val{p2_cl_coma_kal0_solo} & $9.8\pm1.0$ & \val{p2_cl_coma_chi2_ssee} \\
+A2029         & \val{p2_cl_aIIXXIX_ssee} & \val{p2_cl_aIIXXIX_fnu0} & \val{p2_cl_aIIXXIX_std_imf} & \val{p2_cl_aIIXXIX_kal0_solo} & $12.0\pm1.2$ & \val{p2_cl_aIIXXIX_chi2_ssee} \\
+A478          & \val{p2_cl_aCDLXXVIII_ssee} & \val{p2_cl_aCDLXXVIII_fnu0} & \val{p2_cl_aCDLXXVIII_std_imf} & \val{p2_cl_aCDLXXVIII_kal0_solo} & $8.0\pm1.0$ & \val{p2_cl_aCDLXXVIII_chi2_ssee} \\
+Bullet (main) & \val{p2_cl_bullet_ssee} & \val{p2_cl_bullet_fnu0} & \val{p2_cl_bullet_std_imf} & \val{p2_cl_bullet_kal0_solo} & $6.5\pm1.0$ & \val{p2_cl_bullet_chi2_ssee} \\
+Perseus       & \val{p2_cl_perseus_ssee} & \val{p2_cl_perseus_fnu0} & \val{p2_cl_perseus_std_imf} & \val{p2_cl_perseus_kal0_solo} & $6.65\pm0.45$ & \val{p2_cl_perseus_chi2_ssee} \\
+A2142         & \val{p2_cl_aMMCXLII_ssee} & \val{p2_cl_aMMCXLII_fnu0} & \val{p2_cl_aMMCXLII_std_imf} & \val{p2_cl_aMMCXLII_kal0_solo} & $14.5\pm1.5$ & \val{p2_cl_aMMCXLII_chi2_ssee} \\
+A2744         & \val{p2_cl_aMMDCCXLIV_ssee} & \val{p2_cl_aMMDCCXLIV_fnu0} & \val{p2_cl_aMMDCCXLIV_std_imf} & \val{p2_cl_aMMDCCXLIV_kal0_solo} & $18.0\pm4.0$ & \val{p2_cl_aMMDCCXLIV_chi2_ssee} \\
 \midrule
-\multicolumn{7}{l}{$\chi^2_r$: SSEE\,$=0.126$ \;|\; $f_\nu{=}0$:\,$0.028$ \;|\;
-  Std IMF:\,$14.05$ \;|\; $\KALz$ only:\,$14.91$} \\
-\multicolumn{7}{l}{$\Delta\chi^2$ vs SSEE: $-0.68$ \;|\; $+97.5$ \;|\; $+103.5$} \\
+\multicolumn{7}{l}{$\chi^2_r$: SSEE\,$=\val{p2_clVII_chi2r_ssee}$ \;|\; $f_\nu{=}0$:\,$\val{p2_clVII_chi2r_fnu0}$ \;|\;
+  Std IMF:\,$\val{p2_clVII_chi2r_std}$ \;|\; $\KALz$ only:\,$\val{p2_clVII_chi2r_kal}$} \\
+\multicolumn{7}{l}{$\Delta\chi^2$ vs SSEE: $\val{p2_clVII_dchi2_fnu0}$ \;|\; $\val{p2_clVII_dchi2_std}$ \;|\; $\val{p2_clVII_dchi2_kal}$} \\
 \multicolumn{7}{l}{\textit{Uncertainty sensitivity}: halving $\sigma_{M_{\rm obs}}$ to 50\%
-  raises $\chi^2_r(\mathrm{SSEE})$ to $\approx0.50 < 1$; the fit remains good.} \\
+  raises $\chi^2_r(\mathrm{SSEE})$ to $\val{p2_clVII_s0p5} < 1$; the fit remains good.} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \paragraph{IGIMF is essential.}
-Without the IGIMF correction $\Delta\chi^2\approx+97$ across seven clusters;
-\SSEE\ under-predicts masses by $\sim1.7\times$.
+Without the IGIMF correction $\Delta\chi^2\approx\val{p2_clVII_dchi2_std_r}$ across seven clusters;
+\SSEE\ under-predicts masses by $\sim\val{p2_clVII_subpred}\times$.
 
 \paragraph{Neutrino bridge.}
-$f_\nu=0$ lowers $\chi^2_r$ to $0.028$: the seven $R_{200}$ clusters
+$f_\nu=0$ lowers $\chi^2_r$ to $\val{p2_clVII_chi2r_fnu0}$: the seven $R_{200}$ clusters
 do not require the neutrino bridge, but it maintains self-consistency
 with the cosmological $\sum m_\nu^{\rm active}=0.0685$\,eV.
 
 \paragraph{$\KALz$ alone insufficient.}
-$\chi^2_r=14.91$ without IGIMF. Geometric amplification requires
+$\chi^2_r=\val{p2_clVII_chi2r_kal}$ without IGIMF. Geometric amplification requires
 the corrected baryonic baseline.
 
 \paragraph{Robustness to observational uncertainties.}
@@ -933,11 +933,11 @@ To test whether the cluster fit depends critically on the published
 $\sigma_{M_{\rm obs}}$ values, we varied the error bars uniformly
 from $0.5\times$ to $1.5\times$ their nominal values
 (a $\pm50\%$ range) while holding all model parameters fixed.
-With the four-cluster analytic subset, the nominal $\chi^2_r=0.122$
+With the four-cluster analytic subset, the nominal $\chi^2_r=\val{p2_clIV_chi2r_ssee}$
 (all residuals $<0.5\sigma$); $\chi^2_r$ reaches $1.0$ only when
-errors are reduced by $65\%$, and reaches $2.0$ only at $-75\%$
+errors are reduced by $\val{p2_clIV_pct1}\%$, and reaches $2.0$ only at $-\val{p2_clIV_pct2}\%$
 (well beyond the test range).
-For the full 7-cluster analytic set ($(\chi^2_r)_{\rm nom}=0.126$),
+For the full 7-cluster analytic set ($(\chi^2_r)_{\rm nom}=\val{p2_clVII_chi2r_ssee}$),
 the scaling behaviour is similar: the fit quality is not sensitive
 to moderate changes in the assumed observational uncertainties.
 This confirms that the SSEE cluster predictions are robust and
@@ -947,7 +947,7 @@ not contingent on specific choices of $\sigma_{M_{\rm obs}}$.
   \centering
   \includegraphics[width=0.84\textwidth]{fig2_cluster_sensitivity.pdf}
   \caption{Cluster mass predictions by scenario for seven clusters. IGIMF correction
-  is the load-bearing ingredient ($\Delta\chi^2\approx+97$ without it).}
+  is the load-bearing ingredient ($\Delta\chi^2\approx\val{p2_clVII_dchi2_std_r}$ without it).}
   \label{fig:cluster_sens}
 \end{figure}
 
@@ -1157,9 +1157,9 @@ DESI~DR2, Planck~2018, and galaxy-cluster masses.
     lies within $0.24\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior
     (Pantheon+; $1.46$--$1.76\sigma$ across the other official combinations).
 
-  \item Cluster masses achieve $\chi^2_r=0.126$ with IGIMF; removing
-    the IGIMF correction raises $\chi^2_r$ to $14.05$
-    ($\Delta\chi^2\approx+97$), confirming its essential role.
+  \item Cluster masses achieve $\chi^2_r=\val{p2_clVII_chi2r_ssee}$ with IGIMF; removing
+    the IGIMF correction raises $\chi^2_r$ to $\val{p2_clVII_chi2r_std}$
+    ($\Delta\chi^2\approx\val{p2_clVII_dchi2_std_r}$), confirming its essential role.
 
   \item With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background,
     the \SSEE\ sound horizon matches \LCDM\ ($r_d=147.17$ vs $147.10$\,Mpc, CAMB) and \SSEE\ is

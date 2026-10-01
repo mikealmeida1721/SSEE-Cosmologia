@@ -9,22 +9,26 @@
   "camb": 13.79685796422428
  },
  "diferencia_lcdm_menos_ssee": 0.06829360987998889,
+ "retirado": {
+  "receta_vieja": 15.275574986453542,
+  "solo_densidad_corregida": 12.7777303512496
+ },
  "control": {
   "criterio": "integral sin radiacion a < 0.01 Gyr de CAMB",
   "pasa": true
  },
  "_procedencia": {
-  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "commit": "e6d70368e70644ad64ee6b5422e17ed444949152",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/edad_universo.py",
-  "script_sha256": "274abf18f3ba81bbf60301f5c27511f0efd9fe09430975ec059146ac6eff93d7",
+  "script_sha256": "4c2bfa6b92df9ebb0da939d12e5bed04075db475c5994a76d1b3002c360fc751",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p09_hubble/edad_universo.py"
   ],
-  "fecha": "2026-10-01T00:01:37",
+  "fecha": "2026-10-01T00:09:50",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -34,8 +38,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
