@@ -57,7 +57,6 @@ from ssee_core import (
                                    # etiqueta «sector frío (Paper 6)» era del sector
                                    # retirado el 2026-08-01; corregida 2026-09-26.
 )
-FNU_SSEE = 0.020   # fracción de neutrinos — no algebraico, queda local
 
 log(f"w0={W0_SSEE:.4f}  wa={WA_SSEE:.4f}  Om_total={OM_GEOM:.5f} (geometría, ÚNICA densidad)  s_m=1+w0={OM_SECTOR:.6f} (ecuación de estado, NO densidad)  KAL0={KAL0:.4f}")
 
@@ -140,13 +139,6 @@ PLANCK_COV_INV = np.linalg.inv(np.array([
 ]))
 PLANCK_MU = np.array([PLANCK_H0[0], PLANCK_OM[0], PLANCK_OBH2[0]])
 
-# Primary dataset: only the 4 rigorous clusters (Zhang 2026). Estimated clusters moved to sensitivity analysis.
-CLUSTERS = [
-    {"M_ig": 1.8, "dM_obs": 1.0, "M_obs": 9.8 },
-    {"M_ig": 2.2, "dM_obs": 1.2, "M_obs": 12.0},
-    {"M_ig": 1.5, "dM_obs": 1.0, "M_obs": 8.0 },
-    {"M_ig": 1.2, "dM_obs": 1.0, "M_obs": 6.5 },
-]
 
 CC_DATA = np.array([
     [0.070, 69.0, 19.6], [0.179, 75.0,  4.0], [0.199, 75.0,  5.0],
@@ -179,9 +171,6 @@ def ll_planck(H0, Om, ob_h2):
     dv = np.array([H0-PLANCK_MU[0], Om-PLANCK_MU[1], ob_h2-PLANCK_MU[2]])
     return -0.5 * (dv @ PLANCK_COV_INV @ dv)
 
-def ll_clusters(KAL, fnu):
-    return -0.5 * sum(((c["M_ig"]*KAL*(1+fnu) - c["M_obs"])/c["dM_obs"])**2
-                      for c in CLUSTERS)
 
 # ─────────────────────────────────────────────────────────────
 # 5. LOG-POSTERIORS
@@ -196,8 +185,12 @@ def lpost_ssee(theta):
     om_h2  = WM_ALG                # ω_m ALGEBRAICO fijo — la predicción de SSEE
     Om     = WM_ALG/(H0/100)**2    # Ω_m DERIVADO por muestra (no congelado)
     lb = ll_bao_full(H0, om_h2, ob_h2, E_ssee, Om)
-    lc = ll_clusters(KAL0, FNU_SSEE)
-    return lp_bbn + lp_H0 + lb + lc
+    # 2026-10-01: SIN termino de cumulos. Era una constante (KAL0 y f_nu fijos, cero libres) que solo
+    # llevaba SSEE: no movia el posterior, pero restaba chi2=0.49 al lnP_MAP de SSEE y no a LCDM/CPL,
+    # con 4 datos que N_DATA no contaba. Ademas eran datos que no estan en la fuente citada y una formula
+    # del marco MOND de abril (el SSEE vigente es RG: alpha_T=alpha_M=alpha_B=0). La prueba de cumulos
+    # vive aparte, simetrica y sobre los 46 sistemas reales: src/p02_mcmc/cumulos_zhang2026.py
+    return lp_bbn + lp_H0 + lb
 
 def lpost_lcdm(theta):
     H0, Om, ob_h2 = theta

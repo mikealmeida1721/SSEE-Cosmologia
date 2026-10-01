@@ -70,7 +70,6 @@ log(f"  w0 = {W0:.10f},  wa = {WA:.10f}")
 log(f"  H_glob = H_SH0ES·(1−f_screen) = {H0_GLOBAL:.6f} ± {SIG_H0_GLOBAL:.4f}   (blanco puro 3(φ+π)² = {H0_ALG:.6f})")
 
 C_KM = 2.998e5
-FNU_SSEE = 0.020
 
 # ─── Datos DESI DR2 (2503.14738 Tabla 4) — FUENTE ÚNICA data/raw/desi_dr2_bao.csv ───
 # NO hardcodear (evita drift DR1/DR2). src/ ya está en path (línea ~29).
@@ -82,12 +81,6 @@ DESI_TYPE    = [_QSHORT[q] for q in _DESI["quantity"]]
 DESI_OBS     = _DESI["value"]
 DESI_COV_INV = np.linalg.inv(desi_covariance(_DESI))   # bloque-diagonal (r_MH oficiales DR2)
 
-CLUSTERS = [
-    {"M_ig": 1.8, "dM_obs": 1.0, "M_obs": 9.8 },
-    {"M_ig": 2.2, "dM_obs": 1.2, "M_obs": 12.0},
-    {"M_ig": 1.5, "dM_obs": 1.0, "M_obs": 8.0 },
-    {"M_ig": 1.2, "dM_obs": 1.0, "M_obs": 6.5 },
-]
 
 # ─── PRIOR H_alg EXACTO (reframe ω_m-directo) ───
 # Ancla CMB del reframe: con ω_b y ω_c FIJOS por álgebra SSEE, la
@@ -147,8 +140,6 @@ def ll_bao(H0, om_h2, ob_h2, Om):
     r  = _pred_camb(H0, rd) - DESI_OBS
     return -0.5 * (r @ DESI_COV_INV @ r)
 
-LL_CLUSTERS = -0.5 * sum(((c["M_ig"]*KAL0*(1+FNU_SSEE) - c["M_obs"])/c["dM_obs"])**2
-                         for c in CLUSTERS)
 
 def lpost(theta):
     H0, ob_h2 = theta
@@ -159,7 +150,12 @@ def lpost(theta):
     lp_bbn = -0.5*((ob_h2-BBN_OBH2[0])/BBN_OBH2[1])**2
     om_h2  = OMEGA_M_H2                  # ω_m ALGEBRAICO fijo — lo que SSEE predice
     Om     = OMEGA_M_H2/(H0/100)**2      # Ω_m DERIVADO por muestra (no congelado)
-    return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om) + LL_CLUSTERS
+    # 2026-10-01: SIN termino de cumulos. Era una constante (KAL0 y f_nu fijos, cero libres) que solo
+    # llevaba SSEE: no movia el posterior, pero restaba chi2=0.49 al lnP_MAP de SSEE y no a LCDM/CPL,
+    # con 4 datos que N_DATA no contaba. Ademas eran datos que no estan en la fuente citada y una formula
+    # del marco MOND de abril (el SSEE vigente es RG: alpha_T=alpha_M=alpha_B=0). La prueba de cumulos
+    # vive aparte, simetrica y sobre los 46 sistemas reales: src/p02_mcmc/cumulos_zhang2026.py
+    return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om)
 
 # ─── MCMC ───
 N_W, N_S, N_B, SAVE = 100, 25000, 5000, 500
