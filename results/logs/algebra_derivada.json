@@ -81,6 +81,21 @@
    "valor": 417.9072624142957,
    "uso": "M^4 de la Ruta A en rho_crit, Paper 10"
   },
+  "X_UV_sobre_IR": {
+   "formula": "_X_UV/(S_K*KAL0/6)",
+   "valor": 0.9831358327321386,
+   "uso": "X_bg UV / IR, Paper 10"
+  },
+  "c2X_c1_KX": {
+   "formula": "_X_UV*KAL0/_M4_UV",
+   "valor": 0.00857672292392822,
+   "uso": "c2 X / c1 del K(X) de Paper 10 (1/KAL0, 1/M^4)"
+  },
+  "M_meV_rhoLambda": {
+   "formula": "(5*PHI**8)**0.25*2.25",
+   "valor": 8.808466352113994,
+   "uso": "M con la escala LCDM rho_Lambda^(1/4) = 2.25 meV: la INCONSISTENTE que Paper 10 descarta"
+  },
   "inv_1pw0": {
    "formula": "1/(1+W0)",
    "valor": 6.248038558908856,
@@ -261,17 +276,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "ba928fd4cf11136471252f1094d6194efbbd7648",
+  "commit": "9fd1bd996df72119c8d20a907fe875e46cf7c6b5",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "35786f439ed5c424d2affc7303c1e0ac87f1693b6cd790e951306704506a339b",
+  "script_sha256": "f88dc0ed600ffa01b95b9585057fd6d1c31e9de2244ce0484db0cda64182a3fe",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T21:30:24",
+  "fecha": "2026-09-30T21:32:06",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

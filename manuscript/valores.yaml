@@ -160,3 +160,6 @@ dos_AURA_d6: {fuente: "results/logs/algebra_derivada.json#algebra.dos_AURA.valor
 seis_alfa_KAL2_d2: {fuente: "results/logs/algebra_derivada.json#algebra.seis_alfa_KAL2.valor", formato: ".2f"}
 sqrtAURA_MIRA_d5: {fuente: "results/logs/algebra_derivada.json#algebra.sqrtAURA_MIRA.valor", formato: ".5f"}
 tres_MIRA_d4: {fuente: "results/logs/algebra_derivada.json#algebra.tres_MIRA.valor", formato: ".4f"}
+M_meV_rhoLambda_d2: {fuente: "results/logs/algebra_derivada.json#algebra.M_meV_rhoLambda.valor", formato: ".2f"}
+c2X_c1_KX_d6:       {fuente: "results/logs/algebra_derivada.json#algebra.c2X_c1_KX.valor", formato: ".6f"}
+X_UV_sobre_IR_d4:   {fuente: "results/logs/algebra_derivada.json#algebra.X_UV_sobre_IR.valor", formato: ".4f"}
