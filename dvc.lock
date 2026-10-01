@@ -75,20 +75,20 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 0cb5974ec541bdc3f47b25cf80dcafed
-      size: 28554
+      md5: ddbf7810ab4f8c9a41f123384d273907
+      size: 30794
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 157babb56050d778d3b857857417be60
-      size: 7909
+      md5: d60eb4f3a7391a10adaaf4db2bf0fd0f
+      size: 8228
     - path: results/logs/dic_from_chains.json
       hash: md5
       md5: 0323b79d65b8fea7ada02ebc680e950e
       size: 1458
     - path: results/logs/hiclass_campo.json
       hash: md5
-      md5: fc74aaecd4c53c71f3c0949d2f8e8c30
-      size: 6477
+      md5: 3f7b7a1c23c896370627eb23238e272c
+      size: 7718
     - path: results/logs/kids_legacy_bic.json
       hash: md5
       md5: 0481b4f9324f6f413d1aa09ce9a76f37
@@ -128,8 +128,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: b965beff2b07b4e152064418c41b3785
-      size: 36831
+      md5: 6fe930c6f8d8bd56aeeb7bf71c1106bd
+      size: 39527
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -304,8 +304,8 @@ stages:
     deps:
     - path: src/algebra_derivada.py
       hash: md5
-      md5: e3e66b16349859db77c0b3470f8699da
-      size: 6187
+      md5: a2c65f22cf370b78d9d8ae60202fa6f8
+      size: 6455
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -317,8 +317,8 @@ stages:
     outs:
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 157babb56050d778d3b857857417be60
-      size: 7909
+      md5: d60eb4f3a7391a10adaaf4db2bf0fd0f
+      size: 8228
   kids_legacy_bic:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_legacy_bic.py
@@ -557,3 +557,29 @@ stages:
       hash: md5
       md5: ab885be928106666c9e11003c640052d
       size: 568
+  hiclass_campo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/hiclass_campo.py
+    deps:
+    - path: /mnt/datos/hi_class/class
+      hash: md5
+      md5: 277ef94a408c8f421eb2854e05a5b342
+      size: 10614896
+      isexec: true
+    - path: src/p07_eft/hiclass_campo.py
+      hash: md5
+      md5: 0cc5f8f1aa26ed34635ca4e20a35caf5
+      size: 10919
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/hiclass_campo.json
+      hash: md5
+      md5: 3f7b7a1c23c896370627eb23238e272c
+      size: 7718

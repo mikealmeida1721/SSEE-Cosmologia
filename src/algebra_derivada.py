@@ -78,6 +78,7 @@ ALGEBRA = {
     "X_bg_IR":        ("S_K*KAL0/6", "X_bg IR en rho_crit = 1, Paper 10"),
     "cs2_condensado": ("(1+W0)/(5-3*W0)", "c_s^2 del condensado, Paper 7"),
     "cs2_condensado_TM": ("(M_V-T_R)/(5*M_V+3*T_R)", "la misma c_s^2 por T_r, M_v (control)"),
+    "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
 }
 
 res, errores = {}, []
