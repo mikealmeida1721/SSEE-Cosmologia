@@ -451,3 +451,28 @@ wc_ns_sigma_abs:   {fuente: "results/logs/algebra_derivada.json#algebra.wc_ns_si
 # P2 plano w0wa, ambos puntos fijos (2026-10-01): src/p02_mcmc/ssee_paper2_analysis.py
 p2_w0wa_ssee_ec26: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma", formato: ".2f"}
 p2_w0wa_lcdm_ec26: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.lcdm_sigma", formato: ".2f"}
+# Unified tabla MCMC completo (2026-10-01): src/mcmc_full/leer_mcmc_full.py
+mf_ombh2_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.ombh2.media", formato: ".5f"}
+mf_ombh2_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.ombh2.sigma", formato: ".5f"}
+mf_ombh2_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.ombh2.tension_abs", formato: ".2f"}
+mf_omch2_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.omch2.media", formato: ".5f"}
+mf_omch2_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.omch2.sigma", formato: ".5f"}
+mf_omch2_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.omch2.tension_abs", formato: ".2f"}
+mf_rdrag_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.rdrag.media", formato: ".2f"}
+mf_rdrag_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.rdrag.sigma", formato: ".2f"}
+mf_rdrag_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.rdrag.tension_abs", formato: ".2f"}
+mf_H0_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.H0.media", formato: ".2f"}
+mf_H0_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.H0.sigma", formato: ".2f"}
+mf_H0_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.H0.tension_abs", formato: ".2f"}
+mf_omegam_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.omegam.media", formato: ".4f"}
+mf_omegam_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.omegam.sigma", formato: ".4f"}
+mf_omegam_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.omegam.tension_abs", formato: ".2f"}
+mf_w_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.w.media", formato: ".3f"}
+mf_w_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.w.sigma", formato: ".3f"}
+mf_w_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.w.tension_abs", formato: ".2f"}
+mf_wa_media: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.wa.media", formato: ".3f"}
+mf_wa_sigma: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.wa.sigma", formato: ".3f"}
+mf_wa_tens: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.wa.tension_abs", formato: ".2f"}
+mf_rdrag_alg: {fuente: "results/logs/mcmc_full_posteriores.json#tensiones.rdrag.algebraico", formato: ".2f"}
+mf_w0wa_ssee: {fuente: "results/logs/mcmc_full_posteriores.json#distancia_w0wa.ssee.sigma", formato: ".2f"}
+mf_w0wa_lcdm: {fuente: "results/logs/mcmc_full_posteriores.json#distancia_w0wa.lcdm.sigma", formato: ".2f"}

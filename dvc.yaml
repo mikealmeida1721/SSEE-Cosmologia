@@ -62,6 +62,7 @@ stages:
       - results/logs/s8_kids_legacy_camb.json
       - results/logs/paper2_w0wa.json
       - results/logs/cumulos_zhang2026.json
+      - results/logs/mcmc_full_posteriores.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false

@@ -423,22 +423,22 @@ $\sim7\times10^4$ effective samples. DESI~DR2-corrected vector (V-L4-DESI).}
 \toprule
 Parameter & Posterior (mean $\pm1\sigma$) & Algebraic SSEE & Tension \\
 \midrule
-$\Omega_b h^2$                     & $0.02243 \pm 0.00013$ & $0.02242$ & $0.08\sigma$ \\
-$\Omega_c h^2$                     & $0.11935 \pm 0.00082$ & $\val{OMEGA_C_H2_d5}$ & $0.20\sigma$ \\
-$r_{\rm drag}$ [Mpc]               & $147.20  \pm 0.21$    & $147.17$  & $0.14\sigma$ \\
-$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]   & $65.87   \pm 1.17$    & $\val{H0_ALG_d6}$   & $1.79\sigma$ \\
-$\Omega_m$                         & $0.3288  \pm 0.0118$  & $\val{OMEGA_M_TOTAL_d6}$ & $1.69\sigma$ \\
-$w_0$                              & $-0.655  \pm 0.107$   & $\val{W0_d6}$  & $1.73\sigma$ \\
-$w_a$                              & $-1.104  \pm 0.304$   & $\val{WA_d6}$  & $1.43\sigma$ \\
+$\Omega_b h^2$                     & $\val{mf_ombh2_media} \pm \val{mf_ombh2_sigma}$ & $\val{OMEGA_B_H2_d6}$ & $\val{mf_ombh2_tens}\sigma$ \\
+$\Omega_c h^2$                     & $\val{mf_omch2_media} \pm \val{mf_omch2_sigma}$ & $\val{OMEGA_C_H2_d6}$ & $\val{mf_omch2_tens}\sigma$ \\
+$r_{\rm drag}$ [Mpc]               & $\val{mf_rdrag_media}  \pm \val{mf_rdrag_sigma}$    & $\val{mf_rdrag_alg}$  & $\val{mf_rdrag_tens}\sigma$ \\
+$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]   & $\val{mf_H0_media}   \pm \val{mf_H0_sigma}$    & $\val{H0_ALG_d6}$   & $\val{mf_H0_tens}\sigma$ \\
+$\Omega_m$                         & $\val{mf_omegam_media}  \pm \val{mf_omegam_sigma}$  & $\val{OMEGA_M_TOTAL_d6}$ & $\val{mf_omegam_tens}\sigma$ \\
+$w_0$                              & $\val{mf_w_media}  \pm \val{mf_w_sigma}$   & $\val{W0_d6}$  & $\val{mf_w_tens}\sigma$ \\
+$w_a$                              & $\val{mf_wa_media}  \pm \val{mf_wa_sigma}$   & $\val{WA_d6}$  & $\val{mf_wa_tens}\sigma$ \\
 \midrule
-\multicolumn{3}{l}{\textbf{Joint $w_0$--$w_a$ distance:} SSEE $1.31\sigma$ / \LCDM\ excluded $3.22\sigma$} \\
+\multicolumn{3}{l}{\textbf{Joint $w_0$--$w_a$ distance:} SSEE $\val{mf_w0wa_ssee}\sigma$ / \LCDM\ excluded $\val{mf_w0wa_lcdm}\sigma$} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 Under the \emph{full} Planck $C_\ell$ likelihood --- with $H_0$ free under a
 flat prior rather than fixed to a compressed distance prior --- the posterior
-sits at $H_0=65.87\pm1.17$, some $1.79\sigma$ below the global rate
+sits at $H_0=\val{mf_H0_media}\pm\val{mf_H0_sigma}$, some $\val{mf_H0_tens}\sigma$ below the global rate
 $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. This mild downward pull is a known feature of
 $w_0w_a$CDM under the uncompressed CMB likelihood and is stated openly. The key
 model-comparison statement is unchanged and in fact sharper: the fixed
