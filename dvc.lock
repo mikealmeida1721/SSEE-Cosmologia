@@ -119,8 +119,8 @@ stages:
       size: 2861
     - path: results/logs/hiclass_campo.json
       hash: md5
-      md5: 31c9fbd99fb8b84d43ef38a32bd4b520
-      size: 7815
+      md5: 191482341f91d3ecc18f7d00602bf42e
+      size: 7817
     - path: results/logs/hmcode_bariones.json
       hash: md5
       md5: 2ed5244d861d5ea0194df051a5caeff3
@@ -188,7 +188,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: a6d97ab2d11e3a98061e67b1c94c97d1
+      md5: 393c13e88fa30782fa2ee532ba005b24
       size: 72563
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -628,8 +628,8 @@ stages:
       isexec: true
     - path: src/p07_eft/hiclass_campo.py
       hash: md5
-      md5: c5ea8e8e2049f974fb6c0fd4df43df94
-      size: 10997
+      md5: 174d06967a5255162047e87b99240464
+      size: 11065
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -641,8 +641,8 @@ stages:
     outs:
     - path: results/logs/hiclass_campo.json
       hash: md5
-      md5: 31c9fbd99fb8b84d43ef38a32bd4b520
-      size: 7815
+      md5: 191482341f91d3ecc18f7d00602bf42e
+      size: 7817
   R3_rehecho:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/analiza_ssee_R3.py
