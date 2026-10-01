@@ -60,6 +60,9 @@ for _m, _k in _K.items():
     _mx, _mn = _lp.max(), _lp.mean()
     _pD = 2.0 * (_mx - _mn)
     _dic[_m] = -2.0 * _mx + 2.0 * _pD
+    _fil = getattr(sys.modules[__name__], "_fil", {})
+    _fil[_m] = dict(k=_k, lnP_max=float(_mx), lnP_media=float(_mn), p_D=float(_pD), DIC=float(_dic[_m]))
+    sys.modules[__name__]._fil = _fil
     _flag = "" if abs(_pD - _k) < 0.5 else "   ⚠ p_D lejos de k"
     log(f"  {_m.upper():6s} {_k:2d} {_mx:10.3f} {_mn:10.3f} {_pD:7.3f} {_dic[_m]:9.3f}{_flag}")
 
@@ -72,3 +75,11 @@ log("  Cordura: p_D ≈ k en los tres ⇒ posteriors casi gaussianos, DIC ≈ AI
 with open(LOG, "w", encoding="utf-8") as _fh:
     _fh.write("\n".join(_out) + "\n")
 print(f"\nlog: {os.path.relpath(LOG, _REPO)}")
+# JSON con acta (2026-09-30): lo que cita el apendice DIC de Paper 2
+import json  # noqa: E402
+sys.path.insert(0, os.path.join(_REPO, "src"))
+from procedencia import con_acta  # noqa: E402
+json.dump(con_acta(dict(modelos=_fil, dDIC=dict(ssee_menos_lcdm=_dic["ssee"] - _dic["lcdm"],
+                                                 ssee_menos_cpl=_dic["ssee"] - _dic["cpl"])),
+                   __file__, entradas=[os.path.realpath(CHAINS)]),
+          open(os.path.join(_REPO, "results", "logs", "dic_from_chains.json"), "w"), indent=1)
