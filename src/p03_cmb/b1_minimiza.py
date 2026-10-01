@@ -34,8 +34,19 @@ MOD = sys.argv[1]
 PREF = os.path.join(_R, "results", "chains", {"ssee": "ssee_cmb_k2", "lcdm": "lcdm_cmb"}[MOD])
 QUEMA = 0.3   # ORIGEN-VALOR: 0.3 — el mismo burn-in que usa analyse_chains de ssee_paper3_b1_mcmc.py
 
-info = yaml.safe_load(open(PREF + ".updated.yaml"))
-libres = [p for p, v in info["params"].items() if isinstance(v, dict) and "prior" in v]
+# La configuracion se construye con las MISMAS funciones que corrieron la cadena
+# (el .updated.yaml no guarda la funcion logA -> As). El .updated.yaml solo da la
+# lista de libres (con los nuisance de plik) y sirve de control de ingredientes.
+sys.path.insert(0, os.path.join(_R, "src", "p03_cmb"))
+import ssee_paper3_b1_mcmc as B  # noqa: E402
+upd = yaml.safe_load(open(PREF + ".updated.yaml"))
+info = B._ssee_info(PREF, h0_fixed=True) if MOD == "ssee" else B._lcdm_info(PREF)
+libres = [p for p, v in upd["params"].items() if isinstance(v, dict) and "prior" in v]
+_fijos = {p: v for p, v in info["params"].items() if isinstance(v, (int, float)) and not isinstance(v, bool)}
+_mal = [p for p, v in _fijos.items() if abs(float(upd["params"].get(p, {}).get("value", np.nan)) - v) > 1e-9]
+print(f"  ingredientes fijos: {_fijos}", flush=True)
+if _mal:
+    sys.exit(f"  la configuracion reconstruida NO es la de la cadena en {_mal}")
 fs = sorted(glob.glob(PREF + ".[0-9].txt"))
 mejor, mejor_chi2 = None, np.inf
 for f in fs:
@@ -49,7 +60,10 @@ for f in fs:
 print(f"  {MOD}: {len(libres)} libres (con nuisance), {len(fs)} cadenas; mejor muestreado chi2 = {mejor_chi2:.3f}", flush=True)
 
 for p in libres:
-    info["params"][p]["ref"] = mejor[p]
+    if p in info["params"] and isinstance(info["params"][p], dict):
+        info["params"][p] = dict(info["params"][p], ref=mejor[p])
+    else:   # nuisance de plik: su definicion tal como corrio
+        info["params"][p] = dict(upd["params"][p], ref=mejor[p])
     info["params"][p].pop("proposal", None)
 info["sampler"] = {"minimize": {"ignore_prior": True, "best_of": 1}}
 info["output"] = PREF + "_min"
