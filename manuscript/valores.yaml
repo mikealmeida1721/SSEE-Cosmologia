@@ -506,3 +506,15 @@ p2_w0wa_ssee_ec27: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec2
 p2_w0wa_lcdm_ec27: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.lcdm_sigma", formato: ".2f"}
 p2_w0wa_ssee_ec28: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.ssee_sigma", formato: ".2f"}
 p2_w0wa_lcdm_ec28: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.lcdm_sigma", formato: ".2f"}
+fs8_0_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.0.t_ssee", formato: ".1f"}
+fs8_0_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.0.t_lcdm", formato: ".1f"}
+fs8_1_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.1.t_ssee", formato: ".1f"}
+fs8_1_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.1.t_lcdm", formato: ".1f"}
+fs8_2_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.2.t_ssee", formato: ".1f"}
+fs8_2_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.2.t_lcdm", formato: ".1f"}
+fs8_3_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.3.t_ssee", formato: ".1f"}
+fs8_3_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.3.t_lcdm", formato: ".1f"}
+fs8_4_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.4.t_ssee", formato: ".1f"}
+fs8_4_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.4.t_lcdm", formato: ".1f"}
+fs8_5_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.5.t_ssee", formato: ".1f"}
+fs8_5_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.5.t_lcdm", formato: ".1f"}

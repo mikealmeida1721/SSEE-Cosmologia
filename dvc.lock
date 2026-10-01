@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: f340db9499d1844b2336238688da70de
-      size: 50008
+      md5: 9c6128d2f0306724c6b3518fd8eb2423
+      size: 51112
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -115,8 +115,8 @@ stages:
       size: 2416
     - path: results/logs/fsigma8_canonico.json
       hash: md5
-      md5: c18ed121dcd7b64bd6ebdb5292632a17
-      size: 2462
+      md5: cb16041849cc21c934dc84da77f6ddbf
+      size: 2861
     - path: results/logs/hiclass_campo.json
       hash: md5
       md5: 31c9fbd99fb8b84d43ef38a32bd4b520
@@ -188,8 +188,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 059be9ac64d492a6ef4056afd7d43f1c
-      size: 63841
+      md5: 0d6ecf46655905c51552da0ba65aea1c
+      size: 65209
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1185,8 +1185,8 @@ stages:
     deps:
     - path: src/p03_cmb/recalc_fsigma8_canonical.py
       hash: md5
-      md5: 67c88277f2337f0b15ecfb7ec888fd5f
-      size: 5257
+      md5: b5ffac4516c6aeae98ba140aa5c036cc
+      size: 5293
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1198,5 +1198,5 @@ stages:
     outs:
     - path: results/logs/fsigma8_canonico.json
       hash: md5
-      md5: c18ed121dcd7b64bd6ebdb5292632a17
-      size: 2462
+      md5: cb16041849cc21c934dc84da77f6ddbf
+      size: 2861

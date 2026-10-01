@@ -11,7 +11,9 @@
    "ssee": 0.43616620209098944,
    "lcdm": 0.4435363456735055,
    "pull_ssee": 0.23938549256344463,
-   "pull_lcdm": 0.3733881031546462
+   "pull_lcdm": 0.3733881031546462,
+   "t_ssee": 0.23938549256344463,
+   "t_lcdm": 0.3733881031546462
   },
   {
    "survey": "SDSS MGS (Howlett+2015)",
@@ -21,7 +23,9 @@
    "ssee": 0.4493533778772862,
    "lcdm": 0.45861816839463837,
    "pull_ssee": -0.2803215318807849,
-   "pull_lcdm": -0.21642642486456293
+   "pull_lcdm": -0.21642642486456293,
+   "t_ssee": 0.2803215318807849,
+   "t_lcdm": 0.21642642486456293
   },
   {
    "survey": "BOSS DR12 z=0.38 (Alam+2017)",
@@ -31,7 +35,9 @@
    "ssee": 0.4697364580020264,
    "lcdm": 0.4762113996735494,
    "pull_ssee": -0.6058564888438577,
-   "pull_lcdm": -0.46196889614334624
+   "pull_lcdm": -0.46196889614334624,
+   "t_ssee": 0.6058564888438577,
+   "t_lcdm": 0.46196889614334624
   },
   {
    "survey": "BOSS DR12 z=0.51 (Alam+2017)",
@@ -41,7 +47,9 @@
    "ssee": 0.4712425036118094,
    "lcdm": 0.47411795237915666,
    "pull_ssee": 0.3484869371528789,
-   "pull_lcdm": 0.42415664155675376
+   "pull_lcdm": 0.42415664155675376,
+   "t_ssee": 0.3484869371528789,
+   "t_lcdm": 0.42415664155675376
   },
   {
    "survey": "BOSS DR12 z=0.61 (Alam+2017)",
@@ -51,7 +59,9 @@
    "ssee": 0.4684766743224662,
    "lcdm": 0.46874132566909044,
    "pull_ssee": 0.9551963036019471,
-   "pull_lcdm": 0.962980166737954
+   "pull_lcdm": 0.962980166737954,
+   "t_ssee": 0.9551963036019471,
+   "t_lcdm": 0.962980166737954
   },
   {
    "survey": "eBOSS DR16 (Hou+2021)",
@@ -61,7 +71,9 @@
    "ssee": 0.3833230531473135,
    "lcdm": 0.37596532180571063,
    "pull_ssee": -1.7483765967263667,
-   "pull_lcdm": -1.9118817376508754
+   "pull_lcdm": -1.9118817376508754,
+   "t_ssee": 1.7483765967263667,
+   "t_lcdm": 1.9118817376508754
   }
  ],
  "chi2N_ssee": 0.765601918020255,
@@ -70,17 +82,17 @@
  "tension_media_lcdm": 0.7251336616846897,
  "max_pull_ssee": 1.7483765967263667,
  "_procedencia": {
-  "commit": "9dda2bb11657a85027656a879be8c3c83c181641",
+  "commit": "36692827b120e6a578512e6f85c0148753d15b81",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/recalc_fsigma8_canonical.py",
-  "script_sha256": "efedceaf064ba3857c285b357c10a4eadbfdc2cdc9660e7d9fecf2a902200bd7",
+  "script_sha256": "d59eb8baafbaa17326b510bc5e4abf97e582b0ec7515fcb58ecd4710de546afe",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p03_cmb/recalc_fsigma8_canonical.py"
   ],
-  "fecha": "2026-10-01T10:17:16",
+  "fecha": "2026-10-01T10:19:31",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
