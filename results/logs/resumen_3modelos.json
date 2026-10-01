@@ -1,0 +1,156 @@
+{
+ "fecha": "2026-09-30",
+ "N": 16,
+ "modelos": {
+  "ssee": {
+   "k": 2,
+   "lnP_MAP": -5.761513201168265,
+   "BIC": 17.068203846816093,
+   "AIC": 15.52302640233653,
+   "posterior": {
+    "H0": {
+     "mediana": 67.61496849237821,
+     "mas": 0.3482395596758323,
+     "menos": 0.34640354931627826,
+     "std": 0.3491399647914103
+    },
+    "obh2": {
+     "mediana": 0.021792462379258817,
+     "mas": 0.00044567951570717926,
+     "menos": 0.00044659325803904706,
+     "std": 0.0004487807294069198
+    }
+   },
+   "dBIC_vs_ssee": 0.0,
+   "dAIC_vs_ssee": 0.0,
+   "dBIC_ssee_menos": 0.0,
+   "dAIC_ssee_menos": 0.0
+  },
+  "lcdm": {
+   "k": 3,
+   "lnP_MAP": -7.757918850333645,
+   "BIC": 23.833603867386635,
+   "AIC": 21.51583770066729,
+   "posterior": {
+    "H0": {
+     "mediana": 68.38649531492342,
+     "mas": 0.2769190240224475,
+     "menos": 0.2748798054641526,
+     "std": 0.277578827183782
+    },
+    "Om": {
+     "mediana": 0.302167550611948,
+     "mas": 0.004222579446661878,
+     "menos": 0.00421331495127264,
+     "std": 0.004246286223297492
+    },
+    "obh2": {
+     "mediana": 0.022324340983252276,
+     "mas": 0.0001477247679606622,
+     "menos": 0.0001462508682398521,
+     "std": 0.0001476241290944488
+    }
+   },
+   "dBIC_vs_ssee": 6.765400020570542,
+   "dAIC_vs_ssee": 5.992811298330761,
+   "dBIC_ssee_menos": -6.765400020570542,
+   "dAIC_ssee_menos": -5.992811298330761
+  },
+  "cpl": {
+   "k": 5,
+   "lnP_MAP": -4.429250655908535,
+   "BIC": 22.721444923015977,
+   "AIC": 18.858501311817072,
+   "posterior": {
+    "H0": {
+     "mediana": 67.26633337367745,
+     "mas": 0.5130146721203772,
+     "menos": 0.5144098211911654,
+     "std": 0.5160011622101395
+    },
+    "Om": {
+     "mediana": 0.3165892093378422,
+     "mas": 0.006924337160573613,
+     "menos": 0.006940072031512479,
+     "std": 0.006964566339753714
+    },
+    "w0": {
+     "mediana": -0.8195781978289052,
+     "mas": 0.08017693108591939,
+     "menos": 0.07807462176747926,
+     "std": 0.07955095021430307
+    },
+    "wa": {
+     "mediana": -0.5513633514932281,
+     "mas": 0.3006942401134064,
+     "menos": 0.3173600178917366,
+     "std": 0.3111392059655612
+    },
+    "obh2": {
+     "mediana": 0.022373418016650715,
+     "mas": 0.00014875786244548592,
+     "menos": 0.0001485291003934172,
+     "std": 0.00014958440058841213
+    }
+   },
+   "dBIC_vs_ssee": 5.653241076199883,
+   "dAIC_vs_ssee": 3.335474909480542,
+   "dBIC_ssee_menos": -5.653241076199883,
+   "dAIC_ssee_menos": -3.335474909480542
+  }
+ },
+ "tension_H0_ssee_planck": 0.39650569901526317,
+ "rho_w0_wa_cpl": -0.951664046354487,
+ "dist_ssee_a_mediana_cpl_sigma": {
+  "w0": 0.2560820890384671,
+  "wa": 0.3812169341085547
+ },
+ "control": {
+  "log": "results/logs/mcmc_paper2_3models_wmfix.log",
+  "impreso": {
+   "ssee": {
+    "lnP_MAP": -5.76,
+    "BIC": 17.07,
+    "AIC": 15.52
+   },
+   "lcdm": {
+    "lnP_MAP": -7.76,
+    "BIC": 23.83,
+    "AIC": 21.52
+   },
+   "cpl": {
+    "lnP_MAP": -4.43,
+    "BIC": 22.72,
+    "AIC": 18.86
+   }
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "327db4bbaeaed66feee531f3ed719a797db698db",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/resumen_3modelos.py",
+  "script_sha256": "0c09e817e36afd9f5bb554f496bbcaf25b339db551594e72c172575f465bc05c",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "b1c6d5c10d06316629cec68d7feeaa7cf1272ccacb3826f587e2932565a0d22a",
+   "results/logs/mcmc_paper2_3models_wmfix.log": "fdd10c0d9d0d2ebd72bdaddeb45a8ac6c157f5e924df5d7e6e358675a49cdbe2"
+  },
+  "argv": [
+   "src/p02_mcmc/resumen_3modelos.py"
+  ],
+  "fecha": "2026-09-30T21:55:11",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

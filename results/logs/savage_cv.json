@@ -1,0 +1,132 @@
+{
+ "fecha": "2026-09-30",
+ "savage_dickey": {
+  "B_sddr": 10.374366150665258,
+  "ln_B": 2.3393379703386707,
+  "pi_ssee": 0.24825936537012336,
+  "post_density": 2.575533556681447,
+  "w0_med": -0.8195152993695682,
+  "w0_std": 0.07960247407052196,
+  "wa_med": -0.5515097592468043,
+  "wa_std": 0.31162092329375424
+ },
+ "cross_validation": {
+  "ssee": {
+   "params": [
+    68.03890085128272
+   ],
+   "en_borde": [
+    false
+   ],
+   "bounds": [
+    [
+     50,
+     85
+    ]
+   ],
+   "nll_train": 4.917252744175128,
+   "ll_test": -0.7846327150970711,
+   "chi2r_train": 1.404929355478608,
+   "chi2r_test": 0.26154423836569035,
+   "k": 1
+  },
+  "lcdm": {
+   "params": [
+    69.19826391404132,
+    0.3084617279019541
+   ],
+   "en_borde": [
+    false,
+    false
+   ],
+   "bounds": [
+    [
+     50,
+     85
+    ],
+    [
+     0.15,
+     0.55
+    ]
+   ],
+   "nll_train": 4.414692711487378,
+   "ll_test": -2.1343436802772264,
+   "chi2r_train": 1.2613407747106795,
+   "chi2r_test": 0.7114478934257421,
+   "k": 2
+  },
+  "cpl": {
+   "params": [
+    50.0,
+    0.16679625474455856,
+    -0.41701320401932807,
+    -0.43337599370662844
+   ],
+   "en_borde": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "bounds": [
+    [
+     50,
+     85
+    ],
+    [
+     0.15,
+     0.55
+    ],
+    [
+     -2.5,
+     0.5
+    ],
+    [
+     -3.0,
+     2.0
+    ]
+   ],
+   "nll_train": 2.0392637931630375,
+   "ll_test": -191.14688775816458,
+   "chi2r_train": 0.5826467980465821,
+   "chi2r_test": 63.71562925272153,
+   "k": 4
+  }
+ },
+ "dlnL_test": {
+  "ssee_menos_lcdm": 1.3497109651801553,
+  "ssee_menos_cpl": 190.3622550430675
+ },
+ "alguno_en_borde": {
+  "ssee": false,
+  "lcdm": false,
+  "cpl": true
+ },
+ "_procedencia": {
+  "commit": "920fc1d75dac1484efc112f241e40453c28580fa",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/estadistica/ssee_phase_d_savage_cv.py",
+  "script_sha256": "ed0c84d2ec8520d95da5b247cb286f590d6aaeb3a5e2eaf9aec787efd044bb04",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "b1c6d5c10d06316629cec68d7feeaa7cf1272ccacb3826f587e2932565a0d22a"
+  },
+  "argv": [
+   "src/estadistica/ssee_phase_d_savage_cv.py"
+  ],
+  "fecha": "2026-09-30T21:53:35",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

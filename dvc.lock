@@ -75,16 +75,20 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 7d92c8fd68d0137419fa5ce3b6d9a30e
-      size: 19099
+      md5: 84a5e3094fcd8b04d4fdba40317ceefc
+      size: 27468
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 157babb56050d778d3b857857417be60
       size: 7909
+    - path: results/logs/dic_from_chains.json
+      hash: md5
+      md5: 0323b79d65b8fea7ada02ebc680e950e
+      size: 1458
     - path: results/logs/hiclass_campo.json
       hash: md5
-      md5: 11c0b317e9988b1538a895a52c1cde96
-      size: 6195
+      md5: fc74aaecd4c53c71f3c0949d2f8e8c30
+      size: 6477
     - path: results/logs/kids_legacy_bic.json
       hash: md5
       md5: 0481b4f9324f6f413d1aa09ce9a76f37
@@ -95,8 +99,8 @@ stages:
       size: 2372
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 7d5855900488d2817ecc39cc650c72d4
-      size: 6024
+      md5: 42f5b0b71a5f1103e96fa91269602d5c
+      size: 6064
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
@@ -105,10 +109,18 @@ stages:
       hash: md5
       md5: 76b195c6ba3561dd1f5cc49f908eaa3f
       size: 2381
+    - path: results/logs/resumen_3modelos.json
+      hash: md5
+      md5: 0539ee6d0c65ef70917d59521bf9e5de
+      size: 3974
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
       size: 1930
+    - path: results/logs/savage_cv.json
+      hash: md5
+      md5: 672ad890c829e55d5167cd79e60b65c9
+      size: 2574
     - path: src/valores_tex.py
       hash: md5
       md5: 1f5c766594c7c7ab5887dbc8f6b01e8d
@@ -116,8 +128,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 33b9f7d9c08c805c86ff0ea7cb143407
-      size: 24867
+      md5: fd6c89c9922b7e8057c053f26ad23180
+      size: 35524
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -440,8 +452,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/lya_auditoria.py
       hash: md5
-      md5: 573a7161a8076c0d7a412853e6bf7f4c
-      size: 5587
+      md5: a68e644ecce8bed39dfcf115fe040a04
+      size: 5623
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -457,8 +469,8 @@ stages:
     outs:
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 7d5855900488d2817ecc39cc650c72d4
-      size: 6024
+      md5: 42f5b0b71a5f1103e96fa91269602d5c
+      size: 6064
   resumen_3modelos:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p02_mcmc/resumen_3modelos.py
@@ -478,8 +490,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/resumen_3modelos.py
       hash: md5
-      md5: c289b05e65d56fd46e9c0b11743af0e7
-      size: 4042
+      md5: 3e92bf8c9b0348ecbe92d43ce9426610
+      size: 4391
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -487,8 +499,8 @@ stages:
     outs:
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: e23b719b9e7a3b06276c196e6a486e6f
-      size: 3879
+      md5: 0539ee6d0c65ef70917d59521bf9e5de
+      size: 3974
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/estadistica/ssee_phase_d_savage_cv.py > 

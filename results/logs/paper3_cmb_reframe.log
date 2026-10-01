@@ -1,4 +1,5 @@
-preflight  [1/3] __pycache__ borrados: 148
+NÚCLEOS: 1 (CAMB, OMP=1)
+preflight  [1/3] __pycache__ borrados: 103
 preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
 preflight  [3/3] ingredientes de esta corrida:
              SUM_MNU_EV       = 0.068490000
@@ -6,7 +7,7 @@ preflight  [3/3] ingredientes de esta corrida:
              OMEGA_C_H2       = 0.119514408
              OMEGA_NU_H2      = 0.000735345
              OMEGA_M_H2       = 0.142667510
-             OMEGA_M_TOTAL    = 0.308880879
+             OMEGA_M_TOTAL    = 0.308880841
              W0               = -0.839949771
              WA               = -0.669974886
              H0_ALG           = 67.962137323
@@ -31,7 +32,7 @@ Datos Planck PR4 lensing: 14 puntos
 Calculando espectros SSEE con CAMB (TT+TE+EE+lensing)...
   r_d,SSEE (CAMB)   = 147.17 Mpc  (Planck: ~147.1 Mpc)
   z_drag            = 1060.03
-  100θ_MC           = 1.0413940847979533
+  100θ_MC           = 1.0413944913907913
 
 Calculando espectros ΛCDM con CAMB...
   r_d,ΛCDM = 147.10 Mpc
@@ -44,6 +45,9 @@ Calculando espectros ΛCDM con CAMB...
 
   COMBINADO:  SSEE χ²_r=1.040  |  ΛCDM χ²_r=1.040  (N_total=5914)
   ΔBIC(SSEE−ΛCDM) = -35.0  (negativo = SSEE favorecido)
+
+Caso naive (Omega_m = s_m en la geometria)...
+  naive: chi2_TT=171505.9 chi2_r=87.01 (N=1971)  picos {'ssee': [220, 536, 813], 'lcdm': [220, 536, 813], 'naive': [240, 596, 921]}
 
 Posición de picos TT SSEE (primeros 3):
   Pico 1: ℓ=220  Dℓ=5746.4 μK²
@@ -58,4 +62,3 @@ Generando figuras...
   Figura guardada: /home/mike/Proyectos/SSEE/src/p03_cmb/../../results/figures/fig_cmb_peaks_zoom.pdf
 
 ✓ Listo. TT + TE + EE + lensing completados.
-___CORRIDA_OK___

@@ -1,0 +1,305 @@
+{
+ "fecha": "2026-09-30",
+ "dato_lya": {
+  "z": 2.33,
+  "DH_rd": 8.632,
+  "sigma": 0.101
+ },
+ "escenario_A": {
+  "rd": 170.6601674801437,
+  "E_lya": 2.542424476650643,
+  "DH_lya": 1735.0243998818848,
+  "f_DE_lya": 0.08419021093948312,
+  "rhoDE_z_sobre_rhoDE_0_lya": 0.647956289351554,
+  "DH_rd_lya": 10.166545747025326,
+  "pull_lya": 15.19352224777551,
+  "Om": 0.16005022865522103,
+  "chi2_diag": 631.895425053977,
+  "chi2_cov": 722.0784266608957,
+  "pull_max": {
+   "z": 2.33,
+   "cantidad": "DH/rd",
+   "pull": 15.19352224777551
+  },
+  "pulls": [
+   {
+    "z": 0.295,
+    "cantidad": "DV/rd",
+    "pull": -11.439950915843713
+   },
+   {
+    "z": 0.51,
+    "cantidad": "DM/rd",
+    "pull": -9.38020667752073
+   },
+   {
+    "z": 0.51,
+    "cantidad": "DH/rd",
+    "pull": -0.6368170636330253
+   },
+   {
+    "z": 0.706,
+    "cantidad": "DM/rd",
+    "pull": -7.003967126255838
+   },
+   {
+    "z": 0.706,
+    "cantidad": "DH/rd",
+    "pull": 2.0665556724449132
+   },
+   {
+    "z": 0.934,
+    "cantidad": "DM/rd",
+    "pull": -7.0277908633637685
+   },
+   {
+    "z": 0.934,
+    "cantidad": "DH/rd",
+    "pull": 4.083082111686129
+   },
+   {
+    "z": 1.321,
+    "cantidad": "DM/rd",
+    "pull": -1.5992140884846253
+   },
+   {
+    "z": 1.321,
+    "cantidad": "DH/rd",
+    "pull": 6.633475960314537
+   },
+   {
+    "z": 1.484,
+    "cantidad": "DM/rd",
+    "pull": -1.2614779586279679
+   },
+   {
+    "z": 1.484,
+    "cantidad": "DH/rd",
+    "pull": 3.3854096894254204
+   },
+   {
+    "z": 2.33,
+    "cantidad": "DM/rd",
+    "pull": 1.669008775501194
+   },
+   {
+    "z": 2.33,
+    "cantidad": "DH/rd",
+    "pull": 15.19352224777551
+   }
+  ],
+  "rd_formula_vieja": 174.26657484498332,
+  "DH_rd_lya_formula_vieja": 9.956151381441073
+ },
+ "escenario_B": {
+  "rd": 147.17438639259242,
+  "E_lya": 3.444301260391052,
+  "DH_lya": 1280.715061883109,
+  "f_DE_lya": 0.0377438484051699,
+  "rhoDE_z_sobre_rhoDE_0_lya": 0.647956289351554,
+  "DH_rd_lya": 8.702024131201473,
+  "pull_lya": 0.6933082297175532,
+  "Om": 0.30888084061409116,
+  "chi2_diag": 11.793055364816324,
+  "chi2_cov": 11.406333887483015,
+  "pull_max": {
+   "z": 0.51,
+   "cantidad": "DM/rd",
+   "pull": -2.1113861421242737
+  },
+  "pulls": [
+   {
+    "z": 0.295,
+    "cantidad": "DV/rd",
+    "pull": -0.7058637991704113
+   },
+   {
+    "z": 0.51,
+    "cantidad": "DM/rd",
+    "pull": -2.1113861421242737
+   },
+   {
+    "z": 0.51,
+    "cantidad": "DH/rd",
+    "pull": 1.2811099846977758
+   },
+   {
+    "z": 0.706,
+    "cantidad": "DM/rd",
+    "pull": 0.23186565052554176
+   },
+   {
+    "z": 0.706,
+    "cantidad": "DH/rd",
+    "pull": 1.7909751475036102
+   },
+   {
+    "z": 0.934,
+    "cantidad": "DM/rd",
+    "pull": 0.6664226092732107
+   },
+   {
+    "z": 0.934,
+    "cantidad": "DH/rd",
+    "pull": -0.21887003275716826
+   },
+   {
+    "z": 1.321,
+    "cantidad": "DM/rd",
+    "pull": 0.6219150948480324
+   },
+   {
+    "z": 1.321,
+    "cantidad": "DH/rd",
+    "pull": 0.05505051029073895
+   },
+   {
+    "z": 1.484,
+    "cantidad": "DM/rd",
+    "pull": -0.6559725479119789
+   },
+   {
+    "z": 1.484,
+    "cantidad": "DH/rd",
+    "pull": 0.37274248353662504
+   },
+   {
+    "z": 2.33,
+    "cantidad": "DM/rd",
+    "pull": 0.05018361891142675
+   },
+   {
+    "z": 2.33,
+    "cantidad": "DH/rd",
+    "pull": 0.6933082297175532
+   }
+  ]
+ },
+ "lcdm_planck": {
+  "rd": 147.10121690363943,
+  "E_lya": 3.511891984757779,
+  "DH_lya": 1267.2942797875955,
+  "f_DE_lya": 0.055518174800381896,
+  "rhoDE_z_sobre_rhoDE_0_lya": 1.0,
+  "DH_rd_lya": 8.615117580011274,
+  "pull_lya": -0.16715267315569718,
+  "Om": 0.315191849347291,
+  "chi2_diag": 25.94943874504547,
+  "chi2_cov": 31.981952556161477,
+  "pull_max": {
+   "z": 0.934,
+   "cantidad": "DM/rd",
+   "pull": 2.7506677152198358
+  },
+  "pulls": [
+   {
+    "z": 0.295,
+    "cantidad": "DV/rd",
+    "pull": 1.5305687632285725
+   },
+   {
+    "z": 0.51,
+    "cantidad": "DM/rd",
+    "pull": -0.5261783153782195
+   },
+   {
+    "z": 0.51,
+    "cantidad": "DH/rd",
+    "pull": 2.061556373634082
+   },
+   {
+    "z": 0.706,
+    "cantidad": "DM/rd",
+    "pull": 1.972916796427376
+   },
+   {
+    "z": 0.706,
+    "cantidad": "DH/rd",
+    "pull": 2.1619483398393453
+   },
+   {
+    "z": 0.934,
+    "cantidad": "DM/rd",
+    "pull": 2.7506677152198358
+   },
+   {
+    "z": 0.934,
+    "cantidad": "DH/rd",
+    "pull": -0.3779142100636624
+   },
+   {
+    "z": 1.321,
+    "cantidad": "DM/rd",
+    "pull": 1.5084681529542021
+   },
+   {
+    "z": 1.321,
+    "cantidad": "DH/rd",
+    "pull": -0.5072900059374003
+   },
+   {
+    "z": 1.484,
+    "cantidad": "DM/rd",
+    "pull": -0.3125282038441453
+   },
+   {
+    "z": 1.484,
+    "cantidad": "DH/rd",
+    "pull": 0.12024648051404671
+   },
+   {
+    "z": 2.33,
+    "cantidad": "DM/rd",
+    "pull": 0.3627863508052017
+   },
+   {
+    "z": 2.33,
+    "cantidad": "DH/rd",
+    "pull": -0.16715267315569718
+   }
+  ]
+ },
+ "rd_B_sobre_lcdm": 1.0004974091342898,
+ "control": {
+  "contra": {
+   "B_cov_vs_bao_camb": {
+    "aqui": 11.406333887483015,
+    "bao_camb": 11.406333887483813
+   },
+   "LCDM_cov_vs_bao_lcdm_planck": {
+    "aqui": 31.981952556161477,
+    "log": 31.981952556161477
+   }
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "327db4bbaeaed66feee531f3ed719a797db698db",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/lya_auditoria.py",
+  "script_sha256": "8cbb9af5d488328d829c72cc2aff12e5ce1d94af2819dd39230a4c4f04709828",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
+   "results/logs/bao_lcdm_planck.json": "1fc1389d9c3b4763cd9889ac983b900d13946c8f814d423dfdbae23e5926673b"
+  },
+  "argv": [
+   "src/p02_mcmc/lya_auditoria.py"
+  ],
+  "fecha": "2026-09-30T21:55:13",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

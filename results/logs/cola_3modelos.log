@@ -1,1 +1,42 @@
 [2026-09-29 23:43:43] NÚCLEOS: 1. Esperando a la cola N8 (PID 397432)
+[2026-09-30 19:37:44] logs mezclados archivados en /mnt/datos/SSEE_data/mcmc/paper2_3models/superseded_ssee_ckpt_2026-07-25; arranca el MCMC de 3 modelos
+[2026-09-30 21:44:05] 3 modelos rc=0
+DIC desde cadenas — parametrización ω_m algebraico fijo (R25)
+  fuente: results/logs/mcmc_chains_professional.npz
+  DIC = -2·lnL(θ̂) + 2·p_D ,  p_D = 2·[lnL(θ̂) − <lnL>]
+
+  modelo  k    lnP_max      <lnP>     p_D       DIC
+  SSEE    2     -5.762     -6.763   2.002    15.527
+  LCDM    3     -7.758     -9.261   3.006    21.529
+  CPL     5     -4.429     -6.932   5.005    18.869
+
+  ΔDIC (SSEE − ΛCDM) = -6.00   (negativo = SSEE favorecido)
+  ΔDIC (SSEE − CPL)  = -3.34
+
+  Cordura: p_D ≈ k en los tres ⇒ posteriors casi gaussianos, DIC ≈ AIC.
+
+log: results/logs/dic_from_chains.log
+[2026-09-30 21:44:05] dic rc=0
+χ²_r(H(z)): {'SSEE': np.float64(0.479), 'ΛCDM': np.float64(0.459), 'CPL': np.float64(0.471)}
+Fig 7 guardada
+Fig 8 guardada
+r_d MAP: SSEE=147.71  ΛCDM=147.59  CPL=147.10
+H0 SSEE=67.615±0.349  (0.40σ Planck)
+[2026-09-30 21:44:09] src/p02_mcmc/regenerate_fig7_fig8_p2.py rc=0
+{'SSEE': {'H0': 67.61497, 'Om': 0.31206, 'w0': -0.83995, 'wa': -0.66997, 'ob': 0.02179, 'wm': 0.14267}, '$\\Lambda$CDM': {'H0': 68.3865, 'Om': 0.30217, 'w0': -1.0, 'wa': 0.0, 'ob': 0.02232, 'mnu': 0.06}, 'CPL': {'H0': 67.26633, 'Om': 0.31659, 'w0': -0.81958, 'wa': -0.55136, 'ob': 0.02237, 'mnu': 0.06}}
+fig8_bao_residuals regenerada (DR2). χ² por modelo: {'SSEE': 10.9, '$\\Lambda$CDM': 12.0, 'CPL': 9.0}
+[2026-09-30 21:44:12] src/p02_mcmc/regenerate_fig8_bao_residuals.py rc=0
+[ 125.6m] COMPARACIÓN DE MODELOS (covarianza DESI same-bin block-diagonal)
+[ 125.6m] =================================================================
+[ 125.6m] 
+  Modelo           k   ln P_MAP      BIC    ΔBIC      AIC    ΔAIC    N_eff
+[ 125.6m]   ---------------------------------------------------------------
+[ 125.6m]   SSEE             2      -5.76    17.07    0.00    15.52    0.00    76806
+[ 125.6m]   ΛCDM             3      -7.76    23.83    6.77    21.52    5.99    65282
+[2026-09-30 21:44:12] COLA 3 MODELOS TERMINADA
+[2026-09-30 21:44:14] savage_cv rc=0
+  ln B = 2.3393
+  Δ ln L_test (SSEE − ΛCDM) = +1.3497  (SSEE mejor en test)
+  Δ ln L_test (SSEE − CPL)  = +190.3623  (SSEE mejor en test)
+  Si Δ ln L_test(SSEE−ΛCDM) ≥ 0 → SSEE no overfittea DESI.
+[2026-09-30 21:44:14] SAVAGE TERMINADO

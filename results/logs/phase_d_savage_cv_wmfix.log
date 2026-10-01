@@ -2,8 +2,8 @@
 PARTE 1: SAVAGE-DICKEY DENSITY RATIO
 ============================================================
   Muestras CPL: 2,500,000
-  Rango w0: [-1.208, -0.436]
-  Rango wa: [-2.307, 0.838]
+  Rango w0: [-1.181, -0.416]
+  Rango wa: [-2.289, 0.677]
 
   Factor truncación prior w0: 0.997300 (Gauss untruncada: 0.997300)
   Factor truncación prior wa: 0.975900
@@ -17,23 +17,23 @@ PARTE 1: SAVAGE-DICKEY DENSITY RATIO
 
   Ajustando KDE 2D con 500,000 muestras...
   Densidad posterior en (w0=-0.84, wa=-0.67):
-    p(w0,wa | data, CPL) = 4.506367
+    p(w0,wa | data, CPL) = 2.575534
 
   ─────────────────────────────────────────────────────
-  SAVAGE-DICKEY: B(SSEE_dyn vs CPL_dyn) = 18.1519
-  ln B = 2.8988
+  SAVAGE-DICKEY: B(SSEE_dyn vs CPL_dyn) = 10.3744
+  ln B = 2.3393
   → SSEE preferido sobre CPL en sector dinámico
   → Evidencia SUSTANCIAL (Jeffreys: |ln B|>1.1)
   → Evidencia FUERTE (Jeffreys: |ln B|>2.3)
 
   Verificación: fracción CPL posterior dentro de 1σ DESI del punto SSEE:
     |w0 - -0.84| < 0.057 AND |wa - -0.67| < 0.226
-    Fracción = 34.06%
+    Fracción = 31.18%
     (Esperado para distribución concentrada: ~10-20%)
 
   Resumen CPL posterior (w0, wa):
-    w0 = -0.826 ± 0.080  (SSEE: -0.84  — 0.18σ)
-    wa = -0.556 ± 0.313  (SSEE: -0.67  — 0.36σ)
+    w0 = -0.820 ± 0.080  (SSEE: -0.84  — 0.26σ)
+    wa = -0.552 ± 0.312  (SSEE: -0.67  — 0.38σ)
 
 ============================================================
 PARTE 2: CROSS-VALIDATION PREDICTIVA (LOO-z)
@@ -79,9 +79,9 @@ PARTE 3: RESUMEN PARA PAPER 2 — APÉNDICE B
 ============================================================
 
 Savage-Dickey Density Ratio (sector dinámico):
-  B(SSEE_dyn vs CPL_dyn) = 18.152
-  ln B = 2.899
-  → CPL posterior en (w0=-0.840, wa=-0.670): 4.506367
+  B(SSEE_dyn vs CPL_dyn) = 10.374
+  ln B = 2.339
+  → CPL posterior en (w0=-0.840, wa=-0.670): 2.575534
   → Prior CPL en ese punto:                  0.248259
 
 Interpretación SDDR:
@@ -106,8 +106,8 @@ For nested models, the Bayes factor for the dynamic sector is given
 exactly by the Savage--Dickey density ratio~\cite{Verdinelli1995}:
 \begin{equation}
   B_{\rm SSEE/CPL} = \frac{p(w_0^{\rm S},w_a^{\rm S}\,|\,\mathrm{data,CPL})}
-  {\pi(w_0^{\rm S},w_a^{\rm S}\,|\,\mathrm{CPL})} = 18.15
-  \quad (\ln B = +2.90).
+  {\pi(w_0^{\rm S},w_a^{\rm S}\,|\,\mathrm{CPL})} = 10.37
+  \quad (\ln B = +2.34).
 \end{equation}
 The CPL posterior is evaluated at the algebraic SSEE point
 $(w_0,w_a)=(-0.84,-0.67)$ using a Scott-bandwidth

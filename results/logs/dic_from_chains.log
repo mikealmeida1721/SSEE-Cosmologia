@@ -3,11 +3,11 @@ DIC desde cadenas — parametrización ω_m algebraico fijo (R25)
   DIC = -2·lnL(θ̂) + 2·p_D ,  p_D = 2·[lnL(θ̂) − <lnL>]
 
   modelo  k    lnP_max      <lnP>     p_D       DIC
-  SSEE    2     -5.762     -6.887   2.251    16.024
-  LCDM    3     -7.758     -9.256   2.997    21.510
-  CPL     5     -4.435     -6.926   4.981    18.833
+  SSEE    2     -5.762     -6.763   2.002    15.527
+  LCDM    3     -7.758     -9.261   3.006    21.529
+  CPL     5     -4.429     -6.932   5.005    18.869
 
-  ΔDIC (SSEE − ΛCDM) = -5.49   (negativo = SSEE favorecido)
-  ΔDIC (SSEE − CPL)  = -2.81
+  ΔDIC (SSEE − ΛCDM) = -6.00   (negativo = SSEE favorecido)
+  ΔDIC (SSEE − CPL)  = -3.34
 
   Cordura: p_D ≈ k en los tres ⇒ posteriors casi gaussianos, DIC ≈ AIC.

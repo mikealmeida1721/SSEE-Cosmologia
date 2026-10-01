@@ -1,0 +1,103 @@
+{
+ "fecha": "2026-09-30",
+ "picos_TT": {
+  "ssee": [
+   220,
+   536,
+   813
+  ],
+  "lcdm": [
+   220,
+   536,
+   813
+  ],
+  "naive": [
+   240,
+   596,
+   921
+  ]
+ },
+ "naive": {
+  "omch2": 0.050771741336489956,
+  "chi2_TT": 171505.89142096334,
+  "chi2r_TT": 87.0146582551818,
+  "N": 1971,
+  "dchi2_vs_lcdm": 169450.9638750181
+ },
+ "espectros": {
+  "TT": {
+   "chi2_ssee": 2054.5226944553783,
+   "chi2r_ssee": 1.0423757962736573,
+   "chi2_lcdm": 2054.9275459452406,
+   "chi2r_lcdm": 1.0425812003781028,
+   "N": 1971,
+   "dchi2": -0.40485148986226704,
+   "dchi2r": -0.0002054041044454724
+  },
+  "TE": {
+   "chi2_ssee": 2045.5676592224854,
+   "chi2r_ssee": 1.0399428872508822,
+   "chi2_lcdm": 2045.6526085990795,
+   "chi2r_lcdm": 1.0399860745292728,
+   "N": 1967,
+   "dchi2": -0.08494937659406787,
+   "dchi2r": -4.3187278390588446e-05
+  },
+  "EE": {
+   "chi2_ssee": 2044.8854310174456,
+   "chi2r_ssee": 1.0395960503393216,
+   "chi2_lcdm": 2044.3572589231785,
+   "chi2r_lcdm": 1.039327533768774,
+   "N": 1967,
+   "dchi2": 0.52817209426712,
+   "dchi2r": 0.0002685165705476056
+  },
+  "PP": {
+   "chi2_ssee": 6.478602622518624,
+   "chi2r_ssee": 0.7198447358354026,
+   "chi2_lcdm": 6.80907446590342,
+   "chi2r_lcdm": 0.7565638295448244,
+   "N": 9,
+   "dchi2": -0.33047184338479596,
+   "dchi2r": -0.036719093709421724
+  }
+ },
+ "total": {
+  "chi2_ssee": 6151.454387317828,
+  "chi2_lcdm": 6151.746487933401,
+  "N": 5914,
+  "chi2r_ssee": 1.0401512322147157,
+  "chi2r_lcdm": 1.0402006235937438,
+  "dchi2r": -4.9391379028231797e-05,
+  "k_ssee": 2,
+  "k_lcdm": 6,
+  "penalizacion_dk_lnN": -34.74031080164969,
+  "dBIC": -35.03241141722265
+ },
+ "_procedencia": {
+  "commit": "bdb2b2e4938bbe207257e2d9c4f1308378b9514f",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/ssee_paper3_cmb.py",
+  "script_sha256": "93a2d683e34358bf6104c27b125797b6d3209a6d6bd177ec02c3f5c6d7f055b6",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p03_cmb/ssee_paper3_cmb.py"
+  ],
+  "fecha": "2026-09-30T21:46:50",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

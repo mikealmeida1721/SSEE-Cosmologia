@@ -1,0 +1,55 @@
+{
+ "modelos": {
+  "ssee": {
+   "k": 2,
+   "lnP_max": -5.761513201168265,
+   "lnP_media": -6.762556589975165,
+   "p_D": 2.0020867776137994,
+   "DIC": 15.527199957564129
+  },
+  "lcdm": {
+   "k": 3,
+   "lnP_max": -7.757918850333645,
+   "lnP_media": -9.261097347043311,
+   "p_D": 3.006356993419331,
+   "DIC": 21.528551687505953
+  },
+  "cpl": {
+   "k": 5,
+   "lnP_max": -4.429250655908535,
+   "lnP_media": -6.931765352277985,
+   "p_D": 5.0050293927389,
+   "DIC": 18.868560097294868
+  }
+ },
+ "dDIC": {
+  "ssee_menos_lcdm": -6.001351729941824,
+  "ssee_menos_cpl": -3.341360139730739
+ },
+ "_procedencia": {
+  "commit": "92b276795add853a24e2b843def8d8419b04358a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/estadistica/ssee_dic_from_chains.py",
+  "script_sha256": "ac74d10ed4cdcb85ffd28888f7c3dc936e0420f678d4f563c6076ef27fd5074f",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "b1c6d5c10d06316629cec68d7feeaa7cf1272ccacb3826f587e2932565a0d22a"
+  },
+  "argv": [
+   "src/estadistica/ssee_dic_from_chains.py"
+  ],
+  "fecha": "2026-09-30T21:54:03",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

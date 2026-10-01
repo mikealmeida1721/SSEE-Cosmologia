@@ -1,1 +1,9 @@
 [2026-09-29 23:26:03] NÚCLEOS: 1 en serie. Esperando a SPT (PID 340358)
+[2026-09-30 19:36:04] SPT terminó
+  publicado σ8Ωm^0.25 = 0.6046 ± 0.0096
+  nuestro   σ8Ωm^0.25 = 0.6048 ± 0.0097   tirón +0.02σ   R−1 0.008
+  -> PASA   (/home/mike/Proyectos/SSEE/results/logs/spt3g_calibrador.json)
+[2026-09-30 19:36:07] spt lee rc=0
+[2026-09-30 19:36:07] dic: ya re-corrido a mano el 29-sep 23:37 (segundos, carga 9.5)
+[2026-09-30 19:36:45] rd_reframe rc=0
+[2026-09-30 19:37:07] guardián rc=0 -> results/logs/guardian_2026-09-29.txt

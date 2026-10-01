@@ -1,0 +1,49 @@
+{
+ "modelo": "LCDM",
+ "w_b": 0.02237,
+ "H0": 67.36,
+ "w_c": 0.11974135897359961,
+ "n_s": 0.965964877659659,
+ "logA": 3.044705032329081,
+ "tau": 0.05541134715535297,
+ "chi2": 1003.9354604283087,
+ "n_eval": 192,
+ "convergio": true,
+ "w_c_predicho": 0.11931004260355572,
+ "control": {
+  "w_c_log_viejo": 0.1206858402303732,
+  "dif_en_sigma": -3.839354702331648,
+  "pasa": false
+ },
+ "_procedencia": {
+  "commit": "fb254265ba398969de101914cd5045c16bb9296f",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/ajuste_conjunto_wc_ns.py",
+  "script_sha256": "2b6f83d09c8367ad8b5cd4e6a17f049ed2f16926b7e3ff789b18aaaf50585e83",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_ajuste_conjunto_wc_ns.json": "0f786cb32bc625526afc082712125cc5e586f4807a68968a0e891ddfc91abc16"
+  },
+  "argv": [
+   "src/p03_cmb/ajuste_conjunto_wc_ns.py",
+   "LCDM"
+  ],
+  "fecha": "2026-09-30T21:28:06",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5",
+   "cobaya": "3.6.2",
+   "getdist": "1.7.6"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
