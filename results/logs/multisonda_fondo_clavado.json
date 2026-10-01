@@ -22,12 +22,12 @@
     },
     {
       "sonda": "BOSS DR12 P(k) LPT",
-      "logA": 2.7645155630527634,
-      "sigma": 0.09857877757225299,
-      "chi2_min": 75.227863,
-      "n_muestras": 113878,
+      "logA": 2.7614232200495397,
+      "sigma": 0.10100907523901899,
+      "chi2_min": 73.413456,
+      "n_muestras": 77326,
       "n_cadenas": 4,
-      "logA_en_min": 2.7575637
+      "logA_en_min": 2.7699212
     }
   ],
   "estadisticos": {
@@ -43,16 +43,16 @@
     "sigmas_modelo": 0.3406008589368136
   },
   "estadisticos_perfil": {
-    "logA_comun": 3.0503984576102385,
-    "sigma_comun": 0.0006583174661281372,
-    "T_sondas": 19.391368384419582,
+    "logA_comun": 3.0461596897130283,
+    "sigma_comun": 0.00065330319945037,
+    "T_sondas": 2751.265858970351,
     "gl_sondas": 2,
-    "p_sondas": 6.154855439975981e-05,
-    "sigmas_sondas": 4.006793789305936,
-    "T_modelo": 71.4451723787728,
+    "p_sondas": 0.0,
+    "sigmas_sondas": Infinity,
+    "T_modelo": 4.117614360047439,
     "gl_modelo": 1,
-    "p_modelo": 2.8507042940016527e-17,
-    "sigmas_modelo": 8.452524615685705
+    "p_modelo": 0.04243888392486846,
+    "sigmas_modelo": 2.0291905677011806
   },
   "perfil_sirve": false,
   "degeneracion": [
@@ -90,17 +90,17 @@
     },
     {
       "sonda": "BOSS DR12 P(k) LPT",
-      "marginal": 0.09857961333015411,
-      "condicional": 0.024662163796876,
-      "D": 3.9972004947368553,
+      "marginal": 0.10101032676174528,
+      "condicional": 0.02435204304329101,
+      "D": 4.147920015670867,
       "enredado_con": [
         [
           "b1_z1NGC",
-          -0.8906572833982875
+          -0.898430669595219
         ],
         [
           "b1_z2NGC",
-          -0.8644889189876749
+          -0.8783426789293634
         ]
       ]
     }
@@ -122,9 +122,9 @@
     },
     {
       "sonda": "BOSS DR12 P(k) LPT",
-      "logA": 2.7621068383333336,
-      "chi2_min": 75.227863,
-      "sigma": 0.06680936627627498,
+      "logA": 2.771026959615385,
+      "chi2_min": 73.413456,
+      "sigma": 0.005286623352576347,
       "lados": 2
     }
   ],
@@ -147,10 +147,10 @@
     },
     {
       "sonda": "BOSS DR12 P(k) LPT",
-      "logA": 2.7645155630527634,
-      "sigma": 0.09857877757225299,
-      "delta": -0.28031844997009125,
-      "sigmas": -2.8435983573100487,
+      "logA": 2.7614232200495397,
+      "sigma": 0.10100907523901899,
+      "delta": -0.28341079297331495,
+      "sigmas": -2.8057953436627012,
       "direccion": "abajo"
     }
   ],
@@ -171,22 +171,22 @@
     },
     {
       "sonda": "BOSS DR12 P(k) LPT",
-      "chi2": 87.680132,
-      "modo": "perfil leido de la cadena, banda +-0.0148",
+      "chi2": 87.845269,
+      "modo": "perfil leido de la cadena, banda +-0.0152",
       "exacto": false,
-      "n_en_banda": 146
+      "n_en_banda": 105
     },
     {
       "sonda": "BAO DESI DR2",
-      "chi2": 10.858822657229455,
+      "chi2": 11.406503768936682,
       "n_datos": 13,
-      "modo": "fondo clavado H0=67.962137, Om derivado=0.308881",
+      "modo": "fondo clavado H0=67.962142, Om derivado=0.308881",
       "exacto": true
     }
   ],
-  "chi2_total": 3288.00895465723,
+  "chi2_total": 3288.7217727689367,
   "gl_total": 2896,
-  "PTE_total": 3.8283275743822773e-07,
+  "PTE_total": 3.662725147443113e-07,
   "tabla_gl": [
     {
       "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
@@ -214,24 +214,24 @@
     },
     {
       "sonda": "BOSS DR12 P(k) LPT",
-      "chi2": 87.680132,
+      "chi2": 87.845269,
       "N": 222,
       "libres": 18,
       "gl": 204,
-      "chi2_red": 0.429804568627451,
-      "PTE": 0.9999999999999514,
+      "chi2_red": 0.4306140637254902,
+      "PTE": 0.9999999999999457,
       "procedencia": "N: 222 puntos P(k) k<=0.20; libres = 18 sesgos (b1,b2,bs x 3z x 2 hemisferios); logA CLAVADO",
       "chi2_lcdm": 84.26621,
-      "delta_vs_lcdm": 3.4139219999999995
+      "delta_vs_lcdm": 3.579059000000001
     },
     {
       "sonda": "BAO DESI DR2",
-      "chi2": 10.858822657229455,
+      "chi2": 11.406503768936682,
       "N": 13,
       "libres": 0,
       "gl": 13,
-      "chi2_red": 0.8352940505561119,
-      "PTE": 0.6226432612825843,
+      "chi2_red": 0.8774233668412832,
+      "PTE": 0.5768037005617437,
       "procedencia": "N: 13 puntos DESI DR2; CERO libres, el fondo va clavado",
       "chi2_lcdm": null,
       "delta_vs_lcdm": null
@@ -253,24 +253,60 @@
   "control_positivo": [
     {
       "inyectado": 0.0,
-      "T": 7.880442008606083,
-      "sigmas": 2.3369089846046713
+      "T": 7.684695807716164,
+      "sigmas": 2.3000886948239994
     },
     {
       "inyectado": 0.05,
-      "T": 8.636609950462748,
-      "sigmas": 2.4750313982045182
+      "T": 8.430730649652562,
+      "sigmas": 2.438045233843404
     },
     {
       "inyectado": 0.1,
-      "T": 12.273388124277005,
-      "sigmas": 3.0670178509989077
+      "T": 12.057142887577779,
+      "sigmas": 3.0345519278288378
     },
     {
       "inyectado": 0.2,
-      "T": 28.188775167778203,
-      "sigmas": 4.9462332390201444
+      "T": 27.951099551394606,
+      "sigmas": 4.923037680914417
     }
   ],
-  "control_positivo_ve": true
+  "control_positivo_ve": true,
+  "_procedencia": {
+    "commit": "ec761380c51d945bf6596c1239a00c74d2ac7186",
+    "reproducible_desde_commit": true,
+    "cambios_sin_commitear": [],
+    "script": "src/p06_growth/multisonda_fondo_clavado.py",
+    "script_sha256": "5df6870c9a41372921773d9a49b6db3ad8e3c48f128e3458ae790a81f57adc72",
+    "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+    "entradas": {
+      "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d",
+      "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
+      "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
+      "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
+      "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
+      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt": "346f5d737f80b1c0c6dcf5f2716767129700dcf17c748592f98e34e4ece22207",
+      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47",
+      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188",
+      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2",
+      "CANONICAL_VALUES.yaml": "11af9f9e4b69522a0df0ffaf40f05c6f97978e5fb4e20a562af3754968fa0a5a"
+    },
+    "argv": [
+      "src/p06_growth/multisonda_fondo_clavado.py"
+    ],
+    "fecha": "2026-10-01T10:55:00",
+    "host": "mike-System-Product-Name",
+    "python": "3.12.3",
+    "versiones": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1"
+    },
+    "nucleos": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMPI_COMM_WORLD_SIZE": null
+    }
+  }
 }

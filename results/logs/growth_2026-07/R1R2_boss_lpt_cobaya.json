@@ -1,50 +1,94 @@
 {
  "lcdm": {
-  "logA": 2.7898365106203658,
-  "logA_sig": 0.09433553034276627,
+  "logA": 2.790181344523827,
+  "logA_sig": 0.09453956171572275,
   "chi2_marg_min": 73.677763,
-  "chi2_real_min": 207.57605802802433,
-  "n": 100016,
+  "chi2_marg_reevaluado": 73.67776119796346,
+  "chi2_real_min": 207.57605622600255,
+  "n": 111125,
   "fs8": {
    "z1": [
     0.38,
-    0.4207630683614811,
-    0.019807367415358424
+    0.42083805916304495,
+    0.019880345035046154
    ],
    "z2": [
     0.51,
-    0.4191276038796889,
-    0.019730378134878615
+    0.4192023031994149,
+    0.019803072097767684
    ],
    "z3": [
     0.61,
-    0.4144680439123617,
-    0.0195110299477239
+    0.4145419127786492,
+    0.01958291575129297
    ]
   }
  },
  "ssee": {
-  "logA": 2.763639661108589,
-  "logA_sig": 0.09813161759644874,
-  "chi2_marg_min": 75.227863,
-  "chi2_real_min": 207.6381336146119,
-  "n": 104272,
+  "logA": 2.7614232200495397,
+  "logA_sig": 0.10100907523901899,
+  "chi2_marg_min": 73.413456,
+  "chi2_marg_reevaluado": 73.4134576774431,
+  "chi2_real_min": 205.54906179217627,
+  "n": 77326,
   "fs8": {
    "z1": [
     0.38,
-    0.41141047663504265,
-    0.02013908030949435
+    0.4099587117719861,
+    0.02063906288297771
    ],
    "z2": [
     0.51,
-    0.4128588181037873,
-    0.020209978516543395
+    0.4114108387646,
+    0.020712169123811294
    ],
    "z3": [
     0.61,
-    0.410555188478779,
-    0.020097212836872755
+    0.40912194942852964,
+    0.02059693671239322
    ]
+  }
+ },
+ "control_lcdm": {
+  "criterio": "LCDM (cadenas sin rehacer) = resumen del 2026-09-08 dentro de 0.05 sigma; chi2_marg_min a 1e-4",
+  "d_logA_sigma": 0.003655397941879644,
+  "d_fs8_sigma_max": 0.0037860054792400507,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "ec761380c51d945bf6596c1239a00c74d2ac7186",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/analiza_boss_R1R2.py",
+  "script_sha256": "37ed277fd82ee6d6bce9b180a745753b26267596ad7f3cbd39091e5fa5b4eff0",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json": "5b8ea2afaeac8c701580fce7bab57623b76d3cbccda31a127343c0dc7a04bee8",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt": "fe26a3506e693d18cf6604843bcdc477d33c33f8ab5d61d4afb21056dec58275",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt": "4ce61f10dc45fbd2262601e36bb174aa967bc2c02b5378800d7012a7dad8e094",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da"
+  },
+  "argv": [
+   "src/p06_growth/analiza_boss_R1R2.py"
+  ],
+  "fecha": "2026-10-01T10:54:54",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
   }
  }
 }

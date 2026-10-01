@@ -1200,3 +1200,82 @@ stages:
       hash: md5
       md5: cb16041849cc21c934dc84da77f6ddbf
       size: 2861
+  analiza_boss_R1R2:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/analiza_boss_R1R2.py ambos > 
+      results/logs/analiza_boss_R1R2.log 2>&1
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
+      hash: md5
+      md5: 0dba73f1fe982e0a301fb27c00e3ed88
+      size: 18875962
+    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+      hash: md5
+      md5: eb2b7d09f2dae4038bf178968df70d85
+      size: 10385067
+    - path: archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
+      hash: md5
+      md5: 43edfe16597ddba003bb1a127c89fbbd
+      size: 809
+    - path: src/p06_growth/analiza_boss_R1R2.py
+      hash: md5
+      md5: e9413f826ce76257fdbc16a314e73868
+      size: 5045
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: 74a053a1b6cee380a21210864b74e19b
+      size: 21274
+    - path: src/p06_growth/cobaya_boss.py
+      hash: md5
+      md5: a39f652e02b782e1e0df511232ee5211
+      size: 10829
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/analiza_boss_R1R2.log
+      hash: md5
+      md5: 9f7978f3cd09eb295305468c9cc93b70
+      size: 1444
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      hash: md5
+      md5: e4bfee3faab97bf6fb728a1569ea7afe
+      size: 3003
+  multisonda_fondo_clavado:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/multisonda_fondo_clavado.py
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+      hash: md5
+      md5: eb2b7d09f2dae4038bf178968df70d85
+      size: 10385067
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
+      hash: md5
+      md5: 6b0fa9bf9cdb47e54fb87b68d9c3ca6f
+      size: 986674
+    - path: CANONICAL_VALUES.yaml
+      hash: md5
+      md5: 1faf7bfc1eba3582184cdc6558c987e1
+      size: 68171
+    - path: results/chains/ssee_cmb.1.txt
+      hash: md5
+      md5: 155b55672adc4aaa597437c0875a4706
+      size: 49485923
+    - path: src/p06_growth/multisonda_fondo_clavado.py
+      hash: md5
+      md5: cab5fb62a9e46303f93f500868038979
+      size: 32914
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/multisonda_fondo_clavado.json
+      hash: md5
+      md5: 4ebd2b93f756b364ed3b2db028070b3e
+      size: 9082
+    - path: results/logs/multisonda_fondo_clavado.log
+      hash: md5
+      md5: a362a2b0f44308d761f69dcf6c5335d1
+      size: 10546
