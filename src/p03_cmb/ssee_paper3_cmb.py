@@ -143,7 +143,23 @@ def compute_ssee_spectrum(lmax=2500):
     return ells, total, lens_p, r_d_camb, derived
 
 
+def compute_naive_spectrum(lmax=2500):
+    """Caso NAIVE de Paper 3 §3 (contraejemplo pedagogico): la geometria con el
+    0.160 del sector dinamico como Omega_m. omega_c = s_m h^2 - omega_b - omega_nu."""
+    h = H0 / 100.0
+    omch2 = Omm * h**2 - Omb_h2 - __import__("ssee_core").OMEGA_NU_H2
+    total, lens_p, derived = _run_camb(H0, Omb_h2, omch2, SUM_MNU_EV, w0, wa, As, ns, lmax)
+    return np.arange(total.shape[0]), total, omch2
+
+
+def picos(ells, Dl):
+    from scipy.signal import argrelmax
+    i = argrelmax(Dl[50:1500], order=60)[0] + 50
+    return [int(ells[j]) for j in i[:3]]
+
+
 def compute_lcdm_spectrum(lmax=2500):
+    # ORIGEN-VALOR: 67.36, 0.02237, 0.1200, 0.06, 3.044, 0.9649 — Planck 2018 TT,TE,EE+lowE+lensing (tabla 2, col. 5), la referencia LCDM
     total, lens_p, derived = _run_camb(
         67.36, 0.02237, 0.1200, 0.06, -1.0, 0.0,
         np.exp(3.044)*1e-10, 0.9649, lmax)
@@ -428,6 +444,28 @@ def main():
         BIC_lcdm = total_chi2_l + k_lcdm  * np.log(total_N)
         dBIC = BIC_ssee - BIC_lcdm
         print(f"  ΔBIC(SSEE−ΛCDM) = {dBIC:.1f}  (negativo = SSEE favorecido)")
+        # Log con acta (2026-09-30): los chi2 sin redondear que cita Paper 3
+        import json as _json
+        from procedencia import con_acta as _con_acta
+        print("\nCaso naive (Omega_m = s_m en la geometria)...")
+        ells_n, total_n, omch2_n = compute_naive_spectrum()
+        c2n, c2rn, nn = chi2_vs_planck(ell_tt, Dl_tt, sig_tt, ells_n, total_n[:, 0],
+                                        ell_min=30, ell_max=2000)
+        pk = dict(ssee=picos(ells_s, Dl_TT_s), lcdm=picos(ells_l, Dl_TT_l),
+                  naive=picos(ells_n, total_n[:, 0]))
+        print(f"  naive: chi2_TT={c2n:.1f} chi2_r={c2rn:.2f} (N={nn})  picos {pk}")
+        _out = dict(fecha=str(__import__("datetime").date.today()),
+                    picos_TT=pk,
+                    naive=dict(omch2=omch2_n, chi2_TT=c2n, chi2r_TT=c2rn, N=nn,
+                               dchi2_vs_lcdm=c2n - chi2_results["TT"][2]),
+                    espectros={k: dict(chi2_ssee=v[0], chi2r_ssee=v[1], chi2_lcdm=v[2],
+                                       chi2r_lcdm=v[3], N=v[4], dchi2=v[0] - v[2])
+                               for k, v in chi2_results.items()},
+                    total=dict(chi2_ssee=total_chi2_s, chi2_lcdm=total_chi2_l, N=total_N,
+                               k_ssee=k_ssee, k_lcdm=k_lcdm, dBIC=float(dBIC)))
+        _json.dump(_con_acta(_out, __file__),
+                   open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                                     "results", "logs", "paper3_cmb_chi2.json"), "w"), indent=1)
 
     # 5. Posiciones de picos TT
     print("\nPosición de picos TT SSEE (primeros 3):")

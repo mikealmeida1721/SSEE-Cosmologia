@@ -63,12 +63,12 @@ def corre(nombre, p):
                        env=dict(os.environ, OMP_NUM_THREADS="1"))
     txt = r.stdout + r.stderr
     s8 = re.search(r"sigma8=([0-9.]+) for total matter", txt)
-    cs = re.search(r"minimum c_s\^2=([-0-9.e+]+)", txt)
+    cs = re.search(r"minimum c_s\^2=(-?(?:inf|nan|[0-9][-0-9.e+]*))", txt)
     ac = re.search(r"minimum c_s\^2=[-0-9.e+]+ at a=([-0-9.e+]+)", txt)
     rech = r.returncode != 0 or "nstabilit" in txt
     return dict(ini=ini, rc=r.returncode, rechaza=bool(rech),
                 sigma8=float(s8.group(1)) if s8 else None,
-                cs2_min=float(cs.group(1)) if cs else None,
+                cs2_min=(float(cs.group(1)) if cs.group(1)[-1].isdigit() else cs.group(1)) if cs else None,
                 z_cs2_min=1 / float(ac.group(1)) - 1 if ac else None,
                 mensaje=[l for l in txt.splitlines() if "rror" in l or "nstab" in l][:3], txt=txt)
 
