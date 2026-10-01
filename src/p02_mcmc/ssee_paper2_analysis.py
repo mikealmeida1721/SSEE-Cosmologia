@@ -147,6 +147,7 @@ for name, d in datasets.items():
 # Ninguno de los dos se ajusta a los datos; ambos son predicciones. Tabla
 # tab:w0wa_ssee_vs_lcdm del Paper 2. (2026-07-09)
 W0_LCDM, WA_LCDM = -1.0, 0.0
+TABLA_W0WA = {}   # 2026-10-01: se guarda en results/logs/paper2_w0wa.json (antes solo se imprimia)
 print("\n  Tabla SSEE(-0.840,-0.670) vs LCDM(-1,0) — ambos puntos FIJOS:")
 print(f"  {'combinación':34s} {'rho':>7} {'SSEE':>9} {'LCDM':>9}")
 for name, d in datasets.items():
@@ -161,6 +162,8 @@ for name, d in datasets.items():
     s_ssee = _sig(W0_SSEE, WA_SSEE)
     s_lcdm = _sig(W0_LCDM, WA_LCDM)
     print(f"  {name:34s} {d['rho']:+7.3f} {s_ssee:8.2f}σ {s_lcdm:8.2f}σ")
+    import re as _re
+    TABLA_W0WA["ec" + _re.search(r"ec\.(\d+)", name).group(1)] = dict(nombre=name, rho=d['rho'], ssee_sigma=float(s_ssee), lcdm_sigma=float(s_lcdm))
 
 # Sensibilidad a ρ (el paper no publica la correlación w0-wa en texto):
 print("\n  Sensibilidad a ρ(w0,wa) — tensión 2D equivalente por combinación:")
@@ -389,3 +392,14 @@ print(f"""
 
 print("Análisis completado. Outputs listos para Paper 2.")
 print("=" * 60)
+
+
+# ── Salida con acta (2026-10-01) ──
+import json as _json
+import os as _os
+import sys as _sys
+_R = _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..", ".."))
+_sys.path.insert(0, _os.path.join(_R, "src"))
+from procedencia import con_acta as _acta  # noqa: E402
+_json.dump(_acta(dict(w0wa_ssee_vs_lcdm=TABLA_W0WA), __file__),
+           open(_os.path.join(_R, "results", "logs", "paper2_w0wa.json"), "w"), indent=1)
