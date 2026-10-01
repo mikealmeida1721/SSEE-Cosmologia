@@ -100,6 +100,7 @@ P_SC_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.P_SC", formato: ".5
 P_SC_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.P_SC", formato: ".6f"}
 R2_STABILITY_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.R2_STABILITY", formato: ".6f"}
 SOLAR_NYX_d5: {fuente: "results/logs/algebra_derivada.json#algebra.SOLAR_NYX.valor", formato: ".5f"}
+SUM_MNU_EV_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV", formato: ".5f"}
 SUM_MNU_EV_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV", formato: ".6f"}
 S_DE_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".6f"}
 S_DE_d8: {fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".8f"}

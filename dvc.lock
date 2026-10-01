@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 5919f4af18fffff39f89e4b0e80b98e9
-      size: 31570
+      md5: 6fe53b3d0d79fbacda5ec2fcc49769de
+      size: 31666
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: b2dbbef397d0f75c88064d60261115fd
@@ -128,8 +128,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: f28a990170d9d91ba4e03dae362a9282
-      size: 40458
+      md5: 479013c5c287f848f2bd1a54d810a895
+      size: 40580
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 

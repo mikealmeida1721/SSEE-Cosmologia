@@ -654,8 +654,9 @@ the \texttt{propto\_omega} parametrisation
 $\alpha_i(a) = x_i\,\Omde(a)$ with
 $x_K = \val{x_K_d6}$ and $x_B = x_M = x_T = 0$.
 Cosmological parameters are the SSEE algebraic values:
-$h = 0.67962$, $\omega_b = \val{OMEGA_B_H2_d6}$, $\omega_c = \val{OMEGA_C_H2_d6}$,
-$N_{\rm ur} = 2.0328$ with one massive neutrino at $0.06849$~eV.
+$h = H_0^{\rm glob}/100$, $\omega_b = \val{OMEGA_B_H2_d6}$, $\omega_c = \val{OMEGA_C_H2_d6}$,
+and one massive neutrino at $\val{SUM_MNU_EV_d5}$~eV with $N_{\rm ur} = 2.0328$, the
+\texttt{CLASS} value that gives $N_{\rm eff}=3.044$ for that species~\cite{Blas2011}.
 The internal stability tests are left enabled
 (\texttt{skip\_stability\_tests\_smg = no}), so a ghost or gradient
 instability aborts the run rather than being reported.
