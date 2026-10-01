@@ -919,3 +919,99 @@ stages:
       hash: md5
       md5: 0d657b0dff42d314cb4957a27b02c72a
       size: 847
+  perfil_wc_boss:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
+    deps:
+    - path: results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
+      hash: md5
+      md5: d9131519e13409e7be731b91792ede9d
+      size: 1547
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      hash: md5
+      md5: 43edfe16597ddba003bb1a127c89fbbd
+      size: 809
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: 74a053a1b6cee380a21210864b74e19b
+      size: 21274
+    - path: src/p06_growth/perfil_wc_boss.py
+      hash: md5
+      md5: f995beda435d08422476ecf204a814ef
+      size: 5714
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/perfil_wc_boss.json
+      hash: md5
+      md5: f96e6a280810748ff101bfa414539672
+      size: 2797
+    - path: results/logs/perfil_wc_boss.log
+      hash: md5
+      md5: f7dc701a4f38c139f84a2060eab97b02
+      size: 5878
+  perfil_wc_boss_lcdm:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/perfil_wc_boss_lcdm.py > 
+      results/logs/perfil_wc_boss_lcdm.log 2>&1
+    deps:
+    - path: results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
+      hash: md5
+      md5: fcdcb860c7b2a0ca5d58baf113a98f07
+      size: 1409
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      hash: md5
+      md5: 43edfe16597ddba003bb1a127c89fbbd
+      size: 809
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: 74a053a1b6cee380a21210864b74e19b
+      size: 21274
+    - path: src/p06_growth/perfil_wc_boss_lcdm.py
+      hash: md5
+      md5: fad53f964456af19ae03d5230e5ec1ef
+      size: 6249
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/perfil_wc_boss_lcdm.json
+      hash: md5
+      md5: aeadc780168fbed092eeff8610f646c2
+      size: 2802
+    - path: results/logs/perfil_wc_boss_lcdm.log
+      hash: md5
+      md5: 437458cb7f5e99bebfc7067cbb485050
+      size: 5897
+  ganancia_wc_libre:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/ganancia_wc_libre.py
+    deps:
+    - path: results/logs/multisonda_fondo_clavado.log
+      hash: md5
+      md5: 5a91cccc7f2413aba4bc63dc1a78aecb
+      size: 9843
+    - path: results/logs/perfil_wc_boss.json
+      hash: md5
+      md5: f96e6a280810748ff101bfa414539672
+      size: 2797
+    - path: results/logs/perfil_wc_boss_lcdm.json
+      hash: md5
+      md5: aeadc780168fbed092eeff8610f646c2
+      size: 2802
+    - path: src/p06_growth/ganancia_wc_libre.py
+      hash: md5
+      md5: 226502bb7cc7eafddf1c7c42082788cd
+      size: 3296
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/ganancia_wc_libre.json
+      hash: md5
+      md5: 0b5b10bf647abd140dcb69440b66b9d3
+      size: 2487

@@ -1,7 +1,6 @@
-/home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/kernels.py:10: SyntaxWarning: invalid escape sequence '\l'
-  """Real deriv is wrt :math:`t`, complex deriv is wrt :math:`\ln t`"""
+# ACTA-PROCEDENCIA {"commit": "ad151b17c58fcce4946393f78b26857913263438", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/perfil_wc_boss_lcdm.py", "script_sha256": "dd053a2fc5188b0f9a240ea86ce46a230392a9f4090fd378c95d8147a1ac4627", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/perfil_wc_boss_lcdm.py"], "fecha": "2026-10-01T01:33:14", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1", "camb": "1.6.5"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
 
-=== perfil w_c LCDM  |  logA fijo = 3.0453  (A_s de Planck) ===
+=== perfil w_c LCDM  |  logA fijo = 3.0447  (A_s de Planck) ===
  w_c        Om        chi2
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
@@ -9,66 +8,68 @@
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.090000  0.249074      91.600   [55s]
+/home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/mcfit.py:130: UserWarning: use backend='jax' if desired
+  warnings.warn("use backend='jax' if desired")
+0.090000  0.249074      91.623   [58s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.098125  0.266981      86.354   [53s]
+0.098125  0.266981      76.730   [92s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.106250  0.284888      76.003   [51s]
+0.106250  0.284888      71.591   [96s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.114375  0.302795      73.476   [52s]
+0.114375  0.302795      73.450   [97s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.122500  0.320702      82.010   [52s]
+0.122500  0.320702      81.972   [97s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.130625  0.338609      98.886   [51s]
+0.130625  0.338609      98.833   [94s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.138750  0.356515     120.136   [50s]
+0.138750  0.356515     120.075   [92s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.146875  0.374422     146.100   [50s]
+0.146875  0.374422     146.029   [91s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.155000  0.392329     173.626   [48s]
-  minimo en w_c = 0.114375   chi2 = 73.476
-  parabola: w_c = 0.112169 +- 0.003455
-  Planck LCDM 0.120000  ->  2.27 sigma
+0.155000  0.392329     173.556   [88s]
+  minimo en w_c = 0.106250   chi2 = 71.591
+  parabola: w_c = 0.108154 +- 0.004344
+  Planck LCDM 0.120000  ->  2.73 sigma
 
 === perfil w_c LCDM  |  logA fijo = 2.7898  (CONTROL: A_s de BOSS) ===
  w_c        Om        chi2
@@ -78,63 +79,63 @@
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.090000  0.249074     108.771   [53s]
+0.090000  0.249074     112.841   [86s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.098125  0.266981     107.433   [52s]
+0.098125  0.266981      87.945   [95s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.106250  0.284888      74.003   [52s]
+0.106250  0.284888      74.002   [96s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.114375  0.302795      68.805   [53s]
+0.114375  0.302795      69.118   [97s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.122500  0.320702      73.176   [51s]
+0.122500  0.320702      72.999   [92s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.130625  0.338609      84.307   [48s]
+0.130625  0.338609      84.280   [90s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.138750  0.356515     101.861   [50s]
+0.138750  0.356515     101.862   [91s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.146875  0.374422     124.849   [49s]
+0.146875  0.374422     124.663   [90s]
   z1 NGC: 37 puntos  Hartlap=0.9814
   z1 SGC: 37 puntos  Hartlap=0.9814
   z2 NGC: 37 puntos  Hartlap=0.9814
   z2 SGC: 37 puntos  Hartlap=0.9814
   z3 NGC: 37 puntos  Hartlap=0.9814
   z3 SGC: 37 puntos  Hartlap=0.9814
-0.155000  0.392329     151.841   [49s]
-  minimo en w_c = 0.114375   chi2 = 68.805
-  parabola: w_c = 0.114726 +- 0.003714
-  Planck LCDM 0.120000  ->  1.42 sigma
+0.155000  0.392329     151.842   [90s]
+  minimo en w_c = 0.114375   chi2 = 69.118
+  parabola: w_c = 0.114840 +- 0.003881
+  Planck LCDM 0.120000  ->  1.33 sigma
