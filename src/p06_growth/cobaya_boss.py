@@ -224,7 +224,7 @@ def plantilla_fsigma8():
 if __name__ == '__main__':
     from cobaya.run import run
     nombre = _ARGV[1] if len(_ARGV) > 1 else 'ssee'
-    chains = (_ARGV[2] if len(_ARGV) > 2
+    chains = (_ARGV[2] if len(_ARGV) > 2 and not _ARGV[2].startswith('--')
               else '/mnt/datos/SSEE_data/chains_p6/boss')
     os.makedirs(chains, exist_ok=True)
     print(f'  R1/R2 BOSS LPT — {nombre.upper()}  k_max={KMAX}')
@@ -243,6 +243,8 @@ if __name__ == '__main__':
     if _mal:
         sys.exit(f'  INGREDIENTES QUE NO CUADRAN con su fuente: {_mal} -> no se corre')
     print('  ingredientes verificados contra su fuente: OK', flush=True)
+    if '--solo-ingredientes' in _ARGV:   # verifica sin correr cadenas (para cadenas ya hechas)
+        sys.exit(0)
     info = info_ssee(chains) if nombre == 'ssee' else info_lcdm(chains)
     t0 = time.time()
     run(info)
