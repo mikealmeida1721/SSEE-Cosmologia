@@ -1,0 +1,127 @@
+============================================================
+SSEE — ANÁLISIS ESTADÍSTICO PAPER 2
+============================================================
+
+Constantes algebraicas SSEE
+  Φ  = 1.618034
+  KAL0 = 5.521406
+  Tr/Mv = 0.839950
+  P_sc/IGNIS = 0.669975
+
+Predicciones CPL
+  w0   = -0.8399
+  wa   = -0.6700
+  w0+wa = -1.5099
+
+============================================================
+SECCIÓN 1 — DESVIACIONES EN SIGMA (plano w0-wa)
+============================================================
+
+  [DESI+CMB (DR2 ec.25)]
+    Best-fit obs:   w0=-0.418, wa=-1.752
+    SSEE pred:      w0=-0.8399, wa=-0.6700
+    Δw0 = -2.058σ  |  Δwa = +1.866σ
+    χ²(2D) = 4.733  →  1.68σ equiv  (p=0.0938)
+
+  [DESI+CMB+Pantheon+ (DR2 ec.26)]
+    Best-fit obs:   w0=-0.838, wa=-0.617
+    SSEE pred:      w0=-0.8399, wa=-0.6700
+    Δw0 = -0.035σ  |  Δwa = -0.257σ
+    χ²(2D) = 0.416  →  0.24σ equiv  (p=0.8121)
+
+  [DESI+CMB+Union3 (DR2 ec.27)]
+    Best-fit obs:   w0=-0.667, wa=-1.085
+    SSEE pred:      w0=-0.8399, wa=-0.6700
+    Δw0 = -1.955σ  |  Δwa = +1.416σ
+    χ²(2D) = 5.111  →  1.76σ equiv  (p=0.0777)
+
+  [DESI+CMB+DESY5 (DR2 ec.28)]
+    Best-fit obs:   w0=-0.752, wa=-0.861
+    SSEE pred:      w0=-0.8399, wa=-0.6700
+    Δw0 = -1.536σ  |  Δwa = +0.864σ
+    χ²(2D) = 3.889  →  1.46σ equiv  (p=0.1430)
+
+  Tabla SSEE(-0.840,-0.670) vs LCDM(-1,0) — ambos puntos FIJOS:
+  combinación                            rho      SSEE      LCDM
+  DESI+CMB (DR2 ec.25)                -0.978     1.68σ     2.62σ
+  DESI+CMB+Pantheon+ (DR2 ec.26)      -0.894     0.24σ     2.58σ
+  DESI+CMB+Union3 (DR2 ec.27)         -0.933     1.76σ     3.38σ
+  DESI+CMB+DESY5 (DR2 ec.28)          -0.905     1.46σ     3.93σ
+
+  Sensibilidad a ρ(w0,wa) — tensión 2D equivalente por combinación:
+  combinación                         ρ=-0.70  ρ=-0.85  ρ=-0.92
+  DESI+CMB (DR2 ec.25)                  1.64σ    1.57σ    1.55σ
+  DESI+CMB+Pantheon+ (DR2 ec.26)        0.09σ    0.17σ    0.30σ
+  DESI+CMB+Union3 (DR2 ec.27)           1.45σ    1.50σ    1.69σ
+  DESI+CMB+DESY5 (DR2 ec.28)            1.05σ    1.24σ    1.58σ
+
+============================================================
+SECCIÓN 2 — TABLA DE SENSIBILIDAD: MASA DE CÚMULOS
+============================================================
+
+  KAL0        = 5.5214
+  fnu central = 0.020  ±0.002
+  Factor IGIMF/STD promedio = 1.718
+
+  Cluster           M_obs  SSEE full     fnu=0   STD IMF  KAL0 only  χ²_full
+  ----------------------------------------------------------------------------
+  Coma               9.8      10.14      9.94      5.63       5.52     0.114
+  A2029             12.0      12.39     12.15      7.32       7.18     0.106
+  A478               8.0       8.45      8.28      5.07       4.97     0.200
+  Bullet (main)      6.5       6.76      6.63      3.94       3.86     0.067
+
+  Resumen χ² por escenario (N=4 cúmulos):
+  Escenario            χ²_total     χ²_red  Δχ²_vs_full
+  ----------------------------------------------------
+  SSEE completo           0.487      0.122       +0.000
+  fnu = 0                 0.130      0.032       -0.357
+  STD IMF                47.709     11.927      +47.223
+  KAL0 solo              50.583     12.646      +50.097
+
+============================================================
+SECCIÓN 3 — Ω_DE,SSEE vs Ω_Λ : ANÁLISIS CHI2
+============================================================
+
+  Ω_DE,SSEE  = 0.8399  (= Tr/Mv, algebraico)
+  Ω_Λ (ref)  = 0.6850  (Planck 2018)
+  Diferencia absoluta: ΔΩ = 0.1549
+
+  Comparación Ω_DE,SSEE vs restricciones observacionales:
+
+  Dataset                        Ω_obs       σ   Δ/σ (SSEE)   χ²(1D)     p-val
+  -------------------------------------------------------------------------
+  Planck 2018                   0.6847  0.0073       +21.27σ   452.29  2.29e-100
+  DESI DR2 + CMB                0.6900  0.0100       +14.99σ   224.85  7.92e-51
+  DESI DR2 + CMB + DESY5        0.6910  0.0120       +12.41σ   154.07  2.24e-35
+
+  NOTA ESTRUCTURAL:
+  Ω_DE,SSEE ≈ 0.840 es una predicción geométrica (= Tr/Mv), no un fit.
+  La discrepancia de ~21σ respecto a Planck no indica fallo: en SSEE,
+  la presión geométrica adicional (ΔΩ ≈ 0.155) es parcialmente absorbida
+  por la amplificación KAL0 sobre ρ_bar, reduciendo la fracción de materia
+  efectiva. El análisis Bayesiano completo (Paper 2) cuantificará esto.
+
+============================================================
+RESUMEN EJECUTIVO PARA PAPER 2
+============================================================
+
+  POSICIÓN w0-wa (DESI DR2 oficial, 4 combinaciones w0waCDM):
+    SSEE: (w0, wa) = (-0.8399, -0.6700)
+    vs DESI+CMB+Pantheon+ (-0.838, -0.62):
+      Δw0 = -0.035σ,  Δwa = -0.257σ
+      Distancia Mahalanobis: 0.416 → 0.24σ equiv
+    RANGO honesto entre combinaciones (depende del compilado SN):
+      mínimo 0.24σ (DESI+CMB+Pantheon+ (DR2 ec.26)) — máximo 1.76σ (DESI+CMB+Union3 (DR2 ec.27))
+
+  MASAS EN CÚMULOS (χ² reducido):
+    SSEE completo:  χ²_red = 0.122
+    fnu = 0:        χ²_red = 0.032  (Δχ² = +-0.357)
+    STD IMF:        χ²_red = 11.927  (Δχ² = +47.223)
+    KAL0 solo:      χ²_red = 12.646  (Δχ² = +50.097)
+
+  OMEGA_DE:
+    SSEE vs Planck 2018: +21.27σ (requiere reinterpretación estructural)
+    SSEE vs DESI+CMB:    +14.99σ
+
+Análisis completado. Outputs listos para Paper 2.
+============================================================

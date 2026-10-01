@@ -448,3 +448,6 @@ Omega_b_alg_d4:    {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_
 Omega_b_planck_d4: {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_planck.valor", formato: ".4f"}
 Omega_b_pct_vs_planck: {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_pct_vs_planck.valor", formato: "+.1f"}
 wc_ns_sigma_abs:   {fuente: "results/logs/algebra_derivada.json#algebra.wc_ns_sigma_abs.valor", formato: ".2f"}
+# P2 plano w0wa, ambos puntos fijos (2026-10-01): src/p02_mcmc/ssee_paper2_analysis.py
+p2_w0wa_ssee_ec26: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma", formato: ".2f"}
+p2_w0wa_lcdm_ec26: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.lcdm_sigma", formato: ".2f"}

@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: b7182cc8188d0077581141123535aacd
-      size: 44201
+      md5: f3cf5fc4c895bfdf6bb13511b825a717
+      size: 44510
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -89,6 +89,10 @@ stages:
       hash: md5
       md5: be2a1998e045c84c3e6443e95c4f8de7
       size: 4826
+    - path: results/logs/cumulos_zhang2026.json
+      hash: md5
+      md5: 1fd467e5470f75b8d8325ad4650cdf85
+      size: 48953
     - path: results/logs/dic_from_chains.json
       hash: md5
       md5: bb166f311eb519a319a73349317170b6
@@ -133,6 +137,10 @@ stages:
       hash: md5
       md5: 4155ea4fe3083b2928d6e91749c55153
       size: 3444
+    - path: results/logs/paper2_w0wa.json
+      hash: md5
+      md5: 65f97881b99514d0ca4814526ad83806
+      size: 1376
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
       md5: 520462e625e6b0b487c9039c531d1811
@@ -164,8 +172,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: ec2491190130993df5bcc72f2ce0b18b
-      size: 56646
+      md5: da0aa93b6d2ca168212c4893d568393f
+      size: 57015
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1134,3 +1142,20 @@ stages:
       hash: md5
       md5: 29b68fa52eca34f3b943dd3c07310a8e
       size: 1485
+  paper2_w0wa:
+    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py >
+      results/logs/paper2_analysis.log 2>&1
+    deps:
+    - path: src/p02_mcmc/ssee_paper2_analysis.py
+      hash: md5
+      md5: ec9f73e44aa937598e65876ea4d56cb8
+      size: 16855
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/paper2_w0wa.json
+      hash: md5
+      md5: 65f97881b99514d0ca4814526ad83806
+      size: 1376

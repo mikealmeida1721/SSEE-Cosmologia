@@ -1,0 +1,53 @@
+{
+ "w0wa_ssee_vs_lcdm": {
+  "ec25": {
+   "nombre": "DESI+CMB (DR2 ec.25)",
+   "rho": -0.978,
+   "ssee_sigma": 1.675640328976918,
+   "lcdm_sigma": 2.616233301965995
+  },
+  "ec26": {
+   "nombre": "DESI+CMB+Pantheon+ (DR2 ec.26)",
+   "rho": -0.894,
+   "ssee_sigma": 0.23776260713772038,
+   "lcdm_sigma": 2.5759028866531133
+  },
+  "ec27": {
+   "nombre": "DESI+CMB+Union3 (DR2 ec.27)",
+   "rho": -0.933,
+   "ssee_sigma": 1.7644097819482463,
+   "lcdm_sigma": 3.377554224678025
+  },
+  "ec28": {
+   "nombre": "DESI+CMB+DESY5 (DR2 ec.28)",
+   "rho": -0.905,
+   "ssee_sigma": 1.464559735860199,
+   "lcdm_sigma": 3.934947863789209
+  }
+ },
+ "_procedencia": {
+  "commit": "0131557a0cde68a94b0fa26242817ad0bb89f4d8",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/ssee_paper2_analysis.py",
+  "script_sha256": "3fd4961b8139cf3538717499b32bf84a4acab9f424e4bfb843669acbfdbaca84",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p02_mcmc/ssee_paper2_analysis.py"
+  ],
+  "fecha": "2026-10-01T09:58:52",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

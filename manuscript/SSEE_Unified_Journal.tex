@@ -344,8 +344,11 @@ Free parameters $k$ & 2 & 3 & 5 \\
 $N_{\rm eff}$ & \val{p2_neff_ssee} & \val{p2_neff_lcdm} & \val{p2_neff_cpl} \\
 $\Delta\mathrm{BIC}$ & ref & $\val{p2_dBIC_lcdm}$ & $\val{p2_dBIC_cpl}$ \\
 $\Delta\mathrm{DIC}$ & ref & $\val{p2_dDIC_lcdm}$ & $\val{p2_dDIC_cpl}$ \\
-$\chi^2_r$ clusters & $\val{p2_clVII_chi2r_ssee}$ & $0.081$ & — \\
-$(w_0, w_a)$ vs DESI DR2 $w_0w_a$CDM (Pantheon+) & $0.24\sigma$ & $0.7\sigma$ & — \\
+% 2026-10-01: el 0.081 de LCDM no tenia fuente (ningun script lo produce); queda «---» hasta
+% rehacer la prueba de cumulos sobre las tablas reales de Zhang+2026 (cumulos_zhang2026.py).
+% El 0.7 sigma de LCDM en el plano w0wa contradecia al script de P2 (2.58 sigma): ahora por \val.
+$\chi^2_r$ clusters & $\val{p2_clVII_chi2r_ssee}$ & --- & — \\
+$(w_0, w_a)$ vs DESI DR2 $w_0w_a$CDM (Pantheon+) & $\val{p2_w0wa_ssee_ec26}\sigma$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ & — \\
 \bottomrule
 \end{tabular}
 \end{table}

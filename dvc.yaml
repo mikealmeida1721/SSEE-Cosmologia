@@ -58,6 +58,8 @@ stages:
       - results/logs/p5_IS_perturbations_Q3.json
       - results/logs/p5_techo_sigma8_As_fijo.json
       - results/logs/s8_kids_legacy_camb.json
+      - results/logs/paper2_w0wa.json
+      - results/logs/cumulos_zhang2026.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -341,6 +343,14 @@ stages:
       - results/logs/cumulos_zhang2026.json:
           cache: false
       - results/logs/cumulos_zhang2026.log:
+          cache: false
+  paper2_w0wa:
+    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py > results/logs/paper2_analysis.log 2>&1
+    deps:
+      - src/p02_mcmc/ssee_paper2_analysis.py
+      - src/procedencia.py
+    outs:
+      - results/logs/paper2_w0wa.json:
           cache: false
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1
