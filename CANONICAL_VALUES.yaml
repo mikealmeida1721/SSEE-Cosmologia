@@ -91,8 +91,8 @@ canonical:
   # 9 libres (logA + 8 nuisance) contra los 357 puntos de ξ± de KiDS-Legacy
   # (Wright+2025, A&A 703, A158, arXiv:2503.19441). R−1=0.0206, 7.73 h.
   # log: results/logs/kids_legacy_ssee.log
-  sigma8_kids_legacy:  0.8075     # ±0.0160 — propagando ±1σ de logA por CAMB
-  S8_kids_legacy:      0.8193     # ±0.0163 — 0.30σ del posterior oficial
+  sigma8_kids_legacy:  0.8075     # FUENTE: results/logs/s8_kids_legacy_camb.json — ±0.0160 — propagando ±1σ de logA por CAMB
+  S8_kids_legacy:      0.8193     # FUENTE: results/logs/s8_kids_legacy_camb.json — ±0.0162 (era ±0.0163 tecleado, sin log; 2026-10-01) — 0.30σ del posterior oficial
   chi2_min_kids_legacy: 418.336   # 357 puntos, 9 libres → 348 dof, χ²/dof=1.202
   logA_kids_legacy:    3.0255     # ±0.0396 — a 0.49σ del blanco del CMB
   # ⚠️ Los dos resultados NO SE SUMAN: el 0.05σ del titular y el 0.49σ de aquí
