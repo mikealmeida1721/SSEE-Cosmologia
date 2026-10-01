@@ -338,8 +338,12 @@ def cross_validation():
         chi2r_tr = 2 * nll_tr / n_train
         chi2r_te = -2 * lp_test / n_test
 
+        en_borde = [bool(min(abs(v - lo), abs(v - hi)) < 1e-6 * max(1.0, abs(hi - lo)))
+                    for v, (lo, hi) in zip(res.x, bounds)]
         results_cv[model] = {
             "params": res.x,
+            "en_borde": en_borde,   # (2026-09-30) MAP pegado al borde => el chi2 de test depende del borde
+            "bounds": bounds,
             "nll_train": nll_tr,
             "ll_test": lp_test,
             "chi2r_train": chi2r_tr,
@@ -474,3 +478,16 @@ if __name__ == "__main__":
     sddr_res = savage_dickey()
     cv_res   = cross_validation()
     print_paper_summary(sddr_res, cv_res)
+    # Log con acta (2026-09-30): lo que cita el apendice B de Paper 2
+    import json
+    from procedencia import con_acta
+    _f = lambda v: [float(x) for x in v] if hasattr(v, "__len__") else float(v)
+    out = dict(fecha=str(__import__("datetime").date.today()),
+               savage_dickey={k: float(v) for k, v in sddr_res.items()},
+               cross_validation={m: {k: (_f(v) if k not in ("en_borde", "bounds", "k") else v)
+                                     for k, v in r.items()} for m, r in cv_res.items()},
+               dlnL_test=dict(ssee_menos_lcdm=float(cv_res["ssee"]["ll_test"] - cv_res["lcdm"]["ll_test"]),
+                              ssee_menos_cpl=float(cv_res["ssee"]["ll_test"] - cv_res["cpl"]["ll_test"])),
+               alguno_en_borde={m: any(r["en_borde"]) for m, r in cv_res.items()})
+    json.dump(con_acta(out, __file__, entradas=[os.path.realpath(os.path.join("..", "results", "logs", "mcmc_chains_professional.npz"))]),
+              open(os.path.join("..", "results", "logs", "savage_cv.json"), "w"), indent=1)
