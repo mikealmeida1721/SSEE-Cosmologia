@@ -83,6 +83,9 @@ ALGEBRA = {
     "factor_dos_KX":  ("3*(5-3*W0)*S_DE/S_K_FULL", "cociente contra s_K completo de Paper 10"),
     "wc_estatico_planck": ("KAL0*0.02237", "Omega_c h^2 = KAL0 * omega_b(Planck), relacion estatica de Paper 4"),   # ORIGEN-VALOR: 0.02237 — omega_b de Planck 2018 VI Tabla 2, la entrada que declara Paper 4
     "wc_estatico_sigma": ("(KAL0*0.02237-0.1200)/0.0012", "distancia a Planck 0.1200 +- 0.0012, Paper 4"),   # ORIGEN-VALOR: 0.02237, 0.1200, 0.0012 — Planck 2018 VI Tabla 2
+    "wc_estatico_ssee": ("KAL0*OMEGA_B_H2", "Omega_c h^2 estatico con el omega_b PROPIO de SSEE (2026-10-01: Paper 4 usaba el de Planck, ingrediente de otro modelo)"),
+    "wc_estatico_ssee_sigma": ("(KAL0*OMEGA_B_H2-0.1200)/0.0012", "su distancia a Planck"),   # ORIGEN-VALOR: 0.1200, 0.0012 — Planck 2018 VI Tabla 2
+    "wc_ns_sigma":    ("(OMEGA_C_H2-0.1200)/0.0012", "omega_c = KAL0 omega_b n_s frente a Planck"),   # ORIGEN-VALOR: 0.1200, 0.0012 — Planck 2018 VI Tabla 2
     "Yp_ssee":        ("0.2471+0.96*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — ancla Planck 2018; 0.96 — dY_p/d(omega_b) de AlterBBN (Pisanti 2008)
     "Omega_b_alg":    ("OMEGA_B_H2/(H0_ALG/100)**2", "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"),
     "Omega_b_alg_cerrada": ("1e4*(PI-PHI)/(27*OMEGA**6)", "la misma en forma cerrada (control)"),
