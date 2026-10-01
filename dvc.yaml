@@ -43,6 +43,9 @@ stages:
       - results/logs/p10_uv_fscreen.json
       - results/logs/algebra_derivada.json
       - results/logs/kids_legacy_bic.json
+      - results/logs/paper3_cmb_chi2.json
+      - results/logs/lya_auditoria.json
+      - results/logs/hiclass_campo.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -137,4 +140,43 @@ stages:
       - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
     outs:
       - results/logs/kids_legacy_bic.json:
+          cache: false
+  paper3_cmb:
+    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
+    deps:
+      - src/p03_cmb/ssee_paper3_cmb.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - data/raw/planck_pr4_TT.txt
+      - data/raw/planck_pr4_TE.txt
+      - data/raw/planck_pr4_EE.txt
+      - data/raw/planck_pr4_lensing.txt
+    outs:
+      - results/logs/paper3_cmb_chi2.json:
+          cache: false
+      - results/logs/paper3_cmb_reframe.log:
+          cache: false
+  lya_auditoria:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/lya_auditoria.py
+    deps:
+      - src/p02_mcmc/lya_auditoria.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/bao_camb.py
+      - src/desi_dr2_data.py
+      - src/p11_sondas/lcdm_planck.py
+      - data/raw/desi_dr2_bao.csv
+      - results/logs/bao_lcdm_planck.json
+    outs:
+      - results/logs/lya_auditoria.json:
+          cache: false
+  hiclass_campo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/hiclass_campo.py
+    deps:
+      - src/p07_eft/hiclass_campo.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - /mnt/datos/hi_class/class
+    outs:
+      - results/logs/hiclass_campo.json:
           cache: false
