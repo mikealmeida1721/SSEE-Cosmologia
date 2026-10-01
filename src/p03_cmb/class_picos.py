@@ -87,6 +87,8 @@ for ln in open(INI_VIEJO):
         k, v = (x.strip() for x in ln.split("=", 1))
         if k not in ("root", "overwrite_root", "output", "P_k_max_h/Mpc"):
             pv[k] = v
+if "N_eff" in pv:   # CLASS 3.3 ya no lee N_eff; sin neutrinos masivos en ese .ini, N_eff = N_ur
+    pv["N_ur"] = pv.pop("N_eff")
 pv.update(output="tCl,pCl,lCl", lensing="yes", l_max_scalars=LMAX)
 c = Class()
 c.set(pv)
