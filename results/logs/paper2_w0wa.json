@@ -26,17 +26,17 @@
   }
  },
  "_procedencia": {
-  "commit": "0131557a0cde68a94b0fa26242817ad0bb89f4d8",
+  "commit": "221728618397942fc29c9dc7cb745876dc78a2d3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_paper2_analysis.py",
-  "script_sha256": "3fd4961b8139cf3538717499b32bf84a4acab9f424e4bfb843669acbfdbaca84",
+  "script_sha256": "61d387f384f5f1c196ccc69cdda83943c503f8f780408fbbef9da73f81bf67b4",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p02_mcmc/ssee_paper2_analysis.py"
   ],
-  "fecha": "2026-10-01T09:58:52",
+  "fecha": "2026-10-01T10:06:06",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

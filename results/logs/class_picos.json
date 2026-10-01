@@ -55,21 +55,21 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "e2a932b6fe33e1aeed9d3d570e5e8fa50c2be933",
+  "commit": "0ace48ed30ce5d9458a2bd23933d913629f0f4f8",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/class_picos.py",
-  "script_sha256": "3eaae11aba616422b5730dcc62438522ce52bf0950a75d07c7173de4d75b38c6",
+  "script_sha256": "a88d13e194a07946ea368472c2f5d80db934128015f847178dadb1067a1e02ff",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "1e1c3ea50463360873f68f9db2f9c3d16408373a82be0192894f9a185597a2a9",
+   "CANONICAL_VALUES.yaml": "11af9f9e4b69522a0df0ffaf40f05c6f97978e5fb4e20a562af3754968fa0a5a",
    "class_ssee/ssee_v36_nomira.ini": "c0a47ae802d880f79d16e3b15dfcf9f2b68fce476e95390afd87f4c2a57ba98a",
    "results/logs/paper3_cmb_chi2.json": "c239594870f3c761981a5092d8a5ac88523f0d0b8623e72fd0e455f94726e7c0"
   },
   "argv": [
    "src/p03_cmb/class_picos.py"
   ],
-  "fecha": "2026-10-01T00:16:41",
+  "fecha": "2026-10-01T10:05:10",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

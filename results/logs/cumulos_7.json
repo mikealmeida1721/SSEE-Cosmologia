@@ -169,17 +169,17 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "8ed9dc55dd83df53721b21fab80c1fb52476b04d",
+  "commit": "221728618397942fc29c9dc7cb745876dc78a2d3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/cumulos_7.py",
-  "script_sha256": "88331c7fb14d228d26c8e7db31ec4aeb646e2b6ce53d92f828a9254f26816c91",
+  "script_sha256": "89dfd99813ab8a37549749152ab0999c9afa43dd197475ac725adeaab0c9a470",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p02_mcmc/cumulos_7.py"
   ],
-  "fecha": "2026-10-01T00:09:13",
+  "fecha": "2026-10-01T10:06:09",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
