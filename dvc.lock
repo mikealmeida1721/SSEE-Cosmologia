@@ -75,12 +75,12 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 7b60610250a064273c2eda9a37868955
-      size: 44089
+      md5: b7182cc8188d0077581141123535aacd
+      size: 44201
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 93453010af735c635c4a963b342fab15
-      size: 10715
+      md5: 48b3d996b23b5c4f14fa63eea08dc2d5
+      size: 10900
     - path: results/logs/class_picos.json
       hash: md5
       md5: 833cd321d2fcc6111c6ad9f9052af990
@@ -164,8 +164,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: e0ad056a7d63f44199437dce08babe10
-      size: 56513
+      md5: ec2491190130993df5bcc72f2ce0b18b
+      size: 56646
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -340,8 +340,8 @@ stages:
     deps:
     - path: src/algebra_derivada.py
       hash: md5
-      md5: 35b2d834b2071e1de3512bc7bd519ecf
-      size: 8834
+      md5: 31a41bd53b6ad2ec0c02a9c50c694f75
+      size: 9012
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -353,8 +353,8 @@ stages:
     outs:
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 93453010af735c635c4a963b342fab15
-      size: 10715
+      md5: 48b3d996b23b5c4f14fa63eea08dc2d5
+      size: 10900
   kids_legacy_bic:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_legacy_bic.py

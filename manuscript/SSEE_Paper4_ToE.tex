@@ -72,9 +72,9 @@ These background predictions are number-to-number comparisons with zero adjustab
 The same two axioms fix the cosmological background --- including the
 dark-energy parameters $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$ derived in the
 companion Papers~1--3.
-In the static (Eckart) regime $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = 0.1235$ ($+2.9\sigma$);
+In the static (Eckart) regime $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = \val{wc_estatico_ssee_d4}$ ($\val{wc_estatico_ssee_sigma}\sigma$);
 modulated by the IS inflationary factor $n_s = 1-\varphi^{-7}$ this becomes
-$\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = 0.1193$ ($-0.6\sigma$ from Planck),
+$\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d5}$ ($\val{wc_ns_sigma}\sigma$ from Planck),
 within $1\sigma$ of the observed value.
 A falsifiable prediction $r = \varphi^{-10} = 0.008131$ is presented for the
 LiteBIRD satellite mission ($\sim$2032).
@@ -250,7 +250,7 @@ Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \textbf{Cosmology} & & & & \\
 \quad $H_0$ [km/s/Mpc] & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
 \quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & 68.13  & $3(\varphi+\pi)^2$ & $0.17\sigma$ \\
-\quad $\Omega_b$ & $\frac{100(\pi-\varphi)}{6(\varphi+\pi)^4}$ & 0.0495 & $0.0493\pm0.0004$ & $0.53\sigma$ \\
+\quad $\Omega_b$ & $\frac{10^4(\pi-\varphi)}{27(\varphi+\pi)^6}$ & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ \\
 \quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $0.16\sigma$ \\
 \textbf{Hubble tension} & & & & \\
 \quad Fractional correction & $K/H_0 = \frac{\varphi+3\pi}{6(\varphi+\pi)^2}$ & $8.12\%$ & $\approx 8\%$ & — \\
@@ -258,6 +258,7 @@ Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \multicolumn{5}{l}{\footnotesize $^{\rm P}$~Canonical IR-cascade value (2026 reframe): $f_{\rm scr}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $68.13$, i.e.\ $0.17\sigma$ from $3(\varphi+\pi)^2=\val{H0_ALG_d6}$; the full UV cascade closes to $\val{H0_ALG_d5}$ (Paper~10).}\\
 \multicolumn{5}{l}{\footnotesize The earlier CMB-mapped register ($H_0^{\rm MIRA}=67.037$) is superseded.}\\
 \multicolumn{5}{l}{\footnotesize Consistent with Paper~1 / Paper~9 policy (single anchor shared by every sector).}\\
+\multicolumn{5}{l}{\footnotesize $^\ast$~$\Omega_b=\omega_b/h^2$ is composite; its inputs are compared separately. It is $\val{Omega_b_pct_vs_planck}\%$ from Planck's, the $H_0$ offset.}\\
 \end{tabular}%
 }
 \end{table}
@@ -316,8 +317,8 @@ the SSEE Hubble anchor:
 \Omega_b h^2 &= \frac{\pi-\varphi}{3\Omega^2} = \frac{\pi-\varphi}{3(\varphi+\pi)^2} = \val{OMEGA_B_H2_d6}
 \label{eq:Obh2} \\[4pt]
 \Omega_b     &= \frac{\Omega_b h^2}{h^2}
-              = \frac{100(\pi-\varphi)}{6(\varphi+\pi)^4}
-              = 0.04948
+              = \frac{10^4(\pi-\varphi)}{27(\varphi+\pi)^6}
+              = \val{Omega_b_alg_d5}
 \label{eq:Ob}
 \end{align}
 Planck~2018: $\Omega_b h^2 = 0.02237\pm0.00015$; deviation $= 0.32\sigma$.
@@ -356,7 +357,9 @@ sphaleron rate and the SSEE reheating history to obtain $\eta_B$
 entropy-dilution factor is consistent with a quintessential-reheating
 temperature $T_{\rm rh}\sim10^{-4}$~GeV, which is a consistency check, not a
 prediction of $\eta_B$.
-The agreement $\Omega_b^{\rm SSEE} = 0.0495$ vs Planck's $0.0493\pm0.0004$ is $0.53\sigma$.
+$\Omega_b^{\rm SSEE} = \val{Omega_b_alg_d4}$ is $\val{Omega_b_pct_vs_planck}\%$ from the Planck $\Lambda$CDM value
+$\val{Omega_b_planck_d4}$ ($=\omega_b/h^2$ with Planck's own inputs). $\Omega_b=\omega_b/h^2$ is composite: its two inputs are compared separately ($\omega_b$ at $0.32\sigma$, $h$ through $H_0$), so this
+difference is the $H_0$ offset, not an independent tension.
 
 \subsection{Total Matter Density \texorpdfstring{$\Omega_m$}{Omega\_m}}
 \label{sec:matter}
@@ -598,17 +601,18 @@ Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 \midrule
 $H_0^{\rm alg}$ [km/s/Mpc]     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & algebraic (Type~P$^\dagger$) \\
 $H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_ALG_d6} & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
-$\Omega_b$          & 0.0495 & $0.0493\pm0.0004$    & $0.53\sigma$ & algebraic \\
+$\Omega_b$          & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ & algebraic \\
 $\Omega_b h^2$      & 0.02242& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
 $\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $0.88\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
-$\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $0.41\sigma$ & algebraic (forward) \\
+$\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $\val{wc_ns_sigma_abs}\sigma$ & algebraic (forward) \\
 $Y_p$               & \val{Yp_ssee_d4} & $0.2471\pm0.0003$   & $0.2\sigma$ & BBN (no fit) \\
 $n_s$               & \val{N_S_d6}& $0.9649\pm0.0042$   & $0.16\sigma$& algebraic \\
 $A_s$               & $2.1\times10^{-9}$ & $2.10\times10^{-9}$ & $<0.5\sigma$ & standard \\
 $\tau$              & 0.054  & $0.054\pm0.007$     & $0\sigma$   & standard \\
 \midrule
 \midrule
-\multicolumn{5}{l}{\footnotesize IS = Israel--Stewart modulation by $n_s=1-\varphi^{-7}$; reduces tension from $+2.9\sigma$ (Eckart) to $-0.6\sigma$.}\\
+\multicolumn{5}{l}{\footnotesize IS = Israel--Stewart modulation by $n_s=1-\varphi^{-7}$; reduces tension from $\val{wc_estatico_ssee_sigma}\sigma$ (Eckart) to $\val{wc_ns_sigma}\sigma$.}\\
+\multicolumn{5}{l}{\footnotesize $^\ast$~$\Omega_b=\omega_b/h^2$ is composite; its inputs are compared separately. It is $\val{Omega_b_pct_vs_planck}\%$ from Planck's, the $H_0$ offset.}\\
 \multicolumn{5}{l}{\footnotesize $^\dagger$~Type~P: dimensionless combination matches observed value in km\,s$^{-1}$\,Mpc$^{-1}$ units;}\\
 \multicolumn{5}{l}{\footnotesize no dimensional derivation from first principles. Consistent with Paper~1 App.~B policy.}\\
 \multicolumn{5}{l}{\footnotesize $^\ddagger$~CMB sector: $\Omega_{m,\rm CMB}=\omega_m/h^2$ with $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$,}\\
@@ -777,13 +781,14 @@ coincidence ($3.2\sigma$ from Planck) that has been superseded.
 The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018).
 The denominator is the pure algebraic combination whose value, read in
 km\,s$^{-1}$\,Mpc$^{-1}$, is the SSEE Hubble anchor; no free numerical factor
-remains; the physical baryon density $\Omega_b = 0.0495$ is a pure $\varphi,\pi$
+remains; the baryon density parameter $\Omega_b = \val{Omega_b_alg_d4}$ is a pure $\varphi,\pi$
 prediction (Section~\ref{sec:baryons}).
 
 \paragraph{Remaining open problems.}
-The static (Eckart) $\Omega_c h^2$ prediction of $0.1235$ is $+2.9\sigma$
-from Planck, but the IS modulation $\Omega_c h^2 \times n_s = 0.1193$ reduces
-this to $-0.6\sigma$ — within $1\sigma$ of observation (Eq.~\ref{eq:omch2_IS}).
+The static (Eckart) $\Omega_c h^2$ prediction of $\val{wc_estatico_ssee_d4}$ is $\val{wc_estatico_ssee_sigma}\sigma$
+from Planck, but the IS modulation $\Omega_c h^2 \times n_s = \val{OMEGA_C_H2_d5}$ reduces
+this to $\val{wc_ns_sigma}\sigma$ — within $1\sigma$ of observation (Eq.~\ref{eq:omch2_IS}).
+Both use the SSEE baryon density $\omega_b=\val{OMEGA_B_H2_d6}$, not Planck's.
 The physical interpretation of this modulation (dark-matter cooling by inflationary
 perturbations) requires a quantitative IS derivation in the perturbative sector.
 The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
@@ -795,9 +800,9 @@ The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
 We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 \begin{itemize}
   \item $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ ($1.1\sigma$ from Planck)
-  \item $\Omega_b = 0.0495$ ($<0.4\%$ from Planck)
+  \item $\Omega_b h^2 = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck); $\Omega_b=\val{Omega_b_alg_d4}$ follows with $h=H_0/100$
   \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck)
-  \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($0.41\sigma$ from Planck, forward)
+  \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck, forward)
   \item $Y_p = 0.2472$ ($0.2\sigma$ from Planck CMB, $0.6\sigma$ from HII — no fit)
   \item $\delta_c^{\rm SSEE} = 1.67634$ ($z_c{=}0$) from spherical collapse on the
         model background, i.e.\ $\Lambda$CDM-like to $0.02\%$; the earlier

@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-30",
+ "fecha": "2026-10-01",
  "algebra": {
   "alpha_K_z0": {
    "formula": "3*OMDE_DENS*(5-3*W0)",
@@ -246,6 +246,36 @@
    "valor": 2.9282097128109066,
    "uso": "distancia a Planck 0.1200 +- 0.0012, Paper 4"
   },
+  "wc_estatico_ssee": {
+   "formula": "KAL0*OMEGA_B_H2",
+   "valor": 0.12377753623187307,
+   "uso": "Omega_c h^2 estatico con el omega_b PROPIO de SSEE (2026-10-01: Paper 4 usaba el de Planck, ingrediente de otro modelo)"
+  },
+  "wc_estatico_ssee_sigma": {
+   "formula": "(KAL0*OMEGA_B_H2-0.1200)/0.0012",
+   "valor": 3.147946859894229,
+   "uso": "su distancia a Planck"
+  },
+  "wc_ns_sigma": {
+   "formula": "(OMEGA_C_H2-0.1200)/0.0012",
+   "valor": -0.40465964032602536,
+   "uso": "omega_c = KAL0 omega_b n_s frente a Planck"
+  },
+  "Omega_b_planck": {
+   "formula": "0.02237/0.6736**2",
+   "valor": 0.049301692328524445,
+   "uso": "Omega_b de LCDM-Planck = omega_b/h^2 con SUS ingredientes"
+  },
+  "Omega_b_pct_vs_planck": {
+   "formula": "100*(OMEGA_B_H2/(H0_ALG/100)**2/(0.02237/0.6736**2)-1)",
+   "valor": -1.5544093320962293,
+   "uso": "diferencia en %; casi toda es h_SSEE > h_Planck"
+  },
+  "wc_ns_sigma_abs": {
+   "formula": "abs(OMEGA_C_H2-0.1200)/0.0012",
+   "valor": 0.40465964032602536,
+   "uso": "lo mismo en valor absoluto, para \u00aba X sigma de Planck\u00bb"
+  },
   "Yp_ssee": {
    "formula": "0.2471+0.96*(OMEGA_B_H2-0.02237)",
    "valor": 0.24714584650985583,
@@ -334,17 +364,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "7bd0e96ce7c386913d3b7d1393f8bf80c10ea031",
+  "commit": "9ad212b5cf4e785b9bea29fc2cb4f028a94b77cf",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "58a6e461c032f3823d0fdac41735545647f9c6bcedddef17ee2ba3372e13f4f2",
+  "script_sha256": "0da15679e0c316d59c5b548bdb6a89668bd79e1e0e87666b8381554e97b95fdc",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T22:54:19",
+  "fecha": "2026-10-01T09:55:56",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

@@ -439,3 +439,12 @@ p3_S8_techo:       {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#S8_techo"
 p3_sigma8_lcdm_ref: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#control.sigma8_LCDM", formato: ".4f"}
 p3_sigma8_unif:    {fuente: "results/logs/s8_kids_legacy_camb.json#unif.sigma8", formato: ".4f"}
 p3_S8_unif:        {fuente: "results/logs/s8_kids_legacy_camb.json#unif.S8", formato: ".4f"}
+# P4 densidades (2026-10-01): omega_c con el omega_b propio de SSEE; Omega_b = omega_b/h^2
+wc_estatico_ssee_d4: {fuente: "results/logs/algebra_derivada.json#algebra.wc_estatico_ssee.valor", formato: ".4f"}
+wc_estatico_ssee_sigma: {fuente: "results/logs/algebra_derivada.json#algebra.wc_estatico_ssee_sigma.valor", formato: "+.1f"}
+wc_ns_sigma:       {fuente: "results/logs/algebra_derivada.json#algebra.wc_ns_sigma.valor", formato: "+.2f"}
+Omega_b_alg_d5:    {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_alg.valor", formato: ".5f"}
+Omega_b_alg_d4:    {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_alg.valor", formato: ".4f"}
+Omega_b_planck_d4: {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_planck.valor", formato: ".4f"}
+Omega_b_pct_vs_planck: {fuente: "results/logs/algebra_derivada.json#algebra.Omega_b_pct_vs_planck.valor", formato: "+.1f"}
+wc_ns_sigma_abs:   {fuente: "results/logs/algebra_derivada.json#algebra.wc_ns_sigma_abs.valor", formato: ".2f"}
