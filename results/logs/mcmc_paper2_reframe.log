@@ -244,3 +244,85 @@ Comparación con resultados previos:
 Figura: results/figures/fig_corner_ssee_halg_prior.pdf
 [   8.2m] Cadena: /mnt/datos/SSEE_data/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz
 [   8.2m] Tiempo total: 8.2 min
+[   0.0m] ======================================================================
+[   0.0m] SSEE — MCMC PRODUCCIÓN bajo prior H_glob (cascada SH0ES, reframe ω_m-directo)
+[   0.0m] ======================================================================
+[   0.0m]   Ω_m,total (geometría, ÚNICA densidad) = 0.30888084  |  s_m = 1+w0 = 0.16005023 (ecuación de estado)
+[   0.0m]   Ω_m,CMB (ω_m/h², reframe) = 0.308881  (sin factor; OP-8 cerrado)
+[   0.0m]   w0 = -0.8399497713,  wa = -0.6699748857
+[   0.0m]   H_glob = H_SH0ES·(1−f_screen) = 67.962142 ± 0.9677   (blanco puro 3(φ+π)² = 67.962137)
+[   0.0m] 
+Burn-in 5000 steps...
+[   0.4m] Burn-in OK. Producción...
+[   0.4m]   500/25000 steps  accept=0.717
+[   0.5m]   1000/25000 steps  accept=0.717
+[   0.5m]   1500/25000 steps  accept=0.716
+[   0.6m]   2000/25000 steps  accept=0.716
+[   0.6m]   2500/25000 steps  accept=0.717
+[   0.7m]   3000/25000 steps  accept=0.716
+[   0.7m]   3500/25000 steps  accept=0.717
+[   0.7m]   4000/25000 steps  accept=0.717
+[   0.8m]   4500/25000 steps  accept=0.717
+[   0.8m]   5000/25000 steps  accept=0.716
+[   0.9m]   5500/25000 steps  accept=0.716
+[   0.9m]   6000/25000 steps  accept=0.715
+[   1.0m]   6500/25000 steps  accept=0.715
+[   1.0m]   7000/25000 steps  accept=0.715
+[   1.1m]   7500/25000 steps  accept=0.715
+[   1.1m]   8000/25000 steps  accept=0.715
+[   1.2m]   8500/25000 steps  accept=0.715
+[   1.3m]   9000/25000 steps  accept=0.715
+[   1.3m]   9500/25000 steps  accept=0.715
+[   1.4m]   10000/25000 steps  accept=0.715
+[   1.5m]   10500/25000 steps  accept=0.715
+[   1.5m]   11000/25000 steps  accept=0.715
+[   1.6m]   11500/25000 steps  accept=0.715
+[   1.7m]   12000/25000 steps  accept=0.715
+[   1.8m]   12500/25000 steps  accept=0.715
+[   1.9m]   13000/25000 steps  accept=0.715
+[   2.0m]   13500/25000 steps  accept=0.715
+[   2.1m]   14000/25000 steps  accept=0.715
+[   2.2m]   14500/25000 steps  accept=0.715
+[   2.3m]   15000/25000 steps  accept=0.715
+[   2.4m]   15500/25000 steps  accept=0.715
+[   2.5m]   16000/25000 steps  accept=0.715
+[   2.6m]   16500/25000 steps  accept=0.715
+[   2.7m]   17000/25000 steps  accept=0.715
+[   2.8m]   17500/25000 steps  accept=0.715
+[   3.0m]   18000/25000 steps  accept=0.715
+[   3.1m]   18500/25000 steps  accept=0.715
+[   3.3m]   19000/25000 steps  accept=0.715
+[   3.4m]   19500/25000 steps  accept=0.715
+[   3.6m]   20000/25000 steps  accept=0.715
+[   3.7m]   20500/25000 steps  accept=0.715
+[   3.9m]   21000/25000 steps  accept=0.715
+[   4.1m]   21500/25000 steps  accept=0.715
+[   4.3m]   22000/25000 steps  accept=0.715
+[   4.5m]   22500/25000 steps  accept=0.715
+[   4.7m]   23000/25000 steps  accept=0.715
+[   4.9m]   23500/25000 steps  accept=0.715
+[   5.1m]   24000/25000 steps  accept=0.716
+[   5.4m]   24500/25000 steps  accept=0.716
+[   5.6m]   25000/25000 steps  accept=0.716
+[   5.8m] 
+======================================================================
+[   5.8m] RESULTADO MCMC PRODUCCIÓN — Prior H_glob (cascada SH0ES)
+[   5.8m] ======================================================================
+[   5.8m]   H₀     = 67.8206  +0.4110 / -0.4090  km/s/Mpc
+[   5.8m]   H₀ MAP = 67.8205
+[   5.8m]   Ω_b·h² = 0.02197
+[   5.8m]   ln P_MAP = -5.296
+[   5.8m]   τ_max = 31.1    N_eff ≈ 80365
+[   5.8m]   acceptance = 0.716
+[   5.8m] 
+  BIC (k=2, N=15): 16.007
+[   5.8m] 
+Comparación con resultados previos:
+[   5.8m]   Retirado (prior MIRA 67.037, 100w×25k): H₀ = 66.53 ± 0.44
+[   5.8m]   ESTE (prior H_glob 67.962±0.968, 100w×25k): H₀ = 67.821 ± 0.412
+[   5.8m] 
+  Distancia a DESI-puro (67.793, prior plano, h0_four_priors.json): 0.028 km/s/Mpc
+[   5.9m] 
+Figura: results/figures/fig_corner_ssee_halg_prior.pdf
+[   5.9m] Cadena: /mnt/datos/SSEE_data/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz
+[   5.9m] Tiempo total: 5.9 min
