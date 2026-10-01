@@ -8,8 +8,11 @@ calculaba: aparecian copiados en logs de otras corridas (multisonda, conjunta).
 Este script los saca de las cadenas.
 
 COMO: cadenas /mnt/datos/SSEE_data/chains_p6/kids_legacy/{sseefijo,ssee,
-lcdmfijo}.{1-4}.txt; chi2_min = minimo de la columna chi2 en TODAS las filas
-(el minimo no depende del burn-in); k = parametros muestreados (columnas entre
+lcdmfijo}.{1-4}.txt; chi2_min = minimo de la columna chi2 tras quitar el
+burn-in del 30 % de cada cadena — la MISMA convencion de R3/R4 (KiDS-1000) y la
+que tiene CANONICAL. Medido el 2026-09-30: en la corrida con A_s libre el
+minimo absoluto cae DENTRO del burn-in y es menor; se guarda como dato
+informativo (`chi2_min_todas_las_filas`), no se usa. k = parametros muestreados (columnas entre
 minuslogpost y minuslogprior); N = 357 puntos xi+- (Wright+2025);
 BIC = chi2_min + k ln N.
 CONTROL (R53): chi2_min de la corrida unificada tiene que ser el de CANONICAL
@@ -31,6 +34,7 @@ sys.path.insert(0, os.path.join(_R, "src"))
 from procedencia import con_acta  # noqa: E402
 
 CAD = "/mnt/datos/SSEE_data/chains_p6/kids_legacy"
+BURN = 0.30
 N_DATOS = 357   # ORIGEN-VALOR: 357 — puntos xi+- de KiDS-Legacy (Wright+2025, A&A 703, A158)
 C = yaml.safe_load(open(os.path.join(_R, "CANONICAL_VALUES.yaml")))["canonical"]
 CORRIDAS = {"sseefijo": "SSEE unificado (A_s del CMB)", "ssee": "SSEE, A_s libre",
@@ -43,10 +47,12 @@ for nom, desc in CORRIDAS.items():
     with open(rutas[0]) as f:
         col = f.readline().lstrip("#").split()
     k = col.index("minuslogprior") - col.index("minuslogpost") - 1
-    chi2 = np.concatenate([np.loadtxt(r, usecols=col.index("chi2"), ndmin=1) for r in rutas])
-    c2 = float(chi2.min())
+    cad = [np.loadtxt(r, usecols=col.index("chi2"), ndmin=1) for r in rutas]
+    post = np.concatenate([a[int(BURN * len(a)):] for a in cad])
+    c2 = float(post.min())
     res[nom] = dict(descripcion=desc, chi2_min=c2, k=k, N=N_DATOS, dof=N_DATOS - k,
-                    BIC=c2 + k * math.log(N_DATOS), filas=int(len(chi2)))
+                    BIC=c2 + k * math.log(N_DATOS), filas_post_burnin=int(len(post)),
+                    chi2_min_todas_las_filas=float(min(a.min() for a in cad)))
 ctl = dict(unif=dict(log=res["sseefijo"]["chi2_min"], canonical=C["chi2_min_ssee_unif"]),
            libre=dict(log=res["ssee"]["chi2_min"], canonical=C["chi2_min_kids_legacy"]))
 pasa = all(abs(v["log"] - v["canonical"]) < 1e-3 for v in ctl.values())
