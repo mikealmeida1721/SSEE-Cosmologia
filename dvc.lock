@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: d22ba599cad15dfdee2bf096fe5a6fa2
-      size: 39960
+      md5: f85cf6df2e70ac2497143d6237fe3361
+      size: 40491
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: b2dbbef397d0f75c88064d60261115fd
@@ -93,6 +93,10 @@ stages:
       hash: md5
       md5: 8d287577eefaeaf4f778ba3e1a8769ad
       size: 1187
+    - path: results/logs/fondos_exponenciales.json
+      hash: md5
+      md5: a4053d74e048d68182e8c17674680d4f
+      size: 2416
     - path: results/logs/hiclass_campo.json
       hash: md5
       md5: 31c9fbd99fb8b84d43ef38a32bd4b520
@@ -140,8 +144,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: c68833a6fb94a764dc5e23badfbcb545
-      size: 51081
+      md5: bb5eab7739d7ee9722eb19e5e67a4829
+      size: 51843
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -761,3 +765,42 @@ stages:
       hash: md5
       md5: c4bfa830e0e6f65a1e30e1debb26400d
       size: 2073
+  fondos_exponenciales:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/fondos_exponenciales.py > 
+      results/logs/fondos_exponenciales.log 2>&1
+    deps:
+    - path: 
+        archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
+      hash: md5
+      md5: 0e38f1db82e8932f760cc9cc5f7bb67b
+      size: 6796
+    - path: src/p07_eft/busca_lambda.py
+      hash: md5
+      md5: 6fab9e00a10d5d139ee16bf5049c2b2e
+      size: 4582
+    - path: src/p07_eft/fondo_disparo.py
+      hash: md5
+      md5: 63aeb45c73c14a05fedc634783d10698
+      size: 7064
+    - path: src/p07_eft/fondos_exponenciales.py
+      hash: md5
+      md5: c3795a466c7601830fe3043ddc061248
+      size: 5891
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/fondos_exponenciales.json
+      hash: md5
+      md5: a4053d74e048d68182e8c17674680d4f
+      size: 2416
+    - path: results/logs/fondos_exponenciales.log
+      hash: md5
+      md5: 25689daad318277117e2488ccd79f69d
+      size: 1645

@@ -406,3 +406,8 @@ t0_lcdm:      {fuente: "results/logs/edad_universo.json#lcdm.integral", formato:
 t0_dif:       {fuente: "results/logs/edad_universo.json#diferencia_lcdm_menos_ssee", formato: ".3f"}
 t0_ret_receta: {fuente: "results/logs/edad_universo.json#retirado.receta_vieja", formato: ".2f"}
 t0_ret_densidad: {fuente: "results/logs/edad_universo.json#retirado.solo_densidad_corregida", formato: ".2f"}
+p7_wa_atractor: {fuente: "results/logs/fondos_exponenciales.json#fondos.atractor.cpl.wa", formato: ".3f"}
+p7_lambda_cal:  {fuente: "results/logs/fondos_exponenciales.json#fondos.lambda.lam", formato: ".4f"}
+p7_wa_lambda:   {fuente: "results/logs/fondos_exponenciales.json#fondos.lambda.cpl.wa", formato: ".3f"}
+p7_wa_acoplado: {fuente: "results/logs/fondos_exponenciales.json#fondos.acoplado.cpl_w_eff.wa", formato: "+.3f"}
+p7_beta_c_ok:   {fuente: "results/logs/fondos_exponenciales.json#fondos.acoplado.beta_c", formato: "+.6f"}

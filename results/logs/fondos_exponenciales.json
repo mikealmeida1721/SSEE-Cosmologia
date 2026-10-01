@@ -14,7 +14,8 @@
    "lam": 0.6929290627226303,
    "phi_i": 0.5111062285425512,
    "w_a1": -0.9273158504020612,
-   "residuo_Om_DE": 1.281784024720345e-05,
+   "residuo_Om_DE": 0.0,
+   "residuo_Om_DE_rejilla_fina": 1.281784024720345e-05,
    "cpl": {
     "w0": -0.9335762893448505,
     "wa": -0.09259598982997506
@@ -57,14 +58,14 @@
   "w_a1_busca_lambda": -0.9273176036538643,
   "w_a1_fondo_disparo": -0.9273158504020612,
   "dif": 1.7532518030716204e-06,
-  "pasa": false
+  "pasa": true
  },
  "_procedencia": {
-  "commit": "8ed9dc55dd83df53721b21fab80c1fb52476b04d",
+  "commit": "502f377527f0183568c297fdd4eec87bc9d45b4b",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p07_eft/fondos_exponenciales.py",
-  "script_sha256": "39b4906d0b3f557090866139f5ea1b0b0ecd0ed328ec9f0af6271d4a83b6ac1b",
+  "script_sha256": "fc2432fbbb10a1089228ca931619310f0efbd65f5adde5149662c17c8ccfa5c6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "src/p07_eft/fondo_disparo.py": "f27cf72a73604f61e5ec136b803b02ce4bf3ce09f26cb98977fe819704b92998",
@@ -74,7 +75,7 @@
   "argv": [
    "src/p07_eft/fondos_exponenciales.py"
   ],
-  "fecha": "2026-10-01T00:08:50",
+  "fecha": "2026-10-01T00:12:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
