@@ -42,6 +42,7 @@ stages:
       - results/logs/kids_publicados.json
       - results/logs/p10_uv_fscreen.json
       - results/logs/algebra_derivada.json
+      - results/logs/kids_legacy_bic.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -115,4 +116,25 @@ stages:
       - src/ssee_core.py
     outs:
       - results/logs/algebra_derivada.json:
+          cache: false
+  kids_legacy_bic:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_legacy_bic.py
+    deps:
+      - src/p06_growth/kids_legacy_bic.py
+      - src/procedencia.py
+      - CANONICAL_VALUES.yaml
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    outs:
+      - results/logs/kids_legacy_bic.json:
           cache: false

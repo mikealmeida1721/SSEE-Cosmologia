@@ -291,3 +291,72 @@ stages:
       hash: md5
       md5: 330796d16c1a0566d0d4f97e7a5ee922
       size: 6907
+  kids_legacy_bic:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/kids_legacy_bic.py
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      hash: md5
+      md5: 011324f5efd67614c2bad935facde0e6
+      size: 1647428
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      hash: md5
+      md5: 675e2d4fe67863082b2bec605c5b4028
+      size: 1804220
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      hash: md5
+      md5: cda3bc12d91a9431ff2503fd3a539a46
+      size: 1751400
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+      hash: md5
+      md5: 1ec57a34f8b4c6f0ee456a6b8da2c0ee
+      size: 1701638
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
+      hash: md5
+      md5: 6b0fa9bf9cdb47e54fb87b68d9c3ca6f
+      size: 986674
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt
+      hash: md5
+      md5: 19f20753e2f8896a314669fb831226fe
+      size: 1012430
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt
+      hash: md5
+      md5: e6753d44d554a2142dc109f38354db52
+      size: 1002292
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt
+      hash: md5
+      md5: 46d6f69f148734497e32754e9c488184
+      size: 1035994
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
+      hash: md5
+      md5: 606983d774a0ce6d0630517423a574fc
+      size: 953310
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
+      hash: md5
+      md5: dc698c71b9f18b62a364521443539b7d
+      size: 931896
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
+      hash: md5
+      md5: 99ced70cd603ef946ebe56a78b93f259
+      size: 930348
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+      hash: md5
+      md5: 10cee89c7dc3da4d886e5c51da33350f
+      size: 929058
+    - path: CANONICAL_VALUES.yaml
+      hash: md5
+      md5: 089f4ad6d744382735d763231f3630aa
+      size: 68400
+    - path: src/p06_growth/kids_legacy_bic.py
+      hash: md5
+      md5: 4a8c337fe70ba2f14f8312ed393053f8
+      size: 3622
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/kids_legacy_bic.json
+      hash: md5
+      md5: 0481b4f9324f6f413d1aa09ce9a76f37
+      size: 3419

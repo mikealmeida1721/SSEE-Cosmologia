@@ -1,0 +1,90 @@
+{
+ "fecha": "2026-09-30",
+ "corridas": {
+  "sseefijo": {
+   "descripcion": "SSEE unificado (A_s del CMB)",
+   "chi2_min": 417.9706,
+   "k": 8,
+   "N": 357,
+   "dof": 349,
+   "BIC": 464.9924862542371,
+   "filas_post_burnin": 10158,
+   "chi2_min_todas_las_filas": 417.9706
+  },
+  "ssee": {
+   "descripcion": "SSEE, A_s libre",
+   "chi2_min": 418.33606,
+   "k": 9,
+   "N": 357,
+   "dof": 348,
+   "BIC": 471.2356820360167,
+   "filas_post_burnin": 10312,
+   "chi2_min_todas_las_filas": 418.24279
+  },
+  "lcdmfijo": {
+   "descripcion": "LCDM, fondo Planck 2018, A_s libre",
+   "chi2_min": 418.95467,
+   "k": 9,
+   "N": 357,
+   "dof": 348,
+   "BIC": 471.8542920360168,
+   "filas_post_burnin": 17385,
+   "chi2_min_todas_las_filas": 418.95467
+  }
+ },
+ "deltaBIC": {
+  "libre_menos_unif": 6.243195781779605,
+  "lcdm_menos_unif": 6.861805781779651
+ },
+ "control": {
+  "contra_canonical": {
+   "unif": {
+    "log": 417.9706,
+    "canonical": 417.971
+   },
+   "libre": {
+    "log": 418.33606,
+    "canonical": 418.336
+   }
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "fb254265ba398969de101914cd5045c16bb9296f",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/kids_legacy_bic.py",
+  "script_sha256": "491e36d5cff4e75d3f9e1bdbb26c63fc70c6deef4b084907adfcd330183b5f6a",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt": "b330443c5e1b55afd1b8419e8a6f56763bc68ef8b267dfbbb7ae4e97e30d084b",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt": "cacfb3906fbddf1dea2e095c240c99adcae5ed4f5d8a029680aa798863640b54",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt": "56fa05db7add1f7072e2baea035dd47a8d485ddc1fb10abeadd674cbf03061ea",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt": "ee5f2aa8130675cfb954b15bcbd8b1d3fa4d0430e8a604f7b3d7fe4ed27fd7ca",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt": "346f5d737f80b1c0c6dcf5f2716767129700dcf17c748592f98e34e4ece22207",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt": "13d256438ee02ae3fc26cf94b7c050ca54eab4e5936d92858cbe6d925cf9be92",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt": "82efa4b86e1caf9e07aeb6090a898dc19b25b9def7f4fe2df77bb86453050f6d",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt": "a460b97b9fbda5787a612598aaf2ea2fb0e4678274df3ce0244eb7e2372d2e88",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt": "3494b8183bdb85bbd18e8cd9c742c43cd4de0d217d7b7ed525169ea4e7e35715",
+   "CANONICAL_VALUES.yaml": "8c06db022b872e9ecde24a3192a13416fa5b6f3e934306df6e503979e984c9c5"
+  },
+  "argv": [
+   "src/p06_growth/kids_legacy_bic.py"
+  ],
+  "fecha": "2026-09-30T21:27:52",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

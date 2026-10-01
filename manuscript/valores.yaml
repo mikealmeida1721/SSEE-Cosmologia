@@ -147,3 +147,12 @@ uno_mas_3u_d6: {fuente: "results/logs/algebra_derivada.json#algebra.uno_mas_3u.v
 uno_mas_6u_d6: {fuente: "results/logs/algebra_derivada.json#algebra.uno_mas_6u.valor", formato: ".6f"}
 wa_viejo_d6: {fuente: "results/logs/algebra_derivada.json#algebra.wa_viejo.valor", formato: ".6f"}
 x_K_d6: {fuente: "results/logs/algebra_derivada.json#algebra.x_K.valor", formato: ".6f"}
+# KiDS-Legacy, seleccion de modelos — src/p06_growth/kids_legacy_bic.py
+chi2_leg_unif:  {fuente: "results/logs/kids_legacy_bic.json#corridas.sseefijo.chi2_min", formato: ".2f"}
+BIC_leg_unif:   {fuente: "results/logs/kids_legacy_bic.json#corridas.sseefijo.BIC", formato: ".2f"}
+chi2_leg_libre: {fuente: "results/logs/kids_legacy_bic.json#corridas.ssee.chi2_min", formato: ".2f"}
+BIC_leg_libre:  {fuente: "results/logs/kids_legacy_bic.json#corridas.ssee.BIC", formato: ".2f"}
+chi2_leg_lcdm:  {fuente: "results/logs/kids_legacy_bic.json#corridas.lcdmfijo.chi2_min", formato: ".2f"}
+BIC_leg_lcdm:   {fuente: "results/logs/kids_legacy_bic.json#corridas.lcdmfijo.BIC", formato: ".2f"}
+dBIC_leg_libre: {fuente: "results/logs/kids_legacy_bic.json#deltaBIC.libre_menos_unif", formato: ".2f"}
+dBIC_leg_lcdm:  {fuente: "results/logs/kids_legacy_bic.json#deltaBIC.lcdm_menos_unif", formato: ".2f"}
