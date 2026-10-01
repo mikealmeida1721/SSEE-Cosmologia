@@ -424,3 +424,8 @@ cl_ssee_rms:  {fuente: "results/logs/class_picos.json#modelos.ssee.rms_pct", for
 cl_naive_rms: {fuente: "results/logs/class_picos.json#modelos.naive.rms_pct", formato: ".1f"}
 cl_degrada:   {fuente: "results/logs/class_picos.json#modelos.degradacion_rms_naive_sobre_ssee", formato: ".0f"}
 p7_hc_rs_cs2: {fuente: "results/logs/hiclass_campo.json#canonico.pct.ruido_sobre_senal_cs2_l2", formato: ".0f"}
+p5_Beff_mayo:     {fuente: "results/logs/hmcode_bariones.json#mayo.B_eff", formato: ".4f"}
+p5_Beff_mayo_pct: {fuente: "results/logs/hmcode_bariones.json#mayo.pct_P", formato: ".2f"}
+p5_Bs8:           {fuente: "results/logs/hmcode_bariones.json#canonico.B_sigma8", formato: ".4f"}
+p5_Bs8_pct:       {fuente: "results/logs/hmcode_bariones.json#canonico.pct_sigma8", formato: ".2f"}
+p5_S8_techo_bar:  {fuente: "results/logs/hmcode_bariones.json#S8_techo_bar", formato: ".3f"}

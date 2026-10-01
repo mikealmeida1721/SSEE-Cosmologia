@@ -75,8 +75,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 8fda4d0e4fe8dd3ef3b2b48af2c46cb1
-      size: 41716
+      md5: 4ea1606929dc6cd829c4d47579456d5a
+      size: 42189
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: b2dbbef397d0f75c88064d60261115fd
@@ -105,6 +105,10 @@ stages:
       hash: md5
       md5: 31c9fbd99fb8b84d43ef38a32bd4b520
       size: 7815
+    - path: results/logs/hmcode_bariones.json
+      hash: md5
+      md5: 60307f8b60ebd747cf9bf991aaca7021
+      size: 1600
     - path: results/logs/kids_legacy_bic.json
       hash: md5
       md5: 0481b4f9324f6f413d1aa09ce9a76f37
@@ -148,8 +152,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 5515d55ac1c6b58ffc5779d472c39bf5
-      size: 53465
+      md5: b0ee28df22bc8699c65673c7cd28bbde
+      size: 54142
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -882,3 +886,36 @@ stages:
       hash: md5
       md5: fcdcb860c7b2a0ca5d58baf113a98f07
       size: 1409
+  hmcode_bariones:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
+    deps:
+    - path: archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py
+      hash: md5
+      md5: b8b0de2107df66ea3c325ac441c3b557
+      size: 14199
+    - path: config/class/techo_ssee_canonico.ini
+      hash: md5
+      md5: 94304d78571144ec8cfbabd3184be886
+      size: 2483
+    - path: results/logs/p5_techo_sigma8_As_fijo.json
+      hash: md5
+      md5: f5352a1d801f30ec4870908d61a06e43
+      size: 1973
+    - path: src/p05_IS/hmcode_bariones.py
+      hash: md5
+      md5: 10d062d2e6f2ba72d067fa124ac25813
+      size: 4612
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/hmcode_bariones.json
+      hash: md5
+      md5: 60307f8b60ebd747cf9bf991aaca7021
+      size: 1600
+    - path: results/logs/hmcode_bariones.log
+      hash: md5
+      md5: 0d657b0dff42d314cb4957a27b02c72a
+      size: 847

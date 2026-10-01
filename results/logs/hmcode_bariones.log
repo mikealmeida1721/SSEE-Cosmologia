@@ -1,0 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "7d0dbed3812ddc1ccf2f5c9022e787d4799191a3", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/hmcode_bariones.py", "script_sha256": "65ef960464f63ba71480ffa92cce3514e5bd97f261b743dbe39ca799272a6724", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/hmcode_bariones.py"], "fecha": "2026-10-01T01:03:56", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+  canonico: B_eff 0.94263  B_sigma8 0.99545  S8 techo 0.8268 -> 0.8231
+  mayo    : B_eff 0.94471  B_sigma8 0.99563
+  control: B_eff de mayo 0.9447 vs publicado 0.9447 -> PASA

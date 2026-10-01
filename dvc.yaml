@@ -54,6 +54,7 @@ stages:
       - results/logs/edad_universo.json
       - results/logs/fondos_exponenciales.json
       - results/logs/class_picos.json
+      - results/logs/hmcode_bariones.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false

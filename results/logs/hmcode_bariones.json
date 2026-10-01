@@ -1,0 +1,51 @@
+{
+ "fecha": "2026-10-01",
+ "canonico": {
+  "B_eff": 0.942628202871794,
+  "B_sigma8": 0.9954549668273854,
+  "pct_P": 5.737179712820595,
+  "pct_sigma8": 0.45450331726145654
+ },
+ "mayo": {
+  "B_eff": 0.9447148894962026,
+  "B_sigma8": 0.9956313661353565,
+  "pct_P": 5.528511050379736,
+  "pct_sigma8": 0.43686338646434786
+ },
+ "S8_techo": 0.8268267623581046,
+ "S8_techo_bar": 0.8230688072951815,
+ "control": {
+  "B_eff_mayo_publicado": 0.9447,
+  "B_eff_mayo_rehecho": 0.9447148894962026,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "7d0dbed3812ddc1ccf2f5c9022e787d4799191a3",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p05_IS/hmcode_bariones.py",
+  "script_sha256": "65ef960464f63ba71480ffa92cce3514e5bd97f261b743dbe39ca799272a6724",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "config/class/techo_ssee_canonico.ini": "0610f56ec1727556bc5971bd89974a9ed289dc5a419149b0ca4b2b5ee5fc1772",
+   "results/logs/p5_techo_sigma8_As_fijo.json": "827cc28f2ef529604d2830c4011de9490dab6cdb4b1a515bf11b79d138c830d9",
+   "archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py": "a77c5448282d0b9a057762fc2bfe2c12dd6ba026989eae79954954728faa7065"
+  },
+  "argv": [
+   "src/p05_IS/hmcode_bariones.py"
+  ],
+  "fecha": "2026-10-01T01:04:04",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
