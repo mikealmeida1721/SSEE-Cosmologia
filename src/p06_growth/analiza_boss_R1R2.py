@@ -6,7 +6,7 @@ tenia acta y ningun script del repo lo escribia: el que lo hizo el 2026-09-08 no
 se guardo. Ademas su bloque SSEE salio de cadenas corridas con el m_nu de LCDM
 (0.06 en vez de 0.06849). Las cadenas SSEE se rehicieron el 2026-10-01; este
 script hace el resumen y lo deja reproducible. El viejo se conserva como
-R1R2_boss_lpt_cobaya_20260908_mnu006.json.
+archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json.
 
 QUE CALCULA, por modelo, tras quitar el burn-in (_QUEMA de multisonda, 0.3):
   logA, logA_sig      media y desviacion pesadas
@@ -39,7 +39,7 @@ import cobaya_boss as CB  # noqa: E402
 
 CAD = "/mnt/datos/SSEE_data/chains_p6/boss"
 LOGS = os.path.join(_R, "results", "logs", "growth_2026-07")
-VIEJO = os.path.join(LOGS, "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
+VIEJO = os.path.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
 QUEMA = float(re.search(r"^_QUEMA\s*=\s*([0-9.]+)", open(os.path.join(_R, "src", "p06_growth", "multisonda_fondo_clavado.py")).read(), re.M).group(1))
 TOL_SIGMA = 0.05   # ORIGEN-VALOR: 0.05 — cinco veces lo que mueve el burn-in (0.01 sigma, medido)
 PL = CB.plantilla_fsigma8()

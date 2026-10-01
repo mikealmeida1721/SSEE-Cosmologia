@@ -354,6 +354,21 @@ stages:
           cache: false
       - results/logs/paper2_analysis.log:
           cache: false
+  analiza_boss_R1R2:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_boss_R1R2.py ambos > results/logs/analiza_boss_R1R2.log 2>&1
+    deps:
+      - src/p06_growth/analiza_boss_R1R2.py
+      - src/p06_growth/cobaya_boss.py
+      - src/p06_growth/boss_lpt_R1R2.py
+      - src/procedencia.py
+      - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
+      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+    outs:
+      - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json:
+          cache: false
+      - results/logs/analiza_boss_R1R2.log:
+          cache: false
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1
     deps:
