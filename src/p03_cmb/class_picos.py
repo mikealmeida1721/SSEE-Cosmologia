@@ -115,10 +115,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 ell_p = np.arange(LMAX + 1)
 fig, ax = plt.subplots(figsize=(8, 4.5))
-for n, est, lab in (("lcdm", "b--", r"$\Lambda$CDM (Planck 2018)"), ("ssee", "r-", r"SSEE (total $\Omega_m$)"),
-                    ("naive", "0.5", "SSEE with $s_m$ as matter (naive)")):
-    ax.plot(ell_p[2:], 1e12 * T_CMB ** 2 * tt[n][2:] / (2 * np.pi), est if n != "naive" else "-",
-            color=None if n != "naive" else "0.55", lw=1.2, label=lab)
+ESTILO = {"naive": ("0.55", "-", "SSEE with $s_m$ as matter (naive)"),
+          "ssee": ("tab:red", "-", r"SSEE (total $\Omega_m$)"),
+          "lcdm": ("tab:blue", "--", r"$\Lambda$CDM (Planck 2018)")}   # LCDM al final: encima de SSEE
+for n, (col, ls, lab) in ESTILO.items():
+    ax.plot(ell_p[2:], 1e12 * T_CMB ** 2 * tt[n][2:] / (2 * np.pi), color=col, ls=ls, lw=1.2, label=lab)
 ax.set_xlim(2, LMAX)
 ax.set_xlabel(r"$\ell$")
 ax.set_ylabel(r"$D_\ell^{TT}$ [$\mu$K$^2$]")
