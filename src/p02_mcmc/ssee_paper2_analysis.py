@@ -3,6 +3,12 @@ SSEE — Paper 2 Statistical Analysis
 Analytic (no MCMC): w0-wa plane, sigma deviations, sensitivity table, Omega_DE chi2
 """
 
+import os as _os0
+import sys as _sys0
+_sys0.path.insert(0, _os0.path.join(_os0.path.dirname(_os0.path.abspath(__file__)), "..", ".."))
+_sys0.path.insert(0, _os0.path.join(_os0.path.dirname(_os0.path.abspath(__file__)), ".."))
+from procedencia import cabecera as _cab0  # noqa: E402
+print(_cab0(__file__), flush=True)   # acta de procedencia: primera linea del log
 import numpy as np
 from scipy import stats
 import warnings

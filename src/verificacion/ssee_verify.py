@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 16, "cajones": 165}   # 2026-10-01: papers 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
+_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 12, "cajones": 159}   # 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]

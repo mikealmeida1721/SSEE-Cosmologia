@@ -352,6 +352,8 @@ stages:
     outs:
       - results/logs/paper2_w0wa.json:
           cache: false
+      - results/logs/paper2_analysis.log:
+          cache: false
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1
     deps:
