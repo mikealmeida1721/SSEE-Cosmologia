@@ -459,3 +459,89 @@ stages:
       hash: md5
       md5: 7d5855900488d2817ecc39cc650c72d4
       size: 6024
+  resumen_3modelos:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/resumen_3modelos.py
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 64ec098f62a1bb188720f86b25bf11f5
+      size: 260001506
+    - path: results/logs/mcmc_paper2_3models_wmfix.log
+      hash: md5
+      md5: e286a4af3cb06485b51e4d5c3dea7f44
+      size: 11579
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p02_mcmc/resumen_3modelos.py
+      hash: md5
+      md5: c289b05e65d56fd46e9c0b11743af0e7
+      size: 4042
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/resumen_3modelos.json
+      hash: md5
+      md5: e23b719b9e7a3b06276c196e6a486e6f
+      size: 3879
+  savage_cv:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/estadistica/ssee_phase_d_savage_cv.py > 
+      results/logs/phase_d_savage_cv_wmfix.log 2>&1
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 64ec098f62a1bb188720f86b25bf11f5
+      size: 260001506
+    - path: src/estadistica/ssee_phase_d_savage_cv.py
+      hash: md5
+      md5: 9e977f2696b8800768d7c636fcbb92f7
+      size: 24767
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/phase_d_savage_cv_wmfix.log
+      hash: md5
+      md5: 5f5e262aa079e8116ab13c138ee166f8
+      size: 5826
+    - path: results/logs/savage_cv.json
+      hash: md5
+      md5: 672ad890c829e55d5167cd79e60b65c9
+      size: 2574
+  dic_from_chains:
+    cmd: .venv/bin/python3 src/estadistica/ssee_dic_from_chains.py
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 64ec098f62a1bb188720f86b25bf11f5
+      size: 260001506
+    - path: src/estadistica/ssee_dic_from_chains.py
+      hash: md5
+      md5: cb488211aaf8a859fce47e5655a83043
+      size: 3376
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/dic_from_chains.json
+      hash: md5
+      md5: 0323b79d65b8fea7ada02ebc680e950e
+      size: 1458
+    - path: results/logs/dic_from_chains.log
+      hash: md5
+      md5: ab885be928106666c9e11003c640052d
+      size: 568

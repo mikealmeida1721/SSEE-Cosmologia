@@ -88,7 +88,7 @@ ctl = dict(B_cov_vs_bao_camb=dict(aqui=B["chi2_cov"], bao_camb=ref_B),
 pasa = abs(B["chi2_cov"] - ref_B) < 1e-3 and abs(LC["chi2_cov"] - ref_L) < 1e-3
 out = dict(fecha=str(__import__("datetime").date.today()),
            dato_lya=dict(z=Z_LYA, DH_rd=float(obs[i_lya]), sigma=float(sig[i_lya])),
-           escenario_A=A, escenario_B=B, lcdm_planck=LC,
+           escenario_A=A, escenario_B=B, lcdm_planck=LC, rd_B_sobre_lcdm=B["rd"] / LC["rd"],
            control=dict(contra=ctl, pasa=bool(pasa)))
 json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "data", "raw", "desi_dr2_bao.csv"),
                                              os.path.join(_R, "results", "logs", "bao_lcdm_planck.json")]),

@@ -24,6 +24,7 @@ import numpy as np
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
+import ssee_core as S  # noqa: E402
 from desi_dr2_data import load_desi_dr2  # noqa: E402
 from procedencia import con_acta  # noqa: E402
 
@@ -54,6 +55,10 @@ for m in res:
     res[m]["dBIC_ssee_menos"] = res["ssee"]["BIC"] - res[m]["BIC"]
     res[m]["dAIC_ssee_menos"] = res["ssee"]["AIC"] - res[m]["AIC"]
 rho_cpl = float(np.corrcoef(d["cpl_flat"][:, 2], d["cpl_flat"][:, 3])[0, 1])
+# distancia del punto algebraico de SSEE a la mediana CPL, por eje, en sigmas
+pc = res["cpl"]["posterior"]
+dist_ssee_cpl = dict(w0=abs(S.W0 - pc["w0"]["mediana"]) / pc["w0"]["std"],
+                     wa=abs(S.WA - pc["wa"]["mediana"]) / pc["wa"]["std"])
 h = res["ssee"]["posterior"]["H0"]
 tension_H0 = abs(h["mediana"] - PLANCK_H0[0]) / np.hypot(h["std"], PLANCK_H0[1])
 
@@ -66,6 +71,7 @@ for m, e in ETIQ.items():
 pasa = all(abs(res[m][q] - impreso[m][q]) <= 0.005 + 1e-9 for m in res for q in ("lnP_MAP", "BIC", "AIC"))
 out = dict(fecha=str(__import__("datetime").date.today()), N=N, modelos=res,
            tension_H0_ssee_planck=float(tension_H0), rho_w0_wa_cpl=rho_cpl,
+           dist_ssee_a_mediana_cpl_sigma=dist_ssee_cpl,
            control=dict(log=os.path.relpath(LOG, _R), impreso=impreso, pasa=bool(pasa)))
 json.dump(con_acta(out, __file__, entradas=[NPZ, LOG]),
           open(os.path.join(_R, "results", "logs", "resumen_3modelos.json"), "w"), indent=1)
