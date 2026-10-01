@@ -170,6 +170,24 @@ rep = {"sigma8_xk1": his["alpha_K_sigma8"]["1"], "sigma8_xk100": his["alpha_K_si
 pasa = all(rep[k] is not None and abs(rep[k] - v) < 5e-7 for k, v in PAPER.items())
 can["campo"]["alpha_K_dif_rel"] = can["campo"]["alpha_K_z0"] / pred["alpha_K_z0"] - 1
 can["campo"]["cs2_dif_rel"] = can["campo"]["cs2_z0"] / CS2 - 1
+
+
+def pct(j):
+    """Lo que Paper 7 imprime en %, ya multiplicado por 100 (un '%' en una macro comenta la linea)."""
+    s8, c8 = j["alpha_K_sigma8"], j["cs2_sigma8"]
+    tt, tc = j["alpha_K_TT_rel"]["modelo"], j["cs2_TT_rel"]["modelo"]
+    return dict(sigma8_xk1_a_100=100 * (s8["100"] - s8["1"]) / s8["1"],
+                sigma8_cs2_1_a_modelo=100 * (c8["modelo"] - c8["1"]) / c8["1"],
+                TT_alphaK={L: 100 * v for L, v in tt.items()},
+                TT_cs2={L: 100 * v for L, v in tc.items()},
+                var_cosmica={L: 100 * v for L, v in pred["var_cosmica"].items()},
+                ruido_sobre_senal_l2=pred["var_cosmica"][2] / abs(tt[2]))
+
+
+can["pct"] = pct(can)
+his["pct"] = pct(his)
+can["pct"]["alpha_K_dif"] = 100 * abs(can["campo"]["alpha_K_dif_rel"])
+can["pct"]["cs2_dif"] = 100 * abs(can["campo"]["cs2_dif_rel"])
 out = dict(fecha=str(__import__("datetime").date.today()), prediccion=pred,
            canonico=can, historico=his,
            control=dict(historico_reproduce_paper=dict(paper=PAPER, rehecho=rep), pasa=pasa))
