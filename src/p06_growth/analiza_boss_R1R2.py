@@ -13,6 +13,13 @@ QUE CALCULA, por modelo, tras quitar el burn-in (_QUEMA de multisonda, 0.3):
   chi2_marg_min       minimo de la columna chi2 (sesgos lineales integrados)
   chi2_real_min       en ese punto, sum_conjuntos [chi2_marg - ln det F]
   fs8 por z           f * sigma8_ref * sqrt(e^logA 1e-10 / A_ref) (plantilla de cobaya_boss)
+y entre modelos (lo que cita Paper 6, sin teclear nada):
+  dchi2_real          SSEE - LCDM, misma libertad (Delta k = 0)
+  vs_publicado        distancia de cada fs8 al consenso BOSS DR12 de Alam+2017,
+                      leido de data/raw/fsigma8_rsd.csv, en cuadratura
+  perfil_vs_marginal  el minimo del PERFIL de logA (boss_aisla_neutrinos.json,
+                      A_canonico, ya con el m_nu de SSEE) contra la media
+                      marginal de las cadenas, en sigmas de la marginal
 CONTROL (R53): las cadenas LCDM NO se rehicieron; su resumen tiene que coincidir
 con el del 2026-09-08 dentro de TOL_SIGMA en logA y fs8. El script original no
 se guardo y el burn-in exacto no se conoce: cambiarlo entre 0.2 y 0.5 mueve logA
@@ -39,7 +46,9 @@ import cobaya_boss as CB  # noqa: E402
 
 CAD = "/mnt/datos/SSEE_data/chains_p6/boss"
 LOGS = os.path.join(_R, "results", "logs", "growth_2026-07")
-VIEJO = os.path.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
+RSD = os.path.join(_R, "data", "raw", "fsigma8_rsd.csv")
+AISLA = os.path.join(LOGS, "boss_aisla_neutrinos.json")
+VIEJO = os.path.join.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
 QUEMA = float(re.search(r"^_QUEMA\s*=\s*([0-9.]+)", open(os.path.join(_R, "src", "p06_growth", "multisonda_fondo_clavado.py")).read(), re.M).group(1))
 TOL_SIGMA = 0.05   # ORIGEN-VALOR: 0.05 — cinco veces lo que mueve el burn-in (0.01 sigma, medido)
 PL = CB.plantilla_fsigma8()
@@ -100,5 +109,26 @@ if "lcdm" in out:
     if not pasa:
         sys.exit("control LCDM no pasa: no se escribe")
 if QUE == "ambos":
+    pub = {}
+    for ln in open(RSD):
+        c = ln.strip().split(",")
+        if ln.startswith("#") or len(c) < 4 or c[3] != "BOSS_DR12":
+            continue
+        pub[round(float(c[0]), 2)] = (float(c[1]), float(c[2]))
+    vp = {}
+    for m in ("ssee", "lcdm"):
+        vp[m] = {}
+        for zb, (z, f, sf) in out[m]["fs8"].items():
+            pf, ps = pub[round(z, 2)]
+            vp[m][zb] = dict(z=z, publicado=pf, publicado_sigma=ps, sigma=float(abs(pf - f) / np.hypot(ps, sf)))
+    out["vs_publicado"] = dict(fuente="Alam et al. 2017 (data/raw/fsigma8_rsd.csv)", modelos=vp)
+    out["dchi2_real"] = out["ssee"]["chi2_real_min"] - out["lcdm"]["chi2_real_min"]
+    ac = json.load(open(AISLA))["A_canonico"]
+    out["perfil_vs_marginal"] = dict(perfil_logA=ac["logA"], perfil_sigma=ac["sig_logA"], perfil_chi2=ac["chi2"],
+                                     mnu_perfil=ac["mnu"], marginal_logA=out["ssee"]["logA"], marginal_sigma=out["ssee"]["logA_sig"],
+                                     sigmas=float((ac["logA"] - out["ssee"]["logA"]) / out["ssee"]["logA_sig"]))
+    assert abs(ac["mnu"] - CB.R.S.SUM_MNU_EV) < 1e-9, "el perfil no lleva el m_nu de SSEE"
+    entradas += [RSD, AISLA]
+    print(f"  dchi2_real SSEE-LCDM {out['dchi2_real']:+.3f}; perfil-marginal {out['perfil_vs_marginal']['sigmas']:.2f} sigma")
     json.dump(con_acta(out, __file__, entradas=entradas), open(os.path.join(LOGS, "R1R2_boss_lpt_cobaya.json"), "w"), indent=1)
     print("  escrito -> results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json")

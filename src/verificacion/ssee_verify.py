@@ -2577,6 +2577,59 @@ check("R75 el detector distingue lo intacto de lo editado a mano y de la entrada
       all(_c75), "3 casos: intacto pasa; salida editada y entrada cambiada, marcadas" if all(_c75)
       else f"fallos {_c75}")
 
+# --- R76: DATO CRUDO COTEJADO CONTRA SU FUENTE (2026-10-01) -------------------
+# POR QUE EXISTE. Los cumulos de Paper 2 se citaron cinco meses a Zhang+2026;
+# leida la fuente, Coma y el Bullet no estan y A2029/A478 traen otros numeros.
+# data/README.md ya pedia «declarar la referencia», y se declaraba: declarar
+# no es cotejar. R76 exige, para cada archivo de data/raw/, una entrada en
+# data/raw/FUENTES.yaml; cotejada = extracto literal con sha + un script o
+# regla que compara y falla. Lo no cotejado es deuda con trinquete.
+def _r76(base):
+    """-> (sin_entrada, sin_cotejo, extracto_alterado) para un data/raw en `base`."""
+    _man = base / "FUENTES.yaml"
+    _f = (_y75.safe_load(_man.read_text()) or {}) if _man.exists() else {}
+    _arch = sorted(str(p.relative_to(base)) for p in base.rglob("*") if p.is_file() and p.name != "FUENTES.yaml")
+    _sin = [a for a in _arch if a not in _f]
+    _nocot = [a for a in _arch if a in _f and not (_f[a] or {}).get("cotejo")]
+    _alt = []
+    for a, e in _f.items():
+        e = e or {}
+        if e.get("extracto"):
+            _p = base / e["extracto"]
+            if not _p.is_file() or _h75.sha256(_p.read_bytes()).hexdigest() != e.get("sha256"):
+                _alt.append(a)
+    return _sin, _nocot, _alt
+
+
+_sin76, _nocot76, _alt76 = _r76(_REPO75 / "data" / "raw")
+check("R76 todo dato crudo tiene entrada en data/raw/FUENTES.yaml",
+      not _sin76, ", ".join(_sin76) if _sin76 else "todos declarados")
+check("R76 ningun extracto literal fue alterado (sha de la fuente)",
+      not _alt76, ", ".join(_alt76) if _alt76 else "extractos intactos")
+_TOPE_R76 = 8   # 2026-10-01: 8 de 10 archivos sin cotejo (cotejados: DESI por R14, Zhang por su lector)
+_DEUDA_REAL["R76"] = len(_nocot76)
+_DEUDA_MAX["R76"] = _TOPE_R76
+if _nocot76:
+    track_open(f"R76 {len(_nocot76)} datos crudos sin cotejo contra su fuente", ", ".join(_nocot76))
+check("R76 los datos crudos sin cotejo no aumentan",
+      len(_nocot76) <= _TOPE_R76, f"{len(_nocot76)} (tope {_TOPE_R76})")
+# CONTROL (R53): un data/raw sintetico. El cotejado pasa; el archivo nuevo sin
+# entrada, el declarado sin cotejo y el extracto editado se marcan.
+with _tf74.TemporaryDirectory() as _d76:
+    _b76 = pathlib.Path(_d76)
+    (_b76 / "ext.tex").write_text("A2029 & 12.77\n")
+    _sh = _h75.sha256((_b76 / "ext.tex").read_bytes()).hexdigest()
+    (_b76 / "FUENTES.yaml").write_text(f"ext.tex:\n  cotejo: lector\n  extracto: ext.tex\n  sha256: {_sh}\n")
+    _c76 = [_r76(_b76) == ([], [], [])]
+    (_b76 / "nuevo.csv").write_text("Coma,9.8\n")
+    _c76.append(_r76(_b76)[0] == ["nuevo.csv"])
+    (_b76 / "FUENTES.yaml").write_text(f"ext.tex:\n  cotejo: lector\n  extracto: ext.tex\n  sha256: {_sh}\nnuevo.csv:\n  cita: Zhang\n")
+    _c76.append(_r76(_b76)[1] == ["nuevo.csv"])
+    (_b76 / "ext.tex").write_text("A2029 & 12.0\n")
+    _c76.append(_r76(_b76)[2] == ["ext.tex"])
+check("R76 el detector marca el dato sin entrada, el declarado sin cotejo y el extracto editado",
+      all(_c76), "4 casos correctos" if all(_c76) else f"fallos {_c76}")
+
 # --- R64: nadie clava la ecuacion de estado de SSEE en un evaluador ----
 # POR QUE EXISTE (2026-09-08). El evaluador del CMB traia dentro del modelo
 #     'w': -0.840015, 'wa': -0.670141

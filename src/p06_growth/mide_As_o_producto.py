@@ -48,6 +48,8 @@ import sys
 import numpy as np
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "src"))
+from procedencia import cabecera, con_acta  # noqa: E402
 SALIDA = REPO / "results" / "logs" / "growth_2026-07" / "As_medido_o_producto.json"
 
 IGNORA = ("weight", "minuslogpost", "minuslogprior", "chi2")
@@ -90,6 +92,7 @@ def socio(R, nombres, j):
 
 
 def main():
+    print(cabecera(__file__), flush=True)
     # ── CONTROL PRIMERO (R24) ───────────────────────────────────────────
     rng = np.random.default_rng(7)
     s = np.array([1.0, 1.0, 1.0])
@@ -119,9 +122,10 @@ def main():
             "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.[1-4].txt",
     }
 
-    out = {}
+    out, usadas = {}, []
     for nombre, patron in FUENTES.items():
         X, W, nom = carga(patron)
+        usadas += sorted(glob.glob(patron))
         if X is None:
             print("== %s: sin cadenas, saltada" % nombre, flush=True)
             continue
@@ -156,7 +160,7 @@ def main():
             logA_D=float(D[j]) if j is not None else None)
 
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
-    SALIDA.write_text(json.dumps(dict(
+    SALIDA.write_text(json.dumps(con_acta(dict(
         corrida="¿KiDS y BOSS miden A_s o ven un producto?",
         pregunta="M. Almeida — si A_s es primordial y el CMB lo mide bien, "
                  "¿por que las sondas tardias ven menos en su misma epoca? "
@@ -168,8 +172,8 @@ def main():
                               "puesta a mano, y D=1 en el parametro libre",
                      D=list(map(float, Dc)), pasa=True),
         fuentes=out,
-        alcance="diagnostico sobre cadenas existentes; no toca ningun paper"),
-        indent=1))
+        alcance="diagnostico sobre cadenas existentes; lo cita Paper 6 por \\val (2026-10-01)"),
+        __file__, entradas=usadas), indent=1))
     print("escrito -> %s" % SALIDA.relative_to(REPO), flush=True)
 
 

@@ -1,0 +1,59 @@
+# FUENTES de los datos crudos — regla R76 del guardian (2026-10-01).
+#
+# POR QUE EXISTE. Los cumulos de Paper 2 se citaron durante cinco meses a
+# Zhang+2026 y dos de los cuatro no estan en ese articulo; los otros dos, con
+# otros numeros. El archivo DECLARABA su fuente, pero nadie habia COTEJADO el
+# numero contra ella. Declarar no es cotejar.
+#
+# QUE EXIGE. Todo archivo bajo data/raw/ tiene una entrada aqui. Una entrada
+# esta COTEJADA cuando trae
+#   extracto: copia literal de la fuente (con el sha de lo descargado), y
+#   cotejo:   el script o la regla que compara el dato contra ese extracto
+#             y FALLA si no coincide.
+# Si el extracto cambia, su sha ya no coincide y el guardian lo marca.
+# Los archivos sin cotejo son DEUDA con trinquete: la cuenta solo puede bajar.
+# Un archivo nuevo no puede entrar sin entrada, ni entrar sin cotejo.
+
+desi_dr2_bao.csv:
+  cita: "DESI DR2, Abdul-Karim et al. 2025, arXiv:2503.14738, Tabla 4"
+  cotejo: "guardian R14 (13 puntos digito a digito contra la tabla oficial)"
+  extracto: null   # R14 lleva la tabla dentro de la regla
+
+zhang2026/tablas_II_III.tex:
+  cita: "Zhang, Hasani Zonoozi & Kroupa 2026, arXiv:2602.06082v1, Tablas II y III"
+  cotejo: "src/p02_mcmc/cumulos_zhang2026.py (control de lectura: 13+33 filas, A2029 y A0478)"
+  extracto: zhang2026/tablas_II_III.tex
+  sha256: 1a3d9a42ba75920c6bfff05e3482f12b3acf829ab52e6918a7d7ffddc6c71377
+
+cluster_masses.csv:
+  cita: "declara Zhang+2026, Simionescu+2011, Tchernin+2016, Owers+2011"
+  cotejo: null
+  estado: "CONTRADICHO por la fuente (2026-10-01): Coma y Bullet no estan en Zhang; A2029/A478 con otros numeros. Se retira al reescribir P2 sobre cumulos_zhang2026"
+
+cosmic_chronometers.csv:
+  cita: "Moresco et al. 2022, Living Rev. Relativ. 25, 6"
+  cotejo: null
+
+fsigma8_rsd.csv:
+  cita: "Beutler+2012; Howlett+2015; Alam+2017; Hou+2021 (por fila)"
+  cotejo: null   # «verificado» el 2026-05-18 a mano, sin extracto ni script
+
+planck2018_prior.csv:
+  cita: "Planck 2018 VI, A&A 641, A6"
+  cotejo: null
+
+planck_pr4_TT.txt:
+  cita: "Planck PR4 Legacy Archive"
+  cotejo: null
+
+planck_pr4_TE.txt:
+  cita: "Planck PR4 Legacy Archive"
+  cotejo: null
+
+planck_pr4_EE.txt:
+  cita: "Planck PR4 Legacy Archive"
+  cotejo: null
+
+planck_pr4_lensing.txt:
+  cita: "Cobaya planck_supp_data_and_covmats (arXiv:1807.06209)"
+  cotejo: null

@@ -369,6 +369,32 @@ stages:
           cache: false
       - results/logs/paper2_analysis.log:
           cache: false
+  mide_As_o_producto:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/mide_As_o_producto.py > results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
+    deps:
+      - src/p06_growth/mide_As_o_producto.py
+      - src/procedencia.py
+      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt
+      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt
+    outs:
+      - results/logs/growth_2026-07/As_medido_o_producto.json:
+          cache: false
+      - results/logs/growth_2026-07/As_medido_o_producto.log:
+          cache: false
   analiza_boss_R1R2:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_boss_R1R2.py ambos > results/logs/analiza_boss_R1R2.log 2>&1
     deps:
