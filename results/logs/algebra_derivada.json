@@ -241,17 +241,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "494529a88cf1a01e9268892f80f49c8cf643f824",
+  "commit": "9fa24a90a70f22365dba7d9082038eac5e43e729",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "9c52f092f2e83e98963a5af29988179f57b1556deae887e93f817b0c09b73928",
+  "script_sha256": "977e45db2399c8958b49572752b1e211849c699ba7aca35d7578a9bc6843b2e6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-09-30T21:15:06",
+  "fecha": "2026-09-30T21:23:06",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

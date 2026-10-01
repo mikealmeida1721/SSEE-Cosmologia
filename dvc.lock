@@ -276,8 +276,8 @@ stages:
     deps:
     - path: src/algebra_derivada.py
       hash: md5
-      md5: a3dc4fc3b3b003346ff60b87c8bef6da
-      size: 5451
+      md5: bf88f4e036f744955e78e47b1806fc0f
+      size: 5465
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -289,5 +289,5 @@ stages:
     outs:
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: ff3851651ac109468fc06dfabcb08fd8
+      md5: 330796d16c1a0566d0d4f97e7a5ee922
       size: 6907
