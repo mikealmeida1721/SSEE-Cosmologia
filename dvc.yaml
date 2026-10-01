@@ -63,6 +63,7 @@ stages:
       - results/logs/paper2_w0wa.json
       - results/logs/cumulos_zhang2026.json
       - results/logs/mcmc_full_posteriores.json
+      - results/logs/fsigma8_canonico.json
     outs:
       - manuscript/valores_generados.tex:
           cache: false
@@ -371,6 +372,15 @@ stages:
       - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json:
           cache: false
       - results/logs/analiza_boss_R1R2.log:
+          cache: false
+  fsigma8_canonico:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/recalc_fsigma8_canonical.py
+    deps:
+      - src/p03_cmb/recalc_fsigma8_canonical.py
+      - src/procedencia.py
+      - src/ssee_core.py
+    outs:
+      - results/logs/fsigma8_canonico.json:
           cache: false
   cumulos_7:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1

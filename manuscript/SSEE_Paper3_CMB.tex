@@ -792,34 +792,34 @@ eBOSS~DR16 \citep{Alam2021,deMattia2021}, and DESI~DR1 \citep{DESI2024FS}.
 \hline
 Survey & $z_\mathrm{eff}$ & Observed & SSEE & $\Lambda$CDM & Pull \\
 \hline
-6dFGRS (Beutler+2012)   & 0.067 & $0.423\pm0.055$ & 0.436 & 0.444 & $+0.24\sigma$ \\
-SDSS MGS (Howlett+2015) & 0.150 & $0.490\pm0.145$ & 0.449 & 0.459 & $-0.28\sigma$ \\
-BOSS DR12 (Alam+2017)   & 0.380 & $0.497\pm0.045$ & 0.470 & 0.476 & $-0.60\sigma$ \\
-BOSS DR12 (Alam+2017)   & 0.510 & $0.458\pm0.038$ & 0.471 & 0.474 & $+0.34\sigma$ \\
-BOSS DR12 (Alam+2017)   & 0.610 & $0.436\pm0.034$ & 0.468 & 0.469 & $+0.94\sigma$ \\
-eBOSS DR16 (Hou+2021)   & 1.480 & $0.462\pm0.045$ & 0.383 & 0.376 & $-1.76\sigma$ \\
+6dFGRS (Beutler+2012)   & 0.067 & $0.423\pm0.055$ & \val{fs8_0_ssee} & \val{fs8_0_lcdm} & $\val{fs8_0_pull_ssee}\sigma$ \\
+SDSS MGS (Howlett+2015) & 0.150 & $0.490\pm0.145$ & \val{fs8_1_ssee} & \val{fs8_1_lcdm} & $\val{fs8_1_pull_ssee}\sigma$ \\
+BOSS DR12 (Alam+2017)   & 0.380 & $0.497\pm0.045$ & \val{fs8_2_ssee} & \val{fs8_2_lcdm} & $\val{fs8_2_pull_ssee}\sigma$ \\
+BOSS DR12 (Alam+2017)   & 0.510 & $0.458\pm0.038$ & \val{fs8_3_ssee} & \val{fs8_3_lcdm} & $\val{fs8_3_pull_ssee}\sigma$ \\
+BOSS DR12 (Alam+2017)   & 0.610 & $0.436\pm0.034$ & \val{fs8_4_ssee} & \val{fs8_4_lcdm} & $\val{fs8_4_pull_ssee}\sigma$ \\
+eBOSS DR16 (Hou+2021)   & 1.480 & $0.462\pm0.045$ & \val{fs8_5_ssee} & \val{fs8_5_lcdm} & $\val{fs8_5_pull_ssee}\sigma$ \\
 \hline
-\multicolumn{4}{l}{$\chi^2/N$} & SSEE: $0.766$ & $\Lambda$CDM: $0.860$ \\
+\multicolumn{4}{l}{$\chi^2/N$} & SSEE: $\val{fs8_chi2N_ssee}$ & $\Lambda$CDM: $\val{fs8_chi2N_lcdm}$ \\
 \hline
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:fsig8} shows that SSEE+IS achieves $\chi^2/N=0.766$ across the
+Table~\ref{tab:fsig8} shows that SSEE+IS achieves $\chi^2/N=\val{fs8_chi2N_ssee}$ across the
 six canonical RSD points in the CMB observational sector
-($\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$), compared to $0.860$ for $\Lambda$CDM. The
-mean tension is $0.70\sigma$ (SSEE) vs $0.73\sigma$ ($\Lambda$CDM); no SSEE point
-deviates by more than $1.8\sigma$. This is the identical dataset and method used
+($\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$), compared to $\val{fs8_chi2N_lcdm}$ for $\Lambda$CDM. The
+mean tension is $\val{fs8_tmedia_ssee}\sigma$ (SSEE) vs $\val{fs8_tmedia_lcdm}\sigma$ ($\Lambda$CDM); no SSEE point
+deviates by more than $\val{fs8_maxpull_ssee}\sigma$. This is the identical dataset and method used
 in Paper~5; we do not include DESI DR1 full-shape $f\sigma_8$ here because no
 public per-tracer $f\sigma_8$ release exists for DESI DR2 (DR2 is BAO-only,
 \citealp{DESI_DR2}), and we use a single self-consistent RSD compilation.
 The combination of independent growth-rate probes is reviewed in \citet{Moresco2022}.
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=orange!80!black,title={Sector caveat for $f\sigma_8$}]
-The $\chi^2/N=0.766$ quoted above uses the single matter density
+The $\chi^2/N=\val{fs8_chi2N_ssee}$ quoted above uses the single matter density
 $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in both the background and the Poisson source, with
 $\gamma_\mathrm{IS}=0.5504$ and $\sigma_8=0.8136$ ($A_s$ at the Planck value),
-finding a mean $f\sigma_8$ tension of $0.70\sigma$ (Paper~5, $\approx\Lambda$CDM
-$0.73\sigma$). Against the \emph{raw} BOSS DR12 multipoles, Paper~6 finds the
+finding a mean $f\sigma_8$ tension of $\val{fs8_tmedia_ssee}\sigma$ (Paper~5, $\approx\Lambda$CDM
+$\val{fs8_tmedia_lcdm}\sigma$). Against the \emph{raw} BOSS DR12 multipoles, Paper~6 finds the
 algebraic and Planck backgrounds tied ($\chi^2=207.64$ vs $207.58$ over 222
 points, same freedom).
 \end{tcolorbox}
@@ -901,8 +901,8 @@ each of which would \textbf{falsify} the framework if violated:
     $\gamma_\mathrm{IS}=\val{p3_gamma_IS}\pm\val{p3_gamma_IS_sigma}\approx\gamma_\Lambda$
     (the earlier estimates $\phi^{-1}$ and the background-only value of Paper~1, App.~A, are superseded),
     yielding a single-sector ceiling $S_8=\val{p3_S8_techo}$ in the CMB observational sector (Table~\ref{tab:sigma8}).
-    The RSD comparison (Table~\ref{tab:fsig8}) shows $\chi^2/N=0.766$
-    consistently below $\Lambda$CDM (0.860) across the six canonical RSD surveys.
+    The RSD comparison (Table~\ref{tab:fsig8}) shows $\chi^2/N=\val{fs8_chi2N_ssee}$
+    consistently below $\Lambda$CDM (\val{fs8_chi2N_lcdm}) across the six canonical RSD surveys.
     A direct measurement of $\gamma<0.50$ or $\gamma>0.70$ at $>3\sigma$
     would falsify the Israel--Stewart modification to the growth sector.
 \end{enumerate}
