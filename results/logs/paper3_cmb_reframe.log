@@ -1,5 +1,4 @@
-NÚCLEOS: 1 (CAMB, OMP=1)
-preflight  [1/3] __pycache__ borrados: 103
+preflight  [1/3] __pycache__ borrados: 367
 preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
 preflight  [3/3] ingredientes de esta corrida:
              SUM_MNU_EV       = 0.068490000
@@ -12,6 +11,7 @@ preflight  [3/3] ingredientes de esta corrida:
              WA               = -0.669974886
              H0_ALG           = 67.962137323
 preflight  OK — luz verde para el cómputo
+# ACTA-PROCEDENCIA {"commit": "c42256725786878885a225540168c23dde77ce6b", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/ssee_paper3_cmb.py", "script_sha256": "ca307b1230317aafaa102759cc1e40b2a0be4b1b3b449907bb5e1e7e656c01b9", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p03_cmb/ssee_paper3_cmb.py"], "fecha": "2026-10-01T00:06:27", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 ============================================================
 SSEE — Paper 3: CMB vs Planck PR4 (TT+TE+EE+lensing)
 ============================================================

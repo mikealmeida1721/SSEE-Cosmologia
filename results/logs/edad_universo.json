@@ -1,0 +1,42 @@
+{
+ "fecha": "2026-10-01",
+ "ssee": {
+  "integral": 13.732431085218774,
+  "camb": 13.727195342325226
+ },
+ "lcdm": {
+  "integral": 13.800724695098763,
+  "camb": 13.79685796422428
+ },
+ "diferencia_lcdm_menos_ssee": 0.06829360987998889,
+ "control": {
+  "criterio": "integral sin radiacion a < 0.01 Gyr de CAMB",
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p09_hubble/edad_universo.py",
+  "script_sha256": "274abf18f3ba81bbf60301f5c27511f0efd9fe09430975ec059146ac6eff93d7",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p09_hubble/edad_universo.py"
+  ],
+  "fecha": "2026-10-01T00:01:37",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

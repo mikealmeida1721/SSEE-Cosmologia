@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "5aaf48fb4fffba94a3534f3b63f6b37612ea0b65", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/ssee_dic_from_chains.py", "script_sha256": "0bb402b4ae917d7feeb001ad85ba1becb7e2d1eba27df92f6167263bc8354f7e", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/estadistica/ssee_dic_from_chains.py"], "fecha": "2026-10-01T00:07:36", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 DIC desde cadenas — parametrización ω_m algebraico fijo (R25)
   fuente: results/logs/mcmc_chains_professional.npz
   DIC = -2·lnL(θ̂) + 2·p_D ,  p_D = 2·[lnL(θ̂) − <lnL>]

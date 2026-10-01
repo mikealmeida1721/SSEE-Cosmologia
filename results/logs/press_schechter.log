@@ -1,0 +1,42 @@
+# ACTA-PROCEDENCIA {"commit": "d401d9a65c073b6f77d884aef47f7176e28a826a", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_press_schechter.py", "script_sha256": "c75afc035513b3ac4bac050c894668c9bdda310b142f6de1179151440d197bcf", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p02_mcmc/ssee_press_schechter.py"], "fecha": "2026-10-01T00:01:34", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+n_s       = 0.9655581  (1 − φ⁻⁷, Planck: 0.9649)
+δc(EdS)   = 1.6864702
+δc(SSEE)  = 1.6763371   [derivado, colapso esférico]
+δc(ΛCDM)  = 1.6759874
+Δδc/δc    = -0.02%
+
+Linear growth factors D(z)/D(0):
+  z       ΛCDM        SSEE
+   0    1.00000    1.00000
+   5    0.21114    0.21098
+   8    0.14094    0.14071
+  10    0.11535    0.11513
+  12    0.09761    0.09742
+  15    0.07932    0.07915
+
+M_8 (ΛCDM) = 2.786e+14 M☉  (σ_8 = 0.811)
+M_8 (SSEE) = 2.705e+14 M☉  (σ_8 = 0.8153)
+
+==================================================================================
+Press-Schechter enhancement at z=10
+      M [M☉]    σ_M,ΛCDM    σ_M,SSEE    PS ratio     P-ratio
+----------------------------------------------------------------------------------
+    3.00e+10      1.4500      1.4422       0.998       0.989
+    1.00e+11      1.0104      1.0050       0.990       0.981
+    3.00e+11      0.7267      0.7228       0.976       0.966
+    1.00e+12      0.5064      0.5037       0.945       0.935
+    3.00e+12      0.3642      0.3623       0.892       0.882
+==================================================================================
+
+JWST context (Boylan-Kolchin 2023, Nature Astronomy 7, 728):
+  ΛCDM deficit at M>10^10.8 M☉, z~10: ~10–100× in number density
+  M = 10^10.8 M☉: σ_M,ΛCDM = 1.160, σ_M,SSEE = 1.154
+  n_SSEE/n_ΛCDM = 0.99×
+
+LaTeX table rows:
+  $10^{11}$ & $1.010$ & $1.005$ & $0.99$ \\
+  $3\times10^{11}$ & $0.727$ & $0.723$ & $0.98$ \\
+  $10^{12}$ & $0.506$ & $0.504$ & $0.95$ \\
+
+Figure → results/figures/fig_press_schechter.pdf
+Done.

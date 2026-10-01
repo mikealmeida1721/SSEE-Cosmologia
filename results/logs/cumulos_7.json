@@ -1,0 +1,191 @@
+{
+ "fecha": "2026-10-01",
+ "KAL0": 5.521405974759637,
+ "f_nu": 0.02,
+ "f_b": 0.18478054683411826,
+ "F_igimf": 1.7183150183150182,
+ "cumulos": {
+  "Coma": {
+   "M_igimf": 1.8,
+   "M_std": 1.0,
+   "M_obs": 9.8,
+   "dM_obs": 1.0,
+   "fuente": "Zhang2026",
+   "ssee": 10.137301369658694,
+   "fnu0": 9.938530754567347,
+   "std_imf": 5.63183409425483,
+   "kal0_solo": 5.521405974759637,
+   "chi2_ssee": 0.1137722139736303
+  },
+  "A2029": {
+   "M_igimf": 2.2,
+   "M_std": 1.3,
+   "M_obs": 12.0,
+   "dM_obs": 1.2,
+   "fuente": "Zhang2026",
+   "ssee": 12.390035007360627,
+   "fnu0": 12.147093144471203,
+   "std_imf": 7.321384322531279,
+   "kal0_solo": 7.177827767187528,
+   "chi2_ssee": 0.1056439631713919
+  },
+  "A478": {
+   "M_igimf": 1.5,
+   "M_std": 0.9,
+   "M_obs": 8.0,
+   "dM_obs": 1.0,
+   "fuente": "Zhang2026",
+   "ssee": 8.447751141382245,
+   "fnu0": 8.282108962139455,
+   "std_imf": 5.068650684829347,
+   "kal0_solo": 4.969265377283674,
+   "chi2_ssee": 0.200481084609103
+  },
+  "Bullet (main)": {
+   "M_igimf": 1.2,
+   "M_std": 0.7,
+   "M_obs": 6.5,
+   "dM_obs": 1.0,
+   "fuente": "Zhang2026",
+   "ssee": 6.758200913105796,
+   "fnu0": 6.625687169711564,
+   "std_imf": 3.9422838659783808,
+   "kal0_solo": 3.864984182331746,
+   "chi2_ssee": 0.06666771152866674
+  },
+  "Perseus": {
+   "M_igimf": 1.2287906364468866,
+   "M_std": 0.7151137150927309,
+   "M_obs": 6.65,
+   "dM_obs": 0.45,
+   "fuente": "extension f_b",
+   "ssee": 6.9203450010426675,
+   "fnu0": 6.784651961806537,
+   "std_imf": 4.027401801928477,
+   "kal0_solo": 3.9484331391455654,
+   "chi2_ssee": 0.36092059056177617
+  },
+  "A2142": {
+   "M_igimf": 2.6793179290947147,
+   "M_std": 1.5592705065931725,
+   "M_obs": 14.5,
+   "dM_obs": 1.5,
+   "fuente": "extension f_b",
+   "ssee": 15.08947406242386,
+   "fnu0": 14.793602021984176,
+   "std_imf": 8.781552801197428,
+   "kal0_solo": 8.609365491370028,
+   "chi2_ssee": 0.15443540900910654
+  },
+  "A2744": {
+   "M_igimf": 3.326049843014129,
+   "M_std": 1.9356461461156624,
+   "M_obs": 18.0,
+   "dM_obs": 4.0,
+   "fuente": "extension f_b",
+   "ssee": 18.731760905077895,
+   "fnu0": 18.364471475566564,
+   "std_imf": 10.901237960107153,
+   "kal0_solo": 10.687488196183484,
+   "chi2_ssee": 0.03346712638752624
+  }
+ },
+ "cuatro": {
+  "ssee": {
+   "chi2": 0.4865649732827919,
+   "chi2r": 0.12164124332069798,
+   "dchi2_vs_ssee": 0.0
+  },
+  "fnu0": {
+   "chi2": 0.1295987741316318,
+   "chi2r": 0.03239969353290795,
+   "dchi2_vs_ssee": -0.3569661991511601
+  },
+  "std_imf": {
+   "chi2": 47.709330881946926,
+   "chi2r": 11.927332720486731,
+   "dchi2_vs_ssee": 47.22276590866414
+  },
+  "kal0_solo": {
+   "chi2": 50.583183825312865,
+   "chi2r": 12.645795956328216,
+   "dchi2_vs_ssee": 50.096618852030076
+  },
+  "robustez": {
+   "chi2r_s0p5": 0.4865649732827919,
+   "chi2r_s1p5": 0.054062774809199104,
+   "reduccion_para_chi2r_1": 0.6512289528634896,
+   "reduccion_para_chi2r_2": 0.7533816274882404,
+   "max_residuo_sigma": 0.4477511413822448
+  },
+  "N": 4
+ },
+ "siete": {
+  "ssee": {
+   "chi2": 1.0353880992412008,
+   "chi2r": 0.14791258560588583,
+   "dchi2_vs_ssee": 0.0
+  },
+  "fnu0": {
+   "chi2": 0.26574985288662395,
+   "chi2r": 0.03796426469808913,
+   "dchi2_vs_ssee": -0.7696382463545768
+  },
+  "std_imf": {
+   "chi2": 99.35801166553033,
+   "chi2r": 14.194001666504333,
+   "dchi2_vs_ssee": 98.32262356628912
+  },
+  "kal0_solo": {
+   "chi2": 105.38906400543675,
+   "chi2r": 15.05558057220525,
+   "dchi2_vs_ssee": 104.35367590619555
+  },
+  "robustez": {
+   "chi2r_s0p5": 0.5916503424235433,
+   "chi2r_s1p5": 0.06573892693594925,
+   "reduccion_para_chi2r_1": 0.615405946996205,
+   "reduccion_para_chi2r_2": 0.7280509371169981,
+   "max_residuo_sigma": 0.6007666689837047
+  },
+  "N": 7,
+  "subprediccion_std_imf_media": 1.651403998759611
+ },
+ "control": {
+  "original_4": {
+   "chi2": 0.487,
+   "chi2r": 0.122
+  },
+  "masas_original": {
+   "Coma": 10.14,
+   "A2029": 12.39,
+   "A478": 8.45,
+   "Bullet (main)": 6.76
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/cumulos_7.py",
+  "script_sha256": "43ea388b671ab75a54b4c8a68587d49a51e4784ee19b245cc4e1bd96cbf63d67",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p02_mcmc/cumulos_7.py"
+  ],
+  "fecha": "2026-10-01T00:04:01",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

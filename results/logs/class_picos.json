@@ -1,0 +1,73 @@
+{
+ "fecha": "2026-10-01",
+ "modelos": {
+  "lcdm": {
+   "picos": [
+    220,
+    536,
+    813
+   ],
+   "omega_cdm": 0.12
+  },
+  "ssee": {
+   "picos": [
+    220,
+    536,
+    813
+   ],
+   "omega_cdm": 0.11951440843160877,
+   "rms_vs_lcdm": 0.001814641512104397
+  },
+  "naive": {
+   "picos": [
+    240,
+    596,
+    921
+   ],
+   "omega_cdm": 0.050771741336489956,
+   "rms_vs_lcdm": 0.589307365009494
+  },
+  "degradacion_rms_naive_sobre_ssee": 324.7513963934883
+ },
+ "control": {
+  "picos_ssee_camb": [
+   220,
+   536,
+   813
+  ],
+  "picos_ssee_class": [
+   220,
+   536,
+   813
+  ],
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/class_picos.py",
+  "script_sha256": "ab17dc97e12ac0feac856a8fb0805fa5fa069aa68ec05faf5b016ddde33eeb20",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "CANONICAL_VALUES.yaml": "1e1c3ea50463360873f68f9db2f9c3d16408373a82be0192894f9a185597a2a9",
+   "results/logs/paper3_cmb_chi2.json": "a92c2065efd4dfc9e8ea10f78165640989414525f5387d660cd8402b86f8c873"
+  },
+  "argv": [
+   "src/p03_cmb/class_picos.py"
+  ],
+  "fecha": "2026-10-01T00:02:10",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

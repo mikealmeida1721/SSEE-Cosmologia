@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "d401d9a65c073b6f77d884aef47f7176e28a826a", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/ssee_phase_d_savage_cv.py", "script_sha256": "bff3b98f3b1b506495bd145d7c515cd204e250ef965d58c392a8cbb1eae10bed", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/estadistica/ssee_phase_d_savage_cv.py"], "fecha": "2026-10-01T00:03:54", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
 ============================================================
 PARTE 1: SAVAGE-DICKEY DENSITY RATIO
 ============================================================

@@ -27,11 +27,11 @@
   "ssee_menos_cpl": -3.341360139730739
  },
  "_procedencia": {
-  "commit": "92b276795add853a24e2b843def8d8419b04358a",
+  "commit": "5aaf48fb4fffba94a3534f3b63f6b37612ea0b65",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/estadistica/ssee_dic_from_chains.py",
-  "script_sha256": "ac74d10ed4cdcb85ffd28888f7c3dc936e0420f678d4f563c6076ef27fd5074f",
+  "script_sha256": "0bb402b4ae917d7feeb001ad85ba1becb7e2d1eba27df92f6167263bc8354f7e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "b1c6d5c10d06316629cec68d7feeaa7cf1272ccacb3826f587e2932565a0d22a"
@@ -39,14 +39,14 @@
   "argv": [
    "src/estadistica/ssee_dic_from_chains.py"
   ],
-  "fecha": "2026-09-30T21:54:03",
+  "fecha": "2026-10-01T00:07:36",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
    "numpy": "2.4.4"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

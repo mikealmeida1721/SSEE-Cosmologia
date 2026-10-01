@@ -1,0 +1,14 @@
+# ACTA-PROCEDENCIA {"commit": "d401d9a65c073b6f77d884aef47f7176e28a826a", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/cumulos_7.py", "script_sha256": "43ea388b671ab75a54b4c8a68587d49a51e4784ee19b245cc4e1bd96cbf63d67", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p02_mcmc/cumulos_7.py"], "fecha": "2026-10-01T00:04:00", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+  f_b = 0.18478   F_IGIMF = 1.7183
+  Coma            10.14   9.94   5.63   5.52   9.80±1.00  chi2 0.114
+  A2029           12.39  12.15   7.32   7.18  12.00±1.20  chi2 0.106
+  A478             8.45   8.28   5.07   4.97   8.00±1.00  chi2 0.200
+  Bullet (main)    6.76   6.63   3.94   3.86   6.50±1.00  chi2 0.067
+  Perseus          6.92   6.78   4.03   3.95   6.65±0.45  chi2 0.361
+  A2142           15.09  14.79   8.78   8.61  14.50±1.50  chi2 0.154
+  A2744           18.73  18.36  10.90  10.69  18.00±4.00  chi2 0.033
+  N=4: ssee 0.122 (+0.00)  fnu0 0.032 (-0.36)  std_imf 11.927 (+47.22)  kal0_solo 12.646 (+50.10)
+        robustez {'chi2r_s0p5': 0.4865649732827919, 'chi2r_s1p5': 0.054062774809199104, 'reduccion_para_chi2r_1': np.float64(0.6512289528634896), 'reduccion_para_chi2r_2': np.float64(0.7533816274882404), 'max_residuo_sigma': np.float64(0.4477511413822448)}
+  N=7: ssee 0.148 (+0.00)  fnu0 0.038 (-0.77)  std_imf 14.194 (+98.32)  kal0_solo 15.056 (+104.35)
+        robustez {'chi2r_s0p5': 0.5916503424235433, 'chi2r_s1p5': 0.06573892693594925, 'reduccion_para_chi2r_1': np.float64(0.615405946996205), 'reduccion_para_chi2r_2': np.float64(0.7280509371169981), 'max_residuo_sigma': np.float64(0.6007666689837047)}
+  control contra ssee_paper2_analysis (4 cumulos): {'chi2': 0.487, 'chi2r': 0.122} -> PASA
