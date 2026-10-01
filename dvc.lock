@@ -20,19 +20,27 @@ stages:
       hash: md5
       md5: e7d8b7fb03956b974b46042372d25873
       size: 11979011
+    - path: results/logs/lya_auditoria.json
+      hash: md5
+      md5: a477034fa06e33d33d9ecb7811def962
+      size: 6064
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
-      md5: a68c669f4482f6b98d439d674664f18c
-      size: 2907
+      md5: 6db07e8bd716d2a25484bb346785a735
+      size: 3558
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
       size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 8777eb437d8c03f416836daae03ce082
-      size: 2546
+      md5: 17ccc24b6aea8cdfe6209fae23a458f4
+      size: 3596
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
       src/p06_growth/s8_desde_b1.py

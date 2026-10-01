@@ -59,9 +59,24 @@ ALG = dict(ombh2=_S.OMEGA_B_H2, omch2=_S.OMEGA_C_H2, rdrag=json.load(open(LYA))[
            H0=_S.H0_GLOBAL, omegam=_S.OMEGA_M_TOTAL, w=_S.W0, wa=_S.WA)
 tens = {p: dict(algebraico=v, tension_sigma=(res[p]["media"] - v) / res[p]["sigma"],
                 tension_abs=abs(res[p]["media"] - v) / res[p]["sigma"]) for p, v in ALG.items()}
+# Distancia conjunta en (w0, wa): covarianza pesada de las cadenas; SSEE y, como
+# control del otro lado, el punto LCDM (-1, 0). Chi2 con 2 g.l. -> sigma equivalente.
+from scipy import stats as _st  # noqa: E402
+_X = np.vstack([d[:, nombres.index("w")], d[:, nombres.index("wa")]])
+_mu = np.average(_X, axis=1, weights=w)
+_C = np.cov(_X, aweights=w)
+
+
+def _dist(p):
+    dv = np.asarray(p) - _mu
+    c2 = float(dv @ np.linalg.solve(_C, dv))
+    return dict(chi2=c2, sigma=float(_st.norm.isf(_st.chi2.sf(c2, 2) / 2)))
+
+
+dist_w0wa = dict(ssee=_dist([_S.W0, _S.WA]), lcdm=_dist([-1.0, 0.0]))
 out = dict(fecha=str(__import__("datetime").date.today()), cadenas=f"{BASE}/c1..c4",
            filas_tras_corte=int(len(d)), corte="30 % inicial por cadena",
-           posteriores=res, tensiones=tens, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
+           posteriores=res, tensiones=tens, distancia_w0wa=dist_w0wa, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
 json.dump(con_acta(out, __file__, entradas=[f"{BASE}/c{i}/ssee_full.1.txt" for i in (1, 2, 3, 4)] + [LYA]),
           open(os.path.join(R, "results/logs/mcmc_full_posteriores.json"), "w"), indent=1)
 for p in PAR:
