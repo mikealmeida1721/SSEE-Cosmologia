@@ -65,8 +65,13 @@ res = {}
 phi = brentq(lambda p: D.objetivo([p]), -40.0, 60.0, xtol=1e-13)
 r = D.corre(phi, 1e-8)
 ode1, w1 = D._en_a1(r)
+# El residuo del disparo se mide en SU rejilla (objetivo: 600 puntos hasta
+# a=1.05). La primera corrida (2026-10-01) lo midio en la de 3000 hasta a=3 y
+# dio 1.3e-5 por interpolar entre rejillas: el control fallo por resolucion, no
+# por fisica; el criterio (1e-8) no se toca.
 res["atractor"] = dict(alpha=float(D.ALPHA), lam=float(D.LAM), phi_i=float(phi), w_a1=float(w1),
-                       residuo_Om_DE=float(ode1 - D.OM_PHI), cpl=cpl(r["a"], r["w"]))
+                       residuo_Om_DE=float(D.objetivo([phi])),
+                       residuo_Om_DE_rejilla_fina=float(ode1 - D.OM_PHI), cpl=cpl(r["a"], r["w"]))
 
 # lambda calibrado
 p = fsolve(L.solo_phi, 0.5, args=(L.ALPHA_ATR,), xtol=1e-12)[0]

@@ -1,0 +1,91 @@
+{
+ "fecha": "2026-10-01",
+ "a_desi": [
+  0.3003003003003003,
+  0.7722007722007722
+ ],
+ "objetivo": {
+  "w0": -0.839949771344779,
+  "wa": -0.6699748856723895
+ },
+ "fondos": {
+  "atractor": {
+   "alpha": 0.5107690387033228,
+   "lam": 0.6929290627226303,
+   "phi_i": 0.5111062285425512,
+   "w_a1": -0.9273158504020612,
+   "residuo_Om_DE": 1.281784024720345e-05,
+   "cpl": {
+    "w0": -0.9335762893448505,
+    "wa": -0.09259598982997506
+   }
+  },
+  "lambda": {
+   "alpha": 0.752195205420386,
+   "lam": 1.020457152218169,
+   "lam_sobre_atractor": 1.4726718896861213,
+   "phi_i": 0.15846390561423604,
+   "residuos": [
+    0.0,
+    0.0
+   ],
+   "cpl": {
+    "w0": -0.8472324149666801,
+    "wa": -0.21066214199259695
+   }
+  },
+  "acoplado": {
+   "beta_c": 0.23506763928900448,
+   "phi_i": -3.152797882552848,
+   "residuos": [
+    2.042810365310288e-14,
+    2.070565940925917e-14,
+    3.552713678800501e-15
+   ],
+   "cpl_w_eff": {
+    "w0": -0.9629921667831985,
+    "wa": 0.4075370754543958
+   },
+   "cpl_w_phi": {
+    "w0": -1.0732189293423409,
+    "wa": 0.8910264079230329
+   },
+   "beta_c_sobre_bug": 0.05891552423212666
+  }
+ },
+ "control": {
+  "w_a1_busca_lambda": -0.9273176036538643,
+  "w_a1_fondo_disparo": -0.9273158504020612,
+  "dif": 1.7532518030716204e-06,
+  "pasa": false
+ },
+ "_procedencia": {
+  "commit": "8ed9dc55dd83df53721b21fab80c1fb52476b04d",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p07_eft/fondos_exponenciales.py",
+  "script_sha256": "39b4906d0b3f557090866139f5ea1b0b0ecd0ed328ec9f0af6271d4a83b6ac1b",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "src/p07_eft/fondo_disparo.py": "f27cf72a73604f61e5ec136b803b02ce4bf3ce09f26cb98977fe819704b92998",
+   "src/p07_eft/busca_lambda.py": "129973b0d9c3ce08bd97167797db2541021bba89a992f4543d2ebb2438dc5957",
+   "archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py": "145ad12aefd2ffdcf729fe44b039cbbb0c73cea3f56a13fd8d6569ed1b9dc9af"
+  },
+  "argv": [
+   "src/p07_eft/fondos_exponenciales.py"
+  ],
+  "fecha": "2026-10-01T00:08:50",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
