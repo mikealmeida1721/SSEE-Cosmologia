@@ -38,7 +38,9 @@ NO_USAR = {"OMEGA_CDM_SECTOR", "OMEGA_M_DYN", "OMEGA_M_CMB_MIRA", "OMEGA_M_CMB_P
 CORRIGE = {("sqrt_AURA", "1.99947"),      # ORIGEN-VALOR: 1.99947 — mal escrito en Paper 8 (el algebra da 1.999462)
            ("pi_mas_KAL", "8.663001"),    # ORIGEN-VALOR: 8.663001 — mal escrito en la tabla de Paper 4
            ("phi_pi_KAL", "10.281034"),   # ORIGEN-VALOR: 10.281034 — mal escrito en la tabla de Paper 4
-           ("alpha_K_z0", "15.591335")}   # ORIGEN-VALOR: 15.591335 — alpha_K calculado con H0_ALG (22 sitios)
+           ("alpha_K_z0", "15.591335"),   # ORIGEN-VALOR: 15.591335 — alpha_K calculado con H0_ALG (22 sitios)
+           ("tres_MIRA", "5.9967"),       # ORIGEN-VALOR: 5.9967 — truncado en Paper 9 (el algebra redondea a 5.9968)
+           ("sqrtAURA_MIRA", "1.00030")}  # ORIGEN-VALOR: 1.00030 — mal escrito en Paper 8 (el algebra da 1.000269)
 NUM = re.compile(r"(?<![\w.])(-?)(\d+\.\d+)(?![\w.])")
 PROHIBIDO = re.compile(r"\\(?:label|ref|eqref|cite\w*|href|url)\{[^}]*$")
 
@@ -84,7 +86,7 @@ def candidato(signo, s, F, frase=""):
     d = len(s.split(".")[1])
     hits = []
     for k, (sec, v) in F.items():
-        if f"{abs(v):.{d}f}" == s or ((k, s) in CORRIGE and abs(abs(v) - float(s)) <= 3 * 10 ** -d):
+        if f"{abs(v):.{d}f}" == s or (k, s) in CORRIGE:   # CORRIGE es una lista EXPLICITA, revisada a mano
             hits.append((k, sec, d, v))
     if not hits:
         return None, None
