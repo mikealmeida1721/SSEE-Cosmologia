@@ -50,6 +50,7 @@ import numpy as np
 REPO = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "src"))
 from procedencia import con_acta  # noqa: E402
+import ssee_core as S  # noqa: E402
 EVID = REPO / "results" / "logs" / "p5_techo_evidencia"
 # CANONICO desde 2026-09-08: .ini versionado y con neutrinos masivos
 PK_SSEE = EVID / "techo_ssee_canonico__pk.dat"    # config/class/techo_ssee_canonico.ini
@@ -63,9 +64,9 @@ PK_LCDM_VIEJO = EVID / "lcdm_planck2018__pk.dat"
 SALIDA = REPO / "results" / "logs" / "p5_techo_sigma8_As_fijo.json"
 R_TOPHAT = 8.0            # Mpc/h
 N_INTERP = 4000
-OM_CMB = 0.3088808787787524      # Omega_m,CMB = omega_m/h^2 (algebraico)
-SIGMA8_PLANCK = 0.8111           # criterio del control, Planck 2018
-SIGMA8_PLANCK_ERR = 0.006
+OM_CMB = S.OMEGA_M_TOTAL         # Omega_m,CMB = omega_m/h^2 (algebraico; era el literal 0.3088808787787524)
+SIGMA8_PLANCK = 0.8111           # ORIGEN-VALOR: 0.8111 — Planck 2018 VI, Tabla 2, TT,TE,EE+lowE+lensing; criterio del control
+SIGMA8_PLANCK_ERR = 0.006        # ORIGEN-VALOR: 0.006 — su barra, misma tabla
 
 
 def sigma8(archivo):
@@ -88,6 +89,10 @@ def main():
     pasa = desv < 2.0
 
     tens = {}
+    # ORIGEN-VALOR: 0.759, 0.024 — KiDS-1000 Asgari+2021 (cota superior de su barra asimetrica)
+    # ORIGEN-VALOR: 0.776, 0.017 — DES-Y3 3x2pt, Abbott+2022
+    # ORIGEN-VALOR: 0.832, 0.013 — Planck 2018 VI, Tabla 2
+    # ORIGEN-VALOR: 0.006 — barra heredada del techo (ver «no_establece» en la salida)
     for nom, val, err in [("KiDS-1000", 0.759, 0.024), ("DES-Y3", 0.776, 0.017),
                           ("Planck 2018", 0.832, 0.013)]:
         tens[nom] = abs(S8 - val) / np.sqrt(err ** 2 + 0.006 ** 2)
