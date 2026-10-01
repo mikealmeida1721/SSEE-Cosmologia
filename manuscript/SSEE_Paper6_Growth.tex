@@ -66,7 +66,7 @@ $3.04483$ that \SSEE{}'s own CMB fit supplies (under the identical pipeline
 with the Planck background, $1.01\sigma$). Fixing the amplitude to the CMB
 value leaves the growth sector with \emph{no free cosmological parameter} and
 costs nothing: $\chi^2_{\rm min}=417.97$ against $418.34$ with the amplitude
-free, $\Delta\mathrm{BIC}=6.24$, and the nuisance parameters do not move to
+free, $\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$, and the nuisance parameters do not move to
 compensate. $S_8=0.8273$ is then an output of the algebra and the CMB, against
 a measured $0.8265\pm0.0176$. KiDS-Legacy predates this analysis by sixteen
 months and no temporal priority is claimed: the result is a consistency of
@@ -453,9 +453,9 @@ parameters.
 \toprule
 Configuration & background & $A_s$ & free & $\chi^2_{\rm min}$ & BIC \\
 \midrule
-\SSEE{} unified & algebraic & from CMB & 8 & $417.97$ & $464.99$ \\
-\SSEE{}         & algebraic & free     & 9 & $418.34$ & $471.24$ \\
-$\Lambda$CDM-fixed & Planck 2018 & free & 9 & $418.95$ & $471.85$ \\
+\SSEE{} unified & algebraic & from CMB & 8 & $\val{chi2_leg_unif}$ & $\val{BIC_leg_unif}$ \\
+\SSEE{}         & algebraic & free     & 9 & $\val{chi2_leg_libre}$ & $\val{BIC_leg_libre}$ \\
+$\Lambda$CDM-fixed & Planck 2018 & free & 9 & $\val{chi2_leg_lcdm}$ & $\val{BIC_leg_lcdm}$ \\
 \bottomrule
 \end{tabular}
 \normalsize
@@ -484,8 +484,8 @@ Removing the only cosmological parameter from a fit removes its ability to
 accommodate: if either the algebraic background or the CMB amplitude were wrong,
 $\chi^2$ rises with nowhere to hide it. It did not rise. With one parameter
 fewer, $\chi^2_{\rm min}=417.97$ against $418.34$, and
-$\Delta\mathrm{BIC}=6.24$ in favour of the unified configuration
-($6.86$ against $\Lambda$CDM-fixed). A second, independent indication points
+$\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of the unified configuration
+($\val{dBIC_leg_lcdm}$ against $\Lambda$CDM-fixed). A second, independent indication points
 the same way: the nuisance parameters do not move to compensate. Had the fixed
 $A_s$ been wrong, $\log T_{\rm AGN}$ and $A_{\rm scale}$ would have run to cover
 the gap; they shift by $0.066$ and $0.10$, well inside their own posterior
