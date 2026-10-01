@@ -76,6 +76,8 @@ for n in ("ssee", "naive"):
     r = tt[n][sel] / tt["lcdm"][sel] - 1
     res[n]["rms_vs_lcdm"] = float(np.sqrt(np.mean(r ** 2)))
 res["degradacion_rms_naive_sobre_ssee"] = res["naive"]["rms_vs_lcdm"] / res["ssee"]["rms_vs_lcdm"]
+for n in ("ssee", "naive"):   # en porcentaje (x100): el macro no puede llevar «%»
+    res[n]["rms_pct"] = 100 * res[n]["rms_vs_lcdm"]
 
 # CONTROL de la receta (2026-10-01): el caso naive de mayo, con su .ini tal cual
 # (class_ssee/ssee_v36_nomira.ini), por la MISMA receta de RMS. Si da su 31.5 %
@@ -99,7 +101,8 @@ dl_v = cl["ell"] * (cl["ell"] + 1) * cl["tt"]
 iv = argrelmax(dl_v[50:1500], order=60)[0] + 50
 res["naive_ini_mayo"] = dict(picos=[int(cl["ell"][j]) for j in iv[:3]],
                               rms_vs_lcdm=float(np.sqrt(np.mean((dl_v[30:LMAX + 1] / tt["lcdm"][30:LMAX + 1] - 1) ** 2))),
-                              rms_publicado_pct=31.5)   # ORIGEN-VALOR: 31.5 — el RMS que cita Unified de esa corrida de mayo (sin log)
+                              rms_publicado_pct=31.5)
+res["naive_ini_mayo"]["rms_pct"] = 100 * res["naive_ini_mayo"]["rms_vs_lcdm"]   # ORIGEN-VALOR: 31.5 — el RMS que cita Unified de esa corrida de mayo (sin log)
 c.struct_cleanup()
 c.empty()
 camb = json.load(open(os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json")))["picos_TT"]["ssee"]
