@@ -66,39 +66,56 @@ def sets_con(wc):
     return B.build(), Om
 
 
-def ajusta(sets, logA):
-    tot = 0.0
-    for st in sets:
-        u, best = P0.copy(), np.inf
-        for _ in range(3):
-            rr = minimize(
-                lambda v: B.chi2_marg_set(st, 'LCDM', logA,
-                                          v * ESC)[0],
-                u, method='Nelder-Mead', bounds=COTAS,
-                options=dict(maxiter=3000, xatol=1e-4,
-                             fatol=1e-4))
-            if rr.fun < best:
-                best, u = float(rr.fun), rr.x
-        tot += best
-    return tot
+def _min_set(st, logA, u0):
+    """Nelder-Mead con 3 reinicios desde u0 -> (chi2, u)."""
+    u, best = u0.copy(), np.inf
+    for _ in range(3):
+        rr = minimize(lambda v: B.chi2_marg_set(st, 'LCDM', logA, v * ESC)[0],
+                      u, method='Nelder-Mead', bounds=COTAS,
+                      options=dict(maxiter=3000, xatol=1e-4, fatol=1e-4))
+        if rr.fun < best:
+            best, u = float(rr.fun), rr.x
+    return best, u
+
+
+def ajusta(sets, logA, prev=None):
+    """chi2 total marginalizado, optimizando (b1,b2,bs) por conjunto.
+
+    ARRANQUES (2026-10-01): desde P0 y, si hay, desde el optimo del punto
+    vecino de la rejilla; se queda el menor. Con un solo arranque el mismo
+    punto dio 68.805 el 2026-09-08 y 69.118 el 2026-10-01 (minimos locales).
+    Devuelve (chi2, chi2 solo desde P0, optimos por conjunto)."""
+    tot, tot_p0, us = 0.0, 0.0, []
+    for j, st in enumerate(sets):
+        c, u = _min_set(st, logA, P0)
+        tot_p0 += c
+        if prev is not None:
+            c2, u2 = _min_set(st, logA, prev[j])
+            if c2 < c:
+                c, u = c2, u2
+        tot += c
+        us.append(u)
+    return tot, tot_p0, us
 
 
 def perfil(rej, logA, etiq):
     print(f'\n=== perfil w_c LCDM  |  logA fijo = {logA:.4f}'
           f'  ({etiq}) ===', flush=True)
     print(' w_c        Om        chi2', flush=True)
-    out = []
+    out, out_p0, prev = [], [], None
     for wc in rej:
         t0 = time.time()
         sets, Om = sets_con(wc)
-        c = ajusta(sets, logA)
+        c, c_p0, prev = ajusta(sets, logA, prev)
         out.append(c)
+        out_p0.append(c_p0)
         print(f'{wc:.6f}  {Om:.6f}  {c:10.3f}'
               f'   [{time.time()-t0:.0f}s]', flush=True)
     a = np.asarray(out)
     i = int(np.argmin(a))
     res = dict(logA=float(logA), etiqueta=etiq, w_c=[float(x) for x in rej],
-               chi2=[float(x) for x in a], w_c_min_rejilla=float(rej[i]), chi2_min=float(a[i]))
+               chi2=[float(x) for x in a], chi2_solo_P0=[float(x) for x in out_p0],
+               w_c_min_rejilla=float(rej[i]), chi2_min=float(a[i]))
     print(f'  minimo en w_c = {rej[i]:.6f}'
           f'   chi2 = {a[i]:.3f}', flush=True)
     if 0 < i < len(rej) - 1:
