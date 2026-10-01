@@ -156,3 +156,11 @@ ser preguntas al retirarse el objeto del que trataban. Ver el README del cajón.
   cadenas corridas con el Σm_ν de ΛCDM (0.06 en vez de 0.06849). Lo reemplaza `results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json`,
   que escribe `src/p06_growth/analiza_boss_R1R2.py`. Se conserva porque es el CONTROL de ese script (el bloque ΛCDM,
   con cadenas que no se rehicieron, tiene que reproducirse) y porque P6 cita su Δχ² = +0.06 como registro de la corrección.
+- `cumulos_7.json`, `cumulos_7.log` (2026-10-01): la prueba de cúmulos de P2 con la fórmula MOND de abril
+  (M = M_bar·KAL₀·(1+f_ν)) sobre 4 cúmulos atribuidos a Zhang+2026 que no están en sus tablas, más 3 de
+  extensión circulares. La reemplaza `results/logs/cumulos_zhang2026.json` (46 sistemas reales, RG, control ΛCDM).
+
+### `codigo/p02_cumulos_mond_2026-04/` — la prueba de cúmulos del marco MOND (2026-10-01)
+- `cumulos_7.py`: generaba la tabla de cúmulos de P2 con M = M_bar·KAL₀·(1+f_ν). Retirado porque el modelo vigente
+  es relatividad general (α_T=α_M=α_B=0, P7; límite canónico de P8) y porque sus datos no salían de la fuente citada.
+  Lo reemplaza `src/p02_mcmc/cumulos_zhang2026.py`.

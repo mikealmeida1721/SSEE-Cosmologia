@@ -41,7 +41,7 @@ from procedencia import cabecera, con_acta  # noqa: E402
 print(cabecera(__file__), flush=True)
 
 FUENTE = os.path.join(_R, "data", "raw", "zhang2026", "tablas_II_III.tex")
-F_NU = 0.020   # ORIGEN-VALOR: 0.020 — f_nu de Paper 2 (ec. M_SSEE), el mismo que cumulos_7.py; su origen esta en revision
+F_NU = 0.020   # ORIGEN-VALOR: 0.020 — f_nu de la formula MOND de abril (retirada 2026-10-01; ver fnu_tremaine_gunn.json); variante historica
 C_NU = 93.14   # ORIGEN-VALOR: 93.14 — clausura nu del nucleo (omega_nu = Sum m_nu / 93.14)
 SIG_RED = 0.01 / np.sqrt(12)   # piso: la tabla redondea a 2 decimales (uniforme en +-0.005); hay barras impresas «0.00»
 COLS = ["z", "M_gas", "M_g_IMF", "M_g_IG", "M_I_IMF", "M_I_IG", "M_tot_IMF", "M_tot_IG", "M_M_dyn", "M_N_dyn", "f_ICL"]

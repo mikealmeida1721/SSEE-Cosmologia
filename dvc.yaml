@@ -51,7 +51,6 @@ stages:
       - results/logs/resumen_3modelos.json
       - results/logs/savage_cv.json
       - results/logs/dic_from_chains.json
-      - results/logs/cumulos_7.json
       - results/logs/press_schechter.json
       - results/logs/edad_universo.json
       - results/logs/fondos_exponenciales.json
@@ -446,18 +445,6 @@ stages:
       - src/ssee_core.py
     outs:
       - results/logs/fsigma8_canonico.json:
-          cache: false
-  cumulos_7:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_7.py > results/logs/cumulos_7.log 2>&1
-    deps:
-      - src/p02_mcmc/cumulos_7.py
-      - src/p02_mcmc/ssee_paper2_analysis.py
-      - src/ssee_core.py
-      - src/procedencia.py
-    outs:
-      - results/logs/cumulos_7.json:
-          cache: false
-      - results/logs/cumulos_7.log:
           cache: false
   perfil_wc_boss:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
