@@ -596,7 +596,7 @@ Específicamente, falta demostrar:
 
    Lo que queda de verdad en pie es **OP-23**, y es otra pregunta: **ningún
    fondo reproduce `wₐ = −0.670`** (atractor `−0.093`, `λ=1.0205` da `−0.211`,
-   acoplado `+0.406` con el signo contrario). El problema es la **forma del
+   acoplado `+0.408` con el signo contrario; `results/logs/fondos_exponenciales.json`). El problema es la **forma del
    potencial**, no `βc`.
 
 3. **La conexión escala Planck → escala cosmológica:** El sistema Genesis 5.12 es
@@ -2514,7 +2514,7 @@ que enseñar el fondo que lo produce.
 |---|---|
 | atractor | `-0.093` |
 | `λ = 1.0205` | `-0.211` |
-| acoplado | `+0.406` (signo contrario) |
+| acoplado | `+0.408` (signo contrario; `fondos_exponenciales.json`) |
 | **objetivo algebraico** | **`-0.669975`** |
 
 Ninguno se acerca, y el acoplado va en dirección opuesta.
@@ -3028,7 +3028,7 @@ dos fondos, con el δc derivado (`src/p02_mcmc/ssee_press_schechter.py`):
 | z | 3×10¹⁰ M☉ | 10¹¹ M☉ | 10¹² M☉ | 3×10¹² M☉ |
 |---|---|---|---|---|
 | 10 | 0.998 | 0.990 | 0.945 | 0.892 |
-| 15 | — | 0.972 | 0.878 | 0.778 |
+| 15 | — | 0.972 | 0.878 | 0.774 |
 
 SSEE forma **menos** halos masivos tempranos que ΛCDM, no más. La causa no es la amplitud
 —SSEE tiene σ₈ **mayor**, 0.8153 contra 0.811— sino D(z): Ω_m menor (0.308881 vs 0.3153) y

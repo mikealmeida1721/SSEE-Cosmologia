@@ -168,8 +168,8 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | Metric | Value |
 |---|---|
 | χ²_2D (w₀-wₐ vs DESI DR2+CMB+Pantheon+) | 0.42 → 0.24σ (2D); 1.47σ DESY5, 1.77σ Union3 (ρ medidos de cadenas oficiales) |
-| χ²_r clusters (7 clusters, analytic) | 0.126 |
-| χ²_r clusters (4 clusters, MCMC) | 0.122 |
+| χ²_r clusters (7 clusters, analytic) | 0.148 (`results/logs/cumulos_7.json`) |
+| χ²_r clusters (4 clusters, analytic) | 0.122 (`results/logs/cumulos_7.json`) |
 | H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ Planck, **0.33σ de H_glob** — DR2 compatible con la predicción; ω_m algebraico fijo, r_d CAMB) |
 | ΔBIC (SSEE k=2 vs ΛCDM k=3) | −6.77 (SSEE favoured; CPL −5.65; ΔDIC −6.00; Savage-Dickey ln B = 2.34; cross-val SSEE predice mejor que ΛCDM) — `results/logs/resumen_3modelos.json` |
 | r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.479 ≈ ΛCDM 0.459 (3 modelos, `mcmc_paper2_3models_wmfix.log`) |
@@ -243,13 +243,13 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 
 | Test | SSEE full ω_m | SSEE dynamical-only | ΛCDM | Significance |
 |---|---|---|---|---|
-| CMB peak 1 (ℓ) | **221** | 240 | 221 | full ω_m necessary |
-| CMB peak 2 (ℓ) | **537** | 597 | 537 | full ω_m necessary |
-| CMB peak 3 (ℓ) | **814** | 922 | 814 | full ω_m necessary |
-| RMS vs ΛCDM | **0.14%** | 31.5% | — | ~220× degradation with bare Ω_m,dyn |
+| CMB peak 1 (ℓ) | **220** | 240 | 220 | full ω_m necessary |
+| CMB peak 2 (ℓ) | **536** | 596 | 536 | full ω_m necessary |
+| CMB peak 3 (ℓ) | **813** | 921 | 813 | full ω_m necessary |
+| RMS vs ΛCDM | **0.18%** | 58.9% | — | ~325× degradation with bare Ω_m,dyn (`results/logs/class_picos.json`) |
 | IS cs² effect on σ₈ | 0.03% | — | — | Negligible ✓ |
 
-*CLASS confirms the full algebraic matter density ω_m (Ω_m,CMB=0.30889) is physically necessary: using the bare dynamical Ω_m,dyn=0.160 instead, all three CMB peaks shift ~10% and the RMS residual jumps from 0.14% to 31.5% (~220×).*
+*CLASS confirms the full algebraic matter density ω_m (Ω_m,CMB=0.30889) is physically necessary: using the bare dynamical Ω_m,dyn=0.160 instead, all three CMB peaks shift ~10% and the RMS residual jumps from 0.18% to 58.9% (~325×).*
 
 ### MCMC Fase 4 (Multi-probe background)
 
@@ -358,7 +358,7 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
 - [x] Papers 1–10 — algebraic framework, Bayesian MCMC, CMB confrontation, algebraic
       CMB derivation, IS causal perturbations, growth against raw data (Paper 6),
       canonical EFT, strong-gravity regime, Hubble-tension screening, UV completion
-- [x] CLASS Boltzmann validation — MIRA necessity (RMS 1.4% vs 31.5%), σ₈, IS viscosity
+- [x] CLASS Boltzmann validation — full matter density necessary (RMS 0.18% vs 58.9%), σ₈, IS viscosity
 - [x] Multi-probe MCMC (corrected DESI DR2 + Planck + fσ8 + clusters, blind flat w0/wa) — SSEE algebraic point 1.31σ from joint w₀-wₐ posterior
 - [x] Bibliography brought to JCAP/PRD standard — all papers 36–42 refs, 0 orphans
 - [x] OPEN_PROBLEMS OP-2/3/4/6 resolved; OP-1/5 partial
