@@ -88,6 +88,7 @@ ALGEBRA = {
     "wc_ns_sigma":    ("(OMEGA_C_H2-0.1200)/0.0012", "omega_c = KAL0 omega_b n_s frente a Planck"),   # ORIGEN-VALOR: 0.1200, 0.0012 — Planck 2018 VI Tabla 2
     "Omega_b_planck": ("0.02237/0.6736**2", "Omega_b de LCDM-Planck = omega_b/h^2 con SUS ingredientes"),   # ORIGEN-VALOR: 0.02237, 0.6736 — Planck 2018 VI Tabla 2
     "Omega_b_pct_vs_planck": ("100*(OMEGA_B_H2/(H0_ALG/100)**2/(0.02237/0.6736**2)-1)", "diferencia en %; casi toda es h_SSEE > h_Planck"),   # ORIGEN-VALOR: 0.02237, 0.6736 — Planck 2018 VI Tabla 2
+    "wc_ns_sigma_abs": ("abs(OMEGA_C_H2-0.1200)/0.0012", "lo mismo en valor absoluto, para «a X sigma de Planck»"),   # ORIGEN-VALOR: 0.1200, 0.0012 — Planck 2018 VI Tabla 2
     "Yp_ssee":        ("0.2471+0.96*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — ancla Planck 2018; 0.96 — dY_p/d(omega_b) de AlterBBN (Pisanti 2008)
     "Omega_b_alg":    ("OMEGA_B_H2/(H0_ALG/100)**2", "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"),
     "Omega_b_alg_cerrada": ("1e4*(PI-PHI)/(27*OMEGA**6)", "la misma en forma cerrada (control)"),
