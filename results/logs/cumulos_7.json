@@ -169,7 +169,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "221728618397942fc29c9dc7cb745876dc78a2d3",
+  "commit": "0ba4c02d7c37a3af3d3a2442638ea53d1b84fb22",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/cumulos_7.py",
@@ -179,7 +179,7 @@
   "argv": [
    "src/p02_mcmc/cumulos_7.py"
   ],
-  "fecha": "2026-10-01T10:06:09",
+  "fecha": "2026-10-01T10:11:49",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

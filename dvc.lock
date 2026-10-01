@@ -782,8 +782,8 @@ stages:
       size: 6008
     - path: src/p02_mcmc/ssee_paper2_analysis.py
       hash: md5
-      md5: 931a3e4050f107d5af0f26918495e7d6
-      size: 16965
+      md5: 4a8a43dadae641a6ac1ee023f5b1c796
+      size: 17329
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -795,11 +795,11 @@ stages:
     outs:
     - path: results/logs/cumulos_7.json
       hash: md5
-      md5: 0cabe83f4355b121bb0833e4c0f07445
+      md5: 57f3431046f1a424f0945c40d7497bfc
       size: 4826
     - path: results/logs/cumulos_7.log
       hash: md5
-      md5: 9d277da3319dfc714e434e19b9b9c441
+      md5: 11ca6aa633b32d4643537e3be723589a
       size: 2073
   fondos_exponenciales:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1148,14 +1148,18 @@ stages:
     deps:
     - path: src/p02_mcmc/ssee_paper2_analysis.py
       hash: md5
-      md5: 931a3e4050f107d5af0f26918495e7d6
-      size: 16965
+      md5: 4a8a43dadae641a6ac1ee023f5b1c796
+      size: 17329
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
       size: 5420
     outs:
+    - path: results/logs/paper2_analysis.log
+      hash: md5
+      md5: baae2f231f2ed6a45ee2c7a89038db9a
+      size: 6140
     - path: results/logs/paper2_w0wa.json
       hash: md5
-      md5: 944085868ca6297d01ca8cfe1bf83d9c
+      md5: 46714dc2bee740037010df3cf89bf560
       size: 1376
