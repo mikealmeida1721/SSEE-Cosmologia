@@ -125,6 +125,27 @@
    "dchi2": -0.54278564453125,
    "ve_As": true,
    "nota": "7 nuisance minimizados igual en los dos modelos"
+  },
+  {
+   "sonda": "DESI DR2 BAO",
+   "tipo": "BAO (CAMB, r_d de cada modelo)",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
+   "SSEE": {
+    "chi2": 11.406652470296022,
+    "dof": 13,
+    "PTE": 0.5767912883799236,
+    "sigma": 0.558077757319955
+   },
+   "LCDM_Planck": {
+    "chi2": 31.981897557929273,
+    "dof": 13,
+    "PTE": 0.002417178772559315,
+    "sigma": 3.0335210124518586
+   },
+   "dchi2": -20.57524508763325,
+   "ve_As": null,
+   "nota": "LCDM-Planck clavado; aparte, LCDM libre (Om y h r_d ajustados a DESI)"
   }
  ],
  "des_y3": {
@@ -155,10 +176,10 @@
   "fondo_lcdm": "libre",
   "ajustados_lcdm": 2,
   "SSEE": {
-   "chi2": 10.903953594619837,
+   "chi2": 11.406652470296022,
    "dof": 13,
-   "PTE": 0.6188635514243506,
-   "sigma": 0.4974616341822352
+   "PTE": 0.5767912883799236,
+   "sigma": 0.558077757319955
   },
   "LCDM_libre": {
    "chi2": 10.538630544702244,
@@ -166,8 +187,10 @@
    "PTE": 0.4826838498024092,
    "sigma": 0.701992485415265
   },
-  "dchi2": 0.3653230499175937,
-  "nota": "LCDM LIBRE (Om y h r_d ajustados), no clavado: no es la misma comparacion que las demas"
+  "LCDM_libre_Om": 0.29734515318948646,
+  "LCDM_libre_Om_err": 0.008521220143249844,
+  "dchi2": 0.8680219255937782,
+  "nota": "LCDM LIBRE: para llegar ajusta Om y h r_d a DESI"
  },
  "filas_lcdm_ajusta": [
   {
@@ -220,21 +243,23 @@
   }
  ],
  "umbral_discrimina_dchi2": 9.0,
- "discriminan": [],
+ "discriminan": [
+  "DESI DR2 BAO"
+ ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "49d73feeedf4684dc8861a3990a615f80d192733",
+  "commit": "df914cd3fa7c8beef86b4f3e0ead3e6696f7a049",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
-  "script_sha256": "455167c9d6e7507ec6f3c19e5a51da1241202c879d36cc38c94ea91dfca30b44",
+  "script_sha256": "a9fd9d3afe8f01a13163f5b6f0dcefd9cc7f8d84bc52aeb2db1ed524552029f9",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/sn_geometria_en_el_clavo.json": "c04d927fcb284f15b5a628fe83efa537d6ed8c597abf8e94d4a168e915357dd7",
    "results/logs/union3_en_el_clavo.json": "5e785ba89358fe16b16c4d3d3c65109ac5deb7fe5eb4ed8e8d83faf1f3f77100",
    "results/logs/act_dr6_en_el_clavo.json": "f0aeb83d3b50937fc80ad17795e02e80513a2dc49b281b4f99b2e37b6d954448",
    "results/logs/spt3g_kk_en_el_clavo.json": "6f5a2b55112774a05826d6bd5780c6b3f633221effecd386af169cfffcef055f",
-   "results/logs/bao_lcdm_libre.json": "f3ad4e448603a172c0b6670df3b07dad364703cf21e5227cf8559ff77bb68569",
+   "results/logs/bao_lcdm_libre.json": "3173b9a34e63201c10c6ea06f363899860534b451e74c5f1eb6649c21163457c",
    "results/logs/des_y3_en_el_clavo_ssee.json": "a14a2368ea014ea844deee8f3c9fe886099a8df56208b7a0b2d017c485342050",
    "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "dd7ac6cd8431fa9b23748e4ed61ddc1cd5ebd3d04de3eb74881f00d9ff93e750",
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "8e7645b20e92586a1a14f403404ffbdee4832b78bdb9710fab57ec59f53d2d49",
@@ -246,7 +271,7 @@
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-02T18:22:51",
+  "fecha": "2026-10-02T19:30:26",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

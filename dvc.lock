@@ -1658,8 +1658,8 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: add7334d99462ede231d9dd34a910451
-      size: 587
+      md5: 392ae8da2eff2c5a51238b13007633d9
+      size: 2052
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
       md5: a467fbe5b7944f4ba374d9623b30b513
@@ -1698,8 +1698,8 @@ stages:
       size: 1224
     - path: src/p11_sondas/sondas_ssee_vs_lcdm.py
       hash: md5
-      md5: b6c92649e621fdc71680f5b9bcc0fb63
-      size: 8268
+      md5: 919aad79ee35946e950d27a3d7dbc51c
+      size: 8721
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1707,12 +1707,12 @@ stages:
     outs:
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 0762247b96c7038ec8c8ce83db125c15
-      size: 7408
+      md5: 6bcce089e6bcb57a6ab978cef313454b
+      size: 8012
     - path: results/logs/sondas_ssee_vs_lcdm.log
       hash: md5
-      md5: 7129032c183d551b4376ea4c76a0f066
-      size: 1630
+      md5: fdbcef0a0ca17605085a25cbf23c8300
+      size: 1723
   mcmc_paper2_reframe:
     cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
       .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 
