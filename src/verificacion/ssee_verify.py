@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 2, "canonical": 0, "papers": 0, "cajones": 137}   # 2026-10-01 cierre: cajones 138->137 (memoria del ΔBIC CMB cerrada). 2026-10-01 noche: cajones 141->138 (fila del ancla H0 desde perfil_h0_ancla.json); papers 2->0 (67.159 historico declarado con su log en git). 2026-10-01 madrugada: canonical 2->0, papers 3->2 (B1 k=2 y H0 de P2 por \val; historicos con git:<commit>:<ruta>); 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
+_TOPE_R74 = {"logs": 1, "canonical": 0, "papers": 0, "cajones": 136}   # 2026-10-02: logs 2->1 (lcdm_conjunta_cola es bitacora), cajones 137->136 (cuenta medida). 2026-10-01 cierre: cajones 138->137 (memoria del ΔBIC CMB cerrada). 2026-10-01 noche: cajones 141->138 (fila del ancla H0 desde perfil_h0_ancla.json); papers 2->0 (67.159 historico declarado con su log en git). 2026-10-01 madrugada: canonical 2->0, papers 3->2 (B1 k=2 y H0 de P2 por \val; historicos con git:<commit>:<ruta>); 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -2617,7 +2617,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 158   # 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
+_TOPE_R75 = 157   # 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",
@@ -6792,7 +6792,7 @@ except Exception as _e:
 # El caso real, encontrado a mano el 2026-08-10 tirando de un hilo:
 #   ssee_eft_verification.py:59   rho_DE0 = Om_DE * rho_crit   -> 0.840
 #   h0_cascade_audit.py:44        rho_DE  = OMEGA_DE * rho_crit   (archivado 2026-09-19, era H_MIRA)
-#   ssee_paper3_hiclass_check.py  Om_DE_z = Om_DE * ratio/E^2
+#   ssee_paper3_hiclass_check.py  Om_DE_z = Om_DE * ratio/E^2   (archivado 2026-10-02)
 # El último es el peor: mete la saturación en la ranura de DENSIDAD de CLASS y
 # luego compara el resultado contra el mismo álgebra — «Δ = 0.005%» que no es
 # verificación independiente sino la misma sustitución hecha dos veces.
@@ -6977,7 +6977,7 @@ try:
         for _i in _escanea_r54(_ls):
             _r54.append(f"{_f.relative_to(_REPO)}:{_i+1}")
 
-    _DEUDA_R54 = 30   # 47 -> 30 (2026-09-27): alpha_K->s_K/15.591335 en P1, P3, P8, Unified, Sealed, PRD, Endorser; 55 -> 51 al eximir las fixtures del registro (R67); 51 -> 49 (2026-09-19): cuenta real medida tras archivar h0_cascade_audit.py y las anotaciones R65; 49 -> 48 (2026-09-26): G2/G3 corrigieron el mislabel de 0.403302 en Sealed Journal y Paper 1 (alpha_K^eff -> s_K); 48 -> 47 (2026-09-26): el README deja de rotular 0.4033 como kineticidad (P7: alpha_K=15.591335)
+    _DEUDA_R54 = 24   # 30 -> 24 (2026-10-02): ssee_eftcamb_validation.py archivado (6 sitios). 47 -> 30 (2026-09-27): alpha_K->s_K/15.591335 en P1, P3, P8, Unified, Sealed, PRD, Endorser; 55 -> 51 al eximir las fixtures del registro (R67); 51 -> 49 (2026-09-19): cuenta real medida tras archivar h0_cascade_audit.py y las anotaciones R65; 49 -> 48 (2026-09-26): G2/G3 corrigieron el mislabel de 0.403302 en Sealed Journal y Paper 1 (alpha_K^eff -> s_K); 48 -> 47 (2026-09-26): el README deja de rotular 0.4033 como kineticidad (P7: alpha_K=15.591335)
     check("R54 la deuda de etiquetas alpha_K/s_K no crece",
           len(_r54) <= _DEUDA_R54,
           f"{len(_r54)} sitios (tope {_DEUDA_R54}): "

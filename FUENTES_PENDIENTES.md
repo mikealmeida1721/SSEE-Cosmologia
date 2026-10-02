@@ -151,7 +151,7 @@ Pero 0.1 es la **precisión** σ, no un techo. Si el que Euclid reconstruye fuer
 paper estaría ofreciendo como falsador lo que sería su confirmación.
 
 **(b) «hi\_class confirma independientemente al 0.005%» — línea 553.**
-El script `src/p03_cmb/ssee_paper3_hiclass_check.py` calcula:
+El script `archive/codigo/investigacion/huerfanos_2026-10-02/ssee_paper3_hiclass_check.py` (archivado 2026-10-02) calculaba:
 
 ```
 línea  57:  aK_alg = 3 * Om_DE   * (1 + w0_)

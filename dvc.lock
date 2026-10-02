@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: f282c7808351eb9668af0ffba5f13a9f
-      size: 60266
+      md5: c8f418670ea8a505f559cb80ca3b5fc2
+      size: 60827
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -97,6 +97,10 @@ stages:
       hash: md5
       md5: 6eed8d211e5d280945ababe03d7516ed
       size: 1873
+    - path: results/logs/cmb_dbic_mnu_propia.json
+      hash: md5
+      md5: a467fbe5b7944f4ba374d9623b30b513
+      size: 1498
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
       md5: c1aa77efd32461abaf5a76b45c6aacbe
@@ -232,8 +236,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 154327a35988aa3ea420798e34ed8587
-      size: 76320
+      md5: 86ec0183ee25b5a0be23f55e6f457f25
+      size: 76988
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1853,36 +1857,6 @@ stages:
       hash: md5
       md5: 74fa7a180742a6cc17b4b27b7f9861c9
       size: 3027
-  hiclass_check:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p03_cmb/ssee_paper3_hiclass_check.py > results/logs/hiclass_check.log 
-      2>&1
-    deps:
-    - path: data/raw/planck_pr4_TT.txt
-      hash: md5
-      md5: 953f333fa17483d3e2143dc82ddfa874
-      size: 170547
-    - path: src/p03_cmb/ssee_paper3_hiclass_check.py
-      hash: md5
-      md5: eaaebc83ddd190cc35158a54c24b599e
-      size: 16613
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    outs:
-    - path: results/figures/fig_hiclass_TT.pdf
-      hash: md5
-      md5: ed2f6db94ce380a67e5dc412b7b8d7fd
-      size: 111534
-    - path: results/figures/fig_hiclass_alpha.pdf
-      hash: md5
-      md5: 712f6ae355157f61c11ad77d292a4952
-      size: 26316
-    - path: results/logs/hiclass_check.log
-      hash: md5
-      md5: 4cf20611c6b21ce27ec153d447d3ee6c
-      size: 2375
   paper4_toe:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
@@ -1924,3 +1898,32 @@ stages:
       hash: md5
       md5: e03d7e9d27496f40024bbeb51a350a5f
       size: 2471
+  cmb_dbic_mnu_propia:
+    cmd: .venv/bin/python3 src/p11_sondas/cmb_dbic_mnu_propia.py > 
+      results/logs/cmb_dbic_mnu_propia.log 2>&1
+    deps:
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: results/logs/lcdm_conjunta_cmb.json
+      hash: md5
+      md5: bbb052d6ecf0a3b3926f7c82998e708b
+      size: 468
+    - path: src/p11_sondas/cmb_dbic_mnu_propia.py
+      hash: md5
+      md5: ceb38b2c4e2a0b8c75c85d2b587f3bde
+      size: 2125
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/cmb_dbic_mnu_propia.json
+      hash: md5
+      md5: a467fbe5b7944f4ba374d9623b30b513
+      size: 1498
+    - path: results/logs/cmb_dbic_mnu_propia.log
+      hash: md5
+      md5: c9849d801923aae1f28295ba7abc2e63
+      size: 1292

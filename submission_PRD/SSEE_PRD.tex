@@ -56,7 +56,7 @@ $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
 \val{r_tensor_mil_d6}\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. A Boltzmann
 calculation shows the full algebraic $\omega_m$ (not the bare dynamical
 $\Omega_{m,\rm dyn}=\val{S_M_d6}$) is physically required for the CMB:
-without it the acoustic-peak structure degrades by a factor of $\sim22$ in RMS.
+without it the acoustic-peak structure degrades by a factor of $\val{cl_degrada}$ in RMS.
 We are explicit about the framework's limits: the absolute vacuum scale enters
 as a single measured input, and the growth amplitude $S_8$ shows no tension
 with weak lensing once measured on raw data (the retracted extension was
@@ -180,9 +180,9 @@ of them can refute the model.
 
 The paper is organised as a single coherent argument rather than a collection of
 results. Section~\ref{sec:core} constructs the equation of state from the
-algebraic invariants and confronts it with DESI DR2, derives the two-$\Omega$
-structure that distinguishes the dynamical matter fraction
-$\Om^{\mathrm{dyn}}=\val{S_M_d6}$ from the cosmological $\Om^{\mathrm{cosm}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, and
+algebraic invariants and confronts it with DESI DR2, derives the single matter density
+$\Om^{\mathrm{cosm}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ and separates it from the
+equation-of-state number $1+w_0=\val{S_M_d6}$, and
 reports the Hubble-constant inference. Section~\ref{sec:eft} gives the canonical
 effective-field-theory description, the inflationary predictions, and the
 confrontation with Planck PR4, including a Boltzmann test demonstrating that the
@@ -421,16 +421,16 @@ confirm or exclude \emph{regardless} of how restrictive the grammar is proven
 to be---which is precisely why the multiplier is kept outside the core
 predictive register.
 
-\subsection{The cosmic matter fraction: the two-$\Om$ structure}
+\subsection{The cosmic matter fraction: one matter density}
 \label{sec:two-omega}
-The equation of state~\eqref{eq:w0wa} fixes the \emph{dynamical} matter
-fraction through the closure relation of a single rolling field,
+The equation of state~\eqref{eq:w0wa} fixes the combination that earlier
+versions called the \emph{dynamical} matter fraction,
 \begin{equation}
   \Om^{\mathrm{dyn}} \;=\; 1+w_0 \;=\; \val{S_M_d6} ,
   \label{eq:omdyn}
 \end{equation}
-which is the fraction that controls the late-time acceleration. This value is
-notably lower than the matter density inferred from the acoustic peaks. Under
+a number from the equation of state, not a density. It is much lower than
+the matter density inferred from the acoustic peaks, and it is not meant to match it. Under
 the $\omega_m$-direct reframe (retiring the former matter-bridge open problem,
 OP-8; \S\ref{sec:open}) the CMB matter fraction is the
 standard physical observable, built piece-by-piece from SSEE algebra with
@@ -438,7 +438,7 @@ standard physical observable, built piece-by-piece from SSEE algebra with
 \begin{equation}
   \Om^{\mathrm{cosm}} \;=\; \frac{\omega_m}{h^2}
         \;=\; \frac{\omega_b+\omega_c+\omega_\nu}{h^2}
-        \;=\; \frac{\val{OMEGA_M_H2_d5}}{0.67962^2} \;=\; \val{OMEGA_M_TOTAL_d6} ,
+        \;=\; \frac{\val{OMEGA_M_H2_d5}}{(\val{H0_GLOBAL_d5}/100)^2} \;=\; \val{OMEGA_M_TOTAL_d6} ,
   \qquad \omega_c=\mathrm{KAL_0}\,\omega_b\,n_s ,
   \label{eq:omcosm}
 \end{equation}
@@ -484,12 +484,11 @@ Independently of its derivation, a Boltzmann analysis (the full \texttt{CLASS}
 methodology and peak-by-peak numbers are given in
 \S\ref{sec:cmb-confront}) shows the full $\omega_m$ is not optional: replacing
 it with the bare dynamical value $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ degrades the
-acoustic-peak fit by a factor of $\sim22$ in RMS. The sound horizon at
-recombination demands the full matter density; SSEE's two-$\Om$ structure is
-the statement that the sector driving late-time acceleration
-($\Om^{\mathrm{dyn}}$) and the sector setting the early-time geometry
-($\Om^{\mathrm{cosm}}=\omega_m/h^2$) are two independent algebraic
-predictions rather than two free numbers.
+acoustic-peak fit by a factor of $\val{cl_degrada}$ in RMS. The sound horizon at
+recombination demands the full matter density. The equation-of-state number
+$1+w_0$ and the matter density $\Om^{\mathrm{cosm}}=\omega_m/h^2$ are two
+independent algebraic predictions, not two free numbers and not two matter
+densities.
 
 Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
@@ -517,7 +516,7 @@ the background density is a category error, not a physical scale.
 \label{sec:mcmc}
 The algebraic predictions of \S\ref{sec:core} are confronted with data in a
 full Markov-chain Monte Carlo analysis. The dark-energy sector contributes no
-sampled parameters---$w_0$, $w_a$ and the two-$\Om$ structure are fixed by
+sampled parameters---$w_0$, $w_a$ and the matter density $\Om^{\mathrm{cosm}}$ are fixed by
 Eqs.~\eqref{eq:w0wa}--\eqref{eq:omcosm}---so the chain effectively samples
 $H_0$ (and $\Omega_b h^2$) against the DESI DR2 BAO data with a CMB-derived
 prior, using the affine-invariant ensemble sampler~\citep{emcee}. We ran $100$
@@ -763,7 +762,7 @@ Table~\ref{tab:cmb} reports the reduced $\chi^2$.
   \end{tabular}
   \caption{CMB confrontation against Planck PR4. SSEE reproduces the acoustic
   spectra at a quality indistinguishable from $\Lambda$CDM, with acoustic peaks
-  at $\ell=220,\,535,\,810$. The combined $\Delta\mathrm{BIC}
+  at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$. The combined $\Delta\mathrm{BIC}
   (\text{SSEE}-\Lambda\text{CDM})=-35.0$ over $N=5914$ data points (diagonal,
   $\omega_m$-direct) reflects the two-parameter economy of the background.}
   \label{tab:cmb}
@@ -780,35 +779,31 @@ inflates precisely the term that rewards the smaller $k$. We therefore also
 evaluate the compressed Planck likelihood \texttt{plik\_lite}
 (TT+TE+EE, $613$ bandpowers, nuisance parameters marginalised by the Planck
 Collaboration) together with the low-$\ell$ TT and EE likelihoods, for $N=669$
-data points, which gives $\chi^2_{\rm SSEE}=1003.586$ against
-$\chi^2_{\Lambda\rm CDM}=1003.596$ (with its own $\sum m_\nu=0.06$~eV) with $\{A_s,\tau\}$ minimized in both---an
-equal fit ($\Delta\chi^2=-0.010$, statistically zero) for four fewer free
+data points, which gives $\chi^2_{\rm SSEE}=\val{lite_chi2_ssee}$ against
+$\chi^2_{\Lambda\rm CDM}=\val{lite_chi2_lcdm}$ (with its own $\sum m_\nu=0.06$~eV) with $\{A_s,\tau\}$ minimized in both---an
+equal fit ($\Delta\chi^2=\val{lite_dchi2}$, statistically zero) for four fewer free
 parameters---and
 \begin{equation}
   \label{eq:dbic-cmb}
-  \Delta\mathrm{BIC}(\text{SSEE}-\Lambda\text{CDM}) = -26.03 \qquad
+  \Delta\mathrm{BIC}(\text{SSEE}-\Lambda\text{CDM}) = \val{lite_dBIC} \qquad
   (\texttt{plik\_lite}, k=2 \text{ vs } 6) .
 \end{equation}
-This is the number the model comparison rests on; the diagonal $-35.0$ is
-retained for continuity with Paper~3 and should be read as illustrative. One
-residual dependence would remain---\texttt{plik\_lite} marginalises its nuisance
-parameters within a $\Lambda$CDM analysis---so we also ran the \emph{full}
-\texttt{plik} likelihood (TTTEEE $+$ lowl TT $+$ lowl EE $+$ lensing,
-$N=2354$) with the ${\sim}20$ nuisance parameters sampled explicitly. That chain
-has converged (Gelman--Rubin $R-1=0.017$) and it strengthens the result rather
-than softening it:
+The diagonal $\val{p3_dBIC_diag}$ is retained for continuity with Paper~3 and
+should be read as illustrative. One residual dependence would remain---\texttt{plik\_lite}
+marginalises its nuisance parameters within a $\Lambda$CDM analysis---so we also
+evaluated the \emph{full} \texttt{plik} likelihood (TTTEEE $+$ lowl TT $+$ lowl EE
+$+$ lensing, $N=\val{b1_N}$) with the ${\sim}20$ nuisance parameters free, and
+take the \emph{minimum} $\chi^2$ of each model:
 \begin{equation}
   \label{eq:dbic-full}
-  \chi^2_{\rm SSEE}=2770.44 , \quad \chi^2_{\Lambda\rm CDM}=2772.92 , \quad
-  \Delta\mathrm{BIC}=-25.77 \qquad (\texttt{plik full}, k=3 \text{ vs } 6) .
+  \chi^2_{\rm SSEE}=\val{b1_chi2_ssee} , \quad \chi^2_{\Lambda\rm CDM}=\val{b1_chi2_lcdm} , \quad
+  \Delta\mathrm{BIC}=\val{b1_dBIC} \qquad (\texttt{plik full}, k=2 \text{ vs } 6) .
 \end{equation}
-With the nuisance parameters free, SSEE attains a \emph{better} fit than
-$\Lambda$CDM---by $\Delta\chi^2=-2.47$---using three fewer free parameters,
-where under \texttt{plik\_lite} it paid $+1.65$. Sampling $H_0$ freely in the
-same chain returns $H_0=67.88\pm0.10~\kms$, within $0.81\sigma$ of the algebraic
-anchor $3(\varphi+\pi)^2=\val{H0_ALG_d3}$: the chain \emph{recovers} the anchor rather
-than assuming it, and its uncertainty is $5.3\times$ tighter than the
-$\Lambda$CDM posterior on the same data, as the parameter economy predicts.
+The two fits are indistinguishable ($\Delta\chi^2=\val{b1_dchi2}$); the gain is
+the parameter count. Counting conservatively $k=4$ for SSEE gives
+$\val{b1_dBIC_k4}$. As a validation, a separate chain that also samples $H_0$
+returns $H_0=\val{b1v_H0}\pm\val{b1v_H0_s}~\kms$, $\val{b1v_d}\sigma$ from
+$H_0^{\rm glob}=\val{H0_GLOBAL_d3}$: fixing $H_0$ costs no fit quality.
 
 \begin{figure}[t]
   \centering
@@ -816,16 +811,16 @@ $\Lambda$CDM posterior on the same data, as the parameter economy predicts.
   \caption{CMB temperature angular power spectrum computed with \texttt{CLASS}
   for the SSEE background and EFT functions (Eq.~\ref{eq:eft-alphas}), compared
   against Planck PR4. With the dark-energy sector fixed by $\varphi$ and $\pi$,
-  SSEE reproduces the acoustic peaks at $\ell=220,\,535,\,810$ at a quality
-  indistinguishable from $\Lambda$CDM (Table~\ref{tab:cmb}). The two-$\Om$
-  structure is essential: replacing $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ with the bare
-  $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ shifts every peak by ${\sim}10\%$.}
+  SSEE reproduces the acoustic peaks at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$ at a quality
+  indistinguishable from $\Lambda$CDM (Table~\ref{tab:cmb}). The full matter
+  density is essential: replacing $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ with the
+  equation-of-state number $1+w_0=\val{S_M_d6}$ moves the peaks to
+  $\ell=\val{cl_naive_l1},\,\val{cl_naive_l2},\,\val{cl_naive_l3}$.}
   \label{fig:cmb}
 \end{figure}
 
 \paragraph{The CMB density is physically required, not cosmetic.}
-The two-$\Om$ structure
-of \S\ref{sec:two-omega} is decisively tested by the CMB. Running the Boltzmann
+This is decisively tested by the CMB. Running the Boltzmann
 solver (CLASS) at the $\omega_m$-direct canonical matter fraction
 $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 places the first three acoustic peaks at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$, an RMS
@@ -1108,7 +1103,7 @@ SSEE does not predict the absolute energy density of the dark sector. The
 overall scale of the vacuum, $\rho_\Lambda\simeq6\times10^{-10}~\mathrm{J\,
 m^{-3}}$, enters as a single measured input, which we label \emph{Postulate~D}.
 What the algebra fixes is the \emph{shape} of the dark-energy sector---its
-equation-of-state ratios $w_0,w_a$, the two-$\Omega$ structure, and the EFT
+equation-of-state ratios $w_0,w_a$, the matter density $\omega_m$, and the EFT
 function profile---not its amplitude. We make no claim to have solved the
 cosmological-constant problem; we have moved its free numbers from six tuned
 cosmological parameters down to a single measured normalisation plus the
@@ -1144,10 +1139,10 @@ former MIRA matter bridge \emph{dissolved} (the $\omega_m$-direct reframe,
 \S\ref{sec:two-omega}; OP-8 retired), the CMB matter fraction
 $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$ now rests directly on two algebraic inputs: the
 baryon density $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ and the forward
-identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ ($0.41\sigma$ from
+identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from
 Planck). The CLASS Boltzmann test of \S\ref{sec:eft} confirms this full density
 is \emph{numerically necessary}---the acoustic peaks degrade by a factor of
-$\sim22$ in RMS with the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone. What remains
+$\val{cl_degrada}$ in RMS with the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone. What remains
 open is a first-principles derivation of these algebraic forms from the field
 action; the burden has moved from ``derive MIRA'' to ``ground $\omega_b$ and the
 $\omega_c$ identity.'' The values are not fitted, but their UV origin is open.

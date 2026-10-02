@@ -164,3 +164,5 @@ ser preguntas al retirarse el objeto del que trataban. Ver el README del cajón.
 - `cumulos_7.py`: generaba la tabla de cúmulos de P2 con M = M_bar·KAL₀·(1+f_ν). Retirado porque el modelo vigente
   es relatividad general (α_T=α_M=α_B=0, P7; límite canónico de P8) y porque sus datos no salían de la fuente citada.
   Lo reemplaza `src/p02_mcmc/cumulos_zhang2026.py`.
+
+- `codigo/investigacion/huerfanos_2026-10-02/` (2026-10-02): `ssee_paper3_hiclass_check.py` y `ssee_eftcamb_validation.py` con sus figuras; ningun documento los citaba y su fisica estaba retirada (0.160 en la geometria; w constante). Ver su README.

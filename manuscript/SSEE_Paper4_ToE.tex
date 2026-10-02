@@ -578,9 +578,11 @@ of DESI~DR2+CMB+DESY5 data \citep{desidr2_2025}
 
 \subsection{Open Parameters}
 
-$A_s = 2.1\times10^{-9}$ and $\tau = 0.054$ are retained at standard values.
-Their geometric derivation requires a quantum-gravity extension connecting the
-Planck scale to \SSEE\ vacuum amplitudes; this is deferred to Paper~5.
+$A_s$ and $\tau$ are the two free parameters of the framework ($k=2$) and are
+fitted to the CMB (Paper~3): with the full Planck likelihood,
+$\ln(10^{10}A_s)=\val{b1_logA_ssee}\pm\val{b1_logA_ssee_s}$ and
+$\tau=\val{b1_tau_ssee}\pm\val{b1_tau_ssee_s}$. A derivation of $A_s$ from
+$\varphi$ and $\pi$ is an open problem (OP-18).
 
 % ===========================================================================
 \section{CMB Power Spectrum Prediction}
@@ -600,15 +602,15 @@ Planck~2018 \citep{PlanckCollaboration2020a} error bars.}
 Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 \midrule
 $H_0^{\rm alg}$ [km/s/Mpc]     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & algebraic (Type~P$^\dagger$) \\
-$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_ALG_d6} & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
+$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
 $\Omega_b$          & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ & algebraic \\
 $\Omega_b h^2$      & 0.02242& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
 $\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $0.88\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
 $\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $\val{wc_ns_sigma_abs}\sigma$ & algebraic (forward) \\
 $Y_p$               & \val{Yp_ssee_d4} & $0.2471\pm0.0003$   & $0.2\sigma$ & BBN (no fit) \\
 $n_s$               & \val{N_S_d6}& $0.9649\pm0.0042$   & $0.16\sigma$& algebraic \\
-$A_s$               & $2.1\times10^{-9}$ & $2.10\times10^{-9}$ & $<0.5\sigma$ & standard \\
-$\tau$              & 0.054  & $0.054\pm0.007$     & $0\sigma$   & standard \\
+$\ln(10^{10}A_s)$   & \val{b1_logA_ssee} & $3.044\pm0.014$ & --- & fitted ($k=2$) \\
+$\tau$              & \val{b1_tau_ssee}  & $0.054\pm0.007$     & ---   & fitted ($k=2$) \\
 \midrule
 \midrule
 \multicolumn{5}{l}{\footnotesize IS = Israel--Stewart modulation by $n_s=1-\varphi^{-7}$; reduces tension from $\val{wc_estatico_ssee_sigma}\sigma$ (Eckart) to $\val{wc_ns_sigma}\sigma$.}\\
@@ -628,13 +630,14 @@ $\tau$              & 0.054  & $0.054\pm0.007$     & $0\sigma$   & standard \\
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.95\textwidth]{fig_toe_cmb_TT.pdf}
-\caption{\SSEE CMB TT power spectrum ($k=2$: $A_s$ and $\tau$ at standard
-values; all remaining parameters algebraic from $\varphi,\pi$ — zero fitted),
-overlaid on the Planck~2018 $\Lambda$CDM spectrum for reference.
-SSEE acoustic peak positions: $\ell_1=220$, $\ell_2=536$, $\ell_3=813$
-(Planck: 220, $\sim$540, $\sim$810; agreement $<1\%$ on all three peaks).
-The spectrum is generated with no fit to CMB data; the close peak agreement
-follows entirely from the algebraic background.}
+\caption{\SSEE CMB TT power spectrum ($k=2$: $A_s$ and $\tau$ from the
+model's own CMB fit; $\omega_b$, $\omega_c$, $n_s$, $w_0$, $w_a$, $H_0$ and
+$\sum m_\nu$ algebraic from $\varphi,\pi$), overlaid on the Planck~2018
+$\Lambda$CDM spectrum computed in the same way.
+SSEE acoustic peak positions: $\ell_1=\val{p4_pico1_ssee}$, $\ell_2=\val{p4_pico2_ssee}$,
+$\ell_3=\val{p4_pico3_ssee}$; $\Lambda$CDM: $\val{p4_pico1_lcdm}$, $\val{p4_pico2_lcdm}$,
+$\val{p4_pico3_lcdm}$. The background is not fitted to CMB data; the peak
+positions follow from it.}
 \label{fig:cmb_tt}
 \end{figure}
 
@@ -668,11 +671,12 @@ is applied multiplicatively to the measured local rate
 $H_0^{\rm SH0ES}=73.04\pm1.04$~km\,s$^{-1}$\,Mpc$^{-1}$ \citep{Riess2022} ---
 the only directly measured expansion rate --- yielding the canonical global value
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = 68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-$0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$, which
-the $\omega_m$-direct reframe (Paper~3) independently finds preferred by the
-CMB. (The earlier MIRA register $H_0^{\rm MIRA}=67.037$ is superseded.)
+$0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$.
+With $\omega_b,\omega_c$ held at their algebraic values and $A_s,\tau$ profiled,
+the CMB places its own minimum at $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$,
+$\val{perfil_h0_d}\sigma$ from $H_0^{\rm glob}$ (Paper~3). (The earlier MIRA register $H_0^{\rm MIRA}=67.037$ is superseded.)
 Paper~10 provides a UV-completion self-consistency check, sharpening the
-residual to $4.2\times10^{-6}$ ($H_0^{\rm glob,UV} = \val{H0_ALG_d6}$),
+residual to $4.2\times10^{-6}$ ($H_0^{\rm glob} = \val{H0_GLOBAL_d6}$ with the complete $f_{\rm screen}$, IR$+$UV),
 conditional on the UV--IR separability postulate.
 
 % ===========================================================================

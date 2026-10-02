@@ -42,7 +42,7 @@ s_K_papers = 0.40330   # R66-OK: literal citado de los papers A PROPOSITO.
 # del algebra. Importarlo del nucleo compararia el nucleo consigo mismo y la
 # comprobacion pasaria siempre, aunque el paper dijera otra cosa (R53).
 # OJO 2026-08-10: se atribuia a 'CLASS/EFTCAMB'. El script que lo avalaba
-# (ssee_paper3_hiclass_check.py) corre CLASS NORMAL, no hi_class, y en z=0 su
+# (ssee_paper3_hiclass_check.py, archivado 2026-10-02 en archive/codigo/investigacion/huerfanos_2026-10-02/) corre CLASS NORMAL, no hi_class, y en z=0 su
 # formula colapsa al mismo algebra que compara. No es aval independiente.
 
 # ── Step 2: MIRA from Paper 8 disformal null geodesic ───────────────────────

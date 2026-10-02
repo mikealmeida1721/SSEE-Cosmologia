@@ -123,11 +123,10 @@ PP: SSEE χ²_r=0.720  |  ΛCDM χ²_r=0.757  (N=9)    [lensing — SSEE favoure
 Peak positions: ℓ = 221, 538, 815
 ```
 
-CLASS cross-check (αK Bellini-Sawicki):
-```bash
-python3 src/p03_cmb/ssee_paper3_hiclass_check.py
-```
-Expected: αK(0) = 0.4033, Δ = 0.005% vs algebraic prediction.
+CLASS cross-check (αK Bellini-Sawicki): el script de mayo (`archive/codigo/investigacion/huerfanos_2026-10-02/ssee_paper3_hiclass_check.py`) quedó
+ARCHIVADO el 2026-10-02: metía Ω_m,dyn = 0.160 en CLASS y su «Δ = 0.005 %» era la misma
+sustitución dos veces. El hi_class vigente es la etapa DVC `hiclass_campo`
+(`src/p07_eft/hiclass_campo.py`), que P7 cita por `\val`.
 
 ### Paper 4 — Press-Schechter δc comparison
 ```bash

@@ -9,715 +9,748 @@
 # Se migra aqui, etapa por etapa, lo que hoy vive en PROPAGACION.yaml.
 stages:
   mcmc_full_posteriores:
-    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/mcmc_full/leer_mcmc_full.py
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
+      src/mcmc_full/leer_mcmc_full.py
     deps:
-      - src/mcmc_full/leer_mcmc_full.py
-      - src/ssee_core.py
-      - results/logs/lya_auditoria.json
-      - src/procedencia.py
-      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
-      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt
-      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt
-      - /mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt
+    - src/mcmc_full/leer_mcmc_full.py
+    - src/ssee_core.py
+    - results/logs/lya_auditoria.json
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt
     outs:
-      - results/logs/mcmc_full_posteriores.json:
-          cache: false
+    - results/logs/mcmc_full_posteriores.json:
+        cache: false
   s8_desde_b1:
-    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/p06_growth/s8_desde_b1.py
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
+      src/p06_growth/s8_desde_b1.py
     deps:
-      - src/p06_growth/s8_desde_b1.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - results/chains/ssee_cmb.1.txt
-      - results/chains/lcdm_cmb.1.txt
-      - results/logs/b1_analyse.log
-      - CANONICAL_VALUES.yaml
+    - src/p06_growth/s8_desde_b1.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - results/chains/ssee_cmb.1.txt
+    - results/chains/lcdm_cmb.1.txt
+    - results/logs/b1_analyse.log
+    - CANONICAL_VALUES.yaml
     outs:
-      - results/logs/s8_desde_b1.json:
-          cache: false
+    - results/logs/s8_desde_b1.json:
+        cache: false
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
     deps:
-      - src/valores_tex.py
-      - manuscript/valores.yaml
-      - results/logs/paper4_toe.json
-      - results/logs/cmb_dbic_mnu_propia.json
-      - results/logs/s8_desde_b1.json
-      - results/logs/kids_publicados.json
-      - results/logs/p10_uv_fscreen.json
-      - results/logs/algebra_derivada.json
-      - results/logs/kids_legacy_bic.json
-      - results/logs/paper3_cmb_chi2.json
-      - results/logs/lya_auditoria.json
-      - results/logs/hiclass_campo.json
-      - results/logs/resumen_3modelos.json
-      - results/logs/savage_cv.json
-      - results/logs/dic_from_chains.json
-      - results/logs/press_schechter.json
-      - results/logs/edad_universo.json
-      - results/logs/fondos_exponenciales.json
-      - results/logs/class_picos.json
-      - results/logs/hmcode_bariones.json
-      - results/logs/p5_IS_perturbations_Q3.json
-      - results/logs/p5_techo_sigma8_As_fijo.json
-      - results/logs/s8_kids_legacy_camb.json
-      - results/logs/paper2_w0wa.json
-      - results/logs/cumulos_zhang2026.json
-      - results/logs/b1_k2.json
-      - results/logs/sondas_ssee_vs_lcdm.json
-      - results/logs/mcmc_paper2_reframe.json
-      - results/logs/h0_four_priors.json
-      - results/logs/is_growth_gamma.json
-      - results/logs/perfil_h0_ancla.json
-      - results/logs/mcmc_full_posteriores.json
-      - results/logs/fsigma8_canonico.json
-      - results/logs/ganancia_wc_libre.json
-      - results/logs/growth_2026-07/As_medido_o_producto.json
-      - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      - results/logs/perfil_wc_boss.json
-      - results/logs/perfil_wc_boss_lcdm.json
+    - src/valores_tex.py
+    - manuscript/valores.yaml
+    - results/logs/paper4_toe.json
+    - results/logs/cmb_dbic_mnu_propia.json
+    - results/logs/s8_desde_b1.json
+    - results/logs/kids_publicados.json
+    - results/logs/p10_uv_fscreen.json
+    - results/logs/algebra_derivada.json
+    - results/logs/kids_legacy_bic.json
+    - results/logs/paper3_cmb_chi2.json
+    - results/logs/lya_auditoria.json
+    - results/logs/hiclass_campo.json
+    - results/logs/resumen_3modelos.json
+    - results/logs/savage_cv.json
+    - results/logs/dic_from_chains.json
+    - results/logs/press_schechter.json
+    - results/logs/edad_universo.json
+    - results/logs/fondos_exponenciales.json
+    - results/logs/class_picos.json
+    - results/logs/hmcode_bariones.json
+    - results/logs/p5_IS_perturbations_Q3.json
+    - results/logs/p5_techo_sigma8_As_fijo.json
+    - results/logs/s8_kids_legacy_camb.json
+    - results/logs/paper2_w0wa.json
+    - results/logs/cumulos_zhang2026.json
+    - results/logs/b1_k2.json
+    - results/logs/sondas_ssee_vs_lcdm.json
+    - results/logs/mcmc_paper2_reframe.json
+    - results/logs/h0_four_priors.json
+    - results/logs/is_growth_gamma.json
+    - results/logs/perfil_h0_ancla.json
+    - results/logs/mcmc_full_posteriores.json
+    - results/logs/fsigma8_canonico.json
+    - results/logs/ganancia_wc_libre.json
+    - results/logs/growth_2026-07/As_medido_o_producto.json
+    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    - results/logs/perfil_wc_boss.json
+    - results/logs/perfil_wc_boss_lcdm.json
     outs:
-      - manuscript/valores_generados.tex:
-          cache: false
+    - manuscript/valores_generados.tex:
+        cache: false
   p5_IS_perturbations:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_IS/ssee_paper5_IS_perturbations.py > results/logs/p5_IS_perturbations.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p05_IS/ssee_paper5_IS_perturbations.py > 
+      results/logs/p5_IS_perturbations.log 2>&1
     deps:
-      - src/p05_IS/ssee_paper5_IS_perturbations.py
-      - src/procedencia.py
-      - src/ssee_core.py
+    - src/p05_IS/ssee_paper5_IS_perturbations.py
+    - src/procedencia.py
+    - src/ssee_core.py
     outs:
-      - results/logs/p5_IS_perturbations_Q2.json:
-          cache: false
-      - results/logs/p5_IS_perturbations_Q3.json:
-          cache: false
-      - results/logs/p5_IS_perturbations.log:
-          cache: false
+    - results/logs/p5_IS_perturbations_Q2.json:
+        cache: false
+    - results/logs/p5_IS_perturbations_Q3.json:
+        cache: false
+    - results/logs/p5_IS_perturbations.log:
+        cache: false
   kids_publicados:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_publicados.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/kids_publicados.py
     deps:
-      - src/p06_growth/kids_publicados.py
-      - src/procedencia.py
-      - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
-      - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
-      - results/logs/growth_2026-07/R3_ssee_kids_S8.json
-      - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+    - src/p06_growth/kids_publicados.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+    - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
     outs:
-      - results/logs/kids_publicados.json:
-          cache: false
+    - results/logs/kids_publicados.json:
+        cache: false
   p10_uv_fscreen:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/ssee_paper10_verification.py > /dev/null
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p10_uv/ssee_paper10_verification.py > /dev/null
     deps:
-      - src/p10_uv/ssee_paper10_verification.py
-      - src/procedencia.py
-      - src/ssee_core.py
+    - src/p10_uv/ssee_paper10_verification.py
+    - src/procedencia.py
+    - src/ssee_core.py
     outs:
-      - results/logs/p10_uv_fscreen.json:
-          cache: false
+    - results/logs/p10_uv_fscreen.json:
+        cache: false
   prueba_equivalencia_hglob:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/prueba_equivalencia_hglob.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/verificacion/prueba_equivalencia_hglob.py
     deps:
-      - src/verificacion/prueba_equivalencia_hglob.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - results/logs/cmb_dbic_tau_ajustado.json
-      - src/p03_cmb/cmb_eval.py
-      - src/p02_mcmc/chi2_bao_posterior.py
-      - src/p06_growth/cobaya_kids_legacy.py
+    - src/verificacion/prueba_equivalencia_hglob.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - src/p03_cmb/cmb_eval.py
+    - src/p02_mcmc/chi2_bao_posterior.py
+    - src/p06_growth/cobaya_kids_legacy.py
     outs:
-      - results/logs/prueba_equivalencia_hglob.json:
-          cache: false
+    - results/logs/prueba_equivalencia_hglob.json:
+        cache: false
   spt3g_calibrador:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/spt3g_calibra.py lee
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/spt3g_calibra.py lee
     deps:
-      - src/p11_sondas/spt3g_calibra.py
-      - src/procedencia.py
-      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt
-      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt
-      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt
-      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt
-      - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.progress
-      - /mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex
-      - /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
+    - src/p11_sondas/spt3g_calibra.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt
+    - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt
+    - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt
+    - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt
+    - /mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.progress
+    - /mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex
+    - /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
     outs:
-      - results/logs/spt3g_calibrador.json:
-          cache: false
+    - results/logs/spt3g_calibrador.json:
+        cache: false
   algebra_derivada:
     cmd: .venv/bin/python3 src/algebra_derivada.py
     deps:
-      - src/algebra_derivada.py
-      - src/procedencia.py
-      - src/ssee_core.py
+    - src/algebra_derivada.py
+    - src/procedencia.py
+    - src/ssee_core.py
     outs:
-      - results/logs/algebra_derivada.json:
-          cache: false
+    - results/logs/algebra_derivada.json:
+        cache: false
   kids_legacy_bic:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_legacy_bic.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/kids_legacy_bic.py
     deps:
-      - src/p06_growth/kids_legacy_bic.py
-      - src/procedencia.py
-      - CANONICAL_VALUES.yaml
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    - src/p06_growth/kids_legacy_bic.py
+    - src/procedencia.py
+    - CANONICAL_VALUES.yaml
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
     outs:
-      - results/logs/kids_legacy_bic.json:
-          cache: false
+    - results/logs/kids_legacy_bic.json:
+        cache: false
   paper3_cmb:
-    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
+    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 
+      src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
     deps:
-      - src/p03_cmb/ssee_paper3_cmb.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - data/raw/planck_pr4_TT.txt
-      - data/raw/planck_pr4_TE.txt
-      - data/raw/planck_pr4_EE.txt
-      - data/raw/planck_pr4_lensing.txt
+    - src/p03_cmb/ssee_paper3_cmb.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - data/raw/planck_pr4_TT.txt
+    - data/raw/planck_pr4_TE.txt
+    - data/raw/planck_pr4_EE.txt
+    - data/raw/planck_pr4_lensing.txt
     outs:
-      - results/logs/paper3_cmb_chi2.json:
-          cache: false
-      - results/logs/paper3_cmb_reframe.log:
-          cache: false
+    - results/logs/paper3_cmb_chi2.json:
+        cache: false
+    - results/logs/paper3_cmb_reframe.log:
+        cache: false
   lya_auditoria:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/lya_auditoria.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/lya_auditoria.py
     deps:
-      - src/p02_mcmc/lya_auditoria.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/bao_camb.py
-      - src/desi_dr2_data.py
-      - src/p11_sondas/lcdm_planck.py
-      - data/raw/desi_dr2_bao.csv
-      - results/logs/bao_lcdm_planck.json
+    - src/p02_mcmc/lya_auditoria.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/bao_camb.py
+    - src/desi_dr2_data.py
+    - src/p11_sondas/lcdm_planck.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/bao_lcdm_planck.json
     outs:
-      - results/logs/lya_auditoria.json:
-          cache: false
+    - results/logs/lya_auditoria.json:
+        cache: false
   hiclass_campo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/hiclass_campo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/hiclass_campo.py
     deps:
-      - src/p07_eft/hiclass_campo.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - /mnt/datos/hi_class/class
+    - src/p07_eft/hiclass_campo.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - /mnt/datos/hi_class/class
     outs:
-      - results/logs/hiclass_campo.json:
-          cache: false
+    - results/logs/hiclass_campo.json:
+        cache: false
   resumen_3modelos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/resumen_3modelos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/resumen_3modelos.py
     deps:
-      - src/p02_mcmc/resumen_3modelos.py
-      - src/procedencia.py
-      - src/desi_dr2_data.py
-      - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
-      - results/logs/mcmc_paper2_3models_wmfix.log
+    - src/p02_mcmc/resumen_3modelos.py
+    - src/procedencia.py
+    - src/desi_dr2_data.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - results/logs/mcmc_paper2_3models_wmfix.log
     outs:
-      - results/logs/resumen_3modelos.json:
-          cache: false
+    - results/logs/resumen_3modelos.json:
+        cache: false
   savage_cv:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/estadistica/ssee_phase_d_savage_cv.py > results/logs/phase_d_savage_cv_wmfix.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/estadistica/ssee_phase_d_savage_cv.py > 
+      results/logs/phase_d_savage_cv_wmfix.log 2>&1
     deps:
-      - src/estadistica/ssee_phase_d_savage_cv.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - src/estadistica/ssee_phase_d_savage_cv.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
     outs:
-      - results/logs/savage_cv.json:
-          cache: false
-      - results/logs/phase_d_savage_cv_wmfix.log:
-          cache: false
+    - results/logs/savage_cv.json:
+        cache: false
+    - results/logs/phase_d_savage_cv_wmfix.log:
+        cache: false
   dic_from_chains:
     cmd: .venv/bin/python3 src/estadistica/ssee_dic_from_chains.py
     deps:
-      - src/estadistica/ssee_dic_from_chains.py
-      - src/procedencia.py
-      - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - src/estadistica/ssee_dic_from_chains.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
     outs:
-      - results/logs/dic_from_chains.json:
-          cache: false
-      - results/logs/dic_from_chains.log:
-          cache: false
+    - results/logs/dic_from_chains.json:
+        cache: false
+    - results/logs/dic_from_chains.log:
+        cache: false
   ajuste_conjunto_SSEE:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
     deps:
-      - src/p03_cmb/ajuste_conjunto_wc_ns.py
-      - src/p03_cmb/cmb_eval.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
-      - results/logs/cmb_ajuste_conjunto_wc_ns.json
+    - src/p03_cmb/ajuste_conjunto_wc_ns.py
+    - src/p03_cmb/cmb_eval.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - results/logs/cmb_ajuste_conjunto_wc_ns.json
     outs:
-      - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json:
-          cache: false
+    - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json:
+        cache: false
   ajuste_conjunto_LCDM:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
     deps:
-      - src/p03_cmb/ajuste_conjunto_wc_ns.py
-      - src/p03_cmb/cmb_eval.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
-      - results/logs/cmb_ajuste_conjunto_wc_ns.json
+    - src/p03_cmb/ajuste_conjunto_wc_ns.py
+    - src/p03_cmb/cmb_eval.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - results/logs/cmb_ajuste_conjunto_wc_ns.json
     outs:
-      - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json:
-          cache: false
+    - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json:
+        cache: false
   press_schechter:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_press_schechter.py > results/logs/press_schechter.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/ssee_press_schechter.py > results/logs/press_schechter.log 
+      2>&1
     deps:
-      - src/p02_mcmc/ssee_press_schechter.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - CANONICAL_VALUES.yaml
-      - results/logs/deltac_spherical_collapse.json
-      - results/logs/p5_IS_perturbations_Q3.json
-      - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    - src/p02_mcmc/ssee_press_schechter.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - CANONICAL_VALUES.yaml
+    - results/logs/deltac_spherical_collapse.json
+    - results/logs/p5_IS_perturbations_Q3.json
+    - results/logs/growth_2026-07/R3_ssee_kids_S8.json
     outs:
-      - results/logs/press_schechter.json:
-          cache: false
-      - results/logs/press_schechter.log:
-          cache: false
+    - results/logs/press_schechter.json:
+        cache: false
+    - results/logs/press_schechter.log:
+        cache: false
   edad_universo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/edad_universo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p09_hubble/edad_universo.py
     deps:
-      - src/p09_hubble/edad_universo.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
+    - src/p09_hubble/edad_universo.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
     outs:
-      - results/logs/edad_universo.json:
-          cache: false
+    - results/logs/edad_universo.json:
+        cache: false
   class_picos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/class_picos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/class_picos.py
     deps:
-      - src/p03_cmb/class_picos.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
-      - CANONICAL_VALUES.yaml
-      - results/logs/paper3_cmb_chi2.json
-      - class_ssee/ssee_v36_nomira.ini
+    - src/p03_cmb/class_picos.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - CANONICAL_VALUES.yaml
+    - results/logs/paper3_cmb_chi2.json
+    - class_ssee/ssee_v36_nomira.ini
     outs:
-      - results/logs/class_picos.json:
-          cache: false
-      - results/figures/fig_class_tt.pdf:
-          cache: false
+    - results/logs/class_picos.json:
+        cache: false
+    - results/figures/fig_class_tt.pdf:
+        cache: false
   R3_rehecho:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_ssee_R3.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/analiza_ssee_R3.py
     deps:
-      - src/p06_growth/analiza_ssee_R3.py
-      - src/procedencia.py
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-      - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    - src/p06_growth/analiza_ssee_R3.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+    - results/logs/growth_2026-07/R3_ssee_kids_S8.json
     outs:
-      - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json:
-          cache: false
+    - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json:
+        cache: false
   s8_kids_legacy_camb:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/s8_kids_legacy_camb.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/s8_kids_legacy_camb.py
     deps:
-      - src/p06_growth/s8_kids_legacy_camb.py
-      - src/procedencia.py
-      - CANONICAL_VALUES.yaml
-      - src/p06_growth/cobaya_kids_legacy.py
-      - src/p06_growth/kids_shear.py
+    - src/p06_growth/s8_kids_legacy_camb.py
+    - src/procedencia.py
+    - CANONICAL_VALUES.yaml
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/p06_growth/kids_shear.py
     outs:
-      - results/logs/s8_kids_legacy_camb.json:
-          cache: false
+    - results/logs/s8_kids_legacy_camb.json:
+        cache: false
   techo_sigma8_As_fijo:
     cmd: .venv/bin/python3 src/p05_IS/techo_sigma8_As_fijo.py
     deps:
-      - src/p05_IS/techo_sigma8_As_fijo.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - results/logs/p5_techo_evidencia/techo_ssee_canonico__pk.dat
-      - results/logs/p5_techo_evidencia/techo_lcdm_referencia__pk.dat
-      - results/logs/p5_techo_evidencia/can_cold__pk.dat
-      - results/logs/p5_techo_evidencia/lcdm_planck2018__pk.dat
-      - config/class/techo_ssee_canonico.ini
-      - config/class/techo_lcdm_referencia.ini
+    - src/p05_IS/techo_sigma8_As_fijo.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - results/logs/p5_techo_evidencia/techo_ssee_canonico__pk.dat
+    - results/logs/p5_techo_evidencia/techo_lcdm_referencia__pk.dat
+    - results/logs/p5_techo_evidencia/can_cold__pk.dat
+    - results/logs/p5_techo_evidencia/lcdm_planck2018__pk.dat
+    - config/class/techo_ssee_canonico.ini
+    - config/class/techo_lcdm_referencia.ini
     outs:
-      - results/logs/p5_techo_sigma8_As_fijo.json:
-          cache: false
+    - results/logs/p5_techo_sigma8_As_fijo.json:
+        cache: false
   fnu_tremaine_gunn:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 
+      2>&1
     deps:
-      - src/p02_mcmc/fnu_tremaine_gunn.py
-      - src/procedencia.py
-      - src/ssee_core.py
+    - src/p02_mcmc/fnu_tremaine_gunn.py
+    - src/procedencia.py
+    - src/ssee_core.py
     outs:
-      - results/logs/fnu_tremaine_gunn.json:
-          cache: false
-      - results/logs/fnu_tremaine_gunn.log:
-          cache: false
+    - results/logs/fnu_tremaine_gunn.json:
+        cache: false
+    - results/logs/fnu_tremaine_gunn.log:
+        cache: false
   cumulos_zhang2026:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 
+      2>&1
     deps:
-      - src/p02_mcmc/cumulos_zhang2026.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
-      - data/raw/zhang2026/tablas_II_III.tex
+    - src/p02_mcmc/cumulos_zhang2026.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - data/raw/zhang2026/tablas_II_III.tex
     outs:
-      - results/logs/cumulos_zhang2026.json:
-          cache: false
-      - results/logs/cumulos_zhang2026.log:
-          cache: false
+    - results/logs/cumulos_zhang2026.json:
+        cache: false
+    - results/logs/cumulos_zhang2026.log:
+        cache: false
   paper2_w0wa:
-    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py > results/logs/paper2_analysis.log 2>&1
+    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py >
+      results/logs/paper2_analysis.log 2>&1
     deps:
-      - src/p02_mcmc/ssee_paper2_analysis.py
-      - src/procedencia.py
+    - src/p02_mcmc/ssee_paper2_analysis.py
+    - src/procedencia.py
     outs:
-      - results/logs/paper2_w0wa.json:
-          cache: false
-      - results/logs/paper2_analysis.log:
-          cache: false
+    - results/logs/paper2_w0wa.json:
+        cache: false
+    - results/logs/paper2_analysis.log:
+        cache: false
   mide_As_o_producto:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/mide_As_o_producto.py > results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/mide_As_o_producto.py > 
+      results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
     deps:
-      - src/p06_growth/mide_As_o_producto.py
-      - src/procedencia.py
-      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt
+    - src/p06_growth/mide_As_o_producto.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt
     outs:
-      - results/logs/growth_2026-07/As_medido_o_producto.json:
-          cache: false
-      - results/logs/growth_2026-07/As_medido_o_producto.log:
-          cache: false
+    - results/logs/growth_2026-07/As_medido_o_producto.json:
+        cache: false
+    - results/logs/growth_2026-07/As_medido_o_producto.log:
+        cache: false
   leer_conjunta_b3:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 
+      2>&1
     deps:
-      - src/p06_growth/leer_conjunta.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/bao_camb.py
-      - src/rd_camb.py
-      - results/logs/cmb_dbic_tau_ajustado.json
-      - results/logs/multisonda_fondo_clavado.json
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
-      - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
+    - src/p06_growth/leer_conjunta.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/bao_camb.py
+    - src/rd_camb.py
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - results/logs/multisonda_fondo_clavado.json
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
     outs:
-      - results/logs/conjunta_b3_vs_individual.json:
-          cache: false
-      - results/logs/leer_conjunta_b3.log:
-          cache: false
+    - results/logs/conjunta_b3_vs_individual.json:
+        cache: false
+    - results/logs/leer_conjunta_b3.log:
+        cache: false
   b1_min_ssee:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
     deps:
-      - src/p03_cmb/b1_minimiza.py
-      - src/p03_cmb/ssee_paper3_b1_mcmc.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - results/chains/ssee_cmb_k2.updated.yaml
-      - results/chains/ssee_cmb_k2.1.txt
-      - results/chains/ssee_cmb_k2.2.txt
-      - results/chains/ssee_cmb_k2.3.txt
-      - results/chains/ssee_cmb_k2.4.txt
+    - src/p03_cmb/b1_minimiza.py
+    - src/p03_cmb/ssee_paper3_b1_mcmc.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - results/chains/ssee_cmb_k2.updated.yaml
+    - results/chains/ssee_cmb_k2.1.txt
+    - results/chains/ssee_cmb_k2.2.txt
+    - results/chains/ssee_cmb_k2.3.txt
+    - results/chains/ssee_cmb_k2.4.txt
     outs:
-      - results/logs/b1_min_ssee.json:
-          cache: false
-      - results/logs/b1_min_ssee.log:
-          cache: false
+    - results/logs/b1_min_ssee.json:
+        cache: false
+    - results/logs/b1_min_ssee.log:
+        cache: false
   b1_min_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
     deps:
-      - src/p03_cmb/b1_minimiza.py
-      - src/p03_cmb/ssee_paper3_b1_mcmc.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - results/chains/lcdm_cmb.updated.yaml
-      - results/chains/lcdm_cmb.1.txt
+    - src/p03_cmb/b1_minimiza.py
+    - src/p03_cmb/ssee_paper3_b1_mcmc.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - results/chains/lcdm_cmb.updated.yaml
+    - results/chains/lcdm_cmb.1.txt
     outs:
-      - results/logs/b1_min_lcdm.json:
-          cache: false
-      - results/logs/b1_min_lcdm.log:
-          cache: false
+    - results/logs/b1_min_lcdm.json:
+        cache: false
+    - results/logs/b1_min_lcdm.log:
+        cache: false
   b1_k2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py > results/logs/b1_k2.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py
+      > results/logs/b1_k2.log 2>&1
     deps:
-      - src/p03_cmb/b1_k2_lee.py
-      - src/p03_cmb/ssee_paper3_b1_mcmc.py
-      - src/procedencia.py
-      - results/logs/b1_min_ssee.json
-      - results/logs/b1_min_lcdm.json
-      - results/chains/ssee_cmb_k2.input.yaml
-      - results/chains/lcdm_cmb.input.yaml
-      - results/chains/ssee_cmb.1.txt
-      - results/chains/ssee_cmb_k2.1.txt
-      - results/chains/ssee_cmb_k2.2.txt
-      - results/chains/ssee_cmb_k2.3.txt
-      - results/chains/ssee_cmb_k2.4.txt
-      - results/chains/lcdm_cmb.1.txt
+    - src/p03_cmb/b1_k2_lee.py
+    - src/p03_cmb/ssee_paper3_b1_mcmc.py
+    - src/procedencia.py
+    - results/logs/b1_min_ssee.json
+    - results/logs/b1_min_lcdm.json
+    - results/chains/ssee_cmb_k2.input.yaml
+    - results/chains/lcdm_cmb.input.yaml
+    - results/chains/ssee_cmb.1.txt
+    - results/chains/ssee_cmb_k2.1.txt
+    - results/chains/ssee_cmb_k2.2.txt
+    - results/chains/ssee_cmb_k2.3.txt
+    - results/chains/ssee_cmb_k2.4.txt
+    - results/chains/lcdm_cmb.1.txt
     outs:
-      - results/logs/b1_k2.json:
-          cache: false
-      - results/logs/b1_k2.log:
-          cache: false
+    - results/logs/b1_k2.json:
+        cache: false
+    - results/logs/b1_k2.log:
+        cache: false
   analiza_boss_R1R2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_boss_R1R2.py ambos > results/logs/analiza_boss_R1R2.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/analiza_boss_R1R2.py ambos > 
+      results/logs/analiza_boss_R1R2.log 2>&1
     deps:
-      - src/p06_growth/analiza_boss_R1R2.py
-      - src/p06_growth/cobaya_boss.py
-      - src/p06_growth/boss_lpt_R1R2.py
-      - src/procedencia.py
-      - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
-      - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+    - src/p06_growth/analiza_boss_R1R2.py
+    - src/p06_growth/cobaya_boss.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/procedencia.py
+    - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
+    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
     outs:
-      - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json:
-          cache: false
-      - results/logs/analiza_boss_R1R2.log:
-          cache: false
+    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json:
+        cache: false
+    - results/logs/analiza_boss_R1R2.log:
+        cache: false
   fsigma8_canonico:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/recalc_fsigma8_canonical.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/recalc_fsigma8_canonical.py
     deps:
-      - src/p03_cmb/recalc_fsigma8_canonical.py
-      - src/procedencia.py
-      - src/ssee_core.py
+    - src/p03_cmb/recalc_fsigma8_canonical.py
+    - src/procedencia.py
+    - src/ssee_core.py
     outs:
-      - results/logs/fsigma8_canonico.json:
-          cache: false
+    - results/logs/fsigma8_canonico.json:
+        cache: false
   perfil_wc_boss:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
     deps:
-      - src/p06_growth/perfil_wc_boss.py
-      - src/p06_growth/minimo_sesgos.py
-      - src/p06_growth/boss_lpt_R1R2.py
-      - src/procedencia.py
-      - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
-      - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    - src/p06_growth/perfil_wc_boss.py
+    - src/p06_growth/minimo_sesgos.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/procedencia.py
+    - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
+    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
     outs:
-      - results/logs/perfil_wc_boss.json:
-          cache: false
-      - results/logs/perfil_wc_boss.log:
-          cache: false
+    - results/logs/perfil_wc_boss.json:
+        cache: false
+    - results/logs/perfil_wc_boss.log:
+        cache: false
   perfil_wc_boss_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss_lcdm.py > results/logs/perfil_wc_boss_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/perfil_wc_boss_lcdm.py > 
+      results/logs/perfil_wc_boss_lcdm.log 2>&1
     deps:
-      - src/p06_growth/perfil_wc_boss_lcdm.py
-      - src/p06_growth/minimo_sesgos.py
-      - src/p06_growth/boss_lpt_R1R2.py
-      - src/procedencia.py
-      - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
-      - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    - src/p06_growth/perfil_wc_boss_lcdm.py
+    - src/p06_growth/minimo_sesgos.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/procedencia.py
+    - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
+    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
     outs:
-      - results/logs/perfil_wc_boss_lcdm.json:
-          cache: false
-      - results/logs/perfil_wc_boss_lcdm.log:
-          cache: false
+    - results/logs/perfil_wc_boss_lcdm.json:
+        cache: false
+    - results/logs/perfil_wc_boss_lcdm.log:
+        cache: false
   multisonda_fondo_clavado:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/multisonda_fondo_clavado.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/multisonda_fondo_clavado.py
     deps:
-      - src/p06_growth/multisonda_fondo_clavado.py
-      - src/procedencia.py
-      - CANONICAL_VALUES.yaml
-      - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
-      - results/chains/ssee_cmb.1.txt
+    - src/p06_growth/multisonda_fondo_clavado.py
+    - src/procedencia.py
+    - CANONICAL_VALUES.yaml
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
+    - results/chains/ssee_cmb.1.txt
     outs:
-      - results/logs/multisonda_fondo_clavado.json:
-          cache: false
-      - results/logs/multisonda_fondo_clavado.log:
-          cache: false
+    - results/logs/multisonda_fondo_clavado.json:
+        cache: false
+    - results/logs/multisonda_fondo_clavado.log:
+        cache: false
   ganancia_wc_libre:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/ganancia_wc_libre.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/ganancia_wc_libre.py
     deps:
-      - src/p06_growth/ganancia_wc_libre.py
-      - src/procedencia.py
-      - results/logs/perfil_wc_boss.json
-      - results/logs/perfil_wc_boss_lcdm.json
-      - results/logs/multisonda_fondo_clavado.log
+    - src/p06_growth/ganancia_wc_libre.py
+    - src/procedencia.py
+    - results/logs/perfil_wc_boss.json
+    - results/logs/perfil_wc_boss_lcdm.json
+    - results/logs/multisonda_fondo_clavado.log
     outs:
-      - results/logs/ganancia_wc_libre.json:
-          cache: false
+    - results/logs/ganancia_wc_libre.json:
+        cache: false
   fondos_exponenciales:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondos_exponenciales.py > results/logs/fondos_exponenciales.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/fondos_exponenciales.py > 
+      results/logs/fondos_exponenciales.log 2>&1
     deps:
-      - src/p07_eft/fondos_exponenciales.py
-      - src/p07_eft/fondo_disparo.py
-      - src/p07_eft/busca_lambda.py
-      - archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
-      - src/ssee_core.py
-      - src/procedencia.py
+    - src/p07_eft/fondos_exponenciales.py
+    - src/p07_eft/fondo_disparo.py
+    - src/p07_eft/busca_lambda.py
+    - archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
+    - src/ssee_core.py
+    - src/procedencia.py
     outs:
-      - results/logs/fondos_exponenciales.json:
-          cache: false
-      - results/logs/fondos_exponenciales.log:
-          cache: false
+    - results/logs/fondos_exponenciales.json:
+        cache: false
+    - results/logs/fondos_exponenciales.log:
+        cache: false
   hmcode_bariones:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
     deps:
-      - src/p05_IS/hmcode_bariones.py
-      - src/procedencia.py
-      - config/class/techo_ssee_canonico.ini
-      - results/logs/p5_techo_sigma8_As_fijo.json
-      - archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py
+    - src/p05_IS/hmcode_bariones.py
+    - src/procedencia.py
+    - config/class/techo_ssee_canonico.ini
+    - results/logs/p5_techo_sigma8_As_fijo.json
+    - archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py
     outs:
-      - results/logs/hmcode_bariones.json:
-          cache: false
-      - results/logs/hmcode_bariones.log:
-          cache: false
+    - results/logs/hmcode_bariones.json:
+        cache: false
+    - results/logs/hmcode_bariones.log:
+        cache: false
   sondas_ssee_vs_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/sondas_ssee_vs_lcdm.py > results/logs/sondas_ssee_vs_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/sondas_ssee_vs_lcdm.py > 
+      results/logs/sondas_ssee_vs_lcdm.log 2>&1
     deps:
-      - src/p11_sondas/sondas_ssee_vs_lcdm.py
-      - src/procedencia.py
-      - results/logs/sn_geometria_en_el_clavo.json
-      - results/logs/union3_en_el_clavo.json
-      - results/logs/act_dr6_en_el_clavo.json
-      - results/logs/spt3g_kk_en_el_clavo.json
-      - results/logs/bao_lcdm_libre.json
-      - results/logs/des_y3_en_el_clavo_ssee.json
-      - results/logs/des_y3_en_el_clavo_lcdm_planck.json
+    - src/p11_sondas/sondas_ssee_vs_lcdm.py
+    - src/procedencia.py
+    - results/logs/sn_geometria_en_el_clavo.json
+    - results/logs/union3_en_el_clavo.json
+    - results/logs/act_dr6_en_el_clavo.json
+    - results/logs/spt3g_kk_en_el_clavo.json
+    - results/logs/bao_lcdm_libre.json
+    - results/logs/des_y3_en_el_clavo_ssee.json
+    - results/logs/des_y3_en_el_clavo_lcdm_planck.json
     outs:
-      - results/logs/sondas_ssee_vs_lcdm.json:
-          cache: false
-      - results/logs/sondas_ssee_vs_lcdm.log:
-          cache: false
+    - results/logs/sondas_ssee_vs_lcdm.json:
+        cache: false
+    - results/logs/sondas_ssee_vs_lcdm.log:
+        cache: false
   mcmc_paper2_reframe:
-    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 2>&1
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
+      .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 
+      2>&1
     deps:
-      - src/p02_mcmc/ssee_paper2_mcmc_reframe.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/desi_dr2_data.py
-      - src/rd_camb.py
-      - src/bao_camb.py
-      - src/p11_sondas/lcdm_planck.py
-      - data/raw/desi_dr2_bao.csv
-      - results/logs/h0_four_priors.json
+    - src/p02_mcmc/ssee_paper2_mcmc_reframe.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/desi_dr2_data.py
+    - src/rd_camb.py
+    - src/bao_camb.py
+    - src/p11_sondas/lcdm_planck.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/h0_four_priors.json
     outs:
-      - results/logs/mcmc_paper2_reframe.json:
-          cache: false
-      - results/logs/mcmc_paper2_reframe.log:
-          cache: false
-      - results/figures/fig_corner_ssee_halg_prior.pdf:
-          cache: false
+    - results/logs/mcmc_paper2_reframe.json:
+        cache: false
+    - results/logs/mcmc_paper2_reframe.log:
+        cache: false
+    - results/figures/fig_corner_ssee_halg_prior.pdf:
+        cache: false
   h0_four_priors:
-    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p09_hubble/ssee_h0_prior_experiment.py > results/logs/h0_four_priors.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 
+      MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p09_hubble/ssee_h0_prior_experiment.py > 
+      results/logs/h0_four_priors.log 2>&1
     deps:
-      - src/p09_hubble/ssee_h0_prior_experiment.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/desi_dr2_data.py
-      - src/rd_camb.py
-      - src/bao_camb.py
-      - data/raw/desi_dr2_bao.csv
+    - src/p09_hubble/ssee_h0_prior_experiment.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/desi_dr2_data.py
+    - src/rd_camb.py
+    - src/bao_camb.py
+    - data/raw/desi_dr2_bao.csv
     outs:
-      - results/logs/h0_four_priors.json:
-          cache: false
-      - results/logs/h0_four_priors.log:
-          cache: false
-      - results/figures/fig_h0_three_priors.pdf:
-          cache: false
+    - results/logs/h0_four_priors.json:
+        cache: false
+    - results/logs/h0_four_priors.log:
+        cache: false
+    - results/figures/fig_h0_three_priors.pdf:
+        cache: false
   perfil_h0_ancla:
-    cmd: NUCLEOS=6 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > results/logs/perfil_h0_ancla.log 2>&1
+    cmd: NUCLEOS=6 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 
+      nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > 
+      results/logs/perfil_h0_ancla.log 2>&1
     deps:
-      - src/p03_cmb/perfil_h0_ancla.py
-      - src/p03_cmb/cmb_eval.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
-      - results/logs/cmb_dbic_tau_ajustado.json
+    - src/p03_cmb/perfil_h0_ancla.py
+    - src/p03_cmb/cmb_eval.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - results/logs/cmb_dbic_tau_ajustado.json
     outs:
-      - results/logs/perfil_h0_ancla.json:
-          cache: false
-      - results/logs/perfil_h0_ancla.log:
-          cache: false
+    - results/logs/perfil_h0_ancla.json:
+        cache: false
+    - results/logs/perfil_h0_ancla.log:
+        cache: false
   is_growth_gamma:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_is/ssee_is_growth.py > results/logs/is_growth_gamma.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p05_is/ssee_is_growth.py > results/logs/is_growth_gamma.log 2>&1
     deps:
-      - src/p05_is/ssee_is_growth.py
-      - src/procedencia.py
-      - src/ssee_core.py
+    - src/p05_is/ssee_is_growth.py
+    - src/procedencia.py
+    - src/ssee_core.py
     outs:
-      - results/logs/is_growth_gamma.json:
-          cache: false
-      - results/logs/is_growth_gamma.log:
-          cache: false
+    - results/logs/is_growth_gamma.json:
+        cache: false
+    - results/logs/is_growth_gamma.log:
+        cache: false
   # 2026-10-02 (R36/R75): figuras de P3 (hi_class), P4 y P7 (EFTCAMB) rancias desde
   # c8d1566 (H0_ALG -> H0_GLOBAL); ahora etapas con acta en el PDF y log. 1 nucleo.
-  hiclass_check:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_hiclass_check.py > results/logs/hiclass_check.log 2>&1
-    deps:
-      - src/p03_cmb/ssee_paper3_hiclass_check.py
-      - src/procedencia.py
-      - data/raw/planck_pr4_TT.txt
-    outs:
-      - results/logs/hiclass_check.log:
-          cache: false
-      - results/figures/fig_hiclass_TT.pdf:
-          cache: false
-      - results/figures/fig_hiclass_alpha.pdf:
-          cache: false
   paper4_toe:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
     deps:
-      - src/p04_toe/ssee_paper4_toe.py
-      - src/procedencia.py
-      - src/ssee_core.py
-      - src/p11_sondas/lcdm_planck.py
-      - results/logs/cmb_dbic_tau_ajustado.json
+    - src/p04_toe/ssee_paper4_toe.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - results/logs/cmb_dbic_tau_ajustado.json
     outs:
-      - results/logs/paper4_toe.json:
-          cache: false
-      - results/logs/paper4_toe.log:
-          cache: false
-      - results/figures/fig_toe_derivations.pdf:
-          cache: false
-      - results/figures/fig_toe_cmb_TT.pdf:
-          cache: false
-  eftcamb_validation:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p07_eft/ssee_eftcamb_validation.py > results/logs/eftcamb_validation.log 2>&1
-    deps:
-      - src/p07_eft/ssee_eftcamb_validation.py
-      - src/procedencia.py
-      - src/ssee_core.py
-    outs:
-      - results/logs/eftcamb_validation.log:
-          cache: false
-      - results/figures/ssee_eftcamb_CMB_TT.pdf:
-          cache: false
-      - results/figures/ssee_eftcamb_Pk.pdf:
-          cache: false
+    - results/logs/paper4_toe.json:
+        cache: false
+    - results/logs/paper4_toe.log:
+        cache: false
+    - results/figures/fig_toe_derivations.pdf:
+        cache: false
+    - results/figures/fig_toe_cmb_TT.pdf:
+        cache: false
   cmb_dbic_mnu_propia:
-    cmd: .venv/bin/python3 src/p11_sondas/cmb_dbic_mnu_propia.py > results/logs/cmb_dbic_mnu_propia.log 2>&1
+    cmd: .venv/bin/python3 src/p11_sondas/cmb_dbic_mnu_propia.py > 
+      results/logs/cmb_dbic_mnu_propia.log 2>&1
     deps:
-      - src/p11_sondas/cmb_dbic_mnu_propia.py
-      - src/procedencia.py
-      - results/logs/cmb_dbic_tau_ajustado.json
-      - results/logs/lcdm_conjunta_cmb.json
+    - src/p11_sondas/cmb_dbic_mnu_propia.py
+    - src/procedencia.py
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - results/logs/lcdm_conjunta_cmb.json
     outs:
-      - results/logs/cmb_dbic_mnu_propia.json:
-          cache: false
-      - results/logs/cmb_dbic_mnu_propia.log:
-          cache: false
+    - results/logs/cmb_dbic_mnu_propia.json:
+        cache: false
+    - results/logs/cmb_dbic_mnu_propia.log:
+        cache: false

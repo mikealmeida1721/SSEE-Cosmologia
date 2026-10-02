@@ -1,0 +1,38 @@
+# ACTA-PROCEDENCIA {"commit": "5f5334707fc6461d7852d8fe2102e70d040c09f6", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p04_toe/ssee_paper4_toe.py", "script_sha256": "a9f7b5a1447ee5f50278a7a79858e08f977c59a4f37ee7d2f54af1893b66486e", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p04_toe/ssee_paper4_toe.py"], "fecha": "2026-10-02T12:55:06", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+/home/mike/Proyectos/SSEE/src/p04_toe/ssee_paper4_toe.py:206: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+=======================================================
+Nine Sovereignties — all must equal 3(φ+π) = 14.278880
+=======================================================
+  LUCY          14.278879927019   Δ=0.00e+00
+  LUCIFER       14.278879927019   Δ=1.78e-15
+  MIKE          14.278879927019   Δ=0.00e+00
+  MIKAEL        14.278879927019   Δ=0.00e+00
+  ERVN          14.278879927019   Δ=0.00e+00
+  ICEBERG       14.278879927019   Δ=0.00e+00
+  GIGAROJ       14.278879927019   Δ=0.00e+00
+  OSIRIS        14.278879927019   Δ=1.78e-15
+  MIKAEL_V      14.278879927019   Δ=0.00e+00
+
+=======================================================
+Derived cosmological parameters
+=======================================================
+  H0_alg       = 67.9621  km/s/Mpc  (Planck: 67.36 ± 0.54)
+  ns           = 0.96556            (Planck: 0.9649 ± 0.0042)
+  Ωb h² (alg)  = 0.02242            (Planck: 0.02237)
+  Ωb h² (obs)  = 0.02237            (input for IS formula)
+  Ωc h² static = 0.12351            (+2.9σ Eckart)
+  Ωc h² IS     = 0.11926            (−0.6σ, uses Planck Ωb h²)
+  Ωm           = 0.3089            (Planck: 0.3153)
+  w0           = -0.8399            (DESI DR2: −0.827)
+  wa           = -0.6700            (DESI DR2: −0.75)
+  VITA         = 8.662999
+  PHITA        = 10.281033
+
+Saved: results/figures/fig_toe_derivations.pdf
+  SSEE  picos TT l = [220, 536, 813]   ingredientes: mnu 0.06849, ombh2 0.02242, omch2 0.11951
+  LCDM  picos TT l = [220, 536, 813]   ingredientes: mnu 0.06, ombh2 0.02237, omch2 0.12000
+  diferencia relativa SSEE-LCDM por pico: ['0.00%', '0.00%', '0.00%']
+Saved: results/figures/fig_toe_cmb_TT.pdf
+
+Done.

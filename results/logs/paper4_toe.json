@@ -1,0 +1,72 @@
+{
+ "ingredientes": {
+  "SSEE": {
+   "H0": 67.96214152203791,
+   "ombh2": 0.02241775678109985,
+   "omch2": 0.11951440843160877,
+   "w0": -0.839949771344779,
+   "wa": -0.6699748856723895,
+   "ns": 0.9655581462513669,
+   "logA": 3.0448340130228546,
+   "tau": 0.0554590468914248,
+   "mnu": 0.06849
+  },
+  "LCDM": {
+   "H0": 67.36,
+   "ombh2": 0.02237,
+   "omch2": 0.12,
+   "w0": -1.0,
+   "wa": 0.0,
+   "ns": 0.9649,
+   "logA": 3.044,
+   "tau": 0.0544,
+   "mnu": 0.06
+  }
+ },
+ "picos": {
+  "SSEE": [
+   220,
+   536,
+   813
+  ],
+  "LCDM": [
+   220,
+   536,
+   813
+  ]
+ },
+ "dif_rel": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "dif_rel_max": 0.0,
+ "_procedencia": {
+  "commit": "5f5334707fc6461d7852d8fe2102e70d040c09f6",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p04_toe/ssee_paper4_toe.py",
+  "script_sha256": "a9f7b5a1447ee5f50278a7a79858e08f977c59a4f37ee7d2f54af1893b66486e",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123"
+  },
+  "argv": [
+   "src/p04_toe/ssee_paper4_toe.py"
+  ],
+  "fecha": "2026-10-02T12:55:32",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
