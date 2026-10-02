@@ -90,11 +90,16 @@ des = dict(sonda="DES Y3 3x2pt", tipo="cizalla + agrupamiento", fondo_lcdm="Plan
            nota="alineamientos TATT (oficial) y NLA: el empate se mantiene con los dos; el signo de una diferencia "
                 "despreciable cambia, asi que no separa modelos. Solo Delta chi2, sin sigma (nuisances minimizados)")
 b = L["bao"]
-assert b["lcdm_libre"]["reproduce"]
-bao = dict(sonda="DESI DR2 BAO", tipo="BAO", fondo_lcdm="libre", ajustados_lcdm=b["ssee_clavo"]["dof"] - b["lcdm_libre"]["dof"], SSEE=sig(b["ssee_clavo"]["chi2"], b["ssee_clavo"]["dof"]),
+assert b["lcdm_libre"]["reproduce"] and b["control_ssee_camb"]["pasa"]
+# 2026-10-02: DESI con el fondo clavado de los DOS modelos por CAMB (misma comparacion que las demas filas)
+filas.append(fila("DESI DR2 BAO", "BAO (CAMB, r_d de cada modelo)", b["ssee_camb"]["chi2"], b["lcdm_planck_camb"]["chi2"],
+                  b["ssee_camb"]["dof"], nota="LCDM-Planck clavado; aparte, LCDM libre (Om y h r_d ajustados a DESI)"))
+bao = dict(sonda="DESI DR2 BAO", tipo="BAO", fondo_lcdm="libre", ajustados_lcdm=b["ssee_camb"]["dof"] - b["lcdm_libre"]["dof"],
+           SSEE=sig(b["ssee_camb"]["chi2"], b["ssee_camb"]["dof"]),
            LCDM_libre=sig(b["lcdm_libre"]["chi2"], b["lcdm_libre"]["dof"]),
-           dchi2=float(b["delta_chi2_ssee_menos_lcdm_libre"]),
-           nota="LCDM LIBRE (Om y h r_d ajustados), no clavado: no es la misma comparacion que las demas")
+           LCDM_libre_Om=b["lcdm_libre"]["Om"], LCDM_libre_Om_err=b["lcdm_libre"]["Om_err"],
+           dchi2=float(b["delta_chi2_camb_ssee_menos_lcdm_libre"]),
+           nota="LCDM LIBRE: para llegar ajusta Om y h r_d a DESI")
 
 # Filas donde LCDM NO va con el fondo de Planck clavado: ajusta algo a la propia sonda
 c_lite, c_full, kl = L["lite"], L["full"], L["kl"]["corridas"]

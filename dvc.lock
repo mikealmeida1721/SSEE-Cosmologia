@@ -1947,3 +1947,44 @@ stages:
       hash: md5
       md5: c9849d801923aae1f28295ba7abc2e63
       size: 1292
+  bao_lcdm_libre:
+    cmd: OMP_NUM_THREADS=1 .venv/bin/python3 src/p11_sondas/bao_lcdm_libre.py > 
+      results/logs/bao_lcdm_libre.log 2>&1
+    deps:
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/bao_camb_control.json
+      hash: md5
+      md5: 57cc1d687ca5c74264c5f97b82a544a7
+      size: 226
+    - path: src/p06_growth/multisonda_fondo_clavado.py
+      hash: md5
+      md5: cab5fb62a9e46303f93f500868038979
+      size: 32914
+    - path: src/p11_sondas/bao_lcdm_libre.py
+      hash: md5
+      md5: d1e808a960b7df7d675fde88377e1b74
+      size: 7155
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/bao_lcdm_libre.json
+      hash: md5
+      md5: 392ae8da2eff2c5a51238b13007633d9
+      size: 2052
+    - path: results/logs/bao_lcdm_libre.log
+      hash: md5
+      md5: 41aa68ab8e958f60c5f4de1c5ef79bb3
+      size: 1259

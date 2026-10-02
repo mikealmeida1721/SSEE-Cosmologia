@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-27",
+ "fecha": "2026-10-02",
  "publicado": {
   "Om": 0.2975,
   "Om_err": 0.0086,
@@ -21,9 +21,60 @@
   "reproduce": true
  },
  "ssee_clavo": {
-  "chi2": 10.903953594619837,
+  "chi2": 11.406503768936682,
+  "dof": 13,
+  "libres": 0,
+  "nota": "r_d por formula (0.13 % largo): referencia, no canonico"
+ },
+ "ssee_camb": {
+  "chi2": 11.406652470296022,
+  "rd": 147.1743148132685,
+  "Om": 0.30888084061409116,
+  "hrd": 100.02281611748315,
   "dof": 13,
   "libres": 0
  },
- "delta_chi2_ssee_menos_lcdm_libre": 0.3653230499175937
+ "lcdm_planck_camb": {
+  "chi2": 31.981897557929273,
+  "rd": 147.10121945164454,
+  "Om": 0.315191849347291,
+  "hrd": 99.08738142262776,
+  "dof": 13,
+  "libres": 0
+ },
+ "control_ssee_camb": {
+  "ref": 11.406514867303027,
+  "pasa": true
+ },
+ "delta_chi2_ssee_menos_lcdm_libre": 0.8678732242344385,
+ "delta_chi2_camb_ssee_menos_lcdm_planck": -20.57524508763325,
+ "delta_chi2_camb_ssee_menos_lcdm_libre": 0.8680219255937782,
+ "_procedencia": {
+  "commit": "4a4fd431ccd24734846efbe707521f09cc5d613c",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/bao_lcdm_libre.py",
+  "script_sha256": "164ceddae6eb1718c3648874bd8d1803dfe06a1499a20370ccb17123d464f2ad",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/bao_camb_control.json": "d42c85b99b1082c75590a06412d76e2afe5a7cf150e8853539b635f3e271bbb9"
+  },
+  "argv": [
+   "src/p11_sondas/bao_lcdm_libre.py"
+  ],
+  "fecha": "2026-10-02T19:29:59",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }
