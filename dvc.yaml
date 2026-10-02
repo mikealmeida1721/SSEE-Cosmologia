@@ -64,6 +64,7 @@ stages:
       - results/logs/b1_k2.json
       - results/logs/sondas_ssee_vs_lcdm.json
       - results/logs/mcmc_paper2_reframe.json
+      - results/logs/h0_four_priors.json
       - results/logs/mcmc_full_posteriores.json
       - results/logs/fsigma8_canonico.json
       - results/logs/ganancia_wc_libre.json

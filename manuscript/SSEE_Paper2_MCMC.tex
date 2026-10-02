@@ -49,7 +49,7 @@ using DESI~DR2, Planck~2018, and Galaxy-Cluster Mass Data}
 % materia total el posterior sube a 67.79 (0.50sigma del anchor). 67.16 era DR1.
 % CORREGIDO 2026-08-07: el 67.95/0.04sigma previo congelaba Om=0.308881 dentro de
 % E(z), asi que el modelo solo se evaluaba fielmente en H0=67.962 (el ancla) y el
-% posterior quedaba sesgado hacia ella (fix R25, 2026-07-25). Valor vigente: 67.79.
+% posterior quedaba sesgado hacia ella (fix R25, 2026-07-25). Ese 67.79 quedo superado; el vigente sale de \val{h0_p2}.
 % ACTUALIZADO 2026-09-29: prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968 (era el número puro
 % con el σ de Planck 0.54) y r_d/distancias por CAMB. Valor vigente: \val{h0_p2} de results/logs/mcmc_paper2_reframe.json (semilla fija, 2026-10-01).
 % Fuente: results/logs/mcmc_paper2_reframe.json (100w×25k, N_eff=79056) · distancias: h0_distancias_hglob.json.
@@ -697,7 +697,7 @@ compensate. The $H_0$ posterior sits at $\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-
 under the $H_0^{\rm glob}$ prior --- $\val{h0_p2_dplanck}\sigma$ from Planck and $\val{h0_p2_dhglob}\sigma$
 from the prediction $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$. Removing the $H_0$ prior
 altogether leaves DESI~DR2 alone (with only a BBN prior on $\omega_b$) at
-$H_0=67.79\pm0.46$, $0.37\sigma$ from $H_0^{\rm glob}$: the data are
+$H_0=\val{h0_desi_plano}\pm\val{h0_desi_plano_s}$, $\val{h0_desi_plano_dhglob}\sigma$ from $H_0^{\rm glob}$: the data are
 \emph{consistent} with the algebraic value rather than pulling against it,
 though they do not single it out. Under a common
 Planck prior the three-model run gives $H_0^{\SSEE}=\val{p2_ssee_H0_mediana}\pm\val{p2_ssee_H0_std}$
@@ -964,8 +964,8 @@ geometry rather than the CMB prior, making them robust to prior choice.}
 \paragraph{BAO-only.}
 Running without any $H_0$ prior (DESI~DR2 with only a BBN prior on
 $\omega_b$; \S\ref{sec:results_cosmo}) gives
-$H_0=67.79\pm0.46$\,km\,s$^{-1}$\,Mpc$^{-1}$, consistent
-with the full posterior ($\val{h0_p2}\pm\val{h0_p2_s}$) at $0.05\sigma$.
+$H_0=\val{h0_desi_plano}\pm\val{h0_desi_plano_s}$\,km\,s$^{-1}$\,Mpc$^{-1}$, consistent
+with the full posterior ($\val{h0_p2}\pm\val{h0_p2_s}$) at $\val{h0_p2_vs_plano}\sigma$.
 \textit{The $H_0$ estimate is therefore essentially independent of
 Planck and rests entirely on the DESI~DR2 BAO geometry.}
 

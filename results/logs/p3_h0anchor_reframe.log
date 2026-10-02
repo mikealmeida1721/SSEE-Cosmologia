@@ -1,20 +1,3 @@
-# regenerado 2026-09-08 (R66): omega_b, H_alg y Om_piphi pasan del literal
-# redondeado al simbolo del nucleo (dif 2.2e-06, 3.2e-07 y 4.7e-06). El chi2
-# se mueve en la TERCERA decimal (min 1005.715 -> 1005.732); el minimo sigue
-# en Om=0.30700 y ninguna conclusion cambia.
-preflight  [1/3] __pycache__ borrados: 237
-preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
-preflight  [3/3] ingredientes de esta corrida:
-             SUM_MNU_EV       = 0.068490000
-             OMEGA_B_H2       = 0.022417757
-             OMEGA_C_H2       = 0.119514408
-             OMEGA_NU_H2      = 0.000735345
-             OMEGA_M_H2       = 0.142667510
-             OMEGA_M_TOTAL    = 0.308880879
-             W0               = -0.839949771
-             WA               = -0.669974886
-             H0_ALG           = 67.962137323
-preflight  OK — luz verde para el cómputo
 factor pi/phi      = 1.94161 -> Om = 0.31066
 factor phi+0.1*pi  = 1.93219 -> Om = 0.30915
 
@@ -28,7 +11,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.30000   0.11615   0.13857   1254.016
+ 0.30000   0.11615   0.13857   1254.012
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -37,7 +20,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.30500   0.11846   0.14087   1028.770
+ 0.30500   0.11846   0.14088   1028.769
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -55,7 +38,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.30915   0.12037   0.14279   1020.998 <- phi+0.1pi
+ 0.30915   0.12037   0.14279   1020.999 <- phi+0.1pi
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -64,7 +47,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.31076   0.12112   0.14353   1058.472 <- pi/phi (actual)
+ 0.31076   0.12112   0.14353   1058.473 <- pi/phi (actual)
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -73,7 +56,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.31300   0.12215   0.14457   1146.553
+ 0.31300   0.12215   0.14457   1146.556
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -82,7 +65,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.31600   0.12354   0.14596   1326.254
+ 0.31600   0.12354   0.14596   1326.258
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -91,7 +74,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
- 0.32000   0.12539   0.14780   1668.820
+ 0.32000   0.12539   0.14780   1668.826
 
 MIN CMB en Om = 0.30700  (chi2 = 1005.732)
 LCDM ref = 1003.76

@@ -358,13 +358,16 @@ muestreo_certificado:
   # Salida: identico en los dos casos. Y con su control del otro lado (R53):
   # con la clave del OTRO modelo las versiones SI difieren, asi que la prueba
   # puede fallar y por tanto mide algo.
-  kids_lcdm_fondofijo_reparto: 2026-09-19
-  kids_lcdm_fondofijo_SIN_REPARTO_20260908: 2026-09-19
+  # 2026-10-01: c8d1566 (09-28, H0_ALG -> H0_GLOBAL) toco cobaya_kids.py. Re-ejecutada la prueba por
+  # EJECUCION (version del commit de cada log contra la de hoy, 12 evaluaciones con desalojo de cache):
+  # results/logs/equivalencia_kids_cache.log -> 0.000e+00 en los cuatro caminos; cache rota 4.598 (se ve).
+  kids_lcdm_fondofijo_reparto: 2026-10-01
+  kids_lcdm_fondofijo_SIN_REPARTO_20260908: 2026-10-01
   # 2026-09-19: la cache acotada a 3 (8a41450) toca `_camb_cached`, en el
   # camino de los dos de arriba y de `kids_ssee_wc_h`. Misma prueba por
   # ejecucion (results/logs/equivalencia_kids_cache.log): 0.000e+00 en los
   # tres, control de cache rota 4.08 / 4.50. Cubre tambien a los dos de arriba.
-  kids_ssee_wc_h: 2026-09-19
+  kids_ssee_wc_h: 2026-10-01   # renovado: misma prueba por ejecucion de arriba (2026-10-01)
   # 2026-09-26: mcmc_paper2_reframe.log (07-26) contra su script, que cambió dos
   # veces después. Los dos cambios son SÓLO comentarios, y no se declara por
   # leer el diff sino por EJECUCIÓN: se redibujó el posterior desde la cadena

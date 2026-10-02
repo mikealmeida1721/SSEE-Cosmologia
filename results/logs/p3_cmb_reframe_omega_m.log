@@ -1,20 +1,3 @@
-preflight  [1/3] __pycache__ borrados: 75
-preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
-preflight  [3/3] ingredientes de esta corrida:
-             SUM_MNU_EV       = 0.068490000
-             OMEGA_B_H2       = 0.022417757
-             OMEGA_C_H2       = 0.119514408
-             OMEGA_NU_H2      = 0.000735345
-             OMEGA_M_H2       = 0.142667510
-             OMEGA_M_TOTAL    = 0.308880879
-             W0               = -0.839949771
-             WA               = -0.669974886
-             H0_ALG           = 67.962137323
-preflight  OK — luz verde para el cómputo
-# regenerado 2026-09-08 (R66): Sigma m_nu y Om_piphi pasan del literal al
-# simbolo del nucleo. El titular NO se mueve: chi2=1005.409, DeltaBIC=-24.024
-# identicos. Solo cambia el comparador pi/phi (1058.613 -> 1058.472), que es
-# el escenario ya superado.
 === Fase B / P3 CMB reframe omega_m-DIRECTO ===
 H0=67.9621  omega_b=0.02242  omega_c=0.11951  omega_m=0.14267
 -> Omega_m,CMB = omega_m/h² = 0.30888   (sin factor; OP-8 cerrado)
@@ -35,7 +18,7 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
-SSEE factor pi/phi(0.31076)@H=67.962 chi2_eff = 1058.472  (superado)
+SSEE factor pi/phi(0.31076)@H=67.962 chi2_eff = 1058.473  (superado)
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----

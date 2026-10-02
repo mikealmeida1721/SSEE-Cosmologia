@@ -279,8 +279,15 @@ print("Cadenas: results/logs/h0_four_priors.npz")
 # El resultado con prior PLANO (DESI sola) lo LEE el MCMC de Paper 2; antes lo tecleaba.
 import json as _json
 from procedencia import con_acta  # noqa: E402
-_json.dump(con_acta({k: dict(H0_mediana=float(r["H0_med"]), H0_std=float(r["H0_std"]))
-            for k, r in (("planck", res_planck), ("mira", res_mira), ("ssee_hglob", res_ssee), ("plano", res_flat))},
-                    __file__, entradas=["data/raw/desi_dr2_bao.csv"]),
+_res4 = {k: dict(H0_mediana=float(r["H0_med"]), H0_std=float(r["H0_std"]))
+         for k, r in (("planck", res_planck), ("mira", res_mira), ("ssee_hglob", res_ssee), ("plano", res_flat))}
+# Distancias de DESI SOLA (prior plano), 2026-10-01 (antes se tecleaban en P2):
+#   a H_glob con la sigma del posterior; a Planck con las dos sigmas en cuadratura
+_sys_pl = __import__("sys"); _sys_pl.path.insert(0, _dd_os.path.join(_dd_os.path.dirname(_dd_os.path.abspath(__file__)), "..", "p11_sondas"))
+from lcdm_planck import LCDM_PLANCK as _LP  # noqa: E402
+SIG_H0_PLANCK = 0.54   # ORIGEN-VALOR: 0.54 — Planck 2018 VI, Tabla 2, TT,TE,EE+lowE+lensing (la columna de lcdm_planck.py)
+_res4["plano"].update(sigma_a_Hglob=float(abs(H0_GLOBAL - res_flat["H0_med"]) / res_flat["H0_std"]),
+                      sigma_a_Planck=float(abs(res_flat["H0_med"] - _LP["H0"]) / np.hypot(res_flat["H0_std"], SIG_H0_PLANCK)))
+_json.dump(con_acta(_res4, __file__, entradas=["data/raw/desi_dr2_bao.csv"]),
            open("results/logs/h0_four_priors.json", "w"), indent=1)
 print("Resumen: results/logs/h0_four_priors.json")

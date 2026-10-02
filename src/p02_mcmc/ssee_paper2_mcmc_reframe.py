@@ -229,8 +229,11 @@ log(f"  ESTE (prior H_glob {H0_GLOBAL:.3f}±{SIG_H0_GLOBAL:.3f}, 100w×25k): H�
 # corre DESPUÉS de este en la cola, así que es el de la corrida anterior). Si no
 # existe, se dice y no se inventa.
 _fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "results", "logs", "h0_four_priors.json")
+sigma_a_desi_plano = None
 if os.path.exists(_fp):
     desi_pure_H0 = json.load(open(_fp))["plano"]["H0_mediana"]
+    # 2026-10-01: la distancia en sigmas (antes tecleada en P2): las dos sigmas en cuadratura
+    sigma_a_desi_plano = abs(H0_med - desi_pure_H0) / np.hypot(H0_std, json.load(open(_fp))["plano"]["H0_std"])
     delta = abs(H0_med - desi_pure_H0)
     log(f"\n  Distancia a DESI-puro ({desi_pure_H0:.3f}, prior plano, h0_four_priors.json): {delta:.3f} km/s/Mpc")
 else:
@@ -264,6 +267,7 @@ _json.dump(con_acta(dict(fecha=time.strftime("%Y-%m-%d"), H0_mediana=float(H0_me
                 obh2_mediana=float(ob_med), lnP_MAP=float(lp[idx]), BIC=float(BIC),
                 N_eff=float(n_eff), rd="CAMB (rd_camb.py)", distancias="CAMB (bao_camb.py)",
                 sigma_a_Hglob=float(d_hglob), sigma_a_Planck=float(d_planck),
+                sigma_a_desi_plano=None if sigma_a_desi_plano is None else float(sigma_a_desi_plano),
                 H0_planck=LCDM_PLANCK["H0"], sig_H0_planck=SIG_H0_PLANCK, semilla=42),
                 __file__, entradas=_ENT_ACTA),
            open("results/logs/mcmc_paper2_reframe.json", "w"), indent=1)

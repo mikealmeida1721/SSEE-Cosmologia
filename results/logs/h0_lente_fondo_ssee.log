@@ -1,8 +1,8 @@
 {
- "Omega_m": 0.30888087877875237,
+ "Omega_m": 0.30888084061409116,
  "w0": -0.839949771344779,
  "wa": -0.6699748856723895,
- "H_global": 67.96213732340931,
+ "H_global": 67.96214152203791,
  "H_SH0ES": 73.04,
  "sistemas": [
   {
@@ -10,16 +10,16 @@
    "z_l": 0.336,
    "z_s": 1.949,
    "fuente": "arXiv:2509.12301",
-   "razon_H0_SSEE_sobre_LCDM": 0.9837521223342642,
-   "H_global_leido_en_LCDM": 69.08461570801755
+   "razon_H0_SSEE_sobre_LCDM": 0.9837521210619912,
+   "H_global_leido_en_LCDM": 69.08462006533786
   },
   {
    "nombre": "cuasar tipico TDCOSMO",
    "z_l": 0.5,
    "z_s": 2.0,
    "fuente": "orden de magnitud, no un sistema",
-   "razon_H0_SSEE_sobre_LCDM": 0.9810593932025167,
-   "H_global_leido_en_LCDM": 69.27423333826653
+   "razon_H0_SSEE_sobre_LCDM": 0.9810593915847873,
+   "H_global_leido_en_LCDM": 69.2742377321856
   }
  ],
  "publicadas": [
@@ -29,9 +29,9 @@
    "mas": 11.2,
    "menos": 8.1,
    "fuente": "arXiv:2509.12301",
-   "H0_con_fondo_SSEE": 65.81301698416229,
-   "sigma_Hglobal_leida_LCDM": 0.09483368959011633,
-   "sigma_Hglobal_leida_SSEE": 0.19505497393013693,
+   "H0_con_fondo_SSEE": 65.81301689904721,
+   "sigma_Hglobal_leida_LCDM": 0.09483406446767009,
+   "sigma_Hglobal_leida_SSEE": 0.19505536297659393,
    "sigma_SH0ES": 0.5482142857142858
   },
   {
@@ -40,9 +40,9 @@
    "mas": 3.9,
    "menos": 3.3,
    "fuente": "arXiv:2506.03023",
-   "H0_con_fondo_SSEE": 70.24385255330019,
-   "sigma_Hglobal_leida_LCDM": -1.1023826292699048,
-   "sigma_Hglobal_leida_SSEE": -0.7047777762828689,
+   "H0_con_fondo_SSEE": 70.24385243747076,
+   "sigma_Hglobal_leida_LCDM": -1.1023813569582073,
+   "sigma_Hglobal_leida_SSEE": -0.7047764447922434,
    "sigma_SH0ES": 0.3692307692307723
   },
   {
@@ -51,9 +51,9 @@
    "mas": 5.6,
    "menos": 6.1,
    "fuente": "arXiv:2007.02941",
-   "H0_con_fondo_SSEE": 73.0889247935875,
-   "sigma_Hglobal_leida_LCDM": -1.0717807666542118,
-   "sigma_Hglobal_leida_SSEE": -0.85668305930057,
+   "H0_con_fondo_SSEE": 73.08892467306666,
+   "sigma_Hglobal_leida_LCDM": -1.071780078354441,
+   "sigma_Hglobal_leida_SSEE": -0.8566823389859695,
    "sigma_SH0ES": -0.23934426229508096
   },
   {
@@ -62,9 +62,9 @@
    "mas": 4.1,
    "menos": 3.2,
    "fuente": "arXiv:2007.02941",
-   "H0_con_fondo_SSEE": 66.12340310184963,
-   "sigma_Hglobal_leida_LCDM": 0.13710666424617143,
-   "sigma_Hglobal_leida_SSEE": 0.45713008250402853,
+   "H0_con_fondo_SSEE": 66.12340299281466,
+   "sigma_Hglobal_leida_LCDM": 0.13710768830192804,
+   "sigma_Hglobal_leida_SSEE": 0.45713115419160816,
    "sigma_SH0ES": 1.3756097560975613
   },
   {
@@ -73,9 +73,9 @@
    "mas": 1.7,
    "menos": 1.8,
    "fuente": "arXiv:1907.04869",
-   "H0_con_fondo_SSEE": 71.91165352174447,
-   "sigma_Hglobal_leida_LCDM": -2.965479264772605,
-   "sigma_Hglobal_leida_SSEE": -2.236537034296373,
+   "H0_con_fondo_SSEE": 71.9116534031649,
+   "sigma_Hglobal_leida_LCDM": -2.965476932201159,
+   "sigma_Hglobal_leida_SSEE": -2.2365345932302256,
    "sigma_SH0ES": -0.14444444444443938
   }
  ],
@@ -84,7 +84,7 @@
   "centro_H73": "2026-08",
   "centro_H67": "2027-07",
   "SSEE_leida_LCDM": {
-   "H0": 69.08461570801755,
+   "H0": 69.08462006533786,
    "fecha": "2027-03"
   },
   "SH0ES": {

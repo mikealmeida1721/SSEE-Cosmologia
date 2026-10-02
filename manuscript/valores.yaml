@@ -578,3 +578,9 @@ h0_p2_mas:      {fuente: "results/logs/mcmc_paper2_reframe.json#H0_mas", formato
 h0_p2_menos:    {fuente: "results/logs/mcmc_paper2_reframe.json#H0_menos", formato: ".2f"}
 h0_p2_dhglob:   {fuente: "results/logs/mcmc_paper2_reframe.json#sigma_a_Hglob", formato: ".2f"}
 h0_p2_dplanck:  {fuente: "results/logs/mcmc_paper2_reframe.json#sigma_a_Planck", formato: ".2f"}
+# H0 con DESI SOLA (prior plano) — src/p09_hubble/ssee_h0_prior_experiment.py (etapa h0_four_priors, 2026-10-01)
+h0_desi_plano:         {fuente: "results/logs/h0_four_priors.json#plano.H0_mediana", formato: ".2f"}
+h0_desi_plano_s:       {fuente: "results/logs/h0_four_priors.json#plano.H0_std", formato: ".2f"}
+h0_desi_plano_dhglob:  {fuente: "results/logs/h0_four_priors.json#plano.sigma_a_Hglob", formato: ".2f"}
+h0_desi_plano_dplanck: {fuente: "results/logs/h0_four_priors.json#plano.sigma_a_Planck", formato: ".2f"}
+h0_p2_vs_plano:        {fuente: "results/logs/mcmc_paper2_reframe.json#sigma_a_desi_plano", formato: ".2f"}

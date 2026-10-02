@@ -59,8 +59,8 @@ stages:
       size: 49485923
     - path: results/logs/b1_analyse.log
       hash: md5
-      md5: ecd8af59b981448982e3ecda9178b2e9
-      size: 2627
+      md5: 2e71d4f85d5754564e699b21a1292e3b
+      size: 2024
     - path: src/p06_growth/s8_desde_b1.py
       hash: md5
       md5: 52ad5d30bb24b430f4262cb7a03a2989
@@ -76,8 +76,8 @@ stages:
     outs:
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: 4ffdf2b63955ce24ce17028c2ddf5425
-      size: 1930
+      md5: 959e57c505b4e53666471f4fef89233e
+      size: 1928
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
     deps:
@@ -155,7 +155,7 @@ stages:
       size: 3798
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
-      md5: 20714386f7bcca850270391eb4d8d9f7
+      md5: dc3b34c5d61d466ec5f4c22f67794b36
       size: 1428
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
@@ -195,8 +195,8 @@ stages:
       size: 4062
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: 4ffdf2b63955ce24ce17028c2ddf5425
-      size: 1930
+      md5: 959e57c505b4e53666471f4fef89233e
+      size: 1928
     - path: results/logs/s8_kids_legacy_camb.json
       hash: md5
       md5: 8674a658c51262b1184b1e5d0ca1584d
@@ -216,7 +216,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 8c6311754d0f2d0a8b0122585dc775c0
+      md5: 34885d1c2a95fe435560fdfe3de1faad
       size: 73501
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -1680,8 +1680,8 @@ stages:
       size: 2650
     - path: results/logs/h0_four_priors.json
       hash: md5
-      md5: 78b92b7980ec780a2b4bf8a8f02ed906
-      size: 337
+      md5: c6639ba24b1d2425ae8d043fc2b6d8e0
+      size: 1196
     - path: src/bao_camb.py
       hash: md5
       md5: 17e888f2a53c3953da7563d6c7a37e57
@@ -1692,8 +1692,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/ssee_paper2_mcmc_reframe.py
       hash: md5
-      md5: c43ab2a6aed5d9c0cf3d4216bc40b22b
-      size: 14273
+      md5: 151d0d892b5ea509f84ffc95c49d311f
+      size: 14351
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -1713,13 +1713,60 @@ stages:
     outs:
     - path: results/figures/fig_corner_ssee_halg_prior.pdf
       hash: md5
-      md5: 31711d7188a94c141da9e566d975775d
+      md5: 8bd4d4f7669d4f40e88030b480559444
       size: 44258
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
-      md5: 20714386f7bcca850270391eb4d8d9f7
+      md5: dc3b34c5d61d466ec5f4c22f67794b36
       size: 1428
     - path: results/logs/mcmc_paper2_reframe.log
       hash: md5
-      md5: b7b25a0721658854d64d19f103a6100d
+      md5: de9816f63f920b29c13b80735e55b6b6
       size: 4694
+  h0_four_priors:
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 
+      MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p09_hubble/ssee_h0_prior_experiment.py > 
+      results/logs/h0_four_priors.log 2>&1
+    deps:
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: src/bao_camb.py
+      hash: md5
+      md5: 17e888f2a53c3953da7563d6c7a37e57
+      size: 4547
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p09_hubble/ssee_h0_prior_experiment.py
+      hash: md5
+      md5: 0c3fe6f1cbc19ce6725ab00edbb6d20f
+      size: 13289
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/rd_camb.py
+      hash: md5
+      md5: b415ae755ec1f801122eb920e7faa797
+      size: 5764
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/figures/fig_h0_three_priors.pdf
+      hash: md5
+      md5: ecf1181bd6f7baa64bcb5896c28e82f5
+      size: 30795
+    - path: results/logs/h0_four_priors.json
+      hash: md5
+      md5: c6639ba24b1d2425ae8d043fc2b6d8e0
+      size: 1196
+    - path: results/logs/h0_four_priors.log
+      hash: md5
+      md5: 201e66acc38b0f7383399dd62d4b0ab3
+      size: 2744
