@@ -683,7 +683,11 @@ stages:
       - src/p04_toe/ssee_paper4_toe.py
       - src/procedencia.py
       - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+      - results/logs/cmb_dbic_tau_ajustado.json
     outs:
+      - results/logs/paper4_toe.json:
+          cache: false
       - results/logs/paper4_toe.log:
           cache: false
       - results/figures/fig_toe_derivations.pdf:

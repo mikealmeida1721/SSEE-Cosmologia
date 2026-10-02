@@ -91,7 +91,7 @@ params = {
     r"$\Omega_m$":        (Om_m,   0.3153, 0.007),
     r"$n_s$":             (ns,     0.9649, 0.0042),
     r"$\Omega_b h^2$":    (Omb_h2_alg, 0.02237, 0.00015),
-    r"$\Omega_c h^2$ (IS)":(Omc_h2_IS,  0.1200,  0.0012),
+    r"$\Omega_c h^2$ (IS)":(KAL * Omb_h2_alg * ns, 0.1200, 0.0012),   # 2026-10-02: omega_b ALGEBRAICO (= OMEGA_C_H2 del nucleo), como la tabla del texto; antes usaba el de Planck
 }
 colors = ["#2077b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
 y_pos = np.arange(len(params))
@@ -110,14 +110,20 @@ ax.set_title("SSEE algebraic predictions vs Planck 2018", fontsize=11)
 ax.set_xlim(-4.5, 4.5)
 
 ax2 = axes[1]
-names = list(sovereignties.keys())
-vals  = [v - SIGMA_SOV for v in sovereignties.values()]
-colors2 = ["#2077b4"] * 9
-bars = ax2.bar(names, [abs(v) for v in vals], color=colors2, alpha=0.8)
+# 2026-10-02: las cuatro rutas representativas que cita el texto de P4 (notacion
+# neutra), no las nueve con nombre mitologico (dos estaban repetidas y una restaba).
+RUTAS = {r"$\Omega+K_v$": OMEGA + KRYSTOS_V,
+         r"$\beta+\mathrm{KAL}+P_{sc}$": BIAL + KAL + PYROS,
+         r"$P_{sc}+\Omega+\pi$": PYROS + OMEGA + pi,
+         r"$\varphi+\pi+K_v$": phi + pi + KRYSTOS_V}
+names = list(RUTAS.keys())
+vals  = [v - SIGMA_SOV for v in RUTAS.values()]
+# ORIGEN-VALOR: 1e-17 — piso para la escala log: una diferencia exactamente cero no se puede dibujar
+bars = ax2.bar(names, [max(abs(v), 1e-17) for v in vals], color="#2077b4", alpha=0.8)
 ax2.set_yscale("log")
-ax2.set_ylabel(r"$|S_i - M_v|$", fontsize=11)
-ax2.set_title(r"Nine Sovereignties: deviation from $3(\phi+\pi)$", fontsize=11)
-ax2.tick_params(axis="x", rotation=45, labelsize=8)
+ax2.set_ylabel(r"$|\mathrm{route} - M_v|$", fontsize=11)
+ax2.set_title(r"Additive routes to $M_v = 3(\varphi+\pi)$", fontsize=11)
+ax2.tick_params(axis="x", rotation=20, labelsize=9)
 ax2.axhline(1e-14, color="red", linestyle="--", label="Float. pt. limit")
 ax2.legend(fontsize=9)
 
@@ -128,35 +134,62 @@ fig1.savefig("results/figures/fig_toe_derivations.png", dpi=150, bbox_inches="ti
 print("\nSaved: results/figures/fig_toe_derivations.pdf")
 
 # ── Figure 2: CMB TT spectrum (SSEE vs ΛCDM via CAMB) ───────────────────────
+# 2026-10-02: cada modelo con SUS ingredientes. Antes SSEE corria con mnu 0.06
+# (el de LCDM), omega_b de Planck (0.02237) y omega_c de la formula IS con ese
+# omega_b (0.11926), y A_s/tau tecleados: el pie de P4 decia «todo algebraico»
+# y no lo era. Ahora: SSEE = nucleo (omega_b, omega_c, n_s, w0, wa, H_glob,
+# Sum m_nu 0.06849) con A_s y tau del clavo del CMB (cmb_dbic_tau_ajustado.json);
+# LCDM = Planck 2018 (lcdm_planck.py, mnu 0.06). Los picos se CALCULAN aqui y
+# van a results/logs/paper4_toe.json; el pie los cita por \val.
 try:
     import camb
+    import json as _json
+    from scipy.signal import find_peaks
+    _R4 = _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__))))
+    _reloc_sys.path.insert(0, _reloc_os.path.join(_R4, "src", "p11_sondas"))
+    from ssee_core import OMEGA_C_H2, SUM_MNU_EV
+    from lcdm_planck import LCDM_PLANCK as _P, LOGA_PLANCK, TAU_PLANCK
+    _CLAVO = _reloc_os.path.join(_R4, "results", "logs", "cmb_dbic_tau_ajustado.json")
+    _ENT_ACTA.append(_CLAVO)
+    _cl = _json.load(open(_CLAVO))["SSEE"]["mejor"]
 
-    def get_camb_cl(H0, ombh2, omch2, w0=-1.0, wa=0.0, ns=0.9649, As=2.1e-9, lmax=2500):
+    def get_camb_cl(H0, ombh2, omch2, w0, wa, ns, logA, tau, mnu, lmax=2500):
         pars = camb.CAMBparams()
-        pars.set_cosmology(H0=H0, ombh2=ombh2, omch2=omch2, mnu=0.06, omk=0)
+        pars.set_cosmology(H0=H0, ombh2=ombh2, omch2=omch2, mnu=mnu, omk=0, tau=tau)
         pars.set_dark_energy(w=w0, wa=wa, dark_energy_model="ppf")
-        pars.InitPower.set_params(ns=ns, As=As)
-        pars.set_for_lmax(lmax, lens_potential_accuracy=0)
-        results = camb.get_results(pars)
-        powers = results.get_cmb_power_spectra(pars, CMB_unit="muK")
-        return powers["total"][:, 0]  # D_ℓ TT
+        pars.InitPower.set_params(ns=ns, As=np.exp(logA) * 1e-10)
+        pars.set_for_lmax(lmax, lens_potential_accuracy=1)
+        powers = camb.get_results(pars).get_cmb_power_spectra(pars, CMB_unit="muK")
+        return powers["total"][:, 0]  # D_ℓ TT con lente
 
-    h_ssee = H0_alg / 100
-    Cl_ssee = get_camb_cl(
-        H0=H0_alg, ombh2=Omb_h2_obs,
-        omch2=Omc_h2_IS,
-        w0=w0, wa=wa, ns=ns
+    ING = dict(
+        SSEE=dict(H0=H0_alg, ombh2=Omb_h2_alg, omch2=OMEGA_C_H2, w0=w0, wa=wa, ns=ns,
+                  logA=_cl["logA"], tau=_cl["tau"], mnu=SUM_MNU_EV),
+        LCDM=dict(H0=_P["H0"], ombh2=_P["ombh2"], omch2=_P["omch2"], w0=-1.0, wa=0.0, ns=_P["ns"],
+                  logA=LOGA_PLANCK, tau=TAU_PLANCK, mnu=_P["mnu"]),
     )
-    Cl_lcdm = get_camb_cl(
-        H0=67.36, ombh2=0.02237,
-        omch2=0.1200,
-        w0=-1.0, wa=0.0, ns=0.9649
-    )
+    Cl = {n: get_camb_cl(**d) for n, d in ING.items()}
 
-    ell = np.arange(Cl_ssee.shape[0])
+    def picos(dl, n=3):
+        # ORIGEN-VALOR: 100 — prominencia minima en muK^2 para contar un pico acustico (los tres primeros superan 1000)
+        k, _ = find_peaks(dl[100:1500], prominence=100)   # ORIGEN-VALOR: 100-1500 — ventana de l de los tres primeros picos
+        return [int(x + 100) for x in k[:n]]
+
+    PICOS = {n: picos(c) for n, c in Cl.items()}
+    for n in ING:
+        print(f"  {n:5s} picos TT l = {PICOS[n]}   ingredientes: mnu {ING[n]['mnu']}, ombh2 {ING[n]['ombh2']:.5f}, omch2 {ING[n]['omch2']:.5f}")
+    _dif = [abs(a - b) / b for a, b in zip(PICOS["SSEE"], PICOS["LCDM"])]
+    print(f"  diferencia relativa SSEE-LCDM por pico: {[f'{100 * d:.2f}%' for d in _dif]}")
+    from procedencia import con_acta as _con_acta
+    _json.dump(_con_acta(dict(ingredientes=ING, picos=PICOS, dif_rel=_dif, dif_rel_max=max(_dif)),
+                         __file__, entradas=_ENT_ACTA),
+               open(_reloc_os.path.join(_R4, "results", "logs", "paper4_toe.json"), "w"), indent=1)
+    _META = {"Keywords": "ACTA-PROCEDENCIA " + _jsacta.dumps(_acta(__file__, entradas=_ENT_ACTA))}
+
+    ell = np.arange(Cl["SSEE"].shape[0])
     fig2, ax = plt.subplots(figsize=(10, 5))
-    ax.plot(ell[2:], Cl_ssee[2:], color="#2077b4", lw=1.5, label="SSEE (algebraic params)")
-    ax.plot(ell[2:], Cl_lcdm[2:], color="#ff7f0e", lw=1.5, ls="--", label=r"$\Lambda$CDM (Planck 2018)")
+    ax.plot(ell[2:], Cl["SSEE"][2:], color="#2077b4", lw=1.5, label="SSEE (algebraic background; $A_s$, $\\tau$ from the CMB fit)")
+    ax.plot(ell[2:], Cl["LCDM"][2:], color="#ff7f0e", lw=1.5, ls="--", label=r"$\Lambda$CDM (Planck 2018)")
     ax.set_xlabel(r"Multipole $\ell$", fontsize=12)
     ax.set_ylabel(r"$D_\ell^{TT}$ $[\mu\mathrm{K}^2]$", fontsize=12)
     ax.set_title("CMB TT power spectrum: SSEE vs ΛCDM", fontsize=12)
