@@ -30,7 +30,7 @@
   }
  },
  "_procedencia": {
-  "commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2",
+  "commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/s8_desde_b1.py",
@@ -40,12 +40,12 @@
    "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d",
    "results/chains/lcdm_cmb.1.txt": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285",
    "results/logs/b1_analyse.log": "953974e8c3a46cef9ef1b034ac9558b6669f47b6206f66cc219ad431dd97bab0",
-   "CANONICAL_VALUES.yaml": "0d78e881d8f432df32f9ff3bf7598c11bcb1beba2cfdfb789c97fd130c958d35"
+   "CANONICAL_VALUES.yaml": "2350fba5bc19f92f5c0b05c4f3e4d88baa0ac7f29ee495dba6935efd7652fcf0"
   },
   "argv": [
    "src/p06_growth/s8_desde_b1.py"
   ],
-  "fecha": "2026-10-01T23:48:48",
+  "fecha": "2026-10-01T23:53:59",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -55,8 +55,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

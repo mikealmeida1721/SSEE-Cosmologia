@@ -274,7 +274,7 @@
   ],
   "control_positivo_ve": true,
   "_procedencia": {
-    "commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2",
+    "commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46",
     "reproducible_desde_commit": true,
     "cambios_sin_commitear": [],
     "script": "src/p06_growth/multisonda_fondo_clavado.py",
@@ -290,12 +290,12 @@
       "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47",
       "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188",
       "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2",
-      "CANONICAL_VALUES.yaml": "0d78e881d8f432df32f9ff3bf7598c11bcb1beba2cfdfb789c97fd130c958d35"
+      "CANONICAL_VALUES.yaml": "2350fba5bc19f92f5c0b05c4f3e4d88baa0ac7f29ee495dba6935efd7652fcf0"
     },
     "argv": [
       "src/p06_growth/multisonda_fondo_clavado.py"
     ],
-    "fecha": "2026-10-01T23:50:45",
+    "fecha": "2026-10-01T23:55:56",
     "host": "mike-System-Product-Name",
     "python": "3.12.3",
     "versiones": {
@@ -304,8 +304,8 @@
     },
     "nucleos": {
       "OMP_NUM_THREADS": "1",
-      "MKL_NUM_THREADS": null,
-      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
       "OMPI_COMM_WORLD_SIZE": null
     }
   }
