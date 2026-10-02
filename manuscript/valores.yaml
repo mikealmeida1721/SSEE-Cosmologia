@@ -584,3 +584,8 @@ h0_desi_plano_s:       {fuente: "results/logs/h0_four_priors.json#plano.H0_std",
 h0_desi_plano_dhglob:  {fuente: "results/logs/h0_four_priors.json#plano.sigma_a_Hglob", formato: ".2f"}
 h0_desi_plano_dplanck: {fuente: "results/logs/h0_four_priors.json#plano.sigma_a_Planck", formato: ".2f"}
 h0_p2_vs_plano:        {fuente: "results/logs/mcmc_paper2_reframe.json#sigma_a_desi_plano", formato: ".2f"}
+# Crecimiento IS de fondo (P1 apendice EFT) — src/p05_is/ssee_is_growth.py (etapa is_growth_gamma, 2026-10-01)
+gammabg_c:      {fuente: "results/logs/is_growth_gamma.json#gamma_centro", formato: ".3f"}
+gammabg_s:      {fuente: "results/logs/is_growth_gamma.json#gamma_semirango", formato: ".3f"}
+is_S8:          {fuente: "results/logs/is_growth_gamma.json#S8_Om_CMB", formato: ".3f"}
+is_sigma8_norm: {fuente: "results/logs/is_growth_gamma.json#sigma8_normalizacion", formato: ".3f"}

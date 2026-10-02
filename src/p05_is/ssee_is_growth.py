@@ -35,6 +35,8 @@ import sys
 # son la misma entidad, que es la razon de ser de R21b.
 # Ahora no se redefine nada: se importa del nucleo, que es la fuente unica.
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from procedencia import cabecera  # noqa: E402
+print(cabecera(__file__), flush=True)
 from ssee_core import (BETA as beta, IGNIS, K_V as K_v, KAL0,  # noqa: E402
                        M_V as M_v, MIRA, N_S as ns, OMEGA as Omega,
                        P_SC as P_sc, PHI as phi, PI as pi_, T_R as T_r,
@@ -74,6 +76,7 @@ Om_dyn = OM_M_TOTAL                # la densidad de materia REAL (antes: 1 - T_r
 Om_DE0 = 1.0 - OM_M_TOTAL          # plano: 0.691119
 
 gamma_target = 1.0 / phi           # φ⁻¹ ≈ 0.61803
+SIGMA8_NORM = 0.811   # ORIGEN-VALOR: 0.811 — sigma8 de Planck 2018 VI Tabla 2 (0.8111) usado como NORMALIZACION del proxy D_IS/D_EdS; el S8 que sale de aqui es ese sigma8 reescalado por Omega_m, NO una prediccion de SSEE (2026-10-01)
 
 print(f"=== Constantes SSEE ===")
 print(f"φ       = {phi:.6f}")
@@ -293,7 +296,7 @@ for label, T in T_scan.items():
         D_IS_log = np.cumsum(f2 * np.gradient(x2))
         D_IS_relative = np.exp(D_IS_log - D_IS_log[-1])  # normalizado a 1 hoy
         # S8 = σ8 sqrt(Ω_m / 0.3)
-        sigma8_approx = 0.811 * D_IS_relative[-1] / 1.0
+        sigma8_approx = SIGMA8_NORM * D_IS_relative[-1] / 1.0
 
     delta_gamma = gamma_IS - gamma_target if not np.isnan(gamma_IS) else np.nan
     results[label] = {'T': T, 'gamma': gamma_IS, 'R2': R2, 'delta_gamma': delta_gamma}
@@ -342,7 +345,7 @@ gamma_1MIRA, R2 = fit_gamma(a_g, f_arr, Om_arr)
 # σ8 y S8
 f_int  = np.cumsum(f_arr * np.gradient(np.log(a_g)))
 D_norm = np.exp(f_int - f_int[-1])
-sigma8_IS  = 0.811 * D_norm[-1]   # proxy simple
+sigma8_IS  = SIGMA8_NORM * D_norm[-1]   # proxy: NORMALIZADO al sigma8 de Planck, no predicho
 Om_m_today = Om_dyn                # = 0.308881, la densidad real
 Om_m_CMB   = Om_dyn                # sin factor MIRA (retirado 2026-06-18)
 S8_dyn  = sigma8_IS * np.sqrt(Om_m_today / 0.3)
@@ -423,3 +426,18 @@ c_s2_check = KAL0 / (3 * Om_DE0 * T_best)
 print(f"c_s² = KAL₀/(3 Ω_DE τ_Π H₀) = {KAL0:.4f}/(3×{Om_DE0:.3f}×{T_best:.4f}) = {c_s2_check:.4f}")
 causality_ok = c_s2_check <= 1.0
 print(f"Causalidad (c_s² ≤ 1): {'✅ SÍ' if causality_ok else '❌ NO'}")
+
+# ─── Log con acta (2026-10-01): el gamma_bg de P1 se lee de aqui, no se teclea ───
+import json as _json
+from procedencia import con_acta  # noqa: E402
+_g = [v["gamma"] for v in results.values() if not np.isnan(v.get("gamma", np.nan))]
+_json.dump(con_acta(dict(
+    rejilla_tau_Pi_H0={k: dict(T=float(v["T"]), gamma=float(v["gamma"]), R2=float(v["R2"])) for k, v in results.items()},
+    gamma_min=float(min(_g)), gamma_max=float(max(_g)),
+    gamma_centro=float((min(_g) + max(_g)) / 2), gamma_semirango=float((max(_g) - min(_g)) / 2),
+    T_mira=float(T_best), gamma_en_T_mira=float(gamma_1MIRA), z_IS=float(z_IS), w_eff_z0=float(w_eff_arr[-1]),
+    sigma8_normalizacion=SIGMA8_NORM, sigma8_IS=float(sigma8_IS), S8_Om_CMB=float(S8_CMB), Om_CMB=float(Om_m_CMB),
+    nota="gamma_bg: centro y semirango sobre la rejilla de tau_Pi H0 (8 candidatos algebraicos); S8 = sigma8 de Planck "
+         "reescalado por Omega_m (normalizacion del proxy), no una prediccion"), __file__),
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "results", "logs", "is_growth_gamma.json"), "w"), indent=1)
+

@@ -26,7 +26,7 @@ logs:
   mcmc_paper2_reframe:        src/p02_mcmc/ssee_paper2_mcmc_reframe.py
   is_growth_gamma_bg:         src/p05_is/is_growth_gamma_bg.py
   datos_crudos_T2:            src/verificacion/manifiesto_datos_T2.py
-  ssee_is_growth:             src/p05_is/ssee_is_growth.py
+  is_growth_gamma:            src/p05_is/ssee_is_growth.py   # 2026-10-01: era ssee_is_growth (log que nunca existio); ahora etapa DVC
   mcmc_paper2_3models_wmfix:  src/p02_mcmc/ssee_paper2_mcmc.py   # escribe mcmc_professional.log; se copia aquí (corregido 2026-09-28: antes apuntaba a wmfix)
   chi2_bao_posterior:         src/p02_mcmc/chi2_bao_posterior.py
   h0_distancias_hglob:        src/p02_mcmc/h0_distancias.py

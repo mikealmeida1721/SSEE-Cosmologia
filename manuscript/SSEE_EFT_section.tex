@@ -453,7 +453,7 @@ The growth rate $f \equiv \mathrm{d}\ln\delta/\mathrm{d}\ln a \approx \Omega_{m}
 is well described by a power law over $0.1 \leq a \leq 1$ with
 %
 \begin{equation}
-  \gamma_{\mathrm{bg}} = 0.657 \pm 0.002
+  \gamma_{\mathrm{bg}} = \val{gammabg_c} \pm \val{gammabg_s}
   \quad(\text{essentially independent of }\tau_{\Pi} H_{0}).
   \label{eq:gamma_IS}
 \end{equation}
@@ -469,13 +469,13 @@ weak-lensing surveys (LSST, Euclid). An early dimensional-analysis value
 $\gamma=\varphi^{-1}=\val{inv_phi_d6}$ was never derived from the growth
 equation and is superseded.
 Note that the direct IS background growth-factor integral (this Appendix) yields
-$S_8=0.823$\footnote{Corrected 2026-09-26. The previously quoted $S_8=0.837$ evaluated
+$S_8=\val{is_S8}$\footnote{Corrected 2026-09-26. The previously quoted $S_8=0.837$ evaluated
 $\sigma_8\sqrt{\Omega_m/0.3}$ at $\Omega_{m}=\Omega_{m,\mathrm{dyn}}\times\mathrm{MIRA}=0.3199$;
 the MIRA matter factor was withdrawn on 2026-06-18 when OP-8 closed and
 $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ became the derived quantity. Re-running the
-same integral with the canonical density gives $0.823$ at an unchanged $\sigma_8=0.811$. The
+same integral with the canonical density gives $\val{is_S8}$ at an unchanged $\sigma_8=\val{is_sigma8_norm}$, the Planck~2018 value that normalises the growth-factor proxy. The
 growth index is untouched by either substitution.},
-consistent with Planck 2018 ($0.832\pm0.013$) within $1\sigma$.
+Because $\sigma_8$ is normalised to Planck~2018, this $S_8$ is Planck's amplitude rescaled by $\Omega_m$: its closeness to the Planck value ($0.832\pm0.013$) holds by construction and is not a test.
 Paper~5's full IS-coupled perturbation theory (including viscous feedback in $\delta$),
 with $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ in the Poisson source,
 yields $\sigma_8=\val{p3_sigma8_IS}$ and an IS linear-growth $S_8=\val{p3_S8_IS}$ at the
@@ -679,7 +679,7 @@ Four aspects require further development:
 %
 \begin{enumerate}
   \item \textbf{Growth index.}
-        The background IS growth index $\gamma_{\mathrm{bg}} = 0.657$
+        The background IS growth index $\gamma_{\mathrm{bg}} = \val{gammabg_c}$
         (\S\ref{sec:eft:IS}) omits viscous feedback on $\delta$; the full
         IS-coupled result (Paper~5) gives $\gamma_{\mathrm{IS}} = \val{p3_gamma_IS}$,
         close to $\Lambda$CDM, and is the value testable by LSST/Euclid
@@ -724,8 +724,8 @@ $w_{a}$ from EFT & \checkmark Algebraic & $\zeta(a)\!\propto\!(1{-}a)\rho_\mathr
 IS relaxation time $\tau_\Pi$ & \checkmark Algebraic & $\tau_\Pi H_0 = \mathrm{KAL}_0/(3|w_0|) \approx 2.191$ \\
 Gradient stability & $\circ$ IR ansatz unstable & Power-law $P(X)\!\propto\!X^n$: $c_s^2\!\approx\!-0.84$ (resolved in Papers~7--10) \\
 $K(X)\!=\!X/\KALz$ stability & \checkmark Verified & Papers~7--10: $c_s^2\!=\!1$ (canonical); $c_s^2\!\in\!(1/3,1)$ (UV) \\
-Growth index $\gamma_\mathrm{bg}$ & \checkmark Numerical & $0.657 \pm 0.002$ (IS background, CDM growth eq.); full IS: $0.550$ (Paper~5) \\
-$S_8$ (CMB sector) & \checkmark Numerical & $0.823$ (IS bkg); $0.827$ (single-sector ceiling, Paper~5); $0.7555\pm0.0192$ (single sector, $A_s$ free, raw KiDS $\xi_\pm$; Paper~6). The two-sector $0.758$ is retracted \\
+Growth index $\gamma_\mathrm{bg}$ & \checkmark Numerical & $\val{gammabg_c} \pm \val{gammabg_s}$ (IS background, CDM growth eq.; centre and half-range over the $\tau_\Pi H_0$ candidates); full IS: $0.550$ (Paper~5) \\
+$S_8$ (CMB sector) & \checkmark Numerical & $\val{is_S8}$ (IS bkg, $\sigma_8$ normalised to Planck); $0.827$ (single-sector ceiling, Paper~5); $0.7555\pm0.0192$ (single sector, $A_s$ free, raw KiDS $\xi_\pm$; Paper~6). The two-sector $0.758$ is retracted \\
 $\alpha$-attractor ($\alpha=\varphi^4/3$) & \checkmark Algebraic & Eq.~(\ref{eq:alpha_ssee}); exact, $N=2\varphi^7$ \\
 K\"{a}hler curvature $\mathcal{R}=-2\varphi^{-4}$ & \checkmark Algebraic & Eq.~(\ref{eq:kahler_curvature}) \\
 Full perturbation spectrum & $\circ$ Open & Off-diagonal CMB cov.\ + Stage-IV WL \\

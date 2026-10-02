@@ -65,6 +65,8 @@ stages:
       - results/logs/sondas_ssee_vs_lcdm.json
       - results/logs/mcmc_paper2_reframe.json
       - results/logs/h0_four_priors.json
+      - results/logs/is_growth_gamma.json
+      - results/logs/perfil_h0_ancla.json
       - results/logs/mcmc_full_posteriores.json
       - results/logs/fsigma8_canonico.json
       - results/logs/ganancia_wc_libre.json
@@ -647,4 +649,15 @@ stages:
       - results/logs/perfil_h0_ancla.json:
           cache: false
       - results/logs/perfil_h0_ancla.log:
+          cache: false
+  is_growth_gamma:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_is/ssee_is_growth.py > results/logs/is_growth_gamma.log 2>&1
+    deps:
+      - src/p05_is/ssee_is_growth.py
+      - src/procedencia.py
+      - src/ssee_core.py
+    outs:
+      - results/logs/is_growth_gamma.json:
+          cache: false
+      - results/logs/is_growth_gamma.log:
           cache: false
