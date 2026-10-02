@@ -4787,6 +4787,21 @@ try:
     _prop = _yaml.safe_load((_REPO / "PROPAGACION.yaml").read_text())
     _mapa = _prop.get("logs") or {}
     _hist35 = set(_prop.get("historicos") or [])
+    # BITACORAS (2026-10-02): registros de cola (cuándo se lanzó, núcleos, rc).
+    # No son resultados ni los produce un script: R35 no las compara. Su
+    # CONTROL (R53): una bitácora no puede llevar ACTA-PROCEDENCIA; si la
+    # lleva, es un resultado escondido como bitácora y se marca en rojo.
+    _bit35 = set(_prop.get("bitacoras") or [])
+    _bit_con_acta = sorted(
+        _b for _b in _bit35
+        if (_REPO / "results" / "logs" / f"{_b}.log").exists()
+        and "ACTA-PROCEDENCIA" in (_REPO / "results" / "logs" / f"{_b}.log")
+        .open(errors="ignore").readline())
+    check("R35 ninguna bitácora de cola esconde un resultado (sin ACTA)",
+          not _bit_con_acta,
+          f"{len(_bit35)} bitácoras, ninguna con acta" if not _bit_con_acta
+          else "con acta: " + ", ".join(_bit_con_acta))
+    _hist35 |= _bit35
 
     def _commit_ts(rel):
         try:

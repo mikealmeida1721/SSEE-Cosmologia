@@ -22,6 +22,22 @@
 # medible, no una nota suelta que nadie relee.
 
 logs:
+  # ── 2026-10-02: logs con ACTA cuya fuente faltaba aqui. El script se LEE del
+  #    acta de la primera linea de cada log, no se teclea.
+  analiza_boss_R1R2:          src/p06_growth/analiza_boss_R1R2.py
+  b1_k2:                      src/p03_cmb/b1_k2_lee.py
+  b1_min_lcdm:                src/p03_cmb/b1_minimiza.py
+  b1_min_ssee:                src/p03_cmb/b1_minimiza.py
+  cumulos_zhang2026:          src/p02_mcmc/cumulos_zhang2026.py
+  fnu_tremaine_gunn:          src/p02_mcmc/fnu_tremaine_gunn.py
+  fondos_exponenciales:       src/p07_eft/fondos_exponenciales.py
+  hmcode_bariones:            src/p05_IS/hmcode_bariones.py
+  leer_conjunta_b3:           src/p06_growth/leer_conjunta.py
+  p5_IS_perturbations:        src/p05_IS/ssee_paper5_IS_perturbations.py
+  paper2_analysis:            src/p02_mcmc/ssee_paper2_analysis.py
+  perfil_h0_ancla:            src/p03_cmb/perfil_h0_ancla.py
+  press_schechter:            src/p02_mcmc/ssee_press_schechter.py
+  sondas_ssee_vs_lcdm:        src/p11_sondas/sondas_ssee_vs_lcdm.py
   # ── Paper 2 — MCMC / BAO ────────────────────────────────────────────────
   mcmc_paper2_reframe:        src/p02_mcmc/ssee_paper2_mcmc_reframe.py
   is_growth_gamma_bg:         src/p05_is/is_growth_gamma_bg.py
@@ -379,3 +395,33 @@ muestreo_certificado:
   #   21efb8d (09-19): procedencia del pivote de r_d y del prior BBN de DESI.
   # Ninguno toca la verosimilitud ni el muestreo.
   mcmc_paper2_reframe: 2026-09-26
+
+# ── BITACORAS (2026-10-02). Registro de colas: cuando se lanzo cada corrida, con
+#    cuantos nucleos y su rc. No son resultados (ningun numero de un documento
+#    sale de ellas) y ningun script las produce: las escribe la shell de la
+#    cola. R35 no las compara con un script; su CONTROL (R53) es que ninguna
+#    lleve ACTA-PROCEDENCIA: si una bitacora trae acta, es un resultado mal
+#    clasificado y el guardian falla.
+bitacoras:
+  - cola_3modelos
+  - cola_actas_1001
+  - cola_ajuste_conjunto
+  - cola_b1_k2
+  - cola_b1_min
+  - cola_boss_ssee_mnu
+  - cola_canonical_1001
+  - cola_cortas
+  - cola_des_nla
+  - cola_equivalencia_hglob
+  - cola_lectores
+  - cola_n8
+  - cola_p2_mcmc
+  - cola_perfil_1001
+  - cola_perfiles2
+  - cola_perfiles3
+  - cola_perfiles_wc
+  - cola_r35_1001
+  - cola_rapidas
+  - cola_tras_boss
+  - lcdm_conjunta_cola
+  - vigilante_conjunta
