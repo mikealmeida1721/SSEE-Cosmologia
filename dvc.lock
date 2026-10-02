@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: b0f7bf93d139aed56fafd6e55af5a168
-      size: 59629
+      md5: f282c7808351eb9668af0ffba5f13a9f
+      size: 60266
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -185,6 +185,10 @@ stages:
       hash: md5
       md5: 520462e625e6b0b487c9039c531d1811
       size: 2381
+    - path: results/logs/paper4_toe.json
+      hash: md5
+      md5: 64a688def30b9902a56f3eb00d0c428a
+      size: 1496
     - path: results/logs/perfil_h0_ancla.json
       hash: md5
       md5: a4ec29f9ad0a128c1ce0429eeb285027
@@ -228,8 +232,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: a350ad2c5218db65898d14fb66e1abaf
-      size: 75575
+      md5: 154327a35988aa3ea420798e34ed8587
+      size: 76320
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1883,10 +1887,18 @@ stages:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
     deps:
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
     - path: src/p04_toe/ssee_paper4_toe.py
       hash: md5
-      md5: ab89414be176c32662b9a51ef631abfd
-      size: 8346
+      md5: c320b3c24055a1bdf010ab96289246c3
+      size: 11283
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1898,13 +1910,17 @@ stages:
     outs:
     - path: results/figures/fig_toe_cmb_TT.pdf
       hash: md5
-      md5: d705fdf1602eed3c754d6e448896b049
-      size: 24292
+      md5: 2553688414117c8796e8b6692293c444
+      size: 26921
     - path: results/figures/fig_toe_derivations.pdf
       hash: md5
-      md5: 82669b6d171fb658927c8b6d8f58ee28
-      size: 28516
+      md5: 7947aa8ff4f1abcb555f231a37b8b09f
+      size: 26321
+    - path: results/logs/paper4_toe.json
+      hash: md5
+      md5: 64a688def30b9902a56f3eb00d0c428a
+      size: 1496
     - path: results/logs/paper4_toe.log
       hash: md5
-      md5: 19958c53e6b1c05101cf93d2b18bd8ac
-      size: 2214
+      md5: e03d7e9d27496f40024bbeb51a350a5f
+      size: 2471

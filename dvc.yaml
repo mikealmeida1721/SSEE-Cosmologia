@@ -40,6 +40,8 @@ stages:
     deps:
       - src/valores_tex.py
       - manuscript/valores.yaml
+      - results/logs/paper4_toe.json
+      - results/logs/cmb_dbic_mnu_propia.json
       - results/logs/s8_desde_b1.json
       - results/logs/kids_publicados.json
       - results/logs/p10_uv_fscreen.json
@@ -706,4 +708,16 @@ stages:
       - results/figures/ssee_eftcamb_CMB_TT.pdf:
           cache: false
       - results/figures/ssee_eftcamb_Pk.pdf:
+          cache: false
+  cmb_dbic_mnu_propia:
+    cmd: .venv/bin/python3 src/p11_sondas/cmb_dbic_mnu_propia.py > results/logs/cmb_dbic_mnu_propia.log 2>&1
+    deps:
+      - src/p11_sondas/cmb_dbic_mnu_propia.py
+      - src/procedencia.py
+      - results/logs/cmb_dbic_tau_ajustado.json
+      - results/logs/lcdm_conjunta_cmb.json
+    outs:
+      - results/logs/cmb_dbic_mnu_propia.json:
+          cache: false
+      - results/logs/cmb_dbic_mnu_propia.log:
           cache: false

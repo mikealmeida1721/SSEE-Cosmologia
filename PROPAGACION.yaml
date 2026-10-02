@@ -41,6 +41,7 @@ logs:
   hiclass_check:              src/p03_cmb/ssee_paper3_hiclass_check.py
   paper4_toe:                 src/p04_toe/ssee_paper4_toe.py
   eftcamb_validation:         src/p07_eft/ssee_eftcamb_validation.py
+  cmb_dbic_mnu_propia:        src/p11_sondas/cmb_dbic_mnu_propia.py
   # ── Paper 2 — MCMC / BAO ────────────────────────────────────────────────
   mcmc_paper2_reframe:        src/p02_mcmc/ssee_paper2_mcmc_reframe.py
   is_growth_gamma_bg:         src/p05_is/is_growth_gamma_bg.py

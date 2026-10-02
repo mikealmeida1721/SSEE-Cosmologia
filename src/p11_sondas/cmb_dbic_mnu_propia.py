@@ -6,8 +6,12 @@ la mν de SSEE (0.06849). lcdm_conjunta.py cmb re-minimizó ΛCDM con mν 0.06
 (Nelder-Mead, control: no peor que el arranque). Aquí solo se leen los dos
 logs y se recalcula; N = 669 sale del log viejo (medido del likelihood).
 """
-import json, math, os
+import json, math, os, sys
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, os.path.join(R, "src"))
+from procedencia import cabecera, con_acta  # noqa: E402  (2026-10-02: etapa DVC con acta)
+ENT = [f"{R}/results/logs/cmb_dbic_tau_ajustado.json", f"{R}/results/logs/lcdm_conjunta_cmb.json"]
+print(cabecera(__file__, entradas=ENT), flush=True)
 viejo = json.load(open(f"{R}/results/logs/cmb_dbic_tau_ajustado.json"))
 nuevo = json.load(open(f"{R}/results/logs/lcdm_conjunta_cmb.json"))
 assert nuevo["convergido"] and nuevo["control_no_peor_que_arranque"]
@@ -22,6 +26,6 @@ out = dict(fecha="2026-09-28", N=N, chi2_ssee=s["chi2_min"], k_ssee=s["k"],
 # Caso hiper-conservador que cita Paper 3: SSEE con k=4 (contando ω_b y H0 como si se ajustaran).
 out["dBIC_k4_conservador"] = out["dchi2"] + (4 - out["k_lcdm"]) * math.log(N)
 out["fecha"] = str(__import__("datetime").date.today())
-json.dump(out, open(f"{R}/results/logs/cmb_dbic_mnu_propia.json", "w"), indent=1)
+json.dump(con_acta(out, __file__, entradas=ENT), open(f"{R}/results/logs/cmb_dbic_mnu_propia.json", "w"), indent=1)
 for k in ("N", "chi2_ssee", "chi2_lcdm_mnu006", "chi2_lcdm_viejo_mnu_ssee", "dchi2", "dchi2_viejo", "dBIC", "dBIC_viejo", "dBIC_k4_conservador"):
     print(f"  {k:26s} {out[k]}")

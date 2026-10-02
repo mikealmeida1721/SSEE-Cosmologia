@@ -597,3 +597,16 @@ b1v_d:    {fuente: "results/logs/b1_k2.json#validacion_k3.distancia_a_Hglob_sigm
 perfil_h0_min: {fuente: "results/logs/perfil_h0_ancla.json#SSEE.H0_min_parabola", formato: ".2f"}
 perfil_h0_sig: {fuente: "results/logs/perfil_h0_ancla.json#SSEE.sigma_H0", formato: ".2f"}
 perfil_h0_d:   {fuente: "results/logs/perfil_h0_ancla.json#SSEE.distancia_a_Hglob_sigma", formato: ".2f"}
+# P4 figura TT — src/p04_toe/ssee_paper4_toe.py (etapa paper4_toe, 2026-10-02): picos calculados, cada modelo con sus ingredientes
+p4_pico1_ssee:  {fuente: "results/logs/paper4_toe.json#picos.SSEE.0", formato: "d"}
+p4_pico2_ssee:  {fuente: "results/logs/paper4_toe.json#picos.SSEE.1", formato: "d"}
+p4_pico3_ssee:  {fuente: "results/logs/paper4_toe.json#picos.SSEE.2", formato: "d"}
+p4_pico1_lcdm:  {fuente: "results/logs/paper4_toe.json#picos.LCDM.0", formato: "d"}
+p4_pico2_lcdm:  {fuente: "results/logs/paper4_toe.json#picos.LCDM.1", formato: "d"}
+p4_pico3_lcdm:  {fuente: "results/logs/paper4_toe.json#picos.LCDM.2", formato: "d"}
+# plik_lite, {A_s,tau} ajustados, cada modelo con su mnu — src/p03_cmb (etapa cmb_dbic_mnu_propia, 2026-09-29)
+lite_chi2_ssee: {fuente: "results/logs/cmb_dbic_mnu_propia.json#chi2_ssee", formato: ".3f"}
+lite_chi2_lcdm: {fuente: "results/logs/cmb_dbic_mnu_propia.json#chi2_lcdm_mnu006", formato: ".3f"}
+lite_dchi2:     {fuente: "results/logs/cmb_dbic_mnu_propia.json#dchi2", formato: ".3f"}
+lite_dBIC:      {fuente: "results/logs/cmb_dbic_mnu_propia.json#dBIC", formato: ".2f"}
+lite_N:         {fuente: "results/logs/cmb_dbic_mnu_propia.json#N", formato: "d"}
