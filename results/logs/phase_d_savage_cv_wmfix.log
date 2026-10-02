@@ -1,10 +1,10 @@
-# ACTA-PROCEDENCIA {"commit": "d401d9a65c073b6f77d884aef47f7176e28a826a", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/ssee_phase_d_savage_cv.py", "script_sha256": "bff3b98f3b1b506495bd145d7c515cd204e250ef965d58c392a8cbb1eae10bed", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/estadistica/ssee_phase_d_savage_cv.py"], "fecha": "2026-10-01T00:03:54", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "9bf54096fe6f8c94a9d8e7febadd43878227744e", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/ssee_phase_d_savage_cv.py", "script_sha256": "bff3b98f3b1b506495bd145d7c515cd204e250ef965d58c392a8cbb1eae10bed", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/estadistica/ssee_phase_d_savage_cv.py"], "fecha": "2026-10-01T21:12:12", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 ============================================================
 PARTE 1: SAVAGE-DICKEY DENSITY RATIO
 ============================================================
   Muestras CPL: 2,500,000
-  Rango w0: [-1.181, -0.416]
-  Rango wa: [-2.289, 0.677]
+  Rango w0: [-1.171, -0.430]
+  Rango wa: [-2.190, 0.786]
 
   Factor truncación prior w0: 0.997300 (Gauss untruncada: 0.997300)
   Factor truncación prior wa: 0.975900
@@ -18,23 +18,23 @@ PARTE 1: SAVAGE-DICKEY DENSITY RATIO
 
   Ajustando KDE 2D con 500,000 muestras...
   Densidad posterior en (w0=-0.84, wa=-0.67):
-    p(w0,wa | data, CPL) = 2.575534
+    p(w0,wa | data, CPL) = 2.574011
 
   ─────────────────────────────────────────────────────
-  SAVAGE-DICKEY: B(SSEE_dyn vs CPL_dyn) = 10.3744
-  ln B = 2.3393
+  SAVAGE-DICKEY: B(SSEE_dyn vs CPL_dyn) = 10.3682
+  ln B = 2.3387
   → SSEE preferido sobre CPL en sector dinámico
   → Evidencia SUSTANCIAL (Jeffreys: |ln B|>1.1)
   → Evidencia FUERTE (Jeffreys: |ln B|>2.3)
 
   Verificación: fracción CPL posterior dentro de 1σ DESI del punto SSEE:
     |w0 - -0.84| < 0.057 AND |wa - -0.67| < 0.226
-    Fracción = 31.18%
+    Fracción = 31.21%
     (Esperado para distribución concentrada: ~10-20%)
 
   Resumen CPL posterior (w0, wa):
-    w0 = -0.820 ± 0.080  (SSEE: -0.84  — 0.26σ)
-    wa = -0.552 ± 0.312  (SSEE: -0.67  — 0.38σ)
+    w0 = -0.820 ± 0.079  (SSEE: -0.84  — 0.26σ)
+    wa = -0.551 ± 0.311  (SSEE: -0.67  — 0.38σ)
 
 ============================================================
 PARTE 2: CROSS-VALIDATION PREDICTIVA (LOO-z)
@@ -80,9 +80,9 @@ PARTE 3: RESUMEN PARA PAPER 2 — APÉNDICE B
 ============================================================
 
 Savage-Dickey Density Ratio (sector dinámico):
-  B(SSEE_dyn vs CPL_dyn) = 10.374
+  B(SSEE_dyn vs CPL_dyn) = 10.368
   ln B = 2.339
-  → CPL posterior en (w0=-0.840, wa=-0.670): 2.575534
+  → CPL posterior en (w0=-0.840, wa=-0.670): 2.574011
   → Prior CPL en ese punto:                  0.248259
 
 Interpretación SDDR:

@@ -99,8 +99,8 @@ stages:
       size: 52877
     - path: results/logs/dic_from_chains.json
       hash: md5
-      md5: bb166f311eb519a319a73349317170b6
-      size: 1457
+      md5: 93831f98c6929a2b3928fdcb61dfd1f1
+      size: 1460
     - path: results/logs/edad_universo.json
       hash: md5
       md5: 8d287577eefaeaf4f778ba3e1a8769ad
@@ -183,8 +183,8 @@ stages:
       size: 2073
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 9e12af535aa2f1edc2b39472cc53ce7a
-      size: 4055
+      md5: 70d56156bd118d9ed8c49ec776469c1c
+      size: 4062
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: 7e40f5ebc0aab8a91ebf0e83ef5ebf43
@@ -195,8 +195,8 @@ stages:
       size: 1867
     - path: results/logs/savage_cv.json
       hash: md5
-      md5: 6bd2c0a9ac675850ee7207ea4ce76c69
-      size: 2644
+      md5: 58c6b5f3b11b0eef8249bba13347200d
+      size: 2647
     - path: src/valores_tex.py
       hash: md5
       md5: 1f5c766594c7c7ab5887dbc8f6b01e8d
@@ -204,7 +204,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 36b8e9e61596e9bc2fb37db739a546a9
+      md5: dc78508ddeb6e2c929fc0c4c205b0f5f
       size: 69363
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -554,11 +554,11 @@ stages:
     - path: 
         /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
-      md5: 64ec098f62a1bb188720f86b25bf11f5
+      md5: 4fa9bcabe46e5f0e355b759207809245
       size: 260001506
     - path: results/logs/mcmc_paper2_3models_wmfix.log
       hash: md5
-      md5: e286a4af3cb06485b51e4d5c3dea7f44
+      md5: febc767c5e63704cd040d8163c102558
       size: 11579
     - path: src/desi_dr2_data.py
       hash: md5
@@ -575,8 +575,8 @@ stages:
     outs:
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 9e12af535aa2f1edc2b39472cc53ce7a
-      size: 4055
+      md5: 70d56156bd118d9ed8c49ec776469c1c
+      size: 4062
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/estadistica/ssee_phase_d_savage_cv.py > 
@@ -585,7 +585,7 @@ stages:
     - path: 
         /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
-      md5: 64ec098f62a1bb188720f86b25bf11f5
+      md5: 4fa9bcabe46e5f0e355b759207809245
       size: 260001506
     - path: src/estadistica/ssee_phase_d_savage_cv.py
       hash: md5
@@ -602,19 +602,19 @@ stages:
     outs:
     - path: results/logs/phase_d_savage_cv_wmfix.log
       hash: md5
-      md5: cce85733f5ea8561e5042f54b612b390
-      size: 6520
+      md5: a2e0cb86bd1a49c8623cb92e7d6235dc
+      size: 6522
     - path: results/logs/savage_cv.json
       hash: md5
-      md5: 6bd2c0a9ac675850ee7207ea4ce76c69
-      size: 2644
+      md5: 58c6b5f3b11b0eef8249bba13347200d
+      size: 2647
   dic_from_chains:
     cmd: .venv/bin/python3 src/estadistica/ssee_dic_from_chains.py
     deps:
     - path: 
         /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
-      md5: 64ec098f62a1bb188720f86b25bf11f5
+      md5: 4fa9bcabe46e5f0e355b759207809245
       size: 260001506
     - path: src/estadistica/ssee_dic_from_chains.py
       hash: md5
@@ -627,11 +627,11 @@ stages:
     outs:
     - path: results/logs/dic_from_chains.json
       hash: md5
-      md5: bb166f311eb519a319a73349317170b6
-      size: 1457
+      md5: 93831f98c6929a2b3928fdcb61dfd1f1
+      size: 1460
     - path: results/logs/dic_from_chains.log
       hash: md5
-      md5: 1a028b28e6bec7edf0afb8252daab161
+      md5: d0062d01bc03ab523b54e24acf45e3ec
       size: 1241
   hiclass_campo:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

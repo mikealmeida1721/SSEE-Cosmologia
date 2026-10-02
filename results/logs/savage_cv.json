@@ -1,14 +1,14 @@
 {
  "fecha": "2026-10-01",
  "savage_dickey": {
-  "B_sddr": 10.374366150665258,
-  "ln_B": 2.3393379703386707,
+  "B_sddr": 10.368234589250669,
+  "ln_B": 2.3387467656319836,
   "pi_ssee": 0.24825936537012336,
-  "post_density": 2.575533556681447,
-  "w0_med": -0.8195152993695682,
-  "w0_std": 0.07960247407052196,
-  "wa_med": -0.5515097592468043,
-  "wa_std": 0.31162092329375424,
+  "post_density": 2.5740113391359327,
+  "w0_med": -0.8196891958241128,
+  "w0_std": 0.07945479904841261,
+  "wa_med": -0.5513861313856995,
+  "wa_std": 0.31105005722521906,
   "Z_trunc_w0": 0.9973002039367398,
   "Z_trunc_wa": 0.9758999700201907
  },
@@ -105,19 +105,19 @@
   "cpl": true
  },
  "_procedencia": {
-  "commit": "d401d9a65c073b6f77d884aef47f7176e28a826a",
+  "commit": "9bf54096fe6f8c94a9d8e7febadd43878227744e",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/estadistica/ssee_phase_d_savage_cv.py",
   "script_sha256": "bff3b98f3b1b506495bd145d7c515cd204e250ef965d58c392a8cbb1eae10bed",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "b1c6d5c10d06316629cec68d7feeaa7cf1272ccacb3826f587e2932565a0d22a"
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "105a3703b83ffb026ffd35ed042c805d7982d6f3a3bc9b57f33b6f4ed311d141"
   },
   "argv": [
    "src/estadistica/ssee_phase_d_savage_cv.py"
   ],
-  "fecha": "2026-10-01T00:03:55",
+  "fecha": "2026-10-01T21:12:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -126,8 +126,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
