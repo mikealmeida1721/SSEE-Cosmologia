@@ -56,14 +56,25 @@ def perfil(m, H):
     return float(r.fun), [float(v) for v in r.x], bool(r.success)
 
 
+def _tarea(t):
+    nom, d = t
+    m = MODELOS[nom]
+    H = m["centro"] + d
+    c, x, ok = perfil(m, H)
+    print(f"  {nom} H0 {H:8.4f}  chi2 {c:10.3f}  logA {x[0]:.4f}  tau {x[1]:.4f}  {'ok' if ok else 'NO CONVERGIO'}", flush=True)
+    return nom, dict(H0=H, chi2=c, logA=x[0], tau=x[1], convergio=ok)
+
+
+# Los 18 puntos (modelo, H0) son independientes: se reparten en NUCLEOS procesos, declarado
+# en el comando de la etapa (regla de Mike). El resultado no depende del orden.
+NUCLEOS = int(os.environ.get("NUCLEOS", "1"))
+print(f"  NUCLEOS: {NUCLEOS}", flush=True)
+import multiprocessing as _mp  # noqa: E402
+with _mp.get_context("fork").Pool(NUCLEOS) as _pool:
+    _res = _pool.map(_tarea, [(n, d) for n in MODELOS for d in PASOS], chunksize=1)
 out = {}
 for nom, m in MODELOS.items():
-    filas = []
-    for d in PASOS:
-        H = m["centro"] + d
-        c, x, ok = perfil(m, H)
-        filas.append(dict(H0=H, chi2=c, logA=x[0], tau=x[1], convergio=ok))
-        print(f"  {nom} H0 {H:8.4f}  chi2 {c:10.3f}  logA {x[0]:.4f}  tau {x[1]:.4f}  {'ok' if ok else 'NO CONVERGIO'}", flush=True)
+    filas = sorted([r for n, r in _res if n == nom], key=lambda r: r["H0"])
     hs = np.array([f["H0"] for f in filas]); cs = np.array([f["chi2"] for f in filas])
     i0 = int(np.argmin(cs)); sel = slice(max(0, i0 - 2), min(len(hs), i0 + 3))
     a, b, _ = np.polyfit(hs[sel], cs[sel], 2)

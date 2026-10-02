@@ -637,7 +637,7 @@ stages:
       - results/figures/fig_h0_three_priors.pdf:
           cache: false
   perfil_h0_ancla:
-    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > results/logs/perfil_h0_ancla.log 2>&1
+    cmd: NUCLEOS=6 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > results/logs/perfil_h0_ancla.log 2>&1
     deps:
       - src/p03_cmb/perfil_h0_ancla.py
       - src/p03_cmb/cmb_eval.py
