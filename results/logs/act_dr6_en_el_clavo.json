@@ -10,22 +10,22 @@
  "libres": 0,
  "logA_clavo": 3.0448340130228546,
  "tau": 0.0554590468914248,
- "chi2_en_el_clavo": 14.00503743341897,
- "chi2_por_bandpower": 1.400503743341897,
+ "chi2_en_el_clavo": 14.005042120970238,
+ "chi2_por_bandpower": 1.4005042120970237,
  "dof": 10,
- "PTE": 0.1727619589382522,
- "sigma_equivalente": 1.363382609582259,
+ "PTE": 0.1727617453553666,
+ "sigma_equivalente": 1.3633832876335026,
  "control_a_fondo_lcdm": {
   "chi2": 14.201008933304786,
-  "diferencia": -0.1959714998858164,
+  "diferencia": -0.19596681233454838,
   "PTE": 0.16401883650615157,
-  "nota": "se evalua LCDM con el MISMO logA clavado del CMB de SSEE, no con el suyo: la pregunta del control es si ACT da chi2 bueno con cualquier fondo."
+  "nota": "LCDM con SUS parametros de Planck 2018 (lcdm_planck.py: m_nu 0.06, logA 3.044, tau 0.0544), no con los de SSEE (arreglo 2026-09-27)."
  },
  "control_b_sensibilidad_As": {
   "sigma_logA": 0.013125658689892638,
-  "chi2_menos": 18.6327448740002,
-  "chi2_mas": 14.87625170517241,
-  "mayor_salto": 4.627707440581229,
+  "chi2_menos": 18.632764030824834,
+  "chi2_mas": 14.876241368057835,
+  "mayor_salto": 4.627721909854596,
   "ve_As": true
  }
 }

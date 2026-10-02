@@ -1,0 +1,10 @@
+# ACTA-PROCEDENCIA {"commit": "cf695c87aec0820c80f15f50febd21391ce56ab7", "reproducible_desde_commit": false, "cambios_sin_commitear": ["?? src/p11_sondas/sondas_ssee_vs_lcdm.py"], "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py", "script_sha256": "cbb8e829321ab66f771086c4c8362dc1764df17a22049f166099814c8f03fd71", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p11_sondas/sondas_ssee_vs_lcdm.py"], "fecha": "2026-10-01T21:56:13", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+  Pantheon+      SSEE  1386.624/1579 (0.00s)   LCDM  1387.325 (0.00s)   dchi2 -0.702
+  DES-SN5YR      SSEE  1629.440/1819 (0.00s)   LCDM  1632.408 (0.00s)   dchi2 -2.969
+  Union3         SSEE    23.847/21 (1.04s)   LCDM    26.372 (1.30s)   dchi2 -2.524
+  Union3.1       SSEE    26.598/21 (1.33s)   LCDM    28.834 (1.56s)   dchi2 -2.236
+  ACT DR6        SSEE    14.005/10 (1.36s)   LCDM    14.201 (1.39s)   dchi2 -0.196
+  SPT-3G D1 KK   SSEE    17.764/10 (1.89s)   LCDM    18.306 (1.96s)   dchi2 -0.543
+  DES Y3 3x2pt   dchi2 -1.182   (montaje ABIERTO (motor y TATT pendientes): solo Delta chi2, sin sigma)
+  DESI DR2 BAO   SSEE 10.904/13 (0.50s)   LCDM libre 10.539/11 (0.70s)
+  discriminan (|dchi2| >= 9): ninguna

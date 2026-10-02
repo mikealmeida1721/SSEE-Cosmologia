@@ -1607,3 +1607,53 @@ stages:
       hash: md5
       md5: 7b3850e0b5e1f75a1ab1b113fba95df5
       size: 891
+  sondas_ssee_vs_lcdm:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/sondas_ssee_vs_lcdm.py > 
+      results/logs/sondas_ssee_vs_lcdm.log 2>&1
+    deps:
+    - path: results/logs/act_dr6_en_el_clavo.json
+      hash: md5
+      md5: ee518532a90b4b5040b080d58b3047c6
+      size: 930
+    - path: results/logs/bao_lcdm_libre.json
+      hash: md5
+      md5: add7334d99462ede231d9dd34a910451
+      size: 587
+    - path: results/logs/des_y3_en_el_clavo_lcdm_planck.json
+      hash: md5
+      md5: 25f0cd862e48b8916a33e4b65d0ca77c
+      size: 675
+    - path: results/logs/des_y3_en_el_clavo_ssee.json
+      hash: md5
+      md5: 4420a07e5187f2cb5faaec2ebe62a6a2
+      size: 744
+    - path: results/logs/sn_geometria_en_el_clavo.json
+      hash: md5
+      md5: 1045b2c69b2e6eebb4fbcbf5e43e9236
+      size: 1810
+    - path: results/logs/spt3g_kk_en_el_clavo.json
+      hash: md5
+      md5: 3625d7309024dcd93b064924cd7197a7
+      size: 851
+    - path: results/logs/union3_en_el_clavo.json
+      hash: md5
+      md5: 0dbe30d52b0e7dd17932a4d782cecc3a
+      size: 1224
+    - path: src/p11_sondas/sondas_ssee_vs_lcdm.py
+      hash: md5
+      md5: 38da590ecb624d05c01bac4607c9bab3
+      size: 5395
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/sondas_ssee_vs_lcdm.json
+      hash: md5
+      md5: 0bb747b212c7333ca097929a90488287
+      size: 5026
+    - path: results/logs/sondas_ssee_vs_lcdm.log
+      hash: md5
+      md5: 16c02ea03c169a5a8019444d27a586a8
+      size: 1446

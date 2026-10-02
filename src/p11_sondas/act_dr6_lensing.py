@@ -122,8 +122,8 @@ def main():
         dof=n, PTE=pte, sigma_equivalente=float(stats.norm.isf(pte / 2)),
         control_a_fondo_lcdm=dict(
             chi2=ca, diferencia=c - ca, PTE=float(stats.chi2.sf(ca, n)),
-            nota="se evalua LCDM con el MISMO logA clavado del CMB de SSEE, no con el suyo: "
-                 "la pregunta del control es si ACT da chi2 bueno con cualquier fondo."),
+            nota="LCDM con SUS parametros de Planck 2018 (lcdm_planck.py: m_nu 0.06, "
+                 "logA 3.044, tau 0.0544), no con los de SSEE (arreglo 2026-09-27)."),
         control_b_sensibilidad_As=dict(
             sigma_logA=s, chi2_menos=cm, chi2_mas=cp,
             mayor_salto=ve, ve_As=bool(ve > 1.0)))

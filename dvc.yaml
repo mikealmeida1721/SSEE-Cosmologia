@@ -577,3 +577,20 @@ stages:
           cache: false
       - results/logs/hmcode_bariones.log:
           cache: false
+  sondas_ssee_vs_lcdm:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/sondas_ssee_vs_lcdm.py > results/logs/sondas_ssee_vs_lcdm.log 2>&1
+    deps:
+      - src/p11_sondas/sondas_ssee_vs_lcdm.py
+      - src/procedencia.py
+      - results/logs/sn_geometria_en_el_clavo.json
+      - results/logs/union3_en_el_clavo.json
+      - results/logs/act_dr6_en_el_clavo.json
+      - results/logs/spt3g_kk_en_el_clavo.json
+      - results/logs/bao_lcdm_libre.json
+      - results/logs/des_y3_en_el_clavo_ssee.json
+      - results/logs/des_y3_en_el_clavo_lcdm_planck.json
+    outs:
+      - results/logs/sondas_ssee_vs_lcdm.json:
+          cache: false
+      - results/logs/sondas_ssee_vs_lcdm.log:
+          cache: false
