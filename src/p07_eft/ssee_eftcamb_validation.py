@@ -25,6 +25,13 @@ import camb
 import os as _o66, sys as _s66
 _s66.path.insert(0, _o66.path.dirname(_o66.path.dirname(_o66.path.abspath(__file__))))
 import ssee_core as _C
+import json as _jsacta, os as _osacta, sys as _sysacta  # procedencia (R75, 2026-10-02)
+_sysacta.path.insert(0, _osacta.path.dirname(_osacta.path.dirname(_osacta.path.abspath(__file__))))
+from procedencia import acta as _acta, cabecera as _cabecera  # noqa: E402
+_ENT_ACTA = []
+print(_cabecera(__file__, entradas=_ENT_ACTA), flush=True)
+# El acta va en los metadatos del PDF (Keywords): un PDF no puede llevarla como linea de texto (R75)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jsacta.dumps(_acta(__file__, entradas=_ENT_ACTA))}
 
 
 # ORIGEN de los numeros (R65, 2026-09-19)
@@ -248,7 +255,7 @@ if Cl_TT_gr is not None and Cl_TT_ssee is not None:
     ax2.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("results/figures/ssee_eftcamb_CMB_TT.pdf", bbox_inches='tight', dpi=150)
+    plt.savefig("results/figures/ssee_eftcamb_CMB_TT.pdf", bbox_inches='tight', dpi=150, metadata=_META)
     plt.savefig("results/figures/ssee_eftcamb_CMB_TT.png", bbox_inches='tight', dpi=150)
     print(f"\n  → results/figures/ssee_eftcamb_CMB_TT.pdf")
 
@@ -278,7 +285,7 @@ if Cl_TT_gr is not None and Cl_TT_ssee is not None:
     bx2.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("results/figures/ssee_eftcamb_Pk.pdf", bbox_inches='tight', dpi=150)
+    plt.savefig("results/figures/ssee_eftcamb_Pk.pdf", bbox_inches='tight', dpi=150, metadata=_META)
     plt.savefig("results/figures/ssee_eftcamb_Pk.png", bbox_inches='tight', dpi=150)
     print(f"  → results/figures/ssee_eftcamb_Pk.pdf")
 

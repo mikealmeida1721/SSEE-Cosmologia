@@ -21,6 +21,13 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
+import json as _jsacta, os as _osacta, sys as _sysacta  # procedencia (R75, 2026-10-02)
+_sysacta.path.insert(0, _osacta.path.dirname(_osacta.path.dirname(_osacta.path.abspath(__file__))))
+from procedencia import acta as _acta, cabecera as _cabecera  # noqa: E402
+_ENT_ACTA = ["data/raw/planck_pr4_TT.txt"]
+print(_cabecera(__file__, entradas=_ENT_ACTA), flush=True)
+# El acta va en los metadatos del PDF (Keywords): un PDF no puede llevarla como linea de texto (R75)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jsacta.dumps(_acta(__file__, entradas=_ENT_ACTA))}
 import os, warnings
 warnings.filterwarnings('ignore')
 
@@ -268,7 +275,7 @@ ax2.set_ylim(-5, 5)
 ax2.legend(fontsize=8)
 ax2.grid(alpha=0.25)
 
-plt.savefig("results/figures/fig_hiclass_TT.pdf", bbox_inches='tight', dpi=150)
+plt.savefig("results/figures/fig_hiclass_TT.pdf", bbox_inches='tight', dpi=150, metadata=_META)
 plt.savefig("results/figures/fig_hiclass_TT.png", bbox_inches='tight', dpi=150)
 plt.close()
 print("\n  Saved: results/figures/fig_hiclass_TT.pdf")
@@ -288,7 +295,7 @@ ax3.set_xlim(0, 3)
 ax3.set_ylim(0, 0.6)
 ax3.grid(alpha=0.3)
 plt.tight_layout()
-plt.savefig("results/figures/fig_hiclass_alpha.pdf", bbox_inches='tight', dpi=150)
+plt.savefig("results/figures/fig_hiclass_alpha.pdf", bbox_inches='tight', dpi=150, metadata=_META)
 plt.savefig("results/figures/fig_hiclass_alpha.png", bbox_inches='tight', dpi=150)
 plt.close()
 print("  Saved: results/figures/fig_hiclass_alpha.pdf")

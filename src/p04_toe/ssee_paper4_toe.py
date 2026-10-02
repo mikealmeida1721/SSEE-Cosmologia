@@ -8,6 +8,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
+import json as _jsacta, os as _osacta, sys as _sysacta  # procedencia (R75, 2026-10-02)
+_sysacta.path.insert(0, _osacta.path.dirname(_osacta.path.dirname(_osacta.path.abspath(__file__))))
+from procedencia import acta as _acta, cabecera as _cabecera  # noqa: E402
+_ENT_ACTA = []
+print(_cabecera(__file__, entradas=_ENT_ACTA), flush=True)
+# El acta va en los metadatos del PDF (Keywords): un PDF no puede llevarla como linea de texto (R75)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jsacta.dumps(_acta(__file__, entradas=_ENT_ACTA))}
 # ── SSEE constants (zero free parameters) ───────────────────────────────────
 import os as _reloc_os, sys as _reloc_sys  # reloc: anclar src/
 _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__))))
@@ -116,7 +123,7 @@ ax2.legend(fontsize=9)
 
 plt.tight_layout()
 os.makedirs("results/figures", exist_ok=True)
-fig1.savefig("results/figures/fig_toe_derivations.pdf", bbox_inches="tight")
+fig1.savefig("results/figures/fig_toe_derivations.pdf", bbox_inches="tight", metadata=_META)
 fig1.savefig("results/figures/fig_toe_derivations.png", dpi=150, bbox_inches="tight")
 print("\nSaved: results/figures/fig_toe_derivations.pdf")
 
@@ -156,7 +163,7 @@ try:
     ax.set_xlim(2, 2500)
     ax.legend(fontsize=11)
     plt.tight_layout()
-    fig2.savefig("results/figures/fig_toe_cmb_TT.pdf", bbox_inches="tight")
+    fig2.savefig("results/figures/fig_toe_cmb_TT.pdf", bbox_inches="tight", metadata=_META)
     fig2.savefig("results/figures/fig_toe_cmb_TT.png", dpi=150, bbox_inches="tight")
     print("Saved: results/figures/fig_toe_cmb_TT.pdf")
 
