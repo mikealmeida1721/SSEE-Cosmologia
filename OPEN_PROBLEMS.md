@@ -2265,6 +2265,32 @@ Script a crear: `op18_As_from_inflation.py`.
 > w_c) y 46 cúmulos reales (2.32σ con IGIMF, `cumulos_zhang2026.json`); **qué es** sigue abierto aquí. Por eso no se
 > puede decir «SSEE no necesita partículas» sin esta OP.
 
+> **2026-10-01 — PLAN DE BÚSQUEDA DE MECANISMO (decisión de Mike).** A diferencia de la partícula retirada, que
+> tapaba un hueco que resultó no existir, aquí la relación **ya funciona** (Planck, BOSS, 46 cúmulos): el
+> mecanismo tiene que **encajar debajo de ella sin dañar nada más**. Se buscan mecanismos con el blanco conocido,
+> intentando derribar cada uno.
+>
+> **Hipótesis de trabajo de Mike (no es resultado):** n_s = 1 − 2/N_* mide qué tan cerca del final de la caída
+> del inflatón se estamparon nuestras escalas. ω_c/ω_b = KAL₀·n_s = KAL₀·(1 − 2/N_*) diría que la retención no
+> llega completa porque la caída no había terminado. Huecos declarados: (i) en la fórmula la inclinación
+> *reduce* la retención, no se le opone; (ii) falta el puente físico entre la época de la caída (inflación) y la
+> de la retención (abundancia de materia oscura). Candidata natural: producción de materia oscura al final de
+> la caída (recalentamiento / producción gravitacional).
+>
+> **Reglas, escritas ANTES de probar el primer candidato:**
+> 1. Cero perillas ajustadas al blanco: KAL₀·n_s tiene que salir de la física del mecanismo. Todo número que no
+>    salga del álgebra cuenta como libre; si se elige para acertar, el mecanismo queda descartado.
+> 2. Debe predecir algo más, medible y que hoy no sepamos (masa, temperatura o free-streaming de la materia
+>    oscura —KiDS, Lyman-α—, isocurvatura en el CMB…), y no romper nada de lo que ya pasa.
+> 3. Control R53: alimentado con blancos falsos (otro cociente, otro n_s), el mecanismo tiene que FALLAR.
+> 4. Capa 1 antes que capa 2: explicar por qué ω_c ∝ ω_b (origen compartido con la bariogénesis, OP-1).
+>
+> **Primer paso (barato, sin corridas):** criba en papel de las cuatro familias (freeze-out, freeze-in,
+> misalignment, producción gravitacional / en el recalentamiento). Se busca en cuál la abundancia contiene de
+> forma natural N_* o la pendiente de la caída, para que (1 − 2/N_*) aparezca sin insertarlo. Si ninguna lo
+> contiene, eso también es resultado: el factor n_s pediría física nueva. Nova aporta los artículos que
+> conectan con esto o podrían refutarlo.
+
 **Origen.** Tras el reframe $\omega_m$-directo (OP-8 disuelto), la densidad de materia
 oscura fría del CMB entra por la **identidad forward**
 $$\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s = 5.5214\times0.02242\times0.96556 = 0.11951,$$
