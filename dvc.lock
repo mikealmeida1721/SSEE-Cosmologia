@@ -1652,18 +1652,38 @@ stages:
       hash: md5
       md5: ee518532a90b4b5040b080d58b3047c6
       size: 930
+    - path: results/logs/b1_k2.json
+      hash: md5
+      md5: 068efa05529e72146583cb01e9639609
+      size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
       md5: add7334d99462ede231d9dd34a910451
       size: 587
+    - path: results/logs/cmb_dbic_mnu_propia.json
+      hash: md5
+      md5: a467fbe5b7944f4ba374d9623b30b513
+      size: 1498
     - path: results/logs/des_y3_en_el_clavo_lcdm_planck.json
       hash: md5
       md5: 25f0cd862e48b8916a33e4b65d0ca77c
       size: 675
+    - path: results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json
+      hash: md5
+      md5: 98fd574a63b592c56114d50e20560a3c
+      size: 1567
     - path: results/logs/des_y3_en_el_clavo_ssee.json
       hash: md5
       md5: 4420a07e5187f2cb5faaec2ebe62a6a2
       size: 744
+    - path: results/logs/des_y3_en_el_clavo_ssee_nla.json
+      hash: md5
+      md5: ca2e100439a75fa4b4e7658ed4d42360
+      size: 1629
+    - path: results/logs/kids_legacy_bic.json
+      hash: md5
+      md5: c4ea51ba762b43359d275841379cf8ea
+      size: 3417
     - path: results/logs/sn_geometria_en_el_clavo.json
       hash: md5
       md5: 1045b2c69b2e6eebb4fbcbf5e43e9236
@@ -1678,8 +1698,8 @@ stages:
       size: 1224
     - path: src/p11_sondas/sondas_ssee_vs_lcdm.py
       hash: md5
-      md5: 38da590ecb624d05c01bac4607c9bab3
-      size: 5395
+      md5: b6c92649e621fdc71680f5b9bcc0fb63
+      size: 8268
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1687,12 +1707,12 @@ stages:
     outs:
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 3be97b3239ca4b4df51477ecf3a5d3e9
-      size: 4974
+      md5: 0762247b96c7038ec8c8ce83db125c15
+      size: 7408
     - path: results/logs/sondas_ssee_vs_lcdm.log
       hash: md5
-      md5: ea498d1a68ee4472ab262e4c4438a806
-      size: 1401
+      md5: 7129032c183d551b4376ea4c76a0f066
+      size: 1630
   mcmc_paper2_reframe:
     cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
       .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 

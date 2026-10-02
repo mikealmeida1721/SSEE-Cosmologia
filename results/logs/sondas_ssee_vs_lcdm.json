@@ -3,6 +3,8 @@
   {
    "sonda": "Pantheon+",
    "tipo": "supernovas (forma de d_L)",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
    "SSEE": {
     "chi2": 1386.6236766651273,
     "dof": 1579,
@@ -22,6 +24,8 @@
   {
    "sonda": "DES-SN5YR",
    "tipo": "supernovas (forma de d_L)",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
    "SSEE": {
     "chi2": 1629.4396538848491,
     "dof": 1819,
@@ -41,6 +45,8 @@
   {
    "sonda": "Union3",
    "tipo": "supernovas (mu binned)",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
    "SSEE": {
     "chi2": 23.847395291316378,
     "dof": 21,
@@ -60,6 +66,8 @@
   {
    "sonda": "Union3.1",
    "tipo": "supernovas (mu binned)",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
    "SSEE": {
     "chi2": 26.598135524926136,
     "dof": 21,
@@ -79,6 +87,8 @@
   {
    "sonda": "ACT DR6",
    "tipo": "lente del CMB",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
    "SSEE": {
     "chi2": 14.005042120970238,
     "dof": 10,
@@ -98,6 +108,8 @@
   {
    "sonda": "SPT-3G D1 KK",
    "tipo": "lente del CMB",
+   "fondo_lcdm": "Planck clavado",
+   "ajustados_lcdm": 0,
    "SSEE": {
     "chi2": 17.763662338256836,
     "dof": 10,
@@ -118,20 +130,30 @@
  "des_y3": {
   "sonda": "DES Y3 3x2pt",
   "tipo": "cizalla + agrupamiento",
+  "fondo_lcdm": "Planck clavado",
+  "ajustados_lcdm": 0,
   "dchi2": -1.182427231050724,
+  "dchi2_TATT": -1.182427231050724,
+  "dchi2_NLA": 0.4054747367327991,
   "SSEE": {
    "chi2": 516.1075014765364,
+   "chi2_NLA": 520.255703366371,
    "S8": 0.8291249483287166
   },
   "LCDM_Planck": {
    "chi2": 517.2899287075871,
+   "chi2_NLA": 519.8502286296382,
    "S8": 0.8328922572249731
   },
-  "nota": "montaje ABIERTO (motor y TATT pendientes): solo Delta chi2, sin sigma"
+  "empate_robusto": true,
+  "signo_estable": false,
+  "nota": "alineamientos TATT (oficial) y NLA: el empate se mantiene con los dos; el signo de una diferencia despreciable cambia, asi que no separa modelos. Solo Delta chi2, sin sigma (nuisances minimizados)"
  },
  "bao": {
   "sonda": "DESI DR2 BAO",
   "tipo": "BAO",
+  "fondo_lcdm": "libre",
+  "ajustados_lcdm": 2,
   "SSEE": {
    "chi2": 10.903953594619837,
    "dof": 13,
@@ -147,15 +169,65 @@
   "dchi2": 0.3653230499175937,
   "nota": "LCDM LIBRE (Om y h r_d ajustados), no clavado: no es la misma comparacion que las demas"
  },
+ "filas_lcdm_ajusta": [
+  {
+   "sonda": "Planck plik_lite",
+   "tipo": "CMB",
+   "fondo_lcdm": "libre",
+   "ajustados_lcdm": 6,
+   "ajustados_ssee": 2,
+   "SSEE": {
+    "chi2": 1003.5860397789045
+   },
+   "LCDM": {
+    "chi2": 1003.5956843094156
+   },
+   "dchi2": -0.009644530511081939,
+   "dBIC": -26.03278077102391
+  },
+  {
+   "sonda": "Planck plik completo",
+   "tipo": "CMB",
+   "fondo_lcdm": "libre",
+   "ajustados_lcdm": 6,
+   "ajustados_ssee": 2,
+   "SSEE": {
+    "chi2": 2768.448775601234
+   },
+   "LCDM": {
+    "chi2": 2771.227219545251
+   },
+   "dchi2": -2.778443944016999,
+   "dBIC": -33.83392909529789
+  },
+  {
+   "sonda": "KiDS-Legacy",
+   "tipo": "cizalla",
+   "fondo_lcdm": "Planck + A_s libre",
+   "ajustados_lcdm": 1,
+   "ajustados_ssee": 0,
+   "SSEE": {
+    "chi2": 417.9706,
+    "BIC": 464.9924862542371
+   },
+   "LCDM": {
+    "chi2": 418.95467,
+    "BIC": 471.8542920360168
+   },
+   "dchi2": -0.9840700000000311,
+   "dBIC": -6.861805781779651,
+   "nota": "ajustados = los cosmologicos que LCDM ajusta de mas (A_s); los nuisance de KiDS son los mismos en los dos"
+  }
+ ],
  "umbral_discrimina_dchi2": 9.0,
  "discriminan": [],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "2a4d76415bf1c32f26efede21f6e427432d96551",
+  "commit": "49d73feeedf4684dc8861a3990a615f80d192733",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
-  "script_sha256": "cbb8e829321ab66f771086c4c8362dc1764df17a22049f166099814c8f03fd71",
+  "script_sha256": "455167c9d6e7507ec6f3c19e5a51da1241202c879d36cc38c94ea91dfca30b44",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/sn_geometria_en_el_clavo.json": "c04d927fcb284f15b5a628fe83efa537d6ed8c597abf8e94d4a168e915357dd7",
@@ -164,12 +236,17 @@
    "results/logs/spt3g_kk_en_el_clavo.json": "6f5a2b55112774a05826d6bd5780c6b3f633221effecd386af169cfffcef055f",
    "results/logs/bao_lcdm_libre.json": "f3ad4e448603a172c0b6670df3b07dad364703cf21e5227cf8559ff77bb68569",
    "results/logs/des_y3_en_el_clavo_ssee.json": "a14a2368ea014ea844deee8f3c9fe886099a8df56208b7a0b2d017c485342050",
-   "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "dd7ac6cd8431fa9b23748e4ed61ddc1cd5ebd3d04de3eb74881f00d9ff93e750"
+   "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "dd7ac6cd8431fa9b23748e4ed61ddc1cd5ebd3d04de3eb74881f00d9ff93e750",
+   "results/logs/des_y3_en_el_clavo_ssee_nla.json": "8e7645b20e92586a1a14f403404ffbdee4832b78bdb9710fab57ec59f53d2d49",
+   "results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json": "0b3e1bcc757acb36290d936213ad2720b3b8daccfe83dc70001ecd837b445dcd",
+   "results/logs/cmb_dbic_mnu_propia.json": "92d149da5fa73827da25b69f372ba1104e3bbddb505d89588ba7629fac9e082a",
+   "results/logs/b1_k2.json": "d573dc67f15d722d3a022cb53b4c886b312f8a985c21d80a9d913872373f9129",
+   "results/logs/kids_legacy_bic.json": "2ebedaafad53837ed9d809ef7cc3ac7e510968cf38a19739b8cdc911d8e8d9e2"
   },
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-01T22:26:24",
+  "fecha": "2026-10-02T18:22:51",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -178,8 +255,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
