@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-30",
+ "fecha": "2026-10-01",
  "factor_Om": 1.0146934522539162,
  "kids": {
   "S8": 0.759,
@@ -30,7 +30,7 @@
   }
  },
  "_procedencia": {
-  "commit": "a919cd836ffb70037f26715f8ad7b52241905f60",
+  "commit": "12bd0413377f12f1198fa75b19ac56b3f6ab995d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/s8_desde_b1.py",
@@ -40,12 +40,12 @@
    "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d",
    "results/chains/lcdm_cmb.1.txt": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285",
    "results/logs/b1_analyse.log": "f9c92f50dafcea375e1ea0dd257ba96229faf6ee5c6a8ead83ad8b6ed7e945e1",
-   "CANONICAL_VALUES.yaml": "20ea3ddc0880b836ccd6a56d5f22282d0cdba4ed30af081d2fe9279c7372e2ec"
+   "CANONICAL_VALUES.yaml": "18f5ed9367b7fa52cb775a57662f597ec52b614bf0f0ed676a6743c1485c6d38"
   },
   "argv": [
    "src/p06_growth/s8_desde_b1.py"
   ],
-  "fecha": "2026-09-30T18:15:17",
+  "fecha": "2026-10-01T22:16:12",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -51,9 +51,9 @@ using DESI~DR2, Planck~2018, and Galaxy-Cluster Mass Data}
 % E(z), asi que el modelo solo se evaluaba fielmente en H0=67.962 (el ancla) y el
 % posterior quedaba sesgado hacia ella (fix R25, 2026-07-25). Valor vigente: 67.79.
 % ACTUALIZADO 2026-09-29: prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968 (era el número puro
-% con el σ de Planck 0.54) y r_d/distancias por CAMB. Valor vigente: 67.82 ± 0.41 (0.33σ de H_glob).
+% con el σ de Planck 0.54) y r_d/distancias por CAMB. Valor vigente: \val{h0_p2} de results/logs/mcmc_paper2_reframe.json (semilla fija, 2026-10-01).
 % Fuente: results/logs/mcmc_paper2_reframe.json (100w×25k, N_eff=79056) · distancias: h0_distancias_hglob.json.
-\newcommand{\HZeroPosterior}{67.82^{+0.41}_{-0.41}}
+\newcommand{\HZeroPosterior}{\val{h0_p2}^{+\val{h0_p2_mas}}_{-\val{h0_p2_menos}}}
 
 \sloppy
 \input{valores_generados.tex}
@@ -82,7 +82,7 @@ within $1.2$--$1.5\sigma$ of the DESY5/Union3/no-SN combinations
 The $H_0$ posterior is $\HZeroPosterior$~km\,s$^{-1}$\,Mpc$^{-1}$,
 obtained with the global rate of the screening cascade as the $H_0$ prior
 ($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
-$0.33\sigma$ from that prediction.
+$\val{h0_p2_dhglob}\sigma$ from that prediction.
 Against all $\val{clz_rgimf_N}$ cluster dynamical masses of \citet{Zhang2026}, the
 \SSEE\ matter content in general relativity, $M_{\rm dyn}=(\omega_m/\omega_b)\,M_{\rm bar}$
 with no free parameter, is consistent at $\val{clz_rgig_sig}\sigma$ with the IGIMF
@@ -285,7 +285,7 @@ formerly written $\Omega_{m,\rm dyn}=\val{S_M_d6}$ is $1+w_0$, an equation-of-st
 parameter, and never was a density (Paper~1, \S1.4;
 the $\phi$-DM sector that once separated them is retracted in Paper~6).
 The falsifiable content therefore moves from the $|w_0|$ coincidence to the
-direct CMB fit of Paper~3 (canonical $\Delta\mathrm{BIC}=-32.9$ full \texttt{plik}
+direct CMB fit of Paper~3 (canonical $\Delta\mathrm{BIC}=\val{b1_dBIC}$ full \texttt{plik}
 MCMC; $-26.03$ \texttt{plik\_lite} TTTEEE+low-$\ell$ point estimate): if that fit had yielded $\chi^2_r\gg1$ or excluded
 $r_d^{\,\omega_m\text{-direct}}$, the construction would be falsified.
 
@@ -481,7 +481,7 @@ $N_{\rm eff}\approx4402$, the highest of the three, reflecting rapid
 mixing in its two-dimensional constrained parameter space.%
 \footnote{The diagnostics in Table~\ref{tab:convergence} are for the
 three-model comparison run (common Planck prior), used for the
-model-selection statistics. The headline posterior $H_0=67.82\pm0.41$ (with the
+model-selection statistics. The headline posterior $H_0=\val{h0_p2}\pm\val{h0_p2_s}$ (with the
 $H_0^{\rm glob}$ prior, Eq.~\ref{eq:H0_prior_alg}) is drawn from a dedicated production chain of the
 same sampler ($100$ walkers $\times\,25{,}000$ steps, $N_{\rm eff}=79{,}056$); the two
 runs differ only in the prior, not the sampler or data.}
@@ -552,7 +552,7 @@ values in Table~\ref{tab:posteriors} are listed for comparison only.
 Under the common Planck prior used for model comparison, the \SSEE\ posterior
 is $H_0=\val{p2_ssee_H0_mediana}\pm\val{p2_ssee_H0_std}$\,km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{p2_tH0_planck}\sigma$ from Planck);
 under the algebraic prior (Eq.~\ref{eq:H0_prior_alg}) the reframe run gives the
-headline $H_0=\HZeroPosterior$ ($0.68\sigma$ from Planck, $0.33\sigma$ from the
+headline $H_0=\HZeroPosterior$ ($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from the
 prediction $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$). With the total matter density
 $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry, the DESI~DR2 posterior
 \emph{coincides} with $H_0^{\rm glob}$ rather than pulling away from it: the
@@ -567,7 +567,7 @@ Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
   $100\times25000$). Blue lines: prior central values
   ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}$, BBN $\Omega_b h^2=0.02218$~\citep{Schoneberg2024}). With the total matter density
   $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$, the $H_0$ posterior ($\HZeroPosterior$) is
-  consistent with $H_0^{\rm glob}$ ($0.33\sigma$) and lies $0.68\sigma$ from
+  consistent with $H_0^{\rm glob}$ ($\val{h0_p2_dhglob}\sigma$) and lies $\val{h0_p2_dplanck}\sigma$ from
   Planck; the earlier ``$2.9\sigma$ below anchor'' reading was the cold sector
   $0.160$ misplaced in $E(z)$, now corrected.}
   \label{fig:corner_ssee}
@@ -694,7 +694,7 @@ algebraic $\omega_b$, $\omega_m$ and $\sum m_\nu$) matches the Planck measuremen
 \end{equation}
 so there is no enlarged sound horizon and no background discrepancy to
 compensate. The $H_0$ posterior sits at $\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-1}$
-under the $H_0^{\rm glob}$ prior --- $0.68\sigma$ from Planck and $0.33\sigma$
+under the $H_0^{\rm glob}$ prior --- $\val{h0_p2_dplanck}\sigma$ from Planck and $\val{h0_p2_dhglob}\sigma$
 from the prediction $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$. Removing the $H_0$ prior
 altogether leaves DESI~DR2 alone (with only a BBN prior on $\omega_b$) at
 $H_0=67.79\pm0.46$, $0.37\sigma$ from $H_0^{\rm glob}$: the data are
@@ -733,7 +733,7 @@ superseding the earlier MIRA-mapped anchor $H_0^{\rm MIRA}=67.037$.
 With the \emph{total} matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background
 geometry, the MCMC posterior reported above,
 $H_0^{\rm MCMC}=\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-1}$, \emph{coincides}
-with the anchor: it lies $0.33\sigma$ from $H_0^{\rm glob}$ and $0.68\sigma$
+with the anchor: it lies $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$ and $\val{h0_p2_dplanck}\sigma$
 from the $\Lambda$CDM-calibrated Planck value. The DESI~DR2 data are therefore
 \emph{consistent} with $H_0^{\rm glob}$ rather than pulling against it. The earlier
 reading --- a $2.9\sigma$ downward shift ``compensating an enlarged $r_d$'' ---
@@ -749,7 +749,7 @@ total density there is no enlarged $r_d$
   \emph{common} Planck prior (the apples-to-apples model-comparison run); the
   \SSEE\ posterior sits at $\val{p2_ssee_H0_mediana}\pm\val{p2_ssee_H0_std}$, $\val{p2_tH0_planck}\sigma$ from Planck~2018 and
   fully consistent with the titular algebraic-anchor-prior value
-  $67.82\pm0.41$ ($0.68\sigma$ Planck, $0.33\sigma$ from
+  $\val{h0_p2}\pm\val{h0_p2_s}$ ($\val{h0_p2_dplanck}\sigma$ Planck, $\val{h0_p2_dhglob}\sigma$ from
   $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$). \textit{Right}: MAP $r_d$ values; the \SSEE\ sound
   horizon ($148.2$\,Mpc) matches \LCDM\ ($147.8$\,Mpc, ratio $1.002$).}
   \label{fig:tension}
@@ -965,7 +965,7 @@ geometry rather than the CMB prior, making them robust to prior choice.}
 Running without any $H_0$ prior (DESI~DR2 with only a BBN prior on
 $\omega_b$; \S\ref{sec:results_cosmo}) gives
 $H_0=67.79\pm0.46$\,km\,s$^{-1}$\,Mpc$^{-1}$, consistent
-with the full posterior ($67.82\pm0.41$) at $0.05\sigma$.
+with the full posterior ($\val{h0_p2}\pm\val{h0_p2_s}$) at $0.05\sigma$.
 \textit{The $H_0$ estimate is therefore essentially independent of
 Planck and rests entirely on the DESI~DR2 BAO geometry.}
 
@@ -1010,7 +1010,7 @@ The SH0ES distance-ladder rate
 cascade, not a competing value: the screening fraction $f_{\rm screen}$ maps the local rate to
 the global one (Papers~9--10). This paper does not test the screening mechanism itself ---
 that is the subject of Paper~9 --- only that the DESI~DR2 BAO geometry, with $H_0^{\rm glob}$ as prior,
-does not pull away from it ($0.33\sigma$).
+does not pull away from it ($\val{h0_p2_dhglob}\sigma$).
 
 \section{Discussion}
 \label{sec:discussion}
@@ -1034,7 +1034,7 @@ does not pull away from it ($0.33\sigma$).
 
 The companion Paper~3 confirms the background against the full CMB power
 spectrum: with the off-diagonal \texttt{plik} likelihood the two models reach
-indistinguishable best fits and $\Delta\mathrm{BIC}=-32.9$ favours \SSEE{} by
+indistinguishable best fits and $\Delta\mathrm{BIC}=\val{b1_dBIC}$ favours \SSEE{} by
 parsimony.
 
 \subsection{Growth of structure}
@@ -1091,7 +1091,7 @@ DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency t
     reproduced at $0.7\sigma$ ($D_H/r_d=8.71$; Appendix~\ref{app:lya}).
 
   \item The companion Paper~3 confirms the background against the full CMB
-    likelihood ($\Delta\mathrm{BIC}=-32.9$, full \texttt{plik} MCMC).
+    likelihood ($\Delta\mathrm{BIC}=\val{b1_dBIC}$, full \texttt{plik} MCMC).
 \end{enumerate}
 
 \noindent\textbf{Central finding}: an algebraic background with no fitted
@@ -1175,7 +1175,7 @@ and CPL while fixing $w_0,w_a$ algebraically, so the parsimony of a
 two-parameter background is rewarded across BIC, AIC, and DIC. With the total
 matter density in the geometry the sound horizon matches \LCDM\ and no
 background-structure penalty arises; the full CMB likelihood (Paper~3)
-independently favours \SSEE\ at $\Delta\mathrm{BIC}=-32.9$ (full \texttt{plik} MCMC).
+independently favours \SSEE\ at $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC).
 
 \section{Nested Bayes Factor and Predictive Cross-Validation}
 \label{app:sddr_cv}

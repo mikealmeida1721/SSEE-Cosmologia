@@ -3,7 +3,7 @@
   13 puntos, covarianza block-diagonal con los r_MH oficiales
 
   escenario                                 H₀   ω_b h²  Ω_m deriv   χ²_BAO
-  posterior canónico (R25)             67.8244  0.02198   0.310137    10.43
+  posterior canónico (R25)             67.8226  0.02198   0.310153    10.43
   H_glob (SH0ES·(1−f_screen))          67.9621  0.02242   0.308881    11.41
 
   Lectura: el posterior ajusta BAO mejor que el ancla algebraica por 0.97 en chi2 (13 puntos).

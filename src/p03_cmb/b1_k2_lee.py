@@ -55,8 +55,8 @@ for M, pf in PREF.items():
         x = X[:, hdr.index(p)]
         o = np.argsort(x)
         c = np.cumsum(w[o]) / w.sum()
-        post[p] = dict(media=float(np.average(x, weights=w)),
-                       p16=float(x[o][np.searchsorted(c, 0.16)]), p84=float(x[o][np.searchsorted(c, 0.84)]))
+        p16, p84 = float(x[o][np.searchsorted(c, 0.16)]), float(x[o][np.searchsorted(c, 0.84)])
+        post[p] = dict(media=float(np.average(x, weights=w)), p16=p16, p84=p84, semiancho=(p84 - p16) / 2)
     out[M] = dict(k=len(k), libres=k, chi2_min=mn["chi2_min"], chi2_mejor_muestreado=mn["chi2_mejor_muestreado"],
                   n_muestras=int(len(X)), posterior=post)
     entradas += fs + [os.path.join(CH, pf + ".input.yaml"), os.path.join(LOGS, MIN[M])]
@@ -68,7 +68,10 @@ dchi = out["SSEE"]["chi2_min"] - out["LCDM"]["chi2_min"]
 dchi_m = out["SSEE"]["chi2_mejor_muestreado"] - out["LCDM"]["chi2_mejor_muestreado"]
 out.update(N_DATA=B.N_DATA, penal_por_parametro=float(lnN), dk=dk,
            dchi2=float(dchi), dBIC=float(dchi + dk * lnN), penal_BIC=float(dk * lnN),
-           dchi2_muestreado=float(dchi_m), dBIC_muestreado=float(dchi_m + dk * lnN))
+           dchi2_muestreado=float(dchi_m), dBIC_muestreado=float(dchi_m + dk * lnN),
+           penal_BIC_magnitud=float(-dk * lnN),
+           # conservador: ademas de {A_s, tau} se cuentan omega_b y H0 como si se ajustaran (k=4)
+           dBIC_k4=float(dchi + (4 - out["LCDM"]["k"]) * lnN), penal_k4_magnitud=float((out["LCDM"]["k"] - 4) * lnN))
 pasa = bool(np.sign(out["dBIC"]) == np.sign(out["dBIC_muestreado"]))
 out["control"] = dict(criterio="el DeltaBIC con el mejor muestreado queda del mismo lado que con el minimo", pasa=pasa)
 print(f"  dchi2 {dchi:+.3f}  dk {dk}  dBIC {out['dBIC']:+.3f}  (con muestreado {out['dBIC_muestreado']:+.3f}) -> control {'PASA' if pasa else 'NO PASA'}")

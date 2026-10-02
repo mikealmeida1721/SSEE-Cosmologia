@@ -72,9 +72,9 @@ In a full posterior evaluation with the official off-diagonal \texttt{plik} TTTE
 + low-$\ell$ + lensing likelihood via Cobaya, sampling the $k=2=\{A_s,\tau\}$ SSEE
 parameters (with $H_0$, $\omega_b$, $\omega_c$ and $n_s$ algebraically fixed) against
 the $k=6$ $\Lambda$CDM baseline, the two models reach statistically indistinguishable
-best fits ($\chi^2_{\rm SSEE}=2771.3$ vs.\ $\chi^2_{\Lambda\rm CDM}=2773.1$ over
-$N=2354$ data points, $\Delta\chi^2_{\rm BF}=-1.8$), while the parameter-count economy
-yields $\Delta\mathrm{BIC}=-32.9$, decisively favouring SSEE on the Jeffreys scale.
+best fits (minimum $\chi^2_{\rm SSEE}=\val{b1_chi2_ssee}$ vs.\ $\chi^2_{\Lambda\rm CDM}=\val{b1_chi2_lcdm}$ over
+$N=\val{b1_N}$ data points, $\Delta\chi^2_{\rm min}=\val{b1_dchi2}$), while the parameter-count economy
+yields $\Delta\mathrm{BIC}=\val{b1_dBIC}$, decisively favouring SSEE on the Jeffreys scale.
 (A \texttt{plik\_lite} point-estimate cross-check gives a more conservative
 $\Delta\mathrm{BIC}=-26.03$.) The $\Delta\mathrm{BIC}$ is driven by parsimony, not by
 fit quality.
@@ -354,7 +354,7 @@ r_d^{\mathrm{SSEE}} = 147.17 \;\mathrm{Mpc},
 in agreement with the Planck~2018 directly measured value
 $r_d^{\mathrm{obs}}=147.09\pm0.26$ Mpc \citep{Planck2018} at $0.32\sigma$.
 The acoustic scale is likewise consistent: $100\theta_*=1.04099$ (at the MCMC
-posterior $H_0=67.82$), $0.32\sigma$ from the Planck value
+posterior $H_0=\val{h0_p2}$), $0.32\sigma$ from the Planck value
 % ORIGEN-VALOR: 6.66 — tension theta* HISTORICA con el sector frio 1+w0=0.160 metido en E(z) (bug V-L4-DESI, retirado 2026-07-09); se nombra como artefacto, no como resultado
 $1.04109\pm0.00030$ --- the earlier $6.66\sigma$ ``tension'' was an artefact of
 the cold sector $1+w_0=\val{S_M_d6}$ misplaced in $E(z)$, removed once the total
@@ -603,12 +603,12 @@ In the SSEE CMB sector, the dark-energy equation-of-state $(w_0,w_a)$, the spect
 \end{itemize}
 with the $\sim$20 \texttt{plik} nuisance parameters (dust, SZ, CIB, calibration $A_\mathrm{Planck}$) defined by the full likelihood and treated as nuisances common to both models, $\tau$ constrained by the lowl EE (SimAll) data. The likelihood is the full off-diagonal \texttt{plik} TTTEEE evaluated through the \texttt{clipy} pure-Python reimplementation of \texttt{clik} (validated to $|\Delta\ln\mathcal{L}|<10^{-5}$ against the released test point), so no \texttt{clik} binary is required. As an independent cross-check we also run a \emph{validation} chain in which $H_0$ is additionally floated on a flat prior $[64,72]$; that chain recovers $H_0$ at the algebraic anchor (see Fig.~\ref{fig:b1_h0}), confirming that fixing it incurs no loss of fit and that the model count is $k=2=\{A_s,\tau\}$, not $k=3$.
 
-This gives $k_\mathrm{SSEE} = 2$ model parameters ($\log A_s$, $\tau$ --- the only quantities genuinely sampled, with $H_0$ fixed at $H_0^{\rm glob}$; the $\sim$20 \texttt{plik} nuisance parameters are common to both models and excluded from $\Delta k$), compared to the $\Lambda$CDM run with $k_\mathrm{\Lambda CDM} = 6$ free parameters ($H_0$, $\Omega_b h^2$, $\Omega_c h^2$, $n_s$, $\log A_s$, $\tau$). The $k=2$ vs $k=6$ BIC penalty over the $N=2354$ combined data points is $\Delta k \cdot \ln N = 4 \times \ln(2354) = 31.06$, yielding:
+This gives $k_\mathrm{SSEE} = 2$ model parameters ($\log A_s$, $\tau$ --- the only quantities genuinely sampled, with $H_0$ fixed at $H_0^{\rm glob}$; the $\sim$20 \texttt{plik} nuisance parameters are common to both models and excluded from $\Delta k$), compared to the $\Lambda$CDM run with $k_\mathrm{\Lambda CDM} = 6$ free parameters ($H_0$, $\Omega_b h^2$, $\Omega_c h^2$, $n_s$, $\log A_s$, $\tau$). The $k=2$ vs $k=6$ BIC penalty over the $N=\val{b1_N}$ combined data points is $\Delta k \cdot \ln N = 4 \times \ln(\val{b1_N}) = \val{b1_penal}$, yielding:
 \begin{equation}
     \label{eq:bic_b1}
-    \Delta\mathrm{BIC}_{k2} = \Delta\chi^2_\mathrm{BF} - 31.06,
+    \Delta\mathrm{BIC}_{k2} = \Delta\chi^2_\mathrm{min} - \val{b1_penal},
 \end{equation}
-where $\Delta\chi^2_\mathrm{BF} = \chi^2_{\mathrm{SSEE,BF}} - \chi^2_{\Lambda\mathrm{CDM,BF}}$ is the difference in best-fit $\chi^2$ between the two models over the same $N=2354$ data points (evaluated through \texttt{clipy}; no \texttt{clik} binary required).
+where $\Delta\chi^2_\mathrm{min} = \chi^2_{\mathrm{SSEE,min}} - \chi^2_{\Lambda\mathrm{CDM,min}}$ is the difference in \emph{minimum} $\chi^2$ between the two models over the same $N=\val{b1_N}$ data points (evaluated through \texttt{clipy}; no \texttt{clik} binary required). The BIC requires the maximum likelihood of each model, so the minimum is obtained with the Cobaya BOBYQA minimiser started from the best sampled point of each model's four chains, over the cosmological and the $\sim$20 nuisance parameters alike; using the best \emph{sampled} $\chi^2$ instead would favour the model with fewer parameters, whose chains approach their minimum more closely.
 
 \paragraph{Convergence.}
 Chains are run to Gelman--Rubin criterion $R{-}1 < 0.02$ \citep{GelmanRubin1992} (production run) or $R{-}1 < 0.05$ (validation). The \texttt{ssee\_paper3\_b1\_mcmc.py} script is fully reproducible:
@@ -619,13 +619,13 @@ Chains are run to Gelman--Rubin criterion $R{-}1 < 0.02$ \citep{GelmanRubin1992}
 \paragraph{Results.}
 Table~\ref{tab:b1_constraints} summarises the 68\,\% marginalised posterior constraints. Figure~\ref{fig:b1_h0} shows the $H_0$ posterior for SSEE and $\Lambda$CDM; Figure~\ref{fig:b1_corner_ssee} shows the full SSEE corner plot.
 
-The MCMC best-fit $\chi^2_\mathrm{BF}$ from the full chains yields:
+The minimum $\chi^2$ of each model yields:
 \begin{equation}
     \label{eq:bic_b1_result}
-    \Delta\mathrm{BIC}_{k2} = \Delta\chi^2_\mathrm{BF} + (2-6)\ln(2354)
-    = \Delta\chi^2_\mathrm{BF} - 31.06,
+    \Delta\mathrm{BIC}_{k2} = \Delta\chi^2_\mathrm{min} + (2-6)\ln(\val{b1_N})
+    = \Delta\chi^2_\mathrm{min} - \val{b1_penal},
 \end{equation}
-where $\Delta\chi^2_\mathrm{BF} = \chi^2_{\mathrm{SSEE,BF}} - \chi^2_{\Lambda\mathrm{CDM,BF}}$ over the $N=2354$ combined data points (full \texttt{plik} TTTEEE $2289$ + lowl\,TT $28$ + lowl\,EE $28$ + lensing $9$; the data-vector length, not the SimAll-normalised low-$\ell$ EE $\chi^2$). The production chains give $\chi^2_{\mathrm{SSEE,BF}}=2771.3$ and $\chi^2_{\Lambda\mathrm{CDM,BF}}=2773.1$, i.e.\ $\Delta\chi^2_\mathrm{BF}=-1.8$: SSEE attains a best-fit $\chi^2$ statistically \emph{indistinguishable} from $\Lambda$CDM (the small negative value lies within the chain-minimum uncertainty, and we do \emph{not} claim a superior fit). The $k=2$ versus $k=6$ comparison then gives $\Delta\mathrm{BIC}_{k2}=-32.9$, decisively below the Jeffreys threshold ($\Delta\mathrm{BIC}<-10$) and driven by parameter-count economy rather than fit quality. Even under a hyper-conservative $k=4$ assignment (additionally counting two of the algebraically-fixed inputs, $\omega_b$ and $H_0$, as if they were fitted), $\Delta\mathrm{BIC}_{k4}=\Delta\chi^2_\mathrm{BF}+(4-6)\ln(2354)=-17.3$, still decisively favouring SSEE.
+where $\Delta\chi^2_\mathrm{min}$ is taken over the $N=\val{b1_N}$ combined data points (full \texttt{plik} TTTEEE $2289$ + lowl\,TT $28$ + lowl\,EE $28$ + lensing $9$; the data-vector length, not the SimAll-normalised low-$\ell$ EE $\chi^2$). The minimiser gives $\chi^2_{\mathrm{SSEE,min}}=\val{b1_chi2_ssee}$ and $\chi^2_{\Lambda\mathrm{CDM,min}}=\val{b1_chi2_lcdm}$, i.e.\ $\Delta\chi^2_\mathrm{min}=\val{b1_dchi2}$: SSEE attains a minimum $\chi^2$ statistically \emph{indistinguishable} from $\Lambda$CDM (we do \emph{not} claim a superior fit). The $k=2$ versus $k=6$ comparison then gives $\Delta\mathrm{BIC}_{k2}=\val{b1_dBIC}$ (with the best sampled points instead of the minima, $\val{b1_dBIC_muestreado}$: same side, so the result does not hinge on the estimator), decisively below the Jeffreys threshold ($\Delta\mathrm{BIC}<-10$) and driven by parameter-count economy rather than fit quality. Even under a hyper-conservative $k=4$ assignment (additionally counting two of the algebraically-fixed inputs, $\omega_b$ and $H_0$, as if they were fitted), $\Delta\mathrm{BIC}_{k4}=\Delta\chi^2_\mathrm{min}+(4-6)\ln(\val{b1_N})=\val{b1_dBIC_k4}$, still decisively favouring SSEE.
 
 \begin{table}[H]
 \centering
@@ -642,18 +642,18 @@ validation chain that floats $H_0$ recovers it at $H_0^{\rm glob}$
 \toprule
 Parameter & SSEE ($k=2$) & $\Lambda$CDM ($k=6$) \\
 \midrule
-$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$] & $67.96214$ (fixed)   & $67.35 \pm 0.55$ \\
-$\log(10^{10}A_s)$    & $3.043 \pm 0.014$  & $3.044 \pm 0.014$ \\
-$\tau$                & $0.054 \pm 0.006$  & $0.054 \pm 0.007$ \\
-$n_s$                 & $\val{N_S_d5}$ (fixed)  & $0.9651 \pm 0.0041$ \\
-$\Omega_b h^2$        & $0.02242$ (fixed)  & $0.02240 \pm 0.00014$ \\
-$\Omega_c h^2$        & $\val{OMEGA_C_H2_d5}$ (fixed)  & $0.1200 \pm 0.0012$ \\
-$\sigma_8$ (derived)  & $0.814 \pm 0.006$  & $0.811 \pm 0.006$ \\
+$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$] & $\val{H0_GLOBAL_d5}$ (fixed)   & $\val{b1_H0_lcdm} \pm \val{b1_H0_lcdm_s}$ \\
+$\log(10^{10}A_s)$    & $\val{b1_logA_ssee} \pm \val{b1_logA_ssee_s}$  & $\val{b1_logA_lcdm} \pm \val{b1_logA_lcdm_s}$ \\
+$\tau$                & $\val{b1_tau_ssee} \pm \val{b1_tau_ssee_s}$  & $\val{b1_tau_lcdm} \pm \val{b1_tau_lcdm_s}$ \\
+$n_s$                 & $\val{N_S_d5}$ (fixed)  & $\val{b1_ns_lcdm} \pm \val{b1_ns_lcdm_s}$ \\
+$\Omega_b h^2$        & $\val{OMEGA_B_H2_d5}$ (fixed)  & $\val{b1_obh2_lcdm} \pm \val{b1_obh2_lcdm_s}$ \\
+$\Omega_c h^2$        & $\val{OMEGA_C_H2_d5}$ (fixed)  & $\val{b1_och2_lcdm} \pm \val{b1_och2_lcdm_s}$ \\
+$\sigma_8$ (derived)  & $\val{b1_s8_ssee} \pm \val{b1_s8_ssee_s}$  & $\val{b1_s8_lcdm} \pm \val{b1_s8_lcdm_s}$ \\
 \midrule
-$\chi^2_\mathrm{BF}$  & $2771.3$           & $2773.1$           \\
-$\Delta\chi^2_\mathrm{BF}$ & $-1.8$        & (reference)        \\
-$\Delta\mathrm{BIC}$ ($k=2$ vs $k=6$, $N=2354$) & $-32.9$ & (reference) \\
-$\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=2354$) & $-17.3$ & (reference) \\
+$\chi^2_\mathrm{min}$  & $\val{b1_chi2_ssee}$           & $\val{b1_chi2_lcdm}$           \\
+$\Delta\chi^2_\mathrm{min}$ & $\val{b1_dchi2}$        & (reference)        \\
+$\Delta\mathrm{BIC}$ ($k=2$ vs $k=6$, $N=\val{b1_N}$) & $\val{b1_dBIC}$ & (reference) \\
+$\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=\val{b1_N}$) & $\val{b1_dBIC_k4}$ & (reference) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -700,8 +700,8 @@ Method & Spectra & $N$ & $k_{\rm SSEE}$ & $k_{\Lambda\rm CDM}$ & $\Delta\mathrm{
 \midrule
 Diagonal (approx.)        & TT+TE+EE+PP          & \val{p3_N_tot} & 2 & 6 & $\val{p3_dBIC_diag}$ (SSEE favoured) \\
 \texttt{plik\_lite} point est. & TTTEEE+lowl     & 669  & 2 & 6 & $-26.03$ (SSEE decisively favoured) \\
-Full \texttt{plik} MCMC   & TTTEEE+lowl+lensing  & 2354 & 2 & 6 & $\mathbf{-32.9}$ \emph{(canonical)} \\
-Full \texttt{plik} (conserv.) & TTTEEE+lowl+lensing & 2354 & 4 & 6 & $-17.3$ (SSEE strongly favoured) \\
+Full \texttt{plik} MCMC   & TTTEEE+lowl+lensing  & \val{b1_N} & 2 & 6 & $\mathbf{\val{b1_dBIC}}$ \emph{(canonical)} \\
+Full \texttt{plik} (conserv.) & TTTEEE+lowl+lensing & \val{b1_N} & 4 & 6 & $\val{b1_dBIC_k4}$ (SSEE strongly favoured) \\
 \bottomrule
 \end{tabular}%
 }
@@ -926,7 +926,7 @@ The key results are:
   \item Lensing (PP): $\chi^2_r=\val{p3_chi2r_PP_ssee}$ vs.\ $\val{p3_chi2r_PP_lcdm}$ for $\Lambda$CDM — SSEE marginally better (both $\chi^2_r<1$).
   \item \textbf{\texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ ($\omega_m$-direct):} $\chi^2_{\mathrm{eff}} = 1003.586$ with $\{A_s,\tau\}$ minimized, at $H_0 = 67.96214$ km\,s$^{-1}$\,Mpc$^{-1}$ (the CMB-minimising value with SSEE-fixed $\omega_b,\omega_c$); $\Lambda$CDM gives $1003.596$ with six free parameters (its own $\sum m_\nu=0.06$~eV).
   \item $\Delta\mathrm{BIC}=-26.03$ ($k=2$ vs $k=6$, $N=669$), decisively favouring SSEE over $\Lambda$CDM at equal fit quality ($\Delta\chi^2=-0.010$).
-  \item \textbf{Full off-diagonal \texttt{plik} MCMC (canonical):} $\chi^2_{\rm BF}=2771.3$ vs $2773.1$ for $\Lambda$CDM over $N=2354$ points, $\Delta\mathrm{BIC}=-32.9$ ($k=2$ vs $k=6$); $-17.3$ under the conservative $k=4$.
+  \item \textbf{Full off-diagonal \texttt{plik} MCMC (canonical):} minimum $\chi^2=\val{b1_chi2_ssee}$ vs $\val{b1_chi2_lcdm}$ for $\Lambda$CDM over $N=\val{b1_N}$ points, $\Delta\mathrm{BIC}=\val{b1_dBIC}$ ($k=2$ vs $k=6$); $\val{b1_dBIC_k4}$ under the conservative $k=4$.
   \item $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ within $0.88\sigma$ of Planck 2018.
   \item The sound horizon $r_d=147.17$ Mpc matches $\Lambda$CDM to $0.05\%$.
 \end{itemize}

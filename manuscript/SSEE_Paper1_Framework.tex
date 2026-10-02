@@ -755,7 +755,7 @@ applies uniformly to Papers~1--4.
   Validated against: Planck PR4 TT+TE+EE+lensing via CAMB; \texttt{plik\_lite}
   TTTEEE likelihood via Cobaya (Paper~3).
   \textit{Result}: $\chi^2_r=1.044$ (TT, 1971 multipoles);
-  the canonical $\omega_m$-direct CMB fit gives $\Delta\mathrm{BIC}=-32.9$
+  the canonical $\omega_m$-direct CMB fit gives $\Delta\mathrm{BIC}=\val{b1_dBIC}$
   (full \texttt{plik} MCMC, $N=2354$) at the global rate
   $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($k=2$ vs $k=6$), with the
   \texttt{plik\_lite}${}+{}$low-$\ell$ point estimate at $-26.03$ ($\chi^2_{\rm SSEE}=1003.586$). The
@@ -808,8 +808,8 @@ Dataset & $N$ & Background & $k_{\rm SSEE}$ & $k_{\Lambda}$ & $\Delta$BIC & Hypo
 \midrule
 DESI DR2 + Planck prior & 16 & $\omega_m$-direct & 2 & 3 & $\mathbf{\val{p2_dBIC_lcdm}}$ &
   Total matter density in geometry; SSEE favoured (CPL $\val{p2_dBIC_cpl}$; DIC $\val{p2_dDIC_lcdm}$) \\[3pt]
-% Titular canonico: full plik MCMC off-diag TTTEEE+lowl+lensing (Cobaya+clipy), chi2_BF SSEE 2771.3 vs LCDM 2773.1, N=2354 -> DeltaBIC=-32.9 (Paper 3 b1). plik_lite TTTEEE+lowl N=669 point est, A_s y tau ajustados -> -26.03 cross-check (ΛCDM con su mnu 0.06, 2026-09-29; era -26.21) (era -24.0 con N=613 y A_s,tau clavados). Diagonal N=5914 -> -35.0. Cobaya MIRA legacy -32.2 superseded.
-Full \texttt{plik} MCMC & 2354 & $\omega_m$-direct & 2 & 6 & $\mathbf{-32.9}$ &
+% Titular canonico: full plik MCMC off-diag TTTEEE+lowl+lensing (Cobaya+clipy), chi2 MINIMO SSEE vs LCDM (b1_k2.json), N=2354 -> DeltaBIC \val{b1_dBIC} (Paper 3 b1, 2026-10-01; era -32.9 sin log). plik_lite TTTEEE+lowl N=669 point est, A_s y tau ajustados -> -26.03 cross-check (ΛCDM con su mnu 0.06, 2026-09-29; era -26.21) (era -24.0 con N=613 y A_s,tau clavados). Diagonal N=5914 -> -35.0. Cobaya MIRA legacy -32.2 superseded.
+Full \texttt{plik} MCMC & \val{b1_N} & $\omega_m$-direct & 2 & 6 & $\mathbf{\val{b1_dBIC}}$ &
   CMB parsimony, \textbf{canonical} (off-diag.\ TTTEEE+lowl+lensing, Paper~3 §b1) \\[3pt]
 \texttt{plik\_lite} TTTEEE${}+{}$lowl & 669 & $\omega_m$-direct & 2 & 6 & $-26.03$ &
   Compressed-nuisance point est., $\{A_s,\tau\}$ fitted (cross-check; $\Omega_m{=}\val{OMEGA_M_TOTAL_d6}$) \\[3pt]
@@ -826,7 +826,7 @@ With the total gravitating matter density in the background geometry, the DESI
 DR2 comparison gives a single figure, $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring SSEE
 (the earlier ``$+206$'' penalty was an artefact of using the cold sector
 $1+w_0=\val{S_M_d6}$ as the background density).
-The canonical CMB result is the full \texttt{plik} MCMC row, $\Delta\mathrm{BIC}=-32.9$
+The canonical CMB result is the full \texttt{plik} MCMC row, $\Delta\mathrm{BIC}=\val{b1_dBIC}$
 ($k=2$ vs $k=6$, $N=2354$, off-diagonal TTTEEE\,$+$\,lowl\,$+$\,lensing), with a
 best-fit $\chi^2$ statistically indistinguishable from $\Lambda$CDM
 ($\Delta\chi^2_\mathrm{BF}=-1.8$); the preference is parsimony-driven, not a
@@ -929,7 +929,7 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
   DESI~DR5+ excludes $(-0.840,-0.670)$; or $\chi^2_r(H(z))>2.5$ with full cov. &
   A $\chi^2>1$ from \LCDM-calibrated priors the model does not assume \\[4pt]
 \textbf{Observational} &
-  Planck~PR4 $\Delta\mathrm{BIC}=-32.9$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=147.17$~Mpc ($0.32\sigma$) &
+  Planck~PR4 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=147.17$~Mpc ($0.32\sigma$) &
   Euclid/KiDS $\Omega_m<0.25$ at $z<1$ &
   $\chi^2_r=1.044$ vs \LCDM's $1.043$ (non-equivalent background) \\
 \bottomrule
@@ -937,9 +937,9 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
 \end{table}
 
 \paragraph{On cross-sector BIC comparisons.}
-The $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ (DESI dynamic) and $-32.9$ (CMB $\omega_m$-direct)
+The $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ (DESI dynamic) and $\val{b1_dBIC}$ (CMB $\omega_m$-direct)
 are not directly comparable (different $N$, backgrounds, and $\Lambda$CDM $k$ counts).
-The canonical CMB value is the $\omega_m$-direct $\Delta\mathrm{BIC}=-32.9$
+The canonical CMB value is the $\omega_m$-direct $\Delta\mathrm{BIC}=\val{b1_dBIC}$
 (full \texttt{plik} MCMC, $k=2$, $N=2354$), with the \texttt{plik\_lite} point
 estimate at $-26.03$ ($N=669$, with $\{A_s,\tau\}$ fitted rather than held at their
 Planck values) and the diagonal cross-check at $-35.0$ ($N=5914$).
@@ -1062,7 +1062,7 @@ $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with $\omega_m=\Omega_b
 $H_0/\kmsu=3(\varphi+\pi)^2\simeq67.962$. No matter factor (OP-8 closed). A Planck
 \texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ evaluation gives $\chi^2_{\rm SSEE}=1003.586$ vs
 $\chi^2_{\Lambda\rm CDM}=1003.596$, $\Delta\mathrm{BIC}=-26.03$ (the full
-\texttt{plik} MCMC gives the canonical $-32.9$). Earlier register
+\texttt{plik} MCMC gives the canonical $\val{b1_dBIC}$). Earlier register
 forms --- geometric $(\pi-\varphi)/(\pi+\varphi)=0.32010$, MIRA mapping
 $\Omega_{m,\rm dyn}\times\mathrm{MIRA}=0.31993$, and an intermediate factor
 $\pi/\varphi$ giving $0.31076$ --- are all superseded by the $\omega_m$-direct
@@ -1256,7 +1256,7 @@ comparisons in Papers~2 and~3.
 In Paper~2, the $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ (dynamic sector) is a
 Type~M result: it reflects the MCMC posterior relative to $\Lambda$CDM
 under identical priors.
-In Paper~3, the canonical $\Delta\mathrm{BIC}=-32.9$ ($\omega_m$-direct, full
+In Paper~3, the canonical $\Delta\mathrm{BIC}=\val{b1_dBIC}$ ($\omega_m$-direct, full
 \texttt{plik} MCMC, $k=2$; \texttt{plik\_lite}${}+{}$low-$\ell$ point estimate $-26.03$; legacy
 MIRA-background $-32.2$ superseded) is a Type~P result: it depends on the Planck
 \texttt{plik} likelihood as an external CMB anchor.

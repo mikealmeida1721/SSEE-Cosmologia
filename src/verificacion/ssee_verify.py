@@ -2497,6 +2497,19 @@ with _tf74.TemporaryDirectory() as _d74c:
     _a74 = [s for _, s in _r74._sin_origen(_x74, sorted(_r74.R.nucleo_evaluado()), True)]
 check("R74 el detector exime el nucleo evaluado y las referencias arXiv/DOI, no el numero suelto",
       _a74 == ["2503.19441"], f"marcados {_a74} (esperado ['2503.19441'] solo la 2a aparicion)")
+# CONTROL (R53), 2026-10-01: un valor HISTORICO de un cajon se acepta solo si la
+# linea trae `git:<commit>:<ruta>` y el valor esta escrito en ese archivo en ese
+# commit. Se prueban los cuatro lados contra un blob real del repositorio.
+with _tf74.TemporaryDirectory() as _d74d:
+    _h74 = pathlib.Path(_d74d) / "x.md"
+    _h74.write_text("- 67.7869 historico (log: git:513e84e:results/logs/mcmc_paper2_reframe.log)\n"
+                    "- 67.4321 inventado (log: git:513e84e:results/logs/mcmc_paper2_reframe.log)\n"
+                    "- 67.7869 sin referencia\n"
+                    "- 67.7869 commit falso git:0000000:results/logs/mcmc_paper2_reframe.log\n")
+    _hg74 = [s for _, s in _r74._sin_origen(_h74, [], False)]
+check("R74 la referencia git:<commit>:<ruta> de un valor historico se abre y se comprueba",
+      _hg74 == ["67.4321", "67.7869", "67.7869"],
+      f"marcados {_hg74} (esperado: el inventado, el sin referencia y el del commit falso)")
 check("R74 el detector no toma un reporte del guardian ni una cola como fuente",
       _e74 == [False, True, False],
       f"guardian/log/cola -> {_e74} (esperado [False, True, False])")
@@ -2545,7 +2558,57 @@ check("R75 cada resultado de la cadena es el que su lock dice (nadie lo edito, s
 _outs75 = [o if isinstance(o, str) else list(o)[0]
            for _d in ((_y75.safe_load((_REPO75 / "dvc.yaml").read_text()) or {}).get("stages") or {}).values()
            for o in (_d.get("outs") or [])] if (_REPO75 / "dvc.yaml").exists() else []
-_sinacta75 = [f"{o}: {m}" for o in _outs75 for ok, m in [_pr75.verifica(_REPO75 / o)] if not ok]
+import json as _js75
+import re as _re75
+import tempfile as _tf75
+
+
+def _acta_pdf75(pdf):
+    """2026-10-01. Una FIGURA no puede llevar el acta como linea de texto: el
+    script la escribe en los metadatos del PDF (`/Keywords (ACTA-PROCEDENCIA {..})`,
+    matplotlib `savefig(metadata=...)`). Se extrae y se verifica con la MISMA
+    funcion que los logs (script en su commit y entradas bit a bit)."""
+    _m = _re75.search(rb"/Keywords\s*\(ACTA-PROCEDENCIA (\{.*?\})\)\s*/", pathlib.Path(pdf).read_bytes(), _re75.S)
+    if not _m:
+        return False, "sin acta"
+    try:
+        _a = _js75.loads(_m.group(1).replace(rb"\(", b"(").replace(rb"\)", b")").replace(rb"\\", b"\\").decode())
+    except Exception as _e:
+        return False, f"acta ilegible ({type(_e).__name__})"
+    with _tf75.TemporaryDirectory() as _d:
+        _j = pathlib.Path(_d) / "acta.json"
+        _j.write_text(_js75.dumps({"_procedencia": _a}))
+        return _pr75.verifica(_j)
+
+
+def _verifica75(p):
+    return _acta_pdf75(p) if p.suffix == ".pdf" else _pr75.verifica(p)
+
+
+_sinacta75 = [f"{o}: {m}" for o in _outs75 for ok, m in [_verifica75(_REPO75 / o)] if not ok]
+# CONTROL (R53), 2026-10-01: una figura con acta valida en sus metadatos pasa;
+# la misma sin metadatos, y la misma con el sha del script alterado, no.
+try:
+    import matplotlib as _mpl75
+    _mpl75.use("Agg")
+    import matplotlib.pyplot as _plt75
+    with _tf75.TemporaryDirectory() as _d75:
+        _ok75 = dict(_pr75.acta(ROOT / "procedencia.py"), reproducible_desde_commit=True)
+        _ok75["commit"] = _sp68.run(["git", "log", "-1", "--format=%H", "--", "src/procedencia.py"], cwd=_REPO75,
+                                    capture_output=True, text=True).stdout.strip()
+        _ok75["script_sha256"] = _h75.sha256(_sp68.run(["git", "show", f"{_ok75['commit']}:src/procedencia.py"],
+                                                       cwd=_REPO75, capture_output=True).stdout).hexdigest()
+        _mal75b = dict(_ok75, script_sha256="0" * 64)
+        _res75 = []
+        for _n, _meta in (("ok", _ok75), ("sin", None), ("mal", _mal75b)):
+            _fg = _plt75.figure(); _p75 = pathlib.Path(_d75) / f"{_n}.pdf"
+            _fg.savefig(_p75, metadata={"Keywords": "ACTA-PROCEDENCIA " + _js75.dumps(_meta)} if _meta else None)
+            _plt75.close(_fg)
+            _res75.append(_acta_pdf75(_p75)[0])
+    check("R75 el acta de una figura se lee de sus metadatos y se verifica",
+          _res75 == [True, False, False], f"con acta/sin acta/sha alterado -> {_res75} (esperado [True, False, False])")
+except Exception as _e75:
+    check("R75 el acta de una figura se lee de sus metadatos y se verifica", False, f"excepcion: {_e75}")
 check("R75 cada resultado de la cadena trae acta valida (commit y sha del script coinciden)",
       not _sinacta75, "; ".join(_sinacta75) if _sinacta75 else f"{len(_outs75)} actas verificadas")
 # Cobertura: logs que TODAVIA no estan en la cadena. Trinquete: solo baja.

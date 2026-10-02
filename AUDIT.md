@@ -117,7 +117,7 @@ TT: SSEE χ²_r=1.042  |  ΛCDM χ²_r=1.043  (N=1971)
 TE: SSEE χ²_r=1.040  |  ΛCDM χ²_r=1.040  (N=1967)
 EE: SSEE χ²_r=1.040  |  ΛCDM χ²_r=1.039  (N=1967)
 PP: SSEE χ²_r=0.720  |  ΛCDM χ²_r=0.757  (N=9)    [lensing — SSEE favoured]
-ΔBIC (full plik MCMC, TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) = −32.9  [canonical — SSEE decisively favoured]
+ΔBIC (full plik MCMC, TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) = −33.83 (results/logs/b1_k2.json, 2026-10-01)  [canonical — SSEE decisively favoured]
 ΔBIC (plik_lite point est., TTTEEE, k=2 vs k=6, N=613) = −24.0          [cross-check]
 ΔBIC (diagonal, TT+TE+EE+PP, k=2 vs k=6, N=5914) = −35.0                [cross-check]
 Peak positions: ℓ = 221, 538, 815
@@ -315,7 +315,7 @@ dynamic-sector test (ΔBIC = −5.55, SSEE favoured). These address different ph
 
 **Canonical CMB result (Paper 3 §5, ω_m-direct reframe):** at the algebraic global anchor
 H0 = 3(φ+π)² = 67.962, the full `plik` MCMC (TTTEEE+lowl+lensing, N=2354) gives
-ΔBIC = −32.9 (k=2 vs k=6) — decisively favours SSEE. Cross-checked by the `plik_lite`
+ΔBIC = −33.83 (k=2 vs k=6) — decisively favours SSEE. Cross-checked by the `plik_lite`
 point estimate (−24.0, N=613) and the diagonal approximation (−35.0, N=5914); all three
 agree. *(The earlier legacy-MIRA `plik_lite` Cobaya scan — H0=67.066 optimum, ΔBIC≈−31.3 —
 is superseded by the reframe.)*
@@ -324,7 +324,7 @@ is superseded by the reframe.)*
 When H0 is fixed to a DESI-BAO-calibrated value instead of the CMB-preferred anchor, ΔBIC
 rises sharply — this is NOT a contradiction, it decomposes into the H0-offset penalty plus
 the small intrinsic w0/wa effect. The file is explicitly labelled as illustrative; the
-primary result is the canonical ΔBIC = −32.9.
+primary result is the canonical ΔBIC = −33.83.
 
 **k count fixed** (BC2): SSEE uses k=2 in all CMB comparisons (H0 + Ωb h² prior borrowed
 from Planck). k=0 counting appears only in the illustrative file with matching caveat.
@@ -342,7 +342,7 @@ from Planck). k=0 counting appears only in the illustrative file with matching c
 | **Total SSEE** | | **k=2** (k=4 hyper-conservative) |
 | **ΛCDM baseline** | | **k=6** |
 
-Diagonal covariance gives ΔBIC = −35.0 (canonical ω_m-direct fit, N=5914; cross-check of the −32.9 full-plik headline).
+Diagonal covariance gives ΔBIC = −35.0 (canonical ω_m-direct fit, N=5914; cross-check of the −33.83 full-plik headline).
 Full plik/CamSpec likelihood with official off-diagonal Planck covariance matrix remains a refinement for PRD/PRL.
 
 ### 4. Two-sector Ωm (Papers 2, 3, 5, 6) — ω_m-direct reframe (OP-8 dissolved)
@@ -433,7 +433,7 @@ Zenodo DOI (concept): https://doi.org/10.5281/zenodo.20684908
 
 | Blocker | Description | Status |
 |---|---|---|
-| **B1** | full `plik` MCMC done (ΔBIC=−32.9, canonical); plik_lite cross-check −24.0; full CamSpec off-diagonal covariance pending | Weeks |
+| **B1** | full `plik` MCMC done (ΔBIC=−33.83, canonical); plik_lite cross-check −24.0; full CamSpec off-diagonal covariance pending | Weeks |
 | **B2** | Full causal IS tensor perturbations (Hiscock-Lindblom 1985) — B-mode forecasts | Months |
 | **B3** | MIRA: geometric derivation given in Paper 8 (disformal geodesic); full field-equation closure partial | Months |
 | **B4** | arXiv endorsement — deferred by choice (journal-first strategy, see README) | External |

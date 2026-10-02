@@ -30,21 +30,21 @@
   "S8_sigma": 0.016223975916730304
  },
  "_procedencia": {
-  "commit": "6b8ecc7ea07f36d637d39598f70ef623720e9649",
+  "commit": "12bd0413377f12f1198fa75b19ac56b3f6ab995d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/s8_kids_legacy_camb.py",
   "script_sha256": "0ddf9da141bdae553fd75b9aae458cd8d18bf133f846df37273729ca59d58653",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "11af9f9e4b69522a0df0ffaf40f05c6f97978e5fb4e20a562af3754968fa0a5a",
+   "CANONICAL_VALUES.yaml": "18f5ed9367b7fa52cb775a57662f597ec52b614bf0f0ed676a6743c1485c6d38",
    "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21",
    "src/p06_growth/kids_shear.py": "02f1d23d74c1f6a8e76e8d6e0d73aec4b777a617c54adaf4d6a0aff69c047063"
   },
   "argv": [
    "src/p06_growth/s8_kids_legacy_camb.py"
   ],
-  "fecha": "2026-10-01T09:44:03",
+  "fecha": "2026-10-01T22:18:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

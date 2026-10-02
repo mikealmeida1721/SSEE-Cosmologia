@@ -35,7 +35,7 @@ sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 from classy import Class  # noqa: E402
 import ssee_core as S  # noqa: E402
 from lcdm_planck import AS_PLANCK, LCDM_PLANCK as LP, TAU_PLANCK  # noqa: E402
-from procedencia import con_acta  # noqa: E402
+from procedencia import acta, con_acta  # noqa: E402
 
 C = yaml.safe_load(open(os.path.join(_R, "CANONICAL_VALUES.yaml")))["canonical"]
 LMAX = 2500
@@ -110,8 +110,9 @@ camb = json.load(open(os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json"
 pasa = all(abs(a - b) <= 2 for a, b in zip(res["ssee"]["picos"], camb))
 out = dict(fecha=str(__import__("datetime").date.today()), modelos=res,
            control=dict(picos_ssee_camb=camb, picos_ssee_class=res["ssee"]["picos"], pasa=bool(pasa)))
-json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "CANONICAL_VALUES.yaml"), INI_VIEJO,
-                                             os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json")]),
+_ENT_ACTA = [os.path.join(_R, "CANONICAL_VALUES.yaml"), INI_VIEJO,
+             os.path.join(_R, "results", "logs", "paper3_cmb_chi2.json")]
+json.dump(con_acta(out, __file__, entradas=_ENT_ACTA),
           open(os.path.join(_R, "results", "logs", "class_picos.json"), "w"), indent=1)
 # Figura de Unified (fig:cmb_tt): D_l TT lensado de los tres modelos, desde ESTA corrida.
 import matplotlib  # noqa: E402
@@ -130,7 +131,8 @@ ax.set_ylabel(r"$D_\ell^{TT}$ [$\mu$K$^2$]")
 ax.legend(frameon=False)
 fig.tight_layout()
 FIG = os.path.join(_R, "results", "figures", "fig_class_tt.pdf")
-fig.savefig(FIG)
+# El acta va en los metadatos del PDF (Keywords): un PDF no puede llevarla como linea de texto (2026-10-01, R75)
+fig.savefig(FIG, metadata={"Keywords": "ACTA-PROCEDENCIA " + json.dumps(acta(__file__, entradas=_ENT_ACTA))})
 for n in MODELOS:
     print(f"  {n:5s} picos {res[n]['picos']}  " + (f"RMS {100 * res[n]['rms_vs_lcdm']:.2f}%" if n != "lcdm" else ""))
 print(f"  naive .ini de mayo: picos {res['naive_ini_mayo']['picos']}  RMS {100 * res['naive_ini_mayo']['rms_vs_lcdm']:.2f}% (publicado 31.5%)")

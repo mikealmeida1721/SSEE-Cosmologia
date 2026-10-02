@@ -182,11 +182,11 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | EE | 1.040 | 1.039 | 1967 |
 | PP (lensing) | 0.720 | 0.757 | 9 |
 | Combined (diagonal) | **1.040** | 1.040 | 5914 |
-| ΔBIC (full plik MCMC, TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) | **−32.9** (SSEE decisively favoured — **canonical**) | — | — |
+| ΔBIC (full plik MCMC, TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) | **−33.83** (SSEE decisively favoured — **canonical**; minimum χ², `results/logs/b1_k2.json`) | — | — |
 | ΔBIC (plik_lite point est., TTTEEE, k=2 vs k=6, N=613) | **−24.0** (cross-check) | — | — |
 | ΔBIC (diagonal TT+TE+EE+PP, k=2 vs k=6, N=5914) | **−35.0** (cross-check) | — | — |
 
-*All values are the canonical ωm-direct CMB fit at the global anchor H₀ = 3(φ+π)² = 67.962, with Ω_m,CMB = ω_m/h² = 0.30889 derived algebraically (no matter-rescaling factor; OP-8 dissolved). SSEE uses its canonical Σm_ν = 0.06849 eV; ΛCDM uses its standard Planck baseline Σm_ν = 0.06 eV (each model with its own neutrino mass — the fair like-for-like comparison). The **titular ΔBIC = −32.9** comes from the full `plik` MCMC (best-fit χ² = 2771.3 vs ΛCDM 2773.1, Δχ²=−1.8 — indistinguishable fits, parsimony-driven). The earlier `plik_lite` Cobaya legacy-MIRA scan (ΔBIC −32.2 at optimum H₀=67.037) is superseded.*
+*All values are the canonical ωm-direct CMB fit at the global anchor H₀ = 3(φ+π)² = 67.962, with Ω_m,CMB = ω_m/h² = 0.30889 derived algebraically (no matter-rescaling factor; OP-8 dissolved). SSEE uses its canonical Σm_ν = 0.06849 eV; ΛCDM uses its standard Planck baseline Σm_ν = 0.06 eV (each model with its own neutrino mass — the fair like-for-like comparison). The **titular ΔBIC = -33.83** comes from the full `plik` likelihood with the minimum χ² of each model (χ² = 2768.4 vs ΛCDM 2771.2, Δχ² = -2.78 — indistinguishable fits, parsimony-driven; `results/logs/b1_k2.json`). The earlier `plik_lite` Cobaya legacy-MIRA scan (ΔBIC −32.2 at optimum H₀=67.037) is superseded.*
 
 **Growth structure (Paper 3 §5.4–5.5):**
 
@@ -309,7 +309,7 @@ Disclosed honestly in the papers. Editorial limitations in [AUDIT.md](AUDIT.md).
 ### Editorial/pipeline limitations
 1. **Diagonal CMB likelihood** (Paper 3): χ²_r uses diagonal covariance. Off-diagonal terms required for PRD/PRL.
 2. **Full causal IS** (Paper 5): IS growth index γ_IS=0.554 is derived analytically. Full Hiscock-Lindblom 1985 treatment for B-mode predictions remains a blocker for LiteBIRD forecasts.
-3. **CMB ΔBIC status:** The canonical full `plik` MCMC (TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) yields $\Delta\mathrm{BIC}=-32.9$ decisively favouring SSEE; cross-checked by the `plik_lite` point estimate ($-24.0$, N=613) and the diagonal approximation ($-35.0$, N=5914). All three agree (Paper 3 §BIC, canonical Σm_ν = 0.06849 eV; ΛCDM at baseline 0.06). The ΔBIC is parsimony-driven (best-fit χ² statistically indistinguishable from ΛCDM), not a claim of superior fit.
+3. **CMB ΔBIC status:** The canonical full `plik` MCMC (TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) yields $\Delta\mathrm{BIC}=-33.83$ (minimum χ² of each model, `results/logs/b1_k2.json`) decisively favouring SSEE; cross-checked by the `plik_lite` point estimate ($-24.0$, N=613) and the diagonal approximation ($-35.0$, N=5914). All three agree (Paper 3 §BIC, canonical Σm_ν = 0.06849 eV; ΛCDM at baseline 0.06). The ΔBIC is parsimony-driven (best-fit χ² statistically indistinguishable from ΛCDM), not a claim of superior fit.
 
 ### Open physics problems
 

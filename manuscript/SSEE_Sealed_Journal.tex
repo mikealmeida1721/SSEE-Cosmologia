@@ -60,8 +60,8 @@ Crucially, the two forward predictions that can \emph{refute} the core framework
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand \emph{independent}
 of the $\varphi$-dark-matter extension: neither the Hubble resolution nor the growth
 sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
-global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=67.82\pm0.41~\kms$
-($0.68\sigma$ from Planck, $0.33\sigma$ from $H_0^{\rm glob}$). The
+global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
+($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
 with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=0.021284$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
@@ -546,7 +546,7 @@ $\theta_\ast = 0.59667^\circ$ ($1.00\sigma$). Letting the MCMC then correct
 $H_0$ against the low-redshift BAO (corrected DESI~DR2 vector, block-diagonal
 covariance with the official $r_{M,H}$ correlations) yields the posterior
 \begin{equation}
-  H_0^{\mathrm{post}} = 67.82 \pm 0.41~\kms ,
+  H_0^{\mathrm{post}} = \val{h0_p2}\pm\val{h0_p2_s}~\kms ,
   \qquad
   \Omega_b h^2 = 0.02198 \pm 0.00048 ,
   \label{eq:h0post}
@@ -595,7 +595,7 @@ the anchor as its prior, so its posterior is a \emph{consistency} test rather
 than a third confirmation: its content is that DESI DR2 does not pull the value
 away ($\chi^2_{\rm BAO}=10.43$ over 13 points at the posterior, $11.41$ at the
 anchor, against $\simeq726$ for the incorrect background geometry), leaving a
-residual displacement of $0.33\sigma$. Replacing the anchor prior with a Planck one removes even that
+residual displacement of $\val{h0_p2_dhglob}\sigma$. Replacing the anchor prior with a Planck one removes even that
 dependence: the data then pull $H_0$ \emph{upward} from $67.36$ to
 $67.61\pm0.35$, towards the anchor rather than away from it. That
 pattern---one external datum and two independent-prior checks that decline to
@@ -610,7 +610,7 @@ undermine it.
 
 \paragraph{Anchor and posterior agree.} With the total gravitating matter
 density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$ and $r_d$, the BAO-corrected
-posterior ($67.82$) and the CMB anchor ($67.962$) agree to $0.33\sigma$: DESI
+posterior ($\val{h0_p2}$) and the CMB anchor ($67.962$) agree to $\val{h0_p2_dhglob}\sigma$: DESI
 DR2 is \emph{consistent with} the algebraic value rather than pulling against
 it. All early-time observables are simultaneously healthy---$r_d=147.17$~Mpc
 ($0.32\sigma$) and, evaluating the acoustic scale at the posterior,
@@ -656,8 +656,8 @@ not use.
   $\times\,25{,}000$ steps). With the entire dark-energy sector fixed by
   $\varphi$ and $\pi$, the chain samples only $H_0$ and $\Omega_b h^2$ against
   DESI DR2 BAO with $H_0^{\rm glob}$ as prior. The posterior is
-  $H_0=67.82\pm0.41~\kms$ and $\Omega_b h^2 = 0.02198\pm0.00048$
-  (Eq.~\ref{eq:h0post}), agreeing with the anchor to $0.33\sigma$. Dashed lines
+  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = 0.02198\pm0.00048$
+  (Eq.~\ref{eq:h0post}), agreeing with the anchor to $\val{h0_p2_dhglob}\sigma$. Dashed lines
   mark the prior centres ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}~\kms$ and the BBN $\Omega_b h^2 = 0.02218$~\cite{Schoneberg2024}); the
   $16/50/84\%$ quantiles are indicated.}
   \label{fig:corner}

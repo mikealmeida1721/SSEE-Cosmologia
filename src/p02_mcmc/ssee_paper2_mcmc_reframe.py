@@ -55,6 +55,11 @@ CKPT = _SSEE_DATA + "/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz"
 OUT = "results/figures"
 os.makedirs("results/logs", exist_ok=True)
 os.makedirs(OUT, exist_ok=True)
+from procedencia import acta, cabecera, con_acta  # noqa: E402
+_ENT_ACTA = ["data/raw/desi_dr2_bao.csv"]
+# 2026-10-01: el log se ABRIA en modo "a" y acumulaba corridas; ahora una corrida = un log, con su acta arriba
+with open(LOG, "w") as _f:
+    _f.write(cabecera(__file__, entradas=_ENT_ACTA) + "\n")
 
 def log(msg):
     line = f"[{(time.time()-t0)/60:6.1f}m] {msg}"
@@ -162,6 +167,9 @@ N_W, N_S, N_B, SAVE = 100, 25000, 5000, 500
 rng = np.random.default_rng(42)
 pos = np.array([62.0, 0.02237]) + rng.standard_normal((N_W, 2)) * np.array([2.0, 0.0003])
 sampler = emcee.EnsembleSampler(N_W, 2, lpost)
+# 2026-10-01: la semilla 42 solo fijaba los caminantes INICIALES; las propuestas de emcee usaban un
+# estado sin semilla, asi que cada re-corrida movia el H0 en la 3a-4a cifra (67.8244 -> 67.8206).
+sampler.random_state = np.random.RandomState(42).get_state()
 
 log(f"\nBurn-in {N_B} steps...")
 pos, _, _ = sampler.run_mcmc(pos, N_B, progress=False)
@@ -235,14 +243,29 @@ fig = corner.corner(flat,
     title_kwargs={"fontsize": 10})
 # Título en UNA línea, subido, sin duplicar H₀ (ya aparece en el título de cada panel)
 fig.suptitle(r"SSEE posterior — MCMC under the $H_{\rm alg}$ prior (DESI DR2, reframe)", y=1.06, fontsize=11)
-fig.savefig(f"{OUT}/fig_corner_ssee_halg_prior.pdf", bbox_inches="tight")
+# El acta va en los metadatos del PDF (Keywords): un PDF no puede llevarla como linea de texto (R75)
+fig.savefig(f"{OUT}/fig_corner_ssee_halg_prior.pdf", bbox_inches="tight",
+            metadata={"Keywords": "ACTA-PROCEDENCIA " + json.dumps(acta(__file__, entradas=_ENT_ACTA))})
 plt.close(fig)
 log(f"\nFigura: {OUT}/fig_corner_ssee_halg_prior.pdf")
 import json as _json
-_json.dump(dict(fecha=time.strftime("%Y-%m-%d"), H0_mediana=float(H0_med), H0_p16=float(H0_p16),
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "p11_sondas"))
+from lcdm_planck import LCDM_PLANCK  # noqa: E402
+SIG_H0_PLANCK = 0.54   # ORIGEN-VALOR: 0.54 — Planck 2018 VI, Tabla 2, TT,TE,EE+lowE+lensing (la misma columna que lcdm_planck.py)
+# Distancias en sigma (2026-10-01; antes se tecleaban en los papers):
+#   a H_glob: con la sigma del POSTERIOR (el prior ya contiene a H_glob; sumar su ±0.968 la contaria dos veces)
+#   a Planck: dos medidas independientes, sigmas en cuadratura
+d_hglob = abs(H0_GLOBAL - H0_med) / H0_std
+d_planck = abs(H0_med - LCDM_PLANCK["H0"]) / np.hypot(H0_std, SIG_H0_PLANCK)
+log(f"  distancia a H_glob {d_hglob:.3f} sigma · a Planck {d_planck:.3f} sigma")
+_json.dump(con_acta(dict(fecha=time.strftime("%Y-%m-%d"), H0_mediana=float(H0_med), H0_p16=float(H0_p16),
                 H0_p84=float(H0_p84), H0_std=float(H0_std), H0_MAP=float(H0_map),
+                H0_mas=float(H0_p84 - H0_med), H0_menos=float(H0_med - H0_p16),
                 obh2_mediana=float(ob_med), lnP_MAP=float(lp[idx]), BIC=float(BIC),
-                N_eff=float(n_eff), rd="CAMB (rd_camb.py)", distancias="CAMB (bao_camb.py)"),
+                N_eff=float(n_eff), rd="CAMB (rd_camb.py)", distancias="CAMB (bao_camb.py)",
+                sigma_a_Hglob=float(d_hglob), sigma_a_Planck=float(d_planck),
+                H0_planck=LCDM_PLANCK["H0"], sig_H0_planck=SIG_H0_PLANCK, semilla=42),
+                __file__, entradas=_ENT_ACTA),
            open("results/logs/mcmc_paper2_reframe.json", "w"), indent=1)
 log(f"Cadena: {CKPT}")
 log(f"Tiempo total: {(time.time()-t0)/60:.1f} min")

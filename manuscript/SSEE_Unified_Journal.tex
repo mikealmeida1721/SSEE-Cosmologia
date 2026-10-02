@@ -95,8 +95,8 @@ claim of temporal priority over DESI~DR2.
 A Bayesian MCMC analysis under the global rate $H_0^{\rm glob}$ as prior
 ($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$, which is also
 the value at which Planck~\texttt{plik\_lite} is minimised with SSEE-fixed $\omega_b,\omega_c$; Papers~3, 9--10) yields
-$H_0 = 67.82^{+0.41}_{-0.41}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($0.68\sigma$ from Planck,
-$0.33\sigma$ from $H_0^{\rm glob}$) and $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring
+$H_0 = \val{h0_p2}^{+\val{h0_p2_mas}}_{-\val{h0_p2_menos}}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{h0_p2_dplanck}\sigma$ from Planck,
+$\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$) and $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring
 \SSEE\ over \LCDM\ ($\val{p2_dBIC_cpl}$ over CPL).
 A complementary full-likelihood multi-probe MCMC (CAMB $+$ Planck
 \texttt{plik\_lite} $+$ lensing $+$ DESI~DR2 $+$ $f\sigma_8$, $w_0,w_a$ free and
@@ -454,7 +454,7 @@ Corner plots and trace diagnostics are archived at Zenodo
 The complementary question --- how well the fixed algebraic model fits the CMB
 in absolute terms --- is answered in Paper~III: with $H_0,\omega_b,\omega_c,n_s$
 all algebraically fixed and only $(A_s,\tau)$ free, the full Planck
-\texttt{plik} likelihood yields $\Delta\mathrm{BIC}=-32.9$ relative to the
+\texttt{plik} likelihood yields $\Delta\mathrm{BIC}=\val{b1_dBIC}$ relative to the
 six-parameter \LCDM\ fit ($-24.0$ for the \texttt{plik\_lite} point estimate),
 decisively favouring \SSEE\ on the Jeffreys scale. The advantage is driven by
 parsimony ($k=2$ versus $k=6$), not by a lower $\chi^2$: the fixed model matches
@@ -468,7 +468,7 @@ a substantial parsimony advantage.
 Both tests share a defining feature: the \SSEE\ background carries \emph{the
 same fixed values into every probe}. The pair $w_0=\val{W0_d6},\,w_a=\val{WA_d6}$
 confronts DESI (Paper~II, $0.24\sigma$ Pantheon+), the Planck PR4 CMB
-(Paper~III, $\Delta\mathrm{BIC}=-32.9$), the $f\sigma_8$ compilation
+(Paper~III, $\Delta\mathrm{BIC}=\val{b1_dBIC}$), the $f\sigma_8$ compilation
 ($\val{fs8_tmedia_ssee}\sigma$) and the cluster masses ($\val{clz_rgig_sig}\sigma$) without ever being
 re-tuned per data set. A free CPL fit lands on a \emph{different} point for each
 probe; \SSEE\ uses \emph{one} point throughout and does not break on any of
@@ -968,8 +968,8 @@ across four observational tiers.
   $(\wz, \wa) = (-0.840, -0.670)$, fixed by construction (not fitted), lies within
   $0.24\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior (Pantheon+).
   A Bayesian MCMC yields
-  $H_0 = 67.82\pm0.41$~km\,s$^{-1}$\,Mpc$^{-1}$ under $H_0^{\rm glob}$
-  as prior ($0.33\sigma$ from it), and $\Delta\mathrm{BIC} = \val{p2_dBIC_lcdm}$ favouring \SSEE\ over \LCDM.
+  $H_0 = \val{h0_p2}\pm\val{h0_p2_s}$~km\,s$^{-1}$\,Mpc$^{-1}$ under $H_0^{\rm glob}$
+  as prior ($\val{h0_p2_dhglob}\sigma$ from it), and $\Delta\mathrm{BIC} = \val{p2_dBIC_lcdm}$ favouring \SSEE\ over \LCDM.
   A complementary full-likelihood multi-probe MCMC ($w_0,w_a$ free, $H_0$
   free under the uncompressed CMB likelihood) recovers the CMB combinations
   $\omega_b,\omega_c,r_{\rm drag}$ to $\le0.2\sigma$ and places \SSEE\ at

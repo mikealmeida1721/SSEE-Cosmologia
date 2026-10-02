@@ -61,6 +61,9 @@ stages:
       - results/logs/s8_kids_legacy_camb.json
       - results/logs/paper2_w0wa.json
       - results/logs/cumulos_zhang2026.json
+      - results/logs/b1_k2.json
+      - results/logs/sondas_ssee_vs_lcdm.json
+      - results/logs/mcmc_paper2_reframe.json
       - results/logs/mcmc_full_posteriores.json
       - results/logs/fsigma8_canonico.json
       - results/logs/ganancia_wc_libre.json
@@ -593,4 +596,23 @@ stages:
       - results/logs/sondas_ssee_vs_lcdm.json:
           cache: false
       - results/logs/sondas_ssee_vs_lcdm.log:
+          cache: false
+  mcmc_paper2_reframe:
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 2>&1
+    deps:
+      - src/p02_mcmc/ssee_paper2_mcmc_reframe.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/desi_dr2_data.py
+      - src/rd_camb.py
+      - src/bao_camb.py
+      - src/p11_sondas/lcdm_planck.py
+      - data/raw/desi_dr2_bao.csv
+      - results/logs/h0_four_priors.json
+    outs:
+      - results/logs/mcmc_paper2_reframe.json:
+          cache: false
+      - results/logs/mcmc_paper2_reframe.log:
+          cache: false
+      - results/figures/fig_corner_ssee_halg_prior.pdf:
           cache: false

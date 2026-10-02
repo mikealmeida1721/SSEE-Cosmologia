@@ -1,14 +1,50 @@
 {
  "fecha": "2026-10-01",
- "H0_mediana": 67.82062447103019,
- "H0_p16": 67.41167357972176,
- "H0_p84": 68.23161836095659,
- "H0_std": 0.4124631552797936,
- "H0_MAP": 67.82053539116289,
- "obh2_mediana": 0.021972854240578973,
- "lnP_MAP": -5.295535659181937,
- "BIC": 16.007171720568294,
- "N_eff": 80365.21833496615,
+ "H0_mediana": 67.82260560603251,
+ "H0_p16": 67.41211309470296,
+ "H0_p84": 68.23297309411026,
+ "H0_std": 0.4125530383365016,
+ "H0_MAP": 67.81948818507318,
+ "H0_mas": 0.41036748807775325,
+ "H0_menos": 0.4104925113295508,
+ "obh2_mediana": 0.02197599232610748,
+ "lnP_MAP": -5.29553473085349,
+ "BIC": 16.0071698639114,
+ "N_eff": 79143.20306173388,
  "rd": "CAMB (rd_camb.py)",
- "distancias": "CAMB (bao_camb.py)"
+ "distancias": "CAMB (bao_camb.py)",
+ "sigma_a_Hglob": 0.3382253990130272,
+ "sigma_a_Planck": 0.6807441574953138,
+ "H0_planck": 67.36,
+ "sig_H0_planck": 0.54,
+ "semilla": 42,
+ "_procedencia": {
+  "commit": "12bd0413377f12f1198fa75b19ac56b3f6ab995d",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p02_mcmc/ssee_paper2_mcmc_reframe.py"
+  ],
+  "script": "src/p02_mcmc/ssee_paper2_mcmc_reframe.py",
+  "script_sha256": "e2ff1b3bc6422e25ff96ada8b11eb0a639ab9b5aed2734ac86583d695b8a62c4",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"
+  },
+  "argv": [
+   "src/p02_mcmc/ssee_paper2_mcmc_reframe.py"
+  ],
+  "fecha": "2026-10-01T22:15:41",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

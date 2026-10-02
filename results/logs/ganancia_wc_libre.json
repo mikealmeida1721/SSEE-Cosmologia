@@ -19,7 +19,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "2246eea898e77ef404fe9a899e36a9a7c78e2a68",
+  "commit": "12bd0413377f12f1198fa75b19ac56b3f6ab995d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/ganancia_wc_libre.py",
@@ -36,12 +36,12 @@
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef",
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157",
    "results/logs/perfil_wc_boss_lcdm.json": "44af7ac266ab585a79e3b8d1d6102a7cf9842f5814e098d1604ad2341dfe07b8",
-   "results/logs/multisonda_fondo_clavado.log": "d0e658d3dd36ea110a642f537377939d1b4b59adfe669f5a66c31ac37cf2e049"
+   "results/logs/multisonda_fondo_clavado.log": "da3d1bb6ae8b0fef5794dfe1ae54cf3141a3e33f994c8882fdecbf0528d545f5"
   },
   "argv": [
    "src/p06_growth/ganancia_wc_libre.py"
   ],
-  "fecha": "2026-10-01T15:00:41",
+  "fecha": "2026-10-01T22:18:07",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -49,8 +49,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

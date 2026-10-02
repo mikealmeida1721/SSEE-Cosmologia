@@ -21,8 +21,8 @@
 #     delta_AIC_ssee_lcdm    = +2.6937 − 2·4       = −5.31
 #     deltaBIC_cmb_plik_full = −2.474 − 3·ln(2354) = −25.766 (Δk = −3)
 #     Delta_BIC_CMB          = −0.0096 − 4·ln(669) = −26.03  (Δk = −4; ΛCDM con SU mν 0.06, 2026-09-28)
-#     Delta_BIC_CMB_fullplik = −1.81  − 4·ln(2354) = −32.9   (Δk = −4)
-#     deltaBIC_lcdm_minus_ssee = +6.77 ⟹ Δ(SSEE−ΛCDM) = −6.77
+#     Delta_BIC_CMB_fullplik = −2.778 − 4·ln(2354) = −33.83  (Δk = −4)
+#     deltaBIC_lcdm_minus_ssee = +7.25 ⟹ Δ(SSEE−ΛCDM) = −7.25
 #   Este archivo llevaba la convención declarada sólo junto a dos claves
 #   (2026-09-25); de ahí salieron los signos opuestos entre Paper 1/2 y
 #   Paper 6/Sealed/Unified. Ahora se declara aquí y no se repite invertida.
@@ -242,10 +242,10 @@ canonical:
   # puro 3(φ+π)² con el σ de Planck 0.54; y r_d y distancias por CAMB (rd_camb.py, bao_camb.py).
   # log: results/logs/mcmc_paper2_reframe.json · distancias: results/logs/h0_distancias_hglob.json
   # (script src/p02_mcmc/h0_distancias.py). Era 67.79±0.35 (0.50σ H_alg, 0.66σ Planck).
-  H0_posterior_km_s_Mpc: 67.82   # 67.8244 ± 0.4133 — 0.33σ de H_glob, 0.68σ de Planck
+  H0_posterior_km_s_Mpc: 67.82   # FUENTE: results/logs/mcmc_paper2_reframe.json (etapa DVC mcmc_paper2_reframe, semilla fija: determinista) — 67.8226 ± 0.4126 — 0.34σ de H_glob (σ del posterior), 0.68σ de Planck 67.36±0.54 (2026-10-01; era 67.8244±0.4133 sin semilla en emcee)
   H0_desi_plano_km_s_Mpc: 67.79  # 67.7931 ± 0.4603 — DESI sola, prior plano: 0.37σ de H_glob, 0.61σ de Planck (era 67.66)
   chi2_BAO_Hglob:      11.41      # 13 puntos DESI DR2 en H_glob, r_d CAMB (log chi2_bao_posterior.log)
-  chi2_BAO_posterior:  10.43      # en el posterior 67.8244 (mismo log)
+  chi2_BAO_posterior:  10.43      # en el posterior 67.8226 (results/logs/chi2_bao_posterior.log, re-corrido 2026-10-01)
   Omega_b_h2_posterior: 0.02198   # posterior Ω_b·h² (mcmc_paper2_reframe.json, 2026-09-28; era 0.02207)
   # Comparación de modelos (3-modelos, prior Planck común, mismo setup).
   # log: results/logs/mcmc_paper2_3models_wmfix.log  (2026-07-25, parametrización
@@ -258,19 +258,19 @@ canonical:
   # de julio), r_d por CAMB y cada modelo con SU mν. Valores de las cadenas, con acta:
   #   resumen_3modelos.json (src/p02_mcmc/resumen_3modelos.py; control contra la tabla del log),
   #   dic_from_chains.json, savage_cv.json, lya_auditoria.json.
-  #   H0: SSEE 67.61±0.35 (0.40σ Planck) · ΛCDM 68.39±0.28 · CPL 67.27±0.51
-  #   ΔBIC(SSEE−CPL) = −5.65 · ΔAIC −5.99 (ΛCDM) / −3.34 (CPL) · ΔDIC(SSEE−CPL) = −3.34
+  #   H0: SSEE 67.62±0.35 (0.40σ Planck) · ΛCDM 68.39±0.28 · CPL 67.26±0.51
+  #   ΔBIC(SSEE−CPL) = −6.14 · ΔAIC −6.48 (ΛCDM) / −3.82 (CPL) · ΔDIC(SSEE−CPL) = -3.81  (2026-10-01, sin el término de cúmulos)
   #   Savage-Dickey B=10.37 (lnB=2.339; era 18.34/2.91 con la cadena CPL de julio) — sigue > 2.3
   #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35.
   #   CPL: su ajuste de entrenamiento queda en el borde H0=50 (savage_cv.json, alguno_en_borde) —
   #   número NO válido, no se cita.
   #   (lnB10=7.42 RETIRADO: era Laplace de una tabla huérfana, sin script vivo)
-  H0_posterior_planckprior_km_s_Mpc: 67.61   # FUENTE: results/logs/resumen_3modelos.json — 67.615 ± 0.349, 3-modelos prior Planck (era 67.53)
-  deltaBIC_lcdm_minus_ssee: 6.77   # FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
+  H0_posterior_planckprior_km_s_Mpc: 67.62   # FUENTE: results/logs/resumen_3modelos.json — 67.617 ± 0.349, 3-modelos prior Planck (era 67.615)
+  deltaBIC_lcdm_minus_ssee: 7.25   # FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
                                    # su nombre), por eso >0 favorece SSEE. En los papers se cita con la
-                                   # convención común: Δ(SSEE−LCDM) = −6.77 (CPL: −5.65). Era 6.43 (07-25).
-  deltaDIC_ssee_minus_lcdm: -6.00  # FUENTE: results/logs/dic_from_chains.json — era −5.66 (07-25)
-  lnB_savage_dickey: 2.34          # FUENTE: results/logs/savage_cv.json — 2.3393; B = 10.37
+                                   # convención común: Δ(SSEE−LCDM) = −7.25 (CPL: −6.14). Era 6.77 (con el término de cúmulos solo en SSEE).
+  deltaDIC_ssee_minus_lcdm: -6.47  # FUENTE: results/logs/dic_from_chains.json — era −6.00 (con el término de cúmulos)
+  lnB_savage_dickey: 2.34          # FUENTE: results/logs/savage_cv.json — 2.3387; B = 10.37
 
   # ── Fase B / B1 — likelihood COMPLETA de Planck ───────────────────────
   # plik TTTEEE full + lowl TT + lowl EE + lensing, con los ~20 nuisances
@@ -335,14 +335,13 @@ canonical:
   Delta_BIC_cobaya:    -32.2      # SSEE − ΛCDM. plik_lite Cobaya legacy (escenario viejo; PENDIENTE re-confirmar)
   # ── TITULAR canónico CMB: full plik MCMC (off-diagonal TTTEEE + lowl + lensing) ──
   # Cobaya+clipy, SSEE k=2 (H₀ FIJO 67.962) vs ΛCDM k=6. Chains: src/results/chains/ssee_cmb_k2.{1-4}, lcdm_cmb.{1-4}
-  chi2_CMB_SSEE_fullplik: 2771.3  # SSEE k=2 best-fit (full likelihood)
-  chi2_CMB_LCDM_fullplik: 2773.1  # ΛCDM k=6 best-fit; Δχ²_BF=−1.8 (indistinguible; NO se reclama mejor fit)
-  N_data_fullplik:        2354    # FUENTE: results/logs/b1_analyse.log — TTTEEE 2289 (VERIFICADO clipy data_bandpowers/siginv 2289×2289, 2026-06-28) + lowlTT 28 + lowlEE 28 + lensing 9. (Antes 2409 con high-ℓ≈2344 estimado; 6478 del script b1 era multipolos sin binnear — bug corregido)
-  # ⚠ SIN LOG (2026-09-30, R73): las cadenas k=2 del 23-jun que dieron 2771.30/2773.11 se
-  # sobrescribieron el 27-jul con una corrida de H0 LIBRE (k=3 -> deltaBIC_cmb_plik_full -25.766,
-  # que SI tiene log). EN RE-CORRIDA k=2 (decision de Mike): cola_b1_k2 -> results/logs/b1_k2_run.log.
-  # Hasta cerrar, -32.9 NO se cita como cerrado.
-  Delta_BIC_CMB_fullplik: -32.9   # SSEE − ΛCDM. = −1.81 + (2−6)ln(2354) → TITULAR (parsimonia, Jeffreys decisivo). Δχ²=−1.81 de cadenas reales (χ²_SSEE=2771.30, χ²_LCDM=2773.11). Robusto: con N∈[2289,2409] da −32.7..−33.0
+  chi2_CMB_SSEE_fullplik: 2768.45  # FUENTE: results/logs/b1_k2.json — SSEE k=2, χ² MÍNIMO (b1_minimiza.py, BOBYQA desde el mejor muestreado)
+  chi2_CMB_LCDM_fullplik: 2771.23  # FUENTE: results/logs/b1_k2.json — ΛCDM k=6, χ² mínimo; Δχ²=-2.778 (indistinguible; NO se reclama mejor ajuste)
+  N_data_fullplik:        2354    # FUENTE: results/logs/b1_k2.json (N_DATA de ssee_paper3_b1_mcmc.py) — TTTEEE 2289 (VERIFICADO clipy 2289×2289) + lowlTT 28 + lowlEE 28 + lensing 9
+  # CERRADO 2026-10-01: re-corrida k=2 (decisión de Mike) con χ² MÍNIMO de cada modelo, no el mejor
+  # muestreado. Control (R53): con el mejor muestreado da -34.08, mismo signo — PASA.
+  # El −32.9 del 23-jun (Δχ² −1.81) no tenía log: sus cadenas se sobrescribieron el 27-jul.
+  Delta_BIC_CMB_fullplik: -33.83  # FUENTE: results/logs/b1_k2.json — SSEE − ΛCDM = -2.778 + (2−6)·ln(2354) → TITULAR (parsimonia, Jeffreys decisivo). Era −32.9 sin log
   # r_d / θ* — CAMB en el punto reframe (ω_b,ω_c algebraicos FIJOS, H=67.962).
   # log: results/logs/p3_rd_reframe_omega_m.log  (script run_p3_rd_reframe.py)
   # SALE DIRECTO sin mapping MIRA: la dicotomía vieja "175 puro / 147.6 mapped" se disuelve con OP-8.
