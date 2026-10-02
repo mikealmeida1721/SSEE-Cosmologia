@@ -19,13 +19,11 @@
  "sig_H0_planck": 0.54,
  "semilla": 42,
  "_procedencia": {
-  "commit": "12bd0413377f12f1198fa75b19ac56b3f6ab995d",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "M src/p02_mcmc/ssee_paper2_mcmc_reframe.py"
-  ],
+  "commit": "2a4d76415bf1c32f26efede21f6e427432d96551",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_paper2_mcmc_reframe.py",
-  "script_sha256": "e2ff1b3bc6422e25ff96ada8b11eb0a639ab9b5aed2734ac86583d695b8a62c4",
+  "script_sha256": "3675b2d098284b972342567231804c7daaf4bf2c8726d9d6c7e924ac8f2525b8",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"
@@ -33,7 +31,7 @@
   "argv": [
    "src/p02_mcmc/ssee_paper2_mcmc_reframe.py"
   ],
-  "fecha": "2026-10-01T22:15:41",
+  "fecha": "2026-10-01T22:32:36",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

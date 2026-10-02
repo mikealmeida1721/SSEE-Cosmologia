@@ -2419,7 +2419,7 @@ if _n73:
                "; ".join(f"{k.split('/')[-1]} L{v[0][0]} {v[0][1]}" for k, v in _sin73.items())
                + " — rastrear: log, \\cite en la frase o `% ORIGEN-VALOR: <n> — <razon>`")
 # TRINQUETE: la deuda medida al nacer la regla (2026-09-30). Solo puede bajar.
-_TOPE_R73 = 1    # 2026-10-01: 3 -> 1 (P6 BOSS por \val; queda 0.9651 de la tabla B1, que espera la re-corrida k=2). Antes: 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
+_TOPE_R73 = 0    # 2026-10-01 noche: 1 -> 0 (tabla B1 de P3 por \val desde b1_k2.json). Antes 2026-10-01: 3 -> 1 (P6 BOSS por \val; queda 0.9651 de la tabla B1, que espera la re-corrida k=2). Antes: 10 -> 7 -> 4: tab:mcmc_full (leer_mcmc_full.py, filas correctas), S8 de P6 (s8_desde_b1.py; 0.8262 era 0.8261), 6.66 de P3 declarado historico
 _DEUDA_REAL["R73"] = _n73
 _DEUDA_MAX["R73"] = _TOPE_R73
 check("R73 la deuda de numeros-resultado sin origen en los papers no crece",
@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 3, "cajones": 141}   # 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
+_TOPE_R74 = {"logs": 2, "canonical": 0, "papers": 2, "cajones": 141}   # 2026-10-01 madrugada: canonical 2->0, papers 3->2 (B1 k=2 y H0 de P2 por \val; historicos con git:<commit>:<ruta>); 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -2568,7 +2568,7 @@ def _acta_pdf75(pdf):
     script la escribe en los metadatos del PDF (`/Keywords (ACTA-PROCEDENCIA {..})`,
     matplotlib `savefig(metadata=...)`). Se extrae y se verifica con la MISMA
     funcion que los logs (script en su commit y entradas bit a bit)."""
-    _m = _re75.search(rb"/Keywords\s*\(ACTA-PROCEDENCIA (\{.*?\})\)\s*/", pathlib.Path(pdf).read_bytes(), _re75.S)
+    _m = _re75.search(rb"/Keywords\s*\(ACTA-PROCEDENCIA (\{.*?\})\)\s*(?:/|>>)", pathlib.Path(pdf).read_bytes(), _re75.S)
     if not _m:
         return False, "sin acta"
     try:
@@ -2617,7 +2617,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 162   # 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
+_TOPE_R75 = 160   # 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",

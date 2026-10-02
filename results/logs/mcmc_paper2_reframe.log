@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "2a4d76415bf1c32f26efede21f6e427432d96551", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_paper2_mcmc_reframe.py", "script_sha256": "3675b2d098284b972342567231804c7daaf4bf2c8726d9d6c7e924ac8f2525b8", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"}, "argv": ["src/p02_mcmc/ssee_paper2_mcmc_reframe.py"], "fecha": "2026-10-01T22:26:52", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
 [   0.0m] ======================================================================
 [   0.0m] SSEE — MCMC PRODUCCIÓN bajo prior H_glob (cascada SH0ES, reframe ω_m-directo)
 [   0.0m] ======================================================================
@@ -11,73 +12,73 @@ Burn-in 5000 steps...
 [   0.4m]   500/25000 steps  accept=0.718
 [   0.5m]   1000/25000 steps  accept=0.718
 [   0.5m]   1500/25000 steps  accept=0.717
-[   0.6m]   2000/25000 steps  accept=0.718
+[   0.5m]   2000/25000 steps  accept=0.718
 [   0.6m]   2500/25000 steps  accept=0.717
-[   0.7m]   3000/25000 steps  accept=0.717
+[   0.6m]   3000/25000 steps  accept=0.717
 [   0.7m]   3500/25000 steps  accept=0.717
 [   0.7m]   4000/25000 steps  accept=0.716
-[   0.8m]   4500/25000 steps  accept=0.716
+[   0.7m]   4500/25000 steps  accept=0.716
 [   0.8m]   5000/25000 steps  accept=0.716
-[   0.9m]   5500/25000 steps  accept=0.716
+[   0.8m]   5500/25000 steps  accept=0.716
 [   0.9m]   6000/25000 steps  accept=0.716
-[   1.0m]   6500/25000 steps  accept=0.716
+[   0.9m]   6500/25000 steps  accept=0.716
 [   1.0m]   7000/25000 steps  accept=0.715
-[   1.1m]   7500/25000 steps  accept=0.715
+[   1.0m]   7500/25000 steps  accept=0.715
 [   1.1m]   8000/25000 steps  accept=0.715
-[   1.2m]   8500/25000 steps  accept=0.715
-[   1.3m]   9000/25000 steps  accept=0.715
-[   1.3m]   9500/25000 steps  accept=0.715
-[   1.4m]   10000/25000 steps  accept=0.715
-[   1.5m]   10500/25000 steps  accept=0.715
-[   1.5m]   11000/25000 steps  accept=0.715
-[   1.6m]   11500/25000 steps  accept=0.715
-[   1.7m]   12000/25000 steps  accept=0.715
-[   1.8m]   12500/25000 steps  accept=0.715
-[   1.9m]   13000/25000 steps  accept=0.715
-[   2.0m]   13500/25000 steps  accept=0.715
-[   2.1m]   14000/25000 steps  accept=0.715
-[   2.2m]   14500/25000 steps  accept=0.715
-[   2.3m]   15000/25000 steps  accept=0.715
-[   2.4m]   15500/25000 steps  accept=0.715
-[   2.5m]   16000/25000 steps  accept=0.715
-[   2.6m]   16500/25000 steps  accept=0.715
-[   2.7m]   17000/25000 steps  accept=0.715
-[   2.9m]   17500/25000 steps  accept=0.715
-[   3.0m]   18000/25000 steps  accept=0.715
-[   3.2m]   18500/25000 steps  accept=0.715
-[   3.3m]   19000/25000 steps  accept=0.715
-[   3.5m]   19500/25000 steps  accept=0.715
-[   3.7m]   20000/25000 steps  accept=0.715
-[   3.8m]   20500/25000 steps  accept=0.715
-[   4.0m]   21000/25000 steps  accept=0.715
-[   4.2m]   21500/25000 steps  accept=0.715
-[   4.4m]   22000/25000 steps  accept=0.715
-[   4.6m]   22500/25000 steps  accept=0.715
-[   4.8m]   23000/25000 steps  accept=0.715
-[   5.0m]   23500/25000 steps  accept=0.715
-[   5.2m]   24000/25000 steps  accept=0.715
-[   5.4m]   24500/25000 steps  accept=0.715
-[   5.6m]   25000/25000 steps  accept=0.715
-[   5.9m] 
+[   1.1m]   8500/25000 steps  accept=0.715
+[   1.2m]   9000/25000 steps  accept=0.715
+[   1.2m]   9500/25000 steps  accept=0.715
+[   1.3m]   10000/25000 steps  accept=0.715
+[   1.4m]   10500/25000 steps  accept=0.715
+[   1.4m]   11000/25000 steps  accept=0.715
+[   1.5m]   11500/25000 steps  accept=0.715
+[   1.6m]   12000/25000 steps  accept=0.715
+[   1.7m]   12500/25000 steps  accept=0.715
+[   1.8m]   13000/25000 steps  accept=0.715
+[   1.9m]   13500/25000 steps  accept=0.715
+[   2.0m]   14000/25000 steps  accept=0.715
+[   2.1m]   14500/25000 steps  accept=0.715
+[   2.2m]   15000/25000 steps  accept=0.715
+[   2.3m]   15500/25000 steps  accept=0.715
+[   2.4m]   16000/25000 steps  accept=0.715
+[   2.5m]   16500/25000 steps  accept=0.715
+[   2.6m]   17000/25000 steps  accept=0.715
+[   2.7m]   17500/25000 steps  accept=0.715
+[   2.9m]   18000/25000 steps  accept=0.715
+[   3.0m]   18500/25000 steps  accept=0.715
+[   3.2m]   19000/25000 steps  accept=0.715
+[   3.3m]   19500/25000 steps  accept=0.715
+[   3.5m]   20000/25000 steps  accept=0.715
+[   3.7m]   20500/25000 steps  accept=0.715
+[   3.8m]   21000/25000 steps  accept=0.715
+[   4.0m]   21500/25000 steps  accept=0.715
+[   4.2m]   22000/25000 steps  accept=0.715
+[   4.4m]   22500/25000 steps  accept=0.715
+[   4.6m]   23000/25000 steps  accept=0.715
+[   4.8m]   23500/25000 steps  accept=0.715
+[   5.0m]   24000/25000 steps  accept=0.715
+[   5.2m]   24500/25000 steps  accept=0.715
+[   5.5m]   25000/25000 steps  accept=0.715
+[   5.7m] 
 ======================================================================
-[   5.9m] RESULTADO MCMC PRODUCCIÓN — Prior H_glob (cascada SH0ES)
-[   5.9m] ======================================================================
-[   5.9m]   H₀     = 67.8226  +0.4104 / -0.4105  km/s/Mpc
-[   5.9m]   H₀ MAP = 67.8195
-[   5.9m]   Ω_b·h² = 0.02198
-[   5.9m]   ln P_MAP = -5.296
-[   5.9m]   τ_max = 31.6    N_eff ≈ 79143
-[   5.9m]   acceptance = 0.715
-[   5.9m] 
+[   5.7m] RESULTADO MCMC PRODUCCIÓN — Prior H_glob (cascada SH0ES)
+[   5.7m] ======================================================================
+[   5.7m]   H₀     = 67.8226  +0.4104 / -0.4105  km/s/Mpc
+[   5.7m]   H₀ MAP = 67.8195
+[   5.7m]   Ω_b·h² = 0.02198
+[   5.7m]   ln P_MAP = -5.296
+[   5.7m]   τ_max = 31.6    N_eff ≈ 79143
+[   5.7m]   acceptance = 0.715
+[   5.7m] 
   BIC (k=2, N=15): 16.007
-[   5.9m] 
+[   5.7m] 
 Comparación con resultados previos:
-[   5.9m]   Retirado (prior MIRA 67.037, 100w×25k): H₀ = 66.53 ± 0.44
-[   5.9m]   ESTE (prior H_glob 67.962±0.968, 100w×25k): H₀ = 67.823 ± 0.413
-[   5.9m] 
+[   5.7m]   Retirado (prior MIRA 67.037, 100w×25k): H₀ = 66.53 ± 0.44
+[   5.7m]   ESTE (prior H_glob 67.962±0.968, 100w×25k): H₀ = 67.823 ± 0.413
+[   5.7m] 
   Distancia a DESI-puro (67.793, prior plano, h0_four_priors.json): 0.030 km/s/Mpc
-[   5.9m] 
+[   5.7m] 
 Figura: results/figures/fig_corner_ssee_halg_prior.pdf
-[   5.9m]   distancia a H_glob 0.338 sigma · a Planck 0.681 sigma
-[   5.9m] Cadena: /mnt/datos/SSEE_data/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz
-[   5.9m] Tiempo total: 5.9 min
+[   5.7m]   distancia a H_glob 0.338 sigma · a Planck 0.681 sigma
+[   5.7m] Cadena: /mnt/datos/SSEE_data/mcmc/paper2_reframe/mcmc_paper2_reframe_ckpt.npz
+[   5.7m] Tiempo total: 5.7 min

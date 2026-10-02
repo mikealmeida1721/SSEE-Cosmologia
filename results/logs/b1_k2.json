@@ -103,11 +103,9 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "12bd0413377f12f1198fa75b19ac56b3f6ab995d",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "M src/p03_cmb/b1_k2_lee.py"
-  ],
+  "commit": "2a4d76415bf1c32f26efede21f6e427432d96551",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/p03_cmb/b1_k2_lee.py",
   "script_sha256": "3b81198d292da790452e8ea2e1e5f25ba94fad0e9c3857a0005dbe26d7f55aeb",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
@@ -125,7 +123,7 @@
   "argv": [
    "src/p03_cmb/b1_k2_lee.py"
   ],
-  "fecha": "2026-10-01T22:01:46",
+  "fecha": "2026-10-01T22:26:23",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
