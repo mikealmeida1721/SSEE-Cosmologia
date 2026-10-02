@@ -1486,7 +1486,16 @@ $\mathcal{R}_2=\Omega_{\rm DNAV}/(\mathrm{KAL}\cdot\mathrm{TRIAL})$, promoviendo
 
 ---
 
-## OP-15 — Bullet Cluster Offset κ(θ) from KAL(x) Not Computed (Paper 1) — ABIERTO
+## OP-15 — Bullet Cluster Offset κ(θ) from KAL(x) Not Computed (Paper 1) — ⚪ CERRADO POR CAMBIO DE PREGUNTA (2026-10-01)
+
+> **Cierre (decisión de Mike, 2026-10-01).** OP-15 preguntaba si un *refuerzo de la gravedad* que sigue a los
+> bariones, KAL(x), podía poner la lente del Bala sobre las galaxias y no sobre el gas. Esa pregunta solo existe
+> en la lectura MOND. El modelo vigente es relatividad general (α_T=α_M=α_B=0, P7; límite canónico de P8) y KAL₀
+> es **retención**: fija cuánta materia oscura fría hay por barión, ω_c = KAL₀·ω_b·n_s. Esa materia no colisiona y
+> pasa con las galaxias, que es la explicación estándar del Bala. SSEE **la hereda** porque tiene el mismo
+> ingrediente que ΛCDM; no aporta una propia. **No se resolvió gratis: el costo pasa a OP-19** (de qué está hecha
+> ω_c). En P1 se retiraron la ecuación μ(x)·KAL(x)≡1 del Principio 3 y la convergencia ponderada por KAL(x).
+> Lo de abajo queda como registro histórico.
 
 **Location:** Paper 1, §3.4 (Gravitational Lensing and the Newtonian Limit), L618-629.
 
@@ -2250,6 +2259,11 @@ Script a crear: `op18_As_from_inflation.py`.
 ---
 
 ## OP-19 — Mecanismo de producción detrás de $\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s$ (Papers 1, 6 / abundancia relic) — ABIERTO (2026-07-12)
+
+> **2026-10-01 — hereda el costo de OP-15.** Con la gravedad sin modificar, la masa extra de los cúmulos (y el
+> desfase del Bala) es esta materia oscura fría. La cantidad la fija el álgebra y pasa contra Planck, BOSS (perfil de
+> w_c) y 46 cúmulos reales (2.32σ con IGIMF, `cumulos_zhang2026.json`); **qué es** sigue abierto aquí. Por eso no se
+> puede decir «SSEE no necesita partículas» sin esta OP.
 
 **Origen.** Tras el reframe $\omega_m$-directo (OP-8 disuelto), la densidad de materia
 oscura fría del CMB entra por la **identidad forward**

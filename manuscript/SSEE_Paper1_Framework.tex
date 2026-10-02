@@ -263,21 +263,15 @@ these geometric invariants:
   \end{equation}
 
   \item \textbf{Asymmetric Equivalence:} Energy states can possess identical geometric
-  values but divergent dynamic functions. (This is the principle behind $I_g$ and $K_v$
-  sharing the value $\val{K_V_d6}$ while remaining distinct registers: what identifies a
-  register is its construction, not its number --- Appendix~\ref{app:lineage}.) The macroscopic geometric response must inversely
-  mirror the physical source:
-  \begin{equation}
-    \mu_{\SSEE}(x)\cdot\mathrm{KAL}(x) \equiv 1.
-    \label{eq:asymmetric}
-  \end{equation}
-  Here $\mu_{\SSEE}(x)$ is the interpolation function of the structural retention
-  and $\mathrm{KAL}(x)$ its environmental amplifier, both given explicitly in
-  Eq.~(\ref{eq:KAL}) of §\ref{sec:lensing}; $x=|\nabla\Phi|/a_0$. What the
-  principle asserts is that the reciprocity is \emph{exact}: no factor $f(x)\neq1$
-  is permitted between the geometric response and its physical source, which is
-  what fixes $\mathrm{KAL}(x)$ once $\mu_{\SSEE}(x)$ is chosen --- Eq.~(\ref{eq:KAL})
-  realises this identity rather than defining it into existence.
+  values but divergent dynamic functions. What identifies a register is its
+  construction, not its number: $I_g$ and $K_v$ share the value $\val{K_V_d6}$ while
+  remaining distinct registers (Appendix~\ref{app:lineage}), and every equality of
+  values in this suite is read as a coincidence to be explained by construction,
+  never as an identity of entities.%
+  % 2026-10-01 (decision de Mike): retirada la ecuacion mu_SSEE(x) KAL(x) = 1. Era la
+  % funcion de interpolacion MOND, que solo usaba la lectura de gravedad modificada de los
+  % cumulos; el modelo vigente es RG (alpha_T=alpha_M=alpha_B=0) y KAL_0 es RETENCION
+  % (omega_c = KAL_0 omega_b n_s), su funcion de siempre, no un amplificador de la gravedad.
 
 \end{enumerate}
 
@@ -693,55 +687,24 @@ the matter-to-baryon ratio, not the background (full analysis in Paper~2,
 % numeros (A2029, A478). Era la lectura de gravedad modificada (limite tipo MOND de Paper 8),
 % que A1689 excluye. Retirada; f_nu calculado como se declaraba da <2e-6 (fnu_tremaine_gunn.json).
 
-\subsection{Gravitational Lensing and the Newtonian Limit}
+\subsection{Gravitational lensing and the Bullet Cluster}
 \label{sec:lensing}
 
-The Bullet Cluster (1E~0657-56) is frequently cited as proof of particulate dark matter
-due to the spatial offset between collisional X-ray gas and lensing-mass peaks
-\citep{Clowe2006}. \SSEE\ proposes a qualitative mechanism for this offset: the
-environment-dependent amplifier $\mathrm{KAL}(x)$ (Eq.~\ref{eq:KAL}) selectively
-enhances the effective surface mass density in compact galactic potential wells
-(high $x$) relative to the diffuse stripped gas (low $x$), displacing lensing peaks
-toward the galaxies without collisionless particles. We emphasise that this is a
-\emph{qualitative mechanism only}: the quantitative calculation of the projected
-convergence $\kappa(\vec{\theta})$ from the $\mathrm{KAL}(x)$-weighted surface density
---- the test that would show the lensing peak tracks the galaxies rather than the gas
---- has \emph{not} been carried out and is an explicit open problem
-(OP-15 in \texttt{OPEN\_PROBLEMS.md}). This open item concerns the spatial
-\emph{distribution} of the effective lensing mass in a merging cluster; it is distinct
-from the cluster mass \emph{magnitude} of §\ref{sec:clusters}, and from the lensing
-amplitude of Paper~8.
-
-The structural retention acts as an environment-dependent scalar field. Defining
-$x = |\nabla\Phi|/a_0$, \SSEE\ adopts an interpolation function analogous to the
-canonical MOND \citep{Milgrom1983,FamaeyMcGaugh2012} simple interpolating function $\mu(x)$.
-The exact reciprocity below is not a naming convention: it is Principle~3
-(Eq.~\ref{eq:asymmetric}) applied, which forbids any factor $f(x)\neq1$ between the two
-and therefore fixes $\mathrm{KAL}(x)$ once $\mu_{\SSEE}(x)$ is chosen:
-\begin{equation}
-  \mu_{\SSEE}(x) = \frac{x+1}{x+\KALz}
-  \implies
-  \mathrm{KAL}(x) = \frac{1}{\mu_{\SSEE}(x)} = \frac{x+\KALz}{x+1}.
-  \label{eq:KAL}
-\end{equation}
-For $x\gg1$ (Newtonian limit), $\mathrm{KAL}(x)\to1$. For $x\ll1$ (deep MONDian limit),
-$\mathrm{KAL}(x)\to\KALz$. During a high-velocity cluster collision, the stripped X-ray
-gas flattens its local potential gradient ($x\ll1$), activating the full $\KALz$
-amplification; collisionless galaxies retain compact potential wells ($x\ge1$), coupling
-non-linearly.
-
-The effective lensing convergence is:
-\begin{equation}
-  \kappa(\vec{\theta})
-  = \frac{\Sigma_{\SSEE}(\vec{\theta})}{\Sigma_{\rm crit}},
-  \quad
-  \Sigma_{\SSEE}(\vec{\theta})
-  = \int \rho_{\rm bar}^{\rm IGIMF}(\vec{\theta},\ell)\cdot\mathrm{KAL}(x)\,d\ell,
-  \quad
-  \Sigma_{\rm crit} = \frac{c^2}{4\pi G}\frac{D_S}{D_L D_{LS}}.
-\end{equation}
-This allows lensing peaks to track galaxies, consistent with QUMOND simulations
-\citep{Angus2007}.
+Because the extra mass of clusters is cold dark matter and gravity is
+unmodified, lensing in \SSEE\ is lensing in general relativity by the total
+matter: Paper~8 obtains the Einstein radius of A1689 at the observed scale in
+this canonical limit. The Bullet Cluster (1E~0657-56), where the lensing mass
+peaks on the galaxies rather than on the collisional X-ray gas
+\citep{Clowe2006}, then receives the standard explanation: the cold dark matter
+is collisionless and passes through the collision with the galaxies, while the
+gas is stopped. \SSEE\ inherits this explanation because it contains the same
+ingredient; it does not add one of its own. The open question that remains is
+not where that mass sits but what it is made of: the production mechanism behind
+$\omega_c=\KALz\,\omega_b\,n_s$ (OP-19 in \texttt{OPEN\_PROBLEMS.md}).%
+% 2026-10-01: retirada la lectura MOND (interpolacion mu(x)/KAL(x), convergencia
+% ponderada por KAL(x), QUMOND). Era el limite tipo MOND de Paper 8, que A1689 excluye.
+% OP-15 (el desfase del Bala calculado con KAL(x)) se cierra por cambio de pregunta: su
+% costo pasa a OP-19.
 
 \paragraph{Open problem: dimensional connection to fundamental scales.}
 The algebraic prediction $H_0/\kmsu = 3(\varphi+\pi)^2 \approx \val{H0_ALG_d3}$
@@ -1451,11 +1414,6 @@ Almeida Vallejo, M.~E.\ (2026).
 Bayesian MCMC Validation of the Structural Self-Energy Expansion Framework (SSEE).
 \textit{Paper~2, this series}.
 
-\bibitem[Angus et al.(2007)]{Angus2007}
-Angus, G.~W., Shan, H.~Y., Zhao, H.~S., \& Famaey, B.\ (2007).
-On the proof of dark matter, the law of gravity, and the mass of neutrinos.
-\textit{ApJ} \textbf{654}, L13.
-
 \bibitem[Clowe et al.(2006)]{Clowe2006}
 Clowe, D., et al.\ (2006).
 A direct empirical proof of the existence of dark matter.
@@ -1626,16 +1584,6 @@ Planck 2018 results. X. Constraints on inflation.
 LiteBIRD Collaboration (Allys, E., et al.)\ (2023).
 Probing cosmic inflation with the LiteBIRD cosmic microwave background polarization survey.
 \textit{PTEP} \textbf{2023}, 042F01. arXiv:2202.02773.
-
-\bibitem[Milgrom(1983)]{Milgrom1983}
-Milgrom, M.\ (1983).
-A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis.
-\textit{ApJ} \textbf{270}, 365.
-
-\bibitem[Famaey \& McGaugh(2012)]{FamaeyMcGaugh2012}
-Famaey, B., \& McGaugh, S.~S.\ (2012).
-Modified Newtonian Dynamics (MOND): observational phenomenology and relativistic extensions.
-\textit{Living Rev.\ Relativity} \textbf{15}, 10. arXiv:1112.3960.
 
 \bibitem[Kroupa \& Weidner(2003)]{Kroupa2003}
 Kroupa, P., \& Weidner, C.\ (2003).
