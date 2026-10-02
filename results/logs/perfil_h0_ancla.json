@@ -1,0 +1,181 @@
+{
+ "SSEE": {
+  "filas": [
+   {
+    "H0": 66.46214152203791,
+    "chi2": 1212.2464263466718,
+    "logA": 3.0415144159850804,
+    "tau": 0.0557202258665204,
+    "convergio": true
+   },
+   {
+    "H0": 66.96214152203791,
+    "chi2": 1089.6866903742339,
+    "logA": 3.0430057892693108,
+    "tau": 0.05574112622688724,
+    "convergio": true
+   },
+   {
+    "H0": 67.46214152203791,
+    "chi2": 1020.3536413486497,
+    "logA": 3.0441195098812015,
+    "tau": 0.05568164481984856,
+    "convergio": true
+   },
+   {
+    "H0": 67.71214152203791,
+    "chi2": 1005.4193671470671,
+    "logA": 3.0447786706342126,
+    "tau": 0.055709369623131694,
+    "convergio": true
+   },
+   {
+    "H0": 67.96214152203791,
+    "chi2": 1003.5810885657652,
+    "logA": 3.0445687890174753,
+    "tau": 0.05532150513523701,
+    "convergio": true
+   },
+   {
+    "H0": 68.21214152203791,
+    "chi2": 1014.7227531679472,
+    "logA": 3.045569395306826,
+    "tau": 0.05556697263511001,
+    "convergio": true
+   },
+   {
+    "H0": 68.46214152203791,
+    "chi2": 1038.7595947520058,
+    "logA": 3.0457026256211197,
+    "tau": 0.05538558633107917,
+    "convergio": true
+   },
+   {
+    "H0": 68.96214152203791,
+    "chi2": 1125.020150353094,
+    "logA": 3.04679872561516,
+    "tau": 0.05544780795945978,
+    "convergio": true
+   },
+   {
+    "H0": 69.46214152203791,
+    "chi2": 1261.6615347002696,
+    "logA": 3.048053025418506,
+    "tau": 0.05566080750673759,
+    "convergio": true
+   }
+  ],
+  "H0_min_parabola": 67.87338235776873,
+  "sigma_H0": 0.09810002521448936,
+  "chi2_nodo_min": 1003.5810885657652,
+  "H0_nodo_min": 67.96214152203791,
+  "minimo_interior": true,
+  "todos_convergieron": true,
+  "distancia_a_Hglob_sigma": 0.9047822778343964
+ },
+ "LCDM": {
+  "filas": [
+   {
+    "H0": 65.86,
+    "chi2": 1251.0661548303738,
+    "logA": 3.0429172043137247,
+    "tau": 0.056139349923431864,
+    "convergio": true
+   },
+   {
+    "H0": 66.36,
+    "chi2": 1111.2354743874382,
+    "logA": 3.042849081130325,
+    "tau": 0.05533531349837781,
+    "convergio": true
+   },
+   {
+    "H0": 66.86,
+    "chi2": 1028.959283580431,
+    "logA": 3.044242363920624,
+    "tau": 0.055396961999610056,
+    "convergio": true
+   },
+   {
+    "H0": 67.11,
+    "chi2": 1009.2062379500592,
+    "logA": 3.0426219637260297,
+    "tau": 0.0542180141635053,
+    "convergio": true
+   },
+   {
+    "H0": 67.36,
+    "chi2": 1003.6945177970099,
+    "logA": 3.043170853728802,
+    "tau": 0.05419042731732129,
+    "convergio": true
+   },
+   {
+    "H0": 67.61,
+    "chi2": 1012.2961591550065,
+    "logA": 3.0436752622075582,
+    "tau": 0.05422175949729048,
+    "convergio": true
+   },
+   {
+    "H0": 67.86,
+    "chi2": 1034.955825175149,
+    "logA": 3.0443199312435167,
+    "tau": 0.054220993846647886,
+    "convergio": true
+   },
+   {
+    "H0": 68.36,
+    "chi2": 1121.9080113880023,
+    "logA": 3.045150787328184,
+    "tau": 0.05414060586512087,
+    "convergio": true
+   },
+   {
+    "H0": 68.86,
+    "chi2": 1263.8625667207857,
+    "logA": 3.0483961988277746,
+    "tau": 0.05531972380131483,
+    "convergio": true
+   }
+  ],
+  "H0_min_parabola": 67.33332162736643,
+  "sigma_H0": 0.09404175829844683,
+  "chi2_nodo_min": 1003.6945177970099,
+  "H0_nodo_min": 67.36,
+  "minimo_interior": true,
+  "todos_convergieron": true,
+  "distancia_a_H0_planck_sigma": 0.048671829764463485
+ },
+ "control": {
+  "criterio": "LCDM con los omega de Planck pone su minimo a < 1 sigma de su H0 de Planck (67.36 +- 0.54), interior y convergido",
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/perfil_h0_ancla.py",
+  "script_sha256": "bff035ee312c46dc23a685703e2f5c35009dbbc7a5b557af7b3c9b482baa060c",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123"
+  },
+  "argv": [
+   "src/p03_cmb/perfil_h0_ancla.py"
+  ],
+  "fecha": "2026-10-01T23:48:45",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

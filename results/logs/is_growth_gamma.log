@@ -1,0 +1,56 @@
+# ACTA-PROCEDENCIA {"commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_is/ssee_is_growth.py", "script_sha256": "ea69b82d3aba5aa3ba0d2d1a707a46863786f19e5467e56dfc179b5b33377f11", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_is/ssee_is_growth.py"], "fecha": "2026-10-01T23:50:39", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+=== Constantes SSEE ===
+φ       = 1.618034
+KAL₀    = 5.521406
+w₀      = -0.839950
+wₐ      = -0.669975
+n_s     = 0.965558
+MIRA    = 1.998924
+Ω_m,dyn = 0.308881
+Ω_DE,0  = 0.691119
+γ target = φ⁻¹ = 0.618034
+
+========================================================================
+τ_Π H₀ label                               T     γ_IS     R²       Δγ    σ8_IS
+========================================================================
+KAL₀/(3Ω_DE)  [causality min]         2.6630  0.65639 1.0000 +0.03836   0.8110
+1/MIRA                                0.5003  0.65894 1.0000 +0.04091   0.8110
+φ⁻¹  [= γ target]                     0.6180  0.65874 1.0000 +0.04071   0.8110
+Hubble time                           1.0000  0.65816 1.0000 +0.04013   0.8110
+n_s/KAL₀                              0.1749  0.65941 1.0000 +0.04138   0.8110
+1/KAL₀                                0.1811  0.65941 1.0000 +0.04137   0.8110
+φ⁻²                                   0.3820  0.65914 1.0000 +0.04111   0.8110
+φ⁻³  [≈ n_s/KAL₀]                     0.2361  0.65936 1.0000 +0.04133   0.8110
+========================================================================
+Target γ = φ⁻¹                                0.61803
+ΛCDM γ ≈ 6/11                                 0.54545
+
+Mejor T: 'KAL₀/(3Ω_DE)  [causality min]'
+  τ_Π H₀ = 2.663027
+  γ_IS   = 0.656391  (Δγ = +0.038358  vs φ⁻¹=0.618034)
+
+=== Análisis detallado: T = 1/MIRA (= τ_Π × H₀) ===
+  τ_Π H₀       = 0.500269  (= 1/MIRA = 1/1.99892)
+  z_IS (τ_Π H = 1) ≈ 83.070  (transición IS→Eckart)
+  w_eff(z=0)   = -1.01613
+  w_eff(z=1)   = -1.01850
+  Π(z=0)/ρ_DE  = -0.17618
+
+  γ_IS  = 0.658942  (R² = 0.99999)
+  Δγ    = +0.040908  vs φ⁻¹ = 0.618034
+  σ8_IS ≈ 0.8110  (proxy D_IS/D_EdS)
+  S8(Ω_m = 0.308881) ≈ 0.8229
+  S8(Ω_m = 0.308881, sin MIRA) ≈ 0.8229
+  Planck S8 = 0.832 ± 0.013,  KiDS/DES S8 ≈ 0.759 ± 0.025
+
+Figura guardada: results/figures/fig_is_growth.{pdf,png}
+
+=== Resumen para SSEE_EFT_section.tex ===
+τ_Π H₀ = 1/MIRA = 0.500269
+γ_IS   = 0.65894  (φ⁻¹ = 0.61803,  Δ = 0.04091)
+z_IS   = 83.070  (redshift de transición IS→Eckart)
+w_eff(z=0) = -1.01613
+
+IS causal: c_s² = ζ / (ρ_DE τ_Π) ≤ 1
+c_s² = KAL₀/(3 Ω_DE τ_Π H₀) = 5.5214/(3×0.691×0.5003) = 5.3232
+Causalidad (c_s² ≤ 1): ❌ NO

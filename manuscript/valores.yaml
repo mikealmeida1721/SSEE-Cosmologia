@@ -589,3 +589,11 @@ gammabg_c:      {fuente: "results/logs/is_growth_gamma.json#gamma_centro", forma
 gammabg_s:      {fuente: "results/logs/is_growth_gamma.json#gamma_semirango", formato: ".3f"}
 is_S8:          {fuente: "results/logs/is_growth_gamma.json#S8_Om_CMB", formato: ".3f"}
 is_sigma8_norm: {fuente: "results/logs/is_growth_gamma.json#sigma8_normalizacion", formato: ".3f"}
+# Validacion B1 con H0 libre (k=3) — src/p03_cmb/b1_k2_lee.py
+b1v_H0:   {fuente: "results/logs/b1_k2.json#validacion_k3.H0_media", formato: ".2f"}
+b1v_H0_s: {fuente: "results/logs/b1_k2.json#validacion_k3.H0_semiancho", formato: ".2f"}
+b1v_d:    {fuente: "results/logs/b1_k2.json#validacion_k3.distancia_a_Hglob_sigma", formato: ".2f"}
+# Perfil H0 del CMB con los omega del modelo fijos — src/p03_cmb/perfil_h0_ancla.py
+perfil_h0_min: {fuente: "results/logs/perfil_h0_ancla.json#SSEE.H0_min_parabola", formato: ".2f"}
+perfil_h0_sig: {fuente: "results/logs/perfil_h0_ancla.json#SSEE.sigma_H0", formato: ".2f"}
+perfil_h0_d:   {fuente: "results/logs/perfil_h0_ancla.json#SSEE.distancia_a_Hglob_sigma", formato: ".2f"}

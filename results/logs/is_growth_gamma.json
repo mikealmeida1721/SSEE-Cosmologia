@@ -1,0 +1,82 @@
+{
+ "rejilla_tau_Pi_H0": {
+  "KAL\u2080/(3\u03a9_DE)  [causality min]": {
+   "T": 2.6630266791070656,
+   "gamma": 0.6563914995301414,
+   "R2": 0.9999859590266379
+  },
+  "1/MIRA": {
+   "T": 0.5002692311528406,
+   "gamma": 0.6589405090749305,
+   "R2": 0.9999947031639276
+  },
+  "\u03c6\u207b\u00b9  [= \u03b3 target]": {
+   "T": 0.6180339887498948,
+   "gamma": 0.6587434442253747,
+   "R2": 0.9999940040109915
+  },
+  "Hubble time": {
+   "T": 1.0,
+   "gamma": 0.6581637645493599,
+   "R2": 0.9999920544339266
+  },
+  "n_s/KAL\u2080": {
+   "T": 0.1748754122890593,
+   "gamma": 0.6594107521451754,
+   "R2": 0.9999971442314664
+  },
+  "1/KAL\u2080": {
+   "T": 0.1811132897257266,
+   "gamma": 0.6594086671262608,
+   "R2": 0.9999970848638731
+  },
+  "\u03c6\u207b\u00b2": {
+   "T": 0.38196601125010515,
+   "gamma": 0.6591418468598834,
+   "R2": 0.9999954794392808
+  },
+  "\u03c6\u207b\u00b3  [\u2248 n_s/KAL\u2080]": {
+   "T": 0.23606797749978967,
+   "gamma": 0.6593625477679834,
+   "R2": 0.9999965936877333
+  }
+ },
+ "gamma_min": 0.6563914995301414,
+ "gamma_max": 0.6594107521451754,
+ "gamma_centro": 0.6579011258376584,
+ "gamma_semirango": 0.001509626307516998,
+ "T_mira": 0.5002692311528406,
+ "gamma_en_T_mira": 0.658942315763904,
+ "z_IS": 83.07009674377385,
+ "w_eff_z0": -1.0161255857566192,
+ "sigma8_normalizacion": 0.811,
+ "sigma8_IS": 0.811,
+ "S8_Om_CMB": 0.8229164406168259,
+ "Om_CMB": 0.30888087877875237,
+ "nota": "gamma_bg: centro y semirango sobre la rejilla de tau_Pi H0 (8 candidatos algebraicos); S8 = sigma8 de Planck reescalado por Omega_m (normalizacion del proxy), no una prediccion",
+ "_procedencia": {
+  "commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p05_is/ssee_is_growth.py",
+  "script_sha256": "ea69b82d3aba5aa3ba0d2d1a707a46863786f19e5467e56dfc179b5b33377f11",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p05_is/ssee_is_growth.py"
+  ],
+  "fecha": "2026-10-01T23:50:40",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

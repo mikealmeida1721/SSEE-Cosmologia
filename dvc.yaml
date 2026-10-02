@@ -469,6 +469,7 @@ stages:
       - results/logs/b1_min_lcdm.json
       - results/chains/ssee_cmb_k2.input.yaml
       - results/chains/lcdm_cmb.input.yaml
+      - results/chains/ssee_cmb.1.txt
       - results/chains/ssee_cmb_k2.1.txt
       - results/chains/ssee_cmb_k2.2.txt
       - results/chains/ssee_cmb_k2.3.txt

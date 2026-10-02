@@ -72,6 +72,20 @@ out.update(N_DATA=B.N_DATA, penal_por_parametro=float(lnN), dk=dk,
            penal_BIC_magnitud=float(-dk * lnN),
            # conservador: ademas de {A_s, tau} se cuentan omega_b y H0 como si se ajustaran (k=4)
            dBIC_k4=float(dchi + (4 - out["LCDM"]["k"]) * lnN), penal_k4_magnitud=float((out["LCDM"]["k"] - 4) * lnN))
+# Cadena de VALIDACION (2026-10-01): SSEE con H0 LIBRE (k=3, ssee_cmb). No entra en el BIC; dice donde
+# pone H0 el CMB completo cuando se lo deja moverse (los pies de figura de P3 lo citaban tecleado).
+import ssee_core as _S  # noqa: E402
+_fv = sorted(glob.glob(os.path.join(CH, "ssee_cmb.[0-9].txt")))
+_hv = open(_fv[0]).readline().lstrip("#").split()
+_Xv = np.vstack([np.loadtxt(f)[int(QUEMA * sum(1 for _ in open(f))):] for f in _fv])
+_xv, _wv = _Xv[:, _hv.index("H0")], _Xv[:, _hv.index("weight")]
+_ov = np.argsort(_xv); _cv = np.cumsum(_wv[_ov]) / _wv.sum()
+_p16, _p84 = float(_xv[_ov][np.searchsorted(_cv, 0.16)]), float(_xv[_ov][np.searchsorted(_cv, 0.84)])
+_mv = float(np.average(_xv, weights=_wv))
+out["validacion_k3"] = dict(cadenas=len(_fv), H0_media=_mv, H0_p16=_p16, H0_p84=_p84, H0_semiancho=(_p84 - _p16) / 2,
+                            distancia_a_Hglob_sigma=abs(_S.H0_GLOBAL - _mv) / ((_p84 - _p16) / 2))
+entradas += _fv
+print(f"  validacion k=3 ({len(_fv)} cadena): H0 {_mv:.3f} [{_p16:.3f}, {_p84:.3f}] -> {out['validacion_k3']['distancia_a_Hglob_sigma']:.2f} sigma de H_glob")
 pasa = bool(np.sign(out["dBIC"]) == np.sign(out["dBIC_muestreado"]))
 out["control"] = dict(criterio="el DeltaBIC con el mejor muestreado queda del mismo lado que con el minimo", pasa=pasa)
 print(f"  dchi2 {dchi:+.3f}  dk {dk}  dBIC {out['dBIC']:+.3f}  (con muestreado {out['dBIC_muestreado']:+.3f}) -> control {'PASA' if pasa else 'NO PASA'}")

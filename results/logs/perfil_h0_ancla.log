@@ -1,0 +1,119 @@
+# ACTA-PROCEDENCIA {"commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/perfil_h0_ancla.py", "script_sha256": "bff035ee312c46dc23a685703e2f5c35009dbbc7a5b557af7b3c9b482baa060c", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p03_cmb/perfil_h0_ancla.py"], "fecha": "2026-10-01T23:22:16", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+  NUCLEOS: 6
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  SSEE H0  67.9621  chi2   1003.581  logA 3.0446  tau 0.0553  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  SSEE H0  68.2121  chi2   1014.723  logA 3.0456  tau 0.0556  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  SSEE H0  66.4621  chi2   1212.246  logA 3.0415  tau 0.0557  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  SSEE H0  67.4621  chi2   1020.354  logA 3.0441  tau 0.0557  ok
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  SSEE H0  67.7121  chi2   1005.419  logA 3.0448  tau 0.0557  ok
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  SSEE H0  66.9621  chi2   1089.687  logA 3.0430  tau 0.0557  ok
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+  SSEE H0  68.9621  chi2   1125.020  logA 3.0468  tau 0.0554  ok
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+  SSEE H0  68.4621  chi2   1038.760  logA 3.0457  tau 0.0554  ok
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+  SSEE H0  69.4621  chi2   1261.662  logA 3.0481  tau 0.0557  ok
+[camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
+[planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  LCDM H0  65.8600  chi2   1251.066  logA 3.0429  tau 0.0561  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  LCDM H0  67.3600  chi2   1003.695  logA 3.0432  tau 0.0542  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  LCDM H0  66.3600  chi2   1111.235  logA 3.0428  tau 0.0553  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  LCDM H0  67.1100  chi2   1009.206  logA 3.0426  tau 0.0542  ok
+  LCDM H0  67.8600  chi2   1034.956  logA 3.0443  tau 0.0542  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  LCDM H0  67.6100  chi2   1012.296  logA 3.0437  tau 0.0542  ok
+----
+clipy_0.15
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
+----
+before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
+  LCDM H0  66.8600  chi2   1028.959  logA 3.0442  tau 0.0554  ok
+  LCDM H0  68.3600  chi2   1121.908  logA 3.0452  tau 0.0541  ok
+  LCDM H0  68.8600  chi2   1263.863  logA 3.0484  tau 0.0553  ok
+  SSEE: minimo 67.873 ± 0.098 (parabola en 5 nodos)
+  LCDM: minimo 67.333 ± 0.094 (parabola en 5 nodos)
+  SSEE a 0.90 sigma de H_glob · control LCDM a 0.05 sigma de Planck -> PASA
