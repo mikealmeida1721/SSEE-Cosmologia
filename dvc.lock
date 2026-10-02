@@ -1849,3 +1849,62 @@ stages:
       hash: md5
       md5: 74fa7a180742a6cc17b4b27b7f9861c9
       size: 3027
+  hiclass_check:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p03_cmb/ssee_paper3_hiclass_check.py > results/logs/hiclass_check.log 
+      2>&1
+    deps:
+    - path: data/raw/planck_pr4_TT.txt
+      hash: md5
+      md5: 953f333fa17483d3e2143dc82ddfa874
+      size: 170547
+    - path: src/p03_cmb/ssee_paper3_hiclass_check.py
+      hash: md5
+      md5: eaaebc83ddd190cc35158a54c24b599e
+      size: 16613
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/figures/fig_hiclass_TT.pdf
+      hash: md5
+      md5: ed2f6db94ce380a67e5dc412b7b8d7fd
+      size: 111534
+    - path: results/figures/fig_hiclass_alpha.pdf
+      hash: md5
+      md5: 712f6ae355157f61c11ad77d292a4952
+      size: 26316
+    - path: results/logs/hiclass_check.log
+      hash: md5
+      md5: 4cf20611c6b21ce27ec153d447d3ee6c
+      size: 2375
+  paper4_toe:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
+    deps:
+    - path: src/p04_toe/ssee_paper4_toe.py
+      hash: md5
+      md5: ab89414be176c32662b9a51ef631abfd
+      size: 8346
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/figures/fig_toe_cmb_TT.pdf
+      hash: md5
+      md5: d705fdf1602eed3c754d6e448896b049
+      size: 24292
+    - path: results/figures/fig_toe_derivations.pdf
+      hash: md5
+      md5: 82669b6d171fb658927c8b6d8f58ee28
+      size: 28516
+    - path: results/logs/paper4_toe.log
+      hash: md5
+      md5: 19958c53e6b1c05101cf93d2b18bd8ac
+      size: 2214

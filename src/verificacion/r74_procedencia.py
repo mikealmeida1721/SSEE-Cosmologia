@@ -67,6 +67,7 @@ def _logs_sin_script():
                 w(x)
     w(P)
     hist = set(P.get("historicos") or [])
+    hist |= set(P.get("bitacoras") or [])   # registros de cola (2026-10-02); R35 vigila que no lleven acta
     st = (yaml.safe_load((ROOT / "dvc.yaml").read_text()) or {}).get("stages") or {} \
         if (ROOT / "dvc.yaml").exists() else {}
     cadena = {o if isinstance(o, str) else list(o)[0] for d in st.values() for o in (d.get("outs") or [])}
