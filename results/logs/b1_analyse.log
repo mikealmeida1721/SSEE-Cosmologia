@@ -1,16 +1,3 @@
-preflight  [1/3] __pycache__ borrados: 102
-preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
-preflight  [3/3] ingredientes de esta corrida:
-             SUM_MNU_EV       = 0.068490000
-             OMEGA_B_H2       = 0.022417757
-             OMEGA_C_H2       = 0.119514408
-             OMEGA_NU_H2      = 0.000735345
-             OMEGA_M_H2       = 0.142667510
-             OMEGA_M_TOTAL    = 0.308880879
-             W0               = -0.839949771
-             WA               = -0.669974886
-             H0_ALG           = 67.962137323
-preflight  OK — luz verde para el cómputo
 
 =================================================================
   SSEE — B1 Full CMB Posterior Analysis
@@ -20,7 +7,7 @@ preflight  OK — luz verde para el cómputo
   SSEE algebraic predictions:
     w₀    = -0.839950  (−Tr/Mv)
     wₐ    = -0.669975  (−P_sc/IGNIS)
-    Ωm_cmb= 0.308882  (ω_m/h² derivado, ω_m-directo)
+    Ωm_cmb= 0.308881  (ω_m/h² derivado, ω_m-directo)
     ns    = 0.965558  (1 − φ⁻⁷)
     N_data= 2354  (full plik TTTEEE + lowl TT+EE + lensing, via clipy)
 

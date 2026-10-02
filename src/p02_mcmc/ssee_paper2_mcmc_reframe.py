@@ -224,7 +224,7 @@ log(f"  ESTE (prior H_glob {H0_GLOBAL:.3f}±{SIG_H0_GLOBAL:.3f}, 100w×25k): H�
 # ω_m algebraico fijo (R25). El 65.530 que figuraba aquí era un valor exploratorio
 # hardcodeado, nunca recalculado tras el reframe — misma familia de drift que R25
 # vigila. Fuente: src/p09_hubble/ssee_h0_prior_experiment.py (4 priors)
-#   → results/logs/h0_four_priors_wmfix.log
+#   → results/logs/h0_four_priors.log (etapa DVC h0_four_priors; la copia _wmfix del 07-25 salio del arbol el 2026-10-01)
 # 2026-09-28: se LEE de results/logs/h0_four_priors.json (lo escribe ese script;
 # corre DESPUÉS de este en la cola, así que es el de la corrida anterior). Si no
 # existe, se dice y no se inventa.

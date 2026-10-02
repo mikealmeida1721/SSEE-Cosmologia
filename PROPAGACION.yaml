@@ -76,7 +76,7 @@ logs:
   dic_from_chains:            src/estadistica/ssee_dic_from_chains.py
   look_elsewhere_full:        src/estadistica/look_elsewhere_full.py
   phase_d_savage_cv_wmfix:    src/estadistica/ssee_phase_d_savage_cv.py
-  h0_four_priors_wmfix:       src/p09_hubble/ssee_h0_prior_experiment.py
+  h0_four_priors:             src/p09_hubble/ssee_h0_prior_experiment.py   # 2026-10-01: era h0_four_priors_wmfix (copia de pantalla del 07-25); ahora etapa DVC
   mcmc_paper2_lcdm_baseline:  src/p02_mcmc/ssee_paper2_mcmc_lcdm_baseline.py
   # ── Añadidos 2026-09-07 (tarde): las tres corridas de la sesión R1/R2 ──
   boss_cobaya_lcdm:           src/p06_growth/cobaya_boss.py
@@ -95,7 +95,6 @@ logs:
   base_sin_particula:           src/p06_growth/base_sin_particula.py::main
   rejilla_extendida:            src/p06_growth/rejilla_extendida.py::main
   ruido_minimizador_kids:       src/p06_growth/ruido_minimizador_kids.py::main
-  precio_cmb_rejilla_extendida: src/p03_cmb/precio_cmb_rejilla_extendida.py::main
   # 2026-09-09: la corrida sin reparto rapido/lento se archivo (cadenas en
   # chains_p6/kids/sin_reparto_2026-09-08/) y se relanzo declarandole a Cobaya
   # que 7 de los 9 libres NO tocan CAMB. Los DOS logs quedan declarados: el
@@ -206,6 +205,7 @@ historicos:
   - INVENTARIO_two_sector          # dos sectores: retirado 2026-08-01
   - particula_que_prefiere_kids    # particula: retirada 2026-08-01
   - precio_cmb_de_la_particula     # particula: retirada 2026-08-01
+  - precio_cmb_rejilla_extendida   # particula (m_x, om_x): retirada 2026-08-01; script archivado el 2026-10-01 (R35), nadie la cita
   - ssee_kids_results              # script en archive/.../particula_RETIRADA_2026-08-01
   - lcdm_kids_results              # script en archive/.../sondeos_p6_2026-07
   - s8_barra_kids                  # script en archive/codigo/p06_kids1000_SUPERADO_2026-09-20

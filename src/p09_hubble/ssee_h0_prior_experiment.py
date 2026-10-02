@@ -26,13 +26,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import os as _reloc_os, sys as _reloc_sys  # reloc: anclar src/
 _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__))))
+from procedencia import cabecera  # noqa: E402
+print(cabecera(__file__, entradas=["data/raw/desi_dr2_bao.csv"]), flush=True)
 from ssee_core import (
     PHI, PI, KAL0, W0, WA, OMEGA_M_TOTAL, OMEGA_M_H2, H0_ALG, H0_GLOBAL, SIG_H0_GLOBAL
 )
 
 # ───── Constantes ─────
 C_KM = 2.998e5
-FNU_SSEE = 0.020
 
 # ───── Datos DESI DR2 (copia exacta de ssee_paper2_mcmc.py) ─────
 # ── DESI DR2 (2503.14738 Tabla 4) — FUENTE ÚNICA data/raw/desi_dr2_bao.csv ──
@@ -50,13 +51,9 @@ DESI_SIGMA   = _DESI_D["sigma"]
 DESI_COV     = _dd_cov(_DESI_D)          # bloque-diagonal, r_MH oficiales DR2
 DESI_COV_INV = np.linalg.inv(DESI_COV)
 
-# Cúmulos (Zhang 2026)
-CLUSTERS = [
-    {"M_ig": 1.8, "dM_obs": 1.0, "M_obs": 9.8 },
-    {"M_ig": 2.2, "dM_obs": 1.2, "M_obs": 12.0},
-    {"M_ig": 1.5, "dM_obs": 1.0, "M_obs": 8.0 },
-    {"M_ig": 1.2, "dM_obs": 1.0, "M_obs": 6.5 },
-]
+# 2026-10-01: SIN termino de cumulos. Era la formula del marco MOND de abril (M = M_ig*KAL0*(1+f_nu))
+# con 4 cumulos que no estan en la fuente citada (Zhang+2026); una constante que no movia H0.
+# La prueba de cumulos vive aparte, en RG y con los 46 sistemas reales: src/p02_mcmc/cumulos_zhang2026.py
 
 # ───── Física ─────
 def f_de_cpl(z, w0, wa):
@@ -102,11 +99,6 @@ def ll_bao(H0, om_h2, ob_h2, Om):
     r  = _pred_camb(H0, rd) - DESI_OBS
     return -0.5 * (r @ DESI_COV_INV @ r)
 
-def ll_clusters_const():
-    return -0.5 * sum(((c["M_ig"]*KAL0*(1+FNU_SSEE) - c["M_obs"])/c["dM_obs"])**2
-                      for c in CLUSTERS)
-
-LLC_CLUSTERS_CONST = ll_clusters_const()  # no depende de H0 ni ob_h2
 
 # ───── 3 log-posteriors según prior ─────
 PRIOR_PLANCK = (67.36, 0.54)
@@ -124,7 +116,7 @@ def lpost_factory(prior_kind):
             lp_bbn = -0.5*((ob_h2-0.02218)/0.00055)**2   # prior BBN de DESI (Schöneberg 2024)
             om_h2  = OMEGA_M_H2                    # ω_m algebraico FIJO (R25)
             Om     = OMEGA_M_H2/(H0/100)**2        # Ω_m DERIVADO por muestra
-            return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om) + LLC_CLUSTERS_CONST
+            return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om)
         return lp
     elif prior_kind == "mira":
         mu, sig = PRIOR_MIRA
@@ -136,7 +128,7 @@ def lpost_factory(prior_kind):
             lp_bbn = -0.5*((ob_h2-0.02218)/0.00055)**2   # prior BBN de DESI (Schöneberg 2024)
             om_h2  = OMEGA_M_H2                    # ω_m algebraico FIJO (R25)
             Om     = OMEGA_M_H2/(H0/100)**2        # Ω_m DERIVADO por muestra
-            return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om) + LLC_CLUSTERS_CONST
+            return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om)
         return lp
     elif prior_kind == "ssee":
         mu, sig = PRIOR_SSEE
@@ -148,7 +140,7 @@ def lpost_factory(prior_kind):
             lp_bbn = -0.5*((ob_h2-0.02218)/0.00055)**2   # prior BBN de DESI (Schöneberg 2024)
             om_h2  = OMEGA_M_H2                    # ω_m algebraico FIJO (R25)
             Om     = OMEGA_M_H2/(H0/100)**2        # Ω_m DERIVADO por muestra
-            return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om) + LLC_CLUSTERS_CONST
+            return lp_H0 + lp_bbn + ll_bao(H0, om_h2, ob_h2, Om)
         return lp
     else:  # flat
         def lp(theta):
@@ -158,7 +150,7 @@ def lpost_factory(prior_kind):
             lp_bbn = -0.5*((ob_h2-0.02218)/0.00055)**2  # BBN se mantiene (prior BBN de DESI, Schöneberg 2024)
             om_h2  = OMEGA_M_H2                    # ω_m algebraico FIJO (R25)
             Om     = OMEGA_M_H2/(H0/100)**2        # Ω_m DERIVADO por muestra
-            return lp_bbn + ll_bao(H0, om_h2, ob_h2, Om) + LLC_CLUSTERS_CONST
+            return lp_bbn + ll_bao(H0, om_h2, ob_h2, Om)
         return lp
 
 # ───── Runner ─────
@@ -173,6 +165,7 @@ def run_mcmc(label, prior_kind):
     # ORIGEN-VALOR: 0.0005 — dispersion inicial de los walkers en omega_b, elegida (~1/3 del sigma BBN), no es medida
     pos = np.array([65.0, 0.02237]) + rng.standard_normal((N_WALKERS, 2)) * np.array([3.0, 0.0005])
     sampler = emcee.EnsembleSampler(N_WALKERS, 2, lpost_factory(prior_kind))
+    sampler.random_state = np.random.RandomState(42).get_state()   # 2026-10-01: las propuestas de emcee tambien con semilla
     pos, _, _ = sampler.run_mcmc(pos, N_BURN, progress=False)
     sampler.reset()
     sampler.run_mcmc(pos, N_STEPS, progress=False)
@@ -273,7 +266,9 @@ ax.set_xlim(64, 72)
 plt.tight_layout()
 out = "results/figures/fig_h0_three_priors.pdf"
 os.makedirs("results/figures", exist_ok=True)
-plt.savefig(out, bbox_inches="tight")
+import json as _jsfig
+from procedencia import acta as _acta_fig  # noqa: E402
+plt.savefig(out, bbox_inches="tight", metadata={"Keywords": "ACTA-PROCEDENCIA " + _jsfig.dumps(_acta_fig(__file__, entradas=["data/raw/desi_dr2_bao.csv"]))})
 print(f"\nFigura: {out}")
 
 # Guardar cadenas para análisis posterior
@@ -283,7 +278,9 @@ np.savez("results/logs/h0_four_priors.npz",
 print("Cadenas: results/logs/h0_four_priors.npz")
 # El resultado con prior PLANO (DESI sola) lo LEE el MCMC de Paper 2; antes lo tecleaba.
 import json as _json
-_json.dump({k: dict(H0_mediana=float(r["H0_med"]), H0_std=float(r["H0_std"]))
+from procedencia import con_acta  # noqa: E402
+_json.dump(con_acta({k: dict(H0_mediana=float(r["H0_med"]), H0_std=float(r["H0_std"]))
             for k, r in (("planck", res_planck), ("mira", res_mira), ("ssee_hglob", res_ssee), ("plano", res_flat))},
+                    __file__, entradas=["data/raw/desi_dr2_bao.csv"]),
            open("results/logs/h0_four_priors.json", "w"), indent=1)
 print("Resumen: results/logs/h0_four_priors.json")

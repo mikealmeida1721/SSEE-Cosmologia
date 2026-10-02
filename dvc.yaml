@@ -616,3 +616,20 @@ stages:
           cache: false
       - results/figures/fig_corner_ssee_halg_prior.pdf:
           cache: false
+  h0_four_priors:
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p09_hubble/ssee_h0_prior_experiment.py > results/logs/h0_four_priors.log 2>&1
+    deps:
+      - src/p09_hubble/ssee_h0_prior_experiment.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/desi_dr2_data.py
+      - src/rd_camb.py
+      - src/bao_camb.py
+      - data/raw/desi_dr2_bao.csv
+    outs:
+      - results/logs/h0_four_priors.json:
+          cache: false
+      - results/logs/h0_four_priors.log:
+          cache: false
+      - results/figures/fig_h0_three_priors.pdf:
+          cache: false
