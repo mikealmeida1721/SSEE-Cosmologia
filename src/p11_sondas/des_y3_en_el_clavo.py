@@ -22,7 +22,14 @@ cosmologia LIBRE = el maximo de la cadena de DES (del calibrador).
 DES Y3 entra SOLO como sonda individual contra el clavo: solapa cielo con
 KiDS-Legacy y no hay covarianza cruzada publica.
 
-Uso: des_y3_en_el_clavo.py {ssee|lcdm_planck}
+VARIANTE NLA (2026-10-02). Sufijo «_nla» en el caso: el mismo montaje con los
+alineamientos NLA (A1, alpha1) en lugar de TATT; A2 = alpha2 = bias_ta = 0 fijos,
+que es como DES define su NLA dentro del modulo TATT. Para que sirve: una sonda
+solo vota si su resultado NO se mueve al cambiar el estimador; si el Delta chi2
+SSEE - LCDM cambia de signo entre TATT y NLA, DES Y3 no discrimina. Mismo trato
+a los dos modelos (R53).
+
+Uso: des_y3_en_el_clavo.py {ssee|lcdm_planck|lcdm_libre}[_nla] [nuevo|continua|evalua]
 Salida: results/logs/des_y3_en_el_clavo_<caso>.json
 """
 import configparser
@@ -39,11 +46,15 @@ _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
 sys.path.insert(0, os.path.join(_R, "src", "p11_sondas"))
 from des_y3_calibra import CSL, ENT, TRABAJO, lee_cadena  # noqa: E402
+from procedencia import cabecera, con_acta  # noqa: E402
+
+NLA_CERO = ("a2", "alpha2", "bias_ta")   # ORIGEN-VALOR: 0 — NLA = TATT con estos tres en cero (definicion de DES Y3)
 
 CAL = os.path.join(_R, "results", "logs", "des_y3_calibrador.json")
 
 
 def cosmologia(caso):
+    caso = caso.removesuffix("_nla")
     if caso == "ssee":
         from ssee_core import (H0_GLOBAL, N_S, OMEGA_B_H2, OMEGA_C_H2,
                                SUM_MNU_EV, W0, WA)
@@ -67,7 +78,7 @@ def values_nuisance(caso, cab, fila):
         txt = "".join(l for l in open(f"{CSL}/examples/{f}") if not l.startswith("%include"))
         cp.read_string(txt)
     sec = "cosmological_parameters"
-    if caso != "lcdm_libre":
+    if caso.removesuffix("_nla") != "lcdm_libre":
         for p in ("omega_m", "omega_b", "mnu", "a_s", "h0", "n_s"):
             cp.remove_option(sec, p)
     for p, v in cosmologia(caso).items():
@@ -75,14 +86,19 @@ def values_nuisance(caso, cab, fila):
     # nuisances: rango oficial, punto de partida = maximo de la cadena
     for k, col in enumerate(cab):
         if "--" not in col or col.isupper() or (
-                col.startswith("cosmological") and caso != "lcdm_libre"):
+                col.startswith("cosmological") and caso.removesuffix("_nla") != "lcdm_libre"):
             continue
         s, p = col.split("--")
         if not cp.has_option(s, p):
             continue                      # derivado en la cadena, no parametro
+        if caso.endswith("_nla") and s == "intrinsic_alignment_parameters" and p in NLA_CERO:
+            continue                      # fijo en cero en la variante NLA
         lo_ini_hi = cp.get(s, p).split()
         if len(lo_ini_hi) == 3:
             cp.set(s, p, f"{lo_ini_hi[0]} {float(fila[k])!r} {lo_ini_hi[2]}")
+    if caso.endswith("_nla"):
+        for p in NLA_CERO:
+            cp.set("intrinsic_alignment_parameters", p, "0.0")
     ruta = f"{TRABAJO}/clavo_{caso}_values.ini"
     with open(ruta, "w") as fh:
         cp.write(fh)
@@ -123,6 +139,7 @@ def lee_bloque(dirsal, seccion, clave):
 
 def main():
     caso = sys.argv[1]
+    print(cabecera(__file__), flush=True)
     if not json.load(open(CAL))["maxpost"]["reproduce"]:
         sys.exit("el calibrador NO reproduce la cadena de DES: no se evalua nada")
     os.makedirs(TRABAJO, exist_ok=True)
@@ -160,7 +177,9 @@ def main():
     print(f"  {caso}: chi2_2pt = {chi2:.3f}   (LCDM libre, max de la cadena DES: "
           f"{cal['chi2_nuestro']:.3f})   diferencia {chi2 - cal['chi2_nuestro']:+.3f}")
     print(f"        Omega_m = {om:.4f}   S8 = {s8 * (om / 0.3) ** 0.5:.4f}")
-    json.dump(dict(fecha="2026-09-27", caso=caso, cosmologia=cosmologia(caso),
+    import datetime
+    json.dump(con_acta(dict(fecha=datetime.date.today().isoformat(), caso=caso,
+                   alineamientos="NLA" if caso.endswith("_nla") else "TATT", cosmologia=cosmologia(caso),
                    chi2_2pt=chi2, Omega_m=om, sigma_8=s8,
                    S8=s8 * (om / 0.3) ** 0.5,
                    lcdm_libre_chi2=cal["chi2_nuestro"],
@@ -168,7 +187,7 @@ def main():
                    mejor_ini=mejor, libres_cosmologicos=0,
                    convergido=convergio(caso),
                    nota="nuisances minimizados con sus priors DES (max_posterior=T); "
-                        "el chi2 reportado es el del vector de datos"),
+                        "el chi2 reportado es el del vector de datos"), __file__, entradas=[CAL]),
               open(os.path.join(_R, "results", "logs", f"des_y3_en_el_clavo_{caso}.json"), "w"),
               indent=1, ensure_ascii=False)
 
