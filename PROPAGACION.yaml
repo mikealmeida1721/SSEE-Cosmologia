@@ -40,6 +40,7 @@ logs:
   sondas_ssee_vs_lcdm:        src/p11_sondas/sondas_ssee_vs_lcdm.py
   paper4_toe:                 src/p04_toe/ssee_paper4_toe.py
   cmb_dbic_mnu_propia:        src/p11_sondas/cmb_dbic_mnu_propia.py
+  bao_lcdm_libre:             src/p11_sondas/bao_lcdm_libre.py
   # ── Paper 2 — MCMC / BAO ────────────────────────────────────────────────
   mcmc_paper2_reframe:        src/p02_mcmc/ssee_paper2_mcmc_reframe.py
   is_growth_gamma_bg:         src/p05_is/is_growth_gamma_bg.py

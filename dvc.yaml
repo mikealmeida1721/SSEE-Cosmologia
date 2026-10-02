@@ -759,3 +759,18 @@ stages:
         cache: false
     - results/logs/cmb_dbic_mnu_propia.log:
         cache: false
+  bao_lcdm_libre:
+    cmd: OMP_NUM_THREADS=1 .venv/bin/python3 src/p11_sondas/bao_lcdm_libre.py > results/logs/bao_lcdm_libre.log 2>&1
+    deps:
+      - src/p11_sondas/bao_lcdm_libre.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+      - src/p06_growth/multisonda_fondo_clavado.py
+      - results/logs/bao_camb_control.json
+      - data/raw/desi_dr2_bao.csv
+    outs:
+      - results/logs/bao_lcdm_libre.json:
+          cache: false
+      - results/logs/bao_lcdm_libre.log:
+          cache: false
