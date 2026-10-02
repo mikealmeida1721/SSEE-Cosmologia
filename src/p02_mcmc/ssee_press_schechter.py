@@ -295,7 +295,7 @@ _rej = {f"z{z}": {f"{M:.0e}": float(ps_ratio(M, z)) for M in (1e11, 1e12, 3e12)}
 # Inversion por convencion de amplitud (P5 «The amplitude convention is not a
 # detail»): SSEE con el sigma_8 de la cizalla cruda KiDS-1000 (R3) y LCDM con el
 # de Planck. Como sigma_M escala lineal con sigma_8, basta reescalar sig_s.
-_R3 = _o66.path.join(_RAIZ, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8.json")
+_R3 = _o66.path.join(_RAIZ, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8_rehecho.json")
 sig8_R3 = float(_json66.load(open(_R3))["sigma8"]["media"])
 
 

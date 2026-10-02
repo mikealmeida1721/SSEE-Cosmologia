@@ -56,7 +56,7 @@ canonical:
   # correctos (siguen siendo el resultado contra ESE dato) pero ya no son el
   # canónico de «la cizalla»: la colaboración recalibró n(z) y el dato subió.
   #
-  # ⚠️ TRAMPA A EVITAR: citar el S8 VIEJO del modelo (0.7555) junto al dato
+  # ⚠️ TRAMPA A EVITAR: citar el S8 de KiDS-1000 del modelo (0.7559) junto al dato
   # NUEVO (0.8265) da una tensión APARENTE de 2.73σ que NO existe — son dos
   # datos distintos, no predicción contra dato. Lo correcto es 0.8193 vs
   # 0.8265 = 0.30σ. Ver [[project-as-clavado-k1]].
@@ -68,7 +68,7 @@ canonical:
   # S8 deja de ser un ajuste y pasa a ser una PREDICCIÓN.
   logA_cmb_ssee:       3.0448340130228546   # EL BLANCO, y aquí la ENTRADA.
   sigma8_ssee_unif:    0.8153     # predicción, sin barra propia
-  S8_ssee_unif:        0.8273     # predicción → 0.05σ del dato oficial
+  S8_ssee_unif:        0.8273     # FUENTE: results/logs/s8_kids_legacy_camb.json — predicción → 0.04σ del dato oficial (kids_publicados.json#s8.legacy_prediccion; era «0.05σ» redondeado a mano)
   S8_kids_legacy_dato: 0.8265     # FUENTE: results/logs/kids_publicados.json — ±0.0176 — posterior oficial ξ± fiducial,
                                   # calculado de sus muestras (σ8·√(Ωm/0.3))
   chi2_min_ssee_unif:  417.971   # 357 puntos, 8 libres (todos nuisance)
@@ -104,13 +104,18 @@ canonical:
   # ══════════════════════════════════════════════════════════════════════
 
   # ── HISTÓRICO: KiDS-1000 (R3, canónico hasta 2026-09-19) ──────────────
-  # Mismo montaje sobre los 225 puntos de ξ± de KiDS-1000. R−1=0.0189,
-  # N_eff=42033. log: results/logs/growth_2026-07/R3_ssee_kids_S8.json
-  # Pedía logA = 2.863 ± 0.051 = 3.5σ del blanco. Ésa era la tensión que
-  # motivaba la partícula ligera. Los dos releases difieren ENTRE SÍ a 2.5σ.
-  sigma8_kids_mcmc:    0.7446     # ±0.0189 — un sector, A_s libre, dato crudo
-  S8_kids_mcmc:        0.7555     # ±0.0192 — un sector, A_s libre, dato crudo
-  chi2_min_kids_mcmc:  265.4      # 225 puntos, 9 libres → 216 dof, χ²/dof=1.229
+  # Mismo montaje sobre los 225 puntos de ξ± de KiDS-1000. R−1=0.0189.
+  # LECTURA VIGENTE (2026-10-02): burn-in del 30 % de CADA cadena, el método
+  # declarado y el mismo que R4 → results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
+  # (N_eff 42711). La lectura vieja (σ8 0.7446±0.0189, S8 0.7555±0.0192, N_eff
+  # 42033) cortaba el burn-in sobre las 4 cadenas PEGADAS; el control del
+  # script la reproduce exacta. Diferencia: 0.02σ; χ²_min idéntico.
+  # Pide logA = 2.864 ± 0.050 = 3.6σ del blanco (el «3.5σ» de antes era 3.585
+  # mal redondeado). Ésa era la tensión que motivaba la partícula ligera. Los
+  # dos releases difieren ENTRE SÍ a 2.5σ. Fuente: kids_publicados.json#s8.logA
+  sigma8_kids_mcmc:    0.7449     # FUENTE: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json — ±0.0186 — un sector, A_s libre, dato crudo
+  S8_kids_mcmc:        0.7559     # FUENTE: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json — ±0.0189 — un sector, A_s libre, dato crudo
+  chi2_min_kids_mcmc:  265.44     # FUENTE: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json — 225 puntos, 9 libres → 216 dof, χ²/dof=1.229
 
   # ── Control metodológico ΛCDM (R4, 2026-08-06) ────────────────────────
   # MISMO código, MISMOS 225 puntos crudos, MISMA máscara y priors que R3.

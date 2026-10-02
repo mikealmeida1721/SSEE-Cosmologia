@@ -1988,3 +1988,29 @@ stages:
       hash: md5
       md5: 41aa68ab8e958f60c5f4de1c5ef79bb3
       size: 1259
+  des_y3_nla:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/des_y3_en_el_clavo.py ssee_nla && OMP_NUM_THREADS=1 nice -n
+      10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck_nla
+    deps:
+    - path: results/logs/des_y3_calibrador.json
+      hash: md5
+      md5: d38216295a17b0c6c110a961eb879fc2
+      size: 2412
+    - path: src/p11_sondas/des_y3_en_el_clavo.py
+      hash: md5
+      md5: e94f942337fd95f378aef122bbd8ddf3
+      size: 9404
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json
+      hash: md5
+      md5: 98fd574a63b592c56114d50e20560a3c
+      size: 1567
+    - path: results/logs/des_y3_en_el_clavo_ssee_nla.json
+      hash: md5
+      md5: ca2e100439a75fa4b4e7658ed4d42360
+      size: 1629

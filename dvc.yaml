@@ -104,8 +104,10 @@ stages:
     - src/procedencia.py
     - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
     - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
-    - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
     - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+    - results/logs/s8_kids_legacy_camb.json
+    - results/logs/s8_desde_b1.json
     outs:
     - results/logs/kids_publicados.json:
         cache: false
@@ -297,7 +299,7 @@ stages:
     - CANONICAL_VALUES.yaml
     - results/logs/deltac_spherical_collapse.json
     - results/logs/p5_IS_perturbations_Q3.json
-    - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
     outs:
     - results/logs/press_schechter.json:
         cache: false
@@ -632,6 +634,19 @@ stages:
     - results/logs/hmcode_bariones.json:
         cache: false
     - results/logs/hmcode_bariones.log:
+        cache: false
+  des_y3_nla:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py
+      ssee_nla && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck_nla
+    deps:
+    - src/p11_sondas/des_y3_en_el_clavo.py
+    - src/procedencia.py
+    - results/logs/des_y3_calibrador.json
+    outs:
+    - results/logs/des_y3_en_el_clavo_ssee_nla.json:
+        cache: false
+    - results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json:
         cache: false
   sondas_ssee_vs_lcdm:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

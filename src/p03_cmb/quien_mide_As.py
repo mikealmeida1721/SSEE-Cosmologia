@@ -45,8 +45,15 @@ SALIDA = REPO / "results" / "logs" / "cmb_quien_mide_As.json"
 FONDO = dict(ombh2=S.OMEGA_B_H2, omch2=S.OMEGA_C_H2, H0=S.H0_GLOBAL, ns=S.N_S)
 W, WA = S.W0, S.WA
 
-# KiDS, medido sobre su cadena (D = 1.16); ver As_medido_o_producto.json
-KIDS = dict(logA=2.8627107489, marginal=0.0507836451, condicional=0.0431, D=1.16)
+# KiDS-1000, leido de los logs (2026-10-02; antes copiado a mano del R3 viejo):
+# logA y su marginal del R3 vigente (burn-in por cadena), condicional y D de
+# As_medido_o_producto.json, que mide la degeneracion sobre la misma cadena.
+_R3 = REPO / "results" / "logs" / "growth_2026-07" / "R3_ssee_kids_S8_rehecho.json"
+_AM = REPO / "results" / "logs" / "growth_2026-07" / "As_medido_o_producto.json"
+_r3 = json.load(open(_R3))["logA"]
+_am = json.load(open(_AM))["fuentes"]["KiDS (SSEE)"]["parametros"]["logA"]
+KIDS = dict(logA=_r3["media"], marginal=_r3["sigma"], condicional=_am["condicional"], D=_am["D"],
+            fuentes=[str(_R3.relative_to(REPO)), str(_AM.relative_to(REPO))])
 
 
 def chi2(logA, tau):

@@ -170,6 +170,8 @@ logs:
   des_y3_en_el_clavo_lcdm_libre:  src/p11_sondas/des_y3_en_el_clavo.py
   des_y3_en_el_clavo_lcdm_planck: src/p11_sondas/des_y3_en_el_clavo.py
   des_y3_en_el_clavo_ssee:    src/p11_sondas/des_y3_en_el_clavo.py
+  des_y3_en_el_clavo_ssee_nla:        src/p11_sondas/des_y3_en_el_clavo.py
+  des_y3_en_el_clavo_lcdm_planck_nla: src/p11_sondas/des_y3_en_el_clavo.py
   eft_barrido_potenciales_wa: src/p07_eft/barrido_potenciales_wa.py
   eft_dos_campos_acoplados:   src/p07_eft/dos_campos_acoplados.py
   eft_dos_campos_genericos:   src/p07_eft/dos_campos_genericos.py
@@ -184,6 +186,9 @@ logs:
   R1R2_boss_lpt_kmax0.200:    src/p06_growth/boss_lpt_R1R2.py
   R4_lcdm_kids_S8:            src/p06_growth/analiza_lcdm_R4.py
   R3_ssee_kids_S8_rehecho:    src/p06_growth/analiza_ssee_R3.py
+  # R3 viejo (2026-10-02): lo REPRODUCE el control de analiza_ssee_R3.py (burn-in
+  # sobre las cadenas pegadas); ya no es fuente de nada, el vigente es el rehecho.
+  R3_ssee_kids_S8:            src/p06_growth/analiza_ssee_R3.py
   boss_aisla_neutrinos:       src/p06_growth/boss_aisla_neutrinos.py
   boss_control_kmax0.060:     src/p06_growth/boss_control.py
   boss_control_kmax0.080:     src/p06_growth/boss_control.py

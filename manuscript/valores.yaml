@@ -24,6 +24,30 @@ p_dchi2_k1000:     {fuente: "results/logs/kids_publicados.json#seleccion_kids100
 chi2_k1000_publicado: {fuente: "results/logs/kids_publicados.json#kids1000_maxpost.chi2", formato: ".2f"}
 S8_legacy_dato:    {fuente: "results/logs/kids_publicados.json#kids_legacy.S8", formato: ".4f"}
 S8_legacy_dato_sigma: {fuente: "results/logs/kids_publicados.json#kids_legacy.S8_sigma", formato: ".4f"}
+# S8: titular KiDS-Legacy (prediccion) y antecedente KiDS-1000 (R3 vigente = burn-in por cadena) — 2026-10-02
+S8_leg_pred:       {fuente: "results/logs/kids_publicados.json#s8.legacy_prediccion.S8", formato: ".4f"}
+S8_leg_tension:    {fuente: "results/logs/kids_publicados.json#s8.legacy_prediccion.tension_sigma", formato: ".2f"}
+S8_k1000_ssee:     {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.S8", formato: ".4f"}
+S8_k1000_ssee_sigma: {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.S8_sigma", formato: ".4f"}
+sigma8_k1000_ssee: {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.sigma8", formato: ".4f"}
+sigma8_k1000_ssee_sigma: {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.sigma8_sigma", formato: ".4f"}
+S8_k1000_ssee_tension: {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.tension_sigma", formato: ".2f"}
+S8_k1000_lcdm_tension: {fuente: "results/logs/kids_publicados.json#s8.k1000_lcdm.tension_sigma", formato: ".2f"}
+S8_k1000_lcdm:     {fuente: "results/logs/kids_publicados.json#s8.k1000_lcdm.S8", formato: ".4f"}
+S8_k1000_lcdm_sigma: {fuente: "results/logs/kids_publicados.json#s8.k1000_lcdm.S8_sigma", formato: ".4f"}
+logA_k1000: {fuente: "results/logs/kids_publicados.json#s8.logA.k1000", formato: ".3f"}
+logA_k1000_sigma: {fuente: "results/logs/kids_publicados.json#s8.logA.k1000_sigma", formato: ".3f"}
+logA_k1000_vs_cmb: {fuente: "results/logs/kids_publicados.json#s8.logA.k1000_vs_cmb_blanco", formato: ".1f"}
+logA_leg_vs_cmb: {fuente: "results/logs/kids_publicados.json#s8.logA.legacy_vs_cmb_blanco", formato: ".2f"}
+logA_k1000_vs_b1: {fuente: "results/logs/kids_publicados.json#s8.logA.k1000_vs_b1", formato: ".1f"}
+logA_k1000_vs_b1_dif: {fuente: "results/logs/kids_publicados.json#s8.logA.k1000_vs_b1_dif", formato: ".3f"}
+logA_k1000_vs_b1_dif_sigma: {fuente: "results/logs/kids_publicados.json#s8.logA.k1000_vs_b1_dif_sigma", formato: ".3f"}
+logA_entre_entregas: {fuente: "results/logs/kids_publicados.json#s8.logA.entre_entregas", formato: ".1f"}
+neff_k1000:        {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.n_eff", formato: ".0f"}
+Rm1_k1000:         {fuente: "results/logs/kids_publicados.json#s8.k1000_ssee.Rminus1", formato: ".3f"}
+S8_k1000_dS8:      {fuente: "results/logs/kids_publicados.json#s8.k1000_dS8_lcdm_menos_ssee", formato: ".4f"}
+S8_k1000_dato:     {fuente: "results/logs/kids_publicados.json#s8.k1000_dato.S8", formato: ".3f"}
+S8_k1000_dato_sigma: {fuente: "results/logs/kids_publicados.json#s8.k1000_dato.S8_sigma", formato: ".3f"}
 # f_screen en sus tres piezas — src/p10_uv/ssee_paper10_verification.py
 sK_IR:             {fuente: "results/logs/p10_uv_fscreen.json#s_K_IR", formato: ".6f"}
 sK_UV_corr:        {fuente: "results/logs/p10_uv_fscreen.json#s_K_UV_corr", formato: ".6f"}

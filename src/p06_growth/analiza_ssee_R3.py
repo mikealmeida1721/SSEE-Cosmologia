@@ -15,11 +15,16 @@ COMO (el metodo que el propio log declara):
     fondo fijo de SSEE (valido porque el fondo NO varia en la cadena);
   - S8 = sigma8 * sqrt(Omega_m / 0.3), Omega_m de los parametros de CAMB;
   - chi2: media pesada y minimo sobre las filas post burn-in; dof = 225 - 9.
-CONTROL (R53): cada numero se compara con el del log viejo. Los que dependen
-solo de la cadena tienen que coincidir a 1e-6 relativo; sigma8/S8 dependen
-ademas de CAMB en el fondo, que cambio de H0_ALG a H0_GLOBAL el 09-28 (4e-6),
-asi que se les pide 1e-4 relativo. Si algo no pasa, se escribe igual el log
-pero con `control.pasa = false` y se dice.
+CONTROL (R53): el log viejo NO cortaba el 30 % de cada cadena, como dice: lo
+cortaba sobre las 4 cadenas PEGADAS (asi se descarta la cadena 1 entera y parte
+de la 2). Hallado el 2026-10-02. El control rehace la lectura con ESE metodo y
+tiene que reproducir el log viejo campo por campo: 1e-6 relativo en lo que sale
+solo de la cadena, y 1e-4 en sigma8/S8, que dependen ademas de CAMB en el fondo
+(cambio de H0_ALG a H0_GLOBAL el 09-28, 4e-6). Si pasa, la diferencia entre el
+viejo y el vigente se explica entera por el corte del burn-in, y no por otra cosa.
+DECISION (2026-10-02): rige el metodo declarado (por cadena, el mismo que R4
+en analiza_lcdm_R4.py). El viejo queda como historico. Mike delego la decision
+(no es fisica: el cambio en S8 es de 0.02 sigma y chi2_min es identico).
 
 Salida: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json (misma estructura que el viejo).
 """
@@ -40,8 +45,7 @@ from procedencia import con_acta  # noqa: E402
 
 CAD = "/mnt/datos/SSEE_data/chains_p6/kids"
 VIEJO = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8.json")
-# Mientras Mike decide (2026-09-30): el viejo NO se reproduce (ver control), asi
-# que la lectura rehecha va a un archivo aparte y el paper sigue citando el viejo.
+# El vigente (metodo declarado) va a este archivo; los papers lo citan por \val.
 OUT = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8_rehecho.json")
 BURN = 0.30
 N_DATOS = 225   # ORIGEN-VALOR: 225 — puntos xi+- de KiDS-1000 tras la mascara de escalas (el log viejo, campo "datos")
@@ -51,17 +55,23 @@ viejo = json.load(open(VIEJO))
 rutas = sorted(glob.glob(f"{CAD}/ssee.[1-4].txt"))
 with open(rutas[0]) as f:
     col = f.readline().lstrip("#").split()
-bloques, lineas = [], []
+crudas, lineas = [], []
 for r in rutas:
     X = np.loadtxt(r)
     lineas.append(len(X))
-    bloques.append(X[int(BURN * len(X)):])
-X = np.vstack(bloques)
+    crudas.append(X)
 c = {n: i for i, n in enumerate(col)}
-w = X[:, c["weight"]]
 
 
-def mom(v):
+def corta(metodo):
+    """'por_cadena' = el metodo declarado; 'pegadas' = lo que hizo el log viejo."""
+    if metodo == "por_cadena":
+        return np.vstack([X[int(BURN * len(X)):] for X in crudas])
+    T = np.vstack(crudas)
+    return T[int(BURN * len(T)):]
+
+
+def mom(v, w):
     m = float(np.sum(w * v) / np.sum(w))
     return dict(media=m, sigma=float(math.sqrt(np.sum(w * (v - m) ** 2) / np.sum(w))))
 
@@ -72,42 +82,55 @@ r0, = K.run_camb(omch2=bg["omch2"], ombh2=bg["ombh2"], h0=bg["h0"], ns=bg["ns"],
 p = r0.Params
 om = (p.omch2 + p.ombh2 + p.omnuh2) / (p.H0 / 100.0) ** 2
 s8ref = float(r0.get_sigma8_0())
-As = np.exp(X[:, c["logA"]]) * 1e-10
-sg8 = s8ref * np.sqrt(As / AS_REF)
-chi2 = X[:, c["chi2"]]
-nuevo = dict(viejo)
-nuevo.update(
-    lineas_por_cadena=lineas, burn_in_frac=BURN, n_filas_post_burnin=int(len(X)),
-    n_efectivas=float(np.sum(w)), logA=mom(X[:, c["logA"]]), sigma8=mom(sg8),
-    S8=mom(sg8 * math.sqrt(om / 0.3)), chi2=mom(chi2),
-    **{k: mom(X[:, c[k]]) for k in ("halo_A", "A_IA", "dz1", "dz2", "dz3", "dz4", "dz5", "delta_c")},
-    chi2_min=float(chi2.min()), dof=N_DATOS - len(viejo["parametros_libres"]),
-    chi2_min_por_dof=float(chi2.min()) / (N_DATOS - len(viejo["parametros_libres"])),
-    fondo_fijo=dict(viejo["fondo_fijo"], Omega_m=om),
-    sigma8_ref_calibracion=dict(viejo["sigma8_ref_calibracion"], sigma8_ref=s8ref, As_ref=AS_REF))
+
+
+def lee(X):
+    w = X[:, c["weight"]]
+    As = np.exp(X[:, c["logA"]]) * 1e-10
+    sg8 = s8ref * np.sqrt(As / AS_REF)
+    chi2 = X[:, c["chi2"]]
+    out = dict(viejo)
+    out.update(
+        lineas_por_cadena=lineas, burn_in_frac=BURN, n_filas_post_burnin=int(len(X)),
+        n_efectivas=float(np.sum(w)), logA=mom(X[:, c["logA"]], w), sigma8=mom(sg8, w),
+        S8=mom(sg8 * math.sqrt(om / 0.3), w), chi2=mom(chi2, w),
+        **{k: mom(X[:, c[k]], w) for k in ("halo_A", "A_IA", "dz1", "dz2", "dz3", "dz4", "dz5", "delta_c")},
+        chi2_min=float(chi2.min()), dof=N_DATOS - len(viejo["parametros_libres"]),
+        chi2_min_por_dof=float(chi2.min()) / (N_DATOS - len(viejo["parametros_libres"])),
+        fondo_fijo=dict(viejo["fondo_fijo"], Omega_m=om),
+        sigma8_ref_calibracion=dict(viejo["sigma8_ref_calibracion"], sigma8_ref=s8ref, As_ref=AS_REF))
+    return out
+
+
+nuevo = lee(corta("por_cadena"))
+nuevo["burn_in_metodo"] = "30 % de las filas de CADA cadena (el declarado; el mismo que R4)"
+control = lee(corta("pegadas"))
 nuevo["comparacion_KiDS"] = dict(viejo["comparacion_KiDS"])
 nuevo["comparacion_KiDS"]["tension_sigma"] = (nuevo["S8"]["media"] - viejo["comparacion_KiDS"]["S8_publicado"]) / \
     math.hypot(nuevo["S8"]["sigma"], viejo["comparacion_KiDS"]["err_publicado"])
 
-# CONTROL campo por campo
+# CONTROL campo por campo: el metodo de las cadenas pegadas tiene que dar el log viejo
 fallos, tol_cadena, tol_camb = [], 1e-6, 1e-4
 for k in ("logA", "chi2", "halo_A", "A_IA", "dz1", "dz2", "dz3", "dz4", "dz5", "delta_c", "sigma8", "S8"):
     tol = tol_camb if k in ("sigma8", "S8") else tol_cadena
     for s in ("media", "sigma"):
-        a, b = viejo[k][s], nuevo[k][s]
+        a, b = viejo[k][s], control[k][s]
         if abs(a - b) > tol * max(abs(a), 1e-12):
-            fallos.append(f"{k}.{s}: viejo {a} nuevo {b}")
+            fallos.append(f"{k}.{s}: viejo {a} pegadas {b}")
 for k in ("chi2_min", "n_efectivas", "n_filas_post_burnin"):
-    if abs(viejo[k] - nuevo[k]) > tol_cadena * abs(viejo[k]):
-        fallos.append(f"{k}: viejo {viejo[k]} nuevo {nuevo[k]}")
+    if abs(viejo[k] - control[k]) > tol_cadena * abs(viejo[k]):
+        fallos.append(f"{k}: viejo {viejo[k]} pegadas {control[k]}")
 if viejo["lineas_por_cadena"] != lineas:
     fallos.append(f"lineas_por_cadena: viejo {viejo['lineas_por_cadena']} nuevo {lineas}")
-nuevo["control_contra_log_viejo"] = dict(pasa=not fallos, fallos=fallos,
-                                         tolerancias=dict(cadena=tol_cadena, camb=tol_camb))
+nuevo["control_contra_log_viejo"] = dict(
+    pasa=not fallos, fallos=fallos, tolerancias=dict(cadena=tol_cadena, camb=tol_camb),
+    que_prueba="el log viejo se reproduce cortando el burn-in sobre las 4 cadenas pegadas; "
+               "la diferencia con el vigente es SOLO ese corte",
+    viejo_S8=viejo["S8"], vigente_menos_viejo_S8_en_sigma=(nuevo["S8"]["media"] - viejo["S8"]["media"]) / nuevo["S8"]["sigma"])
 nuevo["fecha_analisis"] = str(__import__("datetime").datetime.now().isoformat(timespec="seconds"))
 json.dump(con_acta(nuevo, __file__, entradas=rutas + [VIEJO]), open(OUT, "w"), indent=1)
 print(f"  S8 {nuevo['S8']['media']:.4f} ± {nuevo['S8']['sigma']:.4f}  sigma8 {nuevo['sigma8']['media']:.4f}"
       f"  chi2_min {nuevo['chi2_min']:.5f}  N_eff {nuevo['n_efectivas']:.0f}")
-print(f"  control contra el log viejo: {'PASA' if not fallos else 'NO PASA'}")
+print(f"  control (cadenas pegadas reproducen el log viejo): {'PASA' if not fallos else 'NO PASA'}")
 for x in fallos:
     print("   ", x)

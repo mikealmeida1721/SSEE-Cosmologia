@@ -136,10 +136,11 @@ def main():
         "no_establece": "la barra +/- 0.006 de los papers viene de antes y no se "
                         "ha recomputado aqui",
         "superado_por": {
-            "valor": "S8 = 0.7555 +/- 0.0192 (0.11 sigma vs KiDS-1000)",
-            "log": "results/logs/growth_2026-07/R3_ssee_kids_S8.json",
-            "razon": "A_s libre contra el dato crudo; el 3.5 sigma del techo era "
-                     "artefacto de fijar A_s",
+            "valor": "S8 predicho contra KiDS-Legacy con A_s clavado al CMB del modelo "
+                     "(antes: KiDS-1000 con A_s libre)",
+            "log": "results/logs/kids_publicados.json#s8",
+            "razon": "contra el dato crudo y con el A_s del propio modelo; el 3.5 sigma del "
+                     "techo era artefacto de fijar A_s al de Planck",
         },
     }
     SALIDA.parent.mkdir(parents=True, exist_ok=True)

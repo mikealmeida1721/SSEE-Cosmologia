@@ -47,10 +47,15 @@ UMBRAL_CONTROL = 0.05
 CASOS = {
     "boss": dict(dir=CAD / "boss", pref="ssee", papel="CONTROL — aqui SI hay "
                  "desplazamiento medido por otra via (perfil - marginal = 0.1811)",
-                 publicado=2.763639661108589, perfil_conocido=2.9447867806062953),
+                 # leidos de R1R2_boss_lpt_cobaya.json (2026-10-02; antes tecleados: 2.7636 era la cadena vieja)
+                 publicado=json.load(open(REPO / "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"))["ssee"]["logA"],
+                 perfil_conocido=json.load(open(REPO / "results/logs/growth_2026-07/"
+                                                "R1R2_boss_lpt_cobaya.json"))["perfil_vs_marginal"]["perfil_logA"]),
     "kids": dict(dir=CAD / "kids", pref="ssee", papel="la fila que importa: una "
                  "de las dos mitades de la tension de 3.46 sigma",
-                 publicado=2.8627107488616086, perfil_conocido=None),
+                 publicado=json.load(open(REPO / "results/logs/growth_2026-07/"
+                                          "R3_ssee_kids_S8_rehecho.json"))["logA"]["media"],
+                 perfil_conocido=None),
 }
 
 
@@ -136,9 +141,9 @@ def main():
                  "estan medidos con la misma regla",
         hallazgo_previo=dict(
             cmb="3.0448 sale de SSEE/mejor/logA de una MINIMIZACION -> PERFIL",
-            kids="2.8627 sale de logA/media de una cadena MCMC -> MARGINAL",
+            kids="el logA de KiDS sale de logA/media de una cadena MCMC -> MARGINAL",
             log_cmb="results/logs/cmb_dbic_tau_ajustado.json",
-            log_kids="results/logs/growth_2026-07/R3_ssee_kids_S8.json"),
+            log_kids="results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json"),
         control=dict(criterio="ve el desplazamiento conocido de BOSS (>%.2f)"
                      % UMBRAL_CONTROL, medido=ctrl, pasa=bool(pasa)),
         casos=res,

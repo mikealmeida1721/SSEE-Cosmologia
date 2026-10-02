@@ -42,8 +42,12 @@ LEG = ("/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/"
 K1K = ("/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/"
        "chains_and_config_files/main_chains_iterative_covariance/xipm/"
        "chain/maxpost_multinest_start_C.txt")
-R3 = os.path.join(R, "results/logs/growth_2026-07/R3_ssee_kids_S8.json")
+R3 = os.path.join(R, "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json")
 R4 = os.path.join(R, "results/logs/growth_2026-07/R4_lcdm_kids_S8.json")
+# Prediccion de S8 con A_s clavado al CMB del modelo (el titular desde 2026-09-20)
+PRED = os.path.join(R, "results/logs/s8_kids_legacy_camb.json")
+# logA que el CMB completo (plik, B1) le pide a SSEE: para la distancia KiDS-1000 <-> CMB
+B1 = os.path.join(R, "results/logs/s8_desde_b1.json")
 
 
 def _tabla(ruta):
@@ -86,7 +90,47 @@ dk = r4["n_parametros_libres"] - r3["n_parametros_libres"]
 seleccion = dict(N=N3, control_N_pasa=bool(N3 == N4), delta_chi2=dchi2, delta_k=dk,
                  delta_AIC=dchi2 - 2 * dk, delta_BIC=dchi2 - dk * math.log(N3),
                  p_delta_chi2=float(_chi2.sf(dchi2, dk)))
+# S8 en un solo lugar (2026-10-02): el titular (KiDS-Legacy, prediccion con 0
+# libres cosmologicos) y el antecedente (KiDS-1000, A_s ajustado; R3 vigente y R4).
+_pr = json.load(open(PRED))
+pred = _pr["unif"]["S8"]
+b1 = json.load(open(B1))["filas"]["SSEE"]
+la, sla = r3["logA"]["media"], r3["logA"]["sigma"]
+# Distancias en logA (2026-10-02; antes tecleadas en P6/PRD/Sealed como 3.4, 3.5 y 2.5 sigma):
+#  - contra el blanco del CMB del modelo (perfil, sin barra): la sigma es la de KiDS
+#  - contra el ajuste MCMC a plik (B1, con barra): en cuadratura
+#  - entre las dos entregas de KiDS, con el mismo fondo: en cuadratura
+logA = dict(
+    k1000=la, k1000_sigma=sla,
+    legacy=_pr["libre"]["logA"], legacy_sigma=_pr["libre"]["logA_sigma"], cmb_blanco=_pr["unif"]["logA"],
+    k1000_vs_cmb_blanco=(_pr["unif"]["logA"] - la) / sla,
+    legacy_vs_cmb_blanco=(_pr["unif"]["logA"] - _pr["libre"]["logA"]) / _pr["libre"]["logA_sigma"],
+    b1=b1["logA"], b1_sigma=b1["logA_sigma"], k1000_vs_b1_dif=b1["logA"] - la,
+    k1000_vs_b1_dif_sigma=math.hypot(sla, b1["logA_sigma"]),
+    k1000_vs_b1=(b1["logA"] - la) / math.hypot(sla, b1["logA_sigma"]),
+    entre_entregas=(_pr["libre"]["logA"] - la) / math.hypot(sla, _pr["libre"]["logA_sigma"]))
+
+
+def _t(a, sa, b, sb):
+    return abs(a - b) / math.hypot(sa, sb)
+
+
+s8 = dict(
+    legacy_prediccion=dict(S8=pred, tension_sigma=abs(pred - media) / sig,
+                           nota="prediccion sin barra: A_s clavado al CMB del modelo; la sigma es la del dato"),
+    k1000_ssee=dict(n_eff=r3["n_efectivas"], Rminus1=r3["convergencia"]["Rminus1_final"], S8=r3["S8"]["media"], S8_sigma=r3["S8"]["sigma"], sigma8=r3["sigma8"]["media"],
+                    sigma8_sigma=r3["sigma8"]["sigma"],
+                    tension_sigma=_t(r3["S8"]["media"], r3["S8"]["sigma"], r3["comparacion_KiDS"]["S8_publicado"],
+                                     r3["comparacion_KiDS"]["err_publicado"])),
+    k1000_lcdm=dict(S8=r4["S8"]["media"], S8_sigma=r4["S8"]["sigma"],
+                    tension_sigma=_t(r4["S8"]["media"], r4["S8"]["sigma"], r4["comparacion_KiDS"]["S8_publicado"],
+                                     r4["comparacion_KiDS"]["err_publicado"])),
+    logA=logA,
+    k1000_dS8_lcdm_menos_ssee=r4["S8"]["media"] - r3["S8"]["media"],
+    k1000_dato=dict(S8=r3["comparacion_KiDS"]["S8_publicado"], S8_sigma=r3["comparacion_KiDS"]["err_publicado"],
+                    fuente=r3["comparacion_KiDS"]["fuente"]))
 out = dict(
+    s8=s8,
     fecha=str(__import__("datetime").date.today()),
     kids_legacy=dict(S8=media, S8_sigma=sig, S8_sin_nu_s8_input=media_col, desvio_max_identidad=desvio_identidad,
                      n_muestras=int(len(w)), n_eff=float(1.0 / np.sum(w ** 2)),
@@ -98,7 +142,7 @@ out = dict(
                        z=(r3["chi2_min"] - r3["dof"]) / math.sqrt(2 * r3["dof"])),
              lcdm=dict(chi2=r4["chi2_min"], dof=r4["dof"], PTE=float(_chi2.sf(r4["chi2_min"], r4["dof"])),
                        z=(r4["chi2_min"] - r4["dof"]) / math.sqrt(2 * r4["dof"]))))
-json.dump(con_acta(out, __file__, entradas=[LEG, K1K, R3, R4]),
+json.dump(con_acta(out, __file__, entradas=[LEG, K1K, R3, R4, PRED, B1]),
           open(os.path.join(R, "results/logs/kids_publicados.json"), "w"), indent=1)
 L, P = out["kids_legacy"], out["PTE"]
 print(f"  KiDS-Legacy S8 {L['S8']:.4f} ± {L['S8_sigma']:.4f}  (sin nu {L['S8_sin_nu_s8_input']:.4f}; identidad {L['desvio_max_identidad']:.1e}) control {L['control_pasa']}")

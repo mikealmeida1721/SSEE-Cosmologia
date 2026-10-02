@@ -69,6 +69,10 @@ ING = ["ombh2", "omch2", "H0", "ns"]
 LOGA = {
     "boss": (2.7636396611, 0.0981316176,
              "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json (ssee)"),
+    # Del R3 VIEJO (burn-in sobre las cadenas pegadas). El vigente
+    # (R3_ssee_kids_S8_rehecho.json, 2026-10-02) da 2.8637 +- 0.0499: 0.02 sigma.
+    # No se re-corre (26 h de CPU) porque ningun documento cita este estudio;
+    # su log sigue reproducible con estos valores, que son los del log nombrado.
     "kids": (2.8627107489, 0.0507836451,
              "results/logs/growth_2026-07/R3_ssee_kids_S8.json"),
     "fondo": (3.0448, None,
