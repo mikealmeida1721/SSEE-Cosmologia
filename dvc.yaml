@@ -199,7 +199,7 @@ stages:
       - results/logs/lya_auditoria.json:
           cache: false
   hiclass_campo:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p07_eft/hiclass_campo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/hiclass_campo.py
     deps:
       - src/p07_eft/hiclass_campo.py
       - src/procedencia.py
@@ -243,7 +243,7 @@ stages:
       - results/logs/dic_from_chains.log:
           cache: false
   ajuste_conjunto_SSEE:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
     deps:
       - src/p03_cmb/ajuste_conjunto_wc_ns.py
       - src/p03_cmb/cmb_eval.py
@@ -255,7 +255,7 @@ stages:
       - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json:
           cache: false
   ajuste_conjunto_LCDM:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
     deps:
       - src/p03_cmb/ajuste_conjunto_wc_ns.py
       - src/p03_cmb/cmb_eval.py
@@ -292,7 +292,7 @@ stages:
       - results/logs/edad_universo.json:
           cache: false
   class_picos:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/class_picos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/class_picos.py
     deps:
       - src/p03_cmb/class_picos.py
       - src/procedencia.py
@@ -429,7 +429,7 @@ stages:
       - results/logs/leer_conjunta_b3.log:
           cache: false
   b1_min_ssee:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
     deps:
       - src/p03_cmb/b1_minimiza.py
       - src/p03_cmb/ssee_paper3_b1_mcmc.py
@@ -446,7 +446,7 @@ stages:
       - results/logs/b1_min_ssee.log:
           cache: false
   b1_min_lcdm:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
     deps:
       - src/p03_cmb/b1_minimiza.py
       - src/p03_cmb/ssee_paper3_b1_mcmc.py
@@ -460,7 +460,7 @@ stages:
       - results/logs/b1_min_lcdm.log:
           cache: false
   b1_k2:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py > results/logs/b1_k2.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py > results/logs/b1_k2.log 2>&1
     deps:
       - src/p03_cmb/b1_k2_lee.py
       - src/p03_cmb/ssee_paper3_b1_mcmc.py
@@ -496,7 +496,7 @@ stages:
       - results/logs/analiza_boss_R1R2.log:
           cache: false
   fsigma8_canonico:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p03_cmb/recalc_fsigma8_canonical.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/recalc_fsigma8_canonical.py
     deps:
       - src/p03_cmb/recalc_fsigma8_canonical.py
       - src/procedencia.py
@@ -558,7 +558,7 @@ stages:
       - results/logs/ganancia_wc_libre.json:
           cache: false
   fondos_exponenciales:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p07_eft/fondos_exponenciales.py > results/logs/fondos_exponenciales.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondos_exponenciales.py > results/logs/fondos_exponenciales.log 2>&1
     deps:
       - src/p07_eft/fondos_exponenciales.py
       - src/p07_eft/fondo_disparo.py
