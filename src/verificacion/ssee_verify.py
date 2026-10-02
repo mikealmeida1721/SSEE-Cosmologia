@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 6, "cajones": 147}   # 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
+_TOPE_R74 = {"logs": 2, "canonical": 2, "papers": 3, "cajones": 141}   # 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -4142,7 +4142,7 @@ try:
             # frase, una afirmando y otra contando que estuvo abierto.
             ("tracked as open problem OP-14 in the register", True),
             ("was tracked as open problem OP-14; now resolved", False),
-            ("with the remaining open problems OP-15 and OP-16 for the dark sector", False),
+            ("with the remaining open problems OP-19 and OP-16 for the dark sector", False),   # 2026-10-01: OP-15 se cerro; OP-19 sigue abierto
             # CONTROL del sufijo: el padre cerrado se marca, el hijo abierto no.
             ("what remains open is OP-22, the IS normalisation", True),
             ("what remains open is OP-22b, the field-to-fluid map", False),
