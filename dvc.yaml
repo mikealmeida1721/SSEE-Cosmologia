@@ -647,6 +647,11 @@ stages:
     - results/logs/bao_lcdm_libre.json
     - results/logs/des_y3_en_el_clavo_ssee.json
     - results/logs/des_y3_en_el_clavo_lcdm_planck.json
+    - results/logs/des_y3_en_el_clavo_ssee_nla.json
+    - results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json
+    - results/logs/cmb_dbic_mnu_propia.json
+    - results/logs/b1_k2.json
+    - results/logs/kids_legacy_bic.json
     outs:
     - results/logs/sondas_ssee_vs_lcdm.json:
         cache: false
