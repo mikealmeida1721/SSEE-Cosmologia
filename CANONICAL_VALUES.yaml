@@ -243,7 +243,7 @@ canonical:
   # log: results/logs/mcmc_paper2_reframe.json · distancias: results/logs/h0_distancias_hglob.json
   # (script src/p02_mcmc/h0_distancias.py). Era 67.79±0.35 (0.50σ H_alg, 0.66σ Planck).
   H0_posterior_km_s_Mpc: 67.82   # FUENTE: results/logs/mcmc_paper2_reframe.json (etapa DVC mcmc_paper2_reframe, semilla fija: determinista) — 67.8226 ± 0.4126 — 0.34σ de H_glob (σ del posterior), 0.68σ de Planck 67.36±0.54 (2026-10-01; era 67.8244±0.4133 sin semilla en emcee)
-  H0_desi_plano_km_s_Mpc: 67.79  # 67.7931 ± 0.4603 — DESI sola, prior plano: 0.37σ de H_glob, 0.61σ de Planck (era 67.66)
+  H0_desi_plano_km_s_Mpc: 67.78  # FUENTE: results/logs/h0_four_priors.json (etapa h0_four_priors, semilla fija) — 67.7843 ± 0.4554 — DESI sola, prior plano: 0.39σ de H_glob, 0.60σ de Planck (2026-10-01; era 67.7931 ± 0.4603 sin semilla, y 67.66 antes)
   chi2_BAO_Hglob:      11.41      # 13 puntos DESI DR2 en H_glob, r_d CAMB (log chi2_bao_posterior.log)
   chi2_BAO_posterior:  10.43      # en el posterior 67.8226 (results/logs/chi2_bao_posterior.log, re-corrido 2026-10-01)
   Omega_b_h2_posterior: 0.02198   # posterior Ω_b·h² (mcmc_paper2_reframe.json, 2026-09-28; era 0.02207)

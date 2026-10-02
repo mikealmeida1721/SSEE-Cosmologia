@@ -1,0 +1,45 @@
+# ACTA-PROCEDENCIA {"commit": "87290f8183c109190fd17588446e1f3845c7bcc0", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p09_hubble/ssee_h0_prior_experiment.py", "script_sha256": "013f0a2f97f28c66ae90dec1ff76a7325bde27a97aab0ac44fbf926442dd66f5", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"}, "argv": ["src/p09_hubble/ssee_h0_prior_experiment.py"], "fecha": "2026-10-01T23:00:25", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+==============================================================================
+EXPERIMENTO H₀: tres priors, mismo modelo SSEE, mismos datos DESI+BBN
+==============================================================================
+Prior Planck: N(67.36, 0.54)
+Prior MIRA:   N(67.08, 0.54)  [= H₀ Paper 3 con Ω_m,CMB=0.320]
+Prior SSEE:   N(67.9621, 0.9676975244101783)
+Prior plano:  U(50, 90)
+
+[Prior Planck] arrancando (50w × 10000s)...
+  H₀ = 67.611 +0.347/-0.341  | MAP=67.609  ln P_MAP=-5.47  | accept=0.717  | 27.7s
+
+[Prior MIRA] arrancando (50w × 10000s)...
+  H₀ = 67.495 +0.344/-0.347  | MAP=67.493  ln P_MAP=-5.78  | accept=0.716  | 27.6s
+
+[Prior SSEE] arrancando (50w × 10000s)...
+  H₀ = 67.824 +0.410/-0.411  | MAP=67.822  ln P_MAP=-5.30  | accept=0.716  | 27.7s
+
+[Prior plano] arrancando (50w × 10000s)...
+  H₀ = 67.784 +0.453/-0.449  | MAP=67.788  ln P_MAP=-5.28  | accept=0.716  | 27.4s
+
+==============================================================================
+RESULTADO
+==============================================================================
+
+  Prior                  H₀ mediana          ±     H₀ MAP   ln L_BAO
+  ----------------------------------------------------------------
+  Prior Planck               67.611      0.346     67.609      -5.12
+  Prior MIRA                 67.495      0.348     67.493      -5.13
+  Prior SSEE                 67.824      0.413     67.822      -5.22
+  Prior plano                67.784      0.455     67.788      -5.19
+
+  Distancias entre medianas:
+    |Planck − SSEE|   = 0.213 km/s/Mpc
+    |Planck − Plano|  = 0.173 km/s/Mpc
+    |SSEE   − Plano|  = 0.040 km/s/Mpc
+
+  Interpretación:
+
+  → DESI puro prefiere H₀ ≈ 67.78, MÁS CERCA de H_glob que de Planck
+    H_glob de SSEE gana sin necesidad de prior — predicción robusta
+
+Figura: results/figures/fig_h0_three_priors.pdf
+Cadenas: results/logs/h0_four_priors.npz
+Resumen: results/logs/h0_four_priors.json

@@ -15,15 +15,16 @@
  "distancias": "CAMB (bao_camb.py)",
  "sigma_a_Hglob": 0.3382253990130272,
  "sigma_a_Planck": 0.6807441574953138,
+ "sigma_a_desi_plano": 0.06229419455332523,
  "H0_planck": 67.36,
  "sig_H0_planck": 0.54,
  "semilla": 42,
  "_procedencia": {
-  "commit": "2a4d76415bf1c32f26efede21f6e427432d96551",
+  "commit": "87290f8183c109190fd17588446e1f3845c7bcc0",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_paper2_mcmc_reframe.py",
-  "script_sha256": "3675b2d098284b972342567231804c7daaf4bf2c8726d9d6c7e924ac8f2525b8",
+  "script_sha256": "793f100e428a10d0731c78eb924b5d27a88c6087e4274c75424e840a060517c6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"
@@ -31,7 +32,7 @@
   "argv": [
    "src/p02_mcmc/ssee_paper2_mcmc_reframe.py"
   ],
-  "fecha": "2026-10-01T22:32:36",
+  "fecha": "2026-10-01T23:08:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

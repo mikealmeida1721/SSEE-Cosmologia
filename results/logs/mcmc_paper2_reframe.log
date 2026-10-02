@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "2a4d76415bf1c32f26efede21f6e427432d96551", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_paper2_mcmc_reframe.py", "script_sha256": "3675b2d098284b972342567231804c7daaf4bf2c8726d9d6c7e924ac8f2525b8", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"}, "argv": ["src/p02_mcmc/ssee_paper2_mcmc_reframe.py"], "fecha": "2026-10-01T22:26:52", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "87290f8183c109190fd17588446e1f3845c7bcc0", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_paper2_mcmc_reframe.py", "script_sha256": "793f100e428a10d0731c78eb924b5d27a88c6087e4274c75424e840a060517c6", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"}, "argv": ["src/p02_mcmc/ssee_paper2_mcmc_reframe.py"], "fecha": "2026-10-01T23:02:18", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
 [   0.0m] ======================================================================
 [   0.0m] SSEE — MCMC PRODUCCIÓN bajo prior H_glob (cascada SH0ES, reframe ω_m-directo)
 [   0.0m] ======================================================================
@@ -35,7 +35,7 @@ Burn-in 5000 steps...
 [   1.6m]   12000/25000 steps  accept=0.715
 [   1.7m]   12500/25000 steps  accept=0.715
 [   1.8m]   13000/25000 steps  accept=0.715
-[   1.9m]   13500/25000 steps  accept=0.715
+[   1.8m]   13500/25000 steps  accept=0.715
 [   2.0m]   14000/25000 steps  accept=0.715
 [   2.1m]   14500/25000 steps  accept=0.715
 [   2.2m]   15000/25000 steps  accept=0.715
@@ -46,10 +46,10 @@ Burn-in 5000 steps...
 [   2.7m]   17500/25000 steps  accept=0.715
 [   2.9m]   18000/25000 steps  accept=0.715
 [   3.0m]   18500/25000 steps  accept=0.715
-[   3.2m]   19000/25000 steps  accept=0.715
+[   3.1m]   19000/25000 steps  accept=0.715
 [   3.3m]   19500/25000 steps  accept=0.715
 [   3.5m]   20000/25000 steps  accept=0.715
-[   3.7m]   20500/25000 steps  accept=0.715
+[   3.6m]   20500/25000 steps  accept=0.715
 [   3.8m]   21000/25000 steps  accept=0.715
 [   4.0m]   21500/25000 steps  accept=0.715
 [   4.2m]   22000/25000 steps  accept=0.715
@@ -76,7 +76,7 @@ Comparación con resultados previos:
 [   5.7m]   Retirado (prior MIRA 67.037, 100w×25k): H₀ = 66.53 ± 0.44
 [   5.7m]   ESTE (prior H_glob 67.962±0.968, 100w×25k): H₀ = 67.823 ± 0.413
 [   5.7m] 
-  Distancia a DESI-puro (67.793, prior plano, h0_four_priors.json): 0.030 km/s/Mpc
+  Distancia a DESI-puro (67.784, prior plano, h0_four_priors.json): 0.038 km/s/Mpc
 [   5.7m] 
 Figura: results/figures/fig_corner_ssee_halg_prior.pdf
 [   5.7m]   distancia a H_glob 0.338 sigma · a Planck 0.681 sigma

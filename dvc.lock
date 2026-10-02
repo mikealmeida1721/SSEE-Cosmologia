@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: d5c12eb4cc96d1cca35ce0af4f8ae1e6
-      size: 57795
+      md5: 534d22979f9e9d84beae4c288e034791
+      size: 58425
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -129,6 +129,10 @@ stages:
       hash: md5
       md5: 1de0cce05ee34da34fe8f16d8f9f5f69
       size: 4421
+    - path: results/logs/h0_four_priors.json
+      hash: md5
+      md5: 452a28d03f400637e87b2a7f6ad8c27f
+      size: 1275
     - path: results/logs/hiclass_campo.json
       hash: md5
       md5: 191482341f91d3ecc18f7d00602bf42e
@@ -155,8 +159,8 @@ stages:
       size: 3798
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
-      md5: dc3b34c5d61d466ec5f4c22f67794b36
-      size: 1428
+      md5: 933eee15f9d6d34a6ef6a7f6d2132ad8
+      size: 1472
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
@@ -216,8 +220,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 34885d1c2a95fe435560fdfe3de1faad
-      size: 73501
+      md5: fae2dd1813ee94b2a6966f08ebc26323
+      size: 74214
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1680,8 +1684,8 @@ stages:
       size: 2650
     - path: results/logs/h0_four_priors.json
       hash: md5
-      md5: c6639ba24b1d2425ae8d043fc2b6d8e0
-      size: 1196
+      md5: 452a28d03f400637e87b2a7f6ad8c27f
+      size: 1275
     - path: src/bao_camb.py
       hash: md5
       md5: 17e888f2a53c3953da7563d6c7a37e57
@@ -1692,8 +1696,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/ssee_paper2_mcmc_reframe.py
       hash: md5
-      md5: 151d0d892b5ea509f84ffc95c49d311f
-      size: 14351
+      md5: 482b0e2472943850711021d95e91970f
+      size: 14685
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -1713,15 +1717,15 @@ stages:
     outs:
     - path: results/figures/fig_corner_ssee_halg_prior.pdf
       hash: md5
-      md5: 8bd4d4f7669d4f40e88030b480559444
+      md5: 7ef4f35a1257915f80124a673093f651
       size: 44258
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
-      md5: dc3b34c5d61d466ec5f4c22f67794b36
-      size: 1428
+      md5: 933eee15f9d6d34a6ef6a7f6d2132ad8
+      size: 1472
     - path: results/logs/mcmc_paper2_reframe.log
       hash: md5
-      md5: de9816f63f920b29c13b80735e55b6b6
+      md5: 958c59ac77a6a2a8307750885a60def4
       size: 4694
   h0_four_priors:
     cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 
@@ -1743,8 +1747,8 @@ stages:
       size: 3600
     - path: src/p09_hubble/ssee_h0_prior_experiment.py
       hash: md5
-      md5: 0c3fe6f1cbc19ce6725ab00edbb6d20f
-      size: 13289
+      md5: c1fdd818c3634e07fdbaa334025f94a1
+      size: 13996
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1760,13 +1764,13 @@ stages:
     outs:
     - path: results/figures/fig_h0_three_priors.pdf
       hash: md5
-      md5: ecf1181bd6f7baa64bcb5896c28e82f5
+      md5: 1344a81d7c79f30e9cb0c7b801a2ff02
       size: 30795
     - path: results/logs/h0_four_priors.json
       hash: md5
-      md5: c6639ba24b1d2425ae8d043fc2b6d8e0
-      size: 1196
+      md5: 452a28d03f400637e87b2a7f6ad8c27f
+      size: 1275
     - path: results/logs/h0_four_priors.log
       hash: md5
-      md5: 201e66acc38b0f7383399dd62d4b0ab3
+      md5: 017017757fe55a7cf4b2bd0e833c6913
       size: 2744

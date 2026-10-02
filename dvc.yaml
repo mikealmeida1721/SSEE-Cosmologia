@@ -634,3 +634,17 @@ stages:
           cache: false
       - results/figures/fig_h0_three_priors.pdf:
           cache: false
+  perfil_h0_ancla:
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > results/logs/perfil_h0_ancla.log 2>&1
+    deps:
+      - src/p03_cmb/perfil_h0_ancla.py
+      - src/p03_cmb/cmb_eval.py
+      - src/procedencia.py
+      - src/ssee_core.py
+      - src/p11_sondas/lcdm_planck.py
+      - results/logs/cmb_dbic_tau_ajustado.json
+    outs:
+      - results/logs/perfil_h0_ancla.json:
+          cache: false
+      - results/logs/perfil_h0_ancla.log:
+          cache: false

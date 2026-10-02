@@ -1,18 +1,47 @@
 {
  "planck": {
-  "H0_mediana": 67.61289275022175,
-  "H0_std": 0.3500020281916183
+  "H0_mediana": 67.61126367347391,
+  "H0_std": 0.346437777322683
  },
  "mira": {
-  "H0_mediana": 67.49684215413683,
-  "H0_std": 0.3471837798660965
+  "H0_mediana": 67.49456655394172,
+  "H0_std": 0.34782015725426196
  },
  "ssee_hglob": {
-  "H0_mediana": 67.82021317069147,
-  "H0_std": 0.41042656536672006
+  "H0_mediana": 67.82407391168299,
+  "H0_std": 0.41319124515651634
  },
  "plano": {
-  "H0_mediana": 67.79307945224592,
-  "H0_std": 0.46033335992074836
+  "H0_mediana": 67.78432759640418,
+  "H0_std": 0.45538474216832503,
+  "sigma_a_Hglob": 0.39046966041739384,
+  "sigma_a_Planck": 0.600705722583583
+ },
+ "_procedencia": {
+  "commit": "87290f8183c109190fd17588446e1f3845c7bcc0",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p09_hubble/ssee_h0_prior_experiment.py",
+  "script_sha256": "013f0a2f97f28c66ae90dec1ff76a7325bde27a97aab0ac44fbf926442dd66f5",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b"
+  },
+  "argv": [
+   "src/p09_hubble/ssee_h0_prior_experiment.py"
+  ],
+  "fecha": "2026-10-01T23:02:16",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }
