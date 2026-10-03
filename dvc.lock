@@ -2075,6 +2075,15 @@ stages:
       hash: md5
       md5: 687ae6927e506b6ac7798bc0d934a460
       size: 1413
+    - path: data/raw/fsigma8_fuentes
+      hash: md5
+      md5: cb185407a8774ec677b997819a7b0c5e.dir
+      size: 3668
+      nfiles: 4
+    - path: data/raw/fsigma8_rsd.csv
+      hash: md5
+      md5: 1838a533998af9f849bf4080927d7143
+      size: 1179
     - path: data/raw/moresco2022/tabla_cc1.tex
       hash: md5
       md5: c1f477cc3eb3cbdf9acbed6400b720d9
@@ -2109,10 +2118,10 @@ stages:
       size: 5420
     - path: src/verificacion/coteja_crudos.py
       hash: md5
-      md5: 128993c83b64dff3200725ba9b0a50e6
-      size: 8059
+      md5: b2ea1ab6947e446aa43dd6836b463380
+      size: 10177
     outs:
     - path: results/logs/coteja_crudos.json
       hash: md5
-      md5: ef6ceb372e0c73c0955d9ada4825e94e
-      size: 4120
+      md5: 529f649103ee7b43681fe52ba9bd8886
+      size: 4994

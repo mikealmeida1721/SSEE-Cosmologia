@@ -26,32 +26,62 @@
    "coincide": true,
    "detalle": "14 bandas, L_eff/PP/error identicos",
    "entrega": "Planck 2018 lensing (PR3), agr2 MV bandpowers"
+  },
+  "planck2018_prior.csv": {
+   "fuente": "arXiv:1807.06209 Tabla 2 (extracto data/raw/planck2018_VI/tabla2.tex)",
+   "coincide": true,
+   "detalle": "los 3 valores coinciden con la(s) columna(s) [5] (5 = TT,TE,EE+lowE+lensing)",
+   "entrega": "Planck 2018 VI, TT,TE,EE+lowE+lensing",
+   "no_cotejado": "rho(H0,Om)=-0.85 de la cabecera: no esta en la Tabla 2 (sale de cadenas)"
+  },
+  "cosmic_chronometers.csv": {
+   "fuente": "arXiv:2201.07241 Tabla CC1 (extracto data/raw/moresco2022/tabla_cc1.tex)",
+   "coincide": true,
+   "detalle": "32 filas identicas a la Tabla CC1",
+   "entrega": "Moresco+2022, 32 puntos, solo diagonal"
+  },
+  "fsigma8_rsd.csv": {
+   "fuente": "Beutler+2012, Howlett+2015, Alam+2017, Hou+2021 (extractos data/raw/fsigma8_fuentes/)",
+   "coincide": true,
+   "detalle": "6 filas coinciden con su referencia",
+   "entrega": "6 puntos; los 3 de BOSS estan correlacionados (covarianza en Alam+2017)"
   }
  },
  "todos_coinciden": true,
  "control": {
+  "fs8_alterado_falla": true,
+  "cc_alterado_falla": true,
   "espectro_alterado_falla": true,
   "lensing_alterado_falla": true,
   "pasa": true
  },
  "_procedencia": {
-  "commit": "4fe98f2acce088de36e75cbcb6a3e80e2096a7c1",
+  "commit": "20287f9ce6b3d7ee78c7caa8c60e329b93fed6fb",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/coteja_crudos.py",
-  "script_sha256": "71ca9db6887c3bf3274d614964cce65a936c581f504b617b3a12decdbe998025",
+  "script_sha256": "ee5cd20a201c56a5d6c3efae82c7e91a8562bc20d3afa0738ebe41da4428cbc2",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/planck2018_TT.txt": "ccf3113604020536f6f13ccf51680a7316ad0f32da558eee7f625e613bdd5522",
    "data/raw/planck2018_TE.txt": "8b2c97d8865ebfdfb2b23c3e6883a39820734b804ba6e353533657b3a2f71425",
    "data/raw/planck2018_EE.txt": "c865c56fe215e17e45eeed1069ddcd7d13365735f439fd63cc9c9325db97d67f",
    "data/raw/planck2018_lensing.txt": "74556a18b082975bd8ceff1f04fa3cbfd35ea9526c5e01f0f038557ddcd66f94",
-   "/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat": "022ecd45a4dc0d8ea42643b084811e5ff295040cbc3fead7d4e7ecf6c0c2254e"
+   "data/raw/planck2018_prior.csv": "463af7f5dccaf8e4b56a836541950660a4e47af22d9aafa8f00c1c7c2c3447dc",
+   "data/raw/cosmic_chronometers.csv": "057781c6683bc5c75b5df730c58e7c46f59aea8b5d0fbb0baa00fd2146b0137c",
+   "data/raw/fsigma8_rsd.csv": "84dfd1ad69de6e9399a83777720cbca5e0c9d2805c42fd3529c192d176d6fb06",
+   "data/raw/planck2018_VI/tabla2.tex": "49791a953ae5233971eafd3598de1351661fee785b1f97d4a7bc01609db3d3a5",
+   "data/raw/moresco2022/tabla_cc1.tex": "2eb751bfbbd4a44b20adccda37275b97efa3ab4f5bafc3b065b7e1cc657a4063",
+   "/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat": "022ecd45a4dc0d8ea42643b084811e5ff295040cbc3fead7d4e7ecf6c0c2254e",
+   "data/raw/fsigma8_fuentes/alam2017.tex": "0fa0d656bff2f879f379012a898e671b74ee57196f88f6fac27fd82ff7d9f90e",
+   "data/raw/fsigma8_fuentes/beutler2012.tex": "03145a60b5bb4e5a61103dd75d95e991869de2a3d7f035545d0d3c930300de64",
+   "data/raw/fsigma8_fuentes/hou2021.tex": "127a8b47fd201e61c77e4e4af19983049956efa6dd71cc4f8821fc20964152da",
+   "data/raw/fsigma8_fuentes/howlett2015.tex": "694ea87769578ef9c6dcbe977eb7013f62bdec8ee8d2491039d05063817a10ce"
   },
   "argv": [
    "src/verificacion/coteja_crudos.py"
   ],
-  "fecha": "2026-10-02T20:11:10",
+  "fecha": "2026-10-02T20:19:37",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -59,8 +89,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
