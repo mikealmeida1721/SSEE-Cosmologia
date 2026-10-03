@@ -44,6 +44,7 @@ OFICIAL = {
     "planck2018_EE.txt": ("COM_PowerSpect_CMB-EE-full_R3.01.txt",
                           "c865c56fe215e17e45eeed1069ddcd7d13365735f439fd63cc9c9325db97d67f"),
 }
+TABLA2 = RAW / "planck2018_VI" / "tabla2.tex"   # extracto literal de arXiv:1807.06209, Tabla 2
 LENS_FUENTE = pathlib.Path("/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/"
                            "smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat")
 
@@ -67,6 +68,32 @@ def coteja_lensing(ruta, fuente):
     return bool(ok), f"{a.shape[0]} bandas, L_eff/PP/error identicos" if ok else "difieren"
 
 
+def coteja_prior(csv, tabla):
+    """planck2018_prior.csv contra la columna TT,TE,EE+lowE+lensing (la 5a) de la Tabla 2.
+    Devuelve (ok, detalle, columna) — la columna es la que reproduce los tres valores."""
+    import re
+    filas = {}
+    for ln in pathlib.Path(tabla).read_text().splitlines():
+        if ln.startswith("%") or "\\pm" not in ln:
+            continue
+        celdas = ln.rstrip("\\cr").split("&")
+        filas[celdas[0].strip()] = [c.strip() for c in celdas[1:]]
+    clave = {"H0": "H_0\\,[{\\rm km}\\,{\\rm s}^{-1}\\,{\\rm Mpc}^{-1}]",
+             "Omega_m": "\\Omega_{\\mathrm{m}}", "Omega_b_h2": "\\Omega_{\\mathrm{b}} h^2"}
+    rep = {}
+    for ln in pathlib.Path(csv).read_text().splitlines():
+        if ln.startswith("#") or ln.startswith("parameter") or not ln.strip():
+            continue
+        n, m, s = ln.split(",")
+        rep[n] = (m, s)
+    cols = []
+    for j in range(5):
+        if all(re.fullmatch(rf"{re.escape(rep[n][0])}\\pm\s*{re.escape(rep[n][1])}", filas[clave[n]][j])
+               for n in rep):
+            cols.append(j + 1)
+    return cols == [5], f"los 3 valores coinciden con la(s) columna(s) {cols} (5 = TT,TE,EE+lowE+lensing)", cols
+
+
 res = {}
 for nombre, (oficial, sha) in OFICIAL.items():
     res[nombre] = dict(fuente=IRSA + oficial, sha256_oficial=sha, sha256_repo=_sha(RAW / nombre),
@@ -75,6 +102,11 @@ for nombre, (oficial, sha) in OFICIAL.items():
 ok_l, msg_l = coteja_lensing(RAW / "planck2018_lensing.txt", LENS_FUENTE)
 res["planck2018_lensing.txt"] = dict(fuente=str(LENS_FUENTE), coincide=ok_l, detalle=msg_l,
                                      entrega="Planck 2018 lensing (PR3), agr2 MV bandpowers")
+
+ok_p, msg_p, cols_p = coteja_prior(RAW / "planck2018_prior.csv", TABLA2)
+res["planck2018_prior.csv"] = dict(fuente="arXiv:1807.06209 Tabla 2 (extracto data/raw/planck2018_VI/tabla2.tex)",
+                                   coincide=ok_p, detalle=msg_p, entrega="Planck 2018 VI, TT,TE,EE+lowE+lensing",
+                                   no_cotejado="rho(H0,Om)=-0.85 de la cabecera: no esta en la Tabla 2 (sale de cadenas)")
 
 # CONTROL (R53): un digito cambiado tiene que hacer fallar a los dos comparadores
 with tempfile.TemporaryDirectory() as d:
@@ -87,7 +119,7 @@ with tempfile.TemporaryDirectory() as d:
 control["pasa"] = all(control.values())
 
 out = dict(archivos=res, todos_coinciden=all(v["coincide"] for v in res.values()), control=control)
-json.dump(con_acta(out, __file__, entradas=[RAW / n for n in res] + [LENS_FUENTE]),
+json.dump(con_acta(out, __file__, entradas=[RAW / n for n in res] + [TABLA2, LENS_FUENTE]),
           open(ROOT / "results" / "logs" / "coteja_crudos.json", "w"), indent=1, ensure_ascii=False)
 for n, v in res.items():
     print(f"  {n:24s} {'COINCIDE' if v['coincide'] else 'NO COINCIDE'}  ({v['entrega']})")

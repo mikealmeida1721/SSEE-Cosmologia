@@ -25,10 +25,7 @@ zhang2026/tablas_II_III.tex:
   extracto: zhang2026/tablas_II_III.tex
   sha256: 1a3d9a42ba75920c6bfff05e3482f12b3acf829ab52e6918a7d7ffddc6c71377
 
-cluster_masses.csv:
-  cita: "declara Zhang+2026, Simionescu+2011, Tchernin+2016, Owers+2011"
-  cotejo: null
-  estado: "CONTRADICHO por la fuente (2026-10-01): Coma y Bullet no estan en Zhang; A2029/A478 con otros numeros. Se retira al reescribir P2 sobre cumulos_zhang2026"
+# cluster_masses.csv: RETIRADO 2026-10-02 a archive/datos_retirados/ (la fuente lo contradecia; nadie lo usaba)
 
 cosmic_chronometers.csv:
   cita: "Moresco et al. 2022, Living Rev. Relativ. 25, 6"
@@ -39,8 +36,15 @@ fsigma8_rsd.csv:
   cotejo: null   # «verificado» el 2026-05-18 a mano, sin extracto ni script
 
 planck2018_prior.csv:
-  cita: "Planck 2018 VI, A&A 641, A6"
-  cotejo: null
+  cita: "Planck 2018 VI, A&A 641, A6 (arXiv:1807.06209), Tabla 2, columna TT,TE,EE+lowE+lensing"
+  cotejo: "src/verificacion/coteja_crudos.py (contra el extracto literal de la Tabla 2; solo la columna 5 reproduce los tres valores)"
+  nota: "rho(H0,Om)=-0.85 de la cabecera NO esta en la Tabla 2 (sale de cadenas): sin cotejar; lo usan ssee_paper2_mcmc*.py y ssee_phase_d_savage_cv.py"
+
+planck2018_VI/tabla2.tex:
+  cita: "Planck 2018 VI (arXiv:1807.06209), fuente LaTeX ms.tex lineas 2295-2310, bajada de arxiv.org/e-print el 2026-10-02"
+  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  extracto: planck2018_VI/tabla2.tex
+  sha256: 49791a953ae5233971eafd3598de1351661fee785b1f97d4a7bc01609db3d3a5
 
 planck2018_TT.txt:
   cita: "Planck 2018 (PR3) Legacy Archive, COM_PowerSpect_CMB-*-full_R3.01.txt"
