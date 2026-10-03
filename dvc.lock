@@ -127,7 +127,7 @@ stages:
       size: 2861
     - path: results/logs/ganancia_wc_libre.json
       hash: md5
-      md5: 10a2723c84cd4afea0170d61485928d6
+      md5: 9daa46a0ae5a3577818d578898743a27
       size: 2489
     - path: results/logs/growth_2026-07/As_medido_o_producto.json
       hash: md5
@@ -268,7 +268,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 5b1afc89d83035a77ed95f8566e56c2c
+      md5: cec9b15d566ac3921246342e51eb39e6
       size: 85997
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
