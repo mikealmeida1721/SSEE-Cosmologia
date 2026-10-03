@@ -673,6 +673,8 @@ stages:
     - data/raw/planck2018_lensing.txt
     - data/raw/planck2018_prior.csv
     - data/raw/planck2018_VI/tabla2.tex
+    - data/raw/cosmic_chronometers.csv
+    - data/raw/moresco2022/tabla_cc1.tex
     - /home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat
     outs:
     - results/logs/coteja_crudos.json:

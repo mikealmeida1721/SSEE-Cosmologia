@@ -45,6 +45,7 @@ OFICIAL = {
                           "c865c56fe215e17e45eeed1069ddcd7d13365735f439fd63cc9c9325db97d67f"),
 }
 TABLA2 = RAW / "planck2018_VI" / "tabla2.tex"   # extracto literal de arXiv:1807.06209, Tabla 2
+TABLA_CC = RAW / "moresco2022" / "tabla_cc1.tex"   # extracto literal de arXiv:2201.07241, Tabla CC1
 LENS_FUENTE = pathlib.Path("/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/"
                            "smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat")
 
@@ -94,6 +95,20 @@ def coteja_prior(csv, tabla):
     return cols == [5], f"los 3 valores coinciden con la(s) columna(s) {cols} (5 = TT,TE,EE+lowE+lensing)", cols
 
 
+def coteja_cc(csv, tabla):
+    """cosmic_chronometers.csv fila por fila (z, H, sigma, metodo, ref) contra la Tabla CC1."""
+    import re
+    fuente = [m.groups() for m in (re.match(r"^\s*([0-9.]+)\s*&\s*([0-9.]+)\s*&\s*([0-9.]+)\s*&\s*([FDL])\s*&\s*\\cite\{(\w+)\}", ln)
+                                   for ln in pathlib.Path(tabla).read_text().splitlines()) if m]
+    repo = [tuple(ln.split(",")) for ln in pathlib.Path(csv).read_text().splitlines()
+            if ln and not ln.startswith("#") and not ln.startswith("z,")]
+    if len(repo) != len(fuente):
+        return False, f"{len(repo)} filas vs {len(fuente)} en la fuente"
+    malas = [r for r, f in zip(repo, fuente)
+             if [float(x) for x in r[:3]] != [float(x) for x in f[:3]] or tuple(r[3:]) != tuple(f[3:])]
+    return not malas, (f"{len(repo)} filas identicas a la Tabla CC1" if not malas else f"difieren: {malas[:3]}")
+
+
 res = {}
 for nombre, (oficial, sha) in OFICIAL.items():
     res[nombre] = dict(fuente=IRSA + oficial, sha256_oficial=sha, sha256_repo=_sha(RAW / nombre),
@@ -108,18 +123,25 @@ res["planck2018_prior.csv"] = dict(fuente="arXiv:1807.06209 Tabla 2 (extracto da
                                    coincide=ok_p, detalle=msg_p, entrega="Planck 2018 VI, TT,TE,EE+lowE+lensing",
                                    no_cotejado="rho(H0,Om)=-0.85 de la cabecera: no esta en la Tabla 2 (sale de cadenas)")
 
+ok_c, msg_c = coteja_cc(RAW / "cosmic_chronometers.csv", TABLA_CC)
+res["cosmic_chronometers.csv"] = dict(fuente="arXiv:2201.07241 Tabla CC1 (extracto data/raw/moresco2022/tabla_cc1.tex)",
+                                      coincide=ok_c, detalle=msg_c, entrega="Moresco+2022, 32 puntos, solo diagonal")
+
 # CONTROL (R53): un digito cambiado tiene que hacer fallar a los dos comparadores
 with tempfile.TemporaryDirectory() as d:
     t = pathlib.Path(d) / "tt.txt"
     t.write_text((RAW / "planck2018_TT.txt").read_text().replace("2.25895000e+02", "2.25895001e+02", 1))
     l = pathlib.Path(d) / "l.txt"
     l.write_text((RAW / "planck2018_lensing.txt").read_text().replace("1.33520e-07", "1.33521e-07", 1))
-    control = dict(espectro_alterado_falla=not coteja_espectro(t, OFICIAL["planck2018_TT.txt"][1]),
+    cc = pathlib.Path(d) / "cc.csv"
+    cc.write_text((RAW / "cosmic_chronometers.csv").read_text().replace("0.48,97,62", "0.48,97,60"))
+    control = dict(cc_alterado_falla=not coteja_cc(cc, TABLA_CC)[0],
+                   espectro_alterado_falla=not coteja_espectro(t, OFICIAL["planck2018_TT.txt"][1]),
                    lensing_alterado_falla=not coteja_lensing(l, LENS_FUENTE)[0])
 control["pasa"] = all(control.values())
 
 out = dict(archivos=res, todos_coinciden=all(v["coincide"] for v in res.values()), control=control)
-json.dump(con_acta(out, __file__, entradas=[RAW / n for n in res] + [TABLA2, LENS_FUENTE]),
+json.dump(con_acta(out, __file__, entradas=[RAW / n for n in res] + [TABLA2, TABLA_CC, LENS_FUENTE]),
           open(ROOT / "results" / "logs" / "coteja_crudos.json", "w"), indent=1, ensure_ascii=False)
 for n, v in res.items():
     print(f"  {n:24s} {'COINCIDE' if v['coincide'] else 'NO COINCIDE'}  ({v['entrega']})")

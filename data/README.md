@@ -10,7 +10,7 @@ Observational data used in Papers 2 and 3:
 | `fsigma8_rsd.csv` | fσ₈(z) canonical 6-survey set (6dFGRS, SDSS MGS, BOSS DR12 ×3, eBOSS DR16 QSO); per-row reference; superseded values listed in header — do not reintroduce | Beutler+2012; Howlett+2015; Alam+2017; Hou+2021 (each row checked against its primary reference, 2026-05-18) |
 | `planck2018_prior.csv` | Compressed CMB prior (H₀, Ωm, Ωb h²); ρ(H₀,Ωm)=−0.85 | Planck 2018 VI (A&A 641, A6), Table 2, TT,TE,EE+lowE+lensing — checked by `coteja_crudos.py`; ρ from chains, unchecked |
 | `zhang2026/tablas_II_III.tex` | Literal extract of Zhang+2026 Tables II and III (46 clusters), read by `src/p02_mcmc/cumulos_zhang2026.py` | Zhang, Hasani Zonoozi & Kroupa 2026 (arXiv:2602.06082v1) |
-| `cosmic_chronometers.csv` | H(z) measurements, z=0.07–1.97, 23 points | Moresco et al. 2022 (Living Rev. Relativ. 25, 6) |
+| `cosmic_chronometers.csv` | H(z) measurements, z=0.07–1.965, 32 points (diagonal errors only) | Moresco et al. 2022 (Living Rev. Relativ. 25, 6), Table CC1 — checked by `coteja_crudos.py` |
 | `planck2018_TT.txt` | CMB TT power spectrum Dℓ | Planck 2018 (PR3) Legacy Archive, `COM_PowerSpect_CMB-TT-full_R3.01.txt` — byte-identical, checked by `src/verificacion/coteja_crudos.py` |
 | `planck2018_TE.txt` | CMB TE power spectrum Dℓ | Planck 2018 (PR3) Legacy Archive, `COM_PowerSpect_CMB-TE-full_R3.01.txt` — byte-identical, checked by `src/verificacion/coteja_crudos.py` |
 | `planck2018_EE.txt` | CMB EE power spectrum Dℓ | Planck 2018 (PR3) Legacy Archive, `COM_PowerSpect_CMB-EE-full_R3.01.txt` — byte-identical, checked by `src/verificacion/coteja_crudos.py` |

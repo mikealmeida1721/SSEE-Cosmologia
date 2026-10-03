@@ -2028,8 +2028,8 @@ stages:
     deps:
     - path: data/raw/planck2018_prior.csv
       hash: md5
-      md5: 03b921d7e1b680b5096e3b471589999c
-      size: 265
+      md5: 6e68b1d5ad7bca761358fe52d0056fa8
+      size: 501
     - path: results/logs/fsigma8_canonico.json
       hash: md5
       md5: cb16041849cc21c934dc84da77f6ddbf
@@ -2061,7 +2061,7 @@ stages:
     outs:
     - path: results/figures/fig_readme_tensions.png
       hash: md5
-      md5: b8391a4268b76b71f741e8444f05b2a4
+      md5: 5f12f0165369872e70dba9e0ac3c31d3
       size: 106062
   coteja_crudos:
     cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
@@ -2083,20 +2083,28 @@ stages:
       hash: md5
       md5: 953f333fa17483d3e2143dc82ddfa874
       size: 170547
+    - path: data/raw/planck2018_VI/tabla2.tex
+      hash: md5
+      md5: fe6340fd6a1ad5d8bf013e997faf4e09
+      size: 2230
     - path: data/raw/planck2018_lensing.txt
       hash: md5
       md5: f2804b8f2fa134071a94a5e4c7a2fa82
       size: 1083
+    - path: data/raw/planck2018_prior.csv
+      hash: md5
+      md5: 6e68b1d5ad7bca761358fe52d0056fa8
+      size: 501
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
       size: 5420
     - path: src/verificacion/coteja_crudos.py
       hash: md5
-      md5: 16726cd5f086d0d7358d21025b804940
-      size: 4809
+      md5: 4acc6b8a411d415ff2568d6d228231ff
+      size: 6537
     outs:
     - path: results/logs/coteja_crudos.json
       hash: md5
-      md5: 06f1a2842aca73289937e54461ba2de0
-      size: 3027
+      md5: 21883840b67d109fc1f77e6bdac9d83e
+      size: 3623

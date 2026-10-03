@@ -28,8 +28,15 @@ zhang2026/tablas_II_III.tex:
 # cluster_masses.csv: RETIRADO 2026-10-02 a archive/datos_retirados/ (la fuente lo contradecia; nadie lo usaba)
 
 cosmic_chronometers.csv:
-  cita: "Moresco et al. 2022, Living Rev. Relativ. 25, 6"
-  cotejo: null
+  cita: "Moresco et al. 2022, Living Rev. Relativ. 25, 6 (arXiv:2201.07241), Tabla CC1"
+  cotejo: "src/verificacion/coteja_crudos.py (fila por fila contra el extracto; 2026-10-02: tenia 23 de 32 puntos y sigma 60 en z=0.48, la fuente da 62)"
+  nota: "NO lo usa el MCMC de P2: su prueba H(z) lleva 11 puntos tecleados, uno de ellos (z=0.44, 82.6+-7.8) es BAO de WiggleZ, no un cronometro. Deuda abierta"
+
+moresco2022/tabla_cc1.tex:
+  cita: "Moresco+2022 (arXiv:2201.07241), fuente LaTeX main.tex lineas 578-630, bajada de arxiv.org/e-print el 2026-10-02"
+  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  extracto: moresco2022/tabla_cc1.tex
+  sha256: 2eb751bfbbd4a44b20adccda37275b97efa3ab4f5bafc3b065b7e1cc657a4063
 
 fsigma8_rsd.csv:
   cita: "Beutler+2012; Howlett+2015; Alam+2017; Hou+2021 (por fila)"
