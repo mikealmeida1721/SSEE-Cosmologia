@@ -1,4 +1,4 @@
-%% SSEE — Paper 3: CMB Power Spectrum Confrontation with Planck PR4
+%% SSEE — Paper 3: CMB Power Spectrum Confrontation with Planck 2018
 %% Author: Mike Edison Almeida Vallejo
 %% Date: 2026-04-20
 \documentclass[12pt,a4paper]{article}
@@ -78,12 +78,12 @@ yields $\Delta\mathrm{BIC}=\val{b1_dBIC}$, decisively favouring SSEE on the Jeff
 (A \texttt{plik\_lite} point-estimate cross-check gives a more conservative
 $\Delta\mathrm{BIC}=-26.03$.) The $\Delta\mathrm{BIC}$ is driven by parsimony, not by
 fit quality.
-SSEE is not falsified by the Planck~PR4 CMB power spectra.
+SSEE is not falsified by the Planck~2018 CMB power spectra.
 \end{abstract}
 
 % Cross-reference note for reviewers
 \noindent\textbf{One matter density and domain scope:}
-the CMB claim (``SSEE is not falsified by Planck PR4'') concerns the single
+the CMB claim (``SSEE is not falsified by Planck 2018'') concerns the single
 matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, the same one that enters the
 background geometry at every redshift. The saturation $s_m=1+w_0=\val{S_M_d6}$ is a
 property of the dark-energy equation of state and never occupies a density slot.
@@ -342,7 +342,7 @@ CPL is a local parametrisation only, and the \SSEE\ energy density saturates
 at the finite $T_r/M_v$ boundary at $a\to\infty$ (Paper~1 \S3.4 \citep{AlmeidaSSEE2026a}).
 We compute lensed TT, TE, and EE power spectra to $\ell_{\max}=2500$,
 with \texttt{lens\_potential\_accuracy=2} for the lensing potential.
-Lensing reconstruction data (Planck PR4 $C_L^{\phi\phi}$) were also evaluated
+Lensing reconstruction data (Planck 2018 $C_L^{\phi\phi}$) were also evaluated
 alongside temperature and polarisation.
 
 \subsection{Sound horizon}
@@ -375,7 +375,7 @@ Table~\ref{tab:peaks} compares the first three acoustic peak positions.
 \toprule
 Model & $\ell_1$ & $\ell_2$ & $\ell_3$ \\
 \midrule
-Planck PR4 (observed) & $\sim220$ & $\sim540$ & $\sim810$ \\
+Planck 2018 (observed) & $\sim220$ & $\sim540$ & $\sim810$ \\
 $\Lambda$CDM ($\Omega_m=0.315$) & \val{p3_pico1_lcdm} & \val{p3_pico2_lcdm} & \val{p3_pico3_lcdm} \\
 SSEE naive ($s_m=\val{S_M_d6}$) & \val{p3_pico1_naive} & \val{p3_pico2_naive} & \val{p3_pico3_naive} \\
 \textbf{SSEE} ($\Omega_{m,\mathrm{CMB}}=0.309$) & \textbf{\val{p3_pico1_ssee}} & \textbf{\val{p3_pico2_ssee}} & \textbf{\val{p3_pico3_ssee}} \\
@@ -388,7 +388,7 @@ All three peaks fall within $\Delta\ell\leq5$ of the observed positions.
 \subsection{Power spectrum comparison}
 
 Figure~\ref{fig:spectrum} shows the full TT power spectrum for SSEE,
-$\Lambda$CDM, and Planck PR4 data over $\ell=2$--$2500$.
+$\Lambda$CDM, and Planck 2018 data over $\ell=2$--$2500$.
 
 \begin{figure}[ht]
 \centering
@@ -397,7 +397,7 @@ $\Lambda$CDM, and Planck PR4 data over $\ell=2$--$2500$.
 Blue: SSEE ($\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.309$,
 $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$).
 Orange dashed: $\Lambda$CDM Planck 2018 best-fit.
-Black points: Planck PR4 TT data with $\pm1\sigma$ error bars.
+Black points: Planck 2018 TT data with $\pm1\sigma$ error bars.
 Lower panel: residuals $(D_\ell^{\mathrm{SSEE}}-D_\ell^{\mathrm{Planck}})/\sigma$.}
 \label{fig:spectrum}
 \end{figure}
@@ -406,7 +406,7 @@ Lower panel: residuals $(D_\ell^{\mathrm{SSEE}}-D_\ell^{\mathrm{Planck}})/\sigma
 \centering
 \includegraphics[width=\textwidth]{fig_cmb_peaks_zoom.pdf}
 \caption{Zoom on the first three acoustic peaks. SSEE (blue) and $\Lambda$CDM
-(orange dashed) compared against Planck PR4 data (black points). Green dotted
+(orange dashed) compared against Planck 2018 data (black points). Green dotted
 lines mark the expected peak centres.}
 \label{fig:peaks_zoom}
 \end{figure}
@@ -415,14 +415,14 @@ lines mark the expected peak centres.}
 
 Figures~\ref{fig:te} and~\ref{fig:ee} show the TE temperature–polarization
 cross-correlation and EE polarization power spectra respectively, comparing
-SSEE with $\Lambda$CDM and Planck PR4 data.
+SSEE with $\Lambda$CDM and Planck 2018 data.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{fig_cmb_te.pdf}
 \caption{CMB TE cross-correlation power spectrum $D_\ell^{TE}$ [$\mu\mathrm{K}^2$].
 Blue: SSEE. Orange dashed: $\Lambda$CDM Planck 2018 best-fit.
-Black points: Planck PR4 TE data. Lower panel: residuals normalised by $\sigma_\ell$.}
+Black points: Planck 2018 TE data. Lower panel: residuals normalised by $\sigma_\ell$.}
 \label{fig:te}
 \end{figure}
 
@@ -430,7 +430,7 @@ Black points: Planck PR4 TE data. Lower panel: residuals normalised by $\sigma_\
 \centering
 \includegraphics[width=\textwidth]{fig_cmb_ee.pdf}
 \caption{CMB EE polarization power spectrum $D_\ell^{EE}$ [$\mu\mathrm{K}^2$].
-Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck PR4 EE data.}
+Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck 2018 EE data.}
 \label{fig:ee}
 \end{figure}
 
@@ -439,7 +439,7 @@ Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck PR4 EE data.}
 \includegraphics[width=\textwidth]{fig_cmb_lensing.pdf}
 \caption{CMB lensing potential power spectrum
 $[L(L+1)]^2 C_L^{\phi\phi}/(2\pi)$.
-Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck PR4
+Blue: SSEE. Orange dashed: $\Lambda$CDM. Black points: Planck 2018
 lensing (9 MV bandpowers). Lower panel: residuals normalised by $\sigma_L$.
 SSEE achieves $\chi^2_r=\val{p3_chi2r_PP_ssee}$ over the \val{p3_N_PP} bandpowers
 (\S\ref{sec:bic}; $\Lambda$CDM: $\val{p3_chi2r_PP_lcdm}$), both indicating a good fit
@@ -454,7 +454,7 @@ SSEE achieves $\chi^2_r=\val{p3_chi2r_PP_ssee}$ over the \val{p3_N_PP} bandpower
 
 \subsection{\texorpdfstring{$\chi^2$}{chi-squared} comparison}
 
-We compute $\chi^2$ against the Planck PR4 TT spectrum over $\ell=30$--$2000$
+We compute $\chi^2$ against the Planck 2018 TT spectrum over $\ell=30$--$2000$
 using the published uncertainties:
 \begin{equation}
 \chi^2 = \sum_{\ell=30}^{2000}
@@ -463,7 +463,7 @@ using the published uncertainties:
 
 \begin{table}[ht]
 \centering
-\caption{$\chi^2$ comparison vs.\ Planck PR4 TT ($\ell=30$--$2000$, $N=\val{p3_N_TT}$).}
+\caption{$\chi^2$ comparison vs.\ Planck 2018 TT ($\ell=30$--$2000$, $N=\val{p3_N_TT}$).}
 \label{tab:chi2}
 \begin{tabular}{lccc}
 \toprule
@@ -482,7 +482,7 @@ Table~\ref{tab:chi2_full} reports $\chi^2_r$ for all three spectra individually.
 
 \begin{table}[ht]
 \centering
-\caption{$\chi^2_r$ by spectrum vs.\ Planck PR4.
+\caption{$\chi^2_r$ by spectrum vs.\ Planck 2018.
 TT/TE/EE: $\ell=30$--$2000$; PP (lensing): 9 MV bandpowers, $L=8$--$400$
 \citep[Table~1,][]{PlanckLensing2018}.
 $\chi^2_r$ comparisons use diagonal covariance; for BIC see \S\ref{sec:bic} ($k=2$ for SSEE).}
@@ -520,7 +520,7 @@ lensing smoothing of peaks.
 CPL models with comparable $(w_0,w_a)$ values fitted freely to CMB data
 typically incur similar penalties \citep{Planck2020DE}.
 
-The SSEE model is therefore \textbf{not falsified} by the Planck PR4 CMB
+The SSEE model is therefore \textbf{not falsified} by the Planck 2018 CMB
 power spectra in TT, TE, or EE.
 
 \subsection{Bayesian Information Criterion}
@@ -564,10 +564,10 @@ remains the definitive result.
 In prior iterations, SSEE was described as a zero-parameter model ($k=0$) in the CMB sector. Under the $\omega_m$-direct reframe, the geometry anchor $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=67.96214$~km\,s$^{-1}$\,Mpc$^{-1}$ is \emph{derived} (the output of the screening cascade of Papers~9--10, which reproduces the dimensionless target $3(\varphi+\pi)^2$; not a quantity fitted to the CMB), and the densities $\omega_b=(\pi-\varphi)/(3\Omega^2)$ and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ are algebraically fixed. The only two quantities the SSEE CMB fit does \emph{not} derive from $\{\varphi,\pi\}$ are the primordial amplitude $A_s$ and the reionization optical depth $\tau$; we therefore assign $k=2=\{A_s,\tau\}$, a conservative and robust penalty. (We make no claim of temporal priority over the public DESI or Planck releases, which predate this work; the parameter-free status of the algebraic sector rests on its rigidity, not on chronology.)
 
 \paragraph{Disclaimer regarding the Likelihood function.}
-The $\chi^2_r$ comparisons in \S\ref{sec:stats} use a simplified Gaussian diagonal approximation over the released Planck PR4 bandpowers for qualitative comparison. A formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} is presented in the following subsection.
+The $\chi^2_r$ comparisons in \S\ref{sec:stats} use a simplified Gaussian diagonal approximation over the released Planck 2018 bandpowers for qualitative comparison. A formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} is presented in the following subsection.
 
 \paragraph{Robustness under off-diagonal covariance.}
-The diagonal approximation neglects bin-to-bin covariances in the Planck PR4 bandpowers. Based on the Planck 2018 likelihood analysis \citep{PlanckLikelihood2020}, off-diagonal elements contribute corrections of $\lesssim5\%$ to $\chi^2$ for $\ell>30$. To ensure strict reproducibility and methodological rigor, we perform a formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} in the following subsection.
+The diagonal approximation neglects bin-to-bin covariances in the Planck 2018 bandpowers. Based on the Planck 2018 likelihood analysis \citep{PlanckLikelihood2020}, off-diagonal elements contribute corrections of $\lesssim5\%$ to $\chi^2$ for $\ell>30$. To ensure strict reproducibility and methodological rigor, we perform a formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} in the following subsection.
 
 \subsection{Cobaya \texttt{plik\_lite} unified evaluation}
 \label{sec:cobaya}
@@ -857,7 +857,7 @@ Eq.~\eqref{eq:alphak_pred} this specifies the full set of Bellini--Sawicki EFT
 functions $(\alpha_K,\alpha_B,\alpha_M,\alpha_T)$, validated against CLASS independently of CAMB.
 
 Note that the raw SSEE \emph{dynamical} background ($s_m=\val{S_M_d6}$)
-fed directly to CLASS gives $\chi^2_r=90.3$ against Planck PR4 TT.
+fed directly to CLASS gives $\chi^2_r=90.3$ against Planck 2018 TT.
 This is expected: the dynamical-sector fraction is not the CMB matter density.
 The good fit ($\chi^2_r\approx 1.04$, \S\ref{sec:stats}) is recovered with the
 $\omega_m$-direct CMB matter density $\Omega_{m,\rm CMB}=\omega_m/h^2=0.3089$
@@ -915,12 +915,12 @@ each of which would \textbf{falsify} the framework if violated:
 We have demonstrated that SSEE, with the CMB matter density set
 \emph{forward} by the SSEE algebra ($\omega_m$-direct,
 $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, no matter factor),
-reproduces the Planck PR4 CMB TT power spectrum without introducing fitted
+reproduces the Planck 2018 CMB TT power spectrum without introducing fitted
 dimensionless parameters.
 The key results are:
 
 \begin{itemize}
-  \item Acoustic peaks at $\ell=\val{p3_pico1_ssee},\,\val{p3_pico2_ssee},\,\val{p3_pico3_ssee}$, within $\Delta\ell\leq5$ of Planck PR4.
+  \item Acoustic peaks at $\ell=\val{p3_pico1_ssee},\,\val{p3_pico2_ssee},\,\val{p3_pico3_ssee}$, within $\Delta\ell\leq5$ of Planck 2018.
   \item TT: $\chi^2_r=\val{p3_chi2r_TT_ssee}$ over \val{p3_N_TT} multipoles ($\Lambda$CDM: $\val{p3_chi2r_TT_lcdm}$).
   \item TE/EE: $\chi^2_r=\val{p3_chi2r_TE_ssee}/\val{p3_chi2r_EE_ssee}$, essentially matching $\Lambda$CDM.
   \item Lensing (PP): $\chi^2_r=\val{p3_chi2r_PP_ssee}$ vs.\ $\val{p3_chi2r_PP_lcdm}$ for $\Lambda$CDM — SSEE marginally better (both $\chi^2_r<1$).
@@ -950,7 +950,7 @@ $\pm0.968$.
 All analysis scripts (\texttt{src/p03\_cmb/ssee\_paper3\_cmb.py}), generated figures,
 and reduced data products are publicly available at
 \url{https://github.com/mikealmeida1721/SSEE-Cosmologia}.
-The Planck PR4 TT and TE/EE power spectra are from the Planck Legacy Archive
+The Planck 2018 TT and TE/EE power spectra are from the Planck Legacy Archive
 (\url{https://irsa.ipac.caltech.edu/data/Planck/}) \citep{Planck2020}.
 CAMB v1.6.6 was used for all theoretical power spectrum calculations
 (\url{https://camb.info}).

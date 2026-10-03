@@ -1012,7 +1012,7 @@ medido (0.05σ). Las dos cadenas viejas, la two-sector (0.758) y la G=0.866 →
 distintos, pero la suite debería fijar **una** referencia para que las
 tensiones reportadas sean comparables entre papers. Un árbitro lo marcaría.
 
-## V-L4-CMB — espectro CMB Planck PR4 (Paper 3) — **verificado (re-run CAMB 2026-05-22)**
+## V-L4-CMB — espectro CMB Planck 2018 (Paper 3) — **verificado (re-run CAMB 2026-05-22)**
 
 Re-corrido `ssee_paper3_cmb.py` con CAMB 1.6.5. Reproduce **exactamente**
 lo reportado en CLAUDE.md:

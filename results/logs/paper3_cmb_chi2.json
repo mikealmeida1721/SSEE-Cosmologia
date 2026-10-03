@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-02",
  "picos_TT": {
   "ssee": [
    220,
@@ -75,17 +75,17 @@
   "dBIC": -35.03241141722265
  },
  "_procedencia": {
-  "commit": "5aaf48fb4fffba94a3534f3b63f6b37612ea0b65",
+  "commit": "4fe98f2acce088de36e75cbcb6a3e80e2096a7c1",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/ssee_paper3_cmb.py",
-  "script_sha256": "ca307b1230317aafaa102759cc1e40b2a0be4b1b3b449907bb5e1e7e656c01b9",
+  "script_sha256": "9d30d21b2e410e934ef25c3ce5f6d20ec676ed3a644c102c0d04904fc7c9b86b",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p03_cmb/ssee_paper3_cmb.py"
   ],
-  "fecha": "2026-10-01T00:07:32",
+  "fecha": "2026-10-02T20:11:58",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -95,8 +95,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

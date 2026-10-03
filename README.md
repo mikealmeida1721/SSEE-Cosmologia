@@ -28,7 +28,7 @@
 | Observable | SSEE (algebraic) | Observed | Separation | |
 |---|---|---|---|---|
 | (w₀, wₐ) | (−0.840, −0.670) | DESI DR2+CMB+Pantheon+: (−0.838±0.055, −0.617±0.208) | 0.24σ (2D); range 0.2–1.8σ across SN compilations (official chains) | ✅ |
-| CMB first peak | ℓ₁ = 221 | Planck PR4: ~220 | Δℓ = 1 | ✅ |
+| CMB first peak | ℓ₁ = 221 | Planck 2018: ~220 | Δℓ = 1 | ✅ |
 | Ωm,CMB | 0.30889 (= ωm/h², ωm-direct) | Planck 2018: 0.3153 | 0.88σ | ✅ |
 | n_s | 1 − φ⁻⁷ = 0.96556 | Planck 2018: 0.9649 | 0.16σ | ✅ |
 | αT (GW speed) | 0 exact | GW170817: \|αT\| < 10⁻¹⁵ | exact match | ✅ |
@@ -108,7 +108,7 @@ SSEE/
 │   ├── verificacion/               # ssee_verify.py guardian + CANONICAL sync + core constants
 │   └── ssee_core.py                # single algebraic source (φ, π → all constants)
 ├── class_ssee/                     # CLASS Boltzmann fork — SSEE .ini configs + plot scripts
-├── data/                           # observational data (DESI DR2, Planck PR4, clusters)
+├── data/                           # observational data (DESI DR2, Planck 2018, clusters)
 ├── results/                        # generated figures, tables, logs
 ├── notebooks/                      # Jupyter exploration
 ├── docs/                           # compiled PDFs — 10 papers + endorser + unified journal
@@ -173,7 +173,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | ΔBIC (SSEE k=2 vs ΛCDM k=3) | −7.25 (SSEE favoured; CPL −6.14; ΔDIC -6.47; Savage-Dickey ln B = 2.34; 2026-10-01 sin el término de cúmulos que solo llevaba SSEE; cross-val SSEE predice mejor que ΛCDM) — `results/logs/resumen_3modelos.json` |
 | r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.479 ≈ ΛCDM 0.459 (3 modelos, `mcmc_paper2_3models_wmfix.log`) |
 
-### Paper 3 (Planck PR4 CMB)
+### Paper 3 (Planck 2018 CMB)
 
 | Spectrum | SSEE χ²_r | ΛCDM χ²_r | N |
 |---|---|---|---|

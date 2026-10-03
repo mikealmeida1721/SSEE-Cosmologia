@@ -1,0 +1,67 @@
+{
+ "archivos": {
+  "planck2018_TT.txt": {
+   "fuente": "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/cosmoparams/COM_PowerSpect_CMB-TT-full_R3.01.txt",
+   "sha256_oficial": "ccf3113604020536f6f13ccf51680a7316ad0f32da558eee7f625e613bdd5522",
+   "sha256_repo": "ccf3113604020536f6f13ccf51680a7316ad0f32da558eee7f625e613bdd5522",
+   "coincide": true,
+   "entrega": "Planck 2018 (PR3, R3.01) — NO PR4"
+  },
+  "planck2018_TE.txt": {
+   "fuente": "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/cosmoparams/COM_PowerSpect_CMB-TE-full_R3.01.txt",
+   "sha256_oficial": "8b2c97d8865ebfdfb2b23c3e6883a39820734b804ba6e353533657b3a2f71425",
+   "sha256_repo": "8b2c97d8865ebfdfb2b23c3e6883a39820734b804ba6e353533657b3a2f71425",
+   "coincide": true,
+   "entrega": "Planck 2018 (PR3, R3.01) — NO PR4"
+  },
+  "planck2018_EE.txt": {
+   "fuente": "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/cosmoparams/COM_PowerSpect_CMB-EE-full_R3.01.txt",
+   "sha256_oficial": "c865c56fe215e17e45eeed1069ddcd7d13365735f439fd63cc9c9325db97d67f",
+   "sha256_repo": "c865c56fe215e17e45eeed1069ddcd7d13365735f439fd63cc9c9325db97d67f",
+   "coincide": true,
+   "entrega": "Planck 2018 (PR3, R3.01) — NO PR4"
+  },
+  "planck2018_lensing.txt": {
+   "fuente": "/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat",
+   "coincide": true,
+   "detalle": "14 bandas, L_eff/PP/error identicos",
+   "entrega": "Planck 2018 lensing (PR3), agr2 MV bandpowers"
+  }
+ },
+ "todos_coinciden": true,
+ "control": {
+  "espectro_alterado_falla": true,
+  "lensing_alterado_falla": true,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "4fe98f2acce088de36e75cbcb6a3e80e2096a7c1",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/verificacion/coteja_crudos.py",
+  "script_sha256": "71ca9db6887c3bf3274d614964cce65a936c581f504b617b3a12decdbe998025",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "data/raw/planck2018_TT.txt": "ccf3113604020536f6f13ccf51680a7316ad0f32da558eee7f625e613bdd5522",
+   "data/raw/planck2018_TE.txt": "8b2c97d8865ebfdfb2b23c3e6883a39820734b804ba6e353533657b3a2f71425",
+   "data/raw/planck2018_EE.txt": "c865c56fe215e17e45eeed1069ddcd7d13365735f439fd63cc9c9325db97d67f",
+   "data/raw/planck2018_lensing.txt": "74556a18b082975bd8ceff1f04fa3cbfd35ea9526c5e01f0f038557ddcd66f94",
+   "/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat": "022ecd45a4dc0d8ea42643b084811e5ff295040cbc3fead7d4e7ecf6c0c2254e"
+  },
+  "argv": [
+   "src/verificacion/coteja_crudos.py"
+  ],
+  "fecha": "2026-10-02T20:11:10",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

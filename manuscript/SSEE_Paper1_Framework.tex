@@ -408,7 +408,7 @@ is auditable rather than silent:
         constraint external to SSEE (the standard inflation duration),
         not by an internal numerological choice. From these inputs follow
         the standard $\alpha$-attractor relations
-        $n_s=1-2/N_*=1-\varphi^{-7}$ (matches Planck PR4 at $0.16\sigma$)
+        $n_s=1-2/N_*=1-\varphi^{-7}$ (matches Planck 2018 at $0.16\sigma$)
         and $r=12\alpha/N_*^2 = \varphi^{-10}$ (LiteBIRD prediction).
         Neither the $\alpha$-attractor class, the value $\alpha=\varphi^4/3$,
         nor the form $N_*=2\varphi^n$ is derived from D+S; together they
@@ -752,7 +752,7 @@ applies uniformly to Papers~1--4.
   matter density (no matter factor; Postulate~M retired, OP-8 closed)
   (Structural Constant Dictionary,
   \href{https://doi.org/10.5281/zenodo.20684908}{Zenodo~10.5281/zenodo.20684908}).
-  Validated against: Planck PR4 TT+TE+EE+lensing via CAMB; \texttt{plik\_lite}
+  Validated against: Planck 2018 TT+TE+EE+lensing via CAMB; \texttt{plik\_lite}
   TTTEEE likelihood via Cobaya (Paper~3).
   \textit{Result}: $\chi^2_r=1.044$ (TT, 1971 multipoles);
   the canonical $\omega_m$-direct CMB fit gives $\Delta\mathrm{BIC}=\val{b1_dBIC}$
@@ -761,7 +761,7 @@ applies uniformly to Papers~1--4.
   \texttt{plik\_lite}${}+{}$low-$\ell$ point estimate at $-26.03$ ($\chi^2_{\rm SSEE}=1003.586$). The
   earlier legacy Cobaya scan gave $\Delta\mathrm{BIC}=-32.2$ at the superseded
   MIRA anchor $H_0=67.037$.
-  \textit{Claim}: SSEE is \emph{not falsified} by the Planck PR4 CMB spectra.
+  \textit{Claim}: SSEE is \emph{not falsified} by the Planck 2018 CMB spectra.
   This claim is sector-specific: it refers to the observational sector
   ($\omega_m$-direct, no matter factor; OP-8 closed), not the dynamic sector directly.
 
@@ -779,7 +779,7 @@ applies uniformly to Papers~1--4.
   (documented in Table~\ref{tab:derivation_chain} and \texttt{AUDIT.md}).
   \textit{Claim}: the algebraic sector is \emph{not falsified} by any
   currently available dataset at the $>3\sigma$ level. A future falsification would require
-  $n_s\neq1-\varphi^{-7}$ at $>3\sigma$ from Planck~PR4,
+  $n_s\neq1-\varphi^{-7}$ at $>3\sigma$ from Planck~2018,
   or $r\neq\varphi^{-10}$ from LiteBIRD.
 
 \end{description}
@@ -813,7 +813,7 @@ Full \texttt{plik} MCMC & \val{b1_N} & $\omega_m$-direct & 2 & 6 & $\mathbf{\val
   CMB parsimony, \textbf{canonical} (off-diag.\ TTTEEE+lowl+lensing, Paper~3 §b1) \\[3pt]
 \texttt{plik\_lite} TTTEEE${}+{}$lowl & 669 & $\omega_m$-direct & 2 & 6 & $-26.03$ &
   Compressed-nuisance point est., $\{A_s,\tau\}$ fitted (cross-check; $\Omega_m{=}\val{OMEGA_M_TOTAL_d6}$) \\[3pt]
-Planck PR4 diagonal & 5914 & $\omega_m$-direct & 2 & 6 & $-35.0$ &
+Planck 2018 diagonal & 5914 & $\omega_m$-direct & 2 & 6 & $-35.0$ &
   CMB spectra, diagonal cov.\ (cross-check; $H_0{=}67.962$) \\[3pt]
 \texttt{plik\_lite} TTTEEE & 613 & MIRA bg (legacy) & 2 & 6 & $-32.2$ &
   CMB parsimony; \emph{superseded by the $\omega_m$-direct rows above} \\
@@ -868,7 +868,7 @@ all four papers and cannot be re-interpreted post-hoc.
 \noindent\begin{tcolorbox}[colback=red!4,colframe=red!60!black,title=SSEE Falsification Criteria,width=\linewidth]
 \textbf{Algebraic sector} is falsified if:
 \begin{itemize}[nosep,leftmargin=*]
-  \item $n_s \neq 1-\varphi^{-7}$ at $>3\sigma$ from Planck~PR4 final; or
+  \item $n_s \neq 1-\varphi^{-7}$ at $>3\sigma$ from Planck~2018; or
   \item $r \neq \varphi^{-10}$ at $>2\sigma$ from LiteBIRD ($\sim$2032).
 \end{itemize}
 \textbf{Dynamic sector} is falsified if:
@@ -922,14 +922,14 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
 \midrule
 \textbf{Algebraic} &
   Closed-dictionary algebraic closure; cross-domain Type~A table &
-  $n_s \neq 1-\varphi^{-7}$ (Planck~PR4) or $r \neq \varphi^{-10}$ (LiteBIRD) &
+  $n_s \neq 1-\varphi^{-7}$ (Planck~2018) or $r \neq \varphi^{-10}$ (LiteBIRD) &
   Any tension arising from unit-convention mismatch \\[4pt]
 \textbf{Dynamic} &
   DESI~DR2 $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$; $w_0,w_a$ within $0.24\sigma$ (Pantheon+) &
   DESI~DR5+ excludes $(-0.840,-0.670)$; or $\chi^2_r(H(z))>2.5$ with full cov. &
   A $\chi^2>1$ from \LCDM-calibrated priors the model does not assume \\[4pt]
 \textbf{Observational} &
-  Planck~PR4 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=147.17$~Mpc ($0.32\sigma$) &
+  Planck~2018 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=147.17$~Mpc ($0.32\sigma$) &
   Euclid/KiDS $\Omega_m<0.25$ at $z<1$ &
   $\chi^2_r=1.044$ vs \LCDM's $1.043$ (non-equivalent background) \\
 \bottomrule
@@ -1022,7 +1022,7 @@ $M_v$     & $\varphi+\pi+K_v$ & $\val{M_V_d6}$ & Max.\ dim.\ invariant & A \\
 $w_0$     & $-T_r/M_v$ & $\val{W0_d6}$ & DESI DR2 & A \\
 $w_a$     & $-P_{sc}/I_g$ & $\val{WA_d6}$ & DESI DR2 & A \\
 $H_0^{\rm alg}$ & $3(\varphi+\pi)^2$ & $\val{H0_ALG_d3}$ km/s/Mpc & Planck 2018 & P$^\dagger$ \\
-$H_0^{\rm MCMC}$ & CMB fit at fixed anchor (Paper~3) & $67.962$ (anchor, fixed) & Planck PR4 & M \\
+$H_0^{\rm MCMC}$ & CMB fit at fixed anchor (Paper~3) & $67.962$ (anchor, fixed) & Planck 2018 & M \\
 $s_m$ & $(\pi-\varphi)/[2(\varphi+\pi)]$ & $\val{S_M_d6}$ & EoS sector; $1+w_0$ exact & A \\
 $\Omega_m^{\rm CMB}$ & $\omega_m/h^2=(\Omega_b h^2{+}\Omega_c h^2{+}\omega_\nu)/h^2$ & $\val{OMEGA_M_TOTAL_d6}^\S$ & Planck 2018 & A \\
 $n_s$     & $1-\varphi^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & A \\

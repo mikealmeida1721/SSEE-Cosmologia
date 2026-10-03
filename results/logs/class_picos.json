@@ -55,7 +55,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
+  "commit": "4fe98f2acce088de36e75cbcb6a3e80e2096a7c1",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/class_picos.py",
@@ -64,12 +64,12 @@
   "entradas": {
    "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2",
    "class_ssee/ssee_v36_nomira.ini": "c0a47ae802d880f79d16e3b15dfcf9f2b68fce476e95390afd87f4c2a57ba98a",
-   "results/logs/paper3_cmb_chi2.json": "c239594870f3c761981a5092d8a5ac88523f0d0b8623e72fd0e455f94726e7c0"
+   "results/logs/paper3_cmb_chi2.json": "7fd89e29f6a7346efae7e1b124ccdbb293c42bc467d3f5cc1641df70859270a6"
   },
   "argv": [
    "src/p03_cmb/class_picos.py"
   ],
-  "fecha": "2026-10-02T19:58:53",
+  "fecha": "2026-10-02T20:12:36",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -78,8 +78,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

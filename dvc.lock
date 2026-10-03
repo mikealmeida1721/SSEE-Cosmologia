@@ -95,8 +95,8 @@ stages:
       size: 4205
     - path: results/logs/class_picos.json
       hash: md5
-      md5: d90d0f63d35ca34bd3547fd46d06588d
-      size: 1873
+      md5: dc8844ae45a234a8a7ac990e705f0c0f
+      size: 1875
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
       md5: a467fbe5b7944f4ba374d9623b30b513
@@ -187,8 +187,8 @@ stages:
       size: 1376
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
-      md5: 520462e625e6b0b487c9039c531d1811
-      size: 2381
+      md5: 084b442d8a16232264996a12a5075937
+      size: 2379
     - path: results/logs/paper4_toe.json
       hash: md5
       md5: 64a688def30b9902a56f3eb00d0c428a
@@ -236,7 +236,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 866a97b59f3ba8f808fd398f294abbff
+      md5: d052921644a61c18451efd6f2027c4ea
       size: 80181
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -509,26 +509,26 @@ stages:
       src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 
       src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
     deps:
-    - path: data/raw/planck_pr4_EE.txt
+    - path: data/raw/planck2018_EE.txt
       hash: md5
       md5: f81229611d039f90b6eea76a0fe5b713
       size: 135731
-    - path: data/raw/planck_pr4_TE.txt
+    - path: data/raw/planck2018_TE.txt
       hash: md5
       md5: d6a684fc7d5ff76ff2125691de5995b9
       size: 135731
-    - path: data/raw/planck_pr4_TT.txt
+    - path: data/raw/planck2018_TT.txt
       hash: md5
       md5: 953f333fa17483d3e2143dc82ddfa874
       size: 170547
-    - path: data/raw/planck_pr4_lensing.txt
+    - path: data/raw/planck2018_lensing.txt
       hash: md5
       md5: f2804b8f2fa134071a94a5e4c7a2fa82
       size: 1083
     - path: src/p03_cmb/ssee_paper3_cmb.py
       hash: md5
-      md5: 0955a760b82d6267f518f27c84310fe3
-      size: 21211
+      md5: 3c6a93ee5805e94f01ffc907ea35b748
+      size: 21227
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -540,12 +540,12 @@ stages:
     outs:
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
-      md5: 520462e625e6b0b487c9039c531d1811
-      size: 2381
+      md5: 084b442d8a16232264996a12a5075937
+      size: 2379
     - path: results/logs/paper3_cmb_reframe.log
       hash: md5
-      md5: 3547b2ea7c02f91347e4401b77c72638
-      size: 3502
+      md5: 856897cb705fb0fd852a8ccba3747c2d
+      size: 3506
   lya_auditoria:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p02_mcmc/lya_auditoria.py
@@ -817,8 +817,8 @@ stages:
       size: 861
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
-      md5: 520462e625e6b0b487c9039c531d1811
-      size: 2381
+      md5: 084b442d8a16232264996a12a5075937
+      size: 2379
     - path: src/p03_cmb/class_picos.py
       hash: md5
       md5: a5156534a66421144fdd280118fc07d0
@@ -838,12 +838,12 @@ stages:
     outs:
     - path: results/figures/fig_class_tt.pdf
       hash: md5
-      md5: d88671d2a36218c705016b4be32cb735
-      size: 25163
+      md5: c3e6a46e251babbf083d6061b11f5244
+      size: 25165
     - path: results/logs/class_picos.json
       hash: md5
-      md5: d90d0f63d35ca34bd3547fd46d06588d
-      size: 1873
+      md5: dc8844ae45a234a8a7ac990e705f0c0f
+      size: 1875
   fondos_exponenciales:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p07_eft/fondos_exponenciales.py > 
@@ -2063,3 +2063,40 @@ stages:
       hash: md5
       md5: b8391a4268b76b71f741e8444f05b2a4
       size: 106062
+  coteja_crudos:
+    cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
+    deps:
+    - path: 
+        /home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat
+      hash: md5
+      md5: 6d07469f5fd6a2ae420bb425ab47de6a
+      size: 885
+    - path: data/raw/planck2018_EE.txt
+      hash: md5
+      md5: f81229611d039f90b6eea76a0fe5b713
+      size: 135731
+    - path: data/raw/planck2018_TE.txt
+      hash: md5
+      md5: d6a684fc7d5ff76ff2125691de5995b9
+      size: 135731
+    - path: data/raw/planck2018_TT.txt
+      hash: md5
+      md5: 953f333fa17483d3e2143dc82ddfa874
+      size: 170547
+    - path: data/raw/planck2018_lensing.txt
+      hash: md5
+      md5: f2804b8f2fa134071a94a5e4c7a2fa82
+      size: 1083
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/verificacion/coteja_crudos.py
+      hash: md5
+      md5: 16726cd5f086d0d7358d21025b804940
+      size: 4809
+    outs:
+    - path: results/logs/coteja_crudos.json
+      hash: md5
+      md5: 06f1a2842aca73289937e54461ba2de0
+      size: 3027
