@@ -42,18 +42,18 @@ planck2018_prior.csv:
   cita: "Planck 2018 VI, A&A 641, A6"
   cotejo: null
 
-planck_pr4_TT.txt:
-  cita: "Planck PR4 Legacy Archive"
-  cotejo: null
+planck2018_TT.txt:
+  cita: "Planck 2018 (PR3) Legacy Archive, COM_PowerSpect_CMB-*-full_R3.01.txt"
+  cotejo: "src/verificacion/coteja_crudos.py (sha256 contra el archivo oficial de IRSA, R3.01; bajado 2026-10-02)"
 
-planck_pr4_TE.txt:
-  cita: "Planck PR4 Legacy Archive"
-  cotejo: null
+planck2018_TE.txt:
+  cita: "Planck 2018 (PR3) Legacy Archive, COM_PowerSpect_CMB-*-full_R3.01.txt"
+  cotejo: "src/verificacion/coteja_crudos.py (sha256 contra el archivo oficial de IRSA, R3.01; bajado 2026-10-02)"
 
-planck_pr4_EE.txt:
-  cita: "Planck PR4 Legacy Archive"
-  cotejo: null
+planck2018_EE.txt:
+  cita: "Planck 2018 (PR3) Legacy Archive, COM_PowerSpect_CMB-*-full_R3.01.txt"
+  cotejo: "src/verificacion/coteja_crudos.py (sha256 contra el archivo oficial de IRSA, R3.01; bajado 2026-10-02)"
 
-planck_pr4_lensing.txt:
+planck2018_lensing.txt:
   cita: "Cobaya planck_supp_data_and_covmats (arXiv:1807.06209)"
-  cotejo: null
+  cotejo: "src/verificacion/coteja_crudos.py (columna por columna contra planck_supp_data_and_covmats/lensing/2018/..._agr2_bandpowers.dat)"

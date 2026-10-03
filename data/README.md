@@ -11,10 +11,10 @@ Observational data used in Papers 2 and 3:
 | `planck2018_prior.csv` | Compressed CMB prior (H₀, Ωm, Ωb h²); ρ(H₀,Ωm)=−0.85 | Planck 2018 (A&A 641, A6) TT+TE+EE+lowE |
 | `cluster_masses.csv` | 4 base clusters (+3 extension), IGIMF-corrected baryonic + dynamical masses | Zhang et al. 2026 (arXiv:2602.06082); Simionescu+2011; Tchernin+2016; Owers+2011 |
 | `cosmic_chronometers.csv` | H(z) measurements, z=0.07–1.97, 23 points | Moresco et al. 2022 (Living Rev. Relativ. 25, 6) |
-| `planck_pr4_TT.txt` | CMB TT power spectrum Dℓ, ℓ=2–2508 | Planck PR4 Legacy Archive |
-| `planck_pr4_TE.txt` | CMB TE power spectrum Dℓ, ℓ=2–2508 | Planck PR4 Legacy Archive |
-| `planck_pr4_EE.txt` | CMB EE power spectrum Dℓ, ℓ=2–2508 | Planck PR4 Legacy Archive |
-| `planck_pr4_lensing.txt` | CMB lensing power spectrum (14 bins MV) | Cobaya planck_supp_data_and_covmats (arXiv:1807.06209) |
+| `planck2018_TT.txt` | CMB TT power spectrum Dℓ, ℓ=2–2508 | Planck PR4 Legacy Archive |
+| `planck2018_TE.txt` | CMB TE power spectrum Dℓ, ℓ=2–2508 | Planck PR4 Legacy Archive |
+| `planck2018_EE.txt` | CMB EE power spectrum Dℓ, ℓ=2–2508 | Planck PR4 Legacy Archive |
+| `planck2018_lensing.txt` | CMB lensing power spectrum (14 bins MV) | Cobaya planck_supp_data_and_covmats (arXiv:1807.06209) |
 
 **Clusters (4 base):** Coma, A2029, A478, Bullet — all IGIMF-corrected per Zhang et al. 2026.
 Extension rows (Perseus, A2142, A2744) carry their own references in the csv header.

@@ -1,7 +1,7 @@
 """
-SSEE — Paper 3: CMB Power Spectrum vs Planck PR4
+SSEE — Paper 3: CMB Power Spectrum vs Planck 2018
 Computes Cl_TT/TE/EE/lensing under SSEE background, applies r_d,eff mapping,
-compares against Planck PR4 data, and produces chi2 + figures.
+compares against Planck 2018 data, and produces chi2 + figures.
 """
 
 import numpy as np
@@ -43,27 +43,27 @@ os.makedirs(FIG_DIR, exist_ok=True)
 os.makedirs(DAT_DIR, exist_ok=True)
 
 # ---------------------------------------------------------------------------
-# Download Planck PR4 TT spectrum (COM_PowerSpect_CMB-TT-full_R3.01.txt)
+# Download Planck 2018 TT spectrum (COM_PowerSpect_CMB-TT-full_R3.01.txt)
 # ---------------------------------------------------------------------------
-PLANCK_FILE = os.path.join(DAT_DIR, "planck_pr4_TT.txt")
+PLANCK_FILE = os.path.join(DAT_DIR, "planck2018_TT.txt")
 PLANCK_URL  = (
     "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/"
     "cosmoparams/COM_PowerSpect_CMB-TT-full_R3.01.txt"
 )
 
-PLANCK_TE_FILE = os.path.join(DAT_DIR, "planck_pr4_TE.txt")
+PLANCK_TE_FILE = os.path.join(DAT_DIR, "planck2018_TE.txt")
 PLANCK_TE_URL  = (
     "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/"
     "cosmoparams/COM_PowerSpect_CMB-TE-full_R3.01.txt"
 )
 
-PLANCK_EE_FILE = os.path.join(DAT_DIR, "planck_pr4_EE.txt")
+PLANCK_EE_FILE = os.path.join(DAT_DIR, "planck2018_EE.txt")
 PLANCK_EE_URL  = (
     "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/"
     "cosmoparams/COM_PowerSpect_CMB-EE-full_R3.01.txt"
 )
 
-PLANCK_LENS_FILE = os.path.join(DAT_DIR, "planck_pr4_lensing.txt")
+PLANCK_LENS_FILE = os.path.join(DAT_DIR, "planck2018_lensing.txt")
 PLANCK_LENS_URL  = (
     "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/"
     "cosmoparams/COM_PowerSpect_CMB-lensing_R3.01.txt"
@@ -209,7 +209,7 @@ def _spectrum_figure(ells_s, Dl_s, ells_l, Dl_l,
     ax = axes[0]
     if ell_obs is not None:
         ax.errorbar(ell_obs, Dl_obs, yerr=sigma_obs,
-                    fmt="k.", ms=2, lw=0.5, alpha=0.6, label="Planck PR4")
+                    fmt="k.", ms=2, lw=0.5, alpha=0.6, label="Planck 2018")
     lbl_l = lcdm_label or r"$\Lambda$CDM"
     lbl_s = ssee_label or r"SSEE"
     ax.plot(ells_l[2:], Dl_l[2:], color="tab:orange", lw=1.5, ls="--", label=lbl_l)
@@ -242,7 +242,7 @@ def plot_spectrum(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
     _spectrum_figure(
         ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs,
         ylabel=r"$D_\ell^{TT}$ [$\mu$K$^2$]",
-        title="SSEE vs Planck PR4: CMB TT Power Spectrum",
+        title="SSEE vs Planck 2018: CMB TT Power Spectrum",
         outname="fig_cmb_spectrum.pdf",
         ylim=(0, 6500),
         ssee_label=r"SSEE ($\Omega_{m,\rm CMB}=0.308881$)",
@@ -254,7 +254,7 @@ def plot_te_spectrum(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
     _spectrum_figure(
         ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs,
         ylabel=r"$D_\ell^{TE}$ [$\mu$K$^2$]",
-        title="SSEE vs Planck PR4: CMB TE Power Spectrum",
+        title="SSEE vs Planck 2018: CMB TE Power Spectrum",
         outname="fig_cmb_te.pdf",
         ssee_label=r"SSEE",
         lcdm_label=r"$\Lambda$CDM",
@@ -265,7 +265,7 @@ def plot_ee_spectrum(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
     _spectrum_figure(
         ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs,
         ylabel=r"$D_\ell^{EE}$ [$\mu$K$^2$]",
-        title="SSEE vs Planck PR4: CMB EE Power Spectrum",
+        title="SSEE vs Planck 2018: CMB EE Power Spectrum",
         outname="fig_cmb_ee.pdf",
         ssee_label=r"SSEE",
         lcdm_label=r"$\Lambda$CDM",
@@ -284,7 +284,7 @@ def plot_lensing(ells_s, Cl_s, ells_l, Cl_l, ell_obs, Cl_obs, sigma_obs):
 
     if ell_obs is not None and Cl_obs is not None:
         ax.errorbar(ell_obs, Cl_obs * 1e7, yerr=sigma_obs * 1e7,
-                    fmt="k.", ms=5, lw=1.0, alpha=0.8, label="Planck PR4",
+                    fmt="k.", ms=5, lw=1.0, alpha=0.8, label="Planck 2018",
                     capsize=3)
 
     m_l = ells_l > 1
@@ -295,7 +295,7 @@ def plot_lensing(ells_s, Cl_s, ells_l, Cl_l, ell_obs, Cl_obs, sigma_obs):
             color="tab:blue", lw=1.8, label=r"SSEE")
     ax.set_xlim(2, 1300)
     ax.set_ylabel(r"$[L(L+1)]^2 C_L^{\phi\phi} / (2\pi)\ [\times 10^{-7}]$", fontsize=11)
-    ax.set_title("SSEE vs Planck PR4: CMB Lensing Potential", fontsize=13)
+    ax.set_title("SSEE vs Planck 2018: CMB Lensing Potential", fontsize=13)
     ax.legend(fontsize=10)
     ax.grid(True, alpha=0.3)
 
@@ -344,7 +344,7 @@ def plot_peak_zoom(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
         ax.grid(True, alpha=0.3)
 
     axes[0].set_ylabel(r"$D_\ell^{TT}$ [$\mu$K$^2$]")
-    plt.suptitle("SSEE: Zoom en Picos Acústicos vs Planck PR4", fontsize=13)
+    plt.suptitle("SSEE: Zoom en Picos Acústicos vs Planck 2018", fontsize=13)
     plt.tight_layout()
     out = os.path.join(FIG_DIR, "fig_cmb_peaks_zoom.pdf")
     plt.savefig(out, bbox_inches="tight")
@@ -357,7 +357,7 @@ def plot_peak_zoom(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 60)
-    print("SSEE — Paper 3: CMB vs Planck PR4 (TT+TE+EE+lensing)")
+    print("SSEE — Paper 3: CMB vs Planck 2018 (TT+TE+EE+lensing)")
     print("=" * 60)
     print(f"\nParámetros SSEE:")
     print(f"  w0={w0:.4f}  wa={wa:.4f}")
@@ -375,13 +375,13 @@ def main():
     (ell_lens, Cl_lens, sig_lens) = load_planck()
 
     if ell_tt is not None:
-        print(f"\nDatos Planck PR4 TT: {len(ell_tt)} puntos, ℓ={ell_tt[0]}–{ell_tt[-1]}")
+        print(f"\nDatos Planck 2018 TT: {len(ell_tt)} puntos, ℓ={ell_tt[0]}–{ell_tt[-1]}")
     if ell_te is not None:
-        print(f"Datos Planck PR4 TE: {len(ell_te)} puntos")
+        print(f"Datos Planck 2018 TE: {len(ell_te)} puntos")
     if ell_ee is not None:
-        print(f"Datos Planck PR4 EE: {len(ell_ee)} puntos")
+        print(f"Datos Planck 2018 EE: {len(ell_ee)} puntos")
     if ell_lens is not None:
-        print(f"Datos Planck PR4 lensing: {len(ell_lens)} puntos")
+        print(f"Datos Planck 2018 lensing: {len(ell_lens)} puntos")
 
     # 2. Calcular espectros SSEE
     print("\nCalculando espectros SSEE con CAMB (TT+TE+EE+lensing)...")
@@ -408,7 +408,7 @@ def main():
     print(f"  r_d,ΛCDM = {r_d_lcdm:.2f} Mpc")
 
     # 4. Chi2 total por espectro
-    print("\n--- χ² vs Planck PR4 ---")
+    print("\n--- χ² vs Planck 2018 ---")
     chi2_results = {}
     total_chi2_s = 0
     total_chi2_l = 0

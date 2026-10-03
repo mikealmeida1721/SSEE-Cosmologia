@@ -2708,7 +2708,7 @@ check("R76 todo dato crudo tiene entrada en data/raw/FUENTES.yaml",
       not _sin76, ", ".join(_sin76) if _sin76 else "todos declarados")
 check("R76 ningun extracto literal fue alterado (sha de la fuente)",
       not _alt76, ", ".join(_alt76) if _alt76 else "extractos intactos")
-_TOPE_R76 = 8   # 2026-10-01: 8 de 10 archivos sin cotejo (cotejados: DESI por R14, Zhang por su lector)
+_TOPE_R76 = 4   # 2026-10-02: 8 -> 4 (los 4 de Planck cotejados por coteja_crudos.py: eran Planck 2018 R3.01, no PR4). 2026-10-01: 8 de 10 sin cotejo (cotejados: DESI por R14, Zhang por su lector)
 _DEUDA_REAL["R76"] = len(_nocot76)
 _DEUDA_MAX["R76"] = _TOPE_R76
 if _nocot76:

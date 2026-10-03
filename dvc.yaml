@@ -190,10 +190,10 @@ stages:
     - src/p03_cmb/ssee_paper3_cmb.py
     - src/procedencia.py
     - src/ssee_core.py
-    - data/raw/planck_pr4_TT.txt
-    - data/raw/planck_pr4_TE.txt
-    - data/raw/planck_pr4_EE.txt
-    - data/raw/planck_pr4_lensing.txt
+    - data/raw/planck2018_TT.txt
+    - data/raw/planck2018_TE.txt
+    - data/raw/planck2018_EE.txt
+    - data/raw/planck2018_lensing.txt
     outs:
     - results/logs/paper3_cmb_chi2.json:
         cache: false
@@ -661,6 +661,19 @@ stages:
     - results/logs/mcmc_paper2_reframe.json
     outs:
     - results/figures/fig_readme_tensions.png:
+        cache: false
+  coteja_crudos:
+    cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
+    deps:
+    - src/verificacion/coteja_crudos.py
+    - src/procedencia.py
+    - data/raw/planck2018_TT.txt
+    - data/raw/planck2018_TE.txt
+    - data/raw/planck2018_EE.txt
+    - data/raw/planck2018_lensing.txt
+    - /home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat
+    outs:
+    - results/logs/coteja_crudos.json:
         cache: false
   sondas_ssee_vs_lcdm:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
