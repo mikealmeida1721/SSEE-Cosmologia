@@ -42,6 +42,7 @@ QUITA = re.compile(r"^\[\s*\d+(\.\d+)?m\]|\d{4}-\d{2}-\d{2}|\d{1,2}:\d{2}(:\d{2}
                    r"\d+(\.\d+)?\s*(s|seg|segundos|min|h|it/s)\b")
 # Líneas que se descartan enteras (no llevan resultados):
 DESCARTA = re.compile(r"ACTA-PROCEDENCIA|PID|elapsed|tiempo|/home/|/mnt/|/tmp/|UserWarning|warnings\.warn", re.I)
+PROTEGE = ("results/logs/lcdm_conjunta", "results/logs/vigilante_", "results/logs/cola_", "sandbox_unificado")
 CLAVES_RUIDO = re.compile(r"fecha|_procedencia|tiempo|elapsed|duracion|host|pid", re.I)
 
 
@@ -180,9 +181,14 @@ def main(lista, salida):
             for ruta, est in despues.items():
                 if ruta in antes and antes[ruta] == est:
                     continue
+                if ruta.startswith(PROTEGE):
+                    continue      # corridas ajenas en curso (la conjunta y sus colas): jamás se tocan
                 if est.strip() == "??":
                     p = ROOT / ruta
-                    p.unlink() if p.is_file() else None
+                    if p.is_file():   # se MUEVE fuera del repo, no se borra: si algo se coló, se recupera
+                        destino = DIF / "_creados" / ruta.replace("/", "__")
+                        destino.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.move(str(p), destino)
                 else:
                     _git("checkout", "--", ruta)
             shutil.copy2(copia, ROOT / log)   # el log vuelve a ser el de antes, byte a byte
