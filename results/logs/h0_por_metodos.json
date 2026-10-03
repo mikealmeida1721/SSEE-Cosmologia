@@ -1,6 +1,7 @@
 {
  "fecha": "2026-10-03",
  "preregistro_commit": "ade15d8",
+ "razon_lente_tdcosmo": 0.9810593915847873,
  "f_screen": 0.06952161114405928,
  "H_glob_desi": 67.78432759640418,
  "H_glob_desi_s": 0.45538474216832503,
@@ -49,14 +50,14 @@
    "texto": "\\newcommand{\\hnotflcdmonea}{71.6^{+3.9}_{-3.3}}",
    "tirones": {
     "P": {
-     "pred": 72.84890053142196,
-     "pred_s": 0.489409262614082,
-     "sigma": -0.3177388613737763
+     "pred": 74.25534188479969,
+     "pred_s": 0.49885793542376505,
+     "sigma": -0.6753543859116675
     },
     "C": {
-     "pred": 67.78432759640418,
-     "pred_s": 0.45538474216832503,
-     "sigma": 1.1454099329622525
+     "pred": 69.09299088091547,
+     "pred_s": 0.4641765280211058,
+     "sigma": 0.7522940735468372
     },
     "LCDM": {
      "pred": 67.36,
@@ -301,14 +302,14 @@
   "sirena"
  ],
  "chi2_primario": {
-  "P": 0.2816163526562797,
-  "C": 5.344560375524351,
+  "P": 0.6411832419313194,
+  "C": 4.631105777133044,
   "LCDM": 6.145005312394511
  },
  "n_primario": 3,
  "potencia": {
-  "P": 0.2185,
-  "C": 0.1075
+  "P": 0.226,
+  "C": 0.1145
  },
  "tiene_potencia": false,
  "escala_errores_necesaria": 0.458319091796875,
@@ -317,14 +318,15 @@
  "veredicto_criterio": "NO CONCLUYE",
  "veredicto": "SIN POTENCIA",
  "_procedencia": {
-  "commit": "4733a07eb2052f44b49c84a23ffe49daa7076d8e",
+  "commit": "f0ebf4800542fa136310b5da4044b2e472e23f9e",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/h0_por_metodos.py",
-  "script_sha256": "9eb796a0c11a1527011f14db1f6c1a554bb016dc7050e148afe514d6a7b862af",
+  "script_sha256": "2ea1a216edddf0ff6264d01898eda2f91adae4c188586fe6b3c3db11ba4a54fa",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/h0_four_priors.json": "7ac8cc6e34b14fb0a254fcc00670cbcc19b2dfa54744dbbab453e02aa8f3d33e",
+   "results/logs/h0_lente_fondo_ssee.log": "dc9e2078aacd23b3b3bd88814d53af05586f0fce75d00138e8f13ae2d10d6be9",
    "/mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex": "4ec08a54d7aadabd57e97fd02d0bfcb2d035f222ac6d9e20a7f1346c50ed2e2d",
    "/mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex": "35fff52c44e8f89ea546a22644c856b325497e0819cc800ac32b2ea93c823cd6",
    "/mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex": "993d700517adf7129337103502f9592818faa2759afef88e87f9896ab53de5f4",
@@ -337,7 +339,7 @@
   "argv": [
    "src/p09_hubble/h0_por_metodos.py"
   ],
-  "fecha": "2026-10-03T04:28:23",
+  "fecha": "2026-10-03T04:57:27",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 4ded7b59b4b9532579b11b760f93a5c9
-      size: 65596
+      md5: 780bffc798ae7dccd5675c576765f5d3
+      size: 65973
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -141,6 +141,10 @@ stages:
       hash: md5
       md5: 452a28d03f400637e87b2a7f6ad8c27f
       size: 1275
+    - path: results/logs/h0_lente_fondo_ssee.log
+      hash: md5
+      md5: 572bfa3aacb3e0406ca32a1f46c53c63
+      size: 3488
     - path: results/logs/hiclass_campo.json
       hash: md5
       md5: 191482341f91d3ecc18f7d00602bf42e
@@ -244,8 +248,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 148e9506dbb4d6c64b833db51fed861f
-      size: 82429
+      md5: 368526198aa8db52893dd3b8c5f9dad5
+      size: 83024
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -2432,10 +2436,14 @@ stages:
       hash: md5
       md5: 452a28d03f400637e87b2a7f6ad8c27f
       size: 1275
+    - path: results/logs/h0_lente_fondo_ssee.log
+      hash: md5
+      md5: 572bfa3aacb3e0406ca32a1f46c53c63
+      size: 3488
     - path: src/p09_hubble/h0_por_metodos.py
       hash: md5
-      md5: 0f813a95fda7aecbc6220fd78f5bc180
-      size: 11291
+      md5: 2759a55e5e8c00a38c4a506a83898e9d
+      size: 12032
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -2447,5 +2455,29 @@ stages:
     outs:
     - path: results/logs/h0_por_metodos.json
       hash: md5
-      md5: 0918f77193f84196f051de5887ba0429
-      size: 9518
+      md5: 011e6b667a9d8a485bc2a524d5d69253
+      size: 9673
+  h0_lente_fondo_ssee:
+    cmd: .venv/bin/python3 src/p09_hubble/h0_lente_fondo_ssee.py
+    deps:
+    - path: CANONICAL_VALUES.yaml
+      hash: md5
+      md5: ce3ad1c9b2208b7d890117d184988b8f
+      size: 69505
+    - path: src/p09_hubble/h0_lente_fondo_ssee.py
+      hash: md5
+      md5: 08ee05f1663b5a3cc2e6a7070269fa01
+      size: 6827
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/h0_lente_fondo_ssee.log
+      hash: md5
+      md5: 572bfa3aacb3e0406ca32a1f46c53c63
+      size: 3488

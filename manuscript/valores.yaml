@@ -655,3 +655,6 @@ desi_libre_Om_s:      {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.Om_e
 desi_libre_dchi2:     {fuente: "results/logs/bao_lcdm_libre.json#delta_chi2_camb_ssee_menos_lcdm_libre", formato: ".2f"}
 sondas_umbral:        {fuente: "results/logs/sondas_ssee_vs_lcdm.json#umbral_discrimina_dchi2", formato: ".0f"}
 sondas_desy3_nla:     {fuente: "results/logs/sondas_ssee_vs_lcdm.json#des_y3.dchi2_NLA", formato: ".2f"}
+# SN Requiem: H0 que leería un análisis LCDM plano bajo la lectura P (lente ve el valor local) y bajo C (global) — P9 criterio 5 (2026-10-03)
+requiem_P_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.log#requiem_fecha.P_plano_leida_LCDM.H0", formato: ".1f"}
+requiem_C_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.log#requiem_fecha.SSEE_leida_LCDM.H0", formato: ".1f"}

@@ -3053,6 +3053,17 @@ la expresión de `δρ_φ` está asertada, no derivada.
 > hoy es ~2.25. Descriptivo, no veredicto: los tres primarios caen a ≤ 0.35σ de P (72.85) y a 0.28–2.02σ de C
 > (67.78). La escalera TRGB depende del EQUIPO: SH0ES-JWST 72.1 (−0.33σ de P), CCHP 70.39 (a medio camino entre
 > las dos). Un cambio de método no separa las hipótesis mientras el cambio de equipo pese más.
+> **Corrección declarada (después de la primera corrida):** TDCOSMO publica su H₀ con fondo ΛCDM plano. Las
+> predicciones P y C se pasan a ese marco con la razón de distancias de retraso de `h0_lente_fondo_ssee`
+> (el mismo descuido de ingredientes por modelo de siempre). Con eso: χ² P 0.64, C 4.63; la potencia sigue
+> igual (23 % / 11 %). Sigue SIN POTENCIA.
+> **REGISTRADO 2026-10-03 (decisión de Mike): la lectura P como rival del criterio 4 de Paper 9 (SN Requiem).**
+> P: la lente ve el valor local, y un análisis ΛCDM plano de MACS J0138 daría ~74.2 → la cuarta imagen reaparece
+> en 2026 (centro de la interpolación: junio, ±4 meses). C (criterio 4, ya registrado el 2026-09-19): ~69.1 →
+> 2027. Reaparición en 2026 ⟹ cae el criterio 4 y queda P; en 2027 ⟹ cae P. **Registro tardío, declarado:** la
+> mayor parte de la ventana de P ya pasó sin reporte público de la imagen (búsqueda del 2026-10-03); la
+> ausencia ya pesa contra P, a la espera de los resultados de la campaña HST/JWST (programa 9330). Valores en
+> `h0_lente_fondo_ssee.log` (`requiem_fecha`). Paper 9, criterio 5.
 
 **De dónde viene.** OP-8 se **disolvió** el 2026-06-18 en su forma original: con el reframe
 ω_m-directo ya no hay «factor materia» que derivar, y Ω_m,CMB = ω_m/h² es derivada. Pero

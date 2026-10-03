@@ -91,6 +91,37 @@
    "H0": 73.04,
    "fecha": "2026-08"
   },
+  "P_plano_leida_LCDM": {
+   "H0": 74.24634563547475,
+   "fecha": "2026-06"
+  },
   "nota": "la ventana de cada centro es de ~+-4 meses (incertidumbre del modelo de lente)"
+ },
+ "_procedencia": {
+  "commit": "f0ebf4800542fa136310b5da4044b2e472e23f9e",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p09_hubble/h0_lente_fondo_ssee.py",
+  "script_sha256": "7333a563b3f743816a72ec1a1605575daee4a94803b59ef71873b7c74084a3ae",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2"
+  },
+  "argv": [
+   "src/p09_hubble/h0_lente_fondo_ssee.py"
+  ],
+  "fecha": "2026-10-03T04:57:24",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

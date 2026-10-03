@@ -69,6 +69,7 @@ stages:
     - results/logs/b1_k2.json
     - results/logs/sondas_ssee_vs_lcdm.json
     - results/logs/bao_lcdm_libre.json
+    - results/logs/h0_lente_fondo_ssee.log
     - results/logs/mcmc_paper2_reframe.json
     - results/logs/h0_four_priors.json
     - results/logs/is_growth_gamma.json
