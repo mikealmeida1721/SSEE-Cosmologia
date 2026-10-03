@@ -83,6 +83,17 @@ stages:
     outs:
     - manuscript/valores_generados.tex:
         cache: false
+  op19_adm_masa:
+    cmd: .venv/bin/python3 src/op19/op19_adm_masa.py
+    deps:
+    - src/op19/op19_adm_masa.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - results/logs/cajones_algebra.json
+    outs:
+    - results/logs/op19_adm_masa.json:
+        cache: false
   tabla_sondas_tex:
     cmd: .venv/bin/python3 src/p11_sondas/tabla_sondas_tex.py
     deps:
