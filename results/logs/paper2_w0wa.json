@@ -4,39 +4,55 @@
    "nombre": "DESI+CMB (DR2 ec.25)",
    "rho": -0.978,
    "ssee_sigma": 1.675640328976918,
-   "lcdm_sigma": 2.616233301965995
+   "lcdm_sigma": 2.616233301965995,
+   "ssee_chi2_2D": 4.732996113428682,
+   "ssee_p": 0.09380866435491772,
+   "ssee_dw0": -2.0582631464884398,
+   "ssee_dwa": 1.8659853594334206
   },
   "ec26": {
    "nombre": "DESI+CMB+Pantheon+ (DR2 ec.26)",
    "rho": -0.894,
    "ssee_sigma": 0.23776260713772038,
-   "lcdm_sigma": 2.5759028866531133
+   "lcdm_sigma": 2.5759028866531133,
+   "ssee_chi2_2D": 0.41634923821224173,
+   "ssee_p": 0.812065222227323,
+   "ssee_dw0": -0.03532194465179398,
+   "ssee_dwa": -0.2571044589228779
   },
   "ec27": {
    "nombre": "DESI+CMB+Union3 (DR2 ec.27)",
    "rho": -0.933,
    "ssee_sigma": 1.7644097819482463,
-   "lcdm_sigma": 3.377554224678025
+   "lcdm_sigma": 3.377554224678025,
+   "ssee_chi2_2D": 5.110752330361177,
+   "ssee_p": 0.07766301245084214,
+   "ssee_dw0": -1.955364647963604,
+   "ssee_dwa": 1.4160419854333803
   },
   "ec28": {
    "nombre": "DESI+CMB+DESY5 (DR2 ec.28)",
    "rho": -0.905,
    "ssee_sigma": 1.464559735860199,
-   "lcdm_sigma": 3.934947863789209
+   "lcdm_sigma": 3.934947863789209,
+   "ssee_chi2_2D": 3.8892469174709863,
+   "ssee_p": 0.14304107406585126,
+   "ssee_dw0": -1.5358351633702623,
+   "ssee_dwa": 0.8636471501473587
   }
  },
  "_procedencia": {
-  "commit": "0ba4c02d7c37a3af3d3a2442638ea53d1b84fb22",
+  "commit": "21d754517d45b0aeb521b6e266a5aa81a6d960ce",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_paper2_analysis.py",
-  "script_sha256": "656d1fd0dd27d6de4511761cfce97c6afe8021fb40d6efae0c52afb2cce0f4f9",
+  "script_sha256": "6404d0504807c9810b4c1c7e61cad3b9e485600e3c9f83754e747638cdf8a261",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p02_mcmc/ssee_paper2_analysis.py"
   ],
-  "fecha": "2026-10-01T10:11:47",
+  "fecha": "2026-10-03T05:34:28",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -44,7 +60,7 @@
    "scipy": "1.17.1"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

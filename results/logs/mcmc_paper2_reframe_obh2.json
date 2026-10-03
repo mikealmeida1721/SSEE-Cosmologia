@@ -1,11 +1,37 @@
 {
- "sigmas_a_obh2_algebraico": 0.9105660281430314,
+ "sigmas_a_obh2_algebraico": 0.9139357118853417,
  "obh2_algebraico": 0.02241775678109985,
- "fecha": "2026-09-29",
- "control_H0_mediana": 67.82438276442383,
- "obh2_mediana": 0.021976810394848383,
- "obh2_p16": 0.02149564878659216,
- "obh2_p84": 0.022458156741437144,
- "obh2_std": 0.00048425525730485765,
- "filas": 2500000
+ "fecha": "2026-10-03",
+ "control_H0_mediana": 67.82260560603251,
+ "obh2_mediana": 0.02197599232610748,
+ "obh2_p16": 0.021496602032943467,
+ "obh2_p84": 0.02245668117179291,
+ "obh2_std": 0.0004833649120473249,
+ "filas": 2500000,
+ "_procedencia": {
+  "commit": "c301dc444889ab7cd37fea11c6faac4f1beaf347",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/reframe_obh2.py",
+  "script_sha256": "c8a9ca769387ec7fea3253bcf8aa3e8d3fc639a3a23672d74d546541437c3411",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/mcmc_paper2_reframe.json": "c4f32b358ca3400428340b3bd4d7422ad70625af3d2a53ba2eae0d8baeeb260e"
+  },
+  "argv": [
+   "src/p02_mcmc/reframe_obh2.py"
+  ],
+  "fecha": "2026-10-03T05:36:25",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

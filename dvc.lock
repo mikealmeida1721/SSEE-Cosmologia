@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: abebf994db30e6340e68a4860971552d
-      size: 67629
+      md5: eec519487e0473739f6dfa7ba8e17439
+      size: 68904
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -185,6 +185,10 @@ stages:
       hash: md5
       md5: 933eee15f9d6d34a6ef6a7f6d2132ad8
       size: 1472
+    - path: results/logs/mcmc_paper2_reframe_obh2.json
+      hash: md5
+      md5: 5e772a3455217f48c22194d565041c10
+      size: 1143
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
@@ -203,8 +207,8 @@ stages:
       size: 1860
     - path: results/logs/paper2_w0wa.json
       hash: md5
-      md5: 46714dc2bee740037010df3cf89bf560
-      size: 1376
+      md5: 1327f36fbb7dc8ad2b1240ddc4e715f6
+      size: 1949
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
       md5: 084b442d8a16232264996a12a5075937
@@ -260,8 +264,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 3f9eca8428fe577dc6fe9b8a5c7df9cc
-      size: 84819
+      md5: dabaa85a7051c8a81a0d1782f3ad795b
+      size: 86377
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1223,8 +1227,8 @@ stages:
     deps:
     - path: src/p02_mcmc/ssee_paper2_analysis.py
       hash: md5
-      md5: 4a8a43dadae641a6ac1ee023f5b1c796
-      size: 17329
+      md5: cc32a00bb69a38959269508178292f56
+      size: 17636
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1232,12 +1236,12 @@ stages:
     outs:
     - path: results/logs/paper2_analysis.log
       hash: md5
-      md5: baae2f231f2ed6a45ee2c7a89038db9a
-      size: 6140
+      md5: 1325c82357d183745677d63a1e06ec1b
+      size: 6139
     - path: results/logs/paper2_w0wa.json
       hash: md5
-      md5: 46714dc2bee740037010df3cf89bf560
-      size: 1376
+      md5: 1327f36fbb7dc8ad2b1240ddc4e715f6
+      size: 1949
   fsigma8_canonico:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p03_cmb/recalc_fsigma8_canonical.py
@@ -2526,3 +2530,32 @@ stages:
       hash: md5
       md5: ec1af89b1f1b0d0c8ebbc83d43c25236
       size: 1860
+  reframe_obh2:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/reframe_obh2.py
+    deps:
+    - path: results/logs/mcmc_paper2_reframe.json
+      hash: md5
+      md5: 933eee15f9d6d34a6ef6a7f6d2132ad8
+      size: 1472
+    - path: src/p02_mcmc/reframe_obh2.py
+      hash: md5
+      md5: 3158b0afdac91e51b85bb6e555301093
+      size: 2229
+    - path: src/p02_mcmc/ssee_paper2_mcmc_reframe.py
+      hash: md5
+      md5: 482b0e2472943850711021d95e91970f
+      size: 14685
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/mcmc_paper2_reframe_obh2.json
+      hash: md5
+      md5: 5e772a3455217f48c22194d565041c10
+      size: 1143

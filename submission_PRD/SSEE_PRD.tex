@@ -41,9 +41,9 @@ bare ratios of structural invariants, $w_0=-T_r/M_v=\val{W0_d6}$ and
 $w_a=-P_{\rm sc}/I_g=\val{WA_d6}$, with no fitted amplitude. The point was fixed in
 advance and survives \emph{two independent} DESI releases: it sits at
 $0.05\sigma$ from the DESI~DR1 $w_0w_a$CDM posterior and, after the uncertainties
-tightened, at $0.24\sigma$ from the newer DESI~DR2 posterior
+tightened, at $\val{p2_w0wa_ssee_ec26}\sigma$ from the newer DESI~DR2 posterior
 (Pantheon+; $0.2$--$1.8\sigma$ across supernova compilations,
-$\chi^2_{\rm 2D}=0.42$)---the prediction did not move while the data improved.
+$\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$)---the prediction did not move while the data improved.
 Crucially, the two forward predictions that can \emph{refute} the core framework---this
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand on their own: neither the Hubble resolution nor the growth sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
 global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
@@ -230,15 +230,15 @@ distance rather than two separate one-dimensional offsets. Writing
 $\mathbf{d}=(w_0-w_0^{\rm bf},\,w_a-w_a^{\rm bf})$ and the $2\times2$
 covariance $\mathsf{C}$,
 \begin{equation}
-  \chi^2_{\rm 2D}=\mathbf{d}^{\!\top}\mathsf{C}^{-1}\mathbf{d}=0.42,
+  \chi^2_{\rm 2D}=\mathbf{d}^{\!\top}\mathsf{C}^{-1}\mathbf{d}=\val{p2_chi2_2D_ec26},
   \qquad
-  p=0.81,
+  p=\val{p2_p_ec26},
   \qquad
-  \text{equivalent } 0.24\sigma .
+  \text{equivalent } \val{p2_w0wa_ssee_ec26}\sigma .
   \label{eq:chi2}
 \end{equation}
-The component offsets are $\Delta w_0=-0.04\sigma$ (essentially exact) and
-$\Delta w_a=-0.26\sigma$. Against the other official combinations (moments and
+The component offsets are $\Delta w_0=\val{p2_dw0_ec26}\sigma$ (essentially exact) and
+$\Delta w_a=\val{p2_dwa_ec26}\sigma$. Against the other official combinations (moments and
 correlations likewise measured from the official chains: $\rho=-0.905$ to
 $-0.978$) the joint
 distance is $\val{p2_w0wa_ssee_ec28}\sigma$ (DESY5), $\val{p2_w0wa_ssee_ec27}\sigma$ (Union3) and $\val{p2_w0wa_ssee_ec25}\sigma$ (no-SN DESI$+$CMB): the algebraic point is consistent with all four, with the
@@ -274,7 +274,7 @@ tunes $(w_0,w_a)$.
 \end{table}
 
 \paragraph{Honest caveat: this is agreement with BAO$+$SN, not with CMB-only.}
-The $0.24\sigma$ figure is specific to the DESI DR2 dynamical-dark-energy
+The $\val{p2_w0wa_ssee_ec26}\sigma$ figure is specific to the DESI DR2 dynamical-dark-energy
 posterior, which is dominated by low-redshift data ($z\simeq0.3$--$2.3$), where
 dark energy actually drives the expansion, and the quoted range
 $0.2$--$1.8\sigma$ reflects the known spread among supernova compilations.
@@ -293,8 +293,8 @@ that directly probes the dark-energy-dominated epoch.
   $\varphi$ and $\pi$, with no dark-energy parameters adjusted to the data. The
   shaded contours are the official DESI DR2 $w_0w_a$CDM posteriors
   (Pantheon+, DESY5, Union3). The SSEE point falls inside the Pantheon+
-  $1\sigma$ region; the joint Mahalanobis distance is $\chi^2_{\rm 2D}=0.42$,
-  an equivalent $0.24\sigma$ agreement (Eq.~\ref{eq:chi2}), and within
+  $1\sigma$ region; the joint Mahalanobis distance is $\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$,
+  an equivalent $\val{p2_w0wa_ssee_ec26}\sigma$ agreement (Eq.~\ref{eq:chi2}), and within
   $1.5$--$1.8\sigma$ of the other compilations.}
   \label{fig:w0wa}
 \end{figure}
@@ -474,10 +474,10 @@ densities.
 
 Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
-$\omega_m$ is $147.17$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
+$\omega_m$ is $\val{p2_lyaB_rd}$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 ($\omega_m$-direct), consistent with the Planck-inferred
 $147.09\pm0.26$~Mpc ($0.32\sigma$), and matching $\Lambda$CDM at the
-Planck~2018 parameters ($147.10$~Mpc, same code) to $0.05\%$. The $175.6$~Mpc value that
+Planck~2018 parameters ($\val{p2_rd_lcdm}$~Mpc, same code) to $0.05\%$. The $175.6$~Mpc value that
 appears if the cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ is (incorrectly) used as
 the background density is a category error, not a physical scale.
 
@@ -485,9 +485,9 @@ the background density is a category error, not a physical scale.
   \centering
   \includegraphics[width=0.82\textwidth]{fig_rd_dual.pdf}
   \caption{The physical sound horizon. Set by the full algebraic $\omega_m$
-  (green, $147.17$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$, $\omega_m$-direct), in
+  (green, $\val{p2_lyaB_rd}$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$, $\omega_m$-direct), in
   agreement with Planck 2018 ($147.09\pm0.26$~Mpc, grey band) and with
-  $\Lambda$CDM at the Planck~2018 parameters (blue, $147.10$~Mpc, CAMB). This is the visual counterpart of the Boltzmann test above:
+  $\Lambda$CDM at the Planck~2018 parameters (blue, $\val{p2_rd_lcdm}$~Mpc, CAMB). This is the visual counterpart of the Boltzmann test above:
   the full matter density that restores the acoustic peaks also restores the BAO
   standard ruler. The $175.6$~Mpc scale (red) is the category error of using the
   cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ as the background density.}
@@ -515,17 +515,17 @@ early-time geometry at the CMB-optimal value
 which (with $\omega_b,\omega_c$ fixed by SSEE algebra) lies $\val{perfil_h0_d}\sigma$ from the $H_0$ that
 minimises the Planck \texttt{plik\_lite} likelihood for the SSEE background ($\val{perfil_h0_min}\pm\val{perfil_h0_sig}$, profiled over $A_s,\tau$); at this anchor the
 sound horizon and acoustic scale are both well within tolerance,
-$r_d = 147.17~\mathrm{Mpc}$ ($0.32\sigma$) and
+$r_d = \val{p2_lyaB_rd}~\mathrm{Mpc}$ ($0.32\sigma$) and
 $\theta_\ast = 0.59667^\circ$ ($1.00\sigma$). Letting the MCMC then correct
 $H_0$ against the low-redshift BAO (corrected DESI~DR2 vector, block-diagonal
 covariance with the official $r_{M,H}$ correlations) yields the posterior
 \begin{equation}
   H_0^{\mathrm{post}} = \val{h0_p2}\pm\val{h0_p2_s}~\kms ,
   \qquad
-  \Omega_b h^2 = 0.02198 \pm 0.00048 ,
+  \Omega_b h^2 = \val{p2_obh2} \pm \val{p2_obh2_s} ,
   \label{eq:h0post}
 \end{equation}
-with $r_d = 147.17~\mathrm{Mpc}$ ($0.32\sigma$, $\omega_m$-set, $H_0$-invariant)
+with $r_d = \val{p2_lyaB_rd}~\mathrm{Mpc}$ ($0.32\sigma$, $\omega_m$-set, $H_0$-invariant)
 at the posterior value. These are two stages of the same quantity---a CMB
 anchor and a BAO-corrected posterior---and with the total matter density in the
 background geometry they \emph{coincide}. (The earlier MIRA-anchored
@@ -543,14 +543,14 @@ and we make no claim to have solved it. We therefore do not assert the pure
 number as physical and then show that it explains the data. Instead we start
 from the measured SH0ES \emph{local} rate,
 $H_0^{\rm SH0ES}=73.04\pm1.04~\kms$~\citep{Riess2022}, and de-screen it with
-the algebraically-derived (not fit) fraction $f_{\rm scr}=\alpha_K^{\rm eff}/(3\,\mathrm{MIRA})=(\pi-\varphi)/\Om^2=0.06725$
-(Paper~9): $H_0^{\rm SH0ES}(1-f_{\rm scr})=68.13~\kms$, within $0.17\sigma$ of
+the algebraically-derived (not fit) fraction $f_{\rm scr}=s_K/(3\,\mathrm{MIRA})=(\pi-\varphi)/\Om^2=\val{F_SCREEN_IR_d6}$
+(Paper~9): $H_0^{\rm SH0ES}(1-f_{\rm scr})=\val{p9_sh0es_glob_IR}~\kms$, within $\val{p9_sh0es_sig_IR}\sigma$ of
 the pure number $\val{H0_ALG_d3}$---the model-independent floor, using only the IR
 screening term and no free parameter. Paper~10 sharpens this: with the
-UV-completed fraction $f_{\rm scr}^{\rm UV}=\alpha_K^{\rm full}/(3\,\mathrm{MIRA})=\val{F_SCREEN_d6}$
+UV-completed fraction $f_{\rm scr}^{\rm UV}=s_K^{\rm full}/(3\,\mathrm{MIRA})=\val{F_SCREEN_d6}$
 (conditional on the derivation of $M^4=5\varphi^8\rho_{\rm crit}$ from UV--IR
 $\varphi/\pi$ separability, Postulate~C.1), the identical inversion gives
-$H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm UV})=73.04\times(1-\val{F_SCREEN_d6})=67.9621~\kms$,
+$H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm UV})=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d5}~\kms$,
 reproducing the anchor $3(\varphi+\pi)^2=\val{H0_ALG_d4}$ to four decimals. We quote the
 comparison at four decimals and not further because the input is quoted at two:
 $H_0^{\rm SH0ES}=73.04$. We do not quote the reverse operation $3(\varphi+\pi)^2/(1-f_{\rm scr}^{\rm UV})$ as a prediction, because $3(\varphi+\pi)^2$
@@ -568,7 +568,7 @@ input---but its two variants are one datum under two prescriptions, not two
 independent measurements. The CMB/BAO chain, which never touches SH0ES, adopts
 the anchor as its prior, so its posterior is a \emph{consistency} test rather
 than a third confirmation: its content is that DESI DR2 does not pull the value
-away ($\chi^2_{\rm BAO}=10.43$ over 13 points at the posterior, $11.41$ at the
+away ($\chi^2_{\rm BAO}=10.43$ over 13 points at the posterior, $\val{desi_clav_ssee}$ at the
 anchor, against $\simeq726$ for the incorrect background geometry), leaving a
 residual displacement of $\val{h0_p2_dhglob}\sigma$. Replacing the anchor prior with a Planck one removes even that
 dependence: the data then pull $H_0$ \emph{upward} from $67.36$ to
@@ -585,9 +585,9 @@ undermine it.
 
 \paragraph{Anchor and posterior agree.} With the total gravitating matter
 density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$ and $r_d$, the BAO-corrected
-posterior ($\val{h0_p2}$) and the CMB anchor ($67.962$) agree to $\val{h0_p2_dhglob}\sigma$: DESI
+posterior ($\val{h0_p2}$) and the CMB anchor ($\val{H0_ALG_d3}$) agree to $\val{h0_p2_dhglob}\sigma$: DESI
 DR2 is \emph{consistent with} the algebraic value rather than pulling against
-it. All early-time observables are simultaneously healthy---$r_d=147.17$~Mpc
+it. All early-time observables are simultaneously healthy---$r_d=\val{p2_lyaB_rd}$~Mpc
 ($0.32\sigma$) and, evaluating the acoustic scale at the posterior,
 $100\,\theta_\ast=1.04099$ ($0.32\sigma$). The apparent $2.9\sigma$
 ``BAO--CMB split'' and the $13.9\sigma$ $\theta_\ast$ figure reported in earlier
@@ -853,7 +853,7 @@ outright. Its numerical value follows from the $\omega_m$-direct identity
 
 The same linear EFT predicts the growth of structure, and here we report the
 situation honestly, including a correction to what earlier versions of this document reported. With the Poisson source evaluated at the CMB-calibrated density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct, shown physically required by the Boltzmann test of \S\ref{sec:eft}), the growth factor is essentially that of $\Lambda$CDM,
-$G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=1.0032\pm0.005$, and the
+$G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=\val{p5_G}\pm0.005$, and the
 single-sector amplitude ceiling (CLASS forward) is
 \begin{equation}
   \label{eq:s8}
@@ -863,7 +863,7 @@ single-sector amplitude ceiling (CLASS forward) is
 % ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
 % control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
 % Log: results/logs/p5_techo_sigma8_As_fijo.json
-  \sigma_8=0.8149\pm0.006 , \qquad S_8=0.827
+  \sigma_8=\val{p3_sigma8_techo}\pm0.006 , \qquad S_8=\val{p3_S8_techo}
 \end{equation}
 when the primordial amplitude $A_s$ is held at the Planck-preferred value.
 That configuration was previously reported as a $3.5\sigma$ tension with
@@ -898,18 +898,18 @@ The measurement above uses KiDS-1000.  Repeating it against the KiDS-Legacy
 release---357 raw $\xi_\pm$ points, Wright et al.\ (2025) (arXiv:2503.19441),
 published sixteen months before the present analysis, over which we claim no
 temporal priority---closes the sector.  With the same algebraic background and
-$A_s$ free, the shear asks for $\log(10^{10}A_s)=3.0255\pm0.0396$, against the
-$3.04483$ that the CMB fixes \emph{under that same background}: a distance of
-$0.49\sigma$.  The control with the Planck background held equally rigid gives
+$A_s$ free, the shear asks for $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, against the
+$\val{leg_logA_cmb}$ that the CMB fixes \emph{under that same background}: a distance of
+$\val{logA_leg_vs_cmb}\sigma$.  The control with the Planck background held equally rigid gives
 $1.01\sigma$.  Fixing $A_s$ to the CMB value therefore costs nothing:
 \begin{equation}
-  \chi^2 = 417.97 \ \ (\text{8 free, all nuisance, \emph{none} cosmological})
+  \chi^2 = \val{chi2_leg_unif} \ \ (\text{8 free, all nuisance, \emph{none} cosmological})
   \quad\text{vs.}\quad
-  418.34 \ \ (A_s \text{ free}),
+  \val{chi2_leg_libre} \ \ (A_s \text{ free}),
 \end{equation}
-over the same 357 points, giving $\Delta\mathrm{BIC}=+6.24$ in favour of the
-fixed-amplitude model, and $+6.86$ against the $\Lambda$CDM-background control
-($418.95$).  With no free cosmological parameter left, $S_8=\val{S8_leg_pred}$ is a
+over the same 357 points, giving $\Delta\mathrm{BIC}=+\val{dBIC_leg_libre}$ in favour of the
+fixed-amplitude model, and $+\val{dBIC_leg_lcdm}$ against the $\Lambda$CDM-background control
+($\val{chi2_leg_lcdm}$).  With no free cosmological parameter left, $S_8=\val{S8_leg_pred}$ is a
 prediction rather than a fit, against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured---$\val{S8_leg_tension}\sigma$.
 
 Two cautions belong with this result.  The three $\chi^2$ values span $1.0$
@@ -932,7 +932,7 @@ particle had nothing to be made of.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.9\textwidth]{fig_s8_resolution.pdf}
-  \caption{$S_8$ with the primordial amplitude fixed versus fitted. The single-sector ceiling (red, $S_8=0.827\pm0.006$)
+  \caption{$S_8$ with the primordial amplitude fixed versus fitted. The single-sector ceiling (red, $S_8=\val{p3_S8_techo}\pm0.006$)
   carries the $3.5\sigma$ tension with KiDS-1000 reported in
   Eq.~\eqref{eq:s8}; fitting $A_s$ to raw $\xi_\pm$ data (green,
   $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$) lands $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000 (green band); the $\Lambda$CDM control on the same raw data lands at $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$. The
@@ -997,7 +997,7 @@ $r=\varphi^{-10}$             & Inflation         & $8.1\times10^{-3}$          
 $\alpha_T=\alpha_M=\alpha_B$  & EFT               & $0$ (exact)                     & P7     & Retrodiction \\
 $\alpha_K^{\rm field}$ (bare, pre-integration) & EFT & $0.073$                        & P7     & Internal check \\
 $\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $0.550$                         & P5     & Retrodiction \\
-$f\sigma_8$ (single-sector)   & Growth            & $0.70\sigma$ (6 RSD)            & P5     & Retrodiction \\
+$f\sigma_8$ (BOSS DR12, raw multipoles) & Growth & $\Delta\chi^2=\val{bossR_dchi2}$ vs.\ $\Lambda$CDM, equal freedom & P6 & Retrodiction \\
 \midrule
 \multicolumn{5}{l}{\textit{Built on the core --- growth, UV completion, strong gravity (no extension sector)}} \\
 $S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $\val{S8_leg_pred}$ predicted vs.\ $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & P6 & \textbf{Prediction} \\
@@ -1064,7 +1064,7 @@ the next generation of $B$-mode experiments.
 fixed forever at $(-0.840,-0.670)$; each DESI release is therefore a fresh
 blind test of the \emph{same} target. The trajectory to date: against the legacy DR1 posterior the
 point sat at ${\sim}0.05\sigma$; against DR2,
-whose uncertainties are ${\sim}40\%$ tighter, it sits at $0.24\sigma$
+whose uncertainties are ${\sim}40\%$ tighter, it sits at $\val{p2_w0wa_ssee_ec26}\sigma$
 (Pantheon+; \S\ref{sec:desi-agreement})---the contour shrank and the fixed
 point stayed inside the $68\%$ region, which a fitted model can always do but
 a rigid one need not. We pre-commit, in advance of the DR3 release (expected
@@ -1122,7 +1122,7 @@ honest accounting is the following. $\Lambda$CDM carries six fitted parameters
 $(\Omega_b h^2,\Omega_c h^2,\theta_*,\tau,n_s,A_s)$. SSEE fixes four of them
 algebraically from $\varphi$ and $\pi$: the baryon density $\omega_b$ (OP-1), the
 CDM density via the forward identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$, the
-spectral index $n_s=1-\varphi^{-7}$, and the expansion anchor $H_0=67.962~\kms$
+spectral index $n_s=1-\varphi^{-7}$, and the expansion anchor $H_0=\val{H0_GLOBAL_d3}~\kms$
 (whose value in these units coincides with $3(\varphi+\pi)^2$; derived, Paper~9). This leaves exactly two free CMB parameters---the primordial
 amplitude $A_s$ and the optical depth $\tau$---a $k=2$ versus $k=6$ comparison,
 which is the count used in the Paper~3 Bayesian model selection. The dark-energy
@@ -1161,10 +1161,10 @@ prediction. OP-10, OP-11 and OP-12 close the same way.
 \end{itemize}
 
 The growth-of-structure status of \S\ref{sec:growth} no longer mirrors this
-structure. The $S_8$ ``tension'' at $0.827$ was an artefact of holding $A_s$ at
+structure. The $S_8$ ``tension'' at $\val{p3_S8_techo}$ was an artefact of holding $A_s$ at
 the Planck value while comparing against a $\Lambda$CDM-conditioned summary
 statistic; fitted to raw shear data with a single sector it is
-$\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, matching the $\Lambda$CDM control on the same data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$) with four fewer free parameters. Against the later KiDS-Legacy release the growth sector needs no free amplitude either: the $A_s$ the shear asks for sits $0.49\sigma$ from the one the CMB fixes under the same background, and fixing it predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. No extension sector is required, and the one
+$\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, matching the $\Lambda$CDM control on the same data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$) with four fewer free parameters. Against the later KiDS-Legacy release the growth sector needs no free amplitude either: the $A_s$ the shear asks for sits $\val{logA_leg_vs_cmb}\sigma$ from the one the CMB fixes under the same background, and fixing it predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. No extension sector is required, and the one
 proposed is retracted. The non-linear treatment required to settle the matter
 definitively still demands $N$-body simulations beyond this work's scope.
 
@@ -1180,7 +1180,7 @@ We have presented a minimal-parameter framework in which the shape of the dark
 sector is fixed by the two dimensionless constants $\varphi$ and $\pi$. The
 late-time equation of state emerges as bare ratios of structural invariants,
 $w_0=\val{W0_d6}$ and $w_a=\val{WA_d6}$, and matches the DESI DR2 posterior at
-$0.24\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
+$\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
 effective-field-theory description is canonical, with vanishing tensor, running,
 and braiding functions, $\alpha_K=\val{alpha_K_z0_d6}$ and $c_s^2=\val{cs2_condensado_d6}$; the inflationary sector
 predicts $n_s=\val{N_S_d6}$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation

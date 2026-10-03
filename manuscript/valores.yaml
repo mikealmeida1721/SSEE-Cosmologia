@@ -674,3 +674,16 @@ prof_def_lcdm:     {fuente: "results/logs/h0_por_profundidad.json#modelos.LCDM_P
 prof_frac_max:     {fuente: "results/logs/h0_por_profundidad.json#modelos.SSEE.fraccion_max_3sigma", formato: ".2f"}
 met_s_hoy:         {fuente: "results/logs/h0_por_metodos.json#sigma_combinado_hoy", formato: ".2f"}
 met_s_nec:         {fuente: "results/logs/h0_por_metodos.json#sigma_combinado_necesario", formato: ".2f"}
+# PRD/Sealed: números que estaban tecleados (2026-10-03)
+p2_chi2_2D_ec26:  {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_chi2_2D", formato: ".2f"}
+p2_p_ec26:        {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_p", formato: ".2f"}
+p2_dw0_ec26:      {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_dw0", formato: "+.2f"}
+p2_dwa_ec26:      {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_dwa", formato: "+.2f"}
+p2_obh2:          {fuente: "results/logs/mcmc_paper2_reframe_obh2.json#obh2_mediana", formato: ".5f"}
+p2_obh2_s:        {fuente: "results/logs/mcmc_paper2_reframe_obh2.json#obh2_std", formato: ".5f"}
+p5_G:             {fuente: "results/logs/p5_IS_perturbations_Q3.json#G", formato: ".4f"}
+leg_logA:         {fuente: "results/logs/kids_publicados.json#s8.logA.legacy", formato: ".4f"}
+leg_logA_s:       {fuente: "results/logs/kids_publicados.json#s8.logA.legacy_sigma", formato: ".4f"}
+leg_logA_cmb:     {fuente: "results/logs/kids_publicados.json#s8.logA.cmb_blanco", formato: ".5f"}
+p9_sh0es_glob_IR: {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.H_glob", formato: ".2f"}
+p9_sh0es_sig_IR:  {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.sigma", formato: ".2f"}
