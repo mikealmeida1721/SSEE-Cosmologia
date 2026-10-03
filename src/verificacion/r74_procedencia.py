@@ -134,6 +134,17 @@ def fuente_verificada(linea, v):
     return R.en_fuente(s, sorted({abs(float(x)) for x in R.NUM.findall(t)}))
 
 
+def fuente_admisible(ruta):
+    """2026-10-02. No todo archivo que contiene un numero lo PRUEBA. Una cadena MCMC
+    (cualquier ruta con `chains`) tiene millones de digitos y casa por azar con casi
+    cualquier valor: el rastreo ampliado encontro 33 «fuentes» asi, todas falsas. Un
+    reporte de cola o del guardian cita numeros, no los calcula. Y la prosa (.md) los
+    repite. Ninguno de los tres es procedencia."""
+    *dirs, nombre = ruta.split("/")
+    return (not any("chains" in d for d in dirs)
+            and not nombre.startswith(ORQUESTACION) and not nombre.endswith(".md"))
+
+
 GIT_REF = re.compile(r"git:([0-9a-f]{7,40}):(\S+?)(?=[\s`),;]|$)")
 
 
@@ -145,6 +156,8 @@ def fuente_git(linea, s):
     a un commit o ruta inexistente, o donde el valor no aparece, no es fuente."""
     import subprocess
     for sha, ruta in GIT_REF.findall(linea):
+        if not fuente_admisible(ruta):
+            continue
         o = subprocess.run(["git", "show", f"{sha}:{ruta}"], cwd=ROOT, capture_output=True,
                            text=True, timeout=20)
         if o.returncode == 0 and R.en_fuente(s, sorted({abs(float(x)) for x in R.NUM.findall(o.stdout)})):

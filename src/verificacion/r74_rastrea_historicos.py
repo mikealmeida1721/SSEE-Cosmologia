@@ -29,7 +29,7 @@ import r74_procedencia as P  # noqa: E402
 # 2026-10-02: también results/ entero y archive/ (logs de scripts archivados); NO src/: un
 # literal en un script es un número tecleado, no la salida que lo prueba (salvo el núcleo).
 RUTAS = ["results", "archive", "CANONICAL_VALUES.yaml", "src/ssee_core.py"]
-TEXTO = (".log", ".json", ".txt", ".csv", ".md", ".yaml", ".dat", "ssee_core.py")
+TEXTO = (".log", ".json", ".txt", ".csv", ".yaml", ".dat", "ssee_core.py")
 
 
 def _git(*a):
@@ -41,7 +41,9 @@ def candidato(s):
         for c in (sha, sha + "^"):
             for ruta in _git("show", "--name-only", "--format=", sha, "--", *RUTAS).split():
                 if not ruta.endswith(TEXTO):
-                    continue      # binarios (.npz, .png, .pdf): no se leen como texto
+                    continue      # binarios (.npz, .png, .pdf) y prosa (.md): no son salidas
+                if not P.fuente_admisible(ruta):
+                    continue      # cadenas MCMC (casan por azar), reportes de cola/guardian y prosa: no prueban
                 ref = f"git:{_git('rev-parse', '--short=10', c).strip()}:{ruta}"
                 if P.fuente_git(ref, s):
                     return ref
@@ -57,6 +59,10 @@ def main(aplica):
             (hallados.setdefault(n, {}).setdefault(ln, []).append((s, ref)) if ref else sin.append((n, ln, s)))
     tot = sum(len(v) for d in hallados.values() for v in d.values())
     print(f"con referencia historica: {tot} · sin hallazgo: {len(sin)}")
+    for n, d in hallados.items():
+        for ln, pares in d.items():
+            for s_, r_ in pares:
+                print(f"   CON  {n}:{ln}  {s_}  {r_}")
     for n, ln, s in sin:
         print(f"   SIN  {n}:{ln}  {s}")
     if aplica:

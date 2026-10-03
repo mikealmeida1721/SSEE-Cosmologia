@@ -96,6 +96,17 @@ anota("m_DM_GeV", "KAL0 n_s m_barion", kn * mb)
 nb = anota("n_b_cm3", "omega_b rho_c100 / m_barion", S.OMEGA_B_H2 * RHO_C100_GEV_CM3 / mb)
 anota("eta_bariones", "n_b / n_gamma", nb / N_GAMMA_CM3)
 
+# ── README, tabla de predicciones: Y_p y omega_c (2026-10-02) ──
+# Y_p decía «AlterBBN = 0.2476» sin script ni log. Se calcula con el interpolador BBN de CAMB
+# (tabla PArthENoPE, la del análisis de Planck 2018), en el omega_b algebraico y Delta N_eff = 0.
+import camb.bbn as _bbn  # noqa: E402
+YP_OBS = (0.2449, 0.0040)    # ORIGEN-VALOR: 0.2449 +- 0.0040 — Y_p observado, Aver, Olive & Skillman 2015 (JCAP 07, 011)
+WC_PLANCK = (0.1200, 0.0012)  # ORIGEN-VALOR: 0.1200 +- 0.0012 — omega_c, Planck 2018 VI Tabla 2 (TT,TE,EE+lowE+lensing), data/raw/planck2018_VI/tabla2.tex
+yp = anota("Yp_BBN_camb", "camb.bbn.get_predictor().Y_p(omega_b, 0)", _bbn.get_predictor().Y_p(S.OMEGA_B_H2, 0.0))
+anota("Yp_tension_sigma", "(Y_p - 0.2449)/0.0040", (yp - YP_OBS[0]) / YP_OBS[1])
+anota("wc_alg", "KAL0 omega_b n_s", S.OMEGA_C_H2)
+anota("wc_tension_sigma", "(omega_c - 0.1200)/0.0012", (S.OMEGA_C_H2 - WC_PLANCK[0]) / WC_PLANCK[1])
+
 # ── CONTROL ──
 ctrl = dict(
     r_igual_phi_menos10=abs(r - PHI ** -10) < 1e-15,
