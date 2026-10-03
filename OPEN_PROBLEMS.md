@@ -2996,7 +2996,18 @@ multiplicativa y aditiva. Las pruebas por profundidad y por métodos de OP-8b
 
 ---
 
-## OP-8b — MIRA sigue sin mecanismo dinámico — 🔴 ABIERTO (resto de OP-8)
+## OP-8b — MIRA sigue sin mecanismo dinámico — ✅ CERRADO 2026-10-03 (decisión de Mike: MIRA es constante)
+
+> **CIERRE (2026-10-03, Mike).** MIRA es una **constante**, como cada entidad del álgebra
+> SSEE: no cambian. Lo dinámico son sus **funciones**, y al combinarlas dan entidades nuevas.
+> No hay, por tanto, una dinámica de MIRA que buscar: los cuatro mecanismos descartados
+> (c²_s, Poisson-μ, disforme, retención conformal) buscaban algo que no existe. El álgebra
+> produce **razones**; los **mecanismos** las conectan con medidas (SH0ES, el TRGB de CCHP…).
+> Lo que sigue abierto es **qué mecanismo produce la razón** f_screen sobre una tasa medida:
+> eso es la forma multiplicativa, postulado de Paper 9, y vive en **OP-6b**. (KAL₀ como
+> retención tampoco es elección del modelo: ya era así antes.) Todo lo de abajo queda como
+> registro de cómo se llegó aquí.
+
 
 > **2026-10-03 — HIPÓTESIS DE MIKE y su prueba, escritas ANTES de correr nada.**
 > **La lectura.** AURA es la «irradiación», el nivel donde solo queda energía o luz. Sus copias
@@ -3103,11 +3114,10 @@ declaración explícita de que MIRA es un valor algebraico sin dinámica asociad
 > f_screen(z) (usaba 0.160 como densidad) y el control de Freedman pasó al TRGB adoptado por
 > CCHP v3 (70.39 ± 1.94 → −1.28σ IR; antes 69.96 de la v1 → 1.88σ), leído de su .tex
 > (`p9_cascada_control.json`). P7 L350 y el Unified dicen ya lo mismo.
-> **Lo que NO se decidió:** si esto cumple la segunda vía del criterio de cierre («MIRA es un
-> valor algebraico sin dinámica») sigue siendo decisión de Mike: el mecanismo del
-> apantallamiento sigue abierto, así que OP-8b queda ABIERTO.
+> **Decidido (ver cierre arriba):** cumple la segunda vía del criterio de cierre («MIRA es un
+> valor algebraico sin dinámica»). El mecanismo del apantallamiento pasa a OP-6b.
 
-**Severidad: Alta.** Es el problema abierto más profundo que queda del sector.
+**Severidad:** cerrado.
 
 ---
 

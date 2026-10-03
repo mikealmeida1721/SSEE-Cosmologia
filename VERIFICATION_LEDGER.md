@@ -738,7 +738,11 @@ r_d/D_A del fondo. Rescate posible en principio, no hecho. **ABIERTO.**
 **Bloquea:** sellado de Paper 8 (inconsistencia con Paper 1); y deja a
 P3/P6/P9 sin un mecanismo válido para el 0.320.
 
-## V-L3-mira — test del mecanismo de retención conformal para MIRA — **ABIERTO (mecanismo candidato FALLA)**
+## V-L3-mira — test del mecanismo de retención conformal para MIRA — **CERRADO 2026-10-03 (OP-8b: MIRA es constante)**
+
+> Decisión de Mike (2026-10-03): MIRA es una constante del álgebra, como todas; lo dinámico
+> son sus funciones. No hay dinámica de MIRA que buscar; el resultado de abajo (el mecanismo
+> falla) queda como registro. Lo abierto, el mecanismo de la razón f_screen, está en OP-6b.
 
 *Origen:* tras V-L3-cs2 y V-L3-disf se construyó y probó la «Ruta B» en su
 forma más concreta — MIRA como retención de energía vía un acoplamiento

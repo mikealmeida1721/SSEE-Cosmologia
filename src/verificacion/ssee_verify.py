@@ -3355,14 +3355,14 @@ track_open("V-L3-disf  psi_DM entra en la accion de P8 sin estar definida",
 
 # Mecanismo de retencion conformal (Ruta B) — probado 2026-05-22 en
 # src/ssee_mira_mechanism.py. Acoplamiento beta_c=-AURA: negativo limpio.
-track_open("V-L3-mira  retencion conformal beta_c=AURA NO reproduce MIRA",
-           "test del fondo acoplado Friedmann+KG (ssee_mira_mechanism.py): "
-           "con beta_c=-AURA la excursion del campo es x18 excesiva, signo "
-           "invertido (drena la materia en vez de cargarla, R(z=2)~0.016), y "
-           "timing invertido (campo thawing). Cuarto mecanismo descartado "
-           "para el '0.320' tras cs2, Poisson-mu y disformal. MIRA sin "
-           "derivacion en el marco vigente por los 4 mecanismos naturales",
-           op="OP-8b")
+# 2026-10-03: OP-8b CERRADO por decision de Mike. MIRA es una CONSTANTE del
+# algebra (todas lo son; lo dinamico son sus funciones). Los cuatro mecanismos
+# descartados (cs2, Poisson-mu, disformal y esta retencion conformal: excursion
+# x18, signo y timing invertidos) buscaban una dinamica de MIRA que no hay. Lo
+# abierto es el mecanismo de la razon f_screen sobre una tasa medida: OP-6b.
+check("V-L3-mira  MIRA es constante algebraica = AURA/2 (OP-8b cerrado; el mecanismo de la razon vive en OP-6b)",
+      abs(MIRA - AURA / 2) < 1e-12 and abs(3 * MIRA - Tr / 2) < 1e-12,
+      f"MIRA = {MIRA:.10f} = AURA/2; 3*MIRA = T_r/2")
 
 # dos-Ω_m — DISUELTO. No hay dos Ω_m: s_m = 1+w0 = 0.160 es un número de la
 # ecuación de estado y la única densidad es Ω_m = ω_m/h² = 0.308881. Hasta el
