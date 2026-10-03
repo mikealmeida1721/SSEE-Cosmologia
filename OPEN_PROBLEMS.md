@@ -2289,6 +2289,18 @@ Script a crear: `op18_As_from_inflation.py`.
 
 ## OP-19 — Mecanismo de producción detrás de $\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s$ (Papers 1, 6 / abundancia relic) — ABIERTO (2026-07-12)
 
+> **2026-10-03 — el CMB NO reconoce la identidad por sí solo (pendiente medida, re-medida y sellada).**
+> Se fuerza un ingrediente (n_s u ω_b) fuera de su valor algebraico, Planck plik_lite elige ω_c
+> (con logA y τ) y el resto del fondo queda fijo. Si el dato impusiera ω_c ∝ ω_b·n_s, la pendiente
+> d ln ω_c / d ln x sería +1. Medido: **n_s → −0.042 · ω_b → +0.43**. Control del otro lado (R53):
+> el fondo de ΛCDM, que no tiene la identidad, da **−0.046 · +0.44**, la misma pendiente ⟹ es la
+> degeneración propia de Planck, no algo del álgebra. Control del método: en el punto algebraico sale
+> ω_c = 0.119332, a −0.01σ del vértice del perfil de ω_c. Re-medido el 2026-10-03 con la rejilla del
+> 2026-09-08 (cuyo script se había perdido): cada punto a menos de 0.3σ del viejo. **Lectura:** la
+> identidad es una predicción de un número (0.41σ de Planck), no una relación que el CMB contenga;
+> el porqué sigue siendo esta OP. Logs `results/logs/cmb_{ns,wb}_forzado.json` (script
+> `src/p03_cmb/cmb_identidad_forzada.py`, etapas `cmb_ns_forzado`/`cmb_wb_forzado`).
+>
 > **2026-10-03 — primera prueba barata: la masa ADM NO separa SSEE de ΛCDM.** Si la materia oscura
 > comparte asimetría con los bariones (ADM, razón de números r = n_DM/n_b), su masa es
 > m_DM·r = (ω_c/ω_b)·m_b. Con m_b la masa media por barión (Y_p de CAMB): **SSEE 4.996 GeV**
