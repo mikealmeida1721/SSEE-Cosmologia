@@ -109,6 +109,9 @@ log("  D_M, D_H y r_d de CAMB (bao_camb.py, rd_camb.py), 2026-09-28. Con la form
 log("  de r_d y el E(z) analitico el chi2 salia ~0.5 mas bajo; ver lcdm_conjunta C3.")
 log("  El contraste con χ²≈725 (sector frío 0.160 en E(z)) lo vigila R14.")
 
-with open(LOG, "w", encoding="utf-8") as _fh:
-    _fh.write("\n".join(_out) + "\n")
-print(f"\nlog: {os.path.relpath(LOG, _REPO)}")
+# 2026-10-03: solo al correrlo como script. multisonda_fondo_clavado lo carga como
+# modulo para usar chi2_bao() y, sin esta guarda, reescribia el log sellado sin acta.
+if __name__ == "__main__":
+    with open(LOG, "w", encoding="utf-8") as _fh:
+        _fh.write("\n".join(_out) + "\n")
+    print(f"\nlog: {os.path.relpath(LOG, _REPO)}")
