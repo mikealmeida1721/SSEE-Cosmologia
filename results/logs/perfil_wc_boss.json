@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-03",
  "amplitud_cmb": {
   "logA": 3.0429115117128527,
   "etiqueta": "A_s del CMB",
@@ -135,7 +135,7 @@
   "dist_sigma": 0.5058372193618044
  },
  "_procedencia": {
-  "commit": "2246eea898e77ef404fe9a899e36a9a7c78e2a68",
+  "commit": "14f53eb420c40db9ea4f67d621d35c84b6801fec",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/perfil_wc_boss.py",
@@ -143,12 +143,12 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json": "8d328d44991ddb3b88a7c22592f1c751c86d5290a617adfd68a1ac0b257f7660",
-   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "19fedc4354dfa0d6e360bb65ff0531e381fa40cf0396ef60c87b0fd17bfa0b2a"
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "9c05a038a080ce015b0ff83ad6d5c3a5be9d4aca2e1d5ecb103c1d43d88ce270"
   },
   "argv": [
    "src/p06_growth/perfil_wc_boss.py"
   ],
-  "fecha": "2026-10-01T15:00:38",
+  "fecha": "2026-10-03T14:03:39",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -158,8 +158,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: dabfa449f0853c75d78d132794cf29b6
-      size: 68535
+      md5: 0b56d08d6295ebfb8cbf16e41ec6e7dd
+      size: 68626
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 8976edb5b0fe92513530ef447a58b5ec
@@ -135,8 +135,8 @@ stages:
       size: 16117
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
-      size: 4421
+      md5: c1a478ee8bc47252dd775cba2f720ed2
+      size: 4424
     - path: results/logs/h0_four_priors.json
       hash: md5
       md5: 452a28d03f400637e87b2a7f6ad8c27f
@@ -191,8 +191,8 @@ stages:
       size: 1143
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
-      md5: 5623ac27b395376ad895c0455ef668af
-      size: 1356
+      md5: 6bd260cc23e521d50da2d95f9d45f16f
+      size: 1390
     - path: results/logs/p3_rd_reframe_omega_m.json
       hash: md5
       md5: f2a4de08add67bbfa5c78c9fe603b890
@@ -227,12 +227,12 @@ stages:
       size: 4310
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: fe57de8653a0ed64fd1a9f67f900231e
-      size: 4018
+      md5: 451d9105e5b97962ed98422cd0def7df
+      size: 4020
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: 6170b02ac6f99d6998ecfccaad20d177
-      size: 4020
+      md5: 21d13fe75b4a795a8136d45ed1d35473
+      size: 4025
     - path: results/logs/ppc_cronometros.json
       hash: md5
       md5: f240ba39c1f5f4868a25ade475b92c0e
@@ -268,8 +268,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 1f2770f639ff01efc3770c1a8aaa0358
-      size: 85891
+      md5: 5b1afc89d83035a77ed95f8566e56c2c
+      size: 85997
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -349,8 +349,8 @@ stages:
     deps:
     - path: src/p10_uv/ssee_paper10_verification.py
       hash: md5
-      md5: 44c0d46f874ab7fc172667c19b7b9d7b
-      size: 16275
+      md5: 5f4b1dbfaa235bada6c05082c3732afb
+      size: 16387
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -362,8 +362,8 @@ stages:
     outs:
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
-      md5: 5623ac27b395376ad895c0455ef668af
-      size: 1356
+      md5: 6bd260cc23e521d50da2d95f9d45f16f
+      size: 1390
   prueba_equivalencia_hglob:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/verificacion/prueba_equivalencia_hglob.py
@@ -1020,8 +1020,8 @@ stages:
       size: 1547
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
-      size: 4421
+      md5: c1a478ee8bc47252dd775cba2f720ed2
+      size: 4424
     - path: src/p06_growth/boss_lpt_R1R2.py
       hash: md5
       md5: 74a053a1b6cee380a21210864b74e19b
@@ -1041,12 +1041,12 @@ stages:
     outs:
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: fe57de8653a0ed64fd1a9f67f900231e
-      size: 4018
+      md5: 451d9105e5b97962ed98422cd0def7df
+      size: 4020
     - path: results/logs/perfil_wc_boss.log
       hash: md5
-      md5: 2d215b43b9ad8fa9de35ae8391d5cf09
-      size: 6894
+      md5: 8c4952d2946dad33959593286f2b770c
+      size: 6896
   perfil_wc_boss_lcdm:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/perfil_wc_boss_lcdm.py > 
@@ -1058,8 +1058,8 @@ stages:
       size: 1409
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
-      size: 4421
+      md5: c1a478ee8bc47252dd775cba2f720ed2
+      size: 4424
     - path: src/p06_growth/boss_lpt_R1R2.py
       hash: md5
       md5: 74a053a1b6cee380a21210864b74e19b
@@ -1079,12 +1079,12 @@ stages:
     outs:
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: 6170b02ac6f99d6998ecfccaad20d177
-      size: 4020
+      md5: 21d13fe75b4a795a8136d45ed1d35473
+      size: 4025
     - path: results/logs/perfil_wc_boss_lcdm.log
       hash: md5
-      md5: 0e0da2b1a5553510837c88f7fba33718
-      size: 6946
+      md5: 2af865500a3b832395e27ebc03839878
+      size: 6948
   ganancia_wc_libre:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/ganancia_wc_libre.py

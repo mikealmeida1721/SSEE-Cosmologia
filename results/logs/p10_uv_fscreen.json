@@ -2,6 +2,7 @@
  "s_K_IR": 0.40330245888789745,
  "s_K_UV_corr": 0.013602720252448519,
  "s_K_full": 0.41690517914034597,
+ "s_K_UV_pct": 3.372833453571765,
  "f_screen_IR": 0.06725327034329955,
  "f_screen_UV_corr": 0.002268340800759841,
  "f_screen_full": 0.06952161114405939,
@@ -17,17 +18,17 @@
  },
  "nota": "f_screen COMPLETO = IR + correccion UV; es el canonico. El IR solo es el regimen M->inf (Papers 1-9).",
  "_procedencia": {
-  "commit": "05e3b2e35736e8632b1dff925636adf6c51f8084",
+  "commit": "b08f141446a0c065d32285745618cfc9a44fe172",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p10_uv/ssee_paper10_verification.py",
-  "script_sha256": "c571a98fc322e2f18544a209dd9daf1afd8481740ff6757448bd04b26f5177e8",
+  "script_sha256": "d4d73e834d6bf4c5d54394e702c5edbb126fa174375b240415a07c1d21d34310",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p10_uv/ssee_paper10_verification.py"
   ],
-  "fecha": "2026-09-30T19:34:48",
+  "fecha": "2026-10-03T13:29:15",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
