@@ -45,7 +45,8 @@ print(f"\n--- RESULTADO ({0.0:.1f}s) ---")
 # ORIGEN: H_glob de ssee_core; posterior de results/logs/mcmc_paper2_reframe.json (leídos, no tecleados)
 import json as _j
 _HPOST = _j.load(open("results/logs/mcmc_paper2_reframe.json"))["H0_mediana"]
-for tag, H0v in ((f"H_glob {H0:.6f}", H0), (f"posterior MCMC {_HPOST:.4f}", _HPOST)):
+_RES = {}   # 2026-10-03: tambien a JSON, para que los papers lo lean con \\val (antes el 0.32σ iba tecleado)
+for clave, tag, H0v in (("anchor", f"H_glob {H0:.6f}", H0), ("posterior", f"posterior MCMC {_HPOST:.4f}", _HPOST)):
     total, lens_p, derived = _run_camb(H0v, ombh2, omch2, mnu, w0, wa, As, ns, 2500)
     r_d = derived["rdrag"]
     th100 = derived["thetastar"]            # 100*theta_*
@@ -54,4 +55,12 @@ for tag, H0v in ((f"H_glob {H0:.6f}", H0), (f"posterior MCMC {_HPOST:.4f}", _HPO
     sig_th = abs(th100 - 1.04109) / 0.00030
     print(f"[{tag}] r_d = {r_d:.3f} Mpc ({sig_rd:.2f}σ)  "
           f"θ* = {th_deg:.5f}° (100θ*={th100:.5f}, {sig_th:.2f}σ)")
+    _RES[clave] = dict(H0=float(H0v), rd=float(r_d), rd_sigma=float(sig_rd), theta_deg=float(th_deg),
+                       theta100=float(th100), theta_sigma=float(sig_th))
 print(f"(Planck: r_d=147.09±0.26 Mpc, 100θ*=1.04109±0.00030; {time.time()-t0:.1f}s)")
+import sys as _s, os as _o
+_s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), ".."))
+from procedencia import con_acta  # noqa: E402
+_RES["planck"] = dict(rd=147.09, rd_s=0.26, theta100=1.04109, theta100_s=0.00030)
+_j.dump(con_acta(_RES, __file__, ["results/logs/mcmc_paper2_reframe.json"]),
+        open("results/logs/p3_rd_reframe_omega_m.json", "w"), indent=1)

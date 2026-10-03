@@ -1218,3 +1218,46 @@ tensión y reportarla). Pendiente menor: fσ₈ (Papers 5–6).
 ---
 
 *Registro iniciado 2026-05-21 tras la revisión árbitro hostil de los 11 documentos.*
+
+## V-L5-RECORRE — re-ejecución de los 49 logs ligeros fuera de la cadena (2026-10-03)
+
+`src/verificacion/recorre_logs.py` re-corrió cada script sin tocar el repo y comparó número a
+número. Control del comparador: copia idéntica PASA, dígito alterado FALLA. Lectura uno a uno:
+
+**Sellados (25: etapa DVC + acta, re-corridos en la rama `cierre-op4-desi`, comparados contra el
+log viejo; `src/procedencia_sella.py` pone el acta cuando el script no la escribe — su control:
+limpio pasa `verifica`, con cambio sin commitear falla).** Idénticos o a precisión de máquina:
+chi2_bao_posterior, control_legacy (.log/.json), cruce_fantasma, deltac, des_y3_barrido(_masa),
+eft_dos_campos_* (3), erosita_completitud, formula_rd_exponentes, look_elsewhere_full,
+erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número de paper cambia):
+- H0_GLOBAL en ssee_core (09-28, Ω_m en el 8.º decimal): bao_camb_control (χ² 11.40651→11.40650),
+  is_growth_gamma_bg, sn_geometria, union3_en_el_clavo, erosita_conteos_erass1/efeds (ΔBIC 0.0549 igual).
+- Posterior P2 re-corrido con semilla (10-01, H₀ 67.8244→67.8226): h0_distancias_hglob,
+  p3_rd_reframe_omega_m (**θ* al posterior 0.32σ→0.34σ**; r_d 147.174 igual).
+- union3_en_el_clavo rehecho con ΛCDM con sus parámetros (09-27 19:22): union3_repro_compara
+  citaba el de las 12:03 (χ² ΛCDM 28.820→28.834).
+- multisonda con un decimal más (417.971→417.9706): conjunta_vs_individual (ΔKiDS 0.6331→0.6335).
+- Ruido de la EDO: eft_barrido_potenciales_wa (≤2e-4 relativo en w_a ~1e-11; ≤5e-6 en el resto).
+
+**No se sellan — declarados:**
+- `growth_2026-07/boss_control_kmax*.json` y `boss_fit_kmax*.json` (8): barrido Kaiser de sondeo
+  (08-08), superado por el LPT R1/R2; nadie los cita. Re-corridos CON su k_max: no reproducen
+  (σ(fσ₈) se mueve 2–25 %, el nuisance `sv` salta órdenes de magnitud): minimizador mal
+  condicionado en una dirección plana. Candidatos a archivo; se dejan hasta que Mike lo vea.
+- `growth_2026-07/termino_volumen_boss.json`: cuadra, pero su módulo `boss_lpt_R1R2.py` lleva
+  rutas fijas al árbol principal y es dependencia de la etapa R1/R2; arreglarlo invalida ese
+  candado (habría que re-correr el MCMC). Queda para la tanda pesada.
+- `erosita_extlike.json`: se construye con varias invocaciones con argumentos que acumulan en su
+  propio log; una etapa no lo reproduce. Lo común cuadra (0/35 distintos); el script nuevo añade 95 claves.
+- `rd_dual.json`: cuadra, pero su script regenera figuras; se sella aparte.
+- `erosita_cr.json`: segundo intento; el script vigente ya escribe `erosita_cr_v3.json`. Candidato a archivo.
+- `datos_crudos_T2.json`: es un MANIFIESTO de entrada, no un resultado. Se arregló (2 entradas
+  sin `bytes`) y el verificador da 35/35 byte a byte.
+- Pesados por tiempo (>20 min): base_sin_particula (.log/.json), cmb_fuga3_kids_3sig_rehecho,
+  cmb_perfil_wc (.log/.json), rejilla_extendida (.log/.json), ssee_om_libre → tanda pesada.
+- `barrido_kmax_20260808.log`: lo produce un .sh; recorre_logs lo pasó a python (defecto de la herramienta).
+
+**Defectos de `recorre_logs.py` hallados:** no pasa argumentos (los scripts con argv se comparan
+contra su salida estándar); corre los .sh con python; al matar por timeout un script con Pool deja
+huérfanos a sus workers (se mataron a mano por PID: 7); no tolera tiempos de cómputo ni el último
+dígito flotante (control_legacy salía «no cuadra» por 1e-16 y por `segundos`).

@@ -1216,6 +1216,8 @@ stages:
     outs:
     - results/logs/p3_rd_reframe_omega_m.log:
         cache: false
+    - results/logs/p3_rd_reframe_omega_m.json:
+        cache: false
   sello_rd_camb_control:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/rd_camb.py && .venv/bin/python3 src/procedencia_sella.py src/rd_camb.py results/logs/rd_camb_control.json data/processed/rd_camb_tabla.json
     deps:

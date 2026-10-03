@@ -3416,3 +3416,137 @@ stages:
       hash: md5
       md5: 40540ffd8657f083bac74f4999a381a4
       size: 3382
+  sello_erosita_conteos_erass1:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 
+      /mnt/datos/SSEE_data/erosita/venv/bin/python 
+      src/p11_sondas/erosita_conteos.py erass1 && .venv/bin/python3 
+      src/procedencia_sella.py src/p11_sondas/erosita_conteos.py 
+      results/logs/erosita_conteos_erass1.json 
+      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex 
+      /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html 
+      /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt 
+      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt 
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits 
+      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
+      results/logs/cmb_dbic_tau_ajustado.json
+    deps:
+    - path: /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+      hash: md5
+      md5: d826d1a46abff34875f0ccc34ab4c6b0
+      size: 1914
+    - path: /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+      hash: md5
+      md5: ff6e4109d613a6a2601df01da6fed09d
+      size: 1909
+    - path: /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+      hash: md5
+      md5: 313cd064003bb2af5c741c0d3b9e6428
+      size: 107647
+    - path: /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+      hash: md5
+      md5: 2a03ec1b6077055efa085909737d60e0
+      size: 50636160
+    - path: /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html
+      hash: md5
+      md5: e6aa493a81d4db196251c7e27872d70f
+      size: 25801
+    - path: /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex
+      hash: md5
+      md5: f21e6def40cc1f917d423b93ea2608db
+      size: 111225
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/p11_sondas/erosita_conteos.py
+      hash: md5
+      md5: 7e7ec540c5bd09f7680623e5740ef579
+      size: 14476
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/erosita_conteos_erass1.json
+      hash: md5
+      md5: b87e2f8dee804e98b4489d01a08711ed
+      size: 4686
+  sello_erosita_conteos_efeds:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 
+      /mnt/datos/SSEE_data/erosita/venv/bin/python 
+      src/p11_sondas/erosita_conteos.py efeds && .venv/bin/python3 
+      src/procedencia_sella.py src/p11_sondas/erosita_conteos.py 
+      results/logs/erosita_conteos_efeds.json 
+      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex 
+      /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html 
+      /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt 
+      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt 
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits 
+      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
+      results/logs/cmb_dbic_tau_ajustado.json
+    deps:
+    - path: /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+      hash: md5
+      md5: d826d1a46abff34875f0ccc34ab4c6b0
+      size: 1914
+    - path: /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+      hash: md5
+      md5: ff6e4109d613a6a2601df01da6fed09d
+      size: 1909
+    - path: /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+      hash: md5
+      md5: 313cd064003bb2af5c741c0d3b9e6428
+      size: 107647
+    - path: /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+      hash: md5
+      md5: 2a03ec1b6077055efa085909737d60e0
+      size: 50636160
+    - path: /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html
+      hash: md5
+      md5: e6aa493a81d4db196251c7e27872d70f
+      size: 25801
+    - path: /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex
+      hash: md5
+      md5: f21e6def40cc1f917d423b93ea2608db
+      size: 111225
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/p11_sondas/erosita_conteos.py
+      hash: md5
+      md5: 7e7ec540c5bd09f7680623e5740ef579
+      size: 14476
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/erosita_conteos_efeds.json
+      hash: md5
+      md5: d781c38bc2b93986bb94bbff4e8c9e4a
+      size: 4763
