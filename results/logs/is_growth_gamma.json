@@ -55,17 +55,17 @@
  "Om_CMB": 0.30888087877875237,
  "nota": "gamma_bg: centro y semirango sobre la rejilla de tau_Pi H0 (8 candidatos algebraicos); S8 = sigma8 de Planck reescalado por Omega_m (normalizacion del proxy), no una prediccion",
  "_procedencia": {
-  "commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2",
+  "commit": "373def871435c698d864fc46d3a915561953b680",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p05_is/ssee_is_growth.py",
-  "script_sha256": "ea69b82d3aba5aa3ba0d2d1a707a46863786f19e5467e56dfc179b5b33377f11",
+  "script_sha256": "1b21b68c064e01837de71bea3d0cae3059861b2403c0f7f6034655103973c9da",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p05_is/ssee_is_growth.py"
   ],
-  "fecha": "2026-10-01T23:50:40",
+  "fecha": "2026-10-03T12:38:39",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

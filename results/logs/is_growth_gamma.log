@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_is/ssee_is_growth.py", "script_sha256": "ea69b82d3aba5aa3ba0d2d1a707a46863786f19e5467e56dfc179b5b33377f11", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_is/ssee_is_growth.py"], "fecha": "2026-10-01T23:50:39", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "373def871435c698d864fc46d3a915561953b680", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_is/ssee_is_growth.py", "script_sha256": "1b21b68c064e01837de71bea3d0cae3059861b2403c0f7f6034655103973c9da", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_is/ssee_is_growth.py"], "fecha": "2026-10-03T12:38:38", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 === Constantes SSEE ===
 φ       = 1.618034
 KAL₀    = 5.521406
@@ -6,7 +6,7 @@ w₀      = -0.839950
 wₐ      = -0.669975
 n_s     = 0.965558
 MIRA    = 1.998924
-Ω_m,dyn = 0.308881
+Ω_m = 0.308881  (ω_m/h²; s_m = 1+w0 no entra en ninguna ranura de densidad)
 Ω_DE,0  = 0.691119
 γ target = φ⁻¹ = 0.618034
 

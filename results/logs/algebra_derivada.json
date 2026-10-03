@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-03",
  "algebra": {
   "alpha_K_z0": {
    "formula": "3*OMDE_DENS*(5-3*W0)",
@@ -196,11 +196,6 @@
    "valor": 1.7791345438528516,
    "uso": "Paper 10, Ruta A"
   },
-  "inv_S_M": {
-   "formula": "1/S_M",
-   "valor": 6.248038558908856,
-   "uso": "agrupamiento pleno 1/Omega_m,dyn, Paper 5"
-  },
   "sK_tercio": {
    "formula": "S_K/3",
    "valor": 0.13443415296263247,
@@ -364,17 +359,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "9ad212b5cf4e785b9bea29fc2cb4f028a94b77cf",
+  "commit": "373def871435c698d864fc46d3a915561953b680",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "0da15679e0c316d59c5b548bdb6a89668bd79e1e0e87666b8381554e97b95fdc",
+  "script_sha256": "c94f6fa53ed2e3c1969d95fe777f3cc1370b54f140dec86780402feebf4f9097",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-01T09:55:56",
+  "fecha": "2026-10-03T12:38:36",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

@@ -1,4 +1,4 @@
-preflight  [1/3] __pycache__ borrados: 410
+preflight  [1/3] __pycache__ borrados: 165
 preflight  [2/3] núcleo(fuente) == CANONICAL_VALUES en 6 constantes
 preflight  [3/3] ingredientes de esta corrida:
              SUM_MNU_EV       = 0.068490000
@@ -11,14 +11,14 @@ preflight  [3/3] ingredientes de esta corrida:
              WA               = -0.669974886
              H0_ALG           = 67.962137323
 preflight  OK — luz verde para el cómputo
-# ACTA-PROCEDENCIA {"commit": "4fe98f2acce088de36e75cbcb6a3e80e2096a7c1", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/ssee_paper3_cmb.py", "script_sha256": "9d30d21b2e410e934ef25c3ce5f6d20ec676ed3a644c102c0d04904fc7c9b86b", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p03_cmb/ssee_paper3_cmb.py"], "fecha": "2026-10-02T20:11:13", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "373def871435c698d864fc46d3a915561953b680", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/ssee_paper3_cmb.py", "script_sha256": "73345ad1d99d2a24f0a8cab0e306ee0bd614b70e3aa52f50eeeed606c1daa533", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p03_cmb/ssee_paper3_cmb.py"], "fecha": "2026-10-03T12:38:42", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 ============================================================
 SSEE — Paper 3: CMB vs Planck 2018 (TT+TE+EE+lensing)
 ============================================================
 
 Parámetros SSEE:
   w0=-0.8399  wa=-0.6700
-  Ω_m,dyn=0.1601  Ω_DE=0.8399  (sector dinámico: BAO/cúmulos)
+  s_m=1+w0=0.1601  (ecuación de estado, NO densidad)  Ω_DE=0.8399
   MIRA=1.998924  (AURA/2 — Frecuencia de Observación, Genesis 5.12)
   Ω_m,CMB=0.308881  (sector observacional: CMB, Planck: 0.3153)
   M_SSEE=|w0|=0.8399
@@ -45,9 +45,6 @@ Calculando espectros ΛCDM con CAMB...
 
   COMBINADO:  SSEE χ²_r=1.040  |  ΛCDM χ²_r=1.040  (N_total=5914)
   ΔBIC(SSEE−ΛCDM) = -35.0  (negativo = SSEE favorecido)
-
-Caso naive (Omega_m = s_m en la geometria)...
-  naive: chi2_TT=171505.9 chi2_r=87.01 (N=1971)  picos {'ssee': [220, 536, 813], 'lcdm': [220, 536, 813], 'naive': [240, 596, 921]}
 
 Posición de picos TT SSEE (primeros 3):
   Pico 1: ℓ=220  Dℓ=5746.4 μK²

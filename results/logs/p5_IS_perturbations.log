@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "81382ed15b66abb74866e042957ed1f1c221a564", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/ssee_paper5_IS_perturbations.py", "script_sha256": "26b676cbb624a136f8b422acd89670aa1829bccbbd941a6143014b67beb2db35", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/ssee_paper5_IS_perturbations.py"], "fecha": "2026-09-30T18:15:41", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "373def871435c698d864fc46d3a915561953b680", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/ssee_paper5_IS_perturbations.py", "script_sha256": "dc52c84fa641ba3afcdbdf60149aab9f932d1feacf1e88458ff63571269e93c1", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/ssee_paper5_IS_perturbations.py"], "fecha": "2026-10-03T12:39:32", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 ====================================================================
 SSEE  Paper 5 — Israel-Stewart Causal Perturbative Analysis
 ====================================================================
@@ -98,7 +98,7 @@ SUMMARY
     Discrepancy = 1.009186  (50.5%)
     δ_DE/δ_m → 0 for large k: IS SUPPRESSES DE clustering
     ✗  MIRA NOT reproduced by linear IS perturbations
-       Linear IS → Ω_m,eff ≈ Ω_m,dyn (no DE clustering)
+       Linear IS → Ω_m,eff ≈ Ω_m (no DE clustering)
        MIRA is a background-level IS effect, not perturbative
 
 ────────────────────────────────────────────────────────────────────

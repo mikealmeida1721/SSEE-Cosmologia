@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-02",
+ "fecha": "2026-10-03",
  "modelos": {
   "lcdm": {
    "picos": [
@@ -18,27 +18,6 @@
    "omega_cdm": 0.11951440843160877,
    "rms_vs_lcdm": 0.001814641512104397,
    "rms_pct": 0.18146415121043968
-  },
-  "naive": {
-   "picos": [
-    240,
-    596,
-    921
-   ],
-   "omega_cdm": 0.050771741336489956,
-   "rms_vs_lcdm": 0.589307365009494,
-   "rms_pct": 58.9307365009494
-  },
-  "degradacion_rms_naive_sobre_ssee": 324.7513963934883,
-  "naive_ini_mayo": {
-   "picos": [
-    240,
-    597,
-    922
-   ],
-   "rms_vs_lcdm": 0.5367104751199198,
-   "rms_publicado_pct": 31.5,
-   "rms_pct": 53.67104751199198
   }
  },
  "control": {
@@ -55,21 +34,20 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "4fe98f2acce088de36e75cbcb6a3e80e2096a7c1",
+  "commit": "373def871435c698d864fc46d3a915561953b680",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/class_picos.py",
-  "script_sha256": "52cad45b4be55adfe80001574ccdafa6f85551c232c75d65130a201146227bc6",
+  "script_sha256": "f6acb3c0e2786f2752b80af323774bf8acc646315c441e983a281b1074ba9e3d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2",
-   "class_ssee/ssee_v36_nomira.ini": "c0a47ae802d880f79d16e3b15dfcf9f2b68fce476e95390afd87f4c2a57ba98a",
-   "results/logs/paper3_cmb_chi2.json": "7fd89e29f6a7346efae7e1b124ccdbb293c42bc467d3f5cc1641df70859270a6"
+   "CANONICAL_VALUES.yaml": "c5149d409ab645d55c89bc93247114810bc36d8e2a9d4007499d5eb40465a2db",
+   "results/logs/paper3_cmb_chi2.json": "5fc4bcabe81b0e4a1028b1d500af37e0d1ddaaab166dde6ab683addc1315bf54"
   },
   "argv": [
    "src/p03_cmb/class_picos.py"
   ],
-  "fecha": "2026-10-02T20:12:36",
+  "fecha": "2026-10-03T12:39:29",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
