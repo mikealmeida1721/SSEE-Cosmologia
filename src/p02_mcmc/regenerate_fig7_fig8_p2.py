@@ -19,6 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from procedencia import acta as _acta
 from ssee_core import (
     W0 as W0_SSEE, WA as WA_SSEE,
     OMEGA_M_TOTAL as OM_GEOM, OMEGA_M_H2 as WM_ALG,   # 0.308881 — materia TOTAL, la ÚNICA que entra en E(z)/r_d
@@ -57,13 +58,12 @@ _MNU_LCDM = __import__("lcdm_planck").LCDM_PLANCK["mnu"]
 def sound_horizon_rd(ob_h2, om_h2):
     return _rd_camb(ob_h2, om_h2, mnu=None)  # CAMB; antes 147.27*(...) con normalizacion 0.15 % alta
 
-# ── Cosmic Chronometers (Jimenez–Loeb 2002; Moresco+ 2022 compilación) ──
-CC_DATA = np.array([
-    [0.070, 69.0, 19.6], [0.179, 75.0,  4.0], [0.199, 75.0,  5.0],
-    [0.352, 83.0, 14.0], [0.400, 95.0, 17.0], [0.440, 82.6,  7.8],
-    [0.593, 104.0, 13.0], [0.680, 92.0,  8.0], [0.781, 105.0, 12.0],
-    [0.875, 125.0, 17.0], [1.037, 154.0, 20.0],
-])
+# Cronometros: los 32 de Moresco+2022 del CSV cotejado (2026-10-02). Antes 11 tecleados aqui,
+# uno de ellos (z=0.44, 82.6+-7.8) el H(z) BAO de WiggleZ, que no es un cronometro.
+import csv as _csv_cc
+_CC_CSV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "raw", "cosmic_chronometers.csv")
+CC_DATA = np.array([[float(f["z"]), float(f["Hz"]), float(f["sigma_Hz"])]
+                    for f in _csv_cc.DictReader(l for l in open(_CC_CSV) if not l.startswith("#"))])
 Z_CC, H_CC, DH_CC = CC_DATA[:, 0], CC_DATA[:, 1], CC_DATA[:, 2]
 
 # ── cargar cadenas corregidas ──
@@ -93,10 +93,10 @@ plt.rcParams.update({"font.size": 11, "figure.dpi": 150,
                      "savefig.dpi": 300, "savefig.bbox": "tight"})
 
 # ══ Fig 7: H(z) ══
-z_plot = np.linspace(0, 1.5, 200)
+z_plot = np.linspace(0, 2.05, 200)
 fig7, ax7 = plt.subplots(figsize=(8, 5.5))
 ax7.errorbar(Z_CC, H_CC, yerr=DH_CC, fmt="o", color="black", ms=5, capsize=3,
-             zorder=6, label="Cosmic Chronometers")
+             zorder=6, label=f"Cosmic Chronometers (Moresco+2022, N={len(Z_CC)})")
 for lab, Hf in [("SSEE", H_ssee), ("ΛCDM", H_lcdm), ("CPL", H_cpl)]:
     ax7.plot(z_plot, Hf(z_plot), color=colors[lab], lw=2.3, ls=ls_map[lab],
              label=fr"{lab} (MAP, $\chi^2_r$={chi2[lab]:.2f})")
@@ -108,12 +108,13 @@ ax7.fill_between(z_plot, np.percentile(H_band, 16, 0), np.percentile(H_band, 84,
                  color="#E6002B", alpha=0.15, label="SSEE 68% posterior")
 ax7.set_xlabel("Redshift $z$")
 ax7.set_ylabel(r"$H(z)$ [km s$^{-1}$ Mpc$^{-1}$]")
-ax7.set_title(r"Posterior predictive check — $H(z)$ (total matter $\Omega_m=0.308881$ in geometry)")
+ax7.set_title(r"Posterior predictive check — $H(z)$ (total matter $\Omega_m=\omega_m/h^2$ in geometry)")
 ax7.legend(fontsize=9)
-ax7.set_xlim(0, 1.5)
+ax7.set_xlim(0, 2.05)
 fig7.tight_layout()
-fig7.savefig(os.path.join(OUT, "fig7_Hz_comparison.pdf"))
-fig7.savefig(os.path.join(OUT, "fig7_Hz_comparison.png"))
+_MD = {"Keywords": "ACTA-PROCEDENCIA " + __import__("json").dumps(_acta(__file__, entradas=[CHAIN_FILE, _CC_CSV]))}
+fig7.savefig(os.path.join(OUT, "fig7_Hz_comparison.pdf"), metadata=_MD)
+fig7.savefig(os.path.join(OUT, "fig7_Hz_comparison.png"), metadata=_MD)
 plt.close(fig7)
 print("Fig 7 guardada")
 
@@ -158,8 +159,8 @@ ax8b.legend(fontsize=9)
 for bar, v in zip(bars, rd_vals):
     ax8b.text(v + 0.4, bar.get_y() + bar.get_height() / 2, f"{v:.1f}", va="center", fontsize=10)
 fig8.tight_layout()
-fig8.savefig(os.path.join(OUT, "fig8_tension_summary.pdf"))
-fig8.savefig(os.path.join(OUT, "fig8_tension_summary.png"))
+fig8.savefig(os.path.join(OUT, "fig8_tension_summary.pdf"), metadata=_MD)
+fig8.savefig(os.path.join(OUT, "fig8_tension_summary.png"), metadata=_MD)
 plt.close(fig8)
 print("Fig 8 guardada")
 print(f"r_d MAP: SSEE={rd_vals[0]:.2f}  ΛCDM={rd_vals[1]:.2f}  CPL={rd_vals[2]:.2f}")

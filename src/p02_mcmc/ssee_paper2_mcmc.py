@@ -140,12 +140,12 @@ PLANCK_COV_INV = np.linalg.inv(np.array([
 PLANCK_MU = np.array([PLANCK_H0[0], PLANCK_OM[0], PLANCK_OBH2[0]])
 
 
-CC_DATA = np.array([
-    [0.070, 69.0, 19.6], [0.179, 75.0,  4.0], [0.199, 75.0,  5.0],
-    [0.352, 83.0, 14.0], [0.400, 95.0, 17.0], [0.440, 82.6,  7.8],
-    [0.593,104.0, 13.0], [0.680, 92.0,  8.0], [0.781,105.0, 12.0],
-    [0.875,125.0, 17.0], [1.037,154.0, 20.0],
-])
+# Cronometros: los 32 de Moresco+2022 del CSV cotejado (2026-10-02). Antes 11 tecleados aqui,
+# uno de ellos (z=0.44, 82.6+-7.8) el H(z) BAO de WiggleZ, que no es un cronometro.
+import csv as _csv_cc
+_CC_CSV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "raw", "cosmic_chronometers.csv")
+CC_DATA = np.array([[float(f["z"]), float(f["Hz"]), float(f["sigma_Hz"])]
+                    for f in _csv_cc.DictReader(l for l in open(_CC_CSV) if not l.startswith("#"))])
 Z_CC, H_CC, DH_CC = CC_DATA[:,0], CC_DATA[:,1], CC_DATA[:,2]
 
 # ─────────────────────────────────────────────────────────────

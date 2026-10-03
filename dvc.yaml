@@ -237,6 +237,38 @@ stages:
     outs:
     - results/logs/resumen_3modelos.json:
         cache: false
+  ppc_cronometros:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ppc_cronometros.py
+    deps:
+    - src/p02_mcmc/ppc_cronometros.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - data/raw/cosmic_chronometers.csv
+    - results/logs/mcmc_paper2_3models_wmfix.log
+    outs:
+    - results/logs/ppc_cronometros.json:
+        cache: false
+    - manuscript/tabla_cronometros_generada.tex:
+        cache: false
+  p2_fig7_fig8:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/regenerate_fig7_fig8_p2.py
+    deps:
+    - src/p02_mcmc/regenerate_fig7_fig8_p2.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/rd_camb.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - data/raw/cosmic_chronometers.csv
+    outs:
+    - results/figures/fig7_Hz_comparison.pdf:
+        cache: false
+    - results/figures/fig7_Hz_comparison.png:
+        cache: false
+    - results/figures/fig8_tension_summary.pdf:
+        cache: false
+    - results/figures/fig8_tension_summary.png:
+        cache: false
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/estadistica/ssee_phase_d_savage_cv.py > 
