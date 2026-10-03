@@ -55,7 +55,7 @@ ctrl = {p: dict(tabla=v, lector=res[p]["media"],
 # las traia tecleadas). r_d: CAMB con los ingredientes del nucleo (lya_auditoria, escenario B).
 import ssee_core as _S  # noqa: E402
 LYA = os.path.join(R, "results/logs/lya_auditoria.json")
-ALG = dict(ombh2=_S.OMEGA_B_H2, omch2=_S.OMEGA_C_H2, rdrag=json.load(open(LYA))["escenario_B"]["rd"],
+ALG = dict(ombh2=_S.OMEGA_B_H2, omch2=_S.OMEGA_C_H2, rdrag=json.load(open(LYA))["ssee"]["rd"],
            H0=_S.H0_GLOBAL, omegam=_S.OMEGA_M_TOTAL, w=_S.W0, wa=_S.WA)
 tens = {p: dict(algebraico=v, tension_sigma=(res[p]["media"] - v) / res[p]["sigma"],
                 tension_abs=abs(res[p]["media"] - v) / res[p]["sigma"]) for p, v in ALG.items()}
