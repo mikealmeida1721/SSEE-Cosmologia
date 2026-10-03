@@ -1,0 +1,29 @@
+# ACTA-PROCEDENCIA {"commit": "7bad638e823c505976af3d3d51bb90fa759011d5", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "archive/codigo/investigacion/open_problems/op18_As_from_inflation.py", "script_sha256": "a2556fabd131c3a6c2e7497dce5c6885537e58ec9bd3c0920809d1180eec0a3e", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["-c"], "fecha": "2026-10-02T23:54:20", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+============================================================================
+  OP-18 — ¿A_s desde (φ,π)?  cálculo honesto (α-attractor SSEE)
+============================================================================
+  α=φ⁴/3=2.2847   N_*=2φ⁷=58.069   n_s=1−φ⁻⁷=0.96556   r=φ⁻¹⁰=8.131e-03
+  ε=φ⁻¹⁰/16=5.082e-04   prefactor 2φ¹⁰/3π² = 8.30779  (PURO φ,π)
+----------------------------------------------------------------------------
+  A_s(Planck) = 2.099e-09
+  ⇒ V₀/M_Pl⁴   = A_s·3π²/2φ¹⁰ = 2.526e-10
+  ⇒ V₀^(1/4)   = 9.708e+15 GeV  (~10^16 GeV, escala GUT/inflación típica)
+----------------------------------------------------------------------------
+  ¿La jerarquía V₀/M_Pl⁴ ≈ 2.526e-10 sale de (φ,π)?
+    φ^-46    = 2.435e-10   (factor 0.96 del objetivo)
+    Ω^-14    = 3.266e-10   (factor 1.29 del objetivo)
+    π^-19    = 3.582e-10   (factor 1.42 del objetivo)
+----------------------------------------------------------------------------
+  VEREDICTO (honesto):
+  · SSEE fija la FORMA del espectro primordial por completo: n_s, r, α, N_*,
+    y el prefactor 2φ¹⁰/3π² de A_s — todo (φ,π), sin perillas.
+  · La NORMALIZACIÓN A_s requiere la escala de inflación V₀^(1/4)~10^16 GeV.
+    Esa jerarquía NO sale limpia de potencias (φ,π) — es el residuo real de OP-18,
+    análogo al problema de jerarquía (UV).
+  · CORRECCIÓN a una nota previa: la escala Λ_SSEE=M=9.68 meV (Paper 10) es IR
+    (energía oscura); NO aplica a V₀ (UV, inflación) — están separadas ~10^27.
+    Anclar A_s a M=9.68 meV es INCORRECTO. OP-18 sigue abierto de verdad.
+  · Lo defendible HOY: A_s es 1 input de escala; lo que SSEE aporta es que la
+    FORMA (n_s,r) ya está fijada, y dado A_s la escala de inflación cae en el
+    rango GUT esperado (check de consistencia, no derivación).
+============================================================================
