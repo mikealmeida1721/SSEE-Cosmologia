@@ -1,97 +1,11 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-03",
  "dato_lya": {
   "z": 2.33,
   "DH_rd": 8.632,
   "sigma": 0.101
  },
- "escenario_A": {
-  "rd": 170.6601674801437,
-  "E_lya": 2.542424476650643,
-  "DH_lya": 1735.0243998818848,
-  "f_DE_lya": 0.08419021093948312,
-  "rhoDE_z_sobre_rhoDE_0_lya": 0.647956289351554,
-  "DH_rd_lya": 10.166545747025326,
-  "pull_lya": 15.19352224777551,
-  "Om": 0.16005022865522103,
-  "chi2_diag": 631.895425053977,
-  "chi2_cov": 722.0784266608957,
-  "pull_max": {
-   "z": 2.33,
-   "cantidad": "DH/rd",
-   "pull": 15.19352224777551
-  },
-  "pulls": [
-   {
-    "z": 0.295,
-    "cantidad": "DV/rd",
-    "pull": -11.439950915843713
-   },
-   {
-    "z": 0.51,
-    "cantidad": "DM/rd",
-    "pull": -9.38020667752073
-   },
-   {
-    "z": 0.51,
-    "cantidad": "DH/rd",
-    "pull": -0.6368170636330253
-   },
-   {
-    "z": 0.706,
-    "cantidad": "DM/rd",
-    "pull": -7.003967126255838
-   },
-   {
-    "z": 0.706,
-    "cantidad": "DH/rd",
-    "pull": 2.0665556724449132
-   },
-   {
-    "z": 0.934,
-    "cantidad": "DM/rd",
-    "pull": -7.0277908633637685
-   },
-   {
-    "z": 0.934,
-    "cantidad": "DH/rd",
-    "pull": 4.083082111686129
-   },
-   {
-    "z": 1.321,
-    "cantidad": "DM/rd",
-    "pull": -1.5992140884846253
-   },
-   {
-    "z": 1.321,
-    "cantidad": "DH/rd",
-    "pull": 6.633475960314537
-   },
-   {
-    "z": 1.484,
-    "cantidad": "DM/rd",
-    "pull": -1.2614779586279679
-   },
-   {
-    "z": 1.484,
-    "cantidad": "DH/rd",
-    "pull": 3.3854096894254204
-   },
-   {
-    "z": 2.33,
-    "cantidad": "DM/rd",
-    "pull": 1.669008775501194
-   },
-   {
-    "z": 2.33,
-    "cantidad": "DH/rd",
-    "pull": 15.19352224777551
-   }
-  ],
-  "rd_formula_vieja": 174.26657484498332,
-  "DH_rd_lya_formula_vieja": 9.956151381441073
- },
- "escenario_B": {
+ "ssee": {
   "rd": 147.17438639259242,
   "E_lya": 3.444301260391052,
   "DH_lya": 1280.715061883109,
@@ -274,11 +188,11 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "0ace48ed30ce5d9458a2bd23933d913629f0f4f8",
+  "commit": "81b15562198ec8cec77d1206ddcc41ee4d484993",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/lya_auditoria.py",
-  "script_sha256": "6227e187be8d678ff3323a5aca9497c0677b6ebe4981bb5bda9f3d9c20a89a83",
+  "script_sha256": "00cfb87fb138ed16220635ce6ac98db9df0d79a1f5da3ae71381145f02fac398",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
@@ -287,7 +201,7 @@
   "argv": [
    "src/p02_mcmc/lya_auditoria.py"
   ],
-  "fecha": "2026-10-01T10:05:24",
+  "fecha": "2026-10-03T12:47:47",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
