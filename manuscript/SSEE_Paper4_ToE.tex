@@ -128,6 +128,7 @@ This revised manuscript addresses each point explicitly.
 The entire \SSEE\ framework rests on exactly two mathematical constants:
 % ORIGEN-VALOR: 1.618033988 — expansion decimal TRUNCADA de phi = (1+sqrt5)/2 (definicion, no resultado; los puntos suspensivos lo dicen)
 % ORIGEN-VALOR: 3.141592653 — expansion decimal TRUNCADA de pi (definicion, no resultado)
+% ORIGEN-VALOR: 2.74 — eta_10 = 273.9 Omega_b h^2 (Steigman 2006, IJMPE 15, 1), o sea eta = 2.739e-8 Omega_b h^2; antes 2.73 en L348 y 2.74 en L705 para la misma conversion (2026-10-02)
 \begin{align}
 \varphi &= \frac{1+\sqrt{5}}{2} = 1.618033988\ldots
           \quad\text{(golden ratio)} \\
@@ -345,7 +346,7 @@ enters as the dimensionless value $\val{H0_ALG_d6}$, i.e.\ $H_0^{\rm SSEE}$ expr
 $\mathrm{km\,s^{-1}\,Mpc^{-1}}$; this is a Type-P numerical coincidence in the
 sense of Postulate~D of Paper~1, not a dimensional identity. Second,
 $\eta_B$ and $\Omega_b h^2$ differ by the standard photon-entropy factor
-($\eta_B \simeq 2.73\times10^{-8}\,\Omega_b h^2$), so the proportionality fixes
+($\eta_B \simeq 2.74\times10^{-8}\,\Omega_b h^2$), so the proportionality fixes
 the algebraic \emph{form} only, not the absolute normalisation.
 A scan of 96 algebraic candidates (see \texttt{ssee\_op1\_baryon\_density.py})
 shows Eq.~\eqref{eq:Obh2} is the unique \SSEE\ monomial within $1\sigma$ of
@@ -536,7 +537,7 @@ quantitative mass function is in Paper~5.
 
 The physical baryon density $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ derived in
 Section~\ref{sec:baryons} provides an independent BBN prediction.
-Using the linearised sensitivity from AlterBBN \citep{Pisanti2008},
+Using the linearised sensitivity from PArthENoPE \citep{Pisanti2008},
 $dY_p/d(\Omega_b h^2) \approx 0.96$, and the Planck~2018 anchor
 $Y_p = 0.2471$ at $\Omega_b h^2 = 0.02237$:
 \begin{equation}

@@ -2238,10 +2238,10 @@ stages:
       size: 17307
     - path: src/verificacion/cajones_algebra.py
       hash: md5
-      md5: c5ca7579936ad85bbf5ad9d9d9c5c6e3
-      size: 7406
+      md5: 56c89f66617b92efe7a389ae00253a03
+      size: 11151
     outs:
     - path: results/logs/cajones_algebra.json
       hash: md5
-      md5: defaf559ba2b626cbca55704f763ca94
-      size: 4335
+      md5: 412b2508a8663ffdbd7da9811b0ee841
+      size: 8299

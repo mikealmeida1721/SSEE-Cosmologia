@@ -325,7 +325,7 @@ no probada. OP-2 NO está "RESUELTO": es **condicional a la Conjecture B.1**.
 
 > El «<0.2%» de esta entrada era el **bug de normalización de la saturación**
 > (el shooting calibraba Ω_φ(a=1) a 0.839950 en vez de 0.691119). Corregido da
-> **−2.194210**, a 45% de −AURA. Y `βc` ya **no está en la acción**: Paper 7
+> **−2.194210**, a 45% de −AURA. Y `βc` ya **no está en la acción**: Paper 7 <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 > retiró el acoplamiento conformal y el potencial. La entrada se conserva
 > entera para trazar el linaje; nada de lo que sigue está vigente.
 
@@ -698,7 +698,7 @@ declara falsador.** No es una extensión — es una violación del postulado
 fundacional.
 
 **Además, MIRA no «emerge».** El propio Paper 8 (L69) admite que
-√β_c/MIRA = 1.00030 es «a near-coincidence, **not an algebraic
+√β_c/MIRA = 1.00027 (√AURA/MIRA, `cajones_algebra.json`; la cita vieja traía el último dígito mal) es «a near-coincidence, **not an algebraic
 identity**». La «emergencia» de MIRA en el lensing es una coincidencia
 numérica al 0.03 %, no una derivación.
 

@@ -184,8 +184,11 @@ Ambas son consecuencias algebraicas exactas (|diferencia numérica| = 0 en doble
 **Estructura Fibonacci:** N_* = 2φ⁷ = 26φ+16 ≈ 58.07 e-folds, dentro del rango
 estándar N_* ∈ [50,65]. Los coeficientes {26,16} = {F₁₀, 2F₇} son números de Fibonacci.
 
-**Consistencia slow-roll:** ε = 3α/(4N_*²) ≈ 0.000508, η = −1/N_* ≈ −0.01621;
-n_s = 1+2η−6ε = 0.9645 ✓, r = 16ε = 0.00813 = φ⁻¹⁰ ✓.
+**Consistencia slow-roll:** ε = 3α/(4N_*²) ≈ 0.000508, η = −1/N_* ≈ −0.01722.
+A orden dominante en 1/N_*, n_s = 1−2/N_* = 1−φ⁻⁷ = 0.96556 ✓ (exacto) y r = 16ε = 0.00813 = φ⁻¹⁰ ✓ (exacto).
+Con el slow-roll completo, 1+2η−6ε = 0.96251: la corrección O(1/N_*²) baja n_s en 0.0031.
+Cuentas en `results/logs/cajones_algebra.json` (`src/verificacion/cajones_algebra.py`).
+*(Errata 2026-10-02: los η y n_s que había aquí no salían de N_* = 2φ⁷; el valor viejo está en git.)*
 
 **Límite residual:** La derivación de N_* = 2φ⁷ desde el modelo de inflación quintaesencial
 SSEE (potencial V(φ_inf) con α=φ⁴/3) cierra OP-2 incondicionalmente — programa de Paper B.
@@ -320,7 +323,7 @@ contra `4/3 = 1.333333` (dif 0.0382%). No es cero.
 > (**4.0 kpc**), cúmulo 3.89×10²¹ m (126 kpc).
 > Derivada desde la ecuación de campo del propio paper (ec. 260, Gauss + cruce
 > X²/M⁴ = X/KAL): `r*² = (KAL^{3/2}/√2)·βc·M_obj/(4π·Mpl·M²)`, factor 9.17·βc sobre la
-> forma de Brax. Vía Láctea: **12 kpc** (βc=1), **18 kpc** (|βc|=2.194210), 24 kpc (|βc|=AURA).
+> forma de Brax. Vía Láctea: **12 kpc** (βc=1), **18 kpc** (|βc|=2.194210), 24 kpc (|βc|=AURA). <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 >
 > **H2 — `eq:grad_vainshtein` tiene dimensión E⁴ para un gradiente (E²).** Con
 > X = −½g^{μν}∂φ∂φ (ec. 202), el cruce da X* = M⁴/KAL y `|∇φ|* = √(2/KAL)·M²`.
@@ -541,7 +544,7 @@ Los papers cosmológicos dan peso dimensional a estos roles vía observables:
 
 - ~~Paper 7: βc = −AURA para el acoplamiento disformal del fotón~~ — **retirado
   2026-09-07**: βc salió de la acción de Paper 7 con el potencial; el «<0.2%» era
-  el bug de saturación (valor real −2.194210)
+  el bug de saturación (valor real −2.194210) <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 - Paper 8: geodésicas disformales del fotón usan AURA
 - Papers 1–6: el sector cinético escalar usa KAL₀ como constante de retención estructural (en la capa de fluido esa retención se manifiesta como viscosidad)
 
@@ -586,7 +589,7 @@ Específicamente, falta demostrar:
    ya no existe. Además arrastraba tres errores independientes:
    - el «`βc = −AURA` verificado a <0.2%» (retirado) era el **bug de normalización de la
      saturación** (el shooting calibraba `Ω_φ(a=1)` a `0.839950` en vez de
-     `0.691119`); corregido da `−2.194210`, a **45%** de AURA, no a 0.2%;
+     `0.691119`); corregido da `−2.194210`, a **45%** de AURA, no a 0.2%; <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
    - `P(X) = X/KAL₀ + X²/M⁴` **no es la acción de energía oscura** — es el
      funcional de apantallamiento de Paper 10 (cuarta aparición de la
      confusión de las dos `K(X)`);
@@ -931,7 +934,7 @@ of what is derivable without solving the full $V(\phi)$; residue (ii) is genuine
 not a shortcut away. This confirms — does not weaken — the honest status above.
 
 **Strong rule (still in effect):** the physical Hubble scale
-$H_0^{\rm MIRA}=67.068$~km/s/Mpc **must NOT be substituted** into any mass formula.
+$H_0^{\rm MIRA}=67.068$~km/s/Mpc **must NOT be substituted** into any mass formula. <!-- R74: git:71598acba2:results/planck_cobaya_unified.txt -->
 The canonical chain uses the fixed mass scale $0.9530$ eV and pure $(\varphi,\pi)$
 numbers only — no Hubble rate enters. The dimensionally-inconsistent
 "$\times H_0^{\rm alg}$" framing of the old 5.602 eV ansatz is retired. <!-- R74: git:85e680ef29:results/logs/cmb_dbic_tau_ajustado.json -->
@@ -2386,15 +2389,16 @@ La vio Mike razonando en voz alta, y llega al mismo sitio que un programa public
 veces más», se lee como «hay **la misma cantidad** y cada una pesa 5.33 veces más»,
 entonces la razón de pesos deja de ser una abundancia y **es una razón de masas**:
 
-$$m_{\rm DM} = \mathrm{KAL_0}\cdot n_s\cdot m_{\rm barión} = 5.331239\times0.937112\ \mathrm{GeV} = \mathbf{4.996\ GeV}$$
+$$m_{\rm DM} = \mathrm{KAL_0}\cdot n_s\cdot m_{\rm barión} = 5.331239\times0.937103\ \mathrm{GeV} = \mathbf{4.996\ GeV}$$
 
 La densidad crítica, el $h^2$ y todas las unidades **se cancelan** en el cociente: la
-fórmula final tiene tres factores y nada más. `m_barión = 0.937112 GeV` es la masa media
+fórmula final tiene tres factores y nada más. `m_barión = 0.937103 GeV` es la masa media
 por barión del universo (75% H + 25% He + electrones), **no** la del protón (0.938272,
-0.12% distinta). Control de la cadena de conteo: $n_b=2.5208\times10^{-7}\,\mathrm{cm^{-3}}$
+0.12% distinta). Control de la cadena de conteo: $n_b=2.5207\times10^{-7}\,\mathrm{cm^{-3}}$
 da $\eta=n_b/n_\gamma=6.137\times10^{-10}$ contra el publicado $6.12\times10^{-10}$
 (+0.28%, que es el +0.21% al que nuestro $\omega_b$ está de Planck). Script:
-`scratchpad/cuenta_particulas.py`.
+`src/verificacion/cajones_algebra.py` → `results/logs/cajones_algebra.json` (2026-10-02; el original vivía en un
+scratchpad que ya no existe; rehecho con CODATA cambia el último dígito de $m_{\rm barión}$ y de $n_b$).
 
 **Qué es de SSEE y qué no, en ese 4.996:**
 
@@ -2657,10 +2661,10 @@ es cierta). Script `src/p07_eft/cruce_fantasma_quien_lo_lleva.py`, log
 > $M^4=1$ el término $X^2/M^4$ pesa 20.5 % del lineal; con el $M^4$ físico pesa
 > **0.34 %** — despreciable, tal como afirma Paper 7. *(Corregido: primero cité
 > 0.087 %, calculado con la solución vieja; con la solución del $M$ físico
-> —$\dot\phi=0.540727$, $X=0.146193$— sale 0.34 %.)* Medido:
+> —$\dot\phi=0.540727$, $X=0.146193$— sale 0.34 %.)* Medido: <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 > ```
-> M4 = 1 (convencion)  w -0.972562  b_c -2.194210
-> M4 = 5phi^8 (fisico) w -0.922851  b_c -0.691265
+> M4 = 1 (convencion)  w -0.972562  b_c -2.194210 <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
+> M4 = 5phi^8 (fisico) w -0.922851  b_c -0.691265 <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 > fondos K = X/KAL     w -0.927318
 > ```
 > La brecha de 0.045 cae a **0.0045**. ⟹ `fondo_acoplado` y `fondo_disparo`, que
@@ -2689,13 +2693,13 @@ es cierta). Script `src/p07_eft/cruce_fantasma_quien_lo_lleva.py`, log
 > **Y el término que falta NO es despreciable para el fondo.** Medido apagándolo
 > en `archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/ssee_eft_verification.py` (el único de los tres que sí lo implementa):
 > ```
-> con X^2/M^4   w_phi = -0.972562   beta_c = -2.194210
-> sin X^2/M^4   w_phi = -0.921054   beta_c = -0.666255
+> con X^2/M^4   w_phi = -0.972562   beta_c = -2.194210 <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
+> sin X^2/M^4   w_phi = -0.921054   beta_c = -0.666255 <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 > ```
 > Mueve $w$ en **0.0515**, y la brecha que este OP intenta cerrar es 0.087. Es el
 > 59 % de lo que está en juego. En $K_X$ —que fija $\rho+p$ y por tanto $1+w$—
-> el término no lineal pesa **41 %** ($X=0.037128$, $X/\KAL=0.006724$,
-> $X^2/M^4=0.001378$).
+> el término no lineal pesa **41 %** ($X=0.037128$, $X/\KAL=0.006724$, <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
+> $X^2/M^4=0.001378$). <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 >
 > **Nótese además que $\beta_c$ pasa de $-2.194$ a $-0.666$**, o sea **entra en
 > la región $|\beta_c|\le0.8$ donde el barrido sí encuentra solución.** La
@@ -2828,7 +2832,7 @@ acoplamiento oscuro, $\beta_c=0$.
 
 $\beta_c=-\mathrm{AURA}$ (Paper 7). Ese valor venía de un despeje **en un solo
 punto** que además metía saturaciones en ranuras de densidad. Corregido el bug
-(R52, 2026-09-05) el mismo despeje da $-2.194210$, a **45 %** de $-\mathrm{AURA}$:
+(R52, 2026-09-05) el mismo despeje da $-2.194210$, a **45 %** de $-\mathrm{AURA}$: <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
 el «acuerdo al 0.199 %» era el bug. Y el barrido muestra que no hay solución para
 $\lvert\beta_c\rvert\ge1.0$, así que $-3.997847$ está cinco veces fuera de la
 región donde el fondo acoplado admite solución.

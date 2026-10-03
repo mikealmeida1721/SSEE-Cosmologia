@@ -272,8 +272,8 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | H₀ | 3(φ+π)² = 67.96 km/s/Mpc | 67.36 ± 0.54 | 1.1σ |
 | Ωm (geometric identity, *superseded* by ωm-direct 0.30889) | (π−φ)/(π+φ) = 0.3201 | 0.3153 ± 0.0073 | 0.66σ |
 | Ωb h² | (π−φ)/(3Ω²) = 0.02242 | 0.02237 ± 0.00015 | 0.32σ |
-| Ωc h² (IS) | KAL₀ × Ωb h² × n_s = 0.11926 | 0.1200 ± 0.0012 | **−0.6σ** |
-| Y_p (BBN) | AlterBBN(Ωb h²=0.02242) = 0.2476 | 0.2449 ± 0.0040 | 0.7σ |
+| Ωc h² | KAL₀ × Ωb h² × n_s = 0.11951 | 0.1200 ± 0.0012 | −0.40σ |
+| Y_p (BBN) | CAMB BBN (PArthENoPE, Ωb h²=0.02242) = 0.2472 | 0.2449 ± 0.0040 (Aver+2015) | 0.58σ |
 | δc | **1.67634** (z=0) — colapso esférico sobre el fondo del modelo | 1.67599 (ΛCDM, mismo integrador) | 0.02 % — indistinguible. *(El δc,EdS × n_s = 1.6284 está RETIRADO 2026-09-25: OP-27)* |
 
 **Press-Schechter halo counts** at z=10 (`src/p02_mcmc/ssee_press_schechter.py`), con el δc **derivado**:
