@@ -1,0 +1,89 @@
+# ACTA-PROCEDENCIA {"commit": "1b4ff434c4564c95866b08446696f2a9d9ac5190", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/pB_inflation/ssee_paperB_Nstar.py", "script_sha256": "afd61bfedac4f9de24077929f6d0d05ea9f64481a41a27cc18fd735968e6b873", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["-c"], "fecha": "2026-10-02T23:42:09", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+=================================================================
+Paper B — N_*(T_rh) para α-attractor quintaesencial
+=================================================================
+
+  α = φ⁴/3       = 2.284701
+  N_target = 2φ⁷ = 58.068884 e-folds
+
+[1] Fin de inflación
+  κ = √(2/3α)    = 0.540182
+  φ_end (Mpl)    = 1.3819
+  ε(φ_end) check = 1.000000  (debe ser 1)
+  V_end/Mpl⁴     = 7.5288e-09
+  V_end^(1/4)    = 9.3150e-03 Mpl  ≈ 2.268e+16 GeV  (Mpl reducida)
+
+[2] N_*(T_rh) — rango de reheating cosmológico
+  T_rh (GeV)                  N_*
+  -------------------- ----------
+  1.00e+15                 56.579
+  1.00e+12                 51.974
+  1.00e+09                 47.369
+  1.00e+06                 42.763
+  1.00e+03                 38.158
+  1.00e+00                 33.553
+  1.00e-03                 28.948
+  1.00e-04                 27.413
+  1.00e-06                 24.343
+
+[3] T_rh que produce N_* = 2φ⁷ exacto
+  N_* = 58.068884  (target: 58.068884)
+  T_rh = 9.345190e+15 GeV
+  T_rh = 9.345190e+18 MeV
+  T_rh = 9.345190e+24 keV
+  T_rh = 9.345190e+27 eV
+
+[4] ¿T_rh tiene expresión SSEE?
+  (comparar T_rh en eV con constantes del modelo)
+
+  T_rh = 9.3452e+24 eV
+
+  Candidato                               Valor (eV)   Ratio T_rh/X   Cercano?
+  ----------------------------------- -------------- -------------- ----------
+  T_EW (electroweak) 100 GeV               1.000e+11 93451899751121.5938           
+  T_BBN (nucleosíntesis) 1 MeV             1.000e+06 9345189975112159232.0000           
+  T_QCD (hadrónica) 150 MeV                1.500e+08 62301266500747728.0000           
+  Λ_SSEE = M = 9.68 meV                    9.680e-03 965412187511586759695663104.0000           
+  H₀_SSEE (eV)                             1.450e-33 6446230892171729102981246713276585427958336263237293572096.0000           
+  Ω × H₀ (eV)                              6.900e-33 1354356418385572791757156329494408029396620290010157940736.0000           
+  φ¹² × H₀ (eV)                            4.668e-31 20019543680954274357777085815080540703319773902633172992.0000           
+
+=================================================================
+DESCUBRIMIENTO: ρ_end/ρ_rh ≈ 3 (casi exacto)
+=================================================================
+
+  ρ_end / ρ_rh  = 2.964468
+  vs exacto 3   = 3.000000
+  Diferencia    = 0.035532  (1.184%)
+
+  Si ρ_end/ρ_rh = 3 exacto:
+  N_* = 58.25 − ln(3)/6 = 58.25 − 0.183102 = 58.066898
+  2φ⁷ =                                                58.068884
+  Δ = 0.001986  ← depende de la constante 58.25
+
+  Corrección δ para cierre exacto: 58.25 + 0.001986
+  Esta corrección es O(1/N_*) ≈ 0.0172  — dentro de incertidumbre teórica
+
+  INTERPRETACIÓN:
+  ─────────────────────────────────────────────────
+  La condición ρ_end/ρ_rh = 3 es físicamente natural:
+  • 3 = dimensiones espaciales (argumento de equipartición)
+  • ρ_end = 3V_end (inflación con ε = 1: KE = 2V, total = 3V)
+  • ρ_rh = V_end → T_rh = V_end^(1/4) × (30/π²g*)^(1/4)
+  
+  Si este ansatz (ρ_rh = V_end) se deriva desde el modelo de
+  reheating gravitacional SSEE, entonces N_* = 2φ⁷ es consecuencia.
+  
+  El puente faltante: demostrar que la eficiencia de producción
+  gravitacional de partículas con α=φ⁴/3 da exactamente ρ_rh = V_end.
+
+[5] T_rh expresada en términos de V_end^(1/4)
+-----------------------------------------------------------------
+  V_end^(1/4)      = 2.2682e+16 GeV
+  T_rh             = 9.3452e+15 GeV
+  T_rh / V_end^(1/4) = 0.412009
+  (30/π²g*)^(1/4)  = 0.410784
+  Ratio / (30/π²g*)^(1/4) = 1.002983  ≈ 1.003
+
+  → T_rh = (30/π²g*)^(1/4) × V_end^(1/4)  si ρ_rh = V_end (ratio=3)
+  → T_rh está completamente determinada por α=φ⁴/3 y As (ambos SSEE/Planck)

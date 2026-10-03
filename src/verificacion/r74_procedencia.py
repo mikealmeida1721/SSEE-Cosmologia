@@ -172,6 +172,30 @@ def _texto(f, sin_comentarios):
     return t
 
 
+# 2026-10-02. Notación científica: «9.345×10¹⁵», «4.086 \\times 10^{-5}». Antes se leía sólo la
+# mantisa, así que el valor correcto (9.345e15 en el log) NO casaba y en cambio un 9.345 cualquiera,
+# a otra escala, sí. Ahora se lee el exponente y se compara el número entero.
+_SUP = str.maketrans("⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹", "-+0123456789")
+SCI = re.compile(r"\s*(?:×|\\times|\\cdot|·)\s*10\s*(?:\^\s*\{?\s*([-+−]?\d+)\s*\}?|([⁻⁺]?[⁰¹²³⁴⁵⁶⁷⁸⁹]+))")
+
+
+def exponente(t, fin):
+    """Exponente de 10 que sigue a la mantisa que termina en `fin`, o None."""
+    m = SCI.match(t, fin)
+    if not m:
+        return None
+    return int((m.group(1) or m.group(2).translate(_SUP)).replace("−", "-"))
+
+
+def en_fuente_sci(s, e, pool):
+    """Como R.en_fuente, pero para s×10^e: la tolerancia escala con el exponente."""
+    import bisect
+    x = float(s) * 10 ** e
+    u = (0.5 * 10 ** -len(s.split(".")[1]) + 1e-12) * 10 ** e
+    i = bisect.bisect_left(pool, x - u)
+    return i < len(pool) and pool[i] <= x + u
+
+
 def _sin_origen(f, pool, tex):
     raw = f.read_text(errors="ignore")
     decl = {m.group(1) for m in R.DECL.finditer(raw) if m.group(2).strip()} if tex else set()
@@ -179,7 +203,10 @@ def _sin_origen(f, pool, tex):
     out = []
     for m in NUMALL.finditer(t):
         s = m.group(1)
-        if R.cifras(s) < 3 or s in decl or R.en_fuente(s, pool):
+        e = exponente(t, m.end())
+        if R.cifras(s) < 3 or s in decl:
+            continue
+        if (en_fuente_sci(s, e, pool) if e is not None else R.en_fuente(s, pool)):
             continue
         if R.CITA.search(R.unidad(t, m.start())) or R.es_arxiv(t, m.start(), s):
             continue

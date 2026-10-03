@@ -2224,3 +2224,24 @@ stages:
       hash: md5
       md5: 564876fb3c45276525d51027f46d619d
       size: 153369
+  cajones_algebra:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/verificacion/cajones_algebra.py
+    deps:
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    - path: src/verificacion/cajones_algebra.py
+      hash: md5
+      md5: a59bbaa5136f1e680c250dfff73bc100
+      size: 6559
+    outs:
+    - path: results/logs/cajones_algebra.json
+      hash: md5
+      md5: f20188b56ee727415cd6cf59326db907
+      size: 3908

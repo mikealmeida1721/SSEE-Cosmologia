@@ -1,0 +1,167 @@
+{
+ "identidades": {
+  "ob_formula_vieja_P4": {
+   "formula": "3(pi-phi)/200",
+   "valor": 0.022853379972598474
+  },
+  "phi_11": {
+   "formula": "phi^11",
+   "valor": 199.0050249987407
+  },
+  "pi_menos_phi": {
+   "formula": "pi - phi",
+   "valor": 1.5235586648398982
+  },
+  "ob_h2_alg": {
+   "formula": "(pi-phi)/(3 Omega^2)",
+   "valor": 0.02241775678109985
+  },
+  "N_star": {
+   "formula": "2 phi^7",
+   "valor": 58.06888370749728
+  },
+  "alfa_atractor": {
+   "formula": "phi^4/3",
+   "valor": 2.284700655416562
+  },
+  "epsilon_V": {
+   "formula": "3 alfa/(4 N_*^2)",
+   "valor": 0.0005081636722364592
+  },
+  "eta_V": {
+   "formula": "-1/N_*",
+   "valor": -0.01722092687431651
+  },
+  "ns_orden1": {
+   "formula": "1 - 2/N_*  (orden dominante en 1/N_*)",
+   "valor": 0.9655581462513669
+  },
+  "ns_slowroll_completo": {
+   "formula": "1 + 2 eta_V - 6 epsilon_V",
+   "valor": 0.9625091642179482
+  },
+  "r_tensor": {
+   "formula": "16 epsilon_V",
+   "valor": 0.008130618755783347
+  },
+  "phi_menos10": {
+   "formula": "phi^-10",
+   "valor": 0.008130618755783347
+  },
+  "phi_menos21": {
+   "formula": "phi^-21",
+   "valor": 4.0856349008447376e-05
+  },
+  "n_para_1e-5": {
+   "formula": "5 ln10 / ln phi  (phi^-n = 1e-5)",
+   "valor": 23.924859833908332
+  },
+  "cuatro_tercios": {
+   "formula": "4/3",
+   "valor": 1.3333333333333333
+  },
+  "cuatro_KAL": {
+   "formula": "4 KAL0",
+   "valor": 22.08562389903855
+  },
+  "R_offset22": {
+   "formula": "4 KAL0 - 22",
+   "valor": 0.0856238990385485
+  },
+  "uno_menos_f_IR": {
+   "formula": "1 - f_screen^IR",
+   "valor": 0.9327467296567005
+  },
+  "sqrtAURA_sobre_MIRA": {
+   "formula": "sqrt(AURA)/MIRA",
+   "valor": 1.000269194919888
+  },
+  "alfa_sat_canonico": {
+   "formula": "sqrt(3/2)",
+   "valor": 1.224744871391589
+  },
+  "x_phi_MDE_canonico": {
+   "formula": "-1.2 sqrt(6)/3",
+   "valor": -0.9797958971132711
+  },
+  "alfa_sat_SSEE": {
+   "formula": "sqrt(3/(phi+3 pi))",
+   "valor": 0.5212196605929116
+  },
+  "m_barion_GeV": {
+   "formula": "1/(X/m_H + Y/(m_He4/4)), X=0.75, Y=0.25, con electrones",
+   "valor": 0.937103399803493
+  },
+  "m_proton_GeV": {
+   "formula": "CODATA",
+   "valor": 0.93827208816
+  },
+  "KAL0_por_ns": {
+   "formula": "KAL0 n_s",
+   "valor": 5.331238517690137
+  },
+  "m_DM_GeV": {
+   "formula": "KAL0 n_s m_barion",
+   "valor": 4.995921740090762
+  },
+  "n_b_cm3": {
+   "formula": "omega_b rho_c100 / m_barion",
+   "valor": 2.520654814619449e-07
+  },
+  "eta_bariones": {
+   "formula": "n_b / n_gamma",
+   "valor": 6.137459982029338e-10
+  },
+  "Yp_BBN_camb": {
+   "formula": "camb.bbn.get_predictor().Y_p(omega_b, 0)",
+   "valor": 0.24720762121443066
+  },
+  "Yp_tension_sigma": {
+   "formula": "(Y_p - 0.2449)/0.0040",
+   "valor": 0.5769053036076623
+  },
+  "wc_alg": {
+   "formula": "KAL0 omega_b n_s",
+   "valor": 0.11951440843160877
+  },
+  "wc_tension_sigma": {
+   "formula": "(omega_c - 0.1200)/0.0012",
+   "valor": -0.40465964032602536
+  }
+ },
+ "control": {
+  "casos": {
+   "r_igual_phi_menos10": true,
+   "ns_orden1_igual_1_menos_phi_menos7": true,
+   "otro_lado_phi11_distinto_de_200": true,
+   "otro_lado_ns_completo_distinto_de_orden1": true
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "1b4ff434c4564c95866b08446696f2a9d9ac5190",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/verificacion/cajones_algebra.py",
+  "script_sha256": "d5ded9551700901e6fa7bd08a51f492d11cbf0a79674a56483c24825050706cf",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/verificacion/cajones_algebra.py"
+  ],
+  "fecha": "2026-10-02T23:42:09",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
