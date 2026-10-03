@@ -57,7 +57,7 @@
   }
  },
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sn_geometria.py",
@@ -65,7 +65,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
-   "results/logs/multisonda_fondo_clavado.json": "da6416f1d7aaa77b925d9ce12e9992b547450366d6e09d1599dc98fb5a95a01d",
+   "results/logs/multisonda_fondo_clavado.json": "75951b47a51aed852532e270f536f8aec174fed82fca96d41eecb3a04c9bb37e",
    "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
    "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc",
    "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv": "2f57019d783eaa976df80a41b0054171a2d994ee9808d715ce850c2df5720aaf",
@@ -82,7 +82,7 @@
    "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv",
    "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz"
   ],
-  "fecha": "2026-10-03T08:01:04",
+  "fecha": "2026-10-03T12:56:27",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

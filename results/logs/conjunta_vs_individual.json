@@ -74,7 +74,7 @@
  "total_individual": 1515.5987705478412,
  "total_delta": 3.3892362210956435,
  "_procedencia": {
-  "commit": "b5d30869b5716f8ec63f08088b7a7fc57c16a0f7",
+  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/leer_conjunta.py",
@@ -82,7 +82,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
-   "results/logs/multisonda_fondo_clavado.json": "da6416f1d7aaa77b925d9ce12e9992b547450366d6e09d1599dc98fb5a95a01d",
+   "results/logs/multisonda_fondo_clavado.json": "75951b47a51aed852532e270f536f8aec174fed82fca96d41eecb3a04c9bb37e",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt": "8d05d679213064564d2d2ea19e0ef05cb713bd969cd5e6ad2a831e0b274d4eef",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt": "d0d0a52550e4e3c5fe1f695d2dc2046325368c2d4d72a8047a7d3786655cae77",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt": "e928ff40f16eab2e2dc0af6e1ad8997d3fee18f279de6e67724f1f64a6146965",
@@ -95,7 +95,7 @@
   "argv": [
    "src/p06_growth/leer_conjunta.py"
   ],
-  "fecha": "2026-10-03T08:21:55",
+  "fecha": "2026-10-03T12:56:22",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

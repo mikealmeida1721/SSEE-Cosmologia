@@ -41,19 +41,19 @@
   "H0_s": 0.54
  },
  "_procedencia": {
-  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
+  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/ssee_paper9_figures.py",
   "script_sha256": "75efb5eeb43446cb346519b126e0712efe98f32160c31e83baae4cf9e172346d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/h0_por_metodos.json": "929cc1e45533c847a864b99a98a69419d817971664795ca197341ccbb0cd0ffc"
+   "results/logs/h0_por_metodos.json": "6a01f6a366079e0aa0d686032726e5a8d41a63daa121fd951895e6e4f37b4fb8"
   },
   "argv": [
    "src/p09_hubble/ssee_paper9_figures.py"
   ],
-  "fecha": "2026-10-03T08:25:20",
+  "fecha": "2026-10-03T12:56:34",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

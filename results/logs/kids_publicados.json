@@ -41,7 +41,7 @@
    "fuente": "Asgari et al. 2021, KiDS-1000 cosmic shear band powers"
   }
  },
- "fecha": "2026-10-02",
+ "fecha": "2026-10-03",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -81,7 +81,7 @@
   }
  },
  "_procedencia": {
-  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
+  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
@@ -92,13 +92,13 @@
    "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "ee9d40a152c786e6d54f7ed84dcc10af1eb1083977d5242af8d5fcf9b6af06d5",
    "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "c61de328cfd4a95bb843d4e3447410b902ec9cec028684d1ba89c3aba3ede85d",
-   "results/logs/s8_kids_legacy_camb.json": "3722681124eea928437e146102fbfc1f13911b809a0b5393fc8deda17ab082d0",
-   "results/logs/s8_desde_b1.json": "9be912a9ed82261645e38090521e39b1ed50a5b0d14e91d6bfec9ec47e8a2676"
+   "results/logs/s8_kids_legacy_camb.json": "885b755de1fba1117778070ed8da16b55c937f1eeeb159f7ac62de2dd2c6f766",
+   "results/logs/s8_desde_b1.json": "a98d828f0815fb80e67b2a098dc0a3a060da223cdedc1a1b694c7e67a904589e"
   },
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-02T19:58:25",
+  "fecha": "2026-10-03T12:56:09",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -107,8 +107,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
