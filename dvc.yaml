@@ -1278,3 +1278,67 @@ stages:
     outs:
     - results/logs/union3_repro_compara.json:
         cache: false
+  sello_erosita_conteos_erass1:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_conteos.py erass1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_conteos.py
+      results/logs/erosita_conteos_erass1.json /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz results/logs/cmb_dbic_tau_ajustado.json
+    deps:
+    - src/p11_sondas/erosita_conteos.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/lcdm_planck.py
+    - /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex
+    - /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html
+    - /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+    - /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+    - /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    - /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+    - results/logs/cmb_dbic_tau_ajustado.json
+    outs:
+    - results/logs/erosita_conteos_erass1.json:
+        cache: false
+  sello_erosita_conteos_efeds:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_conteos.py efeds && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_conteos.py results/logs/erosita_conteos_efeds.json
+      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz results/logs/cmb_dbic_tau_ajustado.json
+    deps:
+    - src/p11_sondas/erosita_conteos.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/lcdm_planck.py
+    - /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex
+    - /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html
+    - /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+    - /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+    - /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    - /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+    - results/logs/cmb_dbic_tau_ajustado.json
+    outs:
+    - results/logs/erosita_conteos_efeds.json:
+        cache: false
+  sello_erosita_cr_v3:
+    cmd: OMP_NUM_THREADS=1 NUCLEOS=1 nice -n 10 /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_cr.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_cr.py results/logs/erosita_cr_v3.json
+      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz results/logs/cmb_dbic_tau_ajustado.json /mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    deps:
+    - src/p11_sondas/erosita_cr.py
+    - src/p11_sondas/erosita_conteos.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/lcdm_planck.py
+    - /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex
+    - /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html
+    - /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+    - /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+    - /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    - /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex
+    - /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    outs:
+    - results/logs/erosita_cr_v3.json:
+        cache: false
