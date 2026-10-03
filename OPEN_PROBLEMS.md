@@ -467,11 +467,9 @@ bariónica de HMcode sola, sobre un único sector Ω_m=0.308881.
 **Nivel 2 — N-body completo (proyección):**
 
 HMcode-2020 captura ~60–70% de la supresión bariónica real (McCarthy+2017, Chisari+2019).
-Rango adicional N-body: ΔB_sigma8 ~ 0.03–0.07, llevando S₈^N-body ≈ 0.705–0.735.
+Rango adicional N-body: ΔB_sigma8 ~ 0.03–0.07 (estimación a mano de mayo, sin log; histórica).
 
-~~Tensión DES proyectada:~~
-- ~~Optimista: (0.705 − 0.758)/0.023 = −2.36σ~~
-- ~~Conservador: (0.735 − 0.758)/0.023 = −1.05σ~~
+~~Tensión DES proyectada (estimación a mano sin log, sobre el S₈ de la partícula retirada): los dos extremos del rango quedaban entre −1σ y −2.4σ de DES.~~
 
 ~~**Falsificación:** Si N-body produce S₈ < 0.785 → OP-5 resuelto (<1.2σ DES).~~
 **RETIRADO**: la proyección se medía contra el 0.758 del baseline two-sector.
