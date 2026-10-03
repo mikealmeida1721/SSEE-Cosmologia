@@ -68,6 +68,9 @@ stages:
     - results/logs/cumulos_zhang2026.json
     - results/logs/b1_k2.json
     - results/logs/sondas_ssee_vs_lcdm.json
+    - results/logs/p9_cascada_control.json
+    - results/logs/h0_por_profundidad.json
+    - results/logs/h0_por_metodos.json
     - results/logs/bao_lcdm_libre.json
     - results/logs/h0_lente_fondo_ssee.log
     - results/logs/mcmc_paper2_reframe.json
@@ -758,6 +761,20 @@ stages:
     - results/logs/des_y3_en_el_clavo_ssee_nla.json:
         cache: false
     - results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json:
+        cache: false
+  p9_figura_cascada:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p09_hubble/ssee_paper9_figures.py
+    deps:
+    - src/p09_hubble/ssee_paper9_figures.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - results/logs/h0_por_metodos.json
+    outs:
+    - results/logs/p9_cascada_control.json:
+        cache: false
+    - results/figures/fig_paper9_h0_tension.pdf:
+        cache: false
+    - results/figures/fig_paper9_h0_tension.png:
         cache: false
   readme_figura:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/ssee_readme_tensions_figure.py
