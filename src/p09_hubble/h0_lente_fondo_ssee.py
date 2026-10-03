@@ -30,7 +30,7 @@ sys.path.insert(0, str(REPO / "src"))
 import ssee_core as S  # noqa: E402
 from procedencia import con_acta  # noqa: E402
 
-SALIDA = REPO / "results" / "logs" / "h0_lente_fondo_ssee.log"   # JSON dentro
+SALIDA = REPO / "results" / "logs" / "h0_lente_fondo_ssee.json"   # 2026-10-03: era .log con JSON dentro y R75 no leia su acta
 OM = S.OMEGA_M_TOTAL
 H_GLOBAL = S.H0_GLOBAL                   # H_glob = H_SH0ES*(1-f_screen): el H de SSEE (el blanco puro es S.H0_ALG)
 

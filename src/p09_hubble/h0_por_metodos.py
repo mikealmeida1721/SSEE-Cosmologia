@@ -25,7 +25,7 @@ CRITERIOS (sobre el PRIMARIO: máseres, lentes TDCOSMO-2025, sirena GW170817)
 CONTROLES (R53)
   - Lectura: cada valor se vuelve a buscar en su .tex, y con un dígito alterado NO tiene que aparecer.
   - Potencia: 2000 simulaciones del PRIMARIO con sus errores reales, bajo P y bajo C. Si el criterio
-    no recupera la hipótesis verdadera en ≥ 80 % de los casos, la prueba no tiene potencia: se reporta
+    no recupera la hipótesis verdadera (OP-8b) en ≥ 80 % de los casos, la prueba no tiene potencia: se reporta
     eso y la precisión combinada necesaria, no un veredicto.
 
 Salida: results/logs/h0_por_metodos.json
@@ -45,7 +45,7 @@ from procedencia import con_acta  # noqa: E402
 
 LIT = "/mnt/datos/SSEE_data/literatura"
 H4P = os.path.join(_R, "results", "logs", "h0_four_priors.json")
-LENTE = os.path.join(_R, "results", "logs", "h0_lente_fondo_ssee.log")   # JSON con acta
+LENTE = os.path.join(_R, "results", "logs", "h0_lente_fondo_ssee.json")   # JSON con acta
 OUT = os.path.join(_R, "results", "logs", "h0_por_metodos.json")
 rng = np.random.default_rng(20261003)
 

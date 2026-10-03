@@ -140,7 +140,7 @@ deriva corresponde a **ediciones del script / cambios de prior**, no a azar:
 - 66.412 ± 0.385 — prior H_alg + DESI DR2 REAL pero con **geometría BUGGY**: el sector
   frío Ω_m,dyn=0.160 (=1+w0) metido en E(z)/r_d (debía ser la materia TOTAL 0.308881).
   Daba χ²_BAO=726, Ω_bh² +2.3σ, θ*=13.9σ. **Superado por V-L4-DESI 2026-07-09.**
-- **67.8226 ± 0.4126 — (2026-10-01: sin término de cúmulos y con semilla fija en emcee; antes 67.8206 ± 0.4125 (log: git:1de1618:results/logs/mcmc_paper2_reframe.json) y 67.8244 ± 0.4133, ruido MC) prior H_glob 67.962 ± 0.968 + DESI DR2 + ω_m algebraico FIJO (R25) + r_d y
+- **67.8226 ± 0.4126 — (2026-10-01: sin término de cúmulos y con semilla fija en emcee; antes 67.8206 ± 0.4125 (log: git:1de1618:results/logs/mcmc_paper2_reframe.json) y 67.8244 ± 0.4133 (log: git:513e84e:results/logs/mcmc_paper2_reframe.json), ruido MC) prior H_glob 67.962 ± 0.968 + DESI DR2 + ω_m algebraico FIJO (R25) + r_d y
   distancias CAMB (CANÓNICO ACTUAL, 2026-09-28).** `mcmc_paper2_reframe.json`; 0.33σ de H_glob, 0.68σ
   Planck; Ω_bh² 0.02198±0.00048; χ²_BAO 10.43 (11.41 en H_glob).
 - 67.7869 ⁺⁰·³⁵¹/₋₀·³⁵² (log: git:513e84e:results/logs/mcmc_paper2_reframe.log) — prior número puro 67.962 ± 0.54 (σ de Planck) + r_d por fórmula
@@ -1071,7 +1071,7 @@ vs Planck 2018 **0.59668±0.00046°** (100θ*=1.04109±0.00030): <!-- R74: git:d
 | H₀ usado | θ* resultante | tensión |
 |---|---|---|
 | 67.962 (anchor H_alg, CMB-óptimo ω_m-directo) | 0.59667° (100θ*=1.04139) | **1.00σ ✓** |
-| **67.8226 (posterior MCMC DR2, prior H_glob, semilla 2026-10-01)** | **0.59644° (100θ*=1.04099)** | **0.34σ ✓** (era 0.32σ con 67.8244) |
+| **67.8226 (posterior MCMC DR2, prior H_glob, semilla 2026-10-01)** | **0.59644° (100θ*=1.04099)** | **0.34σ ✓** (era 0.32σ con 67.8244) | <!-- R74: git:513e84e:results/logs/mcmc_paper2_reframe.json -->
 | 67.7869 (log: git:513e84e:results/logs/mcmc_paper2_reframe.log) (posterior previo, prior número puro ±0.54) | 0.59638° (100θ*=1.04089) | 0.67σ *superado* |
 | 66.412 (posterior con bug: sector 0.160 en E(z)) | 100θ*=1.03693 | ~~13.9σ~~ *bug superado* | <!-- R74: git:6039ffdbd0:CANONICAL_VALUES.yaml -->
 | 67.159 (posterior con vector DR1 mal etiquetado) | 100θ*=1.03910 | ~~6.6σ~~ *superado* | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
@@ -1232,10 +1232,10 @@ eft_dos_campos_* (3), erosita_completitud, formula_rd_exponentes, look_elsewhere
 erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número de paper cambia):
 - H0_GLOBAL en ssee_core (09-28, Ω_m en el 8.º decimal): bao_camb_control (χ² 11.40651→11.40650),
   is_growth_gamma_bg, sn_geometria, union3_en_el_clavo, erosita_conteos_erass1/efeds (ΔBIC 0.0549 igual).
-- Posterior P2 re-corrido con semilla (10-01, H₀ 67.8244→67.8226): h0_distancias_hglob,
+- Posterior P2 re-corrido con semilla (10-01, H₀ 67.8244→67.8226): h0_distancias_hglob, <!-- R74: git:513e84e:results/logs/mcmc_paper2_reframe.json -->
   p3_rd_reframe_omega_m (**θ* al posterior 0.32σ→0.34σ**; r_d 147.174 igual).
 - union3_en_el_clavo rehecho con ΛCDM con sus parámetros (09-27 19:22): union3_repro_compara
-  citaba el de las 12:03 (χ² ΛCDM 28.820→28.834).
+  citaba el de las 12:03 (χ² ΛCDM 28.820→28.834). <!-- R74: git:7852453:results/logs/union3_en_el_clavo.json -->
 - multisonda con un decimal más (417.971→417.9706): conjunta_vs_individual (ΔKiDS 0.6331→0.6335).
 - Ruido de la EDO: eft_barrido_potenciales_wa (≤2e-4 relativo en w_a ~1e-11; ≤5e-6 en el resto).
 

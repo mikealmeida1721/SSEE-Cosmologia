@@ -194,6 +194,7 @@ dB, CB = sub(mB)
 cB = dB.IS_CALIBRATOR.values == 1
 CBinv = np.linalg.inv(CB)
 mejor = None
+# ORIGEN-VALOR: 0.0025 — paso de la rejilla en Ω_m (eleccion de resolucion, no un dato)
 for om in np.arange(0.20, 0.45001, 0.0025):
     yB = dB.m_b_corr.values - np.where(cB, dB.CEPH_DIST.values, g_forma(dB, om))
     XB = np.zeros((len(dB), 2))

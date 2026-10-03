@@ -391,7 +391,7 @@ Todo objeto astrofísico tiene r_km ≪ 1 kpc → quinta fuerza DM activa a esca
 - §4.2: Reemplazado fórmula Galileon con fórmula k-mouflage + Tabla revisada
 - §4.4: "Double GR protection" (Vainshtein) → "EFT suppression" (αB=αM=αT=0)
 - Bibitem `brax2014` añadido
-- `src/p08_stronggrav/ssee_paper8_figures.py`: figura regenerada con fórmula k-mouflage
+- `archive/codigo/investigacion/op4_rkm_RETIRADO_2026-10-03/ssee_paper8_figures.py` (archivado 2026-10-03 con OP-4): figura regenerada con fórmula k-mouflage
 
 **Scripts:** `archive/codigo/investigacion/open_problems/ssee_op4_vainshtein.py` (cálculo completo), `archive/codigo/investigacion/op4_rkm_RETIRADO_2026-10-03/ssee_paper8_figures.py` (figura, archivada con el radio)
 
@@ -3033,12 +3033,12 @@ la expresión de `δρ_φ` está asertada, no derivada.
 > C: los métodos sin Cefeidas dan H_glob,DESI. Control del otro lado: ΛCDM sin apantallamiento, todo método
 > local da el H₀ de Planck 2018 (67.36 ± 0.54, leído de su .tex).
 > **Datos (valor titular leído del LaTeX de cada artículo, ninguno tecleado):**
-> - PRIMARIO, sin escalera estelar: máseres MCP (arXiv:2001.09213), lentes TDCOSMO-2025 (2506.03023),
->   sirena GW170817 (1710.05835). Independientes entre sí.
+> - PRIMARIO, sin escalera estelar: máseres MCP (arXiv:2001.09213), lentes TDCOSMO-2025 (arXiv:2506.03023),
+>   sirena GW170817 (arXiv:1710.05835). Independientes entre sí.
 > - SECUNDARIO, escalera sin Cefeidas, POR EQUIPO y sin combinar (comparten supernovas dentro de cada
->   equipo y difieren entre equipos por selección de muestra, según 2408.11770): TRGB de CCHP (2408.06153),
->   TRGB y JAGB de SH0ES con JWST (2408.11770). JAGB de CCHP como referencia.
-> - Con Cefeidas, solo como referencia: SH0ES HST (2112.04510, la entrada de la cascada) y SBF (2101.02221, calibración mixta).
+>   equipo y difieren entre equipos por selección de muestra, según arXiv:2408.11770): TRGB de CCHP (arXiv:2408.06153),
+>   TRGB y JAGB de SH0ES con JWST (arXiv:2408.11770). JAGB de CCHP como referencia.
+> - Con Cefeidas, solo como referencia: SH0ES HST (arXiv:2112.04510, la entrada de la cascada) y SBF (arXiv:2101.02221, calibración mixta).
 > **Criterios (sobre el PRIMARIO):** errores asimétricos como normal partida; errores separados (estadístico,
 > sistemático) en cuadratura. «Apoya P frente a C»: Δχ²(C−P) ≥ 9 y χ²_P con p > 0.05. «Apoya C frente a P»:
 > Δχ²(P−C) ≥ 9 y χ²_C con p > 0.05. Lo demás: no concluye.

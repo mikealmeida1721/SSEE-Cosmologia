@@ -29,7 +29,7 @@ import matplotlib.patches as mpatches
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ / "src"))
 import ssee_core as sc                     # noqa: E402
-from procedencia import con_acta          # noqa: E402
+from procedencia import acta, con_acta    # noqa: E402
 
 METODOS = RAIZ / "results" / "logs" / "h0_por_metodos.json"
 LOG = RAIZ / "results" / "logs" / "p9_cascada_control.json"
@@ -105,8 +105,9 @@ ax.legend(handles=[mpatches.Patch(color=colores[g], label=leyenda[g]) for g in r
 ax.invert_yaxis()
 fig.tight_layout()
 out = OUT / 'fig_paper9_h0_tension.pdf'
-fig.savefig(out, bbox_inches='tight')
-fig.savefig(out.with_suffix('.png'), dpi=150, bbox_inches='tight')
+_META = {'Keywords': 'ACTA-PROCEDENCIA ' + json.dumps(acta(__file__, entradas=[METODOS]))}   # R75: acta de la figura
+fig.savefig(out, bbox_inches='tight', metadata=_META)
+fig.savefig(out.with_suffix('.png'), dpi=150, bbox_inches='tight', metadata=_META)
 plt.close(fig)
 
 for k in ("sh0es", "cchp"):

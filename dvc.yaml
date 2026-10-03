@@ -74,7 +74,7 @@ stages:
     - results/logs/h0_por_profundidad.json
     - results/logs/h0_por_metodos.json
     - results/logs/bao_lcdm_libre.json
-    - results/logs/h0_lente_fondo_ssee.log
+    - results/logs/h0_lente_fondo_ssee.json
     - results/logs/mcmc_paper2_reframe.json
     - results/logs/h0_four_priors.json
     - results/logs/is_growth_gamma.json
@@ -110,7 +110,7 @@ stages:
     - src/ssee_core.py
     - CANONICAL_VALUES.yaml
     outs:
-    - results/logs/h0_lente_fondo_ssee.log:
+    - results/logs/h0_lente_fondo_ssee.json:
         cache: false
   h0_por_metodos:
     cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/h0_por_metodos.py
@@ -119,7 +119,7 @@ stages:
     - src/procedencia.py
     - src/ssee_core.py
     - results/logs/h0_four_priors.json
-    - results/logs/h0_lente_fondo_ssee.log
+    - results/logs/h0_lente_fondo_ssee.json
     - /mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex
     - /mnt/datos/SSEE_data/literatura/h0_metodos/2506.03023/main.tex
     - /mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex
