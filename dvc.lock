@@ -2355,3 +2355,40 @@ stages:
       hash: md5
       md5: 50a83eb6e725eb0a6da2eaa87984fe83
       size: 2033
+  h0_por_profundidad:
+    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p09_hubble/h0_por_profundidad.py
+    deps:
+    - path: /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat
+      hash: md5
+      md5: 2049b142e6aad384470b3364aa10f3fa
+      size: 579283
+    - path: /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov
+      hash: md5
+      md5: 041bdb6638841794fc2d7caa88dd66eb
+      size: 33284960
+    - path: /mnt/datos/SSEE_data/sn_ia/papers/2202.04077/main.tex
+      hash: md5
+      md5: a239cff7c30c2486470e9c22f6562fc9
+      size: 124698
+    - path: src/p09_hubble/h0_por_profundidad.py
+      hash: md5
+      md5: 01ac92c0939f2b0fa22311c9aa7d9122
+      size: 12368
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/h0_por_profundidad.json
+      hash: md5
+      md5: c79e1663402ab7fb945483c66ec502bc
+      size: 4482

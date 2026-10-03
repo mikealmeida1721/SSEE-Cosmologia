@@ -83,6 +83,19 @@ stages:
     outs:
     - manuscript/valores_generados.tex:
         cache: false
+  h0_por_profundidad:
+    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/h0_por_profundidad.py
+    deps:
+    - src/p09_hubble/h0_por_profundidad.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat
+    - /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov
+    - /mnt/datos/SSEE_data/sn_ia/papers/2202.04077/main.tex
+    outs:
+    - results/logs/h0_por_profundidad.json:
+        cache: false
   op19_adm_masa:
     cmd: .venv/bin/python3 src/op19/op19_adm_masa.py
     deps:

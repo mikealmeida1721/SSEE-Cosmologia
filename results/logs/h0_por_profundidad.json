@@ -1,0 +1,168 @@
+{
+ "fecha": "2026-10-03",
+ "delta_requerida": 5.07785847796209,
+ "criterio_revisado": "caida < delta_requerida a >3 sigma (declarado tras ver el dato)",
+ "hipotesis": "OP-8b, Mike: apantallamiento como proyección del crecimiento local",
+ "criterios_commit": "f2f7472",
+ "z_lo": 0.023,
+ "z_hi": 0.15,
+ "H_glob": 67.96214152203791,
+ "H_glob_s": 0.9676975244101783,
+ "N_calibradores": 77,
+ "N_flujo": 277,
+ "modelos": {
+  "SSEE": {
+   "M_B": -19.24640844725374,
+   "H0_zlo": 73.25742720413969,
+   "H0_zlo_s": 1.0796994686792596,
+   "H0_zhi": 73.11060663198958,
+   "H0_zhi_s": 1.299187600907569,
+   "caida": 0.14682057215010502,
+   "caida_s": 1.0494288211753138,
+   "caida_sigma": 0.13990522195271185,
+   "hondo_sobre_Hglob_sigma": 3.1781091317205377,
+   "deficit_sigma": 4.698782619948861,
+   "fraccion_max_3sigma": 0.6489166742194201,
+   "chi2": 299.850675755026,
+   "N": 354,
+   "cuartiles": [
+    {
+     "z_min": 0.02343,
+     "z_max": 0.02873,
+     "H0": 74.3481137255891,
+     "H0_s": 1.211502524421373
+    },
+    {
+     "z_min": 0.02873,
+     "z_max": 0.03725,
+     "H0": 72.60730556942652,
+     "H0_s": 1.1441644501128523
+    },
+    {
+     "z_min": 0.03725,
+     "z_max": 0.06533,
+     "H0": 72.6833457624122,
+     "H0_s": 1.1312850046043936
+    },
+    {
+     "z_min": 0.06533,
+     "z_max": 0.14898,
+     "H0": 73.46227026950055,
+     "H0_s": 1.159563996658986
+    }
+   ],
+   "veredicto": "EXCLUYE",
+   "veredicto_criterio_original": "EXCLUYE",
+   "Om": 0.30888084061409116,
+   "w0": -0.839949771344779,
+   "wa": -0.6699748856723895
+  },
+  "LCDM_Planck": {
+   "M_B": -19.246442111879432,
+   "H0_zlo": 73.3966470693558,
+   "H0_zlo_s": 1.0817513509284757,
+   "H0_zhi": 73.72751212264423,
+   "H0_zhi_s": 1.3101501137536822,
+   "caida": -0.3308650532884343,
+   "caida_s": 1.0565019279094234,
+   "caida_sigma": -0.31317032609977424,
+   "hondo_sobre_Hglob_sigma": 3.539681490119841,
+   "deficit_sigma": 5.119463948308316,
+   "fraccion_max_3sigma": 0.559023206881314,
+   "chi2": 299.74086571056534,
+   "N": 354,
+   "cuartiles": [
+    {
+     "z_min": 0.02343,
+     "z_max": 0.02873,
+     "H0": 74.49112249337584,
+     "H0_s": 1.213832852314122
+    },
+    {
+     "z_min": 0.02873,
+     "z_max": 0.03725,
+     "H0": 72.78385062100041,
+     "H0_s": 1.1469464920887944
+    },
+    {
+     "z_min": 0.03725,
+     "z_max": 0.06533,
+     "H0": 72.92369289659152,
+     "H0_s": 1.1350259043379516
+    },
+    {
+     "z_min": 0.06533,
+     "z_max": 0.14898,
+     "H0": 73.93144284370021,
+     "H0_s": 1.1669696434388352
+    }
+   ],
+   "veredicto": "EXCLUYE",
+   "veredicto_criterio_original": "EXCLUYE",
+   "Om": 0.315191849347291,
+   "w0": -1.0,
+   "wa": 0.0
+  }
+ },
+ "control_brout": {
+  "H0_publicado": 73.6,
+  "H0_publicado_s": 1.1,
+  "H0_aqui": 73.52744329342154,
+  "H0_aqui_s": 1.0072397156240465,
+  "Om_aqui": 0.33250000000000013,
+  "chi2": 1452.017402792258,
+  "N": 1657,
+  "pasa": 1.0
+ },
+ "control_simulados": {
+  "cae_73_a_68": {
+   "esperado": "APOYA",
+   "sin_ruido": "APOYA",
+   "fraccion_con_ruido": 1.0,
+   "criterio_original": {
+    "sin_ruido": "APOYA",
+    "fraccion_con_ruido": 1.0
+   },
+   "pasa": true
+  },
+  "plano_73": {
+   "esperado": "EXCLUYE",
+   "sin_ruido": "EXCLUYE",
+   "fraccion_con_ruido": 0.96,
+   "criterio_original": {
+    "sin_ruido": "EXCLUYE",
+    "fraccion_con_ruido": 0.565
+   },
+   "pasa": true
+  }
+ },
+ "_procedencia": {
+  "commit": "6a4d02ddcbb7d73fcc985cbd887ac68a74576bb7",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p09_hubble/h0_por_profundidad.py",
+  "script_sha256": "c23ac7b2ed4598cd5cc20f1f6bfb6fb2cd4a3ea513a904190fd228b232a34770",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+   "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc",
+   "/mnt/datos/SSEE_data/sn_ia/papers/2202.04077/main.tex": "5bd398947f9ec0355facec937e5865c80154455c2a29331cfd5355f6f8d06408"
+  },
+  "argv": [
+   "src/p09_hubble/h0_por_profundidad.py"
+  ],
+  "fecha": "2026-10-03T04:06:21",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
