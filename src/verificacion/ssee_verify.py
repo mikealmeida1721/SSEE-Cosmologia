@@ -540,11 +540,34 @@ check("V-L3-alpha  curvatura Kahler R = -2/(3 alpha) = -2 phi^-4",
 
 # OP-4 — radio k-mouflage (P8). La fórmula r_km^3 = M_obj/(4pi M_pl M^2)
 # es dimensionalmente inconsistente: exponentes GeV de (M_obj, M_pl, M^2).
+# CERRADO 2026-10-03 por retiro del radio (decisión de Mike, opción 2, d8f9941):
+# P8 ya no cita radio; la fórmula sólo aparece para declararla retirada.
 dim_rkm = (1 - 1 - 2) / 3   # dimensión GeV de r_km según la fórmula de P8
-track_open("V-L3-OP4  formula k-mouflage de P8 dimensionalmente rota",
-           f"r_km tiene dimension GeV^{dim_rkm:.3f}; una longitud es GeV^-1. "
-           "Introducida en commit 295ed6e; requiere re-derivacion",
-           op="OP-4")
+check("V-L3-OP4  la formula k-mouflage de P8 no cierra dimensiones (motivo del retiro)",
+      abs(dim_rkm - (-1)) > 0.1,
+      f"r_km tiene dimension GeV^{dim_rkm:.3f}; una longitud es GeV^-1")
+
+
+def _rkm_vigente(texto):
+    """True si el texto cita r_km sin declararlo retirado en su párrafo."""
+    i = texto.find("r_{\\rm km}")
+    while i >= 0:
+        ventana = texto[max(0, i - 400):i + 600].lower()
+        if "withdrawn" not in ventana and "retirad" not in ventana:
+            return True
+        i = texto.find("r_{\\rm km}", i + 1)
+    return False
+
+
+# Control del otro lado (R53): la fórmula sin declarar retirada debe detectarse.
+check("V-L3-OP4  control: un r_km citado como vigente se detecta",
+      _rkm_vigente("the radius $r_{\\rm km}^3 = M/(4\\pi M_{pl} M^2)$ gives 10 AU")
+      and not _rkm_vigente("$r_{\\rm km}^3$ ... Those values are withdrawn."))
+check("V-L3-OP4  ningún .tex presenta el radio k-mouflage como vigente",
+      not any(_rkm_vigente(_p.read_text(errors="ignore"))
+              for _d in ("manuscript", "submission_PRD")
+              for _p in (ROOT.parent / _d).glob("*.tex")),
+      "P8 lo declara retirado (§k-mouflage); ninguna otra fuente lo cita")
 
 # OP-1 — densidad bariónica (P4/Paper B). La cadena algebraica cierra exacto;
 # el insumo Omega_b h^2 = (pi-phi)/(3 Omega^2) es coincidencia hallada por scan
