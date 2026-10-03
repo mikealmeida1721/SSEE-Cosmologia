@@ -2392,3 +2392,60 @@ stages:
       hash: md5
       md5: c79e1663402ab7fb945483c66ec502bc
       size: 4482
+  h0_por_metodos:
+    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p09_hubble/h0_por_metodos.py
+    deps:
+    - path: /mnt/datos/SSEE_data/literatura/1807.06209/ms.tex
+      hash: md5
+      md5: 98d7738abcce8b39de03f409c16c117f
+      size: 533692
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex
+      hash: md5
+      md5: 2de9cd829ade6341aae516a2a1c43d90
+      size: 62608
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex
+      hash: md5
+      md5: ad76ae4049d50bb74346f2330e32a68e
+      size: 53165
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex
+      hash: md5
+      md5: 5af63986fb789e900db2f962d5c5b425
+      size: 74818
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/2112.04510/shoes6.tex
+      hash: md5
+      md5: 7b05d05908f56d39513fc1e0744436b3
+      size: 254103
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/2408.06153/Ho2024.tex
+      hash: md5
+      md5: 7eea9d9f2c419d01f4613cee7e37b870
+      size: 166976
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/2408.11770/main.tex
+      hash: md5
+      md5: f566bff0319c9d480a0bba5992d20a74
+      size: 93508
+    - path: /mnt/datos/SSEE_data/literatura/h0_metodos/2506.03023/main.tex
+      hash: md5
+      md5: 54d1311b333720ae37468f5c6434e655
+      size: 192597
+    - path: results/logs/h0_four_priors.json
+      hash: md5
+      md5: 452a28d03f400637e87b2a7f6ad8c27f
+      size: 1275
+    - path: src/p09_hubble/h0_por_metodos.py
+      hash: md5
+      md5: 0f813a95fda7aecbc6220fd78f5bc180
+      size: 11291
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/h0_por_metodos.json
+      hash: md5
+      md5: 0918f77193f84196f051de5887ba0429
+      size: 9518

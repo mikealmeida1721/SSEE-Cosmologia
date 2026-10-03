@@ -96,6 +96,24 @@ stages:
     outs:
     - results/logs/h0_por_profundidad.json:
         cache: false
+  h0_por_metodos:
+    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/h0_por_metodos.py
+    deps:
+    - src/p09_hubble/h0_por_metodos.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - results/logs/h0_four_priors.json
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/2506.03023/main.tex
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/2408.06153/Ho2024.tex
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/2408.11770/main.tex
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/2112.04510/shoes6.tex
+    - /mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex
+    - /mnt/datos/SSEE_data/literatura/1807.06209/ms.tex
+    outs:
+    - results/logs/h0_por_metodos.json:
+        cache: false
   op19_adm_masa:
     cmd: .venv/bin/python3 src/op19/op19_adm_masa.py
     deps:

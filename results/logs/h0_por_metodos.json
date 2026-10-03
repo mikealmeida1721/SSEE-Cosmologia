@@ -1,0 +1,354 @@
+{
+ "fecha": "2026-10-03",
+ "preregistro_commit": "ade15d8",
+ "f_screen": 0.06952161114405928,
+ "H_glob_desi": 67.78432759640418,
+ "H_glob_desi_s": 0.45538474216832503,
+ "pred_P": 72.84890053142196,
+ "pred_P_s": 0.489409262614082,
+ "pred_C": 67.78432759640418,
+ "pred_C_s": 0.45538474216832503,
+ "H0_planck": 67.36,
+ "H0_planck_s": 0.54,
+ "medidas": {
+  "maseres": {
+   "nombre": "Máseres MCP (Pesce+2020)",
+   "grupo": "primario",
+   "H0": 73.9,
+   "err_mas": 3.0,
+   "err_menos": 3.0,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:2001.09213",
+   "texto": "constrain the Hubble constant to be $H_0 = 73.9 \\pm 3.0$",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.3457952935836693
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 2.015469784338841
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 2.145519646262658
+    }
+   }
+  },
+  "lentes": {
+   "nombre": "Lentes TDCOSMO-2025",
+   "grupo": "primario",
+   "H0": 71.6,
+   "err_mas": 3.9,
+   "err_menos": 3.3,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:2506.03023",
+   "texto": "\\newcommand{\\hnotflcdmonea}{71.6^{+3.9}_{-3.3}}",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": -0.3177388613737763
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 1.1454099329622525
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 1.2679843125716526
+    }
+   }
+  },
+  "sirena": {
+   "nombre": "Sirena GW170817",
+   "grupo": "primario",
+   "H0": 70.0,
+   "err_mas": 12.0,
+   "err_menos": 8.0,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:1710.05835",
+   "texto": "\\newcommand{\\HnaughtMAPMax}{70.0} \\newcommand{\\HnaughtMAPNinetyUpperDiff}{28} \\newcommand{\\HnaughtMAPNinetyLowerDiff}{11} \\newcommand{\\HnaughtMAPOneSigmaUpperDi",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": -0.23721117778285733
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 0.2765114312631175
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 0.32925077801213193
+    }
+   }
+  },
+  "trgb_cchp": {
+   "nombre": "TRGB, equipo CCHP (HST+JWST)",
+   "grupo": "secundario",
+   "H0": 70.39,
+   "err_mas": 1.9357944105715357,
+   "err_menos": 1.9357944105715357,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:2408.06153",
+   "texto": "\\ho = 70.39 $\\pm$ 1.22 (stat) $\\pm$ 1.33 (sys) $\\pm$ 0.70 ($\\sigma_{SN})$, based on the TRGB method alone",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": -1.2314805840841099
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 1.3102808680030134
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 1.5076866115069871
+    }
+   }
+  },
+  "trgb_shoes": {
+   "nombre": "TRGB, equipo SH0ES (JWST)",
+   "grupo": "secundario",
+   "H0": 72.1,
+   "err_mas": 2.2,
+   "err_menos": 2.2,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:2408.11770",
+   "texto": "Cepheids, JAGB, and TRGB, we find $73.4\\pm2.1$, $72.2\\pm2.2$, and $72.1\\pm2.2$",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": -0.33228653302752015
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 1.9209482850191453
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 2.0924348439730442
+    }
+   }
+  },
+  "jagb_shoes": {
+   "nombre": "JAGB, equipo SH0ES (JWST)",
+   "grupo": "secundario",
+   "H0": 72.2,
+   "err_mas": 2.2,
+   "err_menos": 2.2,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:2408.11770",
+   "texto": "Cepheids, JAGB, and TRGB, we find $73.4\\pm2.1$, $72.2\\pm2.2$, and $72.1\\pm2.2$",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": -0.2879166175199663
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 1.9654592697597566
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 2.136579038993576
+    }
+   }
+  },
+  "jagb_cchp": {
+   "nombre": "JAGB, equipo CCHP (JWST)",
+   "grupo": "referencia",
+   "H0": 67.8,
+   "err_mas": 2.7200183822908257,
+   "err_menos": 2.7200183822908257,
+   "usa_cefeidas": false,
+   "fuente": "arXiv:2408.06153",
+   "texto": "\\ho = 67.80 $\\pm$ 2.17 (stat) $\\pm$ 1.64 (sys) \\hounits for the JAGB method",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": -1.8268646766076195
+    },
+    "C": {
+     "pred": 67.78432759640418,
+     "pred_s": 0.45538474216832503,
+     "sigma": 0.005682782151256139
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 0.15866702647260353
+    }
+   }
+  },
+  "cefeidas_hst": {
+   "nombre": "Cefeidas SH0ES (HST) — entrada de la cascada",
+   "grupo": "referencia",
+   "H0": 73.04,
+   "err_mas": 1.04,
+   "err_menos": 1.04,
+   "usa_cefeidas": true,
+   "fuente": "arXiv:2112.04510",
+   "texto": "\\newcommand{\\hsbase}{$ 73.04 \\pm 1.04 $",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.1662601282893992
+    },
+    "C": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.1662601282893992
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 4.8470939579172
+    }
+   }
+  },
+  "cefeidas_jwst": {
+   "nombre": "Cefeidas SH0ES (JWST)",
+   "grupo": "referencia",
+   "H0": 73.4,
+   "err_mas": 2.1,
+   "err_menos": 2.1,
+   "usa_cefeidas": true,
+   "fuente": "arXiv:2408.11770",
+   "texto": "Cepheids, JAGB, and TRGB, we find $73.4\\pm2.1$",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.255579411348258
+    },
+    "C": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.255579411348258
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 2.7855701489928464
+    }
+   }
+  },
+  "sbf": {
+   "nombre": "SBF (calibración Cefeida+TRGB)",
+   "grupo": "referencia",
+   "H0": 73.3,
+   "err_mas": 2.5,
+   "err_menos": 2.5,
+   "usa_cefeidas": true,
+   "fuente": "arXiv:2101.02221",
+   "texto": "H_0=73.3{\\,\\pm\\,}0.7{\\,\\pm\\,}2.4$",
+   "tirones": {
+    "P": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.1770785593848774
+    },
+    "C": {
+     "pred": 72.84890053142196,
+     "pred_s": 0.489409262614082,
+     "sigma": 0.1770785593848774
+    },
+    "LCDM": {
+     "pred": 67.36,
+     "pred_s": 0.54,
+     "sigma": 2.3224397312935823
+    }
+   }
+  }
+ },
+ "control_lectura": {
+  "maseres": true,
+  "lentes": true,
+  "sirena": true,
+  "trgb_cchp": true,
+  "trgb_shoes": true,
+  "jagb_shoes": true,
+  "jagb_cchp": true,
+  "cefeidas_hst": true,
+  "cefeidas_jwst": true,
+  "sbf": true,
+  "planck": true
+ },
+ "primario": [
+  "maseres",
+  "lentes",
+  "sirena"
+ ],
+ "chi2_primario": {
+  "P": 0.2816163526562797,
+  "C": 5.344560375524351,
+  "LCDM": 6.145005312394511
+ },
+ "n_primario": 3,
+ "potencia": {
+  "P": 0.2185,
+  "C": 0.1075
+ },
+ "tiene_potencia": false,
+ "escala_errores_necesaria": 0.458319091796875,
+ "sigma_combinado_hoy": 2.2457930782767734,
+ "sigma_combinado_necesario": 1.029289843999519,
+ "veredicto_criterio": "NO CONCLUYE",
+ "veredicto": "SIN POTENCIA",
+ "_procedencia": {
+  "commit": "4733a07eb2052f44b49c84a23ffe49daa7076d8e",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p09_hubble/h0_por_metodos.py",
+  "script_sha256": "9eb796a0c11a1527011f14db1f6c1a554bb016dc7050e148afe514d6a7b862af",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/h0_four_priors.json": "7ac8cc6e34b14fb0a254fcc00670cbcc19b2dfa54744dbbab453e02aa8f3d33e",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex": "4ec08a54d7aadabd57e97fd02d0bfcb2d035f222ac6d9e20a7f1346c50ed2e2d",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex": "35fff52c44e8f89ea546a22644c856b325497e0819cc800ac32b2ea93c823cd6",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex": "993d700517adf7129337103502f9592818faa2759afef88e87f9896ab53de5f4",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/2112.04510/shoes6.tex": "32ee459e07984a0e956c70f0ec7b43791df4bd8a70a9948395d6005b8c0959e3",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/2408.06153/Ho2024.tex": "680063a9d66429aca79faecb965e95a1df8943858d3b935ba757e51d020327c2",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/2408.11770/main.tex": "ffd40d0b93632853c56af77e247c233a9cb1815cc2f4303a50528feb7baed399",
+   "/mnt/datos/SSEE_data/literatura/h0_metodos/2506.03023/main.tex": "113e61c88418abf4f595de8011054596aad1ad0bbdd38abc42943786d5282bb1",
+   "/mnt/datos/SSEE_data/literatura/1807.06209/ms.tex": "fe0833d2d0fda17427a709c9559dc7b3a988b955f47bb7de7a02c900ffdc21cf"
+  },
+  "argv": [
+   "src/p09_hubble/h0_por_metodos.py"
+  ],
+  "fecha": "2026-10-03T04:28:23",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

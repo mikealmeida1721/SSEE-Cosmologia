@@ -3047,6 +3047,12 @@ la expresión de `δρ_φ` está asertada, no derivada.
 > prueba **no tiene potencia con estos datos**. Se reporta eso y la precisión combinada que haría falta,
 > no un veredicto. Control de lectura: cada valor se vuelve a buscar en su .tex, y un dígito alterado
 > tiene que no encontrarse.
+> **RESULTADO (log `results/logs/h0_por_metodos.json`, etapa `h0_por_metodos`): SIN POTENCIA.** Con los errores
+> reales de máseres, lentes y la sirena, el criterio recupera P solo el 22 % de las veces y C el 11 % (se exigía
+> el 80 %). No hay veredicto. Haría falta que esos métodos, combinados, midan H₀ con un error de ~1.0 km/s/Mpc;
+> hoy es ~2.25. Descriptivo, no veredicto: los tres primarios caen a ≤ 0.35σ de P (72.85) y a 0.28–2.02σ de C
+> (67.78). La escalera TRGB depende del EQUIPO: SH0ES-JWST 72.1 (−0.33σ de P), CCHP 70.39 (a medio camino entre
+> las dos). Un cambio de método no separa las hipótesis mientras el cambio de equipo pese más.
 
 **De dónde viene.** OP-8 se **disolvió** el 2026-06-18 en su forma original: con el reframe
 ω_m-directo ya no hay «factor materia» que derivar, y Ω_m,CMB = ω_m/h² es derivada. Pero
