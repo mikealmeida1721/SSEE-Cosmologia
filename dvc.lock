@@ -2269,3 +2269,33 @@ stages:
       hash: md5
       md5: 31a6dd3eac4eb1f0e987adae1ffbee0e
       size: 4517
+  p2_corners:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/regenerate_corners_p2.py
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 4fa9bcabe46e5f0e355b759207809245
+      size: 260001506
+    - path: src/p02_mcmc/regenerate_corners_p2.py
+      hash: md5
+      md5: 7de2ae7d2a7dd662ccef072a95623b9a
+      size: 1975
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/figures/fig_corner_cpl_professional.pdf
+      hash: md5
+      md5: 045266a2d4c66abff10516caf612c844
+      size: 217105
+    - path: results/figures/fig_corner_lcdm_professional.pdf
+      hash: md5
+      md5: d8018edb2ea61402a6f558fc2161cb21
+      size: 87165
+    - path: results/figures/fig_corner_ssee_professional.pdf
+      hash: md5
+      md5: b019f4f742edcaff4dfa89b0f2834fdf
+      size: 40040
