@@ -1309,13 +1309,13 @@ lectura de cada cabecera.
 
 **2. Sellado (1):** `termino_volumen_boss.json` (etapa; ver V-L5-RECORRE).
 
-**3. Se quedan en `results/logs/` — y por qué:**
+**3. Se quedan en `results/logs/` — y por qué (60; R75 baja su tope de 117 a 60):**
 
 | clase | logs | qué falta |
 |---|---|---|
 | **vigente, por sellar (ligero)** | `rd_dual.json`, `datos_crudos_T2.json`, `growth_2026-07/marginal_vs_perfil.json`, `analiza_lcdm_R4.log` + `growth_2026-07/R4_lcdm_kids_S8.json`, `growth_2026-07/R3_ssee_kids_S8.json`, `b1_analyse.log`, `auditoria_pdfs_zenodo.json`, `desi_dr2_w0wa_momentos.log`, `erosita_extlike.json` | etapa + acta; leen cadenas o datos, minutos |
 | **vigente, por sellar (pesado, cola)** | `growth_2026-07/boss_aisla_neutrinos.json` (perfil de BOSS que lee `analiza_boss_R1R2`), `base_sin_particula.log` + `growth_2026-07/base_sin_particula.json` (χ² BOSS 198.07 en P6), `cmb_perfil_wc.json` + `.log` (P8), `cmb_dbic_tau_ajustado.json` (ΔBIC −26.03), `cmb_quien_mide_As.json`, `p3_h0anchor_reframe.log`, `paper2_analysis_dr2official.log`, sondas `act_dr6_calibrador`, `act_dr6_en_el_clavo`, `des_y3_calibrador`, `des_y3_en_el_clavo_{ssee,lcdm_planck,lcdm_libre}`, `spt3g_kk_en_el_clavo`, `bao_lcdm_planck`, `conjunta_b3_bloques`, `conjunta_control` | re-corrida con núcleos declarados + etapa; varias horas cada una |
-| **en curso** | `lcdm_conjunta.json`, `lcdm_conjunta_{cmb,kids,bao,control}.json` | la conjunta ΛCDM (PID 491592) sigue minimizando; se sella al terminar |
+| **en curso** | `lcdm_conjunta.json`, `lcdm_conjunta_{cmb,kids,bao,control}.json` y su bitácora `lcdm_conjunta_cola.log` | la conjunta ΛCDM (PID 491592) sigue minimizando; se sella al terminar |
 | **entrada de código vigente, sin script propio** | `cmb_ajuste_conjunto_wc_ns.json` (dep. de `ajuste_conjunto_{SSEE,LCDM}`), `cmb_tau_flotado.json` (lo leen `cmb_eval`, `perfil_wc_cmb` y el guardián), `growth_2026-07/quien_mide_As.json`, `growth_2026-07/R1R2_boss_lpt_kmax0.200.json`, `growth_2026-07/conjunta_tres_sondas.json`, `growth_2026-07/s8_barra_kids.json` (lo lee `no_circular.py`), `growth_2026-07/particula_que_prefiere_kids.json` (su script lo nombran docstrings de `cmb_eval`/`kids_shear`) | se archivan cuando su lector cambie por física; tocar al lector invalida actas |
 | **útil, sin script (c)** | `cmb_ns_forzado.json`, `cmb_wb_forzado.json`: pendiente medida de la identidad ω_c = KAL₀·ω_b·n_s (−0.042 donde predice +1) | re-escribir el script y sellar (OP-19) |
 | **transcripción de cadena** | `b1_full_run`, `b1_lcdm_run`, `b1_k2_run`, `boss_cobaya_{ssee,lcdm}`, `kids_legacy_{ssee,sseefijo,lcdmfijo}`, `kids_lcdm_fondofijo_reparto`, `kids_ssee_wc_h`, `R4_lcdm_resume_20260805`, `mcmc_paper2_3models_wmfix`, `mcmc_professional`, `mcmc_paper2_lcdm_baseline` (.log) | ninguno es fuente: los números salen de etapas selladas que leen las CADENAS (`kids_legacy_bic`, `s8_kids_legacy_camb`, `b1_k2`, `analiza_boss_R1R2`, MCMC P2…). Se quedan como registro de la corrida |
