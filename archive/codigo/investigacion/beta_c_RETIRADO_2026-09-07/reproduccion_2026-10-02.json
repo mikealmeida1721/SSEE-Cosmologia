@@ -1,0 +1,65 @@
+{
+ "commit": "d849df0",
+ "script": "src/p07_eft/ssee_eft_verification.py",
+ "variantes": {
+  "fisico": {
+   "w_phi": -0.922851,
+   "phidot": 0.540727,
+   "beta_c": -0.691265,
+   "alfa_pot": 0.294893,
+   "X": 0.14619284426449997,
+   "X_sobre_KAL": 0.02647746695910441,
+   "X2_sobre_M4": 9.098736854152358e-05,
+   "linea_M4": "(sin tocar)"
+  },
+  "convencion": {
+   "w_phi": -0.972562,
+   "phidot": 0.2725,
+   "beta_c": -2.19421,
+   "alfa_pot": 0.294893,
+   "X": 0.037128125000000005,
+   "X_sobre_KAL": 0.006724396860097993,
+   "X2_sobre_M4": 0.0013784976660156253,
+   "linea_M4": "M4 = rho_crit"
+  },
+  "sin_X2": {
+   "w_phi": -0.921054,
+   "phidot": 0.548865,
+   "beta_c": -0.666255,
+   "alfa_pot": 0.294893,
+   "X": 0.15062639411250003,
+   "X_sobre_KAL": 0.027280441757238698,
+   "X2_sobre_M4": 0.0,
+   "linea_M4": "M4 = 1e300"
+  }
+ },
+ "control": {
+  "fisico_reproduce": -0.691265,
+  "distintas": true,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "c7bfea4451d0313b916e35e7dce15c5aac344ea3",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "?? archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduce_2026-10-02.py"
+  ],
+  "script": "archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduce_2026-10-02.py",
+  "script_sha256": "5c5f19ff91cd3e5a18bb05ded2fcfcf7d5eb02d09679e20a0de9b3a7a24a4bcf",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduce_2026-10-02.py"
+  ],
+  "fecha": "2026-10-02T23:48:37",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

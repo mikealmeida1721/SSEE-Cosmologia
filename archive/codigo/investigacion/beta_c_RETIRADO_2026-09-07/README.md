@@ -50,3 +50,13 @@ Su investigación viva se quedó en `src/p07_eft/`:
 
 `fig_eft_beta_convergence` y `fig_eft_verification` (`.pdf` y `.png`)
 están en `archive/figuras/`. No las citaba ningún `.tex`.
+
+## Reproducción de los números retirados (2026-10-02)
+
+`reproduce_2026-10-02.py` extrae `src/` del commit `d849df0` y corre
+`ssee_eft_verification.py` con una sola línea cambiada (la de `M⁴`) en tres
+variantes: físico (`5φ⁸ρ_crit`, sin tocar), convención (`M⁴=1`, la retirada) y
+sin `X²/M⁴`. Deja `reproduccion_2026-10-02.json` con acta. De ahí salen, con
+procedencia, los `β_c = −2.194210`, `−0.691265`, `−0.666255` y sus `w`, `φ̇` y `X`
+que citan OPEN_PROBLEMS, el Registro y CLAUDE.md. Control: la variante física
+reproduce el `−0.691265` que `d849df0` escribió en su propio comentario.
