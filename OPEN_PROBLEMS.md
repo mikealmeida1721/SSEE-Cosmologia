@@ -89,7 +89,7 @@ que mide la asimetría entre el sector trascendental π (gauge boson loops) y el
 algebraico φ (campo escalar). A temperatura T_EW: H_EW = (π/√90)×√g*×T_EW²/M_Pl ≈ 2.8×10⁻¹⁵ GeV.
 
 **Condición 3 — No-equilibrio térmico:** Inflación quintaesencial → reheating gravitacional
-con T_rh ≪ T_EW. El factor de dilución requerido f_dil ≈ 1.095×10⁻¹⁸ implica T_rh ~ 10⁻⁴ GeV,
+con T_rh ≪ T_EW. El factor de dilución requerido f_dil ≈ 1.095×10⁻¹⁸ implica T_rh ~ 10⁻⁴ GeV, <!-- R74: git:a509d91104:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op1_baryogenesis.log -->
 consistente con el rango T_rh ~ 10⁻² – 10⁴ GeV para producción gravitacional de partículas.
 
 **Estructura algebraica de η_B:**
@@ -113,7 +113,7 @@ revisado en consecuencia (commit de la sesión).
 
 Lo pidió Mike, con el orden correcto: *antes de buscar el puente al sector oscuro,
 probar la máquina con bariones*. Se probó, y no arranca. La temperatura de
-recalentamiento que el propio argumento exige, `T_rh = 1.031×10⁻⁴ GeV`, choca con
+recalentamiento que el propio argumento exige, `T_rh = 1.031×10⁻⁴ GeV`, choca con <!-- R74: git:a509d91104:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op1_baryogenesis.log -->
 **tres** cotas, y dos de ellas no dependen de SSEE:
 
 | cota | piso | T_rh exigida está |
@@ -137,7 +137,7 @@ extremo.
 
 **QUÉ NO SE MUEVE.** `ω_b = (π−φ)/(3Ω²) = 0.022418` sigue intacto: 0.32σ de Planck,
 y el barrido `fuerza_wb` del 2026-09-08 pone el mínimo de χ² del CMB **exactamente
-en el valor algebraico** (χ²=1003.00; los vecinos suben a 1225.85 y 1301.56). La
+en el valor algebraico** (χ²=1003.00; los vecinos del barrido suben más de 200 — el barrido no guardó script ni log, las cifras exactas quedan en git). La
 fórmula nunca se apoyó en este mecanismo — el documento ya declaraba que Sakharov
 motivaba su FORMA, no derivaba su valor. Lo que cae es el relato de respaldo.
 Ningún número de ningún paper se mueve.
@@ -315,7 +315,7 @@ contra `4/3 = 1.333333` (dif 0.0382%). No es cero.
 > **H1 — `eq:rkm` no cierra dimensiones.** `r³ = M_obj/(4π·Mpl·M²)`: el lado derecho es
 > E/(E·E²) = E⁻² = longitud², el izquierdo longitud³. Prueba de fuego: evaluada toda en GeV
 > da r☉ = 1.44×10⁴ m; toda en eV da 1.44×10⁷ m. **Un factor 1000 según la unidad elegida**:
-> una fórmula bien formada no depende de eso. Los números impresos (1.45×10⁷, 10¹¹, 10¹² m)
+> una fórmula bien formada no depende de eso. Los números impresos en P8 (`eq:rkm_sun`, `eq:rkm_mw`, `eq:rkm_cluster`)
 > salen de evaluarla en eV (script `ssee_paper8_figures.py`), y la figura `fig_paper8_vainshtein`
 > cuelga de ella.
 > Forma que cierra: `r² = M_obj/(4π·Mpl·M²)` (Brax & Valageas 2014, que además lleva el
@@ -2225,7 +2225,7 @@ escala de inflación).
 En el plateau, $A_s=(2\varphi^{10}/3\pi^2)\,(V_0/M_{\rm Pl}^4)$. El **prefactor
 $2\varphi^{10}/3\pi^2=8.308$ es puro $(\varphi,\pi)$** — SSEE fija la FORMA del espectro
 por completo ($n_s,r,\alpha,N_*$ y el prefactor). PERO la normalización exige
-$V_0/M_{\rm Pl}^4=2.53\times10^{-10}$, i.e.\ $V_0^{1/4}\approx9.7\times10^{15}$ GeV
+$V_0/M_{\rm Pl}^4=2.53\times10^{-10}$, i.e.\ $V_0^{1/4}\approx9.7\times10^{15}$ GeV <!-- R74: git:a509d91104:archive/codigo/investigacion/open_problems/salidas_2026-10-02/op18_As_from_inflation.log -->
 (escala GUT/inflación, razonable). **Esa jerarquía NO sale limpia de potencias
 $(\varphi,\pi)$** ($\varphi^{-46}$ cae a 4\% pero $-46$ no tiene razón estructural →
 coincidencia, no derivación). **Corrección de una nota previa errónea:** anclar $A_s$ a
@@ -2745,8 +2745,10 @@ sin premisa nombrada no se puede disolver, sólo se puede chocar contra él.
 > La vara es **la propia predicción de SSEE**: $\omega_m=\omega_b+\omega_c+\omega_\nu
 > =0.14267$, la que da $\chi^2_{\rm CMB}=1003.586$ y $\Delta$BIC$=-26.03$ en Paper 3.
 > Medido sobre `results/logs/fondo_acoplado.npz` en $a=0.001$:
-> $\rho_m/\rho_{c,0}$ acoplado $=1.4939\times10^8$ vs estándar $3.0888\times10^8$,
-> razón $0.4837$. Equivalente: $E(z{=}999)$ va **−30.5 %** por debajo.
+> $\rho_m/\rho_{c,0}$ acoplado $\approx1.5\times10^8$ vs estándar $\Omega_m(1+z)^3\approx3.1\times10^8$,
+> razón $\approx0.48$. Equivalente: $E(z{=}999)$ va **≈ −30 %** por debajo. *(Re-medido 2026-10-02 sobre el
+> mismo npz: 0.484 y −30.4 %; las cifras de 4 dígitos de antes no se reproducen, y el npz está ignorado
+> por git, así que sólo se sostiene el redondeo.)*
 >
 > **Física:** para arreglar $w_0$ hoy, el acoplamiento tiene que haber drenado
 > materia oscura hacia el campo toda la historia ⟹ temprano había mucha menos.
@@ -2759,8 +2761,8 @@ sin premisa nombrada no se puede disolver, sólo se puede chocar contra él.
 > cantidad equivocada en la época equivocada (lo comparable en la suite es
 > Paper 9 L677, $f_{\rm EDE}\sim0.1$ cerca de la igualdad $z\sim3000$–5000; yo
 > usaba $\Omega_{\rm DE}(z{=}9)$, en plena dominación de materia). Contra H(z)
-> crudo (Moresco+2022, 23 puntos) el fondo acoplado **NO se excluye**:
-> $\chi^2=13.07$ vs $13.28$ del estándar. El umbral inventado hacía todo el
+> crudo el fondo acoplado **NO se excluye**: su χ² quedaba a la par del estándar. *(Esa cuenta usó el
+> CSV viejo, con 23 de los 32 puntos de Moresco+2022; no se rehízo porque el fondo acoplado está retirado.)* El umbral inventado hacía todo el
 > trabajo. Mike lo cazó preguntando de dónde salía. Ver
 > `memory/project_op23_measuring_stick.md`.
 

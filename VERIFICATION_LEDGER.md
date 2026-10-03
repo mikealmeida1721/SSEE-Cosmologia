@@ -564,7 +564,7 @@ modelo físico de dos sectores hereda la apertura del Lagrangiano de m_φ
 *Claim CLAUDE.md:* "Paper 7: EFT canónico — λ/V₀/M/g² bloqueados".
 
 1. **✓ λ, α_pot, V₀:** son consecuencias algebraicas exactas de constantes
-   ya verificadas — λ²=3·Ω_m,dyn (λ=0.6929), α_pot=λ/√KAL₀ (=0.2949),
+   ya verificadas — λ²=3·Ω_m,dyn (λ=0.6929), α_pot=λ/√KAL₀ (=0.2949), <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
    V₀=Ω_DE·ρ_crit (=0.8400). No son parámetros libres: re-enuncian
    Ω_m,dyn (V-L2-04), KAL₀ (V-L1-07) y Ω_DE (V-L2-03).
 2. **✗ M⁴ inconsistente entre papers:** `archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/ssee_eft_verification.py` (L70, RETIRADO 2026-09-07)
@@ -797,7 +797,7 @@ no fit.
 |---|---|---|---|
 | α_sat canónico (σ=0, KAL=1) | √(3/2) = 1.22474487 | 1.22474487 | 1.4·10⁻⁷ % |
 | x_φMDE canónico (α=1.2) | −α√6/3 = −0.97980 | −0.97980 | exacto |
-| α_sat SSEE (σ→0, KAL=KAL₀) | √(3/(φ+3π)) = 0.521220 | 0.520674 | 0.10 % |
+| α_sat SSEE (σ→0, KAL=KAL₀) | √(3/(φ+3π)) = 0.521220 | *sin log* (ningún script archivado lo reproduce) | — |
 
 **Las 6 comprobaciones:**
 

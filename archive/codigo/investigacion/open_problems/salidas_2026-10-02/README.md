@@ -9,7 +9,12 @@ vigente (`PYTHONPATH=src`), y cada log lleva en su primera línea el acta
 |---|---|---|
 | `ssee_op1_baryogenesis.py` | f_dil = 1.095e-18, T_rh,req = 1.031e-4 GeV | OP-1 |
 | `op18_As_from_inflation.py` | V₀/M_Pl⁴ = 2.526e-10 | OP-18 |
+| `ssee_op5_hmcode.py` | B(k) en k = 0.1…2.0 h/Mpc (CLASS HMcode-2020) | OP-5 |
 
 `ssee_paperB_DW.py` NO se guardó: con el núcleo vigente da sin²(2θ) = 4.958e-5,
 no el 4.7846e-5 citado, porque dependía de la m_φ retirada; en OPEN_PROBLEMS
 la cifra quedó sin dígitos.
+
+Tampoco reproducen, y sus cifras quedaron sin dígitos: el α_sat numérico
+0.520674 del Registro (ninguna variante de `mira_attempts/ssee_alpha_saturation*.py`
+lo da) y el barrido `fuerza_wb` de OP-1 (no hay script guardado).

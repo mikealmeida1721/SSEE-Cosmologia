@@ -148,7 +148,7 @@ def fuente_admisible(ruta):
 GIT_REF = re.compile(r"git:([0-9a-f]{7,40}):(\S+?)(?=[\s`),;]|$)")
 
 
-def fuente_git(linea, s):
+def fuente_git(linea, s, e=None):
     """2026-10-01. Un valor HISTORICO de un cajon (una corrida que existio y fue
     superada) no tiene log vigente: su log vive en el historial. La linea lo
     declara como `git:<commit>:<ruta>` y aqui se ABRE ese archivo en ese commit
@@ -160,7 +160,8 @@ def fuente_git(linea, s):
             continue
         o = subprocess.run(["git", "show", f"{sha}:{ruta}"], cwd=ROOT, capture_output=True,
                            text=True, timeout=20)
-        if o.returncode == 0 and R.en_fuente(s, sorted({abs(float(x)) for x in R.NUM.findall(o.stdout)})):
+        pool = sorted({abs(float(x)) for x in R.NUM.findall(o.stdout)}) if o.returncode == 0 else []
+        if pool and (en_fuente_sci(s, e, pool) if e is not None else R.en_fuente(s, pool)):
             return True
     return False
 
@@ -211,7 +212,7 @@ def _sin_origen(f, pool, tex):
         if R.CITA.search(R.unidad(t, m.start())) or R.es_arxiv(t, m.start(), s):
             continue
         ln = t.count("\n", 0, m.start()) + 1
-        if not tex and "git:" in t.split("\n")[ln - 1] and fuente_git(t.split("\n")[ln - 1], s):
+        if not tex and "git:" in t.split("\n")[ln - 1] and fuente_git(t.split("\n")[ln - 1], s, e):
             continue
         out.append((ln, s))
     return out
