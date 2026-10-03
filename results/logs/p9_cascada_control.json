@@ -1,0 +1,69 @@
+{
+ "numero_puro": 67.96213732340931,
+ "f_screen_IR": 0.06725327034329952,
+ "f_screen": 0.06952161114405928,
+ "sh0es": {
+  "H0": 73.04,
+  "H0_s": 1.04,
+  "IR": {
+   "H_glob": 68.12782113412541,
+   "H_glob_s": 0.9700565988429685,
+   "residuo": 0.1656838107161036,
+   "sigma": 0.17079808633199586
+  },
+  "completo": {
+   "H_glob": 67.96214152203791,
+   "H_glob_s": 0.9676975244101783,
+   "residuo": 4.198628602125609e-06,
+   "sigma": 4.338782001829256e-06
+  }
+ },
+ "cchp": {
+  "H0": 70.39,
+  "H0_s": 1.9357944105715357,
+  "fuente": "arXiv:2408.06153",
+  "texto": "\\ho = 70.39 $\\pm$ 1.22 (stat) $\\pm$ 1.33 (sys) $\\pm$ 0.70 ($\\sigma_{SN})$, based on the TRGB method alone",
+  "IR": {
+   "H_glob": 65.65604230053515,
+   "H_glob_s": 1.80560590574832,
+   "residuo": -2.3060950228741603,
+   "sigma": -1.277186242874198
+  },
+  "completo": {
+   "H_glob": 65.49637379156967,
+   "H_glob_s": 1.801214864304938,
+   "residuo": -2.4657635318396416,
+   "sigma": -1.3689446943305918
+  }
+ },
+ "planck": {
+  "H0": 67.36,
+  "H0_s": 0.54
+ },
+ "_procedencia": {
+  "commit": "a587d6a9da4f92ca0c5cd0c4cf9164cf07d15b8c",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p09_hubble/ssee_paper9_figures.py",
+  "script_sha256": "f1f590108bfc89f2786b1edeb019de013b28ea850bc2823b3f362b63668dc023",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/h0_por_metodos.json": "f59f2ee92419b08b3815363dde3b2018234a085fad5b314c44fdbe3cb72cc732"
+  },
+  "argv": [
+   "src/p09_hubble/ssee_paper9_figures.py"
+  ],
+  "fecha": "2026-10-03T05:32:18",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

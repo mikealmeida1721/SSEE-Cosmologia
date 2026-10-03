@@ -3078,6 +3078,21 @@ medición**, no por opinión: c²_s, Poisson-μ, disformal, y retención conform
 **Criterio de cierre.** Un mecanismo que produzca MIRA desde la acción vigente, o la
 declaración explícita de que MIRA es un valor algebraico sin dinámica asociada.
 
+> **2026-10-03 — Paper 9 reescrito sin lo retirado (rama `cierre-op4-desi`).** P9 ya no
+> toma MIRA de la geodésica disforme de P8 ni deriva la forma multiplicativa del paso de
+> universo separado: éste cancelaba Ω_m/(1+w₀) con la «identidad» 1+w₀ = Ω_m, y 1+w₀ = 0.160
+> es ecuación de estado, no densidad (Ω_m = 0.308881). Queda: (i) MIRA = AURA/2 como
+> **definición algebraica** (3·MIRA = T_r/2); (ii) f = s_K/(3MIRA) como identidad; (iii)
+> H_loc = H_glob/(1−f) como **POSTULADO de apantallamiento** (P9 §3.4, eq:screen_postulate),
+> con las dos pruebas de hoy en §Limitations (profundidad: la versión de volumen se excluye
+> a 4.70σ; métodos: sin potencia) y los criterios 4 y 5 intactos. También se retiró la figura
+> f_screen(z) (usaba 0.160 como densidad) y el control de Freedman pasó al TRGB adoptado por
+> CCHP v3 (70.39 ± 1.94 → −1.28σ IR; antes 69.96 de la v1 → 1.88σ), leído de su .tex
+> (`p9_cascada_control.json`). P7 L350 y el Unified dicen ya lo mismo.
+> **Lo que NO se decidió:** si esto cumple la segunda vía del criterio de cierre («MIRA es un
+> valor algebraico sin dinámica») sigue siendo decisión de Mike: el mecanismo del
+> apantallamiento sigue abierto, así que OP-8b queda ABIERTO.
+
 **Severidad: Alta.** Es el problema abierto más profundo que queda del sector.
 
 ---

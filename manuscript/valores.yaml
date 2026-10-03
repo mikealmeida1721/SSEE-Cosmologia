@@ -658,3 +658,19 @@ sondas_desy3_nla:     {fuente: "results/logs/sondas_ssee_vs_lcdm.json#des_y3.dch
 # SN Requiem: H0 que leería un análisis LCDM plano bajo la lectura P (lente ve el valor local) y bajo C (global) — P9 criterio 5 (2026-10-03)
 requiem_P_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.log#requiem_fecha.P_plano_leida_LCDM.H0", formato: ".1f"}
 requiem_C_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.log#requiem_fecha.SSEE_leida_LCDM.H0", formato: ".1f"}
+# P9: control del otro lado de la cascada con el TRGB ADOPTADO por CCHP 2024 (arXiv:2408.06153), no el 69.96 tecleado (2026-10-03)
+p9_cchp_H0:        {fuente: "results/logs/p9_cascada_control.json#cchp.H0", formato: ".2f"}
+p9_cchp_H0_s:      {fuente: "results/logs/p9_cascada_control.json#cchp.H0_s", formato: ".2f"}
+p9_cchp_glob_IR:   {fuente: "results/logs/p9_cascada_control.json#cchp.IR.H_glob", formato: ".2f"}
+p9_cchp_res_IR:    {fuente: "results/logs/p9_cascada_control.json#cchp.IR.residuo", formato: "+.2f"}
+p9_cchp_sig_IR:    {fuente: "results/logs/p9_cascada_control.json#cchp.IR.sigma", formato: "+.2f"}
+p9_cchp_glob:      {fuente: "results/logs/p9_cascada_control.json#cchp.completo.H_glob", formato: ".2f"}
+p9_cchp_sig:       {fuente: "results/logs/p9_cascada_control.json#cchp.completo.sigma", formato: "+.2f"}
+# P9 / OP-8b: pruebas del mecanismo del apantallamiento contra el dato de hoy (2026-10-03)
+prof_N_flujo:      {fuente: "results/logs/h0_por_profundidad.json#N_flujo", formato: "d"}
+prof_N_cal:        {fuente: "results/logs/h0_por_profundidad.json#N_calibradores", formato: "d"}
+prof_def_ssee:     {fuente: "results/logs/h0_por_profundidad.json#modelos.SSEE.deficit_sigma", formato: ".2f"}
+prof_def_lcdm:     {fuente: "results/logs/h0_por_profundidad.json#modelos.LCDM_Planck.deficit_sigma", formato: ".2f"}
+prof_frac_max:     {fuente: "results/logs/h0_por_profundidad.json#modelos.SSEE.fraccion_max_3sigma", formato: ".2f"}
+met_s_hoy:         {fuente: "results/logs/h0_por_metodos.json#sigma_combinado_hoy", formato: ".2f"}
+met_s_nec:         {fuente: "results/logs/h0_por_metodos.json#sigma_combinado_necesario", formato: ".2f"}

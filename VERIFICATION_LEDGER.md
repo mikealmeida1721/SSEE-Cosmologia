@@ -492,7 +492,10 @@ alcanza al párrafo de abajo, que es el mismo defecto del vecino que exonera.)*
    cascada dimensional: mismo enunciado leído al revés (los σ son
    invariantes bajo la inversión porque la lente es multiplicativa), pero
    con la carga de prueba invertida. Control del otro lado: la misma lente
-   sobre Freedman+2024 (69.96) da 65.26, a 1.88σ. Las rutas H₀^MIRA
+   sobre el TRGB adoptado por CCHP (arXiv:2408.06153v3, 70.39±1.94) da 65.66
+   en IR (−1.28σ) y 65.50 completo (−1.37σ) — `results/logs/p9_cascada_control.json`
+   (2026-10-03). El viejo «69.96 → 65.26, 1.88σ» usaba la v1 de ese artículo,
+   superada por la v3. Las rutas H₀^MIRA
    (71.87/72.05) quedan **superadas** por partida doble.
    H_alg es un anchor **DERIVADO** (de-screened SH0ES × f_screen; el cargo Type-P
    quedó disuelto, ver V-L2-06 arriba), no una coincidencia.
