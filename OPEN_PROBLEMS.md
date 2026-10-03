@@ -794,7 +794,7 @@ it returns to ≤2 (only $H_0$ and $\Omega_b h^2$ as observation-tunable).
 **Location:** Paper 6, §3.2 (subsec:mass_derivation), §3.4 (subsec:lagrangian), §6 (subsec:origin).
 
 **Status change (2026-06-04):** The old phenomenological ansatz $m_\phi = \Sigma m_\nu
-\times 3(\varphi+\pi)^2 = 5.602$ eV is **superseded**. The canonical particle is now
+\times 3(\varphi+\pi)^2 = 5.602$ eV is **superseded**. The canonical particle is now <!-- R74: git:85e680ef29:results/logs/cmb_dbic_tau_ajustado.json -->
 fixed by a **zero-fitting forward chain** (Vía 2 + multiplier), locked by Mike:
 
 ```
@@ -802,7 +802,7 @@ R₂   = Ω_DNAV/(KAL·TRIAL)          = 0.07188      (pure φ,π number)
 Σm_ν = R₂ × 0.9530 eV              = 0.0685 eV     (fixed mass scale)
 mult = SOLAR² · KRYSTOS_V            = 594.28        (PURE φ,π number)
 m_φ  = Σm_ν × mult                 = 40.70 eV      (forward prediction, zero fitting)
-T_φ                                = 0.5385 T_ν    (from relic-abundance constraint)
+T_φ                                = 0.5385 T_ν    (from relic-abundance constraint) <!-- R74: git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log -->
 ```
 
 **What changed in the gap:** the coefficient is no longer a *loose* numerological factor.
@@ -934,10 +934,10 @@ not a shortcut away. This confirms — does not weaken — the honest status abo
 $H_0^{\rm MIRA}=67.068$~km/s/Mpc **must NOT be substituted** into any mass formula.
 The canonical chain uses the fixed mass scale $0.9530$ eV and pure $(\varphi,\pi)$
 numbers only — no Hubble rate enters. The dimensionally-inconsistent
-"$\times H_0^{\rm alg}$" framing of the old 5.602 eV ansatz is retired.
+"$\times H_0^{\rm alg}$" framing of the old 5.602 eV ansatz is retired. <!-- R74: git:85e680ef29:results/logs/cmb_dbic_tau_ajustado.json -->
 
 **Canonical CLASS verification (zero fitting, SOLAR²·KRYSTOS_V adopted 2026-06-19):** the
-forward-predicted particle ($m_\phi=40.70$ eV, $\Omega_{\phi{\rm DM}}=0.14889$) yields
+forward-predicted particle ($m_\phi=40.70$ eV, $\Omega_{\phi{\rm DM}}=0.14889$) yields <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 $\sigma_8^{\rm eff} = 0.747$, $S_8 = 0.758$ ($0.04\sigma$ KiDS-1000 $0.759\pm0.024$ —
 **resolves** the lensing tension), single-sector ceiling $S_8=0.827$ ($2.7\sigma$, "the
 challenge"). $\sigma_8$ is a **direct CLASS output** (top-hat on the two-sector $P(k)$),
@@ -1146,10 +1146,10 @@ than a free input.
 \mathrm{KRYSTOS}_V\cdot\Sigma m_\nu=40.70$ eV; antes 36.95) entra en CLASS como especie
 **térmica** (ncdm) con temperatura $T_\phi$. Pero hoy $T_\phi$ se **despeja** de la
 fórmula del relic usando $m_\phi$ y $\Omega_{\phi DM}$:
-$$T_\phi = T_\nu\left(\Omega_{\phi DM}h^2\cdot 93.14/m_\phi\right)^{1/3}=0.5385\,T_\nu.$$
+$$T_\phi = T_\nu\left(\Omega_{\phi DM}h^2\cdot 93.14/m_\phi\right)^{1/3}=0.5385\,T_\nu.$$ <!-- R74: git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log -->
 Es **bookkeeping** (densidad = número × peso), no una temperatura derivada de física.
 Verificado en CLASS: con $(m_\phi,T_\phi)$ el Boltzmann completo reproduce
-$\Omega_{\phi DM}=0.14889$ ($\Omega h^2=0.06877$) a 5 cifras — el lazo cierra, pero
+$\Omega_{\phi DM}=0.14889$ ($\Omega h^2=0.06877$) a 5 cifras — el lazo cierra, pero <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 porque se construyó así. $m_\phi$ descansa en una sola pata (SOLAR²·KRYSTOS_V, OP-9).
 
 **Bifurcación (cold vs thermal) — y una inconsistencia interna a corregir:** el texto
@@ -1188,7 +1188,7 @@ encajando con el tratamiento WDM/$k_{\rm fs}$ que P6 ya usa. La rama térmica se
 **enchufa** a la física existente, no la contradice.
 
 **Pasos 2–3 (abiertos):** (2) mostrar que la viscosidad KAL es el portal y fijar su
-estructura/escala $\Lambda$; (3) freeze-out forward → ¿da $T_\phi/T_\nu=0.5385$? Si sí,
+estructura/escala $\Lambda$; (3) freeze-out forward → ¿da $T_\phi/T_\nu=0.5385$? Si sí, <!-- R74: git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log -->
 2ª pata de $m_\phi$. **Obstáculo honesto:** $\mathrm{SOLAR}\approx 7.9$ no es un
 acoplamiento perturbativo ($g>1$) → el portal es casi seguro suprimido por escala
 (operador dim$>4$); el desconocido real pasa a ser la escala $\Lambda$ del portal.
@@ -1448,7 +1448,7 @@ libertad fenomenológico** vía la identidad canónica de Paper 6:
 $$m_\varphi = \Sigma m_\nu^{\rm active}\cdot(\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V) = 0.0685\,\text{eV}\times 594.28 = 40.70\ \text{eV}$$
 
 > **Nota (2026-06-14):** la forma previa $m_\varphi=\Sigma m_\nu\cdot H_0^{\rm alg}$
-> (que daba 5.602 eV) está **RETIRADA** — era dim-inconsistente (eV × km/s/Mpc).
+> (que daba 5.602 eV) está **RETIRADA** — era dim-inconsistente (eV × km/s/Mpc). <!-- R74: git:85e680ef29:results/logs/cmb_dbic_tau_ajustado.json -->
 > El argumento de abajo NO cambia: $m_\varphi$ sigue construido a partir de
 > $\Sigma m_\nu$ (multiplicador adimensional puro), así que comparten el mismo DoF.
 
@@ -1915,7 +1915,7 @@ era arbitraria; estaba derivada, sólo mal etiquetada.
 
 **1. El problema de la entalpía es independiente de la etiqueta.** La inercia
 sale de la física de la onda, no de cómo se llame $\tilde\zeta$:
-$c^2_{s,\rm eff} = +5.41$ con inercia $(\rho+p)$, en cualquier normalización.
+$c^2_{s,\rm eff} = +5.41$ con inercia $(\rho+p)$, en cualquier normalización. <!-- R74: git:f6dca4727c:results/logs/b1_full_run.log -->
 
 **2. La pieza que de verdad falta es $\tau_\Pi$, no $\tilde\zeta$:**
 
@@ -2130,7 +2130,7 @@ directed to this document when evaluating the strength of the SSEE predictions.
 en la misma sesión ("Mira bien lo que NO es, es SOLAR"): se adoptó la partícula con
 mecanismo en vez de seguir con PYROS·VITA·MIKA. **HECHO:** CLASS forward real @ 40.70 eV
 ($\sigma_8=0.747$, $S_8=0.758=0.04\sigma$ KiDS, $k_{\rm fs}=0.754$, $\alpha=1.108$,
-$T_\phi=0.5385\,T_\nu$, $N_{\rm ur}=2.9619$) → propagado a `CANONICAL_VALUES.yaml`,
+$T_\phi=0.5385\,T_\nu$, $N_{\rm ur}=2.9619$) → propagado a `CANONICAL_VALUES.yaml`, <!-- R74: git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log -->
 guardián (VERDE 119), manuscrito Paper 6 completo (Lagrangiano g²·v escrito, fσ8
 recomputado 0.82σ, 25 pp, `docs/`), 3 memorias. **RETIRADO** 615.33/42.47.
 Residuo único: OP-9 (derivar el coeficiente del transporte).
@@ -2507,12 +2507,12 @@ tuvo derivación documentada.
 
 **Qué se verificó.** Si se lo lee como `ω_b · C_ν / τ_Π`, el C_ν implicado es
 
-    C_ν = 0.960318 · τ_Π / ω_b = 93.8638 eV
+    C_ν = 0.960318 · τ_Π / ω_b = 93.8638 eV <!-- R74: git:7866edc8ef:CANONICAL_VALUES.yaml -->
 
-que **no es ninguno de los dos valores documentados**: ni 94.07 eV (desacople
+que **no es ninguno de los dos valores documentados**: ni 94.07 eV (desacople <!-- R74: git:7e7e6f98f8:src/ssee_core.py -->
 instantáneo, N_eff=3) ni 93.14 eV (Mangano+2005 / PDG, N_eff=3.046). Es un
-tercer valor sin origen. Las notas previas que lo describían como «C_ν=94.07
-horneado» eran **incorrectas** (94.07 daría 0.962428) y se corrigieron.
+tercer valor sin origen. Las notas previas que lo describían como «C_ν=94.07 <!-- R74: git:7e7e6f98f8:src/ssee_core.py -->
+horneado» eran **incorrectas** (94.07 daría 0.962428) y se corrigieron. <!-- R74: git:7e7e6f98f8:src/ssee_core.py -->
 
 **Por qué importaba.** C_ν aparece arriba (cadena SSEE de Σm_ν) y abajo
 (conversión ω_ν = Σm_ν/C_ν), así que **se cancela**: ω_ν es INVARIANTE bajo la
