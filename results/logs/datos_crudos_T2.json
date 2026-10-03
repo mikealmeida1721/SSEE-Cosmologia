@@ -312,7 +312,12 @@
    "ruta": "/mnt/datos/SSEE_data/erosita/paper_clerc2024/src.tgz",
    "url": "https://arxiv.org/e-print/2402.08457",
    "sha256": "bfbe8ba95b0fda32a778ebf614706d898a457a7ade4bea878a03f7ba106eff0d",
-   "fecha": "2026-09-27"
+   "fecha": "2026-09-27",
+   "nombre": "src.tgz",
+   "bytes": 9153179,
+   "grupo": "eROSITA",
+   "origen": "https://arxiv.org/e-print/2402.08457",
+   "nota": "Clerc+2024 fuente (seleccion eRASS1, NO publica)"
   },
   {
    "sonda": "eROSITA",
@@ -320,10 +325,16 @@
    "ruta": "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/src.tgz",
    "url": "https://arxiv.org/e-print/2402.08458",
    "sha256": "63e90cadb947b5c94bcb93198f1da6847cb9418d5645a60fb423f28798b127a0",
-   "fecha": "2026-09-27"
+   "fecha": "2026-09-27",
+   "nombre": "src.tgz",
+   "bytes": 2302141,
+   "grupo": "eROSITA",
+   "origen": "https://arxiv.org/e-print/2402.08458",
+   "nota": "Ghirardini+2024 fuente (relacion CR-M, tabla de ajuste)"
   }
  ],
  "notas": {
-  "des_y3_cortes": "Localizados 2026-09-26. 2026-09-27: motor decidido = CosmoSIS oficial (entorno conda-forge en el HDD, sin root), calibrado contra la cadena publica (evaluar su max-post y reproducir DATA_VECTOR--2PT_CHI2). DES Y3 SOLO entra como sonda individual contra el clavo: solapa cielo y galaxias con KiDS-Legacy y no hay covarianza cruzada publica."
+  "des_y3_cortes": "Localizados 2026-09-26. 2026-09-27: motor decidido = CosmoSIS oficial (entorno conda-forge en el HDD, sin root), calibrado contra la cadena publica (evaluar su max-post y reproducir DATA_VECTOR--2PT_CHI2). DES Y3 SOLO entra como sonda individual contra el clavo: solapa cielo y galaxias con KiDS-Legacy y no hay covarianza cruzada publica.",
+  "2026-10-03_entradas_erosita": "Las 2 entradas de eROSITA (8c8d653) venían sin 'bytes'/'nombre' y rompían el verificador; se completaron tras comprobar que su sha256 declarado coincide con el fichero."
  }
 }
