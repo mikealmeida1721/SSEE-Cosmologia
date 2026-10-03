@@ -12,7 +12,7 @@ Verificado leyendo los logs, y NO lo estan:
     CMB   3.0448  = `SSEE/mejor/logA` de una MINIMIZACION  -> es un PERFIL
     KiDS  2.8627  = `logA/media` de una cadena MCMC        -> es una MARGINAL
 
-Si la marginal de KiDS arrastra sesgo de volumen, los 3.46 sigma estan medidos
+Si la marginal de KiDS arrastra sesgo de volumen, la tension KiDS-CMB (cmb_quien_mide_As.json) esta medida
 con dos varas distintas, igual que lo estaba el 0.81 de BOSS.
 
 COMO SE MIDE, SIN CORRER NADA NUEVO. La cadena ya guarda el chi2 de cada punto.
@@ -52,7 +52,7 @@ CASOS = {
                  perfil_conocido=json.load(open(REPO / "results/logs/growth_2026-07/"
                                                 "R1R2_boss_lpt_cobaya.json"))["perfil_vs_marginal"]["perfil_logA"]),
     "kids": dict(dir=CAD / "kids", pref="ssee", papel="la fila que importa: una "
-                 "de las dos mitades de la tension de 3.46 sigma",
+                 "de las dos mitades de la tension KiDS-CMB (cmb_quien_mide_As.json)",
                  publicado=json.load(open(REPO / "results/logs/growth_2026-07/"
                                           "R3_ssee_kids_S8_rehecho.json"))["logA"]["media"],
                  perfil_conocido=None),

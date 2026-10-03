@@ -4,64 +4,68 @@
  "fondo_fijo_por_algebra": {
   "ombh2": 0.02241775678109985,
   "omch2": 0.11951440843160877,
-  "H0": 67.96213732340931,
+  "H0": 67.96214152203791,
   "ns": 0.9655581462513669
  },
  "minimo": {
   "logA": 3.0448340130228546,
   "tau": 0.0554590468914248,
-  "chi2": 1003.5860397789045
+  "chi2": 1003.5861181208386
  },
  "control": {
   "paso": {
    "pasa": true,
-   "sigma_r": 0.0142538026554566,
-   "sigma_r_menor": 0.014099255286979378,
-   "difiere_pct": 1.096138521727076,
+   "sigma_r": 0.014253802636684307,
+   "sigma_r_menor": 0.014099255569094306,
+   "difiere_pct": 1.096136365729617,
    "residuos": [
-    7.986005787766317,
-    1.8141400112931478
+    7.986005660464343,
+    1.814139963089474
    ],
    "residuo_relativo": [
-    0.014323741642364506,
-    0.00883785354974093
+    0.014323749019763706,
+    0.008837860943089451
    ]
   },
   "curvatura": {
    "pasa": true,
-   "delta_chi2": 1.2385640652835264,
+   "delta_chi2": 1.2385644338173734,
    "criterio": "+1 sigma debe costar ~1"
   }
  },
  "cmb": {
   "logA": 3.0448340130228546,
-  "marginal": 0.014099255286979378,
-  "condicional": 0.001554897291979223,
-  "D": 9.067644120102933,
-  "tau_marginal": 0.006994592201551323,
-  "correlacion_logA_tau": 0.9939003119512406,
+  "marginal": 0.014099255569094306,
+  "condicional": 0.0015548973139205787,
+  "D": 9.067644173584616,
+  "tau_marginal": 0.0069945923408583415,
+  "correlacion_logA_tau": 0.9939003120234142,
   "combinacion_mejor_medida": "+0.49 logA -1.00 tau",
-  "sigma_de_esa_combinacion": 0.0006916863854015828
+  "sigma_de_esa_combinacion": 0.0006916863951025528
  },
  "kids": {
-  "logA": 2.8627107489,
-  "marginal": 0.0507836451,
-  "condicional": 0.0431,
-  "D": 1.16
+  "logA": 2.8636678493268715,
+  "marginal": 0.04992161344169711,
+  "condicional": 0.043126873919084624,
+  "D": 1.1585218984012469,
+  "fuentes": [
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json",
+   "results/logs/growth_2026-07/As_medido_o_producto.json"
+  ]
  },
  "diferencia": {
-  "delta_logA": -0.1821232641228545,
-  "sigma_conjunta": 0.052704531202641104,
-  "tension_sigma": 3.455552301995014
+  "delta_logA": -0.18116616369598315,
+  "sigma_conjunta": 0.05187443008096446,
+  "tension_sigma": 3.4923981509430178
  },
  "puede_la_niebla_absorberlo": {
-  "pendiente_dlogA_dtau": 2.023226298884059,
-  "tau_necesaria_para_cerrarla": -0.03455721289291438,
+  "pendiente_dlogA_dtau": 2.023226298983351,
+  "tau_necesaria_para_cerrarla": -0.034084156351345006,
   "posible": false,
-  "fraccion_que_cubre_con_tau_cero": 0.6161003248112453,
-  "fraccion_que_cubre_con_suelo_cuasares": 0.17173616109424633,
+  "fraccion_que_cubre_con_tau_cero": 0.6193551814431305,
+  "fraccion_que_cubre_con_suelo_cuasares": 0.17264344284749547,
   "nota": "tau no puede ser negativa, y la reionizacion se ve en los cuasares (tau >~ 0.04). El suelo fisico convierte la degeneracion en un limite duro"
  },
  "alcance": "no toca ningun paper; diagnostico para saber si la deriva de A_s es una medicion contra otra o una sombra de degeneracion",
- "segundos": 1495.112732887268
+ "segundos": 932.6960208415985
 }
