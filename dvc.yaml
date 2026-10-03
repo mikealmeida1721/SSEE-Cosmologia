@@ -270,6 +270,19 @@ stages:
         cache: false
     - results/figures/fig8_tension_summary.png:
         cache: false
+  p2_corners:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/regenerate_corners_p2.py
+    deps:
+    - src/p02_mcmc/regenerate_corners_p2.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    outs:
+    - results/figures/fig_corner_ssee_professional.pdf:
+        cache: false
+    - results/figures/fig_corner_lcdm_professional.pdf:
+        cache: false
+    - results/figures/fig_corner_cpl_professional.pdf:
+        cache: false
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/estadistica/ssee_phase_d_savage_cv.py > 
