@@ -637,3 +637,8 @@ lite_N:         {fuente: "results/logs/cmb_dbic_mnu_propia.json#N", formato: "d"
 # H0 de DESI DR2 con prior Planck (re-corrida de 3 modelos) — PRD/Sealed §3 (2026-10-02; antes «67.61» tecleado)
 h0_3mod:    {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.H0.mediana", formato: ".2f"}
 h0_3mod_s:  {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.H0.std", formato: ".2f"}
+# Chequeo predictivo H(z) de Paper 2 contra los 32 cronometros de Moresco+2022 (2026-10-02; antes 11 tecleados con un punto BAO de WiggleZ)
+cc_N:          {fuente: "results/logs/ppc_cronometros.json#datos.N", formato: "d"}
+cc_chi2r_ssee: {fuente: "results/logs/ppc_cronometros.json#modelos.ssee.chi2r_32", formato: ".3f"}
+cc_chi2r_lcdm: {fuente: "results/logs/ppc_cronometros.json#modelos.lcdm.chi2r_32", formato: ".3f"}
+cc_chi2r_cpl:  {fuente: "results/logs/ppc_cronometros.json#modelos.cpl.chi2r_32", formato: ".3f"}

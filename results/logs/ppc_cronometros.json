@@ -1,0 +1,96 @@
+{
+ "datos": {
+  "csv": "data/raw/cosmic_chronometers.csv",
+  "N": 32,
+  "covarianza": "solo diagonal (la fuente pide la sistematica completa)"
+ },
+ "convencion": "chi2_r = chi2/N; MAP de cada modelo en el MCMC de 3 modelos de Paper 2 (prior Planck comprimido)",
+ "modelos": {
+  "ssee": {
+   "theta_map": [
+    67.61413391791423,
+    0.02179116176826193
+   ],
+   "chi2_32": 15.091833665957378,
+   "N_32": 32,
+   "chi2r_32": 0.47161980206116805,
+   "p_32": 0.995126131097966,
+   "chi2r_11_viejos": 0.4786867234863873,
+   "chi2r_10_sin_wigglez": 0.49320076585763334,
+   "dchi2_32_ssee_menos": 0.0
+  },
+  "lcdm": {
+   "theta_map": [
+    68.38830241213843,
+    0.30213605357541296,
+    0.02232557945483885
+   ],
+   "chi2_32": 14.754510182376777,
+   "N_32": 32,
+   "chi2r_32": 0.46107844319927427,
+   "p_32": 0.9960441362006492,
+   "chi2r_11_viejos": 0.45932978945057895,
+   "chi2r_10_sin_wigglez": 0.4801841099854798,
+   "dchi2_32_ssee_menos": 0.33732348358060094
+  },
+  "cpl": {
+   "theta_map": [
+    67.302016918623,
+    0.3160610358891345,
+    -0.8254464305634948,
+    -0.5299195155914276,
+    0.02237020655687944
+   ],
+   "chi2_32": 14.910680147820834,
+   "N_32": 32,
+   "chi2r_32": 0.46595875461940106,
+   "p_32": 0.9956385312203483,
+   "chi2r_11_viejos": 0.47226582221169977,
+   "chi2r_10_sin_wigglez": 0.4770226205809127,
+   "dchi2_32_ssee_menos": 0.18115351813654357
+  }
+ },
+ "wigglez": {
+  "z": 0.44,
+  "nota": "H(z) BAO de WiggleZ (Blake+2012), no es un cronometro; estaba en CC_DATA"
+ },
+ "control": {
+  "log": "results/logs/mcmc_paper2_3models_wmfix.log",
+  "puntos_11": "git:b14ff14:src/p02_mcmc/ssee_paper2_mcmc.py",
+  "impreso_11": {
+   "ssee": 0.479,
+   "lcdm": 0.459,
+   "cpl": 0.472
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "34ace36bf3235e95bf14cac6cb1c7e35be87577e",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/ppc_cronometros.py",
+  "script_sha256": "af282bc05d1b47f621abf8c0ec99ff84e8b1acfa03ff7807f2d967d2fe833dd9",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "105a3703b83ffb026ffd35ed042c805d7982d6f3a3bc9b57f33b6f4ed311d141",
+   "data/raw/cosmic_chronometers.csv": "057781c6683bc5c75b5df730c58e7c46f59aea8b5d0fbb0baa00fd2146b0137c",
+   "results/logs/mcmc_paper2_3models_wmfix.log": "9faeeaff6a59b463c27dbc6e9a60dc78da0228a3bfaee500c0f7d3720019bcb0"
+  },
+  "argv": [
+   "src/p02_mcmc/ppc_cronometros.py"
+  ],
+  "fecha": "2026-10-02T23:31:07",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

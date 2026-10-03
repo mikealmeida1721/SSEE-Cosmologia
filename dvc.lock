@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 4262c63f59a9aa1bfa996884a843fe1e
-      size: 63699
+      md5: f7ab31cd0295ff7d4a49fa32efef24cc
+      size: 64218
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -205,6 +205,10 @@ stages:
       hash: md5
       md5: 6170b02ac6f99d6998ecfccaad20d177
       size: 4020
+    - path: results/logs/ppc_cronometros.json
+      hash: md5
+      md5: f240ba39c1f5f4868a25ade475b92c0e
+      size: 2827
     - path: results/logs/press_schechter.json
       hash: md5
       md5: 0d67b54376c03f12c02371c295146235
@@ -236,8 +240,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: d052921644a61c18451efd6f2027c4ea
-      size: 80181
+      md5: 0d93323f78a714f328ccebd3806d2094
+      size: 80751
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -2136,3 +2140,87 @@ stages:
       hash: md5
       md5: 10648c6d4550f88c04342ed50293d3c6
       size: 4994
+  ppc_cronometros:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/ppc_cronometros.py
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 4fa9bcabe46e5f0e355b759207809245
+      size: 260001506
+    - path: data/raw/cosmic_chronometers.csv
+      hash: md5
+      md5: 687ae6927e506b6ac7798bc0d934a460
+      size: 1413
+    - path: results/logs/mcmc_paper2_3models_wmfix.log
+      hash: md5
+      md5: febc767c5e63704cd040d8163c102558
+      size: 11579
+    - path: src/p02_mcmc/ppc_cronometros.py
+      hash: md5
+      md5: 6b30f826903a8b18132ed16f63ad8451
+      size: 6287
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: manuscript/tabla_cronometros_generada.tex
+      hash: md5
+      md5: 919e1eb75a00ba9992aca9ead9c9db2c
+      size: 1639
+    - path: results/logs/ppc_cronometros.json
+      hash: md5
+      md5: f240ba39c1f5f4868a25ade475b92c0e
+      size: 2827
+  p2_fig7_fig8:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/regenerate_fig7_fig8_p2.py
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 4fa9bcabe46e5f0e355b759207809245
+      size: 260001506
+    - path: data/raw/cosmic_chronometers.csv
+      hash: md5
+      md5: 687ae6927e506b6ac7798bc0d934a460
+      size: 1413
+    - path: src/p02_mcmc/regenerate_fig7_fig8_p2.py
+      hash: md5
+      md5: 12bebe0cde1d1bdfbc475d5351f89426
+      size: 8347
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/rd_camb.py
+      hash: md5
+      md5: b415ae755ec1f801122eb920e7faa797
+      size: 5764
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/figures/fig7_Hz_comparison.pdf
+      hash: md5
+      md5: 504d795238f201aeb9acd24224628978
+      size: 34160
+    - path: results/figures/fig7_Hz_comparison.png
+      hash: md5
+      md5: 160d625ea596214b87b0206884a3d7ee
+      size: 202613
+    - path: results/figures/fig8_tension_summary.pdf
+      hash: md5
+      md5: bf9ce61fc148651447acd031fbfc1924
+      size: 29132
+    - path: results/figures/fig8_tension_summary.png
+      hash: md5
+      md5: 564876fb3c45276525d51027f46d619d
+      size: 153369

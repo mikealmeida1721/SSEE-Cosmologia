@@ -774,13 +774,18 @@ total density there is no enlarged $r_d$
 \subsection{Posterior predictive check: $H(z)$}
 
 \begin{equation}
-  \chi^2_r(H(z)):\quad \SSEE=0.482,\quad\LCDM=0.459,\quad\mathrm{CPL}=0.471.
+  \chi^2_r(H(z)):\quad \SSEE=\val{cc_chi2r_ssee},\quad\LCDM=\val{cc_chi2r_lcdm},\quad\mathrm{CPL}=\val{cc_chi2r_cpl}.
 \end{equation}
 With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background, the \SSEE\
-Hubble rate predicts the model-independent Cosmic Chronometer measurements as
-well as $\Lambda$CDM: $\chi^2_r=0.482$ versus $0.459$ ($\Lambda$CDM) and $0.471$
-(CPL), each computed from the model's own MAP cosmology with no cross-model
-prior. The apparent $\chi^2_r\approx1.86$ ($\sim3\sigma$) reported in earlier
+Hubble rate predicts the $\val{cc_N}$ model-independent Cosmic Chronometer
+measurements compiled by \citet{Moresco2022} (Table~\ref{tab:CC_Hz}) as well as
+$\Lambda$CDM: $\chi^2_r=\chi^2/N=\val{cc_chi2r_ssee}$ versus $\val{cc_chi2r_lcdm}$
+($\Lambda$CDM) and $\val{cc_chi2r_cpl}$ (CPL), each computed from the model's own
+MAP cosmology with no cross-model prior. Only the diagonal uncertainties are
+used; the systematic covariance recommended by \citet{Moresco2022} would
+correlate the points, so $\chi^2_r<1$ here reflects conservative diagonal
+errors rather than a goodness of fit, and the meaningful comparison is between
+models on the same data. The apparent $\chi^2_r\approx1.86$ ($\sim3\sigma$) reported in earlier
 drafts was an artefact of placing the cold sector $1+w_0=\val{S_M_d6}$ in the
 background geometry: with that spuriously low density the matter-dominated
 deceleration was too weak and the matter-to-dark-energy transition occurred too
@@ -792,7 +797,7 @@ no extension of the gravitational sector required for the background.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.78\textwidth]{fig7_Hz_comparison.pdf}
-  \caption{MAP $H(z)$ vs Cosmic Chronometers \citep{JimenezLoeb2002,Moresco2022}.
+  \caption{MAP $H(z)$ vs the $\val{cc_N}$ Cosmic Chronometers of Table~\ref{tab:CC_Hz} \citep{JimenezLoeb2002,Moresco2022}.
   Red band: \SSEE\ 68\% posterior interval.}
   \label{fig:Hz}
 \end{figure}
@@ -800,39 +805,16 @@ no extension of the gravitational sector required for the background.
 \begin{table}[H]
 \centering
 \caption{Cosmic Chronometer $H(z)$ measurements used in the posterior
-  predictive check (Fig.~\ref{fig:Hz}). Data from
-  \citet{Moresco2022}; uncertainties are $1\sigma$ statistical
-  $+$ systematic combined.}
+  predictive check (Fig.~\ref{fig:Hz}): the $\val{cc_N}$ points of
+  \citet{Moresco2022}, with the diagonal $1\sigma$ uncertainties they tabulate.
+  Method for the differential age: F = full-spectrum fitting, D = calibrated $D4000$, L = Lick indices.}
 \label{tab:CC_Hz}
 \small
-\begin{tabular}{lrr}
+\begin{tabular}{lrrc}
 \toprule
-$z$ & $H(z)$ [km\,s$^{-1}$\,Mpc$^{-1}$] & $\sigma_H$ \\
+$z$ & $H(z)$ [km\,s$^{-1}$\,Mpc$^{-1}$] & $\sigma_H$ & method \\
 \midrule
-0.070 &  69.0 &  19.6 \\
-0.090 &  69.0 &  12.0 \\
-0.120 &  68.6 &  26.2 \\
-0.170 &  83.0 &   8.0 \\
-0.179 &  75.0 &   4.0 \\
-0.199 &  75.0 &   5.0 \\
-0.270 &  77.0 &  14.0 \\
-0.352 &  83.0 &  14.0 \\
-0.400 &  95.0 &  17.0 \\
-0.480 &  97.0 &  60.0 \\
-0.593 & 104.0 &  13.0 \\
-0.680 &  92.0 &   8.0 \\
-0.781 & 105.0 &  12.0 \\
-0.875 & 125.0 &  17.0 \\
-0.880 &  90.0 &  40.0 \\
-0.900 & 117.0 &  23.0 \\
-1.037 & 154.0 &  20.0 \\
-1.300 & 168.0 &  17.0 \\
-1.363 & 160.0 &  33.6 \\
-1.430 & 177.0 &  18.0 \\
-1.530 & 140.0 &  14.0 \\
-1.750 & 202.0 &  40.0 \\
-1.965 & 186.5 &  50.4 \\
-\bottomrule
+\input{tabla_cronometros_generada.tex}
 \end{tabular}
 \end{table}
 
