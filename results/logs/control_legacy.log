@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "f2ac1945e349055465f1417c7b25322001885665", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/control_legacy.py", "script_sha256": "d2a654ead0bbfd98f02ed247305b3e4553d6cf838873d14095ddad3e43bc1ac6", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac", "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits": "aeedfec802c83f468a7459b11be7b9978029fd87985c9e3930cd3d8be38a664d"}, "argv": ["src/procedencia_sella.py", "src/p06_growth/control_legacy.py", "results/logs/control_legacy.log", "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt", "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits"], "fecha": "2026-10-03T07:46:55", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 dataset   : legacy  bins=6  cortes xi+(2.0, 300.0) xi-(4.0, 300.0)
 puntos    : 357 de 378
 A_IA/bin  : [0.1017, 0.2689, 0.3819, 0.5611, 0.5239, 0.0737]
@@ -24,4 +25,4 @@ referencia: chi2 = 407.6470
 VEREDICTO  chi2 = 410.269 contra 407.647 -> +0.64%, con TODOS los ingredientes en su valor oficial y ningun libre de traduccion.
   control HMcode-2015: mas cerca en halo_A=1.5 (-0.18%) -- ahi la traduccion SI es libre, por eso no es el titular.
 sigma8/Om/S8 de referencia de la cadena: 1.05185 / 0.19400 / 0.84347
-log -> /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/control_legacy.json
+log -> results/logs/growth_2026-07/control_legacy.json

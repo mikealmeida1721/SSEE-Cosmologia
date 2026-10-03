@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-29",
+ "fecha": "2026-10-03",
  "H_glob": 67.96214152203791,
  "sig_H_glob": 0.9676975244101783,
  "Planck": {
@@ -7,17 +7,48 @@
   "sd": 0.54
  },
  "posterior": {
-  "H0": 67.82438276442383,
-  "sd": 0.41331717172127086,
-  "sigmas_a_Hglob": 0.33330034907666567,
-  "sigmas_a_Planck": 0.6828928769795742
+  "H0": 67.82260560603251,
+  "sd": 0.4125530383365016,
+  "sigmas_a_Hglob": 0.3382253990130272,
+  "sigmas_a_Planck": 0.6807441574953138
  },
  "desi_plano": {
-  "H0": 67.79307945224592,
-  "sd": 0.46033335992074836,
-  "sigmas_a_Hglob": 0.3672600869532833,
-  "sigmas_a_Planck": 0.6103302671084389
+  "H0": 67.78432759640418,
+  "sd": 0.45538474216832503,
+  "sigmas_a_Hglob": 0.39046966041739384,
+  "sigmas_a_Planck": 0.6007057225835831
  },
  "script": "src/p02_mcmc/h0_distancias.py",
- "plano_vs_posterior_sigmas": 0.05059872401309686
+ "plano_vs_posterior_sigmas": 0.06229419455332523,
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/h0_distancias.py",
+  "script_sha256": "b4d5c51ce1cf0861d1458784aeeedc3feac421149f96520cfc70cc7554279e28",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/mcmc_paper2_reframe.json": "c4f32b358ca3400428340b3bd4d7422ad70625af3d2a53ba2eae0d8baeeb260e",
+   "results/logs/h0_four_priors.json": "7ac8cc6e34b14fb0a254fcc00670cbcc19b2dfa54744dbbab453e02aa8f3d33e",
+   "src/p02_mcmc/ssee_paper2_mcmc.py": "07002316473e967077c70792a62fff661f5322a8bce538122d412c9d1f4cbea9"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p02_mcmc/h0_distancias.py",
+   "results/logs/h0_distancias_hglob.json",
+   "results/logs/mcmc_paper2_reframe.json",
+   "results/logs/h0_four_priors.json",
+   "src/p02_mcmc/ssee_paper2_mcmc.py"
+  ],
+  "fecha": "2026-10-03T08:00:23",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

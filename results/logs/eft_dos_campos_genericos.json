@@ -1,6 +1,6 @@
 {
- "corrida": "cola #12 \u2014 dos campos genericos de w constante contra (w0, wa)",
- "idea": "M. Almeida \u2014 dos opuestos; aqui uno normal y uno fantasma",
+ "corrida": "cola #12 — dos campos genericos de w constante contra (w0, wa)",
+ "idea": "M. Almeida — dos opuestos; aqui uno normal y uno fantasma",
  "objetivo": {
   "w0": -0.839949771344779,
   "wa": -0.6699748856723895,
@@ -35,7 +35,7 @@
   "f_B": 0.2727091895228384,
   "max_dw": 0.23449121056556876,
   "rms": 0.13572244624896132,
-  "veredicto": "NO \u2014 la forma CPL no sale de dos fluidos de w constante",
+  "veredicto": "NO — la forma CPL no sale de dos fluidos de w constante",
   "nota": "el ajuste COLAPSA a w_A = w_B, o sea a un solo fluido con el w medio: no es que ajuste mal, es que la mezcla no puede moverse en el sentido que hace falta"
  },
  "direccion": {
@@ -82,5 +82,29 @@
   "lectura": "una mezcla de dos fluidos de w constante siempre se corre hacia el mas negativo, porque diluye mas despacio; su w total DECRECE con a. SSEE pide que CREZCA. El fallo es de sentido, no de precision, y por eso ningun par de valores lo arregla"
  },
  "pendiente": "si PASA, comparar w_A, w_B y f_A contra el diccionario, con tolerancia declarada y look-elsewhere (1/490 a +-0.0005). NO se busca aqui: primero el numero, despues la busqueda",
- "alcance": "no toca el acuerdo con DESI, que es del par algebraico"
+ "alcance": "no toca el acuerdo con DESI, que es del par algebraico",
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p07_eft/dos_campos_genericos.py",
+  "script_sha256": "2e6257c50c050bf29853c337a5af1549ec82eb9507ad622e225ddadad7932887",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p07_eft/dos_campos_genericos.py",
+   "results/logs/eft_dos_campos_genericos.json"
+  ],
+  "fecha": "2026-10-03T08:00:15",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

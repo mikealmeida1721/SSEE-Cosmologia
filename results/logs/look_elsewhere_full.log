@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "f2ac1945e349055465f1417c7b25322001885665", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/look_elsewhere_full.py", "script_sha256": "55c090ba40ba52157408ea510873578941074e6e683c8fecc17b68d249ca01be", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/procedencia_sella.py", "src/estadistica/look_elsewhere_full.py", "results/logs/look_elsewhere_full.log"], "fecha": "2026-10-03T08:00:27", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 
 === Diccionario Génesis COMPLETO (55 constantes con nombre) ===
   constantes con nombre : 55

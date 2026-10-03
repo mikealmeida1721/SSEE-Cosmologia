@@ -1,45 +1,69 @@
 {
-  "fecha": "2026-09-30",
-  "script": "src/p02_mcmc/spherical_collapse_deltac.py",
-  "metodo": "top-hat esferico, ec. no lineal exacta, shooting sobre delta_i, DE suave",
-  "supuesto_DE_suave_justificado_por": "friccion viscosa IS de Paper 5 (F ~ k^2), NO por c_s^2=0",
-  "control_EdS_analitico": 1.686470199841145,
-  "z_c": [
-    0,
-    1,
-    2,
-    5,
-    10
+ "fecha": "2026-10-03",
+ "script": "src/p02_mcmc/spherical_collapse_deltac.py",
+ "metodo": "top-hat esferico, ec. no lineal exacta, shooting sobre delta_i, DE suave",
+ "supuesto_DE_suave_justificado_por": "friccion viscosa IS de Paper 5 (F ~ k^2), NO por c_s^2=0",
+ "control_EdS_analitico": 1.686470199841145,
+ "z_c": [
+  0,
+  1,
+  2,
+  5,
+  10
+ ],
+ "deltac": {
+  "EdS": [
+   1.68645895311602,
+   1.686458982808377,
+   1.686459094167901,
+   1.6864604601145299,
+   1.686469595156612
   ],
-  "deltac": {
-    "EdS": [
-      1.68645895311602,
-      1.686458982808377,
-      1.686459094167901,
-      1.6864604601145299,
-      1.686469595156612
-    ],
-    "LCDM": [
-      1.6759874166016457,
-      1.6843837593799378,
-      1.6857983210611487,
-      1.6863754496779118,
-      1.6864557583352848
-    ],
-    "SSEE": [
-      1.6763371290815952,
-      1.6849588237641004,
-      1.6861286942979679,
-      1.686441761094317,
-      1.6864682513848919
-    ]
-  },
-  "deltac_SSEE_zc0": 1.6763371290815952,
-  "deltac_LCDM_zc0": 1.6759874166016457,
-  "postulado_retirado_OP27": 1.6284138136529305,
-  "citado_deltac_SSEE_zc0": 1.67634,
-  "citado_deltac_LCDM_zc0": 1.67599,
-  "citado_deltac_SSEE_zc10": 1.68647,
-  "citado_deltac_LCDM_zc10": 1.68646,
-  "citado_deltac_EdS": 1.68647
+  "LCDM": [
+   1.6759874166016457,
+   1.6843837593799378,
+   1.6857983210611487,
+   1.6863754496779118,
+   1.6864557583352848
+  ],
+  "SSEE": [
+   1.6763371290815952,
+   1.6849588237641004,
+   1.6861286942979679,
+   1.686441761094317,
+   1.6864682513848919
+  ]
+ },
+ "deltac_SSEE_zc0": 1.6763371290815952,
+ "deltac_LCDM_zc0": 1.6759874166016457,
+ "postulado_retirado_OP27": 1.6284138136529305,
+ "citado_deltac_SSEE_zc0": 1.67634,
+ "citado_deltac_LCDM_zc0": 1.67599,
+ "citado_deltac_SSEE_zc10": 1.68647,
+ "citado_deltac_LCDM_zc10": 1.68646,
+ "citado_deltac_EdS": 1.68647,
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/spherical_collapse_deltac.py",
+  "script_sha256": "7feb0dae23643cbc2c47c89a6b50a300e230f05268df0e3892d70cb9d6298094",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p02_mcmc/spherical_collapse_deltac.py",
+   "results/logs/deltac_spherical_collapse.json"
+  ],
+  "fecha": "2026-10-03T07:48:11",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

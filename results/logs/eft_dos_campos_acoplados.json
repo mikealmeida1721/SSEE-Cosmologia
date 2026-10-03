@@ -1,7 +1,7 @@
 {
- "corrida": "cola #14 \u2014 dos campos ACOPLADOS contra el (w0, wa) algebraico",
- "idea": "M. Almeida \u2014 dos opuestos que se TOCAN, no que solo conviven",
- "intercambio": "Q = lam \u00b7 H \u00b7 rho_tot; el total se conserva",
+ "corrida": "cola #14 — dos campos ACOPLADOS contra el (w0, wa) algebraico",
+ "idea": "M. Almeida — dos opuestos que se TOCAN, no que solo conviven",
+ "intercambio": "Q = lam · H · rho_tot; el total se conserva",
  "objetivo": {
   "w0": -0.839949771344779,
   "wa": -0.6699748856723895,
@@ -62,5 +62,29 @@
  },
  "fantasma_necesario": false,
  "pendiente": "si algun escenario CUMPLE, comparar lam, w_1, w_2 y f_1 contra el diccionario, con tolerancia declarada y look-elsewhere (1/490 a +-0.0005). NO se busca aqui",
- "alcance": "no toca el acuerdo con DESI, que es del par algebraico"
+ "alcance": "no toca el acuerdo con DESI, que es del par algebraico",
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p07_eft/dos_campos_acoplados.py",
+  "script_sha256": "f5b47b8dc15c6a9f45fef5e61f78da6cd22d71f91c6ba0f07e27d92fd24b2483",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p07_eft/dos_campos_acoplados.py",
+   "results/logs/eft_dos_campos_acoplados.json"
+  ],
+  "fecha": "2026-10-03T08:00:13",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

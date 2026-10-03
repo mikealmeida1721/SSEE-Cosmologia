@@ -838,5 +838,32 @@
   "shear_calibration_parameters--m3": 0.036514373354378286,
   "lens_photoz_errors--bias_1": -0.03512781274381938,
   "intrinsic_alignment_parameters--a2": 0.017793642166048763
+ },
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/des_y3_barrido.py",
+  "script_sha256": "397a8b663a36a703e517cf784c42e870fc877e59855cbd7634e912d0034c5729",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt": "2ba4415560c8a02ccb8da0b7d5cf4552c088a1cc981c1ee96fda90bba31563ff"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/des_y3_barrido.py",
+   "results/logs/des_y3_barrido.json",
+   "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt"
+  ],
+  "fecha": "2026-10-03T07:56:06",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

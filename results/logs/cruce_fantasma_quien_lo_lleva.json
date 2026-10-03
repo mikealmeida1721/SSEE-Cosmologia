@@ -310,5 +310,29 @@
    "pendiente_dc_d(1-a)": 4.186028919181642,
    "lectura": "con Π ∝ ρ+p, el cruce exige |Π| = ρ+p en z*, y |Π| > ρ+p en todo z > z*: la corrección viscosa supera a la entalpía que corrige. Si eso cae dentro o fuera de la validez de Israel-Stewart es la prueba que decide si P1 puede ser cierto."
   }
+ },
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p07_eft/cruce_fantasma_quien_lo_lleva.py",
+  "script_sha256": "cf95eb33d8e8202225da56bfafbfbb9bf98b0d823dbab5413c3aec790cb1a9bd",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p07_eft/cruce_fantasma_quien_lo_lleva.py",
+   "results/logs/cruce_fantasma_quien_lo_lleva.json"
+  ],
+  "fecha": "2026-10-03T07:46:56",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

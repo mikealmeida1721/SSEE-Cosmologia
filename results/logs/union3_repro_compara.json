@@ -77,8 +77,39 @@
  ],
  "chi2_diferencia": 0.009326008314110946,
  "reproduce": true,
- "ssee_chi2_nuestro": 27.16028720238036,
- "ssee_chi2_publicado": 26.598135524926136,
+ "ssee_chi2_nuestro": 27.160288992112996,
+ "ssee_chi2_publicado": 26.598137544540364,
  "lcdm_planck_chi2_nuestro": 29.554327448424317,
- "lcdm_planck_chi2_publicado": 28.82025214368082
+ "lcdm_planck_chi2_publicado": 28.833944489201883,
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/union3_repro_compara.py",
+  "script_sha256": "01c83cbb051b265711caa97e360f4bdebb64ff68d2ed1ebc0efd6d135575af6f",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
+   "/mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits": "40932c1734b78d09ec0fd057fd19f1e3e78f53ceeed33e10258e16753a36982f",
+   "/mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits": "332ad0ef5e3ca721fd34efe76a3759234a6c363c0b2b6fba70c9fc5f42025848"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/union3_repro_compara.py",
+   "results/logs/union3_repro_compara.json",
+   "results/logs/union3_en_el_clavo.json",
+   "/mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits",
+   "/mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits"
+  ],
+  "fecha": "2026-10-03T08:01:09",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

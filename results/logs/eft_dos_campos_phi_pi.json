@@ -1,6 +1,6 @@
 {
  "corrida": "dos campos: se DESPEJA el segundo, no se ajusta",
- "idea": "M. Almeida \u2014 un solo campo no cruza w=-1; \u00bfel segundo esta en el algebra?",
+ "idea": "M. Almeida — un solo campo no cruza w=-1; ¿el segundo esta en el algebra?",
  "objetivo": {
   "w0": -0.839949771344779,
   "wa": -0.6699748856723895,
@@ -9,7 +9,7 @@
  "campo1": {
   "lagrangiano": "k-esencia Paper 7, K = c1 X + c2 X^2",
   "u_algebraico": -0.522735,
-  "w0_que_da": -0.83995,
+  "w0_que_da": -0.839949771344779,
   "wa_que_da": 0.4135
  },
  "control": {
@@ -62,5 +62,29 @@
   "lectura": "la dispersion CRECE con f1 desde el borde: el campo de Paper 7 no ayuda nada, y pasado ese tope el sobrante tendria densidad negativa. El f1 en el borde no es un fallo del barrido, es la respuesta"
  },
  "pendiente": "comparar f1, f2 y w2 contra el diccionario, con la tolerancia declarada y el riesgo look-elsewhere (1/490 a +-0.0005). NO se ha hecho aqui a proposito: primero el numero, despues la busqueda",
- "alcance": "no toca el acuerdo con DESI, que es del par algebraico"
+ "alcance": "no toca el acuerdo con DESI, que es del par algebraico",
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p07_eft/dos_campos_phi_pi.py",
+  "script_sha256": "e100911833cb7d77f91bfdfdb3ce6281e2562a90862887754257b0aeaff85b14",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p07_eft/dos_campos_phi_pi.py",
+   "results/logs/eft_dos_campos_phi_pi.json"
+  ],
+  "fecha": "2026-10-03T08:00:17",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

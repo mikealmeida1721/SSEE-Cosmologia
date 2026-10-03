@@ -1,6 +1,6 @@
 {
  "fecha": "2026-09-28",
- "tabla": "/home/mike/Proyectos/SSEE/data/processed/rd_camb_tabla.json",
+ "tabla": "/tmp/claude-1000/-home-mike-Proyectos-SSEE/a1f54e42-d5ef-4d5b-9891-21ebe008c7e9/scratchpad/wt_cierre/data/processed/rd_camb_tabla.json",
  "puntos": [
   {
    "mnu": 0.06849,
@@ -180,5 +180,32 @@
   "error_formula_vieja": 0.0013151929406844953
  },
  "criterio": "error < 0.001 % en 24 puntos al azar y en SSEE (declarado antes)",
- "pasa": true
+ "pasa": true,
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/rd_camb.py",
+  "script_sha256": "8a815d53c17c2a2cb315bc883bbe855b9082ea1b247171c12a155bfc5abd0c8b",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "data/processed/rd_camb_tabla.json": "2cc2f240d01fe307c2e0bf53d13ce8893c7fc37646cb3ed21d4a94293eefc118"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/rd_camb.py",
+   "results/logs/rd_camb_control.json",
+   "data/processed/rd_camb_tabla.json"
+  ],
+  "fecha": "2026-10-03T08:01:00",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

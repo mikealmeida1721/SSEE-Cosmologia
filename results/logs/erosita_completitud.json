@@ -110,5 +110,34 @@
   }
  ],
  "F50": 2.4638068832199665e-13,
- "factor_vs_zhong": 4.927613766439933
+ "factor_vs_zhong": 4.927613766439933,
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/erosita_completitud.py",
+  "script_sha256": "e1dd99d00673306798bee9b0ad31799d3ee772ef8057697316abe306a1a308c9",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz": "53a2e07f55b3bc8c783fe071d8039c75f5682d04975ff310909abef37612789b",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits": "fe2310495ce2fdba5876e248ab3415012d6f2e79280d87c8bfd1177ca11a779e"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/erosita_completitud.py",
+   "results/logs/erosita_completitud.json",
+   "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits"
+  ],
+  "fecha": "2026-10-03T08:00:20",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "f2ac1945e349055465f1417c7b25322001885665", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/verifica_formula_rd.py", "script_sha256": "07bdfb6c9e1a5143bf8d6b1e0f4143a1a2d51df86339d03dda7135d22d27b920", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/procedencia_sella.py", "src/p02_mcmc/verifica_formula_rd.py", "results/logs/formula_rd_exponentes.log"], "fecha": "2026-10-03T08:00:22", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 {
  "pivote": {
   "w_m": 0.1432,

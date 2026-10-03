@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-29",
+ "fecha": "2026-10-03",
  "preliminar": false,
  "pregunta": "Corrida CONJUNTA con el fondo clavado por algebra y logA clavado al del CMB: da a cada sonda el mismo chi2 que su corrida individual?",
  "logA_clavo": 3.0448340130228546,
@@ -19,9 +19,9 @@
   },
   {
    "sonda": "kids",
-   "individual": 417.971,
+   "individual": 417.9706,
    "conjunta": 418.60406,
-   "delta": 0.6330600000000004,
+   "delta": 0.6334600000000137,
    "min_en_cadena_conjunta": 418.34319
   },
   {
@@ -71,6 +71,42 @@
   "nota": "constante: fuera del muestreador, no puede mover nada"
  },
  "total_conjunta": 1518.9880067689369,
- "total_individual": 1515.5991705478411,
- "total_delta": 3.388836221095744
+ "total_individual": 1515.5987705478412,
+ "total_delta": 3.3892362210956435,
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/leer_conjunta.py",
+  "script_sha256": "d8fa691b4e1dc18e5da158fc0ab38fca08a0876710ba1159f6df0c1e60c1a741",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "results/logs/multisonda_fondo_clavado.json": "da6416f1d7aaa77b925d9ce12e9992b547450366d6e09d1599dc98fb5a95a01d",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt": "8d05d679213064564d2d2ea19e0ef05cb713bd969cd5e6ad2a831e0b274d4eef",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt": "d0d0a52550e4e3c5fe1f695d2dc2046325368c2d4d72a8047a7d3786655cae77",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt": "e928ff40f16eab2e2dc0af6e1ad8997d3fee18f279de6e67724f1f64a6146965",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt": "b892b47019315f0a2322dece523b17aed2079d4e0266b3f64229f68aa4304570",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt": "3989696c4513d8f0a0e83919eee5abb0426256d49e26dfacced8b0696f718021",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt": "679789c840e6b23bdc0aab5221c1414e01140f5d7b60ca3a53eb82b8c305fbcf",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt": "fd1dfd287bc5f48742f3e9cd9bb771db6443fd9932efcce894f60ca009f64fbc",
+   "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt": "cb2ecd3752ea98919788b13f3c22b78e94768e9500d0df33c46646b1ff5abf8d"
+  },
+  "argv": [
+   "src/p06_growth/leer_conjunta.py"
+  ],
+  "fecha": "2026-10-03T07:43:50",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

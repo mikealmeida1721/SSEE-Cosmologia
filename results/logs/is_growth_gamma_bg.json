@@ -8,11 +8,11 @@
   "nota": "Omega_m = s_m = 1+w0 = 0.160050 (la ranura mal llenada del .tex)"
  },
  "correcto_omega_m_total": {
-  "Omega_m": 0.30888087877875237,
+  "Omega_m": 0.30888084061409116,
   "w0": -0.839949771344779,
   "wa": -0.6699748856723895,
-  "gamma": 0.541019397213307,
-  "gamma_sd": 0.0049772538975867454,
+  "gamma": 0.5410193716089386,
+  "gamma_sd": 0.0049772774549980735,
   "nota": "Omega_m = omega_m/h^2 = 0.308881 (la densidad de verdad)"
  },
  "control_lcdm": {
@@ -27,5 +27,29 @@
   "buggy_reproduce_el_0657": false,
   "lcdm_da_el_055_de_libro": true,
   "veredicto": "NO concluyente: revisar antes de tocar el .tex"
+ },
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p05_is/is_growth_gamma_bg.py",
+  "script_sha256": "ca055030d6bab0b5f64a708bedad11add5e97bf9c4540e129a1b4ff890a9c322",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p05_is/is_growth_gamma_bg.py",
+   "results/logs/is_growth_gamma_bg.json"
+  ],
+  "fecha": "2026-10-03T08:00:25",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

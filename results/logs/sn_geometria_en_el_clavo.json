@@ -6,13 +6,13 @@
   "Pantheon+": {
    "n_sne": 1580,
    "dof": 1579,
-   "chi2": 1386.6236766651273,
-   "chi2_por_dof": 0.8781657230304796,
-   "PTE": 0.9998153790869082,
-   "sigma_equivalente": 0.0002313880024868086,
+   "chi2": 1386.6236774250865,
+   "chi2_por_dof": 0.878165723511771,
+   "PTE": 0.9998153790765332,
+   "sigma_equivalente": 0.0002313880154899859,
    "control_a_lcdm": {
     "chi2": 1387.3254048079252,
-    "diferencia": -0.7017281427979469
+    "diferencia": -0.701727382838726
    },
    "control_b_cambio_con_As": 0.0,
    "ve_As": false,
@@ -32,13 +32,13 @@
   "DES-SN5YR": {
    "n_sne": 1820,
    "dof": 1819,
-   "chi2": 1629.4396538848491,
-   "chi2_por_dof": 0.8957887047195432,
-   "PTE": 0.9994188499667673,
-   "sigma_equivalente": 0.0007283636169530009,
+   "chi2": 1629.4396562196173,
+   "chi2_por_dof": 0.8957887060030881,
+   "PTE": 0.9994188498816614,
+   "sigma_equivalente": 0.0007283637236174848,
    "control_a_lcdm": {
     "chi2": 1632.4081789477918,
-    "diferencia": -2.9685250629427173
+    "diferencia": -2.9685227281745483
    },
    "control_b_cambio_con_As": 0.0,
    "ve_As": false,
@@ -54,6 +54,43 @@
     "sigma_vs_publicado": 0.0211397684849494,
     "reproduce": true
    }
+  }
+ },
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/sn_geometria.py",
+  "script_sha256": "bf747e075b5721eaedae7ced667467a02b1957023fd5e33b7277a7129481fad6",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "results/logs/multisonda_fondo_clavado.json": "da6416f1d7aaa77b925d9ce12e9992b547450366d6e09d1599dc98fb5a95a01d",
+   "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+   "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc",
+   "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv": "2f57019d783eaa976df80a41b0054171a2d994ee9808d715ce850c2df5720aaf",
+   "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz": "ffd3124b32148b1372bd95fda9299269f0352a9f8eee02d416c610e38495463b"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/sn_geometria.py",
+   "results/logs/sn_geometria_en_el_clavo.json",
+   "results/logs/cmb_dbic_tau_ajustado.json",
+   "results/logs/multisonda_fondo_clavado.json",
+   "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat",
+   "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov",
+   "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv",
+   "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz"
+  ],
+  "fecha": "2026-10-03T08:01:04",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
   }
  }
 }

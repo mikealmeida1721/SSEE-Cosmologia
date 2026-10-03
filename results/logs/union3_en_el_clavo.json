@@ -15,24 +15,24 @@
   "Union3": {
    "nodos": 22,
    "dof": 21,
-   "chi2": 23.847395291316378,
-   "PTE": 0.3005113026703577,
-   "sigma_equivalente": 1.0353375429714726,
+   "chi2": 23.84739955630661,
+   "PTE": 0.30051109274769616,
+   "sigma_equivalente": 1.035337992631896,
    "control_lcdm_planck": {
     "chi2": 26.371696573390054,
-    "diferencia": -2.524301282073676,
+    "diferencia": -2.5242970170834447,
     "chi2_integrador_propio": 26.54717856545439
    }
   },
   "Union3.1": {
    "nodos": 22,
    "dof": 21,
-   "chi2": 26.598135524926136,
-   "PTE": 0.18455393697864342,
-   "sigma_equivalente": 1.3268632077872817,
+   "chi2": 26.598137544540364,
+   "PTE": 0.18455386610391622,
+   "sigma_equivalente": 1.3268634220040407,
    "control_lcdm_planck": {
     "chi2": 28.833944489201883,
-    "diferencia": -2.2358089642757477,
+    "diferencia": -2.235806944661519,
     "chi2_integrador_propio": 28.933565282242057
    }
   }
@@ -45,5 +45,34 @@
   "dof": 20,
   "sigma_vs_publicado": -0.008758913765140213,
   "reproduce": true
+ },
+ "_procedencia": {
+  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/union3_binned.py",
+  "script_sha256": "aa2d57922ea87e60b6b102f5ac6b94d50c25ed132b70fa4c51c69b1fa940752c",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits": "ef98b7dde1025ee7134f3242aaea3f1f0ed3f2b29a718458c550a8e4e24d0349",
+   "/mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits": "40932c1734b78d09ec0fd057fd19f1e3e78f53ceeed33e10258e16753a36982f"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/union3_binned.py",
+   "results/logs/union3_en_el_clavo.json",
+   "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits",
+   "/mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits"
+  ],
+  "fecha": "2026-10-03T08:01:07",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }
