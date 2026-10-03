@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 6d4fabd2e26fed717b345cd5eae0d4d7
-      size: 69524
+      md5: 26e0956d3743f67bde6f18d1283a24bc
+      size: 69706
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 8976edb5b0fe92513530ef447a58b5ec
@@ -247,7 +247,7 @@ stages:
       size: 2081
     - path: results/logs/rd_dual.json
       hash: md5
-      md5: 6360a39f9b075e4a0a0725b4f91a34f6
+      md5: 23de8d0e75559f32e5f0c0f70a8bb80f
       size: 2446
     - path: results/logs/resumen_3modelos.json
       hash: md5
@@ -276,8 +276,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: d09ac7f68058211c320e1cb1a7a38fd7
-      size: 87108
+      md5: 8dfb482e2db6dd05839a02e381448834
+      size: 87110
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -3732,18 +3732,18 @@ stages:
       size: 17307
     - path: src/ssee_resolution_figures.py
       hash: md5
-      md5: 2f6d43068d74834aeb2810e62887e1b9
-      size: 9375
+      md5: 03c5d54719e76600c3fec42b784688b6
+      size: 9494
     outs:
     - path: results/figures/fig_rd_dual.pdf
       hash: md5
-      md5: 02635b0ea9762cfc8dda906120f2636f
-      size: 23383
+      md5: 0573d899ebec1e804716bd670ee6bdc5
+      size: 24458
     - path: results/figures/fig_s8_resolution.pdf
       hash: md5
-      md5: 1bd098b2004e618fc7cd3dc25576cba2
-      size: 25415
+      md5: cfae37836831e024916c82e2bda5013d
+      size: 26490
     - path: results/logs/rd_dual.json
       hash: md5
-      md5: 6360a39f9b075e4a0a0725b4f91a34f6
+      md5: 23de8d0e75559f32e5f0c0f70a8bb80f
       size: 2446
