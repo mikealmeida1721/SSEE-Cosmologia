@@ -74,7 +74,7 @@
  "total_individual": 1515.5987705478412,
  "total_delta": 3.3892362210956435,
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "b5d30869b5716f8ec63f08088b7a7fc57c16a0f7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/leer_conjunta.py",
@@ -95,7 +95,7 @@
   "argv": [
    "src/p06_growth/leer_conjunta.py"
   ],
-  "fecha": "2026-10-03T07:43:50",
+  "fecha": "2026-10-03T08:21:55",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

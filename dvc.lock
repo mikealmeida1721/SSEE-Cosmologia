@@ -2740,12 +2740,12 @@ stages:
     outs:
     - path: results/logs/conjunta_vs_individual.json
       hash: md5
-      md5: 40f1bf36410bf88dc1b171a549e1cd4a
+      md5: 3b6bd26f7e9103ca4b4a665502ac4cad
       size: 3836
     - path: results/logs/leer_conjunta.log
       hash: md5
-      md5: d7428906332f85d8cec294ffcb9aa300
-      size: 1542
+      md5: 1e9986eb6eccfcada7950788716ac586
+      size: 1467
   sello_control_legacy:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/control_legacy.py > results/logs/control_legacy.log && 
@@ -3260,8 +3260,8 @@ stages:
     outs:
     - path: results/logs/rd_camb_control.json
       hash: md5
-      md5: 5107c47e2c6dba7c5daed8d952a59b29
-      size: 5118
+      md5: 8ecbf7fbd44929916809abc35cb8cf5a
+      size: 5043
   sello_sn_geometria:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p11_sondas/sn_geometria.py && .venv/bin/python3 

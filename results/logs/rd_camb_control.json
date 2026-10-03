@@ -1,6 +1,6 @@
 {
  "fecha": "2026-09-28",
- "tabla": "/tmp/claude-1000/-home-mike-Proyectos-SSEE/a1f54e42-d5ef-4d5b-9891-21ebe008c7e9/scratchpad/wt_cierre/data/processed/rd_camb_tabla.json",
+ "tabla": "/home/mike/Proyectos/SSEE/data/processed/rd_camb_tabla.json",
  "puntos": [
   {
    "mnu": 0.06849,
@@ -182,7 +182,7 @@
  "criterio": "error < 0.001 % en 24 puntos al azar y en SSEE (declarado antes)",
  "pasa": true,
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "b5d30869b5716f8ec63f08088b7a7fc57c16a0f7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/rd_camb.py",
@@ -197,7 +197,7 @@
    "results/logs/rd_camb_control.json",
    "data/processed/rd_camb_tabla.json"
   ],
-  "fecha": "2026-10-03T08:01:00",
+  "fecha": "2026-10-03T08:21:53",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
