@@ -1205,12 +1205,21 @@ check("V-L3-2sec  [RETIRADO] la resta Om_m,CMB - 0.160 no era fisica",
 # El texto de este track llevaba desde julio diciendo que estaban pendientes.
 # Lo unico que sigue vivo es fsigma8 contra BOSS crudo, y eso no es una tarea
 # de higiene: es una corrida de investigacion. Tiene ficha propia, OP-26.
-track_open("REFRAME-FaseB  fsigma8 contra BOSS crudo, lo ultimo que falta de la Fase B",
-           "los otros tres recomputes CERRADOS y verificados contra su log: "
-           "r_d=147.174 (0.32sigma) @ Om_m=0.308881 · H0=67.787+-0.353 bajo prior "
-           "H_alg · control LCDM R4 S8=0.7571+-0.0194. Queda R1/R2 con LPT "
-           "(velocileptors, k<=0.20, 222 pts); el barrido Kaiser fue sondeo",
-           op="OP-26")
+# 2026-10-03: OP-26 MEDIDO (R1/R2 LPT, re-corrido 10-01 con los ingredientes de
+# cada modelo). El track quedaba abierto aunque la ficha ya decia MEDIDO; ahora se
+# comprueba que el log exista con acta reproducible y traiga su Delta chi2.
+import json as _json26
+_r1r2 = ROOT.parent / "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"
+try:
+    _r1r2_d = _json26.loads(_r1r2.read_text())
+except (OSError, ValueError):
+    _r1r2_d = {}
+_r1r2_acta = _r1r2_d.get("_procedencia") or {}
+_r1r2_dchi2 = _r1r2_d.get("dchi2_real")
+check("REFRAME-FaseB  fsigma8 contra BOSS crudo medido (OP-26): log con acta y Delta chi2",
+      bool(_r1r2_acta.get("reproducible_desde_commit"))
+      and isinstance(_r1r2_dchi2, (int, float)) and math.isfinite(_r1r2_dchi2),
+      f"Delta chi2 SSEE-LCDM = {_r1r2_dchi2} (R1R2_boss_lpt_cobaya.json, por \\val en P6/PRD)")
 
 # delta_c (OP-27, abierto 2026-09-25). El Paper 4 postulaba
 # delta_c = delta_c,EdS * n_s = 1.6284 y el Paper 5 colgaba de el un
