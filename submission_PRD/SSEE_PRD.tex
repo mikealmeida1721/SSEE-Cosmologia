@@ -45,28 +45,21 @@ tightened, at $0.24\sigma$ from the newer DESI~DR2 posterior
 (Pantheon+; $0.2$--$1.8\sigma$ across supernova compilations,
 $\chi^2_{\rm 2D}=0.42$)---the prediction did not move while the data improved.
 Crucially, the two forward predictions that can \emph{refute} the core framework---this
-fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand \emph{independent}
-of the $\varphi$-dark-matter extension: neither the Hubble resolution nor the growth
-sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
+fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand on their own: neither the Hubble resolution nor the growth sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
 global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
 ($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
-with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=0.021284$---and the inflationary sector predicts
+with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=\val{cs2_condensado_d6}$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
 \val{r_tensor_mil_d6}\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. A Boltzmann
 calculation shows the full algebraic $\omega_m$ (not the bare dynamical
 $\Omega_{m,\rm dyn}=\val{S_M_d6}$) is physically required for the CMB:
 without it the acoustic-peak structure degrades by a factor of $\val{cl_degrada}$ in RMS.
 We are explicit about the framework's limits: the absolute vacuum scale enters
-as a single measured input, and the growth amplitude $S_8$ shows no tension
-with weak lensing once measured on raw data (the retracted extension was
-kept outside the core register), and the algebraic origin of the CMB matter
-density ($\omega_b$, $\omega_c$) together with the $\varphi$-dark-matter mass
-coefficient are open problems. Both core forward predictions bear on
+as a single measured input, the growth amplitude shows no tension with weak lensing once measured on raw data---with $A_s$ fixed to the model's own CMB fit it predicts $S_8=\val{S8_leg_pred}$ against KiDS-Legacy's $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$---and the algebraic origin of the CMB matter density ($\omega_b$, $\omega_c$) is an open problem. Both core forward predictions bear on
 \emph{unreleased} data: the $(w_0,w_a)$ point is pre-registered to be excluded at
 $>3\sigma$ if DESI~DR3 shifts it, and $r=\varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3}$ is
-testable by LiteBIRD---either alone can refute the framework without touching
-the extension sector. The result is a falsifiable,
+testable by LiteBIRD---either alone can refute the framework. The result is a falsifiable,
 parameter-frugal description of dark energy whose core predictions rest on
 $\varphi$ and $\pi$ alone.
 \end{abstract}
@@ -161,9 +154,7 @@ progress.
 
 This paper develops one such proposal. The central hypothesis of the
 Structural Self-Energy Expansion (SSEE) framework is that the \emph{shape} of
-the dark sector---the equation-of-state ratios, the effective-field-theory
-function profile, and the two independent matter fractions (dynamical and
-cosmological)---is fixed algebraically by two dimensionless constants: the golden
+the dark sector---the equation-of-state ratios, the effective-field-theory function profile, and the matter density $\omega_m$---is fixed algebraically by two dimensionless constants: the golden
 ratio $\varphi=(1+\sqrt5)/2$ and $\pi$. From these, a small set of structural
 invariants (Table~\ref{sec:notation}) is built, and the late-time observables
 follow as bare ratios with no tuned amplitude.
@@ -189,7 +180,7 @@ confrontation with Planck PR4, including a Boltzmann test demonstrating that the
 full CMB-sector matter density ($\omega_m$-direct, $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$) is
 physically necessary---the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone cannot
 reproduce the acoustic scale. Section~\ref{sec:growth} treats
-the growth of structure honestly, including the residual $S_8$ tension.
+the growth of structure, including the correction that removed the $S_8$ tension reported by earlier versions.
 Section~\ref{sec:falsifiability} sets out the pre-committed prediction register,
 and Section~\ref{sec:open} states the model's measured inputs, exact parameter
 count, and principal open problems. We conclude in
@@ -247,8 +238,7 @@ The component offsets are $\Delta w_0=-0.04\sigma$ (essentially exact) and
 $\Delta w_a=-0.26\sigma$. Against the other official combinations (moments and
 correlations likewise measured from the official chains: $\rho=-0.905$ to
 $-0.978$) the joint
-distance is $1.46\sigma$ (DESY5), $1.76\sigma$ (Union3) and $1.68\sigma$
-(no-SN DESI$+$CMB): the algebraic point is consistent with all four, with the
+distance is $\val{p2_w0wa_ssee_ec28}\sigma$ (DESY5), $\val{p2_w0wa_ssee_ec27}\sigma$ (Union3) and $\val{p2_w0wa_ssee_ec25}\sigma$ (no-SN DESI$+$CMB): the algebraic point is consistent with all four, with the
 tension range $0.2$--$1.8\sigma$ set by the supernova compilation. The result
 is robust to the correlation ($\rho\in[-0.92,-0.70]$ would shift the
 Pantheon+ figure by $<0.2\sigma$; the measured value is used). We stress that this agreement is obtained
@@ -272,10 +262,10 @@ tunes $(w_0,w_a)$.
     \toprule
     DESI~DR2 combination & $\rho$ & SSEE distance & $\Lambda$CDM distance \\
     \midrule
-    DESI+CMB+Pantheon+ & $-0.894$ & $\mathbf{0.24\sigma}$ & $2.58\sigma$ \\
-    DESI+CMB+DES~Y5    & $-0.905$ & $\mathbf{1.46\sigma}$ & $3.93\sigma$ \\
-    DESI+CMB+Union3    & $-0.933$ & $\mathbf{1.76\sigma}$ & $3.38\sigma$ \\
-    DESI+CMB (no SN)   & $-0.978$ & $\mathbf{1.68\sigma}$ & $2.62\sigma$ \\
+    DESI+CMB+Pantheon+ & $-0.894$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
+    DESI+CMB+DES~Y5    & $-0.905$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
+    DESI+CMB+Union3    & $-0.933$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
+    DESI+CMB (no SN)   & $-0.978$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -285,10 +275,7 @@ The $0.24\sigma$ figure is specific to the DESI DR2 dynamical-dark-energy
 posterior, which is dominated by low-redshift data ($z\simeq0.3$--$2.3$), where
 dark energy actually drives the expansion, and the quoted range
 $0.2$--$1.8\sigma$ reflects the known spread among supernova compilations.
-Against a \emph{Planck CMB-only}
-$w_0w_a$CDM contour ($w_0=-1.03\pm0.03$, $w_a=0.00$, extrapolated from
-$z\simeq1100$) the same $(w_0,w_a)$ sits at
-$6.0\sigma$. This spread is the
+Against a \emph{Planck CMB-only} $w_0w_a$CDM analysis, which constrains the late-time equation of state only through its extrapolation from $z\simeq1100$, the same $(w_0,w_a)$ is disfavoured. This spread is the
 well-known intrinsic BAO--CMB tension of dynamical-dark-energy models and is
 \emph{not} resolved by SSEE---no element of the framework reconciles the
 $z\simeq1100$ extrapolation with the $z\lesssim2$ measurement. We report the
@@ -406,20 +393,17 @@ $\mathrm{NYX}$ is thus the same law that guarantees it can never become a genuin
 second identity: the near-miss is structural, not accidental, and disclosing it
 strengthens rather than weakens the count.
 
+
 \paragraph{Scope: this test is for the core, not the extension.} The
 look-elsewhere statement above applies to the dark-energy core ($w_0,w_a$),
 where the dictionary grammar is fixed by construction rules (no-self-sum plus
-copy-law) that precede and are independent of the DESI targets. We make
-\emph{no} corresponding look-elsewhere claim for the $\varphi$-DM mass
-multiplier (retracted) of
-\S\ref{sec:open}: its selection is grammar-dependent (ranging from
-$\sim$1-in-3 under the strict lineage grammar to $\sim$1-in-500 under a
-permissive one), and we claim \emph{no} statistical privilege for it. The
-warrant of that prediction is \emph{falsifiability}---the pre-registered
-free-streaming scale (retracted with the particle), which DESI Y3 and Euclid would
-confirm or exclude \emph{regardless} of how restrictive the grammar is proven
-to be---which is precisely why the multiplier is kept outside the core
-predictive register.
+copy-law) that precede and are independent of the DESI targets. No
+$\varphi$-DM mass multiplier is left to test: that construction is retracted. Its
+warrant had been \emph{falsifiability} --- a pre-registered free-streaming
+scale that DESI~Y3 and Euclid would confirm or exclude. That warrant was
+insufficient, and the episode is instructive: falsifiability is the minimum
+requirement for a hypothesis to be scientific, not evidence that the entity it
+concerns exists.
 
 \subsection{The cosmic matter fraction: one matter density}
 \label{sec:two-omega}
@@ -444,9 +428,7 @@ standard physical observable, built piece-by-piece from SSEE algebra with
 \end{equation}
 the matter fraction that enters the background expansion $E(z)$, the Poisson
 equation, and the CMB. The dynamical fraction $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ (DESI)
-and $\omega_m$ (CMB) are two independent SSEE predictions, no longer tied by a
-factor. We are deliberately precise about the epistemic status of this
-accounting, which is now withdrawn.
+and $\omega_m$ (CMB) are two independent algebraic numbers, no longer tied by a factor.
 
 \paragraph{No bridging factor: the CMB density is built from algebra.} Each
 piece of $\omega_m$ is an SSEE algebraic value with no fit: the baryon density
@@ -455,13 +437,10 @@ $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ (a forward identity
 Paper~1; $0.41\sigma$ from Planck). The neutrino term completes the total,
 $\omega_\nu=\Sigma m_\nu^{\rm active}/C_\nu=0.06849/93.14=0.000735$, using the
 same active-neutrino sum $\Sigma m_\nu^{\rm active}=0.06849$~eV and the same
-relic closure constant $C_\nu=93.14$~eV (PDG, $N_{\rm eff}=3.046$) that fix
-$m_\varphi$ in \S\ref{sec:growth},\footnote{$\Sigma m_\nu^{\rm active}$ is not
+relic closure constant $C_\nu=93.14$~eV (PDG, $N_{\rm eff}=3.046$),\footnote{$\Sigma m_\nu^{\rm active}$ is not
 a fitted input: it follows from the algebraic chain
 $\Sigma m_\nu^{\rm active}=R_2\,\omega_b\,C_\nu/(\tau_\Pi H_0)$ with
-$R_2=\Omega/(\mathrm{KAL_0}T_r)$ (Paper~6). It is quoted here so that the
-neutrino term and the $\varphi$-dark-matter mass are manifestly the same
-number; no independent neutrino parameter is introduced.} so that
+$R_2=\Omega/(\mathrm{KAL_0}T_r)$ (Paper~6). No independent neutrino parameter is introduced.} so that
 \begin{equation}
   \omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5},
   \qquad
@@ -590,7 +569,7 @@ away ($\chi^2_{\rm BAO}=10.43$ over 13 points at the posterior, $11.41$ at the
 anchor, against $\simeq726$ for the incorrect background geometry), leaving a
 residual displacement of $\val{h0_p2_dhglob}\sigma$. Replacing the anchor prior with a Planck one removes even that
 dependence: the data then pull $H_0$ \emph{upward} from $67.36$ to
-$67.61\pm0.35$, towards the anchor rather than away from it. That
+$\val{h0_3mod}\pm\val{h0_3mod_s}$, towards the anchor rather than away from it. That
 pattern---one external datum and two independent-prior checks that decline to
 move the value---is the anchor's physical content, not a claim that
 $3(\varphi+\pi)^2$ literally equals a dimensionful rate. In Planck units
@@ -754,24 +733,23 @@ Table~\ref{tab:cmb} reports the reduced $\chi^2$.
     \toprule
     Spectrum & SSEE $\chi^2_r$ & $\Lambda$CDM $\chi^2_r$ & $N$ \\
     \midrule
-    TT          & 1.042 & 1.043 & 1971 \\
-    TE          & 1.040 & 1.040 & 1967 \\
-    EE          & 1.040 & 1.039 & 1967 \\
-    $\phi\phi$ (lensing) & 0.720 & 0.757 & 9 \\
+    TT & $\val{p3_chi2r_TT_ssee}$ & $\val{p3_chi2r_TT_lcdm}$ & $\val{p3_N_TT}$ \\
+    TE & $\val{p3_chi2r_TE_ssee}$ & $\val{p3_chi2r_TE_lcdm}$ & $\val{p3_N_TE}$ \\
+    EE & $\val{p3_chi2r_EE_ssee}$ & $\val{p3_chi2r_EE_lcdm}$ & $\val{p3_N_EE}$ \\
+    $\phi\phi$ (lensing) & $\val{p3_chi2r_PP_ssee}$ & $\val{p3_chi2r_PP_lcdm}$ & $\val{p3_N_PP}$ \\
     \bottomrule
   \end{tabular}
   \caption{CMB confrontation against Planck PR4. SSEE reproduces the acoustic
   spectra at a quality indistinguishable from $\Lambda$CDM, with acoustic peaks
   at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$. The combined $\Delta\mathrm{BIC}
-  (\text{SSEE}-\Lambda\text{CDM})=-35.0$ over $N=5914$ data points (diagonal,
+  (\text{SSEE}-\Lambda\text{CDM})=\val{p3_dBIC_diag}$ over $N=\val{p3_N_tot}$ data points (diagonal,
   $\omega_m$-direct) reflects the two-parameter economy of the background.}
   \label{tab:cmb}
 \end{table}
 
 \paragraph{Which likelihood the model comparison rests on.} We are explicit
 about this because the two numbers differ and only one of them is a model
-comparison. The $\chi^2_r$ of Table~\ref{tab:cmb} and the associated
-$\Delta\mathrm{BIC}=-35.0$ use a \emph{diagonal} covariance. That is adequate
+comparison. The $\chi^2_r$ of Table~\ref{tab:cmb} and the associated $\Delta\mathrm{BIC}=\val{p3_dBIC_diag}$ use a \emph{diagonal} covariance. That is adequate
 for displaying spectral agreement, but not for selecting between models:
 neglecting the Planck bandpower correlations overstates the number of
 independent data points, and since the BIC penalty enters as $k\ln N$, it
@@ -834,16 +812,11 @@ to the data but a structural feature without which the model fails the CMB
 outright. Its numerical value follows from the $\omega_m$-direct identity
 ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, fixed by $\varphi,\pi$; \S\ref{sec:open}).
 
-\section{Structure growth: an honest tension}
+\section{Structure growth: no tension on raw data}
 \label{sec:growth}
 
 The same linear EFT predicts the growth of structure, and here we report the
-situation honestly: a genuine challenge in the minimal (single-sector)
-treatment, resolved only by an extension sector that we deliberately keep
-outside the core register. With the Poisson source evaluated at the
-CMB-calibrated density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct, the
-structure that the Boltzmann test of \S\ref{sec:eft} shows is
-physically required), the growth factor is essentially that of $\Lambda$CDM,
+situation honestly, including a correction to what earlier versions of this document reported. With the Poisson source evaluated at the CMB-calibrated density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct, shown physically required by the Boltzmann test of \S\ref{sec:eft}), the growth factor is essentially that of $\Lambda$CDM,
 $G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=1.0032\pm0.005$, and the
 single-sector amplitude ceiling (CLASS forward) is
 \begin{equation}
@@ -867,7 +840,7 @@ free parameters this model retains at CMB level, so a number obtained that way
 reports the Planck--shear disagreement rather than a property of the model.
 That disagreement is real and is not resolved here --- asking this model's own
 CMB fit to set $A_s$, rather than borrowing Planck's, still leaves
-$3.4\sigma$ against the shear determination. Second, the target itself was model-conditioned: the published $S_8$
+$\val{logA_k1000_vs_b1}\sigma$ against the shear determination. Second, the target itself was model-conditioned: the published $S_8$
 is a compressed statistic whose data-reduction pipeline assumes a $\Lambda$CDM
 background, so fitting to it compares a non-$\Lambda$CDM model against a
 partly-$\Lambda$CDM number.
@@ -875,13 +848,13 @@ partly-$\Lambda$CDM number.
 Measured instead against the 225 \emph{raw} KiDS-1000 $\xi_\pm$ data points,
 with the background fixed entirely by the algebra, a \emph{single}
 unpartitioned matter sector $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, and only $A_s$ and the eight
-official nuisance parameters free, a converged MCMC ($R-1=0.019$,
-$4.2\times10^4$ effective samples) gives
+official nuisance parameters free, a converged MCMC ($R-1=\val{Rm1_k1000}$,
+$\val{neff_k1000}$ effective samples) gives
 \begin{equation}
-  \sigma_8 = 0.7446\pm0.0189, \qquad S_8 = 0.7555\pm0.0192,
+  \sigma_8 = \val{sigma8_k1000_ssee}\pm\val{sigma8_k1000_ssee_sigma}, \qquad S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma},
 \end{equation}
-i.e.\ $0.11\sigma$ from the KiDS-1000 value $0.759\pm0.024$ --- and, in the like-for-like comparison, $\Delta S_8=0.0016$ from the $\Lambda$CDM control run through the same pipeline ($0.7571\pm0.0194$), with
-$\chi^2_{\rm min}=265.4$ over $216$ degrees of freedom. \textbf{There is no
+i.e.\ $\val{S8_k1000_ssee_tension}\sigma$ from the KiDS-1000 value $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ --- and, in the like-for-like comparison, $\Delta S_8=\val{S8_k1000_dS8}$ from the $\Lambda$CDM control run through the same pipeline ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$), with
+$\chi^2_{\rm min}=\val{chi2_k1000_ssee}$ over $216$ degrees of freedom. \textbf{There is no
 $S_8$ tension to resolve, and therefore nothing for a second sector to do.}
 
 \paragraph{The same test against KiDS-Legacy.}
@@ -900,16 +873,16 @@ $1.01\sigma$.  Fixing $A_s$ to the CMB value therefore costs nothing:
 \end{equation}
 over the same 357 points, giving $\Delta\mathrm{BIC}=+6.24$ in favour of the
 fixed-amplitude model, and $+6.86$ against the $\Lambda$CDM-background control
-($418.95$).  With no free cosmological parameter left, $S_8=0.8273$ is a
-prediction rather than a fit, against $0.8265\pm0.0176$ measured---$0.05\sigma$.
+($418.95$).  With no free cosmological parameter left, $S_8=\val{S8_leg_pred}$ is a
+prediction rather than a fit, against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured---$\val{S8_leg_tension}\sigma$.
 
 Two cautions belong with this result.  The three $\chi^2$ values span $1.0$
 over 357 points: \textbf{the shear does not discriminate between these
 models}, and we do not claim that it does.  What separates them is the number
 of parameters each had to spend and whether $A_s$ stays consistent between the
 CMB and the growth epoch.  And the earlier KiDS-1000 release asked for
-$\log(10^{10}A_s)=2.863\pm0.051$, $3.5\sigma$ from the same target; the two
-releases differ from each other by $2.5\sigma$.  What changed is the data---the
+$\log(10^{10}A_s)=\val{logA_k1000}\pm\val{logA_k1000_sigma}$, $\val{logA_k1000_vs_cmb}\sigma$ from the same target; the two
+releases differ from each other by $\val{logA_entre_entregas}\sigma$.  What changed is the data---the
 $n(z)$ calibration, by the collaboration's own Appendix~I---not the model.  A
 future release returning to the lower amplitude would reopen the sector.
 
@@ -926,7 +899,7 @@ particle had nothing to be made of.
   \caption{$S_8$ with the primordial amplitude fixed versus fitted. The single-sector ceiling (red, $S_8=0.827\pm0.006$)
   carries the $3.5\sigma$ tension with KiDS-1000 reported in
   Eq.~\eqref{eq:s8}; fitting $A_s$ to raw $\xi_\pm$ data (green,
-  $S_8=0.7555\pm0.0192$) lands $0.11\sigma$ from KiDS-1000 (green band); the $\Lambda$CDM control on the same raw data lands at $0.7571\pm0.0194$. The
+  $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$) lands $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000 (green band); the $\Lambda$CDM control on the same raw data lands at $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$. The
   retracted two-sector curve is no longer shown, and the
   free-streaming scale it used is withdrawn with the
   particle. Grey
@@ -934,15 +907,17 @@ particle had nothing to be made of.
   \label{fig:s8_resolution}
 \end{figure}
 
-\paragraph{The honest statement.} The single-sector core of SSEE does not
-resolve the $S_8$ tension---it inherits it at the $\Lambda$CDM level. The
-retracted extension appeared to resolve it, but the UV
-origin of the algebraic multiplier that fixes $m_\varphi$ remains underived
-(OP-9, now closed by dissolution with the retracted sector), so the extension stayed outside the core predictive register, and a
-full non-linear treatment requires $N$-body simulations that lie beyond the
-scope of this work. We report the core-level tension as an open challenge
-(\S\ref{sec:open}) and the withdrawn extension as a cautionary record,
-not a claimed first-principles victory.
+\paragraph{The honest statement.} What resolves $S_8$ here is not additional
+freedom --- the background is \emph{more} constrained in this model than in
+$\Lambda$CDM, with $A_s$ the only quantity able to move --- but the removal of
+two things that should not have been there: a fixed $A_s$, and a target
+statistic carrying $\Lambda$CDM in its reduction. The cost of the correction
+is real and worth stating plainly: a pre-registered, genuinely falsifiable
+$P(k)$ prediction is gone, withdrawn not because data refuted it but because
+the construction generating it was not physical. What is gained is one
+postulate fewer and four open problems closed by dissolution. A full
+non-linear treatment still requires $N$-body simulations beyond the scope of
+this work.
 
 \section{Falsifiability and the prediction register}
 \label{sec:falsifiability}
@@ -952,11 +927,7 @@ algebraic invariants are fixed, the numbers it predicts are not free to move.
 A fit can always be improved by adding a parameter; SSEE has none to add. We
 therefore commit, in advance, to a register of quantitative predictions, each
 attached to the observation that will confirm or refute it. We separate the
-register into two tiers: \emph{core} predictions that follow directly from the
-dimensionless invariants $\varphi$ and $\pi$, and \emph{extension} predictions
-that depend on the phenomenological $\varphi$-dark-matter sector and are
-therefore conditional on assumptions still under investigation
-(\S\ref{sec:open}).
+register into the \emph{core} predictions that follow directly from the dimensionless invariants $\varphi$ and $\pi$, and the growth, UV and strong-gravity results that build on them; no extension sector is involved in either (the one proposed earlier is retracted, \S\ref{sec:open}).
 
 \subsection{Master register: one line per observable}
 \label{sec:master-register}
@@ -965,9 +936,7 @@ Before the two tiers in detail, Table~\ref{tab:master} gives the entire suite
 on a single page: every confronted observable, the sector it belongs to, the
 paper that derives it, its algebraic value, and its epistemic status
 (postdiction / retrodiction / prediction / measured input). The horizontal rule
-separates the \emph{core} tier---fixed by $\varphi$ and $\pi$ alone---from the
-\emph{extension} tier, which depends on the phenomenological $\varphi$-dark-matter
-sector. This is the navigation map for the whole programme; each row is expanded
+separates the \emph{core} tier---fixed by $\varphi$ and $\pi$ alone---from the results that build on it (growth, UV completion, strong gravity). This is the navigation map for the whole programme; each row is expanded
 in the paper named in its last-but-one column and in the Predictive Register of
 Paper~1.
 
@@ -983,7 +952,7 @@ Observable & Sector & Value & Paper & Status \\
 $w_0=-T_r/M_v$                & Background (DE)   & $\val{W0_d6}$                         & P1,2,4 & Postdiction \\
 $w_a=-P_{\rm sc}/I_g$ & Background (DE)   & $\val{WA_d6}$                      & P1,2,4 & Postdiction \\
 $(w_0,w_a)$ vs DESI DR3       & Background (DE)   & same fixed point                & P1,2   & \textbf{Prediction (pre-reg.)} \\
-$H_0/\kms=3(\varphi+\pi)^2$   & Background (DE)   & $67.962\,\kms$                   & P1,2,9 & Global anchor (Post.~D) \\
+$H_0^{\rm glob}=H_0^{\rm SH0ES}(1-f_{\rm scr})$ & Background (DE) & $\val{H0_GLOBAL_d3}\,\kms$ (target $3(\varphi+\pi)^2$) & P9,10 & Derived (SH0ES input) \\
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ & CMB      & $\val{OMEGA_C_H2_d6}$                       & P1,3   & Retrodiction \\
 $\Om^{\rm cosm}=\omega_m/h^2$ & CMB               & $\val{OMEGA_M_TOTAL_d6}$                       & P1,3   & Retrodiction \\
 $n_s=1-\varphi^{-7}$          & Inflation / CMB   & $\val{N_S_d6}$                       & P1,3   & Retrodiction \\
@@ -993,9 +962,8 @@ $\alpha_K^{\rm field}$ (bare, pre-integration) & EFT & $0.073$                  
 $\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $0.550$                         & P5     & Retrodiction \\
 $f\sigma_8$ (single-sector)   & Growth            & $0.70\sigma$ (6 RSD)            & P5     & Retrodiction \\
 \midrule
-\multicolumn{5}{l}{\textit{Extension tier --- depends on the $\varphi$-dark-matter sector}} \\
-$S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $0.8273$ predicted vs.\ $0.8265\pm0.0176$ ($0.05\sigma$) & P6 & \textbf{Prediction} \\
-$S_8$ (KiDS-Legacy, $A_s$ from the CMB) & growth  & $0.8273$ (measured $0.8265\pm0.0176$) & P6 & Retrodiction \\
+\multicolumn{5}{l}{\textit{Built on the core --- growth, UV completion, strong gravity (no extension sector)}} \\
+$S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $\val{S8_leg_pred}$ predicted vs.\ $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & P6 & \textbf{Prediction} \\
 $M=(5\varphi^8\rho_{\rm crit})^{1/4}$ & UV compl.  & $9.68\,$meV                    & P10    & Derived (UV) \\
 Lensing (canonical EFT)       & Strong gravity    & GR$+$DM (uncond.)              & P8     & Retrodiction \\
 \midrule
@@ -1032,7 +1000,7 @@ $w_0$            & $\val{W0_d6}$              & $-T_r/M_v$            & DESI Y3 
 $w_a$            & $\val{WA_d6}$              & $-P_{\rm sc}/I_g$ & DESI Y3 / Euclid BAO+SNe \\
 $n_s$            & $\val{N_S_d6}$               & $1-\varphi^{-7}$      & Planck / CMB-S4 \\
 $r$              & $\val{r_tensor_mil_d4}\times10^{-3}$     & $\varphi^{-10}$       & LiteBIRD / CMB-S4 \\
-$c_s^2$          & $0.021284$               & $(M_v-T_r)/(5M_v+3T_r)$ & DESI / Euclid growth \\
+$c_s^2$          & $\val{cs2_condensado_d6}$               & $(M_v-T_r)/(5M_v+3T_r)$ & DESI / Euclid growth \\
 $\alpha_T,\alpha_M,\alpha_B$ & $0$        & exactly zero          & GW standard sirens, ISW \\
 \bottomrule
 \end{tabular}
@@ -1129,8 +1097,7 @@ as open problems rather than counted among the fit parameters.
 
 \subsection{Open problems as bridges to future work}
 
-Three open problems are load-bearing and we name them explicitly. They define
-the path from the present minimal-parameter framework toward a fully derived
+The open problems that bear on this work are listed below; one of them has closed since earlier versions and is kept for the record. They define the path from the present minimal-parameter framework toward a fully derived
 theory.
 
 \begin{itemize}
@@ -1147,28 +1114,22 @@ open is a first-principles derivation of these algebraic forms from the field
 action; the burden has moved from ``derive MIRA'' to ``ground $\omega_b$ and the
 $\omega_c$ identity.'' The values are not fitted, but their UV origin is open.
 
-\item \textbf{The $\varphi$-dark-matter mass (OP-9): closed by dissolution.} The retracted mass
-$m_\varphi$ formerly used in the extension sector followed from the
-algebraic relation $m_\varphi=\Sigma m_\nu^{\rm active}\,(\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V)$,
-a dimensionally consistent product of a neutrino mass scale and a pure
-$(\varphi,\pi)$ number. What remains open is the UV origin of the
-multiplier---a first-principles derivation from the field potential. The
-growth-sector predictions that descend from it---notably a free-streaming step
-in the matter power spectrum, which would have been testable by
-DESI Y3 and Euclid---are deferred to future work and deliberately excluded from
-the core register of Table~\ref{tab:predictions-core} until the multiplier is
-derived.
+\item \textbf{The $\varphi$-dark-matter mass (OP-9): closed by dissolution.}
+This entry previously recorded an algebraic mass $m_\varphi$ whose UV origin
+was open. The particle itself is now retracted, so there is no multiplier left
+to derive and the open problem closes without having been solved. The
+free-streaming step in $P(k)$ that descended from it is withdrawn as a
+prediction. OP-10, OP-11 and OP-12 close the same way.
 
 \end{itemize}
 
-The growth-of-structure status of \S\ref{sec:growth} mirrors this structure:
-the single-sector core inherits an $S_8$ tension at the single-sector ceiling
-($S_8=0.827$ with $A_s$ fixed to Planck) is not a tension once $A_s$ is fitted
-to raw shear data ($S_8=0.7555\pm0.0192$; $\Lambda$CDM control on the same data: $0.7571\pm0.0194$; $\Delta\chi^2=2.65$ on the raw $\xi_\pm$ for four fewer parameters, $\Delta\mathrm{BIC}=19.0$). Against the later KiDS-Legacy release the amplitude the shear asks for sits $0.49\sigma$ from the one the CMB fixes under the same background, so $A_s$ need not be refitted at all: with \emph{no} free cosmological parameter the growth sector predicts $S_8=0.8273$ against $0.8265\pm0.0176$ measured, at a $\chi^2$ indistinguishable from the $A_s$-free fit. The two-sector
-extension that appeared to resolve it is retracted. The non-linear treatment required to settle the matter
-definitively demands $N$-body simulations beyond this work's scope. We record
-the core-level tension as an open challenge and the extension as falsifiable
-future-data territory (DESI~Y3, Euclid).
+The growth-of-structure status of \S\ref{sec:growth} no longer mirrors this
+structure. The $S_8$ ``tension'' at $0.827$ was an artefact of holding $A_s$ at
+the Planck value while comparing against a $\Lambda$CDM-conditioned summary
+statistic; fitted to raw shear data with a single sector it is
+$\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, matching the $\Lambda$CDM control on the same data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$) with four fewer free parameters. Against the later KiDS-Legacy release the growth sector needs no free amplitude either: the $A_s$ the shear asks for sits $0.49\sigma$ from the one the CMB fixes under the same background, and fixing it predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. No extension sector is required, and the one
+proposed is retracted. The non-linear treatment required to settle the matter
+definitively still demands $N$-body simulations beyond this work's scope.
 
 None of these gaps touch the algebraic core of
 Table~\ref{tab:predictions-core}: the dark-energy equation of state, the
@@ -1184,7 +1145,7 @@ late-time equation of state emerges as bare ratios of structural invariants,
 $w_0=\val{W0_d6}$ and $w_a=\val{WA_d6}$, and matches the DESI DR2 posterior at
 $0.24\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
 effective-field-theory description is canonical, with vanishing tensor, running,
-and braiding functions, $\alpha_K=\val{alpha_K_z0_d6}$ and $c_s^2=0.021284$; the inflationary sector
+and braiding functions, $\alpha_K=\val{alpha_K_z0_d6}$ and $c_s^2=\val{cs2_condensado_d6}$; the inflationary sector
 predicts $n_s=\val{N_S_d6}$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation
 confirms that the full $\omega_m$-direct matter density is physically
 required rather than cosmetic.
@@ -1194,9 +1155,7 @@ Its core predictions---the dark-energy ratios, the spectral index, the tensor
 ratio, and the vanishing slip functions---rest on $\varphi$ and $\pi$ alone and
 will be tested decisively by DESI Y3, Euclid, LiteBIRD, and CMB-S4 within this
 decade. We have been equally explicit about its limits: the vacuum scale is a
-measured input, the $S_8$ growth amplitude remains in tension with weak lensing,
-and the algebraic origin of the CMB matter density ($\omega_b$, $\omega_c$)
-together with the $\varphi$-dark-matter mass coefficient are unresolved. These
+measured input and the algebraic origin of the CMB matter density ($\omega_b$, $\omega_c$) is unresolved. The growth amplitude, once reported here as a tension with weak lensing, is not one on raw shear data: with $A_s$ fixed to the model's own CMB fit, the growth sector predicts $S_8=\val{S8_leg_pred}$ against KiDS-Legacy's $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. These
 define a concrete research agenda rather than fatal flaws, and none of them
 touch the algebraic core.
 
@@ -1286,10 +1245,10 @@ observational band of either $w_0$ or $w_a$.
 
 % ----------------------------------------------------------------------------
 \section*{Acknowledgments}
-The author acknowledges the use of the cosmological codes \textsc{class} \citep{Blas2011}, \textsc{eftcamb} \citep{Hu2014}, and the Markov Chain Monte Carlo sampler \textsc{Cobaya} \citep{Torrado2021} for the numerical validation of the SSEE framework. The author also acknowledges the use of the \textsc{GetDist} package \citep{Lewis2019} for the analysis and plotting of posterior distributions.
+The author acknowledges the use of the cosmological codes \textsc{class} \citep{Blas2011}, \textsc{camb} \citep{Lewis2000}, and the Markov Chain Monte Carlo sampler \textsc{Cobaya} \citep{Torrado2021} for the numerical validation of the SSEE framework. The author also acknowledges the use of the \textsc{GetDist} package \citep{Lewis2019} for the analysis and plotting of posterior distributions.
 
 \section*{Data and Code Availability}
-The SSEE framework is fully transparent and reproducible. The complete code repository, including the \textsc{class} and \textsc{eftcamb} configuration files, the \textsc{Cobaya} MCMC chains, the explicit record of Open Theoretical Problems (OP), and the cosmological validation ledgers, are publicly available at the GitHub repository \url{https://github.com/mikealmeida1721/SSEE-Cosmologia} and permanently archived on Zenodo, DOI \href{https://doi.org/10.5281/zenodo.19654118}{10.5281/zenodo.19654118} (concept DOI, all versions).
+The SSEE framework is fully transparent and reproducible. The complete code repository, including the \textsc{class} and \textsc{camb} configuration files, the \textsc{Cobaya} MCMC chains, the explicit record of Open Theoretical Problems (OP), and the cosmological validation ledgers, are publicly available at the GitHub repository \url{https://github.com/mikealmeida1721/SSEE-Cosmologia} and permanently archived on Zenodo, DOI \href{https://doi.org/10.5281/zenodo.19654118}{10.5281/zenodo.19654118} (concept DOI, all versions).
 
 \clearpage
 \bibliographystyle{apsrev4-2}

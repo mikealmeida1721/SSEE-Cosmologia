@@ -123,9 +123,9 @@ Cambian si el script o los datos cambian. Cada uno lleva su **procedencia**.
 | ΔBIC CMB full plik TTTEEE+lowl+lensing (k=2, H₀ fijo) | **−33.83** — χ² MÍNIMO SSEE 2768.449 vs ΛCDM 2771.227, Δχ² −2.778 (indistinguibles), N=2354, k=2 vs 6; conservador k=4: −18.31. Control (R53): con el mejor muestreado −34.08, mismo signo — PASA. El −32.9 del 23-jun queda retirado: no tenía log (cadenas sobrescritas) | `b1_minimiza.py ssee` y `lcdm` → `b1_min_*.json`; `b1_k2_lee.py` → `results/logs/b1_k2.json` (etapas DVC b1_min_ssee, b1_min_lcdm, b1_k2) | 2026-10-01 (re-corrida k=2, decisión de Mike) |
 | θ* (CAMB, en H_glob 67.962, Σm_ν=0.06849) | 0.59667° (100θ*=1.04139) — **1.00σ** | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log` | 2026-09-29 (re-corrido; sin cambio. El log de 07-26 usaba Σm_ν=0.06902 rancio → 0.59668/1.05σ) |
 | θ* (CAMB, en posterior 67.8244, Σm_ν=0.06849) | 0.59645° (100θ*=1.04099) — **0.32σ** (posterior y anchor coinciden; la tensión 6.66σ era el bug del sector 0.160 en E(z), V-L4-DESI) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log` | 2026-09-29 (era 1.04089/0.68σ en el posterior 67.7869, log: git:513e84e:results/logs/mcmc_paper2_reframe.log; 67.9475/66.41/67.159 superados) |
-| σ₈ / S₈ con A_s FIJADO a Planck — **DIAGNÓSTICO condicionado, NO predicción** | **0.814854 / 0.826827** | `config/class/techo_ssee_canonico.ini` (CLASS v3.3.4, fondo canónico **con Σm_ν=0.06849 eV**); evaluado por `src/p05_IS/techo_sigma8_As_fijo.py`; log `results/logs/p5_techo_sigma8_As_fijo.json` | **2026-09-08 — RETIRA 0.8335 / 0.846.** Aquéllos salían de `can_cold__pk.dat`, un fichero **sin `.ini`**, **fuera del repo** (`class_ssee/output/` está en `.gitignore`) y del mismo minuto que la corrida de dos sectores con la partícula retirada. Le faltaban los **neutrinos masivos** que el fondo canónico sí lleva, y sin ellos sobra grumo a 8 Mpc/h: **+2.3%**. **CONTROL** con criterio escrito ANTES de correr (`config/class/techo_lcdm_referencia.ini`): la línea base de Planck 2018 debe dar σ₈=0.8111±0.006 y da **0.810851**, 0.04σ — **PASA**. Tensiones del S₈: KiDS 3.5σ→**2.74σ** · DES-Y3 3.9σ→**2.82σ** · Planck 1.1σ→**0.36σ**. Coincide con el S₈=0.8256 que Paper 5 saca por su vía independiente. El diagnóstico **no** es el resultado: con A_s libre contra dato crudo, S₈=0.7555±0.0192 (0.11σ, R3). La barra ±0.006 viene de antes y **no** se ha recomputado. Informe: `BANDEJA/2026-09-08_techo_sigma8_neutrinos.md` |
-| **σ₈ / S₈ (Paper 6, MCMC R3 contra KiDS CRUDO) — CANÓNICO** | **0.7446±0.0189 / 0.7555±0.0192 — 0.11σ KiDS** | Cobaya+CAMB, 4 cadenas MPI, R−1=0.0189, N_eff=42033; log `results/logs/growth_2026-07/R3_ssee_kids_S8.json` | 2026-08-01 (un sector, A_s libre, fondo fijo por álgebra; χ²_min=265.4/216 dof) |
-| **S₈ ΛCDM control metodológico (Paper 6, MCMC R4 contra KiDS CRUDO)** | **0.7571±0.0194 — 0.06σ KiDS** · χ²_min=**262.746**/212 dof | Cobaya+CAMB, 4 cadenas MPI, R−1=0.0256, 13 libres (fondo LIBRE); log `results/logs/growth_2026-07/R4_lcdm_kids_S8.json` | 2026-08-07 (corrida) · 2026-09-07 (χ²_min recuperado de la cadena y escrito al log: Paper 6 ya lo publicaba y el log no lo respaldaba). Licencia la comparación Δχ²=2.69 (265.44−262.75, `kids_publicados.json`; era 2.65 con un 265.40 tecleado, 2026-09-30) con Δk=4 de la tabla S₈ |
+| σ₈ / S₈ con A_s FIJADO a Planck — **DIAGNÓSTICO condicionado, NO predicción** | **0.814854 / 0.826827** | `config/class/techo_ssee_canonico.ini` (CLASS v3.3.4, fondo canónico **con Σm_ν=0.06849 eV**); evaluado por `src/p05_IS/techo_sigma8_As_fijo.py`; log `results/logs/p5_techo_sigma8_As_fijo.json` | **2026-09-08 — RETIRA 0.8335 / 0.846.** Aquéllos salían de `can_cold__pk.dat`, un fichero **sin `.ini`**, **fuera del repo** (`class_ssee/output/` está en `.gitignore`) y del mismo minuto que la corrida de dos sectores con la partícula retirada. Le faltaban los **neutrinos masivos** que el fondo canónico sí lleva, y sin ellos sobra grumo a 8 Mpc/h: **+2.3%**. **CONTROL** con criterio escrito ANTES de correr (`config/class/techo_lcdm_referencia.ini`): la línea base de Planck 2018 debe dar σ₈=0.8111±0.006 y da **0.810851**, 0.04σ — **PASA**. Tensiones del S₈: KiDS 3.5σ→**2.74σ** · DES-Y3 3.9σ→**2.82σ** · Planck 1.1σ→**0.36σ**. Coincide con el S₈=0.8256 que Paper 5 saca por su vía independiente. El diagnóstico **no** es el resultado: con A_s libre contra dato crudo, S₈=0.7559 ± 0.0189 (0.10σ, R3). La barra ±0.006 viene de antes y **no** se ha recomputado. Informe: `BANDEJA/2026-09-08_techo_sigma8_neutrinos.md` |
+| σ₈ / S₈ (Paper 6, MCMC R3 contra KiDS-1000 CRUDO) — HISTÓRICO, superado por KiDS-Legacy (2026-09-20) | **0.7449 ± 0.0186 / 0.7559 ± 0.0189 — 0.10σ KiDS** | Cobaya+CAMB, 4 cadenas MPI, R−1=0.0189, N_eff=42711 (burn-in por cadena; la lectura vieja 0.7555 cortaba sobre las cadenas pegadas, 2026-10-02); log `results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json` | 2026-08-01, releído 2026-10-02 (un sector, A_s libre, fondo fijo por álgebra; χ²_min=265.44/216 dof) |
+| **S₈ ΛCDM control metodológico (Paper 6, MCMC R4 contra KiDS CRUDO)** | **0.7571±0.0194 — 0.06σ KiDS** · χ²_min=**262.746**/212 dof | Cobaya+CAMB, 4 cadenas MPI, R−1=0.0256, 13 libres (fondo LIBRE); log `results/logs/growth_2026-07/R4_lcdm_kids_S8.json` | 2026-08-07 (corrida) · 2026-09-07 (χ²_min recuperado de la cadena y escrito al log: Paper 6 ya lo publicaba y el log no lo respaldaba). Licencia la comparación Δχ²=2.69 (265.44−262.75, `kids_publicados.json`; era 2.65 con el χ²_min de R3 tecleado a mano y mal redondeado, 2026-09-30) con Δk=4 de la tabla S₈ |
 | **`ω_c` que pide BOSS DR12 (perfil, amplitud propia de cada modelo)** | **SSEE 0.117450±0.004079 → 0.51σ de `KAL₀·ω_b·n_s`** · ΛCDM 0.114346±0.004041 → 1.40σ de Planck 0.1200 | `src/p06_growth/perfil_wc_boss.py` y `perfil_wc_boss_lcdm.py` (minimización robusta `minimo_sesgos.py`); logs `results/logs/perfil_wc_boss.json` + `perfil_wc_boss_lcdm.json` (etapas DVC, P6 por \val) | 2026-10-01 (re-corrido: el minimizador del 09-08 caía en mínimos locales, hasta 26 de χ² arriba; control con 10 arranques al azar PASA en los 4). Con la amplitud del CMB clavada dan 0.109937±0.003994 (2.40σ) y 0.107801±0.003931 (3.10σ): los DOS fondos se desplazan, ΛCDM más ⟹ el desplazamiento es del DATO. Ganancia de soltar `ω_c`: SSEE 1.177, ΛCDM 4.878. El χ² con `ω_c` LIBRE **no se cita** como comparación de modelos. Paper 6 §`par:wc-profile` |
 | ~~σ₈/S₈ two-sector 0.747/0.758~~ · ~~m_φ=40.70 eV~~ · ~~k_fs=0.754~~ · ~~α=1.117~~ | **RETIRADOS 2026-08-01** | — | La resta Ω_φDM=0.308881−0.160 mezclaba densidad con ecuación de estado (0.160=1+w₀); histórico, no citar |
 
@@ -442,14 +442,14 @@ dropeado. OP-3 NO está "RESUELTO". **ABIERTO.**
 
 ## V-L3-OP5 — tensión S₈ weak-lensing / HMcode bariónico — **ABIERTO (anclado en rama secundaria)**
 
-*Claim CLAUDE.md (canónico 2026-06-19, RETIRADO 2026-08-01):* titular two-sector S₈_eff=0.758 (0.04σ KiDS). Canónico vigente: un sector, A_s libre, S₈=0.7555±0.0192 (0.11σ).
+*Claim CLAUDE.md (canónico 2026-06-19, RETIRADO 2026-08-01):* titular two-sector S₈_eff=0.758 (0.04σ KiDS). Canónico vigente: un sector, A_s libre, S₈=0.7559 ± 0.0189 (0.10σ).
 
 1. **✓ definición:** S₈ = σ₈(Ω_m/0.3)^½ con Ω_m,CMB=0.308881 (√(Ω_m/0.3)=1.0147).
 2. **✓ single-sector, A_s FIJO:** σ₈=0.814854 → S₈=0.826827 — **2.74σ KiDS**.
    *(Actualizado 2026-09-08: era 0.8335 → 0.846 → 3.5σ. Aquella corrida de CLASS
    no llevaba neutrinos masivos; con ellos sobra un 2.3% menos de grumo. Y NO es
    un baseline que el modelo deba resolver: el 2.74σ es artefacto de fijar A_s.)*
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 3. ~~**✓ two-sector φ-DM (TITULAR, forward):** el free-streaming en k_fs=0.754
    h/Mpc (de m_φ=40.70 eV SOLAR²·KRYSTOS, cero fiteo) baja σ₈_eff a 0.7470 → **S₈_eff=0.758
    = 0.04σ KiDS-1000**. RESUELVE la tensión S₈, sin parámetros libres.~~
@@ -463,7 +463,7 @@ lineal forward (0.766, 0.01σ).~~ **RETIRADO**: no hay tensión que resolver. El
 «3.5σ» se medía con A_s FIJADO a Planck —o sea importando la discrepancia
 Planck–cizalla— y contra el estadístico comprimido S₈, cuya reducción asume ΛCDM.
 Contra el dato **crudo** de KiDS-1000 con un solo sector y A_s libre:
-**S₈ = 0.7555 ± 0.0192 → 0.11σ** (MCMC R3), con control ΛCDM sobre el mismo dato
+**S₈ = 0.7559 ± 0.0189 → 0.10σ** (MCMC R3), con control ΛCDM sobre el mismo dato
 en 0.7571 ± 0.0194. Las ramas viejas σ₈=0.737/0.794 → S₈=0.761/0.820 (HMcode,
 internamente inconsistentes) y 0.702/0.725 (G=0.866, Ω_m,dyn) siguen **retiradas**.
 Queda ABIERTO sólo el refinamiento no-lineal Nivel 2 (ficha OP-5b).
@@ -969,7 +969,7 @@ Usa Ω_m,CMB=0.308881 → √(Ω_m,CMB/0.3)=1.0147 (S₈ es amplitud gravitacion
    S₈ = 0.814854·1.0147 = 0.826827 → **2.74σ KiDS-1000** (DES-Y3 2.82σ).
    *(2026-09-08: era σ₈=0.8335 → S₈=0.846 → 3.5σ, de una corrida sin `.ini`,
    fuera del repo y sin neutrinos masivos. Ver la fila del techo en §B.)*
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 2. ~~**✓ two-sector φ-DM (TITULAR, forward):** σ₈_eff = 0.7470 (free-streaming
    CLASS, k_fs=0.754 de m_φ=40.70 eV SOLAR²·KRYSTOS, cero fiteo). S₈_eff = 0.7470·1.0147 =
    **0.758 → 0.04σ KiDS-1000**. RESUELVE la tensión.~~ **RETIRADO 2026-08-01.**
@@ -991,7 +991,7 @@ siempre: documentos llamando canon a un valor ya superado. Rehecha siguiendo
 |---|---|---|
 | N6 | `src/ssee_core.py` | n/a — S₈ es RESULTADO de corrida, no constante algebraica |
 | N7 | `CANONICAL_VALUES.yaml` | ✅ fuente: `S8_ssee_unif: 0.8273` |
-| N8 | `results/logs/` | ✅ 2 logs con 0.7555 verificados: son artefactos legítimos de SU corrida (R3, 2026-08-01, con fecha dentro). Nada que re-correr |
+| N8 | `results/logs/` | ✅ 2 logs con el S₈ histórico de R3 verificados: son artefactos legítimos de SU corrida (R3, 2026-08-01, con fecha dentro). **2026-10-02:** esa lectura cortaba el burn-in sobre las cadenas pegadas; la vigente es `R3_ssee_kids_S8_rehecho.json` (0.7559) |
 | N9 | `results/figures/` | ✅ 0 de 42 figuras muestran el valor |
 | N10 | `manuscript/*.tex` | ✅ 7 papers (1,2,3,5,7,8,9): nota al sitio que cita a P6; fila nueva en las tablas de registro de P1 y P9; **criterio de falsación de P1 reescrito** |
 | N11 | `docs/*.pdf` | ✅ 7 recompilados (bibtex + 2 pasadas), 0 refs rotas, verificado en la capa de texto |
@@ -999,7 +999,7 @@ siempre: documentos llamando canon a un valor ya superado. Rehecha siguiendo
 | N13 | guardián + memorias | ✅ R69 y R69b; memoria del método |
 
 **Titular vigente:** un solo sector, Ω_m=0.308881. Contra KiDS-1000 crudo con
-A_s libre, S₈=0.7555±0.0192 (0.11σ). Contra KiDS-Legacy con A_s **clavado** al
+A_s libre, S₈=0.7559 ± 0.0189 (0.10σ). Contra KiDS-Legacy con A_s **clavado** al
 del CMB —cero libres cosmológicos— S₈=0.8273 predicho contra 0.8265±0.0176
 medido (0.05σ). Las dos cadenas viejas, la two-sector (0.758) y la G=0.866 →
 σ₈=0.7023 → S₈=0.7253 (fuente Ω_m,dyn), están **retiradas**. **Verificado.**

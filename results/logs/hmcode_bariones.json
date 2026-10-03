@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-02",
  "canonico": {
   "B_eff": 0.942628202871794,
   "B_sigma8": 0.9954549668273854,
@@ -20,7 +20,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "0ace48ed30ce5d9458a2bd23933d913629f0f4f8",
+  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p05_IS/hmcode_bariones.py",
@@ -28,13 +28,13 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "config/class/techo_ssee_canonico.ini": "0610f56ec1727556bc5971bd89974a9ed289dc5a419149b0ca4b2b5ee5fc1772",
-   "results/logs/p5_techo_sigma8_As_fijo.json": "ebcfd39826ac76dc320c7a8a48a0df9f8f3c41a1ad4841c71357d420e71c7009",
+   "results/logs/p5_techo_sigma8_As_fijo.json": "10b6f0fe91032a1dda42e953cb731fb911817f4822e9464c192b2df38bdf637e",
    "archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py": "a77c5448282d0b9a057762fc2bfe2c12dd6ba026989eae79954954728faa7065"
   },
   "argv": [
    "src/p05_IS/hmcode_bariones.py"
   ],
-  "fecha": "2026-10-01T10:05:21",
+  "fecha": "2026-10-02T19:58:59",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -43,8 +43,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

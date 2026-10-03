@@ -1,5 +1,47 @@
 {
- "fecha": "2026-09-30",
+ "s8": {
+  "legacy_prediccion": {
+   "S8": 0.8272981513472748,
+   "tension_sigma": 0.04327200331847026,
+   "nota": "prediccion sin barra: A_s clavado al CMB del modelo; la sigma es la del dato"
+  },
+  "k1000_ssee": {
+   "n_eff": 42711.0,
+   "Rminus1": 0.0189529230864604,
+   "S8": 0.7558882227821322,
+   "S8_sigma": 0.01886315028196701,
+   "sigma8": 0.7449404348016989,
+   "sigma8_sigma": 0.018589948816848344,
+   "tension_sigma": 0.1019395816479749
+  },
+  "k1000_lcdm": {
+   "S8": 0.757104620038561,
+   "S8_sigma": 0.019354474399087586,
+   "tension_sigma": 0.06147497585397447
+  },
+  "logA": {
+   "k1000": 2.8636678493268715,
+   "k1000_sigma": 0.04992161344169711,
+   "legacy": 3.0255,
+   "legacy_sigma": 0.0396,
+   "cmb_blanco": 3.0448340130228546,
+   "k1000_vs_cmb_blanco": 3.629012590059115,
+   "legacy_vs_cmb_blanco": 0.48823265209228617,
+   "b1": 3.0422466541168727,
+   "b1_sigma": 0.013125658689892619,
+   "k1000_vs_b1_dif": 0.1785788047900012,
+   "k1000_vs_b1_dif_sigma": 0.0516183146244217,
+   "k1000_vs_b1": 3.459601617940309,
+   "entre_entregas": 2.53971084846696
+  },
+  "k1000_dS8_lcdm_menos_ssee": 0.0012163972564288583,
+  "k1000_dato": {
+   "S8": 0.759,
+   "S8_sigma": 0.024,
+   "fuente": "Asgari et al. 2021, KiDS-1000 cosmic shear band powers"
+  }
+ },
+ "fecha": "2026-10-02",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -39,22 +81,24 @@
   }
  },
  "_procedencia": {
-  "commit": "3a4d486dd785c156b17fcdbb724103fb7a643841",
+  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
-  "script_sha256": "3c266e456ef3996137f585a2951815f75a4e38eeccea94c951ef3caab0d60d43",
+  "script_sha256": "38524809098e6ebbe4791b9d4b6d685b17a52907385ba4c8d31105237f444af2",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
    "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568",
-   "results/logs/growth_2026-07/R3_ssee_kids_S8.json": "38bebb99e3b6721bd7c9bd99595e85cce636c4eb66849f55eb3e3121937b6477",
-   "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "c61de328cfd4a95bb843d4e3447410b902ec9cec028684d1ba89c3aba3ede85d"
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "ee9d40a152c786e6d54f7ed84dcc10af1eb1083977d5242af8d5fcf9b6af06d5",
+   "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "c61de328cfd4a95bb843d4e3447410b902ec9cec028684d1ba89c3aba3ede85d",
+   "results/logs/s8_kids_legacy_camb.json": "3722681124eea928437e146102fbfc1f13911b809a0b5393fc8deda17ab082d0",
+   "results/logs/s8_desde_b1.json": "9be912a9ed82261645e38090521e39b1ed50a5b0d14e91d6bfec9ec47e8a2676"
   },
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-09-30T18:10:53",
+  "fecha": "2026-10-02T19:58:25",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -63,8 +107,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

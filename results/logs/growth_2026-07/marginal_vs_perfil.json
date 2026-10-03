@@ -3,31 +3,31 @@
  "pregunta": "M. Almeida \u2014 BOSS no mide A_s igual; lo que hay que resolver es KiDS contra el fondo, asi que la pregunta es si ESOS dos estan medidos con la misma regla",
  "hallazgo_previo": {
   "cmb": "3.0448 sale de SSEE/mejor/logA de una MINIMIZACION -> PERFIL",
-  "kids": "2.8627 sale de logA/media de una cadena MCMC -> MARGINAL",
+  "kids": "el logA de KiDS sale de logA/media de una cadena MCMC -> MARGINAL",
   "log_cmb": "results/logs/cmb_dbic_tau_ajustado.json",
-  "log_kids": "results/logs/growth_2026-07/R3_ssee_kids_S8.json"
+  "log_kids": "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json"
  },
  "control": {
   "criterio": "ve el desplazamiento conocido de BOSS (>0.05)",
-  "medido": 0.006951863052763407,
+  "medido": 0.008497979950460532,
   "pasa": false
  },
  "casos": {
   "boss": {
-   "marginal": 2.7645155630527634,
-   "sigma": 0.09857877757225299,
-   "mejor_punto": 2.7575637,
-   "desplazamiento": -0.006951863052763407,
-   "en_sigmas": -0.0705208892214966,
-   "chi2_mejor": 75.227863,
-   "n_efectivo": 812667.0,
+   "marginal": 2.7614232200495397,
+   "sigma": 0.10100907523901899,
+   "mejor_punto": 2.7699212,
+   "desplazamiento": 0.008497979950460532,
+   "en_sigmas": 0.08413085586964994,
+   "chi2_mejor": 73.413456,
+   "n_efectivo": 557534.0,
    "d_muestreadas": 19,
-   "dchi2_esperado_del_mejor": 2.3109106699834054,
+   "dchi2_esperado_del_mejor": 2.416388882605597,
    "papel": "CONTROL \u2014 aqui SI hay desplazamiento medido por otra via (perfil - marginal = 0.1811)",
-   "publicado": 2.763639661108589,
+   "publicado": 2.7614232200495397,
    "reproduce_publicado": true,
    "perfil_conocido": 2.9447867806062953,
-   "perfil_menos_marginal": 0.18027121755353193
+   "perfil_menos_marginal": 0.18336356055675562
   },
   "kids": {
    "marginal": 2.8636678493268715,
@@ -40,7 +40,7 @@
    "d_muestreadas": 9,
    "dchi2_esperado_del_mejor": 0.470436336742698,
    "papel": "la fila que importa: una de las dos mitades de la tension de 3.46 sigma",
-   "publicado": 2.8627107488616086,
+   "publicado": 2.8636678493268715,
    "reproduce_publicado": true
   }
  },

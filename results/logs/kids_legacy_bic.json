@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-02",
  "corridas": {
   "sseefijo": {
    "descripcion": "SSEE unificado (A_s del CMB)",
@@ -50,7 +50,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46",
+  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_legacy_bic.py",
@@ -69,12 +69,12 @@
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt": "82efa4b86e1caf9e07aeb6090a898dc19b25b9def7f4fe2df77bb86453050f6d",
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt": "a460b97b9fbda5787a612598aaf2ea2fb0e4678274df3ce0244eb7e2372d2e88",
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt": "3494b8183bdb85bbd18e8cd9c742c43cd4de0d217d7b7ed525169ea4e7e35715",
-   "CANONICAL_VALUES.yaml": "2350fba5bc19f92f5c0b05c4f3e4d88baa0ac7f29ee495dba6935efd7652fcf0"
+   "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2"
   },
   "argv": [
    "src/p06_growth/kids_legacy_bic.py"
   ],
-  "fecha": "2026-10-01T23:54:00",
+  "fecha": "2026-10-02T19:58:26",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

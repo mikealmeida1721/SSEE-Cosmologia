@@ -34,7 +34,7 @@ Falsifiable predictions — fixed by algebraic construction, not fitted (Structu
 | CMB peak ℓ₁ | 221 | Planck PR4: ~220 | Δℓ = 1 |
 | Ωm,CMB | 0.30889 (= ωm/h², ωm-direct) | Planck 2018: 0.3153 | 0.88σ |
 | n_s | 1 − φ⁻⁷ = 0.96556 | Planck 2018: 0.9649 | 0.16σ |
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 | ~~m_φ (φ-DM mass)~~ | ~~40.70 eV algebraic~~ | — | **RETRACTED 2026-08-01** |
 | k_fs | 0.754 h/Mpc algebraic | DESI Y3/Euclid P(k): 2026–2028 | Future prediction |
 | (w₀, wₐ) vs DESI DR3 | same fixed point (−0.840, −0.670) | DR3 w₀wₐCDM (2027): trajectory 0.05σ (DR1) → 0.24σ (DR2, errors −40%); expect ~0.5σ if centrals persist; >3σ joint exclusion falsifies | **Pre-registered prediction** |
@@ -63,7 +63,7 @@ SSEE/
 ├── class_ssee/                      — CLASS Boltzmann fork — SSEE .ini configs + plots
 │   ├── ssee_v36.ini                 — SSEE MIRA sector (Ω_m=0.3199)
 │   ├── ssee_v36_nomira.ini          — SSEE dynamic sector only (Ω_m=0.160)
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 │   ├── ssee_v36_twosector.ini       — φ-DM two-sector (ncdm m=40.70 eV)
 │   └── ssee_v36_IS.ini              — IS viscosity (cs2_fld=0.001)
 ├── data/                            — observational data (DESI DR2, Planck PR4, clusters)
@@ -163,7 +163,7 @@ S₈ tension SSEE vs DES-Y3 = 2.74σ  [single-sector baseline; see note below]
 > vigente una solución muerta. Y no hacía falta ninguna solución: el techo
 > 0.827 y su «2.7σ» salen de **fijar A_s al valor de Planck**, y A_s es uno
 > de los dos libres del modelo. Con A_s libre contra el ξ± crudo de KiDS-1000
-> el mismo sector único da **S₈ = 0.7555 ± 0.0192, 0.11σ** (Paper 6, R3;
+> el mismo sector único da **S₈ = 0.7559 ± 0.0189, 0.10σ** (Paper 6, R3;
 > log `results/logs/growth_2026-07/R3_ssee_kids_S8.json`). El techo se
 > conserva como diagnóstico bajo condición declarada, no como predicción.
 
@@ -179,14 +179,14 @@ un solo sector y `A_s` libre:
 
 ```
 KiDS-1000 (A_s libre, 225 puntos):
-  S₈ = 0.7555 ± 0.0192   →  0.11σ vs KiDS-1000 (0.759 ± 0.024)
-  σ₈ = 0.7446 ± 0.0189
+  S₈ = 0.7559 ± 0.0189   →  0.10σ vs KiDS-1000 (0.759 ± 0.024)
+  σ₈ = 0.7449 ± 0.0186
   χ²_min = 265.4 / 216 dof
   log: results/logs/growth_2026-07/R3_ssee_kids_S8.json
 
 KiDS-Legacy (A_s CLAVADO al del CMB — CERO libres cosmologicos, 357 puntos)
   — este es el TITULAR vigente desde 2026-09-20:
-  S₈ = 0.8273 predicho  vs  0.8265 ± 0.0176 medido  →  0.05σ
+  S₈ = 0.8273 predicho  vs  0.8265 ± 0.0176 medido  →  0.04σ
   χ²_min = 417.971 / 357 puntos, 8 libres (todos nuisance)
   logA de la cizalla = 3.0255 ± 0.0396  →  0.49σ del 3.04483 que fija el CMB
   control con fondo Planck igual de rigido: 1.01σ · χ²=418.955
@@ -394,7 +394,7 @@ from the gravitational-production integral is deferred to Paper B.
 
 1. CMB peak ℓ₁ outside 221 ± 3 by more than 2σ in a new measurement
 2. DESI DR2+ requiring Ωm > 0.20 in the dynamic BAO sector
-3. ~~S₈ measured above 0.85 by Euclid weak-lensing (two-sector φ-DM predicts S₈ ≈ 0.76)~~ — **retired 2026-08-01** with the second sector; the live single-sector figure is S₈ = 0.7555 ± 0.0192
+3. ~~S₈ measured above 0.85 by Euclid weak-lensing (two-sector φ-DM predicts S₈ ≈ 0.76)~~ — **retired 2026-08-01** with the second sector; the live single-sector figure is S₈ = 0.7559 ± 0.0189
 4. k_fs cutoff absent or at significantly different scale in Euclid/DESI Y3 P(k) (2026–28)
 5. Tensor-to-scalar ratio r ≠ φ⁻¹⁰ = 0.00813 measured by LiteBIRD (~2032)
 6. |w₀ + 0.840| > 3σ confirmed by DESI DR5 or Euclid
@@ -418,7 +418,7 @@ the closed dictionary. Genuine pre-committed predictions concern **unreleased** 
 | n_s | 1 − φ⁻⁷ | 0.96556 | Planck 2018 | Postdiction |
 | H₀ | 3(φ+π)² | 67.962 | Planck 2018 | Postdiction |
 | r_d | CAMB, ω_m-direct Ω_m,CMB=0.30889 | 147.17 Mpc | Planck 2018: 147.09 ± 0.26 Mpc | 0.3σ postdiction |
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 | ~~m_φ~~ | ~~Σm_ν × SOLAR²·KRYSTOS_V~~ | ~~40.70 eV~~ | — | **RETRACTED 2026-08-01** — no longer a prediction of the model |
 | k_fs | free-streaming (m_φ) | 0.754 h/Mpc | DESI Y3/Euclid 2026–28 | Future prediction (cond. OP-9) |
 | r | φ⁻¹⁰ | 0.00813 | LiteBIRD (~2032) | Future prediction |

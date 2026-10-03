@@ -207,7 +207,7 @@ epoch de bariogénesis. Estas son dos temperaturas físicamente distintas.
 
 **Resultado numérico Paper B (ssee_paperB_DW.py) — RESULTADO NEGATIVO:**
 
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 Script `src/pB_inflation/ssee_paperB_DW.py` evalúa el segundo problema de Paper B: el
 mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducía Ω_φDM h²=0.0688.
 
@@ -381,7 +381,7 @@ Todo objeto astrofísico tiene r_km ≪ 1 kpc → quinta fuerza DM activa a esca
 > **No hay tensión que resolver.** El «3.5σ» se medía con A_s FIJADO al valor de
 > Planck (o sea importando la discrepancia Planck–cizalla) y contra el
 > estadístico comprimido S₈, cuya reducción asume ΛCDM. Ajustando A_s al dato
-> **crudo** de KiDS-1000 con un solo sector: **S₈ = 0.7555 ± 0.0192 → 0.11σ**.
+> **crudo** de KiDS-1000 con un solo sector: **S₈ = 0.7559 ± 0.0189 → 0.10σ**.
 > El OP no se resolvió: dejó de ser una pregunta. Lo de abajo es histórico.
 
 **Location:** Paper 5, Table 3; Paper 6, Table 2 — **revisado 2026-05-16**
@@ -397,7 +397,7 @@ Todo objeto astrofísico tiene r_km ≪ 1 kpc → quinta fuerza DM activa a esca
   lineal/forward (m_φ=40.70 eV, cero fiteo).~~ **RETIRADO 2026-08-01.** El 0.827 es un
   **techo** medido con A_s FIJADO a Planck, no una predicción; y el 0.758 salía del
   baseline two-sector, retirado con la partícula. Con A_s libre contra el dato crudo:
-  **S₈ = 0.7555 ± 0.0192, 0.11σ**. No había desafío.
+  **S₈ = 0.7559 ± 0.0189, 0.10σ**. No había desafío.
 
 **Residual abierto:** solo el refinamiento NO LINEAL pleno (N-body con feedback bariónico,
 Nivel 2) — ficha **OP-5b**, severidad Baja. Ya no es la vía de rescate de ninguna tensión.
@@ -738,7 +738,7 @@ it returns to ≤2 (only $H_0$ and $\Omega_b h^2$ as observation-tunable).
 > ⟹ la partícula no tenía de qué estar hecha.
 > **(2)** La tensión S₈ que motivaba todo el sector no existe en el dato crudo:
 > con un solo sector y A_s libre, el MCMC contra los 225 puntos de ξ± de
-> KiDS-1000 da **S₈ = 0.7555 ± 0.0192 → 0.11σ**.
+> KiDS-1000 da **S₈ = 0.7559 ± 0.0189 → 0.10σ**.
 >
 > **No está resuelto: dejó de ser una pregunta.** Se conserva lo de abajo como
 > registro de qué se preguntaba y por qué. **No citar como abierto.**
@@ -980,7 +980,7 @@ combinations (now superseded by the canonical Vía-2 chain).
 > ⟹ la partícula no tenía de qué estar hecha.
 > **(2)** La tensión S₈ que motivaba todo el sector no existe en el dato crudo:
 > con un solo sector y A_s libre, el MCMC contra los 225 puntos de ξ± de
-> KiDS-1000 da **S₈ = 0.7555 ± 0.0192 → 0.11σ**.
+> KiDS-1000 da **S₈ = 0.7559 ± 0.0189 → 0.10σ**.
 >
 > **No está resuelto: dejó de ser una pregunta.** Se conserva lo de abajo como
 > registro de qué se preguntaba y por qué. **No citar como abierto.**
@@ -1082,7 +1082,7 @@ DISPARADOR esté bloqueado por (φ,π). Sin candidato a la fecha.
 > ⟹ la partícula no tenía de qué estar hecha.
 > **(2)** La tensión S₈ que motivaba todo el sector no existe en el dato crudo:
 > con un solo sector y A_s libre, el MCMC contra los 225 puntos de ξ± de
-> KiDS-1000 da **S₈ = 0.7555 ± 0.0192 → 0.11σ**.
+> KiDS-1000 da **S₈ = 0.7559 ± 0.0189 → 0.10σ**.
 >
 > **No está resuelto: dejó de ser una pregunta.** Se conserva lo de abajo como
 > registro de qué se preguntaba y por qué. **No citar como abierto.**
@@ -1127,7 +1127,7 @@ than a free input.
 > ⟹ la partícula no tenía de qué estar hecha.
 > **(2)** La tensión S₈ que motivaba todo el sector no existe en el dato crudo:
 > con un solo sector y A_s libre, el MCMC contra los 225 puntos de ξ± de
-> KiDS-1000 da **S₈ = 0.7555 ± 0.0192 → 0.11σ**.
+> KiDS-1000 da **S₈ = 0.7559 ± 0.0189 → 0.10σ**.
 >
 > **No está resuelto: dejó de ser una pregunta.** Se conserva lo de abajo como
 > registro de qué se preguntaba y por qué. **No citar como abierto.**
@@ -1400,7 +1400,7 @@ sustracción de enteros, no hay offset 22.
    $0.9530$ eV (constante de normalización fija del Modelo Estándar relíquica↔masa), igual
    que cualquier predicción dimensional de SSEE usa una escala física fija.
 
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 **Cascada (retirada 2026-08-01):** ~~Σm_ν alimenta a $m_\varphi = \Sigma m_\nu^{\rm active}\,(\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V)=40.70$ eV
 en P6 (ver OP-9). Con OP-14 resuelto y OP-9 refinado, la cadena $\varphi,\pi \to \Sigma m_\nu \to m_\varphi$
 es forward-prediction sin parámetros libres.~~ La cadena cerraba unidades, pero su destino
@@ -2079,7 +2079,7 @@ Abordar SOLO después de las auditorías. Relacionado con la advertencia [[proje
 | OP-2 | P4 | ~~n_s exponent 7 not derived from V(φ)~~ | ✅ RESUELTO | α-attractor universality + N_*=2φ⁷; r=φ⁻¹⁰ nueva predicción; script op2 |
 | OP-3 | P10 | Origen del `5/2` en `M⁴ = 5φ⁸ρ_c` | 🟡 PARCIAL | Reabierto 2026-09-06 (Registro V-L3-OP3). `KAL_eff` se despeja DE `M⁴`, no al revés. **3 rutas cerradas por medición**: A sobredeterminada, C subdeterminada + serie no trunca, y la cascada de Hubble NO mide `M⁴` (banda ±0.968 vs residuo 4.2e-06). Falta el `5/2` sin usar `M⁴` ni SH0ES |
 | OP-4 | P8 | r_V > r_Hubble para Vainshtein | 🔴 **REABIERTO 2026-09-19** | El cierre de 2026-05-15 (k-mouflage + αB=αM=αT=0) sigue en pie para la *selección del límite*, pero la auditoría externa (Max, commit 17acccd) encontró que `eq:rkm` **no cierra dimensiones**: evaluada en GeV da r☉=1.44e4 m y en eV 1.44e7 m — un factor 1000 según la unidad elegida. Ver la ficha completa arriba. NO entra en la predicción de lensing del límite canónico, que descansa en ω_c (OP-8) y α_B=α_M=0 (P7) |
-| OP-5 | P5-6 | ~~S₈ weak-lensing tension~~ | ✅ **DISUELTO 2026-08-01, confirmado 2026-09-20** | No hay tensión. Contra KiDS-1000 con A_s libre: S₈=0.7555±0.0192 (0.11σ). Contra **KiDS-Legacy con A_s CLAVADO al del CMB** (cero libres cosmológicos): S₈=0.8273 predicho vs 0.8265±0.0176 medido = **0.05σ**, χ²=417.97/357. El 3.5σ era artefacto de fijar A_s a Planck, o sea de importar la tensión Planck–KiDS |
+| OP-5 | P5-6 | ~~S₈ weak-lensing tension~~ | ✅ **DISUELTO 2026-08-01, confirmado 2026-09-20** | No hay tensión. Contra KiDS-1000 con A_s libre: S₈=0.7559 ± 0.0189 (0.10σ). Contra **KiDS-Legacy con A_s CLAVADO al del CMB** (cero libres cosmológicos): S₈=0.8273 predicho vs 0.8265±0.0176 medido = **0.04σ**, χ²=417.97/357. El 3.5σ era artefacto de fijar A_s a Planck, o sea de importar la tensión Planck–KiDS |
 | OP-6 | P9 | ~~Screening form ambiguity~~ | ✅ RESUELTO | Universo separado k-essence + identidad 1+w₀=Ω_m; Paper 9 §3 revisado |
 | OP-7 | P4/7/8 | QFT derivation of Genesis role assignments | ✅ PARCIAL | EFT uniqueness formalizado P7 §5.2 + P1 §5.3; QFT desde primeros principios → largo plazo |
 | OP-8 | Transv. | ~~MIRA dynamical mechanism~~ → factor-materia DISUELTO | ✅ DISUELTO 2026-06-18 | Reframe ω_m-directo: Ω_m,CMB=ω_m/h²=0.30889 sin factor (ω_c=KAL₀·ω_b·n_s forward); MIRA persiste solo en f_screen; CMB χ²=1003.586/ΔBIC=−26.03 (ΛCDM con su mν 0.06, 2026-09-29) |
@@ -2114,7 +2114,7 @@ directed to this document when evaluating the strength of the SSEE predictions.
 > densidad medida menos un número de la **ecuación de estado** (0.160 = 1+w₀).
 > Bien formada aritméticamente, vacía de física ⟹ la partícula no tenía de qué
 > estar hecha. Y la tensión S₈ que la motivaba no existe contra el dato crudo
-> (S₈ = 0.7555 ± 0.0192, 0.11σ).
+> (S₈ = 0.7559 ± 0.0189, 0.10σ).
 >
 > **Cómo se escapó esta entrada en la ola de propagación del 2026-08-01:** el
 > guardián busca **números** retirados, no **decisiones** revertidas. Un
@@ -2437,7 +2437,7 @@ del espectro $n_s$)*. El $n_s$ es la pista: es una propiedad del **espectro prim
 que si aparece en la abundancia de DM es porque esa abundancia **hereda las mismas semillas**
 que todo lo demás → **origen compartido** (cogénesis), no dos procesos separados.
 
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 ~~El truco que lo hace atacable (misma jugada que OP-17/$k_{fs}$): **$m_\phi=40.70$ eV ya
 está fijo** (forward), así que casi no queda libertad.~~ *(Histórico: retirada la partícula,
 la palanca que lo hacía atacable ya no existe; el blanco ω_c/ω_b = 5.331 sí sigue en pie.)* Cada mecanismo de producción tiene una
@@ -2918,7 +2918,7 @@ campo, que no meta `2φ⁷` como entrada.
 ## OP-5b — El cierre no lineal pleno de S₈ sigue diferido — 🟢 ABIERTO (resto de OP-5)
 
 **De dónde viene.** OP-5 se **disolvió** el 2026-08-01: con A_s libre no hay tensión S₈ que
-resolver (MCMC R3 sobre KiDS crudo, S₈ = 0.7555 ± 0.0192, 0.11σ). Lo que queda no es una
+resolver (MCMC R3 sobre KiDS crudo, S₈ = 0.7559 ± 0.0189, 0.10σ). Lo que queda no es una
 tensión, es un refinamiento.
 
 **Lo que falta.** El régimen no lineal pleno con feedback bariónico (N-body tipo
@@ -3016,7 +3016,7 @@ tres se cerraron y tienen log: r_d = 147.174 Mpc (0.32σ) con Ω_m = 0.308881
 El barrido Kaiser del 2026-08-08 **fue un sondeo, no un resultado**: midió que Δχ² depende
 del corte (de +0.8 a −11.3 entre k = 0.06 y 0.12), y de ahí se sigue que Kaiser no publica.
 
-**Por qué importa.** Paper 6 tiene su fila de S₈ cerrada contra KiDS crudo (0.11σ) y la de
+**Por qué importa.** Paper 6 tiene su fila de S₈ cerrada contra KiDS crudo (0.10σ) y la de
 fσ₈ vacía. Mientras siga vacía, el sector de crecimiento está medido a medias.
 
 **Criterio de cierre.** Una corrida R1/R2 con LPT y su control del otro lado, o la

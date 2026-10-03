@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-02",
  "modelos": {
   "SSEE": {
    "chi2_como_es": 73.413456,
@@ -19,7 +19,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46",
+  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/ganancia_wc_libre.py",
@@ -36,12 +36,12 @@
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef",
    "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157",
    "results/logs/perfil_wc_boss_lcdm.json": "44af7ac266ab585a79e3b8d1d6102a7cf9842f5814e098d1604ad2341dfe07b8",
-   "results/logs/multisonda_fondo_clavado.log": "fb615be5b818dfc467624d7bba2b7a30e3a1c15f5ff4bf5ff07fdf3ef360544e"
+   "results/logs/multisonda_fondo_clavado.log": "a245469f522b26eb2583b0ea3ea3a3f0f677bf07869a7a2ab1188f8ed36fe8ca"
   },
   "argv": [
    "src/p06_growth/ganancia_wc_libre.py"
   ],
-  "fecha": "2026-10-01T23:55:57",
+  "fecha": "2026-10-02T19:59:07",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

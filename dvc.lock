@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 201dbfac0a5306e604ce15cf6a5ef37a
-      size: 63367
+      md5: 4262c63f59a9aa1bfa996884a843fe1e
+      size: 63699
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -236,8 +236,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: fd5d39e39f6262854f2a6641683c299e
-      size: 79922
+      md5: 866a97b59f3ba8f808fd398f294abbff
+      size: 80181
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -1469,7 +1469,7 @@ stages:
       size: 1937
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
-      md5: 8ab83de605681834833641a39a5ebe57
+      md5: 6fdadb43d01fefdbba50c370c3d91f89
       size: 9082
     - path: src/bao_camb.py
       hash: md5
@@ -1494,12 +1494,12 @@ stages:
     outs:
     - path: results/logs/conjunta_b3_vs_individual.json
       hash: md5
-      md5: e6228f087f8e5e93a2b22b03d881d01f
-      size: 3869
+      md5: a4a59abdda05b71f1ee36fc13c4f40d6
+      size: 3871
     - path: results/logs/leer_conjunta_b3.log
       hash: md5
-      md5: 50643d0e4b1606e8b3c84c1586057a77
-      size: 1486
+      md5: c453fe7d58c0b7fda85bcd002bf6d0e5
+      size: 1488
   b1_min_ssee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
@@ -2022,3 +2022,44 @@ stages:
       hash: md5
       md5: ca2e100439a75fa4b4e7658ed4d42360
       size: 1629
+  readme_figura:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/ssee_readme_tensions_figure.py
+    deps:
+    - path: data/raw/planck2018_prior.csv
+      hash: md5
+      md5: 03b921d7e1b680b5096e3b471589999c
+      size: 265
+    - path: results/logs/fsigma8_canonico.json
+      hash: md5
+      md5: cb16041849cc21c934dc84da77f6ddbf
+      size: 2861
+    - path: results/logs/kids_publicados.json
+      hash: md5
+      md5: 492c1660b557cc29c075d7126e2ec67b
+      size: 3862
+    - path: results/logs/mcmc_full_posteriores.json
+      hash: md5
+      md5: b0e55d7f04463551100f6c2cab7ce9f5
+      size: 3798
+    - path: results/logs/mcmc_paper2_reframe.json
+      hash: md5
+      md5: 933eee15f9d6d34a6ef6a7f6d2132ad8
+      size: 1472
+    - path: results/logs/paper2_w0wa.json
+      hash: md5
+      md5: 46714dc2bee740037010df3cf89bf560
+      size: 1376
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    - path: src/ssee_readme_tensions_figure.py
+      hash: md5
+      md5: c08324164332697a655b2ee7b1733bef
+      size: 5082
+    outs:
+    - path: results/figures/fig_readme_tensions.png
+      hash: md5
+      md5: 662e9920e410f22a6535cb5b52a552b5
+      size: 104662

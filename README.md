@@ -32,8 +32,8 @@
 | Ωm,CMB | 0.30889 (= ωm/h², ωm-direct) | Planck 2018: 0.3153 | 0.88σ | ✅ |
 | n_s | 1 − φ⁻⁷ = 0.96556 | Planck 2018: 0.9649 | 0.16σ | ✅ |
 | αT (GW speed) | 0 exact | GW170817: \|αT\| < 10⁻¹⁵ | exact match | ✅ |
-| **S₈ (single sector, A_s FIXED by the CMB — no free cosmological parameter)** | **0.8273 predicted** | KiDS-Legacy: 0.8265±0.0176 | **0.05σ** | ✅ |
-| S₈ (single sector, A_s free, MCMC vs raw ξ±) | 0.7555 ± 0.0192 | KiDS-1000: 0.759±0.024 | 0.11σ | ✅ |
+| **S₈ (single sector, A_s FIXED by the CMB — no free cosmological parameter)** | **0.8273 predicted** | KiDS-Legacy: 0.8265±0.0176 | **0.04σ** | ✅ |
+| S₈ — earlier, superseded: KiDS-1000, A_s free, MCMC vs raw ξ± | 0.7559 ± 0.0189 | KiDS-1000: 0.759±0.024 | 0.10σ | ✅ |
 | c_s² (dark-energy sound speed, Paper 7) | (M_v−T_r)/(5M_v+3T_r) = 0.021284 | not yet constrained | the falsifiable content of the EFT sector is c_s² and w₀; α_K is not observationally accessible (Paper 7) | ⏳ |
 | **(w₀, wₐ) vs DESI DR3** | **same fixed point (−0.840, −0.670)** | **DR3 w₀wₐCDM (2027)** — trajectory 0.05σ (DR1) → 0.24σ (DR2, errors −40%, still inside 68%); ~0.5σ expected if DR2 centrals persist; >3σ joint exclusion falsifies | **pre-registered** | ⏳ |
 
@@ -50,7 +50,7 @@
 > becomes a *prediction* against 0.8265 ± 0.0176 measured. **Two cautions, in
 > the open:** the three χ² compared span 1.0 over 357 points, so the shear does
 > **not** discriminate between these models — what separates them is the
-> parameter count; and KiDS-1000 had asked for log(10¹⁰A_s) = 2.863 ± 0.051,
+> parameter count; and KiDS-1000 had asked for log(10¹⁰A_s) = 2.864 ± 0.050,
 > 3.5σ away, with the two releases differing from each other by 2.5σ. What
 > changed is the data, not the model: KiDS-Legacy recalibrated the source
 > redshift distributions n(z), and re-running the KiDS-1000 analysis under
@@ -215,9 +215,9 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 |---|---|---|
 | Ω_m = ω_m/h² (one matter sector, no partition) | 0.308881 | ω_m-direct; the same value enters background and growth |
 | Σm_ν = R₂ × 0.9530 eV | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
-| **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.05σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
+| **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
 | log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
-| σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7446 ± 0.0189, 0.7555 ± 0.0192 | 0.11σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
+| σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7449 ± 0.0186, 0.7559 ± 0.0189 | 0.10σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
 | fσ₈ vs raw BOSS DR12 multipoles | in progress | single-sector baseline 0.70σ |
 
 > **Methodological point:** a published S₈ is the output of a fit that assumes a

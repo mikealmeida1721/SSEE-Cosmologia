@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_press_schechter.py", "script_sha256": "fb987059867ab0bc09d3d945247ba11cce73d89e30ff1f9cce479ff3f449288a", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p02_mcmc/ssee_press_schechter.py"], "fecha": "2026-10-01T23:54:01", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "6415a5b6a78d846d05a71739c0505a10dedb9726", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_press_schechter.py", "script_sha256": "6242b9ff5a25ad6dc5b2f5f18df687d50c64ccd0cec31ed1ee90e028202ae53d", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p02_mcmc/ssee_press_schechter.py"], "fecha": "2026-10-02T19:58:27", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "OMPI_COMM_WORLD_SIZE": null}}
 n_s       = 0.9655581  (1 − φ⁻⁷, Planck: 0.9649)
 δc(EdS)   = 1.6864702
 δc(SSEE)  = 1.6763371   [derivado, colapso esférico]
@@ -39,5 +39,5 @@ LaTeX table rows:
   $10^{12}$ & $0.506$ & $0.504$ & $0.95$ \\
 
 Figure → results/figures/fig_press_schechter.pdf
-  inversion (SSEE sigma8=0.7446 de R3, LCDM 0.811): {'1e+11': 0.8219999385253995, '1e+12': 0.3438330975535192, '3e+12': 0.11604440348821438}
+  inversion (SSEE sigma8=0.7449 de R3, LCDM 0.811): {'1e+11': 0.8228977183644826, '1e+12': 0.3458122617958383, '3e+12': 0.11739039625382805}
 Done.

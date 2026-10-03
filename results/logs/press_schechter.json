@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-02",
  "umbral": "derivado",
  "delta_c": {
   "ssee": 1.6763371290815952,
@@ -33,31 +33,31 @@
  "ps_ratio_jwst_z10": 0.9938235555629973,
  "ps_ratio_3e10_z10": 0.9980648436542996,
  "inversion_amplitud": {
-  "sigma8_ssee": 0.7445921790951743,
+  "sigma8_ssee": 0.7449404348016989,
   "sigma8_lcdm": 0.811,
   "z10": {
-   "1e+11": 0.8219999385253995,
-   "1e+12": 0.3438330975535192,
-   "3e+12": 0.11604440348821438
+   "1e+11": 0.8228977183644826,
+   "1e+12": 0.3458122617958383,
+   "3e+12": 0.11739039625382805
   }
  },
  "_procedencia": {
-  "commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46",
+  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_press_schechter.py",
-  "script_sha256": "fb987059867ab0bc09d3d945247ba11cce73d89e30ff1f9cce479ff3f449288a",
+  "script_sha256": "6242b9ff5a25ad6dc5b2f5f18df687d50c64ccd0cec31ed1ee90e028202ae53d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/deltac_spherical_collapse.json": "62361ab77655f0a610ba85f78ada4015d55d7668893ad0a3691845c3bc8be3ca",
-   "CANONICAL_VALUES.yaml": "2350fba5bc19f92f5c0b05c4f3e4d88baa0ac7f29ee495dba6935efd7652fcf0",
+   "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2",
    "results/logs/p5_IS_perturbations_Q3.json": "b8e1e6ab2512fb19f0f3ce8f86ad0f123c6253cbf3b7b17ba7d0b48f0aef39a7",
-   "results/logs/growth_2026-07/R3_ssee_kids_S8.json": "38bebb99e3b6721bd7c9bd99595e85cce636c4eb66849f55eb3e3121937b6477"
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "ee9d40a152c786e6d54f7ed84dcc10af1eb1083977d5242af8d5fcf9b6af06d5"
   },
   "argv": [
    "src/p02_mcmc/ssee_press_schechter.py"
   ],
-  "fecha": "2026-10-01T23:54:02",
+  "fecha": "2026-10-02T19:58:28",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

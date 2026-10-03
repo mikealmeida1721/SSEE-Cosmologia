@@ -67,8 +67,8 @@ with the Planck background, $1.01\sigma$). Fixing the amplitude to the CMB
 value leaves the growth sector with \emph{no free cosmological parameter} and
 costs nothing: $\chi^2_{\rm min}=417.97$ against $418.34$ with the amplitude
 free, $\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$, and the nuisance parameters do not move to
-compensate. $S_8=0.8273$ is then an output of the algebra and the CMB, against
-a measured $0.8265\pm0.0176$. KiDS-Legacy predates this analysis by sixteen
+compensate. $S_8=\val{S8_leg_pred}$ is then an output of the algebra and the CMB, against
+a measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. KiDS-Legacy predates this analysis by sixteen
 months and no temporal priority is claimed: the result is a consistency of
 $A_s$ between epochs. We state against our own interest that the three
 $\chi^2$ values compared span less than $1.0$: cosmic shear does not
@@ -315,14 +315,14 @@ additive shear term $\delta_c$) --- against the 225 unmasked
 $\xi_\pm$ data points, with the background held fixed by the algebra
 ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$, $\omega_b$, $\omega_c$, $h$, $n_s$, $w_0$, $w_a$ all
 determined, none of them fitted). Four independent MPI chains were run to a
-Gelman--Rubin convergence of $R-1=0.019$, well inside the stopping criterion
-$R-1<0.03$, giving $4.2\times10^4$ effective samples after a 30\% burn-in.
+Gelman--Rubin convergence of $R-1=\val{Rm1_k1000}$, well inside the stopping criterion
+$R-1<0.03$, giving $\val{neff_k1000}$ effective samples after discarding the first 30\% of each chain.
 The marginalized posterior is
 \begin{equation}
-\sigma_8 = 0.7446\pm0.0189, \qquad
-S_8 \equiv \sigma_8\sqrt{\Omega_m/0.3} = 0.7555\pm0.0192,
+\sigma_8 = \val{sigma8_k1000_ssee}\pm\val{sigma8_k1000_ssee_sigma}, \qquad
+S_8 \equiv \sigma_8\sqrt{\Omega_m/0.3} = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma},
 \end{equation}
-with a best-fit $\chi^2=265.4$ over 225 data points and 9 free parameters
+with a best-fit $\chi^2=\val{chi2_k1000_ssee}$ over 225 data points and 9 free parameters
 (216 degrees of freedom, $\chi^2/{\rm dof}=1.23$). Both nuisance parameters
 that carry astrophysical meaning land in unremarkable places
 ($A_{\rm baryon}=2.57\pm0.31$, $A_{\rm IA}=0.55\pm0.29$), so the fit is not
@@ -354,8 +354,8 @@ $\Delta\mathrm{BIC}=\val{dBIC_k1000}$, both favouring \SSEE{}, the latter in the
 
 The derived amplitudes are then a consequence rather than the test:
 $\Delta S_8 = 0.0016$, under a tenth of either error bar. Against the
-\emph{published} KiDS-1000 value $S_8=0.759\pm0.024$ the offset is
-$0.11\sigma$, but that published number is itself $\Lambda$CDM-derived, so
+\emph{published} KiDS-1000 value $S_8=\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ the offset is
+$\val{S8_k1000_ssee_tension}\sigma$, but that published number is itself $\Lambda$CDM-derived, so
 this second comparison is informative about the pipeline rather than about
 the cosmology, and we do not rest any claim on it.
 
@@ -386,7 +386,7 @@ $A_s$}, and the datasets do not agree with each other:
 \toprule
 $A_s$ determined by & $\log(10^{10}A_s)$ & $S_8$ & vs.\ published KiDS-1000$^\dagger$ \\
 \midrule
-raw KiDS-1000 $\xi_\pm$ (this work) & $2.863\pm0.051$ & $0.7555\pm0.0192$ & $0.11\sigma$ \\
+raw KiDS-1000 $\xi_\pm$ (this work) & $\val{logA_k1000}\pm\val{logA_k1000_sigma}$ & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ & $\val{S8_k1000_ssee_tension}\sigma$ \\
 \SSEE{} fit to raw Planck (full \texttt{plik}, B1 chains) & $\val{logA_b1_ssee}\pm\val{logA_b1_ssee_sigma}$ & $\val{S8_b1_ssee}\pm\val{S8_b1_ssee_sigma}$ & $\val{tension_b1_ssee}\sigma$ \\
 $\Lambda$CDM-fitted Planck value (borrowed) & $\val{logA_b1_lcdm}$ & $\val{S8_b1_lcdm}\pm\val{S8_b1_lcdm_sigma}$ & $\val{tension_b1_lcdm}\sigma$ \\
 \bottomrule
@@ -399,13 +399,13 @@ KiDS-1000 value, which is a $\Lambda$CDM-derived number; it is given for
 orientation only and no claim here rests on it. The quantity that matters for
 the argument below is different: the internal disagreement between rows~1
 and~2, which are the same model with the same background. In
-$\log(10^{10}A_s)$ that separation is $3.042-2.863=0.179\pm0.053$, i.e.\
-$\mathbf{3.4\sigma}$.
+$\log(10^{10}A_s)$ that separation is $\val{logA_b1_ssee}-\val{logA_k1000}=\val{logA_k1000_vs_b1_dif}\pm\val{logA_k1000_vs_b1_dif_sigma}$, i.e.\
+$\mathbf{\val{logA_k1000_vs_b1}\sigma}$.
 \normalsize
 \end{center}
 
 The first two rows are the same model with the same background, differing only
-in the data used to set one number, and they sit $3.4\sigma$ apart. That
+in the data used to set one number, and they sit $\val{logA_k1000_vs_b1}\sigma$ apart. That
 separation is a disagreement \emph{between the datasets}, not a property of
 \SSEE{}: it persists when $A_s$ is fixed by \SSEE{}'s \emph{own} CMB fit rather
 than borrowed from $\Lambda$CDM, and it is the same Planck--shear discrepancy
@@ -496,10 +496,10 @@ dimensions are explored more efficiently than nine. The honest statement is
 that the cost is indistinguishable from zero, not that fixing improves the fit.
 
 \paragraph{(iii) $S_8$ becomes a prediction.} With both background and amplitude
-supplied, $S_8=0.8273$ is an output of the algebra and the CMB, with no free
+supplied, $S_8=\val{S8_leg_pred}$ is an output of the algebra and the CMB, with no free
 cosmological parameter behind it and therefore no posterior width of its own.
 The official Legacy $\xi_\pm$ posterior, computed from its own published chain
-as $\sigma_8\sqrt{\Omega_m/0.3}$, gives $0.8265\pm0.0176$. Two caveats bound
+as $\sigma_8\sqrt{\Omega_m/0.3}$, gives $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. Two caveats bound
 what this establishes: the agreement in $S_8$ and the $0.49\sigma$ in $\log A$
 are the same fact in two variables and do not compound, and the $\pm0.0176$
 width means any prediction between $0.809$ and $0.844$ would have agreed. The
@@ -529,13 +529,13 @@ probability to exceed of $\chi^2_{\rm min}$ at the stated dof.}
 \toprule
  & $k$ & dof & $\chi^2_{\rm min}$ & $\chi^2/$dof & $p$ & $\sigma_8$ & $S_8$ \\
 \midrule
-$\Lambda$CDM (background free)  & 13 & 212 & $\val{chi2_k1000_lcdm}$ & $1.239$ & $\val{PTE_k1000_lcdm}$ & $0.875\pm0.089$ & $0.7571\pm0.0194$ \\
-\SSEE{} (background fixed)      &  9 & 216 & $\val{chi2_k1000_ssee}$ & $1.229$ & $\val{PTE_k1000_ssee}$ & $0.7446\pm0.0189$ & $0.7555\pm0.0192$ \\
+$\Lambda$CDM (background free)  & 13 & 212 & $\val{chi2_k1000_lcdm}$ & $1.239$ & $\val{PTE_k1000_lcdm}$ & $0.875\pm0.089$ & $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ \\
+\SSEE{} (background fixed)      &  9 & 216 & $\val{chi2_k1000_ssee}$ & $1.229$ & $\val{PTE_k1000_ssee}$ & $\val{sigma8_k1000_ssee}\pm\val{sigma8_k1000_ssee_sigma}$ & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ \\
 \midrule
 \multicolumn{8}{l}{\footnotesize $\Delta\chi^2=\val{dchi2_k1000}$ for $\Delta k=4$ (expected $4$ if the extra parameters carry no information, $p=\val{p_dchi2_k1000}$);} \\
 \multicolumn{8}{l}{\footnotesize $\Delta\mathrm{AIC}=\val{dAIC_k1000}$, $\Delta\mathrm{BIC}=\val{dBIC_k1000}$, both favouring \SSEE{}.} \\
 \midrule
-KiDS-1000 published & --- & --- & $\val{chi2_k1000_publicado}$ & --- & --- & --- & $0.759\pm0.024$ \\
+KiDS-1000 published & --- & --- & $\val{chi2_k1000_publicado}$ & --- & --- & --- & $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -546,7 +546,7 @@ parameters $\omega_b,\omega_c,h,n_s$ additionally free. Its purpose is not to
 provide a new measurement --- KiDS-1000 has already published theirs --- but
 to demonstrate that this pipeline reproduces the published $\Lambda$CDM
 result, which is what licenses the \SSEE{} row above it. It does:
-$S_8=0.7571\pm0.0194$ against the published $0.759\pm0.024$. We stress that
+$S_8=\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ against the published $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$. We stress that
 this agreement is \emph{not} a physical measurement of consistency. The
 published KiDS-1000 value is itself a $\Lambda$CDM number --- it is what one
 obtains by fitting $\Lambda$CDM to these data --- so a $\Lambda$CDM run
@@ -764,8 +764,8 @@ $\Lambda$CDM-conditioned summary statistics --- it has no $S_8$ tension. On
 KiDS-Legacy the amplitude the shear asks for lies $0.49\sigma$ from the one
 the model's own CMB fit supplies; with that amplitude fixed the growth sector
 has no free cosmological parameter, the fit costs nothing
-($\chi^2_{\rm min}=417.97$ against $418.34$), and $S_8=0.8273$ is predicted
-against $0.8265\pm0.0176$ measured. On the earlier KiDS-1000 release the
+($\chi^2_{\rm min}=417.97$ against $418.34$), and $S_8=\val{S8_leg_pred}$ is predicted
+against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. On the earlier KiDS-1000 release the
 algebraic background matches $\Lambda$CDM run through the same pipeline with
 four more free parameters ($\Delta\chi^2=\val{dchi2_k1000}$, $\Delta\mathrm{BIC}=\val{dBIC_k1000}$).
 Against raw BOSS DR12 clustering the algebraic background fits marginally

@@ -248,7 +248,7 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "df914cd3fa7c8beef86b4f3e0ead3e6696f7a049",
+  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
@@ -266,12 +266,12 @@
    "results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json": "0b3e1bcc757acb36290d936213ad2720b3b8daccfe83dc70001ecd837b445dcd",
    "results/logs/cmb_dbic_mnu_propia.json": "92d149da5fa73827da25b69f372ba1104e3bbddb505d89588ba7629fac9e082a",
    "results/logs/b1_k2.json": "d573dc67f15d722d3a022cb53b4c886b312f8a985c21d80a9d913872373f9129",
-   "results/logs/kids_legacy_bic.json": "2ebedaafad53837ed9d809ef7cc3ac7e510968cf38a19739b8cdc911d8e8d9e2"
+   "results/logs/kids_legacy_bic.json": "2bc374d84305d46c9640602a7b40c86c44f1274c1f7b4acb4cfbf7db087abf7d"
   },
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-02T19:30:26",
+  "fecha": "2026-10-02T19:59:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -280,8 +280,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
