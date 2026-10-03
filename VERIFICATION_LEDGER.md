@@ -99,7 +99,7 @@ contra esa recomputación — si el módulo se edita mal, el guardián → ROJO.
 | Ω_m | 0.3088808406 | ω_m/h² = (ω_b+ω_c+ω_ν)/h², h=H_glob/100 | Materia total: fondo, Poisson y CMB (2026-10-02: la fila decía MIRA·Ω_m,dyn, el puente RETIRADO el 2026-06-18; su valor queda en el historial de git) |
 | H₀^alg | 67.9621373234 | 3(φ+π)² | Número puro, sin unidades: el **blanco** de H_glob = H_SH0ES(1−f_screen) = 67.9621415220, nunca la semilla (banner 2026-09-06) |
 | n_s | 0.9655581463 | 1−φ⁻⁷ | Índice espectral |
-| α_K | 0.4033024589 | 3·Ω_DE·Ω_m,dyn | Kineticity EFT |
+| s_K | 0.4033024589 | 3·s_DE·s_m | Saturación cinética de la EoS: entra en f_screen (P9–P10). **No** es α_K (α_K(z=0) = 15.59, otra cantidad); la fila decía «α_K = 3·Ω_DE·Ω_m,dyn» hasta 2026-10-03 |
 | Ω_b h² (alg) | 0.0224177568 | (π−φ)/(3Ω²) | Densidad bariónica OP-1 (**ABIERTO**) |
 
 ## B. Valores de pipeline — dependientes de estado (script + datos + fecha)
@@ -174,7 +174,7 @@ son axiomas; el resto son definiciones algebraicas de φ y π.
 | V-L1-03 | Ω | φ+π | 4.7596266423 | Métrica de estabilidad; base de H₀^alg=3Ω² | re-verificado |
 | V-L1-04 | β | (φ+π)/2 | 2.3798133212 | Escalar de acoplamiento base | re-verificado |
 | V-L1-05 | AURA | (3φ+π)/2 | 3.9978473099 | Acoplamiento EFT βc; genera MIRA | re-verificado |
-| V-L1-06 | MIRA | AURA/2 | 1.9989236550 | Razón Ω_m,cosm / Ω_m,dyn | re-verificado |
+| V-L1-06 | MIRA | AURA/2 | 1.9989236550 | Constante algebraica; entra en f_screen = s_K/(3·MIRA). (Decía «razón Ω_m,cosm/Ω_m,dyn»: retirada con el factor materia, 2026-06-18) | re-verificado |
 | V-L1-07 | KAL₀ | (φ+3π)/2 | 5.5214059748 | Retención estructural; fija τ_Π | re-verificado |
 | V-L1-08 | T_r | 3(φ+β) | 11.9935419298 | Horizonte de saturación 3D; numerador de w₀ | re-verificado |
 | V-L1-09 | K_v | 2(φ+π) | 9.5192532847 | Invariante de restricción estructural | re-verificado |
@@ -234,7 +234,7 @@ dimensional pasa.
 
 - **w₀**: dos rutas coinciden — `−T_r/M_v` y `1/(2n−1)` con `n=(T_r−M_v)/(2T_r)`.
 - **f_screen**: dos fórmulas coinciden exactamente — `αK/(3·MIRA)` y `(π−φ)/Ω²`.
-- **Ω_m,dyn + Ω_DE = 1** ✓; **Ω_m,cosm = MIRA·Ω_m,dyn** ✓.
+- **s_m + s_DE = 1** ✓ (dos saturaciones de la EoS, no densidades). ~~Ω_m,cosm = MIRA·Ω_m,dyn~~: aritmética de un factor materia retirado el 2026-06-18, no un cross-check.
 
 ### Problemas ABIERTOS detectados en Capa 2
 
@@ -577,6 +577,9 @@ modelo físico de dos sectores hereda la apertura del Lagrangiano de m_φ
 
 *Claim CLAUDE.md:* "Paper 7: EFT canónico — λ/V₀/M/g² bloqueados".
 
+> **RETIRADO con el potencial (P7 §3, 2026-09-07).** Además λ² = 3·s_m y V₀ = s_DE·ρ_crit
+> metían saturaciones de la EoS donde iba una densidad. Se conserva como registro.
+
 1. **✓ λ, α_pot, V₀:** son consecuencias algebraicas exactas de constantes
    ya verificadas — λ²=3·Ω_m,dyn (λ=0.6929), α_pot=λ/√KAL₀ (=0.2949), <!-- R74: git:4b90e2e:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduccion_2026-10-02.json -->
    V₀=Ω_DE·ρ_crit (=0.8400). No son parámetros libres: re-enuncian
@@ -907,7 +910,13 @@ Las dos lecturas siguen abiertas:
 - **A**: continuar caza (disformal velocity-dependent, screening, ...)
 - **B**: pivot a MIRA-como-etiqueta de transición, no engranaje.
 
-## V-L3-2Om — mecanismo MIRA / transición Ω_m(z) — **ABIERTO (problema central del modelo)**
+## V-L3-2Om — mecanismo MIRA / transición Ω_m(z) — **DISUELTO (2026-07-30 / 2026-08-01)**
+
+> **No hay dos Ω_m.** El «0.160» que esta entrada llama Ω_m,dyn es s_m = 1+w₀, un número
+> de la ecuación de estado; la única densidad es Ω_m = ω_m/h² = 0.308881. Por eso la «regla»
+> del punto 2 («Ω_m,dyn no entra en E(z)») no es una aserción por derivar: es lo que es s_m.
+> No queda transición Ω_m(z) que explicar ni factor que MIRA deba producir (OP-8 cerrado).
+> La entrada se conserva como registro (revisado 2026-10-03).
 
 *Corrección de criterio (2026-05-22):* una versión anterior de esta entrada
 marcaba esto «verificado (regla)». **Era una sobreafirmación.** Lo único

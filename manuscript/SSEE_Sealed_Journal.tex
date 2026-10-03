@@ -66,10 +66,9 @@ $\val{desi_libre_chi2}$ only by lowering $\Omega_m$ to $\val{desi_libre_Om}$. Th
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
 with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=\val{cs2_condensado_d6}$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
-\val{r_tensor_mil_d6}\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. A Boltzmann
-calculation shows the full algebraic $\omega_m$ (not the bare dynamical
-$\Omega_{m,\rm dyn}=\val{S_M_d6}$) is physically required for the CMB:
-without it the acoustic-peak structure degrades by a factor of $\val{cl_degrada}$ in RMS.
+\val{r_tensor_mil_d6}\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. With its single matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, fixed by the
+algebra, a Boltzmann calculation places the first three acoustic peaks at
+$\ell=\val{cl_ssee_l1},\val{cl_ssee_l2},\val{cl_ssee_l3}$, against $\val{cl_lcdm_l1},\val{cl_lcdm_l2},\val{cl_lcdm_l3}$ for $\Lambda$CDM.
 We are explicit about the framework's limits: the absolute vacuum scale enters
 as a single measured input, and the algebraic origin of the CMB matter density
 ($\omega_b$, $\omega_c$) remains an open problem. The growth amplitude $S_8$,
@@ -190,10 +189,8 @@ $\Om^{\mathrm{cosm}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ and separates it from 
 equation-of-state number $1+w_0=\val{S_M_d6}$, and
 reports the Hubble-constant inference. Section~\ref{sec:eft} gives the canonical
 effective-field-theory description, the inflationary predictions, and the
-confrontation with Planck 2018, including a Boltzmann test demonstrating that the
-full CMB-sector matter density ($\omega_m$-direct, $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$) is
-physically necessary---the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone cannot
-reproduce the acoustic scale. Section~\ref{sec:growth} treats
+confrontation with Planck 2018, including a Boltzmann cross-check with the model's single matter density
+($\omega_m$-direct, $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$). Section~\ref{sec:growth} treats
 the growth of structure, including the correction that removed the $S_8$ tension reported by earlier versions.
 Section~\ref{sec:falsifiability} sets out the pre-committed prediction register,
 and Section~\ref{sec:open} states the model's measured inputs, exact parameter
@@ -479,16 +476,13 @@ residual honest open question is only the UV origin of the $\omega_c$ identity.
 $\mathrm{MIRA}$ survives elsewhere, in the late-time Hubble screening fraction
 $f_{\rm scr}=\alpha_K^{\rm eff}/(3\,\mathrm{MIRA})$ (Paper~9), where it is the ``Mirror Ratio''.
 
-\paragraph{The full matter density is physically required, not cosmetic.}
-Independently of its derivation, a Boltzmann analysis (the full \texttt{CLASS}
-methodology and peak-by-peak numbers are given in
-\S\ref{sec:cmb-confront}) shows the full $\omega_m$ is not optional: replacing
-it with the bare dynamical value $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ degrades the
-acoustic-peak fit by a factor of $\val{cl_degrada}$ in RMS. The sound horizon at
-recombination demands the full matter density. The equation-of-state number
-$1+w_0$ and the matter density $\Om^{\mathrm{cosm}}=\omega_m/h^2$ are two
-independent algebraic predictions, not two free numbers and not two matter
-densities.
+\paragraph{One matter density.}
+The equation-of-state number $1+w_0=\val{S_M_d6}$ and the matter density
+$\Om^{\mathrm{cosm}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ are two independent algebraic
+predictions, not two free numbers and not two matter densities: $1+w_0$ never
+enters a density slot. Earlier versions of this paper put it there in a
+Boltzmann run and reported that the acoustic peaks then degrade; that
+comparison tested a density the model does not contain, and it is withdrawn.
 
 Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
@@ -840,31 +834,24 @@ $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$: fixing $H_0$ costs no fit quality.
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.82\textwidth]{fig_cmb_spectrum.pdf}
-  \caption{CMB temperature angular power spectrum computed with \texttt{CLASS}
+  \caption{CMB temperature angular power spectrum computed with \texttt{CAMB} (the Paper~3 pipeline)
   for the SSEE background and EFT functions (Eq.~\ref{eq:eft-alphas}), compared
   against Planck 2018. With the dark-energy sector fixed by $\varphi$ and $\pi$,
   SSEE reproduces the acoustic peaks at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$ at a quality
-  indistinguishable from $\Lambda$CDM (Table~\ref{tab:cmb}). The full matter
-  density is essential: replacing $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ with the
-  equation-of-state number $1+w_0=\val{S_M_d6}$ moves the peaks to
-  $\ell=\val{cl_naive_l1},\,\val{cl_naive_l2},\,\val{cl_naive_l3}$.}
+  indistinguishable from $\Lambda$CDM (Table~\ref{tab:cmb}).}
   \label{fig:cmb}
 \end{figure}
 
-\paragraph{The CMB density is physically required, not cosmetic.}
-This is decisively tested by the CMB. Running the Boltzmann
-solver (CLASS) at the $\omega_m$-direct canonical matter fraction
-$\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
-places the first three acoustic peaks at $\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$, an RMS
-deviation of $\val{cl_ssee_rms}\%$ from $\Lambda$CDM. Running it instead with the bare
-dynamical fraction $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ shifts all
-three peaks by ${\sim}10\%$ ($\ell=\val{cl_naive_l1},\,\val{cl_naive_l2},\,\val{cl_naive_l3}$) and raises the RMS to
-$\val{cl_naive_rms}\%$---a factor of ${\sim}\val{cl_degrada}$ worse. The sound horizon at recombination
-therefore \emph{demands} $\Om^{\mathrm{cosm}}\approx0.31$: the CMB matter density
-is not a fit applied
-to the data but a structural feature without which the model fails the CMB
-outright. Its numerical value follows from the $\omega_m$-direct identity
+\paragraph{The CMB with the single matter density.}
+Running the Boltzmann solver (CLASS) at the $\omega_m$-direct matter density
+$\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ places the first three acoustic peaks at
+$\ell=\val{cl_ssee_l1},\,\val{cl_ssee_l2},\,\val{cl_ssee_l3}$ ($\Lambda$CDM: $\val{cl_lcdm_l1},\,\val{cl_lcdm_l2},\,\val{cl_lcdm_l3}$), an RMS
+deviation of $\val{cl_ssee_rms}\%$ from $\Lambda$CDM; CAMB returns the same peaks (Paper~3).
+The density is not fitted to the CMB: it follows from the $\omega_m$-direct identity
 ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, fixed by $\varphi,\pi$; \S\ref{sec:open}).
+An earlier version contrasted this with a run that put the equation-of-state
+number $1+w_0=\val{S_M_d6}$ in the density slot; $1+w_0$ is not a density, so that
+run is not a version of the model and the comparison is withdrawn.
 
 \section{Structure growth: no tension on raw data}
 \label{sec:growth}
@@ -1166,9 +1153,8 @@ former MIRA matter bridge \emph{dissolved} (the $\omega_m$-direct reframe,
 $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$ now rests directly on two algebraic inputs: the
 baryon density $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ and the forward
 identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from
-Planck). The CLASS Boltzmann test of \S\ref{sec:eft} confirms this full density
-is \emph{numerically necessary}---the acoustic peaks degrade by a factor of
-$\val{cl_degrada}$ in RMS with the dynamical $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone. What remains
+Planck). With it the CLASS run of \S\ref{sec:cmb-confront} reproduces the acoustic
+peaks of $\Lambda$CDM. What remains
 open is a first-principles derivation of these algebraic forms from the field
 action; the burden has moved from ``derive MIRA'' to ``ground $\omega_b$ and the
 $\omega_c$ identity.'' The values are not fitted, but their UV origin is open.

@@ -19,7 +19,7 @@
 
 </div>
 
-**A minimal-parameter dark energy framework derived from φ (golden ratio) and π. The background sector $(w_0, w_a, \Omega_\mathrm{DE}, \Omega_{m,\mathrm{dyn}})$ carries zero fitted dimensionless parameters; the framework rests on 3 postulates (D, S fundamentals + I auxiliary register-level; the former matter-factor postulate M was dissolved in the ωm-direct reframe, OP-8 closed) plus open problems tracked in [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md). Tested against DESI DR2 BAO, Planck 2018 CMB (TT+TE+EE+lensing), galaxy cluster masses, and large-scale structure growth.**
+**A minimal-parameter dark energy framework derived from φ (golden ratio) and π. The dark-energy equation of state $(w_0, w_a)$ and the single matter density $\Omega_m=\omega_m/h^2$ carry zero fitted dimensionless parameters; the framework rests on 3 postulates (D, S fundamentals + I auxiliary register-level; the former matter-factor postulate M was dissolved in the ωm-direct reframe, OP-8 closed) plus open problems tracked in [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md). Tested against DESI DR2 BAO, Planck 2018 CMB (TT+TE+EE+lensing), galaxy cluster masses, and large-scale structure growth.**
 
 ---
 
@@ -97,7 +97,7 @@ SSEE/
 │   ├── SSEE_Unified_Journal.tex    # consolidated journal paper (Papers 1–10)
 │   ├── SSEE_Endorser_Summary.tex   # 2-page arXiv endorser brief
 │   ├── *.bib                       # ssee_paper3/4/5/6 + ssee_unified bibliographies
-│   └── cover_letter_*.txt, abstracts_arXiv.txt
+│   └── (cover letters and arXiv abstracts of May: archive/manuscript_superseded/envios_2026-05_RANCIOS/)
 ├── src/                            # Python scripts — organized per paper
 │   ├── p02_mcmc/ … p10_uv/         # per-paper analysis, MCMC, figures (p02_mcmc, p03_cmb,
 │   │                               #   p04_toe, p05_IS, p06_growth, p07_eft,
@@ -238,17 +238,17 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 
 ### CLASS Boltzmann Validation (Fases 1–3)
 
-> Canonical ωm-direct runs (Ω_m,CMB=0.30889, no matter factor). "full ω_m" = full matter density, "dynamical-only" = bare Ω_m,dyn=0.160. Independent-code cross-check: CLASS here, CAMB in Paper 3.
+> Canonical ωm-direct run with the model's single matter density (Ω_m = ω_m/h² = 0.30889, no matter factor). Independent-code cross-check: CLASS here, CAMB in Paper 3 (`results/logs/class_picos.json`).
 
-| Test | SSEE full ω_m | SSEE dynamical-only | ΛCDM | Significance |
-|---|---|---|---|---|
-| CMB peak 1 (ℓ) | **220** | 240 | 220 | full ω_m necessary |
-| CMB peak 2 (ℓ) | **536** | 596 | 536 | full ω_m necessary |
-| CMB peak 3 (ℓ) | **813** | 921 | 813 | full ω_m necessary |
-| RMS vs ΛCDM | **0.18%** | 58.9% | — | ~325× degradation with bare Ω_m,dyn (`results/logs/class_picos.json`) |
-| IS cs² effect on σ₈ | 0.03% | — | — | Negligible ✓ |
+| Test | SSEE | ΛCDM | Note |
+|---|---|---|---|
+| CMB peak 1 (ℓ) | **220** | 220 | CLASS = CAMB |
+| CMB peak 2 (ℓ) | **536** | 536 | CLASS = CAMB |
+| CMB peak 3 (ℓ) | **813** | 813 | CLASS = CAMB |
+| RMS vs ΛCDM | **0.18%** | — | TT lensed, ℓ = 30–2500 |
+| IS cs² effect on σ₈ | 0.03% | — | Negligible ✓ |
 
-*CLASS confirms the full algebraic matter density ω_m (Ω_m,CMB=0.30889) is physically necessary: using the bare dynamical Ω_m,dyn=0.160 instead, all three CMB peaks shift ~10% and the RMS residual jumps from 0.18% to 58.9% (~325×).*
+*Withdrawn 2026-10-03: an earlier column ran CLASS with s_m = 1+w₀ = 0.160 as the matter density and read the ~325× degradation as proof that the full density is "necessary". s_m is an equation-of-state number, not a density, so that run was never a version of the model.*
 
 ### MCMC Fase 4 (Multi-probe background)
 

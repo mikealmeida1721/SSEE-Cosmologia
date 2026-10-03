@@ -278,7 +278,8 @@ with \emph{no} matter factor.
 The earlier post-hoc mapping $\rdSSEE\times|w_0|\approx147.5$\,Mpc, and the
 structural ratio $\Omega_{m,\mathrm{CMB}}/\Omega_{m,\mathrm{dyn}}\approx
 \mathrm{MIRA}\approx1.999$, are \emph{superseded} by this direct construction
-(OP-8 dissolved; the actual ratio is $\val{OMEGA_M_TOTAL_d6}/0.160=1.93$, not a fixed factor).
+(OP-8 dissolved; a ratio between a density and an equation-of-state number
+carries no information, so there is no factor to fix).
 MIRA survives only as the Hubble screening amplitude of Paper~9.
 There is one matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the quantity
 formerly written $\Omega_{m,\rm dyn}=\val{S_M_d6}$ is $1+w_0$, an equation-of-state
@@ -1202,60 +1203,39 @@ the $0.24\sigma$ joint tension quoted in Section~\ref{sec:w0wa}.
 The Ly-$\alpha$ point at $z=2.33$ provides the sharpest direct test of
 \SSEE's background expansion.  At $z\sim2$ radiation is negligible and
 the ratio $D_H/r_d = c\,/\,(H_0\,E(z)\,r_d)$ directly encodes the
-product $H_0\,E(z)\,r_d$.  We evaluate this quantity under two
-\SSEE\ scenarios and compare to the DESI~DR2 measurement
-$D_H/r_d = 8.632\pm0.101$ (Table~\ref{tab:bao_data}).
+product $H_0\,E(z)\,r_d$.  We evaluate it for the \SSEE\ background and
+compare to the DESI~DR2 measurement
+$D_H/r_d = \val{p2_lya_dato}\pm\val{p2_lya_dato_s}$ (Table~\ref{tab:bao_data}).
 
-\paragraph{Scenario A — raw \SSEE\ background
-($s_m=\val{S_M_d6}$, $r_d=\val{p2_lyaA_rd_d1}$\,Mpc).}
-With $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$\,km\,s$^{-1}$\,Mpc$^{-1}$ and
-$s_m=\val{S_M_d6}$, the CPL dark-energy density at $z=2.33$ is
-$\rho_{\rm DE}(2.33)/\rho_{\rm DE,0}=\val{p2_lyaA_rhoDE}$, giving $E(2.33)=\val{p2_lyaA_E}$ and
-$D_H(2.33)=\val{p2_lyaA_DH}$\,Mpc (sound horizon, $E(z)$ and $D_H$ from CAMB).  The predicted ratio is:
+\paragraph{The \SSEE\ background
+($\Omega_m=\val{OMEGA_M_TOTAL_d6}$, $r_d=\val{p2_lyaB_rd}$\,Mpc).}
+At $z=2.33$ the matter density sets the expansion, and the model has one:
+$\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$. With $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$\,km\,s$^{-1}$\,Mpc$^{-1}$,
+$(w_0,w_a)$ of \SSEE, and the sound horizon $r_d=\val{p2_lyaB_rd}$\,Mpc taken directly from
+$\omega_m$ (CAMB; no $|w_0|$ mapping), $E(2.33)=\val{p2_lyaB_E}$, $D_H(2.33)=\val{p2_lyaB_DH}$\,Mpc, and:
 \begin{equation}
-  \left.\frac{D_H}{r_d}\right|_{z=2.33}^{\rm SSEE,\,raw}
-  = \frac{\val{p2_lyaA_DH}}{\val{p2_lyaA_rd_d1}} = \val{p2_lyaA_DHrd}
-  \quad (\val{p2_lyaA_pull}\sigma \text{ above DESI}),
-  \label{eq:lya_raw}
-\end{equation}
-demonstrating the category error directly: using the cold sector
-$s_m=\val{S_M_d6}$ in $E(z)$ reduces matter domination at high $z$, lowers
-$H(z)$, and enlarges $D_H$ to a $\val{p2_lyaA_pull}\sigma$ discrepancy. This is the same
-misplacement that produced the spurious background tensions in superseded
-drafts; the correct total density (Scenario~B) resolves it.
-
-\paragraph{Scenario B — $\omega_m$-direct CMB-sector background
-($\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$, $r_d=\val{p2_lyaB_rd}$\,Mpc).}
-At $z=2.33$ the full matter density sets the expansion, so
-$E(z)$ takes the algebraic value
-$\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (free-streaming suppresses
-small-scale clustering, not the homogeneous density). Taking the sound horizon
-$r_d=\val{p2_lyaB_rd}$\,Mpc directly from $\omega_m$ (CAMB; no $|w_0|$ mapping) gives
-$E(2.33)=\val{p2_lyaB_E}$, $D_H(2.33)=\val{p2_lyaB_DH}$\,Mpc, and:
-\begin{equation}
-  \left.\frac{D_H}{r_d}\right|_{z=2.33}^{\omega_m\text{-direct}}
+  \left.\frac{D_H}{r_d}\right|_{z=2.33}^{\rm SSEE}
   = \frac{\val{p2_lyaB_DH}}{\val{p2_lyaB_rd}} = \val{p2_lyaB_DHrd}
   \quad (\val{p2_lyaB_pull}\sigma \text{ from DESI}).
   \label{eq:lya_mira}
 \end{equation}
-This supersedes the earlier MIRA-mapped value ($\Omega_m=0.320$, $D_H/r_d=8.56$):
-the matter factor is dissolved (OP-8). The $D_M/r_d$ counterpart at $z=2.33$
-is recovered within $0.1\sigma$. The full 13-point diagonal fit gives
-$\chi^2=12.0$, matching \LCDM\ ($\chi^2=12.0$): the two backgrounds describe
-DESI~DR2 equally well. The largest \SSEE\ residual is at $z=\val{p2_lyaB_pullmax_z}$
-($D_M/r_d$ pull $\val{p2_lyaB_pullmax}\sigma$); \LCDM\ shows a comparable largest residual
-($+1.7\sigma$ at $z=0.706$, $D_H/r_d$) with the same total $\chi^2$, confirming
-the residual pattern is a DESI~DR2 feature rather than an \SSEE-specific failure.
+The full 13-point fit gives $\chi^2=\val{p2_lyaB_chi2cov}$ with the DESI covariance
+($\val{p2_lyaB_chi2diag}$ diagonal), against $\chi^2=\val{p2_lyaL_chi2cov}$
+($\val{p2_lyaL_chi2diag}$) for \LCDM\ at the Planck~2018 parameters, each model with its
+own ingredients and none refitted. The largest \SSEE\ residual is at $z=\val{p2_lyaB_pullmax_z}$
+($D_M/r_d$ pull $\val{p2_lyaB_pullmax}\sigma$); the largest \LCDM\ one, at $z=\val{p2_lyaL_pullmax_z}$
+($\val{p2_lyaL_pullmax}\sigma$). An earlier version of this paragraph quoted
+$\chi^2=12.0$ for both models and concluded that they describe DESI~DR2 equally well;
+those numbers had no log, and the computation above does not reproduce them.
 
-\paragraph{Implication.}
-Eqs.~\eqref{eq:lya_raw}--\eqref{eq:lya_mira} show that the high-$z$ expansion
-requires the full CMB-sector matter density $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$,
-where the cold sector counts as non-relativistic matter, rather than the
-EoS-sector value $s_m=\val{S_M_d6}$: retaining it in $E(z)$ with $r_d=147.17$ would predict
-$D_H/r_d=11.8$ (a $31\sigma$ discrepancy).  This is the same total-versus-
-dynamical distinction that sets the low-$z$ sound horizon
-(\S\ref{sec:folding}), now with \emph{no} matter factor (OP-8 dissolved) and
-with no second matter sector (retracted, Paper~6).  The Savage--Dickey ratio in B.1
+\paragraph{Withdrawn scenario.}
+Earlier versions evaluated a second ``raw'' scenario with the saturation
+$s_m=1+w_0=\val{S_M_d6}$ in $E(z)$ and read a large Ly-$\alpha$ discrepancy from it.
+$s_m$ is a number of the equation of state, not a density, so that scenario is not a
+version of the model: it is the misplacement that produced the spurious background
+tensions of superseded drafts (\S\ref{sec:folding}), and it is withdrawn here.
+
+The Savage--Dickey ratio in B.1
 ($\ln B=\val{p2_lnB_signo}$) then holds as a test of the \emph{dynamical sector} under this
 $\omega_m$-direct background.
 

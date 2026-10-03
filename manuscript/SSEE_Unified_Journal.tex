@@ -109,10 +109,8 @@ $\OmmCMB = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (Planck: $0.3153\pm 0.0073$), 
 piece-by-piece from SSEE algebra ($\omega_m$-direct; OP-8 dissolved, no matter
 factor) and distinct from the saturation $\sm = 1+w_0 = \val{S_M_d6}$, which fixes
 the DESI BAO equation of state and is not a density at all.
-Full-sky CLASS Boltzmann runs confirm that the \emph{full} matter density is
-physically necessary: using only $\sm=\val{S_M_d6}$ as the CMB matter density
-shifts the peak positions by $\sim 10\%$ and raises the RMS residual
-from $\val{cl_ssee_rms}\%$ to $\val{cl_naive_rms}\%$.
+With this single density, full-sky CLASS Boltzmann runs place the acoustic peaks
+where \LCDM\ does (RMS residual $\val{cl_ssee_rms}\%$).
 
 A linear Israel-Stewart perturbation analysis with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in
 the Poisson equation yields a growth factor
@@ -270,7 +268,7 @@ $\Omm = 0.3153\pm 0.0073$ \citep{Planck2018}.
 All three \SSEE\ retrodictions lie within $1.5\sigma$ of the Planck values
 with no adjustment.
 
-\subsection{The two-$\Omega_m$ structure and CMB matter density}
+\subsection{One matter density and the CMB}
 \label{sec:mira}
 
 The framework has a single matter density.
@@ -287,15 +285,15 @@ However, the CMB angular-diameter distance is sensitive to the
   \label{eq:omega_m_direct}
 \end{equation}
 in agreement with Planck~2018 ($0.3153\pm 0.0073$) at $0.88\sigma$. There is
-\emph{no} matter factor: $\sm=\val{S_M_d6}$ (DESI) and $\omega_m$ (CMB) are two
-independent SSEE predictions. (The earlier, now superseded MIRA mapping
+\emph{no} matter factor: $\sm=\val{S_M_d6}$ (a number of the equation of state,
+tested by DESI through $w_0$) and $\omega_m$ (a density, tested by the CMB) are two
+independent SSEE predictions, of two different kinds. (The earlier, now superseded MIRA mapping
 $\MIRA=(3\phiG+\pi)/4\simeq1.9989$ gave $\OmmCMB=\MIRA\times\sm=0.3199$, superseded;
 $\MIRA$ now enters only the Hubble screening fraction, Paper~9.)
 The physical interpretation of these two independent predictions --- the
 earlier reading as a ``two-sector split'' is superseded by the
 $\omega_m$-direct construction --- is examined in Papers~3 and~5 \citep{AlmeidaSSEE2026P3,AlmeidaSSEE2026P5}.
-The numerical validation in \S\ref{sec:cmb} demonstrates its necessity
-independently of its interpretation.
+Section~\ref{sec:cmb} checks this density against the acoustic peaks.
 
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -487,22 +485,19 @@ retained only as an internal consistency check, not as a presented result.)
 \subsection{CLASS implementation}
 \label{sec:class_setup}
 
-We run the CLASS Boltzmann code \citep{Lesgourgues2011} (v3.3, \texttt{src/p03\_cmb/class\_picos.py}) with two
-configurations to isolate the effect of the full CMB matter density.
+We run the CLASS Boltzmann code \citep{Lesgourgues2011} (v3.3, \texttt{src/p03\_cmb/class\_picos.py}) with the
+canonical SSEE background and a \LCDM\ reference.
 \begin{description}[itemsep=1pt]
   \item[SSEE full-$\Omega_m$ ($\omega_m$-direct canonical):] $\omega_b = \val{OMEGA_B_H2_d6}$,
     $\omega_c = \val{OMEGA_C_H2_d6}$ and one massive neutrino at $\sum m_\nu = \val{SUM_MNU_EV_d5}$~eV
     (total $\OmmCMB = \val{OMEGA_M_TOTAL_d6}$; OP-8 dissolved, no matter factor), $w_0 = \val{W0_d6}$,
     $w_a = \val{WA_d6}$, $n_s = \val{N_S_d6}$, $h = H_0^{\rm glob}/100$. The full matter density is
     set directly as a CLASS background input.
-  \item[SSEE dynamical-only:] same EoS, $h$, $\omega_b$ and neutrino, but $\omega_c$ lowered
-    so that the total is $\sm = \val{S_M_d6}$, using only the
-    dynamical sector as CMB matter.
 \end{description}
 A fiducial \LCDM\ run with Planck~2018 best-fit parameters serves as reference.
 All runs use $\ell_{\rm max} = 2500$, lensing enabled.
 
-\subsection{Full matter-density necessity: quantitative test}
+\subsection{Acoustic peaks with the single matter density}
 \label{sec:mira_test}
 
 Table~\ref{tab:cmb_peaks} presents the CMB acoustic peak positions and the
@@ -519,26 +514,22 @@ Model & $\ell_1$ & $\ell_2$ & $\ell_3$ & RMS residual \\
 \midrule
 \LCDM\ (Planck 2018)    & \val{cl_lcdm_l1} & \val{cl_lcdm_l2} & \val{cl_lcdm_l3} & reference \\
 \textbf{SSEE ($\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$)}    & \textbf{\val{cl_ssee_l1}} & \textbf{\val{cl_ssee_l2}} & \textbf{\val{cl_ssee_l3}} & \textbf{\val{cl_ssee_rms}\%} \\
-SSEE ($s_m=\val{S_M_d6}$)             & \val{cl_naive_l1} & \val{cl_naive_l2} & \val{cl_naive_l3} & \val{cl_naive_rms}\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-With the dynamical density $\Omm=\val{S_M_d6}$ alone, all three acoustic peaks shift by
-$\sim 10\%$ toward higher $\ell$ and the RMS residual increases by a factor of \val{cl_degrada}.
-This demonstrates the \emph{two-$\Omega_m$ structure}: the CMB requires the full
-$\omega_m$-direct matter density $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$ (built from
-$\omega_b+\omega_c+\omega_\nu$, no matter factor; OP-8 dissolved), and cannot be
-reproduced with $\Omega_{m,\rm dyn}=\val{S_M_d6}$ alone.
 With $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$, the peak positions agree with \LCDM\ to within $\Delta\ell \le 1$
-($\ell = \val{cl_ssee_l1}, \val{cl_ssee_l2}, \val{cl_ssee_l3}$) and the RMS residual is $\val{cl_ssee_rms}\%$, consistent with the $\chi^2_r \simeq 1.06$
+($\ell = \val{cl_ssee_l1}, \val{cl_ssee_l2}, \val{cl_ssee_l3}$) and the RMS residual is $\val{cl_ssee_rms}\%$, consistent with the $\chi^2_r(\mathrm{TT})=\val{p3_chi2r_TT_ssee}$
 reported in the CAMB-based Planck~2018 likelihood analysis of Paper~3
 \citep{AlmeidaSSEE2026P3}. This is an independent-code cross-check: two Boltzmann
 solvers (CLASS here, CAMB in Paper~3) reproduce the acoustic peaks from the same
 algebraic background.
+Earlier versions of this section added a third run that put the equation-of-state
+number $\sm=1+w_0=\val{S_M_d6}$ in the density slot and read its degraded peaks as
+evidence for a ``two-$\Omega_m$ structure''. $\sm$ is not a density, so that run is
+not a version of the model; the comparison and the structure are withdrawn.
 
-Figure~\ref{fig:cmb_tt} shows the TT power spectrum for both SSEE configurations
-and \LCDM.
+Figure~\ref{fig:cmb_tt} shows the TT power spectrum for SSEE and \LCDM.
 
 \begin{figure}[htbp]
 \centering
@@ -547,11 +538,7 @@ and \LCDM.
          \textit{Red solid}: SSEE with the full $\omega_m$-direct canonical matter density
          $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ ($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) --- peaks at
          $\ell = \val{cl_ssee_l1}, \val{cl_ssee_l2}, \val{cl_ssee_l3}$, agreeing with \LCDM\ to within $\Delta\ell \le 1$
-         (RMS $= \val{cl_ssee_rms}\%$).
-         \textit{Grey}: the SSEE dynamical-only run ($\OmmCMB = \val{S_M_d6}$);
-         it produces peaks at $\ell = \val{cl_naive_l1}, \val{cl_naive_l2}, \val{cl_naive_l3}$ with RMS $= \val{cl_naive_rms}\%$
-         relative to \LCDM, confirming that the \emph{full} matter density
-         (not the dynamical $\sm = \val{S_M_d6}$) is needed to reproduce the acoustic scale.}
+         (RMS $= \val{cl_ssee_rms}\%$).}
 \label{fig:cmb_tt}
 \end{figure}
 
@@ -959,10 +946,8 @@ across four observational tiers.
   $\omega_b,\omega_c,r_{\rm drag}$ to $\le0.2\sigma$ and places \SSEE\ at
   $1.31\sigma$ in the $w_0$--$w_a$ plane, where \LCDM\ is excluded at $3.22\sigma$.
 
-\item \textbf{CMB Boltzmann.} CLASS confirms that the full $\omega_m$-direct
-  matter density ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$) is physically necessary: with only the
-  dynamical $\sm=\val{S_M_d6}$, the CMB RMS residual jumps by a factor of \val{cl_degrada} and
-  all three acoustic peaks shift by $\sim 10\%$.
+\item \textbf{CMB Boltzmann.} With the single $\omega_m$-direct matter density
+  ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$), CLASS places the acoustic peaks where \LCDM\ does.
   With the full $\omega_m$-direct density, peak positions agree with \LCDM\ to
   within $\Delta\ell \le 1$ (RMS $= \val{cl_ssee_rms}\%$).
 

@@ -46,13 +46,11 @@ the background sector $(w_0, w_a, s_m)$ carries zero fitted
 dimensionless parameters, while the primordial amplitude and optical depth
 $\{A_s,\tau\}$ are treated as $k=2$ in the BIC analysis below (\textit{``On the parameter count''} paragraph) following the
 conservative accounting policy established in Paper~1 \S1.3.
-Previous work demonstrated that the SSEE dynamic sector
-($s_m=\val{S_M_d6}$, $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) fits DESI~DR2 BAO data
+Previous work demonstrated that the SSEE dark-energy equation of state
+($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) fits DESI~DR2 BAO data
 at $0.24\sigma$ (DESI+CMB+Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) \citep{DESI_DR2}, and galaxy-cluster dynamical masses in general relativity at the level of $\Lambda$CDM ($\val{clz_rgig_sig}\sigma$ vs.\ $\val{clz_lcig_sig}\sigma$, $\val{clz_rgig_N}$ systems; \citealt{Zhang2026}).
-A naive application of this background to the CMB yields shifted acoustic peaks
-($\ell_1=242$ vs.\ $220$) and $\chi^2_r=97.7$, apparently falsifying the model.
 Here we show that the CMB matter density is fixed \emph{forward} by the SSEE
-algebra, with no factor relating it to the dynamic sector: the physical observable
+algebra, with no factor relating it to the saturation $s_m$: the physical observable
 is $\omega_m=\omega_b+\omega_c+\omega_\nu$, where $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$
 and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ are forward identities of Paper~1
 ($\omega_c$ lies $\val{wc_ns_sigma_abs}\sigma$ from Planck), giving
@@ -151,7 +149,7 @@ closed forms in $\varphi$ and $\pi$ alone:
 w_0 &= -\frac{T_r}{M_v} = -\frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{W0_d6}, \label{eq:w0}\\
 w_a &= -\frac{P_{sc}}{I_g} = -\frac{P_{sc}}{\pi+P_{sc}} = \val{WA_d6}, \label{eq:wa}\\
 s_{\mathrm{DE}} &= \frac{T_r}{M_v} = \frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{S_DE_d6}, \label{eq:sDE}\\
-s_m &= 1 - s_{\mathrm{DE}} = 0.160050. \label{eq:sm}
+s_m &= 1 - s_{\mathrm{DE}} = \val{S_M_d6}. \label{eq:sm}
 \end{align}
 The Hubble constant is the derived dimensional anchor
 $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = M_v\times\Omega = \val{H0_ALG_d5}$
@@ -163,7 +161,7 @@ recovers the spectra at this anchor, and the SSEE CMB sector carries only the
 two borrowed parameters $\{A_s,\tau\}$ ($k=2$).
 
 % ===========================================================================
-\section{The CMB Falsification Problem}
+\section{The Acoustic Scale and the Matter Density}
 \label{sec:problem}
 % ===========================================================================
 
@@ -179,27 +177,19 @@ The first peak falls at $\ell_1 \approx \pi/\theta_*$ \citep{HuSugiyama1996,Dode
 Diffusion damping suppresses power at small angular scales
 $\ell\gtrsim1000$ through photon mean-free-path effects \citep{Silk1968}.
 
-With $s_m=\val{S_M_d6}$, the Hubble parameter at recombination scales as
-$H(z\sim1000)\propto\sqrt{\Omega_m}$, reducing $H$ by $\sim40\%$ relative to
-$\Lambda$CDM ($\Omega_m=0.315$).
-This inflates $D_A(z_*)$ by $\sim32\%$, shifting all peaks to higher multipoles.
+Both $r_d$ and $D_A(z_*)$ depend on the total matter density $\Omega_m$, which sets
+$H(z)$ at recombination. In SSEE that density is $\Omega_m=\omega_m/h^2$, built
+\emph{forward} from the algebra (Section~\ref{sec:mira}). The saturation
+$s_m=1+w_0=\val{S_M_d6}$ of Eq.~(\ref{eq:sm}) is a number of the dark-energy
+equation of state and never enters a density slot.
 
-Running CAMB with the SSEE dynamic background directly gives:
-\begin{equation}
-(\ell_1,\ell_2,\ell_3)_{\mathrm{SSEE,naive}} = (\val{p3_pico1_naive},\,\val{p3_pico2_naive},\,\val{p3_pico3_naive}),
-\quad \chi^2_r = \val{p3_naive_chi2r_TT}.
-\end{equation}
-This constitutes a prima facie falsification.
-
-\subsection{Why the naive application fails}
-
-The naive background uses $s_m=\val{S_M_d6}$, which inflates both the comoving
-sound horizon $r_d$ and the angular diameter distance $D_A(z_*)$ relative to
-their observed values.  The Folding Symmetry factor $|w_0|$ introduced in
-Paper~1 belongs to the dark-energy sector and does \emph{not} directly correct
-the baryon-photon sound horizon computed from recombination physics.  The CMB
-sector requires the physical matter density set \emph{forward} by the SSEE
-algebra — the $\omega_m$-direct construction (Section~\ref{sec:mira}).
+\paragraph{Withdrawn framing (2026-10-03).} Earlier versions of this paper opened
+with a ``naive application'' that placed $s_m$ in the matter-density slot of CAMB,
+obtained acoustic peaks shifted by ${\sim}10\%$, called the result a
+\emph{prima facie} falsification, and then recovered the spectrum with the full
+density. That run is not a version of the model --- $s_m$ is not a density --- so
+it neither threatened nor supports the framework, and it is withdrawn together
+with the corresponding rows of Tables~\ref{tab:peaks} and~\ref{tab:chi2}.
 
 % ===========================================================================
 \section{The CMB Matter Density as a Forward Identity}
@@ -210,7 +200,7 @@ algebra — the $\omega_m$-direct construction (Section~\ref{sec:mira}).
 
 The CMB background geometry is governed by the physical matter density
 $\omega_m\equiv\Omega_m h^2$, which SSEE fixes \emph{forward} from the algebra,
-with no factor relating it to the dynamic sector:
+with no factor relating it to the saturation $s_m$:
 \begin{equation}
   \omega_m = \omega_b + \omega_c + \omega_\nu, \qquad
   \omega_b = \frac{\pi-\varphi}{3(\varphi+\pi)^2} = \val{OMEGA_B_H2_d6}, \qquad
@@ -377,8 +367,7 @@ Model & $\ell_1$ & $\ell_2$ & $\ell_3$ \\
 \midrule
 Planck 2018 (observed) & $\sim220$ & $\sim540$ & $\sim810$ \\
 $\Lambda$CDM ($\Omega_m=0.315$) & \val{p3_pico1_lcdm} & \val{p3_pico2_lcdm} & \val{p3_pico3_lcdm} \\
-SSEE naive ($s_m=\val{S_M_d6}$) & \val{p3_pico1_naive} & \val{p3_pico2_naive} & \val{p3_pico3_naive} \\
-\textbf{SSEE} ($\Omega_{m,\mathrm{CMB}}=0.309$) & \textbf{\val{p3_pico1_ssee}} & \textbf{\val{p3_pico2_ssee}} & \textbf{\val{p3_pico3_ssee}} \\
+\textbf{SSEE} ($\Omega_{m}=\val{OMEGA_M_TOTAL_d6}$) & \textbf{\val{p3_pico1_ssee}} & \textbf{\val{p3_pico2_ssee}} & \textbf{\val{p3_pico3_ssee}} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -471,7 +460,6 @@ Model & $\chi^2$ & $\chi^2_r$ & $\Delta\chi^2$ \\
 \midrule
 $\Lambda$CDM (Planck 2018) & \val{p3_chi2_TT_lcdm} & \val{p3_chi2r_TT_lcdm} & 0 \\
 SSEE & \val{p3_chi2_TT_ssee} & \val{p3_chi2r_TT_ssee} & $\val{p3_dchi2_TT}$ \\
-SSEE naive & \val{p3_naive_chi2_TT} & \val{p3_naive_chi2r_TT} & \val{p3_naive_dchi2} \\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -5,16 +5,14 @@ POR QUE (2026-09-30). El apendice cita E(2.33), D_H, r_d, D_H/r_d y su pull
 para dos escenarios, y el chi2 diagonal de los 13 puntos DESI con sus
 residuos mas grandes, todo escrito a mano: ningun log lo calculaba.
 
-ESCENARIOS (Paper 2, apendice B.2):
-  A (contraejemplo): la geometria con el 0.160 del sector dinamico como
-    Omega_m: omega_c = s_m h^2 - omega_b - omega_nu. Es el error de categoria
-    que el apendice ilustra.
-  B (canonico): omega_b, omega_c, Sigma m_nu del nucleo, Omega_m = omega_m/h^2.
-En los dos: H0 = H0_GLOBAL, w0 y w_a de SSEE, y r_d, D_M, D_H de CAMB (PPF),
-la convencion de todo el repo desde 2026-09-28 (rd_camb.py, bao_camb.py). El
-apendice usaba para A la formula vieja de r_d (normalizacion 0.15 % alta): aqui
-se guarda tambien ese numero, como dato informativo, para que el cambio se vea.
-LCDM: Planck 2018 con sus parametros (lcdm_planck.py).
+MODELOS (Paper 2, apendice B.2):
+  ssee: omega_b, omega_c, Sigma m_nu del nucleo, Omega_m = omega_m/h^2 (la unica
+    densidad), H0 = H0_GLOBAL, w0 y w_a de SSEE; r_d, D_M, D_H de CAMB (PPF),
+    la convencion de todo el repo desde 2026-09-28 (rd_camb.py, bao_camb.py).
+  lcdm_planck: Planck 2018 con sus parametros (lcdm_planck.py).
+(2026-10-03: se retira el «escenario A», que ponia s_m = 1+w0 = 0.160 como
+ Omega_m: omega_c = s_m h^2 - ... . s_m es un numero de la ecuacion de estado;
+ ese caso no es una version del modelo. Con el sale la formula vieja de r_d.)
 
 CONTROL (R53): el chi2 de B con la covarianza COMPLETA tiene que ser el
 canonico de bao_camb.chi2_desi (11.406 en H_glob) a 1e-3; y el de LCDM, el de
@@ -72,13 +70,6 @@ def fondo(H0, ombh2, omch2, mnu, w0, wa):
                 pulls=[dict(z=float(a), cantidad=NOMBRE[b], pull=float(c)) for a, b, c in zip(z, tipo, pull)])
 
 
-h = S.H0_GLOBAL / 100
-A = fondo(S.H0_GLOBAL, S.OMEGA_B_H2, S.S_M * h ** 2 - S.OMEGA_B_H2 - S.OMEGA_NU_H2,
-          S.SUM_MNU_EV, S.W0, S.WA)
-om_A = S.S_M * h ** 2
-# ORIGEN-VALOR: 0.1432 — omega_m de referencia de la formula retirada de r_d (solo informativa)
-A["rd_formula_vieja"] = 147.27 * (om_A / 0.1432) ** -0.255 * (S.OMEGA_B_H2 / 0.02237) ** -0.134  # ORIGEN-VALOR: 147.27, 0.1432, 0.02237 — la formula retirada (rd_camb.py), solo informativa
-A["DH_rd_lya_formula_vieja"] = A["DH_lya"] / A["rd_formula_vieja"]
 B = fondo(S.H0_GLOBAL, S.OMEGA_B_H2, S.OMEGA_C_H2, S.SUM_MNU_EV, S.W0, S.WA)
 LC = fondo(L["H0"], L["ombh2"], L["omch2"], L["mnu"], -1.0, 0.0)
 
@@ -89,14 +80,13 @@ ctl = dict(B_cov_vs_bao_camb=dict(aqui=B["chi2_cov"], bao_camb=ref_B),
 pasa = abs(B["chi2_cov"] - ref_B) < 1e-3 and abs(LC["chi2_cov"] - ref_L) < 1e-3
 out = dict(fecha=str(__import__("datetime").date.today()),
            dato_lya=dict(z=Z_LYA, DH_rd=float(obs[i_lya]), sigma=float(sig[i_lya])),
-           escenario_A=A, escenario_B=B, lcdm_planck=LC, rd_B_sobre_lcdm=B["rd"] / LC["rd"],
+           ssee=B, lcdm_planck=LC, rd_B_sobre_lcdm=B["rd"] / LC["rd"],
            control=dict(contra=ctl, pasa=bool(pasa)))
 json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "data", "raw", "desi_dr2_bao.csv"),
                                              os.path.join(_R, "results", "logs", "bao_lcdm_planck.json")]),
           open(os.path.join(_R, "results", "logs", "lya_auditoria.json"), "w"), indent=1)
-for n, x in (("A", A), ("B", B), ("LCDM", LC)):
+for n, x in (("SSEE", B), ("LCDM", LC)):
     print(f"  {n:4s} r_d {x['rd']:.2f}  f_DE {x['f_DE_lya']:.3f}  E {x['E_lya']:.3f}  D_H {x['DH_lya']:.0f}"
           f"  D_H/r_d {x['DH_rd_lya']:.3f} ({x['pull_lya']:+.2f} sigma)  chi2 diag {x['chi2_diag']:.2f}"
           f"  cov {x['chi2_cov']:.3f}  pull max {x['pull_max']}")
-print(f"  A con la formula vieja: r_d {A['rd_formula_vieja']:.2f}  D_H/r_d {A['DH_rd_lya_formula_vieja']:.3f}")
 print(f"  control: {'PASA' if pasa else 'NO PASA'} {ctl}")

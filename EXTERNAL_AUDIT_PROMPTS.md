@@ -36,7 +36,9 @@ Eres un referee HOSTIL PERO ESCRUPULOSAMENTE JUSTO para una revista top de cosmo
 de fondo algebraicamente de φ (razón áurea) y π.
 
 QUÉ AFIRMA EL MODELO (para que sepas qué atacar, NO para que lo aceptes):
-- El sector de fondo (w₀, wₐ, Ω_DE, Ω_m,dyn) sale de φ,π con CERO parámetros ajustados.
+- La ecuación de estado (w₀, wₐ) y la única densidad de materia Ω_m = ω_m/h² = 0.308881 salen de φ,π con CERO
+  parámetros ajustados. (s_m = 1+w₀ = 0.160 es ecuación de estado, NO densidad: si ves a 0.160 en una ranura
+  de densidad, es un error del modelo y hay que reportarlo.)
   w₀=−0.840, wₐ=−0.670; afirman 0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según
   compilado SN — Union3 el más tenso).
 - H₀ = 3(φ+π)² = 67.96 km/s/Mpc, obtenido vía SH0ES × f_screen (no como número puro).
@@ -112,7 +114,8 @@ del proyecto "SSEE" (Structural Self-Energy Expansion): código Python, datos, s
 verificación, y los 10 papers + documentos consolidados.
 
 QUÉ AFIRMA EL MODELO (para saber qué atacar, NO para aceptarlo):
-- Fondo (w₀=−0.840, wₐ=−0.670, Ω_DE, Ω_m,dyn) de φ,π con CERO parámetros ajustados;
+- Fondo (w₀=−0.840, wₐ=−0.670 y la única densidad Ω_m = ω_m/h² = 0.308881) de φ,π con CERO parámetros ajustados
+  (s_m = 1+w₀ = 0.160 es ecuación de estado, no densidad);
   0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según compilado). H₀=3(φ+π)²=67.96 vía
   SH0ES×f_screen. CMB "k=2" (fija 4 de 6; EXACTAMENTE 2 libres {A_s, τ}), ΔBIC favorece SSEE.
 > 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
@@ -193,7 +196,8 @@ MATERIAL:
 - Archivo reproducible: el repositorio completo (código, datos, scripts de verificación).
 
 QUÉ AFIRMA EL MODELO (para saber qué juzgar, NO para aceptarlo):
-- El sector de fondo de energía oscura (w0=−0.840, wa=−0.670, Ω_DE, Ω_m,dyn) sale de φ y π
+- El sector de fondo (w0=−0.840, wa=−0.670 y la única densidad Ω_m = ω_m/h² = 0.308881; s_m = 1+w0 = 0.160 es
+  ecuación de estado, no densidad) sale de φ y π
   con CERO parámetros ajustados; 0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según compilado).
 - H0 = 3(φ+π)² = 67.96 km/s/Mpc como ANCLA adimensional (no identidad dimensional), vía
   SH0ES×f_screen. CMB "k=2": fija 4 de los 6 de ΛCDM, deja EXACTAMENTE 2 libres {A_s, τ};

@@ -188,7 +188,7 @@ tres_MIRA_d4: {fuente: "results/logs/algebra_derivada.json#algebra.tres_MIRA.val
 M_meV_rhoLambda_d2: {fuente: "results/logs/algebra_derivada.json#algebra.M_meV_rhoLambda.valor", formato: ".2f"}
 c2X_c1_KX_d6:       {fuente: "results/logs/algebra_derivada.json#algebra.c2X_c1_KX.valor", formato: ".6f"}
 X_UV_sobre_IR_d4:   {fuente: "results/logs/algebra_derivada.json#algebra.X_UV_sobre_IR.valor", formato: ".4f"}
-# Paper 3, chi2 diagonal vs Planck PR4, picos y caso naive — src/p03_cmb/ssee_paper3_cmb.py (2026-09-30)
+# Paper 3, chi2 diagonal vs Planck 2018 (PR3), picos — src/p03_cmb/ssee_paper3_cmb.py (2026-09-30)
 p3_N_TT:           {fuente: "results/logs/paper3_cmb_chi2.json#espectros.TT.N", formato: "d"}
 p3_N_TE:           {fuente: "results/logs/paper3_cmb_chi2.json#espectros.TE.N", formato: "d"}
 p3_N_EE:           {fuente: "results/logs/paper3_cmb_chi2.json#espectros.EE.N", formato: "d"}
@@ -221,12 +221,6 @@ p3_pico3_ssee:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.ssee.2",
 p3_pico1_lcdm:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.lcdm.0", formato: "d"}
 p3_pico2_lcdm:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.lcdm.1", formato: "d"}
 p3_pico3_lcdm:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.lcdm.2", formato: "d"}
-p3_pico1_naive:    {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.naive.0", formato: "d"}
-p3_pico2_naive:    {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.naive.1", formato: "d"}
-p3_pico3_naive:    {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.naive.2", formato: "d"}
-p3_naive_chi2_TT:  {fuente: "results/logs/paper3_cmb_chi2.json#naive.chi2_TT", formato: ",.0f"}
-p3_naive_chi2r_TT: {fuente: "results/logs/paper3_cmb_chi2.json#naive.chi2r_TT", formato: ".1f"}
-p3_naive_dchi2:    {fuente: "results/logs/paper3_cmb_chi2.json#naive.dchi2_vs_lcdm", formato: "+,.0f"}
 # Paper 2: 3 modelos, DIC, Savage-Dickey/CV, Ly-alpha (2026-09-30)
 p2_lnP_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.lnP_MAP", formato: ".2f"}
 p2_BIC_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.BIC", formato: ".2f"}
@@ -291,21 +285,21 @@ p2_dist_wa: {fuente: "results/logs/resumen_3modelos.json#dist_ssee_a_mediana_cpl
 p2_B_sddr: {fuente: "results/logs/savage_cv.json#savage_dickey.B_sddr", formato: ".2f"}
 p2_lnB: {fuente: "results/logs/savage_cv.json#savage_dickey.ln_B", formato: ".2f"}
 p2_lnB_signo: {fuente: "results/logs/savage_cv.json#savage_dickey.ln_B", formato: "+.2f"}
-p2_lyaA_E: {fuente: "results/logs/lya_auditoria.json#escenario_A.E_lya", formato: ".3f"}
-p2_lyaA_DH: {fuente: "results/logs/lya_auditoria.json#escenario_A.DH_lya", formato: ".0f"}
-p2_lyaA_rd: {fuente: "results/logs/lya_auditoria.json#escenario_A.rd", formato: ".2f"}
-p2_lyaA_DHrd: {fuente: "results/logs/lya_auditoria.json#escenario_A.DH_rd_lya", formato: ".2f"}
-p2_lyaA_pull: {fuente: "results/logs/lya_auditoria.json#escenario_A.pull_lya", formato: ".1f"}
-p2_lyaB_E: {fuente: "results/logs/lya_auditoria.json#escenario_B.E_lya", formato: ".3f"}
-p2_lyaB_DH: {fuente: "results/logs/lya_auditoria.json#escenario_B.DH_lya", formato: ".0f"}
-p2_lyaB_rd: {fuente: "results/logs/lya_auditoria.json#escenario_B.rd", formato: ".2f"}
-p2_lyaB_DHrd: {fuente: "results/logs/lya_auditoria.json#escenario_B.DH_rd_lya", formato: ".2f"}
-p2_lyaB_pull: {fuente: "results/logs/lya_auditoria.json#escenario_B.pull_lya", formato: ".1f"}
-p2_lyaA_rhoDE: {fuente: "results/logs/lya_auditoria.json#escenario_A.rhoDE_z_sobre_rhoDE_0_lya", formato: ".3f"}
-p2_lyaA_rd_d1: {fuente: "results/logs/lya_auditoria.json#escenario_A.rd", formato: ".1f"}
-p2_lyaB_chi2diag: {fuente: "results/logs/lya_auditoria.json#escenario_B.chi2_diag", formato: ".1f"}
-p2_lyaB_pullmax: {fuente: "results/logs/lya_auditoria.json#escenario_B.pull_max.pull", formato: ".1f"}
-p2_lyaB_pullmax_z: {fuente: "results/logs/lya_auditoria.json#escenario_B.pull_max.z", formato: ".2f"}
+p2_lyaB_E: {fuente: "results/logs/lya_auditoria.json#ssee.E_lya", formato: ".3f"}
+p2_lyaB_DH: {fuente: "results/logs/lya_auditoria.json#ssee.DH_lya", formato: ".0f"}
+p2_lyaB_rd: {fuente: "results/logs/lya_auditoria.json#ssee.rd", formato: ".2f"}
+p2_lyaB_DHrd: {fuente: "results/logs/lya_auditoria.json#ssee.DH_rd_lya", formato: ".2f"}
+p2_lyaB_pull: {fuente: "results/logs/lya_auditoria.json#ssee.pull_lya", formato: ".1f"}
+p2_lyaB_chi2diag: {fuente: "results/logs/lya_auditoria.json#ssee.chi2_diag", formato: ".1f"}
+p2_lyaB_chi2cov: {fuente: "results/logs/lya_auditoria.json#ssee.chi2_cov", formato: ".2f"}
+p2_lyaL_chi2diag: {fuente: "results/logs/lya_auditoria.json#lcdm_planck.chi2_diag", formato: ".1f"}
+p2_lyaL_chi2cov: {fuente: "results/logs/lya_auditoria.json#lcdm_planck.chi2_cov", formato: ".2f"}
+p2_lyaL_pullmax: {fuente: "results/logs/lya_auditoria.json#lcdm_planck.pull_max.pull", formato: "+.1f"}
+p2_lyaL_pullmax_z: {fuente: "results/logs/lya_auditoria.json#lcdm_planck.pull_max.z", formato: ".3f"}
+p2_lya_dato: {fuente: "results/logs/lya_auditoria.json#dato_lya.DH_rd", formato: ".3f"}
+p2_lya_dato_s: {fuente: "results/logs/lya_auditoria.json#dato_lya.sigma", formato: ".3f"}
+p2_lyaB_pullmax: {fuente: "results/logs/lya_auditoria.json#ssee.pull_max.pull", formato: ".1f"}
+p2_lyaB_pullmax_z: {fuente: "results/logs/lya_auditoria.json#ssee.pull_max.z", formato: ".2f"}
 p2_rd_lcdm: {fuente: "results/logs/lya_auditoria.json#lcdm_planck.rd", formato: ".2f"}
 p2_rd_ratio: {fuente: "results/logs/lya_auditoria.json#rd_B_sobre_lcdm", formato: ".4f"}
 p2_dBIC_lcdm_mas: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.dBIC_vs_ssee", formato: "+.2f"}
@@ -379,12 +373,7 @@ cl_lcdm_l3:  {fuente: "results/logs/class_picos.json#modelos.lcdm.picos.2", form
 cl_ssee_l1:  {fuente: "results/logs/class_picos.json#modelos.ssee.picos.0", formato: "d"}
 cl_ssee_l2:  {fuente: "results/logs/class_picos.json#modelos.ssee.picos.1", formato: "d"}
 cl_ssee_l3:  {fuente: "results/logs/class_picos.json#modelos.ssee.picos.2", formato: "d"}
-cl_naive_l1: {fuente: "results/logs/class_picos.json#modelos.naive.picos.0", formato: "d"}
-cl_naive_l2: {fuente: "results/logs/class_picos.json#modelos.naive.picos.1", formato: "d"}
-cl_naive_l3: {fuente: "results/logs/class_picos.json#modelos.naive.picos.2", formato: "d"}
 cl_ssee_rms:  {fuente: "results/logs/class_picos.json#modelos.ssee.rms_pct", formato: ".2f"}
-cl_naive_rms: {fuente: "results/logs/class_picos.json#modelos.naive.rms_pct", formato: ".1f"}
-cl_degrada:   {fuente: "results/logs/class_picos.json#modelos.degradacion_rms_naive_sobre_ssee", formato: ".0f"}
 p7_hc_rs_cs2: {fuente: "results/logs/hiclass_campo.json#canonico.pct.ruido_sobre_senal_cs2_l2", formato: ".0f"}
 p5_Beff_mayo:     {fuente: "results/logs/hmcode_bariones.json#mayo.B_eff", formato: ".4f"}
 p5_Beff_mayo_pct: {fuente: "results/logs/hmcode_bariones.json#mayo.pct_P", formato: ".2f"}

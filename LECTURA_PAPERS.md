@@ -153,7 +153,7 @@ corto porque el signo ya avisa. Registrado en [[project_rounding_policy]].
 **Relaciones (dim. 2):** siete signos, todos correctos — `≡` define la fracción de
 saturación, `∼` para el orden `10⁻⁶¹`, `≈` para el decimal truncado, `=` en las
 identidades exactas. **Valores (dim. 1):** `s = T_r/M_v`, `Ω_DE = s`, `w₀ = −s`,
-`1+w₀ = 1−s = Ω_m,dyn = 0.160050` ✓; `H₀/M_Pl ∼ 10⁻⁶¹` ✓ (1.19×10⁻⁶¹).
+`1+w₀ = 1−s = s_m = 0.160050` ✓ (entonces escrito Ω_m,dyn; es ecuación de estado, no densidad); `H₀/M_Pl ∼ 10⁻⁶¹` ✓ (1.19×10⁻⁶¹).
 
 **Hallazgo (dim. 4): un overclaim que se acota 100 líneas después.** La página
 afirma «*SSEE carries one dimensional input (H₀) and **zero dimensionless** ones*».
@@ -382,7 +382,7 @@ Compila exit=0, 33 pp., docs/ sincronizado, guardián VERDE 172.
 
 ### Página 6 · Postulado M retirado, Postulado I, y f_screen
 Ocho afirmaciones verificadas, **todas correctas**, dos de ellas identidades
-exactas a precisión de máquina: `1+w₀ = 1−s = Ω_m,dyn` (0.160050),
+exactas a precisión de máquina: `1+w₀ = 1−s = s_m` (0.160050; entonces escrito Ω_m,dyn),
 `ω_b = (π−φ)/(3Ω²)` (0.022418 → «0.02242»), `ω_c = KAL₀·ω_b·n_s` (0.119514),
 `Ω_m,CMB = ω_m/h² = 0.308881`, `MIRA = (3φ+π)/4 = AURA/2` (las dos formas dan
 1.998924), `N* = 2φ⁷ = 58.068884` con 2φ⁶=35.889 y 2φ⁸=93.957 fuera de [50,60],

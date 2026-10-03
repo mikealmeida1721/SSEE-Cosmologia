@@ -869,7 +869,7 @@ saturations $s_m=1+w_0$ and $s_{\rm DE}=|w_0|$ --- equation-of-state numbers in 
 density slot, inside a Poisson source. The substitution does not move the
 measured $r$, which is the output of the perturbation integration and never
 touched these two constants; it moves only the normalisation of the ratio below.
-and we write $\mathcal{R} \equiv \Omega_{m,\mathrm{eff}}/\Omega_{m,\mathrm{dyn}}$ for the
+and we write $\mathcal{R} \equiv \Omega_{m,\mathrm{eff}}/\Omega_m$ for the
 enhancement this clustering would produce.
 
 \paragraph{What this section does and does not test (reframed 2026-09-26).}
@@ -971,15 +971,16 @@ confirming the power-law decrease seen in Table~\ref{tab:MIRA}.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{fig_paper5_MIRA_test.pdf}
-\caption{$\mathcal{R}(k) \equiv \Omega_{m,\mathrm{eff}}/\Omega_{m,\mathrm{dyn}}$
+\caption{$\mathcal{R}(k) \equiv \Omega_{m,\mathrm{eff}}/\Omega_m$
   (blue points with error bars) versus $k/(H_0/c)$; earlier versions of this
   text, and of the figure axis, wrote this quantity $\mathrm{MIRA}_\mathrm{num}$
-  and divided by $\Omega_{m,\mathrm{dyn}}$ in the label while the code already
-  divided by $\Omega_m$.
+  and divided by $s_m=1+w_0$ (then written $\Omega_{m,\mathrm{dyn}}$) in the label
+  while the code already divided by $\Omega_m$.
   The former target $\mathrm{MIRA} = (3\varphi+\pi)/4 \simeq 1.999$ (red dashed)
   is not approached: IS suppression drives $\mathcal{R} \to 1$
   for $k \gg H_0/c$.
-  The grey region marks full DE clustering ($1/\Omega_{m,\mathrm{dyn}} \simeq 6.25$),
+  The grey dash-dotted line marks full DE clustering ($\mathcal{R}=1/\Omega_m$; an earlier
+  caption gave $1/s_m\simeq6.25$, which is not a clustering limit),
   ruled out by all current observations.
   The required perturbation amplitude $r^* = 0.190$ (Eq.~\ref{eq:r_required})
   would require DE clustering at the $19\%$ level — \emph{not} produced by IS dynamics.
@@ -1412,7 +1413,7 @@ effective $S_8$ inconsistent with current weak-lensing data.
 \label{sec:discussion}
 %======================================================================
 
-\subsection{Origin of the CMB-to-dynamical matter ratio}
+\subsection{The withdrawn CMB-to-$s_m$ ratio (historical)}
 \label{subsec:MIRA_background}
 
 The failure of linear IS perturbations to reproduce MIRA
@@ -1424,7 +1425,7 @@ equations as \citep{Zimdahl1996,Maartens1996}:
   \label{eq:Friedmann_IS}
 \end{equation}
 where in the SSEE steady state $\Pi_{\mathrm{bulk}} = -3\zeta H = -\KALz\,\rho_{\mathrm{DE}}H$.
-This viscous term effectively shifts the observed matter density. However, numerical integration of the background IS transport equations reveals that fitting an effective $\Omega_m$ to the resulting $H(z)$ evolution yields $\Omega_{m,\mathrm{fit}} / \Omega_{m,\mathrm{dyn}} \approx 3.04$ when using the SSEE viscous constant $\zeta = \KALz/3$. 
+This viscous term effectively shifts the observed matter density. However, numerical integration of the background IS transport equations reveals that fitting an effective $\Omega_m$ to the resulting $H(z)$ evolution yields $\Omega_{m,\mathrm{fit}} / s_m \approx 3.04$ when using the SSEE viscous constant $\zeta = \KALz/3$. 
 
 This is $52\%$ higher than the algebraic MIRA factor ($\val{MIRA_d4}$). We therefore establish that $\mathrm{MIRA}$ \emph{cannot} be derived from the background Israel--Stewart viscous pressure; the classical IS route is ruled out at both the linear-perturbation and background levels. \textbf{Historical note (2026-09-26).} The quantity being chased here, the matter factor $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}=0.3199$, was withdrawn on 2026-06-18 when OP-8 closed: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ is derived with no factor, and $\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation, not a density. The $3.04$ and the $52\%$ are therefore the record of a route closing, not a live tension --- there is no longer a factor of two to derive. The negative result is kept because it is what shut the route.
 

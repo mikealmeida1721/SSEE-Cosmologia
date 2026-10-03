@@ -308,7 +308,7 @@ canonical:
   wa:                  -0.670
   # Densidad de materia CMB — ω_m DIRECTO (reframe 2026-06-18; OP-8 CERRADO).
   # NO hay factor materia: Ω_m,CMB = ω_m/h² es el observable físico estándar,
-  # con cada pieza algebraica. Ω_m,dyn=0.160 (DESI) y ω_m (CMB) son dos
+  # con cada pieza algebraica. s_m=1+w₀=0.160 (ecuación de estado; DESI la prueba vía w₀) y ω_m (densidad, CMB) son dos
   # predicciones INDEPENDIENTES de SSEE, ya no ligadas por factor (MIRA ni π/φ).
   omega_b_h2:          0.02242    # (π−φ)/(3Ω²)        (OP-1)
   omega_c_h2:          0.11951    # KAL₀·ω_b·n_s       (forward, ya en Paper 1; 0.41σ)

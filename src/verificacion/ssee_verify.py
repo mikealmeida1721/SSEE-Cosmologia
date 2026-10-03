@@ -3364,11 +3364,12 @@ track_open("V-L3-mira  retencion conformal beta_c=AURA NO reproduce MIRA",
            "derivacion en el marco vigente por los 4 mecanismos naturales",
            op="OP-8b")
 
-# dos-Ω_m — OP-8 DISUELTO (reframe ω_m-directo 2026-06-18). Ya NO hay factor
-# materia: Om_m,dyn=1+w0=0.160 (DESI) y Om_m,CMB=ω_m/h²=0.308881 (ω_c=KAL0·ω_b·n_s)
-# son DOS predicciones independientes, no ligadas por MIRA ni π/φ.
-check("V-L3-2Om  Om_m,dyn != Om_m,CMB  (dos predicciones independientes)",
-      abs(Om_m_dyn - _omm / _h ** 2) > 0.12)
+# dos-Ω_m — DISUELTO. No hay dos Ω_m: s_m = 1+w0 = 0.160 es un número de la
+# ecuación de estado y la única densidad es Ω_m = ω_m/h² = 0.308881. Hasta el
+# 2026-10-03 aquí se comprobaba «Om_m,dyn != Om_m,CMB (dos predicciones)», que
+# sólo verificaba que dos números distintos son distintos y consagraba la
+# lectura del 0.160 como densidad. Lo que se vigila ahora es que s_m no entre en
+# NINGUNA ranura de densidad: R52, R52b, R52c (código) y R52d (papers).
 check("V-L3-2Om  Om_m,CMB = ω_m/h² (forward, sin factor) = 0.308881",
       abs(_omm / _h ** 2 - 0.3088808856) < 1e-6)
 # OP-8 DISUELTO (no abierto): ya NO hay factor materia que derivar. Lo
@@ -7002,6 +7003,94 @@ try:
           and len(_escanea_r52b(_okA)) == 0 and len(_escanea_r52b(_okB)) == 0,
           "4 casos: E(a) y Poisson con saturación ALIASADA marcados; "
           "los mismos dos con densidad, limpios")
+
+    # ── R52c — SATURACIÓN × h² (2026-10-03) ─────────────────────────────────
+    # La cuarta forma, y la que pasó: convertir una saturación en densidad
+    # FÍSICA, ω = Ω·h². El «caso naive» de ssee_paper3_cmb.py
+    #     omch2 = Omm * h**2 - Omb_h2 - ω_ν     (Omm = OMEGA_M_DYN renombrado)
+    # y el modelo «naive» de class_picos.py (S.S_M * h ** 2 - ...) llevaron
+    # meses metiendo s_m = 0.160 en la ranura omega_cdm de CAMB y CLASS, y tres
+    # documentos (PRD, Sealed, Unified) citaban su «degradación ×325» como prueba
+    # de que la densidad completa es necesaria. R52 miraba ρ_crit; R52b, la
+    # dilución y el Poisson. Nadie miraba h². Se resuelven los alias igual que R52b.
+    def _escanea_r52c(_lineas):
+        _texto = "\n".join(_lineas)
+        _simb = _sat_visibles(_texto)
+        _sat = "(?:" + "|".join(sorted((_re.escape(_x) for _x in _simb),
+                                       key=len, reverse=True)) + ")"
+        _h2 = _re.compile(rf"(?<![A-Za-z0-9_]){_sat}\s*\*\s*(?:h|\(\s*H0\w*\s*/\s*100(?:\.0)?\s*\))\s*\*\*\s*2"
+                          rf"|(?:h|\(\s*H0\w*\s*/\s*100(?:\.0)?\s*\))\s*\*\*\s*2\s*\*\s*{_sat}(?![A-Za-z0-9_])")
+        _malas = []
+        for _i, _ln in enumerate(_lineas):
+            _cod = _ln.split("#")[0]
+            if not _h2.search(_cod):
+                continue
+            _win = "\n".join(_lineas[max(0, _i - 8):_i + 2])
+            if _EXENTO.search(_win):
+                continue
+            _malas.append(_i)
+        return _malas
+
+    _r52c = []
+    for _py in sorted((_REPO / "src").rglob("*.py")):
+        if "__pycache__" in str(_py) or "verificacion" in str(_py):
+            continue
+        _ls = _py.read_text(errors="ignore").splitlines()
+        for _i in _escanea_r52c(_ls):
+            _r52c.append(f"{_py.relative_to(_REPO)}:{_i+1} «{_ls[_i].strip()[:52]}»")
+    check("R52c ninguna saturación se convierte en densidad física (× h²)",
+          not _r52c,
+          "; ".join(_r52c[:4]) + (f" … (+{len(_r52c)-4})" if len(_r52c) > 4 else "")
+          if _r52c else "0 saturaciones × h² en código activo")
+    # Control R53, con las DOS formas reales que pasaron y su versión correcta.
+    _bugC1 = ["from ssee_core import OMEGA_M_DYN as Omm",
+              "    omch2 = Omm * h**2 - Omb_h2 - OMEGA_NU_H2"]
+    _bugC2 = ['    "naive": ssee(S.S_M * h ** 2 - S.OMEGA_B_H2 - S.OMEGA_NU_H2),']
+    _okC1 = ["    omch2 = OMEGA_M_TOTAL * h**2 - ombh2 - OMEGA_NU_H2"]
+    _okC2 = ["    omch2 = Omm_cmb * (H0 / 100)**2 - ombh2"]
+    check("R52c el detector marca s_m × h² (aliasado o con prefijo) y deja pasar la densidad",
+          len(_escanea_r52c(_bugC1)) == 1 and len(_escanea_r52c(_bugC2)) == 1
+          and len(_escanea_r52c(_okC1)) == 0 and len(_escanea_r52c(_okC2)) == 0,
+          "4 casos: los dos naive reales marcados; Ω_m total × h² y Omm_cmb × (H0/100)² limpios")
+
+    # ── R52d — EN LOS PAPERS, s_m NO SE NOMBRA COMO DENSIDAD (2026-10-03) ────
+    # El símbolo viejo «Ω_m,dyn» sólo puede aparecer en una frase que diga que
+    # es historia (earlier/formerly/withdrawn/...). Fuera de eso, el texto
+    # vuelve a presentar 0.160 como una densidad, que es lo que pasó en el
+    # resumen del PRD («the bare dynamical Ω_m,dyn alone cannot reproduce...»).
+    _DYN = _re.compile(r"\\Omega_\{m,\s*(?:\\rm\s*|\\mathrm\{)dyn\}?\}|\\Om\^\{\\mathrm\{dyn\}\}|\\Omdyn\b")
+    _HIST = _re.compile(r"earlier|formerly|previous|withdrawn|retract|supersed|never|"
+                        r"then in force|until|not a density|is not a|was an artefact|"
+                        r"then written|old |used to|cancell?ed|retired|was fed|"
+                        r"two-\$\\Omega_m\$|Two-\$\\Omega", _re.I)
+
+    def _escanea_r52d(_texto):
+        _malas = []
+        for _m in _DYN.finditer(_texto):
+            _ini = _texto.rfind("\n", 0, _m.start()) + 1
+            if _texto[_ini:_m.start()].lstrip().startswith("%"):
+                continue
+            _win = _texto[max(0, _m.start() - 350):_m.end() + 250]
+            if not _HIST.search(_win):
+                _malas.append(_texto.count("\n", 0, _m.start()) + 1)
+        return _malas
+
+    _r52d = []
+    for _d in ("manuscript", "submission_PRD"):
+        for _tx in sorted((_REPO / _d).glob("*.tex")):
+            for _n in _escanea_r52d(_tx.read_text(errors="ignore")):
+                _r52d.append(f"{_tx.relative_to(_REPO)}:{_n}")
+    check("R52d ningún paper nombra s_m = 1+w0 como densidad (Ω_m,dyn fuera de contexto histórico)",
+          not _r52d,
+          "; ".join(_r52d[:5]) + (f" … (+{len(_r52d)-5})" if len(_r52d) > 5 else "")
+          if _r52d else "Ω_m,dyn sólo aparece en frases que lo declaran historia")
+    _bugD = ("A Boltzmann calculation shows the full $\\omega_m$ (not the bare dynamical\n"
+             "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$) is physically required for the CMB.")
+    _okD = ("There is one matter density; the quantity formerly written\n"
+            "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$ is $1+w_0$, an equation-of-state number.")
+    check("R52d el detector marca Ω_m,dyn usado como densidad y deja pasar la nota histórica",
+          len(_escanea_r52d(_bugD)) == 1 and len(_escanea_r52d(_okD)) == 0,
+          "2 casos: la frase real del resumen del PRD marcada; la de P2 «formerly written» limpia")
 
 except Exception as _e:
     check("R52 capa operable", False, str(_e))
