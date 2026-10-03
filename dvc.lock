@@ -2075,11 +2075,22 @@ stages:
       hash: md5
       md5: 687ae6927e506b6ac7798bc0d934a460
       size: 1413
-    - path: data/raw/fsigma8_fuentes
+    - path: data/raw/fsigma8_fuentes/alam2017.tex
       hash: md5
-      md5: cb185407a8774ec677b997819a7b0c5e.dir
-      size: 3668
-      nfiles: 4
+      md5: 305f1090aec1ac43ebfbd97637389ef3
+      size: 1263
+    - path: data/raw/fsigma8_fuentes/beutler2012.tex
+      hash: md5
+      md5: 81b3f036c03156aa873ccd50440f4ebc
+      size: 790
+    - path: data/raw/fsigma8_fuentes/hou2021.tex
+      hash: md5
+      md5: 3d4366a95aca99035d7556b1d65f74bb
+      size: 169
+    - path: data/raw/fsigma8_fuentes/howlett2015.tex
+      hash: md5
+      md5: ef152b50dad93a0e0234d04da2fda092
+      size: 1446
     - path: data/raw/fsigma8_rsd.csv
       hash: md5
       md5: 1838a533998af9f849bf4080927d7143
@@ -2123,5 +2134,5 @@ stages:
     outs:
     - path: results/logs/coteja_crudos.json
       hash: md5
-      md5: 529f649103ee7b43681fe52ba9bd8886
+      md5: 10648c6d4550f88c04342ed50293d3c6
       size: 4994

@@ -56,7 +56,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "20287f9ce6b3d7ee78c7caa8c60e329b93fed6fb",
+  "commit": "332641cc5523526fe6757659c602b023b019590f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/coteja_crudos.py",
@@ -81,7 +81,7 @@
   "argv": [
    "src/verificacion/coteja_crudos.py"
   ],
-  "fecha": "2026-10-02T20:19:37",
+  "fecha": "2026-10-02T20:24:41",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
