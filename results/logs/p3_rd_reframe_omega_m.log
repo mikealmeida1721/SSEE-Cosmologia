@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "e1dd1df5346af069301087fd86336473ac404577", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/run_p3_rd_reframe.py", "script_sha256": "b92d8e197895d2068f3594da40375b98323f5b4529f47e2d0bc709ac6b868b29", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"results/logs/mcmc_paper2_reframe.json": "c4f32b358ca3400428340b3bd4d7422ad70625af3d2a53ba2eae0d8baeeb260e"}, "argv": ["src/procedencia_sella.py", "src/p03_cmb/run_p3_rd_reframe.py", "results/logs/p3_rd_reframe_omega_m.log", "results/logs/mcmc_paper2_reframe.json"], "fecha": "2026-10-03T08:20:26", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "5c406720cd2de2ffa66e87d45f008c5590fde155", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/run_p3_rd_reframe.py", "script_sha256": "b92d8e197895d2068f3594da40375b98323f5b4529f47e2d0bc709ac6b868b29", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"results/logs/mcmc_paper2_reframe.json": "c4f32b358ca3400428340b3bd4d7422ad70625af3d2a53ba2eae0d8baeeb260e"}, "argv": ["src/procedencia_sella.py", "src/p03_cmb/run_p3_rd_reframe.py", "results/logs/p3_rd_reframe_omega_m.log", "results/logs/mcmc_paper2_reframe.json"], "fecha": "2026-10-03T12:52:00", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 === Fase B / P3 — r_d y θ* reframe ω_m-DIRECTO ===
 H0=67.9621  ombh2=0.02242  omch2=0.11951  mnu=0.06849
 -> omega_m=0.14267  Omega_m,CMB=0.30888  (sin factor; OP-8 cerrado)
@@ -6,4 +6,4 @@ H0=67.9621  ombh2=0.02242  omch2=0.11951  mnu=0.06849
 --- RESULTADO (0.0s) ---
 [H_glob 67.962142] r_d = 147.174 Mpc (0.32σ)  θ* = 0.59667° (100θ*=1.04139, 1.00σ)
 [posterior MCMC 67.8226] r_d = 147.174 Mpc (0.32σ)  θ* = 0.59644° (100θ*=1.04099, 0.34σ)
-(Planck: r_d=147.09±0.26 Mpc, 100θ*=1.04109±0.00030; 28.6s)
+(Planck: r_d=147.09±0.26 Mpc, 100θ*=1.04109±0.00030; 28.8s)

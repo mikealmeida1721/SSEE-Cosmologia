@@ -22,12 +22,12 @@ stages:
       size: 11979011
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: a477034fa06e33d33d9ecb7811def962
-      size: 6064
+      md5: 0cc8bb27d16107efd03af4122118be33
+      size: 4429
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
-      md5: 53d20532df8f0b27c6a812612ba6bb71
-      size: 4172
+      md5: 6617dd2d05997e73722fe828a739423c
+      size: 4165
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -39,7 +39,7 @@ stages:
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: b0e55d7f04463551100f6c2cab7ce9f5
+      md5: 8a70fbb2cf22675cf259d69ebfc7ddab
       size: 3798
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
@@ -47,8 +47,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: ce3ad1c9b2208b7d890117d184988b8f
-      size: 69505
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: results/chains/lcdm_cmb.1.txt
       hash: md5
       md5: 881ecb1f5d40784f62c8798473d1affe
@@ -76,8 +76,8 @@ stages:
     outs:
     - path: results/logs/s8_desde_b1.json
       hash: md5
-      md5: fe9e41fb502917d26e7e813b89475033
-      size: 1928
+      md5: 8fd3eca84abbf5932cf12e012518f01a
+      size: 1930
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
     deps:
@@ -521,8 +521,8 @@ stages:
       size: 929058
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: ce3ad1c9b2208b7d890117d184988b8f
-      size: 69505
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: src/p06_growth/kids_legacy_bic.py
       hash: md5
       md5: 4a8c337fe70ba2f14f8312ed393053f8
@@ -534,8 +534,8 @@ stages:
     outs:
     - path: results/logs/kids_legacy_bic.json
       hash: md5
-      md5: c0e72be59e03250057f1ecac06a6a9db
-      size: 3417
+      md5: b29c690fca78dfd4c68e13cb7e92ac1c
+      size: 3419
   paper3_cmb:
     cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 
       src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 
@@ -775,8 +775,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: ce3ad1c9b2208b7d890117d184988b8f
-      size: 69505
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: results/logs/deltac_spherical_collapse.json
       hash: md5
       md5: 767b90f3f003143c7e345d4fa7f6b6b3
@@ -787,7 +787,7 @@ stages:
       size: 4074
     - path: results/logs/p5_IS_perturbations_Q3.json
       hash: md5
-      md5: df92ec6e230ade2f4725a63eda0a11ad
+      md5: 6000df6e40e82f0112bb710ff573c918
       size: 1240
     - path: src/p02_mcmc/ssee_press_schechter.py
       hash: md5
@@ -804,11 +804,11 @@ stages:
     outs:
     - path: results/logs/press_schechter.json
       hash: md5
-      md5: 9e70f4695f9080bb31a5aef20e6d090c
+      md5: 84459652800d5f472b8de67a22082706
       size: 2081
     - path: results/logs/press_schechter.log
       hash: md5
-      md5: 9e3558f0ff03cdaaf193307036e7ad42
+      md5: ecf6187f7a60228d71357a5ad7056349
       size: 2412
   edad_universo:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -841,8 +841,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: 8d28f9a8841333f318ad8f566b6dd891
-      size: 69541
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
       md5: 0b96cab184256e7135861e79a3d46752
@@ -866,11 +866,11 @@ stages:
     outs:
     - path: results/figures/fig_class_tt.pdf
       hash: md5
-      md5: f269f39cd0a543d2116c239635fe379a
+      md5: 392b82fda844c1b9eaae4a65fbb1a605
       size: 21427
     - path: results/logs/class_picos.json
       hash: md5
-      md5: 83552a138f74d8f4755660aba5f9bd2f
+      md5: 0b2f04d8f3feae273aa4e501f6e6928e
       size: 1370
   fondos_exponenciales:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1120,8 +1120,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: ce3ad1c9b2208b7d890117d184988b8f
-      size: 69505
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: src/p06_growth/cobaya_kids_legacy.py
       hash: md5
       md5: 4fb3a20f68aefac83de472acad81875e
@@ -1141,8 +1141,8 @@ stages:
     outs:
     - path: results/logs/s8_kids_legacy_camb.json
       hash: md5
-      md5: 5d6839451e5328847734beea25a901f9
-      size: 1865
+      md5: d3842d6f224d337b88ccb46caca42e03
+      size: 1867
   techo_sigma8_As_fijo:
     cmd: .venv/bin/python3 src/p05_IS/techo_sigma8_As_fijo.py
     deps:
@@ -1319,8 +1319,8 @@ stages:
       size: 986674
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: ce3ad1c9b2208b7d890117d184988b8f
-      size: 69505
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: results/chains/ssee_cmb.1.txt
       hash: md5
       md5: 155b55672adc4aaa597437c0875a4706
@@ -1336,12 +1336,12 @@ stages:
     outs:
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
-      md5: 6fdadb43d01fefdbba50c370c3d91f89
-      size: 9082
+      md5: 407d4c513bbe2f2c02f1a03a8f3c6733
+      size: 9084
     - path: results/logs/multisonda_fondo_clavado.log
       hash: md5
-      md5: c6f04fac1d44f102a2ff077a70401da9
-      size: 10546
+      md5: bac797b2fcb7016caf0eb1388af3cbc2
+      size: 10548
   fnu_tremaine_gunn:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 
@@ -2478,8 +2478,8 @@ stages:
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: ce3ad1c9b2208b7d890117d184988b8f
-      size: 69505
+      md5: 60c5d415834926fb18a76f823a6fe85c
+      size: 69594
     - path: src/p09_hubble/h0_lente_fondo_ssee.py
       hash: md5
       md5: 40311728d2d9f3e84cab400c0f4f1d2f
@@ -2495,8 +2495,8 @@ stages:
     outs:
     - path: results/logs/h0_lente_fondo_ssee.json
       hash: md5
-      md5: 19e2afeb9dd9804df3d3ed464609debe
-      size: 3488
+      md5: 6b5212b70cfdd1e0214915293c538ab9
+      size: 3489
   p9_figura_cascada:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p09_hubble/ssee_paper9_figures.py
@@ -3205,8 +3205,8 @@ stages:
       size: 3586
     - path: src/p03_cmb/ssee_paper3_cmb.py
       hash: md5
-      md5: 3c6a93ee5805e94f01ffc907ea35b748
-      size: 21227
+      md5: dbe64cfb3f8e25b3aa326e9702171973
+      size: 20544
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -3222,11 +3222,11 @@ stages:
     outs:
     - path: results/logs/p3_rd_reframe_omega_m.json
       hash: md5
-      md5: 85c6253bc1b8afb3dd30b9a88a349817
+      md5: f2a4de08add67bbfa5c78c9fe603b890
       size: 1396
     - path: results/logs/p3_rd_reframe_omega_m.log
       hash: md5
-      md5: b032ee095200d67384f27843c7a00204
+      md5: 7692ca92f39fc0706f3ef7f58a09aad9
       size: 1310
   sello_rd_camb_control:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/rd_camb.py && 

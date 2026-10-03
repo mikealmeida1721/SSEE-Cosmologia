@@ -98,19 +98,19 @@
   "nota": "la ventana de cada centro es de ~+-4 meses (incertidumbre del modelo de lente)"
  },
  "_procedencia": {
-  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
+  "commit": "5c406720cd2de2ffa66e87d45f008c5590fde155",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/h0_lente_fondo_ssee.py",
   "script_sha256": "ae8daa18e5b89e87b4308a78350f849ecc549881b5e86badc6f8ab3d981e5045",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2"
+   "CANONICAL_VALUES.yaml": "08bdd82aa039a4f7e05c95579c8db0abd7da4a2e861d291de02ce0f49897123f"
   },
   "argv": [
    "src/p09_hubble/h0_lente_fondo_ssee.py"
   ],
-  "fecha": "2026-10-03T08:25:10",
+  "fecha": "2026-10-03T12:52:25",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -118,7 +118,7 @@
    "scipy": "1.17.1"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

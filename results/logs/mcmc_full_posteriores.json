@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-01",
+ "fecha": "2026-10-03",
  "cadenas": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1..c4",
  "filas_tras_corte": 53116,
  "corte": "30 % inicial por cadena",
@@ -112,23 +112,23 @@
  },
  "control_pasa": true,
  "_procedencia": {
-  "commit": "189e4e1a065f94289634168ffb8759d542f822cf",
+  "commit": "389b11fae99a48dde7b881103a2d3687f83740f6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/mcmc_full/leer_mcmc_full.py",
-  "script_sha256": "1af097e2ec47b265a0cc516f84c54708238d39402437a0513b3fb949fe547143",
+  "script_sha256": "e0d38f8e84d2c2f3aa60e3242d5e8e1eb2370f89327a087c5f9d9f17d5953347",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt": "77e6956834c7e42363b9b1b67ce93c08cc224a8131150dd453ccd4c7aca28cb6",
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt": "755cb5c82c23e4ab2e3bc787286fd52efa20ce67b7903151f3eef7851b8ae354",
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt": "8512b4f4345594e0e0a752d15d9c2889723ab61519f78ced9c97003675c7c77c",
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt": "1a69270dd4c73feb103d33bc48f36486e78c989c0a1d92437d2cc37a3a3cf64f",
-   "results/logs/lya_auditoria.json": "36ca8495e7e9585273aa2cf6892cbba4b40698717aacde54909a0ce573659c59"
+   "results/logs/lya_auditoria.json": "be10d2e8d82b8c5741b5a8ac75d863aacf3b924766cff45f64e0fd7937fb818e"
   },
   "argv": [
    "src/mcmc_full/leer_mcmc_full.py"
   ],
-  "fecha": "2026-10-01T10:15:31",
+  "fecha": "2026-10-03T12:54:27",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

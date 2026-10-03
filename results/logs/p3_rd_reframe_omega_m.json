@@ -22,7 +22,7 @@
   "theta100_s": 0.0003
  },
  "_procedencia": {
-  "commit": "e1dd1df5346af069301087fd86336473ac404577",
+  "commit": "5c406720cd2de2ffa66e87d45f008c5590fde155",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/run_p3_rd_reframe.py",
@@ -34,7 +34,7 @@
   "argv": [
    "src/p03_cmb/run_p3_rd_reframe.py"
   ],
-  "fecha": "2026-10-03T08:20:25",
+  "fecha": "2026-10-03T12:52:00",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
