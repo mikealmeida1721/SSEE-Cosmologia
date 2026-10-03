@@ -25,6 +25,8 @@ sys.path.insert(0, os.path.join(R, "src"))
 from ssee_core import OMEGA_B_H2  # noqa: E402
 out = dict(sigmas_a_obh2_algebraico=float((OMEGA_B_H2 - p50) / np.std(ob)), obh2_algebraico=OMEGA_B_H2, fecha=str(__import__("datetime").date.today()), control_H0_mediana=h, obh2_mediana=float(p50),
            obh2_p16=float(p16), obh2_p84=float(p84), obh2_std=float(np.std(ob)), filas=int(len(c)))
-json.dump(out, open(os.path.join(R, "results", "logs", "mcmc_paper2_reframe_obh2.json"), "w"), indent=1)
+from procedencia import con_acta  # noqa: E402  (2026-10-03: entra en la cadena con acta)
+json.dump(con_acta(out, __file__, [os.path.join(R, "results", "logs", "mcmc_paper2_reframe.json")]),
+          open(os.path.join(R, "results", "logs", "mcmc_paper2_reframe_obh2.json"), "w"), indent=1)
 print(f"  a ω_b algebraico {OMEGA_B_H2}: {(OMEGA_B_H2-p50)/np.std(ob):.2f}σ")
 print(f"  control H0 = {h:.4f} (json {js['H0_mediana']:.4f})  Ω_b h² = {p50:.5f} +{p84-p50:.5f}/-{p50-p16:.5f}")
