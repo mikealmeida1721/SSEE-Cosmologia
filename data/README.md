@@ -1,5 +1,13 @@
 # Data
 
+## manifiesto_descargas_T2.json
+
+Manifest of the probe data downloaded on 2026-09-26 for the joint run (DES Y3, SN Ia,
+CMB lensing, eROSITA…), which live outside the repository (`/mnt/datos/SSEE_data/`):
+URL of origin, size and sha256 of each file. It is an INPUT declaration, not a result.
+`src/verificacion/manifiesto_datos_T2.py` checks that every file on disk is still the
+same bytes. (Until 2026-10-03 it lived in `results/logs/` as `datos_crudos_T2.json`.)
+
 ## raw/
 
 Observational data used in Papers 2 and 3:

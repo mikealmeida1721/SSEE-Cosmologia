@@ -10,7 +10,8 @@ el que se uso. El manifiesto guarda el sha256 y la URL de origen de cada uno.
 
 NO valida la fisica: valida que el fichero no cambio y que se puede abrir.
 Correr:  .venv/bin/python3 src/verificacion/manifiesto_datos_T2.py
-Fuente:  results/logs/datos_crudos_T2.json
+Fuente:  data/manifiesto_descargas_T2.json (2026-10-03: estaba en results/logs/ como si fuera
+         un resultado; es un manifiesto de ENTRADA y vive junto a los datos)
 """
 import hashlib
 import json
@@ -18,7 +19,7 @@ import os
 import sys
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-MAN = os.path.join(REPO, "results", "logs", "datos_crudos_T2.json")
+MAN = os.path.join(REPO, "data", "manifiesto_descargas_T2.json")
 
 
 def sha(p):

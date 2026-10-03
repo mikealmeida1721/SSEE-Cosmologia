@@ -5,7 +5,7 @@ reproduce lo que DES publico?
 MOTOR. CosmoSIS oficial (conda-forge, entorno en el HDD) con el ini MANTENIDO de
 la libreria estandar: examples/des-y3-maglim.ini. Sus cortes de escala son
 identicos a los que trae embebidos la cadena publicada, y su FITS 2pt es el
-mismo archivo que bajamos (mismo sha256, ver results/logs/datos_crudos_T2.json).
+mismo archivo que bajamos (mismo sha256, ver data/manifiesto_descargas_T2.json).
 
 QUE SE COMPARA. La cadena publica de DES (chain_3x2pt_lcdm_SR_maglim.txt) guarda
 por cada muestra el chi2 de su vector de datos (DATA_VECTOR--2PT_CHI2). Se toma
