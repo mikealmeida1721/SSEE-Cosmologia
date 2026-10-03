@@ -3025,6 +3025,28 @@ la expresión de `δρ_φ` está asertada, no derivada.
 > lectura de Mike: el apantallamiento actúa igual a toda profundidad del flujo de Hubble o vive en el paso de
 > calibración (anfitriones Cefeida, < ~40 Mpc). Próxima prueba que separa esas dos: H₀ por subgrupos de
 > calibradores según su distancia.
+> **2026-10-03 — PRUEBA POR MÉTODOS (decisión de Mike), escrita ANTES de correr.** Sustituye a la de
+> calibradores cercanos contra lejanos porque la incluye. Pregunta: ¿el apantallamiento lo ve TODO método
+> local (lectura de plano/nivel, «P») o solo el que se calibra con Cefeidas («C»)?
+> **Predicción sin SH0ES (para no ser circular):** H_glob medido por DESI DR2 sola con prior plano
+> (`h0_four_priors.json`, plano), y el f_screen del álgebra. P: todo método local da H_glob,DESI/(1−f).
+> C: los métodos sin Cefeidas dan H_glob,DESI. Control del otro lado: ΛCDM sin apantallamiento, todo método
+> local da el H₀ de Planck 2018 (67.36 ± 0.54, leído de su .tex).
+> **Datos (valor titular leído del LaTeX de cada artículo, ninguno tecleado):**
+> - PRIMARIO, sin escalera estelar: máseres MCP (arXiv:2001.09213), lentes TDCOSMO-2025 (2506.03023),
+>   sirena GW170817 (1710.05835). Independientes entre sí.
+> - SECUNDARIO, escalera sin Cefeidas, POR EQUIPO y sin combinar (comparten supernovas dentro de cada
+>   equipo y difieren entre equipos por selección de muestra, según 2408.11770): TRGB de CCHP (2408.06153),
+>   TRGB y JAGB de SH0ES con JWST (2408.11770). JAGB de CCHP como referencia.
+> - Con Cefeidas, solo como referencia: SH0ES HST (2112.04510, la entrada de la cascada) y SBF (2101.02221, calibración mixta).
+> **Criterios (sobre el PRIMARIO):** errores asimétricos como normal partida; errores separados (estadístico,
+> sistemático) en cuadratura. «Apoya P frente a C»: Δχ²(C−P) ≥ 9 y χ²_P con p > 0.05. «Apoya C frente a P»:
+> Δχ²(P−C) ≥ 9 y χ²_C con p > 0.05. Lo demás: no concluye.
+> **Control de potencia (R53), antes de leer el veredicto:** 2000 simulaciones del PRIMARIO con sus errores
+> reales, bajo P y bajo C. Si el criterio no recupera la hipótesis verdadera en ≥ 80 % de los casos, la
+> prueba **no tiene potencia con estos datos**. Se reporta eso y la precisión combinada que haría falta,
+> no un veredicto. Control de lectura: cada valor se vuelve a buscar en su .tex, y un dígito alterado
+> tiene que no encontrarse.
 
 **De dónde viene.** OP-8 se **disolvió** el 2026-06-18 en su forma original: con el reframe
 ω_m-directo ya no hay «factor materia» que derivar, y Ω_m,CMB = ω_m/h² es derivada. Pero
