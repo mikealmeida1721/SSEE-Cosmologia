@@ -663,6 +663,27 @@ stages:
     outs:
     - results/logs/fsigma8_canonico.json:
         cache: false
+  rd_dual:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
+      src/ssee_resolution_figures.py
+    deps:
+    - src/ssee_resolution_figures.py
+    - src/rd_camb.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/planck2018_tabla2.py
+    - src/procedencia.py
+    - data/raw/planck2018_VI/tabla2.tex
+    - results/logs/kids_publicados.json
+    - results/logs/s8_kids_legacy_camb.json
+    - CANONICAL_VALUES.yaml
+    outs:
+    - results/logs/rd_dual.json:
+        cache: false
+    - results/figures/fig_rd_dual.pdf:
+        cache: false
+    - results/figures/fig_s8_resolution.pdf:
+        cache: false
   termino_volumen_boss:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/mide_termino_volumen.py && .venv/bin/python3 

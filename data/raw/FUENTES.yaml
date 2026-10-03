@@ -49,10 +49,10 @@ planck2018_prior.csv:
   nota: "rho(H0,Om)=-0.85 de la cabecera NO esta en la Tabla 2 (sale de cadenas): sin cotejar; lo usan ssee_paper2_mcmc*.py y ssee_phase_d_savage_cv.py"
 
 planck2018_VI/tabla2.tex:
-  cita: "Planck 2018 VI (arXiv:1807.06209), fuente LaTeX ms.tex lineas 2295-2310, bajada de arxiv.org/e-print el 2026-10-02"
-  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  cita: "Planck 2018 VI (arXiv:1807.06209), fuente LaTeX ms.tex lineas 2295-2326, bajada de arxiv.org/e-print el 2026-10-02; extendida el 2026-10-03 (tar.gz sha256 868a4956...e18b) con sigma_8, S_8, r_drag y demas derivados. Las 16 lineas anteriores son prefijo identico."
+  cotejo: "es el extracto literal; lo leen src/verificacion/coteja_crudos.py y src/planck2018_tabla2.py"
   extracto: planck2018_VI/tabla2.tex
-  sha256: 49791a953ae5233971eafd3598de1351661fee785b1f97d4a7bc01609db3d3a5
+  sha256: 4f97257907334fc1bd4b80b7575685482e2ffd3fef5c77eb76601c5d9ca99099
 
 planck2018_TT.txt:
   cita: "Planck 2018 (PR3) Legacy Archive, COM_PowerSpect_CMB-*-full_R3.01.txt"
