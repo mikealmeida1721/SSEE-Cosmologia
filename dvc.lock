@@ -1698,7 +1698,7 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 392ae8da2eff2c5a51238b13007633d9
+      md5: b2acaf687162b3e49afa463936800e21
       size: 2052
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
@@ -1747,11 +1747,11 @@ stages:
     outs:
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 00f9dd3c8f1dca691b562a7a1dabca86
+      md5: 6696255dc7ae8be0be53dc7c04a4bb0d
       size: 8010
     - path: results/logs/sondas_ssee_vs_lcdm.log
       hash: md5
-      md5: 77cd5e647087f4acf231c46283697d5d
+      md5: f2cfe8632ce7372f0b0edf4b4e8caf05
       size: 1723
   mcmc_paper2_reframe:
     cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
@@ -2332,11 +2332,11 @@ stages:
     deps:
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 392ae8da2eff2c5a51238b13007633d9
+      md5: b2acaf687162b3e49afa463936800e21
       size: 2052
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 9a9ce4364b2f7c323eb45e7764d2fe68
+      md5: 6696255dc7ae8be0be53dc7c04a4bb0d
       size: 8010
     - path: src/p11_sondas/tabla_sondas_tex.py
       hash: md5
@@ -2349,8 +2349,8 @@ stages:
     outs:
     - path: manuscript/tabla_sondas_generada.tex
       hash: md5
-      md5: 157790f4d28b1cfdcd6d8b67ba04027c
-      size: 1876
+      md5: 6ac80f463b393594206e7f8418068d1f
+      size: 1875
   op19_adm_masa:
     cmd: .venv/bin/python3 src/op19/op19_adm_masa.py
     deps:

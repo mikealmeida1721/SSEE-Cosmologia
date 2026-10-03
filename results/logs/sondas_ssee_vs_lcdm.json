@@ -248,7 +248,7 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
+  "commit": "fbb81b5843cb4ac5f6acc595bbc6cd7692adc4c9",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
@@ -259,7 +259,7 @@
    "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
    "results/logs/act_dr6_en_el_clavo.json": "f0aeb83d3b50937fc80ad17795e02e80513a2dc49b281b4f99b2e37b6d954448",
    "results/logs/spt3g_kk_en_el_clavo.json": "6f5a2b55112774a05826d6bd5780c6b3f633221effecd386af169cfffcef055f",
-   "results/logs/bao_lcdm_libre.json": "3173b9a34e63201c10c6ea06f363899860534b451e74c5f1eb6649c21163457c",
+   "results/logs/bao_lcdm_libre.json": "56aea039f17b401e0b304215919a8f7c8e951446186ef94e960e7ed3374a611d",
    "results/logs/des_y3_en_el_clavo_ssee.json": "a14a2368ea014ea844deee8f3c9fe886099a8df56208b7a0b2d017c485342050",
    "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "dd7ac6cd8431fa9b23748e4ed61ddc1cd5ebd3d04de3eb74881f00d9ff93e750",
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "8e7645b20e92586a1a14f403404ffbdee4832b78bdb9710fab57ec59f53d2d49",
@@ -271,7 +271,7 @@
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-03T08:25:27",
+  "fecha": "2026-10-03T08:29:40",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
