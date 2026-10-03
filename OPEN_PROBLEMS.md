@@ -2281,6 +2281,16 @@ Script a crear: `op18_As_from_inflation.py`.
 
 ## OP-19 — Mecanismo de producción detrás de $\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s$ (Papers 1, 6 / abundancia relic) — ABIERTO (2026-07-12)
 
+> **2026-10-03 — primera prueba barata: la masa ADM NO separa SSEE de ΛCDM.** Si la materia oscura
+> comparte asimetría con los bariones (ADM, razón de números r = n_DM/n_b), su masa es
+> m_DM·r = (ω_c/ω_b)·m_b. Con m_b la masa media por barión (Y_p de CAMB): **SSEE 4.996 GeV**
+> (cociente 5.331 = KAL₀·n_s) contra **ΛCDM-Planck 5.027 GeV** (cociente 5.364): difieren un 0.6 %,
+> que ninguna búsqueda directa resuelve. Control R53: la identidad KAL₀·n_s vale para el cociente de
+> SSEE y NO para el de ΛCDM. **Lectura:** una búsqueda directa a ~5 GeV pondría a prueba la familia
+> ADM, no a SSEE; y r no sale del álgebra, así que elegirlo para acertar sería una perilla (regla 1).
+> Lo propio de SSEE es que el cociente está FIJADO; sólo un mecanismo que dé r y m_DM desde el álgebra
+> lo volvería medible. Log `results/logs/op19_adm_masa.json` (etapa `op19_adm_masa`).
+
 > **2026-10-01 — hereda el costo de OP-15.** Con la gravedad sin modificar, la masa extra de los cúmulos (y el
 > desfase del Bala) es esta materia oscura fría. La cantidad la fija el álgebra y pasa contra Planck, BOSS (perfil de
 > w_c) y 46 cúmulos reales (2.32σ con IGIMF, `cumulos_zhang2026.json`); **qué es** sigue abierto aquí. Por eso no se

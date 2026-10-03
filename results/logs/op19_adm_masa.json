@@ -1,0 +1,60 @@
+{
+ "fecha": "2026-10-03",
+ "pregunta": "¿la masa ADM (r = n_DM/n_b) separa SSEE de LCDM?",
+ "m_b_GeV": 0.9371310651219651,
+ "m_p_GeV": 0.9382720894300001,
+ "Yp_camb": 0.24720762121443066,
+ "ssee": {
+  "omega_c": 0.11951440843160877,
+  "omega_b": 0.02241775678109985,
+  "cociente": 5.331238517690137,
+  "m_DM_por_r_GeV": 4.996069230502204,
+  "m_DM_por_r_GeV_solo_mp": 5.002152303242821
+ },
+ "lcdm_planck": {
+  "omega_c": 0.12,
+  "omega_b": 0.02237,
+  "cociente": 5.364327223960661,
+  "m_DM_por_r_GeV": 5.027077685053008,
+  "m_DM_por_r_GeV_solo_mp": 5.0331985128118015
+ },
+ "diferencia_relativa_masa": -0.006168286327263517,
+ "control": {
+  "cociente_ssee_es_KAL0_ns": true,
+  "cociente_lcdm_es_KAL0_ns": false,
+  "pasa": true
+ },
+ "dependencia_r": {
+  "0.5": 9.992138461004409,
+  "1.0": 4.996069230502204,
+  "2.0": 2.498034615251102
+ },
+ "lectura": "Con r=1 las dos cosmologías dan la misma masa ADM salvo por la diferencia relativa de esta clave; una búsqueda directa no resuelve esa diferencia. La masa ADM pone a prueba la familia ADM, no a SSEE. Lo propio de SSEE es que el cociente está fijado (KAL0*n_s); sólo un mecanismo que prediga r y m_DM a partir del álgebra lo haría medible.",
+ "_procedencia": {
+  "commit": "2a0ca0681f5bab561892caa1da0891fbe2fb8a58",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/op19/op19_adm_masa.py",
+  "script_sha256": "accee974ee03c1eef758332544dacdedbdcf92ed435b2e25ac8d8991cbb4a950",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cajones_algebra.json": "480d652b4b5d19e7bc049d01e119c069b7350e1f2a8f38ce3a795b6ba4bce43d"
+  },
+  "argv": [
+   "src/op19/op19_adm_masa.py"
+  ],
+  "fecha": "2026-10-03T03:39:35",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

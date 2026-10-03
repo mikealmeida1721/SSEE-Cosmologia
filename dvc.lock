@@ -2327,3 +2327,31 @@ stages:
       hash: md5
       md5: 157790f4d28b1cfdcd6d8b67ba04027c
       size: 1876
+  op19_adm_masa:
+    cmd: .venv/bin/python3 src/op19/op19_adm_masa.py
+    deps:
+    - path: results/logs/cajones_algebra.json
+      hash: md5
+      md5: 412b2508a8663ffdbd7da9811b0ee841
+      size: 8299
+    - path: src/op19/op19_adm_masa.py
+      hash: md5
+      md5: 239392a4fac1a39141093f09ac125fd7
+      size: 4601
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/op19_adm_masa.json
+      hash: md5
+      md5: 50a83eb6e725eb0a6da2eaa87984fe83
+      size: 2033
