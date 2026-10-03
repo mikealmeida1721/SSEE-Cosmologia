@@ -3010,6 +3010,13 @@ la expresión de `δρ_φ` está asertada, no derivada.
 > calibradores) debe dar su H₀ = 73.6 ± 1.1 publicado, con tolerancia 0.3; (2) un catálogo simulado con
 > H₀ que cae de 73 a 68 a lo largo de 0.023–0.15 (mismas z y covarianza) TIENE que salir «apoya»; (3) uno
 > plano en 73 TIENE que salir «excluye». Si un control falla, la prueba no vale.
+> **REVISIÓN DEL CRITERIO (2026-10-03, decisión de Mike, DESPUÉS de ver el dato — se declara).**
+> El control 3 falló: el plano en 73 solo salió «excluye» en el 56 % (se exigía 80 %). Causa (error
+> de diseño mío): el criterio sumaba el ±0.968 de H_glob, que sale del mismo ±1.04 de SH0ES que ya
+> lleva la calibración común de todas las capas, o sea, contaba dos veces el mismo error. Criterio nuevo:
+> **excluye si la caída es menor que H_SH0ES·f_screen (el exceso local entero) a más de 3σ**, usando
+> solo la caída, donde el M_B común se cancela. Se reporta además la fracción máxima del apantallamiento
+> que podría promediarse antes de z = 0.15. El veredicto con el criterio original se sigue reportando.
 
 **De dónde viene.** OP-8 se **disolvió** el 2026-06-18 en su forma original: con el reframe
 ω_m-directo ya no hay «factor materia» que derivar, y Ω_m,CMB = ω_m/h² es derivada. Pero
