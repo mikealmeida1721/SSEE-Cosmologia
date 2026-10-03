@@ -2984,6 +2984,33 @@ la expresión de `δρ_φ` está asertada, no derivada.
 
 ## OP-8b — MIRA sigue sin mecanismo dinámico — 🔴 ABIERTO (resto de OP-8)
 
+> **2026-10-03 — HIPÓTESIS DE MIKE y su prueba, escritas ANTES de correr nada.**
+> **La lectura.** AURA es la «irradiación», el nivel donde solo queda energía o luz. Sus copias
+> (ley de copia del diccionario) dan las dimensiones: MIRA = ½AURA, DUAL = 2AURA,
+> TRIAL = 3AURA = T_r. La lente NO es MIRA: es la distorsión de esa luz por la masa (RG).
+> El apantallamiento de Paper 9 sería una proyección del crecimiento local sobre la medida de H.
+> **Lo que el álgebra ya dice (identidades exactas, comprobadas en código):**
+> f_screen = s_K/(3·MIRA) = 2(Ω−AURA)/Ω² = (K_v − DUAL)/Ω² = (π−φ)/Ω², con K_v = 2Ω y 3·MIRA = TRIAL/2.
+> AURA se cancela. f vive en el nivel 2 de las copias (K_v y DUAL) sobre un área (Ω²), y
+> w₀ = TRIAL/M_v en el nivel 3. Esto es lectura de un resultado algebraico: no lo deriva.
+> **La prueba (datos: Pantheon+SH0ES, 77 calibradores con distancia Cefeida y 277 SNe del flujo de
+> Hubble de SH0ES, 0.023 < z < 0.15, covarianza STAT+SYS completa).** Si el apantallamiento es un
+> efecto del VOLUMEN local que se promedia al crecer el volumen, el H₀ que da cada capa de
+> profundidad debe BAJAR con z hacia H_glob = 67.962. Si es una propiedad de la escalera de
+> distancias (o vive solo en el volumen de los calibradores, < ~40 Mpc), todas las capas dan el mismo H₀.
+> Ajuste: M_B común + −5·log₁₀H₀ lineal en z (y aparte, H₀ por cuartiles de z), forma de d_L de cada
+> modelo con SUS ingredientes (SSEE: w₀, w_a, Ω_m = 0.308881; ΛCDM: Planck 2018).
+> **Criterios, fijados ahora:**
+> - **Apoya la versión de volumen:** H₀(z=0.023) − H₀(z=0.15) > 0 a ≥ 2σ.
+> - **Excluye la versión de volumen hasta ~600 Mpc:** caída compatible con 0 (< 2σ) y H₀ de la capa
+>   más profunda a > 3σ por encima de 67.962. Entonces el apantallamiento, si existe, actúa igual a
+>   toda profundidad o solo en el paso de calibración; no es crecimiento local que se promedia.
+> - **No concluye:** cualquier otro caso.
+> **Controles (R53):** (1) el mismo código con el ajuste de Brout+2022 (ΛCDM plano, SNe con z > 0.01 +
+> calibradores) debe dar su H₀ = 73.6 ± 1.1 publicado, con tolerancia 0.3; (2) un catálogo simulado con
+> H₀ que cae de 73 a 68 a lo largo de 0.023–0.15 (mismas z y covarianza) TIENE que salir «apoya»; (3) uno
+> plano en 73 TIENE que salir «excluye». Si un control falla, la prueba no vale.
+
 **De dónde viene.** OP-8 se **disolvió** el 2026-06-18 en su forma original: con el reframe
 ω_m-directo ya no hay «factor materia» que derivar, y Ω_m,CMB = ω_m/h² es derivada. Pero
 MIRA no desapareció con él: sigue siendo una entidad del modelo (`MIRA = AURA/2`), y sigue
