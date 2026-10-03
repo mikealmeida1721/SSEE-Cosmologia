@@ -182,7 +182,6 @@ logs:
   erosita_completitud:        src/p11_sondas/erosita_completitud.py
   erosita_conteos_efeds:      src/p11_sondas/erosita_conteos.py
   erosita_conteos_erass1:     src/p11_sondas/erosita_conteos.py
-  erosita_cr:                 src/p11_sondas/erosita_cr.py
   erosita_cr_v3:              src/p11_sondas/erosita_cr.py
   erosita_extlike:            src/p11_sondas/erosita_extlike.py
   As_medido_o_producto:       src/p06_growth/mide_As_o_producto.py
@@ -193,15 +192,6 @@ logs:
   # sobre las cadenas pegadas); ya no es fuente de nada, el vigente es el rehecho.
   R3_ssee_kids_S8:            src/p06_growth/analiza_ssee_R3.py
   boss_aisla_neutrinos:       src/p06_growth/boss_aisla_neutrinos.py
-  boss_control_kmax0.060:     src/p06_growth/boss_control.py
-  boss_control_kmax0.080:     src/p06_growth/boss_control.py
-  boss_control_kmax0.100:     src/p06_growth/boss_control.py
-  boss_control_kmax0.120:     src/p06_growth/boss_control.py
-  boss_fit_kmax0.060:         src/p06_growth/boss_fit.py
-  boss_fit_kmax0.080:         src/p06_growth/boss_fit.py
-  boss_fit_kmax0.100:         src/p06_growth/boss_fit.py
-  boss_fit_kmax0.120:         src/p06_growth/boss_fit.py
-  barrido_kmax_20260808:      src/p06_growth/barrido_kmax.sh
   conjunta_tres_sondas:       src/p06_growth/conjunta_tres_sondas.py
   marginal_vs_perfil:         src/p06_growth/marginal_vs_perfil.py
   quien_mide_As:              src/p06_growth/quien_mide_As.py

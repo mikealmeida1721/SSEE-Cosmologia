@@ -1243,19 +1243,19 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
 - `growth_2026-07/boss_control_kmax*.json` y `boss_fit_kmax*.json` (8): barrido Kaiser de sondeo
   (08-08), superado por el LPT R1/R2; nadie los cita. Re-corridos CON su k_max: no reproducen
   (σ(fσ₈) se mueve 2–25 %, el nuisance `sv` salta órdenes de magnitud): minimizador mal
-  condicionado en una dirección plana. Candidatos a archivo; se dejan hasta que Mike lo vea.
+  condicionado en una dirección plana. **Archivados** en `archive/logs_superados/boss_kaiser_20260808/` (con su README).
 - `growth_2026-07/termino_volumen_boss.json`: cuadra, pero su módulo `boss_lpt_R1R2.py` lleva
   rutas fijas al árbol principal y es dependencia de la etapa R1/R2; arreglarlo invalida ese
   candado (habría que re-correr el MCMC). Queda para la tanda pesada.
 - `erosita_extlike.json`: se construye con varias invocaciones con argumentos que acumulan en su
   propio log; una etapa no lo reproduce. Lo común cuadra (0/35 distintos); el script nuevo añade 95 claves.
 - `rd_dual.json`: cuadra, pero su script regenera figuras; se sella aparte.
-- `erosita_cr.json`: segundo intento; el script vigente ya escribe `erosita_cr_v3.json`. Candidato a archivo.
+- `erosita_cr.json`: segundo intento; el script vigente ya escribe `erosita_cr_v3.json`. **Archivado** en `archive/logs_superados/`.
 - `datos_crudos_T2.json`: es un MANIFIESTO de entrada, no un resultado. Se arregló (2 entradas
   sin `bytes`) y el verificador da 35/35 byte a byte.
 - Pesados por tiempo (>20 min): base_sin_particula (.log/.json), cmb_fuga3_kids_3sig_rehecho,
   cmb_perfil_wc (.log/.json), rejilla_extendida (.log/.json), ssee_om_libre → tanda pesada.
-- `barrido_kmax_20260808.log`: lo produce un .sh; recorre_logs lo pasó a python (defecto de la herramienta).
+- `barrido_kmax_20260808.log`: lo produce un .sh; recorre_logs lo pasó a python (defecto de la herramienta). Archivado con el barrido Kaiser.
 
 **Defectos de `recorre_logs.py` hallados:** no pasa argumentos (los scripts con argv se comparan
 contra su salida estándar); corre los .sh con python; al matar por timeout un script con Pool deja
