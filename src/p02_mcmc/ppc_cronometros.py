@@ -115,6 +115,8 @@ with open(TABLA, "w") as t:
     t.write(cabecera(__file__, entradas=[CSV], comentario="%") + "\n")
     for f in filas:
         t.write(f"{float(f['z']):.4g} & {float(f['Hz']):.1f} & {float(f['sigma_Hz']):.1f} & {METODO[f['metodo']]} \\\\\n")
+    # \bottomrule DENTRO del archivo: tras un \input, un \noalign en la tabla da «Misplaced \noalign»
+    t.write("\\bottomrule\n")
 for m, r in res.items():
     print(f"{ETIQ[m]:5s} 32: chi2={r['chi2_32']:.3f} chi2_r={r['chi2r_32']:.3f} p={r['p_32']:.3f} | "
           f"11 viejos {r['chi2r_11_viejos']:.4f} (log {impreso[m]}) | sin WiggleZ {r['chi2r_10_sin_wigglez']:.3f}")
