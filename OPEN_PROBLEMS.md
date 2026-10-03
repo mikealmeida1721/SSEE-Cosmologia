@@ -3017,6 +3017,14 @@ la expresión de `δρ_φ` está asertada, no derivada.
 > **excluye si la caída es menor que H_SH0ES·f_screen (el exceso local entero) a más de 3σ**, usando
 > solo la caída, donde el M_B común se cancela. Se reporta además la fracción máxima del apantallamiento
 > que podría promediarse antes de z = 0.15. El veredicto con el criterio original se sigue reportando.
+> **RESULTADO (log `results/logs/h0_por_profundidad.json`, etapa `h0_por_profundidad`).** Controles: Brout+2022
+> reproducido (73.53 contra 73.6 publicado), la caída simulada detectada en el 100 % y el plano en el 96 %. Con
+> SSEE: H₀ = 73.26 en z = 0.023 y 73.11 en z = 0.15, caída +0.15 ± 1.05; le faltan 4.70σ para la caída
+> entera ⟹ **EXCLUYE la versión de volumen que se promedia del todo antes de ~600 Mpc** (ΛCDM-Planck: 5.12σ).
+> No excluye una parcial: hasta el 65 % de f podría promediarse antes de z = 0.15 (3σ). Lo que queda vivo de la
+> lectura de Mike: el apantallamiento actúa igual a toda profundidad del flujo de Hubble o vive en el paso de
+> calibración (anfitriones Cefeida, < ~40 Mpc). Próxima prueba que separa esas dos: H₀ por subgrupos de
+> calibradores según su distancia.
 
 **De dónde viene.** OP-8 se **disolvió** el 2026-06-18 en su forma original: con el reframe
 ω_m-directo ya no hay «factor materia» que derivar, y Ω_m,CMB = ω_m/h² es derivada. Pero
