@@ -2056,10 +2056,10 @@ stages:
       size: 17307
     - path: src/ssee_readme_tensions_figure.py
       hash: md5
-      md5: c08324164332697a655b2ee7b1733bef
-      size: 5082
+      md5: d81e547ced5200b63c1bf4b202a3dd61
+      size: 5512
     outs:
     - path: results/figures/fig_readme_tensions.png
       hash: md5
-      md5: 662e9920e410f22a6535cb5b52a552b5
-      size: 104662
+      md5: b8391a4268b76b71f741e8444f05b2a4
+      size: 106062
