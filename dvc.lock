@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: eec519487e0473739f6dfa7ba8e17439
-      size: 68904
+      md5: 59b5b185eace3ff2020cbe669d067286
+      size: 69646
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -193,6 +193,10 @@ stages:
       hash: md5
       md5: 5623ac27b395376ad895c0455ef668af
       size: 1356
+    - path: results/logs/p3_rd_reframe_omega_m.json
+      hash: md5
+      md5: 85c6253bc1b8afb3dd30b9a88a349817
+      size: 1396
     - path: results/logs/p5_IS_perturbations_Q3.json
       hash: md5
       md5: df92ec6e230ade2f4725a63eda0a11ad
@@ -264,8 +268,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: dabaa85a7051c8a81a0d1782f3ad795b
-      size: 86377
+      md5: 4f4ec84737cb0e7f6f2a12f6e7ed6ad6
+      size: 87244
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -3201,8 +3205,8 @@ stages:
       size: 1472
     - path: src/p03_cmb/run_p3_rd_reframe.py
       hash: md5
-      md5: aae1121799f2d643924fcff2c15d54d7
-      size: 2883
+      md5: eabdc98652d6fe518637e70d31d5af51
+      size: 3586
     - path: src/p03_cmb/ssee_paper3_cmb.py
       hash: md5
       md5: 3c6a93ee5805e94f01ffc907ea35b748
@@ -3220,9 +3224,13 @@ stages:
       md5: d6ef8a580870ee72a5de7ca4b2a18632
       size: 17307
     outs:
+    - path: results/logs/p3_rd_reframe_omega_m.json
+      hash: md5
+      md5: 85c6253bc1b8afb3dd30b9a88a349817
+      size: 1396
     - path: results/logs/p3_rd_reframe_omega_m.log
       hash: md5
-      md5: 72440bdb55478a5d738c30adaede5be6
+      md5: b032ee095200d67384f27843c7a00204
       size: 1310
   sello_rd_camb_control:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/rd_camb.py && 
@@ -3550,3 +3558,83 @@ stages:
       hash: md5
       md5: d781c38bc2b93986bb94bbff4e8c9e4a
       size: 4763
+  sello_erosita_cr_v3:
+    cmd: OMP_NUM_THREADS=1 NUCLEOS=1 nice -n 10 
+      /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_cr.py 
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_cr.py
+      results/logs/erosita_cr_v3.json 
+      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex 
+      /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html 
+      /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt 
+      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt 
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits 
+      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
+      results/logs/cmb_dbic_tau_ajustado.json 
+      /mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex 
+      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    deps:
+    - path: /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
+      hash: md5
+      md5: d826d1a46abff34875f0ccc34ab4c6b0
+      size: 1914
+    - path: /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt
+      hash: md5
+      md5: ff6e4109d613a6a2601df01da6fed09d
+      size: 1909
+    - path: /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+      hash: md5
+      md5: 313cd064003bb2af5c741c0d3b9e6428
+      size: 107647
+    - path: /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+      hash: md5
+      md5: 12db3ccc5081703311d99f6f87f0596d
+      size: 1186560
+    - path: /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+      hash: md5
+      md5: 2a03ec1b6077055efa085909737d60e0
+      size: 50636160
+    - path: /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html
+      hash: md5
+      md5: e6aa493a81d4db196251c7e27872d70f
+      size: 25801
+    - path: /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex
+      hash: md5
+      md5: f21e6def40cc1f917d423b93ea2608db
+      size: 111225
+    - path: /mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex
+      hash: md5
+      md5: fa8a263501d6fcdac6c6f3f65b66a650
+      size: 231657
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/p11_sondas/erosita_conteos.py
+      hash: md5
+      md5: 7e7ec540c5bd09f7680623e5740ef579
+      size: 14476
+    - path: src/p11_sondas/erosita_cr.py
+      hash: md5
+      md5: e67d4fa3d95079c145443debea5b7456
+      size: 23059
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/erosita_cr_v3.json
+      hash: md5
+      md5: 9ac590a49814287bbdf0ac6bded38734
+      size: 33595

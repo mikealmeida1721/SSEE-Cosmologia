@@ -1,0 +1,52 @@
+{
+ "anchor": {
+  "H0": 67.96214152203791,
+  "rd": 147.1742987059569,
+  "rd_sigma": 0.3242257921418566,
+  "theta_deg": 0.5966724997120372,
+  "theta100": 1.0413899676079967,
+  "theta_sigma": 0.9998920266555504
+ },
+ "posterior": {
+  "H0": 67.82260560603251,
+  "rd": 147.17429621382652,
+  "rd_sigma": 0.32421620702507425,
+  "theta_deg": 0.5964429741220298,
+  "theta100": 1.0409893698816757,
+  "theta_sigma": 0.33543372774798763
+ },
+ "planck": {
+  "rd": 147.09,
+  "rd_s": 0.26,
+  "theta100": 1.04109,
+  "theta100_s": 0.0003
+ },
+ "_procedencia": {
+  "commit": "e1dd1df5346af069301087fd86336473ac404577",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/run_p3_rd_reframe.py",
+  "script_sha256": "b92d8e197895d2068f3594da40375b98323f5b4529f47e2d0bc709ac6b868b29",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/mcmc_paper2_reframe.json": "c4f32b358ca3400428340b3bd4d7422ad70625af3d2a53ba2eae0d8baeeb260e"
+  },
+  "argv": [
+   "src/p03_cmb/run_p3_rd_reframe.py"
+  ],
+  "fecha": "2026-10-03T08:20:25",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

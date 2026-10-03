@@ -687,3 +687,10 @@ leg_logA_s:       {fuente: "results/logs/kids_publicados.json#s8.logA.legacy_sig
 leg_logA_cmb:     {fuente: "results/logs/kids_publicados.json#s8.logA.cmb_blanco", formato: ".5f"}
 p9_sh0es_glob_IR: {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.H_glob", formato: ".2f"}
 p9_sh0es_sig_IR:  {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.sigma", formato: ".2f"}
+# r_d y theta* (CAMB) en el ancla H_glob y en el posterior P2 — run_p3_rd_reframe (2026-10-03; antes tecleados)
+p3_rd_sig_anc:    {fuente: "results/logs/p3_rd_reframe_omega_m.json#anchor.rd_sigma", formato: ".2f"}
+p3_th_deg_anc:    {fuente: "results/logs/p3_rd_reframe_omega_m.json#anchor.theta_deg", formato: ".5f"}
+p3_th_sig_anc:    {fuente: "results/logs/p3_rd_reframe_omega_m.json#anchor.theta_sigma", formato: ".2f"}
+p3_rd_sig_post:   {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.rd_sigma", formato: ".2f"}
+p3_th100_post:    {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.theta100", formato: ".5f"}
+p3_th_sig_post:   {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.theta_sigma", formato: ".2f"}

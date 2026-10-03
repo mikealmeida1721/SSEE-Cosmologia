@@ -494,7 +494,7 @@ Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
 $\omega_m$ is $\val{p2_lyaB_rd}$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 ($\omega_m$-direct), consistent with the Planck-inferred
-$147.09\pm0.26$~Mpc ($0.32\sigma$), and matching $\Lambda$CDM at the
+$147.09\pm0.26$~Mpc ($\val{p3_rd_sig_anc}\sigma$), and matching $\Lambda$CDM at the
 Planck~2018 parameters ($\val{p2_rd_lcdm}$~Mpc, same code) to $0.05\%$. The $175.6$~Mpc value that
 appears if the cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ is (incorrectly) used as
 the background density is a category error, not a physical scale.
@@ -533,8 +533,8 @@ early-time geometry at the CMB-optimal value
 which (with $\omega_b,\omega_c$ fixed by SSEE algebra) lies $\val{perfil_h0_d}\sigma$ from the $H_0$ that
 minimises the Planck \texttt{plik\_lite} likelihood for the SSEE background ($\val{perfil_h0_min}\pm\val{perfil_h0_sig}$, profiled over $A_s,\tau$); at this anchor the
 sound horizon and acoustic scale are both well within tolerance,
-$r_d = \val{p2_lyaB_rd}~\mathrm{Mpc}$ ($0.32\sigma$) and
-$\theta_\ast = 0.59667^\circ$ ($1.00\sigma$). Letting the MCMC then correct
+$r_d = \val{p2_lyaB_rd}~\mathrm{Mpc}$ ($\val{p3_rd_sig_anc}\sigma$) and
+$\theta_\ast = \val{p3_th_deg_anc}^\circ$ ($\val{p3_th_sig_anc}\sigma$). Letting the MCMC then correct
 $H_0$ against the low-redshift BAO (corrected DESI~DR2 vector, block-diagonal
 covariance with the official $r_{M,H}$ correlations) yields the posterior
 \begin{equation}
@@ -543,7 +543,7 @@ covariance with the official $r_{M,H}$ correlations) yields the posterior
   \Omega_b h^2 = \val{p2_obh2} \pm \val{p2_obh2_s} ,
   \label{eq:h0post}
 \end{equation}
-with $r_d = \val{p2_lyaB_rd}~\mathrm{Mpc}$ ($0.32\sigma$, $\omega_m$-set, $H_0$-invariant)
+with $r_d = \val{p2_lyaB_rd}~\mathrm{Mpc}$ ($\val{p3_rd_sig_post}\sigma$, $\omega_m$-set, $H_0$-invariant)
 at the posterior value. These are two stages of the same quantity---a CMB
 anchor and a BAO-corrected posterior---and with the total matter density in the
 background geometry they \emph{coincide}. (The earlier MIRA-anchored
@@ -606,8 +606,8 @@ density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$ and $r_d$, the BA
 posterior ($\val{h0_p2}$) and the CMB anchor ($\val{H0_ALG_d3}$) agree to $\val{h0_p2_dhglob}\sigma$: DESI
 DR2 is \emph{consistent with} the algebraic value rather than pulling against
 it. All early-time observables are simultaneously healthy---$r_d=\val{p2_lyaB_rd}$~Mpc
-($0.32\sigma$) and, evaluating the acoustic scale at the posterior,
-$100\,\theta_\ast=1.04099$ ($0.32\sigma$). The apparent $2.9\sigma$
+($\val{p3_rd_sig_post}\sigma$) and, evaluating the acoustic scale at the posterior,
+$100\,\theta_\ast=\val{p3_th100_post}$ ($\val{p3_th_sig_post}\sigma$). The apparent $2.9\sigma$
 ``BAO--CMB split'' and the $13.9\sigma$ $\theta_\ast$ figure reported in earlier
 drafts were the footprint of a single error---placing the cold dynamical sector
 $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ in the background geometry, where the total density

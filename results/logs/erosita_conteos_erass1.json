@@ -32,30 +32,30 @@
  ],
  "casos": {
   "ssee": {
-   "chi2": 3551.106713368354,
+   "chi2": 3551.106711801131,
    "dof": 80,
    "PTE": 0.0,
    "sigma_equivalente": Infinity,
    "nuisance": {
-    "logA": 43.869116561960254,
-    "B": 3.9999999999981797,
-    "gamma": -0.5247740916827157,
-    "sigma_int": 0.0444632430378659
+    "logA": 43.869116627803336,
+    "B": 3.9999999999981775,
+    "gamma": -0.5247736520064132,
+    "sigma_int": 0.04446324088079565
    },
-   "Omega_m": 0.30888088317820594,
-   "sigma8": 0.8154465021171172,
-   "S8": 0.8274282833718496,
+   "Omega_m": 0.3088808450135442,
+   "sigma8": 0.8154465171107965,
+   "S8": 0.8274282474682012,
    "sigma_seleccion_dex": [
-    0.45525656782621127,
-    0.26687500715898693,
-    0.3021217193757266,
-    0.2845342022241084,
-    0.24300373498804362,
-    0.293711997008117,
-    0.31475027266928635
+    0.4552565684697356,
+    0.2668750072520538,
+    0.3021217201504669,
+    0.2845342030401099,
+    0.24300373506660833,
+    0.2937119970863691,
+    0.31475027260040633
    ],
    "n_obs": 8681.0,
-   "n_esp": 8741.775258281037
+   "n_esp": 8741.774630002963
   },
   "lcdm_planck": {
    "chi2": 3579.038396430553,
@@ -121,6 +121,45 @@
    }
   }
  },
- "delta_chi2_ssee_menos_lcdm_libre": 1194.9976039561875,
- "delta_BIC_ssee_menos_lcdm_libre": 1186.1359703585008
+ "delta_chi2_ssee_menos_lcdm_libre": 1194.9976023889644,
+ "delta_BIC_ssee_menos_lcdm_libre": 1186.1359687912777,
+ "_procedencia": {
+  "commit": "02809dfc2a1884ba72a2f3e3bff248dc6c871d67",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/erosita_conteos.py",
+  "script_sha256": "dbf7e476be384d799dbc0c27a02a62d0d3dd49ad48c2716d448ec9758a057af2",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex": "82be60ee4de93a20e74f3066a4b3dc512c077884f7c7b854d3e45ebb19fb4d98",
+   "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html": "f8d28599abee6295a96ad6c078e7045ba19627761b0de3294074ef1902891973",
+   "/mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt": "bfe0abb3ddde3ff402728f6f77d984a5520d98274e5be86b5b82a26f22b4ba6a",
+   "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt": "b2ec77a66bfbf8368824c23de10b7b9a664ef0e8c831e8ffc61f0addd3ff981a",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits": "e79c392e2d7b9e26105ead7d56787713465aa853feb040a227891fb9571b9a54",
+   "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz": "53a2e07f55b3bc8c783fe071d8039c75f5682d04975ff310909abef37612789b",
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/erosita_conteos.py",
+   "results/logs/erosita_conteos_erass1.json",
+   "/mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex",
+   "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html",
+   "/mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt",
+   "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits",
+   "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
+   "results/logs/cmb_dbic_tau_ajustado.json"
+  ],
+  "fecha": "2026-10-03T08:07:14",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

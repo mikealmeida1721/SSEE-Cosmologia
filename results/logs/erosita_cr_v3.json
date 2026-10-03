@@ -1296,5 +1296,48 @@
   "en_borde": true,
   "calibrador_pasa": false,
   "criterio": "|S8-0.86|<1 sigma_nuestro y minimo fuera del borde (declarado antes, tercer intento)"
+ },
+ "_procedencia": {
+  "commit": "e1dd1df5346af069301087fd86336473ac404577",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/erosita_cr.py",
+  "script_sha256": "3a0ef3196162c1e62e418f6a14b2c58a157fe84d39919a48d499b81deea8e4f4",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex": "82be60ee4de93a20e74f3066a4b3dc512c077884f7c7b854d3e45ebb19fb4d98",
+   "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html": "f8d28599abee6295a96ad6c078e7045ba19627761b0de3294074ef1902891973",
+   "/mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt": "bfe0abb3ddde3ff402728f6f77d984a5520d98274e5be86b5b82a26f22b4ba6a",
+   "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt": "b2ec77a66bfbf8368824c23de10b7b9a664ef0e8c831e8ffc61f0addd3ff981a",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits": "e79c392e2d7b9e26105ead7d56787713465aa853feb040a227891fb9571b9a54",
+   "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz": "53a2e07f55b3bc8c783fe071d8039c75f5682d04975ff310909abef37612789b",
+   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex": "358dcead976d417820201debcb56b987f8c9dc9ab9bd27a3f250a80b1fa41755",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits": "fe2310495ce2fdba5876e248ab3415012d6f2e79280d87c8bfd1177ca11a779e"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/erosita_cr.py",
+   "results/logs/erosita_cr_v3.json",
+   "/mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex",
+   "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html",
+   "/mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt",
+   "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits",
+   "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
+   "results/logs/cmb_dbic_tau_ajustado.json",
+   "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits"
+  ],
+  "fecha": "2026-10-03T08:19:50",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }

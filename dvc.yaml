@@ -70,6 +70,7 @@ stages:
     - results/logs/sondas_ssee_vs_lcdm.json
     - results/logs/p9_cascada_control.json
     - results/logs/mcmc_paper2_reframe_obh2.json
+    - results/logs/p3_rd_reframe_omega_m.json
     - results/logs/h0_por_profundidad.json
     - results/logs/h0_por_metodos.json
     - results/logs/bao_lcdm_libre.json
