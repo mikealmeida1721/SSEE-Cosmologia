@@ -137,11 +137,11 @@
   }
  },
  "_procedencia": {
-  "commit": "6a4d02ddcbb7d73fcc985cbd887ac68a74576bb7",
+  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/h0_por_profundidad.py",
-  "script_sha256": "c23ac7b2ed4598cd5cc20f1f6bfb6fb2cd4a3ea513a904190fd228b232a34770",
+  "script_sha256": "9ba636d12c0be7b26846d2df4fcdf2e5c44bcaf3eb8b37c4737540f56c4952a5",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
@@ -151,7 +151,7 @@
   "argv": [
    "src/p09_hubble/h0_por_profundidad.py"
   ],
-  "fecha": "2026-10-03T04:06:21",
+  "fecha": "2026-10-03T08:25:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -160,7 +160,7 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }

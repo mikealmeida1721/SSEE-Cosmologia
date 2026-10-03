@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-02",
+ "fecha": "2026-10-03",
  "umbral": "derivado",
  "delta_c": {
   "ssee": 1.6763371290815952,
@@ -42,14 +42,14 @@
   }
  },
  "_procedencia": {
-  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
+  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_press_schechter.py",
   "script_sha256": "6242b9ff5a25ad6dc5b2f5f18df687d50c64ccd0cec31ed1ee90e028202ae53d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/deltac_spherical_collapse.json": "62361ab77655f0a610ba85f78ada4015d55d7668893ad0a3691845c3bc8be3ca",
+   "results/logs/deltac_spherical_collapse.json": "3f6776f1574c618c501d7acc47a5250d30c65a0cca47d96f5f01b7d64efeb012",
    "CANONICAL_VALUES.yaml": "a872f5d93cf8e23a54d6cd938aab3086a3591b8adb6514f11019e150aadef7e2",
    "results/logs/p5_IS_perturbations_Q3.json": "b8e1e6ab2512fb19f0f3ce8f86ad0f123c6253cbf3b7b17ba7d0b48f0aef39a7",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "ee9d40a152c786e6d54f7ed84dcc10af1eb1083977d5242af8d5fcf9b6af06d5"
@@ -57,7 +57,7 @@
   "argv": [
    "src/p02_mcmc/ssee_press_schechter.py"
   ],
-  "fecha": "2026-10-02T19:58:28",
+  "fecha": "2026-10-03T08:25:24",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -66,8 +66,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

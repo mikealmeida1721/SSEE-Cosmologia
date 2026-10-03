@@ -318,15 +318,15 @@
  "veredicto_criterio": "NO CONCLUYE",
  "veredicto": "SIN POTENCIA",
  "_procedencia": {
-  "commit": "f0ebf4800542fa136310b5da4044b2e472e23f9e",
+  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/h0_por_metodos.py",
-  "script_sha256": "2ea1a216edddf0ff6264d01898eda2f91adae4c188586fe6b3c3db11ba4a54fa",
+  "script_sha256": "d55dabb0bf652a8db776003db03863ffc90bb7eee0f923641ee3f582ef903b9b",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/h0_four_priors.json": "7ac8cc6e34b14fb0a254fcc00670cbcc19b2dfa54744dbbab453e02aa8f3d33e",
-   "results/logs/h0_lente_fondo_ssee.log": "dc9e2078aacd23b3b3bd88814d53af05586f0fce75d00138e8f13ae2d10d6be9",
+   "results/logs/h0_lente_fondo_ssee.json": "b58d95d60bdd08d7eaf1ddabb46098f102488775758089e28ac60e5c39d10dff",
    "/mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex": "4ec08a54d7aadabd57e97fd02d0bfcb2d035f222ac6d9e20a7f1346c50ed2e2d",
    "/mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex": "35fff52c44e8f89ea546a22644c856b325497e0819cc800ac32b2ea93c823cd6",
    "/mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex": "993d700517adf7129337103502f9592818faa2759afef88e87f9896ab53de5f4",
@@ -339,7 +339,7 @@
   "argv": [
    "src/p09_hubble/h0_por_metodos.py"
   ],
-  "fecha": "2026-10-03T04:57:27",
+  "fecha": "2026-10-03T08:25:18",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

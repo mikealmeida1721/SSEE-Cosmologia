@@ -374,8 +374,8 @@ stages:
       size: 1937
     - path: src/p02_mcmc/chi2_bao_posterior.py
       hash: md5
-      md5: b00675001accb4ac1296749de33ecbca
-      size: 4525
+      md5: 9eea4ecdd44f30a1bae30b3c914bfd8a
+      size: 4733
     - path: src/p03_cmb/cmb_eval.py
       hash: md5
       md5: 706a9d0e3384cce04dc5fcbf0c2fb522
@@ -399,8 +399,8 @@ stages:
     outs:
     - path: results/logs/prueba_equivalencia_hglob.json
       hash: md5
-      md5: 987cdc83c3d1193ba4b283be1d4f77b4
-      size: 2093
+      md5: bbd057d44c6d11afc7c9648cc35cc778
+      size: 2095
   spt3g_calibrador:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p11_sondas/spt3g_calibra.py lee
@@ -2635,8 +2635,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/chi2_bao_posterior.py
       hash: md5
-      md5: b00675001accb4ac1296749de33ecbca
-      size: 4525
+      md5: 9eea4ecdd44f30a1bae30b3c914bfd8a
+      size: 4733
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -2656,8 +2656,8 @@ stages:
     outs:
     - path: results/logs/chi2_bao_posterior.log
       hash: md5
-      md5: f37fabefbfd63004cba5e697407983be
-      size: 1771
+      md5: 236b145ea249adbac85919e6d20d65ff
+      size: 1770
   leer_conjunta:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/leer_conjunta.py > results/logs/leer_conjunta.log && 

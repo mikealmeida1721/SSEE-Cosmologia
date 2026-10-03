@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-30",
+ "fecha": "2026-10-03",
  "H_viejo": 67.96213732340931,
  "H_nuevo": 67.96214152203791,
  "dH": 4.198628602125609e-06,
@@ -29,7 +29,7 @@
  },
  "pasa": true,
  "_procedencia": {
-  "commit": "85cacbdf0907270917c622af3a5a5f23bbec9f9c",
+  "commit": "c895a34857f285133d00dc726781b5dec338bd10",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/prueba_equivalencia_hglob.py",
@@ -38,13 +38,13 @@
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
    "src/p03_cmb/cmb_eval.py": "36b480f0db20d8da770a75ca588618f41ae749a9036ec70c1637075b0c729365",
-   "src/p02_mcmc/chi2_bao_posterior.py": "003258bbc8b2052d9c026cddfdb5ee53176121304f1a2c8a2d2e1e9bcfceeb14",
+   "src/p02_mcmc/chi2_bao_posterior.py": "c3523a50d562bfec7d6ab4b96750cabd5e6af7642e8406aaa1b6358dd5341dab",
    "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21"
   },
   "argv": [
    "src/verificacion/prueba_equivalencia_hglob.py"
   ],
-  "fecha": "2026-09-30T19:35:55",
+  "fecha": "2026-10-03T08:28:17",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -56,8 +56,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

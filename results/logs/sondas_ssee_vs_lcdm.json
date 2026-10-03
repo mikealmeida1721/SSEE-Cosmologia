@@ -6,10 +6,10 @@
    "fondo_lcdm": "Planck clavado",
    "ajustados_lcdm": 0,
    "SSEE": {
-    "chi2": 1386.6236766651273,
+    "chi2": 1386.6236774250865,
     "dof": 1579,
-    "PTE": 0.9998153790869082,
-    "sigma": 0.0002313880024868086
+    "PTE": 0.9998153790765332,
+    "sigma": 0.0002313880154899859
    },
    "LCDM_Planck": {
     "chi2": 1387.3254048079252,
@@ -17,7 +17,7 @@
     "PTE": 0.9998055648135079,
     "sigma": 0.00024368837043398103
    },
-   "dchi2": -0.7017281427979469,
+   "dchi2": -0.701727382838726,
    "ve_As": false,
    "nota": ""
   },
@@ -27,10 +27,10 @@
    "fondo_lcdm": "Planck clavado",
    "ajustados_lcdm": 0,
    "SSEE": {
-    "chi2": 1629.4396538848491,
+    "chi2": 1629.4396562196173,
     "dof": 1819,
-    "PTE": 0.9994188499667673,
-    "sigma": 0.0007283636169530009
+    "PTE": 0.9994188498816614,
+    "sigma": 0.0007283637236174848
    },
    "LCDM_Planck": {
     "chi2": 1632.4081789477918,
@@ -38,7 +38,7 @@
     "PTE": 0.9993009110285367,
     "sigma": 0.0008761782032815942
    },
-   "dchi2": -2.9685250629427173,
+   "dchi2": -2.9685227281745483,
    "ve_As": false,
    "nota": ""
   },
@@ -48,10 +48,10 @@
    "fondo_lcdm": "Planck clavado",
    "ajustados_lcdm": 0,
    "SSEE": {
-    "chi2": 23.847395291316378,
+    "chi2": 23.84739955630661,
     "dof": 21,
-    "PTE": 0.3005113026703577,
-    "sigma": 1.0353375429714726
+    "PTE": 0.30051109274769616,
+    "sigma": 1.035337992631896
    },
    "LCDM_Planck": {
     "chi2": 26.371696573390054,
@@ -59,7 +59,7 @@
     "PTE": 0.1926293695026899,
     "sigma": 1.3028400644530027
    },
-   "dchi2": -2.524301282073676,
+   "dchi2": -2.5242970170834447,
    "ve_As": null,
    "nota": ""
   },
@@ -69,10 +69,10 @@
    "fondo_lcdm": "Planck clavado",
    "ajustados_lcdm": 0,
    "SSEE": {
-    "chi2": 26.598135524926136,
+    "chi2": 26.598137544540364,
     "dof": 21,
-    "PTE": 0.18455393697864342,
-    "sigma": 1.3268632077872817
+    "PTE": 0.18455386610391622,
+    "sigma": 1.3268634220040407
    },
    "LCDM_Planck": {
     "chi2": 28.833944489201883,
@@ -80,7 +80,7 @@
     "PTE": 0.11804560653042036,
     "sigma": 1.563029711531959
    },
-   "dchi2": -2.2358089642757477,
+   "dchi2": -2.235806944661519,
    "ve_As": null,
    "nota": ""
   },
@@ -248,15 +248,15 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
+  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
   "script_sha256": "a9fd9d3afe8f01a13163f5b6f0dcefd9cc7f8d84bc52aeb2db1ed524552029f9",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/sn_geometria_en_el_clavo.json": "c04d927fcb284f15b5a628fe83efa537d6ed8c597abf8e94d4a168e915357dd7",
-   "results/logs/union3_en_el_clavo.json": "5e785ba89358fe16b16c4d3d3c65109ac5deb7fe5eb4ed8e8d83faf1f3f77100",
+   "results/logs/sn_geometria_en_el_clavo.json": "dce112cefca9d56a363e67eb3e1febbf2d1e2ca680e86e88fe44f3b61d10567a",
+   "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
    "results/logs/act_dr6_en_el_clavo.json": "f0aeb83d3b50937fc80ad17795e02e80513a2dc49b281b4f99b2e37b6d954448",
    "results/logs/spt3g_kk_en_el_clavo.json": "6f5a2b55112774a05826d6bd5780c6b3f633221effecd386af169cfffcef055f",
    "results/logs/bao_lcdm_libre.json": "3173b9a34e63201c10c6ea06f363899860534b451e74c5f1eb6649c21163457c",
@@ -271,7 +271,7 @@
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-02T19:59:01",
+  "fecha": "2026-10-03T08:25:27",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -280,8 +280,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
