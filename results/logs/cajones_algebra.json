@@ -127,6 +127,22 @@
   "wc_tension_sigma": {
    "formula": "(omega_c - 0.1200)/0.0012",
    "valor": -0.40465964032602536
+  },
+  "R2_retirado": {
+   "formula": "Omega/(KAL0 T_r)",
+   "valor": 0.07187465088369115
+  },
+  "sum_mnu_viejo_retirado": {
+   "formula": "R2 \u00b7 0.960318",
+   "valor": 0.06902252098732452
+  },
+  "multiplicador_viejo_retirado": {
+   "formula": "Omega^4 + AURA\u00b7KAL0",
+   "valor": 535.2795279749394
+  },
+  "m_phi_viejo_retirado": {
+   "formula": "sum_mnu_viejo \u00b7 multiplicador_viejo",
+   "valor": 36.94634245373541
   }
  },
  "control": {
@@ -139,17 +155,17 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "1b4ff434c4564c95866b08446696f2a9d9ac5190",
+  "commit": "3779f89809b319472e18e0ba8386573e53b564c5",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/cajones_algebra.py",
-  "script_sha256": "d5ded9551700901e6fa7bd08a51f492d11cbf0a79674a56483c24825050706cf",
+  "script_sha256": "e9f8b34466d17dc210b33aca9c87b905fbfb11bce66af19dd5ab4daa9c1d785e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/verificacion/cajones_algebra.py"
   ],
-  "fecha": "2026-10-02T23:42:09",
+  "fecha": "2026-10-02T23:49:46",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
