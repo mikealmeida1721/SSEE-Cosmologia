@@ -86,7 +86,7 @@ USA_CEFEIDAS = {"cefeidas_hst", "cefeidas_jwst", "sbf"}
 
 
 def lee(archivo, patron):
-    t = open(os.path.join(LIT, archivo), errors="ignore").read()
+    t = re.sub(r"\s+", " ", open(os.path.join(LIT, archivo), errors="ignore").read())   # espacios y saltos de línea -> un espacio
     m = re.search(patron, t, re.S)
     assert m, f"no encuentro el valor en {archivo}"
     return [float(x) for x in m.groups()], m.group(0), t
