@@ -2454,7 +2454,7 @@ _r74 = _ilu73.module_from_spec(_sp74)
 _sp74.loader.exec_module(_r74)
 _res74 = _r74.barrido()
 _n74 = _r74.cuentas(_res74)
-_TOPE_R74 = {"logs": 0, "canonical": 0, "papers": 0, "cajones": 102}   # 2026-10-02 noche: cajones 136->102 (30 historicos con git:<commit>:<ruta> hallados por r74_rastrea_historicos.py y verificados por R74; Registro Capa 1-2 al dia: MIRA, beta_c, m_phi, s_K). 2026-10-02 noche: logs 1->0 (R3 viejo lo reproduce el control de analiza_ssee_R3; DES-NLA mapeados). 2026-10-02: logs 2->1 (lcdm_conjunta_cola es bitacora), cajones 137->136 (cuenta medida). 2026-10-01 cierre: cajones 138->137 (memoria del ΔBIC CMB cerrada). 2026-10-01 noche: cajones 141->138 (fila del ancla H0 desde perfil_h0_ancla.json); papers 2->0 (67.159 historico declarado con su log en git). 2026-10-01 madrugada: canonical 2->0, papers 3->2 (B1 k=2 y H0 de P2 por \val; historicos con git:<commit>:<ruta>); 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
+_TOPE_R74 = {"logs": 0, "canonical": 0, "papers": 6, "cajones": 0}   # 2026-10-02 madrugada: cajones 102->0 (algebra en cajones_algebra.json, beta_c reproducido desde d849df0, OP-1/OP-5/OP-18 con salidas con acta en archive, retirados sin log sin digitos); papers 0->6: NO son nuevos, R74 ahora lee la notacion cientifica (x10^n) y los r_km de P8 (eq:rkm_sun/mw/cluster) ya no casan por la mantisa con logs ajenos; se pagan con OP-4 (formula dimensionalmente rota, decision fisica de Mike). 2026-10-02 noche: cajones 136->102 (30 historicos con git:<commit>:<ruta> hallados por r74_rastrea_historicos.py y verificados por R74; Registro Capa 1-2 al dia: MIRA, beta_c, m_phi, s_K). 2026-10-02 noche: logs 1->0 (R3 viejo lo reproduce el control de analiza_ssee_R3; DES-NLA mapeados). 2026-10-02: logs 2->1 (lcdm_conjunta_cola es bitacora), cajones 137->136 (cuenta medida). 2026-10-01 cierre: cajones 138->137 (memoria del ΔBIC CMB cerrada). 2026-10-01 noche: cajones 141->138 (fila del ancla H0 desde perfil_h0_ancla.json); papers 2->0 (67.159 historico declarado con su log en git). 2026-10-01 madrugada: canonical 2->0, papers 3->2 (B1 k=2 y H0 de P2 por \val; historicos con git:<commit>:<ruta>); 2026-10-01 noche: papers 6->3, cajones 147->141 (cumulos RG, B1 k=2, P2 3 modelos); 2026-10-01 tarde: papers 12->6, cajones 159->147 (P6/P3/Unified BOSS y perfiles por \val; Registro y OPEN_PROBLEMS desde logs); 2026-10-01: papers 16->12, cajones 165->159 (P3 sigma8, P4 densidades, Unified w0wa por \val); antes 27->16 (cumulos, PS, edades, CLASS, fondos exponenciales por \val); era 88/6/294/214 el 2026-09-30
 for _k74, _v74 in _n74.items():
     _DEUDA_REAL[f"R74-{_k74}"] = _v74
     _DEUDA_MAX[f"R74-{_k74}"] = _TOPE_R74[_k74]
@@ -2473,6 +2473,14 @@ with _tf74.TemporaryDirectory() as _d74:
     _f74.write_text("H0 = 67.82 bien. H0 = 67.47 mal. Dato 0.8265 \\citep{K}.\n"
                     "% ORIGEN-VALOR: 1.234 — prueba\nvalor 1.234\n")
     _s74 = [s for _, s in _r74._sin_origen(_f74, sorted([67.8244]), True)]
+# CONTROL (R53), 2026-10-02: notacion cientifica. «9.345×10¹⁵» casa con 9.345e15 en el
+# pool y NO con un 9.345 suelto (a otra escala); antes se leia solo la mantisa.
+with _tf74.TemporaryDirectory() as _d74s:
+    _s74f = pathlib.Path(_d74s) / "x.md"
+    _s74f.write_text("T = 9.345×10¹⁵ GeV bien. U = 7.125×10⁻⁵ mal.\n")
+    _s74s = [s for _, s in _r74._sin_origen(_s74f, sorted([9.34519e15, 7.125]), False)]
+check("R74 lee el exponente: 9.345×10¹⁵ casa con 9.345e15, 7.125×10⁻⁵ no casa con 7.125",
+      _s74s == ["7.125"], f"marcados {_s74s} (esperado ['7.125'])")
 check("R74 el detector marca solo el numero sin fuente",
       _s74 == ["67.47"], f"marcados {_s74} (esperado ['67.47']: log a su redondeo, cita y "
       "declaracion pasan)")

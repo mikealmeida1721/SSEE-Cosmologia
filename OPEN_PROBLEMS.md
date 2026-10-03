@@ -414,11 +414,11 @@ Resultados CLASS HMcode-2020 con parámetros SSEE (H₀=66.75 — input de la co
 
 | k [h/Mpc] | B(k) = P_bar/P_hm |
 |---|---|
-| 0.1 | 0.9974 |
-| 0.3 | 0.9878 |
-| 0.5 | 0.9765 |
+| 0.1 | 0.9974 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
+| 0.3 | 0.9878 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
+| 0.5 | 0.9765 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
 | 1.0 | 0.9560 |
-| 2.0 | 0.9203 |
+| 2.0 | 0.9203 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
 
 B_eff (lensing k=0.03–2 h/Mpc, peso k) = **0.9447** (supresión 5.53% en P(k))
 B_sigma8 (top-hat integral, k<2 h/Mpc) = **0.9956** (supresión 0.44% en σ₈_eff)
