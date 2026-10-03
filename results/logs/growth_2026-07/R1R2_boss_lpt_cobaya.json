@@ -3,8 +3,8 @@
   "logA": 2.790181344523827,
   "logA_sig": 0.09453956171572275,
   "chi2_marg_min": 73.677763,
-  "chi2_marg_reevaluado": 73.67776119804591,
-  "chi2_real_min": 207.57605622607346,
+  "chi2_marg_reevaluado": 73.67776119804367,
+  "chi2_real_min": 207.57605622607946,
   "n": 111125,
   "fs8": {
    "z1": [
@@ -28,8 +28,8 @@
   "logA": 2.7614232200495397,
   "logA_sig": 0.10100907523901899,
   "chi2_marg_min": 73.413456,
-  "chi2_marg_reevaluado": 73.41345767750072,
-  "chi2_real_min": 205.54906179223127,
+  "chi2_marg_reevaluado": 73.41345767751542,
+  "chi2_real_min": 205.54906179223332,
   "n": 77326,
   "fs8": {
    "z1": [
@@ -100,7 +100,7 @@
    }
   }
  },
- "dchi2_real": -2.026994433842191,
+ "dchi2_real": -2.0269944338461414,
  "perfil_vs_marginal": {
   "perfil_logA": 2.9447867806062953,
   "perfil_sigma": 0.12384982819806273,
@@ -111,7 +111,7 @@
   "sigmas": 1.8153176843056946
  },
  "_procedencia": {
-  "commit": "2246eea898e77ef404fe9a899e36a9a7c78e2a68",
+  "commit": "7cebd9c0ea3ba8bc4b1008fbb3b73975f36d3e7c",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/analiza_boss_R1R2.py",
@@ -133,7 +133,7 @@
   "argv": [
    "src/p06_growth/analiza_boss_R1R2.py"
   ],
-  "fecha": "2026-10-01T14:05:38",
+  "fecha": "2026-10-03T13:15:47",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -143,8 +143,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

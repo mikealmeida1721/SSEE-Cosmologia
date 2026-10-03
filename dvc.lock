@@ -1280,6 +1280,10 @@ stages:
       hash: md5
       md5: 43edfe16597ddba003bb1a127c89fbbd
       size: 809
+    - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
+      hash: md5
+      md5: 9fc22850ba4020d5745441d8d4585021
+      size: 1139
     - path: src/p06_growth/analiza_boss_R1R2.py
       hash: md5
       md5: ed3d552860d48719259964e197abc61c
@@ -1299,12 +1303,12 @@ stages:
     outs:
     - path: results/logs/analiza_boss_R1R2.log
       hash: md5
-      md5: 3e339c6bd18d28994f161a6527a8e1d8
-      size: 1502
+      md5: 055f1ff99a2cd864a0bd7bd8bdf0b5e7
+      size: 1702
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 1de0cce05ee34da34fe8f16d8f9f5f69
-      size: 4421
+      md5: c1a478ee8bc47252dd775cba2f720ed2
+      size: 4424
   multisonda_fondo_clavado:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/multisonda_fondo_clavado.py
@@ -3634,3 +3638,35 @@ stages:
       hash: md5
       md5: 9ac590a49814287bbdf0ac6bded38734
       size: 33595
+  termino_volumen_boss:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/mide_termino_volumen.py && .venv/bin/python3 
+      src/procedencia_sella.py src/p06_growth/mide_termino_volumen.py 
+      results/logs/growth_2026-07/termino_volumen_boss.json 
+      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    deps:
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      hash: md5
+      md5: c1a478ee8bc47252dd775cba2f720ed2
+      size: 4424
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: 74a053a1b6cee380a21210864b74e19b
+      size: 21274
+    - path: src/p06_growth/mide_termino_volumen.py
+      hash: md5
+      md5: eeee156ac7ed298b477e061f9686d97c
+      size: 6379
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/growth_2026-07/termino_volumen_boss.json
+      hash: md5
+      md5: 33ee7c605d970425af2ffebf35034512
+      size: 2370

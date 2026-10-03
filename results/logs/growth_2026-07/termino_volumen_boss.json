@@ -1,10 +1,10 @@
 {
  "corrida": "medir el termino de volumen ln det F de la cadena de BOSS",
- "mecanismo": "boss_lpt_R1R2.chi2_marg_set L262-291 devuelve c + ln det F; F = T^T Cinv T + Lambda con T \u221d e^logA (L277), asi que el volumen de las molestias lineales depende de A_s",
+ "mecanismo": "boss_lpt_R1R2.chi2_marg_set L262-291 devuelve c + ln det F; F = T^T Cinv T + Lambda con T ∝ e^logA (L277), asi que el volumen de las molestias lineales depende de A_s",
  "control": {
-  "criterio": "0 < pendiente <= 36 (techo algebraico: F es 3x3, T \u221d e^logA, 6 conjuntos)",
-  "pendiente": 32.75267008401426,
-  "residuo_recta": 0.06107465892040409,
+  "criterio": "0 < pendiente <= 36 (techo algebraico: F es 3x3, T ∝ e^logA, 6 conjuntos)",
+  "pendiente": 32.7526705156992,
+  "residuo_recta": 0.0610746532958899,
   "pasa": true
  },
  "rejilla": [
@@ -19,33 +19,60 @@
   3.1
  ],
  "ln_det_F": [
-  -134.363629252922,
-  -132.77339145562388,
-  -131.1682405614066,
-  -129.5489463640782,
-  -127.91627460028639,
-  -126.27098258009833,
-  -124.61381510327244,
-  -122.94550072391013,
-  -121.26674841375858
+  -134.363628425986,
+  -132.77339060289233,
+  -131.16823968406695,
+  -129.54894546333784,
+  -127.91627367736194,
+  -126.27098163620613,
+  -124.61381413961915,
+  -122.94549974168453,
+  -121.26674741412425
  ],
  "c": [
-  402.2898482323053,
-  328.93121857594525,
-  274.1448993124546,
-  238.11871993170772,
-  221.11943458258455,
-  223.52210890018085,
-  245.84022371287867,
-  288.75635558331055,
-  353.1533853946991
+  402.28978408322814,
+  328.9311795450511,
+  274.14488867803374,
+  238.11874166393332,
+  221.11949345607732,
+  223.52221061278408,
+  245.84037501129674,
+  288.75656439641165,
+  353.15366097561156
  ],
- "alcance": "mide de donde sale el desplazamiento. NO dice cual estimador es insesgado \u2014 eso es la cola #23, con dato sintetico",
+ "alcance": "mide de donde sale el desplazamiento. NO dice cual estimador es insesgado — eso es la cola #23, con dato sintetico",
  "prediccion": {
   "curvatura_perfil": 130.38846682798967,
   "sigma_perfil": 0.12384982819806273,
-  "desplazamiento_predicho": 0.25119299950985735,
-  "desplazamiento_observado": 0.18114711949770612,
-  "razon": 1.3866795133501322
+  "desplazamiento_predicho": 0.2511930028206175,
+  "desplazamiento_observado": 0.18336356055675562,
+  "razon": 1.3699177855071536
+ },
+ "_procedencia": {
+  "commit": "7cebd9c0ea3ba8bc4b1008fbb3b73975f36d3e7c",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/mide_termino_volumen.py",
+  "script_sha256": "f72b3de427b819325702e2cd08adf89b45d8f1ee0e326696d3af33085d265483",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "9c05a038a080ce015b0ff83ad6d5c3a5be9d4aca2e1d5ecb103c1d43d88ce270"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p06_growth/mide_termino_volumen.py",
+   "results/logs/growth_2026-07/termino_volumen_boss.json",
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"
+  ],
+  "fecha": "2026-10-03T13:17:23",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }
