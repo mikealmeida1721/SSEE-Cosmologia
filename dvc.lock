@@ -2071,6 +2071,14 @@ stages:
       hash: md5
       md5: 6d07469f5fd6a2ae420bb425ab47de6a
       size: 885
+    - path: data/raw/cosmic_chronometers.csv
+      hash: md5
+      md5: 687ae6927e506b6ac7798bc0d934a460
+      size: 1413
+    - path: data/raw/moresco2022/tabla_cc1.tex
+      hash: md5
+      md5: c1f477cc3eb3cbdf9acbed6400b720d9
+      size: 2582
     - path: data/raw/planck2018_EE.txt
       hash: md5
       md5: f81229611d039f90b6eea76a0fe5b713
@@ -2101,10 +2109,10 @@ stages:
       size: 5420
     - path: src/verificacion/coteja_crudos.py
       hash: md5
-      md5: 4acc6b8a411d415ff2568d6d228231ff
-      size: 6537
+      md5: 128993c83b64dff3200725ba9b0a50e6
+      size: 8059
     outs:
     - path: results/logs/coteja_crudos.json
       hash: md5
-      md5: 21883840b67d109fc1f77e6bdac9d83e
-      size: 3623
+      md5: ef6ceb372e0c73c0955d9ada4825e94e
+      size: 4120

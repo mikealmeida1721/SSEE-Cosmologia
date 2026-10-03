@@ -39,8 +39,9 @@ moresco2022/tabla_cc1.tex:
   sha256: 2eb751bfbbd4a44b20adccda37275b97efa3ab4f5bafc3b065b7e1cc657a4063
 
 fsigma8_rsd.csv:
-  cita: "Beutler+2012; Howlett+2015; Alam+2017; Hou+2021 (por fila)"
-  cotejo: null   # «verificado» el 2026-05-18 a mano, sin extracto ni script
+  cita: "Beutler+2012 (arXiv:1204.4725); Howlett+2015 (arXiv:1409.3238); Alam+2017 (arXiv:1607.03155); Hou+2021 (arXiv:2007.08998)"
+  cotejo: "src/verificacion/coteja_crudos.py (cada fila contra el extracto de su referencia; Howlett 0.49 +0.15/-0.14 simetrizado a 0.145)"
+  nota: "los 3 puntos BOSS DR12 estan correlacionados (Alam+2017 da la covarianza); usarlos con error diagonal los cuenta como independientes"
 
 planck2018_prior.csv:
   cita: "Planck 2018 VI, A&A 641, A6 (arXiv:1807.06209), Tabla 2, columna TT,TE,EE+lowE+lensing"
@@ -68,3 +69,27 @@ planck2018_EE.txt:
 planck2018_lensing.txt:
   cita: "Cobaya planck_supp_data_and_covmats (arXiv:1807.06209)"
   cotejo: "src/verificacion/coteja_crudos.py (columna por columna contra planck_supp_data_and_covmats/lensing/2018/..._agr2_bandpowers.dat)"
+
+fsigma8_fuentes/beutler2012.tex:
+  cita: "arXiv:1204.4725, cor_v8_final.tex lineas 132 y 567; fuente LaTeX bajada de arxiv.org/e-print el 2026-10-02"
+  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  extracto: fsigma8_fuentes/beutler2012.tex
+  sha256: 03145a60b5bb4e5a61103dd75d95e991869de2a3d7f035545d0d3c930300de64
+
+fsigma8_fuentes/howlett2015.tex:
+  cita: "arXiv:1409.3238, DR7VACRSD_final.tex linea 591; fuente LaTeX bajada de arxiv.org/e-print el 2026-10-02"
+  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  extracto: fsigma8_fuentes/howlett2015.tex
+  sha256: 694ea87769578ef9c6dcbe977eb7013f62bdec8ee8d2491039d05063817a10ce
+
+fsigma8_fuentes/alam2017.tex:
+  cita: "arXiv:1607.03155, combining_measurements.tex lineas 50-62; fuente LaTeX bajada de arxiv.org/e-print el 2026-10-02"
+  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  extracto: fsigma8_fuentes/alam2017.tex
+  sha256: 0fa0d656bff2f879f379012a898e671b74ee57196f88f6fac27fd82ff7d9f90e
+
+fsigma8_fuentes/hou2021.tex:
+  cita: "arXiv:2007.08998, eboss_paper.tex linea 922; fuente LaTeX bajada de arxiv.org/e-print el 2026-10-02"
+  cotejo: "es el extracto literal; lo lee src/verificacion/coteja_crudos.py"
+  extracto: fsigma8_fuentes/hou2021.tex
+  sha256: 127a8b47fd201e61c77e4e4af19983049956efa6dd71cc4f8821fc20964152da

@@ -46,6 +46,7 @@ OFICIAL = {
 }
 TABLA2 = RAW / "planck2018_VI" / "tabla2.tex"   # extracto literal de arXiv:1807.06209, Tabla 2
 TABLA_CC = RAW / "moresco2022" / "tabla_cc1.tex"   # extracto literal de arXiv:2201.07241, Tabla CC1
+FS8 = RAW / "fsigma8_fuentes"   # extractos literales de las 4 fuentes de fsigma8
 LENS_FUENTE = pathlib.Path("/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/"
                            "smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat")
 
@@ -109,6 +110,33 @@ def coteja_cc(csv, tabla):
     return not malas, (f"{len(repo)} filas identicas a la Tabla CC1" if not malas else f"difieren: {malas[:3]}")
 
 
+def coteja_fs8(csv, d):
+    """Cada fila de fsigma8_rsd.csv contra el extracto de SU referencia.
+    Howlett+2015 da 0.49 (+0.15/-0.14): el csv usa la media simetrizada (0.15+0.14)/2."""
+    import re
+    ext = {k: (pathlib.Path(d) / f).read_text() for k, f in
+           (("Beutler2012", "beutler2012.tex"), ("Howlett2015", "howlett2015.tex"),
+            ("Alam2017", "alam2017.tex"), ("Hou2021", "hou2021.tex"))}
+    malas = []
+    for ln in pathlib.Path(csv).read_text().splitlines():
+        if not ln or ln.startswith("#") or ln.startswith("z_eff"):
+            continue
+        z, v, e, _, ref = ln.split(",")
+        t = ext.get(ref, "")
+        if ref == "Howlett2015":
+            m = re.search(r"f\\sigma_\{8\}=([0-9.]+)\^\{\+([0-9.]+)\}_\{-([0-9.]+)\}", t)
+            ok = bool(m) and float(m.group(1)) == float(v) and abs((float(m.group(2)) + float(m.group(3))) / 2 - float(e)) < 1e-12
+        elif ref == "Alam2017":
+            m = re.search(rf"f\\sigma_8\({float(z):.2f}\)\$\s*&\s*([0-9.]+)\s*&\s*([0-9.]+)", t)
+            ok = bool(m) and float(m.group(1)) == float(v) and float(m.group(2)) == float(e)
+        else:
+            ok = re.search(rf"{re.escape(v)}\s*\\pm\s*{re.escape(e)}", t) is not None and \
+                 (ref != "Beutler2012" or z in t) and (ref != "Hou2021" or z.rstrip("0") in t)
+        if not ok:
+            malas.append(ln)
+    return not malas, ("6 filas coinciden con su referencia" if not malas else f"difieren: {malas}")
+
+
 res = {}
 for nombre, (oficial, sha) in OFICIAL.items():
     res[nombre] = dict(fuente=IRSA + oficial, sha256_oficial=sha, sha256_repo=_sha(RAW / nombre),
@@ -127,6 +155,10 @@ ok_c, msg_c = coteja_cc(RAW / "cosmic_chronometers.csv", TABLA_CC)
 res["cosmic_chronometers.csv"] = dict(fuente="arXiv:2201.07241 Tabla CC1 (extracto data/raw/moresco2022/tabla_cc1.tex)",
                                       coincide=ok_c, detalle=msg_c, entrega="Moresco+2022, 32 puntos, solo diagonal")
 
+ok_f, msg_f = coteja_fs8(RAW / "fsigma8_rsd.csv", FS8)
+res["fsigma8_rsd.csv"] = dict(fuente="Beutler+2012, Howlett+2015, Alam+2017, Hou+2021 (extractos data/raw/fsigma8_fuentes/)",
+                              coincide=ok_f, detalle=msg_f, entrega="6 puntos; los 3 de BOSS estan correlacionados (covarianza en Alam+2017)")
+
 # CONTROL (R53): un digito cambiado tiene que hacer fallar a los dos comparadores
 with tempfile.TemporaryDirectory() as d:
     t = pathlib.Path(d) / "tt.txt"
@@ -135,13 +167,16 @@ with tempfile.TemporaryDirectory() as d:
     l.write_text((RAW / "planck2018_lensing.txt").read_text().replace("1.33520e-07", "1.33521e-07", 1))
     cc = pathlib.Path(d) / "cc.csv"
     cc.write_text((RAW / "cosmic_chronometers.csv").read_text().replace("0.48,97,62", "0.48,97,60"))
-    control = dict(cc_alterado_falla=not coteja_cc(cc, TABLA_CC)[0],
+    fs = pathlib.Path(d) / "fs.csv"
+    fs.write_text((RAW / "fsigma8_rsd.csv").read_text().replace("0.510,0.458,0.038", "0.510,0.458,0.039"))
+    control = dict(fs8_alterado_falla=not coteja_fs8(fs, FS8)[0],
+                   cc_alterado_falla=not coteja_cc(cc, TABLA_CC)[0],
                    espectro_alterado_falla=not coteja_espectro(t, OFICIAL["planck2018_TT.txt"][1]),
                    lensing_alterado_falla=not coteja_lensing(l, LENS_FUENTE)[0])
 control["pasa"] = all(control.values())
 
 out = dict(archivos=res, todos_coinciden=all(v["coincide"] for v in res.values()), control=control)
-json.dump(con_acta(out, __file__, entradas=[RAW / n for n in res] + [TABLA2, TABLA_CC, LENS_FUENTE]),
+json.dump(con_acta(out, __file__, entradas=[RAW / n for n in res] + [TABLA2, TABLA_CC, LENS_FUENTE] + sorted(FS8.glob('*.tex'))),
           open(ROOT / "results" / "logs" / "coteja_crudos.json", "w"), indent=1, ensure_ascii=False)
 for n, v in res.items():
     print(f"  {n:24s} {'COINCIDE' if v['coincide'] else 'NO COINCIDE'}  ({v['entrega']})")
