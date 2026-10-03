@@ -10,6 +10,12 @@ siguiente, y sólo para los que cuadran.
 
 COMO.
   - Lista: el TSV que se le pasa (log, script, …), sólo los marcados «ligero».
+    Columnas opcionales (2026-10-03): 6ª = argumentos del script (se parten como
+    en la shell); 7ª = tolerancia relativa DECLARADA para ese log (p. ej. una
+    cadena con semilla fija pero suma en otro orden). Sin 7ª, la de siempre.
+  - Un `.sh` se corre con bash, no con python. Cada corrida va en su propio
+    grupo de procesos: al vencer el tiempo se mata el GRUPO, no sólo el padre
+    (antes quedaban huérfanos los workers de Pool; hubo que matar 7 a mano).
   - Si el script nombra su log, el script lo escribe; si no, se captura su salida
     estándar como log nuevo.
   - Comparación: JSON por ruta de claves; texto línea a línea. Se ignoran fechas,
@@ -26,6 +32,8 @@ CUADRAR y la misma copia con un dígito cambiado tiene que NO cuadrar.
 (las salidas que no cuadran quedan junto a salida.json, en recorre_salidas_nuevas/)
 """
 import json
+import shlex
+import signal
 import os
 import pathlib
 import re
@@ -93,8 +101,8 @@ def _iguales_texto(a, b):
     return abs(x - y) <= 0.5 * 10 ** -dec * esc + 1e-12
 
 
-def compara(viejo, nuevo):
-    """Devuelve (cuadra, detalle)."""
+def compara(viejo, nuevo, tol=1e-6):
+    """Devuelve (cuadra, detalle). `tol`: relativa, sólo si el caso la declara."""
     if viejo.suffix == ".json":
         try:
             A = dict(_plano(json.loads(viejo.read_text())))
@@ -103,7 +111,7 @@ def compara(viejo, nuevo):
             return False, f"JSON ilegible: {e}"
         faltan = sorted(set(A) - set(B))
         malos = [(k, A[k], B[k]) for k in A if k in B
-                 and not (A[k] == B[k] or abs(A[k] - B[k]) <= 1e-6 * max(abs(A[k]), abs(B[k])))]
+                 and not (A[k] == B[k] or abs(A[k] - B[k]) <= tol * max(abs(A[k]), abs(B[k])))]
         if faltan or malos:
             return False, {"claves_que_faltan": faltan[:5], "n_faltan": len(faltan),
                            "distintos": [f"{k}: {a!r} -> {b!r}" for k, a, b in malos[:8]], "n_distintos": len(malos)}
@@ -114,7 +122,9 @@ def compara(viejo, nuevo):
         return False, {"filas_con_numeros": [len(A), len(B)]}
     malos = []
     for i, (fa, fb) in enumerate(zip(A, B)):
-        if len(fa) != len(fb) or not all(_iguales_texto(a, b) for a, b in zip(fa, fb)):
+        if len(fa) != len(fb) or not all(_iguales_texto(a, b) or
+                                         abs(float(a) - float(b)) <= (tol if tol > 1e-6 else 0) * max(abs(float(a)), abs(float(b)))
+                                         for a, b in zip(fa, fb)):
             malos.append(f"fila {i}: {fa[:6]} -> {fb[:6]}")
     if malos:
         return False, {"n_distintos": len(malos), "distintos": malos[:8]}
@@ -135,8 +145,10 @@ def control():
         (d / "b.json").write_text(json.dumps({"x": 1.5, "fecha": "mañana", "y": [2.25]}))
         (d / "c.json").write_text(json.dumps({"x": 1.5, "fecha": "hoy", "y": [2.26]}))
         r = [compara(d / "a.log", d / "b.log")[0], compara(d / "a.log", d / "c.log")[0],
-             compara(d / "a.json", d / "b.json")[0], compara(d / "a.json", d / "c.json")[0]]
-    return r == [True, False, True, False], r
+             compara(d / "a.json", d / "b.json")[0], compara(d / "a.json", d / "c.json")[0],
+             # tolerancia declarada: el 2.25 -> 2.26 (0.4 %) cuadra con 1e-2 y no con 1e-3
+             compara(d / "a.json", d / "c.json", 1e-2)[0], compara(d / "a.json", d / "c.json", 1e-3)[0]]
+    return r == [True, False, True, False, True, False], r
 
 
 def main(lista, salida):
@@ -154,6 +166,9 @@ def main(lista, salida):
         if c[3] != "ligero":
             continue
         nombra = c[4] == "nombra-su-log"
+        args = shlex.split(c[5]) if len(c) > 5 and c[5].strip() else []
+        tol = float(c[6]) if len(c) > 6 and c[6].strip() else 1e-6
+        interp = ["bash"] if scr.endswith(".sh") else [str(ROOT / ".venv/bin/python3")]
         t0 = time.time()
         with tempfile.TemporaryDirectory() as d:
             copia = pathlib.Path(d) / log.name
@@ -161,19 +176,26 @@ def main(lista, salida):
             nuevo = pathlib.Path(d) / ("nuevo" + log.suffix)
             env = dict(os.environ, OMP_NUM_THREADS="1", MKL_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1",
                        MPLBACKEND="Agg", PYTHONPATH=str(ROOT / "src"))
+            pr = subprocess.Popen(["nice", "-n", "10", *interp, scr, *args], cwd=ROOT, env=env,
+                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                                  start_new_session=True)   # grupo propio: se mata entero
             try:
-                o = subprocess.run(["nice", "-n", "10", str(ROOT / ".venv/bin/python3"), scr], cwd=ROOT, env=env,
-                                   capture_output=True, text=True, timeout=1200)
-                rc, err = o.returncode, o.stderr[-600:]
+                out, errt = pr.communicate(timeout=1200)
+                rc, err = pr.returncode, errt[-600:]
                 if nombra:
                     if (ROOT / log).exists():
                         shutil.copy2(ROOT / log, nuevo)
                 else:
-                    nuevo.write_text(o.stdout)
+                    nuevo.write_text(out)
             except subprocess.TimeoutExpired:
+                try:
+                    os.killpg(pr.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                pr.communicate()
                 rc, err = "timeout", ""
             if rc == 0 and nuevo.exists():
-                cuadra, det = compara(copia, nuevo)
+                cuadra, det = compara(copia, nuevo, tol)
                 if not cuadra:
                     DIF.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(nuevo, DIF / log.name)   # la salida nueva, para mirarla; FUERA del repo
@@ -197,7 +219,7 @@ def main(lista, salida):
             shutil.copy2(copia, ROOT / log)   # el log vuelve a ser el de antes, byte a byte
         estado = "CUADRA" if cuadra else ("NO CUADRA" if cuadra is False else "NO CORRE")
         print(f"{estado:9s} {time.time() - t0:6.0f}s  {log}  <- {scr}", flush=True)
-        res.append(dict(log=str(log), script=scr, estado=estado, detalle=det, segundos=round(time.time() - t0)))
+        res.append(dict(log=str(log), script=scr, args=args, tolerancia=tol, estado=estado, detalle=det, segundos=round(time.time() - t0)))
     json.dump(dict(control_comparador=ok, casos=res), open(salida, "w"), indent=1, ensure_ascii=False)
 
 

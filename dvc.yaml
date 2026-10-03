@@ -645,6 +645,7 @@ stages:
     - src/p06_growth/boss_lpt_R1R2.py
     - src/procedencia.py
     - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
+    - results/logs/growth_2026-07/boss_aisla_neutrinos.json
     - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
     - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
     outs:
@@ -661,6 +662,21 @@ stages:
     - src/ssee_core.py
     outs:
     - results/logs/fsigma8_canonico.json:
+        cache: false
+  termino_volumen_boss:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/mide_termino_volumen.py && .venv/bin/python3 
+      src/procedencia_sella.py src/p06_growth/mide_termino_volumen.py 
+      results/logs/growth_2026-07/termino_volumen_boss.json 
+      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    deps:
+    - src/p06_growth/mide_termino_volumen.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    outs:
+    - results/logs/growth_2026-07/termino_volumen_boss.json:
         cache: false
   perfil_wc_boss:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

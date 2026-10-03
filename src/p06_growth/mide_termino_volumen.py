@@ -23,7 +23,8 @@ y el desplazamiento que esa pendiente predice:
     desplazamiento  =  pendiente / curvatura_del_perfil        (minimo de una
     parabola desplazada por un termino lineal; curvatura = 2/sigma_perfil^2)
 
-y se compara contra el desplazamiento REALMENTE observado, 0.1811.
+y se compara contra el desplazamiento REALMENTE observado (perfil - marginal,
+leido de R1R2_boss_lpt_cobaya.json#perfil_vs_marginal).
 
 CONTROL (R53, va PRIMERO por R24). El algebra predice la pendiente sin correr
 nada: F es 3x3 y T ∝ e^logA, luego det F ∝ e^(6 logA) SI el termino de dato
@@ -33,7 +34,6 @@ el techo algebraico (o algo esta mal leido). Si sale fuera, se aborta.
 
 FUENTE: results/logs/growth_2026-07/termino_volumen_boss.json
 """
-# ORIGEN-VALOR: 0.1811 — desplazamiento marginal-perfil, results/logs/growth_2026-07/marginal_vs_perfil.json
 import json
 import pathlib
 import sys
@@ -49,8 +49,15 @@ import boss_lpt_R1R2 as B                                      # noqa: E402
 SALIDA = REPO / "results" / "logs" / "growth_2026-07" / "termino_volumen_boss.json"
 
 TECHO = 36.0          # 6 conjuntos x 3 molestias x 2 (T^2) = pendiente maxima
-OBSERVADO = 0.18114711949770612
-SIG_PERFIL = 0.12384982819806273
+# Leidos del log VIGENTE de BOSS (2026-10-03). Antes iban tecleados: 0.18115
+# era perfil - marginal con la cadena BOSS del 09-08 (marginal 2.7636, m_nu de
+# LCDM); la re-corrida del 10-01 con los ingredientes de SSEE da 2.7614, y el
+# desplazamiento pasa a 0.1834. El literal no se entero (R65, «un literal no se
+# entera de que su fuente cambio»).
+_PVM = json.load(open(REPO / "results" / "logs" / "growth_2026-07"
+                      / "R1R2_boss_lpt_cobaya.json"))["perfil_vs_marginal"]
+OBSERVADO = _PVM["perfil_logA"] - _PVM["marginal_logA"]
+SIG_PERFIL = _PVM["perfil_sigma"]
 REJILLA = np.linspace(2.70, 3.10, 9)
 
 

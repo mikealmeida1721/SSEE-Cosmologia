@@ -34,7 +34,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "src" / "verificacion"))
 import r73_papers as R  # noqa: E402  (misma maquinaria de fuentes y cifras: sin copia)
 
-NUMALL = re.compile(r"(?<![\w.])(\d+\.\d+)(?![\w.])")
+# 2026-10-03: el lookahead era (?![\w.]) y descartaba TODO numero seguido de
+# punto, o sea el que cierra una frase («... queda en 0.738291.»). Lo destapo el
+# caso de mutacion de R74, que no enrojecia. Lo que se quiere excluir es la
+# version tipo 1.2.3 (punto SEGUIDO de cifra), no el punto final. Escondia 2:
+# P7 eq:alphak 15.591335 (truncado; el log da 15.5913358) y un 0.0688 retirado.
+NUMALL = re.compile(r"(?<![\w.])(\d+\.\d+)(?!\w|\.\d)")
 CAJONES = ["VERIFICATION_LEDGER.md", "README.md", "OPEN_PROBLEMS.md", "CLAUDE.md"]
 
 

@@ -212,7 +212,7 @@ epoch de bariogénesis. Estas son dos temperaturas físicamente distintas.
 
 > 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 Script `archive/codigo/investigacion/s_m_como_densidad_RETIRADO_2026-10-03/ssee_paperB_DW.py` evaluaba el segundo problema de Paper B: el
-mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducía Ω_φDM h²=0.0688.
+mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducía su densidad Ω_φDM h² (la resta retirada; el valor queda en el script archivado).
 
 - Mecanismo Dodelson-Widrow (mezcla activo-estéril): el ángulo requerido es
   sin²(2θ)_DW ≈ 5×10⁻⁵ (fórmula Boyarsky-Ruchayskiy-Shaposhnikov 2009; el valor exacto colgaba de la m_φ retirada y el script ya no lo reproduce).

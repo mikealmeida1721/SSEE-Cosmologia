@@ -6494,7 +6494,7 @@ _NIVEL = {1: "FUENTE — dato crudo, núcleo y procedencia",
 _PREF_NIVEL = [
     (("DESI", "canon", "R26", "R31", "R32", "R20"), 1),
     (("V-L2", "V-L3", "L1 ", "L2 ", "V-L3"), 2),
-    (("R33", "R34", "R35", "R36", "R52", "R65", "R66", "R68",
+    (("R33", "R34", "R35", "R36", "R52", "R65", "R66", "R68", "R72",
       "procedencia", "Procedencia"), 3),
     (("V-L4", "R25"), 4),
     (("R37", "R38", "R40", "R41", "R42", "R43", "R44", "R45",
@@ -6502,7 +6502,7 @@ _PREF_NIVEL = [
       "R19", "R21", "R22", "R23", "R24", "R27", "R28", "R29", "R30",
       "R55", "R56", "R58", "R59", "R60", "R61", "R63",
       "diccionario", "sello"), 5),
-    (("memoria", "archivo", "R12", "R39", "R46"), 6),
+    (("memoria", "archivo", "R12", "R39", "R46", "R77"), 6),
     # el propio aparato de verificacion: se mira al final, porque un
     # fallo suyo no invalida un numero, invalida la CONFIANZA en el resto.
     (("R47", "R48", "R49", "R50", "R51", "R53", "R54",
