@@ -129,6 +129,7 @@ def control():
         # ORIGEN-VALOR: 0.4321 — idem, segundo numero sintetico del control
         (d / "a.log").write_text("[ 1.2m] chi2 = 12.3456  sigma 0.4321\n2026-10-03 12:00 fecha\n")
         (d / "b.log").write_text("[ 9.9m] chi2 = 12.3456  sigma 0.4321\n2026-10-04 13:00 fecha\n")
+        # ORIGEN-VALOR: 12.3457 — el mismo dato sintetico con un digito alterado (debe NO cuadrar)
         (d / "c.log").write_text("[ 1.2m] chi2 = 12.3457  sigma 0.4321\n2026-10-03 12:00 fecha\n")
         (d / "a.json").write_text(json.dumps({"x": 1.5, "fecha": "hoy", "y": [2.25]}))
         (d / "b.json").write_text(json.dumps({"x": 1.5, "fecha": "mañana", "y": [2.25]}))
