@@ -455,7 +455,37 @@ REGLAS = {
         exenciones=[("línea que dice explícitamente que NO debe usarse así", None)],
         mutacion=[("una saturación usada como densidad, el bug de β_c",
                    "OM_M = S.OMEGA_M_TOTAL",
-                   "OM_M = S.OMEGA_DE * rho_crit")],
+                   "OM_M = S.OMEGA_DE * rho_crit"),
+                  # 2026-10-03, R52c: la cuarta forma, s_m convertida en densidad
+                  # FISICA (× h²), el «caso naive» de ssee_paper3_cmb y class_picos.
+                  ("s_m convertida en densidad física (× h²), el caso naive",
+                   "OM_M = S.OMEGA_M_TOTAL",
+                   "OM_M = S.S_M * h**2")],
+    ),
+    "R72": dict(
+        capa="R72 — ninguna saturación ocupa ranura de densidad en los MANUSCRITOS",
+        intencion="saturacion-no-es-densidad",
+        ambito="manuscript/*.tex y submission_PRD/*.tex",
+        archivo="manuscript/SSEE_Paper3_CMB.tex",
+        exenciones=[("frase que lo declara historia o dice que no es densidad", None)],
+        # 2026-10-03: la capa existia sin entrada (fallo M1 previo). El caso es el
+        # defecto REAL del resumen del PRD hasta 81b1556: Ω_m,dyn presentado como la
+        # densidad «dinamica» que no basta para el CMB. Lo atrapa R72c (simbolo).
+        mutacion=[("s_m presentada como densidad dinámica, el resumen del PRD",
+                   "\\section{The Acoustic Scale and the Matter Density}",
+                   "The bare dynamical $\\Omega_{m,\\rm dyn}=0.160$ alone cannot reproduce\n"
+                   "the acoustic peaks.\n\\section{The Acoustic Scale and the Matter Density}")],
+    ),
+    "R77": dict(
+        capa="R77 — todo lo archivado entra declarado",
+        intencion="archivo-declarado",
+        ambito="archive/** (versionado) contra archive/README.md y los README de cada carpeta",
+        archivo="archive/README.md",
+        exenciones=[],
+        # Regla de Mike (2026-10-03): a archive se entra con la nota de por qué.
+        mutacion=[("un archivo archivado pierde su entrada en la bitácora",
+                   "- `SSEE_Paper2_MCMC_Validation_v1.pdf` — llegó en",
+                   "- (entrada borrada) — llegó en")],
     ),
     "R59": dict(
         capa="R59 — ninguna ruta de script citada en la prosa apunta al vacío",

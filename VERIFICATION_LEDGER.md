@@ -1261,7 +1261,7 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
 - `growth_2026-07/boss_control_kmax*.json` y `boss_fit_kmax*.json` (8): barrido Kaiser de sondeo
   (08-08), superado por el LPT R1/R2; nadie los cita. Re-corridos CON su k_max: no reproducen
   (σ(fσ₈) se mueve 2–25 %, el nuisance `sv` salta órdenes de magnitud): minimizador mal
-  condicionado en una dirección plana. **Archivados** en `archive/logs_superados/boss_kaiser_20260808/` (con su README).
+  condicionado en una dirección plana. **Archivados**, junto con sus dos scripts `boss_control.py` y `boss_fit.py` (2026-10-03), en `archive/logs_superados/boss_kaiser_20260808/` (con su README).
 - `growth_2026-07/termino_volumen_boss.json`: cuadra, pero su módulo `boss_lpt_R1R2.py` lleva
   rutas fijas al árbol principal y es dependencia de la etapa R1/R2; arreglarlo invalida ese
   candado (habría que re-correr el MCMC). Queda para la tanda pesada.

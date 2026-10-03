@@ -169,3 +169,230 @@ ser preguntas al retirarse el objeto del que trataban. Ver el README del cajón.
 
 ### `datos_retirados/` — datos crudos que la fuente contradice (2026-10-02)
 - `cluster_masses_2026-10-02.csv`: las masas de cúmulos (Coma, A2029, A478 y Bullet) que citaban a Zhang+2026. Al cotejarlas con la fuente (R76), Coma y Bullet no aparecen y A2029 y A478 vienen con otros números. Nadie lo usaba ya. Lo reemplaza `data/raw/zhang2026/tablas_II_III.tex`, leído por `src/p02_mcmc/cumulos_zhang2026.py`. El detalle está en `archive/datos_retirados/README.md`.
+
+- `boss_control.py`, `boss_fit.py` — salen de `src/p06_growth/` el 2026-10-03 hacia `logs_superados/boss_kaiser_20260808/`: ajuste Kaiser lineal de BOSS, superado por LPT (`boss_lpt_R1R2.py`, en la cadena). Detalle en el README de esa carpeta.
+
+## Inventario declarado (2026-10-03)
+
+**Por qué existe esta sección.** La regla de arriba («nada se archiva sin entrada») no la
+verificaba nadie, y 172 archivos llegaron sin estar nombrados. Desde el 2026-10-03 la vigila
+**R77** del guardián: todo archivo de `archive/` debe aparecer por su nombre en esta bitácora
+o en un README de su carpeta. Aquí van los que faltaban, cada uno con el commit que lo trajo
+a `archive/` y su mensaje: el porqué sale del historial, no de la memoria. Cuando ese commit
+es una reorganización (p. ej. `642bffa` o `b3ba7c5`), el motivo original **no quedó
+registrado**: vale entonces el de su cajón en el Catálogo de arriba.
+
+### `archive/chains/`
+- `ssee_cmb.1.txt` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cmb.checkpoint` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cmb.covmat` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cmb.input.yaml` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cmb.progress` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cmb.updated.dill_pickle` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cmb.updated.yaml` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+
+### `archive/codigo/`
+- `build_arxiv_packages.py` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fix_p1.py` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fix_p9.py` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `regenerate_fig_corner_p2_legacy.py` — llegó en `7026bf6` (2026-07-10): «audit(zenodo): purga masiva de valores legacy en OPEN_PROBLEMS y archivado de scripts obsoletos»
+- `ssee_b3_mira.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_candidate1_test.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_cluster_sensitivity.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_is_growth.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_mira_background_IS.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_nonlinear_s8_legacy.py` — llegó en `7026bf6` (2026-07-10): «audit(zenodo): purga masiva de valores legacy en OPEN_PROBLEMS y archivado de scripts obsoletos»
+- `ssee_option_b_IS_sigma8.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_paper3_diagnostic.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_paper3_sigma8.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_paper3_theta_scan.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_paper6_alphaM_scan.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_paper6_lyman_alpha_audit_legacy.py` — llegó en `7026bf6` (2026-07-10): «audit(zenodo): purga masiva de valores legacy en OPEN_PROBLEMS y archivado de scripts obsoletos»
+- `ssee_paper6_phi_dark_matter.py` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_phase_c_dic_legacy.py` — llegó en `7026bf6` (2026-07-10): «audit(zenodo): purga masiva de valores legacy en OPEN_PROBLEMS y archivado de scripts obsoletos»
+
+### `archive/codigo/investigacion/huerfanos_2026-10-02/figuras/`
+- `fig_hiclass_TT.pdf` — llegó en `fb37984` (2026-10-02): «Restos que la propagacion no alcanzo: P4 (H_glob era el numero puro; 'el CMB prefiere 67.962'; A_s/tau 'est…»
+- `fig_hiclass_TT.png` — llegó en `fb37984` (2026-10-02): «Restos que la propagacion no alcanzo: P4 (H_glob era el numero puro; 'el CMB prefiere 67.962'; A_s/tau 'est…»
+- `fig_hiclass_alpha.pdf` — llegó en `fb37984` (2026-10-02): «Restos que la propagacion no alcanzo: P4 (H_glob era el numero puro; 'el CMB prefiere 67.962'; A_s/tau 'est…»
+- `fig_hiclass_alpha.png` — llegó en `fb37984` (2026-10-02): «Restos que la propagacion no alcanzo: P4 (H_glob era el numero puro; 'el CMB prefiere 67.962'; A_s/tau 'est…»
+- `ssee_eftcamb_CMB_TT.png` — llegó en `fb37984` (2026-10-02): «Restos que la propagacion no alcanzo: P4 (H_glob era el numero puro; 'el CMB prefiere 67.962'; A_s/tau 'est…»
+- `ssee_eftcamb_Pk.png` — llegó en `fb37984` (2026-10-02): «Restos que la propagacion no alcanzo: P4 (H_glob era el numero puro; 'el CMB prefiere 67.962'; A_s/tau 'est…»
+
+### `archive/codigo/investigacion/mira_attempts/`
+- `ssee_alpha_saturation.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_alpha_saturation_stepB.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_alpha_saturation_stepC.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_alpha_saturation_stepD.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_alpha_saturation_stepD2.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_mira_saturated_test.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+
+### `archive/codigo/investigacion/op4_rkm_RETIRADO_2026-10-03/`
+- `fig_paper8_vainshtein.png` — llegó en `eda1f97` (2026-10-03): «tabla_sondas_tex: la tabla SSEE contra LCDM sonda por sonda para PRD y Sealed, leida del log de sondas, con…»
+
+### `archive/codigo/investigacion/open_problems/`
+- `op10_dimensional_bridge.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op10_mechanisms_2to6.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op10_principled_search.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op10_systematic_search.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op11_xi_from_overproduction.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op12_route2_freezeout.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op12_thermal_decoupling.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op12_trace_lights_qcd.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op14_yukawa_attack.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op18_As_from_inflation.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op8_constants_network.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op8_coupled_dm_de.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op8_lambda_P7_coupling.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op8_tracker_delta_phi.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_gravitational_production.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_lineage_grammar_scan.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_misalignment_relic.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_multiplier_search.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_particle_existence.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_phi_dm_formula_search.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_phi_i_search.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_physical_formula.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op9_transport_derivation.py` — llegó en `7220fce` (2026-07-11): «close(OP-9): intento transporte acotado → CORTE, congelar Camino A»
+- `op_As_from_potential.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op_osiris_kretschmann_trigger.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `op_osiris_primordial_split.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op10_family2_dynamics.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op10_family3_axion.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op10_phase2e_dynamic_mass.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op10_potential_catalog.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op10_seesaw_search.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op10_uv_induced_minimum.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op13_canonical_lensing.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op14_neutrino_mass.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op1_baryogenesis.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op1_baryon_density.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op3_separability.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op4_vainshtein.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op5_hmcode.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+- `ssee_op6_screening_form.py` — llegó en `b592853` (2026-06-24): «chore(organización mesa Stage 2): mover investigación+tooling deprecado a archive/»
+
+### `archive/codigo/investigacion/open_problems/salidas_2026-10-02/`
+- `op18_As_from_inflation.log` — llegó en `a509d91` (2026-10-02): «salidas de OP-1 y OP-18 (forzadas: *.log se ignora en archive/)»
+- `ssee_op1_baryogenesis.log` — llegó en `a509d91` (2026-10-02): «salidas de OP-1 y OP-18 (forzadas: *.log se ignora en archive/)»
+- `ssee_op5_hmcode.log` — llegó en `5480fef` (2026-10-02): «R74: fuente_git respeta el exponente; salida con acta de HMcode (OP-5); cifras sin log ni script reproducib…»
+
+### `archive/codigo/investigacion/p9_disforme_RETIRADO_2026-10-03/`
+- `fig_paper9_fscreen_z.png` — llegó en `a587d6a` (2026-10-03): «P9 figura: lee cada medida de su fuente (h0_por_metodos) y escribe log con acta; control CCHP v3 70.39 (el …»
+
+### `archive/codigo/investigacion/particula_RETIRADA_2026-08-01/`
+- `circular_test.py` — llegó en `aaf0a58` (2026-09-19): «verde, tramo 3: R44b a cero, R60 de 58 a 34 y los papers recompilados»
+- `class_probe3.py` — llegó en `aaf0a58` (2026-09-19): «verde, tramo 3: R44b a cero, R60 de 58 a 34 y los papers recompilados»
+- `precio_cmb_rejilla_extendida.py` — llegó en `c127be7` (2026-10-01): «R35: b1_analyse re-corrido (identico: -25.766, k=3 validacion); experimento 4 priors sin el termino de cumu…»
+- `ssee_kids.py` — llegó en `aaf0a58` (2026-09-19): «verde, tramo 3: R44b a cero, R60 de 58 a 34 y los papers recompilados»
+- `ssee_paper6_cmb_fs8_filter.py` — llegó en `aaf0a58` (2026-09-19): «verde, tramo 3: R44b a cero, R60 de 58 a 34 y los papers recompilados»
+- `t2_grid.py` — llegó en `aaf0a58` (2026-09-19): «verde, tramo 3: R44b a cero, R60 de 58 a 34 y los papers recompilados»
+- `t2_nl.py` — llegó en `aaf0a58` (2026-09-19): «verde, tramo 3: R44b a cero, R60 de 58 a 34 y los papers recompilados»
+
+### `archive/figuras/`
+- `fig3_omega_de.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig4_KAL_interpolation.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig5_corner_ssee.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig5_corner_ssee.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig6_corner_lcdm.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig6_corner_lcdm.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig7_Hz_comparison.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig8_bao_residuals.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_b1_corner_lcdm.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_b1_h0_sigma8_ssee.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_b3_mira.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_b3_mira.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_candidate1_fsig8.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_candidate1_fsig8.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_cluster_residuals.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_cluster_sensitivity.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_corner_cpl_professional.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_corner_ssee_mira_prior.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_corner_ssee_professional.pdf` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_eft_beta_convergence.pdf` — llegó en `85caadf` (2026-09-07): «chore(archive): beta_c al cajon — y 20 rutas que apuntaban al vacio»
+- `fig_eft_beta_convergence.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_eft_verification.pdf` — llegó en `85caadf` (2026-09-07): «chore(archive): beta_c al cajon — y 20 rutas que apuntaban al vacio»
+- `fig_eft_verification.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_h0_four_priors.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_h0_three_priors.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_hiclass_TT.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_hiclass_TT.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_hiclass_alpha.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_hiclass_alpha.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_inflation_connection.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_inflation_connection.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_is_growth.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_is_growth.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_optionB_sigma8_selfconsistent.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_optionB_sigma8_selfconsistent.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper10_KX_profile.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper10_alphaK_vs_alpha.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper5_S8_comparison.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper5_growth_rate.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper5b_MIRA_background.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_alphaM_scan.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_corner.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_corner.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_fsig8_mcmc.pdf` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper6_fsig8_mcmc.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper6_kinetic_braiding.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_lyman_alpha_audit.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_lyman_alpha_audit.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_mcmc.pdf` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper6_mcmc.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper6_mcmc_v2_corner.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper6_phi_dark_matter.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_sigma8_tension.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_sigma8_tension.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_sterile_neutrino.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_trace.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper6_trace.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_paper8_lensing_ratio.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper8_vainshtein.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper9_fscreen_z.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_paper9_h0_tension.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_pk_cuatro_rutas.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_pk_diferencia_lcdm.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_press_schechter.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_press_schechter.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `fig_toe_cmb_TT.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_toe_derivations.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `fig_w0wa_degeneracy.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `mcmc_fase4_corner.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `mcmc_fase4_corner.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `mcmc_fase4_traces.png` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `ssee_eftcamb_CMB_TT.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+- `ssee_eftcamb_Pk.png` — llegó en `9d132be` (2026-07-11): «chore(repo): limpieza de docs, figuras redundantes y scripts temporales para zenodo»
+
+### `archive/logs_superados/`
+- `erosita_cr.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `p3_cmb_reframe_omega_m.log` — llegó en `409be7e` (2026-10-03): «s_m no es densidad, propagacion en el codigo: fuera el caso naive (s_m como Omega_m) de ssee_paper3_cmb y c…»
+
+### `archive/logs_superados/boss_kaiser_20260808/`
+- `boss_control_kmax0.060.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_control_kmax0.080.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_control_kmax0.100.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_control_kmax0.120.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_fit_kmax0.060.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_fit_kmax0.080.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_fit_kmax0.100.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+- `boss_fit_kmax0.120.json` — llegó en `df161d6` (2026-10-03): «archivo: barrido Kaiser de BOSS (sondeo 08-08, superado por LPT R1/R2, no reproduce: minimizador mal condic…»
+
+### `archive/manuscript_superseded/`
+- `SSEE_Paper6_phiDM_TWOSECTOR_RETIRED.pdf` — llegó en `36aa061` (2026-07-31): «docs(P6): publica el PDF renacido, archiva el viejo (dos sectores)»
+- `SSEE_Paper6_phiDM_TWOSECTOR_RETIRED.tex` — llegó en `88cbd16` (2026-07-31): «feat(P6): renace el Paper 6 — retracta dos sectores y particula, mide en crudo»
+- `ssee_paper6_TWOSECTOR_RETIRED.bib` — llegó en `88cbd16` (2026-07-31): «feat(P6): renace el Paper 6 — retracta dos sectores y particula, mide en crudo»
+
+### `archive/manuscript_superseded/envios_2026-05_RANCIOS/`
+- `abstracts_arXiv.txt` — llegó en `81b1556` (2026-10-03): «s_m no es densidad, propagacion en papers y cajones: PRD y Sealed sin la 'prueba Boltzmann' que comparaba c…»
+- `cover_letter_paper2_JCAP.txt` — llegó en `81b1556` (2026-10-03): «s_m no es densidad, propagacion en papers y cajones: PRD y Sealed sin la 'prueba Boltzmann' que comparaba c…»
+- `cover_letter_paper3_JCAP.txt` — llegó en `81b1556` (2026-10-03): «s_m no es densidad, propagacion en papers y cajones: PRD y Sealed sin la 'prueba Boltzmann' que comparaba c…»
+
+### `archive/pdfs/`
+- `SSEE_Paper2_MCMC_Validation.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `SSEE_Paper2_MCMC_Validation_draft.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `SSEE_Paper2_MCMC_Validation_v1.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `SSEE_Paper2_MCMC_Validation_v2.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `SSEE_Paper3_CMB_Confrontation.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `SSEE_Paper3_CMB_Confrontation_v1.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+- `SSEE_Paper3_CMB_Confrontation_v2.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»

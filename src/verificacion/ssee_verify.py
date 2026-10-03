@@ -3369,7 +3369,7 @@ check("V-L3-mira  MIRA es constante algebraica = AURA/2 (OP-8b cerrado; el mecan
 # 2026-10-03 aquí se comprobaba «Om_m,dyn != Om_m,CMB (dos predicciones)», que
 # sólo verificaba que dos números distintos son distintos y consagraba la
 # lectura del 0.160 como densidad. Lo que se vigila ahora es que s_m no entre en
-# NINGUNA ranura de densidad: R52, R52b, R52c (código) y R52d (papers).
+# NINGUNA ranura de densidad: R52, R52b, R52c (código) y R72, R72c (papers).
 check("V-L3-2Om  Om_m,CMB = ω_m/h² (forward, sin factor) = 0.308881",
       abs(_omm / _h ** 2 - 0.3088808856) < 1e-6)
 # OP-8 DISUELTO (no abierto): ya NO hay factor materia que derivar. Lo
@@ -7053,44 +7053,6 @@ try:
           and len(_escanea_r52c(_okC1)) == 0 and len(_escanea_r52c(_okC2)) == 0,
           "4 casos: los dos naive reales marcados; Ω_m total × h² y Omm_cmb × (H0/100)² limpios")
 
-    # ── R52d — EN LOS PAPERS, s_m NO SE NOMBRA COMO DENSIDAD (2026-10-03) ────
-    # El símbolo viejo «Ω_m,dyn» sólo puede aparecer en una frase que diga que
-    # es historia (earlier/formerly/withdrawn/...). Fuera de eso, el texto
-    # vuelve a presentar 0.160 como una densidad, que es lo que pasó en el
-    # resumen del PRD («the bare dynamical Ω_m,dyn alone cannot reproduce...»).
-    _DYN = _re.compile(r"\\Omega_\{m,\s*(?:\\rm\s*|\\mathrm\{)dyn\}?\}|\\Om\^\{\\mathrm\{dyn\}\}|\\Omdyn\b")
-    _HIST = _re.compile(r"earlier|formerly|previous|withdrawn|retract|supersed|never|"
-                        r"then in force|until|not a density|is not a|was an artefact|"
-                        r"then written|old |used to|cancell?ed|retired|was fed|"
-                        r"two-\$\\Omega_m\$|Two-\$\\Omega", _re.I)
-
-    def _escanea_r52d(_texto):
-        _malas = []
-        for _m in _DYN.finditer(_texto):
-            _ini = _texto.rfind("\n", 0, _m.start()) + 1
-            if _texto[_ini:_m.start()].lstrip().startswith("%"):
-                continue
-            _win = _texto[max(0, _m.start() - 350):_m.end() + 250]
-            if not _HIST.search(_win):
-                _malas.append(_texto.count("\n", 0, _m.start()) + 1)
-        return _malas
-
-    _r52d = []
-    for _d in ("manuscript", "submission_PRD"):
-        for _tx in sorted((_REPO / _d).glob("*.tex")):
-            for _n in _escanea_r52d(_tx.read_text(errors="ignore")):
-                _r52d.append(f"{_tx.relative_to(_REPO)}:{_n}")
-    check("R52d ningún paper nombra s_m = 1+w0 como densidad (Ω_m,dyn fuera de contexto histórico)",
-          not _r52d,
-          "; ".join(_r52d[:5]) + (f" … (+{len(_r52d)-5})" if len(_r52d) > 5 else "")
-          if _r52d else "Ω_m,dyn sólo aparece en frases que lo declaran historia")
-    _bugD = ("A Boltzmann calculation shows the full $\\omega_m$ (not the bare dynamical\n"
-             "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$) is physically required for the CMB.")
-    _okD = ("There is one matter density; the quantity formerly written\n"
-            "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$ is $1+w_0$, an equation-of-state number.")
-    check("R52d el detector marca Ω_m,dyn usado como densidad y deja pasar la nota histórica",
-          len(_escanea_r52d(_bugD)) == 1 and len(_escanea_r52d(_okD)) == 0,
-          "2 casos: la frase real del resumen del PRD marcada; la de P2 «formerly written» limpia")
 
 except Exception as _e:
     check("R52 capa operable", False, str(_e))
@@ -7326,6 +7288,60 @@ except Exception as _e:            # noqa: BLE001
     check("R55 la capa de dirección de cascada corrió", False,
           f"excepción: {_e}", nivel=5)
 
+print("\nCapa R77 — todo lo archivado entra declarado")
+# POR QUÉ EXISTE (2026-10-03, regla de Mike). «En archive entra declarado, y en el
+# sistema también: de esa manera hasta el que pasa sabe por qué está ahí y no
+# dentro del modelo.» La bitácora archive/README.md ya decía «nada se archiva sin
+# entrada» desde junio, pero nadie lo verificaba: 185 archivos habían llegado sin
+# estar nombrados. Se declararon (commit que los trajo + su mensaje) y desde aquí
+# la regla se COMPRUEBA: cada archivo versionado bajo archive/ tiene que aparecer
+# por su nombre en la bitácora o en un README de su carpeta o de una superior.
+import subprocess as _sp77
+try:
+    _A77 = ROOT.parent / "archive"
+
+    def _readmes77(_rel):
+        _out, _d = [], (ROOT.parent / _rel).parent
+        while True:
+            for _n in ("README.md", "README", "LEEME.md", "README.txt"):
+                if (_d / _n).exists():
+                    _out.append(_d / _n)
+            if _d == _A77 or _A77 not in _d.parents:
+                break
+            _d = _d.parent
+        return _out
+
+    def _sin_declarar77(_rels, _leer):
+        _cache, _out = {}, []
+        for _rel in _rels:
+            _nom = _rel.rsplit("/", 1)[-1]
+            if _nom.lower().startswith("readme"):
+                continue
+            _txt = " ".join(_cache.setdefault(_r, _leer(_r)) for _r in _readmes77(_rel))
+            if _nom not in _txt:
+                _out.append(_rel)
+        return _out
+
+    _arch77 = [_x for _x in _sp77.check_output(["git", "ls-files", "archive"], cwd=ROOT.parent,
+                                                text=True).splitlines() if _x]
+    _sin77 = _sin_declarar77(_arch77, lambda _r: _r.read_text(errors="ignore"))
+    check("R77 todo archivo de archive/ está nombrado en la bitácora o en el README de su carpeta",
+          not _sin77 and len(_arch77) > 100,
+          (f"{len(_sin77)} sin declarar: " + "; ".join(_sin77[:4])) if _sin77
+          else f"{len(_arch77)} archivos, todos declarados")
+    # Control (R53): un archivo nuevo sin nombrar se marca; el mismo, nombrado, no.
+    _bit77 = _A77 / "README.md"
+    _fake77 = "archive/codigo/investigacion/s_m_como_densidad_RETIRADO_2026-10-03/script_sin_nota_R77.py"
+    _base77 = _bit77.read_text(errors="ignore")
+    _sin_nota = _sin_declarar77([_fake77], lambda _r: _base77 if _r == _bit77 else _r.read_text(errors="ignore"))
+    _con_nota = _sin_declarar77([_fake77], lambda _r: _base77 + " script_sin_nota_R77.py " if _r == _bit77
+                                else _r.read_text(errors="ignore"))
+    check("R77 el detector marca lo archivado sin nota y deja pasar lo declarado",
+          _sin_nota == [_fake77] and _con_nota == [],
+          "2 casos: archivo nuevo sin nombrar, marcado; el mismo nombrado en la bitácora, limpio")
+except Exception as _e:            # noqa: BLE001
+    check("R77 la capa de archivo declarado corrió", False, f"excepción: {_e}", nivel=5)
+
 print("\nCapa R72 — ninguna saturación ocupa ranura de densidad en los MANUSCRITOS")
 # Por qué existe. R52/R52b vigilan lo mismo pero SÓLO en código .py. El error de
 # categoría vive igual —y más tiempo— en los .tex, donde nadie lo ejecuta:
@@ -7494,6 +7510,47 @@ try:
           f"2 signos invertidos marcados ({sum(_cmb_)}/2), "
           f"3 limpios de 3: negativo, dirección declarada y el subíndice "
           f"_{{k2}} de Paper 3 ({sum(_cbb)}/3)")
+    # ── R72c — s_m NO SE NOMBRA COMO DENSIDAD en los papers (refina R72, 2026-10-03) ────
+    # R72 mira cuatro FORMAS de ranura en manuscript/. El resumen del PRD decía
+    # «the bare dynamical Ω_m,dyn alone cannot reproduce…»: ninguna de las cuatro, y
+    # además en submission_PRD/, que R72 no recorría. Esta parte mira el SÍMBOLO.
+    # El símbolo viejo «Ω_m,dyn» sólo puede aparecer en una frase que diga que
+    # es historia (earlier/formerly/withdrawn/...). Fuera de eso, el texto
+    # vuelve a presentar 0.160 como una densidad, que es lo que pasó en el
+    # resumen del PRD («the bare dynamical Ω_m,dyn alone cannot reproduce...»).
+    _DYN = _re.compile(r"\\Omega_\{m,\s*(?:\\rm\s*|\\mathrm\{)dyn\}?\}|\\Om\^\{\\mathrm\{dyn\}\}|\\Omdyn\b")
+    _HIST = _re.compile(r"earlier|formerly|previous|withdrawn|retract|supersed|never|"
+                        r"then in force|until|not a density|is not a|was an artefact|"
+                        r"then written|old |used to|cancell?ed|retired|was fed|"
+                        r"two-\$\\Omega_m\$|Two-\$\\Omega", _re.I)
+
+    def _escanea_r72c(_texto):
+        _malas = []
+        for _m in _DYN.finditer(_texto):
+            _ini = _texto.rfind("\n", 0, _m.start()) + 1
+            if _texto[_ini:_m.start()].lstrip().startswith("%"):
+                continue
+            _win = _texto[max(0, _m.start() - 350):_m.end() + 250]
+            if not _HIST.search(_win):
+                _malas.append(_texto.count("\n", 0, _m.start()) + 1)
+        return _malas
+
+    _r72c = []
+    for _d in ("manuscript", "submission_PRD"):
+        for _tx in sorted((_REPO / _d).glob("*.tex")):
+            for _n in _escanea_r72c(_tx.read_text(errors="ignore")):
+                _r72c.append(f"{_tx.relative_to(_REPO)}:{_n}")
+    check("R72c ningún paper nombra s_m = 1+w0 como densidad (Ω_m,dyn fuera de contexto histórico)",
+          not _r72c,
+          "; ".join(_r72c[:5]) + (f" … (+{len(_r72c)-5})" if len(_r72c) > 5 else "")
+          if _r72c else "Ω_m,dyn sólo aparece en frases que lo declaran historia")
+    _bugD = ("A Boltzmann calculation shows the full $\\omega_m$ (not the bare dynamical\n"
+             "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$) is physically required for the CMB.")
+    _okD = ("There is one matter density; the quantity formerly written\n"
+            "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$ is $1+w_0$, an equation-of-state number.")
+    check("R72c el detector marca Ω_m,dyn usado como densidad y deja pasar la nota histórica",
+          len(_escanea_r72c(_bugD)) == 1 and len(_escanea_r72c(_okD)) == 0,
+          "2 casos: la frase real del resumen del PRD marcada; la de P2 «formerly written» limpia")
 except Exception as _e:            # noqa: BLE001
     check("R72 la capa de saturación-en-manuscritos corrió", False,
           f"excepción: {_e}", nivel=5)

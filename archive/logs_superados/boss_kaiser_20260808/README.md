@@ -15,8 +15,15 @@ magnitud. El minimizador está mal condicionado en una dirección plana de `sv`,
 cambio mínimo de entrada (H0_GLOBAL en ssee_core, 2026-09-28) lo desplaza. Es otra razón para
 no usarlo como resultado. Ver VERIFICATION_LEDGER.md §V-L5-RECORRE.
 
-`boss_fit.py` y `boss_control.py` siguen en `src/`: la ventana de `boss_fit.py` es la que pasó
-los 16 controles de Fase 0 y la que reutiliza `boss_lpt_R1R2.py`.
+**Los dos scripts también se archivan (2026-10-03, decisión de Mike).** `boss_control.py`
+(control negativo: reproducir el fσ₈ publicado con Kaiser) y `boss_fit.py` (amplitud de
+SSEE y ΛCDM con Kaiser) estaban en `src/p06_growth/` sin etapa, sin log vigente y sin nadie
+que los importara. Motivo: **superados por física nueva** — la teoría lineal de Kaiser la
+reemplaza LPT (velocileptors) en `boss_lpt_R1R2.py`, que ya está en la cadena y cumple
+(Δχ² −2.03). Lo único que heredó de ellos es la lectura de multipolos y la ventana, que
+`boss_lpt_R1R2.py` reimplementa por su cuenta (su docstring L110 aún nombra `boss_fit.py`
+como origen de esa ventana: se deja así para no invalidar el acta de su etapa; el original
+está aquí). Para re-ejecutarlos: `PYTHONPATH=src python archive/logs_superados/boss_kaiser_20260808/boss_fit.py`.
 
 `erosita_cr.json` (en esta carpeta): segundo intento de eROSITA; el script vigente
 escribe `results/logs/erosita_cr_v3.json`. La docstring de `erosita_cr.py` todavía dice
