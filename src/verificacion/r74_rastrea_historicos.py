@@ -26,7 +26,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "src" / "verificacion"))
 import r74_procedencia as P  # noqa: E402
 
-RUTAS = ["results/logs", "CANONICAL_VALUES.yaml", "src/ssee_core.py"]
+# 2026-10-02: también results/ entero y archive/ (logs de scripts archivados); NO src/: un
+# literal en un script es un número tecleado, no la salida que lo prueba (salvo el núcleo).
+RUTAS = ["results", "archive", "CANONICAL_VALUES.yaml", "src/ssee_core.py"]
+TEXTO = (".log", ".json", ".txt", ".csv", ".md", ".yaml", ".dat", "ssee_core.py")
 
 
 def _git(*a):
@@ -37,6 +40,8 @@ def candidato(s):
     for sha in _git("log", "--all", f"-S{s}", "--format=%H", "--", *RUTAS).split():
         for c in (sha, sha + "^"):
             for ruta in _git("show", "--name-only", "--format=", sha, "--", *RUTAS).split():
+                if not ruta.endswith(TEXTO):
+                    continue      # binarios (.npz, .png, .pdf): no se leen como texto
                 ref = f"git:{_git('rev-parse', '--short=10', c).strip()}:{ruta}"
                 if P.fuente_git(ref, s):
                     return ref

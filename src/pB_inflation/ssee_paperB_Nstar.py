@@ -44,7 +44,9 @@ print(f"  κ = √(2/3α)    = {kappa:.6f}")
 print(f"  φ_end (Mpl)    = {phi_end:.4f}")
 print(f"  ε(φ_end) check = {epsilon(phi_end):.6f}  (debe ser 1)")
 print(f"  V_end/Mpl⁴     = {V_end:.4e}")
-print(f"  V_end^(1/4)    = {V_end**0.25:.4e} Mpl  ≈ {V_end**0.25 * 1.22e19:.3e} GeV")
+# 2026-10-02: convertía con 1.22e19 (Planck NO reducida) aunque todo va en Planck reducida;
+# daba 1.136e17 GeV, 5x de más. La sección [6] ya lo hacía bien con Mpl_GeV.
+print(f"  V_end^(1/4)    = {V_end**0.25:.4e} Mpl  ≈ {V_end**0.25 * 2.435e18:.3e} GeV  (Mpl reducida)")
 
 # ── Paso 2: Fórmula N_* para reheating gravitacional (w=1) ───────────────
 # Quintessential inflation con stiff fluid:
@@ -86,10 +88,14 @@ print(f"  T_rh = {T_rh_solution * 1e12:.6e} eV")
 print(f"\n[4] ¿T_rh tiene expresión SSEE?")
 print(f"  (comparar T_rh en eV con constantes del modelo)")
 
-T_eV = T_rh_solution * 1e12   # en eV
+T_eV = T_rh_solution * 1e9    # en eV (2026-10-02: era *1e12, GeV->eV es 1e9)
 
 # Constantes SSEE en eV (usando H₀_SSEE = 67.96 km/s/Mpc)
-H0_eV   = __import__("ssee_core").H0_GLOBAL * 3.241e-20 * 1.973e-7 * 1e9  # km/s/Mpc → eV
+# 2026-10-02: la conversion anterior (x3.241e-20 x1.973e-7 x1e9) no cerraba dimensiones (~4e-16 eV).
+# H0 [km/s/Mpc] -> s^-1 (1 Mpc = 3.0856775814913673e19 km) -> eV (hbar = 6.582119569e-16 eV s, CODATA 2018)
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".."))
+H0_eV   = __import__("ssee_core").H0_GLOBAL / 3.0856775814913673e19 * 6.582119569e-16
 Omega   = phi + pi
 beta    = Omega / 2
 KAL0    = beta + pi

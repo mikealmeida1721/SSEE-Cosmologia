@@ -695,6 +695,15 @@ stages:
     outs:
     - results/figures/fig_readme_tensions.png:
         cache: false
+  cajones_algebra:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/cajones_algebra.py
+    deps:
+    - src/verificacion/cajones_algebra.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    outs:
+    - results/logs/cajones_algebra.json:
+        cache: false
   coteja_crudos:
     cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
     deps:

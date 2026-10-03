@@ -71,6 +71,9 @@ logs:
   h0_lente_fondo_ssee:        src/p09_hubble/h0_lente_fondo_ssee.py
   desi_dr2_w0wa_momentos:     src/p02_mcmc/momentos_desi_dr2_w0wa.py
 
+  # ── Paper B (inflación) — números que cita OPEN_PROBLEMS OP-2 (2026-10-02) ──
+  paperB_Nstar:               src/pB_inflation/ssee_paperB_Nstar.py
+
   # ── Paper 3 — CMB ───────────────────────────────────────────────────────
   p3_cmb_reframe_omega_m:     src/p03_cmb/run_p3_reframe.py
   p3_rd_reframe_omega_m:      src/p03_cmb/run_p3_rd_reframe.py
