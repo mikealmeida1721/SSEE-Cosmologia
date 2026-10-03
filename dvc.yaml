@@ -983,3 +983,298 @@ stages:
           cache: false
       - results/logs/bao_lcdm_libre.log:
           cache: false
+  sello_bao_camb_control:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/bao_camb.py && .venv/bin/python3 src/procedencia_sella.py src/bao_camb.py results/logs/bao_camb_control.json data/raw/desi_dr2_bao.csv data/processed/bao_camb_ssee.json
+      results/logs/lcdm_conjunta_control.json
+    deps:
+    - src/bao_camb.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/rd_camb.py
+    - src/desi_dr2_data.py
+    - data/raw/desi_dr2_bao.csv
+    - data/processed/bao_camb_ssee.json
+    - results/logs/lcdm_conjunta_control.json
+    outs:
+    - results/logs/bao_camb_control.json:
+        cache: false
+  sello_chi2_bao_posterior:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/chi2_bao_posterior.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/chi2_bao_posterior.py results/logs/chi2_bao_posterior.log
+      data/raw/desi_dr2_bao.csv results/logs/mcmc_paper2_reframe.json
+    deps:
+    - src/p02_mcmc/chi2_bao_posterior.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/bao_camb.py
+    - src/rd_camb.py
+    - src/desi_dr2_data.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/mcmc_paper2_reframe.json
+    outs:
+    - results/logs/chi2_bao_posterior.log:
+        cache: false
+  leer_conjunta:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/leer_conjunta.py > results/logs/leer_conjunta.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/leer_conjunta.py results/logs/leer_conjunta.log
+      results/logs/cmb_dbic_tau_ajustado.json results/logs/multisonda_fondo_clavado.json /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt
+      /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
+      /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
+    deps:
+    - src/p06_growth/leer_conjunta.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/bao_camb.py
+    - src/rd_camb.py
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - results/logs/multisonda_fondo_clavado.json
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
+    outs:
+    - results/logs/leer_conjunta.log:
+        cache: false
+    - results/logs/conjunta_vs_individual.json:
+        cache: false
+  sello_control_legacy:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_legacy.py > results/logs/control_legacy.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/growth_2026-07/control_legacy.json
+      /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/control_legacy.log /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+      /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+    deps:
+    - src/p06_growth/control_legacy.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p06_growth/kids_shear.py
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+    outs:
+    - results/logs/growth_2026-07/control_legacy.json:
+        cache: false
+    - results/logs/control_legacy.log:
+        cache: false
+  sello_cruce_fantasma:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/cruce_fantasma_quien_lo_lleva.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/cruce_fantasma_quien_lo_lleva.py results/logs/cruce_fantasma_quien_lo_lleva.json
+    deps:
+    - src/p07_eft/cruce_fantasma_quien_lo_lleva.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/cruce_fantasma_quien_lo_lleva.json:
+        cache: false
+  sello_deltac:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/spherical_collapse_deltac.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/spherical_collapse_deltac.py results/logs/deltac_spherical_collapse.json
+    deps:
+    - src/p02_mcmc/spherical_collapse_deltac.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/deltac_spherical_collapse.json:
+        cache: false
+  sello_des_y3_barrido:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_barrido.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/des_y3_barrido.py results/logs/des_y3_barrido.json /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    deps:
+    - src/p11_sondas/des_y3_barrido.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/des_y3_calibra.py
+    - /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    outs:
+    - results/logs/des_y3_barrido.json:
+        cache: false
+  sello_des_y3_barrido_masa:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_barrido_en_masa.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/des_y3_barrido_en_masa.py results/logs/des_y3_barrido_masa.json
+      results/logs/des_y3_barrido.json /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    deps:
+    - src/p11_sondas/des_y3_barrido_en_masa.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - results/logs/des_y3_barrido.json
+    - /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    outs:
+    - results/logs/des_y3_barrido_masa.json:
+        cache: false
+  sello_eft_barrido_potenciales_wa:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/barrido_potenciales_wa.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/barrido_potenciales_wa.py results/logs/eft_barrido_potenciales_wa.json
+    deps:
+    - src/p07_eft/barrido_potenciales_wa.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/eft_barrido_potenciales_wa.json:
+        cache: false
+  sello_eft_dos_campos_acoplados:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/dos_campos_acoplados.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/dos_campos_acoplados.py results/logs/eft_dos_campos_acoplados.json
+    deps:
+    - src/p07_eft/dos_campos_acoplados.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/eft_dos_campos_acoplados.json:
+        cache: false
+  sello_eft_dos_campos_genericos:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/dos_campos_genericos.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/dos_campos_genericos.py results/logs/eft_dos_campos_genericos.json
+    deps:
+    - src/p07_eft/dos_campos_genericos.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/eft_dos_campos_genericos.json:
+        cache: false
+  sello_eft_dos_campos_phi_pi:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/dos_campos_phi_pi.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/dos_campos_phi_pi.py results/logs/eft_dos_campos_phi_pi.json
+    deps:
+    - src/p07_eft/dos_campos_phi_pi.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/eft_dos_campos_phi_pi.json:
+        cache: false
+  sello_erosita_completitud:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_completitud.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_completitud.py results/logs/erosita_completitud.json
+      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    deps:
+    - src/p11_sondas/erosita_completitud.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
+    - /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    outs:
+    - results/logs/erosita_completitud.json:
+        cache: false
+  sello_formula_rd:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/verifica_formula_rd.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/verifica_formula_rd.py results/logs/formula_rd_exponentes.log
+    deps:
+    - src/p02_mcmc/verifica_formula_rd.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/formula_rd_exponentes.log:
+        cache: false
+  sello_h0_distancias:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/h0_distancias.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/h0_distancias.py results/logs/h0_distancias_hglob.json results/logs/mcmc_paper2_reframe.json
+      results/logs/h0_four_priors.json src/p02_mcmc/ssee_paper2_mcmc.py
+    deps:
+    - src/p02_mcmc/h0_distancias.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - results/logs/mcmc_paper2_reframe.json
+    - results/logs/h0_four_priors.json
+    - src/p02_mcmc/ssee_paper2_mcmc.py
+    outs:
+    - results/logs/h0_distancias_hglob.json:
+        cache: false
+  sello_is_growth_gamma_bg:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_is/is_growth_gamma_bg.py && .venv/bin/python3 src/procedencia_sella.py src/p05_is/is_growth_gamma_bg.py results/logs/is_growth_gamma_bg.json
+    deps:
+    - src/p05_is/is_growth_gamma_bg.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/is_growth_gamma_bg.json:
+        cache: false
+  sello_look_elsewhere_full:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/estadistica/look_elsewhere_full.py > results/logs/look_elsewhere_full.log && .venv/bin/python3 src/procedencia_sella.py src/estadistica/look_elsewhere_full.py
+      results/logs/look_elsewhere_full.log
+    deps:
+    - src/estadistica/look_elsewhere_full.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    outs:
+    - results/logs/look_elsewhere_full.log:
+        cache: false
+  sello_p3_rd_reframe:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/run_p3_rd_reframe.py > results/logs/p3_rd_reframe_omega_m.log && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/run_p3_rd_reframe.py
+      results/logs/p3_rd_reframe_omega_m.log results/logs/mcmc_paper2_reframe.json
+    deps:
+    - src/p03_cmb/run_p3_rd_reframe.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p03_cmb/ssee_paper3_cmb.py
+    - results/logs/mcmc_paper2_reframe.json
+    outs:
+    - results/logs/p3_rd_reframe_omega_m.log:
+        cache: false
+  sello_rd_camb_control:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/rd_camb.py && .venv/bin/python3 src/procedencia_sella.py src/rd_camb.py results/logs/rd_camb_control.json data/processed/rd_camb_tabla.json
+    deps:
+    - src/rd_camb.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/processed/rd_camb_tabla.json
+    outs:
+    - results/logs/rd_camb_control.json:
+        cache: false
+  sello_sn_geometria:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/sn_geometria.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/sn_geometria.py results/logs/sn_geometria_en_el_clavo.json
+      results/logs/cmb_dbic_tau_ajustado.json results/logs/multisonda_fondo_clavado.json /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov
+      /mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv /mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz
+    deps:
+    - src/p11_sondas/sn_geometria.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/lcdm_planck.py
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - results/logs/multisonda_fondo_clavado.json
+    - /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat
+    - /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov
+    - /mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv
+    - /mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz
+    outs:
+    - results/logs/sn_geometria_en_el_clavo.json:
+        cache: false
+  sello_union3_en_el_clavo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/union3_binned.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/union3_binned.py results/logs/union3_en_el_clavo.json /mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits
+      /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
+    deps:
+    - src/p11_sondas/union3_binned.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p11_sondas/sn_geometria.py
+    - /mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits
+    - /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
+    outs:
+    - results/logs/union3_en_el_clavo.json:
+        cache: false
+  sello_union3_repro_compara:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/union3_repro_compara.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/union3_repro_compara.py results/logs/union3_repro_compara.json
+      results/logs/union3_en_el_clavo.json /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits /mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits
+    deps:
+    - src/p11_sondas/union3_repro_compara.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p11_sondas/sn_geometria.py
+    - src/p11_sondas/union3_binned.py
+    - results/logs/union3_en_el_clavo.json
+    - /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
+    - /mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits
+    outs:
+    - results/logs/union3_repro_compara.json:
+        cache: false

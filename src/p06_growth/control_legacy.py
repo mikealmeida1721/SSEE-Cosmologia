@@ -33,7 +33,9 @@ import time
 
 import numpy as np
 
-sys.path.insert(0, '/home/mike/Proyectos/SSEE/src/p06_growth')
+import os                                                       # noqa: E402
+_R = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(_R, 'src', 'p06_growth'))   # 2026-10-03: antes ruta fija al arbol principal
 import kids_shear as K                                          # noqa: E402
 
 # --- punto de maxima verosimilitud, LEIDO de la cadena oficial ---
@@ -158,11 +160,10 @@ def main():
             'IA: se pasa la salida del NLA-M oficial como amplitud por bin',
             'binning en theta sin pesos npairs medidos',
         ])
-    ruta = ('/home/mike/Proyectos/SSEE/results/logs/growth_2026-07/'
-            'control_legacy.json')
+    ruta = os.path.join(_R, 'results', 'logs', 'growth_2026-07', 'control_legacy.json')
     with open(ruta, 'w') as f:
         json.dump(log, f, indent=2)
-    print(f'log -> {ruta}')
+    print(f'log -> {os.path.relpath(ruta, _R)}')
 
 
 if __name__ == '__main__':
