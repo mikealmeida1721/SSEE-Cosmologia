@@ -53,6 +53,7 @@ stages:
     - results/logs/lya_auditoria.json
     - results/logs/hiclass_campo.json
     - results/logs/resumen_3modelos.json
+    - results/logs/ppc_cronometros.json
     - results/logs/savage_cv.json
     - results/logs/dic_from_chains.json
     - results/logs/press_schechter.json

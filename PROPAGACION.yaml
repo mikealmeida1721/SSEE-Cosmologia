@@ -342,6 +342,16 @@ muestreo_certificado:
   # BAO 1.1e-5, KiDS 2.9e-6; su control (salto x1000 en H) SI se ve en las
   # tres. Fuera a proposito: multisonda y h0_lente (otras sondas u otros
   # commits sin revisar), b1_analyse (su codigo de analisis cambio de verdad).
+  # 2026-10-02 — ef548ca cambio en ssee_paper2_mcmc.py SOLO la fuente de CC_DATA
+  # (11 puntos tecleados, uno el H(z) BAO de WiggleZ -> los 32 del CSV cotejado).
+  # Revisado: CC_DATA/Z_CC/H_CC/DH_CC aparecen UNICAMENTE en el bloque «PPC —
+  # Cosmic Chronometers» (L382), que imprime chi2_r DESPUES de muestrear; ningun
+  # lpost_* ni la seleccion de MAP los lee (grep: lineas 145-149 y 382). Las
+  # cadenas, BIC, AIC y posteriores del log no pueden moverse. Las 3 lineas de
+  # chi2_r del log SI quedan superadas: las reemplaza results/logs/ppc_cronometros.json,
+  # cuyo control (los 11 viejos leidos de git:b14ff14) reproduce las del log a 5e-4.
+  # No se re-corre: emcee va sin semilla y movería la 3a cifra de H0 sin causa fisica.
+  mcmc_paper2_3models_wmfix: 2026-10-02
   paper3_cmb_reframe: 2026-09-30
   kids_legacy_ssee: 2026-09-30
   kids_legacy_sseefijo: 2026-09-30
