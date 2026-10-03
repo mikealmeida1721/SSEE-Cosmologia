@@ -166,3 +166,6 @@ ser preguntas al retirarse el objeto del que trataban. Ver el README del cajón.
   Lo reemplaza `src/p02_mcmc/cumulos_zhang2026.py`.
 
 - `codigo/investigacion/huerfanos_2026-10-02/` (2026-10-02): `ssee_paper3_hiclass_check.py` y `ssee_eftcamb_validation.py` con sus figuras; ningun documento los citaba y su fisica estaba retirada (0.160 en la geometria; w constante). Ver su README.
+
+### `datos_retirados/` — datos crudos que la fuente contradice (2026-10-02)
+- `cluster_masses_2026-10-02.csv`: las masas de cúmulos (Coma, A2029, A478 y Bullet) que citaban a Zhang+2026. Al cotejarlas con la fuente (R76), Coma y Bullet no aparecen y A2029 y A478 vienen con otros números. Nadie lo usaba ya. Lo reemplaza `data/raw/zhang2026/tablas_II_III.tex`, leído por `src/p02_mcmc/cumulos_zhang2026.py`. El detalle está en `archive/datos_retirados/README.md`.

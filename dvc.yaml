@@ -676,7 +676,10 @@ stages:
     - data/raw/cosmic_chronometers.csv
     - data/raw/moresco2022/tabla_cc1.tex
     - data/raw/fsigma8_rsd.csv
-    - data/raw/fsigma8_fuentes
+    - data/raw/fsigma8_fuentes/alam2017.tex
+    - data/raw/fsigma8_fuentes/beutler2012.tex
+    - data/raw/fsigma8_fuentes/howlett2015.tex
+    - data/raw/fsigma8_fuentes/hou2021.tex
     - /home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat
     outs:
     - results/logs/coteja_crudos.json:
