@@ -1095,12 +1095,12 @@ stages:
       size: 10548
     - path: results/logs/perfil_wc_boss.json
       hash: md5
-      md5: fe57de8653a0ed64fd1a9f67f900231e
-      size: 4018
+      md5: 451d9105e5b97962ed98422cd0def7df
+      size: 4020
     - path: results/logs/perfil_wc_boss_lcdm.json
       hash: md5
-      md5: 6170b02ac6f99d6998ecfccaad20d177
-      size: 4020
+      md5: 21d13fe75b4a795a8136d45ed1d35473
+      size: 4025
     - path: src/p06_growth/ganancia_wc_libre.py
       hash: md5
       md5: cc7eae17b8cd54403eca2fdaa50981ff
@@ -1112,7 +1112,7 @@ stages:
     outs:
     - path: results/logs/ganancia_wc_libre.json
       hash: md5
-      md5: 10a2723c84cd4afea0170d61485928d6
+      md5: 9daa46a0ae5a3577818d578898743a27
       size: 2489
   s8_kids_legacy_camb:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
