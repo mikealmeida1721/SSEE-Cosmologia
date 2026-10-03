@@ -2581,8 +2581,28 @@ def _acta_pdf75(pdf):
         return _pr75.verifica(_j)
 
 
+def _acta_png75(png):
+    """2026-10-02. Lo mismo para un PNG: matplotlib escribe `metadata={"Keywords": ...}`
+    como bloque tEXt del PNG. Se lee con PIL y se verifica con la MISMA funcion."""
+    try:
+        from PIL import Image as _Im75
+        _k = (_Im75.open(png).text or {}).get("Keywords", "")
+    except Exception as _e:
+        return False, f"png ilegible ({type(_e).__name__})"
+    if not _k.startswith("ACTA-PROCEDENCIA "):
+        return False, "sin acta"
+    with _tf75.TemporaryDirectory() as _d:
+        _j = pathlib.Path(_d) / "acta.json"
+        _j.write_text(_js75.dumps({"_procedencia": _js75.loads(_k[len("ACTA-PROCEDENCIA "):])}))
+        return _pr75.verifica(_j)
+
+
 def _verifica75(p):
-    return _acta_pdf75(p) if p.suffix == ".pdf" else _pr75.verifica(p)
+    if p.suffix == ".pdf":
+        return _acta_pdf75(p)
+    if p.suffix == ".png":
+        return _acta_png75(p)
+    return _pr75.verifica(p)
 
 
 _sinacta75 = [f"{o}: {m}" for o in _outs75 for ok, m in [_verifica75(_REPO75 / o)] if not ok]
@@ -2600,13 +2620,15 @@ try:
                                                        cwd=_REPO75, capture_output=True).stdout).hexdigest()
         _mal75b = dict(_ok75, script_sha256="0" * 64)
         _res75 = []
-        for _n, _meta in (("ok", _ok75), ("sin", None), ("mal", _mal75b)):
-            _fg = _plt75.figure(); _p75 = pathlib.Path(_d75) / f"{_n}.pdf"
-            _fg.savefig(_p75, metadata={"Keywords": "ACTA-PROCEDENCIA " + _js75.dumps(_meta)} if _meta else None)
-            _plt75.close(_fg)
-            _res75.append(_acta_pdf75(_p75)[0])
+        for _ext in ("pdf", "png"):   # PNG desde 2026-10-02 (la portada del README)
+            for _n, _meta in (("ok", _ok75), ("sin", None), ("mal", _mal75b)):
+                _fg = _plt75.figure(); _p75 = pathlib.Path(_d75) / f"{_n}.{_ext}"
+                _fg.savefig(_p75, metadata={"Keywords": "ACTA-PROCEDENCIA " + _js75.dumps(_meta)} if _meta else None)
+                _plt75.close(_fg)
+                _res75.append(_verifica75(_p75)[0])
     check("R75 el acta de una figura se lee de sus metadatos y se verifica",
-          _res75 == [True, False, False], f"con acta/sin acta/sha alterado -> {_res75} (esperado [True, False, False])")
+          _res75 == [True, False, False] * 2,
+          f"pdf y png con acta/sin acta/sha alterado -> {_res75} (esperado [True, False, False] x2)")
 except Exception as _e75:
     check("R75 el acta de una figura se lee de sus metadatos y se verifica", False, f"excepcion: {_e75}")
 check("R75 cada resultado de la cadena trae acta valida (commit y sha del script coinciden)",

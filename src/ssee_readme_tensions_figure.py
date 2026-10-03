@@ -37,6 +37,9 @@ import sys
 _R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 sys.path.insert(0, os.path.join(_R, 'src'))
 import ssee_core as S  # noqa: E402
+from procedencia import acta  # noqa: E402
+
+_ENT = [os.path.join(_R, 'results', 'logs', x) for x in ('kids_publicados.json', 'paper2_w0wa.json', 'mcmc_full_posteriores.json', 'fsigma8_canonico.json', 'mcmc_paper2_reframe.json')] + [os.path.join(_R, 'data', 'raw', 'planck2018_prior.csv'), os.path.join(_R, 'src', 'ssee_core.py')]
 
 
 def _log(rel, *ruta):
@@ -106,5 +109,6 @@ ax.spines[['top', 'right']].set_visible(False)
 fig.tight_layout()
 
 out = os.path.join(OUT, 'fig_readme_tensions.png')
-fig.savefig(out, dpi=170, bbox_inches='tight')
+fig.savefig(out, dpi=170, bbox_inches='tight',
+            metadata={'Keywords': 'ACTA-PROCEDENCIA ' + json.dumps(acta(__file__, entradas=_ENT))})
 print(f"Saved: {out}")
