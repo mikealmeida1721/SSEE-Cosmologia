@@ -688,8 +688,8 @@ p3_th_sig_post:   {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.th
 rd_planck:        {fuente: "results/logs/rd_dual.json#rd_planck_medido.0", formato: ".2f"}
 rd_planck_sigma:  {fuente: "results/logs/rd_dual.json#rd_planck_medido.1", formato: ".2f"}
 rd_ssee_sig_planck: {fuente: "results/logs/rd_dual.json#rd_ssee_sigmas", formato: ".2f"}
-p2_fig8_rd_ssee:  {fuente: "results/logs/p2_fig8_rd.json#rd_map.SSEE", formato: ".1f"}
-p2_fig8_rd_lcdm:  {fuente: "results/logs/p2_fig8_rd.json#rd_map.ΛCDM", formato: ".1f"}
+p2_fig8_rd_ssee:  {fuente: "results/logs/p2_fig8_rd.json#rd_map.SSEE", formato: ".2f"}  # 2 decimales: con 1, el de ΛCDM (147.59) se leía 147.6, el r_d retirado del mapeo MIRA
+p2_fig8_rd_lcdm:  {fuente: "results/logs/p2_fig8_rd.json#rd_map.ΛCDM", formato: ".2f"}  # 2 decimales: con 1, el de ΛCDM (147.59) se leía 147.6, el r_d retirado del mapeo MIRA
 p2_fig8_rd_ratio: {fuente: "results/logs/p2_fig8_rd.json#rd_ratio_ssee_lcdm", formato: ".4f"}
 # S8 de la cizalla KiDS-Legacy con A_s libre (fig. de S8)
 S8_leg_libre:       {fuente: "results/logs/s8_kids_legacy_camb.json#libre.S8", formato: ".4f"}

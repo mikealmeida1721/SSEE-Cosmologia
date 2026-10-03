@@ -42,13 +42,16 @@ from ssee_core import OMEGA_B_H2 as _WB, OMEGA_M_H2 as _WM, SUM_MNU_EV as _SM, O
 from rd_camb import rd_mpc as _rd  # noqa: E402
 from lcdm_planck import LCDM_PLANCK as _LP  # noqa: E402
 from planck2018_tabla2 import lee as _planck  # noqa: E402
-from procedencia import con_acta  # noqa: E402
+from procedencia import con_acta, acta  # noqa: E402
 
 OUT = os.path.join(REPO, 'results', 'figures')
 os.makedirs(OUT, exist_ok=True)
 KIDS = os.path.join(REPO, 'results', 'logs', 'kids_publicados.json')
 CANON = os.path.join(REPO, 'CANONICAL_VALUES.yaml')
 TABLA2 = os.path.join(REPO, 'data', 'raw', 'planck2018_VI', 'tabla2.tex')
+LEGACY = os.path.join(REPO, 'results', 'logs', 's8_kids_legacy_camb.json')
+# R75: cada figura lleva su acta en los metadatos del PDF
+_META = {'Keywords': 'ACTA-PROCEDENCIA ' + json.dumps(acta(__file__, entradas=[KIDS, CANON, TABLA2, LEGACY]))}
 
 # ════════════════════════════════════════════════════════════════════════════
 # Figure A — r_d
@@ -81,7 +84,7 @@ ax.grid(axis='x', lw=0.4, alpha=0.4, zorder=0)
 ax.spines[['top', 'right']].set_visible(False)
 fig.tight_layout()
 out_a = os.path.join(OUT, 'fig_rd_dual.pdf')
-fig.savefig(out_a, bbox_inches='tight')
+fig.savefig(out_a, bbox_inches='tight', metadata=_META)
 plt.close(fig)
 print(f'r_d SSEE {RD_SSEE:.3f} ({SIG_SSEE:+.2f} sigma)  LCDM-Planck {RD_LCDM:.3f} ({SIG_LCDM:+.2f} sigma)  '
       f'Planck {RD_PLANCK}±{RD_PLANCK_ERR}')
@@ -92,7 +95,7 @@ print(f'r_d SSEE {RD_SSEE:.3f} ({SIG_SSEE:+.2f} sigma)  LCDM-Planck {RD_LCDM:.3f
 K = json.load(open(KIDS))
 S = K['s8']
 LEG = K['kids_legacy']
-with open(os.path.join(REPO, 'results', 'logs', 's8_kids_legacy_camb.json')) as f:
+with open(LEGACY) as f:
     LIB = json.load(f)['libre']
 C = yaml.safe_load(open(CANON))
 _obs = {k: v for blk in C.values() if isinstance(blk, dict) for k, v in blk.items()}
@@ -141,7 +144,7 @@ ax.grid(axis='x', lw=0.4, alpha=0.4, zorder=0)
 ax.spines[['top', 'right']].set_visible(False)
 fig.tight_layout()
 out_b = os.path.join(OUT, 'fig_s8_resolution.pdf')
-fig.savefig(out_b, bbox_inches='tight')
+fig.savefig(out_b, bbox_inches='tight', metadata=_META)
 plt.close(fig)
 
 res = dict(
@@ -151,7 +154,6 @@ res = dict(
     fuentes=dict(rd='src/rd_camb.py (CAMB)', planck='data/raw/planck2018_VI/tabla2.tex (columna 5)',
                  s8='results/logs/kids_publicados.json y s8_kids_legacy_camb.json', des='CANONICAL_VALUES.yaml obs_DES_S8'),
     script='src/ssee_resolution_figures.py')
-json.dump(con_acta(res, __file__, entradas=[KIDS, CANON, TABLA2,
-                                             os.path.join(REPO, 'results', 'logs', 's8_kids_legacy_camb.json')]),
+json.dump(con_acta(res, __file__, entradas=[KIDS, CANON, TABLA2, LEGACY]),
           open(os.path.join(REPO, 'results', 'logs', 'rd_dual.json'), 'w'), indent=1)
 print(f'Saved: {out_a}, {out_b}')
