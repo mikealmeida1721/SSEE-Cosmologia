@@ -56,7 +56,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "332641cc5523526fe6757659c602b023b019590f",
+  "commit": "121bfb21d382f8d48c82d35f1d04dd80dd56bb5b",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/coteja_crudos.py",
@@ -70,7 +70,7 @@
    "data/raw/planck2018_prior.csv": "463af7f5dccaf8e4b56a836541950660a4e47af22d9aafa8f00c1c7c2c3447dc",
    "data/raw/cosmic_chronometers.csv": "057781c6683bc5c75b5df730c58e7c46f59aea8b5d0fbb0baa00fd2146b0137c",
    "data/raw/fsigma8_rsd.csv": "84dfd1ad69de6e9399a83777720cbca5e0c9d2805c42fd3529c192d176d6fb06",
-   "data/raw/planck2018_VI/tabla2.tex": "49791a953ae5233971eafd3598de1351661fee785b1f97d4a7bc01609db3d3a5",
+   "data/raw/planck2018_VI/tabla2.tex": "4f97257907334fc1bd4b80b7575685482e2ffd3fef5c77eb76601c5d9ca99099",
    "data/raw/moresco2022/tabla_cc1.tex": "2eb751bfbbd4a44b20adccda37275b97efa3ab4f5bafc3b065b7e1cc657a4063",
    "/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat": "022ecd45a4dc0d8ea42643b084811e5ff295040cbc3fead7d4e7ecf6c0c2254e",
    "data/raw/fsigma8_fuentes/alam2017.tex": "0fa0d656bff2f879f379012a898e671b74ee57196f88f6fac27fd82ff7d9f90e",
@@ -81,14 +81,14 @@
   "argv": [
    "src/verificacion/coteja_crudos.py"
   ],
-  "fecha": "2026-10-02T20:24:41",
+  "fecha": "2026-10-03T15:43:08",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
    "numpy": "2.4.4"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

@@ -1,0 +1,41 @@
+{
+ "rd_map": {
+  "SSEE": 147.70984396236057,
+  "\u039bCDM": 147.5917894470165,
+  "CPL": 147.06214248152352
+ },
+ "rd_ratio_ssee_lcdm": 1.0007998718342421,
+ "rd_planck": [
+  147.09,
+  0.26
+ ],
+ "_procedencia": {
+  "commit": "b4e443f101c48816c6053deefb9ce88e3f4ec73d",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/regenerate_fig7_fig8_p2.py",
+  "script_sha256": "9d82524717e005b7b97179ee58822bd484a68b4f23495d22847d9351017862c1",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "105a3703b83ffb026ffd35ed042c805d7982d6f3a3bc9b57f33b6f4ed311d141",
+   "data/raw/cosmic_chronometers.csv": "057781c6683bc5c75b5df730c58e7c46f59aea8b5d0fbb0baa00fd2146b0137c",
+   "data/raw/planck2018_VI/tabla2.tex": "4f97257907334fc1bd4b80b7575685482e2ffd3fef5c77eb76601c5d9ca99099"
+  },
+  "argv": [
+   "src/p02_mcmc/regenerate_fig7_fig8_p2.py"
+  ],
+  "fecha": "2026-10-03T15:45:43",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
