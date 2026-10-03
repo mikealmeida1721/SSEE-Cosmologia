@@ -259,7 +259,7 @@ stages:
       size: 2647
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 00f9dd3c8f1dca691b562a7a1dabca86
+      md5: 6696255dc7ae8be0be53dc7c04a4bb0d
       size: 8010
     - path: src/valores_tex.py
       hash: md5
@@ -268,7 +268,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 25e57e17f9fd8da2259c3d6dd67504e9
+      md5: d8d0d9336c7074ce83d6f20898552e3b
       size: 87246
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
