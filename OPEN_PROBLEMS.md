@@ -428,14 +428,14 @@ Nivel 2) — ficha **OP-5b**, severidad Baja. Ya no es la vía de rescate de nin
 Script `archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py` implementa retroalimentación bariónica AGN via
 HMcode-2020_baryonic_feedback en CLASS (Mead et al. 2020, log10T_heat=7.8):
 
-Resultados CLASS HMcode-2020 con parámetros SSEE (H₀=66.75 — input de la corrida 2026-05-16, anterior al posterior canónico 66.53 km/s/Mpc; Ω_m=0.30889, w₀=−0.840, wₐ=−0.670):
+Resultados CLASS HMcode-2020 con parámetros SSEE (H₀=66.75 — input de la corrida 2026-05-16, anterior al posterior canónico 66.53 km/s/Mpc; Ω_m=0.30889, w₀=−0.840, wₐ=−0.670): <!-- R74: git:8a705d375b:archive/logs_superados/era_v36_mira_dr1/mcmc_run_20260420.txt -->
 
 | k [h/Mpc] | B(k) = P_bar/P_hm |
 |---|---|
 | 0.1 | 0.9974 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
 | 0.3 | 0.9878 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
 | 0.5 | 0.9765 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
-| 1.0 | 0.9560 |
+| 1.0 | 0.9560 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
 | 2.0 | 0.9203 | <!-- R74: git:5480fef325:archive/codigo/investigacion/open_problems/salidas_2026-10-02/ssee_op5_hmcode.log -->
 
 B_eff (lensing k=0.03–2 h/Mpc, peso k) = **0.9447** (supresión 5.53% en P(k))
@@ -819,7 +819,7 @@ it returns to ≤2 (only $H_0$ and $\Omega_b h^2$ as observation-tunable).
 >
 > Que OP-9 esté abierto **y declarado abierto con la pregunta exacta** es lo CONTRARIO de
 > numerología (que fingiría tenerlo resuelto). Incompletitud, no inconsistencia. El bloque
-> histórico (615.33, 1/537) es rastro, no estado. Ver [[project-op17-particle-deferred]],
+> histórico (615.33, 1/537) es rastro, no estado. Ver [[project-op17-particle-deferred]], <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 > [[project-nine-sovereigns-naming]].
 
 **Location:** Paper 6, §3.2 (subsec:mass_derivation), §3.4 (subsec:lagrangian), §6 (subsec:origin).
@@ -849,15 +849,15 @@ coefficient now comes from a Lagrangian mass term, not a bare numerological mult
 
 **What remains open (the refined OP-9):** the **UV origin of the canonical multiplier**
 $\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V=594.28$ (adopted 2026-06-19; supersedes the
-intermediate $\mathrm{PYROS}\cdot\mathrm{VITA}\cdot\mathrm{MIKA}=615.33$ and the older
+intermediate $\mathrm{PYROS}\cdot\mathrm{VITA}\cdot\mathrm{MIKA}=615.33$ and the older <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 $\Omega_{\rm DNAV}^4+\mathrm{AURA}\cdot\mathrm{KAL}=535.28$) — i.e.,
 why *this* particular combination of $(\varphi,\pi)$ constants sets the curvature of the
 potential at its minimum. The Lagrangian is written, but the multiplier's derivation from
 a unified $V(\phi)$ (OP-10) is the next step. This is **incompleteness, not inconsistency**.
 
-> [!warning] Bloque histórico (615.33-era). El análisis look-elsewhere que sigue
+> [!warning] Bloque histórico (615.33-era). El análisis look-elsewhere que sigue <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 > (1/537, 1/192) corresponde al multiplicador **intermedio** $\mathrm{PYROS}\cdot
-> \mathrm{VITA}\cdot\mathrm{MIKA}=615.33$, hoy **superado** por $\mathrm{SOLAR}^2\cdot
+> \mathrm{VITA}\cdot\mathrm{MIKA}=615.33$, hoy **superado** por $\mathrm{SOLAR}^2\cdot <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 > \mathrm{KRYSTOS}_V=594.28$. La selección vigente bajo la gramática de linaje estricta
 > es **1/3**, no 1/cientos — ver «Methodological note» más abajo. Se conserva por registro.
 
@@ -872,7 +872,7 @@ dictionary entities, but the multiplier is **not statistically privileged** unde
 permissive grammar — its uniqueness is exactly as strong as the lineage-law grammar we
 can rigorously justify (the narrow "no-self-sum" rule once gave $\sim1/16$; pinning this
 down is the substance of OP-7/OP-9). Versus the old 535.28: statistically similar, but
-615.33 is a **pure 3-volume** (cleaner, more Lagrangian-derivable) vs a power$+$product
+615.33 is a **pure 3-volume** (cleaner, more Lagrangian-derivable) vs a power$+$product <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 *sum* — a better *form* for a UV derivation, **not** a stronger statistical selection.
 Implication: OP-9 is **not** closed by the dictionary; the promising route is a UV
 completion whose $V''(\phi_{\rm min})$ is literally a 3-volume of structural scales.
@@ -880,7 +880,7 @@ completion whose $V''(\phi_{\rm min})$ is literally a 3-volume of structural sca
 **Leading mechanism candidate (2026-06-19) — $M=\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V$.**
 A data-driven probe (let $m_\phi$ float in CLASS, find what $S_8$ prefers;
 `ssee_paper6_particle_scan.py`) gives a data-preferred $m_\phi\simeq41.0$ eV
-($M\simeq594$, $S_8=0.00\sigma$ vs the forward 615.33 at $0.24\sigma$). At that value the
+($M\simeq594$, $S_8=0.00\sigma$ vs the forward 615.33 at $0.24\sigma$). At that value the <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 construction $M=\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V=(\varphi+2\pi)^2\cdot(\varphi+\pi+\Omega)=594.28$
 ($m_\phi=40.70$ eV) is notable because — unlike a generic look-elsewhere hit — every
 ingredient is **lineage-anchored** to an *already-established* role (the standard set by
@@ -2163,10 +2163,10 @@ mecanismo en vez de seguir con PYROS·VITA·MIKA. **HECHO:** CLASS forward real 
 ($\sigma_8=0.747$, $S_8=0.758=0.04\sigma$ KiDS, $k_{\rm fs}=0.754$, $\alpha=1.108$,
 $T_\phi=0.5385\,T_\nu$, $N_{\rm ur}=2.9619$) → propagado a `CANONICAL_VALUES.yaml`, <!-- R74: git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log -->
 guardián (VERDE 119), manuscrito Paper 6 completo (Lagrangiano g²·v escrito, fσ8
-recomputado 0.82σ, 25 pp, `docs/`), 3 memorias. **RETIRADO** 615.33/42.47.
+recomputado 0.82σ, 25 pp, `docs/`), 3 memorias. **RETIRADO** 615.33/42.47. <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 Residuo único: OP-9 (derivar el coeficiente del transporte).
 
-**Qué cambió:** la partícula canónica pasó de $m_\phi=42.47$ eV (PYROS·VITA·MIKA=615.33,
+**Qué cambió:** la partícula canónica pasó de $m_\phi=42.47$ eV (PYROS·VITA·MIKA=615.33, <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 triple-producto plano, sin mecanismo, $S_8=0.24\sigma$) a
 $$m_\phi = \mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V\cdot\Sigma m_\nu = (\varphi+2\pi)^2\cdot (\varphi+\pi+\Omega)\cdot 0.0685 = 40.70\ \text{eV},$$
 que **resuelve $S_8$ de lleno ($0.04\sigma$ KiDS)** — el valor que los datos prefieren
@@ -2814,13 +2814,13 @@ Barrido fino de 31 puntos en $\beta_c\in[+0.100,+0.245]$
 
 | $\beta_c$ | $w_{\rm eff}(a{=}1)$ | $\lvert w-w_0\rvert$ | $\Omega_{\rm DE}(z{=}9)$ |
 |---|---|---|---|
-| 0.1000 | $-0.892879$ | 0.052929 | 1.19 % |
-| 0.1800 | $-0.862144$ | 0.022200 | **2.99 %** ← frontera |
-| 0.2351 | $-0.839949$ | **0.000001** | **4.53 %** |
+| 0.1000 | $-0.892879$ | 0.052929 | 1.19 % | <!-- R74: git:d849df0ec7:results/logs/barrido_beta_c.log git:d849df0ec7:results/logs/barrido_beta_c_fino.log -->
+| 0.1800 | $-0.862144$ | 0.022200 | **2.99 %** ← frontera | <!-- R74: git:d849df0ec7:results/logs/barrido_beta_c_fino.log -->
+| 0.2351 | $-0.839949$ | **0.000001** | **4.53 %** | <!-- R74: git:d849df0ec7:results/logs/barrido_beta_c.log -->
 
 **Ningún punto cumple las dos.** Las dos condiciones se mueven en sentidos
 opuestos y se cruzan en el lado prohibido. Lo mejor que se consigue dentro del
-límite observacional es $w_{\rm eff}=-0.862144$, a $0.0222$ de $w_0$.
+límite observacional es $w_{\rm eff}=-0.862144$, a $0.0222$ de $w_0$. <!-- R74: git:d849df0ec7:results/logs/barrido_beta_c_fino.log -->
 
 *Control del barrido:* incluye $\beta_c=0.1000$ y $0.235068$, que ya tenían
 respuesta del barrido grueso, y los **reproduce** ambos. Sin eso, las 29 filas
@@ -2865,7 +2865,7 @@ acoplamiento oscuro, $\beta_c=0$.
   rango, tras el fix R52 de 2026-09-05.
 - **No compromete $w_0$ ni $\alpha_K$.** $w_0=-T_r/M_v=-\mathrm{AURA}/\Omega$ es
   identidad algebraica exacta (diferencia $0.0$ a 40 dígitos) y no pasa por
-  $\beta_c$. Con $\beta_c=0$ el fondo da $\alpha_K=0.150696$, que coincide con
+  $\beta_c$. Con $\beta_c=0$ el fondo da $\alpha_K=0.150696$, que coincide con <!-- R74: git:d849df0ec7:results/logs/barrido_beta_c.log -->
   el $0.150703$ algebraico por vía independiente.
 
 ### Lo que este OP RETIRA
@@ -3176,7 +3176,7 @@ predicción propia del sector.
 
 **De dónde viene.** Era el último punto vivo de la Fase B del reframe ω_m-directo. Los otros
 tres se cerraron y tienen log: r_d = 147.174 Mpc (0.32σ) con Ω_m = 0.308881
-(`p3_rd_reframe_omega_m.log`), el posterior H₀ = 67.787 ± 0.353 bajo prior H_alg
+(`p3_rd_reframe_omega_m.log`), el posterior H₀ = 67.787 ± 0.353 bajo prior H_alg <!-- R74: git:2a4d76415b:CANONICAL_VALUES.yaml -->
 (`mcmc_paper2_reframe.log`) y el control metodológico ΛCDM R4
 (`growth_2026-07/R4_lcdm_kids_S8.json`). Éste no.
 

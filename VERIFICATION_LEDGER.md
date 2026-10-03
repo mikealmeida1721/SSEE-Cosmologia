@@ -116,28 +116,28 @@ Cambian si el script o los datos cambian. Cada uno lleva su **procedencia**.
 | ΔBIC MCMC (ΛCDM−SSEE) | **+7.25** (CPL +6.14; ΔAIC +6.48/+3.82; ΔDIC -6.47; Savage-Dickey ln B = 2.34; re-corrido 2026-10-01 sin el término de cúmulos que solo llevaba SSEE — era +6.77) | `ssee_paper2_mcmc.py` → `mcmc_paper2_3models_wmfix.log`; resumen con acta `src/p02_mcmc/resumen_3modelos.py` → `results/logs/resumen_3modelos.json`; DIC `dic_from_chains.json`; SD `savage_cv.json` | 2026-09-30 (re-corrida completa, SSEE incluido; era +6.43/+6.35 del 07-25) <!-- R74: git:d11487679d:CANONICAL_VALUES.yaml -->
 | Ω_b h² (posterior MCMC reframe) | **0.02198 ± 0.00048** (≈BBN 0.02218) | `src/p02_mcmc/reframe_obh2.py` lee la cadena de `ssee_paper2_mcmc_reframe.py` (control: mediana H₀ = json) → `results/logs/mcmc_paper2_reframe_obh2.json` | 2026-09-29 (era 0.02207±0.00045 con prior número puro ±0.54) | <!-- R74: git:6fdfa3b03c:CANONICAL_VALUES.yaml -->
 | r_d,SSEE (MCMC, ω_m algebraico fijo R25) | 147.71 en la mediana del posterior (ΛCDM 147.59, ratio 1.001); en el punto algebraico 147.17 vs ΛCDM-Planck 147.10 (`rd_dual.json`, `lya_auditoria.json`) | `ssee_paper2_mcmc.py` → `results/logs/mcmc_paper2_3models_wmfix.log` | 2026-09-30 (148.15 con Ω_m congelado; el 175.16 era el bug 0.160 en E(z))
-| r_d (CAMB, reframe ω_m-directo @ H_glob=67.962, Ω_m,CMB=0.308881) | 147.17 Mpc — **0.32σ** (ΛCDM-Planck con su mν, mismo código: 147.10) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log`; ΛCDM `src/ssee_resolution_figures.py` → `rd_dual.json` | 2026-09-29 (re-corrido; sin mapping MIRA; era 146.73@67.037) |
-| χ²_r CMB TT (SSEE) | 1.042 | `ssee_paper3_cmb.py` (reframe ω_m-directo @ H=67.962, Σm_ν=0.0685) → `results/logs/paper3_cmb_reframe.log` | 2026-06-19 (era 1.044 @67.04 legacy) |
+| r_d (CAMB, reframe ω_m-directo @ H_glob=67.962, Ω_m,CMB=0.308881) | 147.17 Mpc — **0.32σ** (ΛCDM-Planck con su mν, mismo código: 147.10) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log`; ΛCDM `src/ssee_resolution_figures.py` → `rd_dual.json` | 2026-09-29 (re-corrido; sin mapping MIRA; era 146.73@67.037) | <!-- R74: git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
+| χ²_r CMB TT (SSEE) | 1.042 | `ssee_paper3_cmb.py` (reframe ω_m-directo @ H=67.962, Σm_ν=0.0685) → `results/logs/paper3_cmb_reframe.log` | 2026-06-19 (era 1.044 @67.04 legacy) | <!-- R74: git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
 | ΔBIC CMB diagonal (SSEE−ΛCDM) | −35.0 (SSEE favorecido) | `ssee_paper3_cmb.py` (etapa `paper3_cmb`) → `results/logs/paper3_cmb_chi2.json#total.dBIC` = −35.03 (el log de julio `p3_pr4_diag_nu_fix.log`, archivado 2026-10-03 en `archive/logs_superados/era_v36_mira_dr1/`, daba lo mismo) | 2026-07-25 (Σm_ν=0.06849 coherente; era −34.9 con 0.0690, −28.0 @67.04 legacy) |
-| ΔBIC CMB plik_lite TTTEEE+lowT+lowE (ω_m-directo, k=2) | **−26.03** (χ²=1003.586 vs ΛCDM 1003.596 con SU mν=0.06; N=669 medido; caso k=4 −13.02) | `src/p11_sondas/cmb_dbic_mnu_propia.py` → `results/logs/cmb_dbic_mnu_propia.json` (ΛCDM re-minimizado por `lcdm_conjunta.py cmb`) | 2026-09-29 (era −26.21: ΛCDM con la mν de SSEE. Antes, 2026-09-09 CANÓNICO: {A_s,τ} ajustados y N medido del likelihood). Supersede −24.02 (χ²=1005.41), que clavaba A_s y τ en Planck contándolos como libres y usaba N=613 — con N bien contado habría sido −24.37. Cobaya legacy −32.2 @67.037 superado |
+| ΔBIC CMB plik_lite TTTEEE+lowT+lowE (ω_m-directo, k=2) | **−26.03** (χ²=1003.586 vs ΛCDM 1003.596 con SU mν=0.06; N=669 medido; caso k=4 −13.02) | `src/p11_sondas/cmb_dbic_mnu_propia.py` → `results/logs/cmb_dbic_mnu_propia.json` (ΛCDM re-minimizado por `lcdm_conjunta.py cmb`) | 2026-09-29 (era −26.21: ΛCDM con la mν de SSEE. Antes, 2026-09-09 CANÓNICO: {A_s,τ} ajustados y N medido del likelihood). Supersede −24.02 (χ²=1005.41), que clavaba A_s y τ en Planck contándolos como libres y usaba N=613 — con N bien contado habría sido −24.37. Cobaya legacy −32.2 @67.037 superado | <!-- R74: git:09bfe6ac4b:CANONICAL_VALUES.yaml -->
 | ΔBIC CMB full plik TTTEEE+lowl+lensing (k=2, H₀ fijo) | **−33.83** — χ² MÍNIMO SSEE 2768.449 vs ΛCDM 2771.227, Δχ² −2.778 (indistinguibles), N=2354, k=2 vs 6; conservador k=4: −18.31. Control (R53): con el mejor muestreado −34.08, mismo signo — PASA. El −32.9 del 23-jun queda retirado: no tenía log (cadenas sobrescritas) | `b1_minimiza.py ssee` y `lcdm` → `b1_min_*.json`; `b1_k2_lee.py` → `results/logs/b1_k2.json` (etapas DVC b1_min_ssee, b1_min_lcdm, b1_k2) | 2026-10-01 (re-corrida k=2, decisión de Mike) |
 | θ* (CAMB, en H_glob 67.962, Σm_ν=0.06849) | 0.59667° (100θ*=1.04139) — **1.00σ** | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log` | 2026-09-29 (re-corrido; sin cambio. El log de 07-26 usaba Σm_ν=0.06902 rancio → 0.59668/1.05σ) | <!-- R74: git:d7446ace8a:results/logs/p3_rd_reframe_omega_m.log -->
-| θ* (CAMB, en posterior 67.8226, Σm_ν=0.06849) | 0.59644° (100θ*=1.04099) — **0.34σ** (`p3_rd_reframe_omega_m.json`, 2026-10-03; era 0.32σ con el posterior sin semilla) (posterior y anchor coinciden; la tensión 6.66σ era el bug del sector 0.160 en E(z), V-L4-DESI) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log` | 2026-09-29 (era 1.04089/0.68σ en el posterior 67.7869, log: git:513e84e:results/logs/mcmc_paper2_reframe.log; 67.9475/66.41/67.159 superados) | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
+| θ* (CAMB, en posterior 67.8226, Σm_ν=0.06849) | 0.59644° (100θ*=1.04099) — **0.34σ** (`p3_rd_reframe_omega_m.json`, 2026-10-03; era 0.32σ con el posterior sin semilla) (posterior y anchor coinciden; la tensión 6.66σ era el bug del sector 0.160 en E(z), V-L4-DESI) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log` | 2026-09-29 (era 1.04089/0.68σ en el posterior 67.7869, log: git:513e84e:results/logs/mcmc_paper2_reframe.log; 67.9475/66.41/67.159 superados) | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml --> <!-- R74: git:34dcf9365e:CANONICAL_VALUES.yaml -->
 | σ₈ / S₈ con A_s FIJADO a Planck — **DIAGNÓSTICO condicionado, NO predicción** | **0.814854 / 0.826827** | `config/class/techo_ssee_canonico.ini` (CLASS v3.3.4, fondo canónico **con Σm_ν=0.06849 eV**); evaluado por `src/p05_IS/techo_sigma8_As_fijo.py`; log `results/logs/p5_techo_sigma8_As_fijo.json` | **2026-09-08 — RETIRA 0.8335 / 0.846.** Aquéllos salían de `can_cold__pk.dat`, un fichero **sin `.ini`**, **fuera del repo** (`class_ssee/output/` está en `.gitignore`) y del mismo minuto que la corrida de dos sectores con la partícula retirada. Le faltaban los **neutrinos masivos** que el fondo canónico sí lleva, y sin ellos sobra grumo a 8 Mpc/h: **+2.3%**. **CONTROL** con criterio escrito ANTES de correr (`config/class/techo_lcdm_referencia.ini`): la línea base de Planck 2018 debe dar σ₈=0.8111±0.006 y da **0.810851**, 0.04σ — **PASA**. Tensiones del S₈: KiDS 3.5σ→**2.74σ** · DES-Y3 3.9σ→**2.82σ** · Planck 1.1σ→**0.36σ**. Coincide con el S₈=0.8256 que Paper 5 saca por su vía independiente. El diagnóstico **no** es el resultado: con A_s libre contra dato crudo, S₈=0.7559 ± 0.0189 (0.10σ, R3). La barra ±0.006 viene de antes y **no** se ha recomputado. Informe: `BANDEJA/2026-09-08_techo_sigma8_neutrinos.md` |
 | σ₈ / S₈ (Paper 6, MCMC R3 contra KiDS-1000 CRUDO) — HISTÓRICO, superado por KiDS-Legacy (2026-09-20) | **0.7449 ± 0.0186 / 0.7559 ± 0.0189 — 0.10σ KiDS** | Cobaya+CAMB, 4 cadenas MPI, R−1=0.0189, N_eff=42711 (burn-in por cadena; la lectura vieja 0.7555 cortaba sobre las cadenas pegadas, 2026-10-02); log `results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json` | 2026-08-01, releído 2026-10-02 (un sector, A_s libre, fondo fijo por álgebra; χ²_min=265.44/216 dof) |
 | **S₈ ΛCDM control metodológico (Paper 6, MCMC R4 contra KiDS CRUDO)** | **0.7571±0.0194 — 0.06σ KiDS** · χ²_min=**262.746**/212 dof | Cobaya+CAMB, 4 cadenas MPI, R−1=0.0256, 13 libres (fondo LIBRE); log `results/logs/growth_2026-07/R4_lcdm_kids_S8.json` | 2026-08-07 (corrida) · 2026-09-07 (χ²_min recuperado de la cadena y escrito al log: Paper 6 ya lo publicaba y el log no lo respaldaba). Licencia la comparación Δχ²=2.69 (265.44−262.75, `kids_publicados.json`; era 2.65 con el χ²_min de R3 tecleado a mano y mal redondeado, 2026-09-30) con Δk=4 de la tabla S₈ |
 | **`ω_c` que pide BOSS DR12 (perfil, amplitud propia de cada modelo)** | **SSEE 0.117450±0.004079 → 0.51σ de `KAL₀·ω_b·n_s`** · ΛCDM 0.114346±0.004041 → 1.40σ de Planck 0.1200 | `src/p06_growth/perfil_wc_boss.py` y `perfil_wc_boss_lcdm.py` (minimización robusta `minimo_sesgos.py`); logs `results/logs/perfil_wc_boss.json` + `perfil_wc_boss_lcdm.json` (etapas DVC, P6 por \val) | 2026-10-01 (re-corrido: el minimizador del 09-08 caía en mínimos locales, hasta 26 de χ² arriba; control con 10 arranques al azar PASA en los 4). Con la amplitud del CMB clavada dan 0.109937±0.003994 (2.40σ) y 0.107801±0.003931 (3.10σ): los DOS fondos se desplazan, ΛCDM más ⟹ el desplazamiento es del DATO. Ganancia de soltar `ω_c`: SSEE 1.177, ΛCDM 4.878. El χ² con `ω_c` LIBRE **no se cita** como comparación de modelos. Paper 6 §`par:wc-profile` |
-| ~~σ₈/S₈ two-sector 0.747/0.758~~ · ~~m_φ=40.70 eV~~ · ~~k_fs=0.754~~ · ~~α=1.117~~ | **RETIRADOS 2026-08-01** | — | La resta Ω_φDM=0.308881−0.160 mezclaba densidad con ecuación de estado (0.160=1+w₀); histórico, no citar |
+| ~~σ₈/S₈ two-sector 0.747/0.758~~ · ~~m_φ=40.70 eV~~ · ~~k_fs=0.754~~ · ~~α=1.117~~ | **RETIRADOS 2026-08-01** | — | La resta Ω_φDM=0.308881−0.160 mezclaba densidad con ecuación de estado (0.160=1+w₀); histórico, no citar | <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 
 **Historial de deriva de H₀ MCMC** (para entender por qué cambió): el MCMC
 es determinista (semilla fija 42) — *mismo script → mismo número*. La
 deriva corresponde a **ediciones del script / cambios de prior**, no a azar:
-- 66.75 ± 0.44 — prior Planck-ΛCDM legacy, 50w×10k.
-- 66.533 ± 0.442 — prior MIRA 67.037 self-consistent, 100w×25k. **Superado por el
+- 66.75 ± 0.44 — prior Planck-ΛCDM legacy, 50w×10k. <!-- R74: git:8a705d375b:archive/logs_superados/era_v36_mira_dr1/mcmc_run_20260420.txt -->
+- 66.533 ± 0.442 — prior MIRA 67.037 self-consistent, 100w×25k. **Superado por el <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
   reframe ω_m-directo 2026-06-19.**
 - 67.159 ± 0.442 — prior H_alg 67.962, 100w×25k, **datos DR1 mal etiquetados. Superado <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
   por V-L4-DESI (2026-07-02).** ref `results/logs/mcmc_paper2_reframe.log`.
-- 66.412 ± 0.385 — prior H_alg + DESI DR2 REAL pero con **geometría BUGGY**: el sector
+- 66.412 ± 0.385 — prior H_alg + DESI DR2 REAL pero con **geometría BUGGY**: el sector <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
   frío Ω_m,dyn=0.160 (=1+w0) metido en E(z)/r_d (debía ser la materia TOTAL 0.308881).
   Daba χ²_BAO=726, Ω_bh² +2.3σ, θ*=13.9σ. **Superado por V-L4-DESI 2026-07-09.**
 - **67.8226 ± 0.4126 — (2026-10-01: sin término de cúmulos y con semilla fija en emcee; antes 67.8206 ± 0.4125 (log: git:1de1618:results/logs/mcmc_paper2_reframe.json) y 67.8244 ± 0.4133 (log: git:513e84e:results/logs/mcmc_paper2_reframe.json), ruido MC) prior H_glob 67.962 ± 0.968 + DESI DR2 + ω_m algebraico FIJO (R25) + r_d y
@@ -499,7 +499,7 @@ alcanza al párrafo de abajo, que es el mismo defecto del vecino que exonera.)*
    con la carga de prueba invertida. Control del otro lado: la misma lente
    sobre el TRGB adoptado por CCHP (arXiv:2408.06153v3, 70.39±1.94) da 65.66
    en IR (−1.28σ) y 65.50 completo (−1.37σ) — `results/logs/p9_cascada_control.json`
-   (2026-10-03). El viejo «69.96 → 65.26, 1.88σ» usaba la v1 de ese artículo,
+   (2026-10-03). El viejo «69.96 → 65.26, 1.88σ» usaba la v1 de ese artículo, <!-- R74: git:f6dca4727c:results/logs/mcmc_run.log -->
    superada por la v3. Las rutas H₀^MIRA
    (71.87/72.05) quedan **superadas** por partida doble.
    H_alg es un anchor **DERIVADO** (de-screened SH0ES × f_screen; el cargo Type-P
@@ -947,8 +947,8 @@ verificado es el *álgebra*; la *regla física* de uso no está derivada.
 **Por qué importa.** El resultado más fuerte de SSEE (DESI 0.5σ, cero
 parámetros) se construyó con 0.160 en el fondo. El commit `4892b53`
 («corrección dos-Ω_m») cambió E(z) a 0.320 y, con el prior Planck-ΛCDM legacy,
-movió H₀ a 67.756 — que producía r_d/θ* a 4–5σ. **El switch de prior MIRA
-(2026-05-24) reancló H₀ a 66.533 posterior / 67.037 anchor** (ambos superados por el
+movió H₀ a 67.756 — que producía r_d/θ* a 4–5σ. **El switch de prior MIRA <!-- R74: git:f6dca4727c:results/logs/mcmc_paper2_mira.log -->
+(2026-05-24) reancló H₀ a 66.533 posterior / 67.037 anchor** (ambos superados por el <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
 reframe ω_m-directo 2026-06-19 → 67.159 / 67.962), y con esos H₀ <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
 r_d queda a ≤1.5σ y θ* a 0.66σ *en el anchor* (ver V-L4-rd/θ* re-corridas;
 reframe da r_d 0.32σ y θ* 1.05σ). Lo que queda abierto NO es ya un 5σ duro en r_d, sino: (a) la
@@ -1064,7 +1064,7 @@ de Paper 3 es reproducible. Verificado.**
 ## V-L4-rd — horizonte de sonido r_d — **r_d sano en ambos anclajes**
 
 Re-corrido con CAMB en el reframe ω_m-directo (2026-06-19). Con los H₀
-de entonces (anchor H_alg 67.962, posterior DR2 66.412 —hoy superado por
+de entonces (anchor H_alg 67.962, posterior DR2 66.412 —hoy superado por <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
 67.82±0.41, que da el mismo r_d = 147.174 Mpc: `run_p3_rd_reframe.py`,
 re-corrido 2026-09-29—; el 67.159 previo usaba el vector DR1 mal etiquetado, superado): <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
 
@@ -1072,7 +1072,7 @@ re-corrido 2026-09-29—; el 67.159 previo usaba el vector DR1 mal etiquetado, s
 |---|---|---|
 | 67.962 (anchor H_alg, CMB-óptimo ω_m-directo) | 147.17 Mpc | **0.32σ ✓** |
 | 67.159 (posterior MCMC reframe con DR1 mal etiquetado, superado) | 147.17 Mpc | **0.32σ ✓** (r_d es H₀-invariante a ω fijo) | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
-| 67.037 / 66.533 (anchor/posterior MIRA viejo) | 146.73 / *(sin log)* Mpc | *superado por reframe* |
+| 67.037 / 66.533 (anchor/posterior MIRA viejo) | 146.73 / *(sin log)* Mpc | *superado por reframe* | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
 
 **Mecanismo (ω_m-directo):** la parametrización SSEE fija la densidad física
 ω_m = ω_b+ω_c+ω_ν = 0.14267 (forward, ω_c=KAL₀·ω_b·n_s), y Ω_m,CMB=ω_m/h²=0.308881
@@ -1090,7 +1090,7 @@ vs Planck 2018 **0.59668±0.00046°** (100θ*=1.04109±0.00030): <!-- R74: git:d
 |---|---|---|
 | 67.962 (anchor H_alg, CMB-óptimo ω_m-directo) | 0.59667° (100θ*=1.04139) | **1.00σ ✓** |
 | **67.8226 (posterior MCMC DR2, prior H_glob, semilla 2026-10-01)** | **0.59644° (100θ*=1.04099)** | **0.34σ ✓** (era 0.32σ con 67.8244) | <!-- R74: git:513e84e:results/logs/mcmc_paper2_reframe.json -->
-| 67.7869 (log: git:513e84e:results/logs/mcmc_paper2_reframe.log) (posterior previo, prior número puro ±0.54) | 0.59638° (100θ*=1.04089) | 0.67σ *superado* |
+| 67.7869 (log: git:513e84e:results/logs/mcmc_paper2_reframe.log) (posterior previo, prior número puro ±0.54) | 0.59638° (100θ*=1.04089) | 0.67σ *superado* | <!-- R74: git:34dcf9365e:CANONICAL_VALUES.yaml git:d23a954111:results/logs/p3_rd_reframe_omega_m.log -->
 | 66.412 (posterior con bug: sector 0.160 en E(z)) | 100θ*=1.03693 | ~~13.9σ~~ *bug superado* | <!-- R74: git:6039ffdbd0:CANONICAL_VALUES.yaml -->
 | 67.159 (posterior con vector DR1 mal etiquetado) | 100θ*=1.03910 | ~~6.6σ~~ *superado* | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
 
@@ -1139,7 +1139,7 @@ DESI DR2 + geometría total Ω_m=0.308881, prior Planck común, r_d CAMB, cada m
 
 **Veredicto:** la aritmética estadística (BIC, ΔBIC, tensión H₀) cierra y
 **SSEE sigue favorecido (ΔBIC=+7.91)**. Pero el headline H₀ registrado
-(66.75) está obsoleto — el valor vivo es 67.76. Y el dato bariónico
+(66.75) está obsoleto — el valor vivo es 67.76. Y el dato bariónico <!-- R74: git:8a705d375b:archive/logs_superados/era_v36_mira_dr1/mcmc_run_20260420.txt -->
 empuja en contra de OP-1.
 
 ## V-L4-DESI — datos BAO eran DR1 mal etiquetados como DR2 — **CORREGIDO (fuente única, 2026-07-01); re-runs PENDIENTES**
@@ -1212,7 +1212,7 @@ Re-corridos los tres pipelines (CAMB r_d, CAMB CMB, emcee MCMC) el
 |---|---|
 | **verificado / reproducido** | S₈ (P5), χ²+ΔBIC del CMB (P3), BIC+ΔBIC del MCMC (P2) |
 | **ABIERTO — tensión grave (enmascarada)** | r_d 4.47σ, θ* 5.62σ — al usar el H₀ canónico |
-| **ABIERTO — deriva de valor (resuelta)** | H₀ MCMC 66.75→67.76 — re-anclado a 67.756 |
+| **ABIERTO — deriva de valor (resuelta)** | H₀ MCMC 66.75→67.76 — re-anclado a 67.756 | <!-- R74: git:8a705d375b:archive/logs_superados/era_v36_mira_dr1/mcmc_run_20260420.txt git:f6dca4727c:results/logs/mcmc_paper2_mira.log -->
 | **ABIERTO — tensión física** | Ω_b h² −1.2σ vs OP-1 |
 | **ABIERTO — inconsistencia de referencia** | DES-Y3 (0.776 vs 0.758; el 0.758 es valor RETIRADO 2026-08-01) |
 
@@ -1220,8 +1220,8 @@ Re-corridos los tres pipelines (CAMB r_d, CAMB CMB, emcee MCMC) el
 estadística por SSEE (ΔBIC negativo en P2 y P3) se sostienen al re-correr.
 
 **Lo que la campaña destapó** — y es lo más importante de toda Capa 4: el
-valor stale H₀=66.75 estaba **enmascarando** una tensión de 4.47σ en r_d
-y 5.62σ en θ*. Al re-anclar H₀ al canónico 67.756 y propagarlo, las
+valor stale H₀=66.75 estaba **enmascarando** una tensión de 4.47σ en r_d <!-- R74: git:8a705d375b:archive/logs_superados/era_v36_mira_dr1/mcmc_run_20260420.txt -->
+y 5.62σ en θ*. Al re-anclar H₀ al canónico 67.756 y propagarlo, las <!-- R74: git:f6dca4727c:results/logs/mcmc_paper2_mira.log -->
 tensiones aparecieron. El "r_d ✅ 0.25σ" era un artefacto. **Esta es la
 brecha más grave del modelo y bloquea el sellado de Papers 2, 3 y 9**
 hasta que se encare (revisar la parametrización Ω_m,cosm, o aceptar la
