@@ -634,3 +634,6 @@ lite_chi2_lcdm: {fuente: "results/logs/cmb_dbic_mnu_propia.json#chi2_lcdm_mnu006
 lite_dchi2:     {fuente: "results/logs/cmb_dbic_mnu_propia.json#dchi2", formato: ".3f"}
 lite_dBIC:      {fuente: "results/logs/cmb_dbic_mnu_propia.json#dBIC", formato: ".2f"}
 lite_N:         {fuente: "results/logs/cmb_dbic_mnu_propia.json#N", formato: "d"}
+# H0 de DESI DR2 con prior Planck (re-corrida de 3 modelos) — PRD/Sealed §3 (2026-10-02; antes «67.61» tecleado)
+h0_3mod:    {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.H0.mediana", formato: ".2f"}
+h0_3mod_s:  {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.H0.std", formato: ".2f"}

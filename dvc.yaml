@@ -648,6 +648,20 @@ stages:
         cache: false
     - results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json:
         cache: false
+  readme_figura:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/ssee_readme_tensions_figure.py
+    deps:
+    - src/ssee_readme_tensions_figure.py
+    - src/ssee_core.py
+    - data/raw/planck2018_prior.csv
+    - results/logs/kids_publicados.json
+    - results/logs/paper2_w0wa.json
+    - results/logs/mcmc_full_posteriores.json
+    - results/logs/fsigma8_canonico.json
+    - results/logs/mcmc_paper2_reframe.json
+    outs:
+    - results/figures/fig_readme_tensions.png:
+        cache: false
   sondas_ssee_vs_lcdm:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p11_sondas/sondas_ssee_vs_lcdm.py > 

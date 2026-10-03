@@ -28,15 +28,47 @@ os.makedirs(OUT, exist_ok=True)
 # La fila del S_8 sobrevivio porque la barre R60 en el CODIGO, pero la figura
 # es un .png y el barrido de figuras lee capa de texto de PDF: un .png no
 # tiene. El agujero queda anotado aparte.
+# 2026-10-02: cada barra se LEE de su log o se calcula del nucleo contra el dato
+# crudo; antes todas iban tecleadas (y dos rancias: el S8 de KiDS-1000, superado
+# por KiDS-Legacy, y el H_0 IR 68.13, que no es el canonico).
+import csv
+import json
+import sys
+_R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path.insert(0, os.path.join(_R, 'src'))
+import ssee_core as S  # noqa: E402
+
+
+def _log(rel, *ruta):
+    o = json.load(open(os.path.join(_R, 'results', 'logs', rel)))
+    for k in ruta:
+        o = o[k]
+    return float(o)
+
+
+_pl = {r['parameter']: (float(r['mean']), float(r['sigma']))
+       for r in csv.DictReader(l for l in open(os.path.join(_R, 'data', 'raw', 'planck2018_prior.csv'))
+                               if not l.startswith('#'))}
+NS_PLANCK = (0.9649, 0.0042)  # ORIGEN-VALOR: 0.9649 ± 0.0042 — Planck 2018 VI (A&A 641, A6), Tabla 2, TT,TE,EE+lowE+lensing
+
+
+def _t(x, ref):
+    return abs(x - ref[0]) / ref[1]
+
+
 entries = [
-    (r'$S_8 = 0.7555 \pm 0.0192$ (one sector, $A_s$ free)', 0.11, 'KiDS-1000 (raw)'),
-    (r'$n_s = 1-\varphi^{-7}$',                  0.16, 'Planck 2018'),
-    (r'$w_0$–$w_a$ plane',                       0.24, 'DESI DR2 (Pantheon+)'),
-    (r'$r_d$ (joint posterior)',                 0.32, 'MCMC multi-probe'),
-    (r'$\Omega_b h^2 = (\pi-\varphi)/3\Omega^2$', 0.32, 'Planck 2018'),
-    (r'$\Omega_{m,\rm CMB} = \omega_m/h^2 = 0.308881$', 0.88, 'Planck 2018'),
-    (r'mean $f\sigma_8$ (6 RSD surveys)',        0.70, 'one sector; raw BOSS pending'),
-    (r'$H_0^{\rm glob}$ = 68.13 km/s/Mpc',       0.17, r'$3(\varphi+\pi)^2$'),
+    (r'$S_8$ predicted ($A_s$ fixed by the CMB)',
+     _log('kids_publicados.json', 's8', 'legacy_prediccion', 'tension_sigma'), 'KiDS-Legacy (raw)'),
+    (r'$n_s = 1-\varphi^{-7}$', _t(S.N_S, NS_PLANCK), 'Planck 2018'),
+    (r'$w_0$–$w_a$ plane',
+     _log('paper2_w0wa.json', 'w0wa_ssee_vs_lcdm', 'ec26', 'ssee_sigma'), 'DESI DR2 (Pantheon+)'),
+    (r'$r_d$ (joint posterior)',
+     _log('mcmc_full_posteriores.json', 'tensiones', 'rdrag', 'tension_abs'), 'MCMC multi-probe'),
+    (r'$\Omega_b h^2 = (\pi-\varphi)/3\Omega^2$', _t(S.OMEGA_B_H2, _pl['Omega_b_h2']), 'Planck 2018'),
+    (r'$\Omega_{m} = \omega_m/h^2$', _t(S.OMEGA_M_TOTAL, _pl['Omega_m']), 'Planck 2018'),
+    (r'mean $f\sigma_8$ (6 RSD surveys)', _log('fsigma8_canonico.json', 'tension_media_ssee'), 'one sector'),
+    (r'$H_0$ posterior (DESI DR2)', _log('mcmc_paper2_reframe.json', 'sigma_a_Hglob'),
+     r'$H_0^{\rm glob}=H_0^{\rm SH0ES}(1-f_{\rm screen})$'),
 ]
 # Ordenado POR sigma, no a mano. Antes la lista se escribia ordenada y se
 # invertia; con eso el H_0 (0.17) llevaba tiempo al fondo fuera de sitio, y al
