@@ -3010,7 +3010,21 @@ predicción propia del sector.
 
 ---
 
-## OP-26 — fσ₈ contra el dato crudo de BOSS sigue sin medirse — 🟠 ABIERTO (2026-09-19)
+## OP-26 — fσ₈ contra el dato crudo de BOSS — ✅ MEDIDO (R1/R2 LPT 2026-09-07, re-corrido con los ingredientes de cada modelo 2026-10-01)
+
+> **CIERRE (anotado 2026-10-03; la medición es del 2026-10-01).** Este OP quedó escrito como abierto
+> después de que se midiera, y el banner de CLAUDE.md lo repetía: el 2026-10-03 se citó a Mike como
+> «pendiente» por leer la ficha y no el log. Medido (`results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json`,
+> `analiza_boss_R1R2.py`, velocileptors LPT, k ≤ 0.20, 222 puntos, SSEE con Σm_ν 0.06849 y ΛCDM con 0.06):
+> - χ²_real mínimo: SSEE 205.55 vs ΛCDM 207.58 → Δχ² = -2.03, a igual número de libres.
+> - fσ₈ de SSEE en z = 0.38 / 0.51 / 0.61: 0.410 / 0.411 / 0.409 (± 0.021).
+>   Contra el fσ₈ comprimido publicado (Alam+2017): 1.76σ / 1.08σ / 0.68σ; ΛCDM, con el mismo pipeline: 1.55σ / 0.91σ / 0.55σ. El pipeline queda bajo en z = 0.38 con los DOS modelos: es del método, no de SSEE.
+> - Control del otro lado: ΛCDM reproduce su propia cadena (logA y fσ₈ a < 0.004σ, χ² idéntico).
+> - **BOSS no vota en A_s:** el logA de perfil y el marginal difieren 1.82σ ⟹ el valor central se mueve con el estimador (ver `memory/feedback_check_repo_before_deriving.md`).
+> Ya está en Paper 6 por `\val` (`bossR_*`). Lo que queda vivo es sólo de lectura: la cizalla discrimina en A_s, BOSS no.
+
+**Texto original (2026-09-19), conservado:**
+
 
 **De dónde viene.** Era el último punto vivo de la Fase B del reframe ω_m-directo. Los otros
 tres se cerraron y tienen log: r_d = 147.174 Mpc (0.32σ) con Ω_m = 0.308881
