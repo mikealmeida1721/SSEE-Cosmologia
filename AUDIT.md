@@ -164,7 +164,7 @@ S₈ tension SSEE vs DES-Y3 = 2.74σ  [single-sector baseline; see note below]
 > 0.827 y su «2.7σ» salen de **fijar A_s al valor de Planck**, y A_s es uno
 > de los dos libres del modelo. Con A_s libre contra el ξ± crudo de KiDS-1000
 > el mismo sector único da **S₈ = 0.7559 ± 0.0189, 0.10σ** (Paper 6, R3;
-> log `results/logs/growth_2026-07/R3_ssee_kids_S8.json`). El techo se
+> log `results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json`). El techo se
 > conserva como diagnóstico bajo condición declarada, no como predicción.
 
 ### Paper 6 — 🔴 **RETIRADO 2026-08-01: NO forma parte de la auditoría**
@@ -182,7 +182,7 @@ KiDS-1000 (A_s libre, 225 puntos):
   S₈ = 0.7559 ± 0.0189   →  0.10σ vs KiDS-1000 (0.759 ± 0.024)
   σ₈ = 0.7449 ± 0.0186
   χ²_min = 265.4 / 216 dof
-  log: results/logs/growth_2026-07/R3_ssee_kids_S8.json
+  log: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
 
 KiDS-Legacy (A_s CLAVADO al del CMB — CERO libres cosmologicos, 357 puntos)
   — este es el TITULAR vigente desde 2026-09-20:

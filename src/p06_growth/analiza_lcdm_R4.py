@@ -14,16 +14,45 @@ Carlo, que con miles de puntos queda pequeña).
 Mismo criterio de burn-in que R3 (30% por cadena) para comparar manzanas
 con manzanas.
 """
-# ORIGEN-VALOR: 0.025570 — R-1 de las medias de R4, results/logs/R4_lcdm_resume_20260805.log
+# 2026-10-03 (sellado, regla de Mike: nada tecleado). Antes llevaba a mano el R-1,
+# los dof, el numero de libres, la m_nu y el S8 publicado de KiDS. Ahora: R-1 de la
+# ultima linea de lcdm.progress, libres del lcdm.updated.yaml de la propia cadena,
+# m_nu de la verosimilitud LCDM (cobaya_kids.bg_key_to_dict), puntos de la mascara
+# de escalas de cobaya_kids, y el dato de KiDS de CANONICAL obs_KiDS_S8. Control: los
+# siete valores leidos coinciden con los que estaban tecleados.
+# La salida lleva acta (etapa analiza_lcdm_R4 de dvc.yaml).
+import glob
 import json
+import re
+import os
+import sys
 import time
 import numpy as np
 import camb
+import yaml
+
+AQUI = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(os.path.dirname(AQUI))
+sys.path.insert(0, os.path.join(REPO, 'src'))
+sys.path.insert(0, AQUI)
+from procedencia import con_acta  # noqa: E402
+from cobaya_kids import MASK, bg_key_to_dict  # noqa: E402
 
 CHAINS_DIR = '/mnt/datos/SSEE_data/chains_p6/kids'
 BURN_IN_FRAC = 0.30
 THIN_EVERY = 8          # 1 de cada 8 filas post burn-in
-MNU = 0.06              # fiducial de esta corrida (fijo en el yaml)
+UPD = yaml.safe_load(open(f'{CHAINS_DIR}/lcdm.updated.yaml'))
+MNU = float(bg_key_to_dict((0.0, 0.0, 0.0, 0.0))['mnu'])   # la m_nu que uso la verosimilitud LCDM de la cadena
+LIBRES = [k for k, v in UPD['params'].items() if isinstance(v, dict) and 'prior' in v]
+N_DATOS = int(np.sum(MASK))
+_PROG = [ln.split() for ln in open(f'{CHAINS_DIR}/lcdm.progress') if ln.strip() and not ln.startswith('#')]
+RM1_MEDIAS, RM1_COLAS = float(_PROG[-1][3]), float(_PROG[-1][4])
+CANON = os.path.join(REPO, 'CANONICAL_VALUES.yaml')
+_C = yaml.safe_load(open(CANON))
+KIDS_S8 = next(v['obs_KiDS_S8'] for v in _C.values() if isinstance(v, dict) and 'obs_KiDS_S8' in v)
+# la sigma vive en el comentario de su ancla en CANONICAL («# KiDS-1000 S8 (Asgari+2021); ±σ»)
+KIDS_S8_ERR = next(float(re.search(r'±\s*([0-9.]*[0-9])', ln).group(1))
+                   for ln in open(CANON) if ln.strip().startswith('obs_KiDS_S8:'))
 
 
 def sigma8_de(ombh2, omch2, h0, ns, As):
@@ -98,36 +127,42 @@ def main():
     resultado = {
         'corrida': 'R4 — LCDM control metodologico, KiDS-1000',
         'muestreador': 'Cobaya mcmc, 4 cadenas MPI, reanudada tras corte de luz',
-        'n_parametros_libres': 13,
+        'n_parametros_libres': len(LIBRES),
+        'parametros_libres': LIBRES,
+        'datos': N_DATOS,
+        'mnu': MNU,
         'burn_in_frac': BURN_IN_FRAC,
         'thin_every': THIN_EVERY,
         'n_muestras_usadas': int(len(todas_w)),
         'n_filas_por_cadena': n_por_cadena,
         'convergencia': {
-            'Rminus1_medias': 0.025570,
-            'Rminus1_colas': 0.115482,
-            'converged': True,
+            'Rminus1_medias': RM1_MEDIAS,
+            'Rminus1_colas': RM1_COLAS,
+            'fuente': 'ultima linea de lcdm.progress',
         },
-        'dof': 212,
+        'dof': N_DATOS - len(LIBRES),
         'chi2_min': round(min(chi2_min_cad), 5),
-        'chi2_min_por_dof': min(chi2_min_cad) / 212.0,
+        'chi2_min_por_dof': min(chi2_min_cad) / (N_DATOS - len(LIBRES)),
         'chi2_min_por_cadena': [round(c, 3) for c in chi2_min_cad],
         'Omega_m': {'media': wmean(todas_om, todas_w), 'sigma': wstd(todas_om, todas_w)},
         'sigma8': {'media': wmean(sigma8_arr, todas_w), 'sigma': wstd(sigma8_arr, todas_w)},
         'S8': {'media': wmean(S8_arr, todas_w), 'sigma': wstd(S8_arr, todas_w)},
         'comparacion_KiDS': {
-            'S8_publicado': 0.759,
-            'err_publicado': 0.024,
+            'S8_publicado': KIDS_S8,
+            'err_publicado': KIDS_S8_ERR,
+            'fuente': 'CANONICAL_VALUES.yaml obs_KiDS_S8',
         },
         'tiempo_analisis_seg': time.time() - t0,
     }
     S8m, S8s = resultado['S8']['media'], resultado['S8']['sigma']
-    tension = abs(S8m - 0.759) / np.sqrt(S8s**2 + 0.024**2)
+    tension = abs(S8m - KIDS_S8) / np.sqrt(S8s**2 + KIDS_S8_ERR**2)
     resultado['comparacion_KiDS']['tension_sigma'] = float(tension)
 
-    out = '/home/mike/Proyectos/SSEE/results/logs/growth_2026-07/R4_lcdm_kids_S8.json'
+    out = os.path.join(REPO, 'results', 'logs', 'growth_2026-07', 'R4_lcdm_kids_S8.json')
+    entradas = sorted(glob.glob(f'{CHAINS_DIR}/lcdm.[1-4].txt')) + [
+        f'{CHAINS_DIR}/lcdm.progress', f'{CHAINS_DIR}/lcdm.updated.yaml', CANON]
     with open(out, 'w') as f:
-        json.dump(resultado, f, indent=2, ensure_ascii=False)
+        json.dump(con_acta(resultado, __file__, entradas=entradas), f, indent=2, ensure_ascii=False)
 
     print(json.dumps(resultado, indent=2, ensure_ascii=False))
     print(f'\nGuardado en {out}')

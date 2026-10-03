@@ -55,6 +55,8 @@ import logging
 import os as _o66, sys as _s66
 _s66.path.insert(0, _o66.path.dirname(_o66.path.dirname(_o66.path.abspath(__file__))))
 from ssee_core import SUM_MNU_EV as _MNU
+from planck2018_tabla2 import lee as _planck_t2   # prior de Planck LEIDO de la tabla (antes 67.36/0.54 tecleados)
+from procedencia import acta as _acta
 
 
 # ---------------------------------------------------------------------------
@@ -333,6 +335,16 @@ def run_mcmc(label, info_fn, output_prefix, args):
     return updated_info, sampler
 
 
+def _entradas(ssee_prefix, lcdm_prefix):
+    import glob
+    return sorted(glob.glob(f"{ssee_prefix}.[0-9]*.txt") + glob.glob(f"{lcdm_prefix}.[0-9]*.txt"))
+
+
+def _meta(ssee_prefix, lcdm_prefix):
+    """R75 (2026-10-03): cada figura lleva su acta en los metadatos del PDF."""
+    return {"Keywords": "ACTA-PROCEDENCIA " + json.dumps(_acta(__file__, entradas=_entradas(ssee_prefix, lcdm_prefix)))}
+
+
 # ---------------------------------------------------------------------------
 # Analysis: load chains and compute statistics
 # ---------------------------------------------------------------------------
@@ -479,7 +491,8 @@ def make_figures(ssee_prefix, lcdm_prefix, results):
 
     # Planck 2018 prior (for reference)
     h0_arr = np.linspace(63, 72, 300)
-    planck_prior = np.exp(-0.5 * ((h0_arr - 67.36) / 0.54) ** 2)
+    _h0p, _h0s = _planck_t2("H0")
+    planck_prior = np.exp(-0.5 * ((h0_arr - _h0p) / _h0s) ** 2)
     ax.plot(h0_arr, planck_prior / planck_prior.max(), "k--", lw=1.5,
             alpha=0.6, label="Planck 2018 TT+TE+EE+lowE")
 
@@ -494,7 +507,7 @@ def make_figures(ssee_prefix, lcdm_prefix, results):
     ax.set_title(r"$H_0$ posterior: SSEE vs $\Lambda$CDM (Planck 2018 plik full TTTEEE+lensing)", fontsize=11)
     plt.tight_layout()
     out = os.path.join(FIGS_DIR, "fig_b1_h0_posterior.pdf")
-    plt.savefig(out, dpi=150, bbox_inches="tight")
+    plt.savefig(out, dpi=150, bbox_inches="tight", metadata=_meta(ssee_prefix, lcdm_prefix))
     plt.close()
     print(f"  Saved: {out}")
 
@@ -511,7 +524,7 @@ def make_figures(ssee_prefix, lcdm_prefix, results):
             legend_labels=["SSEE"],
         )
         out = os.path.join(FIGS_DIR, "fig_b1_corner_ssee.pdf")
-        g.export(out)
+        g.fig.savefig(out, bbox_inches="tight", metadata=_meta(ssee_prefix, lcdm_prefix))
         print(f"  Saved: {out}")
 
     # ---- Figure 3: ΛCDM corner plot ----
@@ -527,7 +540,7 @@ def make_figures(ssee_prefix, lcdm_prefix, results):
             legend_labels=[r"$\Lambda$CDM"],
         )
         out = os.path.join(FIGS_DIR, "fig_b1_corner_lcdm.pdf")
-        g.export(out)
+        g.fig.savefig(out, bbox_inches="tight", metadata=_meta(ssee_prefix, lcdm_prefix))
         print(f"  Saved: {out}")
 
     # ---- Figure 4: H0 vs sigma8 for SSEE (derived constraints) ----
@@ -541,7 +554,7 @@ def make_figures(ssee_prefix, lcdm_prefix, results):
             ax2.set_xlabel(r"$H_0$ [km s$^{-1}$ Mpc$^{-1}$]")
             ax2.set_ylabel(r"$\sigma_8$")
             out = os.path.join(FIGS_DIR, "fig_b1_h0_sigma8_ssee.pdf")
-            g.export(out)
+            g.fig.savefig(out, bbox_inches="tight", metadata=_meta(ssee_prefix, lcdm_prefix))
             print(f"  Saved: {out}")
         except Exception:
             pass

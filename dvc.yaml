@@ -463,7 +463,7 @@ stages:
     - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-    - results/logs/growth_2026-07/R3_ssee_kids_S8.json
+    - archive/logs_superados/r3_burnin_concatenado_2026-09-30/R3_ssee_kids_S8.json
     outs:
     - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json:
         cache: false
@@ -1412,4 +1412,55 @@ stages:
     - results/logs/cmb_perfil_wc.json
     outs:
     - results/logs/cmb_wb_forzado.json:
+        cache: false
+  b1_analyse:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_b1_mcmc.py
+      --mode analyse > results/logs/b1_analyse.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py
+      src/p03_cmb/ssee_paper3_b1_mcmc.py results/logs/b1_analyse.log results/chains/ssee_cmb.1.txt
+      results/chains/lcdm_cmb.1.txt && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/ssee_paper3_b1_mcmc.py
+      results/tables/b1_mcmc_constraints.txt results/chains/ssee_cmb.1.txt results/chains/lcdm_cmb.1.txt
+    deps:
+    - src/p03_cmb/ssee_paper3_b1_mcmc.py
+    - src/ssee_core.py
+    - src/planck2018_tabla2.py
+    - data/raw/planck2018_VI/tabla2.tex
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - results/chains/ssee_cmb.1.txt
+    - results/chains/lcdm_cmb.1.txt
+    outs:
+    - results/logs/b1_analyse.log:
+        cache: false
+    - results/tables/b1_mcmc_constraints.txt:
+        cache: false
+    - results/figures/fig_b1_h0_posterior.pdf:
+        cache: false
+    - results/figures/fig_b1_corner_ssee.pdf:
+        cache: false
+    - results/figures/fig_b1_corner_lcdm.pdf:
+        cache: false
+    - results/figures/fig_b1_h0_sigma8_ssee.pdf:
+        cache: false
+  analiza_lcdm_R4:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_lcdm_R4.py
+      > results/logs/analiza_lcdm_R4.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py
+      src/p06_growth/analiza_lcdm_R4.py results/logs/analiza_lcdm_R4.log
+      results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+    deps:
+    - src/p06_growth/analiza_lcdm_R4.py
+    - src/p06_growth/cobaya_kids.py
+    - src/p06_growth/kids_shear.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - CANONICAL_VALUES.yaml
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.progress
+    - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.updated.yaml
+    outs:
+    - results/logs/growth_2026-07/R4_lcdm_kids_S8.json:
+        cache: false
+    - results/logs/analiza_lcdm_R4.log:
         cache: false

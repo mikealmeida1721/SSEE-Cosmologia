@@ -3700,7 +3700,7 @@ try:
         # CEGUERA CORREGIDA 2026-09-08. Esto decia `\.log` a secas, asi que un
         # valor respaldado por un log JSON contaba como SIN RESPALDO. Marcaba
         # como grieta el titular de Paper 6 (S8=0.7555, MCMC R3 convergido, log
-        # results/logs/growth_2026-07/R3_ssee_kids_S8.json) y su control LCDM.
+        # R3_ssee_kids_S8.json, hoy en archive/logs_superados/r3_burnin_concatenado_2026-09-30/) y su control LCDM.
         # Falsa alarma del peor tipo: la que dice que no hay prueba donde SI la
         # hay. Es la 4a patologia — el NOMBRE del check prometia "sin log" y el
         # codigo comprobaba "sin log .log". Ahora acepta las dos extensiones.

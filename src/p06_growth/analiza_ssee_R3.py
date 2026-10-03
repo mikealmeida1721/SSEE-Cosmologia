@@ -44,7 +44,8 @@ import kids_shear as K  # noqa: E402
 from procedencia import con_acta  # noqa: E402
 
 CAD = "/mnt/datos/SSEE_data/chains_p6/kids"
-VIEJO = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8.json")
+# archivado 2026-10-03 (burn-in sobre cadenas pegadas); sigue siendo la entrada del control «pegadas»
+VIEJO = os.path.join(_R, "archive", "logs_superados", "r3_burnin_concatenado_2026-09-30", "R3_ssee_kids_S8.json")
 # El vigente (metodo declarado) va a este archivo; los papers lo citan por \val.
 OUT = os.path.join(_R, "results", "logs", "growth_2026-07", "R3_ssee_kids_S8_rehecho.json")
 BURN = 0.30
