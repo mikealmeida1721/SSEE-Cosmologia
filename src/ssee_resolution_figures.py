@@ -63,7 +63,8 @@ fig, ax = plt.subplots(figsize=(8.0, 3.2))
 ax.axvspan(RD_PLANCK - RD_PLANCK_ERR, RD_PLANCK + RD_PLANCK_ERR, color='#777777', alpha=0.35, zorder=1)
 ax.axvline(RD_PLANCK, color='#444444', lw=1.2, ls='--', zorder=2)
 ax.text(RD_PLANCK, 1.62, rf'Planck 2018: ${RD_PLANCK:.2f}\pm{RD_PLANCK_ERR:.2f}$ Mpc',
-        ha='center', fontsize=9.5, color='#333333')
+        ha='center', fontsize=9.5, color='#333333', zorder=5,
+        bbox=dict(facecolor='white', edgecolor='none', pad=1.5))
 filas = [(r'SSEE (algebraic $\omega_m$, CAMB)', RD_SSEE, SIG_SSEE, '#1a9641'),
          (r'$\Lambda$CDM at Planck 2018 (CAMB)', RD_LCDM, SIG_LCDM, '#4393c3')]
 for y, (lab, val, sg, col) in zip([1, 0], filas):

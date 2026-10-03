@@ -29,7 +29,8 @@ CHAIN_FILE = _SSEE_DATA + "/mcmc/paper2_3models/mcmc_chains_professional.npz"
 OUT = os.path.join(os.path.dirname(__file__), "..", "..", "results", "figures")
 os.makedirs(OUT, exist_ok=True)
 C_KM = 2.998e5
-PLANCK_H0 = (67.36, 0.54)
+from planck2018_tabla2 import lee as _planck_t2, TABLA as _T2  # noqa: E402
+PLANCK_H0 = _planck_t2("H0")   # Planck 2018 VI, Tabla 2, col. 5 (antes tecleado; 2026-10-03)
 
 # ── funciones E(z) / r_d idénticas al MCMC (ssee_paper2_mcmc.py) ──
 def f_de_cpl(z, w0, wa):
@@ -150,7 +151,9 @@ rd_vals = [rd_of(lab, m) for lab, _, m in chains]
 y_pos = np.arange(len(chains))
 bars = ax8b.barh(y_pos, rd_vals, color=[colors[l] for l, _, _ in chains],
                  alpha=0.8, edgecolor="black", linewidth=0.6)
-ax8b.axvline(147.09, color="black", ls="--", lw=1.5, label=r"Planck: $147.09$ Mpc")
+# r_d de Planck LEIDO del extracto literal de la Tabla 2 (antes tecleado 147.09; 2026-10-03)
+RD_PLANCK = _planck_t2("r_drag")
+ax8b.axvline(RD_PLANCK[0], color="black", ls="--", lw=1.5, label=rf"Planck: ${RD_PLANCK[0]:.2f}$ Mpc")
 ax8b.set_yticks(y_pos)
 ax8b.set_yticklabels([l for l, _, _ in chains])
 ax8b.set_xlabel("$r_d$ [Mpc]")
@@ -163,5 +166,13 @@ fig8.savefig(os.path.join(OUT, "fig8_tension_summary.pdf"), metadata=_MD)
 fig8.savefig(os.path.join(OUT, "fig8_tension_summary.png"), metadata=_MD)
 plt.close(fig8)
 print("Fig 8 guardada")
+# Los r_d MAP que dibuja la figura, a un log con acta: el pie de Paper 2 los lee por \val
+# (2026-10-03; antes el pie tecleaba 148.2 / 147.8, de cuando r_d salía por fórmula).
+import json as _json8  # noqa: E402
+_json8.dump(dict(rd_map={l: float(v) for (l, _, _), v in zip(chains, rd_vals)},
+                               rd_ratio_ssee_lcdm=float(rd_vals[0] / rd_vals[1]),
+                               rd_planck=list(RD_PLANCK),
+                               _procedencia=_acta(__file__, entradas=[CHAIN_FILE, _CC_CSV, str(_T2)])),
+            open(os.path.join(os.path.dirname(OUT), "logs", "p2_fig8_rd.json"), "w"), indent=1)
 print(f"r_d MAP: SSEE={rd_vals[0]:.2f}  ΛCDM={rd_vals[1]:.2f}  CPL={rd_vals[2]:.2f}")
 print(f"H0 SSEE={h0_ssee:.3f}±{s_ssee:.3f}  ({sig_planck:.2f}σ Planck)")

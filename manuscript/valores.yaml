@@ -684,3 +684,13 @@ p3_th_sig_anc:    {fuente: "results/logs/p3_rd_reframe_omega_m.json#anchor.theta
 p3_rd_sig_post:   {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.rd_sigma", formato: ".2f"}
 p3_th100_post:    {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.theta100", formato: ".5f"}
 p3_th_sig_post:   {fuente: "results/logs/p3_rd_reframe_omega_m.json#posterior.theta_sigma", formato: ".2f"}
+# r_d (2026-10-03): Planck leido del extracto de la Tabla 2 (rd_dual.json) y los MAP de la fig. 8 de P2
+rd_planck:        {fuente: "results/logs/rd_dual.json#rd_planck_medido.0", formato: ".2f"}
+rd_planck_sigma:  {fuente: "results/logs/rd_dual.json#rd_planck_medido.1", formato: ".2f"}
+rd_ssee_sig_planck: {fuente: "results/logs/rd_dual.json#rd_ssee_sigmas", formato: ".2f"}
+p2_fig8_rd_ssee:  {fuente: "results/logs/p2_fig8_rd.json#rd_map.SSEE", formato: ".1f"}
+p2_fig8_rd_lcdm:  {fuente: "results/logs/p2_fig8_rd.json#rd_map.ΛCDM", formato: ".1f"}
+p2_fig8_rd_ratio: {fuente: "results/logs/p2_fig8_rd.json#rd_ratio_ssee_lcdm", formato: ".4f"}
+# S8 de la cizalla KiDS-Legacy con A_s libre (fig. de S8)
+S8_leg_libre:       {fuente: "results/logs/s8_kids_legacy_camb.json#libre.S8", formato: ".4f"}
+S8_leg_libre_sigma: {fuente: "results/logs/s8_kids_legacy_camb.json#libre.S8_sigma", formato: ".4f"}

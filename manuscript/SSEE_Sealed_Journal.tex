@@ -488,21 +488,19 @@ Figure~\ref{fig:rd_dual} makes the same point on the drag-epoch sound
 horizon itself: the physical CMB drag scale set by the full algebraic
 $\omega_m$ is $\val{p2_lyaB_rd}$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
 ($\omega_m$-direct), consistent with the Planck-inferred
-$147.09\pm0.26$~Mpc ($\val{p3_rd_sig_anc}\sigma$), and matching $\Lambda$CDM at the
-Planck~2018 parameters ($\val{p2_rd_lcdm}$~Mpc, same code) to $0.05\%$. The $175.6$~Mpc value that
-appears if the cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ is (incorrectly) used as
-the background density is a category error, not a physical scale.
+$\val{rd_planck}\pm\val{rd_planck_sigma}$~Mpc ($\val{rd_ssee_sig_planck}\sigma$), and matching $\Lambda$CDM at the
+Planck~2018 parameters ($\val{p2_rd_lcdm}$~Mpc, same code). The equation-of-state number
+$1+w_0=\val{S_M_d6}$ does not enter the geometry.
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.82\textwidth]{fig_rd_dual.pdf}
   \caption{The physical sound horizon. Set by the full algebraic $\omega_m$
   (green, $\val{p2_lyaB_rd}$~Mpc at $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$, $\omega_m$-direct), in
-  agreement with Planck 2018 ($147.09\pm0.26$~Mpc, grey band) and with
+  agreement with Planck 2018 ($\val{rd_planck}\pm\val{rd_planck_sigma}$~Mpc, grey band) and with
   $\Lambda$CDM at the Planck~2018 parameters (blue, $\val{p2_rd_lcdm}$~Mpc, CAMB). This is the visual counterpart of the Boltzmann test above:
   the full matter density that restores the acoustic peaks also restores the BAO
-  standard ruler. The $175.6$~Mpc scale (red) is the category error of using the
-  cold sector $\Om^{\mathrm{dyn}}=\val{S_M_d6}$ as the background density.}
+  standard ruler.}
   \label{fig:rd_dual}
 \end{figure}
 
@@ -942,14 +940,17 @@ particle had nothing to be made of.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.9\textwidth]{fig_s8_resolution.pdf}
-  \caption{$S_8$ with the primordial amplitude fixed versus fitted. Red
-  ($S_8=\val{p3_S8_techo}\pm0.006$): $A_s$ held at the Planck value, which imports the
-  Planck--KiDS discrepancy. Green ($S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$): $A_s$ fitted to the
-  raw KiDS-1000 $\xi_\pm$ data with a single matter sector and the background
-  fixed by the algebra --- $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000 (green band); the $\Lambda$CDM control on the same raw data lands at $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$. Grey
-  points: Planck 2018, KiDS-1000 and DES-Y3 with $1\sigma$ errors.
-  \emph{(An earlier version of this figure showed a two-sector $\varphi$-DM
-  curve; that construction is retracted.)}}
+  \caption{$S_8$ on the algebraic background of \SSEE{}, identical in every \SSEE{}
+  row; only the dataset asked to fix $A_s$ changes. Purple diamond: the prediction with
+  $A_s$ fixed to the model's own CMB fit --- no free cosmological parameter ---
+  $S_8=\val{S8_leg_pred}$, $\val{S8_leg_tension}\sigma$ from the KiDS-Legacy posterior
+  ($\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$, purple band). Green: $A_s$ fitted to
+  the raw KiDS-Legacy $\xi_\pm$ ($\val{S8_leg_libre}\pm\val{S8_leg_libre_sigma}$) and, as
+  antecedent, to the raw KiDS-1000 $\xi_\pm$ ($\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$,
+  $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000). Blue: the $\Lambda$CDM control on the
+  same raw KiDS-1000 data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$). Grey: published
+  KiDS-Legacy, KiDS-1000, DES-Y3 and Planck~2018 constraints with $1\sigma$ errors. The
+  shift between the two KiDS releases is in the data, not in the model.}
   \label{fig:s8_resolution}
 \end{figure}
 

@@ -1216,27 +1216,28 @@ two-sector baseline, whereas the factor that acts on $\sigma_8$ itself is
 $B_{\sigma_8}=\val{p5_Bs8}$, a $\val{p5_Bs8_pct}\%$ suppression on this background. Applied to the single-sector
 ceiling, HMcode-2020 therefore leaves it at $S_8\simeq\val{p5_S8_techo_bar}$ --- still a ceiling
 computed with $A_s$ fixed to Planck, not a prediction.
-The single-sector ceiling of this paper ($S_8 = 0.827$) is an upper bound
-obtained with $A_s$ fixed to Planck; the nominal SSEE prediction is the
-single-sector fit with $A_s$ free, $S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ (Paper~6).
-Figure~\ref{fig:s8_resolution} visualises both states: the ceiling derived here
-and the raw-data fit of Paper~6.
+The single-sector value of this paper ($S_8=\val{p3_S8_techo}$) is obtained with $A_s$
+fixed to Planck. With $A_s$ fixed instead to the model's own CMB fit --- no free
+cosmological parameter --- \SSEE{} predicts $S_8=\val{S8_leg_pred}$, $\val{S8_leg_tension}\sigma$
+from KiDS-Legacy (Paper~6); the two agree because the model's CMB amplitude lands on
+Planck's. Fitting $A_s$ to the raw KiDS-1000 shear instead gave
+$S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ (antecedent).
+Figure~\ref{fig:s8_resolution} shows these determinations on the same background.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.92\textwidth]{fig_s8_resolution.pdf}
-  \caption{One model, one free amplitude, three independent determinations of
-    it. The background is fixed by the algebra and identical in every entry;
-    only the dataset asked to fix $A_s$ changes. The $2.7\sigma$ separation
-    between the CMB- and shear-determined amplitudes is a disagreement between
-    those datasets --- carried by $\Lambda$CDM as well --- not a property of
-    \SSEE{}, and it is not claimed to be resolved here. The prediction of this paper \emph{with $A_s$ held at the
-    Planck value} ($S_8 = 0.827 \pm 0.006$, red) sits $2.7\sigma$ above
-    KiDS-1000 --- but that offset is inherited from fixing $A_s$, not derived.
-    Paper~6 (green) fits $A_s$ to the raw shear data with the same background
-    and a single matter sector, landing at $S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ ---
-    $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000 (green band); the $\Lambda$CDM control on the same raw data lands at $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$. Grey points: Planck 2018,
-    KiDS-1000, and DES-Y3 measurements with $1\sigma$ errors.}
+  \caption{$S_8$ on the algebraic background of \SSEE{}, identical in every \SSEE{}
+  row; only the dataset asked to fix $A_s$ changes. Purple diamond: the prediction with
+  $A_s$ fixed to the model's own CMB fit --- no free cosmological parameter ---
+  $S_8=\val{S8_leg_pred}$, $\val{S8_leg_tension}\sigma$ from the KiDS-Legacy posterior
+  ($\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$, purple band). Green: $A_s$ fitted to
+  the raw KiDS-Legacy $\xi_\pm$ ($\val{S8_leg_libre}\pm\val{S8_leg_libre_sigma}$) and, as
+  antecedent, to the raw KiDS-1000 $\xi_\pm$ ($\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$,
+  $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000). Blue: the $\Lambda$CDM control on the
+  same raw KiDS-1000 data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$). Grey: published
+  KiDS-Legacy, KiDS-1000, DES-Y3 and Planck~2018 constraints with $1\sigma$ errors. The
+  shift between the two KiDS releases is in the data, not in the model.}
   \label{fig:s8_resolution}
 \end{figure}
 

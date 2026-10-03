@@ -42,6 +42,8 @@ stages:
     deps:
     - src/valores_tex.py
     - manuscript/valores.yaml
+    - results/logs/rd_dual.json
+    - results/logs/p2_fig8_rd.json
     - results/logs/paper4_toe.json
     - results/logs/cmb_dbic_mnu_propia.json
     - results/logs/s8_desde_b1.json
@@ -329,6 +331,8 @@ stages:
     - src/procedencia.py
     - src/ssee_core.py
     - src/rd_camb.py
+    - src/planck2018_tabla2.py
+    - data/raw/planck2018_VI/tabla2.tex
     - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
     - data/raw/cosmic_chronometers.csv
     outs:
@@ -339,6 +343,8 @@ stages:
     - results/figures/fig8_tension_summary.pdf:
         cache: false
     - results/figures/fig8_tension_summary.png:
+        cache: false
+    - results/logs/p2_fig8_rd.json:
         cache: false
   p2_corners:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/regenerate_corners_p2.py

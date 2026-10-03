@@ -259,11 +259,8 @@ $f_\nu$: computed as the paper declared it --- relic neutrinos bound to a cluste
 \subsection{The sound horizon under the $\omega_m$-direct reframe}
 \label{sec:folding}
 
-Placing the cold sector alone ($1+w_0=\val{S_M_d6}$) in the background geometry would
-give a drag scale $\rdSSEE \approx 175.6$\,Mpc, far from the Planck-inferred
-$r_d=147.09\pm0.26$\,Mpc \citep{Planck2018}. That figure is a category error:
-$0.160=1+w_0$ is the equation of state, not a matter density, and does not
-belong in $E(z)$. The physical sound horizon is set by the CMB-sector matter
+The number $1+w_0=\val{S_M_d6}$ is the equation of state, not a matter density, and
+does not enter $E(z)$ or the sound horizon. The physical sound horizon is set by the CMB-sector matter
 density, with \emph{no} $|w_0|$ rescaling. The recombination matter budget is the standard physical
 $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$, built piece-by-piece from
 SSEE algebra ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, forward; Paper~3), so
@@ -752,7 +749,7 @@ total density there is no enlarged $r_d$
   fully consistent with the titular algebraic-anchor-prior value
   $\val{h0_p2}\pm\val{h0_p2_s}$ ($\val{h0_p2_dplanck}\sigma$ Planck, $\val{h0_p2_dhglob}\sigma$ from
   $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$). \textit{Right}: MAP $r_d$ values; the \SSEE\ sound
-  horizon ($148.2$\,Mpc) matches \LCDM\ ($147.8$\,Mpc, ratio $1.002$).}
+  horizon ($\val{p2_fig8_rd_ssee}$\,Mpc) matches \LCDM\ ($\val{p2_fig8_rd_lcdm}$\,Mpc, ratio $\val{p2_fig8_rd_ratio}$), CAMB with each model's own $m_\nu$.}
   \label{fig:tension}
 \end{figure}
 
@@ -762,13 +759,10 @@ total density there is no enlarged $r_d$
   \caption{The physical sound horizon. Set by the total algebraic matter budget
   $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$
   ($\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, $\omega_m$-direct, no matter factor), the
-  \SSEE\ drag scale is $r_d = 147.17$\,Mpc (CAMB; log
-  \texttt{p3\_rd\_reframe\_omega\_m}), consistent with the Planck-inferred
-  $147.09\pm0.26$\,Mpc (grey band, $0.32\sigma$) and with \LCDM\ at the
-  Planck~2018 parameters ($147.10$\,Mpc, same code; log \texttt{rd\_dual}),
-  a $0.05\%$ difference. The $175.6$\,Mpc value that appears
-  if the cold sector $1+w_0=\val{S_M_d6}$ is (incorrectly) used as the background
-  density is a category error, not a physical scale.}
+  \SSEE\ drag scale is $r_d = \val{p2_lyaB_rd}$\,Mpc (CAMB, green), consistent with the
+  Planck-inferred $\val{rd_planck}\pm\val{rd_planck_sigma}$\,Mpc (grey band,
+  $\val{rd_ssee_sig_planck}\sigma$) and with \LCDM\ at the Planck~2018 parameters
+  ($\val{p2_rd_lcdm}$\,Mpc, same code, blue). Log \texttt{rd\_dual}.}
   \label{fig:rd_dual}
 \end{figure}
 
