@@ -150,7 +150,7 @@ python src/p02_mcmc/ssee_paper2_mcmc.py
 You can set the `COBAYA_PACKAGES_PATH` environment variable to point to your local Planck 2018 data:
 ```bash
 export COBAYA_PACKAGES_PATH=/path/to/your/cobaya_packages
-python src/p03_cmb/ssee_paper3_cobaya_unified.py
+python src/p03_cmb/b1_minimiza.py   # chi2 minimo de cada modelo (full plik); ssee_paper3_cobaya_unified.py es solo biblioteca
 ```
 
 See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.

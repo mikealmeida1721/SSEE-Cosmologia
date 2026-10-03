@@ -5,7 +5,7 @@ Israel-Stewart causal perturbative analysis for SSEE dark energy.
 
 Two central questions:
   Q1: Does IS regularize c²_s < 0 → stable DE perturbations at all subhorizon k?
-  Q2: Does Ω_m,eff/Ω_m,dyn ≈ MIRA = (3φ+π)/4 ≈ 1.9989 emerge from the IS
+  Q2: Does Ω_m,eff/Ω_m ≈ MIRA = (3φ+π)/4 ≈ 1.9989 emerge from the IS
       perturbation growth history?
 
 IS perturbation equations (Newtonian gauge, d/d ln a convention):
@@ -424,7 +424,7 @@ if results:
             print(f"    ~ MIRA partially reproduced — subleading corrections needed")
         else:
             print(f"    ✗  MIRA NOT reproduced by linear IS perturbations")
-            print(f"       Linear IS → Ω_m,eff ≈ Ω_m,dyn (no DE clustering)")
+            print(f"       Linear IS → Ω_m,eff ≈ Ω_m (no DE clustering)")
             print(f"       MIRA is a background-level IS effect, not perturbative")
 
 # ── Q3. LINEAR GROWTH FACTOR, γ_IS, σ₈, S₈ ──────────────────────────────────
@@ -433,7 +433,7 @@ if results:
 #
 # Poisson source = Ω_m,CMB = ω_m/h² = 0.308881   (el fondo gravitacional real;
 # ω_m-directo, SIN factor materia — OP-8 disuelto; era MIRA×Ω_m,dyn=0.31988, retirado).
-# Ω_m,dyn=0.160 SOLO fija w₀ (vía 1+w₀); el contenido que gravita y siembra la
+# s_m = 1+w₀ = 0.160 es ecuación de estado (fija w₀), no densidad; el contenido que gravita y siembra la
 # estructura es Ω_m,CMB, predicción algebraica independiente (ω_b+ω_c+ω_ν).
 # Ω_m(a) = Ω_m,CMB × (H₀/H)² × a^{-3}.   Para ΛCDM: Ω_m(a) = 0.3153 / (H_Λ(a)² × a³)
 #
@@ -459,7 +459,7 @@ S8_KIDS       = 0.759;  S8_KIDS_err = 0.024   # KiDS-1000 (Asgari+2021, canónic
 def H_ssee_exact(a):
     """Analytic SSEE H(a)/H₀ — CPL formula, valid for any a without grid."""
     rDE = a**(-3.0*(1.0+w0+wa)) * np.exp(-3.0*wa*(1.0-a))
-    # Ω_m,cosm=0.308881 en el fondo gravitacional (ω_m-directo; Ω_m,dyn=0.160 solo fija w₀ vía 1+w₀)
+    # Ω_m,cosm=0.308881 en el fondo gravitacional (ω_m-directo; s_m=1+w₀=0.160 es ecuación de estado, no densidad)
     return np.sqrt(Omm_CMB * a**(-3) + (1.0 - Omm_CMB) * rDE)
 
 def H_lcdm(a):

@@ -5,7 +5,7 @@ Replaces the Eckart ansatz (γ = φ⁻¹ postulado) con derivación formal IS.
 Sistema de ODEs acopladas:
   [1] IS transport:   T h(a) dΠ/d ln a + Π = -KAL₀ h²(a)          (bulk viscosity causal)
   [2] Conservation:   dρ_DE/d ln a + 3(1+w₀) ρ_DE = -3 Π(a)        (energía DE)
-  [3] Friedmann:      h²(a) = Ω_m,dyn a⁻³ + ρ_DE(a)                (background)
+  [3] Friedmann:      h²(a) = Ω_m a⁻³ + ρ_DE(a)   (Ω_m = ω_m/h² = 0.308881)                (background)
   [4] Growth:         δ'' + [2 + d ln h/d ln a] δ' = (3/2) Ω_m,eff(a) δ  (perturbaciones)
 
 Convención: todas las densidades normalizadas por ρ_crit,0; h = H/H₀; primes = d/d ln a
@@ -72,7 +72,7 @@ from ssee_core import (BETA as beta, IGNIS, K_V as K_v, KAL0,  # noqa: E402
 OM_M_TOTAL = 0.30888087877875237   # omega_m/h^2 (CANONICO)
 S_M_EOS    = 1 - T_r / M_v         # = 0.160050 = 1+w_0 -- NO es densidad
 
-Om_dyn = OM_M_TOTAL                # la densidad de materia REAL (antes: 1 - T_r/M_v)
+Om_m = OM_M_TOTAL                  # la densidad de materia REAL (antes Om_dyn = 1 - T_r/M_v)
 Om_DE0 = 1.0 - OM_M_TOTAL          # plano: 0.691119
 
 gamma_target = 1.0 / phi           # φ⁻¹ ≈ 0.61803
@@ -85,7 +85,7 @@ print(f"w₀      = {w0:.6f}")
 print(f"wₐ      = {wa:.6f}")
 print(f"n_s     = {ns:.6f}")
 print(f"MIRA    = {MIRA:.6f}")
-print(f"Ω_m,dyn = {Om_dyn:.6f}")
+print(f"Ω_m = {Om_m:.6f}  (ω_m/h²; s_m = 1+w0 no entra en ninguna ranura de densidad)")
 print(f"Ω_DE,0  = {Om_DE0:.6f}")
 print(f"γ target = φ⁻¹ = {gamma_target:.6f}")
 print()
@@ -113,11 +113,11 @@ def make_system(T):
         a = np.exp(x)
 
         # Friedmann
-        h2 = Om_dyn * a**(-3) + rho
+        h2 = Om_m * a**(-3) + rho
         h2 = max(h2, 1e-30)
         h  = np.sqrt(h2)
 
-        # d ln h / d ln a = - (3/2) Om_dyn a^-3 / (2 h^2)  + ...
+        # d ln h / d ln a = - (3/2) Om_m a^-3 / (2 h^2)  + ...
         # Necesitamos dlnh/dx para la ecuación de crecimiento
         # Calculado numéricamente en growth ODE, aquí solo necesitamos drho/dx y dPi/dx
 
@@ -145,7 +145,7 @@ def solve_background(T, n_pts=2000):
 
     # Condición inicial en atractor (Eckart) + solución particular IS
     rho_i = Om_DE0 * a_i**(-3 * (1 + w0))
-    h2_i  = Om_dyn * a_i**(-3) + rho_i
+    h2_i  = Om_m * a_i**(-3) + rho_i
     Pi_i  = -KAL0 * h2_i / (1 + T * np.sqrt(h2_i) * 3 * (1 + w0))
 
     sol = solve_ivp(
@@ -166,7 +166,7 @@ def solve_background(T, n_pts=2000):
     a_arr   = np.exp(x_arr)
     rho_arr = sol.y[0]
     Pi_arr  = sol.y[1]
-    h2_arr  = Om_dyn * a_arr**(-3) + rho_arr
+    h2_arr  = Om_m * a_arr**(-3) + rho_arr
     h2_arr  = np.maximum(h2_arr, 1e-30)
     h_arr   = np.sqrt(h2_arr)
 
@@ -179,7 +179,7 @@ def compute_growth(a_arr, h2_arr, x_arr):
       δ'' + [2 + d ln h / d ln a] δ' = (3/2) Ω_m,eff(a) δ
 
     δ' ≡ dδ/dx,  x = ln a
-    Ω_m,eff(a) = Om_dyn a^-3 / h²(a)
+    Ω_m,eff(a) = Om_m a^-3 / h²(a)
 
     Retorna arrays: a, f = d ln δ / d ln a, Ω_m(a)
     """
@@ -190,7 +190,7 @@ def compute_growth(a_arr, h2_arr, x_arr):
     dlnh_dlna = np.gradient(ln_h2, x_arr) / 2.0
 
     # Ω_m efectivo
-    Om_eff_arr = Om_dyn * np.exp(-3 * x_arr) / h2_arr
+    Om_eff_arr = Om_m * np.exp(-3 * x_arr) / h2_arr
 
     # Splines para interpolación dentro del integrador
     cs_dlnh = CubicSpline(x_arr, dlnh_dlna)
@@ -346,8 +346,8 @@ gamma_1MIRA, R2 = fit_gamma(a_g, f_arr, Om_arr)
 f_int  = np.cumsum(f_arr * np.gradient(np.log(a_g)))
 D_norm = np.exp(f_int - f_int[-1])
 sigma8_IS  = SIGMA8_NORM * D_norm[-1]   # proxy: NORMALIZADO al sigma8 de Planck, no predicho
-Om_m_today = Om_dyn                # = 0.308881, la densidad real
-Om_m_CMB   = Om_dyn                # sin factor MIRA (retirado 2026-06-18)
+Om_m_today = Om_m                # = 0.308881, la densidad real
+Om_m_CMB   = Om_m                # sin factor MIRA (retirado 2026-06-18)
 S8_dyn  = sigma8_IS * np.sqrt(Om_m_today / 0.3)
 S8_CMB  = sigma8_IS * np.sqrt(Om_m_CMB  / 0.3)
 

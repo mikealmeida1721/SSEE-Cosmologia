@@ -76,7 +76,6 @@ logs:
   paperB_Nstar:               src/pB_inflation/ssee_paperB_Nstar.py
 
   # ── Paper 3 — CMB ───────────────────────────────────────────────────────
-  p3_cmb_reframe_omega_m:     src/p03_cmb/run_p3_reframe.py
   p3_rd_reframe_omega_m:      src/p03_cmb/run_p3_rd_reframe.py
   p3_h0anchor_reframe:        src/p03_cmb/scan_omega_m.py
   paper3_cmb_reframe:         src/p03_cmb/ssee_paper3_cmb.py

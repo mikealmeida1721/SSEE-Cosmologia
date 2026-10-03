@@ -208,10 +208,10 @@ epoch de bariogénesis. Estas son dos temperaturas físicamente distintas.
 
 **Script:** `archive/codigo/investigacion/open_problems/ssee_op2_spectral_index.py` (n_s, r) + `src/pB_inflation/ssee_paperB_Nstar.py` (T_rh completo)
 
-**Resultado numérico Paper B (ssee_paperB_DW.py) — RESULTADO NEGATIVO:**
+**Resultado numérico Paper B (ssee_paperB_DW.py, archivado 2026-10-03) — RESULTADO NEGATIVO:**
 
 > 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
-Script `src/pB_inflation/ssee_paperB_DW.py` evalúa el segundo problema de Paper B: el
+Script `archive/codigo/investigacion/s_m_como_densidad_RETIRADO_2026-10-03/ssee_paperB_DW.py` evaluaba el segundo problema de Paper B: el
 mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducía Ω_φDM h²=0.0688.
 
 - Mecanismo Dodelson-Widrow (mezcla activo-estéril): el ángulo requerido es
@@ -230,7 +230,7 @@ mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducí
   estimación de orden de magnitud del script sale corta por un factor grande
   (solo prefactor); requiere la integral de producción completa con α=φ⁴/3.
 
-**Script:** `src/pB_inflation/ssee_paperB_DW.py` (DW scan + producción gravitacional preliminar)
+**Script:** `archive/codigo/investigacion/s_m_como_densidad_RETIRADO_2026-10-03/ssee_paperB_DW.py` (DW scan + producción gravitacional preliminar; archivado con la partícula)
 
 ---
 
@@ -668,15 +668,18 @@ desde primeros principios (necesario para aspirar a nivel de premio).
 > pieza algebraica de SSEE:
 > - $\omega_b = (\pi-\varphi)/(3\Omega^2) = 0.02242$  (OP-1)
 > - $\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s = 0.11951$  (identidad **forward**, ya en Paper 1, 0.41σ)
-> - $\omega_\nu = \Sigma m_\nu/93.14\,\mathrm{eV} = 0.000741$
+> - $\omega_\nu = \Sigma m_\nu/93.14\,\mathrm{eV} = 0.000735$
 >
 > y $\Omega_{m,{\rm CMB}} = \omega_m/h^2 = 0.30889$ es **derivado**, no postulado.
-> $\Omega_{m,{\rm dyn}}=0.160$ (DESI) y $\omega_m$ (CMB) son **dos predicciones
-> independientes**, ya no ligadas por ningún factor (ni MIRA ni π/φ).
-> Verificación CMB Fase B (Planck plik_lite, $H=67.962$, $\Omega_m=0.30889$):
-> $\chi^2_{\rm SSEE}=1005.41$ vs $\chi^2_{\Lambda{\rm CDM}}=1003.76$,
-> $\Delta\mathrm{BIC}=-26.03$ → SSEE favorecido (ΛCDM con su mν 0.06, 2026-09-29; era −26.21, y antes −24.02 con $A_s,\tau$ clavados y $N=613$; corregido 2026-09-09)
-> (`results/logs/p3_cmb_reframe_omega_m.log`).
+> Es la **única** densidad de materia del modelo. $s_m=1+w_0=0.160$ es un número de la
+> **ecuación de estado**, no una densidad (2026-07-30); lo que DESI prueba es $(w_0,w_a)$
+> y la geometría con este mismo $\Omega_m$. *(Hasta el 2026-10-03 este bloque llamaba a
+> 0.160 «$\Omega_{m,\rm dyn}$ (DESI)» y lo presentaba como una segunda predicción de
+> densidad; corregido.)*
+> Verificación CMB Fase B (Planck plik_lite+lowT+lowE, $H=67.962$, $\{A_s,\tau\}$ ajustados, $N=669$):
+> $\chi^2_{\rm SSEE}=1003.586$ vs $\chi^2_{\Lambda{\rm CDM}}=1003.596$ (su mν 0.06),
+> $\Delta\mathrm{BIC}=-26.03$ → SSEE favorecido (era −26.21 con ΛCDM en la mν de SSEE, y antes −24.02 con $A_s,\tau$ clavados y $N=613$)
+> (`results/logs/cmb_dbic_mnu_propia.json`; el log de la Fase B vieja quedó en `archive/logs_superados/p3_cmb_reframe_omega_m.log`).
 >
 > **Residuo honesto (no es perilla nueva):** $\Omega_{m,{\rm CMB}}$ ahora descansa
 > en que $\omega_b$ (OP-1) y la identidad $\omega_c=\mathrm{KAL_0}\cdot\omega_b\cdot n_s$

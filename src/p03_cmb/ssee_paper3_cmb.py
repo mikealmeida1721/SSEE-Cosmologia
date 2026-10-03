@@ -20,7 +20,7 @@ _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_o
 from ssee_core import (
     PHI as phi, PI as pi, OMEGA as Omega, BETA as beta, KAL0,
     P_SC as P_sc, K_V as Kv, T_R as Tr, M_V as Mv, W0 as w0, WA as wa,
-    OMEGA_DE as OmDE, OMEGA_M_DYN as Omm, AURA, MIRA,
+    OMEGA_DE as OmDE, S_M as s_m, AURA, MIRA,
     OMEGA_M_CMB as Omm_cmb, N_S as ns, SUM_MNU_EV,
 )
 M_SSEE = abs(w0)   # acoustic saturation factor (= |w0|)
@@ -143,13 +143,10 @@ def compute_ssee_spectrum(lmax=2500):
     return ells, total, lens_p, r_d_camb, derived
 
 
-def compute_naive_spectrum(lmax=2500):
-    """Caso NAIVE de Paper 3 §3 (contraejemplo pedagogico): la geometria con el
-    0.160 del sector dinamico como Omega_m. omega_c = s_m h^2 - omega_b - omega_nu."""
-    h = H0 / 100.0
-    omch2 = Omm * h**2 - Omb_h2 - __import__("ssee_core").OMEGA_NU_H2
-    total, lens_p, derived = _run_camb(H0, Omb_h2, omch2, SUM_MNU_EV, w0, wa, As, ns, lmax)
-    return np.arange(total.shape[0]), total, omch2
+# 2026-10-03: aquí vivía compute_naive_spectrum, el «caso naive» que ponía
+# s_m = 1+w0 = 0.160 como Omega_m en la geometría. s_m es un número de la ecuación
+# de estado, no una densidad: el caso no es una versión del modelo sino el error de
+# categoría retirado el 2026-07-30, y Paper 3 ya no lo usa como contraejemplo.
 
 
 def picos(ells, Dl):
@@ -361,7 +358,7 @@ def main():
     print("=" * 60)
     print(f"\nParámetros SSEE:")
     print(f"  w0={w0:.4f}  wa={wa:.4f}")
-    print(f"  Ω_m,dyn={Omm:.4f}  Ω_DE={OmDE:.4f}  (sector dinámico: BAO/cúmulos)")
+    print(f"  s_m=1+w0={s_m:.4f}  (ecuación de estado, NO densidad)  Ω_DE={OmDE:.4f}")
     print(f"  MIRA={MIRA:.6f}  (AURA/2 — Frecuencia de Observación, Genesis 5.12)")
     print(f"  Ω_m,CMB={Omm_cmb:.6f}  (sector observacional: CMB, Planck: 0.3153)")
     print(f"  M_SSEE=|w0|={M_SSEE:.4f}")
@@ -447,17 +444,9 @@ def main():
         # Log con acta (2026-09-30): los chi2 sin redondear que cita Paper 3
         import json as _json
         from procedencia import con_acta as _con_acta
-        print("\nCaso naive (Omega_m = s_m en la geometria)...")
-        ells_n, total_n, omch2_n = compute_naive_spectrum()
-        c2n, c2rn, nn = chi2_vs_planck(ell_tt, Dl_tt, sig_tt, ells_n, total_n[:, 0],
-                                        ell_min=30, ell_max=2000)
-        pk = dict(ssee=picos(ells_s, Dl_TT_s), lcdm=picos(ells_l, Dl_TT_l),
-                  naive=picos(ells_n, total_n[:, 0]))
-        print(f"  naive: chi2_TT={c2n:.1f} chi2_r={c2rn:.2f} (N={nn})  picos {pk}")
+        pk = dict(ssee=picos(ells_s, Dl_TT_s), lcdm=picos(ells_l, Dl_TT_l))
         _out = dict(fecha=str(__import__("datetime").date.today()),
                     picos_TT=pk,
-                    naive=dict(omch2=omch2_n, chi2_TT=c2n, chi2r_TT=c2rn, N=nn,
-                               dchi2_vs_lcdm=c2n - chi2_results["TT"][2]),
                     espectros={k: dict(chi2_ssee=v[0], chi2r_ssee=v[1], chi2_lcdm=v[2],
                                        chi2r_lcdm=v[3], N=v[4], dchi2=v[0] - v[2],
                                        dchi2r=v[1] - v[3])

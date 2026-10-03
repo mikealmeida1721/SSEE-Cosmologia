@@ -15,7 +15,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 import emcee
-from ssee_core import KAL0, OMEGA_M_DYN as OM_DYN
+from ssee_core import KAL0
 
 C_KM = 2.998e5
 

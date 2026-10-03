@@ -21,7 +21,7 @@ from ssee_core import (
     PHI as phi, PI as pi, OMEGA as Omega, BETA as beta, KAL0,
     P_SC as P_sc, K_V as Kv, T_R as Tr, M_V as Mv,
     W0 as w0_ssee, WA as wa_ssee, OMEGA_DE as OmDE,
-    OMEGA_M_DYN as Omm_dyn, AURA, MIRA, OMEGA_M_CMB_MIRA as Omm_cmb,
+    AURA, MIRA,
     N_S as ns_ssee, SUM_MNU_EV as _MNU,
 )
 
@@ -100,69 +100,15 @@ def evaluate_model(H0, ombh2, omch2, w0, wa, As, ns, tau, mnu=0.06, quiet=False)
 
     return chi2_eff
 
-def get_ssee_chi2(H0):
-    omch2 = Omm_cmb * (H0 / 100)**2 - ombh2_ssee
-    print(f"Evaluating SSEE at H0 = {H0:.3f} (omch2 = {omch2:.5f})... ", end='', flush=True)
-    t0 = time.time()
-    chi2 = evaluate_model(H0, ombh2_ssee, omch2, w0_ssee, wa_ssee, As_ssee, ns_ssee, tau_ssee, mnu=mnu_ssee, quiet=True)
-    print(f"chi2_eff = {chi2:.3f} ({time.time()-t0:.1f}s)")
-    return chi2
+# 2026-10-03: get_ssee_chi2() y main() se retiran. Barrian H0 con
+# Omega_m,CMB = MIRA x s_m = 0.31983, una densidad construida desde s_m = 1+w0,
+# que es un numero de la ecuacion de estado (factor materia retirado el
+# 2026-06-18; el 0.160 no es densidad, 2026-07-30). Su ΔBIC −32.2 era ese escenario.
+# Este archivo queda como BIBLIOTECA (evaluate_model y los parametros LCDM/SSEE),
+# que usa scan_omega_m.py. El ΔBIC canonico de plik_lite es −26.03
+# (results/logs/cmb_dbic_mnu_propia.json).
 
-def main():
-    print("\n" + "="*65)
-    print("  SSEE — CMB Unified Likelihood Optimization")
-    print("  Minimizing chi2_eff over H0 via Cobaya (plik_lite TTTEEE + lowl)")
-    print("="*65)
-
-    print(f"\n   Σm_ν: ΛCDM={mnu_lcdm} eV (baseline estándar) | SSEE={mnu_ssee} eV (canónico R₂)")
-    print("\n1. Evaluating ΛCDM baseline...")
-    chi2_lcdm = evaluate_model(H0_lcdm, ombh2_lcdm, omch2_lcdm, -1.0, 0.0, As_lcdm, ns_lcdm, tau_lcdm, mnu=mnu_lcdm, quiet=True)
-    print(f"   ΛCDM chi2_eff = {chi2_lcdm:.3f}")
-
-    print("\n2. Scanning H0 for SSEE...")
-    print(f"   Usando Ω_m,CMB = {Omm_cmb:.10f}  (MIRA × Ω_m,dyn, exacto desde ssee_core)")
-    # SciPy minimize_scalar with bounded method
-    # Bounds ampliados (66.0, 68.0) para detectar shift si el exacto Ω_m,CMB mueve el óptimo
-    res = minimize_scalar(get_ssee_chi2, bounds=(66.7, 67.4), method='bounded', options={'xatol': 0.003})
-    
-    H0_opt = res.x
-    chi2_ssee = res.fun
-    
-    print("\n3. Re-evaluating SSEE at optimal H0 for detailed breakdown...")
-    omch2_opt = Omm_cmb * (H0_opt / 100)**2 - ombh2_ssee
-    evaluate_model(H0_opt, ombh2_ssee, omch2_opt, w0_ssee, wa_ssee, As_ssee, ns_ssee, tau_ssee, mnu=mnu_ssee, quiet=False)
-
-    N_data  = 6413 + 28 + 28   # 6469
-    k_ssee  = 2                # H0, ombh2
-    k_lcdm  = 6                # H0, ombh2, omch2, ns, As, tau
-
-    delta_chi2 = chi2_ssee - chi2_lcdm
-    delta_bic  = delta_chi2 + (k_ssee - k_lcdm) * np.log(N_data)
-
-    print(f"\n{'='*65}")
-    print(f"  RESULTADO FINAL UNIFICADO")
-    print(f"{'='*65}")
-    print(f"  H0 óptimo SSEE  = {H0_opt:.3f}")
-    print(f"  chi2_eff SSEE   = {chi2_ssee:.3f}")
-    print(f"  chi2_eff ΛCDM   = {chi2_lcdm:.3f}")
-    print(f"  Δchi2           = {delta_chi2:+.3f}  (SSEE − ΛCDM)")
-    print(f"  ΔBIC            = {delta_bic:+.3f}  (k_SSEE={k_ssee} vs k_ΛCDM={k_lcdm})")
-    print()
-
-    out_dir = os.path.join(os.path.dirname(__file__), "..", "..", "results")
-    os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "planck_cobaya_unified.txt")
-    with open(out_path, "w") as f:
-        f.write("SSEE — Planck 2018 Unified Evaluation (Cobaya)\n")
-        f.write("="*65 + "\n")
-        f.write(f"Optimal SSEE H0 = {H0_opt:.3f}\n")
-        f.write(f"chi2_eff SSEE   = {chi2_ssee:.4f}\n")
-        f.write(f"chi2_eff ΛCDM   = {chi2_lcdm:.4f}\n")
-        f.write(f"delta_chi2      = {delta_chi2:+.4f}\n")
-        f.write(f"delta_BIC       = {delta_bic:+.4f}\n")
-        f.write(f"k_SSEE = {k_ssee}, k_ΛCDM = {k_lcdm}\n")
-    
-    print(f"  Guardado en {out_path}")
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit("ssee_paper3_cobaya_unified.py es una biblioteca: su barrido "
+                     "MIRA x s_m quedo retirado el 2026-10-03 (ver comentario).")

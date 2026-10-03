@@ -33,8 +33,7 @@ que manda.
 | `techo_ssee_canonico.ini` | techo σ₈ con A_s clavado a Planck, fondo canónico **con** Σm_ν=0.06849 eV |
 | `techo_lcdm_referencia.ini` | su control: línea base de Planck 2018, criterio σ₈=0.8111±0.006 escrito antes de correr |
 | `ssee_v36_canonical.ini` | fondo canónico SSEE (rescatado; **sin neutrinos masivos** — revisar antes de citar nada suyo) |
-| `ssee_v36.ini`, `ssee_v36_IS.ini`, `ssee_v36_nomira.ini` | variantes históricas rescatadas |
-| `ssee_v36_twosector.ini` | dos sectores + partícula — **RETIRADO 2026-08-01**, se guarda como historia |
+| ~~`ssee_v36.ini`, `ssee_v36_IS.ini`, `ssee_v36_nomira.ini`, `ssee_v36_twosector.ini`~~ | **archivados 2026-10-03** en `archive/codigo/investigacion/s_m_como_densidad_RETIRADO_2026-10-03/config_class/`: ponían s_m = 1+w₀ = 0.160 (o MIRA × 0.160) en la ranura de densidad |
 | `lcdm_planck2018_ref.ini` | referencia ΛCDM vieja; pide `output = tCl,pCl,lCl`, o sea **no genera espectro de materia**: el fichero que llevaba ese nombre vino de otra corrida sin identificar |
 
 ## Lo que queda por revisar

@@ -323,7 +323,7 @@ canonical:
   H0_alg_km_s_Mpc:     67.962     # 3(φ+π)² — H GLOBAL de fondo (titular tras reframe)
 
   # Estadística — CMB (Planck plik_lite TTTEEE, Fase B con ω_m-directo @ H=67.962)
-  # log: results/logs/p3_cmb_reframe_omega_m.log  (script run_p3_reframe.py)
+  # log: results/logs/cmb_dbic_mnu_propia.json (la Fase B vieja, run_p3_reframe.py, quedó archivada 2026-10-03)
   chi2_CMB_SSEE:       1003.586   # SSEE ω_m-directo, plik_lite+lowT+lowE, {A_s,τ} AJUSTADOS, N=669 —
                                  # log results/logs/cmb_dbic_mnu_propia.json (chi2_ssee). 2026-09-30: la clave
                                  # seguía en 1005.41 (Fase B con A_s,τ clavados, N=613), superado desde el −24.02;

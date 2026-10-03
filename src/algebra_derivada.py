@@ -73,7 +73,6 @@ ALGEBRA = {
     "SOLAR_NYX":      ("(PHI+2*PI)/((PHI+7*PI)/2)", "Sealed / PRD"),
     "KAL_KALeff":     ("KAL0/(PHI**2*math.sqrt(5/2))", "Paper 10, Ruta A"),
     "KAL_KALeff2":    ("(KAL0/(PHI**2*math.sqrt(5/2)))**2", "Paper 10, Ruta A"),
-    "inv_S_M":        ("1/S_M", "agrupamiento pleno 1/Omega_m,dyn, Paper 5"),
     "sK_tercio":      ("S_K/3", "rho_phi(1+w0) en rho_crit = 1, Paper 10"),
     "X_bg_IR":        ("S_K*KAL0/6", "X_bg IR en rho_crit = 1, Paper 10"),
     "cs2_condensado": ("(1+W0)/(5-3*W0)", "c_s^2 del condensado, Paper 7"),
