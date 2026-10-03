@@ -483,7 +483,14 @@ IllustrisTNG-SSEE: ~10,000–20,000 CPU-horas (~USD 1,000–2,000).
 
 ---
 
-## OP-6 — Screening Form Ambiguity in Hubble Tension Resolution (Paper 9) ✅ RESUELTO
+## OP-6 — Screening Form Ambiguity in Hubble Tension Resolution (Paper 9) ⚠️ RESOLUCIÓN RETIRADA (2026-10-03) — lo abierto vive en OP-6b
+
+> **2026-10-03 — esta resolución ya no vale.** Cancelaba Ω_m,dyn/(1+w₀) con la identidad
+> «1+w₀ = Ω_m», y 1+w₀ = s_m es un número de la ecuación de estado, no una densidad
+> (ver banner del 0.160). Sin la identidad, el paso de universo separado no cierra. Paper 9
+> lo retira (§`sec:withdrawn`) y adopta la forma multiplicativa como **postulado**
+> (`eq:screen_postulate`). El valor de f_screen sigue siendo identidad exacta. El texto de abajo
+> se conserva como registro de la resolución de mayo.
 
 **Location:** Paper 9, §3 (f_screen derivation) — **revisado 2026-05-15**
 
@@ -2101,7 +2108,7 @@ Abordar SOLO después de las auditorías. Relacionado con la advertencia [[proje
 | OP-3 | P10 | Origen del `5/2` en `M⁴ = 5φ⁸ρ_c` | 🟡 PARCIAL | Reabierto 2026-09-06 (Registro V-L3-OP3). `KAL_eff` se despeja DE `M⁴`, no al revés. **3 rutas cerradas por medición**: A sobredeterminada, C subdeterminada + serie no trunca, y la cascada de Hubble NO mide `M⁴` (banda ±0.968 vs residuo 4.2e-06). Falta el `5/2` sin usar `M⁴` ni SH0ES |
 | OP-4 | P8 | r_V > r_Hubble para Vainshtein | ✅ **CERRADO 2026-10-03** | P8 ya no cita radio de apantallamiento (sección reducida a un párrafo; sin acople βc en la acción no hay quinta fuerza que apantallar). Historia: El cierre de 2026-05-15 (k-mouflage + αB=αM=αT=0) sigue en pie para la *selección del límite*, pero la auditoría externa (Max, commit 17acccd) encontró que `eq:rkm` **no cierra dimensiones**: evaluada en GeV da r☉=1.44e4 m y en eV 1.44e7 m — un factor 1000 según la unidad elegida. Ver la ficha completa arriba. NO entra en la predicción de lensing del límite canónico, que descansa en ω_c (OP-8) y α_B=α_M=0 (P7) |
 | OP-5 | P5-6 | ~~S₈ weak-lensing tension~~ | ✅ **DISUELTO 2026-08-01, confirmado 2026-09-20** | No hay tensión. Contra KiDS-1000 con A_s libre: S₈=0.7559 ± 0.0189 (0.10σ). Contra **KiDS-Legacy con A_s CLAVADO al del CMB** (cero libres cosmológicos): S₈=0.8273 predicho vs 0.8265±0.0176 medido = **0.04σ**, χ²=417.97/357. El 3.5σ era artefacto de fijar A_s a Planck, o sea de importar la tensión Planck–KiDS |
-| OP-6 | P9 | ~~Screening form ambiguity~~ | ✅ RESUELTO | Universo separado k-essence + identidad 1+w₀=Ω_m; Paper 9 §3 revisado |
+| OP-6 | P9 | Screening form ambiguity | ⚠️ RETIRADA 2026-10-03 → OP-6b | La identidad 1+w₀=Ω_m era falsa; la forma multiplicativa es POSTULADO en Paper 9 (eq:screen_postulate) |
 | OP-7 | P4/7/8 | QFT derivation of Genesis role assignments | ✅ PARCIAL | EFT uniqueness formalizado P7 §5.2 + P1 §5.3; QFT desde primeros principios → largo plazo |
 | OP-8 | Transv. | ~~MIRA dynamical mechanism~~ → factor-materia DISUELTO | ✅ DISUELTO 2026-06-18 | Reframe ω_m-directo: Ω_m,CMB=ω_m/h²=0.30889 sin factor (ω_c=KAL₀·ω_b·n_s forward); MIRA persiste solo en f_screen; CMB χ²=1003.586/ΔBIC=−26.03 (ΛCDM con su mν 0.06, 2026-09-29) |
 | OP-9 | P6 | ~~UV origin of mass multiplier~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | La partícula fue retirada (la resta que definía Ω_φDM mezclaba densidad con ecuación de estado); no queda multiplicador que derivar. No resuelto: dejó de ser pregunta |
@@ -2966,19 +2973,23 @@ ninguna tensión — ese encuadre murió con la partícula.
 
 ---
 
-## OP-6b — El insumo δ_local = 2 de f_screen no está derivado — 🟡 ABIERTO (resto de OP-6)
+## OP-6b — La forma multiplicativa de f_screen es postulado, y su paso δρ_φ con δ_local = 2 no está derivado — 🟡 ABIERTO (resto de OP-6)
 
-**De dónde viene.** OP-6 cerró la **forma** multiplicativa del screening (sigue del universo
-separado k-essence). El **valor** de `f_screen` necesita además dos cosas que no salen de
-φ y π.
+**De dónde viene.** El **valor** de f_screen = (π−φ)/Ω² es identidad exacta. La **forma**
+multiplicativa H_loc = H_glob/(1−f) se creyó cerrada en OP-6 por el universo separado, pero
+ese paso usaba la identidad falsa 1+w₀ = Ω_m. Desde el 2026-10-03 Paper 9 la adopta como
+postulado (`eq:screen_postulate`). La variante aditiva difiere en f²·H ≈ 0.31 km/s/Mpc,
+por debajo de la incertidumbre actual de SH0ES.
 
-**Lo que falta.** `δ_local = 2` (sobredensidad del Grupo Local) es un insumo observacional, y
-la expresión de `δρ_φ` está asertada, no derivada.
+**Lo que falta.** Un mecanismo que dé la forma desde la acción de Paper 7. El viejo paso
+también tomaba δ_local = 2 (sobredensidad del Grupo Local) como insumo observacional y
+una expresión de δρ_φ asertada, no derivada.
 
-**Criterio de cierre.** Derivar δρ_φ del Lagrangiano y mostrar la dependencia de H_glob con
-δ_local, para saber cuánto del 0.17σ es predicción y cuánto es ese insumo.
+**Criterio de cierre.** Derivar la forma de la acción, o medir la diferencia entre
+multiplicativa y aditiva. Las pruebas por profundidad y por métodos de OP-8b
+(2026-10-03) no tienen potencia con los datos de hoy.
 
-**Severidad: Media.** Toca el titular de Paper 9.
+**Severidad: Media.** Toca el titular de Paper 9 sólo en la forma, no en el valor.
 
 ---
 

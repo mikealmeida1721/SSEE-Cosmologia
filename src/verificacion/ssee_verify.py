@@ -600,17 +600,18 @@ track_open("V-L3-OP5  S8 sin tension con A_s libre; cierre no-lineal pleno difer
            op="OP-5b")
 
 # OP-6 — forma de screening (P9). El valor f_screen es algebra exacta (ver
-# V-L2-13); la forma multiplicativa sigue del universo separado. El paso
-# delta_rho_phi y el insumo delta_local = 2 (sobredensidad Grupo Local) no
-# estan derivados de phi,pi (ABIERTO parcial).
+# V-L2-13). La forma multiplicativa es POSTULADO desde 2026-10-03 (P9
+# eq:screen_postulate): el universo separado usaba 1+w0=Om, que es falsa.
+# El paso delta_rho_phi y el insumo delta_local = 2 tampoco estan derivados.
 f_screen_op6 = (pi - phi) / Omega ** 2
 H0_local_op6 = (3 * Omega ** 2) / (1 - f_screen_op6)
 check("V-L3-OP6  H0_local = H0^alg/(1-f_screen) = 72.86",
       abs(H0_local_op6 - 72.864) < 1e-2, f"H0_local = {H0_local_op6:.4f}")
-track_open("V-L3-OP6  forma multiplicativa: insumo delta_local = 2 no derivado",
-           "la forma multiplicativa sigue del universo separado, pero el valor "
-           "f_screen requiere delta_local=2 (sobredensidad Grupo Local) y una "
-           "expresion delta_rho_phi asertada, no derivada de phi,pi",
+track_open("V-L3-OP6  forma multiplicativa: postulado, no derivada",
+           "el valor f_screen=(pi-phi)/Om^2 es identidad exacta; la forma multiplicativa "
+           "es POSTULADO en P9 (eq:screen_postulate) desde 2026-10-03, porque el universo "
+           "separado usaba 1+w0=Om, falsa. El viejo paso tomaba ademas delta_local=2 y una "
+           "expresion delta_rho_phi asertada. Aditiva vs multiplicativa: f^2 H ~ 0.31 km/s/Mpc",
            op="OP-6b")
 
 # m_phi — masa del campo phi-DM (P6, CANÓNICO forward-prediction; SOLAR²·KRYSTOS 2026-06-19).

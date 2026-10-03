@@ -32,6 +32,7 @@ logs:
   fnu_tremaine_gunn:          src/p02_mcmc/fnu_tremaine_gunn.py
   fondos_exponenciales:       src/p07_eft/fondos_exponenciales.py
   hmcode_bariones:            src/p05_IS/hmcode_bariones.py
+  leer_conjunta:              src/p06_growth/leer_conjunta.py
   leer_conjunta_b3:           src/p06_growth/leer_conjunta.py
   p5_IS_perturbations:        src/p05_IS/ssee_paper5_IS_perturbations.py
   paper2_analysis:            src/p02_mcmc/ssee_paper2_analysis.py

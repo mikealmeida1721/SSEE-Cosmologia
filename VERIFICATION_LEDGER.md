@@ -478,7 +478,12 @@ Queda ABIERTO sólo el refinamiento no-lineal Nivel 2 (ficha OP-5b).
 RETIRADO. Lo encontró una auditoría externa el 2026-09-19: el cartel de arriba no
 alcanza al párrafo de abajo, que es el mismo defecto del vecino que exonera.)*
 
-## V-L3-OP6 — forma de screening f_screen / universo separado — **PARCIAL (forma derivada, valor con insumo)**
+## V-L3-OP6 — forma de screening f_screen / universo separado — **PARCIAL → la forma pasa a POSTULADO (2026-10-03)**
+
+> **2026-10-03.** La «forma derivada» de abajo descansaba en la identidad 1+w₀ = Ω_m, que es
+> falsa (1+w₀ = s_m es ecuación de estado; la densidad es Ω_m = 0.308881). Paper 9 retira el paso
+> (§`sec:withdrawn`) y adopta la forma multiplicativa como postulado (`eq:screen_postulate`).
+> El valor (punto 1) sigue verificado. Lo abierto queda en OP-6b. El resto se conserva como registro.
 
 *Claim CLAUDE.md:* "OP-6 ✅ RESUELTO — universo separado k-essence + identidad 1+w₀=Ω_m".
 
