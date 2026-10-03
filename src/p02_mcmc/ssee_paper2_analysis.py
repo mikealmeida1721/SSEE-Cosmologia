@@ -169,7 +169,10 @@ for name, d in datasets.items():
     s_lcdm = _sig(W0_LCDM, WA_LCDM)
     print(f"  {name:34s} {d['rho']:+7.3f} {s_ssee:8.2f}σ {s_lcdm:8.2f}σ")
     import re as _re
-    TABLA_W0WA["ec" + _re.search(r"ec\.(\d+)", name).group(1)] = dict(nombre=name, rho=d['rho'], ssee_sigma=float(s_ssee), lcdm_sigma=float(s_lcdm))
+    TABLA_W0WA["ec" + _re.search(r"ec\.(\d+)", name).group(1)] = dict(nombre=name, rho=d['rho'], ssee_sigma=float(s_ssee), lcdm_sigma=float(s_lcdm),
+        # 2026-10-03: el PRD citaba estos tecleados (chi2 0.42, p 0.81, Δw0 −0.04σ, Δwa −0.26σ)
+        ssee_chi2_2D=results_sigma[name]["chi2_2D"], ssee_p=float(results_sigma[name]["p_val"]),
+        ssee_dw0=float(results_sigma[name]["delta_w0"]), ssee_dwa=float(results_sigma[name]["delta_wa"]))
 
 # Sensibilidad a ρ (el paper no publica la correlación w0-wa en texto):
 print("\n  Sensibilidad a ρ(w0,wa) — tensión 2D equivalente por combinación:")
