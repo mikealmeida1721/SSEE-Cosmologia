@@ -2245,3 +2245,27 @@ stages:
       hash: md5
       md5: 412b2508a8663ffdbd7da9811b0ee841
       size: 8299
+  paperB_Nstar:
+    cmd: bash -c '( .venv/bin/python3 -c "import 
+      sys;sys.path.insert(0,\"src\");from procedencia import 
+      cabecera;print(cabecera(\"src/pB_inflation/ssee_paperB_Nstar.py\"))"; 
+      OMP_NUM_THREADS=1 .venv/bin/python3 src/pB_inflation/ssee_paperB_Nstar.py 
+      ) > results/logs/paperB_Nstar.log'
+    deps:
+    - path: src/pB_inflation/ssee_paperB_Nstar.py
+      hash: md5
+      md5: 8bfbee11493f74e4c1623d0f84a718ad
+      size: 8792
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/paperB_Nstar.log
+      hash: md5
+      md5: 31a6dd3eac4eb1f0e987adae1ffbee0e
+      size: 4517
