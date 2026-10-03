@@ -1,0 +1,60 @@
+   [Guardián (Ledger)] VERIFICATION_LEDGER.md:430  «0.758»  →  *Claim CLAUDE.md (canónico 2026-06-19):* titular two-sector S₈_eff=0.758 (0.04σ KiDS).
+   [Guardián (Ledger)] VERIFICATION_LEDGER.md:430  «two-sector»  →  *Claim CLAUDE.md (canónico 2026-06-19):* titular two-sector S₈_eff=0.758 (0.04σ KiDS).
+   [Guardián (Ledger)] VERIFICATION_LEDGER.md:1078  «0.758»  →  | **ABIERTO — inconsistencia de referencia** | DES-Y3 (0.776 vs 0.758) |
+   [CLAUDE.md] CLAUDE.md:110  «0.758»  →  - `ssee_op5_hmcode.py` — OP-5 Nivel 1: HMcode-2020 baryonic feedback CLASS; S₈=0.758 (0.06
+   [Papers (cajón)] manuscript/SSEE_Endorser_Summary.tex:82  «two-sector»  →  distinct) and canonical two-sector with EFT $\alpha_B=\alpha_M=\alpha_T=0$
+   [Papers (cajón)] manuscript/SSEE_Paper1_Framework.tex:524  «two-sector»  →  two-sector construction --- that is ordinary model-building, and it was
+   [Papers (cajón)] manuscript/SSEE_Paper1_Framework.tex:1400  «two sector»  →  roles between the two sectors forces $\beta_c=-\mathrm{AURA}$ as the unique consistent val
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:209  «two-sector»  →  \section{The Two-Sector CMB Matter Density}
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:250  «two-sector»  →  \subsection{Two-sector matter density}
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:276  «two-sector»  →  \subsection{Physical interpretation of the two-sector model}
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:279  «two-sector»  →  The two-sector structure is not an \textit{ad hoc} device.
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:321  «two-sector»  →  two-sector $\phi$-dark matter construction of Paper~6 (Section~\ref{sec:mira}): a warm
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:330  «two sector»  →  that links the two sectors.
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:369  «two-sector»  →  The two-sector model predicts a single crossover: for datasets spanning
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:375  «two-sector»  →  data require $\Omega_m<0.25$ at $z<1$, the two-sector model would require revision.
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:910  «two-sector»  →  Paper~6 two-sector gives $0.93\sigma$: the free-streaming that lowers $\sigma_8$
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:975  «two-sector»  →  The SSEE two-sector model makes the following testable predictions,
+   [Papers (cajón)] manuscript/SSEE_Paper3_CMB.tex:985  «two-sector»  →  would indicate the two-sector model cannot maintain coherence.
+   [Papers (cajón)] manuscript/SSEE_Paper5_IS.tex:47  «two-sector»  →  and the Two-Sector Matter Structure}}
+   [Papers (cajón)] manuscript/SSEE_Paper5_IS.tex:135  «two-sector»  →  by the two-sector $\phi$-DM construction of Paper~6.
+   [Papers (cajón)] manuscript/SSEE_Paper5_IS.tex:1022  «0.758»  →  gives $S_8^{\rm bar} = 0.758$ ($0.06\sigma$ DES-Y3; Paper~6, eq.~12).
+   [Papers (cajón)] manuscript/SSEE_Paper5_IS.tex:1394  «two-sector»  →  the two-sector $\phi$-DM construction of Paper~6 is required for that.
+   [Papers (cajón)] manuscript/SSEE_Paper6_Growth.tex:150  «two-sector»  →  The two-sector construction rested on
+   [Papers (cajón)] manuscript/SSEE_Paper6_Growth.tex:188  «two-sector»  →  Four open problems catalogued against the two-sector construction close by
+   [Papers (cajón)] manuscript/SSEE_Paper6_Growth.tex:196  «two-sector»  →  ``technically violated'' by the two-sector construction) --- closes,
+   [Papers (cajón)] manuscript/SSEE_Paper7_EFT.tex:476  «two-sector»  →  The linear two-sector growth at $a = 1$ is captured by the ratio
+   [Papers (cajón)] manuscript/SSEE_Paper7_EFT.tex:479  «two-sector»  →  derived in Paper~6 via the two-sector background (not from a
+   [Papers (cajón)] manuscript/SSEE_Paper7_EFT.tex:757  «two-sector»  →  denominator corrections.  The full two-sector background (Paper~6,
+   [Papers (cajón)] manuscript/SSEE_Paper7_EFT.tex:791  «two-sector»  →  The full two-sector background is expected to close the residual
+   [Papers (cajón)] manuscript/SSEE_Paper7_EFT.tex:877  «two-sector»  →  \item \textbf{Dark coupling:} $\bc = -3.997847$ (fixed) yields a two-sector dark
+   [Papers (cajón)] manuscript/SSEE_Paper7_EFT.tex:941  «two-sector»  →  \textit{$\phi$-DM Two-Sector Model: Algebraic $m_\phi$, $k_{\rm fs}$,
+   [Papers (cajón)] manuscript/SSEE_Paper8_StrongGravity.tex:926  «two sector»  →  structurally} in two sectors:
+   [Papers (cajón)] manuscript/SSEE_Paper8_StrongGravity.tex:1082  «two-sector»  →  \textit{SSEE: Two-Sector $\varphi$-DM, Algebraic Scalar Mass, and
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:134  «two-sector»  →  algebraically distinct), and the canonical two-sector limit with EFT
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:188  «two-sector»  →  causal perturbation theory and a $\phi$-DM two-sector extension that resolves the
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:274  «two-sector»  →  The physical interpretation of this two-sector split --- whether it arises from a backgrou
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:275  «two-sector»  →  Israel-Stewart thermodynamic correction, a two-sector dark matter architecture,
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:651  «two-sector»  →  indistinguishable from $\Lambda$CDM ($0.73\sigma$). The two-sector variant of
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:798  «two-sector»  →  $\alphaB \neq 0$ at $z < 0.31$ would support the two-sector picture.
+   [Papers (cajón)] manuscript/SSEE_Unified_Journal.tex:851  «two-sector»  →  \emph{In the canonical two-sector limit} (Paper~6 with real DM
+   [Estado raíz] README.md:61  «two-sector»  →  | 5 | Israel-Stewart Causal Viscous Perturbations — Exact Marginal Stability, ΛCDM-Consist
+   [Estado raíz] README.md:195  «two-sector»  →  | **S₈_SSEE (single-sector ceiling)** | **0.846** | **3.5σ KiDS — the challenge the Paper 
+   [Estado raíz] README.md:196  «two-sector»  →  | Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | → 0.93σ with the Paper 6 two-secto
+   [Estado raíz] README.md:199  «0.758»  →  This is the open challenge that motivates the Paper 6 two-sector φ-DM extension, which res
+   [Estado raíz] README.md:199  «two-sector»  →  This is the open challenge that motivates the Paper 6 two-sector φ-DM extension, which res
+   [Estado raíz] README.md:201  «two-sector»  →  ### Paper 6 (φ-Dark Matter, Two-Sector Model)
+   [Estado raíz] README.md:212  «two-sector»  →  | σ₈_eff (two-sector particle) | 0.747 | — |
+   [Estado raíz] README.md:255  «0.758»  →  | S₈ (two-sector, canonical particle) | **0.758** | — | ~0.83 | 0.04σ KiDS-1000 |
+   [Estado raíz] README.md:255  «two-sector»  →  | S₈ (two-sector, canonical particle) | **0.758** | — | ~0.83 | 0.04σ KiDS-1000 |
+   [Estado raíz] RIGOR_CHECKLIST.md:180  «0.758»  →  `ssee_paper6_verification.py` tenía `kids_s8 = 0.758` — pero 0.758 es la **predicción SSEE
+   [Obsidian (vault)] Constantes/OPEN_PROBLEMS.md:16  «0.758»  →  | OP-5 | S₈ lensing | ✅ PARCIAL — S₈=0.758 (0.01σ KiDS) forward P6; N-body diferido |
+   [Obsidian (vault)] Constantes/OPEN_PROBLEMS.md:51  «0.758»  →  > - Two-sector titular (P6, forward): S₈=**0.758** → **0.01σ KiDS** ✅ **RESUELVE**
+   [Obsidian (vault)] Constantes/OPEN_PROBLEMS.md:51  «two-sector»  →  > - Two-sector titular (P6, forward): S₈=**0.758** → **0.01σ KiDS** ✅ **RESUELVE**
+   [Obsidian (vault)] Constantes/OPEN_PROBLEMS.md:56  «two-sector»  →  > - Two-sector (P6): **0.76σ** — 0.03σ de precio por resolver S₈
+   [Obsidian (vault)] Genesis.md:124  «0.758»  →  DESI DR2 0.05σ · CMB 1.4% RMS · fσ₈ 0.82σ · S₈=0.758 (0.01σ KiDS)
+   [Obsidian (vault)] MOCs/SSEE Master.md:65  «0.758»  →  > | **S₈_eff (two-sector)** | **0.758 — 0.01σ KiDS ✅** |
+   [Obsidian (vault)] MOCs/SSEE Master.md:65  «two-sector»  →  > | **S₈_eff (two-sector)** | **0.758 — 0.01σ KiDS ✅** |
+   [Obsidian (vault)] MOCs/Validaciones.md:26  «two-sector»  →  > | [[fsig8_tension\|fσ₈ tensión]] media | 0.82σ two-sector; 0.70σ single; empata ΛCDM 0.7
+   [Obsidian (vault)] Papers/Paper5.md:25  «two-sector»  →  El desafío S₈=0.846 lo resuelve el two-sector de **[[Paper6]]** bajando a S₈=0.759 (0.01σ 
+   [Obsidian (vault)] Papers/Unificado.md:22  «0.758»  →  | §6 φ-DM + fσ₈ | σ₈=0.747 / S₈=0.758 (0.01σ KiDS) | ✅ |

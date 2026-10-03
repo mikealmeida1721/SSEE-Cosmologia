@@ -1,0 +1,39 @@
+==============================================================================
+  R1/R2 — BOSS DR12 full-shape LPT, fondo FIJO   k_max = 0.2
+==============================================================================
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z2 NGC: 37 puntos  Hartlap=0.9814
+  z2 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  6 conjuntos, 222 puntos, 37 libres
+
+[LCDM] fondo FIJO: Om=0.315300 w0=-1.0000 wa=0.0000
+    logA=2.6000  chi2=1897.581
+    logA=2.6500  chi2=482.276
+    logA=2.7000  chi2=446.800
+    logA=2.7500  chi2=444.373
+    logA=2.8000  chi2=386.226
+    logA=2.8500  chi2=392.433
+    logA=2.9000  chi2=358.235
+    logA=2.9500  chi2=353.798
+    logA=3.0000  chi2=347.440
+    logA=3.0500  chi2=351.175
+    logA=3.1000  chi2=363.186
+    logA=3.1500  chi2=385.815
+    logA=3.2000  chi2=404.249
+    logA=3.2500  chi2=330.796
+    logA=3.3000  chi2=359.140
+    logA=3.3500  chi2=250.722
+    logA=3.4000  chi2=267.542
+  chi2 = 242.348  dof = 185  chi2/dof = 1.3100
+  logA = 3.36828 +- 0.00632
+    z1 NGC: f*sigma8 = 0.56126
+    z1 SGC: f*sigma8 = 0.56126
+    z2 NGC: f*sigma8 = 0.55908
+    z2 SGC: f*sigma8 = 0.55908
+    z3 NGC: f*sigma8 = 0.55286
+    z3 SGC: f*sigma8 = 0.55286
+
+[SSEE] fondo FIJO: Om=0.308881 w0=-0.8399 wa=-0.6700
