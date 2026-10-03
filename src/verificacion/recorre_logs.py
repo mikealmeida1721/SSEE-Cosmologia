@@ -126,6 +126,7 @@ def control():
     with tempfile.TemporaryDirectory() as d:
         d = pathlib.Path(d)
         # ORIGEN-VALOR: 12.3456 — dato sintetico del control del comparador (no es un resultado)
+        # ORIGEN-VALOR: 0.4321 — idem, segundo numero sintetico del control
         (d / "a.log").write_text("[ 1.2m] chi2 = 12.3456  sigma 0.4321\n2026-10-03 12:00 fecha\n")
         (d / "b.log").write_text("[ 9.9m] chi2 = 12.3456  sigma 0.4321\n2026-10-04 13:00 fecha\n")
         (d / "c.log").write_text("[ 1.2m] chi2 = 12.3457  sigma 0.4321\n2026-10-03 12:00 fecha\n")
