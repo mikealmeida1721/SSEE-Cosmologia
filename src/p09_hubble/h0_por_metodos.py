@@ -61,7 +61,7 @@ FUENTES = [
      + r"\}\s*\\newcommand\{\\HnaughtMAPOneSigmaLowerDiff\}\{" + PAT_PM + r"\}", lambda g: (g[0], g[1], g[2])),
     ("trgb_cchp", "TRGB, equipo CCHP (HST+JWST)", "secundario", "h0_metodos/2408.06153/Ho2024.tex",
      r"\\ho = " + PAT_PM + r" \$\\pm\$ " + PAT_PM + r" \(stat\) \$\\pm\$ " + PAT_PM + r" \(sys\) \$\\pm\$ " + PAT_PM
-     + r" \(\$\\sigma_\{SN\}\)\$\), based on the TRGB method alone",
+     + r" \(\$\\sigma_\{SN\}\)\$, based on the TRGB method alone",
      lambda g: (g[0], np.sqrt(g[1] ** 2 + g[2] ** 2 + g[3] ** 2), np.sqrt(g[1] ** 2 + g[2] ** 2 + g[3] ** 2))),
     ("trgb_shoes", "TRGB, equipo SH0ES (JWST)", "secundario", "h0_metodos/2408.11770/main.tex",
      r"Cepheids, JAGB, and TRGB, we find \$" + PAT_PM + r"\\pm" + PAT_PM + r"\$, \$" + PAT_PM + r"\\pm" + PAT_PM
