@@ -15,3 +15,6 @@ estado), no una densidad.
 - `op9_multiplier_search.log`
 - `op9_particle_existence.log`
 - `p6_class_reframe_omega_m.log`
+
+`kids_twosector.py` (en la carpeta superior, archivado 2026-10-03): el two-sector contra los
+225 ξ± crudos de KiDS-1000, P_2sec = P_frío·T2 de CLASS. Sector φ retirado; nadie lo importa.

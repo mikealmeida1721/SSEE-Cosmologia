@@ -213,7 +213,6 @@ historicos:
   #    algun dia hicieran falta, se rehacen con script (como R3 y el ajuste
   #    conjunto w_c,n_s), no se citan.
   - particula_que_prefiere_kids    # particula: retirada 2026-08-01
-  - s8_barra_kids                  # script en archive/codigo/p06_kids1000_SUPERADO_2026-09-20
   - cmb_ns_forzado                 # 01d4369, sin script
   - cmb_wb_forzado                 # 01d4369, sin script
   - cmb_tau_flotado                # 01d4369, marcado «NO USAR» (EoS clavada, R64)

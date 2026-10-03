@@ -509,6 +509,9 @@ REGLAS = {
                    "\\section{Conclusion}",
                    "The collapse threshold is $\\delta_c = 1.6284$.\n\n\\section{Conclusion}")],
     ),
+    # ORIGEN-VALOR: 71.2837 — dato SINTETICO del caso de mutacion de R73: tiene que NO tener origen
+    # ORIGEN-VALOR: 0.4123 — idem, su barra sintetica
+    # ORIGEN-VALOR: 4.271936 — dato SINTETICO del caso de mutacion de R74: tiene que NO tener origen
     "R73": dict(
         capa="R73 — de dónde sale cada número-resultado de los papers",
         intencion="numero-con-origen",
