@@ -34,7 +34,7 @@
 
 \title{\textbf{SSEE in the Strong-Gravity Regime:\\
        Disformal Geodesics, MIRA Emergence,\\
-       and k-mouflage Screening}}
+       and Solar-System Compliance}}
 
 \author{Mike Edison Almeida Vallejo \\
 \small \textit{Independent Researcher} \\
@@ -118,9 +118,9 @@ new effects arise beyond the linearised regime:
   \item \textbf{Enhanced deflection angle} --- photons propagating through the
         modified gravitational potential of disformally-coupled dark matter
         experience a different total deflection relative to pure GR.
-  \item \textbf{K-mouflage suppression} --- the non-linear scalar kinetic term
-        in the SSEE action screens the fifth force on solar-system and
-        stellar scales, restoring GR locally.
+  \item \textbf{Local GR compliance} --- any fifth force must vanish on
+        solar-system and stellar scales; in SSEE this follows from selective
+        coupling and the EFT structure, not from a screening radius.
 \end{enumerate}
 
 In this paper we derive both effects analytically and obtain numerical
@@ -175,8 +175,8 @@ Section~\ref{sec:geodesic} constructs the disformal null geodesic and
 derives the photon deflection angle.
 Section~\ref{sec:mira} shows algebraically how $\MIRA$ emerges as the
 lensing amplification factor.
-Section~\ref{sec:vainshtein} derives the k-mouflage radius and the
-screening suppression.
+Section~\ref{sec:vainshtein} shows how solar-system compliance follows
+from selective coupling and the EFT structure.
 Section~\ref{sec:lensing} translates the results into strong-lensing
 observables and identifies JWST/HST falsification windows.
 Section~\ref{sec:falsify} collects the pre-committed falsifiable
@@ -236,8 +236,7 @@ saturation $\val{S_DE_d6} = |w_0|$ rather than the density fraction
 $1-\Omm = \val{OMDE_DENS_d6}$, and with the correct target it changes sign.  There is
 therefore no longer a second $\bc$ to reconcile, and the disformal coupling
 used here stands on its own.  We adopt $\bc \equiv +\AURA > 0$, of which only
-the magnitude $|\bc| = \AURA = \val{AURA_d6}$ enters the deflection angle and the
-k-mouflage radius.
+the magnitude $|\bc| = \AURA = \val{AURA_d6}$ enters the deflection angle.
 
 For the purposes of this paper, we work in the quasi-static, non-relativistic
 limit ($v \ll c$, $\Phi_N \ll 1$), which is appropriate for galaxy and
@@ -319,9 +318,10 @@ $F_{\mathrm{tot}} = F_N + F_\phi = -(1 + 2\KAL\bc^2)\,\nabla\Phi_N$,
 corresponding to an effective gravitational enhancement of
 $G_{\mathrm{eff}}/G = 1 + 2\KAL\bc^2 \approx 1 + 2(5.521)(3.998)^2
 \approx 177$.
-However, this linear estimate applies only far from the k-mouflage radius
-(see Section~\ref{sec:vainshtein}); inside $\rV$ the non-linear kinetic term
-in~\eqref{eq:Pkernel} screens this amplification and restores GR.
+This linear estimate belongs to the alternative MOND-like limit
+(Section~\ref{sec:geodesic}); in the canonical limit the EFT structure
+$\alpha_B=\alpha_M=0$ sets $\mu-1=0$ (Section~\ref{sec:double_protection})
+and no such enhancement is observable.
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \section{Disformal Null Geodesic and Photon Deflection (Alternative MOND-like limit)}
@@ -393,10 +393,9 @@ factor $\approx1.93$ (numerically near $\MIRA$) relative to the $\Lambda$CDM exp
 the Einstein radius is correspondingly reduced (see
 Section~\ref{sec:lensing}).
 
-\subsection{Total deflection angle outside the k-mouflage radius}
+\subsection{Total deflection angle in the linear regime}
 
-Outside the k-mouflage radius $\rV$ (derived in
-Section~\ref{sec:vainshtein}), the scalar force operates at full strength.
+In the linear kinetic regime the scalar force operates at full strength.
 The total deflection of a photon passing an isolated dark-matter halo of
 effective gravitational mass $M_{\mathrm{eff}}$ at impact parameter $b$
 is, following the standard geodesic perturbation calculation
@@ -532,7 +531,7 @@ $0.03\%$ level through the near-coincidence $\sqrt{\bc}\approx\MIRA$
 (Section~\ref{sec:mira}), not as an exact identity.
 
 %% ─────────────────────────────────────────────────────────────────────────────
-\section{K-mouflage Screening}
+\section{Solar-System Compliance}
 \label{sec:vainshtein}
 %% ─────────────────────────────────────────────────────────────────────────────
 
@@ -543,89 +542,26 @@ The $X^2/M^4$ term in the SSEE action~\eqref{eq:Pkernel} places SSEE in the
 distinct from Galileon (DGP) \citep{deffayet2001} or Vainshtein
 screening \citep{vainshtein1972,babichev2013}; for a review of
 scalar screening mechanisms see \citet{Koyama2018}.
-When $X^2/M^4 \gg X/\KAL$, the non-linear kinetic term dominates and
-the scalar degree of freedom is self-suppressed around any
-overdensity, screening $F_\phi/F_N$ at small radii.
-
-The crossover between the two kinetic regimes occurs at the gradient scale
-\begin{equation}
-  |\nabla\phi|_* \;=\; \frac{M^4}{\KAL}\,,
-  \label{eq:grad_vainshtein}
-\end{equation}
-which defines the k-mouflage radius $\rV$ via the gradient closure~\eqref{eq:grad_closure}.
-
-\subsection{K-mouflage screening radius}
-\label{sec:rkm}
-
-For a k-mouflage Lagrangian $K(X) = X/\KAL + X^2/M^4$, the crossover between
-linear and non-linear kinetic regimes for a spherical source of mass $M_{\rm obj}$
-defines the k-mouflage radius \citep{brax2014}:
-\begin{equation}
-  \boxed{r_{\rm km}^3 \;=\; \frac{M_{\rm obj}}{4\pi\,\Mpl\,M^2}\,,}
-  \label{eq:rkm}
-\end{equation}
-where $\Mpl = 2.435\times10^{18}\,\mathrm{GeV}$ is the reduced Planck mass
-and $M = 9.68\,\mathrm{meV}$ is the UV cutoff from Paper~10~\citep{SSEE10}.
-This formula differs fundamentally from the Galileon (DGP) Vainshtein formula,
-which requires a gradient closure $\nabla\phi \propto \nabla\Phi_N$ that is
-inapplicable to k-mouflage theories.
-
-Evaluating equation~\eqref{eq:rkm} with $M^4 = 5\phiG^8\rhoc$ from Paper~10:
-\begin{align}
-  r_{\rm km}^{\odot} &= 1.45\times10^7\,\mathrm{m}
-    \;\approx\; 0.021\,R_\odot\,, \label{eq:rkm_sun}\\
-  r_{\rm km}^{10^{12}M_\odot} &= 1.45\times10^{11}\,\mathrm{m}
-    \;\approx\; 1.0\,\mathrm{AU}\,, \label{eq:rkm_mw}\\
-  r_{\rm km}^{10^{15}M_\odot} &= 1.45\times10^{12}\,\mathrm{m}
-    \;\approx\; 10\,\mathrm{AU}\,. \label{eq:rkm_cluster}
-\end{align}
-
-\begin{table}[h]
-\centering
-\caption{K-mouflage screening radius at the UV completion scale $M = 9.68\,\mathrm{meV}$
-         from Paper~10~\citep{SSEE10}.
-         All values satisfy $r_{\rm km} \ll 1\,\mathrm{kpc}$: the DM fifth force
-         is active at galactic and cosmological scales.}
-\label{tab:vainshtein}
-\begin{tabular}{llll}
-\toprule
-Object & $M_{\rm obj}$ & $r_{\rm km}$ & Status \\
-\midrule
-Sun              & $1\,M_\odot$          & $1.45\times10^7\,\mathrm{m} \approx 0.021\,R_\odot$ & Inside stellar body \\
-Milky Way        & $10^{12}\,M_\odot$    & $1.45\times10^{11}\,\mathrm{m} \approx 1\,\mathrm{AU}$ & $\ll 1\,\mathrm{kpc}$ \\
-Galaxy cluster   & $10^{15}\,M_\odot$    & $1.45\times10^{12}\,\mathrm{m} \approx 10\,\mathrm{AU}$ & $\ll 1\,\mathrm{Mpc}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.82\textwidth]{../results/figures/fig_paper8_vainshtein.pdf}
-  \caption{%
-    K-mouflage screening radius $r_{\rm km} = [M_{\rm obj}/(4\pi\Mpl M^2)]^{1/3}$
-    as a function of object mass (in $M_\odot$) at the UV completion scale
-    $M = 9.68\,\mathrm{meV}$ \citep{SSEE10,brax2014}.
-    For all representative objects, $r_{\rm km}$ lies far below the galactic
-    scale, so DM fifth-force dynamics are active at cosmological radii
-    while baryons remain decoupled through selective coupling
-    (Section~\ref{sec:gr_compliance}).
-  }
-  \label{fig:vainshtein}
-\end{figure}
-
-Inside $r_{\rm km}$, the non-linear kinetic term dominates and the DM field
-gradient is suppressed ($\phi' \propto r^{-2/3}$); outside, the linear term
-dominates and the DM fifth force operates at full strength.
-Since $r_{\rm km} \ll 1\,\mathrm{kpc}$ for all astrophysical objects
-(Table~\ref{tab:vainshtein}), the DM fifth force is cosmologically active,
-consistent with the single-sector matter content of Paper~6~\citep{ssee_paper6}.
-Baryonic matter is independently protected by selective coupling
-(Section~\ref{sec:gr_compliance}) regardless of $r_{\rm km}$.
+We do \emph{not} quote a k-mouflage screening radius.
+Earlier versions of this paper did, from
+$r_{\rm km}^3 = M_{\rm obj}/(4\pi\Mpl M^2)$; in natural units the
+right-hand side has dimension $[\mathrm{mass}]^{-2} = [\mathrm{length}]^2$,
+not $[\mathrm{length}]^3$, so the expression is not dimensionally consistent
+and its numerical values changed by a factor $10^3$ depending on whether
+masses were written in GeV or in eV.  Those values are withdrawn.
+No screening radius is needed for the results of this paper: solar-system
+compliance and the canonical lensing prediction rest on two facts that hold
+for any value of $M$ --- baryons do not couple to the scalar
+(Section~\ref{sec:gr_compliance}), and the EFT functions
+$\alpha_B=\alpha_M=\alpha_T=0$ of Paper~7 set $\mu-1=0$
+(Section~\ref{sec:double_protection}).
+The non-linear profile of the scalar around individual halos is left to a
+numerical calculation.
 
 \subsection{GR compliance from selective coupling}
 \label{sec:gr_compliance}
 
-Solar-system gravitational tests are nevertheless automatically satisfied by
+Solar-system gravitational tests are automatically satisfied by
 the \emph{selective coupling} structure of the action~\eqref{eq:action}:
 \begin{itemize}
   \item \textbf{Baryons} couple to the physical metric $g_{\mu\nu}$ only.
@@ -695,11 +631,8 @@ The two GR-compliance mechanisms in SSEE are:
         at solar-system scales.
 \end{enumerate}
 
-The k-mouflage radius $r_{\rm km} \approx 0.022\,R_\odot$
-(Section~\ref{sec:rkm}, equation~\eqref{eq:rkm_sun}) provides supplementary
-non-linear screening inside stellar bodies, but the EFT suppression in
-equation~\eqref{eq:fifth_force_solar} is the dominant mechanism for all
-solar-system tests.
+No non-linear screening radius is invoked: the EFT suppression in
+equation~\eqref{eq:fifth_force_solar} is sufficient for all solar-system tests.
 The cosmological background Hubble flow remains in the linear kinetic regime
 ($X_{\rm bg}^2/M^4 \approx 5.7\times10^{-4}$, Paper~10~\citep{SSEE10}),
 so the background equations of motion are unaffected by the UV completion.
@@ -760,11 +693,7 @@ see \S\ref{sec:twosector_signature_withdrawn}.}} \\
 $M_{\mathrm{dyn}}/M_{\mathrm{lens}}$ ratio
   & 1 (GR)
   & $> 1$ (fifth force on DM)
-  & $r > \rV$ \\
-K-mouflage screening
-  & N/A
-  & $F_\phi/F_N \propto r^{4/3} \to 0$
-  & $r \ll \rV$ \\
+  & Linear regime \\
 GW speed anomaly ($\alpha_T$)
   & 0
   & 0 (exact)
@@ -926,7 +855,7 @@ falsify the corresponding sector of the SSEE framework.
         prediction.
         \textit{Falsification criterion}: If a clean sample shows
         $M_{\mathrm{dyn}}/M_{\mathrm{lens}}$ systematically $\gtrsim 2$
-        across $\gtrsim 100$ clusters with $r>\rV$, the canonical limit
+        across $\gtrsim 100$ clusters, the canonical limit
         is falsified and the alternative limit would be selected.
 
   \item \textbf{Gravitational wave speed}: $\alpha_T = 0$ (exact), same as GR.
@@ -1003,8 +932,7 @@ question and not a filled one.
 \subsection{Limitations and open questions}
 
 The derivations in this paper adopt the quasi-static, non-relativistic
-limit and treat the scalar force in the linear regime (outside the
-k-mouflage radius).
+limit and treat the scalar force in the linear kinetic regime.
 Several steps remain to complete the strong-gravity picture:
 
 \begin{enumerate}
@@ -1015,12 +943,10 @@ Several steps remain to complete the strong-gravity picture:
         A proper calculation requires solving the coupled DM--scalar system
         numerically (N-body simulation with scalar force module).
 
-  \item \textbf{Full k-mouflage profile}: The screening radius
-        $\rV = [M_{\mathrm{obj}}/(4\pi\Mpl M^2)]^{1/3}$ is fixed
-        algebraically once Paper~10 sets $M \approx 9.68\,\mathrm{meV}$
-        (Section~\ref{sec:rkm}, Table~\ref{tab:vainshtein});
-        a full N-body calculation would convert this crossover scale into
-        a precise non-linear field profile for individual halos.
+  \item \textbf{Non-linear field profile}: No k-mouflage screening radius
+        is quoted (Section~\ref{sec:vainshtein}); the non-linear profile of
+        the scalar around individual halos requires a numerical calculation.
+        None of the predictions of this paper depends on it.
 
   \item \textbf{Relativistic corrections}: On cluster scales at $z \sim 0.5$,
         relativistic corrections to the geodesic
@@ -1082,9 +1008,6 @@ coupling and found:
         structure $\alphaT = \alphaM = \alpha_B = 0$ from Paper~7, which
         suppresses any residual fifth force to $F_\phi/F_N \sim 10^{-31}$
         at $1\,\mathrm{AU}$ (Section~\ref{sec:double_protection}).
-        The k-mouflage radius $\rV \approx 0.022\,R_\odot$ for the Sun
-        (Table~\ref{tab:vainshtein}) provides supplementary non-linear
-        screening inside stellar bodies.
 
   \item \emph{(A two-sector scale-dependent lensing signature was listed here;
         it is retracted with the $\phi$-DM particle, Paper~6.)}

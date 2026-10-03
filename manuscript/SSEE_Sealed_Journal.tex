@@ -59,7 +59,10 @@ $\chi^2_{\rm 2D}=0.42$)---the prediction did not move while the data improved.
 Crucially, the two forward predictions that can \emph{refute} the core framework---this
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand on their own: neither the Hubble resolution nor the growth sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
 global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
-($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). The
+($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). With the
+background of both models fixed in advance, DESI~DR2 BAO gives $\chi^2=\val{desi_clav_ssee}$ for SSEE and
+$\val{desi_clav_lcdm}$ for $\Lambda$CDM at its Planck values ($\val{desi_N}$ points); $\Lambda$CDM reaches
+$\val{desi_libre_chi2}$ only by lowering $\Omega_m$ to $\val{desi_libre_Om}$. The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
 with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=\val{cs2_condensado_d6}$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
@@ -639,6 +642,39 @@ parameters at equal fit, not by a superior $\chi^2$: the competitor that
 \emph{can} bend to the data (CPL, $k=5$) is penalised for the freedom SSEE does
 not use.
 
+\paragraph{Each probe with the background fixed in advance.} The comparison
+above lets $\Lambda$CDM fit its background to DESI. Table~\ref{tab:sondas}
+instead fixes the background of both models before looking at each probe---SSEE
+at its algebraic point, $\Lambda$CDM at the Planck~2018 best fit---and reads the
+$\chi^2$ of each probe with no cosmological parameter fitted. One probe separates
+the two models by more than $\Delta\chi^2=\val{sondas_umbral}$: DESI~DR2 BAO, with
+$\chi^2=\val{desi_clav_ssee}$ for SSEE and $\val{desi_clav_lcdm}$ for $\Lambda$CDM over
+$\val{desi_N}$ points ($\Delta\chi^2=\val{desi_clav_dchi2}$). When $\Lambda$CDM is allowed to
+fit DESI, it reaches $\chi^2=\val{desi_libre_chi2}$ for $\val{desi_libre_dof}$ degrees of
+freedom by lowering $\Omega_m$ from $\val{desi_lcdm_planck_Om}$ to
+$\val{desi_libre_Om}\pm\val{desi_libre_Om_s}$; SSEE reaches $\val{desi_clav_ssee}$ with nothing
+fitted. The other probes do not separate the models. The supernova compilations
+share objects and the two CMB-lensing probes share sky, so the rows are not summed.
+\begin{table}[h]
+\centering
+\caption{$\chi^2$ of SSEE and $\Lambda$CDM probe by probe, read from the analysis
+logs. Block A: background fixed in both models in advance ($\Lambda$CDM at the Planck~2018 best fit). Block B: $\Lambda$CDM
+fits cosmological parameters that SSEE does not have (column ``fitted'', SSEE /
+$\Lambda$CDM). $\Delta\chi^2=\chi^2_{\rm SSEE}-\chi^2_{\Lambda\rm CDM}$. ``$N$'' is the
+number of degrees of freedom where the log records it.
+$^{a}$Seven nuisance parameters minimised identically in both models.
+$^{b}$TATT intrinsic alignments (the survey's baseline); with NLA the difference
+is $\Delta\chi^2=\val{sondas_desy3_nla}$.}
+\label{tab:sondas}
+\small
+\begin{tabular}{llccccc}
+\toprule
+Probe & Type & $N$ & fitted & $\chi^2_{\rm SSEE}$ & $\chi^2_{\Lambda\rm CDM}$ & $\Delta\chi^2$ \\
+\midrule
+\csname @@input\endcsname tabla_sondas_generada.tex % primitivo expandible: \multicolumn debe ser lo primero de la celda
+\end{tabular}
+\end{table}
+
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.62\textwidth]{fig_corner_ssee_halg_prior.pdf}
@@ -975,6 +1011,7 @@ $w_0=-T_r/M_v$                & Background (DE)   & $\val{W0_d6}$               
 $w_a=-P_{\rm sc}/I_g$ & Background (DE)   & $\val{WA_d6}$                     & P1,2,4 & Postdiction \\
 $(w_0,w_a)$ vs DESI DR3       & Background (DE)   & same fixed point                & P1,2   & \textbf{Prediction (pre-reg.)} \\
 $H_0^{\rm glob}=H_0^{\rm SH0ES}(1-f_{\rm scr})$ & Background (DE) & $\val{H0_GLOBAL_d3}\,\kms$ (target $3(\varphi+\pi)^2$) & P9,10 & Derived (SH0ES input) \\
+BAO distances, background fixed & Background & $\chi^2=\val{desi_clav_ssee}/\val{desi_N}$ ($\Lambda$CDM-Planck $\val{desi_clav_lcdm}$; Tab.~\ref{tab:sondas}) & P2 & Postdiction \\
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ & CMB      & $\val{OMEGA_C_H2_d6}$                       & P1,3   & Retrodiction \\
 $\Om^{\rm cosm}=\omega_m/h^2$ & CMB               & $\val{OMEGA_M_TOTAL_d6}$                       & P1,3   & Retrodiction \\
 $n_s=1-\varphi^{-7}$          & Inflation / CMB   & $\val{N_S_d6}$                       & P1,3   & Retrodiction \\

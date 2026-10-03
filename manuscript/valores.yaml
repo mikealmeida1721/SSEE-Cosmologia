@@ -642,3 +642,16 @@ cc_N:          {fuente: "results/logs/ppc_cronometros.json#datos.N", formato: "d
 cc_chi2r_ssee: {fuente: "results/logs/ppc_cronometros.json#modelos.ssee.chi2r_32", formato: ".3f"}
 cc_chi2r_lcdm: {fuente: "results/logs/ppc_cronometros.json#modelos.lcdm.chi2r_32", formato: ".3f"}
 cc_chi2r_cpl:  {fuente: "results/logs/ppc_cronometros.json#modelos.cpl.chi2r_32", formato: ".3f"}
+# DESI DR2 BAO con el fondo CLAVADO en los dos modelos (CAMB, r_d de cada uno) y LCDM libre — PRD/Sealed §3 (2026-10-03)
+desi_N:               {fuente: "results/logs/bao_lcdm_libre.json#ssee_camb.dof", formato: "d"}
+desi_clav_ssee:       {fuente: "results/logs/bao_lcdm_libre.json#ssee_camb.chi2", formato: ".2f"}
+desi_clav_lcdm:       {fuente: "results/logs/bao_lcdm_libre.json#lcdm_planck_camb.chi2", formato: ".2f"}
+desi_clav_dchi2:      {fuente: "results/logs/bao_lcdm_libre.json#delta_chi2_camb_ssee_menos_lcdm_planck", formato: ".1f"}
+desi_lcdm_planck_Om:  {fuente: "results/logs/bao_lcdm_libre.json#lcdm_planck_camb.Om", formato: ".4f"}
+desi_libre_chi2:      {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.chi2", formato: ".2f"}
+desi_libre_dof:       {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.dof", formato: "d"}
+desi_libre_Om:        {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.Om", formato: ".3f"}
+desi_libre_Om_s:      {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.Om_err", formato: ".3f"}
+desi_libre_dchi2:     {fuente: "results/logs/bao_lcdm_libre.json#delta_chi2_camb_ssee_menos_lcdm_libre", formato: ".2f"}
+sondas_umbral:        {fuente: "results/logs/sondas_ssee_vs_lcdm.json#umbral_discrimina_dchi2", formato: ".0f"}
+sondas_desy3_nla:     {fuente: "results/logs/sondas_ssee_vs_lcdm.json#des_y3.dchi2_NLA", formato: ".2f"}

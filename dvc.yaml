@@ -68,6 +68,7 @@ stages:
     - results/logs/cumulos_zhang2026.json
     - results/logs/b1_k2.json
     - results/logs/sondas_ssee_vs_lcdm.json
+    - results/logs/bao_lcdm_libre.json
     - results/logs/mcmc_paper2_reframe.json
     - results/logs/h0_four_priors.json
     - results/logs/is_growth_gamma.json
@@ -81,6 +82,16 @@ stages:
     - results/logs/perfil_wc_boss_lcdm.json
     outs:
     - manuscript/valores_generados.tex:
+        cache: false
+  tabla_sondas_tex:
+    cmd: .venv/bin/python3 src/p11_sondas/tabla_sondas_tex.py
+    deps:
+    - src/p11_sondas/tabla_sondas_tex.py
+    - src/procedencia.py
+    - results/logs/sondas_ssee_vs_lcdm.json
+    - results/logs/bao_lcdm_libre.json
+    outs:
+    - manuscript/tabla_sondas_generada.tex:
         cache: false
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 

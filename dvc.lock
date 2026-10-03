@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: f7ab31cd0295ff7d4a49fa32efef24cc
-      size: 64218
+      md5: 4ded7b59b4b9532579b11b760f93a5c9
+      size: 65596
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 48b3d996b23b5c4f14fa63eea08dc2d5
@@ -93,6 +93,10 @@ stages:
       hash: md5
       md5: 068efa05529e72146583cb01e9639609
       size: 4205
+    - path: results/logs/bao_lcdm_libre.json
+      hash: md5
+      md5: 392ae8da2eff2c5a51238b13007633d9
+      size: 2052
     - path: results/logs/class_picos.json
       hash: md5
       md5: dc8844ae45a234a8a7ac990e705f0c0f
@@ -240,8 +244,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 0d93323f78a714f328ccebd3806d2094
-      size: 80751
+      md5: 148e9506dbb4d6c64b833db51fed861f
+      size: 82429
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -2299,3 +2303,27 @@ stages:
       hash: md5
       md5: b019f4f742edcaff4dfa89b0f2834fdf
       size: 40040
+  tabla_sondas_tex:
+    cmd: .venv/bin/python3 src/p11_sondas/tabla_sondas_tex.py
+    deps:
+    - path: results/logs/bao_lcdm_libre.json
+      hash: md5
+      md5: 392ae8da2eff2c5a51238b13007633d9
+      size: 2052
+    - path: results/logs/sondas_ssee_vs_lcdm.json
+      hash: md5
+      md5: 9a9ce4364b2f7c323eb45e7764d2fe68
+      size: 8010
+    - path: src/p11_sondas/tabla_sondas_tex.py
+      hash: md5
+      md5: 2fe56bf4195e535eebd85bb638d51280
+      size: 4853
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: manuscript/tabla_sondas_generada.tex
+      hash: md5
+      md5: 157790f4d28b1cfdcd6d8b67ba04027c
+      size: 1876

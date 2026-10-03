@@ -402,6 +402,12 @@ derivación. Requiere re-derivar el radio k-mouflage desde cero y propagar a
 P8 §4–5 (tabla, figura, ejemplo A1689). **ABIERTO** — remediación grande,
 pendiente de sesión dedicada.
 
+**Cierre 2026-10-03:** no se re-derivó el radio; se **retiró**. P8 reduce la sección a un
+párrafo que no cita radio (fórmula, valores, tabla y figura fuera) y dice por qué: sin el
+acople βc en la acción de Paper 7 (retirado 2026-09-07) no hay quinta fuerza que apantallar,
+y el Sistema Solar y la lente canónica descansan en el acople selectivo y en
+α_B=α_M=α_T=0 (μ−1=0), que valen para cualquier M. Ver OPEN_PROBLEMS OP-4. **CERRADO.**
+
 ## V-L3-OP1 — Ω_b h² = (π−φ)/(3Ω²) (densidad bariónica) — **ABIERTO (coincidencia escaneada)**
 
 *Claim CLAUDE.md:* "OP-1 PARCIAL — (π−φ)/H₀_SSEE = 0.32σ".
@@ -945,7 +951,7 @@ EFT, K(X), IS, c_s² (T_μν), dos-Ω_m.
 |---|---|
 | **verificado** | α=φ⁴/3 |
 | **PARCIAL** (álgebra/forma cierra, insumo físico no) | OP-2, OP-6, OP-7, EFT, IS — ~~dos sectores~~ y ~~m_φ~~ **RETIRADOS 2026-08-01** (la cadena cerraba unidades, pero la partícula no tenía de qué estar hecha) |
-| **ABIERTO** | OP-1, OP-3, OP-4, OP-5, K(X), c_s² (T_μν), **dos-Ω_m (central)** |
+| **ABIERTO** | OP-1, OP-3, ~~OP-4~~ (cerrado 2026-10-03, radio retirado), OP-5, K(X), c_s² (T_μν), **dos-Ω_m (central)** |
 
 2 bugs corregidos/detectados de paso: curvatura de Kähler (P1, **corregido**)
 y M⁴ inconsistente P7↔P10 (**detectado**, pendiente de re-derivación).

@@ -307,7 +307,25 @@ contra `4/3 = 1.333333` (dif 0.0382%). No es cero.
 
 ---
 
-## OP-4 — Vainshtein Radius Exceeds Observable Universe (Paper 8) — 🔴 **REABIERTO 2026-09-19**
+## OP-4 — Vainshtein Radius Exceeds Observable Universe (Paper 8) — ✅ **CERRADO 2026-10-03 (por retiro del radio)**
+
+> **Cierre 2026-10-03 (decisión de Mike: opción 2, reducir la sección a un párrafo).**
+> Paper 8 ya **no cita ningún radio de apantallamiento**. La antigua §5.1–5.2 (fórmula
+> `eq:rkm`, sus tres valores, la tabla `tab:vainshtein` y la figura `fig_paper8_vainshtein`)
+> queda sustituida por un párrafo que dice tres cosas: (1) K(X) es de clase k-mouflage;
+> (2) la fórmula anterior no cerraba dimensiones y cambiaba un factor 10³ entre GeV y eV,
+> así que sus valores se retiran; (3) ningún resultado del paper necesita un radio: el
+> Sistema Solar y la lente del límite canónico descansan en el acople selectivo (los
+> bariones no ven el escalar) y en α_B = α_M = α_T = 0 de Paper 7 (μ−1 = 0), que valen
+> para cualquier M. También se quitaron las menciones del radio en el título, la
+> introducción, §2, §3, la tabla de firmas, la discusión, las conclusiones y en Unified.
+> **Por qué no la opción 1 (rehacer el radio con r²):** el radio sólo importa si hay una
+> quinta fuerza que apantallar, y la quinta fuerza viene del acople βc, que salió de la
+> acción de Paper 7 el 2026-09-07. Calcular bien el radio de una fuerza que ya no está en
+> la acción sería medir con cuidado algo que no existe. Los radios corregidos (823 AU,
+> 4.0 kpc, 126 kpc) quedan en `results/logs/cajones_algebra.json` como registro.
+> **Lo que queda abierto, y no es este OP:** el perfil no lineal del escalar alrededor de
+> un halo (cálculo numérico), que ninguna predicción del paper usa.
 
 > **Verificación independiente de la auditoría externa (Max, commit 17acccd) — 2026-09-19.**
 > Los dos hallazgos son REALES. Se miden, no se discuten:
@@ -375,7 +393,7 @@ Todo objeto astrofísico tiene r_km ≪ 1 kpc → quinta fuerza DM activa a esca
 - Bibitem `brax2014` añadido
 - `src/p08_stronggrav/ssee_paper8_figures.py`: figura regenerada con fórmula k-mouflage
 
-**Scripts:** `archive/codigo/investigacion/open_problems/ssee_op4_vainshtein.py` (cálculo completo), `src/p08_stronggrav/ssee_paper8_figures.py` (figura)
+**Scripts:** `archive/codigo/investigacion/open_problems/ssee_op4_vainshtein.py` (cálculo completo), `archive/codigo/investigacion/op4_rkm_RETIRADO_2026-10-03/ssee_paper8_figures.py` (figura, archivada con el radio)
 
 ---
 
@@ -2081,7 +2099,7 @@ Abordar SOLO después de las auditorías. Relacionado con la advertencia [[proje
 | OP-1 | P4 | ~~Factor 200 in Ω_b h²~~ | ✅ PARCIAL | (π−φ)/H₀_SSEE=0.32σ Planck; BBN derivation → Paper B/C; script op1 |
 | OP-2 | P4 | ~~n_s exponent 7 not derived from V(φ)~~ | ✅ RESUELTO | α-attractor universality + N_*=2φ⁷; r=φ⁻¹⁰ nueva predicción; script op2 |
 | OP-3 | P10 | Origen del `5/2` en `M⁴ = 5φ⁸ρ_c` | 🟡 PARCIAL | Reabierto 2026-09-06 (Registro V-L3-OP3). `KAL_eff` se despeja DE `M⁴`, no al revés. **3 rutas cerradas por medición**: A sobredeterminada, C subdeterminada + serie no trunca, y la cascada de Hubble NO mide `M⁴` (banda ±0.968 vs residuo 4.2e-06). Falta el `5/2` sin usar `M⁴` ni SH0ES |
-| OP-4 | P8 | r_V > r_Hubble para Vainshtein | 🔴 **REABIERTO 2026-09-19** | El cierre de 2026-05-15 (k-mouflage + αB=αM=αT=0) sigue en pie para la *selección del límite*, pero la auditoría externa (Max, commit 17acccd) encontró que `eq:rkm` **no cierra dimensiones**: evaluada en GeV da r☉=1.44e4 m y en eV 1.44e7 m — un factor 1000 según la unidad elegida. Ver la ficha completa arriba. NO entra en la predicción de lensing del límite canónico, que descansa en ω_c (OP-8) y α_B=α_M=0 (P7) |
+| OP-4 | P8 | r_V > r_Hubble para Vainshtein | ✅ **CERRADO 2026-10-03** | P8 ya no cita radio de apantallamiento (sección reducida a un párrafo; sin acople βc en la acción no hay quinta fuerza que apantallar). Historia: El cierre de 2026-05-15 (k-mouflage + αB=αM=αT=0) sigue en pie para la *selección del límite*, pero la auditoría externa (Max, commit 17acccd) encontró que `eq:rkm` **no cierra dimensiones**: evaluada en GeV da r☉=1.44e4 m y en eV 1.44e7 m — un factor 1000 según la unidad elegida. Ver la ficha completa arriba. NO entra en la predicción de lensing del límite canónico, que descansa en ω_c (OP-8) y α_B=α_M=0 (P7) |
 | OP-5 | P5-6 | ~~S₈ weak-lensing tension~~ | ✅ **DISUELTO 2026-08-01, confirmado 2026-09-20** | No hay tensión. Contra KiDS-1000 con A_s libre: S₈=0.7559 ± 0.0189 (0.10σ). Contra **KiDS-Legacy con A_s CLAVADO al del CMB** (cero libres cosmológicos): S₈=0.8273 predicho vs 0.8265±0.0176 medido = **0.04σ**, χ²=417.97/357. El 3.5σ era artefacto de fijar A_s a Planck, o sea de importar la tensión Planck–KiDS |
 | OP-6 | P9 | ~~Screening form ambiguity~~ | ✅ RESUELTO | Universo separado k-essence + identidad 1+w₀=Ω_m; Paper 9 §3 revisado |
 | OP-7 | P4/7/8 | QFT derivation of Genesis role assignments | ✅ PARCIAL | EFT uniqueness formalizado P7 §5.2 + P1 §5.3; QFT desde primeros principios → largo plazo |

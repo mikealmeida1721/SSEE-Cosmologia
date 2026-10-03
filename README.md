@@ -100,7 +100,7 @@ SSEE/
 │   └── cover_letter_*.txt, abstracts_arXiv.txt
 ├── src/                            # Python scripts — organized per paper
 │   ├── p02_mcmc/ … p10_uv/         # per-paper analysis, MCMC, figures (p02_mcmc, p03_cmb,
-│   │                               #   p04_toe, p05_IS, p06_phiDM, p07_eft, p08_stronggrav,
+│   │                               #   p04_toe, p05_IS, p06_growth, p07_eft,
 │   │                               #   p09_hubble, p10_uv)
 │   ├── pB_inflation/               # Paper B groundwork (baryogenesis, N_*)
 │   ├── estadistica/                # Bayesian model-selection phases (DIC, Savage-Dickey, cross-val)
