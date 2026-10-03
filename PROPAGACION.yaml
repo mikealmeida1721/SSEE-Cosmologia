@@ -66,8 +66,6 @@ logs:
   # Prueba de equivalencia por EJECUCION del camino LCDM de cobaya_kids.py
   # (ver la nota en `muestreo_certificado`). Declarada aqui para que R35 la
   # vigile como a cualquier otro log: si su script cambia, el log envejece.
-  equivalencia_kids_lcdm:     src/verificacion/prueba_equivalencia_kids_lcdm.py
-  equivalencia_kids_cache:    src/verificacion/prueba_equivalencia_kids_cache.py
   formula_rd_exponentes:      src/p02_mcmc/verifica_formula_rd.py
   h0_lente_fondo_ssee:        src/p09_hubble/h0_lente_fondo_ssee.py
   desi_dr2_w0wa_momentos:     src/p02_mcmc/momentos_desi_dr2_w0wa.py
@@ -109,14 +107,11 @@ logs:
   # qué función sale cada uno, R35 compara sólo ese camino y las funciones que
   # él llama. Caso que lo motivó: el commit 8f49b48 arregló `loglike_ssee_wc_h`
   # y ensució estos dos, que salen de `loglike_lcdm_fijo`.
-  kids_lcdm_fondofijo_SIN_REPARTO_20260908:  src/p06_growth/cobaya_kids.py::loglike_lcdm_fijo
   kids_lcdm_fondofijo_reparto:               src/p06_growth/cobaya_kids.py::loglike_lcdm_fijo
   kids_ssee_wc_h:                            src/p06_growth/cobaya_kids.py::loglike_ssee_wc_h
 
   # ── Añadidos 2026-09-19: la cola #28 (tres sondas, un solo A_s) ──
   base_sin_particula:           src/p06_growth/base_sin_particula.py::main
-  rejilla_extendida:            src/p06_growth/rejilla_extendida.py::main
-  ruido_minimizador_kids:       src/p06_growth/ruido_minimizador_kids.py::main
   # 2026-09-09: la corrida sin reparto rapido/lento se archivo (cadenas en
   # chains_p6/kids/sin_reparto_2026-09-08/) y se relanzo declarandole a Cobaya
   # que 7 de los 9 libres NO tocan CAMB. Los DOS logs quedan declarados: el
@@ -154,11 +149,6 @@ logs:
   rd_camb_control:            src/rd_camb.py
   cmb_dbic_mnu_propia:        src/p11_sondas/cmb_dbic_mnu_propia.py
   cmb_dbic_tau_ajustado:      src/p03_cmb/dbic_tau_ajustado.py
-  cmb_fuga2_combinaciones:    src/p03_cmb/fuga2_combinaciones.py
-  cmb_fuga3_kids:             src/p03_cmb/fuga3_por_As.py
-  cmb_fuga3_fondo:            src/p03_cmb/fuga3_por_As.py
-  cmb_fuga3_kids_3sig_rehecho: src/p03_cmb/fuga3_rehace_3sig.py
-  cmb_punto_de_fuga2:         src/p03_cmb/punto_de_fuga2.py
   cmb_quien_mide_As:          src/p03_cmb/quien_mide_As.py
   cmb_ajuste_conjunto_wc_ns_SSEE: src/p03_cmb/ajuste_conjunto_wc_ns.py
   cmb_ajuste_conjunto_wc_ns_LCDM: src/p03_cmb/ajuste_conjunto_wc_ns.py
@@ -195,10 +185,7 @@ logs:
   conjunta_tres_sondas:       src/p06_growth/conjunta_tres_sondas.py
   marginal_vs_perfil:         src/p06_growth/marginal_vs_perfil.py
   quien_mide_As:              src/p06_growth/quien_mide_As.py
-  ssee_om_libre:              src/p06_growth/ssee_om_libre.py
   termino_volumen_boss:       src/p06_growth/mide_termino_volumen.py
-  vara_As_libre_perfil:       src/p06_growth/vara_As_libre_perfil.py
-  vara_lcdm_fondo_fijo:       src/p06_growth/vara_lcdm_fondo_fijo.py
   h0_four_priors:             src/p09_hubble/ssee_h0_prior_experiment.py
   lcdm_conjunta:              src/p11_sondas/lcdm_conjunta.py
   lcdm_conjunta_bao:          src/p11_sondas/lcdm_conjunta.py
@@ -211,6 +198,12 @@ logs:
   union3_repro_compara:       src/p11_sondas/union3_repro_compara.py
 
 historicos:
+  # 2026-10-03: los históricos SIN cita y SIN lector se movieron a archive/
+  #   (logs_superados/{particula_colas_24_29_2026-09, punto_de_fuga_2026-09-08,
+  #   p6_exploracion_2026-07-30, era_v36_mira_dr1, corridas_cortadas,
+  #   pruebas_puntuales} y codigo/investigacion/*/logs), cada carpeta con su
+  #   README (R77). Aquí quedan sólo los que siguen en results/logs/ porque
+  #   algo vigente los lee o los cita.
 
   # ── 2026-09-30: logs SIN script recuperable. Entraron en un commit sin el
   #    codigo que los produjo (lectura o calculo suelto, perdido) o su script
@@ -219,28 +212,13 @@ historicos:
   #    son fuente de ningun numero vigente. Se conservan como registro; si
   #    algun dia hicieran falta, se rehacen con script (como R3 y el ajuste
   #    conjunto w_c,n_s), no se citan.
-  - INVENTARIO_two_sector          # dos sectores: retirado 2026-08-01
   - particula_que_prefiere_kids    # particula: retirada 2026-08-01
-  - precio_cmb_de_la_particula     # particula: retirada 2026-08-01
-  - precio_cmb_rejilla_extendida   # particula (m_x, om_x): retirada 2026-08-01; script archivado el 2026-10-01 (R35), nadie la cita
-  - ssee_kids_results              # script en archive/.../particula_RETIRADA_2026-08-01
-  - lcdm_kids_results              # script en archive/.../sondeos_p6_2026-07
   - s8_barra_kids                  # script en archive/codigo/p06_kids1000_SUPERADO_2026-09-20
-  - mcmc_run_20260420              # corrida de abril, anterior a todo reframe
-  - test_hueco                     # fc3b594, sin script
-  - conjunta_vs_individual_preliminar  # lectura previa a la conjunta cerrada
-  - multisonda_un_solo_As          # 3ea99aa: RETRACTADO el +12.45 de BOSS
-  - cmb_punto_de_fuga              # v1; superado por cmb_punto_de_fuga2 (con script)
-  - cmb_As_perfil                  # 01d4369, sin script
-  - cmb_combinacion_s8             # 01d4369, sin script
   - cmb_ns_forzado                 # 01d4369, sin script
   - cmb_wb_forzado                 # 01d4369, sin script
   - cmb_tau_flotado                # 01d4369, marcado «NO USAR» (EoS clavada, R64)
-  - cmb_tau_flotado_lcdm           # 01d4369, sin script
   - cmb_ajuste_conjunto_wc_ns      # 01d4369, sin script; REHECHO con script en cmb_ajuste_conjunto_wc_ns_{SSEE,LCDM}
   - R1R2_boss_lpt_cobaya           # sin script; el R1R2 vigente es R1R2_boss_lpt_kmax0.200 (boss_lpt_R1R2.py)
-  - R1R2_cobaya_lcdm_20260907      # salida de consola de una corrida Cobaya, sin script propio
-  - R1R2_lpt_20260907              # idem
   # ── Control de memory_sync (2026-09-30): LISTA valores retirados a proposito
   #    (es su trabajo: probar que el comprobador los caza). No es un computo.
   - memory_sync_control_2026-09-30
@@ -248,35 +226,10 @@ historicos:
   #    las dos corridas vivas se reanudaron con KIDS_REANUDAR=1. Lo de antes
   #    del corte queda congelado: no se re-corre, se conserva como registro
   #    de que la cadena continuo y no empezo de cero.
-  - kids_legacy_ssee_antes_corte
-  - kids_legacy_lcdmfijo_antes_corte
   # ── Retirados 2026-09-07 — su script está en archive/, no se re-corren ──
-  - barrido_beta_c            # β_c: artefacto del bug de saturación (2026-09-05)
-  - barrido_beta_c_fino       #   scripts en archive/codigo/investigacion/
-  - bc_autoconsistente_20260808  #   beta_c_RETIRADO_2026-09-07/
-  - op9_multiplier_search     # partícula φ-DM retirada 2026-08-01
-  - op9_particle_existence    #   scripts en archive/codigo/investigacion/
-  - p6_class_reframe_omega_m   # sector φ-DM retirado 2026-08-01 (script en archive/)
   - mcmc_paper2_3models_om308
-  - mcmc_paper2_reframe_om308
-  - mcmc_paper2_reframe_dr2
   - mcmc_professional
-  - mcmc_professional2
-  - mcmc_run
-  - mcmc_run2
-  - mcmc_om320_run
-  - mcmc_paper2_mira
-  - lcdm_baseline_om308
-  - lcdm_baseline_dr2
-  - p3_cmb_reframe_nu_fix
-  - p3_rd_reframe_nu_fix
-  - p3_pr4_diag_nu_fix
-  - paper3_cmb_canonical
-  - paper2_analysis_dr2real
   - paper2_analysis_dr2official
-  - mcmc_paper2_3models_dr2
-  - clik_install          # instalación de dependencia, no un resultado
-  - b1_mcmc_reframe       # corrida --fast de validación (R−1<0.05), superada
                           # por b1_full_run convergido a R−1=0.017 (2026-07-27)
 
 # Figuras REGENERADAS y verificadas byte-idénticas al PDF ya commiteado: el
@@ -389,7 +342,6 @@ muestreo_certificado:
   # EJECUCION (version del commit de cada log contra la de hoy, 12 evaluaciones con desalojo de cache):
   # results/logs/equivalencia_kids_cache.log -> 0.000e+00 en los cuatro caminos; cache rota 4.598 (se ve).
   kids_lcdm_fondofijo_reparto: 2026-10-01
-  kids_lcdm_fondofijo_SIN_REPARTO_20260908: 2026-10-01
   # 2026-09-19: la cache acotada a 3 (8a41450) toca `_camb_cached`, en el
   # camino de los dos de arriba y de `kids_ssee_wc_h`. Misma prueba por
   # ejecucion (results/logs/equivalencia_kids_cache.log): 0.000e+00 en los

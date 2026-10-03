@@ -17,18 +17,18 @@ muerta por lanzar primero y verificar después.
 
 | # | Log | Script | Alimenta | Estado |
 |---|---|---|---|---|
-| 1 | `p6_class_reframe_omega_m.log` | `archive/codigo/p06_phiDM_RETIRADO_2026-08-01/ssee_paper6_canonical_particle.py` | ~~m_φ, k_fs, σ₈, S₈~~ | 🔴 **RETIRADO 2026-08-01** — alimentaba la partícula. «Reproduce lo publicado» dejó de ser cierto al reescribirse Paper 6: `m_φ` y `k_fs` ya no se publican. Canónico: `R3_ssee_kids_S8.json` (S₈=0.7555±0.0192) |
+| 1 | `p6_class_reframe_omega_m.log` | `archive/codigo/p06_phiDM_RETIRADO_2026-08-01/ssee_paper6_canonical_particle.py` | ~~m_φ, k_fs, σ₈, S₈~~ | 🔴 **RETIRADO 2026-08-01** — alimentaba la partícula. «Reproduce lo publicado» dejó de ser cierto al reescribirse Paper 6: `m_φ` y `k_fs` ya no se publican. Canónico: `R3_ssee_kids_S8.json` (S₈=0.7555±0.0192)  Log archivado 2026-10-03 en `archive/codigo/investigacion/particula_RETIRADA_2026-08-01/logs/`. |
 | 2 | `p3_rd_reframe_omega_m.log` | `src/p03_cmb/run_p3_rd_reframe.py` | r_d, θ* (Paper 3) | ✅ **HECHO** — Registro actualizado (θ*) |
 | 3 | `p3_cmb_reframe_omega_m.log` | `run_p3_reframe.py` | χ², ΔBIC (Paper 3) | 🗄️ **ARCHIVADO 2026-10-03** (`archive/logs_superados/`): A_s y τ clavados, N=613, y un control con (π/φ)·s_m. Superado por `cmb_dbic_mnu_propia.json` (ΔBIC −26.03) |
 | 4 | `p3_h0anchor_reframe.log` | `src/p03_cmb/scan_omega_m.py` | ancla H₀ (Paper 3) | ✅ **HECHO** — el SCRIPT estaba rancio |
 | 5 | `paper3_cmb_reframe.log` | `src/p03_cmb/ssee_paper3_cmb.py` | CMB (Paper 3) | ✅ **HECHO** — ΔBIC=−35.0 + 5 figuras |
 | 6 | `b1_full_run.log` | `src/p03_cmb/ssee_paper3_b1_mcmc.py` | CMB Fase B | ⬜ pendiente |
 | 7 | `b1_lcdm_run.log` | `src/p03_cmb/ssee_paper3_b1_mcmc.py` | CMB Fase B (ΛCDM) | ⬜ pendiente |
-| 8 | `b1_mcmc_reframe.log` | `src/p03_cmb/ssee_paper3_b1_mcmc.py` | CMB Fase B (MCMC) | ⬜ pendiente |
+| 8 | `b1_mcmc_reframe.log` | `src/p03_cmb/ssee_paper3_b1_mcmc.py` | CMB Fase B (MCMC) | 🗄️ **ARCHIVADO 2026-10-03** (`archive/logs_superados/era_v36_mira_dr1/`): corrida --fast del 06-20, cortada; la reemplaza `b1_k2.json` (etapa) |
 
 Históricos ya declarados en `_LOGS_HISTORICOS` (no se re-corren, quedan como
-registro): `mcmc_paper2_3models_om308`, `mcmc_paper2_reframe_om308`,
-`mcmc_professional`, `mcmc_paper2_reframe_dr2`.
+registro): `mcmc_paper2_3models_om308`, `mcmc_professional`. **2026-10-03:** `mcmc_paper2_reframe_om308`,
+`mcmc_paper2_reframe_dr2` y el resto de la era V3.6 se movieron a `archive/logs_superados/era_v36_mira_dr1/` (con su README).
 
 ## Contraste esperado (lo que hay que confirmar, no suponer)
 

@@ -118,7 +118,7 @@ Cambian si el script o los datos cambian. Cada uno lleva su **procedencia**.
 | r_d,SSEE (MCMC, ω_m algebraico fijo R25) | 147.71 en la mediana del posterior (ΛCDM 147.59, ratio 1.001); en el punto algebraico 147.17 vs ΛCDM-Planck 147.10 (`rd_dual.json`, `lya_auditoria.json`) | `ssee_paper2_mcmc.py` → `results/logs/mcmc_paper2_3models_wmfix.log` | 2026-09-30 (148.15 con Ω_m congelado; el 175.16 era el bug 0.160 en E(z))
 | r_d (CAMB, reframe ω_m-directo @ H_glob=67.962, Ω_m,CMB=0.308881) | 147.17 Mpc — **0.32σ** (ΛCDM-Planck con su mν, mismo código: 147.10) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log`; ΛCDM `src/ssee_resolution_figures.py` → `rd_dual.json` | 2026-09-29 (re-corrido; sin mapping MIRA; era 146.73@67.037) |
 | χ²_r CMB TT (SSEE) | 1.042 | `ssee_paper3_cmb.py` (reframe ω_m-directo @ H=67.962, Σm_ν=0.0685) → `results/logs/paper3_cmb_reframe.log` | 2026-06-19 (era 1.044 @67.04 legacy) |
-| ΔBIC CMB diagonal (SSEE−ΛCDM) | −35.0 (SSEE favorecido) | `ssee_paper3_cmb.py` (reframe ω_m-directo @ H=67.962) → `results/logs/p3_pr4_diag_nu_fix.log` | 2026-07-25 (Σm_ν=0.06849 coherente; era −34.9 con 0.0690, −28.0 @67.04 legacy) |
+| ΔBIC CMB diagonal (SSEE−ΛCDM) | −35.0 (SSEE favorecido) | `ssee_paper3_cmb.py` (etapa `paper3_cmb`) → `results/logs/paper3_cmb_chi2.json#total.dBIC` = −35.03 (el log de julio `p3_pr4_diag_nu_fix.log`, archivado 2026-10-03 en `archive/logs_superados/era_v36_mira_dr1/`, daba lo mismo) | 2026-07-25 (Σm_ν=0.06849 coherente; era −34.9 con 0.0690, −28.0 @67.04 legacy) |
 | ΔBIC CMB plik_lite TTTEEE+lowT+lowE (ω_m-directo, k=2) | **−26.03** (χ²=1003.586 vs ΛCDM 1003.596 con SU mν=0.06; N=669 medido; caso k=4 −13.02) | `src/p11_sondas/cmb_dbic_mnu_propia.py` → `results/logs/cmb_dbic_mnu_propia.json` (ΛCDM re-minimizado por `lcdm_conjunta.py cmb`) | 2026-09-29 (era −26.21: ΛCDM con la mν de SSEE. Antes, 2026-09-09 CANÓNICO: {A_s,τ} ajustados y N medido del likelihood). Supersede −24.02 (χ²=1005.41), que clavaba A_s y τ en Planck contándolos como libres y usaba N=613 — con N bien contado habría sido −24.37. Cobaya legacy −32.2 @67.037 superado |
 | ΔBIC CMB full plik TTTEEE+lowl+lensing (k=2, H₀ fijo) | **−33.83** — χ² MÍNIMO SSEE 2768.449 vs ΛCDM 2771.227, Δχ² −2.778 (indistinguibles), N=2354, k=2 vs 6; conservador k=4: −18.31. Control (R53): con el mejor muestreado −34.08, mismo signo — PASA. El −32.9 del 23-jun queda retirado: no tenía log (cadenas sobrescritas) | `b1_minimiza.py ssee` y `lcdm` → `b1_min_*.json`; `b1_k2_lee.py` → `results/logs/b1_k2.json` (etapas DVC b1_min_ssee, b1_min_lcdm, b1_k2) | 2026-10-01 (re-corrida k=2, decisión de Mike) |
 | θ* (CAMB, en H_glob 67.962, Σm_ν=0.06849) | 0.59667° (100θ*=1.04139) — **1.00σ** | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log` | 2026-09-29 (re-corrido; sin cambio. El log de 07-26 usaba Σm_ν=0.06902 rancio → 0.59668/1.05σ) | <!-- R74: git:d7446ace8a:results/logs/p3_rd_reframe_omega_m.log -->
@@ -1262,9 +1262,13 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
   (08-08), superado por el LPT R1/R2; nadie los cita. Re-corridos CON su k_max: no reproducen
   (σ(fσ₈) se mueve 2–25 %, el nuisance `sv` salta órdenes de magnitud): minimizador mal
   condicionado en una dirección plana. **Archivados**, junto con sus dos scripts `boss_control.py` y `boss_fit.py` (2026-10-03), en `archive/logs_superados/boss_kaiser_20260808/` (con su README).
-- `growth_2026-07/termino_volumen_boss.json`: cuadra, pero su módulo `boss_lpt_R1R2.py` lleva
-  rutas fijas al árbol principal y es dependencia de la etapa R1/R2; arreglarlo invalida ese
-  candado (habría que re-correr el MCMC). Queda para la tanda pesada.
+- `growth_2026-07/termino_volumen_boss.json`: **SELLADO 2026-10-03** (etapa `termino_volumen_boss`).
+  No hacía falta tocar `boss_lpt_R1R2.py`: sus rutas fijas apuntan al árbol principal, que es
+  donde corren las etapas. Al sellarlo apareció que `mide_termino_volumen.py` llevaba tecleados
+  el desplazamiento observado (0.1811) y la σ del perfil: el 0.1811 era de la cadena BOSS del
+  09-08 (marginal 2.7636); con la vigente (2.7614) sale 0.1834 y la razón predicho/observado
+  pasa de 1.387 a 1.370. Ahora los lee de `R1R2_boss_lpt_cobaya.json#perfil_vs_marginal`.
+  (La etapa R1/R2 tampoco re-corre el MCMC: sólo lee las cadenas, 3 min.)
 - `erosita_extlike.json`: se construye con varias invocaciones con argumentos que acumulan en su
   propio log; una etapa no lo reproduce. Lo común cuadra (0/35 distintos); el script nuevo añade 95 claves.
 - `rd_dual.json`: cuadra, pero su script regenera figuras; se sella aparte.
@@ -1279,3 +1283,40 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
 contra su salida estándar); corre los .sh con python; al matar por timeout un script con Pool deja
 huérfanos a sus workers (se mataron a mano por PID: 7); no tolera tiempos de cómputo ni el último
 dígito flotante (control_legacy salía «no cuadra» por 1e-16 y por `segundos`).
+
+## V-L5-CLASIF — los 117 logs fuera de la cadena, clasificados por lo que buscaban (2026-10-03)
+
+Regla de Mike (2026-10-03): no re-correr a ciegas. Para cada log se leyó qué buscaba, quién
+lo lee (código vigente, `\val`, etapas DVC) y quién lo cita (papers, PRD, cajones,
+CANONICAL), y se decidió con sus tres motivos: **(a)** corrida mala, reemplazada por otra que
+ya está en el modelo y cumple → archivo con nota; **(b)** superada por física nueva → archivo
+con nota; **(c)** útil pero sin conservar o a mano → se re-corre y se sella. Lo que se
+archiva entra declarado (R77). Tabla de trabajo: `clasifica75.py` (cruce automático) más la
+lectura de cada cabecera.
+
+**1. Archivados (57 logs y 15 scripts), cada carpeta con su README:**
+- `archive/logs_superados/particula_colas_24_29_2026-09/` (b): colas #24–#29, la partícula que
+  pedía KiDS-1000; innecesaria con KiDS-Legacy (0.49σ). 10 logs + 7 scripts.
+- `archive/logs_superados/punto_de_fuga_2026-09-08/` (b): qué soltaría el CMB para aceptar el
+  A_s de KiDS-1000; sin tensión que localizar con KiDS-Legacy. 9 logs + 5 scripts.
+- `archive/logs_superados/p6_exploracion_2026-07-30/` (a): ajustes por minimización del 07-30;
+  los reemplazan R3/R4 y KiDS-Legacy. 4 logs + 1 script.
+- `archive/logs_superados/era_v36_mira_dr1/` (a+b): MCMC y P3 bajo MIRA, DR1 mal etiquetado,
+  Ω_m congelado o Σm_ν rancio. 17 logs.
+- `archive/logs_superados/corridas_cortadas/` (a): 5 corridas detenidas, con la completa en su lugar.
+- `archive/logs_superados/pruebas_puntuales/` (a): 5 pruebas contestadas + 2 scripts.
+- `archive/codigo/investigacion/{beta_c_RETIRADO_2026-09-07,particula_RETIRADA_2026-08-01}/logs/` (b): 3 + 4 logs, junto a sus scripts.
+
+**2. Sellado (1):** `termino_volumen_boss.json` (etapa; ver V-L5-RECORRE).
+
+**3. Se quedan en `results/logs/` — y por qué:**
+
+| clase | logs | qué falta |
+|---|---|---|
+| **vigente, por sellar (ligero)** | `rd_dual.json`, `datos_crudos_T2.json`, `growth_2026-07/marginal_vs_perfil.json`, `analiza_lcdm_R4.log` + `growth_2026-07/R4_lcdm_kids_S8.json`, `growth_2026-07/R3_ssee_kids_S8.json`, `b1_analyse.log`, `auditoria_pdfs_zenodo.json`, `desi_dr2_w0wa_momentos.log`, `erosita_extlike.json` | etapa + acta; leen cadenas o datos, minutos |
+| **vigente, por sellar (pesado, cola)** | `growth_2026-07/boss_aisla_neutrinos.json` (perfil de BOSS que lee `analiza_boss_R1R2`), `base_sin_particula.log` + `growth_2026-07/base_sin_particula.json` (χ² BOSS 198.07 en P6), `cmb_perfil_wc.json` + `.log` (P8), `cmb_dbic_tau_ajustado.json` (ΔBIC −26.03), `cmb_quien_mide_As.json`, `p3_h0anchor_reframe.log`, `paper2_analysis_dr2official.log`, sondas `act_dr6_calibrador`, `act_dr6_en_el_clavo`, `des_y3_calibrador`, `des_y3_en_el_clavo_{ssee,lcdm_planck,lcdm_libre}`, `spt3g_kk_en_el_clavo`, `bao_lcdm_planck`, `conjunta_b3_bloques`, `conjunta_control` | re-corrida con núcleos declarados + etapa; varias horas cada una |
+| **en curso** | `lcdm_conjunta.json`, `lcdm_conjunta_{cmb,kids,bao,control}.json` | la conjunta ΛCDM (PID 491592) sigue minimizando; se sella al terminar |
+| **entrada de código vigente, sin script propio** | `cmb_ajuste_conjunto_wc_ns.json` (dep. de `ajuste_conjunto_{SSEE,LCDM}`), `cmb_tau_flotado.json` (lo leen `cmb_eval`, `perfil_wc_cmb` y el guardián), `growth_2026-07/quien_mide_As.json`, `growth_2026-07/R1R2_boss_lpt_kmax0.200.json`, `growth_2026-07/conjunta_tres_sondas.json`, `growth_2026-07/s8_barra_kids.json` (lo lee `no_circular.py`), `growth_2026-07/particula_que_prefiere_kids.json` (su script lo nombran docstrings de `cmb_eval`/`kids_shear`) | se archivan cuando su lector cambie por física; tocar al lector invalida actas |
+| **útil, sin script (c)** | `cmb_ns_forzado.json`, `cmb_wb_forzado.json`: pendiente medida de la identidad ω_c = KAL₀·ω_b·n_s (−0.042 donde predice +1) | re-escribir el script y sellar (OP-19) |
+| **transcripción de cadena** | `b1_full_run`, `b1_lcdm_run`, `b1_k2_run`, `boss_cobaya_{ssee,lcdm}`, `kids_legacy_{ssee,sseefijo,lcdmfijo}`, `kids_lcdm_fondofijo_reparto`, `kids_ssee_wc_h`, `R4_lcdm_resume_20260805`, `mcmc_paper2_3models_wmfix`, `mcmc_professional`, `mcmc_paper2_lcdm_baseline` (.log) | ninguno es fuente: los números salen de etapas selladas que leen las CADENAS (`kids_legacy_bic`, `s8_kids_legacy_camb`, `b1_k2`, `analiza_boss_R1R2`, MCMC P2…). Se quedan como registro de la corrida |
+| **citado por CANONICAL** | `mcmc_paper2_3models_om308.log`, `memory_sync_control_2026-09-30.log` | se archivan con el próximo cambio físico de `CANONICAL_VALUES.yaml` (editarlo re-sella ~30 etapas) |

@@ -973,7 +973,7 @@ $\sigma_8^{\rm eff} = 0.747$, $S_8 = 0.758$ ($0.04\sigma$ KiDS-1000 $0.759\pm0.0
 **resolves** the lensing tension), single-sector ceiling $S_8=0.827$ ($2.7\sigma$, "the
 challenge"). $\sigma_8$ is a **direct CLASS output** (top-hat on the two-sector $P(k)$),
 not the retired $\alpha_{\rm WDM}$ fit; the Viel $\alpha = 1.108$ Mpc/h is a CLASS
-diagnostic output. log: `results/logs/p6_class_reframe_omega_m.log`.
+diagnostic output. log (archivado 2026-10-03): `archive/codigo/investigacion/particula_RETIRADA_2026-08-01/logs/p6_class_reframe_omega_m.log`.
 
 **Falsifiable anchor:** $k_{\rm fs} = 0.754\,h/$Mpc (analytic; CLASS-measured half-mode
 $k_{1/2} = 0.339\,h/$Mpc), set by $m_\phi = 40.70$ eV (SOLAR²·KRYSTOS_V; the prediction
@@ -2809,7 +2809,7 @@ sin premisa nombrada no se puede disolver, sólo se puede chocar contra él.
 El fondo acoplado tiene que cumplir dos cosas a la vez: reproducir
 $w_0=-0.839950$ hoy, y no dejar más de $\sim3\%$ de energía oscura en $z=9$.
 Barrido fino de 31 puntos en $\beta_c\in[+0.100,+0.245]$
-(`results/logs/barrido_beta_c_fino.log`, script
+(`archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/logs/barrido_beta_c_fino.log`, script
 `archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/barrido_beta_c_fino.py`):
 
 | $\beta_c$ | $w_{\rm eff}(a{=}1)$ | $\lvert w-w_0\rvert$ | $\Omega_{\rm DE}(z{=}9)$ |

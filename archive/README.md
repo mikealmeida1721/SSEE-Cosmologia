@@ -172,6 +172,8 @@ ser preguntas al retirarse el objeto del que trataban. Ver el README del cajón.
 
 - `boss_control.py`, `boss_fit.py` — salen de `src/p06_growth/` el 2026-10-03 hacia `logs_superados/boss_kaiser_20260808/`: ajuste Kaiser lineal de BOSS, superado por LPT (`boss_lpt_R1R2.py`, en la cadena). Detalle en el README de esa carpeta.
 
+- **Clasificación de los logs fuera de la cadena (2026-10-03, regla de Mike):** 57 logs y 15 scripts salen de `results/logs/` y `src/` hacia `logs_superados/{particula_colas_24_29_2026-09, punto_de_fuga_2026-09-08, p6_exploracion_2026-07-30, era_v36_mira_dr1, corridas_cortadas, pruebas_puntuales}/` y `codigo/investigacion/{beta_c_RETIRADO_2026-09-07, particula_RETIRADA_2026-08-01}/logs/`. Cada carpeta lleva su README con el motivo (corrida mala reemplazada, o superada por física nueva) y lo que la reemplaza. Detalle y lo que se quedó, con su porqué: `VERIFICATION_LEDGER.md` §V-L5-CLASIF.
+
 ## Inventario declarado (2026-10-03)
 
 **Por qué existe esta sección.** La regla de arriba («nada se archiva sin entrada») no la
