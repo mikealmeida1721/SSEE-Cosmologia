@@ -28,6 +28,7 @@ from scipy.integrate import quad
 REPO = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "src"))
 import ssee_core as S  # noqa: E402
+from procedencia import con_acta  # noqa: E402
 
 SALIDA = REPO / "results" / "logs" / "h0_lente_fondo_ssee.log"   # JSON dentro
 OM = S.OMEGA_M_TOTAL
@@ -133,10 +134,15 @@ def main():
         centro_H73=mes(c73), centro_H67=mes(c67),
         SSEE_leida_LCDM=dict(H0=h_lcdm, fecha=mes(fecha(h_lcdm))),
         SH0ES=dict(H0=H_SH0ES, fecha=mes(fecha(H_SH0ES))),
+        # Lectura P (OP-8b, Mike, registrada 2026-10-03): el apantallamiento lo ve TODO metodo
+        # local, la lente incluida, asi que la lente lee el valor local H_glob/(1-f) = H_SH0ES
+        # con el fondo de SSEE; un analisis LCDM plano reporta eso dividido por la razon.
+        P_plano_leida_LCDM=dict(H0=H_SH0ES / out["sistemas"][0]["razon_H0_SSEE_sobre_LCDM"],
+                                fecha=mes(fecha(H_SH0ES / out["sistemas"][0]["razon_H0_SSEE_sobre_LCDM"]))),
         nota="la ventana de cada centro es de ~+-4 meses (incertidumbre del modelo de lente)")
     print(f"\n  Requiem, centro de la ventana: SSEE (LCDM-leido {h_lcdm:.2f}) -> "
           f"{mes(fecha(h_lcdm))};  SH0ES ({H_SH0ES}) -> {mes(fecha(H_SH0ES))}")
-    SALIDA.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    SALIDA.write_text(json.dumps(con_acta(out, __file__, entradas=[REPO / "CANONICAL_VALUES.yaml"]), ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n  escrito en {SALIDA.relative_to(REPO)}")
 
 

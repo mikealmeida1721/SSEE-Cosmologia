@@ -45,6 +45,7 @@ from procedencia import con_acta  # noqa: E402
 
 LIT = "/mnt/datos/SSEE_data/literatura"
 H4P = os.path.join(_R, "results", "logs", "h0_four_priors.json")
+LENTE = os.path.join(_R, "results", "logs", "h0_lente_fondo_ssee.log")   # JSON con acta
 OUT = os.path.join(_R, "results", "logs", "h0_por_metodos.json")
 rng = np.random.default_rng(20261003)
 
@@ -112,23 +113,32 @@ d4 = json.load(open(H4P))["plano"]
 H_D, S_D = d4["H0_mediana"], d4["H0_std"]
 mu_P, s_P = H_D / (1 - F_SCREEN), S_D / (1 - F_SCREEN)
 mu_C, s_C = H_D, S_D
+# CORRECCION declarada 2026-10-03 (tras la primera corrida): TDCOSMO publica su H0 con el fondo
+# LCDM plano. Una predicción hecha con el fondo de SSEE se lee en ese marco dividida por la razón
+# de distancias de retraso (h0_lente_fondo_ssee, «cuasar típico TDCOSMO»). Faltaba: el mismo
+# descuido de ingredientes por modelo. Solo afecta a las lentes y solo a P y C (LCDM usa su fondo).
+RAZON_LENTE = json.load(open(LENTE))["sistemas"][1]["razon_H0_SSEE_sobre_LCDM"]
 
 
 def pred(hip, clave):
-    if hip == "P":
-        return mu_P, s_P
-    if hip == "C":
-        return (mu_P, s_P) if med[clave]["usa_cefeidas"] else (mu_C, s_C)
-    return H_PL, S_PL          # LCDM sin apantallamiento
+    if hip == "LCDM":
+        return H_PL, S_PL      # LCDM sin apantallamiento, en su propio fondo
+    if hip == "P" or med[clave]["usa_cefeidas"]:
+        mu, s = mu_P, s_P
+    else:
+        mu, s = mu_C, s_C
+    if clave == "lentes":
+        mu, s = mu / RAZON_LENTE, s / RAZON_LENTE
+    return mu, s
 
 
 def chi2_conj(claves, hip, xs=None):
     x = np.array([med[k]["H0"] for k in claves]) if xs is None else xs
     mus = np.array([pred(hip, k)[0] for k in claves])
-    sp = pred(hip, claves[0])[1]
+    sps = np.array([pred(hip, k)[1] for k in claves])   # error de la predicción: común (correlación total)
     r = x - mus
     s = np.array([med[k]["err_menos"] if ri > 0 else med[k]["err_mas"] for k, ri in zip(claves, r)])
-    Cov = np.diag(s ** 2) + sp ** 2 * np.ones((len(x), len(x)))
+    Cov = np.diag(s ** 2) + np.outer(sps, sps)
     return float(r @ np.linalg.solve(Cov, r))
 
 
@@ -144,15 +154,15 @@ PRIM = [k for k, *_ in FUENTES if med[k]["grupo"] == "primario"]
 
 
 def simula(hip, escala=1.0, n=2000):
-    mu, sp = (mu_P, s_P) if hip == "P" else (mu_C, s_C)
     aciertos = 0
     for _ in range(n):
-        verdad = mu + sp * rng.standard_normal()
+        z0 = rng.standard_normal()
         xs = []
         for k in PRIM:
+            mu, sp = pred(hip, k)
             z = rng.standard_normal()
             s = med[k]["err_mas"] if z > 0 else med[k]["err_menos"]
-            xs.append(verdad + escala * s * z)
+            xs.append(mu + sp * z0 + escala * s * z)
         xs = np.array(xs)
         guard = {k: (med[k]["err_mas"], med[k]["err_menos"]) for k in PRIM}
         for k in PRIM:
@@ -207,13 +217,13 @@ print(f"potencia: recupera P {pot['P']:.0%}, recupera C {pot['C']:.0%} -> "
       f"haría falta ×{escala_nec:.2f} ≈ {s_comb_hoy*escala_nec:.2f}")
 print("veredicto:", v_prim if tiene_potencia else f"no se lee (sin potencia); el criterio diría {v_prim}")
 
-res = dict(fecha="2026-10-03", preregistro_commit="ade15d8", f_screen=F_SCREEN,
+res = dict(fecha="2026-10-03", preregistro_commit="ade15d8", razon_lente_tdcosmo=RAZON_LENTE, f_screen=F_SCREEN,
            H_glob_desi=H_D, H_glob_desi_s=S_D, pred_P=mu_P, pred_P_s=s_P, pred_C=mu_C, pred_C_s=s_C,
            H0_planck=H_PL, H0_planck_s=S_PL, medidas=med, control_lectura=lectura,
            primario=PRIM, chi2_primario=res_prim, n_primario=len(PRIM),
            potencia=pot, tiene_potencia=tiene_potencia, escala_errores_necesaria=escala_nec,
            sigma_combinado_hoy=s_comb_hoy, sigma_combinado_necesario=s_comb_hoy * escala_nec,
            veredicto_criterio=v_prim, veredicto=v_prim if tiene_potencia else "SIN POTENCIA")
-json.dump(con_acta(res, __file__, entradas=[H4P] + sorted({os.path.join(LIT, f[3]) for f in FUENTES}) + [os.path.join(LIT, PLANCK[0])]),
+json.dump(con_acta(res, __file__, entradas=[H4P, LENTE] + sorted({os.path.join(LIT, f[3]) for f in FUENTES}) + [os.path.join(LIT, PLANCK[0])]),
           open(OUT, "w"), indent=1, ensure_ascii=False, default=float)
 print("->", OUT)
