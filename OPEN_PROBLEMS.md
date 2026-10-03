@@ -215,7 +215,7 @@ Script `src/pB_inflation/ssee_paperB_DW.py` evalúa el segundo problema de Paper
 mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducía Ω_φDM h²=0.0688.
 
 - Mecanismo Dodelson-Widrow (mezcla activo-estéril): el ángulo requerido es
-  sin²(2θ)_DW = 4.7846×10⁻⁵ (fórmula Boyarsky-Ruchayskiy-Shaposhnikov 2009).
+  sin²(2θ)_DW ≈ 5×10⁻⁵ (fórmula Boyarsky-Ruchayskiy-Shaposhnikov 2009; el valor exacto colgaba de la m_φ retirada y el script ya no lo reproduce).
 - Scan de ~80 combinaciones algebraicas de φ,π,Ω,MIRA,AURA: el mejor candidato es
   φ⁻²¹ = 4.086×10⁻⁵, con **Δ = 14.6%** — supera el umbral del 10% para "limpio".
 - **Conclusión:** el ángulo de mezcla DW NO admite forma algebraica SSEE. Si se
@@ -272,7 +272,7 @@ derivación.
 | Ruta | Cómo falla | Medido |
 |---|---|---|
 | **A** — el atractor produce `M⁴` vía `K_DE(X)=K_α(X/N)` | **sobredeterminada**: 2 condiciones, 1 botón | lineal pide `N=KAL ⟹ M⁴=417.91`; cuadrática pide `M⁴=5φ⁸ ⟹ N=4.139475=KAL_eff`, y entonces el término lineal pide `0.241577` donde el paper usa `0.181113`, razón `1.333842` |
-| **C** — aterrizaje sobre la acción de Paper 7 | **subdeterminada Y la serie no trunca** | con `A=0.206293212819` fijo y `N` libre: `M⁴ = 66.45 / 910.91 / 6645 / 664500` según `N`; y `X₃/X₂ = −0.6970` independiente de `N` |
+| **C** — aterrizaje sobre la acción de Paper 7 | **subdeterminada Y la serie no trunca** | con `A` (el coeficiente de Paper 7) fijo y `N` libre: `M⁴` recorre cuatro órdenes de magnitud según `N` (cuenta de sesión del 2026-09-06, sin script guardado); y `X₃/X₂ = −0.6970` independiente de `N` |
 | **Hubble** — que la cascada *mida* el corte | **sin poder de restricción** | σ propagado de SH0ES `±0.968` km/s/Mpc vs residuo `+4.2e-06`: `M⁴` compatible de `0.2×` a `∞` (sólo se excluye `0.1×`). Degeneración: `+1% KAL ↔ +2.01% M⁴` |
 
 Consecuencia para el método de ingredientes: `c₂ = 1/M⁴` es un ingrediente
@@ -365,7 +365,7 @@ Satisface la restricción solar por un factor de 6×10²⁵.
 **Argumento secundario — k-mouflage (Brax & Valageas 2014):**
 K(X) = X/KAL + X²/M⁴ es k-mouflage, NO Galileon. La fórmula Galileon usada en Paper 8 §4.2 original era inaplicable. Radio k-mouflage correcto:
 $$r_{\rm km}^3 = \frac{M_{\rm obj}}{4\pi M_{\rm Pl} M^2}, \quad M = 9.62\ \text{meV (valor anterior; vigente 9.68)}$$
-$$r_{\rm km}(\odot) = 1.54 \times 10^7\ \text{m} \approx 0.022\,R_\odot \ll r_{\rm Hubble}$$
+$$r_{\rm km}(\odot) \sim 10^7\ \text{m} \approx 0.02\,R_\odot \ll r_{\rm Hubble}$$ *(cifra de la resolución previa; con la fórmula rota y todo en eV hoy da 1.44×10⁷ m, ver arriba)*
 Todo objeto astrofísico tiene r_km ≪ 1 kpc → quinta fuerza DM activa a escalas cosmológicas.
 
 **Cambios aplicados en Paper 8:**
@@ -689,10 +689,10 @@ but this is a parametrization, not a dynamical derivation.
 **Finding 2026-06-05 — OP-8 and Roadmap-point-2 collapse to a single number.**
 The previously separate "$\Omega_{m,{\rm CMB}}$ dual" puzzle (Roadmap-point-2:
 geometric route $\Omega_{\rm geom}=(\pi-\varphi)/(\pi+\varphi)=0.3201005$ vs
-MIRA route $\mathrm{MIRA}\times\Omega_{m,{\rm dyn}}=0.30889282$, a $0.054\%$ gap
+MIRA route $\mathrm{MIRA}\times\Omega_{m,{\rm dyn}}$ (retired; digits in git, no log), a $0.054\%$ gap
 read as a possible loop/self-energy correction) is **not a second coincidence**.
 It is the **same object** as MIRA's deviation from the integer $2$. Proven to
-machine precision ($\Delta=5.55\times10^{-17}$) and by hand:
+machine precision (difference at the $10^{-17}$ level) and by hand:
 - $M_v = \varphi+\pi+K_v = 3\Omega$ (since $K_v=2\Omega$, $\Omega=\varphi+\pi$);
   $\mathrm{TRIAL}=3(3\varphi+\pi)/2$, so $M_v-\mathrm{TRIAL}=3(\pi-\varphi)/2$.
 - Therefore $\Omega_{m,{\rm dyn}}=(M_v-\mathrm{TRIAL})/M_v=(\pi-\varphi)/\big(2(\pi+\varphi)\big)=\Omega_{\rm geom}/2$ **exactly**.
@@ -1064,7 +1064,7 @@ la energía no diluye como materia.
 (transición de fase única): el potencial cambia de forma UNA sola vez cerca de
 z_eq, con masa constante = 40.70 eV en la fase oscilante. El escenario
 escalón + masa constante ES el misalignment frío ya estudiado (cierre Osiris
-2026-05-30): viable como DM, pero φ_i = 1.17×10⁻⁶ M_Pl no sale algebraico de
+2026-05-30): viable como DM, pero φ_i ~ 10⁻⁶ M_Pl no sale algebraico de
 (φ,π) → empata ΛCDM en conteo de parámetros, no lo supera.
 
 **Única ruta no excluida:** transición de fase única cerca de z_eq cuyo
@@ -1152,7 +1152,7 @@ fórmula del relic usando $m_\phi$ y $\Omega_{\phi DM}$:
 $$T_\phi = T_\nu\left(\Omega_{\phi DM}h^2\cdot 93.14/m_\phi\right)^{1/3}=0.5385\,T_\nu.$$ <!-- R74: git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log -->
 Es **bookkeeping** (densidad = número × peso), no una temperatura derivada de física.
 Verificado en CLASS: con $(m_\phi,T_\phi)$ el Boltzmann completo reproduce
-$\Omega_{\phi DM}=0.14889$ ($\Omega h^2=0.06877$) a 5 cifras — el lazo cierra, pero <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
+$\Omega_{\phi DM}=0.14889$ ($\Omega h^2=\Omega_{\phi DM}h^2$) a 5 cifras — el lazo cierra, pero <!-- R74: git:f3b01e5c2d:CANONICAL_VALUES.yaml -->
 porque se construyó así. $m_\phi$ descansa en una sola pata (SOLAR²·KRYSTOS_V, OP-9).
 
 **Bifurcación (cold vs thermal) — y una inconsistencia interna a corregir:** el texto
@@ -2160,8 +2160,8 @@ de KAL, NO certeza. El coeficiente $\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V$ aú
 del transporte disipativo (ver el "mecanismo líder" en OP-9) — eso es lo que cerraría OP-9.
 
 **Trabajo de implementación (cuando se haga):**
-1. Correr CLASS exacto en $m_\phi=41.017$ → tomar $S_8/k_{\rm fs}/\sigma_8$ reales (no interpolados).
-2. Propagar 42.47→41.017 y 615.33→594.28 por: `ssee_core`, `CANONICAL_VALUES.yaml`, guardián,
+1. Correr CLASS exacto en el $m_\phi$ intermedio (retirado) → tomar $S_8/k_{\rm fs}/\sigma_8$ reales (no interpolados).
+2. Propagar los $m_\phi$ y multiplicadores intermedios (retirados) por: `ssee_core`, `CANONICAL_VALUES.yaml`, guardián,
    3 memorias, vault (kfs/sigma8_eff/Cadena), Papers 1/6.
 3. Escribir el mecanismo del **Lagrangiano** ($m_\phi=g^2 v\,\Sigma m_\nu$, $g$=SOLAR disipativo,
    $v$=KRYSTOS_V vacío) y **mostrar cómo resuelve $S_8$** en Paper 6.

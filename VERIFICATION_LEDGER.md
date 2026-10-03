@@ -1002,7 +1002,7 @@ siempre: documentos llamando canon a un valor ya superado. Rehecha siguiendo
 A_s libre, S₈=0.7559 ± 0.0189 (0.10σ). Contra KiDS-Legacy con A_s **clavado** al
 del CMB —cero libres cosmológicos— S₈=0.8273 predicho contra 0.8265±0.0176
 medido (0.05σ). Las dos cadenas viejas, la two-sector (0.758) y la G=0.866 →
-σ₈=0.7023 → S₈=0.7253 (fuente Ω_m,dyn), están **retiradas**. **Verificado.**
+σ₈ y S₈ con fuente Ω_m,dyn (cifras en git; ninguna corrida guardó log), están **retiradas**. **Verificado.**
 
 ## V-L4-DES — referencia DES-Y3 inconsistente entre scripts — **ABIERTO**
 
@@ -1045,7 +1045,7 @@ re-corrido 2026-09-29—; el 67.159 previo usaba el vector DR1 mal etiquetado, s
 |---|---|---|
 | 67.962 (anchor H_alg, CMB-óptimo ω_m-directo) | 147.17 Mpc | **0.32σ ✓** |
 | 67.159 (posterior MCMC reframe con DR1 mal etiquetado, superado) | 147.17 Mpc | **0.32σ ✓** (r_d es H₀-invariante a ω fijo) | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
-| 67.037 / 66.533 (anchor/posterior MIRA viejo) | 146.73 / 147.30 Mpc | *superado por reframe* |
+| 67.037 / 66.533 (anchor/posterior MIRA viejo) | 146.73 / *(sin log)* Mpc | *superado por reframe* |
 
 **Mecanismo (ω_m-directo):** la parametrización SSEE fija la densidad física
 ω_m = ω_b+ω_c+ω_ν = 0.14267 (forward, ω_c=KAL₀·ω_b·n_s), y Ω_m,CMB=ω_m/h²=0.308881
@@ -1148,7 +1148,7 @@ con w₀ casi exacto*. DESY5/Union3 exactos: pinnear de 2503.14738 §VII en F3.
 >   -> P(exceder) = 0.81058  ->  0.2397 sigma equivalente  ->  0.24
 > ```
 > **Y una trampa que hay que dejar escrita**: la cuadratura *sin* correlación
-> da 0.2299 y **se parece por casualidad**. No es la vía. Yo mismo derivé el
+> da un valor que **se parece por casualidad** (en la segunda cifra). No es la vía. Yo mismo derivé el
 > 0.24 así el 2026-09-08 y salió bien de chiripa; creer esa vía llevaría a
 > exigir 0.23 y a «corregir» un valor que está bien. La vía correcta es χ²
 > bidimensional convertido a σ de una dimensión por su probabilidad de
