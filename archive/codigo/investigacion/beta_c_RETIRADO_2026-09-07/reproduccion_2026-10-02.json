@@ -39,11 +39,9 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "c7bfea4451d0313b916e35e7dce15c5aac344ea3",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "?? archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduce_2026-10-02.py"
-  ],
+  "commit": "b7bd31f1d17cc3727cc18e47f39d61908708ef3d",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduce_2026-10-02.py",
   "script_sha256": "5c5f19ff91cd3e5a18bb05ded2fcfcf7d5eb02d09679e20a0de9b3a7a24a4bcf",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
@@ -51,7 +49,7 @@
   "argv": [
    "archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/reproduce_2026-10-02.py"
   ],
-  "fecha": "2026-10-02T23:48:37",
+  "fecha": "2026-10-02T23:49:06",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
