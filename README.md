@@ -214,7 +214,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | Result | Value | Status |
 |---|---|---|
 | Ω_m = ω_m/h² (one matter sector, no partition) | 0.308881 | ω_m-direct; the same value enters background and growth |
-| Σm_ν = R₂ × 0.9530 eV | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
+| Σm_ν = R₂ · ω_b · C_ν / (τ_Π · H₀) | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
 | **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
 | log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
 | σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7449 ± 0.0186, 0.7559 ± 0.0189 | 0.10σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |

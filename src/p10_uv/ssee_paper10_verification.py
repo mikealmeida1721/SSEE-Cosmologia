@@ -243,6 +243,7 @@ _log = _reloc_os.path.join(_reloc_os.path.dirname(_reloc_os.path.abspath(__file_
                            "..", "..", "results", "logs", "p10_uv_fscreen.json")
 _res = dict(
     s_K_IR=float(s_K_IR), s_K_UV_corr=float(s_K_UV - s_K_IR), s_K_full=float(s_K_UV),
+    s_K_UV_pct=float(100.0 * (s_K_UV - s_K_IR) / s_K_IR),   # 2026-10-03: el «+3.37 %» de P10 estaba tecleado
     f_screen_IR=float(f_screen_IR), f_screen_UV_corr=float(f_screen_UV - f_screen_IR),
     f_screen_full=float(f_screen_UV),
     H0_SH0ES=H0_SH0ES, sigma_SH0ES=sigma_SH0ES,

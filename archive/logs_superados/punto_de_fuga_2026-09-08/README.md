@@ -19,3 +19,19 @@ ni log vigente lee estos archivos.
 `cmb_tau_flotado.json` NO se archiva: lo leen `cmb_eval.py`, `perfil_wc_cmb.py` y el guardián.
 `cmb_ns_forzado.json` / `cmb_wb_forzado.json` tampoco: miden la pendiente de la identidad
 ω_c = KAL₀·ω_b·n_s (OP-19) y siguen siendo útiles; su script falta y queda por re-escribir.
+
+**Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `cmb_As_perfil.json`
+- `cmb_combinacion_s8.json`
+- `cmb_fuga2_combinaciones.json`
+- `cmb_fuga3_fondo.json`
+- `cmb_fuga3_kids_3sig_rehecho.json`
+- `cmb_fuga3_kids.json`
+- `cmb_punto_de_fuga2.json`
+- `cmb_punto_de_fuga.json`
+- `cmb_tau_flotado_lcdm.json`
+- `fuga2_combinaciones.py`
+- `fuga2_control.py`
+- `fuga3_por_As.py`
+- `fuga3_rehace_3sig.py`
+- `punto_de_fuga2.py`

@@ -1,6 +1,6 @@
 # Los 15 subconjuntos: la sinergia es enorme, y **un cuarto del castigo no lo absorbe nadie**
 
-**Corrida:** `src/p03_cmb/fuga2_combinaciones.py` ·
+**Corrida:** `archive/logs_superados/punto_de_fuga_2026-09-08/fuga2_combinaciones.py` ·
 **Log:** `results/logs/cmb_fuga2_combinaciones.json` · 7 h 30 min ·
 **Control PASA al 100%** antes de medir nada. **No toca ningún paper.**
 

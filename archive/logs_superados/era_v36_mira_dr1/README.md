@@ -19,3 +19,22 @@ H₀ 67.82±0.41), CMB de P3 (`paper3_cmb_chi2.json`, ΔBIC diagonal −35.03) y
 `mcmc_paper2_3models_om308.log` se queda en `results/logs/` porque lo nombra un comentario
 de `CANONICAL_VALUES.yaml`; editarlo re-sella ~30 etapas. Se archiva con el próximo cambio
 físico de ese archivo.
+
+**Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `b1_mcmc_reframe.log`
+- `lcdm_baseline_dr2.log`
+- `lcdm_baseline_om308.log`
+- `mcmc_om320_run.log`
+- `mcmc_paper2_3models_dr2.log`
+- `mcmc_paper2_mira.log`
+- `mcmc_paper2_reframe_dr2.log`
+- `mcmc_paper2_reframe_om308.log`
+- `mcmc_professional2.log`
+- `mcmc_run_20260420.txt`
+- `mcmc_run2.log`
+- `mcmc_run.log`
+- `p3_cmb_reframe_nu_fix.log`
+- `p3_pr4_diag_nu_fix.log`
+- `p3_rd_reframe_nu_fix.log`
+- `paper2_analysis_dr2real.log`
+- `paper3_cmb_canonical.log`

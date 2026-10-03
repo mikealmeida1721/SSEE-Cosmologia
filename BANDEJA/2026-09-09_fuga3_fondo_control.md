@@ -1,6 +1,6 @@
 # El control: con el A_s del propio fondo, los cuatro ingredientes no tienen nada que hacer
 
-**Corrida:** `src/p03_cmb/fuga3_por_As.py fondo` ·
+**Corrida:** `archive/logs_superados/punto_de_fuga_2026-09-08/fuga3_por_As.py fondo` ·
 **Log:** `results/logs/cmb_fuga3_fondo.json` · **12 h 36 min** ·
 **No toca ningún paper.**
 

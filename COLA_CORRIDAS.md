@@ -226,7 +226,7 @@ Informe: `BANDEJA/2026-09-08_As_medido_o_producto.md`.
 
 | # | corrida | coste | qué contesta | depende de |
 |---|---|---|---|---|
-| 17 | **barrido de ingredientes clavando el A_s de KiDS (2.8627)** | ~8 h | medido: KiDS **sí** mide A_s (D=1.16) y BOSS **no** (D=4.01, enredado con el sesgo a −0.89). Así que el valor a clavar es el de KiDS, no el promedio ni el de BOSS. Script listo: `src/p03_cmb/fuga3_por_As.py kids`, con las dos cotas en la misma pasada | el control `fondo`, en marcha |
+| 17 | **barrido de ingredientes clavando el A_s de KiDS (2.8627)** | ~8 h | medido: KiDS **sí** mide A_s (D=1.16) y BOSS **no** (D=4.01, enredado con el sesgo a −0.89). Así que el valor a clavar es el de KiDS, no el promedio ni el de BOSS. Script listo: `archive/logs_superados/punto_de_fuga_2026-09-08/fuga3_por_As.py kids`, con las dos cotas en la misma pasada | el control `fondo`, en marcha |
 | 18 | **¿cuánto de la deriva de KiDS sobrevive con un prior estrecho en `halo_A`?** | ~4 h | `halo_A` (retroalimentación bariónica) es el único acompañante que le queda a logA en KiDS, r = −0.39. Es débil, pero es el que hay. Si con un prior estrecho la deriva de 3.59σ no se mueve, entonces es física | la #17 |
 
 **Lo que esto retira:** clavar el A_s de BOSS deja de tener sentido como

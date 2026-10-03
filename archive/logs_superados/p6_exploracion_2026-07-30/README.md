@@ -7,3 +7,10 @@ libre) y `test_hueco.json` (huecos en H(z) a bajo z). Los reemplazan el MCMC R3 
 (ΛCDM) sobre KiDS-1000 y, como titular, KiDS-Legacy con A_s clavado (S₈ 0.8273 vs 0.8265).
 Ningún paper ni `\val` los lee. `s8_barra_kids.json`, del mismo día, NO se archiva: lo lee
 `no_circular.py`.
+
+**Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `lcdm_kids_results.json`
+- `ssee_kids_results.json`
+- `ssee_om_libre.json`
+- `ssee_om_libre.py`
+- `test_hueco.json`

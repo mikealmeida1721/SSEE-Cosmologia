@@ -2,7 +2,7 @@
 
 **Escrito:** 2026-09-11, con la corrida sin lanzar.
 **Autor de la predicción:** Mike. Yo la anoto, la afilo en números y la mido.
-**Corrida:** `src/p06_growth/boss_con_particula.py` · **No toca ningún paper.**
+**Corrida:** `archive/logs_superados/particula_colas_24_29_2026-09/boss_con_particula.py` · **No toca ningún paper.**
 
 ## El enunciado, textual
 

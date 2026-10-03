@@ -22,3 +22,21 @@ nombran los docstrings de `cmb_eval.py` y `kids_shear.py`, que son dependencias 
 etapas; editarlos invalidaría sus actas. `conjunta_tres_sondas.py` (+ json) es entrada de
 `base_sin_particula.py`, cuya casilla `om_x = 0` (χ² BOSS 198.07) cita Paper 6.
 `boss_lpt_R1R2.py` L92 aún nombra el control C0 de `boss_con_particula.py` en un comentario.
+
+**Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `boss_con_particula.py`
+- `pinza_conjunta.py`
+- `precio_cmb_de_la_particula.json`
+- `precio_cmb_de_la_particula.py`
+- `precio_cmb_rejilla_extendida.json`
+- `precio_cmb_rejilla_extendida.log`
+- `rejilla_extendida.json`
+- `rejilla_extendida.log`
+- `rejilla_extendida.py`
+- `ruido_minimizador_kids.json`
+- `ruido_minimizador_kids.log`
+- `ruido_minimizador_kids.py`
+- `vara_As_libre_perfil.json`
+- `vara_As_libre_perfil.py`
+- `vara_lcdm_fondo_fijo.json`
+- `vara_lcdm_fondo_fijo.py`

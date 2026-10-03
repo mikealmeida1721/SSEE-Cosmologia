@@ -9,3 +9,9 @@ estado), no una densidad.
   (`git:d7446ace8a:results/logs/p6_class_reframe_omega_m.log`).
 - `op9_multiplier_search.log`, `op9_particle_existence.log`: búsqueda del multiplicador m_φ/Σm_ν (OP-9).
 - `INVENTARIO_two_sector.txt`: inventario de los sitios que citaban el titular two-sector (S₈ 0.758).
+
+**Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `INVENTARIO_two_sector.txt`
+- `op9_multiplier_search.log`
+- `op9_particle_existence.log`
+- `p6_class_reframe_omega_m.log`

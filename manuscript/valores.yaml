@@ -52,6 +52,7 @@ S8_k1000_dato_sigma: {fuente: "results/logs/kids_publicados.json#s8.k1000_dato.S
 sK_IR:             {fuente: "results/logs/p10_uv_fscreen.json#s_K_IR", formato: ".6f"}
 sK_UV_corr:        {fuente: "results/logs/p10_uv_fscreen.json#s_K_UV_corr", formato: ".6f"}
 sK_full:           {fuente: "results/logs/p10_uv_fscreen.json#s_K_full", formato: ".6f"}
+sK_UV_pct:         {fuente: "results/logs/p10_uv_fscreen.json#s_K_UV_pct", formato: ".2f"}
 fscreen_IR:        {fuente: "results/logs/p10_uv_fscreen.json#f_screen_IR", formato: ".6f"}
 fscreen_UV_corr:   {fuente: "results/logs/p10_uv_fscreen.json#f_screen_UV_corr", formato: ".6f"}
 fscreen_full:      {fuente: "results/logs/p10_uv_fscreen.json#f_screen_full", formato: ".6f"}

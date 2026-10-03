@@ -332,9 +332,9 @@ no probada. OP-2 NO está "RESUELTO": es **condicional a la Conjecture B.1**.
 *Claim CLAUDE.md:* "PARCIALMENTE RESUELTO — unicidad EFT vía dualidad Z₂".
 
 1. **✓** Extracción numérica: integrar el fondo EFT (P7 §6, shooting con
-   Ω_φ(a=1)=Ω_DE) da `βc ≈ −3.990`, sin parámetros libres.
+   Ω_φ(a=1)=Ω_DE) da `βc ≈ −3.990`, sin parámetros libres. <!-- R74: git:febc1b9609:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/logs/barrido_beta_c.log -->
 2. **✗** Identificación `βc = −AURA`: −AURA = −3.99785; el valor extraído
-   −3.990 está a **0.2 %** (|Δ|/βc = 0.196 %). La ecuación `\boxed{βc=−AURA}`
+   −3.990 está a **0.2 %** (|Δ|/βc = 0.196 %). La ecuación `\boxed{βc=−AURA}` <!-- R74: git:febc1b9609:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/logs/barrido_beta_c.log -->
    de P7 lo presenta como exacto — no lo es. El origen del 0.2 % se atribuye
    a la aproximación de shooting, pero el árbitro halló que el plateau test
    muestra que NO viene de las condiciones iniciales. "Bariones+radiación lo
@@ -347,7 +347,7 @@ no probada. OP-2 NO está "RESUELTO": es **condicional a la Conjecture B.1**.
    través de la dualidad" es un overclaim lógico: una coincidencia notacional
    no es una derivación.
 
-**Veredicto:** el resultado numérico βc≈−3.990 es sólido; `βc=−AURA` es una
+**Veredicto:** el resultado numérico βc≈−3.990 es sólido; `βc=−AURA` es una <!-- R74: git:febc1b9609:archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/logs/barrido_beta_c.log -->
 coincidencia numérica al 0.2 %, no una derivación; la dualidad Z₂ es álgebra
 real pero descriptiva, no generativa. **ABIERTO.**
 
@@ -1092,7 +1092,7 @@ vs Planck 2018 **0.59668±0.00046°** (100θ*=1.04109±0.00030): <!-- R74: git:d
 | **67.8226 (posterior MCMC DR2, prior H_glob, semilla 2026-10-01)** | **0.59644° (100θ*=1.04099)** | **0.34σ ✓** (era 0.32σ con 67.8244) | <!-- R74: git:513e84e:results/logs/mcmc_paper2_reframe.json -->
 | 67.7869 (log: git:513e84e:results/logs/mcmc_paper2_reframe.log) (posterior previo, prior número puro ±0.54) | 0.59638° (100θ*=1.04089) | 0.67σ *superado* | <!-- R74: git:34dcf9365e:CANONICAL_VALUES.yaml git:d23a954111:results/logs/p3_rd_reframe_omega_m.log -->
 | 66.412 (posterior con bug: sector 0.160 en E(z)) | 100θ*=1.03693 | ~~13.9σ~~ *bug superado* | <!-- R74: git:6039ffdbd0:CANONICAL_VALUES.yaml -->
-| 67.159 (posterior con vector DR1 mal etiquetado) | 100θ*=1.03910 | ~~6.6σ~~ *superado* | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
+| 67.159 (posterior con vector DR1 mal etiquetado) | 100θ* rancio (sin log) | ~~6.6σ~~ *superado* | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
 
 **El giro (V-L4-DESI 2026-07-09):** la tensión de 13.9σ/6.66σ **era el bug de geometría** —
 el sector frío 0.160 metido en E(z) hundía el posterior a 66.41 y desalineaba el θ*.
@@ -1254,7 +1254,7 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
   p3_rd_reframe_omega_m (**θ* al posterior 0.32σ→0.34σ**; r_d 147.174 igual).
 - union3_en_el_clavo rehecho con ΛCDM con sus parámetros (09-27 19:22): union3_repro_compara
   citaba el de las 12:03 (χ² ΛCDM 28.820→28.834). <!-- R74: git:7852453:results/logs/union3_en_el_clavo.json -->
-- multisonda con un decimal más (417.971→417.9706): conjunta_vs_individual (ΔKiDS 0.6331→0.6335).
+- multisonda con un decimal más (417.971→417.9706): conjunta_vs_individual (ΔKiDS cambia en la cuarta cifra; vigente 0.6335).
 - Ruido de la EDO: eft_barrido_potenciales_wa (≤2e-4 relativo en w_a ~1e-11; ≤5e-6 en el resto).
 
 **No se sellan — declarados:**
@@ -1267,7 +1267,7 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
   donde corren las etapas. Al sellarlo apareció que `mide_termino_volumen.py` llevaba tecleados
   el desplazamiento observado (0.1811) y la σ del perfil: el 0.1811 era de la cadena BOSS del
   09-08 (marginal 2.7636); con la vigente (2.7614) sale 0.1834 y la razón predicho/observado
-  pasa de 1.387 a 1.370. Ahora los lee de `R1R2_boss_lpt_cobaya.json#perfil_vs_marginal`.
+  pasa de 1.387 a 1.370. Ahora los lee de `R1R2_boss_lpt_cobaya.json#perfil_vs_marginal`. <!-- R74: git:7cebd9c:results/logs/growth_2026-07/termino_volumen_boss.json -->
   (La etapa R1/R2 tampoco re-corre el MCMC: sólo lee las cadenas, 3 min.)
 - `erosita_extlike.json`: se construye con varias invocaciones con argumentos que acumulan en su
   propio log; una etapa no lo reproduce. Lo común cuadra (0/35 distintos); el script nuevo añade 95 claves.
