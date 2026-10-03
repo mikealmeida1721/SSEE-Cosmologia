@@ -23,14 +23,13 @@ bulto, no la punta) pero con d chico el hueco esperado es minusculo, y ese hueco
 se calcula y se declara, no se supone.
 
 CONTROL (R53, y va PRIMERO por R24). La misma medida sobre **BOSS**, donde el
-desplazamiento YA esta medido por otra via (0.1811 entre marginal y perfil, con
-D=4.01). Si el diagnostico no ve nada en BOSS, no sirve para absolver a KiDS.
+desplazamiento YA esta medido por otra via (perfil_vs_marginal de
+R1R2_boss_lpt_cobaya.json, que se lee abajo). Si el diagnostico no ve nada en BOSS, no sirve para absolver a KiDS.
     criterio: en BOSS el diagnostico debe ver un hueco > 0.05 (mitad del sigma
     de BOSS). Si no lo ve, se aborta y no se lee la fila de KiDS.
 
 FUENTE: results/logs/growth_2026-07/marginal_vs_perfil.json
 """
-# ORIGEN-VALOR: 0.1811 — desplazamiento marginal-perfil, results/logs/growth_2026-07/marginal_vs_perfil.json
 import json
 import pathlib
 
@@ -44,9 +43,13 @@ SALIDA = REPO / "results" / "logs" / "growth_2026-07" / "marginal_vs_perfil.json
 # El hueco que el CONTROL tiene que ver para que la prueba valga.
 UMBRAL_CONTROL = 0.05
 
+# 2026-10-03: el desplazamiento conocido de BOSS se LEE (antes 0.1811 tecleado, de la cadena del 09-08)
+_PVM = json.load(open(REPO / "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"))["perfil_vs_marginal"]
+
 CASOS = {
     "boss": dict(dir=CAD / "boss", pref="ssee", papel="CONTROL — aqui SI hay "
-                 "desplazamiento medido por otra via (perfil - marginal = 0.1811)",
+                 "desplazamiento medido por otra via (perfil - marginal = %.4f)" % (
+                     _PVM["perfil_logA"] - _PVM["marginal_logA"]),
                  # leidos de R1R2_boss_lpt_cobaya.json (2026-10-02; antes tecleados: 2.7636 era la cadena vieja)
                  publicado=json.load(open(REPO / "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"))["ssee"]["logA"],
                  perfil_conocido=json.load(open(REPO / "results/logs/growth_2026-07/"

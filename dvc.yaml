@@ -1464,3 +1464,83 @@ stages:
         cache: false
     - results/logs/analiza_lcdm_R4.log:
         cache: false
+  marginal_vs_perfil:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/marginal_vs_perfil.py && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/marginal_vs_perfil.py results/logs/growth_2026-07/marginal_vs_perfil.json results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+    deps:
+    - src/p06_growth/marginal_vs_perfil.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
+    outs:
+    - results/logs/growth_2026-07/marginal_vs_perfil.json:
+        cache: false
+  desi_dr2_w0wa_momentos:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/momentos_desi_dr2_w0wa.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/momentos_desi_dr2_w0wa.py results/logs/desi_dr2_w0wa_momentos.log /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    deps:
+    - src/p02_mcmc/momentos_desi_dr2_w0wa.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    outs:
+    - results/logs/desi_dr2_w0wa_momentos.log:
+        cache: false
+  erosita_extlike:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_extlike.py results/logs/erosita_extlike.json /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    deps:
+    - src/p11_sondas/erosita_extlike.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    outs:
+    - results/logs/erosita_extlike.json:
+        cache: false
+  auditoria_pdfs_zenodo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/audita_pdfs_zenodo.py && .venv/bin/python3 src/procedencia_sella.py src/verificacion/audita_pdfs_zenodo.py results/logs/auditoria_pdfs_zenodo.json CANONICAL_VALUES.yaml docs/SSEE_Cover.pdf docs/SSEE_Cover_Letter.pdf docs/SSEE_Endorser_Summary.pdf docs/SSEE_PRD.pdf docs/SSEE_Paper10_UVCompletion.pdf docs/SSEE_Paper1_Framework.pdf docs/SSEE_Paper2_MCMC.pdf docs/SSEE_Paper3_CMB.pdf docs/SSEE_Paper4_ToE.pdf docs/SSEE_Paper5_IS.pdf docs/SSEE_Paper6_Growth.pdf docs/SSEE_Paper7_EFT.pdf docs/SSEE_Paper8_StrongGravity.pdf docs/SSEE_Paper9_HubbleTension.pdf docs/SSEE_Sealed_Journal.pdf docs/SSEE_Unified_Journal.pdf
+    deps:
+    - src/verificacion/audita_pdfs_zenodo.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - CANONICAL_VALUES.yaml
+    - docs/SSEE_Cover.pdf
+    - docs/SSEE_Cover_Letter.pdf
+    - docs/SSEE_Endorser_Summary.pdf
+    - docs/SSEE_PRD.pdf
+    - docs/SSEE_Paper10_UVCompletion.pdf
+    - docs/SSEE_Paper1_Framework.pdf
+    - docs/SSEE_Paper2_MCMC.pdf
+    - docs/SSEE_Paper3_CMB.pdf
+    - docs/SSEE_Paper4_ToE.pdf
+    - docs/SSEE_Paper5_IS.pdf
+    - docs/SSEE_Paper6_Growth.pdf
+    - docs/SSEE_Paper7_EFT.pdf
+    - docs/SSEE_Paper8_StrongGravity.pdf
+    - docs/SSEE_Paper9_HubbleTension.pdf
+    - docs/SSEE_Sealed_Journal.pdf
+    - docs/SSEE_Unified_Journal.pdf
+    outs:
+    - results/logs/auditoria_pdfs_zenodo.json:
+        cache: false
