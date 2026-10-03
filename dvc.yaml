@@ -1387,3 +1387,29 @@ stages:
     outs:
     - results/logs/erosita_cr_v3.json:
         cache: false
+  cmb_ns_forzado:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/cmb_identidad_forzada.py
+      ns
+    deps:
+    - src/p03_cmb/cmb_identidad_forzada.py
+    - src/p03_cmb/cmb_eval.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/procedencia.py
+    - results/logs/cmb_perfil_wc.json
+    outs:
+    - results/logs/cmb_ns_forzado.json:
+        cache: false
+  cmb_wb_forzado:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/cmb_identidad_forzada.py
+      wb
+    deps:
+    - src/p03_cmb/cmb_identidad_forzada.py
+    - src/p03_cmb/cmb_eval.py
+    - src/ssee_core.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/procedencia.py
+    - results/logs/cmb_perfil_wc.json
+    outs:
+    - results/logs/cmb_wb_forzado.json:
+        cache: false
