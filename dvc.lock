@@ -4704,3 +4704,83 @@ stages:
       hash: md5
       md5: 76d0e50931c76ad3b9dc48322a39281f
       size: 1601
+  sello_des_y3_calibrador:
+    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/des_y3_calibra.py && .venv/bin/python3 
+      src/procedencia_sella.py src/p11_sondas/des_y3_calibra.py 
+      results/logs/des_y3_calibrador.json 
+      /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    deps:
+    - path: /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+      hash: md5
+      md5: b85ce9de8fae3e08f94e2f5e2b020de5
+      size: 16351854
+    - path: src/p11_sondas/des_y3_calibra.py
+      hash: md5
+      md5: 48c3edbaef7cc341f70aaa177131ab7a
+      size: 5989
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/des_y3_calibrador.json
+      hash: md5
+      md5: 2dcee7022ceb6b7fb61cebcb6049e1e5
+      size: 3396
+  sello_act_dr6_calibrador:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/act_dr6_calibra.py lee && .venv/bin/python3 
+      src/procedencia_sella.py src/p11_sondas/act_dr6_calibra.py 
+      results/logs/act_dr6_calibrador.json 
+      /mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex 
+      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt 
+      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt 
+      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt 
+      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt
+    deps:
+    - path: /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt
+      hash: md5
+      md5: ceb481d8a23661aa840858a18af7e5be
+      size: 1002447
+    - path: /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt
+      hash: md5
+      md5: 2dd4e9acd7683b13adb23338016cd8f1
+      size: 1045413
+    - path: /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt
+      hash: md5
+      md5: 8d2f671978c58b2a3b8d6eb700b2f02c
+      size: 926001
+    - path: /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt
+      hash: md5
+      md5: ba8a5470b5ffaeff548c572ab60340b7
+      size: 948879
+    - path: /mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex
+      hash: md5
+      md5: 755862c7d1241da690fba51082ae618c
+      size: 328281
+    - path: src/p11_sondas/act_dr6_calibra.py
+      hash: md5
+      md5: 4173ba4136d9fb517782564b4f5e07bb
+      size: 6118
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/act_dr6_calibrador.json
+      hash: md5
+      md5: bf06c1959451291512d880d1d1a9bff3
+      size: 2919

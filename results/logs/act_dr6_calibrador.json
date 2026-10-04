@@ -48,5 +48,40 @@
  "tirones_sigma": -0.06631698245463846,
  "razon_sigmas": 0.9850054380003649,
  "criterio": "|dmedia| < 0.25 sigma; |dsigma|/sigma < 15 %; R-1 < 0.02 (declarado antes)",
- "pasa": true
+ "pasa": true,
+ "_procedencia": {
+  "commit": "fe5e96d4c08530828e548ae175712e980c87ba49",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/act_dr6_calibra.py",
+  "script_sha256": "bbbeaf330bcb7b470df58febc9fabeea77b1bd9f4350e0db6193203024b5e477",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex": "75438d5f755f3176df2ce6dbe3cc422e88fc7cc1dd91cf86b88893ade9e66213",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt": "beb2d89553df6f4185b06830092cc7f59916e5de16a41aea6392e689d18f0cdd",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt": "8287dbcafa35a272748faa9c63c368082a9bff2ba965952e987e0b3ad26026ac",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt": "bb0a5a8987df2262a75f0408725816df2faa03f06393a74b4976ba4925bc0ec0",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt": "6247430925c240cd77f0587b00776161bd58191a165281a4a095b56c3e78869f"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/act_dr6_calibra.py",
+   "results/logs/act_dr6_calibrador.json",
+   "/mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt",
+   "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt"
+  ],
+  "fecha": "2026-10-04T08:31:04",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

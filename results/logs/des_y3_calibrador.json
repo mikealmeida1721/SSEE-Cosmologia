@@ -51,5 +51,32 @@
   "chi2_nuestro": 535.7020259554442,
   "dif": 0.9299762801082352,
   "pasa": true
+ },
+ "_procedencia": {
+  "commit": "fe5e96d4c08530828e548ae175712e980c87ba49",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/des_y3_calibra.py",
+  "script_sha256": "20ec7816a50d5423b08322e276c3e3286aac40a7bf9314981dbae2577c01fef9",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt": "2ba4415560c8a02ccb8da0b7d5cf4552c088a1cc981c1ee96fda90bba31563ff"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/des_y3_calibra.py",
+   "results/logs/des_y3_calibrador.json",
+   "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt"
+  ],
+  "fecha": "2026-10-04T08:31:01",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }
