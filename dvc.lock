@@ -173,6 +173,10 @@ stages:
       hash: md5
       md5: 3e9731e2e54f14a1e43665c197f5cb88
       size: 3862
+    - path: results/logs/lcdm_conjunta.json
+      hash: md5
+      md5: 5a56cb96c567b564e7196d8fc7d39108
+      size: 5518
     - path: results/logs/lya_auditoria.json
       hash: md5
       md5: 0cc8bb27d16107efd03af4122118be33
@@ -276,7 +280,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 5b2d8cbd0ad3ad786dedf71a7afc872f
+      md5: c129040547b4dc195223b570a0dd296b
       size: 88183
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -4281,7 +4285,9 @@ stages:
       /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt 
       /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt 
       /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt && 
+      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
+      results/logs/lcdm_conjunta_lee.log
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
       hash: md5
@@ -4358,9 +4364,9 @@ stages:
     outs:
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: b06d6be716a1a9ab05eb83c48d238cd1
+      md5: 5a56cb96c567b564e7196d8fc7d39108
       size: 5518
     - path: results/logs/lcdm_conjunta_lee.log
       hash: md5
-      md5: 324ab596500d0b2720614cd3da37262e
-      size: 610
+      md5: 30619449c24b185c10d2f1dc7f5e16d1
+      size: 1318

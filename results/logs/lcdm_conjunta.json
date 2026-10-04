@@ -110,7 +110,7 @@
   "consistencia_sigma": 0.8477878229907357
  },
  "_procedencia": {
-  "commit": "d97d740aa20bc21b592b26a8dc2b9c06a7eadccd",
+  "commit": "ae3c4bf5f4d0b702b639d2022ef94e7c458d30ac",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
@@ -147,7 +147,7 @@
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt"
   ],
-  "fecha": "2026-10-04T04:33:18",
+  "fecha": "2026-10-04T04:36:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
