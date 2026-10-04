@@ -43,10 +43,11 @@ SALIDA = REPO / "results" / "logs" / "growth_2026-07" / "boss_aisla_neutrinos.js
 # El valor que traia la version con el prestamo, y el de la cadena MCMC vieja.
 # ORIGEN-VALOR: 0.0981 — sigma marginal de logA de la cadena SSEE con m_nu 0.06, archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json (hoy 0.1010)
 MNU_PRESTADA = 0.06
-# ORIGEN: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json      (el viejo, 2.7636 +- 0.0981)
+# ORIGEN: archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json   (el viejo, 2.7636 +- 0.0981;
+#         el R1R2_boss_lpt_cobaya.json vigente es la re-corrida y ya no lleva este valor)
 # ORIGEN: results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json   (el nuevo, 2.9448 +- 0.1238)
 VIEJO_MCMC = dict(logA=2.763639661108589, sig=0.09813161759644874,
-                  fuente="results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json")
+                  fuente="archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json")
 
 
 def corre(mnu):

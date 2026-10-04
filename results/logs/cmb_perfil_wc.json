@@ -12,18 +12,18 @@
    0.12031399999999999
   ],
   "chi2": [
-   1009.4159263463589,
-   1005.924052129584,
-   1003.7912691133226,
-   1003.012348898287,
-   1003.5836376018647,
-   1005.418388033443,
-   1008.6102938349566,
-   1013.0935946747273,
-   1018.879402366498
+   1009.4157361179948,
+   1005.9239295628512,
+   1003.7912132877359,
+   1003.0123602086255,
+   1003.5837157083886,
+   1005.4185326921697,
+   1008.6105053694153,
+   1013.0938721030263,
+   1018.8797459284112
   ],
-  "wc0": 0.11933407705591019,
-  "sigma": 0.0002459119627714555
+  "wc0": 0.11933406694491495,
+  "sigma": 0.0002459119792488515
  },
  "LCDM": {
   "wc": [
@@ -51,5 +51,32 @@
   "wc0": 0.11974819443845978,
   "sigma": 0.0002517841337427641
  },
- "control_razon_sigmas": 0.9766777561237917
+ "control_razon_sigmas": 0.9766778215663426,
+ "_procedencia": {
+  "commit": "57a02eae0ea59864ec497f5bf7d2ca31166353ec",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/perfil_wc_cmb.py",
+  "script_sha256": "d225d1b2aabc45419bc1747a9c3945f45ee66e65b7db2acab337e14dd238567f",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat": "dac0d9d493213e77c940a10a968cf0da3c5730bae60e1356c4cd8bcff96377ff"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p03_cmb/perfil_wc_cmb.py",
+   "results/logs/cmb_perfil_wc.json",
+   "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat"
+  ],
+  "fecha": "2026-10-04T12:05:17",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

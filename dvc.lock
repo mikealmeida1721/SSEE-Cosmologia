@@ -4948,3 +4948,95 @@ stages:
       hash: md5
       md5: a411736822252c03d30d0da38d946c42
       size: 2211
+  sello_cmb_perfil_wc:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/perfil_wc_cmb.py > results/logs/cmb_perfil_wc.log 2>&1 && 
+      .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/perfil_wc_cmb.py 
+      results/logs/cmb_perfil_wc.json 
+      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    deps:
+    - path: 
+        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+      hash: md5
+      md5: 690b6b708572bf00486db3250ea988d8
+      size: 37393
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p03_cmb/perfil_wc_cmb.py
+      hash: md5
+      md5: a24bc53174b61abc7106ff14dbb7b104
+      size: 5465
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cmb_perfil_wc.json
+      hash: md5
+      md5: f591037c322980c3cce994e3b44e504c
+      size: 2098
+    - path: results/logs/cmb_perfil_wc.log
+      hash: md5
+      md5: f18aa02b99889b73c78c688736abf6f5
+      size: 2125
+  sello_boss_aisla_neutrinos:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/boss_aisla_neutrinos.py > results/logs/cola_boss_aisla.log 
+      2>&1 && .venv/bin/python3 src/procedencia_sella.py 
+      src/p06_growth/boss_aisla_neutrinos.py 
+      results/logs/growth_2026-07/boss_aisla_neutrinos.json 
+      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json 
+      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+    deps:
+    - path: /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+      hash: md5
+      md5: a980051fef75199131b1fab7ed87fa0a.dir
+      size: 4717270
+      nfiles: 89
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+      hash: md5
+      md5: c1a478ee8bc47252dd775cba2f720ed2
+      size: 4424
+    - path: src/p06_growth/boss_aisla_neutrinos.py
+      hash: md5
+      md5: a96ea29e74d6111787e69b079a61e3b1
+      size: 6066
+    - path: src/p06_growth/boss_dr12_data.py
+      hash: md5
+      md5: 0fca273fcf595f2cedf01f92119e251c
+      size: 5156
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: 74a053a1b6cee380a21210864b74e19b
+      size: 21274
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cola_boss_aisla.log
+      hash: md5
+      md5: f3b797d867e66f409a72275ef05dd359
+      size: 4148
+    - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
+      hash: md5
+      md5: 133e56748e85c3f0cb9f83fab30004b3
+      size: 2246

@@ -1797,3 +1797,35 @@ stages:
     outs:
     - results/logs/cmb_quien_mide_As.json:
         cache: false
+  sello_cmb_perfil_wc:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_wc_cmb.py > results/logs/cmb_perfil_wc.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/perfil_wc_cmb.py results/logs/cmb_perfil_wc.json
+      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    deps:
+    - src/p03_cmb/perfil_wc_cmb.py
+    - src/p03_cmb/cmb_eval.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    outs:
+    - results/logs/cmb_perfil_wc.json:
+        cache: false
+    - results/logs/cmb_perfil_wc.log:
+        cache: false
+  sello_boss_aisla_neutrinos:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/boss_aisla_neutrinos.py > results/logs/cola_boss_aisla.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/boss_aisla_neutrinos.py results/logs/growth_2026-07/boss_aisla_neutrinos.json
+      archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+    deps:
+    - src/p06_growth/boss_aisla_neutrinos.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/p06_growth/boss_dr12_data.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
+    - /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+    outs:
+    - results/logs/growth_2026-07/boss_aisla_neutrinos.json:
+        cache: false
+    - results/logs/cola_boss_aisla.log:
+        cache: false
