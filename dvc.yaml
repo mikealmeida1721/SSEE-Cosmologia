@@ -1583,3 +1583,115 @@ stages:
         cache: false
     - results/logs/lcdm_conjunta_lee.log:
         cache: false
+  # ── LCDM conjunta: las MINIMIZACIONES (2026-10-04). Cuestan de horas a dias
+  # (la conjunta: 30-sep -> 4-oct, 1 nucleo). Se corrieron FUERA de dvc en la
+  # cola (lcdm_conjunta_cola.log) con el codigo de minimiza() de 42feaac, que no
+  # ha cambiado (R35 poda por camino lo vigila); se registraron con `dvc commit`
+  # y su acta con procedencia_sella, el mismo precedente que cmb_ns/wb_forzado.
+  # Re-correr una: dvc repro -s -f lcdm_conjunta_min_<modo>.
+  lcdm_conjunta_min_cmb:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py cmb > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_cmb.log 2>&1
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_cmb.json
+    deps:
+    - src/p11_sondas/lcdm_conjunta.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p03_cmb/cmb_eval.py
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/desi_dr2_data.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    outs:
+    - results/logs/lcdm_conjunta_cmb.json:
+        cache: false
+  lcdm_conjunta_min_kids:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py kids > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_kids.log 2>&1
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_kids.json
+    deps:
+    - src/p11_sondas/lcdm_conjunta.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p03_cmb/cmb_eval.py
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/desi_dr2_data.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    outs:
+    - results/logs/lcdm_conjunta_kids.json:
+        cache: false
+  lcdm_conjunta_min_bao:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py bao > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_bao.log 2>&1
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_bao.json
+    deps:
+    - src/p11_sondas/lcdm_conjunta.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p03_cmb/cmb_eval.py
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/desi_dr2_data.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    outs:
+    - results/logs/lcdm_conjunta_bao.json:
+        cache: false
+  lcdm_conjunta_min_conjunta:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py conjunta > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_conjunta.log 2>&1
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_conjunta.json
+    deps:
+    - src/p11_sondas/lcdm_conjunta.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p03_cmb/cmb_eval.py
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/desi_dr2_data.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    outs:
+    - results/logs/lcdm_conjunta_conjunta.json:
+        cache: false
+  lcdm_conjunta_control:
+    # controles R53 de la conjunta (C1 CMB, C2 KiDS, C3 BAO); minutos
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py control > results/logs/lcdm_conjunta_control.log 2>&1;
+      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_control.json
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_control.log
+    deps:
+    - src/p11_sondas/lcdm_conjunta.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/p03_cmb/cmb_eval.py
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/desi_dr2_data.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+    - src/ssee_core.py
+    - src/p06_growth/multisonda_fondo_clavado.py
+    outs:
+    - results/logs/lcdm_conjunta_control.json:
+        cache: false
+    - results/logs/lcdm_conjunta_control.log:
+        cache: false
