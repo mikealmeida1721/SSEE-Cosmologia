@@ -4,8 +4,8 @@
  "chi2_corte": 551.125605486931,
  "n_dentro": 8,
  "n_fuera": 12,
- "dif_max_abs_dentro": 0.8428500448401337,
- "dif_max_abs_fuera": 71.65335052373803,
+ "dif_max_abs_dentro": 0.8428500447450915,
+ "dif_max_abs_fuera": 71.65335052161527,
  "peso_rel_max_fuera": 0.0032643830232253024,
  "criterio": "|dif| < 1 (declarado en el calibrador), aplicado dentro del 99.7 % de la masa",
  "pasa": true,
@@ -13,153 +13,153 @@
   {
    "indice": 12024,
    "chi2_cadena": 555.564307345223,
-   "dif": 3.174027190595666,
+   "dif": 3.17402719058623,
    "peso_rel": 0.0014034643257710322,
    "dentro": false
   },
   {
    "indice": 4442,
    "chi2_cadena": 932.939455150314,
-   "dif": 19.054529336574888,
+   "dif": 19.054529336942096,
    "peso_rel": 1.3499005641033678e-95,
    "dentro": false
   },
   {
    "indice": 20203,
    "chi2_cadena": 520.8334539539347,
-   "dif": 0.17311251523085502,
+   "dif": 0.17311251540263584,
    "peso_rel": 0.22617047253989683,
    "dentro": true
   },
   {
    "indice": 20247,
    "chi2_cadena": 520.521135118012,
-   "dif": 0.6706790210665758,
+   "dif": 0.6706790210957934,
    "peso_rel": 0.21830963723664887,
    "dentro": true
   },
   {
    "indice": 21007,
    "chi2_cadena": 516.6266324417663,
-   "dif": 0.10555356963641316,
+   "dif": 0.10555356965778628,
    "peso_rel": 0.12750270286192714,
    "dentro": true
   },
   {
    "indice": 12260,
    "chi2_cadena": 558.980816386877,
-   "dif": 1.643975020124003,
+   "dif": 1.6439750202084724,
    "peso_rel": 0.0032643830232253024,
    "dentro": false
   },
   {
    "indice": 11757,
    "chi2_cadena": 555.733318575231,
-   "dif": -0.5575393266357196,
+   "dif": -0.5575393265540924,
    "peso_rel": 0.0004934751025873159,
    "dentro": false
   },
   {
    "indice": 9349,
    "chi2_cadena": 578.929419742085,
-   "dif": -0.657889746194769,
+   "dif": -0.6578897458480242,
    "peso_rel": 1.6869129869557534e-11,
    "dentro": false
   },
   {
    "indice": 21221,
    "chi2_cadena": 524.0524412205299,
-   "dif": 0.6966978602063136,
+   "dif": 0.6966978601776646,
    "peso_rel": 0.10471103070260777,
    "dentro": true
   },
   {
    "indice": 2793,
    "chi2_cadena": 1567.25773359887,
-   "dif": 71.65335052373803,
+   "dif": 71.65335052161527,
    "peso_rel": 3.8029027858225933e-240,
    "dentro": false
   },
   {
    "indice": 11457,
    "chi2_cadena": 565.772513110618,
-   "dif": 0.9895980017889769,
+   "dif": 0.9895980022890853,
    "peso_rel": 0.00015883536954571715,
    "dentro": false
   },
   {
    "indice": 6698,
    "chi2_cadena": 673.398427137934,
-   "dif": -6.668733472153349,
+   "dif": -6.668733472321833,
    "peso_rel": 4.206221609403352e-36,
    "dentro": false
   },
   {
    "indice": 20035,
    "chi2_cadena": 526.0603828510359,
-   "dif": 0.07061945473071773,
+   "dif": 0.07061945489556365,
    "peso_rel": 0.26345522215228157,
    "dentro": true
   },
   {
    "indice": 21916,
    "chi2_cadena": 522.6657455351674,
-   "dif": -0.4414797790080911,
+   "dif": -0.4414797789588647,
    "peso_rel": 0.056866143484801256,
    "dentro": true
   },
   {
    "indice": 19096,
    "chi2_cadena": 522.1405687249356,
-   "dif": -0.8428500448401337,
+   "dif": -0.8428500447450915,
    "peso_rel": 0.4885288084654152,
    "dentro": true
   },
   {
    "indice": 11079,
    "chi2_cadena": 562.460203025016,
-   "dif": 2.6838756239864097,
+   "dif": 2.6838756243211037,
    "peso_rel": 2.4745890198217872e-05,
    "dentro": false
   },
   {
    "indice": 10517,
    "chi2_cadena": 553.55791931577,
-   "dif": -0.2615639978303079,
+   "dif": -0.2615639978106401,
    "peso_rel": 7.535451046225634e-07,
    "dentro": false
   },
   {
    "indice": 9349,
    "chi2_cadena": 578.929419742085,
-   "dif": -0.657889746194769,
+   "dif": -0.6578897458480242,
    "peso_rel": 1.6869129869557534e-11,
    "dentro": false
   },
   {
    "indice": 21983,
    "chi2_cadena": 519.0420208883542,
-   "dif": 0.16312575830613696,
+   "dif": 0.16312575836843735,
    "peso_rel": 0.053084548314503245,
    "dentro": true
   },
   {
    "indice": 2372,
    "chi2_cadena": 1632.2767038456,
-   "dif": 19.02771722566058,
+   "dif": 19.027717224829303,
    "peso_rel": 1.322585605015e-311,
    "dentro": false
   }
  ],
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "e494fc07922df9c11e388d268d1f0484e6aeabe6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/des_y3_barrido_en_masa.py",
   "script_sha256": "d8da08087941ad27f179f1ddcc20aa5c2dfc874f84a698a84d04abe98aed5fa0",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/des_y3_barrido.json": "8ec020a26ab0634cf5d67c412bc92190bfb438be93747dcefee0e0fd73ec4455",
+   "results/logs/des_y3_barrido.json": "a5cf535f4825ad66fc0a5d4f9af3ef4ed0efda8ae94a9ff1f8e8036c3ad122b5",
    "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt": "2ba4415560c8a02ccb8da0b7d5cf4552c088a1cc981c1ee96fda90bba31563ff"
   },
   "argv": [
@@ -169,14 +169,14 @@
    "results/logs/des_y3_barrido.json",
    "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt"
   ],
-  "fecha": "2026-10-03T07:56:07",
+  "fecha": "2026-10-04T02:11:37",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
