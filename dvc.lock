@@ -22,8 +22,8 @@ stages:
       size: 11979011
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 0cc8bb27d16107efd03af4122118be33
-      size: 4429
+      md5: 82d27fc46289b13777cae59b69bdac0d
+      size: 4435
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
       md5: 6617dd2d05997e73722fe828a739423c
@@ -39,7 +39,7 @@ stages:
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 8a70fbb2cf22675cf259d69ebfc7ddab
+      md5: 663c8e655a7457f14fb9f87743c869c4
       size: 3798
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
@@ -179,11 +179,11 @@ stages:
       size: 5518
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 0cc8bb27d16107efd03af4122118be33
-      size: 4429
+      md5: 82d27fc46289b13777cae59b69bdac0d
+      size: 4435
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 8a70fbb2cf22675cf259d69ebfc7ddab
+      md5: 663c8e655a7457f14fb9f87743c869c4
       size: 3798
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -280,7 +280,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 6152de080a537cb930f6c92fd84a4335
+      md5: 8b38f4b5ac59a62e05005a6349d32974
       size: 88183
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -629,8 +629,8 @@ stages:
     outs:
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 2214e753c8eb2cdd209e89309b524293
-      size: 4476
+      md5: 82d27fc46289b13777cae59b69bdac0d
+      size: 4435
   resumen_3modelos:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p02_mcmc/resumen_3modelos.py
@@ -2085,7 +2085,7 @@ stages:
       size: 3862
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 8a70fbb2cf22675cf259d69ebfc7ddab
+      md5: 663c8e655a7457f14fb9f87743c869c4
       size: 3798
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -2106,8 +2106,8 @@ stages:
     outs:
     - path: results/figures/fig_readme_tensions.png
       hash: md5
-      md5: 1af41ae62932db57d11fd04a29e868ed
-      size: 106060
+      md5: 43d3bf9a20d547d89ad3bf357ae02de9
+      size: 106062
   coteja_crudos:
     cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
     deps:

@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-04",
  "dato_lya": {
   "z": 2.33,
   "DH_rd": 8.632,
@@ -182,26 +182,26 @@
    },
    "LCDM_cov_vs_bao_lcdm_planck": {
     "aqui": 31.981952556161477,
-    "log": 31.981952556161477
+    "log": 31.981897557929273
    }
   },
   "pasa": true
  },
  "_procedencia": {
-  "commit": "81b15562198ec8cec77d1206ddcc41ee4d484993",
+  "commit": "07d0d4cdcd2c4a6381cf300b356511bb213652c9",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/lya_auditoria.py",
-  "script_sha256": "00cfb87fb138ed16220635ce6ac98db9df0d79a1f5da3ae71381145f02fac398",
+  "script_sha256": "371ef0c07da232862374826eed041a52faf00e715bb2c5c6c0fa06a1d2cf0468",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
-   "results/logs/bao_lcdm_planck.json": "1fc1389d9c3b4763cd9889ac983b900d13946c8f814d423dfdbae23e5926673b"
+   "results/logs/lcdm_conjunta_control.json": "9b9826e64395d4e764977f2d4f3d6fbbccd166b0251655ff1ee48c470cd44975"
   },
   "argv": [
    "src/p02_mcmc/lya_auditoria.py"
   ],
-  "fecha": "2026-10-03T12:47:47",
+  "fecha": "2026-10-04T08:18:32",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
