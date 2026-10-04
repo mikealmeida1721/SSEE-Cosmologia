@@ -358,6 +358,27 @@ def lee():
         d = s_cmb + s_kids + s_bao - res["conjunta"]["chi2"]
         res["delta_ssee_menos_lcdm_conjunta"] = d
         print(f"  Delta chi2 (SSEE - LCDM conjunta) = {d:+.3f}")
+        # Seleccion de modelos, con N y k LEIDOS de sus logs (2026-10-04):
+        #   LCDM: 5 compartidos + tau + las 8 molestias de KiDS;
+        #   SSEE: {A_s, tau} ajustados en el CMB + las mismas 8 molestias.
+        from scipy.stats import chi2 as _X2, norm as _norm
+        from desi_dr2_data import load_desi_dr2
+        kb = json.load(open(os.path.join(LOGS, "kids_legacy_bic.json")))["corridas"]["sseefijo"]
+        n_cmb = json.load(open(os.path.join(LOGS, "cmb_dbic_tau_ajustado.json")))["N_datos"]
+        N = n_cmb + kb["N"] + len(load_desi_dr2()["value"])
+        k_l = len(("ombh2", "omch2", "h0", "ns", "logA", "tau")) + kb["k"]
+        k_s = len(("logA", "tau")) + kb["k"]
+        # consistencia de las sondas dentro de LCDM: los compartidos que cada
+        # sonda fija por su cuenta, menos los 5 que comparte la conjunta
+        gl = sum(len(v) for v in (m["cmb"], m["kids"], m["bao"]) for v in [
+            [p for p in ("ombh2", "omch2", "h0", "ns", "logA") if p in v]]) - 5
+        p_val = float(_X2.sf(res["perdida_lcdm"], gl))
+        res["seleccion"] = dict(N=N, N_desglose=dict(cmb=n_cmb, kids=kb["N"], bao=N - n_cmb - kb["N"]),
+                                k_lcdm=k_l, k_ssee=k_s, dBIC_ssee_menos_lcdm=d + (k_s - k_l) * np.log(N),
+                                consistencia_gl=gl, consistencia_p=p_val,
+                                consistencia_sigma=float(_norm.isf(p_val / 2)))
+        print(f"  N={N} k LCDM={k_l} SSEE={k_s}  dBIC={res['seleccion']['dBIC_ssee_menos_lcdm']:+.2f}  "
+              f"perdida {res['perdida_lcdm']:.2f} con {gl} gl -> {res['seleccion']['consistencia_sigma']:.2f} sigma")
     json.dump(res, open(OUT, "w"), indent=1)
     print(f"  -> {OUT}")
 
