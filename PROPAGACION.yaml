@@ -73,7 +73,6 @@ logs:
 
   # ── Paper 3 — CMB ───────────────────────────────────────────────────────
   p3_rd_reframe_omega_m:      src/p03_cmb/run_p3_rd_reframe.py
-  p3_h0anchor_reframe:        src/p03_cmb/scan_omega_m.py
   paper3_cmb_reframe:         src/p03_cmb/ssee_paper3_cmb.py
   b1_full_run:                src/p03_cmb/ssee_paper3_b1_mcmc.py
   b1_lcdm_run:                src/p03_cmb/ssee_paper3_b1_mcmc.py
@@ -228,7 +227,6 @@ historicos:
   # ── Retirados 2026-09-07 — su script está en archive/, no se re-corren ──
   - mcmc_paper2_3models_om308
   - mcmc_professional
-  - paper2_analysis_dr2official
                           # por b1_full_run convergido a R−1=0.017 (2026-07-27)
 
 # Figuras REGENERADAS y verificadas byte-idénticas al PDF ya commiteado: el

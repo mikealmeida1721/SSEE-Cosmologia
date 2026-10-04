@@ -153,7 +153,7 @@ deriva corresponde a **ediciones del script / cambios de prior**, no a azar:
 **Anatomía del H₀ (un solo número, dos etapas — ahora COINCIDEN):** el modelo tiene UN H₀.
 (1) **Anchor/prior** = H_alg = 67.962 km/s/Mpc: el H₀ que minimiza la
 tensión CMB (con ω_b,ω_c fijos por álgebra, plik_lite minimiza ahí —
-`results/logs/p3_h0anchor_reframe.log`; superó al viejo H_MIRA 67.037).
+`archive/logs_superados/sin_script_reemplazados_2026-10-04/p3_h0anchor_reframe.log`, archivado; la medida vigente es `perfil_h0_ancla.json`; superó al viejo H_MIRA 67.037).
 (2) **Posterior** = 67.7869 ± 0.351 (log: git:513e84e:results/logs/mcmc_paper2_reframe.log): el mismo H₀ tras dejar que el MCMC ajuste
 DESI DR2 BAO encima del prior. Con la geometría total, DESI DR2 lo deja a 0.04σ del
 anchor — anchor y posterior COINCIDEN. El "split BAO–CMB" que se veía antes (66.41)
