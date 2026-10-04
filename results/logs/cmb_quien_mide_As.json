@@ -1,6 +1,6 @@
 {
- "corrida": "\u00bfquien mide mejor A_s, el fondo cosmico o KiDS?",
- "pregunta": "M. Almeida \u2014 si dos sondas distintas miden A_s distinto con el MISMO fondo ajustado, la tension es real",
+ "corrida": "¿quien mide mejor A_s, el fondo cosmico o KiDS?",
+ "pregunta": "M. Almeida — si dos sondas distintas miden A_s distinto con el MISMO fondo ajustado, la tension es real",
  "fondo_fijo_por_algebra": {
   "ombh2": 0.02241775678109985,
   "omch2": 0.11951440843160877,
@@ -67,5 +67,34 @@
   "nota": "tau no puede ser negativa, y la reionizacion se ve en los cuasares (tau >~ 0.04). El suelo fisico convierte la degeneracion en un limite duro"
  },
  "alcance": "no toca ningun paper; diagnostico para saber si la deriva de A_s es una medicion contra otra o una sombra de degeneracion",
- "segundos": 932.6960208415985
+ "segundos": 932.6960208415985,
+ "_procedencia": {
+  "commit": "614f7d78b17e5461a00b280cdf5e50130f6fc59a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/quien_mide_As.py",
+  "script_sha256": "ef9df3e5b2259d9e7eaa4d01de26f7f7208adf42c051c17c412de324126cae29",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
+   "results/logs/growth_2026-07/As_medido_o_producto.json": "29d8258860d20d17b58bc8c6410731099ac40434a516008c00a40de967d78d99"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p03_cmb/quien_mide_As.py",
+   "results/logs/cmb_quien_mide_As.json",
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json",
+   "results/logs/growth_2026-07/As_medido_o_producto.json"
+  ],
+  "fecha": "2026-10-04T08:37:02",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

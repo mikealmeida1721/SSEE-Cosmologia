@@ -4784,3 +4784,80 @@ stages:
       hash: md5
       md5: bf06c1959451291512d880d1d1a9bff3
       size: 2919
+  sello_cmb_dbic_tau_ajustado:
+    cmd: OMP_NUM_THREADS=4 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/dbic_tau_ajustado.py && .venv/bin/python3 
+      src/procedencia_sella.py src/p03_cmb/dbic_tau_ajustado.py 
+      results/logs/cmb_dbic_tau_ajustado.json 
+      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    deps:
+    - path: 
+        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+      hash: md5
+      md5: 690b6b708572bf00486db3250ea988d8
+      size: 37393
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p03_cmb/dbic_tau_ajustado.py
+      hash: md5
+      md5: 9a74d13cca4bd0638ae8f85a3c2bbecb
+      size: 6798
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: a469b82f9895eedd1c6b677a82056cdd
+      size: 3072
+  sello_cmb_quien_mide_As:
+    cmd: OMP_NUM_THREADS=4 nice -n 10 .venv/bin/python3 
+      src/p03_cmb/quien_mide_As.py && .venv/bin/python3 src/procedencia_sella.py
+      src/p03_cmb/quien_mide_As.py results/logs/cmb_quien_mide_As.json 
+      results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json 
+      results/logs/growth_2026-07/As_medido_o_producto.json
+    deps:
+    - path: results/logs/growth_2026-07/As_medido_o_producto.json
+      hash: md5
+      md5: ec3810fe92d496c154f6342a7a400ce8
+      size: 16117
+    - path: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
+      hash: md5
+      md5: 15c1f697ac5859fda420661df543b4eb
+      size: 4104
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p03_cmb/quien_mide_As.py
+      hash: md5
+      md5: 39b33f23e2a26ae49c7dd078ac92a8b8
+      size: 13379
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/cmb_quien_mide_As.json
+      hash: md5
+      md5: e289e10c32c980e6060924505e17bddf
+      size: 3386

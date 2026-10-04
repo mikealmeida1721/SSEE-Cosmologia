@@ -1,5 +1,5 @@
 {
- "corrida": "\u0394BIC Paper 3 con tau AJUSTADO en los dos modelos",
+ "corrida": "ΔBIC Paper 3 con tau AJUSTADO en los dos modelos",
  "N_datos": 669,
  "ln_N": 6.505784060128229,
  "N_desglose": {
@@ -11,8 +11,8 @@
  },
  "SSEE": {
   "k": 2,
-  "chi2_min": 1003.5860397789045,
-  "BIC": 1016.597607899161,
+  "chi2_min": 1003.5861181208386,
+  "BIC": 1016.5976862410951,
   "libres": [
    "logA",
    "tau"
@@ -20,7 +20,7 @@
   "fondo_fijo_por_algebra": {
    "ombh2": 0.02241775678109985,
    "omch2": 0.11951440843160877,
-   "H0": 67.96213732340931,
+   "H0": 67.96214152203791,
    "ns": 0.9655581462513669,
    "w0": -0.839949771344779,
    "wa": -0.6699748856723895
@@ -55,7 +55,7 @@
    "tau": 0.05487411916205905
   }
  },
- "delta_BIC": -26.205652623229753,
+ "delta_BIC": -26.20557428129564,
  "publicado_con_tau_prestado": -24.02,
  "control": {
   "criterio": "cada parametro de LCDM a < 2 sigma de Planck 2018",
@@ -83,5 +83,32 @@
    }
   }
  },
- "segundos": 2615.2141466140747
+ "segundos": 789.3842930793762,
+ "_procedencia": {
+  "commit": "614f7d78b17e5461a00b280cdf5e50130f6fc59a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p03_cmb/dbic_tau_ajustado.py",
+  "script_sha256": "9e19f00e27e4d8a2993de160588b6e1ef92e88a0e962d46e4c0581370bdc1f77",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat": "dac0d9d493213e77c940a10a968cf0da3c5730bae60e1356c4cd8bcff96377ff"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p03_cmb/dbic_tau_ajustado.py",
+   "results/logs/cmb_dbic_tau_ajustado.json",
+   "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat"
+  ],
+  "fecha": "2026-10-04T08:36:44",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }
