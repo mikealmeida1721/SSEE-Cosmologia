@@ -1,0 +1,121 @@
+
+=== A · canonico  m_nu = 0.06849 (la de SSEE)
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z2 NGC: 37 puntos  Hartlap=0.9814
+  z2 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+
+[SSEE] fondo FIJO: Om=0.308881 w0=-0.8399 wa=-0.6700
+/home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/mcfit.py:130: UserWarning: use backend='jax' if desired
+  warnings.warn("use backend='jax' if desired")
+    logA=2.6000  chi2=207.807
+    logA=2.6500  chi2=203.246
+    logA=2.7000  chi2=201.408
+    logA=2.7500  chi2=199.915
+    logA=2.8000  chi2=198.771
+    logA=2.8500  chi2=197.993
+    logA=2.9000  chi2=197.569
+    logA=2.9500  chi2=197.440
+    logA=3.0000  chi2=197.637
+    logA=3.0500  chi2=198.117
+    logA=3.1000  chi2=198.854
+    logA=3.1500  chi2=200.064
+    logA=3.2000  chi2=202.696
+    logA=3.2500  chi2=207.788
+    logA=3.3000  chi2=216.541
+    logA=3.3500  chi2=230.195
+    logA=3.4000  chi2=249.035
+  chi2 = 197.438  dof = 185  chi2/dof = 1.0672
+  logA = 2.94479 +- 0.12385
+    z1 NGC: f*sigma8 = 0.44875
+    z1 SGC: f*sigma8 = 0.44875
+    z2 NGC: f*sigma8 = 0.45034
+    z2 SGC: f*sigma8 = 0.45034
+    z3 NGC: f*sigma8 = 0.44783
+    z3 SGC: f*sigma8 = 0.44783
+    logA = 2.94479 +- 0.12385   chi2 = 197.438
+
+=== C · REPETICION de A (control de reproducibilidad, va antes de leer nada)
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z2 NGC: 37 puntos  Hartlap=0.9814
+  z2 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+
+[SSEE] fondo FIJO: Om=0.308881 w0=-0.8399 wa=-0.6700
+    logA=2.6000  chi2=207.807
+    logA=2.6500  chi2=203.246
+    logA=2.7000  chi2=201.408
+    logA=2.7500  chi2=199.915
+    logA=2.8000  chi2=198.771
+    logA=2.8500  chi2=197.993
+    logA=2.9000  chi2=197.569
+    logA=2.9500  chi2=197.440
+    logA=3.0000  chi2=197.637
+    logA=3.0500  chi2=198.117
+    logA=3.1000  chi2=198.854
+    logA=3.1500  chi2=200.064
+    logA=3.2000  chi2=202.696
+    logA=3.2500  chi2=207.788
+    logA=3.3000  chi2=216.541
+    logA=3.3500  chi2=230.195
+    logA=3.4000  chi2=249.035
+  chi2 = 197.438  dof = 185  chi2/dof = 1.0672
+  logA = 2.94479 +- 0.12385
+    z1 NGC: f*sigma8 = 0.44875
+    z1 SGC: f*sigma8 = 0.44875
+    z2 NGC: f*sigma8 = 0.45034
+    z2 SGC: f*sigma8 = 0.45034
+    z3 NGC: f*sigma8 = 0.44783
+    z3 SGC: f*sigma8 = 0.44783
+    logA = 2.94479 +- 0.12385   chi2 = 197.438
+    |A - C| = 0.00e+00   (criterio < 1e-5)  -> PASA
+
+=== B · con la masa PRESTADA  m_nu = 0.06000 (la de LCDM)
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z2 NGC: 37 puntos  Hartlap=0.9814
+  z2 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+
+[SSEE] fondo FIJO: Om=0.308881 w0=-0.8399 wa=-0.6700
+    logA=2.6000  chi2=207.674
+    logA=2.6500  chi2=203.249
+    logA=2.7000  chi2=201.436
+    logA=2.7500  chi2=199.966
+    logA=2.8000  chi2=198.843
+    logA=2.8500  chi2=198.085
+    logA=2.9000  chi2=197.677
+    logA=2.9500  chi2=197.564
+    logA=3.0000  chi2=197.788
+    logA=3.0500  chi2=198.293
+    logA=3.1000  chi2=199.056
+    logA=3.1500  chi2=200.237
+    logA=3.2000  chi2=202.617
+    logA=3.2500  chi2=207.717
+    logA=3.3000  chi2=216.790
+    logA=3.3500  chi2=230.506
+    logA=3.4000  chi2=250.560
+  chi2 = 197.559  dof = 185  chi2/dof = 1.0679
+  logA = 2.94181 +- 0.12166
+    z1 NGC: f*sigma8 = 0.44920
+    z1 SGC: f*sigma8 = 0.44920
+    z2 NGC: f*sigma8 = 0.45079
+    z2 SGC: f*sigma8 = 0.45079
+    z3 NGC: f*sigma8 = 0.44827
+    z3 SGC: f*sigma8 = 0.44827
+    logA = 2.94181 +- 0.12166   chi2 = 197.559
+
+====================================================================
+  DESCOMPOSICION del desplazamiento total (0.1811)
+====================================================================
+  por la MASA DE NEUTRINO (A - B, metodo fijo) = +0.0030  (2%)
+  por el METODO (lo que queda)                 = +0.1782  (98%)
+  en sigmas de la barra vieja (0.0981):
+     neutrinos 0.03 sigma   ·   metodo 1.82 sigma
+
+escrito -> results/logs/growth_2026-07/boss_aisla_neutrinos.json

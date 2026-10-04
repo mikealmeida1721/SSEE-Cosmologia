@@ -4995,7 +4995,7 @@ stages:
       2>&1 && .venv/bin/python3 src/procedencia_sella.py 
       src/p06_growth/boss_aisla_neutrinos.py 
       results/logs/growth_2026-07/boss_aisla_neutrinos.json 
-      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json 
+      archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json 
       /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
     deps:
     - path: /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
@@ -5003,14 +5003,14 @@ stages:
       md5: a980051fef75199131b1fab7ed87fa0a.dir
       size: 4717270
       nfiles: 89
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
+    - path: archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
       hash: md5
-      md5: c1a478ee8bc47252dd775cba2f720ed2
-      size: 4424
+      md5: 43edfe16597ddba003bb1a127c89fbbd
+      size: 809
     - path: src/p06_growth/boss_aisla_neutrinos.py
       hash: md5
-      md5: a96ea29e74d6111787e69b079a61e3b1
-      size: 6066
+      md5: b40e3cd605ac6e7b2208174c9f096104
+      size: 6175
     - path: src/p06_growth/boss_dr12_data.py
       hash: md5
       md5: 0fca273fcf595f2cedf01f92119e251c
@@ -5038,5 +5038,5 @@ stages:
       size: 4148
     - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
       hash: md5
-      md5: 133e56748e85c3f0cb9f83fab30004b3
-      size: 2246
+      md5: 70c46a37f87d44fa318abbd341e6a9f8
+      size: 2279

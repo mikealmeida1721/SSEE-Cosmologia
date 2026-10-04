@@ -1,38 +1,67 @@
 {
  "corrida": "separar el efecto de la masa de neutrino del efecto del metodo",
- "pregunta": "M. Almeida \u2014 cuando algo cambia asi, aunque sea a mejor, se reverifica antes de pasarlo al paper",
+ "pregunta": "M. Almeida — cuando algo cambia asi, aunque sea a mejor, se reverifica antes de pasarlo al paper",
  "control": {
   "criterio": "la repeticion devuelve el mismo logA a <1e-5",
-  "A": 2.9447867806062953,
-  "C": 2.9447867806062953,
+  "A": 2.9447867903117566,
+  "C": 2.9447867903117566,
   "dif": 0.0,
   "pasa": true
  },
  "A_canonico": {
   "mnu": 0.06849,
-  "logA": 2.9447867806062953,
-  "sig_logA": 0.12384982819806273,
-  "chi2": 197.4378444134644,
+  "logA": 2.9447867903117566,
+  "sig_logA": 0.12385007758914003,
+  "chi2": 197.4378892471293,
   "dof": 185
  },
  "B_prestada": {
   "mnu": 0.06,
-  "logA": 2.9418127690688998,
-  "sig_logA": 0.12166424193201272,
-  "chi2": 197.55897405076269,
+  "logA": 2.9418126642963736,
+  "sig_logA": 0.1216631813164066,
+  "chi2": 197.55899360728438,
   "dof": 185
  },
  "viejo_mcmc": {
   "logA": 2.763639661108589,
   "sig": 0.09813161759644874,
-  "fuente": "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"
+  "fuente": "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json"
  },
  "descomposicion": {
-  "total": 0.18114711949770612,
-  "por_neutrinos": 0.0029740115373955156,
-  "por_metodo": 0.1781731079603106,
-  "frac_neutrinos": 0.016417658451550347,
-  "frac_metodo": 0.9835823415484497
+  "total": 0.18114712920316745,
+  "por_neutrinos": 0.0029741260153830495,
+  "por_metodo": 0.1781730031877844,
+  "frac_neutrinos": 0.01641828953329637,
+  "frac_metodo": 0.9835817104667036
  },
- "alcance": "mide de que fue el desplazamiento. NO decide si el numero nuevo entra en Paper 6 \u2014 eso es decision de Mike"
+ "alcance": "mide de que fue el desplazamiento. NO decide si el numero nuevo entra en Paper 6 — eso es decision de Mike",
+ "_procedencia": {
+  "commit": "fbd9f95dd68142d4c495f20d908734e546c44441",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/boss_aisla_neutrinos.py",
+  "script_sha256": "d9b3e0f34ed49e52a989d974f038282237694f4de8856beea3819056cc17eac7",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json": "5b8ea2afaeac8c701580fce7bab57623b76d3cbccda31a127343c0dc7a04bee8",
+   "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD": "NO-EXISTE"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p06_growth/boss_aisla_neutrinos.py",
+   "results/logs/growth_2026-07/boss_aisla_neutrinos.json",
+   "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json",
+   "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD"
+  ],
+  "fecha": "2026-10-04T13:11:47",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }
