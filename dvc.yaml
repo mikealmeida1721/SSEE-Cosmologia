@@ -284,7 +284,7 @@ stages:
     - src/desi_dr2_data.py
     - src/p11_sondas/lcdm_planck.py
     - data/raw/desi_dr2_bao.csv
-    - results/logs/bao_lcdm_planck.json
+    - results/logs/lcdm_conjunta_control.json
     outs:
     - results/logs/lya_auditoria.json:
         cache: false

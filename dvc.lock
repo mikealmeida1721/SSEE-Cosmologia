@@ -598,10 +598,10 @@ stages:
       hash: md5
       md5: 2bff7b22cc0db2c876403fd913c42746
       size: 2650
-    - path: results/logs/bao_lcdm_planck.json
+    - path: results/logs/lcdm_conjunta_control.json
       hash: md5
-      md5: 2361bbdc5543a591c2d15644665ccbda
-      size: 230
+      md5: 07f6f55208449a551f48f529083d75de
+      size: 1298
     - path: src/bao_camb.py
       hash: md5
       md5: 17e888f2a53c3953da7563d6c7a37e57
@@ -612,8 +612,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/lya_auditoria.py
       hash: md5
-      md5: 90160d8abf6b4ed7985649fc6452049e
-      size: 4963
+      md5: 87474986516e1d29958362d4034b8ced
+      size: 5156
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -629,8 +629,8 @@ stages:
     outs:
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 0cc8bb27d16107efd03af4122118be33
-      size: 4429
+      md5: 2214e753c8eb2cdd209e89309b524293
+      size: 4476
   resumen_3modelos:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p02_mcmc/resumen_3modelos.py

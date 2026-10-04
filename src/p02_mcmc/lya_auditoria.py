@@ -74,7 +74,9 @@ B = fondo(S.H0_GLOBAL, S.OMEGA_B_H2, S.OMEGA_C_H2, S.SUM_MNU_EV, S.W0, S.WA)
 LC = fondo(L["H0"], L["ombh2"], L["omch2"], L["mnu"], -1.0, 0.0)
 
 ref_B = chi2_desi(S.H0_GLOBAL, B["rd"])
-ref_L = json.load(open(os.path.join(_R, "results", "logs", "bao_lcdm_planck.json")))["lcdm_planck"]["chi2"]
+# 2026-10-04: el chi2 BAO de LCDM-Planck se lee del control SELLADO de lcdm_conjunta
+# (misma cuenta por CAMB). El bao_lcdm_planck.json de 09-27 no tenía script y se archivó.
+ref_L = json.load(open(os.path.join(_R, "results", "logs", "lcdm_conjunta_control.json")))["bao_lcdm_planck"]["chi2"]
 ctl = dict(B_cov_vs_bao_camb=dict(aqui=B["chi2_cov"], bao_camb=ref_B),
            LCDM_cov_vs_bao_lcdm_planck=dict(aqui=LC["chi2_cov"], log=ref_L))
 pasa = abs(B["chi2_cov"] - ref_B) < 1e-3 and abs(LC["chi2_cov"] - ref_L) < 1e-3
@@ -83,7 +85,7 @@ out = dict(fecha=str(__import__("datetime").date.today()),
            ssee=B, lcdm_planck=LC, rd_B_sobre_lcdm=B["rd"] / LC["rd"],
            control=dict(contra=ctl, pasa=bool(pasa)))
 json.dump(con_acta(out, __file__, entradas=[os.path.join(_R, "data", "raw", "desi_dr2_bao.csv"),
-                                             os.path.join(_R, "results", "logs", "bao_lcdm_planck.json")]),
+                                             os.path.join(_R, "results", "logs", "lcdm_conjunta_control.json")]),
           open(os.path.join(_R, "results", "logs", "lya_auditoria.json"), "w"), indent=1)
 for n, x in (("SSEE", B), ("LCDM", LC)):
     print(f"  {n:4s} r_d {x['rd']:.2f}  f_DE {x['f_DE_lya']:.3f}  E {x['E_lya']:.3f}  D_H {x['DH_lya']:.0f}"
