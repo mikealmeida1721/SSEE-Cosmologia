@@ -41,7 +41,7 @@
    "fuente": "Asgari et al. 2021, KiDS-1000 cosmic shear band powers"
   }
  },
- "fecha": "2026-10-03",
+ "fecha": "2026-10-04",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -81,7 +81,7 @@
   }
  },
  "_procedencia": {
-  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
+  "commit": "111d5e99d9f140e039d0dd5c92b50fb1476754ee",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
@@ -90,15 +90,15 @@
   "entradas": {
    "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
    "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568",
-   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "ee9d40a152c786e6d54f7ed84dcc10af1eb1083977d5242af8d5fcf9b6af06d5",
-   "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "c61de328cfd4a95bb843d4e3447410b902ec9cec028684d1ba89c3aba3ede85d",
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
+   "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "555edc9b1922166a50239ff930303e81e19b3c70ded3a47521d164cf76ae9268",
    "results/logs/s8_kids_legacy_camb.json": "885b755de1fba1117778070ed8da16b55c937f1eeeb159f7ac62de2dd2c6f766",
    "results/logs/s8_desde_b1.json": "a98d828f0815fb80e67b2a098dc0a3a060da223cdedc1a1b694c7e67a904589e"
   },
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-03T12:56:09",
+  "fecha": "2026-10-04T00:00:49",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -107,8 +107,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

@@ -1,6 +1,6 @@
 {
  "corrida": "la media marginal de KiDS, sesgada por volumen?",
- "pregunta": "M. Almeida \u2014 BOSS no mide A_s igual; lo que hay que resolver es KiDS contra el fondo, asi que la pregunta es si ESOS dos estan medidos con la misma regla",
+ "pregunta": "M. Almeida — BOSS no mide A_s igual; lo que hay que resolver es KiDS contra el fondo, asi que la pregunta es si ESOS dos estan medidos con la misma regla",
  "hallazgo_previo": {
   "cmb": "3.0448 sale de SSEE/mejor/logA de una MINIMIZACION -> PERFIL",
   "kids": "el logA de KiDS sale de logA/media de una cadena MCMC -> MARGINAL",
@@ -23,7 +23,7 @@
    "n_efectivo": 557534.0,
    "d_muestreadas": 19,
    "dchi2_esperado_del_mejor": 2.416388882605597,
-   "papel": "CONTROL \u2014 aqui SI hay desplazamiento medido por otra via (perfil - marginal = 0.1811)",
+   "papel": "CONTROL — aqui SI hay desplazamiento medido por otra via (perfil - marginal = 0.1834)",
    "publicado": 2.7614232200495397,
    "reproduce_publicado": true,
    "perfil_conocido": 2.9447867806062953,
@@ -45,5 +45,50 @@
   }
  },
  "alcance": "mide si la media marginal se aparta del mejor ajuste. NO sustituye a la cola #23 (dato sintetico con la verdad conocida), que es la unica que dice cual estimador es INSESGADO",
- "veredicto": "el diagnostico no ve el desplazamiento que YA se sabe que existe en BOSS: no absuelve a KiDS"
+ "veredicto": "el diagnostico no ve el desplazamiento que YA se sabe que existe en BOSS: no absuelve a KiDS",
+ "_procedencia": {
+  "commit": "111d5e99d9f140e039d0dd5c92b50fb1476754ee",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/marginal_vs_perfil.py",
+  "script_sha256": "f26db77bb7d0ffb8ece8203cf43cee4716cb7388bccb615153c64d3b4f8aacb6",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "9c05a038a080ce015b0ff83ad6d5c3a5be9d4aca2e1d5ecb103c1d43d88ce270",
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt": "ed4d0c1d818775d439726e51a4f38445066ee896d3a2b12a3a436bd393d351d0",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt": "680990c1342bfb000f29b7ef25370a05adba2ee3e97848605ea14c91dbd3841a",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt": "2fe41d979a46279acb23dfa438c6176eb4ef72a3c3f0d248934c82d17281eeb9",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt": "595a26fa0d75fceab3885437b0c3992b7cc1813ece925937ef78e3c84872581b"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p06_growth/marginal_vs_perfil.py",
+   "results/logs/growth_2026-07/marginal_vs_perfil.json",
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json",
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt",
+   "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt"
+  ],
+  "fecha": "2026-10-04T00:00:28",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

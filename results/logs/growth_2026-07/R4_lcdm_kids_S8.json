@@ -2,6 +2,23 @@
   "corrida": "R4 — LCDM control metodologico, KiDS-1000",
   "muestreador": "Cobaya mcmc, 4 cadenas MPI, reanudada tras corte de luz",
   "n_parametros_libres": 13,
+  "parametros_libres": [
+    "ombh2",
+    "omch2",
+    "h0",
+    "ns",
+    "logA",
+    "halo_A",
+    "A_IA",
+    "dz1",
+    "dz2",
+    "dz3",
+    "dz4",
+    "dz5",
+    "delta_c"
+  ],
+  "datos": 225,
+  "mnu": 0.06,
   "burn_in_frac": 0.3,
   "thin_every": 8,
   "n_muestras_usadas": 5872,
@@ -14,7 +31,7 @@
   "convergencia": {
     "Rminus1_medias": 0.02557,
     "Rminus1_colas": 0.115482,
-    "converged": true
+    "fuente": "ultima linea de lcdm.progress"
   },
   "dof": 212,
   "chi2_min": 262.7462,
@@ -40,7 +57,42 @@
   "comparacion_KiDS": {
     "S8_publicado": 0.759,
     "err_publicado": 0.024,
+    "fuente": "CANONICAL_VALUES.yaml obs_KiDS_S8",
     "tension_sigma": 0.06147497585397447
   },
-  "tiempo_analisis_seg": 36099.32732915878
+  "tiempo_analisis_seg": 28920.83465051651,
+  "_procedencia": {
+    "commit": "ca2b6181aede8f8c78caaf770f15d254b1ec98a6",
+    "reproducible_desde_commit": true,
+    "cambios_sin_commitear": [],
+    "script": "src/p06_growth/analiza_lcdm_R4.py",
+    "script_sha256": "41a3d147c058b2a8a387696aef995878e0625ea2087b6097044cf4a8464f0835",
+    "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+    "entradas": {
+      "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt": "b686ae0a89ea9c07ed0b891ae278e12d88050c7f60bb48b184f0c575d89c93f5",
+      "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt": "2954fdbb683b9f1438e9bd5adc4201dfde5ed4457f8e3548191406aba6c20a4a",
+      "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt": "6c3181a88e3b59be21842cc3a0c1b43515b3129799ec3d4791bf7e1f08c0dee3",
+      "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt": "9ec7ab035d4a559db1c07a598ba681f67a1974161c1f1254dc1df70ac0f72be9",
+      "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.progress": "2e2fbc827cb17790dede4bec98baa382dc0c4be8330f74de722f07af75dfbcfa",
+      "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.updated.yaml": "85b43915372bd0dd54bb4ede0ce1c44b615b8c3b0a4bfeaa8425e61e006de322",
+      "CANONICAL_VALUES.yaml": "08bdd82aa039a4f7e05c95579c8db0abd7da4a2e861d291de02ce0f49897123f"
+    },
+    "argv": [
+      "src/p06_growth/analiza_lcdm_R4.py"
+    ],
+    "fecha": "2026-10-03T23:59:28",
+    "host": "mike-System-Product-Name",
+    "python": "3.12.3",
+    "versiones": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "camb": "1.6.5"
+    },
+    "nucleos": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "OMPI_COMM_WORLD_SIZE": null
+    }
+  }
 }

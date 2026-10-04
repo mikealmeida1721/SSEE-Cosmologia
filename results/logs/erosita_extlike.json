@@ -97,7 +97,8 @@
     -2.472950385401333
    ],
    "pasa": false,
-   "criterio": "ninguna casilla > 2 sigma binomiales (declarado antes, mismo que modelos 1-3)"
+   "criterio": "ninguna casilla > 2 sigma binomiales (declarado antes, mismo que modelos 1-3)",
+   "n_libres": 13
   },
   "conjunto_ext_det_C": {
    "params": [
@@ -160,6 +161,33 @@
    "pasa": false,
    "criterio": "ninguna casilla > 2 sigma binomiales (declarado antes, mismo que modelos 1-3)",
    "n_libres": 15
+  }
+ },
+ "_procedencia": {
+  "commit": "111d5e99d9f140e039d0dd5c92b50fb1476754ee",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/erosita_extlike.py",
+  "script_sha256": "13ff577738c4185b48f86b1d88d36ac65434312aed35b9304ffa475617d629e5",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits": "e79c392e2d7b9e26105ead7d56787713465aa853feb040a227891fb9571b9a54"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/erosita_extlike.py",
+   "results/logs/erosita_extlike.json",
+   "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits"
+  ],
+  "fecha": "2026-10-04T00:19:21",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
   }
  }
 }

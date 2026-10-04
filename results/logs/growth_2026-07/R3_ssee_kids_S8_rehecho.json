@@ -1,6 +1,6 @@
 {
  "corrida": "R3 \u2014 S8 KiDS-1000, SSEE fondo fijo, un sector",
- "fecha_analisis": "2026-10-02T19:56:59",
+ "fecha_analisis": "2026-10-03T15:57:11",
  "muestreador": "Cobaya mcmc, 4 cadenas MPI, CAMB 1.6.5 + HMcode-2015",
  "datos": "KiDS-1000 xi_pm crudo, 225 puntos tras mascara de escalas (270 totales)",
  "n_parametros_libres": 9,
@@ -111,23 +111,23 @@
   "vigente_menos_viejo_S8_en_sigma": 0.01883923806244336
  },
  "_procedencia": {
-  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
+  "commit": "ca2b6181aede8f8c78caaf770f15d254b1ec98a6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/analiza_ssee_R3.py",
-  "script_sha256": "263235c53746e251ebaa1801ea3554fd672b9385a3d03626ae099a3aa7df1c92",
+  "script_sha256": "dbb945786bed6676261b5b223cd987b16296ec9b6629622d9c454524069fd581",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt": "ed4d0c1d818775d439726e51a4f38445066ee896d3a2b12a3a436bd393d351d0",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt": "680990c1342bfb000f29b7ef25370a05adba2ee3e97848605ea14c91dbd3841a",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt": "2fe41d979a46279acb23dfa438c6176eb4ef72a3c3f0d248934c82d17281eeb9",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt": "595a26fa0d75fceab3885437b0c3992b7cc1813ece925937ef78e3c84872581b",
-   "results/logs/growth_2026-07/R3_ssee_kids_S8.json": "38bebb99e3b6721bd7c9bd99595e85cce636c4eb66849f55eb3e3121937b6477"
+   "archive/logs_superados/r3_burnin_concatenado_2026-09-30/R3_ssee_kids_S8.json": "38bebb99e3b6721bd7c9bd99595e85cce636c4eb66849f55eb3e3121937b6477"
   },
   "argv": [
    "src/p06_growth/analiza_ssee_R3.py"
   ],
-  "fecha": "2026-10-02T19:56:59",
+  "fecha": "2026-10-03T15:57:11",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -137,8 +137,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

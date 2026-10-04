@@ -1509,7 +1509,7 @@ stages:
     - results/logs/desi_dr2_w0wa_momentos.log:
         cache: false
   erosita_extlike:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_extlike.py results/logs/erosita_extlike.json /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py conjunto && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py conjunto_c && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_extlike.py results/logs/erosita_extlike.json /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
     deps:
     - src/p11_sondas/erosita_extlike.py
     - src/procedencia.py

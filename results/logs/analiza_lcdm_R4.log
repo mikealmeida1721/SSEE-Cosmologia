@@ -1,3 +1,71 @@
+# ACTA-PROCEDENCIA {"commit": "ca2b6181aede8f8c78caaf770f15d254b1ec98a6", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/analiza_lcdm_R4.py", "script_sha256": "41a3d147c058b2a8a387696aef995878e0625ea2087b6097044cf4a8464f0835", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "555edc9b1922166a50239ff930303e81e19b3c70ded3a47521d164cf76ae9268"}, "argv": ["src/procedencia_sella.py", "src/p06_growth/analiza_lcdm_R4.py", "results/logs/analiza_lcdm_R4.log", "results/logs/growth_2026-07/R4_lcdm_kids_S8.json"], "fecha": "2026-10-03T23:59:28", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 cadena 1: 16788 filas, burn-in 5036, 1469 submuestreadas
 cadena 2: 16808 filas, burn-in 5042, 1471 submuestreadas
 cadena 3: 16867 filas, burn-in 5060, 1476 submuestreadas
+cadena 4: 16640 filas, burn-in 4992, 1456 submuestreadas
+{
+  "corrida": "R4 — LCDM control metodologico, KiDS-1000",
+  "muestreador": "Cobaya mcmc, 4 cadenas MPI, reanudada tras corte de luz",
+  "n_parametros_libres": 13,
+  "parametros_libres": [
+    "ombh2",
+    "omch2",
+    "h0",
+    "ns",
+    "logA",
+    "halo_A",
+    "A_IA",
+    "dz1",
+    "dz2",
+    "dz3",
+    "dz4",
+    "dz5",
+    "delta_c"
+  ],
+  "datos": 225,
+  "mnu": 0.06,
+  "burn_in_frac": 0.3,
+  "thin_every": 8,
+  "n_muestras_usadas": 5872,
+  "n_filas_por_cadena": [
+    1469,
+    1471,
+    1476,
+    1456
+  ],
+  "convergencia": {
+    "Rminus1_medias": 0.02557,
+    "Rminus1_colas": 0.115482,
+    "fuente": "ultima linea de lcdm.progress"
+  },
+  "dof": 212,
+  "chi2_min": 262.7462,
+  "chi2_min_por_dof": 1.2393688679245283,
+  "chi2_min_por_cadena": [
+    262.746,
+    262.918,
+    262.813,
+    262.756
+  ],
+  "Omega_m": {
+    "media": 0.231034222322688,
+    "sigma": 0.045787736544540436
+  },
+  "sigma8": {
+    "media": 0.8751755678831248,
+    "sigma": 0.08900932197580154
+  },
+  "S8": {
+    "media": 0.757104620038561,
+    "sigma": 0.019354474399087586
+  },
+  "comparacion_KiDS": {
+    "S8_publicado": 0.759,
+    "err_publicado": 0.024,
+    "fuente": "CANONICAL_VALUES.yaml obs_KiDS_S8",
+    "tension_sigma": 0.06147497585397447
+  },
+  "tiempo_analisis_seg": 28920.83465051651
+}
+
+Guardado en /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/R4_lcdm_kids_S8.json
