@@ -2,11 +2,11 @@
  "fecha": "2026-09-28",
  "error_max_rel": 6.772360450213455e-15,
  "chi2_clavo": 11.406503768936682,
- "ref_C3": 11.406663483677269,
+ "ref_C3": 11.406652470296022,
  "criterio": "(a) < 1e-5 relativo; (b) |chi2 - C3| < 1e-3 (declarado antes)",
  "pasa": true,
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "c418e5937a93035b5b62d6955c490af2242290b6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/bao_camb.py",
@@ -15,7 +15,7 @@
   "entradas": {
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
    "data/processed/bao_camb_ssee.json": "0da2f033ed8424da778365afde46437b40fa2cfb04f83460ad0022a83bae1bee",
-   "results/logs/lcdm_conjunta_control.json": "ee984deeebc4ee075641faca6e69b91fc4dbbd55fef34b9db935b9c5bd7d3683"
+   "results/logs/lcdm_conjunta_control.json": "9b9826e64395d4e764977f2d4f3d6fbbccd166b0251655ff1ee48c470cd44975"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -25,7 +25,7 @@
    "data/processed/bao_camb_ssee.json",
    "results/logs/lcdm_conjunta_control.json"
   ],
-  "fecha": "2026-10-03T07:43:45",
+  "fecha": "2026-10-04T04:42:24",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

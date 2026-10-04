@@ -1981,8 +1981,8 @@ stages:
       size: 1937
     - path: results/logs/lcdm_conjunta_cmb.json
       hash: md5
-      md5: bbb052d6ecf0a3b3926f7c82998e708b
-      size: 468
+      md5: 4aedd28d5fac08fc8ec5ebc5e41d79c1
+      size: 1234
     - path: src/p11_sondas/cmb_dbic_mnu_propia.py
       hash: md5
       md5: ceb38b2c4e2a0b8c75c85d2b587f3bde
@@ -1994,11 +1994,11 @@ stages:
     outs:
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
-      md5: a467fbe5b7944f4ba374d9623b30b513
+      md5: f38c04f1032af418de561d4097b98a06
       size: 1498
     - path: results/logs/cmb_dbic_mnu_propia.log
       hash: md5
-      md5: c9849d801923aae1f28295ba7abc2e63
+      md5: 1b1cd880280d9f9d457a168def021299
       size: 1292
   bao_lcdm_libre:
     cmd: OMP_NUM_THREADS=1 .venv/bin/python3 src/p11_sondas/bao_lcdm_libre.py > 
@@ -2604,8 +2604,8 @@ stages:
       size: 2650
     - path: results/logs/lcdm_conjunta_control.json
       hash: md5
-      md5: a47fac5ed0131bd9077325e303470aa6
-      size: 530
+      md5: 07f6f55208449a551f48f529083d75de
+      size: 1298
     - path: src/bao_camb.py
       hash: md5
       md5: 17e888f2a53c3953da7563d6c7a37e57
@@ -2633,7 +2633,7 @@ stages:
     outs:
     - path: results/logs/bao_camb_control.json
       hash: md5
-      md5: 9f19ecd944fcbee167bf97b0fb67e1db
+      md5: f522576fde1d883baa7ea9002608d6f3
       size: 1401
   sello_chi2_bao_posterior:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
