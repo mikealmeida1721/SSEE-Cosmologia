@@ -2680,7 +2680,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 58   # 2026-10-03 (4): 117 -> 59 (clasificacion por lo que buscaban, regla de Mike: 57 historicos archivados con README por carpeta, termino_volumen_boss sellado, s8_barra_kids con no_circular en un segundo pase; los 59 que quedan, con su porque, en VERIFICATION_LEDGER V-L5-CLASIF). 2026-10-03 (3): 118 -> 117 (p3_cmb_reframe_omega_m.log, Fase B vieja con control (pi/phi)*s_m, archivado). 2026-10-03 (2): 128 -> 118 (barrido Kaiser de BOSS (8 json + su .log ignorado) y erosita_cr.json archivados en archive/logs_superados/, superados y sin cita). 2026-10-03: 156 -> 128 (recorre_logs: 25 logs re-corridos, comparados numero a numero y sellados con etapa y acta; V-L5-RECORRE). 2026-10-02 noche: 157 -> 156 (DES Y3 NLA a la cadena: etapa des_y3_nla). 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
+_TOPE_R75 = 47   # 2026-10-04: 58 -> 47 (etapas ligeras sueltas a la cadena: b1_analyse, analiza_lcdm_R4, R3_rehecho, marginal_vs_perfil, desi_dr2_w0wa_momentos, erosita_extlike, auditoria_pdfs_zenodo, cmb_ns/wb_forzado). 2026-10-03 (4): 117 -> 59 (clasificacion por lo que buscaban, regla de Mike: 57 historicos archivados con README por carpeta, termino_volumen_boss sellado, s8_barra_kids con no_circular en un segundo pase; los 59 que quedan, con su porque, en VERIFICATION_LEDGER V-L5-CLASIF). 2026-10-03 (3): 118 -> 117 (p3_cmb_reframe_omega_m.log, Fase B vieja con control (pi/phi)*s_m, archivado). 2026-10-03 (2): 128 -> 118 (barrido Kaiser de BOSS (8 json + su .log ignorado) y erosita_cr.json archivados en archive/logs_superados/, superados y sin cita). 2026-10-03: 156 -> 128 (recorre_logs: 25 logs re-corridos, comparados numero a numero y sellados con etapa y acta; V-L5-RECORRE). 2026-10-02 noche: 157 -> 156 (DES Y3 NLA a la cadena: etapa des_y3_nla). 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",
@@ -4964,6 +4964,15 @@ try:
                                    for _x in ast.walk(_t2) if isinstance(_x, ast.Name)}
                         if _dianas and not (_dianas & _usa):
                             continue
+                    if isinstance(_st, (ast.Import, ast.ImportFrom)):
+                        # lo mismo para un import de módulo: si el camino no
+                        # nombra lo que trae, no le mueve un número (caso
+                        # 2026-10-04: dos imports que sólo usan las figuras de
+                        # b1 marcaban rancias las cadenas de b1)
+                        _trae = {(_a.asname or _a.name).split(".")[0]
+                                 for _a in _st.names}
+                        if "*" not in _trae and not (_trae & _usa):
+                            continue
                     if isinstance(_st, ast.If):
                         _st = _poda_ifs(_st)
                     _cuerpo.append(_st)
@@ -5133,17 +5142,26 @@ try:
         (_modulo35 + _disp35.replace("otra(2)", "otra(3)"), True),    # rama ajena
         (_modulo35 + _disp35.replace("mia(1)", "mia(9)"), False),     # nuestra rama
     ]
+    # imports de módulo: el que el camino no usa se exime; cambiar de dónde
+    # viene uno que el camino SÍ usa, no
+    _imp35 = "from m import g as G\n" + _modulo35.replace("return aux(x) + 1", "return aux(x) + G")
+    _cc35 += [
+        ("from p import h\n" + _modulo35, True),                         # import ajeno
+        (_imp35.replace("from m import", "from n import"), False),       # import suyo
+    ]
     _base_disp35 = _modulo35 + _disp35
     _malc35 = []
     for _i, (_v, _igual) in enumerate(_cc35):
-        _ref35 = _base_disp35 if "__main__" in _v else _modulo35
+        _ref35 = (_base_disp35 if "__main__" in _v else
+                  _imp35 if "import g as G" in _v else _modulo35)
         if (_norm35(_v, "mia") == _norm35(_ref35, "mia")) is not _igual:
             _malc35.append(_i)
     check("R35 la poda por camino no exime lo que sí toca al log",
           not _malc35,
-          "7 casos: cambiar otra función, una constante ajena o la rama del "
-          "despachador de otra corrida se exime; cambiar la propia función, la "
-          "que ella llama, su constante o su propia rama, no"
+          "9 casos: cambiar otra función, una constante ajena, un import que el "
+          "camino no usa o la rama del despachador de otra corrida se exime; "
+          "cambiar la propia función, la que ella llama, su constante, el origen "
+          "de un import suyo o su propia rama, no"
           if not _malc35 else f"casos mal clasificados: {_malc35}")
     # CONTROL (R53) del certificado con fecha: cubre lo de antes, NO lo de
     # después, y sin fecha no cubre nada.

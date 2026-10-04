@@ -248,7 +248,7 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
@@ -265,13 +265,13 @@
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "8e7645b20e92586a1a14f403404ffbdee4832b78bdb9710fab57ec59f53d2d49",
    "results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json": "0b3e1bcc757acb36290d936213ad2720b3b8daccfe83dc70001ecd837b445dcd",
    "results/logs/cmb_dbic_mnu_propia.json": "92d149da5fa73827da25b69f372ba1104e3bbddb505d89588ba7629fac9e082a",
-   "results/logs/b1_k2.json": "d573dc67f15d722d3a022cb53b4c886b312f8a985c21d80a9d913872373f9129",
+   "results/logs/b1_k2.json": "948a4a6e4108e14e560fe35c8a3c5e8d378a5b7669b4c5e56f648aec257225f9",
    "results/logs/kids_legacy_bic.json": "68e01c09b470df2d3e594b34f53227e1ebe19bc335bdf3731011610a379ae421"
   },
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-03T12:56:37",
+  "fecha": "2026-10-04T02:00:37",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -280,8 +280,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

@@ -308,8 +308,13 @@ muestreo_certificado:
   #           nucleo, mas las 2 lineas de sys.path para importarlo.
   #           SUM_MNU_EV == 0.06849 da True (mismo float, bit a bit).
   # Ninguno cambia un numero de la cadena: se renueva la fecha.
-  b1_full_run: 2026-09-30   # ver bloque H0_GLOBAL abajo
-  b1_lcdm_run: 2026-09-30   # ver bloque H0_GLOBAL abajo
+  # 2026-10-03 (ca2b618): se revisó el cambio a ssee_paper3_b1_mcmc.py: dos
+  # imports (planck2018_tabla2, procedencia), _entradas/_meta, el prior de
+  # Planck de la figura leído de la tabla y el acta en los metadatos de las 4
+  # figuras. Todo vive en make_figures; run_mcmc, _ssee_info y _lcdm_info no
+  # se tocaron (git diff c8d1566 ca2b618): ningún número de la cadena cambia.
+  b1_full_run: 2026-10-03   # ver bloque H0_GLOBAL abajo
+  b1_lcdm_run: 2026-10-03   # ver bloque H0_GLOBAL abajo
   # 2026-09-08: cobaya_kids.py cambio, pero SOLO por adicion — se anadieron
   # loglike_lcdm_fijo/info_lcdm_fijo y una rama de despacho para el variante
   # 'lcdmfijo'. Las rutas 'ssee' y 'lcdm' quedan identicas (la unica linea

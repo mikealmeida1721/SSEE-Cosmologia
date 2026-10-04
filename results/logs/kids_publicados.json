@@ -81,7 +81,7 @@
   }
  },
  "_procedencia": {
-  "commit": "111d5e99d9f140e039d0dd5c92b50fb1476754ee",
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
@@ -93,12 +93,12 @@
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
    "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "555edc9b1922166a50239ff930303e81e19b3c70ded3a47521d164cf76ae9268",
    "results/logs/s8_kids_legacy_camb.json": "885b755de1fba1117778070ed8da16b55c937f1eeeb159f7ac62de2dd2c6f766",
-   "results/logs/s8_desde_b1.json": "a98d828f0815fb80e67b2a098dc0a3a060da223cdedc1a1b694c7e67a904589e"
+   "results/logs/s8_desde_b1.json": "46486f5d9f8f6d61469b1f41dac408f1080022487354233da6542c16536f5484"
   },
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-04T00:00:49",
+  "fecha": "2026-10-04T02:00:42",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

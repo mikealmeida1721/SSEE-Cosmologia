@@ -6,8 +6,8 @@
   {
    "indice": 12024,
    "chi2_cadena": 555.564307345223,
-   "chi2_nuestro": 558.7383345358187,
-   "dif": 3.174027190595666,
+   "chi2_nuestro": 558.7383345358093,
+   "dif": 3.17402719058623,
    "parametros": {
     "cosmological_parameters--omega_m": 0.248362751128155,
     "cosmological_parameters--h0": 0.895983260655379,
@@ -46,8 +46,8 @@
   {
    "indice": 4442,
    "chi2_cadena": 932.939455150314,
-   "chi2_nuestro": 951.9939844868888,
-   "dif": 19.054529336574888,
+   "chi2_nuestro": 951.9939844872561,
+   "dif": 19.054529336942096,
    "parametros": {
     "cosmological_parameters--omega_m": 0.289106563558156,
     "cosmological_parameters--h0": 0.614242677053341,
@@ -86,8 +86,8 @@
   {
    "indice": 20203,
    "chi2_cadena": 520.8334539539347,
-   "chi2_nuestro": 521.0065664691656,
-   "dif": 0.17311251523085502,
+   "chi2_nuestro": 521.0065664693374,
+   "dif": 0.17311251540263584,
    "parametros": {
     "cosmological_parameters--omega_m": 0.3086983515098183,
     "cosmological_parameters--h0": 0.714341170147053,
@@ -126,8 +126,8 @@
   {
    "indice": 20247,
    "chi2_cadena": 520.521135118012,
-   "chi2_nuestro": 521.1918141390786,
-   "dif": 0.6706790210665758,
+   "chi2_nuestro": 521.1918141391078,
+   "dif": 0.6706790210957934,
    "parametros": {
     "cosmological_parameters--omega_m": 0.32300098650074593,
     "cosmological_parameters--h0": 0.7055076480681364,
@@ -166,8 +166,8 @@
   {
    "indice": 21007,
    "chi2_cadena": 516.6266324417663,
-   "chi2_nuestro": 516.7321860114027,
-   "dif": 0.10555356963641316,
+   "chi2_nuestro": 516.7321860114241,
+   "dif": 0.10555356965778628,
    "parametros": {
     "cosmological_parameters--omega_m": 0.3348011993190192,
     "cosmological_parameters--h0": 0.6379089509973869,
@@ -206,8 +206,8 @@
   {
    "indice": 12260,
    "chi2_cadena": 558.980816386877,
-   "chi2_nuestro": 560.624791407001,
-   "dif": 1.643975020124003,
+   "chi2_nuestro": 560.6247914070855,
+   "dif": 1.6439750202084724,
    "parametros": {
     "cosmological_parameters--omega_m": 0.345518455681334,
     "cosmological_parameters--h0": 0.667202519622242,
@@ -246,8 +246,8 @@
   {
    "indice": 11757,
    "chi2_cadena": 555.733318575231,
-   "chi2_nuestro": 555.1757792485953,
-   "dif": -0.5575393266357196,
+   "chi2_nuestro": 555.1757792486769,
+   "dif": -0.5575393265540924,
    "parametros": {
     "cosmological_parameters--omega_m": 0.357519966027908,
     "cosmological_parameters--h0": 0.775678044736364,
@@ -286,8 +286,8 @@
   {
    "indice": 9349,
    "chi2_cadena": 578.929419742085,
-   "chi2_nuestro": 578.2715299958902,
-   "dif": -0.657889746194769,
+   "chi2_nuestro": 578.271529996237,
+   "dif": -0.6578897458480242,
    "parametros": {
     "cosmological_parameters--omega_m": 0.371236840918064,
     "cosmological_parameters--h0": 0.673263066363754,
@@ -326,8 +326,8 @@
   {
    "indice": 21221,
    "chi2_cadena": 524.0524412205299,
-   "chi2_nuestro": 524.7491390807362,
-   "dif": 0.6966978602063136,
+   "chi2_nuestro": 524.7491390807076,
+   "dif": 0.6966978601776646,
    "parametros": {
     "cosmological_parameters--omega_m": 0.39054878256304915,
     "cosmological_parameters--h0": 0.559325954647956,
@@ -366,8 +366,8 @@
   {
    "indice": 2793,
    "chi2_cadena": 1567.25773359887,
-   "chi2_nuestro": 1638.911084122608,
-   "dif": 71.65335052373803,
+   "chi2_nuestro": 1638.9110841204852,
+   "dif": 71.65335052161527,
    "parametros": {
     "cosmological_parameters--omega_m": 0.444886349037273,
     "cosmological_parameters--h0": 0.819667975626106,
@@ -406,8 +406,8 @@
   {
    "indice": 11457,
    "chi2_cadena": 565.772513110618,
-   "chi2_nuestro": 566.762111112407,
-   "dif": 0.9895980017889769,
+   "chi2_nuestro": 566.7621111129071,
+   "dif": 0.9895980022890853,
    "parametros": {
     "cosmological_parameters--omega_m": 0.249414589212525,
     "cosmological_parameters--h0": 0.740071092329118,
@@ -446,8 +446,8 @@
   {
    "indice": 6698,
    "chi2_cadena": 673.398427137934,
-   "chi2_nuestro": 666.7296936657807,
-   "dif": -6.668733472153349,
+   "chi2_nuestro": 666.7296936656122,
+   "dif": -6.668733472321833,
    "parametros": {
     "cosmological_parameters--omega_m": 0.289428481864279,
     "cosmological_parameters--h0": 0.734027227807235,
@@ -486,8 +486,8 @@
   {
    "indice": 20035,
    "chi2_cadena": 526.0603828510359,
-   "chi2_nuestro": 526.1310023057666,
-   "dif": 0.07061945473071773,
+   "chi2_nuestro": 526.1310023059315,
+   "dif": 0.07061945489556365,
    "parametros": {
     "cosmological_parameters--omega_m": 0.3085449237664011,
     "cosmological_parameters--h0": 0.6648622313926142,
@@ -526,8 +526,8 @@
   {
    "indice": 21916,
    "chi2_cadena": 522.6657455351674,
-   "chi2_nuestro": 522.2242657561593,
-   "dif": -0.4414797790080911,
+   "chi2_nuestro": 522.2242657562085,
+   "dif": -0.4414797789588647,
    "parametros": {
     "cosmological_parameters--omega_m": 0.3230643014196092,
     "cosmological_parameters--h0": 0.7126887075570996,
@@ -566,8 +566,8 @@
   {
    "indice": 19096,
    "chi2_cadena": 522.1405687249356,
-   "chi2_nuestro": 521.2977186800955,
-   "dif": -0.8428500448401337,
+   "chi2_nuestro": 521.2977186801905,
+   "dif": -0.8428500447450915,
    "parametros": {
     "cosmological_parameters--omega_m": 0.33484849468513456,
     "cosmological_parameters--h0": 0.703685356507841,
@@ -606,8 +606,8 @@
   {
    "indice": 11079,
    "chi2_cadena": 562.460203025016,
-   "chi2_nuestro": 565.1440786490024,
-   "dif": 2.6838756239864097,
+   "chi2_nuestro": 565.1440786493371,
+   "dif": 2.6838756243211037,
    "parametros": {
     "cosmological_parameters--omega_m": 0.345464544011577,
     "cosmological_parameters--h0": 0.613447105178044,
@@ -646,8 +646,8 @@
   {
    "indice": 10517,
    "chi2_cadena": 553.55791931577,
-   "chi2_nuestro": 553.2963553179397,
-   "dif": -0.2615639978303079,
+   "chi2_nuestro": 553.2963553179594,
+   "dif": -0.2615639978106401,
    "parametros": {
     "cosmological_parameters--omega_m": 0.357626951775985,
     "cosmological_parameters--h0": 0.617148293949374,
@@ -686,8 +686,8 @@
   {
    "indice": 9349,
    "chi2_cadena": 578.929419742085,
-   "chi2_nuestro": 578.2715299958902,
-   "dif": -0.657889746194769,
+   "chi2_nuestro": 578.271529996237,
+   "dif": -0.6578897458480242,
    "parametros": {
     "cosmological_parameters--omega_m": 0.371236840918064,
     "cosmological_parameters--h0": 0.673263066363754,
@@ -726,8 +726,8 @@
   {
    "indice": 21983,
    "chi2_cadena": 519.0420208883542,
-   "chi2_nuestro": 519.2051466466603,
-   "dif": 0.16312575830613696,
+   "chi2_nuestro": 519.2051466467226,
+   "dif": 0.16312575836843735,
    "parametros": {
     "cosmological_parameters--omega_m": 0.39056314883310395,
     "cosmological_parameters--h0": 0.5749134149158889,
@@ -766,8 +766,8 @@
   {
    "indice": 2372,
    "chi2_cadena": 1632.2767038456,
-   "chi2_nuestro": 1651.3044210712605,
-   "dif": 19.02771722566058,
+   "chi2_nuestro": 1651.3044210704293,
+   "dif": 19.027717224829303,
    "parametros": {
     "cosmological_parameters--omega_m": 0.444627861887719,
     "cosmological_parameters--h0": 0.561371522217184,
@@ -804,43 +804,43 @@
    "S8": null
   }
  ],
- "dif_media": 5.500945749439421,
- "dif_std": 16.31366509995371,
+ "dif_media": 5.500945749415143,
+ "dif_std": 16.313665099475024,
  "correlaciones": {
-  "bias_lens--b2": 0.6825930534329927,
-  "lens_photoz_errors--width_2": 0.6325544983356879,
-  "shear_calibration_parameters--m2": -0.525100573147448,
-  "intrinsic_alignment_parameters--a1": 0.5042369897585245,
-  "cosmological_parameters--omega_m": 0.49196497096695235,
-  "cosmological_parameters--a_s": -0.4216159107677986,
-  "bias_lens--b1": 0.3852977826078149,
-  "wl_photoz_errors--bias_4": -0.3816222812153372,
-  "lens_photoz_errors--bias_3": 0.38043585667004126,
-  "wl_photoz_errors--bias_3": 0.348048052147152,
-  "cosmological_parameters--omega_b": 0.2795711200293375,
-  "lens_photoz_errors--width_1": -0.25447839602993527,
-  "cosmological_parameters--omnuh2": -0.25081168021833344,
-  "shear_calibration_parameters--m4": 0.24641051855871382,
-  "bias_lens--b3": -0.24193063199886825,
-  "cosmological_parameters--h0": 0.22783071664165339,
-  "lens_photoz_errors--width_3": -0.21919691864889315,
-  "intrinsic_alignment_parameters--alpha1": 0.2143067226346963,
-  "intrinsic_alignment_parameters--bias_ta": -0.15690411679509814,
-  "intrinsic_alignment_parameters--alpha2": 0.13747544611138676,
-  "cosmological_parameters--n_s": -0.133384669117521,
-  "shear_calibration_parameters--m1": -0.12249822859317856,
-  "lens_photoz_errors--bias_4": -0.11531106423533549,
-  "wl_photoz_errors--bias_1": 0.0738461785579568,
-  "lens_photoz_errors--width_4": 0.05884013941980698,
-  "wl_photoz_errors--bias_2": -0.047635859070322875,
-  "bias_lens--b4": -0.04437166615042921,
-  "lens_photoz_errors--bias_2": -0.04019455097132068,
-  "shear_calibration_parameters--m3": 0.036514373354378286,
-  "lens_photoz_errors--bias_1": -0.03512781274381938,
-  "intrinsic_alignment_parameters--a2": 0.017793642166048763
+  "bias_lens--b2": 0.6825930534235831,
+  "lens_photoz_errors--width_2": 0.6325544983310739,
+  "shear_calibration_parameters--m2": -0.5251005731427638,
+  "intrinsic_alignment_parameters--a1": 0.5042369897511387,
+  "cosmological_parameters--omega_m": 0.4919649709608258,
+  "cosmological_parameters--a_s": -0.42161591075929533,
+  "bias_lens--b1": 0.3852977826001143,
+  "wl_photoz_errors--bias_4": -0.38162228121561104,
+  "lens_photoz_errors--bias_3": 0.38043585666272106,
+  "wl_photoz_errors--bias_3": 0.348048052150442,
+  "cosmological_parameters--omega_b": 0.27957112002139345,
+  "lens_photoz_errors--width_1": -0.2544783960255979,
+  "cosmological_parameters--omnuh2": -0.25081168021555716,
+  "shear_calibration_parameters--m4": 0.2464105185593303,
+  "bias_lens--b3": -0.24193063200353798,
+  "cosmological_parameters--h0": 0.22783071664030455,
+  "lens_photoz_errors--width_3": -0.21919691865227697,
+  "intrinsic_alignment_parameters--alpha1": 0.21430672263772804,
+  "intrinsic_alignment_parameters--bias_ta": -0.1569041167989548,
+  "intrinsic_alignment_parameters--alpha2": 0.1374754461125418,
+  "cosmological_parameters--n_s": -0.1333846691177877,
+  "shear_calibration_parameters--m1": -0.12249822859483704,
+  "lens_photoz_errors--bias_4": -0.11531106423301594,
+  "wl_photoz_errors--bias_1": 0.07384617856437024,
+  "lens_photoz_errors--width_4": 0.05884013942156325,
+  "wl_photoz_errors--bias_2": -0.047635859070650224,
+  "bias_lens--b4": -0.044371666152980944,
+  "lens_photoz_errors--bias_2": -0.04019455096860218,
+  "shear_calibration_parameters--m3": 0.03651437335084341,
+  "lens_photoz_errors--bias_1": -0.03512781274161018,
+  "intrinsic_alignment_parameters--a2": 0.017793642174662002
  },
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/des_y3_barrido.py",
@@ -855,14 +855,14 @@
    "results/logs/des_y3_barrido.json",
    "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt"
   ],
-  "fecha": "2026-10-03T07:56:06",
+  "fecha": "2026-10-04T02:08:42",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

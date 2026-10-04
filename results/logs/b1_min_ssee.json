@@ -64,7 +64,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "299399619d8f8ae8b073240930467d86ae15c201",
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/b1_minimiza.py",
@@ -81,7 +81,7 @@
    "src/p03_cmb/b1_minimiza.py",
    "ssee"
   ],
-  "fecha": "2026-10-01T19:29:24",
+  "fecha": "2026-10-04T00:29:06",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

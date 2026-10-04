@@ -44,11 +44,13 @@
   "razon": "contra el dato crudo y con el A_s del propio modelo; el 3.5 sigma del techo era artefacto de fijar A_s al de Planck"
  },
  "_procedencia": {
-  "commit": "6415a5b6a78d846d05a71739c0505a10dedb9726",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p05_IS/techo_sigma8_As_fijo.py"
+  ],
   "script": "src/p05_IS/techo_sigma8_As_fijo.py",
-  "script_sha256": "4701a1b56ec595c67383f438eb5c91a6b70286789b96727d758c0e8ee35ecd3d",
+  "script_sha256": "280a0205aae455aef7e4e7756c7c67ee516d6e826e8e17e6df06a586312ed49d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/p5_techo_evidencia/techo_ssee_canonico__pk.dat": "bdeacff72e17bc49aff596a35f05b266e1d42a4495be11eada58a311718a9854",
@@ -61,7 +63,7 @@
   "argv": [
    "src/p05_IS/techo_sigma8_As_fijo.py"
   ],
-  "fecha": "2026-10-02T19:58:54",
+  "fecha": "2026-10-04T02:00:34",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

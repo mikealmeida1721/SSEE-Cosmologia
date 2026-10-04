@@ -64,7 +64,7 @@ PK_LCDM_VIEJO = EVID / "lcdm_planck2018__pk.dat"
 SALIDA = REPO / "results" / "logs" / "p5_techo_sigma8_As_fijo.json"
 R_TOPHAT = 8.0            # Mpc/h
 N_INTERP = 4000
-OM_CMB = S.OMEGA_M_TOTAL         # Omega_m,CMB = omega_m/h^2 (algebraico; era el literal 0.3088808787787524)
+OM_CMB = S.OMEGA_M_TOTAL         # Omega_m,CMB = omega_m/h^2 (algebraico; antes iba tecleado como literal)
 SIGMA8_PLANCK = 0.8111           # ORIGEN-VALOR: 0.8111 — Planck 2018 VI, Tabla 2, TT,TE,EE+lowE+lensing; criterio del control
 SIGMA8_PLANCK_ERR = 0.006        # ORIGEN-VALOR: 0.006 — su barra, misma tabla
 

@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-04",
  "umbral": "derivado",
  "delta_c": {
   "ssee": 1.6763371290815952,
@@ -42,7 +42,7 @@
   }
  },
  "_procedencia": {
-  "commit": "5c406720cd2de2ffa66e87d45f008c5590fde155",
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_press_schechter.py",
@@ -52,12 +52,12 @@
    "results/logs/deltac_spherical_collapse.json": "3f6776f1574c618c501d7acc47a5250d30c65a0cca47d96f5f01b7d64efeb012",
    "CANONICAL_VALUES.yaml": "08bdd82aa039a4f7e05c95579c8db0abd7da4a2e861d291de02ce0f49897123f",
    "results/logs/p5_IS_perturbations_Q3.json": "600cd41c25c49db79a3dda2bb93cae0f3e73753b3c8096acb6599daa1064ffd7",
-   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "ee9d40a152c786e6d54f7ed84dcc10af1eb1083977d5242af8d5fcf9b6af06d5"
+   "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70"
   },
   "argv": [
    "src/p02_mcmc/ssee_press_schechter.py"
   ],
-  "fecha": "2026-10-03T12:52:19",
+  "fecha": "2026-10-04T01:55:37",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -66,8 +66,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": null,
-   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

@@ -111,7 +111,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "09bfe6ac4ba11f6c00e4252beff2840c22d36e46",
+  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/b1_k2_lee.py",
@@ -123,16 +123,16 @@
    "results/chains/ssee_cmb_k2.3.txt": "744e71cab137fb9a822e858262aa201d90acacf140c1f268cb303a188e9c985d",
    "results/chains/ssee_cmb_k2.4.txt": "057a1c038019ea308d00109bbb0404891f266b5d77c3b0c2735302b7c78205f3",
    "results/chains/ssee_cmb_k2.input.yaml": "56a0247855abd57a606e531123beb143af3041505303ad9dcf0521e044e5565d",
-   "results/logs/b1_min_ssee.json": "38e5e1d5a4eade9a728e1e350c7284e3e52967b71558d33ff38ad50ba7dfcc96",
+   "results/logs/b1_min_ssee.json": "4e824a0ea2da4501dad8f8e25f9546823dd7b08802bb83e274404695617ddc17",
    "results/chains/lcdm_cmb.1.txt": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285",
    "results/chains/lcdm_cmb.input.yaml": "24ab7828a275793ef161aa62e22f5c67d6746e8fdbc8c2dbce9e9c35fc6b7c36",
-   "results/logs/b1_min_lcdm.json": "f7f6423a3ad42bde4ceae6cf1990b21dc9bba9aab46224ea0f6b7174184d7ab5",
+   "results/logs/b1_min_lcdm.json": "9dbdfdf119fbef7b538a0078cea38f8c8518a0efe563e8dff2f72538fc88b288",
    "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d"
   },
   "argv": [
    "src/p03_cmb/b1_k2_lee.py"
   ],
-  "fecha": "2026-10-01T23:55:51",
+  "fecha": "2026-10-04T01:55:29",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
