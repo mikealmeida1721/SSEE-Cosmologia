@@ -110,7 +110,7 @@
   "consistencia_sigma": 0.8477878229907357
  },
  "_procedencia": {
-  "commit": "3eda9c5d593aa7d6438f7231d5006008d2f77921",
+  "commit": "f37a6daf4e26cc986c3ac2b43f1b4b133c928f29",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
@@ -121,7 +121,7 @@
    "results/logs/lcdm_conjunta_kids.json": "ab2d0007b4ba63c005b8c12f4618e1c6155c635da2235d6bf68673d6826442e0",
    "results/logs/lcdm_conjunta_bao.json": "a2b031c9763cb8d65d590295f9264471a4d6c21a8a630964b9f498ba63b98005",
    "results/logs/lcdm_conjunta_conjunta.json": "d6a0aa2af3da2f512c06037dacdd4debf66f645aa4da9dc408ba0bbb196a5e87",
-   "results/logs/bao_lcdm_libre.json": "56aea039f17b401e0b304215919a8f7c8e951446186ef94e960e7ed3374a611d",
+   "results/logs/bao_lcdm_libre.json": "7635b3351b03c4668db3576e33a57f3fd0ea2cf507458cc2fef6322da57b7202",
    "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
    "results/logs/kids_legacy_bic.json": "68e01c09b470df2d3e594b34f53227e1ebe19bc335bdf3731011610a379ae421",
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
@@ -147,7 +147,7 @@
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt"
   ],
-  "fecha": "2026-10-04T04:41:11",
+  "fecha": "2026-10-04T04:45:29",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
