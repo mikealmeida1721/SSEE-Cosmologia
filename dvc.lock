@@ -4201,12 +4201,12 @@ stages:
       size: 193167
     - path: docs/SSEE_PRD.pdf
       hash: md5
-      md5: 1c783829bf8cbb20cfe05b0a1679d39c
-      size: 691043
+      md5: f0a012219102063928b0c959c79d65e8
+      size: 673153
     - path: docs/SSEE_Paper10_UVCompletion.pdf
       hash: md5
-      md5: 32a40b499a93cec1e1a8ed2355ea07b6
-      size: 410734
+      md5: 04d17d1cf62699b596bcd650167df8ab
+      size: 410720
     - path: docs/SSEE_Paper1_Framework.pdf
       hash: md5
       md5: 9aa7f194e9c956b17a704d05c90c39be
@@ -4266,5 +4266,5 @@ stages:
     outs:
     - path: results/logs/auditoria_pdfs_zenodo.json
       hash: md5
-      md5: 4982d65116aa264c1ad0a16f7be46706
-      size: 21144
+      md5: dd01625358150603fd252c1ae5fde26d
+      size: 21146

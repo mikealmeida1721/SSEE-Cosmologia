@@ -19,33 +19,33 @@
    "narrados": []
   },
   "SSEE_PRD.pdf": {
-   "caracteres": 63354,
+   "caracteres": 63214,
    "vivos": [],
    "narrados": [
     {
      "patron": "66.53",
-     "pos": 24173,
+     "pos": 23884,
      "texto": "and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sec"
     },
     {
      "patron": "67.159",
-     "pos": 24192,
+     "pos": 23903,
      "texto": "matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sector 0.160 in the ge"
     },
     {
      "patron": "66.533",
-     "pos": 24173,
+     "pos": 23884,
      "texto": "and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sec"
     },
     {
      "patron": "67.037",
-     "pos": 24166,
+     "pos": 23877,
      "texto": "terior\u0016and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the c"
     }
    ]
   },
   "SSEE_Paper10_UVCompletion.pdf": {
-   "caracteres": 37151,
+   "caracteres": 37152,
    "vivos": [],
    "narrados": [
     {
@@ -370,7 +370,7 @@
   }
  },
  "_procedencia": {
-  "commit": "111d5e99d9f140e039d0dd5c92b50fb1476754ee",
+  "commit": "9159962c63d18c34cd0f307be641a29cbfdd1246",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/audita_pdfs_zenodo.py",
@@ -381,8 +381,8 @@
    "docs/SSEE_Cover.pdf": "8f5b7601a8e9919e6fbe36b93d6c05d3012e6dc53db7f1776b814804fbceeeca",
    "docs/SSEE_Cover_Letter.pdf": "074fc9fea2ed1782953bdad912009eca6d0029e03d8f77e61118a64e84dc0807",
    "docs/SSEE_Endorser_Summary.pdf": "bfb7dde4f822a21486c44c96ebf0d83d9bcd7b279bfffc9e82f411da1520f0aa",
-   "docs/SSEE_PRD.pdf": "3e757d593f25660a97918e64a5d28b7844846db026bb1988557e5d3243ce53e4",
-   "docs/SSEE_Paper10_UVCompletion.pdf": "ad7ffe899d4945800a292ce0948fa08b5cb00e4b73dc87ab9ad62b97b444ab7b",
+   "docs/SSEE_PRD.pdf": "8ac1ce745a00862be6f2df476c2ffef02c59978c92a9fbde3281caf8672ea8b4",
+   "docs/SSEE_Paper10_UVCompletion.pdf": "39d632f8df19e759364b5f5c301209c5291c3d9fc911d1065a1b5281bcd8dfb2",
    "docs/SSEE_Paper1_Framework.pdf": "08af7a8eea1b3f95bd2ebc1a05cbfa899b88d8d7aecea4dbdd7ec59081532eba",
    "docs/SSEE_Paper2_MCMC.pdf": "6fde36a1396fb6dd1a5488d5b1c23bd550c291e2bac5a044462028d873f6973b",
    "docs/SSEE_Paper3_CMB.pdf": "4f0fb588f3c2e345038dcddbc90ab2b8cd599e7af41f98f465fa9198dcf581b6",
@@ -417,14 +417,14 @@
    "docs/SSEE_Sealed_Journal.pdf",
    "docs/SSEE_Unified_Journal.pdf"
   ],
-  "fecha": "2026-10-04T00:00:44",
+  "fecha": "2026-10-04T02:16:16",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }
