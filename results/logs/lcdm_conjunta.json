@@ -110,17 +110,17 @@
   "consistencia_sigma": 0.8477878229907357
  },
  "_procedencia": {
-  "commit": "ae3c4bf5f4d0b702b639d2022ef94e7c458d30ac",
+  "commit": "3eda9c5d593aa7d6438f7231d5006008d2f77921",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
   "script_sha256": "ea2d0fcc83aaa45471015db4c03950106bafd77269d415cc797774d03b9f4670",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/lcdm_conjunta_cmb.json": "31b2b9f9d316681d62a7b01583a2f86e52e80a7e6980469dda4b548a7db4dbd1",
-   "results/logs/lcdm_conjunta_kids.json": "86c6379194f3ef7fc974e7f659e6dd17e121344d6eeae3abebc805dfeebe118b",
-   "results/logs/lcdm_conjunta_bao.json": "963603b95dba311d93441516b63ed376b7c43518bfd2b0052628377b382266df",
-   "results/logs/lcdm_conjunta_conjunta.json": "102af89b5f6af59b17a332e93d2378cb160f2567357bb5ba8fab790eabbc7fec",
+   "results/logs/lcdm_conjunta_cmb.json": "000f2b67d3d9aa1d6acef6cb9445af1be5ea3651b9ddb626db730567629577cd",
+   "results/logs/lcdm_conjunta_kids.json": "ab2d0007b4ba63c005b8c12f4618e1c6155c635da2235d6bf68673d6826442e0",
+   "results/logs/lcdm_conjunta_bao.json": "a2b031c9763cb8d65d590295f9264471a4d6c21a8a630964b9f498ba63b98005",
+   "results/logs/lcdm_conjunta_conjunta.json": "d6a0aa2af3da2f512c06037dacdd4debf66f645aa4da9dc408ba0bbb196a5e87",
    "results/logs/bao_lcdm_libre.json": "56aea039f17b401e0b304215919a8f7c8e951446186ef94e960e7ed3374a611d",
    "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
    "results/logs/kids_legacy_bic.json": "68e01c09b470df2d3e594b34f53227e1ebe19bc335bdf3731011610a379ae421",
@@ -147,7 +147,7 @@
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt"
   ],
-  "fecha": "2026-10-04T04:36:13",
+  "fecha": "2026-10-04T04:41:11",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

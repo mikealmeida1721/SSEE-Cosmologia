@@ -175,7 +175,7 @@ stages:
       size: 3862
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: 5a56cb96c567b564e7196d8fc7d39108
+      md5: 788e0b71631da9cca614a691aa05d184
       size: 5518
     - path: results/logs/lya_auditoria.json
       hash: md5
@@ -280,7 +280,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: c129040547b4dc195223b570a0dd296b
+      md5: a8fe14969aeb276c3e9ce9af72a6a6dd
       size: 88183
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -4323,20 +4323,20 @@ stages:
       size: 3419
     - path: results/logs/lcdm_conjunta_bao.json
       hash: md5
-      md5: efb2477caa25d6c2fe52e3eb8429fa20
-      size: 381
+      md5: ee0de450f07a3481b7d1f283974e4808
+      size: 1147
     - path: results/logs/lcdm_conjunta_cmb.json
       hash: md5
-      md5: bbb052d6ecf0a3b3926f7c82998e708b
-      size: 468
+      md5: 4aedd28d5fac08fc8ec5ebc5e41d79c1
+      size: 1234
     - path: results/logs/lcdm_conjunta_conjunta.json
       hash: md5
-      md5: 5c790e40df13c9984ad2c06138272585
-      size: 830
+      md5: 76d0e50931c76ad3b9dc48322a39281f
+      size: 1601
     - path: results/logs/lcdm_conjunta_kids.json
       hash: md5
-      md5: 885c132c9d816a3699d687f4a86afb6d
-      size: 756
+      md5: e65c9155d3f895b0ee3f8c62cd0aff8d
+      size: 1523
     - path: src/desi_dr2_data.py
       hash: md5
       md5: f99d77b763872407c2b2126980e46e22
@@ -4364,11 +4364,11 @@ stages:
     outs:
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: 5a56cb96c567b564e7196d8fc7d39108
+      md5: 788e0b71631da9cca614a691aa05d184
       size: 5518
     - path: results/logs/lcdm_conjunta_lee.log
       hash: md5
-      md5: 30619449c24b185c10d2f1dc7f5e16d1
+      md5: cb83ccb78cdf84210de4c39a61dff364
       size: 1318
   lcdm_conjunta_control:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
