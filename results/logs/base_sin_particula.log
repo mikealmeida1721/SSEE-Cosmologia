@@ -10,7 +10,9 @@
   z3 SGC: 37 puntos  Hartlap=0.9814
 
 [SSEE] fondo FIJO: Om=0.308881 w0=-0.8399 wa=-0.6700
-    logA=2.6000  chi2=206.981
+/home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/mcfit.py:130: UserWarning: use backend='jax' if desired
+  warnings.warn("use backend='jax' if desired")
+    logA=2.6000  chi2=207.807
     logA=2.6500  chi2=203.246
     logA=2.7000  chi2=201.408
     logA=2.7500  chi2=199.915
@@ -21,12 +23,12 @@
     logA=3.0000  chi2=197.637
     logA=3.0500  chi2=198.117
     logA=3.1000  chi2=198.854
-    logA=3.1500  chi2=200.010
-    logA=3.2000  chi2=202.266
-    logA=3.2500  chi2=207.148
-    logA=3.3000  chi2=215.871
-    logA=3.3500  chi2=229.696
-    logA=3.4000  chi2=248.939
+    logA=3.1500  chi2=200.064
+    logA=3.2000  chi2=202.696
+    logA=3.2500  chi2=207.788
+    logA=3.3000  chi2=216.541
+    logA=3.3500  chi2=230.195
+    logA=3.4000  chi2=249.035
   chi2 = 197.438  dof = 185  chi2/dof = 1.0672
   logA = 2.94479 +- 0.12385
     z1 NGC: f*sigma8 = 0.44875
@@ -36,38 +38,38 @@
     z3 NGC: f*sigma8 = 0.44783
     z3 SGC: f*sigma8 = 0.44783
   BOSS listo (min 197.478)
-  KiDS 1/9  logA=2.8800  chi2=  266.716  (3.4 min)
-  KiDS 2/9  logA=2.9075  chi2=  267.392  (4.1 min)
-  KiDS 3/9  logA=2.9350  chi2=  268.627  (4.6 min)
-  KiDS 4/9  logA=2.9625  chi2=  270.477  (4.3 min)
-  KiDS 5/9  logA=2.9900  chi2=  273.256  (4.2 min)
-  KiDS 6/9  logA=3.0175  chi2=  277.189  (3.1 min)
-  KiDS 7/9  logA=3.0450  chi2=  282.210  (3.5 min)
-  KiDS 8/9  logA=3.0725  chi2=  288.654  (2.7 min)
-  KiDS 9/9  logA=3.1000  chi2=  296.506  (3.5 min)
+  KiDS 1/9  logA=2.8800  chi2=  266.716  (15.8 min)
+  KiDS 2/9  logA=2.9075  chi2=  267.392  (19.9 min)
+  KiDS 3/9  logA=2.9350  chi2=  268.627  (22.0 min)
+  KiDS 4/9  logA=2.9625  chi2=  270.477  (19.9 min)
+  KiDS 5/9  logA=2.9900  chi2=  273.256  (18.6 min)
+  KiDS 6/9  logA=3.0175  chi2=  277.189  (13.3 min)
+  KiDS 7/9  logA=3.0450  chi2=  282.210  (13.4 min)
+  KiDS 8/9  logA=3.0725  chi2=  288.654  (11.9 min)
+  KiDS 9/9  logA=3.1000  chi2=  296.506  (15.8 min)
   KiDS listo (min 266.716)
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
 clipy_0.15
-Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86217e-09)
+Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik' on test data. got -292.286 expected -292.286 (diff -3.86245e-09)
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
-  CMB  1/9  logA=2.8800  chi2= 3113.097  (0.9 min)
-  CMB  2/9  logA=2.9075  chi2= 1867.963  (0.9 min)
-  CMB  3/9  logA=2.9350  chi2= 1167.242  (0.9 min)
-  CMB  4/9  logA=2.9625  chi2= 1023.577  (0.7 min)
-  CMB  5/9  logA=2.9900  chi2= 1015.104  (0.7 min)
-  CMB  6/9  logA=3.0175  chi2= 1006.707  (0.9 min)
-  CMB  7/9  logA=3.0450  chi2= 1003.586  (0.5 min)
-  CMB  8/9  logA=3.0725  chi2= 1007.385  (0.8 min)
-  CMB  9/9  logA=3.1000  chi2= 1015.579  (0.8 min)
+  CMB  1/9  logA=2.8800  chi2= 3113.098  (5.0 min)
+  CMB  2/9  logA=2.9075  chi2= 1867.963  (4.7 min)
+  CMB  3/9  logA=2.9350  chi2= 1167.242  (4.5 min)
+  CMB  4/9  logA=2.9625  chi2= 1023.577  (3.7 min)
+  CMB  5/9  logA=2.9900  chi2= 1015.104  (3.8 min)
+  CMB  6/9  logA=3.0175  chi2= 1006.707  (4.7 min)
+  CMB  7/9  logA=3.0450  chi2= 1003.586  (2.8 min)
+  CMB  8/9  logA=3.0725  chi2= 1007.385  (4.0 min)
+  CMB  9/9  logA=3.1000  chi2= 1015.579  (4.1 min)
   CMB listo (min 1003.586)
 
        logA        CMB       KiDS       BOSS        TOTAL
      2.8800    3113.10     266.72     197.74      3577.55 
-     2.9075    1867.96     267.39     197.55      2332.90 
+     2.9075    1867.96     267.39     197.55      2332.91 
      2.9350    1167.24     268.63     197.48      1633.35 
      2.9625    1023.58     270.48     197.49      1491.54 
      2.9900    1015.10     273.26     197.60      1485.96 
@@ -81,4 +83,4 @@ after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 
   dchi2 = -10.87  (Dk=2)  ->  mejora por encima del ruido de 2 parametros
 
-escrito -> results/logs/growth_2026-07/base_sin_particula.json (1.01 h)
+escrito -> results/logs/growth_2026-07/base_sin_particula.json (3.54 h)

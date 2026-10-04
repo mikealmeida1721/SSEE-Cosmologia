@@ -1,5 +1,5 @@
 {
- "corrida": "base sin particula \u2014 la casilla om_x=0 que le faltaba a la cola #28",
+ "corrida": "base sin particula — la casilla om_x=0 que le faltaba a la cola #28",
  "para_que": "dar la referencia contra la que leer el chi2_total=1470.83; el control C0 de la cola #28 NO sirve porque evalua cada sonda en su propio minimo de logA, que es el error que esa corrida corrige",
  "lectura_fijada_antes": "dchi2>0 la particula empeora; dchi2<0 hay que pesarla contra Dk=2, y por debajo de |6| es ruido",
  "rejilla_logA": [
@@ -14,52 +14,52 @@
   3.1
  ],
  "cmb": [
-  3113.0971887291566,
-  1867.9630617862222,
-  1167.241753821509,
-  1023.5768260887842,
-  1015.103861053563,
-  1006.7066712069613,
-  1003.586198475964,
-  1007.3853336307668,
-  1015.5785724347338
+  3113.0977795475806,
+  1867.9634739755224,
+  1167.241971634941,
+  1023.5769045834243,
+  1015.1039409641147,
+  1006.7067509685862,
+  1003.5862766166347,
+  1007.3854108467006,
+  1015.5786503868246
  ],
  "kids": [
-  266.71643399506723,
-  267.39223318367976,
-  268.626790041564,
-  270.47689643072846,
-  273.25589641983873,
-  277.1885969238742,
-  282.21018975443855,
-  288.65449766987666,
-  296.50568287462005
+  266.71643371429315,
+  267.3922303258084,
+  268.626785585185,
+  270.47688290605794,
+  273.2558865939826,
+  277.1885833625609,
+  282.2101710246136,
+  288.6544759023344,
+  296.50565669483575
  ],
  "boss": [
-  197.73833559509038,
-  197.54926487937817,
-  197.47831575974087,
-  197.4888594318713,
-  197.5971944541231,
-  197.8047749478091,
-  198.0690671394576,
-  198.44860763069462,
-  198.85375885517357
+  197.73837980688586,
+  197.54930931150543,
+  197.47836044280345,
+  197.48890403767302,
+  197.59723858882842,
+  197.80481904900302,
+  198.06911145718854,
+  198.4486522999148,
+  198.85380390587235
  ],
  "total": [
-  3577.5519583193145,
-  2332.9045598492803,
-  1633.3468596228138,
-  1491.542581951384,
-  1485.9569519275249,
-  1481.7000430786447,
-  1483.86545536986,
-  1494.4884389313381,
-  1510.9380141645274
+  3577.5525930687595,
+  2332.9050136128362,
+  1633.3471176629293,
+  1491.542691527155,
+  1485.9570661469256,
+  1481.7001533801501,
+  1483.8655590984367,
+  1494.4885390489496,
+  1510.9381109875328
  ],
  "logA_base": 3.0175,
  "sigmas_vs_CMB": -1.7675378266850106,
- "chi2_base": 1481.7000430786447,
+ "chi2_base": 1481.7001533801501,
  "chi2_mejor_con_particula": 1470.826333492986,
  "mejor_con_particula": {
   "m_x": 7.5,
@@ -132,8 +132,43 @@
    ]
   }
  },
- "dchi2": -10.873709585658844,
+ "dchi2": -10.873819887164245,
  "delta_k": 2,
  "veredicto": "mejora por encima del ruido de 2 parametros",
- "segundos": 3649.6232204437256
+ "segundos": 12744.514875888824,
+ "_procedencia": {
+  "commit": "6bad2dcad23344ecd2cb4ad9c51b9f5df1adc23a",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/base_sin_particula.py",
+  "script_sha256": "ad2659c2136ef50af734b6a230b836da7371b8ac46eb788fbba93f7e502622bc",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/growth_2026-07/conjunta_tres_sondas.json": "a54d40ebd06db2db2619527ab4c43cff060811013bb338de9e760e9e9b7be0ea",
+   "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits": "466d1d761fedac02e53b5468cdbab20f622c2f04b830085cccdae5b629ebe66c",
+   "/mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc": "7a0a36040e065f43131f4a208fbda8f8290868eb9867bd2704a86b00f1cad5f1",
+   "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD": "NO-EXISTE",
+   "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat": "dac0d9d493213e77c940a10a968cf0da3c5730bae60e1356c4cd8bcff96377ff"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p06_growth/base_sin_particula.py",
+   "results/logs/growth_2026-07/base_sin_particula.json",
+   "results/logs/growth_2026-07/conjunta_tres_sondas.json",
+   "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits",
+   "/mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc",
+   "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD",
+   "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat"
+  ],
+  "fecha": "2026-10-04T13:14:07",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }
