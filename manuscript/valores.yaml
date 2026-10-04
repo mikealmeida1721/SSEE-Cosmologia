@@ -694,3 +694,12 @@ p2_fig8_rd_ratio: {fuente: "results/logs/p2_fig8_rd.json#rd_ratio_ssee_lcdm", fo
 # S8 de la cizalla KiDS-Legacy con A_s libre (fig. de S8)
 S8_leg_libre:       {fuente: "results/logs/s8_kids_legacy_camb.json#libre.S8", formato: ".4f"}
 S8_leg_libre_sigma: {fuente: "results/logs/s8_kids_legacy_camb.json#libre.S8_sigma", formato: ".4f"}
+# LCDM obligado a un solo universo (CMB + KiDS-Legacy + DESI BAO) — src/p11_sondas/lcdm_conjunta.py lee
+perdida_lcdm_conj:   {fuente: "results/logs/lcdm_conjunta.json#perdida_lcdm", formato: ".2f"}
+sigma_lcdm_conj:     {fuente: "results/logs/lcdm_conjunta.json#seleccion.consistencia_sigma", formato: ".2f"}
+gl_lcdm_conj:        {fuente: "results/logs/lcdm_conjunta.json#seleccion.consistencia_gl", formato: "d"}
+chi2_lcdm_conj:      {fuente: "results/logs/lcdm_conjunta.json#conjunta.chi2", formato: ".2f"}
+chi2_ssee_conj:      {fuente: "results/logs/lcdm_conjunta.json#ssee.total", formato: ".2f"}
+dchi2_ssee_lcdm_conj: {fuente: "results/logs/lcdm_conjunta.json#delta_ssee_menos_lcdm_conjunta", formato: ".2f"}
+dBIC_ssee_lcdm_conj: {fuente: "results/logs/lcdm_conjunta.json#seleccion.dBIC_ssee_menos_lcdm", formato: ".2f"}
+N_conj:              {fuente: "results/logs/lcdm_conjunta.json#seleccion.N", formato: "d"}

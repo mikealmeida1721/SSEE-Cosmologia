@@ -57,7 +57,7 @@ logs:
   b1_k2_run:                  src/p03_cmb/ssee_paper3_b1_mcmc.py
   s8_kids_legacy_camb:        src/p06_growth/s8_kids_legacy_camb.py
   bao_lcdm_planck:            src/p11_sondas/lcdm_conjunta.py
-  bao_lcdm_libre:             src/p11_sondas/lcdm_conjunta.py
+  bao_lcdm_libre:             src/p11_sondas/bao_lcdm_libre.py   # 2026-10-04: lo escribe ESTE script (su acta lo dice); el mapeo a lcdm_conjunta.py era errata
   spt3g_calibrador:           src/p11_sondas/spt3g_calibra.py
   spt3g_kk_en_el_clavo:       src/p11_sondas/spt3g_kk.py
 
@@ -191,6 +191,8 @@ logs:
   lcdm_conjunta_cmb:          src/p11_sondas/lcdm_conjunta.py
   lcdm_conjunta_kids:         src/p11_sondas/lcdm_conjunta.py
   lcdm_conjunta_control:      src/p11_sondas/lcdm_conjunta.py
+  lcdm_conjunta_conjunta:     src/p11_sondas/lcdm_conjunta.py
+  lcdm_conjunta_lee:          src/p11_sondas/lcdm_conjunta.py
   p5_techo_sigma8_As_fijo:    src/p05_IS/techo_sigma8_As_fijo.py
   sn_geometria_en_el_clavo:   src/p11_sondas/sn_geometria.py
   union3_en_el_clavo:         src/p11_sondas/union3_binned.py

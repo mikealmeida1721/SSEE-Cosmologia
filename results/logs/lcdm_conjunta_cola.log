@@ -7,3 +7,15 @@
 [2026-09-27 19:19:36] DETENIDA por Claude: el minimo CMB de BOBYQA (chi2 1006.10) es PEOR que un punto conocido (1004.29 = mejor LCDM viejo re-evaluado con mnu 0.06). Minimizador no fiable; conjunta abortada. Espera decision de Mike.
 [2026-09-28 00:23:16] relanzada con Nelder-Mead (decision: avanzar lo pendiente, 28-sep). BOBYQA descartado movido a bobyqa_descartado/
 [2026-09-28 02:41:48] cmb rc=0
+[2026-09-30 20:24:59] kids rc=0
+[2026-09-30 20:25:07] bao rc=0
+[2026-10-04 03:59:23] conjunta rc=0
+  CALIBRADOR BAO: Om=0.2971 vs DESI 0.2975±0.0086 -> -0.05 sigma
+  suma de minimos por sonda = 1429.919
+  conjunta                  = 1438.307   perdida = +8.388
+     cmb   sola  1003.596  en la conjunta  1007.227  (+3.631)
+     kids  sola   415.775  en la conjunta   418.568  (+2.793)
+     bao   sola    10.549  en la conjunta    12.512  (+1.964)
+  SSEE (misma funcion): CMB 1003.586 + KiDS 417.971 + BAO 11.406 = 1432.963
+  Delta chi2 (SSEE - LCDM conjunta) = -5.344
+  -> /home/mike/Proyectos/SSEE/results/logs/lcdm_conjunta.json

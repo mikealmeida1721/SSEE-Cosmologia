@@ -40,6 +40,7 @@ stages:
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
     deps:
+    - results/logs/lcdm_conjunta.json
     - src/valores_tex.py
     - manuscript/valores.yaml
     - results/logs/rd_dual.json
@@ -1557,6 +1558,7 @@ stages:
       results/logs/kids_legacy_bic.json data/raw/desi_dr2_bao.csv
       /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
       /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_lee.log
     deps:
     - src/p11_sondas/lcdm_conjunta.py
     - src/p11_sondas/lcdm_planck.py

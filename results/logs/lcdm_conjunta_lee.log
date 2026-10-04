@@ -1,0 +1,10 @@
+  CALIBRADOR BAO: Om=0.2971 vs DESI 0.2975±0.0086 -> -0.05 sigma
+  suma de minimos por sonda = 1429.919
+  conjunta                  = 1438.307   perdida = +8.388
+     cmb   sola  1003.596  en la conjunta  1007.227  (+3.631)
+     kids  sola   415.775  en la conjunta   418.568  (+2.793)
+     bao   sola    10.549  en la conjunta    12.512  (+1.964)
+  SSEE (misma funcion): CMB 1003.586 + KiDS 417.971 + BAO 11.406 = 1432.963
+  Delta chi2 (SSEE - LCDM conjunta) = -5.344
+  N=1039 k LCDM=14 SSEE=10  dBIC=-33.13  perdida 8.39 con 8 gl -> 0.85 sigma
+  -> /home/mike/Proyectos/SSEE/results/logs/lcdm_conjunta.json

@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 26e0956d3743f67bde6f18d1283a24bc
-      size: 69706
+      md5: f313931314cb50e3c8c5821e4d55d770
+      size: 70624
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 8976edb5b0fe92513530ef447a58b5ec
@@ -276,8 +276,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: c700894f6b0440e6375d74f9ec45525d
-      size: 87107
+      md5: 5b2d8cbd0ad3ad786dedf71a7afc872f
+      size: 88183
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -4268,3 +4268,99 @@ stages:
       hash: md5
       md5: dd01625358150603fd252c1ae5fde26d
       size: 21146
+  lcdm_conjunta_lee:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/lcdm_conjunta.py lee > results/logs/lcdm_conjunta_lee.log 
+      2>&1 && .venv/bin/python3 src/procedencia_sella.py 
+      src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta.json 
+      results/logs/lcdm_conjunta_cmb.json results/logs/lcdm_conjunta_kids.json 
+      results/logs/lcdm_conjunta_bao.json 
+      results/logs/lcdm_conjunta_conjunta.json results/logs/bao_lcdm_libre.json 
+      results/logs/cmb_dbic_tau_ajustado.json results/logs/kids_legacy_bic.json 
+      data/raw/desi_dr2_bao.csv 
+      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt 
+      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt 
+      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt 
+      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
+      hash: md5
+      md5: 606983d774a0ce6d0630517423a574fc
+      size: 953310
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
+      hash: md5
+      md5: dc698c71b9f18b62a364521443539b7d
+      size: 931896
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
+      hash: md5
+      md5: 99ced70cd603ef946ebe56a78b93f259
+      size: 930348
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+      hash: md5
+      md5: 10cee89c7dc3da4d886e5c51da33350f
+      size: 929058
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/bao_lcdm_libre.json
+      hash: md5
+      md5: b2acaf687162b3e49afa463936800e21
+      size: 2052
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: results/logs/kids_legacy_bic.json
+      hash: md5
+      md5: b29c690fca78dfd4c68e13cb7e92ac1c
+      size: 3419
+    - path: results/logs/lcdm_conjunta_bao.json
+      hash: md5
+      md5: efb2477caa25d6c2fe52e3eb8429fa20
+      size: 381
+    - path: results/logs/lcdm_conjunta_cmb.json
+      hash: md5
+      md5: bbb052d6ecf0a3b3926f7c82998e708b
+      size: 468
+    - path: results/logs/lcdm_conjunta_conjunta.json
+      hash: md5
+      md5: 5c790e40df13c9984ad2c06138272585
+      size: 830
+    - path: results/logs/lcdm_conjunta_kids.json
+      hash: md5
+      md5: 885c132c9d816a3699d687f4a86afb6d
+      size: 756
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p11_sondas/lcdm_conjunta.py
+      hash: md5
+      md5: d3addd1e592fae354eb8189ad30dbadb
+      size: 19363
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/lcdm_conjunta.json
+      hash: md5
+      md5: b06d6be716a1a9ab05eb83c48d238cd1
+      size: 5518
+    - path: results/logs/lcdm_conjunta_lee.log
+      hash: md5
+      md5: 324ab596500d0b2720614cd3da37262e
+      size: 610
