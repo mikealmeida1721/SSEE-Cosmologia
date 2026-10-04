@@ -8,9 +8,9 @@
  "nuisance_fijados_por_colaboracion": 7,
  "dof": 10,
  "logA_clavo": 3.0448340130228546,
- "chi2_en_el_clavo": 17.763662338256836,
- "PTE": 0.05908360995086155,
- "sigma_equivalente": 1.8875706754536747,
+ "chi2_en_el_clavo": 17.76366424560547,
+ "PTE": 0.05908357560546616,
+ "sigma_equivalente": 1.8875709310811166,
  "mejor_ajuste_nuisance": {
   "Tcal_lens": 0.999107,
   "Pcal_lens": 1.0074730002499999,
@@ -22,13 +22,44 @@
  },
  "control_a_fondo_lcdm": {
   "chi2": 18.306447982788086,
-  "diferencia": -0.54278564453125
+  "diferencia": -0.5427837371826172
  },
  "control_b_sensibilidad_As": {
   "sigma_logA": 0.013125658689892638,
-  "chi2_menos": 19.337268829345703,
+  "chi2_menos": 19.33727264404297,
   "chi2_mas": 16.818500518798828,
-  "mayor_salto": 1.5736064910888672,
+  "mayor_salto": 1.5736083984375,
   "ve_As": true
+ },
+ "_procedencia": {
+  "commit": "9b0610834193d7684acacb5d609474342c4ed416",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/spt3g_kk.py",
+  "script_sha256": "e82b568b87846ea512e1905a45dbe658e3dfb66c7bc548b495b2811236ea3f56",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
+   "results/logs/multisonda_fondo_clavado.json": "75951b47a51aed852532e270f536f8aec174fed82fca96d41eecb3a04c9bb37e",
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml": "35f72bb7166f101257f615989b37a0205e788d8bdc0f34a6cdd86f803141d1d3"
+  },
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/spt3g_kk.py",
+   "results/logs/spt3g_kk_en_el_clavo.json",
+   "results/logs/cmb_dbic_tau_ajustado.json",
+   "results/logs/multisonda_fondo_clavado.json",
+   "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml"
+  ],
+  "fecha": "2026-10-04T08:38:24",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
  }
 }
