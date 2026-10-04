@@ -4370,3 +4370,337 @@ stages:
       hash: md5
       md5: 30619449c24b185c10d2f1dc7f5e16d1
       size: 1318
+  lcdm_conjunta_control:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/lcdm_conjunta.py control > 
+      results/logs/lcdm_conjunta_control.log 2>&1; .venv/bin/python3 
+      src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py 
+      results/logs/lcdm_conjunta_control.json && .venv/bin/python3 
+      src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py 
+      results/logs/lcdm_conjunta_control.log
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      hash: md5
+      md5: 011324f5efd67614c2bad935facde0e6
+      size: 1647428
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      hash: md5
+      md5: 675e2d4fe67863082b2bec605c5b4028
+      size: 1804220
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      hash: md5
+      md5: cda3bc12d91a9431ff2503fd3a539a46
+      size: 1751400
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+      hash: md5
+      md5: 1ec57a34f8b4c6f0ee456a6b8da2c0ee
+      size: 1701638
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/p06_growth/multisonda_fondo_clavado.py
+      hash: md5
+      md5: cab5fb62a9e46303f93f500868038979
+      size: 32914
+    - path: src/p11_sondas/lcdm_conjunta.py
+      hash: md5
+      md5: d3addd1e592fae354eb8189ad30dbadb
+      size: 19363
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/lcdm_conjunta_control.json
+      hash: md5
+      md5: 07f6f55208449a551f48f529083d75de
+      size: 1298
+    - path: results/logs/lcdm_conjunta_control.log
+      hash: md5
+      md5: bdf7fdebdb8f9e14ce4df17ca42e5209
+      size: 2176
+  lcdm_conjunta_min_cmb:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/lcdm_conjunta.py cmb > 
+      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_cmb.log 2>&1 && 
+      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
+      results/logs/lcdm_conjunta_cmb.json
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      hash: md5
+      md5: 011324f5efd67614c2bad935facde0e6
+      size: 1647428
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      hash: md5
+      md5: 675e2d4fe67863082b2bec605c5b4028
+      size: 1804220
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      hash: md5
+      md5: cda3bc12d91a9431ff2503fd3a539a46
+      size: 1751400
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+      hash: md5
+      md5: 1ec57a34f8b4c6f0ee456a6b8da2c0ee
+      size: 1701638
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/p11_sondas/lcdm_conjunta.py
+      hash: md5
+      md5: d3addd1e592fae354eb8189ad30dbadb
+      size: 19363
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/lcdm_conjunta_cmb.json
+      hash: md5
+      md5: 4aedd28d5fac08fc8ec5ebc5e41d79c1
+      size: 1234
+  lcdm_conjunta_min_kids:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/lcdm_conjunta.py kids > 
+      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_kids.log 2>&1 && 
+      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
+      results/logs/lcdm_conjunta_kids.json
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      hash: md5
+      md5: 011324f5efd67614c2bad935facde0e6
+      size: 1647428
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      hash: md5
+      md5: 675e2d4fe67863082b2bec605c5b4028
+      size: 1804220
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      hash: md5
+      md5: cda3bc12d91a9431ff2503fd3a539a46
+      size: 1751400
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+      hash: md5
+      md5: 1ec57a34f8b4c6f0ee456a6b8da2c0ee
+      size: 1701638
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/p11_sondas/lcdm_conjunta.py
+      hash: md5
+      md5: d3addd1e592fae354eb8189ad30dbadb
+      size: 19363
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/lcdm_conjunta_kids.json
+      hash: md5
+      md5: e65c9155d3f895b0ee3f8c62cd0aff8d
+      size: 1523
+  lcdm_conjunta_min_bao:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/lcdm_conjunta.py bao > 
+      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_bao.log 2>&1 && 
+      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
+      results/logs/lcdm_conjunta_bao.json
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      hash: md5
+      md5: 011324f5efd67614c2bad935facde0e6
+      size: 1647428
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      hash: md5
+      md5: 675e2d4fe67863082b2bec605c5b4028
+      size: 1804220
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      hash: md5
+      md5: cda3bc12d91a9431ff2503fd3a539a46
+      size: 1751400
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+      hash: md5
+      md5: 1ec57a34f8b4c6f0ee456a6b8da2c0ee
+      size: 1701638
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/p11_sondas/lcdm_conjunta.py
+      hash: md5
+      md5: d3addd1e592fae354eb8189ad30dbadb
+      size: 19363
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/lcdm_conjunta_bao.json
+      hash: md5
+      md5: ee0de450f07a3481b7d1f283974e4808
+      size: 1147
+  lcdm_conjunta_min_conjunta:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p11_sondas/lcdm_conjunta.py conjunta > 
+      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_conjunta.log 2>&1 && 
+      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
+      results/logs/lcdm_conjunta_conjunta.json
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
+      hash: md5
+      md5: 011324f5efd67614c2bad935facde0e6
+      size: 1647428
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt
+      hash: md5
+      md5: 675e2d4fe67863082b2bec605c5b4028
+      size: 1804220
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt
+      hash: md5
+      md5: cda3bc12d91a9431ff2503fd3a539a46
+      size: 1751400
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt
+      hash: md5
+      md5: 1ec57a34f8b4c6f0ee456a6b8da2c0ee
+      size: 1701638
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: results/logs/cmb_dbic_tau_ajustado.json
+      hash: md5
+      md5: 91ac79b931f0637dae3255dd054f59b9
+      size: 1937
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p03_cmb/cmb_eval.py
+      hash: md5
+      md5: 706a9d0e3384cce04dc5fcbf0c2fb522
+      size: 4837
+    - path: src/p06_growth/cobaya_kids_legacy.py
+      hash: md5
+      md5: 4fb3a20f68aefac83de472acad81875e
+      size: 13453
+    - path: src/p11_sondas/lcdm_conjunta.py
+      hash: md5
+      md5: d3addd1e592fae354eb8189ad30dbadb
+      size: 19363
+    - path: src/p11_sondas/lcdm_planck.py
+      hash: md5
+      md5: b3e772d5526f6ffcb61148e439c50b39
+      size: 1243
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    outs:
+    - path: results/logs/lcdm_conjunta_conjunta.json
+      hash: md5
+      md5: 76d0e50931c76ad3b9dc48322a39281f
+      size: 1601

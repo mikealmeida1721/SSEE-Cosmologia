@@ -19,5 +19,29 @@
   1003.5956843094156
  ],
  "convergido": true,
- "control_no_peor_que_arranque": true
+ "control_no_peor_que_arranque": true,
+ "_procedencia": {
+  "commit": "a7c2a1d82d040c283db096b716a25b8f649c7fa6",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/lcdm_conjunta.py",
+  "script_sha256": "ea2d0fcc83aaa45471015db4c03950106bafd77269d415cc797774d03b9f4670",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/lcdm_conjunta.py",
+   "results/logs/lcdm_conjunta_cmb.json"
+  ],
+  "fecha": "2026-10-04T04:40:41",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

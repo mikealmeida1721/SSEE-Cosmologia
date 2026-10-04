@@ -13,9 +13,9 @@
   "pasa": true
  },
  "C3": {
-  "ssee_camb": 11.406663483677269,
-  "ssee_otra_via": 10.903953594619837,
-  "pasa": false
+  "ssee_camb": 11.406652470296022,
+  "ssee_otra_via": 11.406503768936682,
+  "pasa": true
  },
  "bao_lcdm_planck": {
   "chi2": 31.981897557929273,
@@ -23,5 +23,29 @@
   "rd": 147.10121945164454,
   "hrd": 99.08738142262777
  },
- "pasa": false
+ "pasa": true,
+ "_procedencia": {
+  "commit": "a7c2a1d82d040c283db096b716a25b8f649c7fa6",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/lcdm_conjunta.py",
+  "script_sha256": "ea2d0fcc83aaa45471015db4c03950106bafd77269d415cc797774d03b9f4670",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p11_sondas/lcdm_conjunta.py",
+   "results/logs/lcdm_conjunta_control.json"
+  ],
+  "fecha": "2026-10-04T04:40:16",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }
