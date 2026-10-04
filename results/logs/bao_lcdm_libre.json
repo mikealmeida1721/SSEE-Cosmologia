@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-04",
  "publicado": {
   "Om": 0.2975,
   "Om_err": 0.0086,
@@ -50,19 +50,19 @@
  "delta_chi2_camb_ssee_menos_lcdm_planck": -20.57524508763325,
  "delta_chi2_camb_ssee_menos_lcdm_libre": 0.8680219255937782,
  "_procedencia": {
-  "commit": "b00352869cc835f4a85786d281c8c11cdcebfa08",
+  "commit": "6f514de7c4b6a233460feed031baaecbe446aa28",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/bao_lcdm_libre.py",
   "script_sha256": "164ceddae6eb1718c3648874bd8d1803dfe06a1499a20370ccb17123d464f2ad",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/bao_camb_control.json": "f481304e63f4c38b2425b1a7cccdc5f89f30d9f4a3ef14665330f6f10f5e374b"
+   "results/logs/bao_camb_control.json": "389dc6c8cdc2ccb7ffc08ccc7e5903027132f87833ca8e8edd4069774d1f61a2"
   },
   "argv": [
    "src/p11_sondas/bao_lcdm_libre.py"
   ],
-  "fecha": "2026-10-03T08:25:39",
+  "fecha": "2026-10-04T04:43:59",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

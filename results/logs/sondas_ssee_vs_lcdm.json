@@ -248,7 +248,7 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "ed74b933dbcaf99244e4d90ddf20260f98de5628",
+  "commit": "6f514de7c4b6a233460feed031baaecbe446aa28",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
@@ -259,19 +259,19 @@
    "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
    "results/logs/act_dr6_en_el_clavo.json": "f0aeb83d3b50937fc80ad17795e02e80513a2dc49b281b4f99b2e37b6d954448",
    "results/logs/spt3g_kk_en_el_clavo.json": "6f5a2b55112774a05826d6bd5780c6b3f633221effecd386af169cfffcef055f",
-   "results/logs/bao_lcdm_libre.json": "56aea039f17b401e0b304215919a8f7c8e951446186ef94e960e7ed3374a611d",
+   "results/logs/bao_lcdm_libre.json": "7635b3351b03c4668db3576e33a57f3fd0ea2cf507458cc2fef6322da57b7202",
    "results/logs/des_y3_en_el_clavo_ssee.json": "a14a2368ea014ea844deee8f3c9fe886099a8df56208b7a0b2d017c485342050",
    "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "dd7ac6cd8431fa9b23748e4ed61ddc1cd5ebd3d04de3eb74881f00d9ff93e750",
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "8e7645b20e92586a1a14f403404ffbdee4832b78bdb9710fab57ec59f53d2d49",
    "results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json": "0b3e1bcc757acb36290d936213ad2720b3b8daccfe83dc70001ecd837b445dcd",
-   "results/logs/cmb_dbic_mnu_propia.json": "92d149da5fa73827da25b69f372ba1104e3bbddb505d89588ba7629fac9e082a",
+   "results/logs/cmb_dbic_mnu_propia.json": "04f8428abc1e4c20e83a805df0203d84139a83b2c86d07654cb32e75a5e5fa54",
    "results/logs/b1_k2.json": "948a4a6e4108e14e560fe35c8a3c5e8d378a5b7669b4c5e56f648aec257225f9",
    "results/logs/kids_legacy_bic.json": "68e01c09b470df2d3e594b34f53227e1ebe19bc335bdf3731011610a379ae421"
   },
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-04T02:00:37",
+  "fecha": "2026-10-04T04:44:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -280,8 +280,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

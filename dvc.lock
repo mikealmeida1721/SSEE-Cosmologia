@@ -95,7 +95,7 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: b2acaf687162b3e49afa463936800e21
+      md5: 8968f8fab54a24cb8fac70120ac757f2
       size: 2052
     - path: results/logs/class_picos.json
       hash: md5
@@ -103,7 +103,7 @@ stages:
       size: 1370
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
-      md5: a467fbe5b7944f4ba374d9623b30b513
+      md5: f38c04f1032af418de561d4097b98a06
       size: 1498
     - path: results/logs/cumulos_zhang2026.json
       hash: md5
@@ -271,8 +271,8 @@ stages:
       size: 2647
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: e34acb081fb8c0750ab722dc85a5a92a
-      size: 8008
+      md5: effad68c5c7922eda8beea7d69665476
+      size: 8010
     - path: src/valores_tex.py
       hash: md5
       md5: 1f5c766594c7c7ab5887dbc8f6b01e8d
@@ -280,7 +280,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: a8fe14969aeb276c3e9ce9af72a6a6dd
+      md5: fa8b696f82cf200749c89d52598bf5e6
       size: 88183
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -1711,11 +1711,11 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: b2acaf687162b3e49afa463936800e21
+      md5: 8968f8fab54a24cb8fac70120ac757f2
       size: 2052
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
-      md5: a467fbe5b7944f4ba374d9623b30b513
+      md5: f38c04f1032af418de561d4097b98a06
       size: 1498
     - path: results/logs/des_y3_en_el_clavo_lcdm_planck.json
       hash: md5
@@ -1760,12 +1760,12 @@ stages:
     outs:
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: e34acb081fb8c0750ab722dc85a5a92a
-      size: 8008
+      md5: effad68c5c7922eda8beea7d69665476
+      size: 8010
     - path: results/logs/sondas_ssee_vs_lcdm.log
       hash: md5
-      md5: 79f9b59282f24c935d4da7c13fb0db77
-      size: 1721
+      md5: 9aa84841013b6bcb173dcc101056eeac
+      size: 1723
   mcmc_paper2_reframe:
     cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
       .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 
@@ -2010,7 +2010,7 @@ stages:
       size: 2650
     - path: results/logs/bao_camb_control.json
       hash: md5
-      md5: 9f19ecd944fcbee167bf97b0fb67e1db
+      md5: f522576fde1d883baa7ea9002608d6f3
       size: 1401
     - path: src/p06_growth/multisonda_fondo_clavado.py
       hash: md5
@@ -2035,12 +2035,12 @@ stages:
     outs:
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: b2acaf687162b3e49afa463936800e21
+      md5: 8968f8fab54a24cb8fac70120ac757f2
       size: 2052
     - path: results/logs/bao_lcdm_libre.log
       hash: md5
-      md5: 188f456e647b55646c8427276e442173
-      size: 1334
+      md5: c61979abf3cd124e602f87e20ed66956
+      size: 1259
   des_y3_nla:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p11_sondas/des_y3_en_el_clavo.py ssee_nla && OMP_NUM_THREADS=1 nice -n
