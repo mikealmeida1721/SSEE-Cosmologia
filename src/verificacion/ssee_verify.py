@@ -7408,6 +7408,38 @@ try:
 except Exception as _e:            # noqa: BLE001
     check("R55c la capa corrió", False, f"excepción: {_e}", nivel=5)
 
+print("\nCapa R55d — s_K no se rotula como kineticidad α_K")
+# POR QUÉ EXISTE (2026-10-10). 0.403302 (y su versión completa 0.416905) es s_K,
+# la tasa de dilución de la presión por e-fold; la kineticidad de Bellini-Sawicki
+# de P7 es α_K = 15.591336, otro objeto. El rótulo «kineticity» sobre s_K circuló
+# en la serie (P7 §alphak lo declara erróneo) y quedaba un sitio en Unified.
+try:
+    _R55D = re.compile(r"kineticit\w*[^\n]{0,60}?(\\val\{(S_K_|sK_IR|sK_full)"
+                       r"|s_K\^\{?\\rm full|0\.403|0\.4169)", re.I)
+    _N55D = re.compile(r"\bnot\b|distinct|confus|unrelated|no es", re.I)
+
+    def _malos55d(_tx):
+        _t = "\n".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
+        _t = _t.replace("\n", " ")
+        return [_m.group(0) for _m in _R55D.finditer(_t)
+                if not _N55D.search(_t[max(0, _m.start() - 30):_m.end()])]
+    _r55d_malos = []
+    for _sub in ("manuscript", "submission_PRD"):
+        for _f in sorted((_R55_REPO / _sub).rglob("*.tex")):
+            if "archive" in str(_f) or "superseded" in str(_f):
+                continue
+            if _malos55d(_f.read_text(encoding="utf-8", errors="ignore")):
+                _r55d_malos.append(_f.name)
+    check("R55d s_K no aparece rotulado como kineticidad",
+          not _r55d_malos, "0 sitios" if not _r55d_malos else "; ".join(_r55d_malos))
+    check("R55d el detector marca la forma vieja",
+          bool(_malos55d("the full Bellini-Sawicki kineticity becomes\n$s_K^{\\rm full}=0.41691$"))
+          and not _malos55d("the full pressure-dilution rate (not the Bellini--Sawicki "
+                            "kineticity $\\alpha_K$) becomes $s_K^{\\rm full}$"),
+          "control R53")
+except Exception as _e:            # noqa: BLE001
+    check("R55d la capa corrió", False, f"excepción: {_e}", nivel=5)
+
 print("\nCapa R77 — todo lo archivado entra declarado")
 # POR QUÉ EXISTE (2026-10-03, regla de Mike). «En archive entra declarado, y en el
 # sistema también: de esa manera hasta el que pasa sabe por qué está ahí y no
