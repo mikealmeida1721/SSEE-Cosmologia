@@ -1,0 +1,2293 @@
+{
+ "_procedencia": {
+  "script": "src/verificacion/manifiesto_externos.py",
+  "commit": "08aab6c90ecde8b255804151646ff82c0b1be4bf",
+  "fecha_utc": "2026-10-10T19:04:59+00:00",
+  "fuente_de_origenes": "notes/lectura_tercera/MANIFIESTO_EXTERNOS.md"
+ },
+ "resumen": {
+  "rutas": 110,
+  "sin_origen": [],
+  "no_existen": [],
+  "por_clase": {
+   "A": 54,
+   "B": 47,
+   "C": 8,
+   "S": 1,
+   "?": 0
+  }
+ },
+ "ficheros": [
+  {
+   "ruta": "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat",
+   "clase": "A",
+   "origen": "cobaya-install planck_2018_highl_plik.TTTEEE_lite_native --packages-path $COBAYA_PACKAGES_PATH",
+   "cita": "Planck 2018 (PR3)",
+   "etapas": [
+    "sello_base_sin_particula",
+    "sello_cmb_dbic_tau_ajustado",
+    "sello_cmb_perfil_wc"
+   ],
+   "archivos": [
+    {
+     "rel": "cl_cmb_plik_v22.dat",
+     "bytes": 37393,
+     "sha256": "dac0d9d493213e77c940a10a968cf0da3c5730bae60e1356c4cd8bcff96377ff"
+    }
+   ]
+  },
+  {
+   "ruta": "/home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat",
+   "clase": "A",
+   "origen": "cobaya-install planck_2018_lensing.native --packages-path $COBAYA_PACKAGES_PATH",
+   "cita": "Planck 2018 lensing",
+   "etapas": [
+    "coteja_crudos"
+   ],
+   "archivos": [
+    {
+     "rel": "smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat",
+     "bytes": 885,
+     "sha256": "022ecd45a4dc0d8ea42643b084811e5ff295040cbc3fead7d4e7ecf6c0c2254e"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD",
+   "clase": "A",
+   "origen": "https://data.sdss.org/sas/dr12/boss/papers/clustering/",
+   "cita": "Beutler et al. 2017, MNRAS 466, 2242 (arXiv:1607.03149)",
+   "etapas": [
+    "sello_base_sin_particula",
+    "sello_boss_aisla_neutrinos"
+   ],
+   "archivos": [
+    {
+     "rel": "._Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_window_z1_NGC.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_window_z1_SGC.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_window_z2_NGC.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_window_z2_SGC.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_window_z3_NGC.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "._Beutleretal_window_z3_SGC.dat",
+     "bytes": 171,
+     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
+    },
+    {
+     "rel": "Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat",
+     "bytes": 45933,
+     "sha256": "2e40c75e72a79dc66aa0c4f3652daa307a35268f84cb596314f4430510ca69d8"
+    },
+    {
+     "rel": "Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat",
+     "bytes": 46146,
+     "sha256": "ad49763652014855b3a55c68cf1f935b1c2464d803f45ff137f15c71f11b16f9"
+    },
+    {
+     "rel": "Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat",
+     "bytes": 44643,
+     "sha256": "30345e14b478086f58d37a015b6a644d4093dd7b40550352f13b4315b72f1cf5"
+    },
+    {
+     "rel": "Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat",
+     "bytes": 46053,
+     "sha256": "19c34c3314ec8a25c262487300b6d6387b81ceb666919a8cc6963835aacfb336"
+    },
+    {
+     "rel": "Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat",
+     "bytes": 45916,
+     "sha256": "d5f14088f46e3229c0f114a5c871f516f1ef339f74b182562a7e9f84ede94e8f"
+    },
+    {
+     "rel": "Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat",
+     "bytes": 45899,
+     "sha256": "0513aadfa749bf744439f226bb8eecc91c3194a73405a68ec409231b930e68e0"
+    },
+    {
+     "rel": "Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat",
+     "bytes": 1044,
+     "sha256": "6254eed8e4a8671dcbcedde6f57205cbfd8ee94919840f73dc1c9fd02a6b89bc"
+    },
+    {
+     "rel": "Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat",
+     "bytes": 1043,
+     "sha256": "fd6ce87d65c65d9587d0946fde46abb4d13a4e8b879b0fac4d71ba9771f4b8c9"
+    },
+    {
+     "rel": "Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat",
+     "bytes": 1040,
+     "sha256": "df5d8e51735759fdecd822eec259b5ee4e26ede96720f5e6c9f3364be6d45d1e"
+    },
+    {
+     "rel": "Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat",
+     "bytes": 1043,
+     "sha256": "44a3c8e36f316f85b4c0a401f984d6d44a87bb1bd6b94753a47b747353364d8c"
+    },
+    {
+     "rel": "Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat",
+     "bytes": 1046,
+     "sha256": "5691a0a9fc3eb966824239c7b40e5385b86496a5246774c7004082e933a31c56"
+    },
+    {
+     "rel": "Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat",
+     "bytes": 1042,
+     "sha256": "1088c663d253ae45a532a962988bdc6de02c0779cf9b2393d3ec8f9cdfea0196"
+    },
+    {
+     "rel": "Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat",
+     "bytes": 1251,
+     "sha256": "9c3212045d1f566b037006d0bf009bd4083e19b65cd10912ea048b19572ad085"
+    },
+    {
+     "rel": "Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat",
+     "bytes": 1253,
+     "sha256": "253e381d3d55f34e6c4c90bc2cd683e7421c9f81bf5b3b2140adb5da60a7fc87"
+    },
+    {
+     "rel": "Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat",
+     "bytes": 1253,
+     "sha256": "4eb6697014bfe3eb386a125b38397a58be4296c3b512c20d18501684176139e0"
+    },
+    {
+     "rel": "Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat",
+     "bytes": 1252,
+     "sha256": "a928fd177acc877f678067b02b95ebc11393559c8573aef5f11dac9f7c845305"
+    },
+    {
+     "rel": "Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat",
+     "bytes": 1249,
+     "sha256": "58a5f7387a6980169c0e7f87ee6742a4aeb3fa374d12107ab4873e0df333bcfd"
+    },
+    {
+     "rel": "Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat",
+     "bytes": 1252,
+     "sha256": "aea626b17952dc7eb58633399951b46490b6c5ec8abd6c33cf6bfabe0a64f269"
+    },
+    {
+     "rel": "Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat",
+     "bytes": 1248,
+     "sha256": "8d8f70a587f947601b4ef310fe8aef9a779bdc57b69506b2dfa3f6babdf3836a"
+    },
+    {
+     "rel": "Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat",
+     "bytes": 1250,
+     "sha256": "1d32ebcbf6a4a5b519222130c28298da0fc6a13adfdc92aaa30499ac57d9dd82"
+    },
+    {
+     "rel": "Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat",
+     "bytes": 1248,
+     "sha256": "42a768ba38af0159c7e356f202a03a356cbbf8b736bacdea1f5c20f37c197bef"
+    },
+    {
+     "rel": "Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat",
+     "bytes": 1247,
+     "sha256": "feab0f16f22fbfdcb36387f3acabb5c12a00ca9b651d8992f6ed63acba671570"
+    },
+    {
+     "rel": "Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat",
+     "bytes": 1246,
+     "sha256": "5067baa22279b813e5d610af031fd710ab3e9d637e9c12c15e6f4b80cbf400f1"
+    },
+    {
+     "rel": "Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat",
+     "bytes": 1249,
+     "sha256": "fc4db482d8e14e786554afe5aea3038def7f219ba32cf5443086f27594878e2e"
+    },
+    {
+     "rel": "Beutleretal_window_z1_NGC.dat",
+     "bytes": 250337,
+     "sha256": "396a3d8c5f86cde2647c765c48eea580c65babb992e9acaca9b445527493ee51"
+    },
+    {
+     "rel": "Beutleretal_window_z1_SGC.dat",
+     "bytes": 255975,
+     "sha256": "6105eb74e7bb0ca002a0a5209b2df6d0c2a8f17e211f5e7b96223ed8dc691917"
+    },
+    {
+     "rel": "Beutleretal_window_z2_NGC.dat",
+     "bytes": 254630,
+     "sha256": "94c98856d60fb6ae71757bd47f64e799fa1bdc5a207a24754e9141efae7df27d"
+    },
+    {
+     "rel": "Beutleretal_window_z2_SGC.dat",
+     "bytes": 260738,
+     "sha256": "fb949ab254d41d203ddd97de9be128ed55bbc2a44258198bebaea1be144f2729"
+    },
+    {
+     "rel": "Beutleretal_window_z3_NGC.dat",
+     "bytes": 258440,
+     "sha256": "8704b095421aad847b0a816e2bd013717ad6dc9af7c8df8183978a1fa9a8832f"
+    },
+    {
+     "rel": "Beutleretal_window_z3_SGC.dat",
+     "bytes": 262211,
+     "sha256": "ce4d571c58845e02b0b46d740848bae065527c3b348963f2b0f896cf5e61da6a"
+    },
+    {
+     "rel": "paper_figures/.DS_Store",
+     "bytes": 6148,
+     "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+    },
+    {
+     "rel": "paper_figures/._.DS_Store",
+     "bytes": 120,
+     "sha256": "74694443e1068dda8cb89e61b380ea27bcf410293bb68b4680e9d1253da73d4d"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_alpha_perp_alpha_para_patchy_z1.eps",
+     "bytes": 177,
+     "sha256": "0fa72080f575c36b2547e7397e3b39172f4c7a3a454c946ae017bb9fc252bbfd"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_alpha_perp_alpha_para_patchy_z2.eps",
+     "bytes": 177,
+     "sha256": "ec2debd06034f82eee358ac4a6c5da6b61f43efed760b5b0cadda2b595b478d2"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_alpha_perp_alpha_para_patchy_z3.eps",
+     "bytes": 177,
+     "sha256": "21a2c74045f5247b703f2d2abe700d8e4bd3b1d41147c9c3f78022c1bb92299a"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_alpha_perp_fsig8_patchy_z1.eps",
+     "bytes": 177,
+     "sha256": "6964ca6e59eed4126a7c26179a005948671b15c4e16aacd1b3b3793772db135b"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_alpha_perp_fsig8_patchy_z2.eps",
+     "bytes": 177,
+     "sha256": "ec2debd06034f82eee358ac4a6c5da6b61f43efed760b5b0cadda2b595b478d2"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_alpha_perp_fsig8_patchy_z3.eps",
+     "bytes": 177,
+     "sha256": "ec2debd06034f82eee358ac4a6c5da6b61f43efed760b5b0cadda2b595b478d2"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_chi2_BAOfit_z1.eps",
+     "bytes": 177,
+     "sha256": "989808e3bdfb05a3bf265369db7fa314680dbd80b777c6bbedbc008f0aed6e7e"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_my_challenge4.eps",
+     "bytes": 177,
+     "sha256": "b654b51160e967ed02b1f9f9a30fcfab59164c9c3b9661cbc1692733757ea11d"
+    },
+    {
+     "rel": "paper_figures/._Beutleretal_win_mono.eps",
+     "bytes": 177,
+     "sha256": "d92679dda8ca655468144fb629955b8e4d29570f3ec2846c2b5606036165327d"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_Well_z1_NGC.pdf",
+     "bytes": 90035,
+     "sha256": "f16c2bfb82cfed0ac04d6ff4fad9f6decc1b371832aabc003ba4f5b123361a51"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_Well_z1_SGC.pdf",
+     "bytes": 89761,
+     "sha256": "66cfa090a6efa278f8066925b2a0ab8105c49a1eeadb6d00c38ffd2027ca833e"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_Well_z2_NGC.pdf",
+     "bytes": 89869,
+     "sha256": "1ac70106294ad4c6cdc5af372e7714ed94ae9497aec5146a56e50ed597338324"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_Well_z2_SGC.pdf",
+     "bytes": 89731,
+     "sha256": "5f6caa825acde7e0f60ed9343e344a01487d6189ed67de00e23e89e05820c807"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_Well_z3_NGC.pdf",
+     "bytes": 90261,
+     "sha256": "c8d64dda458f37a76d8ca4b2e88c23fcc74abd14d12f4b64f9fca038c423a043"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_Well_z3_SGC.pdf",
+     "bytes": 90110,
+     "sha256": "80b7098844550edee7b5b4b8de81ea641827d03a34198fd5dd6bf7c43c4076a6"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_alpha_perp_alpha_para_patchy_z1.eps",
+     "bytes": 45728,
+     "sha256": "df12f6112cbadb45fc5303810331ee937b82704d184da64bbaef9f7f08e58a75"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_alpha_perp_alpha_para_patchy_z2.eps",
+     "bytes": 45863,
+     "sha256": "92666e792c1898338be847c32e80b8d0c4fd15f928850e99663ef2506e2af55f"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_alpha_perp_alpha_para_patchy_z3.eps",
+     "bytes": 45560,
+     "sha256": "bef6e4c528c14e8e3cd987c95027940e8187846627600a9132ff456e2c0db880"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_alpha_perp_fsig8_patchy_z1.eps",
+     "bytes": 45090,
+     "sha256": "26c3eb42aec6318216b76f12f15c1fc0890d2943173127a675135804abcbfd15"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_alpha_perp_fsig8_patchy_z2.eps",
+     "bytes": 45362,
+     "sha256": "6582ebc78923ad6329dab5bd122f30d19c61dff96331976a021dc47eb2dca0bd"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_alpha_perp_fsig8_patchy_z3.eps",
+     "bytes": 45374,
+     "sha256": "e2f4451c1c86338d3add6838921e196c171d055c6044e9bd3ee02c2836487b97"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_best_fit_z1_RSD.pdf",
+     "bytes": 97381,
+     "sha256": "23244619ceee6c6377dfa7864ef97b962bbc9788d449521c593d39e22703739d"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_best_fit_z2_RSD.pdf",
+     "bytes": 97292,
+     "sha256": "be513bea7e2298158b2b4e10b218715cfc5528b3f7be46ead0ec25bb5f56dfb2"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_best_fit_z3_RSD.pdf",
+     "bytes": 96948,
+     "sha256": "a2a0ad3f1ae80afba81093e928d9f32b9ea535dcda3d3707e93ab33248524aed"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_binning.pdf",
+     "bytes": 86773,
+     "sha256": "3991830fbc42e75960d3d8214dc0bb6421f72a11fc60e8e32c09740aa9d2d665"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_chi2_BAOfit_z1.eps",
+     "bytes": 7279,
+     "sha256": "f89d9cf92c8aac425f8efac91f7ff58fe7d8f69dc3cc40689ad3c32e76f40bc5"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_chi2_BAOfit_z2.eps",
+     "bytes": 7319,
+     "sha256": "430899cd9871d2dd36f52a54434beb6d37bad7e82754747cc1dd8a5532f18b02"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_chi2_BAOfit_z3.eps",
+     "bytes": 7304,
+     "sha256": "b869bd8a39236bc80fffcc6d778c29aef55db429359f6b6ca2ea906f95a370b2"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_cov_z1_NGC.pdf",
+     "bytes": 80606,
+     "sha256": "67663c6379dff2379d4db12724a289074b56a2c882de970f6bdbc5e8bed2f2fd"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_cov_z1_SGC.pdf",
+     "bytes": 80682,
+     "sha256": "02c73243432c6c987d8ac869dc31eb6b73038bd467848c238502b9090e166988"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_cov_z2_NGC.pdf",
+     "bytes": 80264,
+     "sha256": "ec9a9edc3758d6d3bb3ef420fb39940e09cf3d37a9233146430cc44f1ae7d2dd"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_cov_z2_SGC.pdf",
+     "bytes": 80573,
+     "sha256": "2287ea8203b985c062a0ab420f2accda62a61ace7a4e5cf7f44a3902743e1468"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_cov_z3_NGC.pdf",
+     "bytes": 80692,
+     "sha256": "5d5b3c03f6eb7c52b0321ab4513382cd2eee241536b026d031b86a41c6f8b6a3"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_cov_z3_SGC.pdf",
+     "bytes": 80457,
+     "sha256": "f2b78ff82dd82217b4c6a74cafea173c25ffc5e979dbcb52bf9bc36312d17c05"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_my_challenge4.eps",
+     "bytes": 8982,
+     "sha256": "c9d818a7638550dbc85b368513d63ddf6b9928acf5bb2dc9ce36618e25ac7404"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_my_fsig8_F.pdf",
+     "bytes": 147372,
+     "sha256": "4ac4dcdc85e3e81ffbf246f5e68f8ebda3626a63f1e1ce26102ccbecbf525f35"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_nbar.pdf",
+     "bytes": 76763,
+     "sha256": "0202d5b7b910a9ee8cb04b0b1c95091f520a12c175dd1aa1764dee23c3bf8a84"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_sim_cmp_1_NGC.pdf",
+     "bytes": 91665,
+     "sha256": "871f807c41a9504596ba4f67afcc12a078e28309e01c5ed5d333c21114dbae75"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_sim_cmp_1_SGC.pdf",
+     "bytes": 91819,
+     "sha256": "eb6d5027c68f5a60ee445d5910bfa8dadeb5689cd3817c485bcc44a5087c283a"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_sim_cmp_2_NGC.pdf",
+     "bytes": 91621,
+     "sha256": "19c01c50bb59ce6fadc8b0c1d952de88cd0e2f127ee1e0c3a13cf1710567e776"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_sim_cmp_2_SGC.pdf",
+     "bytes": 91849,
+     "sha256": "46c959c394a3c3138f8ee89c4b73ac254529450653122b0f595647a13e86f9ab"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_sim_cmp_3_NGC.pdf",
+     "bytes": 91662,
+     "sha256": "4f2c3c23a505ae4aa92fe7b7c95c80d37dbdc0f2dd88d51f8412a0b90cb6434d"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_sim_cmp_3_SGC.pdf",
+     "bytes": 91907,
+     "sha256": "714e60810854c120f5d08e1aa3ed99d68f438d7b9d49a5e6152f2c0fa12667ed"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_test_RSD_z1.pdf",
+     "bytes": 56304,
+     "sha256": "b0e607aa06cd526c402821fddec4bb2cfaeed4430c9cdaf466f2a0a0966d593e"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_test_RSD_z2.pdf",
+     "bytes": 63988,
+     "sha256": "88acebc2ffb28e8b15bb886ce85cef95bee812413e3e07aa4d57d6ea10e28e8b"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_test_RSD_z3.pdf",
+     "bytes": 59309,
+     "sha256": "85f329e6c3fc26dff848ea8c5cc6ce7929e07f8d70aafb077a8bbf1218c78706"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_win_mono.eps",
+     "bytes": 9867,
+     "sha256": "8516c8c315bfc02a8072fcf0435264855525767b3283f18d3a7eb289e1a37f97"
+    },
+    {
+     "rel": "paper_figures/Beutleretal_window_test_Ncutsky_diff.pdf",
+     "bytes": 200271,
+     "sha256": "a192cadb351f158de9f70b11bcc0558ac6dab1a8264873f0e43e04256a2649f6"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_boss_R1R2",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.1.txt",
+     "bytes": 18875962,
+     "sha256": "fe26a3506e693d18cf6604843bcdc477d33c33f8ab5d61d4afb21056dec58275"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.2.txt",
+     "bytes": 15252867,
+     "sha256": "4ce61f10dc45fbd2262601e36bb174aa967bc2c02b5378800d7012a7dad8e094"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.3.txt",
+     "bytes": 17425870,
+     "sha256": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.4.txt",
+     "bytes": 16231978,
+     "sha256": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_boss_R1R2",
+    "marginal_vs_perfil",
+    "mide_As_o_producto",
+    "multisonda_fondo_clavado"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.1.txt",
+     "bytes": 10385067,
+     "sha256": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.2.txt",
+     "bytes": 11298420,
+     "sha256": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.3.txt",
+     "bytes": 14076909,
+     "sha256": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.4.txt",
+     "bytes": 11409013,
+     "sha256": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta",
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "boss_clavado.1.txt",
+     "bytes": 10256785,
+     "sha256": "3989696c4513d8f0a0e83919eee5abb0426256d49e26dfacced8b0696f718021"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta",
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "boss_clavado.2.txt",
+     "bytes": 11070675,
+     "sha256": "679789c840e6b23bdc0aab5221c1414e01140f5d7b60ca3a53eb82b8c305fbcf"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta",
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "boss_clavado.3.txt",
+     "bytes": 14593810,
+     "sha256": "fd1dfd287bc5f48742f3e9cd9bb771db6443fd9932efcce894f60ca009f64fbc"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta",
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "boss_clavado.4.txt",
+     "bytes": 17590265,
+     "sha256": "cb2ecd3752ea98919788b13f3c22b78e94768e9500d0df33c46646b1ff5abf8d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta.1.txt",
+     "bytes": 13503270,
+     "sha256": "8d05d679213064564d2d2ea19e0ef05cb713bd969cd5e6ad2a831e0b274d4eef"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta.2.txt",
+     "bytes": 4230501,
+     "sha256": "d0d0a52550e4e3c5fe1f695d2dc2046325368c2d4d72a8047a7d3786655cae77"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta.3.txt",
+     "bytes": 13637349,
+     "sha256": "e928ff40f16eab2e2dc0af6e1ad8997d3fee18f279de6e67724f1f64a6146965"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta.4.txt",
+     "bytes": 13668765,
+     "sha256": "b892b47019315f0a2322dece523b17aed2079d4e0266b3f64229f68aa4304570"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta_b3.1.txt",
+     "bytes": 10968111,
+     "sha256": "9c21d624eb7e69c1388311d0e64bec0bf31275cf9b29a06a117537dc82e17781"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta_b3.2.txt",
+     "bytes": 10906401,
+     "sha256": "27def7ed764798d78bfce4db0d4d301485c49b5a933041e57c867f6b32755735"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta_b3.3.txt",
+     "bytes": 11309199,
+     "sha256": "cdfd6dbf4451867fe9a52946676c4ee55bab2c6c636c5f9bf495e4e780b8511e"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "leer_conjunta_b3"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta_b3.4.txt",
+     "bytes": 12422223,
+     "sha256": "823bd98707479d3c968495eefb6f03a2445b0e02ade9386e9ea16fb6c8240b1b"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_lcdm_R4",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.1.txt",
+     "bytes": 5557159,
+     "sha256": "b686ae0a89ea9c07ed0b891ae278e12d88050c7f60bb48b184f0c575d89c93f5"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_lcdm_R4",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.2.txt",
+     "bytes": 5563779,
+     "sha256": "2954fdbb683b9f1438e9bd5adc4201dfde5ed4457f8e3548191406aba6c20a4a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_lcdm_R4",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.3.txt",
+     "bytes": 5583308,
+     "sha256": "6c3181a88e3b59be21842cc3a0c1b43515b3129799ec3d4791bf7e1f08c0dee3"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_lcdm_R4",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.4.txt",
+     "bytes": 5508171,
+     "sha256": "9ec7ab035d4a559db1c07a598ba681f67a1974161c1f1254dc1df70ac0f72be9"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.progress",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_lcdm_R4"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.progress",
+     "bytes": 2129,
+     "sha256": "2e2fbc827cb17790dede4bec98baa382dc0c4be8330f74de722f07af75dfbcfa"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.updated.yaml",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "analiza_lcdm_R4"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.updated.yaml",
+     "bytes": 2856,
+     "sha256": "85b43915372bd0dd54bb4ede0ce1c44b615b8c3b0a4bfeaa8425e61e006de322"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "R3_rehecho",
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.1.txt",
+     "bytes": 1137687,
+     "sha256": "ed4d0c1d818775d439726e51a4f38445066ee896d3a2b12a3a436bd393d351d0"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "R3_rehecho",
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.2.txt",
+     "bytes": 1171863,
+     "sha256": "680990c1342bfb000f29b7ef25370a05adba2ee3e97848605ea14c91dbd3841a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "R3_rehecho",
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.3.txt",
+     "bytes": 1153707,
+     "sha256": "2fe41d979a46279acb23dfa438c6176eb4ef72a3c3f0d248934c82d17281eeb9"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "R3_rehecho",
+    "marginal_vs_perfil",
+    "mide_As_o_producto"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.4.txt",
+     "bytes": 1165455,
+     "sha256": "595a26fa0d75fceab3885437b0c3992b7cc1813ece925937ef78e3c84872581b"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_control",
+    "lcdm_conjunta_min_bao",
+    "lcdm_conjunta_min_cmb",
+    "lcdm_conjunta_min_conjunta",
+    "lcdm_conjunta_min_kids"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdmfijo.1.txt",
+     "bytes": 1647428,
+     "sha256": "13d256438ee02ae3fc26cf94b7c050ca54eab4e5936d92858cbe6d925cf9be92"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_control",
+    "lcdm_conjunta_min_bao",
+    "lcdm_conjunta_min_cmb",
+    "lcdm_conjunta_min_conjunta",
+    "lcdm_conjunta_min_kids"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdmfijo.2.txt",
+     "bytes": 1804220,
+     "sha256": "82efa4b86e1caf9e07aeb6090a898dc19b25b9def7f4fe2df77bb86453050f6d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_control",
+    "lcdm_conjunta_min_bao",
+    "lcdm_conjunta_min_cmb",
+    "lcdm_conjunta_min_conjunta",
+    "lcdm_conjunta_min_kids"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdmfijo.3.txt",
+     "bytes": 1751400,
+     "sha256": "a460b97b9fbda5787a612598aaf2ea2fb0e4678274df3ce0244eb7e2372d2e88"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_control",
+    "lcdm_conjunta_min_bao",
+    "lcdm_conjunta_min_cmb",
+    "lcdm_conjunta_min_conjunta",
+    "lcdm_conjunta_min_kids"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdmfijo.4.txt",
+     "bytes": 1701638,
+     "sha256": "3494b8183bdb85bbd18e8cd9c742c43cd4de0d217d7b7ed525169ea4e7e35715"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "multisonda_fondo_clavado"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.1.txt",
+     "bytes": 986674,
+     "sha256": "346f5d737f80b1c0c6dcf5f2716767129700dcf17c748592f98e34e4ece22207"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.2.txt",
+     "bytes": 1012430,
+     "sha256": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.3.txt",
+     "bytes": 1002292,
+     "sha256": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee.4.txt",
+     "bytes": 1035994,
+     "sha256": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_lee"
+   ],
+   "archivos": [
+    {
+     "rel": "sseefijo.1.txt",
+     "bytes": 953310,
+     "sha256": "b330443c5e1b55afd1b8419e8a6f56763bc68ef8b267dfbbb7ae4e97e30d084b"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_lee"
+   ],
+   "archivos": [
+    {
+     "rel": "sseefijo.2.txt",
+     "bytes": 931896,
+     "sha256": "cacfb3906fbddf1dea2e095c240c99adcae5ed4f5d8a029680aa798863640b54"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_lee"
+   ],
+   "archivos": [
+    {
+     "rel": "sseefijo.3.txt",
+     "bytes": 930348,
+     "sha256": "56fa05db7add1f7072e2baea035dd47a8d485ddc1fb10abeadd674cbf03061ea"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "kids_legacy_bic",
+    "lcdm_conjunta_lee"
+   ],
+   "archivos": [
+    {
+     "rel": "sseefijo.4.txt",
+     "bytes": 929058,
+     "sha256": "ee5f2aa8130675cfb954b15bcbd8b1d3fa4d0430e8a604f7b3d7fe4ed27fd7ca"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "sello_act_dr6_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "act_lcdm.1.txt",
+     "bytes": 1002447,
+     "sha256": "beb2d89553df6f4185b06830092cc7f59916e5de16a41aea6392e689d18f0cdd"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "sello_act_dr6_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "act_lcdm.2.txt",
+     "bytes": 1045413,
+     "sha256": "8287dbcafa35a272748faa9c63c368082a9bff2ba965952e987e0b3ad26026ac"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "sello_act_dr6_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "act_lcdm.3.txt",
+     "bytes": 926001,
+     "sha256": "bb0a5a8987df2262a75f0408725816df2faa03f06393a74b4976ba4925bc0ec0"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "sello_act_dr6_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "act_lcdm.4.txt",
+     "bytes": 948879,
+     "sha256": "6247430925c240cd77f0587b00776161bd58191a165281a4a095b56c3e78869f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "sello_act_dr6_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 328281,
+     "sha256": "75438d5f755f3176df2ce6dbe3cc422e88fc7cc1dd91cf86b88893ade9e66213"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "sec8_summary.tex",
+     "bytes": 6606,
+     "sha256": "0361153fa402794a7e8ba14448187a3e8f5a9ba8258d4c0633c67a63b5f8e9ef"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml",
+   "clase": "A",
+   "origen": "https://github.com/SouthPoleTelescope/spt_candl_data.git (commit efe35b7)",
+   "cita": "SPT-3G D1 lensing",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "gmv.yaml",
+     "bytes": 486,
+     "sha256": "7fbbc2dbfe5df3e0e857c9a47773906a55c4a871b4fd3e1ee16c2f41006c48d8"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml",
+   "clase": "A",
+   "origen": "https://github.com/SouthPoleTelescope/spt_candl_data.git (commit efe35b7)",
+   "cita": "SPT-3G D1 lensing",
+   "etapas": [
+    "sello_spt3g_kk_en_el_clavo"
+   ],
+   "archivos": [
+    {
+     "rel": "gmv.yaml",
+     "bytes": 1814,
+     "sha256": "35f72bb7166f101257f615989b37a0205e788d8bdc0f34a6cdd86f803141d1d3"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "spt_lcdm.1.txt",
+     "bytes": 3644451,
+     "sha256": "2aa2346d40fdc7a900bbe8f12652047f4a59b055ba0ad30606ab9d7820835504"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "spt_lcdm.2.txt",
+     "bytes": 3584295,
+     "sha256": "9bc5d3601bc2e8b5d4500081f05ff936eea9e30b06bcfa80e88d917e28abdf74"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "spt_lcdm.3.txt",
+     "bytes": 3636653,
+     "sha256": "b3a07b53442fb23301274309d947fdf69597bad7ec2de8204535ba5eb7c267fb"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "spt_lcdm.4.txt",
+     "bytes": 3565357,
+     "sha256": "0ae5ba6c1f2a113b2a71ee257804a7f9044a084e20c77956ffe1025fd56854e1"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.progress",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
+   "cita": "",
+   "etapas": [
+    "spt3g_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "spt_lcdm.progress",
+     "bytes": 2142,
+     "sha256": "9216613947bdde9464a0aa62d6ef5d43a568ea859808cb02f5a389d4c4c583ad"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt",
+   "clase": "A",
+   "origen": "https://des.ncsa.illinois.edu/releases/y3a2/Y3key-products (cadenas 3x2pt)",
+   "cita": "DES Collaboration 2022, PRD 105, 023520 (arXiv:2105.13549)",
+   "etapas": [
+    "sello_des_y3_barrido",
+    "sello_des_y3_barrido_masa",
+    "sello_des_y3_calibrador"
+   ],
+   "archivos": [
+    {
+     "rel": "chain_3x2pt_lcdm_SR_maglim.txt",
+     "bytes": 16351854,
+     "sha256": "2ba4415560c8a02ccb8da0b7d5cf4552c088a1cc981c1ee96fda90bba31563ff"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.1.txt",
+     "bytes": 14457000,
+     "sha256": "8c783ebf283a205b7f569ce36a6694a32646ced5e28fd3b4683742733f6165e0"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.2.txt",
+     "bytes": 14562228,
+     "sha256": "cd4f2ff3a66aa92aceecd47c8452520c2de09d887f231fc0df033cd68597a886"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.3.txt",
+     "bytes": 14544216,
+     "sha256": "f7f8dbf28ff23d371e0b987b938d321adb920f1a09e97f746b3c0bb2d6247a01"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.4.txt",
+     "bytes": 14427612,
+     "sha256": "4a3607867d34890832f431c4d61947e5572a72ff1a407141f4b8cb8d3d7ec769"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.1.txt",
+     "bytes": 24049386,
+     "sha256": "db81d299d59051ae5e1e8f67952320e08a1644a4a1f8d19267705aee32798877"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.2.txt",
+     "bytes": 24118074,
+     "sha256": "442390266f6a3bfe88e9c7cd8e29d1e7cff47fc8582f3a3af80a6b40b9f83939"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.3.txt",
+     "bytes": 23704992,
+     "sha256": "1c92edf523df34784633f6852f7564f3d953203ae939d5d2e8cd4c3fd6f580ae"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.4.txt",
+     "bytes": 24407136,
+     "sha256": "b17dc02689c3a30dd34a96d91ac35180006f17d10b82331396ef55ce999594af"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.1.txt",
+     "bytes": 19346836,
+     "sha256": "c228de7bbaec19ddb22eec25c3dd7c40ef218976c020a7b55dd1c78dc3a638c5"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.2.txt",
+     "bytes": 19727892,
+     "sha256": "01bb30f43b3207d8575cc16354159fceff2ad4deffacc87964b0aef7f8e8ee44"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.3.txt",
+     "bytes": 20007272,
+     "sha256": "db12623c8c69c03ad219b28bbc517416fc941cbb1e717054344f30b4e43a4adc"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.4.txt",
+     "bytes": 19485152,
+     "sha256": "339312d9b7d3027147c38433fb4335cb9a12585776c4dfffc592c7c43af9a5ff"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.1.txt",
+     "bytes": 25731564,
+     "sha256": "f95d091203f615e1654ea9f4fea332db08fa66c59a5fe188b4915e67e1d73b11"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.2.txt",
+     "bytes": 26142996,
+     "sha256": "23aac58326257d207b8ee3699d21ed908e46238e42041d8c2ccf12fd85c8b839"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.3.txt",
+     "bytes": 25179828,
+     "sha256": "9e0998c5685e7552b94fd45e985dd137604f34692bebbc6fb922a1588669ab6a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+   "clase": "A",
+   "origen": "https://doi.org/10.5281/zenodo.16644577",
+   "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "etapas": [
+    "desi_dr2_w0wa_momentos"
+   ],
+   "archivos": [
+    {
+     "rel": "chain.4.txt",
+     "bytes": 26019756,
+     "sha256": "7710ababc2ab0c7fb5f3f67c8b790409703bce18707a2f99a1cd3fea531b4c20"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt",
+   "clase": "A",
+   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "cita": "Bulbul et al. 2024",
+   "etapas": [
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "Ghirardini2024_abstract.txt",
+     "bytes": 1914,
+     "sha256": "b2ec77a66bfbf8368824c23de10b7b9a664ef0e8c831e8ffc61f0addd3ff981a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt",
+   "clase": "A",
+   "origen": "CDS/VizieR (Bahar et al. 2022)",
+   "cita": "eFEDS clusters V3.2",
+   "etapas": [
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "Liu2022_abstract.txt",
+     "bytes": 1909,
+     "sha256": "bfe0abb3ddde3ff402728f6f77d984a5520d98274e5be86b5b82a26f22b4ba6a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
+   "clase": "A",
+   "origen": "CDS/VizieR (Bahar et al. 2022)",
+   "cita": "eFEDS clusters V3.2",
+   "etapas": [
+    "sello_erosita_completitud",
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "eFEDS_clusters_V3.2.fits.gz",
+     "bytes": 107647,
+     "sha256": "53a2e07f55b3bc8c783fe071d8039c75f5682d04975ff310909abef37612789b"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits",
+   "clase": "A",
+   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "cita": "Bulbul et al. 2024",
+   "etapas": [
+    "sello_erosita_completitud",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "erass1cl_cosmology_v1.1.fits",
+     "bytes": 1186560,
+     "sha256": "fe2310495ce2fdba5876e248ab3415012d6f2e79280d87c8bfd1177ca11a779e"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits",
+   "clase": "A",
+   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "cita": "Bulbul et al. 2024",
+   "etapas": [
+    "erosita_extlike",
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "erass1cl_primary_v3.2.fits",
+     "bytes": 50636160,
+     "sha256": "e79c392e2d7b9e26105ead7d56787713465aa853feb040a227891fb9571b9a54"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html",
+   "clase": "A",
+   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "cita": "Bulbul et al. 2024",
+   "etapas": [
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "erass1cl_primary_v3.2.html",
+     "bytes": 25801,
+     "sha256": "f8d28599abee6295a96ad6c078e7045ba19627761b0de3294074ef1902891973"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex",
+   "clase": "A",
+   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "cita": "Bulbul et al. 2024",
+   "etapas": [
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "AA_final.tex",
+     "bytes": 111225,
+     "sha256": "82be60ee4de93a20e74f3066a4b3dc512c077884f7c7b854d3e45ebb19fb4d98"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex",
+   "clase": "A",
+   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "cita": "Bulbul et al. 2024",
+   "etapas": [
+    "sello_erosita_cr_v3"
+   ],
+   "archivos": [
+    {
+     "rel": "48852corr.tex",
+     "bytes": 231657,
+     "sha256": "358dcead976d417820201debcb56b987f8c9dc9ab9bd27a3f250a80b1fa41755"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/ (KiDS-1000 cosmic shear data release)",
+   "cita": "Asgari et al. 2021, A&A 645, A104 (arXiv:2007.15633)",
+   "etapas": [
+    "kids_publicados"
+   ],
+   "archivos": [
+    {
+     "rel": "maxpost_multinest_start_C.txt",
+     "bytes": 374768,
+     "sha256": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/ (KiDS-1000 cosmic shear data release)",
+   "cita": "Asgari et al. 2021, A&A 645, A104 (arXiv:2007.15633)",
+   "etapas": [
+    "sello_base_sin_particula"
+   ],
+   "archivos": [
+    {
+     "rel": "xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits",
+     "bytes": 622080,
+     "sha256": "466d1d761fedac02e53b5468cdbab20f622c2f04b830085cccdae5b629ebe66c"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/ (KiDS-1000 cosmic shear data release)",
+   "cita": "Asgari et al. 2021, A&A 645, A104 (arXiv:2007.15633)",
+   "etapas": [
+    "sello_base_sin_particula"
+   ],
+   "archivos": [
+    {
+     "rel": "SOM_cov_multiplied.asc",
+     "bytes": 295,
+     "sha256": "7a0a36040e065f43131f4a208fbda8f8290868eb9867bd2704a86b00f1cad5f1"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
+   "cita": "Wright et al. 2025 (arXiv:2503.19441)",
+   "etapas": [
+    "kids_publicados",
+    "sello_control_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "output_nautilus_xipm_Fiducial.txt",
+     "bytes": 105084314,
+     "sha256": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
+   "cita": "Wright et al. 2025 (arXiv:2503.19441)",
+   "etapas": [
+    "sello_control_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "KiDS_Legacy_xipm.fits",
+     "bytes": 1186560,
+     "sha256": "aeedfec802c83f468a7459b11be7b9978029fd87985c9e3930cd3d8be38a664d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/1807.06209/ms.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "ms.tex",
+     "bytes": 533692,
+     "sha256": "fe0833d2d0fda17427a709c9559dc7b3a988b955f47bb7de7a02c900ffdc21cf"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 62608,
+     "sha256": "4ec08a54d7aadabd57e97fd02d0bfcb2d035f222ac6d9e20a7f1346c50ed2e2d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 53165,
+     "sha256": "35fff52c44e8f89ea546a22644c856b325497e0819cc800ac32b2ea93c823cd6"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 74818,
+     "sha256": "993d700517adf7129337103502f9592818faa2759afef88e87f9896ab53de5f4"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2112.04510/shoes6.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "shoes6.tex",
+     "bytes": 254103,
+     "sha256": "32ee459e07984a0e956c70f0ec7b43791df4bd8a70a9948395d6005b8c0959e3"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2408.06153/Ho2024.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "Ho2024.tex",
+     "bytes": 166976,
+     "sha256": "680063a9d66429aca79faecb965e95a1df8943858d3b935ba757e51d020327c2"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2408.11770/main.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 93508,
+     "sha256": "ffd40d0b93632853c56af77e247c233a9cb1815cc2f4303a50528feb7baed399"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2506.03023/main.tex",
+   "clase": "C",
+   "origen": "arXiv (id = nombre de la carpeta)",
+   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "etapas": [
+    "h0_por_metodos"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 192597,
+     "sha256": "113e61c88418abf4f595de8011054596aad1ad0bbdd38abc42943786d5282bb1"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mcmc_full_posteriores"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_full.1.txt",
+     "bytes": 7631371,
+     "sha256": "77e6956834c7e42363b9b1b67ce93c08cc224a8131150dd453ccd4c7aca28cb6"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mcmc_full_posteriores"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_full.1.txt",
+     "bytes": 6657211,
+     "sha256": "755cb5c82c23e4ab2e3bc787286fd52efa20ce67b7903151f3eef7851b8ae354"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mcmc_full_posteriores"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_full.1.txt",
+     "bytes": 7956091,
+     "sha256": "8512b4f4345594e0e0a752d15d9c2889723ab61519f78ced9c97003675c7c77c"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "mcmc_full_posteriores"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_full.1.txt",
+     "bytes": 11979011,
+     "sha256": "1a69270dd4c73feb103d33bc48f36486e78c989c0a1d92437d2cc37a3a3cf64f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
+   "cita": "regenerable; o dataset aparte",
+   "etapas": [
+    "dic_from_chains",
+    "p2_corners",
+    "p2_fig7_fig8",
+    "ppc_cronometros",
+    "resumen_3modelos",
+    "savage_cv"
+   ],
+   "archivos": [
+    {
+     "rel": "mcmc_chains_professional.npz",
+     "bytes": 260001506,
+     "sha256": "105a3703b83ffb026ffd35ed042c805d7982d6f3a3bc9b57f33b6f4ed311d141"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "sello_sn_geometria"
+   ],
+   "archivos": [
+    {
+     "rel": "DES-Dovekie_HD.csv",
+     "bytes": 148002,
+     "sha256": "2f57019d783eaa976df80a41b0054171a2d994ee9808d715ce850c2df5720aaf"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "sello_sn_geometria"
+   ],
+   "archivos": [
+    {
+     "rel": "STAT+SYS.npz",
+     "bytes": 6244951,
+     "sha256": "ffd3124b32148b1372bd95fda9299269f0352a9f8eee02d416c610e38495463b"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "h0_por_profundidad",
+    "sello_sn_geometria"
+   ],
+   "archivos": [
+    {
+     "rel": "Pantheon+SH0ES.dat",
+     "bytes": 579283,
+     "sha256": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "h0_por_profundidad",
+    "sello_sn_geometria"
+   ],
+   "archivos": [
+    {
+     "rel": "Pantheon+SH0ES_STAT+SYS.cov",
+     "bytes": 33284960,
+     "sha256": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/papers/2202.04077/main.tex",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "h0_por_profundidad"
+   ],
+   "archivos": [
+    {
+     "rel": "main.tex",
+     "bytes": 124698,
+     "sha256": "5bd398947f9ec0355facec937e5865c80154455c2a29331cfd5355f6f8d06408"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "sello_union3_en_el_clavo"
+   ],
+   "archivos": [
+    {
+     "rel": "mu_mat_union3_cosmo=2_mu.fits",
+     "bytes": 8640,
+     "sha256": "ef98b7dde1025ee7134f3242aaea3f1f0ed3f2b29a718458c550a8e4e24d0349"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "sello_union3_en_el_clavo",
+    "sello_union3_repro_compara"
+   ],
+   "archivos": [
+    {
+     "rel": "mu_mat.fits",
+     "bytes": 8640,
+     "sha256": "40932c1734b78d09ec0fd057fd19f1e3e78f53ceeed33e10258e16753a36982f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits",
+   "clase": "A",
+   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
+   "cita": "",
+   "etapas": [
+    "sello_union3_repro_compara"
+   ],
+   "archivos": [
+    {
+     "rel": "mu_mat.fits",
+     "bytes": 8640,
+     "sha256": "332ad0ef5e3ca721fd34efe76a3759234a6c363c0b2b6fba70c9fc5f42025848"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/hi_class/class",
+   "clase": "S",
+   "origen": "https://github.com/miguelzuma/hi_class_public.git (commit 0009f51d8; compilar)",
+   "cita": "binario compilado: se reconstruye, no se compara por sha256",
+   "etapas": [
+    "hiclass_campo"
+   ],
+   "archivos": []
+  }
+ ]
+}
