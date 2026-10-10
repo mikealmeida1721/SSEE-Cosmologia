@@ -7459,7 +7459,13 @@ try:
     _R55E = [re.compile(r"f_\{\\rm scr(?:een)?\}\s*=\s*s_K/[^$]{0,30}=\s*\(\\pi-\\varphi\)"),
              re.compile(r"Mapped Inference Resonance", re.I),
              re.compile(r"CMB-alone[^\n]{0,80}-1\.03\s*\\pm\s*0\.03"),
-             re.compile(r"0\.773\s*\\pm\s*0\.025")]
+             re.compile(r"0\.773\s*\\pm\s*0\.025"),
+             # tanda P4–P6 + bibliografía:
+             re.compile(r"Peer-Review Corrected"),          # P4: no hubo revisión por pares
+             re.compile(r"Zero-Parameter Framework"),       # eslogan retirado (P1 es minimal-parameter)
+             re.compile(r"zenodo\.20093447"),               # versión de 7 papers; se cita el concept 19654118
+             re.compile(r"r\^\*\s*=\s*0\.190"),               # r* con s_m=0.160 como densidad
+             re.compile(r"discrepancy is \$50")]            # P5 Q2 es una COTA
 
     def _malos55e(_tx):
         _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
@@ -7476,7 +7482,10 @@ try:
     _ctl = ("$f_{\\rm scr}=s_K/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ MIRA & Mapped Inference "
             "Resonance The Planck~2018 CMB-alone posterior yields $w_0 = -1.03\\pm0.03$ DES $0.773\\pm0.025$")
     check("R55e el detector marca las cuatro formas viejas",
-          len(_malos55e(_ctl)) == 4 and not _malos55e(
+          len(_malos55e(_ctl)) == 4
+          and len(_malos55e("Paper~4 (Peer-Review Corrected) A Zero-Parameter Framework "
+                            "zenodo.20093447 $r^* = 0.190$ The discrepancy is $50\\%$")) == 5
+          and not _malos55e(
               "$f_{\\rm scr}^{\\rm IR}=s_K^{\\rm IR}/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ Mirror Ratio"),
           "control R53")
 except Exception as _e:            # noqa: BLE001
