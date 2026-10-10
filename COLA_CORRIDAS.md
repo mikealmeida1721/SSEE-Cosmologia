@@ -40,7 +40,7 @@ hay que **decidir** cuál corre, no lanzarlas según van saliendo.
 | `cola_1010.sh` (re-sellado DVC de 22 etapas, secuencial; log `results/logs/cola_1010.log`) | 1–6 | 10-10 | horas (lcdm_conjunta_min_* y des_y3_nla son las largas) | R75 en verde: cada resultado igual a su lock tras el re-sellado de cmb_dbic_tau_ajustado y R1R2 |
 
 Al terminar: mover `results/logs/des_y3_clavo_*_continua.run.log` a `/mnt/datos/SSEE_data/des_y3/calibrador/consola/` (otro disco: no se puede mover mientras escriben) y quitarlos de `bitacoras` en PROPAGACION.yaml; sellar por DVC; repro de `sondas_ssee_vs_lcdm` y demás lectores (R75).
-Tras cola_1010 (añadido 2026-10-10, tercera lectura): `dvc repro -s valores_tex` (macros nuevas `costo_*_conj` de P6, tabla «Ingredient transport test»; y |w_a| del PRD), recompilar P6 y PRD, copiar a docs/; luego parametrizar las rutas absolutas de `dvc.yaml` (REPRO H4: 227 líneas) con `vars:` sin cambiar el cmd resuelto (comprobar con `dvc status` que nada queda desactualizado).
+Tras cola_1010 (añadido 2026-10-10, tercera lectura): `dvc repro -s valores_tex` (macros nuevas `costo_*_conj` de P6, tabla «Ingredient transport test»; y |w_a| del PRD), recompilar P6 y PRD, copiar a docs/; luego parametrizar las rutas absolutas de `dvc.yaml` (REPRO H4: 227 líneas) con `vars:` sin cambiar el cmd resuelto (comprobar con `dvc status` que nada queda desactualizado). Y archivar la carta a JCAP (`manuscript/SSEE_Cover_Letter.tex` + `docs/SSEE_Cover_Letter.pdf` → `archive/superado/`, nota en `archive/README.md`: el envío activo es PRD con `submission_PRD/PRD_cover_letter.md`); quitarla de la etapa `auditoria_pdfs_zenodo` de `dvc.yaml` (cmd y deps) y re-sellarla. No se toca `dvc.yaml` mientras la cola corre.
 
 ## Reglas de la casa
 
