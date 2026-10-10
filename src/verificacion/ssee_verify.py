@@ -7465,7 +7465,12 @@ try:
              re.compile(r"Zero-Parameter Framework"),       # eslogan retirado (P1 es minimal-parameter)
              re.compile(r"zenodo\.20093447"),               # versión de 7 papers; se cita el concept 19654118
              re.compile(r"r\^\*\s*=\s*0\.190"),               # r* con s_m=0.160 como densidad
-             re.compile(r"discrepancy is \$50")]            # P5 Q2 es una COTA
+             re.compile(r"discrepancy is \$50"),            # P5 Q2 es una COTA
+             # tanda P7–P9:
+             re.compile(r"1404\.3604"),                      # no es Bellini-Sawicki (es un paper de oncología)
+             re.compile(r"2405\.13491"),                     # Euclid I (misión), no un pronóstico de α_B/α_M
+             re.compile(r"Cao et al\.?\\?\s*2018"),          # 1803.00819 es Li et al. 2018
+             re.compile(r"suppressed by the\s+factor \$\\approx1\.93")]  # Ω_m/(1+w₀) retirado en P8
 
     def _malos55e(_tx):
         _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
