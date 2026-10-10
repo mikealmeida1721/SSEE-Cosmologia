@@ -83,8 +83,8 @@ earlier version of Paper~6, are \emph{retracted} (\S\ref{sec:growth_raw}): the
 matter sector is a single unpartitioned component, and their register entries
 (OP-9, OP-11) close by dissolution (\texttt{OPEN\_PROBLEMS.md}). In CMB-likelihood terms SSEE is a $k=2$ fit: of
 $\Lambda$CDM's six parameters it fixes four algebraically ($\Omega_b$, $\Omega_c$
-via $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$, $n_s=1-\phiG^{-7}$, and the derived
-anchor $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}})=3(\phiG+\pi)^2$), leaving only the primordial amplitude $A_s$ and the
+via $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$, $n_s=1-\phiG^{-7}$, and the global
+rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$ from the measured SH0ES input, which lands on the pure number $3(\phiG+\pi)^2$), leaving only the primordial amplitude $A_s$ and the
 optical depth $\tau$ ($k=2$ versus $k=6$, the count used in the Paper~3 model
 comparison).
 The dark energy equation of state $\wz = -(3\phiG+\pi)/[2(\phiG+\pi)] \simeq -0.840$
@@ -102,7 +102,7 @@ A complementary full-likelihood multi-probe MCMC (CAMB $+$ Planck
 \texttt{plik\_lite} $+$ lensing $+$ DESI~DR2 $+$ $f\sigma_8$, $w_0,w_a$ free and
 $H_0$ under a flat prior) places the model at $1.31\sigma$ in the $w_0$--$w_a$
 plane, where \LCDM\ is excluded at $3.22\sigma$; under this uncompressed CMB
-likelihood $H_0$ relaxes to $65.87\pm1.17$ ($1.79\sigma$ below the anchor).
+likelihood $H_0$ relaxes to $65.87\pm1.17$ ($1.79\sigma$ below the global rate).
 
 The CMB-sector matter density is the standard physical observable
 $\OmmCMB = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (Planck: $0.3153\pm 0.0073$), built
@@ -258,7 +258,7 @@ state, not the density $\Omde = 1-\OmmCMB = \val{OMDE_DENS_d6}$.
 
 All primary observational inputs are retrodicted without fitting:
 \begin{alignat}{3}
-  \frac{H_0}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} &= 3(\phiG+\pi)^2        &&\simeq 67.96214,  \label{eq:H0}\\
+  \frac{H_0^{\rm glob}}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} &= \frac{H_{\rm SH0ES}(1-f_{\rm screen})}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} &&\simeq \val{H0_GLOBAL_d5} \;\;(\text{target } 3(\phiG+\pi)^2),  \label{eq:H0}\\
   n_s   &= 1 - \phiG^{-7}        &&\simeq \val{N_S_d5},  \label{eq:ns}\\
   \OmmCMB &= \omega_m/h^2 &&\simeq \val{OMEGA_M_TOTAL_d6} \quad (\omega_m\text{-direct, CMB sector}).
   \label{eq:Omm}
@@ -424,7 +424,7 @@ Parameter & Posterior (mean $\pm1\sigma$) & Algebraic SSEE & Tension \\
 $\Omega_b h^2$                     & $\val{mf_ombh2_media} \pm \val{mf_ombh2_sigma}$ & $\val{OMEGA_B_H2_d6}$ & $\val{mf_ombh2_tens}\sigma$ \\
 $\Omega_c h^2$                     & $\val{mf_omch2_media} \pm \val{mf_omch2_sigma}$ & $\val{OMEGA_C_H2_d6}$ & $\val{mf_omch2_tens}\sigma$ \\
 $r_{\rm drag}$ [Mpc]               & $\val{mf_rdrag_media}  \pm \val{mf_rdrag_sigma}$    & $\val{mf_rdrag_alg}$  & $\val{mf_rdrag_tens}\sigma$ \\
-$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]   & $\val{mf_H0_media}   \pm \val{mf_H0_sigma}$    & $\val{H0_ALG_d6}$   & $\val{mf_H0_tens}\sigma$ \\
+$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]   & $\val{mf_H0_media}   \pm \val{mf_H0_sigma}$    & $\val{H0_GLOBAL_d6}$   & $\val{mf_H0_tens}\sigma$ \\
 $\Omega_m$                         & $\val{mf_omegam_media}  \pm \val{mf_omegam_sigma}$  & $\val{OMEGA_M_TOTAL_d6}$ & $\val{mf_omegam_tens}\sigma$ \\
 $w_0$                              & $\val{mf_w_media}  \pm \val{mf_w_sigma}$   & $\val{W0_d6}$  & $\val{mf_w_tens}\sigma$ \\
 $w_a$                              & $\val{mf_wa_media}  \pm \val{mf_wa_sigma}$   & $\val{WA_d6}$  & $\val{mf_wa_tens}\sigma$ \\
@@ -863,7 +863,7 @@ $w_a = -P_{\rm sc}/I_g$ & $\val{WA_d6}$ & DESI DR2 CPL posterior & Postdiction \
 $\MIRA = (3\phiG+\pi)/4$ & $\val{MIRA_d6}$ & $\fscr=\alphaK/(3\MIRA)$ (Papers 8, 9) & Postdiction \\
 \midrule
 \multicolumn{4}{l}{\textit{Retrodictions (derived independently, compared to existing data)}} \\
-$H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\phiG+\pi)^2$ & $67.96214$ km/s/Mpc & Planck 2018 & Retrodiction \\
+$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$, target $3(\phiG+\pi)^2$ & $\val{H0_GLOBAL_d5}$ km/s/Mpc & Planck 2018 & Retrodiction \\
 $n_s = 1-\phiG^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & Retrodiction \\
 $\OmmCMB = \omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & Planck 2018 & Retrodiction \\
 $r_d$ (CAMB, $\omega_m$-direct) & $147.17$ Mpc & Planck 2018 $r_d$ ($0.32\sigma$) & Retrodiction \\
@@ -913,8 +913,8 @@ computational cost) is required to confirm the linear-theory $S_8$ at the
 non-linear level.
 
 \textbf{(iii) Quantum field theory completion.}
-The algebraic connection $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\phiG+\pi)^2$ is a successful numerical
-retrodiction but lacks a derivation from first-principles quantum field theory.
+The coincidence between the measured cascade $H_0^{\rm glob}$ and the pure number $3(\phiG+\pi)^2$ is a
+comparison, not a derivation: deriving $H_0$ from first-principles quantum field theory remains open, for this and every model.
 Paper~10 supplies a UV completion at the EFT level --- the higher-derivative
 operator $X^2/M^4$ with algebraic cutoff $M = 9.68$~meV --- but a derivation of
 the full $P(X,\phi)$ Lagrangian from $\phiG$ and $\pi$ alone remains open.
@@ -1010,7 +1010,7 @@ Parameter & Formula & SSEE value & Observed \\
 \midrule
 $w_0$ & $-T_r/M_v = -(3\phiG+\pi)/[2(\phiG+\pi)]$ & $\val{W0_d6}$ & $-0.838\pm0.057$ (DESI) \\
 $w_a$ & $-P_{\rm sc}/I_g$ & $\val{WA_d6}$ & $-0.631\pm0.226$ (DESI) \\
-$H_0$ & $3(\phiG+\pi)^2$ & $67.96214$ km/s/Mpc & $67.36\pm0.54$ (Planck) \\
+$H_0^{\rm glob}$ & $H_{\rm SH0ES}(1-f_{\rm screen})$, target $3(\phiG+\pi)^2$ & $\val{H0_GLOBAL_d5}$ km/s/Mpc & $67.36\pm0.54$ (Planck) \\
 $n_s$ & $1-\phiG^{-7}$ & $\val{N_S_d6}$ & $0.9649\pm0.0042$ (Planck) \\
 $\OmmCMB$ & $\omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & $0.3153\pm0.0073$ (Planck) \\
 $\Omde$ & $1-\OmmCMB$ (density) & $\val{OMDE_DENS_d6}$ & $0.6847$ (\LCDM) \\

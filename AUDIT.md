@@ -312,8 +312,8 @@ dynamic-sector test (ΔBIC = −5.55, SSEE favoured). These address different ph
 
 ### 3. CMB pipeline — canonical result and H0-anchoring sensitivity (Paper 3)
 
-**Canonical CMB result (Paper 3 §5, ω_m-direct reframe):** at the algebraic global anchor
-H0 = 3(φ+π)² = 67.962, the full `plik` MCMC (TTTEEE+lowl+lensing, N=2354) gives
+**Canonical CMB result (Paper 3 §5, ω_m-direct reframe):** at the global rate
+H_glob = SH0ES×(1−f_screen) = 67.962 (target: the pure number 3(φ+π)²), the full `plik` MCMC (TTTEEE+lowl+lensing, N=2354) gives
 ΔBIC = −33.83 (k=2 vs k=6) — decisively favours SSEE. Cross-checked by the `plik_lite`
 point estimate (−24.0, N=613) and the diagonal approximation (−35.0, N=5914); all three
 agree. *(The earlier legacy-MIRA `plik_lite` Cobaya scan — H0=67.066 optimum, ΔBIC≈−31.3 —

@@ -41,7 +41,7 @@ QUÉ AFIRMA EL MODELO (para que sepas qué atacar, NO para que lo aceptes):
   de densidad, es un error del modelo y hay que reportarlo.)
   w₀=−0.840, wₐ=−0.670; afirman 0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según
   compilado SN — Union3 el más tenso).
-- H₀ = 3(φ+π)² = 67.96 km/s/Mpc, obtenido vía SH0ES × f_screen (no como número puro).
+- H_glob = SH0ES×(1−f_screen) = 67.962 km/s/Mpc (SH0ES entra); 3(φ+π)² = 67.96214 es el blanco puro, no una entrada.
 - CONTEO DE PARÁMETROS (verifícalo con lupa): el ajuste CMB es "k=2" — de los 6 de ΛCDM,
   SSEE fija 4 por álgebra (ω_b, ω_c, n_s, H₀-derivado) y deja EXACTAMENTE 2 libres: A_s y τ.
 > 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
@@ -116,8 +116,8 @@ verificación, y los 10 papers + documentos consolidados.
 QUÉ AFIRMA EL MODELO (para saber qué atacar, NO para aceptarlo):
 - Fondo (w₀=−0.840, wₐ=−0.670 y la única densidad Ω_m = ω_m/h² = 0.308881) de φ,π con CERO parámetros ajustados
   (s_m = 1+w₀ = 0.160 es ecuación de estado, no densidad);
-  0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según compilado). H₀=3(φ+π)²=67.96 vía
-  SH0ES×f_screen. CMB "k=2" (fija 4 de 6; EXACTAMENTE 2 libres {A_s, τ}), ΔBIC favorece SSEE.
+  0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según compilado). H_glob = SH0ES×(1−f_screen) = 67.962 (SH0ES entra; el número puro
+  3(φ+π)²=67.96214 es sólo el blanco de comparación). CMB "k=2" (fija 4 de 6; EXACTAMENTE 2 libres {A_s, τ}), ΔBIC favorece SSEE.
 > 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
   ~~Extensión φ-DM: m_φ=40.70 eV y Ω_φDM=0.14889 = predicciones FORWARD (no libres; el MCMC de
   Paper 6 que las flota es test de consistencia, 0.24σ), k_fs=0.754 h/Mpc (forward pre-registrado),
@@ -199,8 +199,8 @@ QUÉ AFIRMA EL MODELO (para saber qué juzgar, NO para aceptarlo):
 - El sector de fondo (w0=−0.840, wa=−0.670 y la única densidad Ω_m = ω_m/h² = 0.308881; s_m = 1+w0 = 0.160 es
   ecuación de estado, no densidad) sale de φ y π
   con CERO parámetros ajustados; 0.24σ vs DESI DR2 (Pantheon+; rango 0.2–1.8σ según compilado).
-- H0 = 3(φ+π)² = 67.96 km/s/Mpc como ANCLA adimensional (no identidad dimensional), vía
-  SH0ES×f_screen. CMB "k=2": fija 4 de los 6 de ΛCDM, deja EXACTAMENTE 2 libres {A_s, τ};
+- H_glob = SH0ES×(1−f_screen) = 67.962 km/s/Mpc (SH0ES entra); 3(φ+π)² = 67.96214 es el
+  BLANCO adimensional de comparación, no una entrada ni un postulado. CMB "k=2": fija 4 de los 6 de ΛCDM, deja EXACTAMENTE 2 libres {A_s, τ};
   ΔBIC favorece SSEE por parsimonia (no por mejor χ²).
 > 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 - ~~Extensión φ-DM: m_φ=40.70 eV y Ω_φDM=0.14889 son predicciones FORWARD (no libres);

@@ -368,6 +368,8 @@ muestreo_certificado:
 #    lleve ACTA-PROCEDENCIA: si una bitacora trae acta, es un resultado mal
 #    clasificado y el guardian falla.
 bitacoras:
+  - des_y3_clavo_lcdm_planck_continua.run   # salida de consola de la corrida DES Y3 (2026-10-04/10); el resultado es des_y3_en_el_clavo_*.json
+  - des_y3_clavo_ssee_continua.run   # salida de consola de la corrida DES Y3 (2026-10-04/10); el resultado es des_y3_en_el_clavo_*.json
   - cola_3modelos
   - cola_actas_1001
   - cola_ajuste_conjunto

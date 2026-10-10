@@ -462,9 +462,19 @@ check("L2 identidad  f_screen = s_K/(3*MIRA) = (pi-phi)/Om^2",
       abs(s_K / (3 * MIRA) - (pi - phi) / Omega ** 2) < 1e-10)
 
 # Problemas ABIERTOS detectados en Capa 2 — comprobación dimensional.
-track_open("V-L2-06 H0^alg dimensional",
-           "3*Omega^2 es adimensional; H0 tiene unidades km/s/Mpc (Postulado D)",
-           op="OP-7")
+# V-L2-06 (re-enunciado 2026-10-10, Mike): NO es un problema abierto del modelo.
+# 3*Omega^2 es un numero PURO y no es entrada ni postulado: es el BLANCO contra el
+# que se compara la salida H_glob = H_SH0ES*(1-f_screen), que si tiene unidades
+# (SH0ES ENTRA). Derivar H desde primeros principios no lo ha logrado ningun
+# modelo: queda como comparacion anotada, sin prioridad. R55b vigila los textos.
+import importlib.util as _ilu06
+_sp06 = _ilu06.spec_from_file_location("_core06", ROOT / "ssee_core.py")
+_c06 = _ilu06.module_from_spec(_sp06); _sp06.loader.exec_module(_c06)
+check("V-L2-06 el H con unidades es la SALIDA de la cascada (3*Omega^2 es el blanco puro)",
+      abs(_c06.H0_GLOBAL - _c06.H0_SH0ES * (1 - _c06.F_SCREEN)) < 1e-12
+      and abs(_c06.H0_GLOBAL - 3 * Omega ** 2) < 1e-4,
+      f"H_glob = {_c06.H0_SH0ES}*(1-{_c06.F_SCREEN:.6f}) = {_c06.H0_GLOBAL:.6f}; "
+      f"blanco 3*Omega^2 = {3 * Omega ** 2:.6f}")
 # V-L2-10: la fórmula CANÓNICA (forward-prediction 40.70 eV SOLAR²·KRYSTOS) es dimensionalmente
 # consistente — [eV]*(número puro) = [eV]. El antiguo ansatz Sigma_m_nu*H0^alg
 # (5.60 eV) está retirado. Lo abierto es el Lagrangiano φ-DM (OP-9), no la dimensión.
@@ -2680,7 +2690,7 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
 _fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 42   # 2026-10-04 (2): 47 -> 42 (LCDM conjunta a la cadena: 4 minimizaciones registradas con acta, su control re-corrido por DVC, etapa lee). 2026-10-04: 58 -> 47 (etapas ligeras sueltas a la cadena: b1_analyse, analiza_lcdm_R4, R3_rehecho, marginal_vs_perfil, desi_dr2_w0wa_momentos, erosita_extlike, auditoria_pdfs_zenodo, cmb_ns/wb_forzado). 2026-10-03 (4): 117 -> 59 (clasificacion por lo que buscaban, regla de Mike: 57 historicos archivados con README por carpeta, termino_volumen_boss sellado, s8_barra_kids con no_circular en un segundo pase; los 59 que quedan, con su porque, en VERIFICATION_LEDGER V-L5-CLASIF). 2026-10-03 (3): 118 -> 117 (p3_cmb_reframe_omega_m.log, Fase B vieja con control (pi/phi)*s_m, archivado). 2026-10-03 (2): 128 -> 118 (barrido Kaiser de BOSS (8 json + su .log ignorado) y erosita_cr.json archivados en archive/logs_superados/, superados y sin cita). 2026-10-03: 156 -> 128 (recorre_logs: 25 logs re-corridos, comparados numero a numero y sellados con etapa y acta; V-L5-RECORRE). 2026-10-02 noche: 157 -> 156 (DES Y3 NLA a la cadena: etapa des_y3_nla). 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
+_TOPE_R75 = 30   # 2026-10-10: 42 -> 30 (R50: medido 30; ninguna etapa nueva, sólo se ajusta el trinquete a lo real). 2026-10-04 (2): 47 -> 42 (LCDM conjunta a la cadena: 4 minimizaciones registradas con acta, su control re-corrido por DVC, etapa lee). 2026-10-04: 58 -> 47 (etapas ligeras sueltas a la cadena: b1_analyse, analiza_lcdm_R4, R3_rehecho, marginal_vs_perfil, desi_dr2_w0wa_momentos, erosita_extlike, auditoria_pdfs_zenodo, cmb_ns/wb_forzado). 2026-10-03 (4): 117 -> 59 (clasificacion por lo que buscaban, regla de Mike: 57 historicos archivados con README por carpeta, termino_volumen_boss sellado, s8_barra_kids con no_circular en un segundo pase; los 59 que quedan, con su porque, en VERIFICATION_LEDGER V-L5-CLASIF). 2026-10-03 (3): 118 -> 117 (p3_cmb_reframe_omega_m.log, Fase B vieja con control (pi/phi)*s_m, archivado). 2026-10-03 (2): 128 -> 118 (barrido Kaiser de BOSS (8 json + su .log ignorado) y erosita_cr.json archivados en archive/logs_superados/, superados y sin cita). 2026-10-03: 156 -> 128 (recorre_logs: 25 logs re-corridos, comparados numero a numero y sellados con etapa y acta; V-L5-RECORRE). 2026-10-02 noche: 157 -> 156 (DES Y3 NLA a la cadena: etapa des_y3_nla). 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
 check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",
@@ -3307,16 +3317,14 @@ cs2_vals = []
 for B_M4 in (1.0, 1.0 / 234.8936):       # M^4 = 1 (P7) y 5 phi^8 (P10)
     for Xv in (0.0, 0.1, 1.0, 1e2, 1e6):
         cs2_vals.append((A_ke + 2 * B_M4 * Xv) / (A_ke + 6 * B_M4 * Xv))
-check("V-L3-cs2  c_s^2 k-essence acotado en [1/3, 1] para todo X",
+check("V-L3-cs2  el funcional de apantallamiento K(X) de P10 (NO la accion de energia oscura) tiene c_s^2 en [1/3, 1]",
       all(1 / 3 - 1e-9 <= c <= 1 + 1e-9 for c in cs2_vals),
       f"min={min(cs2_vals):.5f} max={max(cs2_vals):.5f}")
-track_open("V-L3-cs2  el sector geometrico de SSEE no puede agruparse [CENTRAL]",
-           "extraccion T_munu^ef: c_s^2 de la k-essence in [1/3,1] siempre — "
-           "nunca baja de 1/3, no clusteriza como materia fria. El sector "
-           "geometrico tiene peso de FONDO (rho_phi existe) pero NO peso de "
-           "agrupamiento. El CMB exige materia que se agrupe -> la k-essence "
-           "actual no puede ser la '0.320'. MIRA no esta en la accion vigente",
-           op="OP-7")
+# V-L3-cs2 (re-enunciado 2026-10-10): que la energia oscura NO se agrupe es lo
+# que el modelo necesita. El «problema CENTRAL» de 2026-05-22 pedia al campo ser
+# la materia del factor MIRA ('0.320'), retirado el 2026-06-18 (OP-8): la materia
+# que se agrupa es omega_c = KAL0*omega_b*n_s (CDM real), y por eso S8 sale bien
+# (KiDS-Legacy 0.8273 vs 0.8265). Ya no es un problema abierto.
 
 # Ruta B (gravedad disformal de P8) — RE-ENUNCIADA 2026-09-07.
 #
@@ -7306,6 +7314,99 @@ try:
 except Exception as _e:            # noqa: BLE001
     check("R55 la capa de dirección de cascada corrió", False,
           f"excepción: {_e}", nivel=5)
+
+print("\nCapa R55b — el número puro no se presenta como H₀ (ni ancla, ni entrada, ni Postulado D)")
+# POR QUÉ EXISTE (2026-10-10, Mike). R55 vigilaba la OPERACIÓN invertida
+# (número puro / (1−f)), pero no la PALABRA: 10 documentos seguían escribiendo
+# «H₀ = 3(φ+π)²», «the algebraic anchor 3(φ+π)²», «supplies H₀» o
+# «3(φ+π)² (Postulate D)», 34 días después de la decisión del 2026-09-06. Mike
+# lo había reclamado varias veces: se informaba y no se arreglaba. El H con
+# unidades es H_glob = H_SH0ES(1−f_screen); 3(φ+π)² es el BLANCO puro.
+try:
+    _PURO = (r"3\s*\(\s*\\?(?:phiG|varphi|phi|pi)\s*\+\s*\\?(?:pi|phiG|varphi|phi)"
+             r"\s*\)\s*\^?\s*\{?2\}?")
+    _R55B = re.compile(
+        r"H_?\{?0\}?\s*(?:/|\}\s*\{)\s*\(?\s*(?:\\kmsu|\\mathrm\{km)[^=]{0,40}\}?\s*&?=\s*"
+        r"(?:M_v\s*\\times\s*\\Omega\s*=\s*)?" + _PURO +
+        r"|H_?\{?0\}?\^\{\\rm\s*(?:alg|SSEE)\}"
+        r"|(?:algebraic|Hubble|global|derived|dimensional|SSEE)\s+anchor\s*\$?\s*"
+        r"(?:H_0[^$]{0,30}=\s*)?" + _PURO +
+        r"|supplies\s+(?:the\s+)?(?:\$?H_0|Hubble)"
+        r"|" + _PURO + r"(?:[^&.;]|\d\.\d){0,40}\(Post(?:ulate|\.)~?D", re.I)
+    _R55B_EX = re.compile(r"supersed|retirad|superad|historic|old register"
+                          r"|not an input|no es entrada", re.I)
+
+    def _r55b_lineas(texto):
+        _o = []
+        for _ln in texto.split("\n"):
+            _s = "" if _ln.lstrip().startswith("%") else _ln.split("%")[0]
+            if _s and _R55B.search(_s) and not _R55B_EX.search(_s):
+                _o.append(_ln)
+        return _o
+
+    _r55b_n, _r55b_malos = 0, []
+    for _sub in ("manuscript", "submission_PRD"):
+        _rp = _R55_REPO / _sub
+        if not _rp.is_dir():
+            continue
+        for _f in sorted(_rp.rglob("*.tex")):
+            if ("archive" in str(_f) or "superseded" in str(_f)
+                    or _f.name in _FIXTURES):
+                continue
+            _r55b_n += 1
+            _m = _r55b_lineas(_f.read_text(encoding="utf-8", errors="ignore"))
+            if _m:
+                _r55b_malos.append(f"{_f.name}:{len(_m)}")
+    check("R55b ningún documento presenta 3(φ+π)² como H₀, ancla o Postulado D",
+          not _r55b_malos and _r55b_n >= 15,
+          f"{_r55b_n} .tex escaneados, 0 sitios" if not _r55b_malos else
+          "número puro como H₀ en " + "; ".join(sorted(_r55b_malos)[:8]))
+    # CONTROL (R53): marca las formas viejas (tal como estaban el 2026-10-09)
+    # y deja pasar las correctas.
+    _malas = [r"$H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}$",
+              r"$3(\varphi+\pi)^2$ is the algebraic combination that supplies the Hubble anchor.",
+              r"to be compared with $3(\phiG+\pi)^2 = 67.96214$ (Postulate~D, Paper~1)",
+              r"$H_0^{\rm alg}$ is thus the theoretical prediction",
+              r"anchor $H_0/\kmsu=3(\varphi+\pi)^2$ (derived, Paper~9)"]
+    _buenas = [r"$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d6}$, target $3(\varphi+\pi)^2$",
+               r"the pure number $3(\varphi+\pi)^2$ is the comparison target, not an input",
+               r"\frac{H_0^{\rm glob}}{\kms} \simeq 3(\varphi+\pi)^2"]
+    _mk = [bool(_r55b_lineas(_c)) for _c in _malas]
+    _ok = [not _r55b_lineas(_c) for _c in _buenas]
+    check("R55b el detector marca la forma vieja y deja pasar la correcta",
+          all(_mk) and all(_ok),
+          f"viejas marcadas {sum(_mk)}/{len(_malas)}, correctas limpias {sum(_ok)}/{len(_buenas)}")
+except Exception as _e:            # noqa: BLE001
+    check("R55b la capa corrió", False, f"excepción: {_e}", nivel=5)
+
+print("\nCapa R55c — una sola c_s² de energía oscura (la del condensado de P7)")
+# POR QUÉ EXISTE (2026-10-10). P10 llamaba «field mode» y «detectable por Euclid»
+# al 0.967 de su funcional de apantallamiento, mientras P5, P7 y el PRD dan
+# 0.021284 para el campo. El funcional K(X) de P10 NO es la acción de energía
+# oscura (lo dice el propio P10). Esta capa impide que el 0.967 vuelva a
+# presentarse como la velocidad del sonido del campo.
+try:
+    _R55C = re.compile(r"0\.967[^\n]{0,120}(field mode|scalar-field excitations|Euclid|CMB-S4)"
+                       r"|(field mode|scalar-field excitations)[^\n]{0,120}0\.967", re.I)
+    _r55c_malos = []
+    for _sub in ("manuscript", "submission_PRD"):
+        for _f in sorted((_R55_REPO / _sub).rglob("*.tex")):
+            if "archive" in str(_f) or "superseded" in str(_f):
+                continue
+            _tx = _f.read_text(encoding="utf-8", errors="ignore")
+            _n = sum(1 for _ln in _tx.split("\n") if _R55C.search(_ln))
+            _tx1 = _tx.replace("\n", " ")
+            if _n or _R55C.search(_tx1):
+                _r55c_malos.append(_f.name)
+    check("R55c el 0.967 del funcional de P10 no se presenta como c_s² del campo",
+          not _r55c_malos, "0 sitios" if not _r55c_malos else "; ".join(_r55c_malos))
+    _ctl = "adiabatic sound speed of scalar-field excitations ... approx 0.967"
+    check("R55c el detector marca la forma vieja",
+          bool(_R55C.search(_ctl)) and not _R55C.search(
+              "the sound speed of the dark-energy field is 0.021284; the device has 0.967"),
+          "control R53")
+except Exception as _e:            # noqa: BLE001
+    check("R55c la capa corrió", False, f"excepción: {_e}", nivel=5)
 
 print("\nCapa R77 — todo lo archivado entra declarado")
 # POR QUÉ EXISTE (2026-10-03, regla de Mike). «En archive entra declarado, y en el

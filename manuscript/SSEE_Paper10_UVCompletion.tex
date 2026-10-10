@@ -54,7 +54,7 @@ Lagrangian $K(X) = X/\KAL$ produces a local Hubble correction
 $H_0^{\rm glob} = H_0^{\rm local}(1-f_{\rm scr})$ with $f_{\rm scr}\approx 0.06725$
 (Paper~9). Run on the only directly measured rate, $H_0^{\rm SH0ES}=73.04\pm1.04$,
 this gives $H_0^{\rm glob,IR}=68.13$ km/s/Mpc, $0.17\sigma$ from the dimensionless
-algebraic number $3(\phiG+\pi)^2=67.96214$ (Postulate~D, Paper~1); the
+algebraic number $3(\phiG+\pi)^2=67.96214$ (the comparison target, not an input; Paper~1); the
 earlier MIRA-mapped anchor $67.037$ is superseded
 by the 2026 reframe.
 We extend the EFT to include the leading higher-derivative operator
@@ -383,7 +383,9 @@ At the cosmological background $\varepsilon \equiv X_{\rm bg}^2/M^4 \approx 5.7\
 the full K(X) formula gives $c_s^2 \approx 0.967$ (see \S\ref{sec:consistency}), well above $1/3$.
 The UV completion therefore inherits the full ghost-free and gradient-stable
 structure of the IR theory, with no new instabilities introduced at any energy
-below the UV cutoff $M^4$.
+below the UV cutoff $M^4$. These are conditions on the screening functional
+of Eq.~\eqref{eq:KX}; the sound speed of the dark-energy field itself is that of
+the Paper~7 condensate, $c_s^2=\val{cs2_condensado_d6}>0$, which is also stable.
 
 \begin{figure}[ht]
   \centering
@@ -447,8 +449,8 @@ from the Hubble cascade.
 \centering
 \caption{%
 IR vs.\ UV global rate returned by the cascade from the measured local
-  rate, compared with the dimensionless $3(\phiG+\pi)^2 = 67.96214$
-  (Postulate~D). The UV completion with $M^4 = 45\alpha^2\rhoc$ sharpens the
+  rate, compared with the dimensionless target $3(\phiG+\pi)^2 = 67.96214$
+  (the measured SH0ES rate is the input, Postulate~D). The UV completion with $M^4 = 45\alpha^2\rhoc$ sharpens the
   residual from $0.17\sigma$ (IR) to $4.3\times10^{-6}\sigma$ (UV),
   conditional on Postulate~C.1 (see §\ref{sec:theorem}). The propagated SH0ES
   uncertainty ($\pm0.970$ km/s/Mpc in the IR regime, $\pm0.968$ with the full
@@ -657,9 +659,12 @@ sector satisfies
   \label{eq:conjecture}
 \end{equation}
 where $\alpha = \phiG^4/3$ is the $\alpha$-attractor curvature fixed by
-the inflationary sector and $\rhoc = 3\Mpl^2 H_0^2$ uses the algebraic anchor
-$H_0^{\rm alg}/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\phiG+\pi)^2$ (Paper~1).
-No low-redshift distance-ladder input is used. The statement is about the
+the inflationary sector and $\rhoc = 3\Mpl^2 H_0^2$ uses the global rate
+$H_0^{\rm glob}=H_0^{\rm SH0ES}(1-f_{\rm scr})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$
+(Postulate~D, Paper~1), which equals the pure number $3(\phiG+\pi)^2$ to
+$4\times10^{-6}$, so $M$ does not depend on which of the two is used at the
+quoted precision. The ratio $M^4/\rhoc=5\phiG^8$ itself carries no $H_0$ at all;
+only the conversion of $M$ to meV does. The statement is about the
 cutoff $M$ of Eq.~\eqref{eq:KX}, not about the coefficients of the
 Paper~7 condensate; relating the two functionals is a separate open
 question.}
@@ -884,26 +889,27 @@ Euclid sensitivity ($\sigma_{w_0} \approx 0.01$): the UV term leaves the
 background equation of state observationally indistinguishable from the
 IR limit, and the discriminating observable remains $\sK$.
 
-\paragraph{Sound speed.}
-The adiabatic sound speed of scalar-field excitations around the homogeneous
-background is
+\paragraph{Sound speed: one observable, one auxiliary number.}
+The sound speed of the dark-energy field, the one that controls whether dark
+energy clusters, is that of the Paper~7 condensate,
+$c_s^2=(M_v-T_r)/(5M_v+3T_r)=\val{cs2_condensado_d6}$, fixed by $w_0$ alone
+($c_2X/c_1=\val{u_condensado_d6}$). It is small, so the field barely clusters;
+the clustering matter of the model is the cold component
+$\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$, which is why the growth observables
+($S_8$, $f\sigma_8$) follow the matter density and not the dark-energy field.
+Paper~5's $c_s^2\approx0$ is the Israel--Stewart fluid description of the
+\emph{same} wave; the field value $\val{cs2_condensado_d6}$ is the fundamental
+one (Paper~5; OP-22b). The screening functional of
+Eq.~\eqref{eq:KX} has its own propagation speed,
 \begin{equation}
-  c_{s,\rm ad}^2 \;=\; \frac{K_X}{K_X + 2X K_{XX}}
+  \frac{K_X}{K_X + 2X K_{XX}}
           \;=\; \frac{1/\KAL + 2X/M^4}{1/\KAL + 6X/M^4}
-          \;\approx\; 0.967\,.
+          \;\approx\; 0.967\,,
 \end{equation}
-This quantity governs how fast small adiabatic excitations of $\phi$ propagate
-on top of the smooth dark-energy background.
-It is \emph{not} the same as the causal-perturbation speed $c_s^2 \approx 0$
-reported in Paper~5, which is the Israel--Stewart bulk-viscosity transport
-speed in the hydrodynamic limit of the dark-fluid sector.
-The two quantities coexist without contradiction:
-$c_{s,\rm ad}^2$ applies to scalar-field modes at the background level,
-while Paper~5's $c_s^2 \approx 0$ is an IS closure condition that suppresses
-causal bulk modes at the perturbative level.
-The 3.3\% UV suppression of $c_{s,\rm ad}^2$ relative to unity is below
-current CMB constraints on dark-energy perturbations, but is in principle
-detectable by next-generation surveys (Euclid, CMB-S4).
+but Eq.~\eqref{eq:KX} is not the dark-energy action (see the paragraph after Eq.~\eqref{eq:KX}), so this
+number is a property of the device that transports the cutoff $M$ into $\sK$,
+not a prediction for dark-energy perturbations. Whether a single theory
+furnishes both functionals is the question Postulate~C.1 leaves open.
 
 
 % ═══════════════════════════════════════════════════════════════════════════════
@@ -924,7 +930,7 @@ with the nine preceding papers.
 Paper & Result used & UV impact \\
 \midrule
 Paper 1 & $\alpha = \phiG^4/3$ → $r = 0.008131$ & \textbf{Direct input:} $M^4 = 45\alpha^2\rhoc$ \\
-Paper 5 & IS: $c_s^2 \approx 0$ (bulk-viscosity mode) & Compatible: distinct from $c_{s,\rm ad}^2 \approx 0.967$ (field mode) \\
+Paper 5 & IS: $c_s^2 \approx 0$ (fluid description) & Compatible: same wave as Paper~7's field value $c_s^2=\val{cs2_condensado_d6}$; Eq.~\eqref{eq:KX} is not the DE action \\
 Paper 7 & Ghost condensate: $w_0$, $c_s^2$ from the Lagrangian & Independent: $\sK^{\rm IR}$ comes from $w_0$, not from the action \\
 Paper 8 & $\MIRA = \AURA/2$; Vainshtein $r_V \propto 1/M^2$ & $r_V$ enlarged to $\sim 10^{44}$ m at UV; double GR protection \\
 Paper 9 & $H_0^{\rm glob,IR} = 68.13$ (0.17$\sigma$) & UV closes to $\val{H0_GLOBAL_d5}$ ($4.3{\times}10^{-6}\sigma$; conditional$^{a}$) \\

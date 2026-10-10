@@ -151,11 +151,13 @@ w_a &= -\frac{P_{sc}}{I_g} = -\frac{P_{sc}}{\pi+P_{sc}} = \val{WA_d6}, \label{eq
 s_{\mathrm{DE}} &= \frac{T_r}{M_v} = \frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{S_DE_d6}, \label{eq:sDE}\\
 s_m &= 1 - s_{\mathrm{DE}} = \val{S_M_d6}. \label{eq:sm}
 \end{align}
-The Hubble constant is the derived dimensional anchor
-$H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = M_v\times\Omega = \val{H0_ALG_d5}$
-($M_v=\varphi+\pi+K_v=3\Omega$, $\Omega=\pi+\varphi$; the global anchor of
-Postulate~D, Paper~1, against which the SH0ES cascade of Paper~9 is compared),
-\emph{not} a quantity fitted to the CMB. Under the
+The Hubble constant is the global rate of the SH0ES cascade (Papers~9--10),
+$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d6}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$:
+the measured local rate is the single dimensional input (Postulate~D, Paper~1)
+and the global rate is its output. It lands on the pure number
+$3(\varphi+\pi)^2 = M_v\times\Omega = \val{H0_ALG_d5}$
+($M_v=\varphi+\pi+K_v=3\Omega$, $\Omega=\pi+\varphi$), which is the comparison
+target, not an input. It is \emph{not} a quantity fitted to the CMB. Under the
 $\omega_m$-direct reframe the full CMB MCMC (Section~\ref{sec:b1_mcmc})
 recovers the spectra at this anchor, and the SSEE CMB sector carries only the
 two borrowed parameters $\{A_s,\tau\}$ ($k=2$).
@@ -293,7 +295,7 @@ We use CAMB v1.6.6 \citep{Seljak1996,Lewis2000,Howlett2012} with the following i
 \toprule
 Parameter & Value & Source \\
 \midrule
-$H_0$ [km/s/Mpc] & \val{H0_ALG_d6} & SSEE anchor $3(\varphi+\pi)^2$ (Postulate~D, Paper~1) \\
+$H_0$ [km/s/Mpc] & \val{H0_GLOBAL_d6} & $H_{\rm SH0ES}(1-f_{\rm screen})$ (Postulate~D, Paper~1); target $3(\varphi+\pi)^2$ \\
 $\Omega_b h^2$ & 0.02237 & Planck 2018 prior \\
 $\Omega_{m,\mathrm{CMB}}$ & 0.3089 & $\omega_m/h^2$ (forward) \\
 $\sum m_\nu^{\rm active}$ [eV] & \val{SUM_MNU_EV_d6} & SSEE algebraic (Paper~4) \\
@@ -929,7 +931,7 @@ but statistically preferred by the CMB data when fully penalized for free parame
 Independently of the CMB sector, the SSEE screening cascade of Papers~9--10
 takes the measured SH0ES rate as input and, with the full screening fraction,
 returns $H_0^{\rm glob}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d6}$~km\,s$^{-1}$\,Mpc$^{-1}$,
-a residual of $+4.2\times10^{-6}$ from the anchor $3(\varphi+\pi)^2$ used here
+a residual of $+4.2\times10^{-6}$ from the pure-number target $3(\varphi+\pi)^2$
 \citep{Verde2019,DiValentino2021,Riess2022}; the propagated uncertainty is
 $\pm0.968$.
 

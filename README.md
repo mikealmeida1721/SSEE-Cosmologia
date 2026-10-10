@@ -186,7 +186,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | ΔBIC (plik_lite point est., TTTEEE, k=2 vs k=6, N=613) | **−24.0** (cross-check) | — | — |
 | ΔBIC (diagonal TT+TE+EE+PP, k=2 vs k=6, N=5914) | **−35.0** (cross-check) | — | — |
 
-*All values are the canonical ωm-direct CMB fit at the global anchor H₀ = 3(φ+π)² = 67.962, with Ω_m,CMB = ω_m/h² = 0.30889 derived algebraically (no matter-rescaling factor; OP-8 dissolved). SSEE uses its canonical Σm_ν = 0.06849 eV; ΛCDM uses its standard Planck baseline Σm_ν = 0.06 eV (each model with its own neutrino mass — the fair like-for-like comparison). The **titular ΔBIC = -33.83** comes from the full `plik` likelihood with the minimum χ² of each model (χ² = 2768.4 vs ΛCDM 2771.2, Δχ² = -2.78 — indistinguishable fits, parsimony-driven; `results/logs/b1_k2.json`). The earlier `plik_lite` Cobaya legacy-MIRA scan (ΔBIC −32.2 at optimum H₀=67.037) is superseded.*
+*All values are the canonical ωm-direct CMB fit at the global rate H_glob = H_SH0ES(1−f_screen) = 67.962 (SH0ES is the input; the pure number 3(φ+π)² is the comparison target), with Ω_m,CMB = ω_m/h² = 0.30889 derived algebraically (no matter-rescaling factor; OP-8 dissolved). SSEE uses its canonical Σm_ν = 0.06849 eV; ΛCDM uses its standard Planck baseline Σm_ν = 0.06 eV (each model with its own neutrino mass — the fair like-for-like comparison). The **titular ΔBIC = -33.83** comes from the full `plik` likelihood with the minimum χ² of each model (χ² = 2768.4 vs ΛCDM 2771.2, Δχ² = -2.78 — indistinguishable fits, parsimony-driven; `results/logs/b1_k2.json`). The earlier `plik_lite` Cobaya legacy-MIRA scan (ΔBIC −32.2 at optimum H₀=67.037) is superseded.*
 
 **Growth structure (Paper 3 §5.4–5.5):**
 

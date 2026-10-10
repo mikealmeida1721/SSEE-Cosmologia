@@ -54,7 +54,7 @@ a theorem rather than an independent axiom; no free parameter is introduced at t
 Phenomenological extensions (notably the neutrino mass sum $\Sigma m_\nu$, classified as Type~P later in the paper) were tracked as open problem OP-14 in \texttt{OPEN\_PROBLEMS.md}, resolved on 2026-06-04.
 From these two axioms alone we derive, without fitting:
 \begin{enumerate}
-\item[(i)] $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ ($1.1\sigma$ from Planck~2018),
+\item[(i)] the pure number $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$, which read in km\,s$^{-1}$\,Mpc$^{-1}$ lies $1.1\sigma$ from Planck~2018. It is the comparison \emph{target} of the Hubble sector, not an input: the model's rate is the output of the SH0ES cascade in (iv), and it lands on this number (Paper~10),
 where $M_v=3\Omega$ is the maximal structural invariant of the dictionary, reached by twenty distinct additive routes under the no-self-sum construction law (Appendix~\ref{app:independence}); this multiplicity is consistent with, but does not by itself prove, the absence of post-hoc tuning;
 \item[(ii)] the physical baryon density
 $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018);
@@ -249,7 +249,7 @@ are introduced.}
 Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \midrule
 \textbf{Cosmology} & & & & \\
-\quad $H_0$ [km/s/Mpc] & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
+\quad $H_0$ target (pure number) & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
 \quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & 68.13  & $3(\varphi+\pi)^2$ & $0.17\sigma$ \\
 \quad $\Omega_b$ & $\frac{10^4(\pi-\varphi)}{27(\varphi+\pi)^6}$ & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ \\
 \quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $0.16\sigma$ \\
@@ -258,7 +258,7 @@ Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \bottomrule
 \multicolumn{5}{l}{\footnotesize $^{\rm P}$~Canonical IR-cascade value (2026 reframe): $f_{\rm scr}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $68.13$, i.e.\ $0.17\sigma$ from $3(\varphi+\pi)^2=\val{H0_ALG_d6}$; the full UV cascade closes to $\val{H0_ALG_d5}$ (Paper~10).}\\
 \multicolumn{5}{l}{\footnotesize The earlier CMB-mapped register ($H_0^{\rm MIRA}=67.037$) is superseded.}\\
-\multicolumn{5}{l}{\footnotesize Consistent with Paper~1 / Paper~9 policy (single anchor shared by every sector).}\\
+\multicolumn{5}{l}{\footnotesize Consistent with Paper~1 / Paper~9 policy (single target shared by every sector; the measured SH0ES rate is the input).}\\
 \multicolumn{5}{l}{\footnotesize $^\ast$~$\Omega_b=\omega_b/h^2$ is composite; its inputs are compared separately. It is $\val{Omega_b_pct_vs_planck}\%$ from Planck's, the $H_0$ offset.}\\
 \end{tabular}%
 }
@@ -279,41 +279,44 @@ significance rather than an informal product of individual deviations.
 \label{sec:h0}
 
 From Section~\ref{sec:sovereigns}, the maximal structural invariant is $M_v = 3(\varphi+\pi)$.
-The Hubble constant is the product of this convergent sum and the base unit
+The Hubble target is the product of this convergent sum and the base unit
 $\Omega = \varphi+\pi$:
 \begin{equation}
-\boxed{\frac{H_0}{\mathrm{km\,s^{-1}\,Mpc^{-1}}} = M_v \times \Omega = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}}
+\boxed{M_v \times \Omega = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}}
 \label{eq:H0}
 \end{equation}
-\textbf{Dimensional note.} The number \val{H0_ALG_d6} is compared to $H_0$ as measured
-in km~s$^{-1}$~Mpc$^{-1}$.  \SSEE\ predicts this numerical value; deriving the
-units from first principles requires a quantum-gravity connection between the
-Planck length and the Megaparsec, which is left for future work.
+\textbf{Dimensional note.} The number \val{H0_ALG_d6} is pure and carries no units,
+so it cannot be the input of a dimensionful cascade. The model's rate is the
+output of the SH0ES cascade, $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d6}$~km\,s$^{-1}$\,Mpc$^{-1}$
+(Papers~9--10), and the pure number is the target that output is compared
+against. Why the measured cascade lands on it would require deriving $H_0$
+from first principles --- a quantum-gravity connection between the Planck length
+and the Megaparsec that no cosmological model has achieved --- and is left open.
 
-\textbf{Algebraic prediction vs.\ observational posterior.}
-The value $H_0^{\rm alg}=\val{H0_ALG_d6}$ is a pure geometric prediction.
+\textbf{Global rate vs.\ observational posterior.}
+The pure number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$ is a geometric target, not an input.
 Baryon acoustic oscillations \citep{Eisenstein2005} provide a standard ruler;
 independent Bayesian inference against DESI~DR2 BAO data \citep{desidr2_2025} yields
 $H_0^{\rm MCMC}=\val{h0_p2}\pm\val{h0_p2_s}$~km\,s$^{-1}$\,Mpc$^{-1}$ (Paper~2, under
 the global rate of the screening cascade as prior, $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$, Papers~9--10).
 With the total gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ in the
-background geometry, the BAO-corrected posterior is consistent with the algebraic
-anchor at $\val{h0_p2_dhglob}\sigma$, and the \SSEE\ sound horizon matches \LCDM\
+background geometry, the BAO-corrected posterior is consistent with the global
+rate $H_0^{\rm glob}$ at $\val{h0_p2_dhglob}\sigma$, and the \SSEE\ sound horizon matches \LCDM\
 ($r_d^{\rm SSEE}=147.17$~Mpc vs.\ $r_d^{\rm \Lambda CDM}=147.10$~Mpc, CAMB): DESI~DR2
-is consistent with the algebraic value without singling it out. The $\sim$0.8~km\,s$^{-1}$\,Mpc$^{-1}$ downshift
+is consistent with the global rate without singling it out. The $\sim$0.8~km\,s$^{-1}$\,Mpc$^{-1}$ downshift
 reported in earlier drafts was an artefact of using the cold sector
 $1+w_0=\val{S_M_d6}$ as the background density, now corrected.
-$H_0^{\rm alg}$ is thus the theoretical prediction of the \SSEE\ background;
-$H_0^{\rm MCMC}$ is the same quantity after the observational calibration
-correction is applied, and the two agree to $\val{h0_p2_dhglob}\sigma$.
+$H_0^{\rm glob}$ is thus the \SSEE\ background rate obtained from the measured
+SH0ES input; $H_0^{\rm MCMC}$ is the same quantity after the BAO correction is
+applied, and the two agree to $\val{h0_p2_dhglob}\sigma$.
 
 \subsection{Physical Baryon Density \texorpdfstring{$\Omega_b$}{Omega\_b}}
 \label{sec:baryons}
 
 The \SSEE\ algebraic structure yields the physical baryon density directly from
 the CP asymmetry $(\pi-\varphi)$ normalized to the pure algebraic combination
-$3\Omega^2 = 3(\varphi+\pi)^2$, whose value read in km\,s$^{-1}$\,Mpc$^{-1}$ is
-the SSEE Hubble anchor:
+$3\Omega^2 = 3(\varphi+\pi)^2$, whose value read in km\,s$^{-1}$\,Mpc$^{-1}$
+coincides with the global rate $H_0^{\rm glob}$ of the SH0ES cascade:
 \begin{align}
 \Omega_b h^2 &= \frac{\pi-\varphi}{3\Omega^2} = \frac{\pi-\varphi}{3(\varphi+\pi)^2} = \val{OMEGA_B_H2_d6}
 \label{eq:Obh2} \\[4pt]
@@ -342,9 +345,10 @@ The Sakharov scaling $\eta_B \propto \delta_{\rm CP}/(\text{expansion rate})$
 motivates the \emph{shape} $\Omega_b h^2 \sim (\pi-\varphi)/(3\Omega^2)$, with
 $(\pi-\varphi)$ as the CP-asymmetry numerator and $3\Omega^2$ as the
 normalising denominator. Two caveats are stated openly. First, $3\Omega^2$
-enters as the dimensionless value $\val{H0_ALG_d6}$, i.e.\ $H_0^{\rm SSEE}$ expressed in
-$\mathrm{km\,s^{-1}\,Mpc^{-1}}$; this is a Type-P numerical coincidence in the
-sense of Postulate~D of Paper~1, not a dimensional identity. Second,
+enters as the dimensionless value $\val{H0_ALG_d6}$, which coincides numerically with
+the global rate $H_0^{\rm glob}$ read in $\mathrm{km\,s^{-1}\,Mpc^{-1}}$; this is a
+Type-P numerical coincidence, not a dimensional identity (in Postulate~D of
+Paper~1 the dimensional input is the measured SH0ES rate). Second,
 $\eta_B$ and $\Omega_b h^2$ differ by the standard photon-entropy factor
 ($\eta_B \simeq 2.74\times10^{-8}\,\Omega_b h^2$), so the proportionality fixes
 the algebraic \emph{form} only, not the absolute normalisation.
@@ -602,7 +606,7 @@ Planck~2018 \citep{PlanckCollaboration2020a} error bars.}
 \toprule
 Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 \midrule
-$H_0^{\rm alg}$ [km/s/Mpc]     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & algebraic (Type~P$^\dagger$) \\
+$3(\varphi+\pi)^2$ (target)     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & pure number (Type~P$^\dagger$) \\
 $H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
 $\Omega_b$          & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ & algebraic \\
 $\Omega_b h^2$      & 0.02242& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
@@ -785,7 +789,7 @@ The factor~200 in the preliminary formula $3(\pi-\varphi)/200$ was a numerical
 coincidence ($3.2\sigma$ from Planck) that has been superseded.
 The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018).
 The denominator is the pure algebraic combination whose value, read in
-km\,s$^{-1}$\,Mpc$^{-1}$, is the SSEE Hubble anchor; no free numerical factor
+km\,s$^{-1}$\,Mpc$^{-1}$, coincides with the global Hubble rate of the SH0ES cascade; no free numerical factor
 remains; the baryon density parameter $\Omega_b = \val{Omega_b_alg_d4}$ is a pure $\varphi,\pi$
 prediction (Section~\ref{sec:baryons}).
 
@@ -804,7 +808,7 @@ The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
 
 We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 \begin{itemize}
-  \item $H_0/(\mathrm{km\,s^{-1}\,Mpc^{-1}}) = 3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ ($1.1\sigma$ from Planck)
+  \item the Hubble target $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ (pure number; read in km\,s$^{-1}$\,Mpc$^{-1}$, $1.1\sigma$ from Planck), on which the measured SH0ES cascade lands
   \item $\Omega_b h^2 = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck); $\Omega_b=\val{Omega_b_alg_d4}$ follows with $h=H_0/100$
   \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck)
   \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck, forward)

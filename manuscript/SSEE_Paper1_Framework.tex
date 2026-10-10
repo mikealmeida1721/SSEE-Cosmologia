@@ -193,7 +193,7 @@ $(w_0,w_a)$ vs DESI DR3 & same fixed point & DR3 $w_0w_a$CDM (2027); ${>}3\sigma
 $\omega_c = \mathrm{KAL}_0\,\omega_b\,n_s$ & $\val{OMEGA_C_H2_d6}$ & Planck 2018 & Retrodiction \\
 $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2$ & $\val{OMEGA_M_TOTAL_d6}$ & Planck 2018 & Retrodiction \\
 $n_s = 1-\varphi^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & Retrodiction \\
-$H_0/\kmsu = 3(\varphi+\pi)^2$ & $67.962\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ & Planck 2018 & Global background anchor (Post.~D) \\
+$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$ & $\val{H0_GLOBAL_d3}\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$ & SH0ES input (Post.~D); target $3(\varphi+\pi)^2$ & Global background rate \\
 \midrule
 \multicolumn{4}{l}{\textit{Paper 5 — IS causal perturbation theory}} \\
 $\gamma_{\mathrm{IS}}$ & $0.550$ & RSD surveys ($\gamma_{\Lambda\mathrm{CDM}}=0.55$) & Retrodiction \\
@@ -316,11 +316,15 @@ level \SSEE\ retains exactly two dimensionless fitted parameters --- the primord
 amplitude $A_s$ and the optical depth $\tau$, which no algebraic relation yet fixes ---
 so the honest comparison there is $k=2$ against $\Lambda$CDM's $k=6$, as set out in the
 effective-parameter accounting at the end of this section.
-The algebraic combination $3(\varphi+\pi)^2 \approx \val{H0_ALG_d3}$ supplies $H_0$ in
-$\mathrm{km\,s^{-1}\,Mpc^{-1}}$ and serves as the single \emph{dimensional anchor}
-of Postulate~D (\S\ref{app:result_types}): the \emph{dimensionless} value is fixed
-algebraically, while the \emph{absolute} scale is not claimed to be derived from a
-fundamental energy.
+The dimensional input is \emph{measured}, not algebraic: it is the local
+expansion rate $H_{\rm SH0ES}=73.04\pm1.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}$, the only
+directly measured value of $H_0$. The global rate is its \emph{output},
+$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d6}\pm0.968~\mathrm{km\,s^{-1}\,Mpc^{-1}}$,
+with the screening fraction $f_{\rm screen}=\val{F_SCREEN_d6}$ derived beforehand
+(Papers~9--10). The pure number $3(\varphi+\pi)^2=\val{H0_ALG_d3}$ carries no units
+and is \emph{not} an input of Postulate~D (\S\ref{app:result_types}): it is the
+dimensionless \emph{target} the output is compared against, and the two agree to
+$4\times10^{-6}$, below the precision of the SH0ES input.
 Deriving the absolute scale of $H_0$ from a fundamental scale is the
 cosmological-constant problem --- the ratio $H_0/M_{\rm Pl}\sim10^{-61}$ is not
 bridged by any closed algebraic form --- and lies beyond \SSEE\ as it does
@@ -377,8 +381,8 @@ is auditable rather than silent:
         $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ (a forward identity,
         matching Planck at $\val{wc_ns_sigma_abs}\sigma$), and $\omega_\nu=\Sigma m_\nu/93.14$.
         The CMB matter fraction is then \emph{derived},
-        $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ at the global anchor
-        $H_0/\kmsu=3(\varphi+\pi)^2\simeq67.962$ (no matter factor; OP-8
+        $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ at the global rate
+        $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})\simeq\val{H0_GLOBAL_d3}\,\kmsu$ (no matter factor; OP-8
         dissolved; the former two-$\Omega_m$ criterion is withdrawn,
         \S\ref{sec:two_omega_m}). The equation-of-state-sector identity
         $s_m=1+w_0=\val{S_M_d6}$ is not a density. This \textbf{closes OP-8}:
@@ -456,8 +460,8 @@ parameters $(\Omega_m,\Omega_b,n_s,A_s,\tau,H_0)$, SSEE fixes four
 algebraically --- $\Omega_b$ via $\omega_b$ (OP-1), $\Omega_m$ via
 $\omega_m=\omega_b+\omega_c+\omega_\nu$ with the forward identity
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ (the $h$ in $\Omega_m=\omega_m/h^2$
-being the anchor itself), $n_s=1-\varphi^{-7}$, and the expansion
-anchor $H_0/\kmsu=3(\varphi+\pi)^2$ (derived, Paper~9) --- leaving exactly two free,
+being the anchor itself), $n_s=1-\varphi^{-7}$, and the global
+expansion rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$ (SH0ES input, derived $f_{\rm screen}$, Papers~9--10) --- leaving exactly two free,
 the primordial amplitude $A_s$ and the optical depth $\tau$. This $k=2$ vs $k=6$
 count is the one used in the Paper~3 Bayesian model comparison. The two
 dark-sector ans\"atze formerly listed above ($m_\phi$; $\xi$) are retracted with
@@ -707,10 +711,10 @@ $\omega_c=\KALz\,\omega_b\,n_s$ (OP-19 in \texttt{OPEN\_PROBLEMS.md}).%
 % costo pasa a OP-19.
 
 \paragraph{Open problem: dimensional connection to fundamental scales.}
-The algebraic prediction $H_0/\kmsu = 3(\varphi+\pi)^2 \approx \val{H0_ALG_d3}$
-fixes the \emph{dimensionless} Hubble value and serves as the single dimensional
-anchor of Postulate~D (see Appendix~\ref{app:derivation_chain}, footnote~$\dagger$);
-what is \emph{not} claimed is a derivation of its \emph{absolute} scale, since no
+The global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\,\kmsu$
+is obtained from the measured local rate, and it coincides with the pure number
+$3(\varphi+\pi)^2\approx\val{H0_ALG_d3}$ (see Appendix~\ref{app:derivation_chain},
+footnote~$\dagger$). That coincidence is a comparison, not a derivation: no
 theoretical bridge connects $\{\varphi,\pi\}$ to the ratio of kilometre, second, and
 megaparsec scales.  A complete first-principles
 derivation would require a quantum-gravity argument linking the Planck length
@@ -718,8 +722,10 @@ derivation would require a quantum-gravity argument linking the Planck length
 ($1\,\mathrm{Mpc}\approx3.1\times10^{22}$\,m), a connection 57 orders of magnitude
 in scale.  This derivation lies outside the scope of the present framework and
 is identified as an open problem for future theoretical work; it is the reason
-$H_0$ is taken as the single dimensional anchor of Postulate~D
-(\S\ref{sec:scope}) rather than a derived quantity.
+a measured $H_0$ enters as the single dimensional input of Postulate~D
+(\S\ref{sec:scope}) rather than a derived quantity. Finding that bridge would
+explain \emph{why} the measured cascade lands on $3(\varphi+\pi)^2$; no
+cosmological model has yet derived $H_0$ from first principles.
 
 %=====================================================================
 \section{Domain of Validity}
@@ -1021,7 +1027,7 @@ $M_v$     & $\varphi+\pi+K_v$ & $\val{M_V_d6}$ & Max.\ dim.\ invariant & A \\
 \multicolumn{5}{l}{\textit{Level 3 — Cosmological Observables}} \\
 $w_0$     & $-T_r/M_v$ & $\val{W0_d6}$ & DESI DR2 & A \\
 $w_a$     & $-P_{sc}/I_g$ & $\val{WA_d6}$ & DESI DR2 & A \\
-$H_0^{\rm alg}$ & $3(\varphi+\pi)^2$ & $\val{H0_ALG_d3}$ km/s/Mpc & Planck 2018 & P$^\dagger$ \\
+$H_0^{\rm glob}$ & $H_{\rm SH0ES}(1-f_{\rm screen})$ & $\val{H0_GLOBAL_d3}$ km/s/Mpc & target $3(\varphi+\pi)^2$ & P$^\dagger$ \\
 $H_0^{\rm MCMC}$ & CMB fit at fixed anchor (Paper~3) & $67.962$ (anchor, fixed) & Planck 2018 & M \\
 $s_m$ & $(\pi-\varphi)/[2(\varphi+\pi)]$ & $\val{S_M_d6}$ & EoS sector; $1+w_0$ exact & A \\
 $\Omega_m^{\rm CMB}$ & $\omega_m/h^2=(\Omega_b h^2{+}\Omega_c h^2{+}\omega_\nu)/h^2$ & $\val{OMEGA_M_TOTAL_d6}^\S$ & Planck 2018 & A \\
@@ -1058,8 +1064,8 @@ $\Omega_c h^2 = \val{KAL0_d6}\times\val{OMEGA_B_H2_d5}\times\val{N_S_d5} = \val{
 
 \footnotesize $^\S$ Canonical CMB-sector matter density ($\omega_m$-direct reframe, 2026):
 $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with $\omega_m=\Omega_b h^2+\Omega_c h^2
-+\omega_\nu=\val{OMEGA_M_H2_d5}$ algebraic, at the single global anchor
-$H_0/\kmsu=3(\varphi+\pi)^2\simeq67.962$. No matter factor (OP-8 closed). A Planck
++\omega_\nu=\val{OMEGA_M_H2_d5}$ algebraic, at the single global rate
+$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})\simeq\val{H0_GLOBAL_d3}\,\kmsu$. No matter factor (OP-8 closed). A Planck
 \texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ evaluation gives $\chi^2_{\rm SSEE}=1003.586$ vs
 $\chi^2_{\Lambda\rm CDM}=1003.596$, $\Delta\mathrm{BIC}=-26.03$ (the full
 \texttt{plik} MCMC gives the canonical $\val{b1_dBIC}$). Earlier register
@@ -1068,14 +1074,14 @@ $\Omega_{m,\rm dyn}\times\mathrm{MIRA}=0.31993$, and an intermediate factor
 $\pi/\varphi$ giving $0.31076$ --- are all superseded by the $\omega_m$-direct
 construction.
 
-\footnotesize $^\dagger$ $H_0/\kmsu=3(\varphi+\pi)^2\approx67.962$
-is the \textbf{global background anchor} (Postulate~D): the adimensional
-combination $3(\varphi+\pi)^2$ supplies the Hubble constant in
-km\,s$^{-1}$\,Mpc$^{-1}$ units --- a single dimensionful input shared by every
-sector of the suite. No derivation of the \emph{absolute} scale from a
-fundamental energy is claimed (this is the cosmological-constant problem,
-$H_0/M_{\rm Pl}\sim10^{-61}$); the dimensionless value is fixed algebraically
-and serves as the one anchor, the identical status $H_0$ holds in $\Lambda$CDM.
+\footnotesize $^\dagger$ The \textbf{global background rate} shared by every
+sector of the suite is $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\,\kmsu$
+(Postulate~D): the measured SH0ES rate is the single dimensionful input, and the
+global rate is its output. The pure number $3(\varphi+\pi)^2\approx\val{H0_ALG_d3}$
+has no units and is the target the output is compared against, not the input.
+No derivation of the \emph{absolute} scale from a fundamental energy is claimed
+(this is the cosmological-constant problem, $H_0/M_{\rm Pl}\sim10^{-61}$); one
+measured dimensional input is the identical status $H_0$ holds in $\Lambda$CDM.
 
 %---------------------------------------------------------------------
 \section{The SSEE Constant Algebra: Named Registers and Construction Laws}
@@ -1379,9 +1385,9 @@ SSEE algebraic value; this comparison was made after the axiom was committed.
 The structural expression $(\pi-\varphi)/[3(\varphi+\pi)^2]$
 gives $0.02242$, at $0.32\sigma$ from Planck~2018 ($0.02237\pm0.00015$).
 Both sides are pure numbers, as they must be: $\Omega_b h^2$ is dimensionless and
-so is the ratio on the right.  The denominator is numerically the anchor read in
-$\kmsu$, $H_0^{\rm SSEE}/\kmsu = 3(\varphi+\pi)^2$, but we do \emph{not} write the
-relation as $(\pi-\varphi)/H_0^{\rm SSEE}$: that would divide a dimensionless
+so is the ratio on the right.  The denominator coincides numerically with the global rate read in
+$\kmsu$, $H_0^{\rm glob}/\kmsu\simeq3(\varphi+\pi)^2$, but we do \emph{not} write the
+relation as $(\pi-\varphi)/H_0^{\rm glob}$: that would divide a dimensionless
 number by a rate, and would make the identity depend on the unit chosen for
 $H_0$.  The content is the pure-number relation, not a division by a physical
 Hubble rate.
@@ -1389,7 +1395,7 @@ This form is classified as a \emph{retrodiction}: it was identified after the da
 (OP-1, \texttt{OPEN\_PROBLEMS.md}), replacing the preliminary placeholder
 $3(\pi-\varphi)/200 = 0.02285$ ($3.2\sigma$), in which the factor $200$ was not an
 algebraic $\{\varphi,\pi\}$ quantity. No parameter is fitted: the denominator
-$3(\varphi+\pi)^2$ is the algebraic combination that supplies the Hubble anchor.
+$3(\varphi+\pi)^2$ is the same pure number the measured Hubble cascade is compared against.
 
 
 %=====================================================================
