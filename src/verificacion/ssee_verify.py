@@ -7446,6 +7446,42 @@ try:
 except Exception as _e:            # noqa: BLE001
     check("R55d la capa corrió", False, f"excepción: {_e}", nivel=5)
 
+print("\nCapa R55e — formas corregidas en la tercera lectura (2026-10-10)")
+# POR QUÉ EXISTE. Cada patrón es un error que la tercera lectura encontró y se
+# corrigió en todos los documentos; la capa impide que vuelva:
+#  · f_scr = s_K/(3·MIRA) = (π−φ)/Ω² sin rótulo IR: esa igualdad sólo vale para
+#    el término IR (0.067253); el canónico es f con s_K^full = 0.069522.
+#  · «Mapped Inference Resonance Amplitude»: MIRA es Mirror Ratio en toda la suite.
+#  · w₀ = −1.03±0.03 de Planck 2018 llamado «CMB-alone»: es Planck+SNe+BAO con
+#    w_a=0 (1807.06209, ms.tex L4258); CMB-alone es −1.57^{+0.50}_{−0.40}.
+#  · DES Y3 S₈ = 0.773±0.025: DES2022 (2105.13549) da 0.776±0.017.
+try:
+    _R55E = [re.compile(r"f_\{\\rm scr(?:een)?\}\s*=\s*s_K/[^$]{0,30}=\s*\(\\pi-\\varphi\)"),
+             re.compile(r"Mapped Inference Resonance", re.I),
+             re.compile(r"CMB-alone[^\n]{0,80}-1\.03\s*\\pm\s*0\.03"),
+             re.compile(r"0\.773\s*\\pm\s*0\.025")]
+
+    def _malos55e(_tx):
+        _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
+        return [_p.pattern for _p in _R55E if _p.search(_t)]
+    _r55e_malos = []
+    for _sub in ("manuscript", "submission_PRD"):
+        for _f in sorted((_R55_REPO / _sub).rglob("*.tex")):
+            if "archive" in str(_f) or "superseded" in str(_f):
+                continue
+            if _malos55e(_f.read_text(encoding="utf-8", errors="ignore")):
+                _r55e_malos.append(_f.name)
+    check("R55e ninguna forma corregida en la tercera lectura reaparece",
+          not _r55e_malos, "0 sitios" if not _r55e_malos else "; ".join(_r55e_malos))
+    _ctl = ("$f_{\\rm scr}=s_K/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ MIRA & Mapped Inference "
+            "Resonance The Planck~2018 CMB-alone posterior yields $w_0 = -1.03\\pm0.03$ DES $0.773\\pm0.025$")
+    check("R55e el detector marca las cuatro formas viejas",
+          len(_malos55e(_ctl)) == 4 and not _malos55e(
+              "$f_{\\rm scr}^{\\rm IR}=s_K^{\\rm IR}/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ Mirror Ratio"),
+          "control R53")
+except Exception as _e:            # noqa: BLE001
+    check("R55e la capa corrió", False, f"excepción: {_e}", nivel=5)
+
 print("\nCapa R77 — todo lo archivado entra declarado")
 # POR QUÉ EXISTE (2026-10-03, regla de Mike). «En archive entra declarado, y en el
 # sistema también: de esa manera hasta el que pasa sabe por qué está ahí y no

@@ -77,7 +77,7 @@ The \SSEE\ prediction $(\wz,\wa)=(-0.840,-0.670)$, fixed algebraically by the
 closed dictionary \citep{AlmeidaSSEE2026genesis} and not fitted to the data,
 lies within $0.24\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior
 (DESI+CMB+Pantheon+; arXiv:2503.14738, eq.~26) in the $\wz$--$\wa$ plane, and
-within $1.2$--$1.5\sigma$ of the DESY5/Union3/no-SN combinations
+within $\val{p2_w0wa_ssee_ec28}$--$\val{p2_w0wa_ssee_ec27}\sigma$ of the DESY5/no-SN/Union3 combinations
 (a parameter-free postdiction).
 The $H_0$ posterior is $\HZeroPosterior$~km\,s$^{-1}$\,Mpc$^{-1}$,
 obtained with the global rate of the screening cascade as the $H_0$ prior
@@ -656,22 +656,26 @@ same measurement.
 \end{figure}
 
 \paragraph{CMB-only constraint on $w_0$.}
-The Planck~2018 CMB-alone posterior yields $w_0 = -1.03\pm0.03$
-(68\%~CL, \citealt{Planck2018}), which differs from the \SSEE\
-prediction $w_0=\val{W0_d6}$ by $\sim6.3\sigma$ \emph{when evaluated against the
-CMB-only contour}.  This is not a failure of the model: the CMB-alone
+For a constant equation of state, the Planck~2018 CMB-alone posterior
+(TT,TE,EE+lowE+lensing) is $w_0=-1.57^{+0.50}_{-0.40}$ (68\%~CL, table of
+one-parameter extensions in \citealt{Planck2018}); the \SSEE\ value
+$w_0=\val{W0_d6}$ lies $(-0.840+1.57)/0.50\simeq1.5\sigma$ from it.  The tight
+$w_0=-1.028\pm0.031$ quoted in the same paper is \emph{not} a CMB-alone
+result: it combines Planck with SNe and BAO and fixes $w_a=0$, i.e.\ it
+constrains a constant-$w$ model, and cannot be compared with \SSEE, whose
+$\wa=\val{WA_d6}$ is not zero.  The CMB-alone
 constraint on $w_0$ is driven by the acoustic-scale degeneracy
 $\theta_\ast \propto r_d/D_A$, which trades off against the full expansion
 history.  With the background matter density set to the total gravitating
 value $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (see below), \SSEE\ yields
 $r_d^{\mathrm{SSEE}}=\val{p2_lyaB_rd}\ \mathrm{Mpc}$ (CAMB; $\val{p3_rd_sig_post}\sigma$ from Planck's $147.09\pm0.26$)
 and $100\theta_\ast=\val{p3_th100_post}$ at the posterior ($\val{p3_th_sig_post}\sigma$ from Planck): the sound horizon and
-acoustic scale are standard, so the CMB-only $w_0$ tension is the usual
+acoustic scale are standard, so the width of the CMB-alone $w_0$ posterior is the
 projection of the $w_0$--$w_a$--$\theta_\ast$ degeneracy, not a background
 discrepancy.  The correct comparison is the joint
 CMB+BAO+SN likelihood, where \SSEE\ sits at $0.24\sigma$ of the DESI~DR2
-$w_0w_a$CDM best-fit (Pantheon+; Fig.~\ref{fig:w0wa}).  Reporting the CMB-only tension without this
-context would constitute a misuse of the likelihood \citep{Verde2019}.
+$w_0w_a$CDM best-fit (Pantheon+; Fig.~\ref{fig:w0wa}).  Comparing \SSEE\ with the constant-$w$ combined bound would be a misuse of
+the likelihood \citep{Verde2019}.
 
 \subsection{Sound horizon and $H_0$ posterior}
 
@@ -1065,7 +1069,7 @@ DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency t
     cross-validation. $\Omega_m$ agrees with Planck at $0.88\sigma$.
 
   \item The high-$z$ Ly-$\alpha$ forest BAO from DESI~DR2 ($z=2.33$) is
-    reproduced at $0.7\sigma$ ($D_H/r_d=8.71$; Appendix~\ref{app:lya}).
+    reproduced at $\val{p2_lyaB_pull}\sigma$ ($D_H/r_d=\val{p2_lyaB_DHrd}$; Appendix~\ref{app:lya}).
 
   \item The companion Paper~3 confirms the background against the full CMB
     likelihood ($\Delta\mathrm{BIC}=\val{b1_dBIC}$, full \texttt{plik} MCMC).

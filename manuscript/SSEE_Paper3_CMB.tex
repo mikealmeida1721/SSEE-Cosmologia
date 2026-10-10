@@ -147,7 +147,7 @@ $P_{sc}=2\varphi+\pi$, $K_v=2(\varphi+\pi)$, all four reduce to
 closed forms in $\varphi$ and $\pi$ alone:
 \begin{align}
 w_0 &= -\frac{T_r}{M_v} = -\frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{W0_d6}, \label{eq:w0}\\
-w_a &= -\frac{P_{sc}}{I_g} = -\frac{P_{sc}}{\pi+P_{sc}} = \val{WA_d6}, \label{eq:wa}\\
+w_a &= -\frac{P_{sc}}{K_v} = -\frac{P_{sc}}{\pi+P_{sc}} = \val{WA_d6}, \label{eq:wa}\\
 s_{\mathrm{DE}} &= \frac{T_r}{M_v} = \frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{S_DE_d6}, \label{eq:sDE}\\
 s_m &= 1 - s_{\mathrm{DE}} = \val{S_M_d6}. \label{eq:sm}
 \end{align}
@@ -300,7 +300,7 @@ $\Omega_b h^2$ & 0.02237 & Planck 2018 prior \\
 $\Omega_{m,\mathrm{CMB}}$ & 0.3089 & $\omega_m/h^2$ (forward) \\
 $\sum m_\nu^{\rm active}$ [eV] & \val{SUM_MNU_EV_d6} & SSEE algebraic (Paper~4) \\
 $w_0$ & $\val{W0_d6}$ & $-T_r/M_v$ \\
-$w_a$ & $\val{WA_d6}$ & $-P_{sc}/I_g$ \\
+$w_a$ & $\val{WA_d6}$ & $-P_{sc}/K_v$ \\
 $n_s$ & $1-\varphi^{-7}=\val{N_S_d6}$ & SSEE algebraic (Paper~4) \\
 $\ln(10^{10}A_s)$ & 3.044 & Planck 2018 \\
 $\tau$ & 0.054 & Planck 2018\footnotemark{} \\
@@ -750,10 +750,10 @@ SSEE+IS (linear growth, $\gamma_\mathrm{IS}=\val{p3_gamma_IS}$, Paper~5) & \val{
 SSEE+IS (single-sector ceiling, CLASS, Paper~5) & \val{p3_sigma8_techo} & \val{p3_S8_techo} \\
 SSEE, $A_s$ from its own CMB fit (Paper~6) & \val{p3_sigma8_unif} & $\mathbf{\val{p3_S8_unif}}$ \\
 \hline
-Planck 2018 \citep{Planck2020} & $0.812\pm0.008$ & $0.832\pm0.013$ \\
+Planck 2018 \citep{Planck2020} & $0.811\pm0.006$ & $0.832\pm0.013$ \\
 KiDS-Legacy (raw $\xi_\pm$, Paper~6) & --- & $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ \\
 KiDS-1000 \citep{Asgari2021} & --- & $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ \\
-DES Y3 \citep{DES2022} & --- & $0.773\pm0.025$ \\
+DES Y3 \citep{DES2022} & --- & $0.776\pm0.017$ \\
 \hline
 \end{tabular}
 \end{table}
@@ -783,11 +783,11 @@ eBOSS~DR16 \citep{Alam2021,deMattia2021}, and DESI~DR1 \citep{DESI2024FS}.
 Survey & $z_\mathrm{eff}$ & Observed & SSEE & $\Lambda$CDM & Pull \\
 \hline
 6dFGRS (Beutler+2012)   & 0.067 & $0.423\pm0.055$ & \val{fs8_0_ssee} & \val{fs8_0_lcdm} & $\val{fs8_0_pull_ssee}\sigma$ \\
-SDSS MGS (Howlett+2015) & 0.150 & $0.490\pm0.145$ & \val{fs8_1_ssee} & \val{fs8_1_lcdm} & $\val{fs8_1_pull_ssee}\sigma$ \\
-BOSS DR12 (Alam+2017)   & 0.380 & $0.497\pm0.045$ & \val{fs8_2_ssee} & \val{fs8_2_lcdm} & $\val{fs8_2_pull_ssee}\sigma$ \\
-BOSS DR12 (Alam+2017)   & 0.510 & $0.458\pm0.038$ & \val{fs8_3_ssee} & \val{fs8_3_lcdm} & $\val{fs8_3_pull_ssee}\sigma$ \\
-BOSS DR12 (Alam+2017)   & 0.610 & $0.436\pm0.034$ & \val{fs8_4_ssee} & \val{fs8_4_lcdm} & $\val{fs8_4_pull_ssee}\sigma$ \\
-eBOSS DR16 (Hou+2021)   & 1.480 & $0.462\pm0.045$ & \val{fs8_5_ssee} & \val{fs8_5_lcdm} & $\val{fs8_5_pull_ssee}\sigma$ \\
+SDSS MGS \citep{Howlett2015} & 0.150 & $0.490\pm0.145$ & \val{fs8_1_ssee} & \val{fs8_1_lcdm} & $\val{fs8_1_pull_ssee}\sigma$ \\
+BOSS DR12 \citep{Alam2017} & 0.380 & $0.497\pm0.045$ & \val{fs8_2_ssee} & \val{fs8_2_lcdm} & $\val{fs8_2_pull_ssee}\sigma$ \\
+BOSS DR12 \citep{Alam2017} & 0.510 & $0.458\pm0.038$ & \val{fs8_3_ssee} & \val{fs8_3_lcdm} & $\val{fs8_3_pull_ssee}\sigma$ \\
+BOSS DR12 \citep{Alam2017} & 0.610 & $0.436\pm0.034$ & \val{fs8_4_ssee} & \val{fs8_4_lcdm} & $\val{fs8_4_pull_ssee}\sigma$ \\
+eBOSS DR16 \citep{Hou2021} & 1.480 & $0.462\pm0.045$ & \val{fs8_5_ssee} & \val{fs8_5_lcdm} & $\val{fs8_5_pull_ssee}\sigma$ \\
 \hline
 \multicolumn{4}{l}{$\chi^2/N$} & SSEE: $\val{fs8_chi2N_ssee}$ & $\Lambda$CDM: $\val{fs8_chi2N_lcdm}$ \\
 \hline
