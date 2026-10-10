@@ -19,7 +19,9 @@
 
 </div>
 
-**A minimal-parameter dark energy framework derived from φ (golden ratio) and π. The dark-energy equation of state $(w_0, w_a)$ and the single matter density $\Omega_m=\omega_m/h^2$ carry zero fitted dimensionless parameters; the framework rests on 3 postulates (D, S fundamentals + I auxiliary register-level; the former matter-factor postulate M was dissolved in the ωm-direct reframe, OP-8 closed) plus open problems tracked in [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md). Tested against DESI DR2 BAO, Planck 2018 CMB (TT+TE+EE+lensing), galaxy cluster masses, and large-scale structure growth.**
+**A minimal-parameter dark energy framework derived from φ (golden ratio) and π. The dark-energy equation of state $(w_0, w_a)$ and the single matter density $\Omega_m=\omega_m/h^2$ carry zero fitted dimensionless parameters; the framework rests on 3 postulates (D, S fundamentals + I auxiliary register-level; the former matter-factor postulate M was dissolved in the ωm-direct reframe, OP-8 closed) plus open problems tracked in [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md). Tested against DESI DR2 BAO, Planck 2018 CMB (TT+TE+EE+lensing), supernovae, CMB lensing, weak lensing, redshift-space distortions and galaxy cluster masses.**
+
+**How the test works — one fit, then fixed.** The background (ω_b, ω_c, n_s, w₀, wₐ and the global rate H_glob = H_SH0ES(1−f_screen) = 67.962 ± 0.968 km/s/Mpc) is fixed by the algebra. Only A_s and τ are fitted, **once**, to Planck 2018. After that nothing cosmological is adjusted: every other probe is read with the background of both models fixed in advance (SSEE at its algebraic point, ΛCDM at the Planck best fit). The result, probe by probe, is in the table [below](#each-probe-with-the-background-fixed-in-advance): SSEE ties ΛCDM everywhere except DESI DR2 BAO, where it fits better, and it wins on parsimony (k = 2 vs 6).
 
 ---
 
@@ -97,7 +99,8 @@ SSEE/
 │   ├── SSEE_Unified_Journal.tex    # consolidated journal paper (Papers 1–10)
 │   ├── SSEE_Endorser_Summary.tex   # 2-page arXiv endorser brief
 │   ├── *.bib                       # ssee_paper3/4/5/6 + ssee_unified bibliographies
-│   └── (cover letters and arXiv abstracts of May: archive/manuscript_superseded/envios_2026-05_RANCIOS/)
+│   ├── valores.yaml → valores_generados.tex  # every \val{} number and the log it comes from
+│   └── SSEE_Cover_Letter.tex       # cover letter to Physical Review D
 ├── src/                            # Python scripts — organized per paper
 │   ├── p02_mcmc/ … p10_uv/         # per-paper analysis, MCMC, figures (p02_mcmc, p03_cmb,
 │   │                               #   p04_toe, p05_IS, p06_growth, p07_eft,
@@ -105,19 +108,24 @@ SSEE/
 │   ├── pB_inflation/               # Paper B groundwork (baryogenesis, N_*)
 │   ├── estadistica/                # Bayesian model-selection phases (DIC, Savage-Dickey, cross-val)
 │   ├── mcmc_full/                  # full Cobaya CAMB+PPF pipeline (heavy chains → /mnt/datos)
-│   ├── verificacion/               # ssee_verify.py guardian + CANONICAL sync + core constants
+│   ├── verificacion/               # ssee_verify.py guardian, provenance checks, data manifest, Zenodo packager
 │   └── ssee_core.py                # single algebraic source (φ, π → all constants)
 ├── class_ssee/                     # CLASS Boltzmann fork — SSEE .ini configs + plot scripts
 ├── data/                           # observational data (DESI DR2, Planck 2018, clusters)
 ├── results/                        # generated figures, tables, logs
 ├── notebooks/                      # Jupyter exploration
-├── docs/                           # compiled PDFs — 10 papers + endorser + unified journal
+├── docs/                           # compiled PDFs — 10 papers, Sealed, Unified, PRD, endorser, cover
 ├── submission_packages/            # arXiv-ready .tar.gz bundles per paper
 ├── archive/                        # superseded drafts (historical)
 ├── notes/                          # internal work-notes & attack plans (not load-bearing)
 ├── archive/codigo/build_arxiv_packages.py  # regenerates submission_packages/ (moved to archive/)
 ├── requirements.txt · environment.yml   # reproducible Python environment
-├── OPEN_PROBLEMS.md                # physics gaps OP-1..OP-19 with status
+├── submission_PRD/                 # Physical Review D manuscript (active submission)
+├── dvc.yaml · dvc.lock             # the whole pipeline: data → script → log → \val → PDF
+├── AUDIT.md                        # how to audit and reproduce, step by step
+├── RETRACTIONS.md                  # every withdrawn claim and why
+├── VERIFICATION_LEDGER.md          # canonical values and how each was verified
+├── OPEN_PROBLEMS.md                # physics gaps OP-1..OP-27 with status
 ├── CHANGELOG.md · CITATION.cff · LICENSE
 └── (eftcamb_ssee/ — EFTCAMB fork, not versioned: clone separately)
 ```
@@ -152,6 +160,8 @@ export COBAYA_PACKAGES_PATH=/path/to/your/cobaya_packages
 python src/p03_cmb/b1_minimiza.py   # chi2 minimo de cada modelo (full plik); ssee_paper3_cobaya_unified.py es solo biblioteca
 ```
 
+**Full pipeline and audit trail.** Every result is a DVC stage (`dvc.yaml`, hashes in `dvc.lock`); every log carries its provenance (commit, script and input sha256); every number in the papers is a `\val{}` macro that names its log; every external dataset has its download origin and sha256 in [`data/manifiesto_externos.json`](data/manifiesto_externos.json). Step-by-step instructions to check any number, re-run any result and run the guardian: **[AUDIT.md](AUDIT.md)**.
+
 See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) for known limitations.
 
 ---
@@ -162,15 +172,31 @@ See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OP
 <img src="results/figures/fig_readme_tensions.png" width="680" alt="Canonical SSEE tension summary — all predictions below 1.2 sigma"/>
 </div>
 
+### Each probe with the background fixed in advance
+
+Both backgrounds are fixed before looking at each probe — SSEE at its algebraic point, ΛCDM at the Planck 2018 best fit — and no cosmological parameter is fitted (`results/logs/sondas_ssee_vs_lcdm.json`). A probe "separates" the models only if |Δχ²| > 9.
+
+| Probe | Type | χ² SSEE | χ² ΛCDM | Δχ² (SSEE − ΛCDM) | Verdict |
+|---|---|---|---|---|---|
+| Pantheon+ (1579 dof) | supernovae | 1386.62 | 1387.33 | −0.70 | tie |
+| DES-SN5YR (1819 dof) | supernovae | 1629.44 | 1632.41 | −2.97 | tie |
+| Union3 (21 dof) | supernovae | 23.85 | 26.37 | −2.52 | tie |
+| ACT DR6 | CMB lensing | 14.01 | 14.20 | −0.20 | tie |
+| SPT-3G D1 | CMB lensing | 17.76 | 18.31 | −0.54 | tie |
+| DES Y3 3×2pt | shear + clustering | — | — | \|Δχ²\| ≈ 1 (sign changes with the IA model) | tie |
+| **DESI DR2 BAO (13 pts)** | BAO | **11.41** | **31.98** | **−20.58** | **separates — SSEE** |
+
+ΛCDM reaches χ² = 10.54 on DESI only by lowering Ω_m to 0.297. Probes where ΛCDM fits parameters SSEE does not have: Planck `plik_lite` Δχ² = −0.01 and full `plik` −2.78 (ΛCDM fits 6), KiDS-Legacy −0.98 (ΛCDM fits A_s). Supernova compilations share objects and the two CMB-lensing probes share sky, so the rows are not summed.
+
 ### Paper 2 (DESI DR2 + Planck 2018 + clusters)
 
 | Metric | Value |
 |---|---|
 | χ²_2D (w₀-wₐ vs DESI DR2+CMB+Pantheon+) | 0.42 → 0.24σ (2D); 1.47σ DESY5, 1.77σ Union3 (ρ medidos de cadenas oficiales) |
 | Clusters, 46 real systems of Zhang+2026 (GR, M_dyn = (ω_m/ω_b)·M_bar = 6.364·M_bar, no free parameter) | IGIMF: SSEE 2.32σ vs ΛCDM 2.41σ · canonical IMF: 8.64σ vs 8.46σ — clusters test the baryon census, not the background (`results/logs/cumulos_zhang2026.json`) |
-| H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ Planck, **0.33σ de H_glob** — DR2 compatible con la predicción; ω_m algebraico fijo, r_d CAMB) |
-| ΔBIC (SSEE k=2 vs ΛCDM k=3) | −7.25 (SSEE favoured; CPL −6.14; ΔDIC -6.47; Savage-Dickey ln B = 2.34; 2026-10-01 sin el término de cúmulos que solo llevaba SSEE; cross-val SSEE predice mejor que ΛCDM) — `results/logs/resumen_3modelos.json` |
-| r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.479 ≈ ΛCDM 0.459 (3 modelos, `mcmc_paper2_3models_wmfix.log`) |
+| H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ from Planck, **0.34σ from H_glob** — DR2 is compatible with the prediction; ω_m algebraic and fixed, r_d from CAMB) |
+| ΔBIC (SSEE k=2 vs ΛCDM k=3) | −7.25 (SSEE favoured; CPL −6.14; ΔDIC −6.47; Savage-Dickey ln B = 2.34; 2026-10-01, without the cluster term only SSEE carried; in cross-validation SSEE predicts better than ΛCDM) — `results/logs/resumen_3modelos.json` |
+| r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.479 ≈ ΛCDM 0.459 (3 models, `mcmc_paper2_3models_wmfix.log`) |
 
 ### Paper 3 (Planck 2018 CMB)
 
@@ -201,12 +227,12 @@ See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OP
 |---|---|---|
 | c²_s,eff | 0 (exact algebraic) | Q1: all modes stable |
 | k_crit / (H₀/c) | 0.456 < 1 | Sub-Hubble stability window |
-| R = Ω_m,eff/Ω_m (k≥10) | 0.9897 ± 0.0167 | Cota a la agrupación de EO: |r| ≤ 0.0175, 3.9% de r*=0.4464 |
+| R = Ω_m,eff/Ω_m (k≥10) | 0.9897 ± 0.0167 | A bound on dark-energy clustering: \|r\| ≤ 0.0175, 3.9% of r* = 0.4464 |
 | γ_IS | 0.5504 ± 0.001 | ≈ γ_ΛCDM = 0.55 |
 | G = D₁_SSEE/D₁_ΛCDM | 1.0032 ± 0.005 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.308881) |
 | σ₈_SSEE (single-sector ceiling) | 0.8149 ± 0.006 | ODE linear growth gives 0.8136 |
 | S₈ with A_s fixed to **Planck** (ceiling, not a prediction) | 0.827 | imports the Planck–KiDS offset; the model's own prediction fixes A_s to its **own** CMB fit — see Paper 6 |
-| Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | ≈ ΛCDM (0.73σ); fσ₈ against raw BOSS multipoles is in progress |
+| Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | ≈ ΛCDM (0.73σ); against the raw BOSS multipoles see Paper 6 |
 
 ### Paper 6 (Growth against raw data — single sector)
 
@@ -217,7 +243,7 @@ See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OP
 | **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
 | log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
 | σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7449 ± 0.0186, 0.7559 ± 0.0189 | 0.10σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
-| fσ₈ vs raw BOSS DR12 multipoles | in progress | single-sector baseline 0.70σ |
+| fσ₈ vs raw BOSS DR12 multipoles (LPT, each model with its own ingredients) | Δχ² = −2.03 (SSEE − ΛCDM, equal freedom) | measured; BOSS does not constrain A_s (profile vs marginal 1.82σ) — `results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json` |
 
 > **Methodological point:** a published S₈ is the output of a fit that assumes a
 > ΛCDM background. Before treating a number with an error bar as a target, ask
@@ -268,14 +294,14 @@ See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OP
 | Observable | SSEE algebraic | Planck 2018 | Tension |
 |---|---|---|---|
 | n_s | 1 − φ⁻⁷ = 0.96556 | 0.9649 ± 0.0042 | 0.16σ |
-| H₀ | 3(φ+π)² = 67.96 km/s/Mpc | 67.36 ± 0.54 | 1.1σ |
+| H_glob = H_SH0ES(1−f_screen) | 67.962 ± 0.968 km/s/Mpc (lands on the pure number 3(φ+π)² = 67.96214) | 67.36 ± 0.54 | 0.54σ |
 | Ωm (geometric identity, *superseded* by ωm-direct 0.308881) | (π−φ)/(π+φ) = 0.3201 | 0.3153 ± 0.0073 | 0.66σ |
 | Ωb h² | (π−φ)/(3Ω²) = 0.02242 | 0.02237 ± 0.00015 | 0.32σ |
 | Ωc h² | KAL₀ × Ωb h² × n_s = 0.11951 | 0.1200 ± 0.0012 | −0.40σ |
 | Y_p (BBN) | CAMB BBN (PArthENoPE, Ωb h²=0.02242) = 0.2472 | 0.2449 ± 0.0040 (Aver+2015) | 0.58σ |
-| δc | **1.67634** (z=0) — colapso esférico sobre el fondo del modelo | 1.67599 (ΛCDM, mismo integrador) | 0.02 % — indistinguible. *(El δc,EdS × n_s = 1.6284 está RETIRADO 2026-09-25: OP-27)* |
+| δc | **1.67634** (z=0) — spherical collapse on the model's background | 1.67599 (ΛCDM, same integrator) | 0.02 % — indistinguishable. *(δc,EdS × n_s = 1.6284 is RETIRED 2026-09-25: OP-27)* |
 
-**Press-Schechter halo counts** at z=10 (`src/p02_mcmc/ssee_press_schechter.py`), con el δc **derivado**:
+**Press-Schechter halo counts** at z=10 (`src/p02_mcmc/ssee_press_schechter.py`), with the **derived** δc:
 
 | Halo mass | σ_M(z=10) | n_SSEE/n_ΛCDM |
 |---|---|---|
@@ -285,7 +311,7 @@ See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OP
 | 10^12 M☉ | 0.504 | 0.945 |
 | 3×10^12 M☉ | 0.362 | 0.892 |
 
-*No hay enhancement, y el signo es el contrario del que se publicó antes: con el umbral que el modelo realmente produce, SSEE forma **algo menos** de halos masivos tempranos que ΛCDM. La causa no es la amplitud —SSEE tiene σ₈ MAYOR (0.8153 vs 0.811)— sino D(z): Ω_m menor y fondo CPL crecen menos hasta z alto. A las masas que JWST mide (~10^10.8 M☉) el cociente es 0.99, indistinguible. **El modelo no explica el exceso JWST.** Ver OP-27.*
+*There is no enhancement, and the sign is the opposite of what was published earlier: with the threshold the model actually produces, SSEE forms **slightly fewer** massive early haloes than ΛCDM. The cause is not the amplitude — SSEE has the larger σ₈ (0.8153 vs 0.811) — but D(z): the lower Ω_m and the CPL background grow less up to high z. At the masses JWST measures (~10^10.8 M☉) the ratio is 0.99, indistinguishable. **The model does not explain the JWST excess.** See OP-27.*
 
 **Inflationary embedding (Paper 1 App.A §A.5):**
 
@@ -303,12 +329,12 @@ See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OP
 ## ⚠️ Known limitations and open problems
 
 Disclosed honestly in the papers. Open problems in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md).
-**Physics gaps that future work must address:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) (19 items, OP-1..OP-19).
+**Physics gaps that future work must address:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) (OP-1..OP-27, each with its own status).
 
 ### Editorial/pipeline limitations
-1. **Diagonal CMB likelihood** (Paper 3): χ²_r uses diagonal covariance. Off-diagonal terms required for PRD/PRL.
-2. **Full causal IS** (Paper 5): IS growth index γ_IS=0.554 is derived analytically. Full Hiscock-Lindblom 1985 treatment for B-mode predictions remains a blocker for LiteBIRD forecasts.
-3. **CMB ΔBIC status:** The canonical full `plik` MCMC (TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) yields $\Delta\mathrm{BIC}=-33.83$ (minimum χ² of each model, `results/logs/b1_k2.json`) decisively favouring SSEE; cross-checked by the `plik_lite` point estimate ($-24.0$, N=613) and the diagonal approximation ($-35.0$, N=5914). All three agree (Paper 3 §BIC, canonical Σm_ν = 0.06849 eV; ΛCDM at baseline 0.06). The ΔBIC is parsimony-driven (best-fit χ² statistically indistinguishable from ΛCDM), not a claim of superior fit.
+1. **Diagonal CMB χ²_r** (Paper 3 spectrum table) is a quick-look statistic; the model comparison uses the full Planck `plik` likelihood (below).
+2. **Full causal IS** (Paper 5): IS growth index γ_IS = 0.5504 is derived analytically. Full Hiscock-Lindblom 1985 treatment for B-mode predictions remains a blocker for LiteBIRD forecasts.
+3. **CMB ΔBIC status:** The canonical full `plik` MCMC (TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) yields $\Delta\mathrm{BIC}=-33.83$ (minimum χ² of each model, `results/logs/b1_k2.json`) decisively favouring SSEE; cross-checked by `plik_lite` with {A_s, τ} fitted in both models ($-26.03$, N=669) and the diagonal approximation ($-35.0$, N=5914). All three agree (Paper 3 §BIC, canonical Σm_ν = 0.06849 eV; ΛCDM at baseline 0.06). The ΔBIC is parsimony-driven (best-fit χ² statistically indistinguishable from ΛCDM), not a claim of superior fit.
 
 ### Open physics problems
 
@@ -316,8 +342,9 @@ The single source is [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md): each entry carries it
 own status and severity, and its summary table is kept in step with the entries.
 A copy here used to drift out of date, so none is kept.
 
-**Foundational postulates (Paper 1 §2.4, Postulates D & S):** the dimensional scale of
-H₀ is an explicit anchor input (zero *dimensionless* fitted parameters, like ΛCDM); the
+**Foundational postulates (Paper 1, Postulates D & S):** the measured SH0ES rate is the
+single dimensional input (zero *dimensionless* fitted parameters); the pure number
+3(φ+π)² is the target the output is compared with, not an input; the
 saturation correspondence (Ω_DE, w₀) = (s, −s) interpolates matter ↔ de Sitter. These are
 pre-registered axioms, not derived theorems — see OPEN_PROBLEMS.md and Paper 1.
 
@@ -337,7 +364,7 @@ pre-registered axioms, not derived theorems — see OPEN_PROBLEMS.md and Paper 1
 
 ## 🗺️ Roadmap
 
-**Status (2026-09-19):** all 10 papers + consolidated journal documents complete and
+**Status (2026-10-10):** all 10 papers + consolidated journal documents complete and
 compile clean (0 LaTeX errors, 0 orphan bibitems, 0 undefined citations). The
 verification guardian runs 288 checks with no regressions; its own 30 self-tests, the
 55 meta-guardian layers and the 51 injected-defect mutation tests are green.
@@ -356,20 +383,20 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
 - [x] Papers 1–10 — algebraic framework, Bayesian MCMC, CMB confrontation, algebraic
       CMB derivation, IS causal perturbations, growth against raw data (Paper 6),
       canonical EFT, strong-gravity regime, Hubble-tension screening, UV completion
-- [x] CLASS Boltzmann validation — full matter density necessary (RMS 0.18% vs 58.9%), σ₈, IS viscosity
+- [x] CLASS Boltzmann validation — peaks and TT spectrum match CAMB (RMS 0.18% vs ΛCDM), σ₈, IS viscosity
 - [x] Multi-probe MCMC (corrected DESI DR2 + Planck + fσ8 + clusters, blind flat w0/wa) — SSEE algebraic point 1.31σ from joint w₀-wₐ posterior
 - [x] Bibliography brought to JCAP/PRD standard — all papers 36–42 refs, 0 orphans
-- [x] OPEN_PROBLEMS OP-2/3/4/6 resolved; OP-1/5 partial
-- [x] Paper 1 Postulates D (dimensional anchor) & S (saturation correspondence)
+- [x] OPEN_PROBLEMS OP-2/3/4 resolved; OP-1/5 partial; OP-6 reopened as a postulate (2026-10-03)
+- [x] Paper 1 Postulates D (SH0ES as the single dimensional input) & S (saturation correspondence)
 - [x] Hostile-referee overclaim sweep across all 10 papers
-- [x] Zenodo v6 — Papers 1–7 archived (DOI 10.5281/zenodo.19654118)
+- [x] Zenodo — earlier versions archived (concept DOI 10.5281/zenodo.19654118)
+- [x] Third page-by-page reading (2026-10-10): every paper, citation checked against arXiv/Crossref, reproducibility manifest of all external data (`data/manifiesto_externos.json`)
 - [x] Internal hostile-referee audit — guardian fully green; figure-level
       pdftotext sweep across all compiled PDFs; arXiv source tarballs (10/10)
 
 **Pending**
-- [ ] New Zenodo version — Papers 1–10 + Unified + Sealed, after the page-by-page reading closes
-- [ ] Journal submission — Sealed Journal (late-DE core) → JCAP / Universe;
-      Papers 5–7 second wave; P6/P8/P9 upgrade pending DESI Y3
+- [ ] New Zenodo version — Papers 1–10 + Unified + Sealed + PRD manuscript (`src/verificacion/armar_zenodo.py`)
+- [ ] Journal submission — Physical Review D (`submission_PRD/`)
 - [ ] Paper B — ab-initio baryogenesis (OP-1 closure)
 - [ ] Full non-linear N-body growth (BAHAMAS / IllustrisTNG-SSEE) — desirable, not a rescue
 
