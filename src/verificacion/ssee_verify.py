@@ -7472,7 +7472,9 @@ try:
              re.compile(r"Cao et al\.?\\?\s*2018"),          # 1803.00819 es Li et al. 2018
              re.compile(r"suppressed by the\s+factor \$\\approx1\.93"),  # Ω_m/(1+w₀) retirado en P8
              # consolidados: el blanco puro se escribe con H0_ALG, nunca con la salida H0_GLOBAL
-             re.compile(r"3\(\\(?:phiG|varphi)\s*\+\s*\\pi\)\^2\s*=\s*\\val\{H0_GLOBAL")]
+             re.compile(r"3\(\\(?:phiG|varphi)\s*\+\s*\\pi\)\^2\s*=\s*\\val\{H0_GLOBAL"),
+             # carta de presentación: el envío activo es PRD (2026-10-10); la vieja iba a JCAP
+             re.compile(r"\\begin\{letter\}\{[^}]*(?:JCAP|Journal of Cosmology)")]
 
     def _malos55e(_tx):
         _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
@@ -7492,6 +7494,9 @@ try:
           len(_malos55e(_ctl)) == 4
           and len(_malos55e("Paper~4 (Peer-Review Corrected) A Zero-Parameter Framework "
                             "zenodo.20093447 $r^* = 0.190$ The discrepancy is $50\\%$")) == 5
+          and len(_malos55e("\\begin{letter}{The Editorial Board\\\\Journal of Cosmology and "
+                            "Astroparticle Physics (JCAP)}")) == 1
+          and not _malos55e("\\begin{letter}{The Editors\\\\Physical Review D}")
           and not _malos55e(
               "$f_{\\rm scr}^{\\rm IR}=s_K^{\\rm IR}/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ Mirror Ratio"),
           "control R53")

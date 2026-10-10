@@ -3,91 +3,88 @@
 \usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=red!70!black,citecolor=green!50!black,urlcolor=blue!80!black]{hyperref}
 
-\signature{Mike Edison Almeida Vallejo\\\texttt{mike.almeida1721@gmail.com}}
+% Carta de presentación para Physical Review D (2026-10-10). Sustituye a la
+% versión dirigida a JCAP: el envío activo es PRD. Todo número va por \val
+% (manuscript/valores_generados.tex). La fecha de portada la fija
+% src/verificacion/preparar_publicacion.py, igual que en el resto de la suite.
+\signature{Mike Edison Almeida Vallejo\\Independent Researcher\\\texttt{mike.almeida1721@gmail.com} --- ORCID 0009-0008-2195-7836}
 \address{Mike Edison Almeida Vallejo \\ Independent Researcher}
+\date{October 2026}
 
 \sloppy
 \input{valores_generados.tex}
+\newcommand{\kms}{\mathrm{km\,s^{-1}\,Mpc^{-1}}}
 \begin{document}
 
-\begin{letter}{The Editorial Board\\Journal of Cosmology and Astroparticle Physics (JCAP)}
+\begin{letter}{The Editors\\Physical Review D}
 
 \opening{Dear Editors,}
 
-I am pleased to submit the manuscript \textit{``Structural Self-Energy
-Expansion: A Minimal-Parameter Dark-Energy Framework Anchored in
-$\varphi$ and $\pi$''} for consideration in JCAP.
+I am pleased to submit for your consideration the manuscript \textit{``Fixing
+the Dark-Energy Equation of State with Two Dimensionless Constants, $\varphi$
+and $\pi$: A Falsifiable, Parameter-Frugal Test Against DESI~DR2 and
+Planck~2018.''}
 
-The paper addresses a central question in late-time cosmology: how much of the
-dark-energy phenomenology can be fixed by structure rather than by free
-parameters. We show that the \emph{shape} of cosmic acceleration---the
-equation-of-state pair $(w_0,w_a)$, the canonical effective-field-theory
-coefficients, and the inflationary spectral observables---follows algebraically
-from two dimensionless constants, the golden ratio $\varphi$ and $\pi$, with no
-tuned amplitude. In CMB-likelihood terms the framework is a $k=2$ fit: it fixes
-four of $\Lambda$CDM's six parameters algebraically ($\Omega_b$, $\Omega_c$,
-$n_s=1-\varphi^{-7}$, and the global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$, measured input and derived screening, which lands on the pure number $3(\varphi+\pi)^2$), leaving only
-the primordial amplitude $A_s$ and the optical depth $\tau$ ($k=2$ versus $k=6$).
+\textbf{Physics claim.} The DESI results have made it pressing to ask whether
+the dark-energy equation of state is a set of free parameters to be measured
+or a structure fixed in advance. The manuscript presents a minimal-parameter
+framework in which the pair $(w_0,w_a)$ follows as bare algebraic ratios of two
+dimensionless constants, $w_0=\val{W0_d6}$ and $w_a=\val{WA_d6}$, with no fitted
+amplitude. No quantity is fitted to place it, and it sits at
+$\val{p2_w0wa_ssee_ec26}\sigma$ from its $w_0w_a$CDM posterior (Pantheon+;
+$0.2$--$1.8\sigma$ across supernova compilations). It carries a pre-committed
+falsification criterion: exclusion at $>3\sigma$ by DESI~DR3 refutes the model,
+as would LiteBIRD failing to find $r=\varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3}$.
 
-The principal results that I believe merit publication are:
+\textbf{One fit, then fixed.} In CMB-likelihood terms the framework is a $k=2$
+model: the background ($\omega_b$, $\omega_c$, $n_s$, $w_0$, $w_a$ and the
+global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968~\kms$)
+is fixed algebraically, and only the primordial amplitude $A_s$ and the optical
+depth $\tau$ are fitted, once, to Planck~2018. The full \texttt{plik} likelihood
+gives a best-fit $\chi^2$ indistinguishable from $\Lambda$CDM
+($\Delta\chi^2=\val{b1_dchi2}$) and $\Delta\mathrm{BIC}=\val{b1_dBIC}$ ($k=2$ versus
+$k=6$): the preference comes from parsimony, not from a better fit. After that
+single fit nothing cosmological is adjusted again. Every other probe is read
+with the background of both models fixed in advance---SSEE at its algebraic
+point, $\Lambda$CDM at the Planck best fit---and with no cosmological parameter
+free. Supernovae, CMB lensing and weak lensing do not separate the two models;
+the one probe that does is DESI~DR2 BAO, with $\chi^2=\val{desi_clav_ssee}$ for
+SSEE and $\val{desi_clav_lcdm}$ for $\Lambda$CDM over $\val{desi_N}$ points.
 
-\begin{itemize}
-  \item The bare ratios $w_0=-T_r/M_v=\val{W0_d6}$ and $w_a=-P_{\rm sc}/I_g=\val{WA_d6}$
-  match the DESI DR2 $w_0w_a$CDM posterior at the $0.24\sigma$ level (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations), with no
-  fitted normalization.
-  \item A Markov-chain analysis combining DESI BAO with the global rate
-  $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$ as prior yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\mathrm{km\,s^{-1}\,Mpc^{-1}}$
-  ($\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$), and the
-  full Planck 2018 \texttt{plik} likelihood (TT, TE, EE $+$ low-$\ell$ $+$ lensing)
-  gives $\Delta\mathrm{BIC}=\val{b1_dBIC}$ relative to $\Lambda$CDM ($k=2$ versus $k=6$),
-  with a best-fit $\chi^2$ statistically indistinguishable from $\Lambda$CDM---the
-  preference is driven by parsimony, not by a superior fit.
-  \item The CMB matter density carries no fitted parameter: it follows from the
-  forward identity $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$, giving
-  $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ in agreement with Planck at
-  $0.88\sigma$ and reproducing the acoustic-peak structure. (The $0.41\sigma$
-  quoted in an earlier version is the agreement of $\omega_c$ itself, not of
-  $\Omega_{m,\mathrm{CMB}}$.)
-  \item The inflationary sector predicts $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a
-  tensor-to-scalar ratio $r=\varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3}$, falsifiable by
-  LiteBIRD and CMB-S4.
-\end{itemize}
+\textbf{Weak lensing without an extra component.} An earlier version of this
+work introduced an additional dark-matter component to relieve an apparent
+$S_8$ tension. Measured against the raw KiDS-Legacy cosmic-shear data
+(Wright et al.\ 2025, arXiv:2503.19441), that tension does not exist: with the
+algebraic background, the shear asks for
+$\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, at $\val{logA_leg_vs_cmb}\sigma$
+from the $\val{leg_logA_cmb}$ fixed by the model's own CMB fit. Fixing $A_s$ to that
+value costs nothing ($\chi^2=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$
+with $A_s$ free, all remaining parameters nuisance), so
+$S_8=\val{S8_leg_pred}$ is a prediction rather than a fit, against
+$\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. The additional
+component was therefore withdrawn, and a single $A_s$ now serves the CMB and the
+growth of structure. KiDS-Legacy predates this analysis; I claim consistency
+across epochs, not priority.
 
-In keeping with the standards of the journal, the manuscript is explicit about
-the framework's limits. The absolute vacuum scale enters as a single measured
-input rather than a derived quantity; the non-linear closure of the growth
-amplitude is deferred to N-body work; and the mechanism behind MIRA remains
-an open problem rather than a claimed result. \emph{(Updated 2026-09-07:
-earlier versions of this letter said $S_8$ ``remains in tension with
-weak-lensing surveys, relaxed only in the conditional two-sector extension'',
-and cited the $\varphi$-dark-matter mass coefficient. Both are withdrawn.
-Against the raw KiDS-1000 data with $A_s$ free --- it is a free parameter of
-the model --- the converged MCMC gives $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, which is
-$\val{S8_k1000_ssee_tension}\sigma$ from KiDS: there is no tension to relax. The $3.5\sigma$ figure
-was an artefact of fixing $A_s$ to Planck, i.e.\ of importing the
-Planck--KiDS tension. The two-sector extension and the particle were retired
-on 2026-08-01. \emph{Further updated 2026-09-20:} the same test against the
-KiDS-Legacy release (357 raw $\xi_\pm$ points; Wright et al.\ 2025,
-arXiv:2503.19441, published sixteen months before this analysis --- no
-temporal priority is claimed) finds the shear asking for
-$\log(10^{10}A_s)=3.0255\pm0.0396$ against the $3.04483$ the CMB fixes under
-the same algebraic background, $0.49\sigma$. Fixing $A_s$ to that CMB value
-costs nothing ($\chi^2=417.97$ with eight free parameters, all nuisance and
-none cosmological, against $418.34$ with $A_s$ free; $\Delta\mathrm{BIC}=+6.24$),
-so $S_8=\val{S8_leg_pred}$ becomes a prediction rather than a fit, against
-$\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. The three $\chi^2$ compared span $1.0$: the shear
-does not discriminate between the models, and I make no claim that it
-does.)} I have deliberately separated the algebraically fixed core from these
-ongoing questions so that referees can assess each on its own terms.
+\textbf{Limits stated in the manuscript.} The absolute vacuum scale enters as a
+single measured input; the algebraic origin of $\omega_b$ and $\omega_c$ and the
+mechanism behind the screening ratio are open problems, listed as such; the
+non-linear closure of the growth amplitude is deferred to N-body work.
 
-The work is original, has not been published elsewhere, and is not under
-consideration by any other journal. I have no competing interests to declare.
-All numerical results are reproducible from the analysis scripts accompanying
-the manuscript.
+\textbf{Originality and status.} The manuscript is original, has not been
+published elsewhere, and is not under consideration at any other journal. A
+preprint of the associated framework is archived on Zenodo (concept DOI
+\href{https://doi.org/10.5281/zenodo.19654118}{10.5281/zenodo.19654118}); it has
+not been posted to arXiv. I am an independent researcher without institutional
+affiliation and have no competing interests. All code, data provenance and
+validation scripts are public
+(\url{https://github.com/mikealmeida1721/SSEE-Cosmologia}), as stated in the
+manuscript's Data and Code Availability section.
 
-Thank you for your time and consideration. I would be glad to respond to any
+Thank you for considering this submission. I would be glad to answer any
 questions from the editors or referees.
 
 \closing{Sincerely,}

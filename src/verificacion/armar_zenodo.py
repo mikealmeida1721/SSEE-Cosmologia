@@ -55,11 +55,9 @@ PAQUETE = [
     ("11", "SSEE_Sealed_Journal.pdf", "manuscript/SSEE_Sealed_Journal.pdf"),
     ("12", "SSEE_Unified_Journal.pdf", "manuscript/SSEE_Unified_Journal.pdf"),
     ("13", "SSEE_Endorser_Summary.pdf", "manuscript/SSEE_Endorser_Summary.pdf"),
-    ("14", "SSEE_PRD.pdf", "submission_PRD/SSEE_PRD.pdf"),
+    ("14", "SSEE_Cover_Letter.pdf", "manuscript/SSEE_Cover_Letter.pdf"),  # carta a PRD (2026-10-10; antes JCAP)
+    ("15", "SSEE_PRD.pdf", "submission_PRD/SSEE_PRD.pdf"),
 ]
-# SSEE_Cover_Letter (dirigida a JCAP) NO va: el envío activo es PRD y su carta es
-# submission_PRD/PRD_cover_letter.md; una carta a una revista no es producto de
-# investigación (decisión administrativa 2026-10-10, ver archive/README.md).
 
 
 def _hash(p, algo):
@@ -110,7 +108,7 @@ def main():
         dst = out / f"{pre}_{doc}"
         shutil.copy2(ROOT / "docs" / doc, dst)
         archivos.append(dst)
-    zp = out / f"15_SSEE_source_{commit}.zip"
+    zp = out / f"16_SSEE_source_{commit}.zip"
     subprocess.run(["git", "archive", "--format=zip", "-o", str(zp), "HEAD"], cwd=ROOT, check=True)
     archivos.append(zp)
 
