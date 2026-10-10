@@ -92,6 +92,16 @@ edits files and takes several minutes; do not interrupt it.
 .venv/bin/python3 src/verificacion/ssee_verify.py
 ```
 
+On a fresh clone, without the heavy MCMC chains and external data (§5), the
+provenance layers (R65, R74, R75) report the missing files — e.g.
+`falta results/chains/ssee_cmb_k2.1.txt` — and the run ends red. That is the
+guardian refusing to vouch for logs whose inputs it cannot see, not a defect of the
+logs: download the data listed in `data/manifiesto_externos.json` (or regenerate the
+chains with their DVC stages) and those checks can be evaluated. Everything that
+depends only on the repository — the algebra, the cross-paper consistency of every
+value, and the retracted-claim rules — runs without them. The guardian's messages
+are in Spanish.
+
 ## 7. Re-running the main results
 
 | Result | Command | Log |
