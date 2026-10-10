@@ -1,16 +1,11 @@
 name: ssee
+# Una sola lista de paquetes: requirements.txt. Este archivo sólo fija Python y
+# delega en ella (2026-10-10: environment.yml se había quedado en numpy>=1.24
+# después de que requirements.txt lo corrigiera, y le faltaban 6 paquetes).
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.11
-  - numpy>=1.24
-  - scipy>=1.10
-  - matplotlib>=3.7
   - pip
   - pip:
-    - emcee>=3.1
-    - corner>=2.2
-    - camb>=1.5
-    - cobaya>=3.6
-    - classy>=3.3
+    - -r requirements.txt

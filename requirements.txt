@@ -13,3 +13,12 @@ classy>=3.3
 getdist>=1.4
 astropy>=5.3
 pyyaml>=6.0
+# Faltaban (auditoría de reproducibilidad, 2026-10-10): los importan etapas
+# activas de dvc.yaml (h0_por_profundidad usa pandas; velocileptors = BOSS LPT;
+# dvc corre la cadena de procedencia).
+pandas>=2.0
+velocileptors>=3.1
+dvc>=3.50
+# pyccl y healpy NO van aquí: las etapas erosita_cr / erosita_completitud corren
+# en un entorno aparte (pyccl 3.3.6, healpy 1.20.0, numpy 2.5.3, astropy 8.0.1),
+# porque pyccl compila contra su propia pila. Ver requirements-erosita.txt.

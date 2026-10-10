@@ -327,7 +327,7 @@ pre-registered axioms, not derived theorems — see OPEN_PROBLEMS.md and Paper 1
 ## 🧬 Provenance
 
 - **Constant dictionary**: the closed algebraic set is documented in
-  [`docs/SSEE_Constant_Dictionary.md`](docs/SSEE_Constant_Dictionary.md) — 31 invariants
+  [`zenodo_dictionary/SSEE_Constant_Dictionary.md`](zenodo_dictionary/SSEE_Constant_Dictionary.md) — 31 invariants
   generated from φ and π by two lineage laws (copy / no-self-sum), fixed **independently
   of any cosmological dataset**. MIRA = (3φ+π)/4 is one such structural invariant, derived,
   not fitted. **No claim of temporal priority over public data** (DESI DR1/DR2, Planck 2018)

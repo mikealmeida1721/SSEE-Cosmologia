@@ -1,0 +1,7 @@
+# Entorno aparte para las etapas erosita_cr y erosita_completitud de dvc.yaml.
+# Versiones medidas en el venv con que se sellaron (2026-10-10).
+# Crear:  python -m venv $SSEE_DATA_DIR/erosita/venv && $SSEE_DATA_DIR/erosita/venv/bin/pip install -r requirements-erosita.txt
+pyccl==3.3.6
+healpy==1.20.0
+numpy==2.5.3
+astropy==8.0.1
