@@ -7415,7 +7415,11 @@ print("\nCapa R55d — s_K no se rotula como kineticidad α_K")
 # en la serie (P7 §alphak lo declara erróneo) y quedaba un sitio en Unified.
 try:
     _R55D = re.compile(r"kineticit\w*[^\n]{0,60}?(\\val\{(S_K_|sK_IR|sK_full)"
-                       r"|s_K\^\{?\\rm full|0\.403|0\.4169)", re.I)
+                       r"|s_K\^\{?\\rm full|0\.403|0\.4169)"
+                       # f_scr se arma con s_K, no con α_K (P7 §alphak; PRD L461, 2026-10-10)
+                       r"|f_\{?(\\rm )?scr(een)?\}?\s*=\s*\\alpha_?\{?K"
+                       # 0.073 = α_K de la acción vieja (k-essence+potencial), retirada 76f18fb
+                       r"|alpha_K\^\{\\rm field\}", re.I)
     _N55D = re.compile(r"\bnot\b|distinct|confus|unrelated|no es", re.I)
 
     def _malos55d(_tx):
@@ -7434,6 +7438,8 @@ try:
           not _r55d_malos, "0 sitios" if not _r55d_malos else "; ".join(_r55d_malos))
     check("R55d el detector marca la forma vieja",
           bool(_malos55d("the full Bellini-Sawicki kineticity becomes\n$s_K^{\\rm full}=0.41691$"))
+          and bool(_malos55d("$f_{\\rm scr}=\\alpha_K^{\\rm eff}/(3\\,\\mathrm{MIRA})$"))
+          and bool(_malos55d("$\\alpha_K^{\\rm field} \\approx 0.073$"))
           and not _malos55d("the full pressure-dilution rate (not the Bellini--Sawicki "
                             "kineticity $\\alpha_K$) becomes $s_K^{\\rm full}$"),
           "control R53")
