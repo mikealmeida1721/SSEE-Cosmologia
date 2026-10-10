@@ -7470,7 +7470,9 @@ try:
              re.compile(r"1404\.3604"),                      # no es Bellini-Sawicki (es un paper de oncología)
              re.compile(r"2405\.13491"),                     # Euclid I (misión), no un pronóstico de α_B/α_M
              re.compile(r"Cao et al\.?\\?\s*2018"),          # 1803.00819 es Li et al. 2018
-             re.compile(r"suppressed by the\s+factor \$\\approx1\.93")]  # Ω_m/(1+w₀) retirado en P8
+             re.compile(r"suppressed by the\s+factor \$\\approx1\.93"),  # Ω_m/(1+w₀) retirado en P8
+             # consolidados: el blanco puro se escribe con H0_ALG, nunca con la salida H0_GLOBAL
+             re.compile(r"3\(\\(?:phiG|varphi)\s*\+\s*\\pi\)\^2\s*=\s*\\val\{H0_GLOBAL")]
 
     def _malos55e(_tx):
         _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))

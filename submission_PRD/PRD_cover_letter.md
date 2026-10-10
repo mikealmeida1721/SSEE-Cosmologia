@@ -9,7 +9,7 @@ To the Editors of *Physical Review D*,
 
 I am pleased to submit for your consideration the manuscript **"Fixing the
 Dark-Energy Equation of State with Two Dimensionless Constants, φ and π: A
-Falsifiable, Parameter-Frugal Test Against DESI DR2 and Planck PR4."**
+Falsifiable, Parameter-Frugal Test Against DESI DR2 and Planck 2018."**
 
 **Physics claim.** The manuscript addresses a question made pressing by the DESI
 results: whether the dark-energy equation of state is a set of free parameters to
@@ -17,7 +17,7 @@ be measured, or a structure fixed in advance. It presents a minimal-parameter
 framework in which the equation-of-state pair follows as bare algebraic ratios of
 two dimensionless constants, w0 = −0.840 and wa = −0.670, with no fitted amplitude.
 This pre-registered point is confronted with DESI DR2 (0.24σ, Pantheon+) and Planck
-PR4, and carries a pre-committed DESI DR3 falsification criterion (joint exclusion
+2018 (PR3 spectra, PR4 lensing), and carries a pre-committed DESI DR3 falsification criterion (joint exclusion
 at >3σ refutes the model). Where standard extensions add parameters to fit the data,
 this framework removes them while remaining consistent with BAO, CMB, and
 structure-growth observations. I believe this sharply falsifiable, parameter-frugal
