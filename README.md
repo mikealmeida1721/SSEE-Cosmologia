@@ -6,7 +6,7 @@
 
 ### A minimal-parameter dark energy framework derived from φ and π
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20093447-blue.svg)](https://doi.org/10.5281/zenodo.20093447)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19654118-blue.svg)](https://doi.org/10.5281/zenodo.19654118)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](requirements.txt)
 [![Papers](https://img.shields.io/badge/Papers-10_+_2_consolidated-8A2BE2.svg)](docs/)
@@ -29,7 +29,7 @@
 |---|---|---|---|---|
 | (w₀, wₐ) | (−0.840, −0.670) | DESI DR2+CMB+Pantheon+: (−0.838±0.055, −0.617±0.208) | 0.24σ (2D); range 0.2–1.8σ across SN compilations (official chains) | ✅ |
 | CMB first peak | ℓ₁ = 221 | Planck 2018: ~220 | Δℓ = 1 | ✅ |
-| Ωm,CMB | 0.30889 (= ωm/h², ωm-direct) | Planck 2018: 0.3153 | 0.88σ | ✅ |
+| Ωm,CMB | 0.308881 (= ωm/h², ωm-direct) | Planck 2018: 0.3153 | 0.88σ | ✅ |
 | n_s | 1 − φ⁻⁷ = 0.96556 | Planck 2018: 0.9649 | 0.16σ | ✅ |
 | αT (GW speed) | 0 exact | GW170817: \|αT\| < 10⁻¹⁵ | exact match | ✅ |
 | **S₈ (single sector, A_s FIXED by the CMB — no free cosmological parameter)** | **0.8273 predicted** | KiDS-Legacy: 0.8265±0.0176 | **0.04σ** | ✅ |
@@ -118,7 +118,6 @@ SSEE/
 ├── archive/codigo/build_arxiv_packages.py  # regenerates submission_packages/ (moved to archive/)
 ├── requirements.txt · environment.yml   # reproducible Python environment
 ├── OPEN_PROBLEMS.md                # physics gaps OP-1..OP-19 with status
-├── AUDIT.md                        # reproducibility guide + known limitations
 ├── CHANGELOG.md · CITATION.cff · LICENSE
 └── (eftcamb_ssee/ — EFTCAMB fork, not versioned: clone separately)
 ```
@@ -153,7 +152,7 @@ export COBAYA_PACKAGES_PATH=/path/to/your/cobaya_packages
 python src/p03_cmb/b1_minimiza.py   # chi2 minimo de cada modelo (full plik); ssee_paper3_cobaya_unified.py es solo biblioteca
 ```
 
-See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
+See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) for known limitations.
 
 ---
 
@@ -183,10 +182,10 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | PP (lensing) | 0.720 | 0.757 | 9 |
 | Combined (diagonal) | **1.040** | 1.040 | 5914 |
 | ΔBIC (full plik MCMC, TTTEEE+lowl+lensing, k=2 vs k=6, N=2354) | **−33.83** (SSEE decisively favoured — **canonical**; minimum χ², `results/logs/b1_k2.json`) | — | — |
-| ΔBIC (plik_lite point est., TTTEEE, k=2 vs k=6, N=613) | **−24.0** (cross-check) | — | — |
+| ΔBIC (plik_lite TTTEEE+lowT+lowE, {A_s,τ} fitted in both models, k=2 vs k=6, N=669) | **−26.03** (cross-check; supersedes −24.0, which held A_s,τ at Planck and counted N=613) | — | — |
 | ΔBIC (diagonal TT+TE+EE+PP, k=2 vs k=6, N=5914) | **−35.0** (cross-check) | — | — |
 
-*All values are the canonical ωm-direct CMB fit at the global rate H_glob = H_SH0ES(1−f_screen) = 67.962 (SH0ES is the input; the pure number 3(φ+π)² is the comparison target), with Ω_m,CMB = ω_m/h² = 0.30889 derived algebraically (no matter-rescaling factor; OP-8 dissolved). SSEE uses its canonical Σm_ν = 0.06849 eV; ΛCDM uses its standard Planck baseline Σm_ν = 0.06 eV (each model with its own neutrino mass — the fair like-for-like comparison). The **titular ΔBIC = -33.83** comes from the full `plik` likelihood with the minimum χ² of each model (χ² = 2768.4 vs ΛCDM 2771.2, Δχ² = -2.78 — indistinguishable fits, parsimony-driven; `results/logs/b1_k2.json`). The earlier `plik_lite` Cobaya legacy-MIRA scan (ΔBIC −32.2 at optimum H₀=67.037) is superseded.*
+*All values are the canonical ωm-direct CMB fit at the global rate H_glob = H_SH0ES(1−f_screen) = 67.962 (SH0ES is the input; the pure number 3(φ+π)² is the comparison target), with Ω_m,CMB = ω_m/h² = 0.308881 derived algebraically (no matter-rescaling factor; OP-8 dissolved). SSEE uses its canonical Σm_ν = 0.06849 eV; ΛCDM uses its standard Planck baseline Σm_ν = 0.06 eV (each model with its own neutrino mass — the fair like-for-like comparison). The **titular ΔBIC = -33.83** comes from the full `plik` likelihood with the minimum χ² of each model (χ² = 2768.4 vs ΛCDM 2771.2, Δχ² = -2.78 — indistinguishable fits, parsimony-driven; `results/logs/b1_k2.json`). The earlier `plik_lite` Cobaya legacy-MIRA scan (ΔBIC −32.2 at optimum H₀=67.037) is superseded.*
 
 **Growth structure (Paper 3 §5.4–5.5):**
 
@@ -204,7 +203,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | k_crit / (H₀/c) | 0.456 < 1 | Sub-Hubble stability window |
 | R = Ω_m,eff/Ω_m (k≥10) | 0.9897 ± 0.0167 | Cota a la agrupación de EO: |r| ≤ 0.0175, 3.9% de r*=0.4464 |
 | γ_IS | 0.5504 ± 0.001 | ≈ γ_ΛCDM = 0.55 |
-| G = D₁_SSEE/D₁_ΛCDM | 1.0032 ± 0.005 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.30889) |
+| G = D₁_SSEE/D₁_ΛCDM | 1.0032 ± 0.005 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.308881) |
 | σ₈_SSEE (single-sector ceiling) | 0.8149 ± 0.006 | ODE linear growth gives 0.8136 |
 | S₈ with A_s fixed to **Planck** (ceiling, not a prediction) | 0.827 | imports the Planck–KiDS offset; the model's own prediction fixes A_s to its **own** CMB fit — see Paper 6 |
 | Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | ≈ ΛCDM (0.73σ); fσ₈ against raw BOSS multipoles is in progress |
@@ -238,7 +237,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 
 ### CLASS Boltzmann Validation (Fases 1–3)
 
-> Canonical ωm-direct run with the model's single matter density (Ω_m = ω_m/h² = 0.30889, no matter factor). Independent-code cross-check: CLASS here, CAMB in Paper 3 (`results/logs/class_picos.json`).
+> Canonical ωm-direct run with the model's single matter density (Ω_m = ω_m/h² = 0.308881, no matter factor). Independent-code cross-check: CLASS here, CAMB in Paper 3 (`results/logs/class_picos.json`).
 
 | Test | SSEE | ΛCDM | Note |
 |---|---|---|---|
@@ -258,7 +257,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 | Ω_c h² | 0.11951 | 0.11935 ± 0.00082 | **0.20σ** ✅ |
 | r_drag (Mpc) | 147.17 | 147.20 ± 0.21 | **0.14σ** ✅ |
 | H₀ (km/s/Mpc) | 67.96 | 65.87 ± 1.17 | **1.79σ** ✅ |
-| Ω_m,CMB | 0.30889 | 0.3288 ± 0.0118 | **1.69σ** ✅ |
+| Ω_m,CMB | 0.308881 | 0.3288 ± 0.0118 | **1.69σ** ✅ |
 | w₀ | −0.840 | −0.655 ± 0.107 | **1.73σ** ✅ |
 | wₐ | −0.670 | −1.104 ± 0.304 | **1.43σ** ✅ |
 
@@ -270,7 +269,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 |---|---|---|---|
 | n_s | 1 − φ⁻⁷ = 0.96556 | 0.9649 ± 0.0042 | 0.16σ |
 | H₀ | 3(φ+π)² = 67.96 km/s/Mpc | 67.36 ± 0.54 | 1.1σ |
-| Ωm (geometric identity, *superseded* by ωm-direct 0.30889) | (π−φ)/(π+φ) = 0.3201 | 0.3153 ± 0.0073 | 0.66σ |
+| Ωm (geometric identity, *superseded* by ωm-direct 0.308881) | (π−φ)/(π+φ) = 0.3201 | 0.3153 ± 0.0073 | 0.66σ |
 | Ωb h² | (π−φ)/(3Ω²) = 0.02242 | 0.02237 ± 0.00015 | 0.32σ |
 | Ωc h² | KAL₀ × Ωb h² × n_s = 0.11951 | 0.1200 ± 0.0012 | −0.40σ |
 | Y_p (BBN) | CAMB BBN (PArthENoPE, Ωb h²=0.02242) = 0.2472 | 0.2449 ± 0.0040 (Aver+2015) | 0.58σ |
@@ -303,7 +302,7 @@ See [AUDIT.md](AUDIT.md) for expected outputs and known limitations.
 
 ## ⚠️ Known limitations and open problems
 
-Disclosed honestly in the papers. Editorial limitations in [AUDIT.md](AUDIT.md).
+Disclosed honestly in the papers. Open problems in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md).
 **Physics gaps that future work must address:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) (19 items, OP-1..OP-19).
 
 ### Editorial/pipeline limitations
@@ -363,7 +362,7 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
 - [x] OPEN_PROBLEMS OP-2/3/4/6 resolved; OP-1/5 partial
 - [x] Paper 1 Postulates D (dimensional anchor) & S (saturation correspondence)
 - [x] Hostile-referee overclaim sweep across all 10 papers
-- [x] Zenodo v6 — Papers 1–7 archived (DOI 10.5281/zenodo.20093447)
+- [x] Zenodo v6 — Papers 1–7 archived (DOI 10.5281/zenodo.19654118)
 - [x] Internal hostile-referee audit — guardian fully green; figure-level
       pdftotext sweep across all compiled PDFs; arXiv source tarballs (10/10)
 

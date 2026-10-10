@@ -33,12 +33,17 @@ archive/
 | `VERIFICATION_LEDGER.md`, `CANONICAL_VALUES.yaml` | **VIGENTE (fuente de verdad)** | guardián |
 | `CLAUDE.md`, `SSEE-Vault/` | **VIGENTE (memorias)** | guardián Capa Memorias |
 | `zenodo_dictionary/` | **VIGENTE** (registro publicado) | scripts corren limpio |
-| `AUDIT.md`, `RIGOR_CHECKLIST.md` | **VIGENTE** (sistema de auditoría) | — |
+| `RIGOR_CHECKLIST.md` | **VIGENTE** (sistema de auditoría) | — |
 | `archive/` | **HISTÓRICO** — no se edita, no se cita como vigente | esta bitácora |
 | `sandbox_unificado/`, `notes/`, `class_ssee/output/`, `eftcamb_ssee/` | **TRABAJO** — no canónico, no auditado | — |
 
 > `AUDIT_V7_PREFLIGHT.md` y `HALG_PIFI_CHANGEMAP.md` (antes en la raíz) se archivaron
 > en `superado/` el 2026-06-24 (snapshots ya ejecutados; llevan banner interno).
+> `AUDIT.md` (raíz) se archivó en `superado/AUDIT_2026-05-17.md` el 2026-10-10: era una foto del
+> 17-05 cuyo propio aviso de «números superados» listaba como vigentes la partícula (m_φ=40.70 eV,
+> k_fs), H_local=72.86 y «Planck PR4» para el pico CMB (tercera lectura, notes/lectura_tercera/CAJONES.md).
+> Lo que hacía lo cubren hoy README.md (reproducción), OPEN_PROBLEMS.md (limitaciones) y
+> VERIFICATION_LEDGER.md (valores esperados).
 
 ---
 

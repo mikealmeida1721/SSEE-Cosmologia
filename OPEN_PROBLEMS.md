@@ -407,9 +407,9 @@ Todo objeto astrofísico tiene r_km ≪ 1 kpc → quinta fuerza DM activa a esca
 
 **Location:** Paper 5, Table 3; Paper 6, Table 2 — **revisado 2026-05-16**
 
-**Clarification — what IS and IS NOT resolved (canónico ω_m-directo, Ω_m=0.30889):**
+**Clarification — what IS and IS NOT resolved (canónico ω_m-directo, Ω_m=0.308881):**
 - **fσ₈ (growth-rate):** NO es donde el φ-DM ayuda. El single-sector canónico (Paper 5,
-  Ω_m=0.30889) da media 0.70σ; el two-sector da 0.70σ (idéntico) — ambos **empatan ΛCDM**
+  Ω_m=0.308881) da media 0.70σ; el two-sector da 0.70σ (idéntico) — ambos **empatan ΛCDM**
   (0.73σ). A escalas RSD (k≪k_fs) el φ-DM agrupa como frío, sin firma two-sector en fσ₈.
   (El viejo "2.56σ→0.50σ" usaba datos fσ₈ erróneos y/o el baseline no-canónico Ω_m=0.160;
   el "0.74/0.76σ" usaba Ω_m=0.30889 vía MIRA — ambos retirados.)
@@ -586,10 +586,10 @@ el reframe ω_m-directo (OP-8 disuelto) la densidad de materia del CMB sale DIRE
 materia — el escalar usa KAL₀ dentro de ω_c:
 
 ```
-ω_c = KAL₀ · ω_b · n_s = 0.11951   →   Ω_m,CMB = ω_m/h² = 0.30889
+ω_c = KAL₀ · ω_b · n_s = 0.11951   →   Ω_m,CMB = ω_m/h² = 0.308881
 ```
 
-(0.88σ de Planck 2018: 0.3153±0.0073; la vieja cadena MIRA×Ω_m,dyn=0.30889 queda retirada)
+(0.88σ de Planck 2018: 0.3153±0.0073; la vieja cadena MIRA×Ω_m,dyn≈0.320 queda retirada)
 
 **El gap:**
 
@@ -668,7 +668,7 @@ desde primeros principios (necesario para aspirar a nivel de premio).
 > - $\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s = 0.11951$  (identidad **forward**, ya en Paper 1, 0.41σ)
 > - $\omega_\nu = \Sigma m_\nu/93.14\,\mathrm{eV} = 0.000735$
 >
-> y $\Omega_{m,{\rm CMB}} = \omega_m/h^2 = 0.30889$ es **derivado**, no postulado.
+> y $\Omega_{m,{\rm CMB}} = \omega_m/h^2 = 0.308881$ es **derivado**, no postulado.
 > Es la **única** densidad de materia del modelo. $s_m=1+w_0=0.160$ es un número de la
 > **ecuación de estado**, no una densidad (2026-07-30); lo que DESI prueba es $(w_0,w_a)$
 > y la geometría con este mismo $\Omega_m$. *(Hasta el 2026-10-03 este bloque llamaba a
@@ -2111,7 +2111,7 @@ Abordar SOLO después de las auditorías. Relacionado con la advertencia [[proje
 | OP-5 | P5-6 | ~~S₈ weak-lensing tension~~ | ✅ **DISUELTO 2026-08-01, confirmado 2026-09-20** | No hay tensión. Contra KiDS-1000 con A_s libre: S₈=0.7559 ± 0.0189 (0.10σ). Contra **KiDS-Legacy con A_s CLAVADO al del CMB** (cero libres cosmológicos): S₈=0.8273 predicho vs 0.8265±0.0176 medido = **0.04σ**, χ²=417.97/357. El 3.5σ era artefacto de fijar A_s a Planck, o sea de importar la tensión Planck–KiDS |
 | OP-6 | P9 | Screening form ambiguity | ⚠️ RETIRADA 2026-10-03 → OP-6b | La identidad 1+w₀=Ω_m era falsa; la forma multiplicativa es POSTULADO en Paper 9 (eq:screen_postulate) |
 | OP-7 | P4/7/8 | QFT derivation of Genesis role assignments | ✅ PARCIAL | EFT uniqueness formalizado P7 §5.2 + P1 §5.3; QFT desde primeros principios → largo plazo |
-| OP-8 | Transv. | ~~MIRA dynamical mechanism~~ → factor-materia DISUELTO | ✅ DISUELTO 2026-06-18 | Reframe ω_m-directo: Ω_m,CMB=ω_m/h²=0.30889 sin factor (ω_c=KAL₀·ω_b·n_s forward); MIRA persiste solo en f_screen; CMB χ²=1003.586/ΔBIC=−26.03 (ΛCDM con su mν 0.06, 2026-09-29) |
+| OP-8 | Transv. | ~~MIRA dynamical mechanism~~ → factor-materia DISUELTO | ✅ DISUELTO 2026-06-18 | Reframe ω_m-directo: Ω_m,CMB=ω_m/h²=0.308881 sin factor (ω_c=KAL₀·ω_b·n_s forward); MIRA persiste solo en f_screen; CMB χ²=1003.586/ΔBIC=−26.03 (ΛCDM con su mν 0.06, 2026-09-29) |
 | OP-9 | P6 | ~~UV origin of mass multiplier~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | La partícula fue retirada (la resta que definía Ω_φDM mezclaba densidad con ecuación de estado); no queda multiplicador que derivar. No resuelto: dejó de ser pregunta |
 | OP-10 | P6/P7 | ~~Unify χ into φ via richer V(φ)~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | No hay segundo campo χ que unificar |
 | OP-11 | P6 | ~~ξ (non-minimal coupling) is free parameter~~ | ⚫ **CERRADO POR DISOLUCIÓN 2026-08-01** | ξ vivía en el sector φ-DM retirado |
@@ -2345,7 +2345,7 @@ Script a crear: `op18_As_from_inflation.py`.
 **Origen.** Tras el reframe $\omega_m$-directo (OP-8 disuelto), la densidad de materia
 oscura fría del CMB entra por la **identidad forward**
 $$\omega_c = \mathrm{KAL_0}\cdot\omega_b\cdot n_s = 5.5214\times0.02242\times0.96556 = 0.11951,$$
-que junto a $\omega_b$ (OP-1) y $\omega_\nu$ da $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.30889$
+que junto a $\omega_b$ (OP-1) y $\omega_\nu$ da $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=0.308881$
 (**0.88σ** de Planck 2018). Hoy es una **relación observada que ajusta**, sin una acción de
 la que se **derive**. Una auditoría externa (2026-07-12) la señaló como el residuo teórico
 para nivel PRD. Esta OP fija la pregunta correcta.
