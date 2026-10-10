@@ -382,8 +382,8 @@ stages:
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
-      md5: 91ac79b931f0637dae3255dd054f59b9
-      size: 1937
+      md5: a469b82f9895eedd1c6b677a82056cdd
+      size: 3072
     - path: src/p02_mcmc/chi2_bao_posterior.py
       hash: md5
       md5: 9eea4ecdd44f30a1bae30b3c914bfd8a
@@ -411,7 +411,7 @@ stages:
     outs:
     - path: results/logs/prueba_equivalencia_hglob.json
       hash: md5
-      md5: bbd057d44c6d11afc7c9648cc35cc778
+      md5: a60e3e0f92b2969b187eeabed22dbb77
       size: 2095
   spt3g_calibrador:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1295,8 +1295,8 @@ stages:
       size: 809
     - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
       hash: md5
-      md5: 9fc22850ba4020d5745441d8d4585021
-      size: 1139
+      md5: 70c46a37f87d44fa318abbd341e6a9f8
+      size: 2279
     - path: src/p06_growth/analiza_boss_R1R2.py
       hash: md5
       md5: ed3d552860d48719259964e197abc61c
@@ -1316,12 +1316,12 @@ stages:
     outs:
     - path: results/logs/analiza_boss_R1R2.log
       hash: md5
-      md5: 055f1ff99a2cd864a0bd7bd8bdf0b5e7
+      md5: e25a830d2fb2c8446df32f858ebc5736
       size: 1702
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: c1a478ee8bc47252dd775cba2f720ed2
-      size: 4424
+      md5: 667868b20ed6c8696917ac54b95a45bd
+      size: 4420
   multisonda_fondo_clavado:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/multisonda_fondo_clavado.py
@@ -1510,8 +1510,8 @@ stages:
       size: 12422223
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
-      md5: 91ac79b931f0637dae3255dd054f59b9
-      size: 1937
+      md5: a469b82f9895eedd1c6b677a82056cdd
+      size: 3072
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
       md5: 407d4c513bbe2f2c02f1a03a8f3c6733
@@ -1539,11 +1539,11 @@ stages:
     outs:
     - path: results/logs/conjunta_b3_vs_individual.json
       hash: md5
-      md5: dbdb677eb2cbca3db317685e332b8095
+      md5: e41e6f177619b3c3e45ac2d30d1ec358
       size: 3871
     - path: results/logs/leer_conjunta_b3.log
       hash: md5
-      md5: 0f18d8526e0a24fd96fef1a1e0f2fb37
+      md5: 10c791a4291d7d6ae95aac3c8c393151
       size: 1488
   b1_min_ssee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

@@ -3,8 +3,8 @@
   "logA": 2.790181344523827,
   "logA_sig": 0.09453956171572275,
   "chi2_marg_min": 73.677763,
-  "chi2_marg_reevaluado": 73.67776119804367,
-  "chi2_real_min": 207.57605622607946,
+  "chi2_marg_reevaluado": 73.67776119804306,
+  "chi2_real_min": 207.57605622606667,
   "n": 111125,
   "fs8": {
    "z1": [
@@ -28,8 +28,8 @@
   "logA": 2.7614232200495397,
   "logA_sig": 0.10100907523901899,
   "chi2_marg_min": 73.413456,
-  "chi2_marg_reevaluado": 73.41345767751542,
-  "chi2_real_min": 205.54906179223332,
+  "chi2_marg_reevaluado": 73.4134576775149,
+  "chi2_real_min": 205.549061792237,
   "n": 77326,
   "fs8": {
    "z1": [
@@ -100,18 +100,18 @@
    }
   }
  },
- "dchi2_real": -2.0269944338461414,
+ "dchi2_real": -2.026994433829657,
  "perfil_vs_marginal": {
-  "perfil_logA": 2.9447867806062953,
-  "perfil_sigma": 0.12384982819806273,
-  "perfil_chi2": 197.4378444134644,
+  "perfil_logA": 2.9447867903117566,
+  "perfil_sigma": 0.12385007758914003,
+  "perfil_chi2": 197.4378892471293,
   "mnu_perfil": 0.06849,
   "marginal_logA": 2.7614232200495397,
   "marginal_sigma": 0.10100907523901899,
-  "sigmas": 1.8153176843056946
+  "sigmas": 1.8153177803907374
  },
  "_procedencia": {
-  "commit": "7cebd9c0ea3ba8bc4b1008fbb3b73975f36d3e7c",
+  "commit": "9be7a97c4c326cd4ec7e11f1e907eafd41b394bf",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/analiza_boss_R1R2.py",
@@ -128,12 +128,12 @@
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
    "data/raw/fsigma8_rsd.csv": "84dfd1ad69de6e9399a83777720cbca5e0c9d2805c42fd3529c192d176d6fb06",
-   "results/logs/growth_2026-07/boss_aisla_neutrinos.json": "e6abee98b34a54f98b5feb94198f70fa618a3c2c06b14b209a3fad5bd5bc4ef4"
+   "results/logs/growth_2026-07/boss_aisla_neutrinos.json": "d0779d36b86e14c80e3284430285b3832bdae884a779140882bdc892b2ea3ecb"
   },
   "argv": [
    "src/p06_growth/analiza_boss_R1R2.py"
   ],
-  "fecha": "2026-10-03T13:15:47",
+  "fecha": "2026-10-10T09:59:53",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
