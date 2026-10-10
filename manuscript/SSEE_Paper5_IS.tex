@@ -982,8 +982,9 @@ confirming the power-law decrease seen in Table~\ref{tab:MIRA}.
   The grey dash-dotted line marks full DE clustering ($\mathcal{R}=1/\Omega_m$; an earlier
   caption gave $1/s_m\simeq6.25$, which is not a clustering limit),
   ruled out by all current observations.
-  The required perturbation amplitude $r^* = 0.190$ (Eq.~\ref{eq:r_required})
-  would require DE clustering at the $19\%$ level — \emph{not} produced by IS dynamics.
+  The perturbation amplitude a two-fold enhancement would need is $r^* = 0.4464$
+  (Eq.~\ref{eq:r_required}), DE clustering at the $45\%$ level; the measured bound is
+  $|r|\leq0.0175$ ($3.9\%$ of $r^*$) --- \emph{not} produced by IS dynamics.
   The conclusion stands: MIRA is \emph{not} reproduced by IS dynamics, at either
   level --- linear perturbations give $\mathcal{R}\approx1$ and the background
   IS Friedmann integration a ratio $\approx3.04$, neither of them $\val{MIRA_d4}$.
@@ -1545,8 +1546,8 @@ $f\sigma_8$ predictions align closely with $\Lambda$CDM:
         single-sector IS framework to resolve.
 
   \item \textbf{$f\sigma_8$ (RSD growth rate):}
-        SSEE predicts $f\sigma_8(z=0.5) = 0.4714$, matching the
-        BOSS DR12 value of $0.458 \pm 0.038$ at $0.3\sigma$.
+        SSEE predicts $f\sigma_8(z=0.5) = \val{fs8_3_ssee}$, matching the
+        BOSS DR12 value of $0.458 \pm 0.038$ at $\val{fs8_3_pull_ssee}\sigma$.
         The mean tension across six RSD surveys is $0.70\sigma$, essentially
         identical to $\Lambda$CDM ($0.73\sigma$).
 \end{itemize}
@@ -1611,7 +1612,7 @@ Prediction & SSEE value & Test level & Dataset / Timeline \\
 $c^2_{s,\mathrm{eff}} = 0$ (DE pressureless) & $0$ (exact) & $|c^2_s| < 0.05$ & CMB lensing/$T_{\ell\ell'}$ cross \citep{Calabrese2011} / current \\
 $S_8 = 0.827$ (single-sector ceiling) & $0.827 \pm 0.006$ & $S_8 > 0.86$: favours SSEE over $\Lambda$CDM & KiDS-1000, DES-Y3 / current \\
 $\gamma_{\rm IS} = 0.5504$ & $0.5504 \pm 0.0003$ & $\gamma$ degenerate with $\Lambda$CDM at current precision & DESI full shape, Euclid / 2026--2028 \\
-$f\sigma_8(z=0.5) = 0.4714$ & $0.4714 \pm 0.010$ & $0.3\sigma$ BOSS; mean $0.70\sigma$ (6 surveys) & DESI full-shape / 2026 \\
+$f\sigma_8(z=0.5) = \val{fs8_3_ssee}$ & $\val{fs8_3_ssee}$ & $\val{fs8_3_pull_ssee}\sigma$ BOSS; mean $0.70\sigma$ (6 surveys) & DESI full-shape / 2026 \\
 $D_1$ ratio $\mathcal{G} = 1.0032$ & $1.0032 \pm 0.005$ & $0.3\%$ enhancement; below near-term ($\gtrsim 1\%$) sensitivity & Euclid weak lensing / 2027 \\
 No DE clustering ($|\delta_{\mathrm{DE}}/\delta_m| < 10^{-3}$) & $< 10^{-3}$ at $k > 20\,H_0/c$ & cosmic variance & Future 21cm surveys / 2030+ \\
 MIRA $= (3\varphi+\pi)/4$ (algebraic; the two-sector basis is retracted, Paper~6 --- see OP-8) & $\val{MIRA_d6}$ & $\Omega_m$ direct measurement & Stage IV CMB / 2030 \\
@@ -1646,10 +1647,12 @@ consistent with thermodynamic stability.
 
 \paragraph{Q2 — MIRA factor (pure algebraic axiom).}
 Linear IS perturbations yield
-$\mathcal{R} = 0.9897 \pm 0.0167$ versus the former target
-$\mathrm{MIRA}_{\mathrm{alg}} = \val{MIRA_d4}$ at all sub-horizon scales.
-The discrepancy is $50\%$, establishing that the MIRA factor is not a
-perturbative phenomenon.
+$\mathcal{R} = 0.9897 \pm 0.0167$ at $k\geq10\,H_0/c$, consistent with no
+enhancement. Its content is a bound on dark-energy clustering,
+$|r|\leq0.0175$ ($3.9\%$ of the $r^*=0.4464$ that the former target
+$\mathrm{MIRA}_{\mathrm{alg}} = \val{MIRA_d4}$ would have required): the MIRA
+factor is not a perturbative phenomenon. (That target was itself withdrawn in
+2026-06, OP-8, so no ``discrepancy'' against it is claimed.)
 Furthermore, numerical integration of the background IS Friedmann equations yields an effective ratio of $3.04$, failing to reproduce the matter factor at the background level --- a figure retained as the historical record of that route closing, since the factor it targeted was itself withdrawn in 2026-06 (OP-8).
 We conclude that the MIRA factor does not emerge from classical Israel--Stewart fluid mechanics. A two-sector dark matter structure was once proposed (Paper~6) as its physical basis, on the grounds that two near-equal densities would produce $\mathrm{MIRA}\approx2$ algebraically; that proposal is retracted, so MIRA has no proposed carrier at present and survives only as the algebraic invariant entering $f_{\rm screen}$ (Paper~9).
 
@@ -1697,7 +1700,7 @@ The Python script \texttt{src/ssee\_paper5\_IS\_perturbations.py} (including
 the growth rate and $S_8$ computations) and all output figures are available in
 the SSEE repository at
 \url{https://github.com/mikealmeida1721/SSEE-Cosmologia}
-(Zenodo DOI: \href{https://doi.org/10.5281/zenodo.20093447}{10.5281/zenodo.20093447}).
+(Zenodo DOI: \href{https://doi.org/10.5281/zenodo.19654118}{10.5281/zenodo.19654118}).
 All computations use publicly available Python packages (NumPy, SciPy, Matplotlib).
 
 %======================================================================

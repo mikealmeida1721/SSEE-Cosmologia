@@ -26,7 +26,7 @@
 % ---------------------------------------------------------------
 \title{\textbf{Structural Self-Energy Expansion as a Two-Axiom Cosmology:\\
 Algebraic Derivation of the CMB Background from~$\varphi$ and~$\pi$}\\[0.5em]
-\normalsize SSEE — Paper~4 (Peer-Review Corrected)}
+\normalsize SSEE — Paper~4}
 
 \author{Mike Edison Almeida Vallejo \\
 \small \textit{Independent Researcher} \\
@@ -256,7 +256,7 @@ Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \textbf{Hubble tension} & & & & \\
 \quad Fractional correction & $K/H_0 = \frac{\varphi+3\pi}{6(\varphi+\pi)^2}$ & $8.12\%$ & $\approx 8\%$ & — \\
 \bottomrule
-\multicolumn{5}{l}{\footnotesize $^{\rm P}$~Canonical IR-cascade value (2026 reframe): $f_{\rm scr}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $68.13$, i.e.\ $0.17\sigma$ from $3(\varphi+\pi)^2=\val{H0_ALG_d6}$; the full UV cascade closes to $\val{H0_ALG_d5}$ (Paper~10).}\\
+\multicolumn{5}{l}{\footnotesize $^{\rm P}$~IR-cascade value ($M\to\infty$ regime, not canonical): $f_{\rm scr}^{\rm IR}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $\val{p9_sh0es_glob_IR}$, i.e.\ $\val{p9_sh0es_sig_IR}\sigma$ from $3(\varphi+\pi)^2=\val{H0_ALG_d6}$; the full IR+UV cascade gives the canonical $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$ (Paper~10).}\\
 \multicolumn{5}{l}{\footnotesize The earlier CMB-mapped register ($H_0^{\rm MIRA}=67.037$) is superseded.}\\
 \multicolumn{5}{l}{\footnotesize Consistent with Paper~1 / Paper~9 policy (single target shared by every sector; the measured SH0ES rate is the input).}\\
 \multicolumn{5}{l}{\footnotesize $^\ast$~$\Omega_b=\omega_b/h^2$ is composite; its inputs are compared separately. It is $\val{Omega_b_pct_vs_planck}\%$ from Planck's, the $H_0$ offset.}\\
@@ -664,7 +664,7 @@ The Hubble tension between early- and late-universe measurements
 \citep{Verde2019,Kamionkowski2023} is currently unresolved by $\Lambda$CDM.
 The fractional correction $K/H_0 = 8.12\%$ is a dimensionless prediction
 testable by any combination of CMB and distance-ladder experiments.
-\citet{Riess2022}: $H_0 = 73.0\pm1.0$\,km\,s$^{-1}$\,Mpc$^{-1}$; deviation $0.5\sigma$.
+\citet{Riess2022}: $H_0 = 73.04\pm1.04$\,km\,s$^{-1}$\,Mpc$^{-1}$; deviation $0.4\sigma$.
 
 \paragraph{Superseded by Papers~9 and~10.}
 The additive form $H_0^{\rm glob} = H_0 + K$ adopted above is a preliminary
@@ -674,9 +674,9 @@ series, where a structural screening fraction
 $f_{\rm scr}^{\rm IR} = s_K^{\rm IR}/(3\,\mathrm{MIRA}) = (\pi-\varphi)/\Omega^2 = \val{F_SCREEN_IR_d6}$
 is applied multiplicatively to the measured local rate
 $H_0^{\rm SH0ES}=73.04\pm1.04$~km\,s$^{-1}$\,Mpc$^{-1}$ \citep{Riess2022} ---
-the only directly measured expansion rate --- yielding the canonical global value
-$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = 68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-$0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$.
+the only directly measured expansion rate --- yielding, with the IR term alone,
+$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = \val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$,
+$\val{p9_sh0es_sig_IR}\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$.
 With $\omega_b,\omega_c$ held at their algebraic values and $A_s,\tau$ profiled,
 the CMB places its own minimum at $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$,
 $\val{perfil_h0_d}\sigma$ from $H_0^{\rm glob}$ (Paper~3). (The earlier MIRA register $H_0^{\rm MIRA}=67.037$ is superseded.)
@@ -774,7 +774,7 @@ not an axiom.  The system has exactly two axioms: $\varphi$ and $\pi$.
 
 \paragraph{Objection B-2 — Exponent in $n_s$.}
 The result $n_s = 1-\varphi^{-7}$ follows algebraically from the universality
-theorem of $\alpha$-attractors \citep{KalloshLinde2013}: $n_s = 1-2/N_*$ at
+theorem of $\alpha$-attractors \citep{Kallosh2013}: $n_s = 1-2/N_*$ at
 leading order in $1/N_*$, independent of the potential shape.
 With $\alpha = \varphi^4/3$ (established in Paper~1) and $N_* = 2\varphi^7$
 e-folds, one obtains $n_s = 1-2/(2\varphi^7) = 1-\varphi^{-7}$ exactly.
@@ -900,7 +900,9 @@ $\pi$-dominated constant KAL $=(\varphi+3\pi)/2$, and vice versa, with
 zero residual.  The $\varphi\leftrightarrow\pi$ duality above motivated the
 disformal coupling $\beta_c=-\mathrm{AURA}$ of earlier drafts; Paper~7
 withdraws that coupling (``The Potential and the Dark Coupling, and Why
-They Are Withdrawn'': $|\beta_c|<0.027$, $151\times$ below AURA), so no
+They Are Withdrawn''): the cold-matter sector bounds $|\beta_c|\lesssim0.027$,
+$151$ times below AURA, and the correctly normalised shooting gives
+$\beta_c=\val{p7_beta_c_ok}$, itself outside that bound, so no
 live disformal coupling is claimed here.
 The open question of whether this discrete symmetry extends to the full
 $P(X,\phi)$ action is catalogued as OP-7 (\texttt{OPEN\_PROBLEMS.md}).

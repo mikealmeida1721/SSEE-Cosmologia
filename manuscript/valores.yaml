@@ -700,6 +700,9 @@ sigma_lcdm_conj:     {fuente: "results/logs/lcdm_conjunta.json#seleccion.consist
 gl_lcdm_conj:        {fuente: "results/logs/lcdm_conjunta.json#seleccion.consistencia_gl", formato: "d"}
 chi2_lcdm_conj:      {fuente: "results/logs/lcdm_conjunta.json#conjunta.chi2", formato: ".2f"}
 chi2_ssee_conj:      {fuente: "results/logs/lcdm_conjunta.json#ssee.total", formato: ".2f"}
+costo_cmb_conj:      {fuente: "results/logs/lcdm_conjunta.json#costo_por_sonda.cmb", formato: ".2f"}
+costo_kids_conj:     {fuente: "results/logs/lcdm_conjunta.json#costo_por_sonda.kids", formato: ".2f"}
+costo_bao_conj:      {fuente: "results/logs/lcdm_conjunta.json#costo_por_sonda.bao", formato: ".2f"}
 dchi2_ssee_lcdm_conj: {fuente: "results/logs/lcdm_conjunta.json#delta_ssee_menos_lcdm_conjunta", formato: ".2f"}
 dBIC_ssee_lcdm_conj: {fuente: "results/logs/lcdm_conjunta.json#seleccion.dBIC_ssee_menos_lcdm", formato: ".2f"}
 N_conj:              {fuente: "results/logs/lcdm_conjunta.json#seleccion.N", formato: "d"}

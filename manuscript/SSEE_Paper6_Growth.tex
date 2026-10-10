@@ -250,13 +250,16 @@ Table~\ref{tab:r7}.
 \begin{table}[h]
 \centering
 \caption{Ingredient transport test (\S\ref{sec:r7}). $\Delta\chi^2$ evaluated
-per probe, joint-fit ingredients vs.\ probe-dedicated fit.}
+per probe, joint-fit ingredients vs.\ probe-dedicated fit. $\Lambda$CDM: total
+loss $\val{perdida_lcdm_conj}$ for $\val{gl_lcdm_conj}$ degrees of freedom
+($\val{sigma_lcdm_conj}\sigma$), from the joint CMB+KiDS-Legacy+DESI fit
+(\texttt{lcdm\_conjunta.json}).}
 \label{tab:r7}
 \begin{tabular}{lccc}
 \toprule
- & CMB (Planck) & shear (KiDS-1000) & clustering (BOSS) \\
+ & CMB (Planck) & shear (KiDS-Legacy) & BAO (DESI DR2) \\
 \midrule
-$\Lambda$CDM, $\Delta\chi^2$ & \TODO{joint fit} & \TODO{joint fit} & \TODO{joint fit + free-background BOSS} \\
+$\Lambda$CDM, $\Delta\chi^2$ & $\val{costo_cmb_conj}$ & $\val{costo_kids_conj}$ & $\val{costo_bao_conj}$ \\
 \SSEE{}, $\Delta\chi^2$ & 0 (by construction) & 0 (by construction) & 0 (by construction) \\
 \bottomrule
 \end{tabular}
