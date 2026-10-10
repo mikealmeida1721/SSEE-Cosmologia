@@ -525,3 +525,14 @@ iguala, y reiniciar con corridas vivas las mataría) → se lanza `lcdm` a mano 
 dos primeras se escriben antes de lanzar la tercera. El vigilante queda en el repo
 para la próxima vez que haga falta esperar un hueco sin reinicio de por medio.
 
+
+## DES Y3 TATT — re-corrida del 2026-10-04/10 (cerrada 2026-10-10)
+La re-corrida por DVC del 10-04 y su `continua` del 10-10 dieron SSEE 516.753 (convergido) y
+ΛCDM-Planck 517.286 (sin converger). Los logs vigentes son los del 2026-09-28 (commits 026b6eb,
+5cdbcfc): SSEE **516.108** y ΛCDM-Planck **517.290**, los dos convergidos. En una minimización
+manda el χ² más bajo: la re-corrida de SSEE quedó en un mínimo local 0.65 más alto. Se restauraron
+los del 09-28 y la re-corrida se guardó en `/mnt/datos/SSEE_data/des_y3/calibrador/rerun_2026-10-10/`.
+Dispersión del minimizador ≈ 0.65 en χ²: el veredicto (empate, |Δχ²| ≲ 1.2, signo inestable
+TATT/NLA) no cambia. `sondas_ssee_vs_lcdm.py` re-corrido contra esos logs: reproduce la tabla
+(diferencias ≤ 2e-6, SPT). Pendiente tras la cola: `dvc commit des_y3_tatt` sobre los logs del 09-28.
+Referencia ΛCDM libre = 514.893 (minimizado); 518.096 es el máximo de la cadena DES, no un mínimo.
