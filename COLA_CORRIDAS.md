@@ -30,6 +30,13 @@ hay que **decidir** cuál corre, no lanzarlas según van saliendo.
 
 ---
 
+## Corriendo 2026-10-10
+
+| corrida | núcleos | lanzada | coste estimado | qué desbloquea |
+|---|---|---|---|---|
+| `des_y3_en_el_clavo ssee continua` (PID 2313987) | 1 | 10-10 09:27 | ~4–8 h (la vuelta del 10-04 tardó 8 h y agotó maxiter) | la vuelta TATT del 10-04 NO convergió (χ² 518.076, era 516.108 NLA-convergido); sin esto no se sella `des_y3_en_el_clavo` |
+| `des_y3_en_el_clavo lcdm_planck continua` (PID 2313986) | 1 | 10-10 09:27 | ídem | control R53 del mismo punto (523.17, tampoco convergió) |
+
 ## Reglas de la casa
 
 1. **Nada se lanza sin `preflight.py` verde en la misma línea de comando.**
