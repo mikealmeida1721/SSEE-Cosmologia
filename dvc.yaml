@@ -192,6 +192,18 @@ stages:
         cache: false
     - results/logs/p5_cruce_fantasma_IS.log:
         cache: false
+  p7_fondo_campo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondo_campo_p7.py
+      > results/logs/p7_fondo_campo.log 2>&1
+    deps:
+    - src/p07_eft/fondo_campo_p7.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    outs:
+    - results/logs/p7_fondo_campo.json:
+        cache: false
+    - results/logs/p7_fondo_campo.log:
+        cache: false
   p5_estabilidad_IS_completa:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p05_IS/estabilidad_IS_completa.py > 
