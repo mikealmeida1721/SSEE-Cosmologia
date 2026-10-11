@@ -46,7 +46,7 @@ tightened, at $\val{p2_w0wa_ssee_ec26}\sigma$ from the newer DESI~DR2 posterior
 $\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$)---the prediction did not move while the data improved.
 Crucially, the two forward predictions that can \emph{refute} the core framework---this
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand on their own: neither the Hubble resolution nor the growth sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
-global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
+global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
 ($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). With the
 background of both models fixed in advance, DESI~DR2 BAO gives $\chi^2=\val{desi_clav_ssee}$ for SSEE and
 $\val{desi_clav_lcdm}$ for $\Lambda$CDM at its Planck values ($\val{desi_N}$ points); $\Lambda$CDM reaches
@@ -336,7 +336,7 @@ is \emph{essentially unique}---the opposite of a dense coincidence forest, a
 stronger statement than a generic $(a\varphi+b\pi)/(c\varphi+d\pi)$ scan, which
 by construction inflates the denominator with expressions the model never uses.
 
-\begin{table}[ht]
+\begin{table}[tbp]
 \centering
 \caption{Look-elsewhere sensitivity to the matching tolerance, computed over the
 \emph{complete} $55$-constant Genesis dictionary ($490$ distinct ratios in
@@ -348,7 +348,7 @@ within $\pm0.0005$ of either target.}
 \label{tab:lookelsewhere-tol}
 \begin{tabular}{lcc}
 \toprule
-Tolerance & hits on $|w_0|=\val{S_DE_d6}$ & hits on $|w_a|=0.669975$ \\
+Tolerance & hits on $|w_0|=\val{S_DE_d6}$ & hits on $|w_a|=\val{WA_abs_d6}$ \\
 \midrule
 $\pm0.0005$ & 1 & 1 \\
 $\pm0.001$  & 1 & 2 \\
@@ -502,7 +502,7 @@ walkers $\times\,25{,}000$ steps (seed $42$).
 early-time geometry at the CMB-optimal value
 \begin{equation}
   \begin{aligned}
-  H_0^{\rm glob} &= H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d3}\pm0.968~\kms ,\\
+  H_0^{\rm glob} &= H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}~\kms ,\\
   \frac{H_0^{\rm glob}}{\kms} &\simeq 3(\varphi+\pi)^2 ,
   \end{aligned}
   \label{eq:h0anchor}

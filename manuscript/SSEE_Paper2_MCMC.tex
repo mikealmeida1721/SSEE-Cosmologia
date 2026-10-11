@@ -81,7 +81,7 @@ within $\val{p2_w0wa_ssee_ec28}$--$\val{p2_w0wa_ssee_ec27}\sigma$ of the DESY5/n
 (a parameter-free postdiction).
 The $H_0$ posterior is $\HZeroPosterior$~km\,s$^{-1}$\,Mpc$^{-1}$,
 obtained with the global rate of the screening cascade as the $H_0$ prior
-($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
+($H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$; Papers~3, 9--10, \S\ref{sec:prior_mira}),
 $\val{h0_p2_dhglob}\sigma$ from that prediction.
 Against all $\val{clz_rgimf_N}$ cluster dynamical masses of \citet{Zhang2026}, the
 \SSEE\ matter content in general relativity, $M_{\rm dyn}=(\omega_m/\omega_b)\,M_{\rm bar}$
@@ -356,12 +356,12 @@ $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$; Paper~3, $\omega_m
 the CMB $\chi^2$ is minimised at the global rate returned by the SSEE
 screening cascade (Papers~9--10), which takes the measured SH0ES rate as input:
 \begin{equation}
-  H_0^{\rm prior,SSEE} \;=\; H_0^{\rm glob} \;=\; H_{\rm SH0ES}\,(1-f_{\rm screen}) \;=\; \val{H0_GLOBAL_d3}\pm0.968 \;\text{km\,s}^{-1}\,\text{Mpc}^{-1},
+  H_0^{\rm prior,SSEE} \;=\; H_0^{\rm glob} \;=\; H_{\rm SH0ES}\,(1-f_{\rm screen}) \;=\; \val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma} \;\text{km\,s}^{-1}\,\text{Mpc}^{-1},
   \label{eq:H0_prior_alg}
 \end{equation}
 where the uncertainty is the SH0ES error propagated through the (multiplicative)
 screening factor, and the central value reproduces the dimensionless algebraic
-target $3(\varphi+\pi)^2$ to $\val{p9_hglob_residuo}$~km\,s$^{-1}$\,Mpc$^{-1}$ (a relative $6\times10^{-8}$). The background
+target $3(\varphi+\pi)^2$ to $\val{p9_hglob_residuo}$~km\,s$^{-1}$\,Mpc$^{-1}$ (a relative $\val{hglob_residuo_rel}$). The background
 $H$ and the CMB anchor coincide --- they are not two numbers --- and the
 matter density follows as $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$,
 with \emph{no} matter factor (the earlier MIRA mapping
@@ -575,7 +575,7 @@ Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
   \centering
   \includegraphics[width=0.68\textwidth]{fig_corner_lcdm_professional.pdf}
   \caption{\LCDM\ posteriors. The model recovers standard values
-  $H_0\approx68.0$, $\Omega_m\approx0.307$.}
+  $H_0=\val{p2_lcdm_H0_mediana}$, $\Omega_m=\val{p2_lcdm_Om_mediana}$ (posterior medians).}
   \label{fig:corner_lcdm}
 \end{figure}
 
@@ -730,7 +730,7 @@ dimensionless target $3(\varphi+\pi)^2$, is not a
 mere coincidence: with the baryon and cold-matter densities fixed by SSEE
 algebra, the Planck~\texttt{plik\_lite} likelihood is minimised exactly at
 that value (Paper~3, \S\ref{sec:prior_mira}). The background $H$ and the
-CMB anchor therefore coincide --- they are the same number, $H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968$ ---
+CMB anchor therefore coincide --- they are the same number, $H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$ ---
 superseding the earlier MIRA-mapped anchor $H_0^{\rm MIRA}=67.037$.
 With the \emph{total} matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background
 geometry, the MCMC posterior reported above,
@@ -961,7 +961,7 @@ constant $(-1,0)$ at $\val{mf_w0wa_lcdm}\sigma$, independently confirming a dyna
 state; under this uncompressed likelihood $H_0$ relaxes to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$. The
 \SSEE\ algebraic point $(-0.840,-0.670)$ lies at $\val{mf_w0wa_ssee}\sigma$ from this posterior
 --- more than twice closer than $\Lambda$CDM (Fig.~\ref{fig:degeneracy}).
-The $\wz$--$\wa$ posterior is strongly anticorrelated ($\rho=-0.93$) and \SSEE\ falls
+The $\wz$--$\wa$ posterior is strongly anticorrelated ($\rho=\val{p2_rho_w0wa_full}$) and \SSEE\ falls
 within its $2\sigma$ region. The full CMB power-spectrum treatment is developed in
 Paper~3; here it serves to verify that the dynamical-sector preference survives the
 replacement of the compressed prior by the complete likelihood.
@@ -979,7 +979,7 @@ replacement of the compressed prior by the complete likelihood.
 \end{figure}
 
 \paragraph{Hubble tension.}
-The \SSEE\ global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$
+The \SSEE\ global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$~km\,s$^{-1}$\,Mpc$^{-1}$
 --- the output of the screening cascade of Papers~9--10, whose central value reproduces
 the dimensionless target $3(\varphi+\pi)^2$ and at which the
 Planck \texttt{plik\_lite} likelihood is minimised under the $\omega_m$-direct

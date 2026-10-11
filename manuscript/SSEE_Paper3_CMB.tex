@@ -153,7 +153,7 @@ s_{\mathrm{DE}} &= \frac{T_r}{M_v} = \frac{3\varphi+\pi}{2(\varphi+\pi)} = \val{
 s_m &= 1 - s_{\mathrm{DE}} = \val{S_M_d6}. \label{eq:sm}
 \end{align}
 The Hubble constant is the global rate of the SH0ES cascade (Papers~9--10),
-$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d6}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$:
+$H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d6}\pm\val{p9_hglob_sigma}$~km\,s$^{-1}$\,Mpc$^{-1}$:
 the measured local rate is the single dimensional input (Postulate~D, Paper~1)
 and the global rate is its output. It lands on the pure number
 $3(\varphi+\pi)^2 = M_v\times\Omega = \val{H0_ALG_d5}$
@@ -313,14 +313,13 @@ $\tau$ & 0.054 & Planck 2018\footnotemark{} \\
   ($k=2$); the values in this table are the \emph{fiducial} inputs used for
   the fixed-point evaluations of \S\ref{sec:results}, not fitted results. They
   are fitted in the Phase-B chain of \S\ref{sec:b1_mcmc}. A direct
-  check of how much that fiducial choice costs (2026-09-07): minimising
+  check of that fiducial choice: minimising
   $\chi^2$ over $(\ln 10^{10}A_s,\tau)$ against
   \texttt{plik\_lite} TTTEEE + lowT + lowE, with the remaining background
-  fixed by the algebra, moves $\tau$ to $0.05546$ and $\ln(10^{10}A_s)$ to
-  $3.04484$ and lowers $\chi^2$ by only $1.84$. The recovered $\tau$ sits
+  fixed by the algebra, moves $\tau$ to $\val{tau_aj_ssee}$ and $\ln(10^{10}A_s)$ to
+  $\val{logA_aj_ssee}$. The recovered $\tau$ sits
   within $0.1\sigma$ of the Phase-B posterior $\val{b1_tau_ssee}\pm\val{b1_tau_ssee_s}$, so the fiducial
-  choice is doing no work. The same exercise on the $\Lambda$CDM background
-  ($w=-1$, $w_a=0$) gains $0.47$.}
+  choice is doing no work.}
 
 The baryon density is fixed to the Planck~2018 prior $\Omega_b h^2 = 0.02237$.
 The SSEE algebraic value derived in Paper~4, $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2]
@@ -763,9 +762,11 @@ DES Y3 \citep{DES2022} & --- & $0.776\pm0.017$ \\
 \label{sec:fsig8}
 
 The growth-index prediction $\gamma_\mathrm{IS}$ is directly testable through
-redshift-space distortions.  We compute $f\sigma_8(z) = \Omega_m(z)^\gamma \times
-\sigma_8 \times D(z)/D(0)$ using the proper integral
-$D(z)/D(0) = \exp\!\left[-\int_0^z \Omega_m(z')^\gamma/(1+z')\,dz'\right]$
+redshift-space distortions.  We compute $f\sigma_8(z) = f(z)\,\sigma_8\,D(z)/D(0)$,
+with $D$ integrated from the linear growth equation on the \SSEE\ background and
+$f=d\ln D/d\ln a$ taken from that solution, not from a $\Omega_m(z)^\gamma$
+parametrisation; the effective index of the solution over $0\le z\le2$ is
+$\gamma=\val{p3_fs8_gamma_ef}$, beside the $\gamma_{\rm IS}=\val{p3_gamma_IS}$ fitted in Paper~5,
 and compare against published RSD measurements from
 6dFGS \citep{Beutler2012}, SDSS MGS \citep{Howlett2015}, BOSS~DR12 \citep{Alam2017},
 and the eBOSS~DR16 quasar sample \citep{Hou2021} (the six points of Table~\ref{tab:fsig8}).
@@ -776,7 +777,7 @@ and the eBOSS~DR16 quasar sample \citep{Hou2021} (the six points of Table~\ref{t
   (six peer-reviewed points), computed with the canonical Paper~5
   Israel--Stewart growth ODE: $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$
   ($\omega_m$-direct) in both the gravitational background and the Poisson
-  source, with $\gamma_\mathrm{IS}=\val{p3_gamma_IS}$ and $\sigma_8=\val{p3_sigma8_IS}$ (single-sector).
+  source, with $\sigma_8=\val{p3_sigma8_IS}$ (single-sector); $f$ comes from the ODE itself.
   Pull $=(f\sigma_8^\mathrm{SSEE}-f\sigma_8^\mathrm{obs})/\sigma$.}
 \label{tab:fsig8}
 \begin{adjustbox}{max width=\textwidth}
@@ -810,7 +811,7 @@ The combination of independent growth-rate probes is reviewed in \citet{Moresco2
 \begin{tcolorbox}[colback=yellow!5!white,colframe=orange!80!black,title={Sector caveat for $f\sigma_8$}]
 The $\chi^2/N=\val{fs8_chi2N_ssee}$ quoted above uses the single matter density
 $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in both the background and the Poisson source, with
-$\gamma_\mathrm{IS}=\val{p3_gamma_IS}$ and $\sigma_8=\val{p3_sigma8_IS}$ ($A_s$ at the Planck value),
+the growth rate taken from the ODE and $\sigma_8=\val{p3_sigma8_IS}$ ($A_s$ at the Planck value),
 finding a mean $f\sigma_8$ tension of $\val{fs8_tmedia_ssee}\sigma$ (Paper~5, $\approx\Lambda$CDM
 $\val{fs8_tmedia_lcdm}\sigma$). Against the \emph{raw} BOSS DR12 multipoles, Paper~6 finds the
 algebraic background fitting marginally better than Planck's ($\chi^2=\val{bossR_chi2_ssee}$ vs
@@ -933,7 +934,7 @@ takes the measured SH0ES rate as input and, with the full screening fraction,
 returns $H_0^{\rm glob}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d6}$~km\,s$^{-1}$\,Mpc$^{-1}$,
 a residual of $+4.2\times10^{-6}$ from the pure-number target $3(\varphi+\pi)^2$
 \citep{Verde2019,DiValentino2021,Riess2022}; the propagated uncertainty is
-$\pm0.968$.
+$\pm\val{p9_hglob_sigma}$.
 
 \bigskip
 \noindent\textbf{Data Availability.}

@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-04",
+ "fecha": "2026-10-11",
  "cadenas": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1..c4",
  "filas_tras_corte": 53116,
  "corte": "30 % inicial por cadena",
@@ -86,7 +86,8 @@
   "lcdm": {
    "chi2": 13.326336658721393,
    "sigma": 3.221078034748996
-  }
+  },
+  "rho": -0.934147974077974
  },
  "control": {
   "H0": {
@@ -112,11 +113,11 @@
  },
  "control_pasa": true,
  "_procedencia": {
-  "commit": "07d0d4cdcd2c4a6381cf300b356511bb213652c9",
+  "commit": "98f48baf7b449baec40a7e75711c4a3225974fd1",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/mcmc_full/leer_mcmc_full.py",
-  "script_sha256": "e0d38f8e84d2c2f3aa60e3242d5e8e1eb2370f89327a087c5f9d9f17d5953347",
+  "script_sha256": "807316096b20e5987a116f36df688dd7ea5e6b7418391e1bc13b6070588844d0",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt": "77e6956834c7e42363b9b1b67ce93c08cc224a8131150dd453ccd4c7aca28cb6",
@@ -128,7 +129,7 @@
   "argv": [
    "src/mcmc_full/leer_mcmc_full.py"
   ],
-  "fecha": "2026-10-04T08:18:55",
+  "fecha": "2026-10-11T11:43:37",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -59,7 +59,7 @@ together with the structural constants of the algebra, fixes a
 \[
   \fsc \;=\; \frac{\sK}{3\,\MIRA}
        \;=\; \frac{\pi - \phiG}{(\phiG+\pi)^2}
-       \;\approx\; 0.06725\,,
+       \;\approx\; \val{F_SCREEN_IR_d5}\,,
 \]
 where $\sK = 3\,\sDE(1+w_0) = -3w_0(1+w_0)$ is the pressure-dilution rate
 derived from the
@@ -79,21 +79,21 @@ $H_0^{\rm SH0ES} = 73.04\pm1.04$\,km\,s$^{-1}$\,Mpc$^{-1}$
 (Riess et al.\ 2022); it enters, and the global background rate comes out,
 \[
   H_0^{\rm glob,IR} \;=\; H_0^{\rm SH0ES}\,(1-\fsc^{\rm IR})
-                 \;=\; 73.04\times(1-0.06725)
-                 \;=\; 68.13 \text{ km/s/Mpc}\,,
+                 \;=\; 73.04\times(1-\val{F_SCREEN_IR_d5})
+                 \;=\; \val{p9_sh0es_glob_IR} \text{ km/s/Mpc}\,,
 \]
 to be compared with the dimensionless algebraic number
-$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ (the comparison target, not an input; Paper~1): a residual of $0.166$,
-i.e.\ $0.17\sigma$, with \emph{zero free parameters}.
+$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ (the comparison target, not an input; Paper~1): a residual of $\val{p9_sh0es_res_IR}$,
+i.e.\ $\val{p9_sh0es_sig_IR}\sigma$, with \emph{zero free parameters}.
 \footnote{\label{fn:regime}\textbf{Regime, stated once for the whole paper.} This paper works
 in the \emph{infrared} regime ($M\to\infty$), where $\sK=\sK^{\rm IR}=\val{S_K_d6}$
-and hence $\fsc=0.06725$.  The screening fraction of the full theory is not a
+and hence $\fsc=\val{F_SCREEN_IR_d5}$.  The screening fraction of the full theory is not a
 separate quantity but the \emph{sum} of this term and the ultraviolet
 correction supplied by Paper~10, $\sK^{\rm full}=\sK^{\rm IR}+\val{sK_UV_corr}=\val{sK_full}$,
 giving $\fsc^{\rm full}=\fsc+\val{fscreen_UV_corr}=\val{fscreen_full}$ and the single model value
 $H_0^{\rm glob}=73.04\times(1-\val{fscreen_full})=\val{H0_glob}$~km/s/Mpc.  There is
 therefore \emph{one} $H_0^{\rm glob}$, not an infrared one and an ultraviolet
-one: the $68.13$ used throughout this paper is the same cascade evaluated with
+one: the $\val{p9_sh0es_glob_IR}$ used throughout this paper is the same cascade evaluated with
 the infrared term alone, and it is superseded by the complete value once the
 ultraviolet completion is included.  In either case the propagated uncertainty
 ($\pm\val{p9_hglob_IR_sigma}$ in the infrared regime, $\pm\val{p9_hglob_sigma}$ with the full screening fraction), inherited from the SH0ES input, dominates over the residual
@@ -155,10 +155,10 @@ own the target does not, at first sight, resolve the local tension.
 
 In this paper we show that the same algebraic structure that produces
 $\Hzero^{\rm alg}$ also produces a local kinematic correction
-$\fsc \approx 0.06725$ from the SSEE algebra. Applied to the measured
+$\fsc \approx \val{F_SCREEN_IR_d5}$ from the SSEE algebra. Applied to the measured
 local rate $H_0^{\rm SH0ES} = 73.04\pm1.04$~km/s/Mpc, this returns a global
-background rate $H_0^{\rm glob,IR} = 68.13$ km/s/Mpc in the IR regime, to be
-compared with the algebraic number $3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ ($0.17\sigma$);
+background rate $H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$ km/s/Mpc in the IR regime, to be
+compared with the algebraic number $3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ ($\val{p9_sh0es_sig_IR}\sigma$);
 the model value, with the complete $\fsc$, is $\val{H0_GLOBAL_d5}$ km/s/Mpc (footnote~\ref{fn:regime}).
 The value of $\fsc$ combines two algebraic ingredients:
 \begin{enumerate}
@@ -370,7 +370,7 @@ $\phiG$ and $\pi$:
   \boxed{
     \fsc \;\equiv\; \frac{\sK}{3\MIRA}
          \;=\; \frac{\pi-\phiG}{(\phiG+\pi)^2}
-         \;\approx\; 0.06725\,.
+         \;\approx\; \val{F_SCREEN_IR_d5}\,.
   }
   \label{eq:fscreen_identity}
 \end{equation}
@@ -431,12 +431,12 @@ $3\MIRA$     & $3\AURA/2$             & $\val{tres_MIRA_d4}$       & Eq.~\eqref{
 $\fsc = \sK/(3\MIRA)$ & $(\pi-\phiG)/\Omega^2$ & $\val{F_SCREEN_IR_d6}$ & Eq.~\eqref{eq:fscreen_identity} \\
 \midrule
 $H_0^{\rm SH0ES}$ (\emph{input}, measured) & --- & $73.04\pm1.04$ km/s/Mpc & \citet{Riess2022} \\
-$H_0^{\rm glob,IR}$ (Paper-9 IR regime, mult.) & $H_0^{\rm SH0ES}(1-\fsc^{\rm IR})$ & $68.13$ km/s/Mpc & Eq.~\eqref{eq:H0local} \\
+$H_0^{\rm glob,IR}$ (Paper-9 IR regime, mult.) & $H_0^{\rm SH0ES}(1-\fsc^{\rm IR})$ & $\val{p9_sh0es_glob_IR}$ km/s/Mpc & Eq.~\eqref{eq:H0local} \\
 $H_0^{\rm glob}$ (\textbf{model value}, mult.) & $H_0^{\rm SH0ES}(1-\fsc^{\rm full})$ & $\mathbf{\val{H0_GLOBAL_d5}}$ km/s/Mpc & Paper~10, Eq.~(sKfullform) \\
 $H_0^{\rm glob,IR}$ (additive variant) & $H_0^{\rm SH0ES}/(1+\fsc^{\rm IR})$ & $68.44$ km/s/Mpc & --- \\
 $3\Omega^2$ (pure number, target) & $3(\phiG+\pi)^2$ & $\val{H0_ALG_d5}$ & Paper~1 (target, not input) \\
 $H_0^{\rm CCHP}$ (TRGB, adopted) & ---       & $\val{p9_cchp_H0}\pm\val{p9_cchp_H0_s}$ km/s/Mpc & \citet{Freedman2024} \\
-Residual from SH0ES (IR regime) & ---         & $0.17\sigma$   & --- \\
+Residual vs $3(\phiG+\pi)^2$ (IR regime) & ---         & $\val{p9_sh0es_sig_IR}\sigma$   & --- \\
 Residual from CCHP (IR regime) & ---          & $\val{p9_cchp_sig_IR}\sigma$   & --- \\
 \textit{superseded:} $H_0^{\rm MIRA}{=}67.037 \to 71.87$ & MIRA mapping & $1.12\sigma$ & old register \\
 \bottomrule
@@ -523,24 +523,24 @@ determination. We therefore take SH0ES as the input throughout:
   \begin{aligned}
   H_0^{\rm glob,IR} &= H_0^{\rm SH0ES}\,(1-\fsc^{\rm IR})
   = 73.04\times\left[1 - \frac{\pi-\phiG}{(\phiG+\pi)^2}\right]\\
-  &= 68.13\;\text{km/s/Mpc}\qquad[\text{multiplicative}]\,,
+  &= \val{p9_sh0es_glob_IR}\;\text{km/s/Mpc}\qquad[\text{multiplicative}]\,,
   \end{aligned}
   \label{eq:H0local}
 \end{equation}
 \begin{equation}
   H_0^{\rm glob,IR} \;=\; \frac{H_0^{\rm SH0ES}}{1+\fsc^{\rm IR}}
-  \;=\; 68.44\;\text{km/s/Mpc}
+  \;=\; \val{p9_add_H}\;\text{km/s/Mpc}
   \quad[\text{additive}]\,.
   \label{eq:H0local_add}
 \end{equation}
 
-The difference between the two forms is of order $\fsc^2 \approx 0.31$ km/s/Mpc.
+The two forms differ by $\val{p9_add_dif}$ km/s/Mpc, a second-order effect in $\fsc$.
 The output is then compared with the dimensionless algebraic number
-$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ (the comparison target, Paper~1). The residual is $0.166$ in
-the multiplicative form and $0.475$ in the additive one, i.e.\ in units of the
-propagated SH0ES uncertainty $1.04\times(1-\fsc) = 0.970$:
+$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ (the comparison target, Paper~1). The residual is $\val{p9_sh0es_res_IR}$ in
+the multiplicative form and $\val{p9_add_res}$ in the additive one, i.e.\ in units of the
+propagated SH0ES uncertainty $1.04\times(1-\fsc) = \val{p9_hglob_IR_sigma}$:
 \begin{equation}
-  \Delta_{\rm mult} = 0.17\sigma\,, \qquad \Delta_{\rm add} = 0.49\sigma\,.
+  \Delta_{\rm mult} = \val{p9_sh0es_sig_IR}\sigma\,, \qquad \Delta_{\rm add} = \val{p9_add_sig}\sigma\,.
   \label{eq:tensions}
 \end{equation}
 These are the same two numbers reported in earlier versions of this paper,
@@ -644,7 +644,7 @@ Paper & Key result & Affected by $\fsc$? \\
                MIRA-mapped $67.037$ is retired \\
 2 (MCMC DESI) & MCMC posterior $\Hzero = \val{h0_p2}\pm\val{h0_p2_s}$ (prior $H_0^{\rm glob}$) & No —
                MCMC measures the global background, not local \\
-3 (CMB)       & $r_d = \val{rd_ssee_camb_d1}$ Mpc, peaks at $\ell=220,540,810$ & No —
+3 (CMB)       & $r_d = \val{rd_ssee_camb_d1}$ Mpc, peaks at $\ell=\val{p3_pico1_ssee},\val{p3_pico2_ssee},\val{p3_pico3_ssee}$ & No —
                $\fsc$ does not shift $r_d$ or $\theta_*$ \\
 4 (Sovereignties) & $H_0^{\rm glob}$ as first sovereignty & No —
                $H_0^{\rm local}$ is a new sector \\
@@ -677,8 +677,8 @@ We therefore register the following pre-committed prediction:
 \begin{quote}
 \textbf{SSEE predicts:}
 \begin{equation}
-  H_0^{\rm glob} = H_0^{\rm SH0ES}\left[1-\frac{\pi-\phiG}{(\phiG+\pi)^2}\right]
-  = 73.04\times(1-0.06725) = 68.13\;\text{km/s/Mpc}\,,
+  H_0^{\rm glob,IR} = H_0^{\rm SH0ES}\left[1-\frac{\pi-\phiG}{(\phiG+\pi)^2}\right]
+  = 73.04\times(1-\val{F_SCREEN_IR_d5}) = \val{p9_sh0es_glob_IR}\;\text{km/s/Mpc}\,,
   \label{eq:prediction}
 \end{equation}
 where the output is compared against the pure number
@@ -686,7 +686,8 @@ $3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ (the comparison target, Paper~1), the same va
 recovers---the
 CMB matter density is the $\omega_m$-direct forward identity
 $\Omega_{m,\rm CMB}=\omega_m/h^2$, with \emph{no} matter factor (OP-8 dissolved).
-\textit{Current status}: $0.17\sigma$ from SH0ES \citep{Riess2022}.
+\textit{Current status}: $\val{p9_sh0es_sig_IR}\sigma$ from that target, in units of the SH0ES
+uncertainty \citep{Riess2022} propagated through the screening.
 \end{quote}
 
 \noindent\textbf{Falsification criteria:}
@@ -838,7 +839,7 @@ Table~\ref{tab:comparison}:
         so the $S_8$ results of Papers~5--6 are preserved.
   \item \textbf{Sub-sigma residual, zero added parameters.}  The
         SSEE output $H_0^{\rm SH0ES}(1-\fsc^{\rm IR})$, compared against the pure
-        number $3(\phiG+\pi)^2$, sits at $0.17\sigma$
+        number $3(\phiG+\pi)^2$, sits at $\val{p9_sh0es_sig_IR}\sigma$
         from it when the IR cascade is applied to SH0ES --- better than every finalist of the
         $H_0$ Olympics, \emph{and} achieves this with zero added parameters.
         The UV completion (Paper~10) sharpens it to $0.00\sigma$.
@@ -905,7 +906,7 @@ their criteria committed before the run:
 \paragraph{UV completion of $M$ (addressed in Paper~10).}
 The algebraic identity $\fsc = \sK/(3\MIRA) = (\pi-\phiG)/(\Omega^2)$ does not
 depend on $M$ (it cancels in the ratio), so the IR-regime prediction
-$H_0^{\rm glob,IR} = 68.13$\,km/s/Mpc ($0.17\sigma$ from $3(\phiG+\pi)^2$) is robust.
+$H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$\,km/s/Mpc ($\val{p9_sh0es_sig_IR}\sigma$ from $3(\phiG+\pi)^2$) is robust.
 Paper~10 of this series \citep{Paper10} derives $M^4 = 45\alpha^2\rho_{\rm crit} = 5\phiG^8\rho_{\rm crit}$
 from the same $\alpha$-attractor that governs inflation (Paper~1), yielding
 $\sK^{\rm full} = \val{S_K_FULL_d5}$ ($+\val{sK_UV_pct}\%$ over the IR value) and the UV output
@@ -920,7 +921,7 @@ $H_0^{\rm glob}$, but the same cascade with $\fsc$ complete.
 We have shown that the SSEE equation of state (Paper~7), with the structural
 constants of the algebra, fixes an algebraically exact screening fraction:
 \begin{equation}
-  \fsc = \frac{\sK}{3\,\MIRA} = \frac{\pi-\phiG}{(\phiG+\pi)^2} \approx 0.06725\,,
+  \fsc = \frac{\sK}{3\,\MIRA} = \frac{\pi-\phiG}{(\phiG+\pi)^2} \approx \val{F_SCREEN_IR_d5}\,,
 \end{equation}
 where $\sK = 3\,\sDE(1+w_0)$ is the pressure-dilution rate and
 $\MIRA = \AURA/2$ is a structural constant.
@@ -932,9 +933,9 @@ postulate whose mechanism remains open (§\ref{sec:limitations}).
 Applied to the measured local rate, the lens gives, in the IR regime,
 \begin{equation}
   H_0^{\rm glob,IR} = H_0^{\rm SH0ES}\left[1-\frac{\pi-\phiG}{(\phiG+\pi)^2}\right]
-  \approx 68.13\;\text{km/s/Mpc}\,,
+  \approx \val{p9_sh0es_glob_IR}\;\text{km/s/Mpc}\,,
 \end{equation}
-which is $0.17\sigma$ from the algebraic $3(\phiG+\pi)^2$ with zero free
+which is $\val{p9_sh0es_sig_IR}\sigma$ from the algebraic $3(\phiG+\pi)^2$ with zero free
 parameters, the SH0ES datum \citep{Riess2022} being the input.
 The earlier MIRA-mapped value $67.037\to71.87$ ($1.12\sigma$) is superseded by
 the single algebraic target under the 2026 reframe (Paper~1).
@@ -998,7 +999,7 @@ model predicts $\val{t0_ssee}$\,Gyr, so a measurement of $t_0>14$\,Gyr would cou
 
 The body reports the cascade run on the measured local rate
 $H_0^{\rm SH0ES}=73.04\pm1.04$~km/s/Mpc: with the IR term alone it gives
-$H_0^{\rm glob,IR}=68.13$ ($0.17\sigma$), and with $\fsc$ complete (IR${+}$UV,
+$H_0^{\rm glob,IR}=\val{p9_sh0es_glob_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$), and with $\fsc$ complete (IR${+}$UV,
 Paper~10) the single model value $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$~km/s/Mpc, whose
 residual against $3(\phiG+\pi)^2$ is $+\val{p9_hglob_residuo}$~km/s/Mpc. That residual
 is \emph{not} a significance: the uncertainty propagated from

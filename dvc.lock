@@ -26,8 +26,8 @@ stages:
       size: 4435
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
-      md5: 6617dd2d05997e73722fe828a739423c
-      size: 4165
+      md5: c5d1910b632d351fcc2d9da213e3697b
+      size: 4270
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -39,8 +39,8 @@ stages:
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 663c8e655a7457f14fb9f87743c869c4
-      size: 3798
+      md5: 97d699f40f2291cfb82bd7d27d3cf422
+      size: 3827
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
       src/p06_growth/s8_desde_b1.py
@@ -289,8 +289,8 @@ stages:
     deps:
     - path: src/p05_IS/ssee_paper5_IS_perturbations.py
       hash: md5
-      md5: 54e64d2fdb50fe23cb095e955afc3bfe
-      size: 43163
+      md5: 09f7480b3100469734136dcae2ddda02
+      size: 43580
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -302,16 +302,16 @@ stages:
     outs:
     - path: results/logs/p5_IS_perturbations.log
       hash: md5
-      md5: 16b585563aca4437f1289f922d6b209a
+      md5: 9e157bb4485de49b7e2aa97e0ac70148
       size: 10833
     - path: results/logs/p5_IS_perturbations_Q2.json
       hash: md5
-      md5: 17ba307d1918a4e98fcd5bbd939a37ba
+      md5: e12c20bd6728375e2b6ab6859329de56
       size: 2150
     - path: results/logs/p5_IS_perturbations_Q3.json
       hash: md5
-      md5: 6000df6e40e82f0112bb710ff573c918
-      size: 1240
+      md5: ca137e61f23bc18012003b25183e3114
+      size: 1721
   kids_publicados:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_publicados.py

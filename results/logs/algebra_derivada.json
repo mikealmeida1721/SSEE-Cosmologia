@@ -321,6 +321,61 @@
    "valor": 0.04853534222208848,
    "uso": "la misma en forma cerrada (control)"
   },
+  "hglob_residuo_rel": {
+   "formula": "(H0_GLOBAL-H0_ALG)/H0_ALG",
+   "valor": 6.177893702997782e-08,
+   "uso": "residuo relativo de H_glob frente al numero puro (P1, P2)"
+  },
+  "hglob_planck_sig": {
+   "formula": "abs(H0_GLOBAL-67.36)/math.hypot(SIG_H0_GLOBAL,0.54)",
+   "valor": 0.5433661565404286,
+   "uso": "H_glob (con su sigma) frente al H0 de Planck, errores combinados (P5)"
+  },
+  "k_bao_c_H0": {
+   "formula": "0.1*299792.458/H0_GLOBAL",
+   "valor": 441.1168501845797,
+   "uso": "k = 0.1/Mpc en unidades de H0/c (P5)"
+  },
+  "frac_de_z19": {
+   "formula": "(1-OMEGA_M_TOTAL)*20**(3*(1+W0+WA))*math.exp(-3*WA*19/20)/(OMEGA_M_TOTAL*20**3+(1-OMEGA_M_TOTAL)*20**(3*(1+W0+WA))*math.exp(-3*WA*19/20))",
+   "valor": 1.930349720375948e-05,
+   "uso": "fraccion de energia oscura en z=19, CPL (P5)"
+  },
+  "ck_H0_AU": {
+   "formula": "299792.458/(H0_GLOBAL*4.84813681109536e-12)",
+   "valor": 909868816356517.6,
+   "uso": "c k/H0 a k = 1/UA (P8)"
+  },
+  "quinta_fuerza_AU": {
+   "formula": "(H0_GLOBAL*4.84813681109536e-12/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)",
+   "valor": 1.3361390903811013e-31,
+   "uso": "F_phi/F_N cuasi-estatico a 1 UA (P8 eq. fifth_force_qs)"
+  },
+  "quinta_fuerza_margen": {
+   "formula": "1e-5/((H0_GLOBAL*4.84813681109536e-12/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL))",
+   "valor": 7.484250758016325e+25,
+   "uso": "margen frente a la cota de Cassini 1e-5 (P8)"
+  },
+  "H_glob_IR_aditiva": {
+   "formula": "H0_SH0ES/(1+F_SCREEN_IR)",
+   "valor": 68.43736349152202,
+   "uso": "forma aditiva del apantallamiento IR (P9 eq. H0local_add)"
+  },
+  "H_glob_IR_aditiva_res": {
+   "formula": "H0_SH0ES/(1+F_SCREEN_IR)-H0_ALG",
+   "valor": 0.47522616811271234,
+   "uso": "su residuo frente al numero puro (P9)"
+  },
+  "H_glob_IR_aditiva_sig": {
+   "formula": "(H0_SH0ES/(1+F_SCREEN_IR)-H0_ALG)/(SIG_H0_SH0ES*(1-F_SCREEN_IR))",
+   "valor": 0.48989529959338113,
+   "uso": "ese residuo en unidades del sigma SH0ES propagado (P9)"
+  },
+  "H_glob_IR_aditiva_dif": {
+   "formula": "H0_SH0ES/(1+F_SCREEN_IR)-H0_SH0ES*(1-F_SCREEN_IR)",
+   "valor": 0.30954235739660874,
+   "uso": "aditiva menos multiplicativa, km/s/Mpc (P9)"
+  },
   "horizonte_cs_Mpc": {
    "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
    "valor": 643.5424922781127,
@@ -394,19 +449,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "7a7517c34122f084c6a0c50e8d10af6570f2d4df",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "M src/algebra_derivada.py"
-  ],
+  "commit": "98f48baf7b449baec40a7e75711c4a3225974fd1",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "938ac4662b740abe90a0745c858b87fb2b1d65f27e863b040d90350e29ef14a7",
+  "script_sha256": "74d98d04cfd53b19e16e651b72f9cd74e62545276ee39644e77423e2d2a9ca8d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T11:20:44",
+  "fecha": "2026-10-11T11:43:20",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

@@ -39,7 +39,10 @@
    "k1000_vs_b1_dif": 0.1785788047900012,
    "k1000_vs_b1_dif_sigma": 0.0516183146244217,
    "k1000_vs_b1": 3.459601617940309,
-   "entre_entregas": 2.53971084846696
+   "entre_entregas": 2.53971084846696,
+   "Om_planck_bg": 0.315191849347291,
+   "Om_ssee_bajo_planck_bg_pct": 2.002275359045247,
+   "As_legacy_sobre_planck_bg_pct": 1.8857110909314967
   },
   "k1000_dS8_lcdm_menos_ssee": 0.0012163972564288583,
   "k1000_dato": {
@@ -104,13 +107,11 @@
   }
  },
  "_procedencia": {
-  "commit": "4c5f87073eb5c7db860182db1b88c72525409377",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "M src/p06_growth/kids_publicados.py"
-  ],
+  "commit": "98f48baf7b449baec40a7e75711c4a3225974fd1",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
-  "script_sha256": "a7e6725b01e1a0035dcfaa9d0d28bebc088e8ac24f3f2397a4dda769b0d3d3e9",
+  "script_sha256": "c5b5e688f2c66f1bf935c0dfc3869df312f27402c06128e382c9991876040c2e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
@@ -123,7 +124,7 @@
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-11T11:11:45",
+  "fecha": "2026-10-11T11:43:20",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -131,7 +132,7 @@
    "scipy": "1.17.1"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
