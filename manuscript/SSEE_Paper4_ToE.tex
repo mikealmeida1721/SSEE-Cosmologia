@@ -50,22 +50,24 @@ Algebraic Derivation of the CMB Background from~$\varphi$ and~$\pi$}\\[0.5em]
 We show that the cosmological background of the observable universe
 can be described by a two-axiom algebraic system built on the golden ratio
 $\varphi = (1+\sqrt{5})/2$ and the circle constant $\pi$.
-A third structural constant, $\Omega = \varphi+\pi$, follows as
-a theorem rather than an independent axiom; no free parameter is introduced at the background level.
-Phenomenological extensions (notably the neutrino mass sum $\Sigma m_\nu$, classified as Type~P later in the paper) were tracked as open problem OP-14 in \texttt{OPEN\_PROBLEMS.md}, resolved on 2026-06-04.
-From these two axioms alone we derive, without fitting:
+A third structural constant, $\Omega = \varphi+\pi$, is a definition
+rather than an independent axiom; no free parameter is introduced at the background level.
+Phenomenological extensions (notably the neutrino mass sum $\Sigma m_\nu$, formerly classified as Type~P) were tracked as open problem OP-14 in \texttt{OPEN\_PROBLEMS.md}, resolved on 2026-06-04.
+From these two axioms --- and, for the Hubble rate, the measured SH0ES rate as the single
+dimensional input --- we derive, without fitting:
 \begin{enumerate}
-\item[(i)] the pure number $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$, which read in km\,s$^{-1}$\,Mpc$^{-1}$ lies $1.1\sigma$ from Planck~2018. It is the comparison \emph{target} of the Hubble sector, not an input: the model's rate is the output of the SH0ES cascade in (iv), and it lands on this number (Paper~10),
+\item[(i)] the pure number $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$, which read in km\,s$^{-1}$\,Mpc$^{-1}$ lies $\val{halg_planck_sig}\sigma$ from Planck~2018. It is the comparison \emph{target} of the Hubble sector, not an input: the model's rate is the output of the SH0ES cascade in (iv), and it lands on this number (Paper~10),
 where $M_v=3\Omega$ is the maximal structural invariant of the dictionary, reached by twenty distinct additive routes under the no-self-sum construction law (Appendix~\ref{app:independence}); this multiplicity is consistent with, but does not by itself prove, the absence of post-hoc tuning;
 \item[(ii)] the physical baryon density
 $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck~2018);
 \item[(iii)] the primordial spectral index
 $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($\val{ns_planck_sig}\sigma$ from Planck~2018),
-where the exponent~7 equals the number of primary structural registers in the \SSEE\ hierarchy;
-\item[(iv)] a local Hubble constant from the screening mechanism of Paper~9,
-$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = \val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$
-($\val{p9_sh0es_sig_IR}\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$),
-taking \citet{Riess2022} as the input (2026 reframe); the earlier
+where the exponent~7 is fixed by Postulate~I of Paper~1 ($N_*=2\varphi^n$ e-folds falls in the
+inflation window $[50,60]$ only for $n=7$);
+\item[(iv)] the global Hubble rate of the screening cascade of Papers~9--10, with
+\citet{Riess2022} as the input: $H_0^{\rm glob}=H_0^{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d6}\pm\val{p9_hglob_sigma}$~km\,s$^{-1}$\,Mpc$^{-1}$
+with the complete screening fraction (with the IR term alone,
+$H_0^{\rm glob,IR}=\val{p9_sh0es_glob_IR}$, $\val{p9_sh0es_sig_IR}\sigma$ from $3(\varphi+\pi)^2$); the earlier
 CMB-mapped register (via $H_0^{\rm MIRA}=67.037$) is superseded;
 see Section~\ref{sec:hubble_tension}).
 \end{enumerate}
@@ -73,8 +75,8 @@ These background predictions are number-to-number comparisons with zero adjustab
 The same two axioms fix the cosmological background --- including the
 dark-energy parameters $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$ derived in the
 companion Papers~1--3.
-In the static (Eckart) regime $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = \val{wc_estatico_ssee_d4}$ ($\val{wc_estatico_ssee_sigma}\sigma$);
-modulated by the IS inflationary factor $n_s = 1-\varphi^{-7}$ this becomes
+The static relation gives $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = \val{wc_estatico_ssee_d4}$ ($\val{wc_estatico_ssee_sigma}\sigma$);
+with the primordial tilt $n_s = 1-\varphi^{-7}$ as a factor it becomes
 $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma}\sigma$ from Planck),
 within $1\sigma$ of the observed value.
 A falsifiable prediction $r = \varphi^{-10} = \val{R_TENSOR_d6}$ is presented for the
@@ -103,18 +105,18 @@ merely fit them \citep{Weinberg1987,Weinberg2013review}.
 
 The \SSEE\ framework (Structural Self-Energy Expansion, \citep{AlmeidaSSEE2026genesis})
 derives the dark-energy equation-of-state parameters
-$(w_0, w_a) = (-0.840, -0.670)$ in the Chevallier--Polarski--Linder
+$(w_0, w_a) = (\val{W0_d6}, \val{WA_d6})$ in the Chevallier--Polarski--Linder
 parametrization \citep{ChevallierPolarski2001,Linder2003}
 algebraically from $\varphi$ and $\pi$, with zero free parameters in that
 sector \citep{AlmeidaSSEE2026paper1,AlmeidaSSEE2026paper2,AlmeidaSSEE2026paper3}.
 Here we extend this programme to the entire cosmological background.
 The DESI DR2 BAO data \citep{desidr2_2025} independently favor the
-SSEE point at $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) in the $w_0$--$w_a$ plane \citep{AlmeidaSSEE2026paper2}.
+SSEE point at $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+; up to $\val{p2_w0wa_ssee_ec27_d1}\sigma$ across the other SN compilations) in the $w_0$--$w_a$ plane \citep{AlmeidaSSEE2026paper2}.
 
 \paragraph{Peer-review notice.}
 An internal audit identified four vulnerabilities in a prior draft of this paper:
 (A) use of dimensional quantities without unit justification;
-(B-1) treating $\Omega = \varphi+\pi$ as an axiom rather than a theorem;
+(B-1) treating $\Omega = \varphi+\pi$ as an axiom rather than a definition;
 (B-2) post-hoc selection of the exponent in $n_s = 1-\varphi^{-7}$;
 (B-3) unexplained factor of~100 in the baryon density.
 This revised manuscript addresses each point explicitly.
@@ -136,14 +138,14 @@ The entire \SSEE\ framework rests on exactly two mathematical constants:
 \pi     &= 3.141592653\ldots
           \quad\text{(circle constant)}
 \end{align}
-Both are \emph{transcendental} numbers defined independently of any physical
-measurement.
+$\varphi$ is algebraic (a root of $x^2-x-1=0$) and $\pi$ is transcendental; both are
+defined independently of any physical measurement.
 
-\subsection{Theorem 1: \texorpdfstring{$\Omega = \varphi+\pi$}{Omega = phi+pi}}
+\subsection{Definition: \texorpdfstring{$\Omega = \varphi+\pi$}{Omega = phi+pi}}
 \label{sec:omega}
 
 The \SSEE\ structural constant $\Omega$ is \textbf{not} an independent axiom.
-It is the unique combination that encodes the sum of the two geometric axioms:
+It is defined as the sum of the two axioms:
 \begin{equation}
 \Omega \equiv \varphi + \pi = \val{OMEGA_d9}\ldots
 \label{eq:omega}
@@ -250,12 +252,10 @@ are introduced.}
 Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \midrule
 \textbf{Cosmology} & & & & \\
-\quad $H_0$ target (pure number) & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
+\quad $H_0$ target (pure number) & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.36\pm0.54$ & $\val{halg_planck_sig}\sigma$ \\
 \quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & \val{p9_sh0es_glob_IR}  & $3(\varphi+\pi)^2$ & $\val{p9_sh0es_sig_IR}\sigma$ \\
 \quad $\Omega_b$ & $\frac{10^4(\pi-\varphi)}{27(\varphi+\pi)^6}$ & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ \\
 \quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $\val{ns_planck_sig}\sigma$ \\
-\textbf{Hubble tension} & & & & \\
-\quad Fractional correction & $K/H_0 = \frac{\varphi+3\pi}{6(\varphi+\pi)^2}$ & $8.12\%$ & $\approx 8\%$ & — \\
 \bottomrule
 \multicolumn{5}{l}{\footnotesize $^{\rm P}$~IR-cascade value ($M\to\infty$ regime, not canonical): $f_{\rm scr}^{\rm IR}$ applied to the measured $H_0^{\rm SH0ES}=73.04$ returns $\val{p9_sh0es_glob_IR}$, i.e.\ $\val{p9_sh0es_sig_IR}\sigma$ from $3(\varphi+\pi)^2=\val{H0_ALG_d6}$; the full IR+UV cascade gives the canonical $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$ (Paper~10).}\\
 \multicolumn{5}{l}{\footnotesize The earlier CMB-mapped register ($H_0^{\rm MIRA}=67.037$) is superseded.}\\
@@ -328,24 +328,17 @@ coincides with the global rate $H_0^{\rm glob}$ of the SH0ES cascade:
 \end{align}
 Planck~2018: $\Omega_b h^2 = 0.02237\pm0.00015$; deviation $= \val{wb_planck_sig}\sigma$.
 
-\textbf{Sakharov-mechanism motivation (not a quantitative derivation).}
-We are explicit about the status of Eq.~\eqref{eq:Obh2}: it is an algebraic
-ansatz whose \emph{form} is motivated by --- but not derived from --- the
-Sakharov conditions for baryogenesis \citep{Sakharov1967}. The three conditions
-are realised structurally in \SSEE\ as follows:
-\begin{itemize}
-  \item \textbf{B-violation:} sphaleron transitions at $T_{\rm EW}\sim\Omega$
-    (SSEE units), with rate $\Gamma_{\rm sph} \propto (\alpha_W T)^4 e^{-E_{\rm sph}/T}$.
-  \item \textbf{CP-violation:} $\delta_{\rm CP} = (\pi-\varphi)/\Omega$, the ratio of
-    the transcendental excess ($\pi$, gauge-boson loops) to the algebraic scalar sector
-    ($\varphi$), normalised by $\Omega = \varphi+\pi$.
-  \item \textbf{Non-equilibrium:} gravitational reheating with
-    $T_{\rm rh}\sim10^{-4}$~GeV $\ll T_{\rm EW}$ ensures departure from equilibrium.
-\end{itemize}
-The Sakharov scaling $\eta_B \propto \delta_{\rm CP}/(\text{expansion rate})$
-motivates the \emph{shape} $\Omega_b h^2 \sim (\pi-\varphi)/(3\Omega^2)$, with
-$(\pi-\varphi)$ as the CP-asymmetry numerator and $3\Omega^2$ as the
-normalising denominator. Two caveats are stated openly. First, $3\Omega^2$
+\textbf{Status: an algebraic ansatz, with no baryogenesis mechanism behind it.}
+Eq.~\eqref{eq:Obh2} is an algebraic ansatz. Earlier drafts motivated its \emph{form}
+with the Sakharov conditions \citep{Sakharov1967} --- electroweak sphalerons, a CP
+phase $\delta_{\rm CP}=(\pi-\varphi)/\Omega$, and departure from equilibrium through a
+late reheating --- read as $\eta_B\propto\delta_{\rm CP}/(\text{expansion rate})$, with
+$(\pi-\varphi)$ as numerator and $3\Omega^2$ as denominator. That mechanism is
+\emph{withdrawn}: the reheating it requires, $T_{\rm rh}\approx10^{-4}$~GeV, lies below
+the BBN lower bound $T_{\rm rh}\gtrsim4\times10^{-3}$~GeV \citep{deSalas2015} and six
+orders of magnitude below the temperature at which sphalerons are active, so the
+sphalerons it invokes would never have run. The formula does not depend on it and
+does not move. Two caveats on the form remain. First, $3\Omega^2$
 enters as the dimensionless value $\val{H0_ALG_d6}$, which coincides numerically with
 the global rate $H_0^{\rm glob}$ read in $\mathrm{km\,s^{-1}\,Mpc^{-1}}$; this is a
 Type-P numerical coincidence, not a dimensional identity (in Postulate~D of
@@ -353,16 +346,9 @@ Paper~1 the dimensional input is the measured SH0ES rate). Second,
 $\eta_B$ and $\Omega_b h^2$ differ by the standard photon-entropy factor
 ($\eta_B \simeq 2.74\times10^{-8}\,\Omega_b h^2$), so the proportionality fixes
 the algebraic \emph{form} only, not the absolute normalisation.
-A scan of 96 algebraic candidates (see \texttt{ssee\_op1\_baryon\_density.py})
-shows Eq.~\eqref{eq:Obh2} is the unique \SSEE\ monomial within $1\sigma$ of
-Planck --- a selection statement, not a dynamical derivation.
-The genuine quantitative test --- integrating the Boltzmann equation with the
-sphaleron rate and the SSEE reheating history to obtain $\eta_B$
-\emph{ab initio} --- is deferred to Paper~B; the companion framework script
-\texttt{ssee\_op1\_baryogenesis.py} currently only verifies that the required
-entropy-dilution factor is consistent with a quintessential-reheating
-temperature $T_{\rm rh}\sim10^{-4}$~GeV, which is a consistency check, not a
-prediction of $\eta_B$.
+The formula was chosen among a handful of $\varphi,\pi$ monomials compared with Planck
+(an early scan, archived without a log): a selection statement, not a dynamical
+derivation. A derivation of $\omega_b$ from first principles is the residual part of OP-1.
 $\Omega_b^{\rm SSEE} = \val{Omega_b_alg_d4}$ is $\val{Omega_b_pct_vs_planck}\%$ from the Planck $\Lambda$CDM value
 $\val{Omega_b_planck_d4}$ ($=\omega_b/h^2$ with Planck's own inputs). $\Omega_b=\omega_b/h^2$ is composite: its two inputs are compared separately ($\omega_b$ at $\val{wb_planck_sig}\sigma$, $h$ through $H_0$), so this
 difference is the $H_0$ offset, not an independent tension.
@@ -376,43 +362,39 @@ OP-8 dissolved):
 \begin{equation}
 \Omega_{m,\rm CMB} = \frac{\omega_m}{h^2}
   = \frac{\omega_b+\omega_c+\omega_\nu}{h^2}
-  = \frac{\val{OMEGA_M_H2_d5}}{(0.67962)^2} = \val{OMEGA_M_TOTAL_d6},
+  = \frac{\val{OMEGA_M_H2_d5}}{(\val{H_GLOBAL_h_d5})^2} = \val{OMEGA_M_TOTAL_d6},
 \end{equation}
 with $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]$ and
 $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$ (forward; Paper~3), in $\val{om_planck_sig}\sigma$
 agreement with Planck~2018 ($\Omega_m = 0.3153\pm0.0073$). There is one matter
 density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (no matter factor; OP-8 dissolved;
 the former Two-$\Omega_m$ criterion is withdrawn, cf.\ Paper~1, Sec.~1.4).
-The quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]\approx 0.160$ ($=1+w_0$) is an
+The quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]=\val{S_M_d6}$ ($=1+w_0$) is an
 equation-of-state-sector identity, not a density. (The earlier MIRA mapping
 $\mathrm{MIRA}\times s_m=0.31993$ and the geometric route
 $(\pi-\varphi)/(\pi+\varphi)=0.3201$ are both superseded.)
 The cold dark matter density can be related to the baryon density through the
-structural retention $K_{\rm AL} = \beta + \pi \approx \val{KAL0_d4}$:
+structural retention $K_{\rm AL} = \beta + \pi = \val{KAL0_d6}$:
 \begin{equation}
-\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = \val{wc_estatico_planck_d5} \quad (+\val{wc_estatico_sigma_d1}\sigma\text{ Eckart static}).
+\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = \val{wc_estatico_ssee_d4} \quad (\val{wc_estatico_ssee_sigma}\sigma\text{, static}).
 \label{eq:omch2_static}
 \end{equation}
-When the Israel--Stewart inflationary correction is applied, the primordial spectral
-factor $n_s = 1-\varphi^{-7}$ modulates the dark-matter density:
+With the primordial tilt $n_s = 1-\varphi^{-7}$ as a factor (the forward identity of
+Paper~1):
 \begin{equation}
 \boxed{\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s
       = \val{KAL0_d6}\times \val{OMEGA_B_H2_d6}\times \val{N_S_d5} = \val{OMEGA_C_H2_d6}}
 \label{eq:omch2_IS}
 \end{equation}
 \textbf{Note on $\Omega_b h^2$ input.}
-The static relation (Eq.~\ref{eq:omch2_static}) is evaluated with the Planck~2018
-\emph{observed} value $\Omega_b h^2 = 0.02237\pm0.00015$ \citep{PlanckCollaboration2020a}. The IS
-relation (Eq.~\ref{eq:omch2_IS}), which is the canonical one, uses the \SSEE\ algebraic
-$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck)
-and gives $\Omega_c h^2 = \val{OMEGA_C_H2_d6}$, $\val{wc_ns_sigma_abs}\sigma$ from Planck: no
-observed input enters it.
+Both relations use the \SSEE\ algebraic
+$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck);
+no observed input enters either. An earlier version evaluated the static one with
+Planck's $\omega_b$, an ingredient of the other model.
+Against Planck~2018 ($0.1200\pm0.0012$) the tilted relation, the canonical one, lies
+$\val{wc_ns_sigma_abs}\sigma$ away; the static one, $\val{wc_estatico_ssee_sigma}\sigma$.
 
-Planck~2018: $0.1200\pm0.0012$; deviation~$= -0.6\sigma$ (using Planck observed $\Omega_b h^2$).
-The IS modulation reduces the tension from $+\val{wc_estatico_sigma_d1}\sigma$ (Eckart) to $-0.6\sigma$ (IS),
-within $1\sigma$ of the observed value and consistent with zero tension at $1\sigma$.
-
-\subsection{Primordial Spectral Index and the Seven-Level Hierarchy}
+\subsection{Primordial Spectral Index}
 \label{sec:ns}
 
 The spectral index $n_s$ measures the tilt of the primordial power spectrum
@@ -420,46 +402,20 @@ generated during inflation \citep{Mukhanov1992,Starobinsky1980,Albrecht1982,Guth
 Current observational constraints from Planck are $n_s = 0.9649 \pm 0.0042$
 \citep{PlanckInflation2018}.
 
-\paragraph{Independent justification of the exponent~7.}
-The \SSEE\ system possesses exactly seven primary structural registers that
-can be derived sequentially from $\varphi$ and $\pi$ without redundancy
-(Table~\ref{tab:hierarchy}).
-
-\begin{table}[ht]
-\centering
-\caption{The seven primary structural registers of \SSEE.
-Each level is derived from the previous; none is adjustable.}
-\label{tab:hierarchy}
-\begin{tabular}{clll}
-\toprule
-Level & Register & Formula & Value \\
-\midrule
-1 & $\varphi$ & $(1+\sqrt5)/2$ & \val{PHI_d5}\ldots \\
-2 & $\pi$     & (circle constant) & \val{PI_d5}\ldots \\
-3 & $\beta$    & $(\varphi+\pi)/2$         & \val{BETA_d5}\ldots \\
-4 & $\Omega$   & $\varphi+\pi$             & \val{OMEGA_d5}\ldots \\
-5 & AURA      & $(3\varphi+\pi)/2$         & \val{AURA_d5}\ldots \\
-6 & KAL       & $(\varphi+3\pi)/2$         & \val{KAL0_d5}\ldots \\
-7 & MIRA      & $(3\varphi+\pi)/4$         & \val{MIRA_d5}\ldots \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Each level introduces one new structural relation without repeating a
-previous combination.
-The inflationary suppression of the primordial spectrum is governed by
-the golden-ratio harmonic at the depth of this seven-level hierarchy:
+\paragraph{Origin of the exponent~7 (Postulate~I of Paper~1).}
+The form $N_*=2\varphi^n$ of the e-fold number, with $\alpha=\varphi^4/3$, is
+Postulate~I of Paper~1. The integer is not chosen: of the powers of $\varphi$,
+only $n=7$ puts $N_*$ inside the canonical inflation window $[50,60]$
+($2\varphi^6$ falls below it, $2\varphi^8$ above). The spectral index follows:
 
 \begin{equation}
 \boxed{n_s = 1 - \varphi^{-7} = 1 - \frac{1}{\varphi^7} = \val{N_S_d6}}
 \label{eq:ns}
 \end{equation}
 
-The exponent~7 is not merely an ansatz: it follows from $\alpha$-attractor inflation
-with $\alpha = \varphi^4/3$ (derived in Paper~1, App.~A.5) via the universality theorem
-of \citet{Kallosh2013}. For all $\alpha$-attractors with $N_\ast \gg \sqrt\alpha$, the
-spectral index satisfies $n_s = 1 - 2/N_\ast$ at leading order. Setting
-$N_\ast = 2\varphi^7 \approx 58.07$~e-folds (within the standard window $N_\ast \in[50,65]$):
+It uses the universality of $\alpha$-attractor inflation \citep{Kallosh2013}: for all
+$\alpha$-attractors with $N_\ast \gg \sqrt\alpha$, the spectral index satisfies
+$n_s = 1 - 2/N_\ast$ at leading order. Setting $N_\ast = 2\varphi^7 = \val{dos_phi7_d6}$~e-folds:
 \begin{equation}
 n_s = 1 - \frac{2}{2\varphi^7} = 1 - \varphi^{-7} \quad \text{(algebraically exact)}.
 \end{equation}
@@ -467,25 +423,21 @@ The same substitution yields the tensor-to-scalar ratio prediction (see
 Section~\ref{sec:r} below).
 
 \begin{conjecture}[B.1 — e-fold count]
-$N_\ast = 2\varphi^7 \approx 58.07$ is the number of inflationary e-folds of the
-SSEE quintessential inflation model with $\alpha = \varphi^4/3$ and a reheating
-temperature $T_{\rm rh} \approx (30/\pi^2 g_*)^{1/4}\,V_{\rm end}^{1/4}
-\approx 9.4\times10^{15}$~GeV (corresponding to $\rho_{\rm rh}\approx V_{\rm end}$).
+$N_\ast = 2\varphi^7 = \val{dos_phi7_d6}$ is the number of inflationary e-folds of the
+SSEE quintessential inflation model with $\alpha = \varphi^4/3$ and a reheating with
+$\rho_{\rm rh}\approx V_{\rm end}$.
 \end{conjecture}
 
 Conjecture~B.1 is an open postulate, not yet derived from $V(\varphi_{\rm inf})$.
-Its value, $N_\ast = \val{dos_phi7_d6}$, lies within the standard window $[50, 65]$ for
-inflation with reheating (consistent with, but not proven by, the framework).
-Numerically, the condition $\rho_{\rm end}/\rho_{\rm rh} = 3$ — which follows from
-$\rho_{\rm end}=3V_{\rm end}$ (at $\varepsilon=1$) together with
-$\rho_{\rm rh}=V_{\rm end}$ — gives $N_\ast = 58.25 - \ln(3)/6 = \val{N_star_rh_d3}$,
-matching $2\varphi^7 = \val{dos_phi7_d6}$ to within $O(1/N_\ast)\approx 0.002$ e-folds.
-The physical mechanism that selects $\rho_{\rm rh}=V_{\rm end}$ is deferred to
+Its value lies within the standard window $[50,60]$ for inflation with reheating
+(consistent with, but not proven by, the framework). An earlier draft matched it to an
+e-fold estimate built on a reference value $N_\ast=58.25$ that has no source in the
+literature; that comparison is withdrawn. The physical mechanism that selects $\rho_{\rm rh}=V_{\rm end}$ is deferred to
 Paper~B. The conjecture is indirectly testable via the falsifiable prediction
 $r = \varphi^{-10} = \val{R_TENSOR_d6}$ (Sec.~\ref{sec:r}): a CMB-S4 or LiteBIRD detection
 inconsistent with this value would refute Conjecture~B.1.
 
-Planck~2018: $n_s = 0.9649\pm0.0042$; deviation $= 0.157\sigma$.
+Planck~2018: $n_s = 0.9649\pm0.0042$, from which it lies $\val{ns_planck_sig}\sigma$.
 
 \subsection{Linear Collapse Threshold $\delta_c$}
 \label{sec:deltac}
@@ -542,17 +494,16 @@ quantitative mass function is in Paper~5.
 
 The physical baryon density $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ derived in
 Section~\ref{sec:baryons} provides an independent BBN prediction.
-Using the linearised sensitivity from PArthENoPE \citep{Pisanti2008},
-$dY_p/d(\Omega_b h^2) \approx 0.96$, and the Planck~2018 anchor
-$Y_p = 0.2471$ at $\Omega_b h^2 = 0.02237$:
+Using the linearised BBN sensitivity $dY_p/d\eta_{10}\approx0.0016$ with
+$\eta_{10}=273.9\,\Omega_b h^2$ \citep{Steigman2007}, anchored on the BBN value
+$Y_p = 0.2471$ that Planck~2018 derives at its $\Omega_b h^2 = 0.02237$:
 \begin{equation}
-\boxed{Y_p^{\rm SSEE} = 0.2471 + 0.96\times(\val{OMEGA_B_H2_d5}-0.02237) = \val{Yp_ssee_d4}.}
+\boxed{Y_p^{\rm SSEE} = 0.2471 + 0.0016\times273.9\times(\val{OMEGA_B_H2_d5}-0.02237) = \val{Yp_ssee_d4}.}
 \label{eq:yp}
 \end{equation}
-Observed values: $Y_p = 0.2471\pm0.0003$ (Planck CMB, $+0.2\sigma$);
-$Y_p = 0.2449\pm0.0040$ (HII regions, Aver et al.\ 2015, $+0.6\sigma$).
-Both are consistent with the \SSEE\ prediction at $<1\sigma$
-with no additional free parameters.
+The Planck value is itself a BBN computation from $\omega_b$, not an independent
+measurement, so the test is against the helium observed in HII regions,
+$Y_p = 0.2449\pm0.0040$ \citep{Aver2015}: $\val{Yp_aver_sig}\sigma$, with no additional free parameter.
 
 \subsection{Dark-Energy Equation of State}
 \label{sec:w0wa}
@@ -564,8 +515,9 @@ Define the four structural constants (Table~\ref{tab:constants}):
   T_r    &= \tfrac{3(3\varphi+\pi)}{2} \approx \val{T_R_d4} \quad \text{(3D Saturation Horizon)}, \\
   M_v    &= \varphi+\pi+K_v            \approx \val{M_V_d4} \quad \text{(Maximal Dimensional Invariant $= M_v$)}, \\
   P_{sc} &= 2\varphi+\pi               \approx  \val{P_SC_d4} \quad \text{(Dynamical Evolution Scalar)}, \\
-  K_v    &= \varphi+\pi+\Omega         \approx  \val{K_V_d4} \quad \text{(Structural Constraint)}.
+  K_v    &= \varphi+\pi+\Omega         \approx  \val{K_V_d4} \quad \text{(Structural Constraint)},
 \end{align}
+with $I_g=\pi+P_{sc}=2(\varphi+\pi)$.
 The CPL parameters follow as:
 \begin{equation}
   w_0 = -\frac{T_r}{M_v}, \qquad w_a = -\frac{P_{sc}}{I_g}.
@@ -578,8 +530,8 @@ Substituting the explicit $\varphi,\pi$ expressions yields the closed-form predi
   \label{eq:w0wa_p4}
 \end{equation}
 Both values are uniquely determined; no free parameters enter.
-The algebraic point $(-0.840,-0.670)$ lies within the 68\% confidence region
-of DESI~DR2+CMB+DESY5 data \citep{desidr2_2025}
+The algebraic point lies within the 68\% confidence region
+of DESI~DR2+CMB+Pantheon+ data \citep{desidr2_2025}
 (Mahalanobis $\chi^2_{2D}=\val{p2_chi2_2D_ec26}$, i.e.\ $\val{p2_w0wa_ssee_ec26}\sigma$ Pantheon+; Paper~2).
 
 \subsection{Open Parameters}
@@ -608,25 +560,25 @@ Planck~2018 \citep{PlanckCollaboration2020a} error bars.}
 \toprule
 Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 \midrule
-$3(\varphi+\pi)^2$ (target)     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & pure number (Type~P$^\dagger$) \\
-$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $+\val{p9_hglob_residuo}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
+$3(\varphi+\pi)^2$ (target)     & \val{H0_ALG_d6} & $67.36\pm0.54$  & $\val{halg_planck_sig}\sigma$ & pure number (Type~P$^\dagger$) \\
+$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $\val{p9_hglob_residuo}$ km/s/Mpc & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
 $\Omega_b$          & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ & algebraic \\
 $\Omega_b h^2$      & \val{OMEGA_B_H2_d5}& $0.02237\pm0.00015$ & $\val{wb_planck_sig}\sigma$ & algebraic \\
 $\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $\val{om_planck_sig}\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
-$\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $\val{wc_ns_sigma_abs}\sigma$ & algebraic (forward) \\
-$Y_p$               & \val{Yp_ssee_d4} & $0.2471\pm0.0003$   & $0.2\sigma$ & BBN (no fit) \\
+$\Omega_c h^2$ & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $\val{wc_ns_sigma_abs}\sigma$ & algebraic (forward) \\
+$Y_p$               & \val{Yp_ssee_d4} & $0.2449\pm0.0040$ (HII) & $\val{Yp_aver_sig}\sigma$ & BBN (no fit) \\
 $n_s$               & \val{N_S_d6}& $0.9649\pm0.0042$   & $\val{ns_planck_sig}\sigma$& algebraic \\
 $\ln(10^{10}A_s)$   & \val{b1_logA_ssee} & $3.044\pm0.014$ & --- & fitted ($k=2$) \\
 $\tau$              & \val{b1_tau_ssee}  & $0.054\pm0.007$     & ---   & fitted ($k=2$) \\
 \midrule
 \midrule
-\multicolumn{5}{l}{\footnotesize IS = Israel--Stewart modulation by $n_s=1-\varphi^{-7}$; reduces tension from $\val{wc_estatico_ssee_sigma}\sigma$ (Eckart) to $\val{wc_ns_sigma}\sigma$.}\\
+\multicolumn{5}{l}{\footnotesize $\Omega_c h^2=\mathrm{KAL}_0\,\omega_b\,n_s$; without the factor $n_s$ (static) it would be $\val{wc_estatico_ssee_sigma}\sigma$ away.}\\
 \multicolumn{5}{l}{\footnotesize $^\ast$~$\Omega_b=\omega_b/h^2$ is composite; its inputs are compared separately. It is $\val{Omega_b_pct_vs_planck}\%$ from Planck's, the $H_0$ offset.}\\
 \multicolumn{5}{l}{\footnotesize $^\dagger$~Type~P: dimensionless combination matches observed value in km\,s$^{-1}$\,Mpc$^{-1}$ units;}\\
 \multicolumn{5}{l}{\footnotesize no dimensional derivation from first principles. Consistent with Paper~1 App.~B policy.}\\
 \multicolumn{5}{l}{\footnotesize $^\ddagger$~CMB sector: $\Omega_{m,\rm CMB}=\omega_m/h^2$ with $\omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5}$,}\\
 \multicolumn{5}{l}{\footnotesize each piece algebraic ($\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, forward; Paper~3). \emph{No} matter factor.}\\
-\multicolumn{5}{l}{\footnotesize The equation-of-state-sector quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]\approx 0.160$ ($=1+w_0$)}\\
+\multicolumn{5}{l}{\footnotesize The equation-of-state-sector quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]=\val{S_M_d6}$ ($=1+w_0$)}\\
 \multicolumn{5}{l}{\footnotesize is not a density; there is one matter density $\Omega_{m,\rm CMB}=\omega_m/h^2$ (the former Two-$\Omega_m$}\\
 \multicolumn{5}{l}{\footnotesize criterion is withdrawn; see Paper~1, Sec.~1.4). The earlier MIRA mapping to $0.31993$ and}\\
 \multicolumn{5}{l}{\footnotesize geometric route $0.3201$ are superseded; OP-8 dissolved).}\\
@@ -661,18 +613,9 @@ positions follow from it.}
 \label{sec:hubble_tension}
 % ===========================================================================
 
-The dimensionless scalar $K=(\varphi+3\pi)/2 \approx \val{KAL0_d3}$ numerically coincides with the fractional offset between local and global Hubble measurements only when $H_0$ is expressed in km s$^{-1}$ Mpc$^{-1}$. Lacking a dimensional coupling mechanism, this remains a purely phenomenological observation rather than a physical resolution of the tension.
-
 The Hubble tension between early- and late-universe measurements
-\citep{Verde2019,Kamionkowski2023} is currently unresolved by $\Lambda$CDM.
-The fractional correction $K/H_0 = 8.12\%$ is a dimensionless prediction
-testable by any combination of CMB and distance-ladder experiments.
-\citet{Riess2022}: $H_0 = 73.04\pm1.04$\,km\,s$^{-1}$\,Mpc$^{-1}$; deviation $0.4\sigma$.
-
-\paragraph{Superseded by Papers~9 and~10.}
-The additive form $H_0^{\rm glob} = H_0 + K$ adopted above is a preliminary
-Type-P coincidence and is \emph{not} the canonical \SSEE\ prediction for the
-local Hubble constant. A physical treatment is developed in Paper~9 of this
+\citep{Verde2019,Kamionkowski2023} is currently unresolved by $\Lambda$CDM. The
+\SSEE\ treatment is that of Paper~9 of this
 series, where a structural screening fraction
 $f_{\rm scr}^{\rm IR} = s_K^{\rm IR}/(3\,\mathrm{MIRA}) = (\pi-\varphi)/\Omega^2 = \val{F_SCREEN_IR_d6}$
 is applied multiplicatively to the measured local rate
@@ -684,8 +627,10 @@ With $\omega_b,\omega_c$ held at their algebraic values and $A_s,\tau$ profiled,
 the CMB places its own minimum at $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$,
 $\val{perfil_h0_d}\sigma$ from $H_0^{\rm glob}$ (Paper~3). (The earlier MIRA register $H_0^{\rm MIRA}=67.037$ is superseded.)
 Paper~10 provides a UV-completion self-consistency check, sharpening the
-residual to $\val{p9_hglob_residuo}$ ($H_0^{\rm glob} = \val{H0_GLOBAL_d6}$ with the complete $f_{\rm screen}$, IR$+$UV),
-conditional on the UV--IR separability postulate.
+residual to $\val{p9_hglob_residuo}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($H_0^{\rm glob} = \val{H0_GLOBAL_d6}$ with the complete $f_{\rm screen}$, IR$+$UV),
+conditional on the UV--IR separability postulate. An earlier draft of this section
+used an additive coincidence, $3(\varphi+\pi)^2+\mathrm{KAL}$, compared with the SH0ES
+rate; it had no mechanism and is withdrawn.
 
 % ===========================================================================
 \section{Falsifiability Programme}
@@ -695,8 +640,8 @@ conditional on the UV--IR separability postulate.
 \subsection{Tensor-to-Scalar Ratio}
 \label{sec:r}
 
-By analogy with the seven-level spectral tilt, the tensor-to-scalar ratio is
-predicted at the tenth golden harmonic:
+For $\alpha$-attractors $r=12\alpha/N_*^2$ \citep{Kallosh2013}; with $\alpha=\varphi^4/3$ and
+$N_*=2\varphi^7$ (Postulate~I), the tensor-to-scalar ratio is
 \begin{equation}
 \boxed{r = \varphi^{-10} = \val{R_TENSOR_d6}}
 \label{eq:r}
@@ -710,14 +655,13 @@ A null detection $r<0.001$ at $>5\sigma$ confidence would be a decisive falsific
 \subsection{Baryon-to-Photon Ratio}
 
 The baryon-to-photon ratio follows from the SSEE physical baryon density via the
-standard BBN proportionality $\eta \approx 2.74\times10^{-8}\,\Omega_b h^2$:
+standard BBN proportionality $\eta_{10} = 273.9\,\Omega_b h^2$ \citep{Steigman2007}:
 \begin{equation}
-  \eta_{\rm SSEE} = 2.74\times10^{-8}\times\frac{\pi-\varphi}{3(\varphi+\pi)^2}
-    = 2.74\times10^{-8}\times0.02242 = 6.14\times10^{-10}.
+  \eta_{\rm SSEE} = 273.9\times10^{-10}\times\frac{\pi-\varphi}{3(\varphi+\pi)^2}
+    = \val{eta_ssee_d2}\times10^{-10}.
 \end{equation}
-Measured value: $\eta = 6.1\times10^{-10}$ (Planck~2018); deviation $<3\%$.
-\textbf{Falsification criterion:} $\eta < 5.8\times10^{-10}$ or $\eta > 6.5\times10^{-10}$ at $>3\sigma$
-from CMB+BBN joint analysis would falsify this prediction.
+It is $\Omega_b h^2$ restated, so it carries the same $\val{wb_planck_sig}\sigma$ from Planck and
+the same falsification criterion.
 
 \subsection{Neutrino Mass Sum}
 
@@ -751,8 +695,8 @@ neutrino-mass relation no longer contains a calibrated integer and is therefore
 promoted from Type~P (phenomenological) to a closed-form algebraic prediction.
 The conversion factor $93.14$~eV is the standard $\Sigma m_\nu=93.14~\mathrm{eV}\times
 \Omega_\nu h^2$ relation, a Standard-Model input rather than an SSEE quantity.
-\textbf{Falsification criterion:} $\Sigma m_\nu > 0.12~\mathrm{eV}$ or
-$\Sigma m_\nu < 0.058~\mathrm{eV}$ at $>3\sigma$ would falsify this prediction.
+\textbf{Falsification criterion:} a measurement that excludes $\Sigma m_\nu=\val{SUM_MNU_EV_d4}$~eV at
+$>3\sigma$ would falsify this prediction.
 
 % ===========================================================================
 \section{Discussion and Response to Peer Review}
@@ -772,16 +716,16 @@ its global significance is quantified by the closed-dictionary look-elsewhere
 analysis of Paper~1 rather than asserted informally here.
 
 \paragraph{Objection B-1 — Origin of $\Omega$.}
-$\Omega = \varphi+\pi$ is a \emph{theorem} (Section~\ref{sec:omega}),
+$\Omega = \varphi+\pi$ is a \emph{definition} (Section~\ref{sec:omega}),
 not an axiom.  The system has exactly two axioms: $\varphi$ and $\pi$.
 
 \paragraph{Objection B-2 — Exponent in $n_s$.}
 The result $n_s = 1-\varphi^{-7}$ follows algebraically from the universality
 theorem of $\alpha$-attractors \citep{Kallosh2013}: $n_s = 1-2/N_*$ at
 leading order in $1/N_*$, independent of the potential shape.
-With $\alpha = \varphi^4/3$ (established in Paper~1) and $N_* = 2\varphi^7$
+With $\alpha = \varphi^4/3$ (Postulate~I of Paper~1) and $N_* = 2\varphi^7$
 e-folds, one obtains $n_s = 1-2/(2\varphi^7) = 1-\varphi^{-7}$ exactly.
-The exponent~7 counts the depth of the algebraic hierarchy (Table~\ref{tab:hierarchy}),
+The exponent~7 is the only one that places $N_*$ in the inflation window,
 and the same calculation yields the tensor-to-scalar ratio $r = \varphi^{-10}$
 (Section~\ref{sec:r}) as a new falsifiable prediction.
 The derivation of $N_* = 2\varphi^7$ from the quintessential inflation potential
@@ -793,17 +737,15 @@ coincidence ($3.2\sigma$ from Planck) that has been superseded.
 The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck~2018).
 The denominator is the pure algebraic combination whose value, read in
 km\,s$^{-1}$\,Mpc$^{-1}$, coincides with the global Hubble rate of the SH0ES cascade; no free numerical factor
-remains; the baryon density parameter $\Omega_b = \val{Omega_b_alg_d4}$ is a pure $\varphi,\pi$
-prediction (Section~\ref{sec:baryons}).
+remains; the baryon density parameter $\Omega_b = \val{Omega_b_alg_d4}$ follows with
+$h=H_0^{\rm glob}/100$ and is composite (Section~\ref{sec:baryons}).
 
 \paragraph{Remaining open problems.}
-The static (Eckart) $\Omega_c h^2$ prediction of $\val{wc_estatico_ssee_d4}$ is $\val{wc_estatico_ssee_sigma}\sigma$
-from Planck, but the IS modulation $\Omega_c h^2 \times n_s = \val{OMEGA_C_H2_d6}$ reduces
-this to $\val{wc_ns_sigma}\sigma$ — within $1\sigma$ of observation (Eq.~\ref{eq:omch2_IS}).
+The static $\Omega_c h^2$ relation gives $\val{wc_estatico_ssee_d4}$, $\val{wc_estatico_ssee_sigma}\sigma$
+from Planck; with the factor $n_s$ it gives $\val{OMEGA_C_H2_d6}$, $\val{wc_ns_sigma}\sigma$ (Eq.~\ref{eq:omch2_IS}).
 Both use the SSEE baryon density $\omega_b=\val{OMEGA_B_H2_d6}$, not Planck's.
-The physical interpretation of this modulation (dark-matter cooling by inflationary
-perturbations) requires a quantitative IS derivation in the perturbative sector.
-The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
+Why the primordial tilt multiplies the dark-matter density has no mechanism yet;
+what the dark matter is made of is OP-19. A derivation of $A_s$ is OP-18.
 
 % ===========================================================================
 \section{Conclusion}
@@ -811,11 +753,11 @@ The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
 
 We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 \begin{itemize}
-  \item the Hubble target $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ (pure number; read in km\,s$^{-1}$\,Mpc$^{-1}$, $1.1\sigma$ from Planck), on which the measured SH0ES cascade lands
+  \item the Hubble target $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ (pure number; read in km\,s$^{-1}$\,Mpc$^{-1}$, $\val{halg_planck_sig}\sigma$ from Planck), on which the measured SH0ES cascade lands
   \item $\Omega_b h^2 = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck); $\Omega_b=\val{Omega_b_alg_d4}$ follows with $h=H_0/100$
   \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($\val{ns_planck_sig}\sigma$ from Planck)
   \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck, forward)
-  \item $Y_p = \val{Yp_ssee_d4}$ ($0.2\sigma$ from Planck CMB, $0.6\sigma$ from HII — no fit)
+  \item $Y_p = \val{Yp_ssee_d4}$ ($\val{Yp_aver_sig}\sigma$ from HII regions --- no fit)
   \item $\delta_c^{\rm SSEE} = \val{deltac_ssee_zc0}$ ($z_c{=}0$) from spherical collapse on the
         model background, i.e.\ $\Lambda$CDM-like to $0.02\%$; the earlier
         $\delta_{c,\rm EdS}\times n_s = 1.6284$ and its JWST link are
@@ -826,8 +768,8 @@ We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 
 The identification of $M_v=3\Omega$ as the maximal structural
 invariant of the dictionary --- reached by twenty additive routes under the
-no-self-sum construction law (Appendix~\ref{app:independence}) --- motivates the
-connection $H_0 = M_v \times \Omega$.
+no-self-sum construction law (Appendix~\ref{app:independence}) --- motivates taking
+$M_v \times \Omega$ as the target against which the global rate is compared.
 The internal consistency of these cosmological predictions, taken together
 and assessed against the closed-dictionary look-elsewhere analysis of
 Paper~1, is what motivates taking the agreements seriously rather than as
@@ -837,10 +779,10 @@ isolated coincidences.
 \section*{Reproducibility}
 % ===========================================================================
 
-Script: \texttt{src/ssee\_paper4\_toe.py} (repository root).
+Script: \texttt{src/p04\_toe/ssee\_paper4\_toe.py}.
 Requires Python~3, \texttt{camb}$\geq$1.5, \texttt{numpy}, \texttt{matplotlib},
 \texttt{scipy}.  No proprietary data.
-Run: \texttt{python3 src/ssee\_paper4\_toe.py} — reproduces
+Run: \texttt{python3 src/p04\_toe/ssee\_paper4\_toe.py} --- reproduces
 \texttt{fig\_toe\_cmb\_TT.pdf} and \texttt{fig\_toe\_derivations.pdf}
 in \texttt{results/figures/}.
 
@@ -901,12 +843,12 @@ Identity~\eqref{eq:id_kal_p4}--\eqref{eq:id_aura_p4} reveals that KAL and AURA a
 $\varphi$-dominated constant AURA $=(3\varphi+\pi)/2$ maps to the
 $\pi$-dominated constant KAL $=(\varphi+3\pi)/2$, and vice versa, with
 zero residual.  The $\varphi\leftrightarrow\pi$ duality above motivated the
-disformal coupling $\beta_c=-\mathrm{AURA}$ of earlier drafts; Paper~7
+coupling $\beta_c=-\mathrm{AURA}$ of earlier drafts; Paper~7
 withdraws that coupling (``The Potential and the Dark Coupling, and Why
 They Are Withdrawn''): the correctly normalised shooting gives
 $\beta_c=\val{p7_beta_c_ok}$, of the opposite sign to AURA, and no published
 number depends on $\beta_c$, so no
-live disformal coupling is claimed here.
+live coupling is claimed here.
 The open question of whether this discrete symmetry extends to the full
 $P(X,\phi)$ action is catalogued as OP-7 (\texttt{OPEN\_PROBLEMS.md}).
 

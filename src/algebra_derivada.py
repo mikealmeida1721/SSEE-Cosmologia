@@ -42,7 +42,6 @@ ALGEBRA = {
     "dos_phi6":       ("2*PHI**6", "ventana de e-folds, Paper 1"),
     "dos_phi7":       ("2*PHI**7", "N_* = 2 phi^7"),
     "dos_phi8":       ("2*PHI**8", "ventana de e-folds, Paper 1"),
-    "N_star_rh":      ("58.25-math.log(3)/6", "N_* con rho_rh = V_end, Paper 4"),   # ORIGEN-VALOR: 58.25 — N_* de referencia de Paper 4 (Liddle-Leach con rho_rh = V_end)
     "sqrt_AURA":      ("math.sqrt(AURA)", "deflexion del limite MOND-like, Paper 8"),
     "cuatro_AURA":    ("4*AURA", "CUARTAL, tabla de Paper 7"),
     "inv_phi":        ("1/PHI", "gamma algebraico = phi^-1"),
@@ -95,7 +94,10 @@ ALGEBRA = {
     "WA_abs":          ("abs(WA)", "|w_a| = P_sc/IGNIS, para la busqueda look-elsewhere (Sealed)"),
     "Om_sin_nu":       ("(OMEGA_B_H2+OMEGA_C_H2)/(H0_GLOBAL/100)**2", "Omega_m sin omega_nu: muestra que el neutrino no es opcional (Sealed)"),
     "Om_sin_nu_pct":   ("100*OMEGA_M_H2/(OMEGA_B_H2+OMEGA_C_H2)-100", "corrimiento relativo en % al quitar omega_nu"),
-    "Yp_ssee":        ("0.2471+0.96*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — ancla Planck 2018; 0.96 — dY_p/d(omega_b) de AlterBBN (Pisanti 2008)
+    "Yp_ssee":        ("0.2471+0.0016*273.9*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — Y_p BBN de Planck 2018 VI en su omega_b; 0.0016 = dY_p/d(eta_10) y 273.9 = eta_10/omega_b — Steigman 2007 (ARNPS 57, 463). Era 0.96 «de AlterBBN (Pisanti 2008)»: 2.2 veces la sensibilidad publicada (quinta lectura P4, 2026-10-11); Y_p no cambia a 4 decimales
+    "Yp_aver_sig":    ("abs(0.2471+0.0016*273.9*(OMEGA_B_H2-0.02237)-0.2449)/0.0040", "Y_p de SSEE frente a las regiones HII (P4)"),   # ORIGEN-VALOR: 0.2449 +- 0.0040 — Aver, Olive & Skillman 2015
+    "eta_ssee_1e10":  ("273.9*OMEGA_B_H2", "eta_10 = 1e10 n_b/n_gamma de SSEE (P4)"),   # ORIGEN-VALOR: 273.9 — Steigman 2007
+    "halg_planck_sig": ("abs(H0_ALG-67.36)/0.54", "el numero puro 3(phi+pi)^2 leido en km/s/Mpc frente al H0 de Planck (P4)"),   # ORIGEN-VALOR: 67.36 +- 0.54 — Planck 2018 VI Tabla 2
     "Omega_b_alg":    ("OMEGA_B_H2/(H0_ALG/100)**2", "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"),
     "Omega_b_alg_cerrada": ("1e4*(PI-PHI)/(27*OMEGA**6)", "la misma en forma cerrada (control)"),
     # auditoría del lector externo (2026-10-11): cifras que P1/P2/P5/P8 tecleaban a mano

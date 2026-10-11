@@ -99,7 +99,6 @@ M_V_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.M_V", formato: ".6f"
 M_V_d9: {fuente: "results/logs/algebra_derivada.json#nucleo.M_V", formato: ".9f"}
 N_S_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.N_S", formato: ".5f"}
 N_S_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.N_S", formato: ".6f"}
-N_star_rh_d3: {fuente: "results/logs/algebra_derivada.json#algebra.N_star_rh.valor", formato: ".3f"}
 OMDE_DENS_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.OMDE_DENS", formato: ".6f"}
 OMEGA_B_H2_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_B_H2", formato: ".6f"}
 OMEGA_C_H2_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_C_H2", formato: ".5f"}
@@ -857,3 +856,8 @@ OMEGA_M_TOTAL_d4:  {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_T
 h_glob_d4:         {fuente: "results/logs/algebra_derivada.json#algebra.h_glob.valor", formato: ".4f"}
 lite_dBIC_k4:      {fuente: "results/logs/cmb_dbic_mnu_propia.json#dBIC_k4_conservador", formato: ".2f"}
 p3_th100_anc:      {fuente: "results/logs/p3_rd_reframe_omega_m.json#anchor.theta100", formato: ".5f"}
+# quinta lectura P4 (2026-10-11)
+Yp_aver_sig:       {fuente: "results/logs/algebra_derivada.json#algebra.Yp_aver_sig.valor", formato: ".1f"}
+eta_ssee_d2:       {fuente: "results/logs/algebra_derivada.json#algebra.eta_ssee_1e10.valor", formato: ".2f"}
+halg_planck_sig:   {fuente: "results/logs/algebra_derivada.json#algebra.halg_planck_sig.valor", formato: ".1f"}
+H_GLOBAL_h_d5:     {fuente: "results/logs/algebra_derivada.json#algebra.h_glob.valor", formato: ".5f"}
