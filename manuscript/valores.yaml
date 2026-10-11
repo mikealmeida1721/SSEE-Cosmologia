@@ -761,3 +761,9 @@ SUM_MNU_EV_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV", 
 # cuarta lectura P7 (2026-10-10, notes/lectura_cuarta/P7.yaml)
 AURA_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.AURA", formato: ".3f"}
 p7_hc_TTcs2_l30: {fuente: "results/logs/hiclass_campo.json#canonico.pct.TT_cs2.30", formato: ".2f"}
+# distancias a Planck del álgebra (2026-10-11, pasada \pm de la cuarta lectura)
+wb_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.wb_sigma_planck.valor", formato: ".2f"}
+ns_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.ns_sigma_planck.valor", formato: ".2f"}
+om_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.Om_sigma_planck.valor", formato: ".2f"}
+p5_techo_vs_kids: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.KiDS-1000", formato: ".1f"}
+p5_techo_vs_planck: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.Planck 2018", formato: ".1f"}

@@ -58,9 +58,9 @@ From these two axioms alone we derive, without fitting:
 \item[(i)] the pure number $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$, which read in km\,s$^{-1}$\,Mpc$^{-1}$ lies $1.1\sigma$ from Planck~2018. It is the comparison \emph{target} of the Hubble sector, not an input: the model's rate is the output of the SH0ES cascade in (iv), and it lands on this number (Paper~10),
 where $M_v=3\Omega$ is the maximal structural invariant of the dictionary, reached by twenty distinct additive routes under the no-self-sum construction law (Appendix~\ref{app:independence}); this multiplicity is consistent with, but does not by itself prove, the absence of post-hoc tuning;
 \item[(ii)] the physical baryon density
-$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018);
+$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck~2018);
 \item[(iii)] the primordial spectral index
-$n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck~2018),
+$n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($\val{ns_planck_sig}\sigma$ from Planck~2018),
 where the exponent~7 equals the number of primary structural registers in the \SSEE\ hierarchy;
 \item[(iv)] a local Hubble constant from the screening mechanism of Paper~9,
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = \val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$
@@ -253,7 +253,7 @@ Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \quad $H_0$ target (pure number) & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
 \quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & \val{p9_sh0es_glob_IR}  & $3(\varphi+\pi)^2$ & $\val{p9_sh0es_sig_IR}\sigma$ \\
 \quad $\Omega_b$ & $\frac{10^4(\pi-\varphi)}{27(\varphi+\pi)^6}$ & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ \\
-\quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $0.16\sigma$ \\
+\quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $\val{ns_planck_sig}\sigma$ \\
 \textbf{Hubble tension} & & & & \\
 \quad Fractional correction & $K/H_0 = \frac{\varphi+3\pi}{6(\varphi+\pi)^2}$ & $8.12\%$ & $\approx 8\%$ & — \\
 \bottomrule
@@ -326,7 +326,7 @@ coincides with the global rate $H_0^{\rm glob}$ of the SH0ES cascade:
               = \val{Omega_b_alg_d5}
 \label{eq:Ob}
 \end{align}
-Planck~2018: $\Omega_b h^2 = 0.02237\pm0.00015$; deviation $= 0.32\sigma$.
+Planck~2018: $\Omega_b h^2 = 0.02237\pm0.00015$; deviation $= \val{wb_planck_sig}\sigma$.
 
 \textbf{Sakharov-mechanism motivation (not a quantitative derivation).}
 We are explicit about the status of Eq.~\eqref{eq:Obh2}: it is an algebraic
@@ -364,7 +364,7 @@ entropy-dilution factor is consistent with a quintessential-reheating
 temperature $T_{\rm rh}\sim10^{-4}$~GeV, which is a consistency check, not a
 prediction of $\eta_B$.
 $\Omega_b^{\rm SSEE} = \val{Omega_b_alg_d4}$ is $\val{Omega_b_pct_vs_planck}\%$ from the Planck $\Lambda$CDM value
-$\val{Omega_b_planck_d4}$ ($=\omega_b/h^2$ with Planck's own inputs). $\Omega_b=\omega_b/h^2$ is composite: its two inputs are compared separately ($\omega_b$ at $0.32\sigma$, $h$ through $H_0$), so this
+$\val{Omega_b_planck_d4}$ ($=\omega_b/h^2$ with Planck's own inputs). $\Omega_b=\omega_b/h^2$ is composite: its two inputs are compared separately ($\omega_b$ at $\val{wb_planck_sig}\sigma$, $h$ through $H_0$), so this
 difference is the $H_0$ offset, not an independent tension.
 
 \subsection{Total Matter Density \texorpdfstring{$\Omega_m$}{Omega\_m}}
@@ -379,8 +379,8 @@ OP-8 dissolved):
   = \frac{\val{OMEGA_M_H2_d5}}{(0.67962)^2} = \val{OMEGA_M_TOTAL_d6},
 \end{equation}
 with $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]$ and
-$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$ (forward; Paper~3), in $0.88\sigma$
-agreement with Planck~2018 ($\Omega_m = 0.3153\pm0.007$). There is one matter
+$\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$ (forward; Paper~3), in $\val{om_planck_sig}\sigma$
+agreement with Planck~2018 ($\Omega_m = 0.3153\pm0.0073$). There is one matter
 density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ (no matter factor; OP-8 dissolved;
 the former Two-$\Omega_m$ criterion is withdrawn, cf.\ Paper~1, Sec.~1.4).
 The quantity $s_m=(\pi-\varphi)/[2(\varphi+\pi)]\approx 0.160$ ($=1+w_0$) is an
@@ -404,7 +404,7 @@ factor $n_s = 1-\varphi^{-7}$ modulates the dark-matter density:
 The static relation (Eq.~\ref{eq:omch2_static}) is evaluated with the Planck~2018
 \emph{observed} value $\Omega_b h^2 = 0.02237\pm0.00015$ \citep{PlanckCollaboration2020a}. The IS
 relation (Eq.~\ref{eq:omch2_IS}), which is the canonical one, uses the \SSEE\ algebraic
-$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck)
+$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck)
 and gives $\Omega_c h^2 = \val{OMEGA_C_H2_d6}$, $\val{wc_ns_sigma_abs}\sigma$ from Planck: no
 observed input enters it.
 
@@ -611,11 +611,11 @@ Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 $3(\varphi+\pi)^2$ (target)     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & pure number (Type~P$^\dagger$) \\
 $H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $+\val{p9_hglob_residuo}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
 $\Omega_b$          & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ & algebraic \\
-$\Omega_b h^2$      & \val{OMEGA_B_H2_d5}& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
-$\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $0.88\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
+$\Omega_b h^2$      & \val{OMEGA_B_H2_d5}& $0.02237\pm0.00015$ & $\val{wb_planck_sig}\sigma$ & algebraic \\
+$\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $\val{om_planck_sig}\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
 $\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $\val{wc_ns_sigma_abs}\sigma$ & algebraic (forward) \\
 $Y_p$               & \val{Yp_ssee_d4} & $0.2471\pm0.0003$   & $0.2\sigma$ & BBN (no fit) \\
-$n_s$               & \val{N_S_d6}& $0.9649\pm0.0042$   & $0.16\sigma$& algebraic \\
+$n_s$               & \val{N_S_d6}& $0.9649\pm0.0042$   & $\val{ns_planck_sig}\sigma$& algebraic \\
 $\ln(10^{10}A_s)$   & \val{b1_logA_ssee} & $3.044\pm0.014$ & --- & fitted ($k=2$) \\
 $\tau$              & \val{b1_tau_ssee}  & $0.054\pm0.007$     & ---   & fitted ($k=2$) \\
 \midrule
@@ -790,7 +790,7 @@ with gravitational reheating is reserved for Paper~B.
 \paragraph{Objection B-3 — Factor of~200 in the original formula.}
 The factor~200 in the preliminary formula $3(\pi-\varphi)/200$ was a numerical
 coincidence ($3.2\sigma$ from Planck) that has been superseded.
-The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck~2018).
+The correct algebraic formula is $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck~2018).
 The denominator is the pure algebraic combination whose value, read in
 km\,s$^{-1}$\,Mpc$^{-1}$, coincides with the global Hubble rate of the SH0ES cascade; no free numerical factor
 remains; the baryon density parameter $\Omega_b = \val{Omega_b_alg_d4}$ is a pure $\varphi,\pi$
@@ -812,8 +812,8 @@ The $\delta_c$ prediction and $A_s,\tau$ derivation are reserved for Paper~5.
 We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 \begin{itemize}
   \item the Hubble target $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$ (pure number; read in km\,s$^{-1}$\,Mpc$^{-1}$, $1.1\sigma$ from Planck), on which the measured SH0ES cascade lands
-  \item $\Omega_b h^2 = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck); $\Omega_b=\val{Omega_b_alg_d4}$ follows with $h=H_0/100$
-  \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck)
+  \item $\Omega_b h^2 = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck); $\Omega_b=\val{Omega_b_alg_d4}$ follows with $h=H_0/100$
+  \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($\val{ns_planck_sig}\sigma$ from Planck)
   \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck, forward)
   \item $Y_p = \val{Yp_ssee_d4}$ ($0.2\sigma$ from Planck CMB, $0.6\sigma$ from HII — no fit)
   \item $\delta_c^{\rm SSEE} = \val{deltac_ssee_zc0}$ ($z_c{=}0$) from spherical collapse on the

@@ -60,7 +60,7 @@ and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ are forward ide
   = \frac{\omega_m}{h^2}
   = \frac{\val{OMEGA_M_H2_d5}}{0.6796^2} = 0.3089,
 \end{equation*}
-within $0.88\sigma$ of the Planck~2018 value ($0.3153\pm0.0073$). There is a
+within $\val{om_planck_sig}\sigma$ of the Planck~2018 value ($0.3153\pm0.0073$). There is a
 single matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the saturation
 $s_m=1+w_0=\val{S_M_d6}$ is a number of the equation of state, not a density, and
 the scalar $\mathrm{MIRA}=(3\varphi+\pi)/4$ enters only the Hubble screening of
@@ -268,7 +268,7 @@ Compared with $\Omega_m^{\mathrm{Planck}}=0.3153\pm0.0073$
 \citep{Planck2018}, the tension is
 \begin{equation}
 \frac{|\Omega_{m,\mathrm{CMB}} - \Omega_m^{\mathrm{Planck}}|}{\sigma}
-= \frac{|0.3089-0.3153|}{0.0073} = 0.88\sigma .
+= \frac{|\val{OMEGA_M_TOTAL_d6}-0.3153|}{0.0073} = \val{om_planck_sig}\sigma .
 \end{equation}
 
 
@@ -917,7 +917,7 @@ The key results are:
   \item \textbf{\texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ ($\omega_m$-direct):} $\chi^2_{\mathrm{eff}} = \val{lite_chi2_ssee}$ with $\{A_s,\tau\}$ minimized, at $H_0 = \val{H0_GLOBAL_d5}$ km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{perfil_h0_d}\sigma$ from the \texttt{plik\_lite} minimum $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$ with SSEE-fixed $\omega_b,\omega_c$); $\Lambda$CDM gives $\val{lite_chi2_lcdm}$ with six free parameters (its own $\sum m_\nu=0.06$~eV).
   \item $\Delta\mathrm{BIC}=\val{lite_dBIC}$ ($k=2$ vs $k=6$, $N=669$), decisively favouring SSEE over $\Lambda$CDM at equal fit quality ($\Delta\chi^2=-0.010$).
   \item \textbf{Full off-diagonal \texttt{plik} MCMC (canonical):} minimum $\chi^2=\val{b1_chi2_ssee}$ vs $\val{b1_chi2_lcdm}$ for $\Lambda$CDM over $N=\val{b1_N}$ points, $\Delta\mathrm{BIC}=\val{b1_dBIC}$ ($k=2$ vs $k=6$); $\val{b1_dBIC_k4}$ under the conservative $k=4$.
-  \item $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ within $0.88\sigma$ of Planck 2018.
+  \item $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ within $\val{om_planck_sig}\sigma$ of Planck 2018.
   \item The sound horizon $r_d=\val{p2_lyaB_rd}$ Mpc matches $\Lambda$CDM to $0.05\%$.
 \end{itemize}
 

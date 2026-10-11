@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-11",
  "algebra": {
   "alpha_K_z0": {
    "formula": "3*OMDE_DENS*(5-3*W0)",
@@ -271,6 +271,21 @@
    "valor": 0.40465964032602536,
    "uso": "lo mismo en valor absoluto, para \u00aba X sigma de Planck\u00bb"
   },
+  "wb_sigma_planck": {
+   "formula": "abs(OMEGA_B_H2-0.02237)/0.00015",
+   "valor": 0.31837854066564997,
+   "uso": "omega_b algebraico frente a Planck, en sigma"
+  },
+  "ns_sigma_planck": {
+   "formula": "abs(N_S-0.9649)/0.0042",
+   "valor": 0.1567014884207032,
+   "uso": "n_s = 1-phi^-7 frente a Planck, en sigma"
+  },
+  "Om_sigma_planck": {
+   "formula": "abs(OMEGA_M_TOTAL-0.3153)/0.0073",
+   "valor": 0.8793369021792969,
+   "uso": "Omega_m = omega_m/h^2 frente a Planck, en sigma"
+  },
   "Yp_ssee": {
    "formula": "0.2471+0.96*(OMEGA_B_H2-0.02237)",
    "valor": 0.24714584650985583,
@@ -359,17 +374,19 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "373def871435c698d864fc46d3a915561953b680",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "f3a87ebfe208f7bb4962f7eb3af590be0fb50a75",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/algebra_derivada.py"
+  ],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "c94f6fa53ed2e3c1969d95fe777f3cc1370b54f140dec86780402feebf4f9097",
+  "script_sha256": "8effe010bc4086989dae8343176135be7cf37d7df9d03c6526a5e62704a54ee3",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-03T12:38:36",
+  "fecha": "2026-10-11T11:02:15",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

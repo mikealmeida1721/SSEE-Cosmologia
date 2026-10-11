@@ -412,7 +412,7 @@ is auditable rather than silent:
         constraint external to SSEE (the standard inflation duration),
         not by an internal numerological choice. From these inputs follow
         the standard $\alpha$-attractor relations
-        $n_s=1-2/N_*=1-\varphi^{-7}$ (matches Planck 2018 at $0.16\sigma$)
+        $n_s=1-2/N_*=1-\varphi^{-7}$ (matches Planck 2018 at $\val{ns_planck_sig}\sigma$)
         and $r=12\alpha/N_*^2 = \varphi^{-10}$ (LiteBIRD prediction).
         Neither the $\alpha$-attractor class, the value $\alpha=\varphi^4/3$,
         nor the form $N_*=2\varphi^n$ is derived from D+S; together they
@@ -778,7 +778,7 @@ applies uniformly to Papers~1--4.
   Table~\ref{tab:derivation_chain} are within $2\sigma$ of published
   observational values (see Paper~4 for full compilation).
   The baryon density $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$
-  ($0.32\sigma$ from Planck~2018, $0.02237\pm0.00015$) is classified as a
+  ($\val{wb_planck_sig}\sigma$ from Planck~2018, $0.02237\pm0.00015$) is classified as a
   \emph{retrodiction}: its structural algebraic form was identified after the
   data, superseding the preliminary placeholder $3(\pi-\varphi)/200$
   (documented in Table~\ref{tab:derivation_chain} and \texttt{AUDIT.md}).
@@ -934,7 +934,7 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
   DESI~DR5+ excludes $(-0.840,-0.670)$; or $\chi^2_r(H(z))>2.5$ with full cov. &
   A $\chi^2>1$ from \LCDM-calibrated priors the model does not assume \\[4pt]
 \textbf{Observational} &
-  Planck~2018 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=\val{mf_rdrag_alg}$~Mpc ($0.32\sigma$) &
+  Planck~2018 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=\val{mf_rdrag_alg}$~Mpc ($\val{p3_rd_sig_anc}\sigma$) &
   Euclid/KiDS $\Omega_m<0.25$ at $z<1$ &
   $\chi^2_r=\val{p3_chi2r_TT_ssee}$ vs \LCDM's $\val{p3_chi2r_TT_lcdm}$ (non-equivalent background) \\
 \bottomrule
@@ -1031,7 +1031,7 @@ $H_0^{\rm MCMC}$ & DESI DR2 BAO, prior $H_0^{\rm glob}$, CAMB $r_d$ (Paper~2) & 
 $s_m$ & $(\pi-\varphi)/[2(\varphi+\pi)]$ & $\val{S_M_d6}$ & EoS sector; $1+w_0$ exact & A \\
 $\Omega_m^{\rm CMB}$ & $\omega_m/h^2=(\Omega_b h^2{+}\Omega_c h^2{+}\omega_\nu)/h^2$ & $\val{OMEGA_M_TOTAL_d6}^\S$ & Planck 2018 & A \\
 $n_s$     & $1-\varphi^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & A \\
-$\Omega_b h^2$ & $(\pi-\varphi)/[3(\varphi+\pi)^2]$ & $\val{OMEGA_B_H2_d6}$ ($0.32\sigma$) & Planck 2018 & A$^\ddagger$ \\
+$\Omega_b h^2$ & $(\pi-\varphi)/[3(\varphi+\pi)^2]$ & $\val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$) & Planck 2018 & A$^\ddagger$ \\
 $\Omega_c h^2$ & $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ & $\val{OMEGA_C_H2_d6}$ ($0.4\sigma$) & Planck 2018 & A \\
 $r$       & $\varphi^{-10}$ & $0.008131$ & LiteBIRD 2032 & A \\
 $\sum m_\nu^{\rm active}$ & $\mathcal{R}_2\,\Omega_b h^2\cdot93.14/(\tau_\Pi H_0)$ (Paper~4) & $\val{SUM_MNU_EV_d5}$ eV & Planck+BBN & A \\
@@ -1053,7 +1053,7 @@ two-$\Omega_m$ criterion is withdrawn, \S\ref{sec:two_omega_m}).
 Similarly, $\mathrm{KAL}_0$ is both a derived constant (Level~2) and
 a dynamical viscosity operator scaling cluster masses.
 
-\footnotesize $^\ddagger$ $\Omega_b h^2=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ is at $0.32\sigma$ from Planck 2018 ($0.02237\pm0.00015$).
+\footnotesize $^\ddagger$ $\Omega_b h^2=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ is at $\val{wb_planck_sig}\sigma$ from Planck 2018 ($0.02237\pm0.00015$).
 This is a \emph{retrodiction}: the structural form was identified after the data (OP-1, \texttt{OPEN\_PROBLEMS.md}),
 superseding the preliminary placeholder $3(\pi-\varphi)/200=0.02285$ ($3.2\sigma$), whose factor $200$ was not an
 algebraic $\{\varphi,\pi\}$ quantity.
@@ -1376,13 +1376,13 @@ that class is established \emph{a posteriori} in App.~A §A.5: the two
 independent SSEE axioms ($n_s = 1-\varphi^{-7}$ and $r = \varphi^{-10}$)
 determine $N = 2\varphi^7\approx58.07$ and $\alpha = \varphi^4/3$ exactly
 as a consistency check, not as a derivation.
-The Planck~2018 value \citep{Akrami2020} $n_s = 0.9649\pm0.0042$ is $0.16\sigma$ from the
+The Planck~2018 value \citep{Akrami2020} $n_s = 0.9649\pm0.0042$ is $\val{ns_planck_sig}\sigma$ from the
 SSEE algebraic value; this comparison was made after the axiom was committed.
 
 \subsection*{Baryon density $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2]$}
 
 The structural expression $(\pi-\varphi)/[3(\varphi+\pi)^2]$
-gives $0.02242$, at $0.32\sigma$ from Planck~2018 ($0.02237\pm0.00015$).
+gives $0.02242$, at $\val{wb_planck_sig}\sigma$ from Planck~2018 ($0.02237\pm0.00015$).
 Both sides are pure numbers, as they must be: $\Omega_b h^2$ is dimensionless and
 so is the ratio on the right.  The denominator coincides numerically with the global rate read in
 $\kmsu$, $H_0^{\rm glob}/\kmsu\simeq3(\varphi+\pi)^2$, but we do \emph{not} write the
