@@ -252,8 +252,9 @@ def rhs_QS(x, Y, k_H0):
     adding a k-dependent friction to the Euler equation:
       friction: +(1−3c²_s + ζ̃ kH²) → +(1+2.52 + 1.84 kH²) at k=1, z=0
 
-    Eigenvalues at k=1, z=0:  λ₁ ≈ +0.15, λ₂ ≈ −5.5
-    Gradient instability survives (λ₁ > 0) but is SLOW (c.f. bare rate ~0.92).
+    Autovalores (k=10, z=0): se calculan y van al log Q2
+    (autovalores_k10_z0). El modo de gradiente de DE sobrevive en este límite
+    cuasi-estático, con tasa → |w₀|/ζ̃ = 1/(τ_Π H₀) por e-fold a k grande.
     Solution remains finite and integrable for k ≥ 1 H₀/c from a=0.05 to a=1.
     """
     a   = np.exp(x)
@@ -264,20 +265,26 @@ def rhs_QS(x, Y, k_H0):
     δm, vm, δDE, vDE = Y
     one_plus_w = max(1.0 + w, 1e-6)   # guard against 1+w → 0
 
-    Phi = -(1.5 / (k_H0**2 * a * H**2)) * (Omm * δm + OmDE * fDE * δDE)
+    # 2026-10-11 (quinta lectura P5): la gravedad iba con el SIGNO AL REVÉS
+    # (dvm = -vm - kH·Phi con Phi<0 para δ>0 ⟹ repulsiva: autovalores de
+    # materia complejos con parte real negativa), el potencial llevaba 1/H² de
+    # más y el término de DE escalaba con 1/a en vez de a², la presión de DE
+    # tenía el signo invertido y la gravedad sobre DE iba dividida por (1+w).
+    # Con θ̇ = -ℋθ + k²ψ, k²ψ = -(3/2)ℋ²Σ Ω_i(a)δ_i (H₀=c=1, v=θ/k):
+    Phi = -(1.5 / k_H0**2) * (Omm * δm / a + a**2 * OmDE * fDE * δDE)
     kH  = k_H0 / (a * H)
 
     # Matter (pressureless CDM)
     dδm = -kH * vm
-    dvm = -vm - kH * Phi
+    dvm = -vm + kH * Phi
 
     # Dark energy — quasi-static IS Π̃ absorbed as extra friction
     # Pit_QS = -zeta_tilde * kH * vDE
     eff_friction = (1.0 - 3.0 * cs2_bare) + zeta_tilde * kH**2
     dδDE = -one_plus_w * kH * vDE
     dvDE = (-eff_friction * vDE
-            - kH * cs2_bare * δDE / one_plus_w
-            - kH * Phi / one_plus_w)
+            + kH * cs2_bare * δDE / one_plus_w
+            + kH * Phi)
 
     return [dδm, dvm, dδDE, dvDE]
 
@@ -296,7 +303,9 @@ def integrate_growth(k_H0, a_ini=0.05, a_fin=1.0, n_pts=400):
     x_fin = np.log(a_fin)
 
     δm0 =  a_ini    # growing mode δ_m ∝ a
-    vm0 = -a_ini    # θ_m = -H δ_m → v_m normalized
+    # modo creciente: δ' = δ ⟹ v = -δ/kH (antes v = -a_ini, k veces de más:
+    # de ahí que δ_m(z=0) creciera ∝ k)
+    vm0 = -a_ini * a_ini * H_interp(a_ini) / k_H0
     Y0  = [δm0, vm0, 0.0, 0.0]
 
     x_eval = np.linspace(x_ini, x_fin, n_pts)
@@ -390,6 +399,17 @@ if results:
         # que solo tiene sentido con Om = 0.160050. Nadie lo vio porque el
         # script no dejaba log y R35/R65 no tenian contra que comparar. Ahora
         # lo deja, y la tabla del .tex se genera de aqui.
+        # 2026-10-11: autovalores del sistema que se INTEGRA (rhs_QS), en z=0 y
+        # k=10 H0/c; el apendice B de Paper 5 los traia a mano y con otra matriz.
+        _k_eig = 10.0
+        _J = np.zeros((4, 4))
+        _f0 = np.array(rhs_QS(0.0, [0.0]*4, _k_eig))
+        for _j in range(4):
+            _e = np.zeros(4); _e[_j] = 1.0
+            _J[:, _j] = np.array(rhs_QS(0.0, list(_e), _k_eig)) - _f0
+        _lam = np.linalg.eigvals(_J)
+        _lam = _lam[np.argsort(-_lam.real)]
+        _F_eig = (1.0 - 3.0 * cs2_bare) + zeta_tilde * (_k_eig / H_interp(1.0))**2
         import json as _json, os as _os
         _log = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
                              '..', '..', 'results', 'logs',
@@ -404,6 +424,9 @@ if results:
                             R=float(results[_k]['MIRA_num']))
                        for _k in sorted(results)],
                 R_media_k10=float(MIRA_mean), R_sd_k10=float(MIRA_std),
+                autovalores_k10_z0=dict(k=_k_eig, F=float(_F_eig),
+                    re=[float(v.real) for v in _lam], im=[float(v.imag) for v in _lam],
+                    nota='jacobiano de rhs_QS (lineal) en x=ln a=0; variable d/dln a'),
                 nota=('R = Omega_m,eff/Omega_m con las DENSIDADES reales. '
                       'El blanco 1.998924 era el factor materia retirado el '
                       '2026-06-18 (OP-8); se conserva solo como registro.')),
@@ -568,8 +591,12 @@ else:
 
     tens_DES_IS   = _tension(S8_SSEE_val, S8_DES,  S8_SSEE_err_val, S8_DES_err)
     tens_KIDS_IS  = _tension(S8_SSEE_val, S8_KIDS, S8_SSEE_err_val, S8_KIDS_err)
-    tens_DES_LC   = abs(S8_LCDM_val - S8_DES)  / S8_DES_err
-    tens_KIDS_LC  = abs(S8_LCDM_val - S8_KIDS) / S8_KIDS_err
+    # 2026-10-11: la barra del modelo entra en cuadratura TAMBIEN para LCDM.
+    # Antes LCDM usaba solo la barra observacional (3.02/3.26 sigma) y SSEE la
+    # suma (2.69/2.74): la asimetria fabricaba el «SSEE algo mejor».
+    S8_LCDM_err_val = sigma8_LCDM_err * np.sqrt(Omm_LCDM / 0.3)
+    tens_DES_LC   = _tension(S8_LCDM_val, S8_DES,  S8_LCDM_err_val, S8_DES_err)
+    tens_KIDS_LC  = _tension(S8_LCDM_val, S8_KIDS, S8_LCDM_err_val, S8_KIDS_err)
 
     # ── fσ₈ at z = 0.5
     idx_05 = np.argmin(np.abs(z_g - 0.5))
@@ -622,6 +649,10 @@ else:
             S8_SSEE=float(S8_SSEE_val), S8_SSEE_sigma=float(S8_SSEE_err_val),
             fsigma8_z05_SSEE=float(fσ8_SSEE_05), fsigma8_z05_LCDM=float(fσ8_LCDM_05),
             tabla_f=tabla_f,
+            S8_LCDM=float(S8_LCDM_val), S8_LCDM_sigma=float(S8_LCDM_err_val),
+            tensiones_S8=dict(SSEE_KiDS1000=float(tens_KIDS_IS), SSEE_DESY3=float(tens_DES_IS),
+                              LCDM_KiDS1000=float(tens_KIDS_LC), LCDM_DESY3=float(tens_DES_LC),
+                              nota='barra del modelo en cuadratura en los dos'),
             nota='sigma8 con A_s FIJADO a Planck (techo); no es el S8 de Paper 6.'),
             __file__), _fh, indent=1)
     print(f"    -> log: {_log3}")
