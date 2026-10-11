@@ -49,6 +49,7 @@ stages:
     - results/logs/p5_IS_perturbations_Q2.json
     - results/logs/p5_estabilidad_IS_completa.json
     - results/logs/p5_cruce_fantasma_IS.json
+    - results/logs/p7_fondo_campo.json
     - results/logs/lcdm_conjunta.json
     - src/valores_tex.py
     - manuscript/valores.yaml

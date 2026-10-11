@@ -121,7 +121,7 @@ if __name__ == '__main__':
     h = 1e-4
     aa, wpp, _, _ = integra(0.0, a_fin=1 - h)
     wa_loc = float((wpp[-1] - W0) / h)       # -dw/da en a=1  (w(1-h) - w(1))/h
-    tab = {f'{x:.2f}': float(np.interp(x, a[::-1], wp[::-1]))
+    tab = {f'a{round(100*x):03d}': float(np.interp(x, a[::-1], wp[::-1]))
            for x in (0.3, 0.5, 0.7, 0.9, 1.0)}
     out['A_campo_solo'] = dict(w_phi=tab, wa_local=wa_loc,
                                cpl=dict(w0=w0A, wa=waA),
