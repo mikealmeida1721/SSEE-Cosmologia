@@ -30,6 +30,7 @@
 \newcommand{\wz}{w_0}
 \newcommand{\wa}{w_a}
 \newcommand{\OmDE}{\Omega_{\mathrm{DE}}}
+\newcommand{\sDE}{s_{\mathrm{DE}}}
 \newcommand{\Omm}{\Omega_{m}}
 \newcommand{\cs}{c_{s}}
 \newcommand{\tauPi}{\tau_\Pi}
@@ -44,8 +45,8 @@
 % ── Title ───────────────────────────────────────────────────────────────────
 \title{\textbf{Israel-Stewart Causal Viscous Perturbations\\
 in the SSEE Dark Energy Framework:\\
-Exact Marginal Stability, $\Lambda$CDM-Consistent Structure Growth,\\
-and the Amplitude Ceiling}}
+Stability from the Field, Weak Dark-Energy Clustering,\\
+and $\Lambda$CDM-Consistent Structure Growth}}
 
 \author{Mike Edison Almeida Vallejo \\
 \small \textit{Independent Researcher} \\
@@ -63,10 +64,10 @@ and the Amplitude Ceiling}}
 % ── Abstract ────────────────────────────────────────────────────────────────
 \begin{abstract}
 The Structural Self-Energy Expansion (SSEE) derives a dark energy
-equation of state $w_0 = -T_r/M_v \simeq -0.8399$ and $w_a \simeq -0.6700$
+equation of state $w_0 = -T_r/M_v = \val{W0_d6}$ and $w_a = \val{WA_d6}$
 purely from the golden ratio $\varphi$ and $\pi$, with zero fitted
 dimensionless parameters in the dark-energy background sector,
-in agreement with the official DESI DR2 $w_0w_a$CDM posterior at $0.24\sigma$ (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations).
+in agreement with the official DESI DR2 $w_0w_a$CDM posterior at $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+; $\val{p2_w0wa_ssee_ec28_d1}$--$\val{p2_w0wa_ssee_ec27_d1}\sigma$ across SN compilations).
 (Following Paper~1 \S1.3, the broader SSEE programme carries a small set of
 phenomenological ans\"atze in the dark-matter sector --- in particular the
 $\phi$-DM mass and the non-minimal coupling $\xi$ --- retracted with the
@@ -74,7 +75,7 @@ $\varphi$-DM sector (Paper~6); OP-9/11 closed by dissolution, OP-14 resolved
 in \texttt{OPEN\_PROBLEMS.md}; the present perturbation analysis is independent
 of those ans\"atze.)
 Because $w_0 < -1/3$, a naive $k$-essence interpretation gives a negative
-bare sound speed $c^2_{s,\mathrm{bare}} = w_0 \simeq -0.840$, implying catastrophic
+bare sound speed $c^2_{s,\mathrm{bare}} = w_0 = \val{W0_d6}$, implying catastrophic
 gradient instability on all sub-horizon scales.
 
 We perform a linear Israel-Stewart (IS) causal viscous perturbation analysis of \SSEE\ dark energy in the sub-horizon regime,
@@ -90,41 +91,34 @@ rather than a second matter sector)?
 \emph{(Q3)}~What are the falsifiable predictions for the growth rate,
 $\sigma_8$, and the $S_8$ parameter?
 
-For Q1, we prove analytically that the SSEE structure constants satisfy the
-algebraic identity $\ztilde/(\tauPi H_0) = |w_0|$, forcing
-$c^2_{s,\mathrm{eff}}(k\to\infty) = 0$ to floating-point precision
-(equivalently $\ztilde/(\tauPi H_0) = \OmDE$, since $\OmDE = |w_0|$ is the
-saturation correspondence of Paper~1, Postulate~S, not an independent identity).
-This is not a numerical coincidence but a construction-level identity:
-any IS embedding of a dark-energy fluid satisfying
-$\ztilde = |\wz|\,\tauPi H_0$ is exactly marginally stable, and the SSEE
-structure constants admit such an embedding. We do not claim this as an
-external theorem about all IS models, but as the consistency statement that
-SSEE supports a stable IS extension at the construction level.
-The critical wavenumber is $k_\mathrm{crit} = 0.456\,H_0/c$, placing the
-instability boundary \emph{outside} the sub-horizon regime;
-all modes with $k > H_0/c$ are causally stabilised. The margin
-($k_\mathrm{crit}/H_0 c^{-1} \simeq 0.46$, a factor $\sim 2.2$ inside the
-horizon) is comfortable at tree level. A future one-loop treatment would
-test whether the stability regime is robust to QFT corrections; we
-note this as an extension question rather than a current limitation.
+For Q1, the SSEE structure constants satisfy the algebraic identity
+$\ztilde/(\tauPi H_0) = \sDE = |w_0|$ (the saturation $s_{\rm DE}=T_r/M_v$ of Paper~1),
+so that the high-frequency ($\omega\tauPi\to\infty$) sound speed of the IS fluid
+vanishes, $c^2_{s,\mathrm{eff}} = w_0 + \sDE = 0$. We show that this is \emph{not}
+a stability result. For a mode growing at rate $\lambda$ the viscous stiffness is
+$\sDE\,\lambda\tauPi/(1+\lambda\tauPi) < \sDE$, so with $c^2_{s,\rm bare}=w_0$ the
+growing branch obeys $\lambda^2 = k^2\sDE/(1+\lambda\tauPi) > 0$ at every $k$
+($\lambda = \val{p5_lamIS_k100}\,H_0$ at $k=100\,H_0/c$); the full five-variable
+integration confirms it. The stability of the \SSEE\ dark-energy sector is carried
+instead by the field of Paper~7, whose own sound speed is
+$c^2_s=+\val{cs2_condensado_d6}$: with it, and the same viscosity, no mode grows.
+The quasi-static reduction used for this question in earlier versions is the
+Navier--Stokes limit, valid only for $\tauPi H\ll1$, which never holds here.
 
-For Q2, integrating the full linear IS perturbation ODE from $z=19$ to $z=0$
-yields $\delta_{\mathrm{DE}}/\delta_m \to 0^-$ at all sub-horizon scales.
-Consequently the numerical enhancement ratio is
-$\Omega_{m,\mathrm{eff}}/\Omega_m = \val{R_media_k10_p5}\pm \val{R_sd_k10_p5} \to 1$, not~$\approx2$:
-linear IS perturbations generate no such link --- and there is no second matter
-sector for them to link to.
-A background IS viscous calculation also fails to generate the factor (yielding
-$\approx3.04$, not $\approx2$). The CMB-to-dynamical ratio $\approx1.93$ is therefore
-not a fluid-dynamical effect.  Nor is it a ratio of two matter densities, as
-earlier versions of this abstract stated: $\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$ is
-not a density but $1+w_0$, a quantity of the equation of state, so the
-difference $\val{OMEGA_M_TOTAL_d6}-0.160$ that once defined a second sector subtracts
-objects of different kinds.  That construction is retracted (Paper~6).  The
-matter content is a single sector, $\Omega_m = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, and
-the algebraic number $\mathrm{MIRA}=(3\varphi+\pi)/4\simeq1.999$ survives only
-as the Hubble-screening amplitude of Paper~9, no longer as a matter factor.
+For Q2, integrating the full linear IS system (with the field's sound speed) from
+$z=19$ to $z=0$ gives $\delta_{\mathrm{DE}}/\delta_m = \val{q2_r_k3}$ at
+$k=10\,H_0/c$, falling as $k^{-2}$: the enhancement
+$\Omega_{m,\mathrm{eff}}/\Omega_m = \val{R_media_k10_p5}\pm \val{R_sd_k10_p5}$ ($k\geq10\,H_0/c$)
+is a bound on dark-energy clustering, not a factor $\approx2$ --- and there is no
+second matter sector for it to supply. The number $\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$
+once paired with $\Omega_{m,\mathrm{CMB}}$ is not a density but $1+w_0$, a quantity of the
+equation of state, so the difference $\val{OMEGA_M_TOTAL_d6}-\val{S_M_d6}$ that once defined a
+second sector subtracts objects of different kinds; that construction is retracted
+(Paper~6). The matter content is a single sector, $\Omega_m = \omega_m/h^2 =
+\val{OMEGA_M_TOTAL_d6}$, and the algebraic number $\mathrm{MIRA}=(3\varphi+\pi)/4=\val{MIRA_d6}$
+survives only as the Hubble-screening amplitude of Paper~9. The same integration,
+written in the regular variable of Kunz \& Sapone, carries the perturbations through
+the phantom crossing at $z_*=\val{z_cruce}$ without divergence.
 
 For Q3, we compute the IS growth index $\gamma_{\mathrm{IS}} = \val{p3_gamma_IS} \pm \val{p3_gamma_IS_sigma}$
 (consistent with $\gamma_{\Lambda\mathrm{CDM}} \simeq 0.55$), the growth
@@ -144,7 +138,7 @@ Planck imports the Planck--KiDS offset instead of predicting it.  With $A_s$
 free and this same background, the fit to the raw KiDS-1000 $\xi_\pm$ gives
 $S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000; against the later
 \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points) the amplitude the shear
-asks for lies $0.49\sigma$ from the one the model's own CMB fit supplies, so
+asks for lies $\val{logA_leg_vs_cmb}\sigma$ from the one the model's own CMB fit supplies, so
 $A_s$ can be fixed there as well, and with \emph{no} free cosmological parameter
 the model predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured
 (Paper~6).\footnote{KiDS-Legacy (Wright et al.\ 2025, arXiv:2503.19441) was
@@ -157,16 +151,18 @@ does \emph{not} discriminate between the models; what separates them is the
 parameter count. See Paper~6.}  What this
 paper establishes is the growth \emph{shape}, $\mathcal{G}$ and
 $\gamma_{\mathrm{IS}}$, which are amplitude-independent.
-The $f\sigma_8$ mean tension is $0.70\sigma$, essentially identical to $\Lambda$CDM
-($0.73\sigma$): SSEE does not suppress or enhance structure formation relative to
+The $f\sigma_8$ mean tension is $\val{fs8_tmedia_ssee}\sigma$, essentially identical to $\Lambda$CDM
+($\val{fs8_tmedia_lcdm}\sigma$): SSEE does not suppress or enhance structure formation relative to
 $\Lambda$CDM once $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ governs the growth equation.
 
-Finally, we map the SSEE IS parameters to the EFT-of-dark-energy operator basis
-\citep{Gubitosi2013,Bellini2015}, show that IS viscosity generates a unique
-combination of the $\bar{M}_2^4$ braiding operator and a non-minimal kinetic
-term, and demonstrate that the ghost condensate \citep{Arkani-Hamed2004}
-and SSEE IS mechanisms are physically inequivalent: SSEE achieves \emph{exact}
-marginal stability ($c^2_s=0$, the minimal-viscosity solution), while ghost condensation gives $c^2_s=1$.
+Finally, we place the IS layer in the EFT-of-dark-energy language
+\citep{Gubitosi2013,Bellini2015}: the dark-energy action of Paper~7 is a
+shift-symmetric ghost condensate with $\alpha_T=\alpha_B=\alpha_M=0$, which
+produces no bulk viscosity, so the IS layer is a property of the fluid
+parametrisation and maps to no operator of the action. An earlier mapping to
+$\bar M_2^2$ (which would imply $\alpha_T\neq0$) and an earlier contrast with the
+ghost condensate (``$c^2_s=1$'') are withdrawn: the ghost condensate \emph{is} the
+\SSEE\ dark-energy sector.
 \end{abstract}
 
 \clearpage
@@ -187,24 +183,24 @@ in the background sector; see Paper~1 \S1.3) whose equation-of-state parameters
 \begin{equation}
   w_0 = -\frac{T_r}{M_v}
   = -\frac{3(\varphi+\beta)}{\varphi+\pi+K_v}
-  \simeq -0.8399, \qquad
-  w_a = -\frac{P_{sc}}{I_g} \simeq \val{WA_d5},
+  = \val{W0_d6}, \qquad
+  w_a = -\frac{P_{sc}}{I_g} = \val{WA_d6},
   \label{eq:w0_wa}
 \end{equation}
 are derived algebraically from the golden ratio $\varphi=(1+\sqrt{5})/2$ and $\pi$,
 without any continuous free parameters.
-Here $\beta=(\pi+\varphi)/2$, $K_v=\varphi+\pi+(\pi+\varphi)$,
+Here $\beta=(\pi+\varphi)/2$, $K_v=\varphi+\pi+(\pi+\varphi)$, $I_g = K_v$ (the
+structural constraint of Paper~1),
 $T_r=3(\varphi+\beta)$, $M_v=\varphi+\pi+K_v$, and $P_{sc}=(\pi+\varphi)+\varphi$.
-The CPL parameters~\eqref{eq:w0_wa} \citep{ChevallierPolarski2001,Linder2003} are consistent with DESI DR2 at $0.24\sigma$ (Pantheon+)
-\citep{SSEE_Paper2,AbdulKarim2025} and with Planck 2018 CMB spectra at
-$\chi^2_r \leq 1.062$ \citep{SSEE_Paper3}.
+The CPL parameters~\eqref{eq:w0_wa} \citep{ChevallierPolarski2001,Linder2003} are consistent with DESI DR2 at $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+)
+\citep{SSEE_Paper2,AbdulKarim2025} and with the Planck 2018 CMB spectra \citep{SSEE_Paper3}.
 
 Paper~4 \citep{SSEE_Paper4} identifies the algebraic structure constants
 \begin{align}
   \KALz &\equiv \beta + \pi \simeq \val{KAL0_d4}
   \quad\text{(Structural Retention)}, \\
   \mathrm{MIRA} &\equiv \frac{3\varphi+\pi}{4} \simeq \val{MIRA_d4}
-  \quad\text{(MIRA factor)},
+  \quad\text{(screening amplitude, Paper~9)},
 \end{align}
 and (under the $\omega_m$-direct reframe; OP-8 dissolved) the CMB matter
 density is the standard physical $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2
@@ -220,14 +216,14 @@ perturbatively stable}?
 \subsection{The gradient instability problem}
 \label{subsec:instability}
 
-A canonical-kinetic (constant-$w$) $k$-essence proxy with Lagrangian $\mathcal{L} \propto X^n$
+A single-power (constant-$w$) $k$-essence proxy with Lagrangian $\mathcal{L} \propto X^n$
 \citep{ArmendarizPicon2001},
 where $X = -\tfrac{1}{2}\partial_\mu\phi\partial^\mu\phi$, has an adiabatic sound
 speed $c^2_s = 1/(2n-1)$ and equation of state $w = 1/(2n-1)$, so $c^2_s = w$
 \citep{Hu1998}.
-For SSEE, $w_0 \simeq -0.840$, giving
+For SSEE this gives
 \begin{equation}
-  c^2_{s,\mathrm{bare}} = w_0 \simeq -0.840.
+  c^2_{s,\mathrm{bare}} = w_0 = \val{W0_d6}.
   \label{eq:cs2_bare}
 \end{equation}
 Negative $c^2_s$ signals a \emph{gradient instability}: perturbations
@@ -246,7 +242,7 @@ $K = c_1X + c_2X^2$ with $c_2X/c_1 = \val{u_condensado_d6}$, which is independen
 ghost-free and gradient-stable with adiabatic sound speed
 \begin{equation}
   c^2_{s,\mathrm{ad}} = \frac{1+2u}{1+6u} = \frac{M_v-T_r}{5M_v+3T_r}
-  = 0.021284 ,
+  = \val{cs2_condensado_d6} ,
   \qquad u \equiv c_2X/c_1 ,
 \end{equation}
 a clustered rather than smooth dark energy.
@@ -255,21 +251,23 @@ a clustered rather than smooth dark energy.
 $c^2_{s,\mathrm{ad}}\in[0.60,1]$ and attributed the Lagrangian to ``Papers~7
 and~10''. That value was computed from $K(X)=X/\KALz+X^2/M^4$, which is
 Paper~10's \emph{screening} functional and not the dark-energy action: the two
-carry different coefficient ratios ($+0.008577$ against $\val{u_condensado_d6}$) and do
+carry different coefficient ratios ($+\val{c2X_c1_KX_d6}$ against $\val{u_condensado_d6}$) and do
 different jobs \citep{SSEE_Paper10}. The sound speed of the dark-energy sector
 is the one above.
 The IS analysis below addresses the \emph{hydrodynamic} (fluid) description used
 by Boltzmann codes, where dark energy is parametrised by $(w, c^2_s)$ and the
 naive closure $c^2_s = w$ would be catastrophic.
-The IS bulk viscosity is $\ztilde = \KALz/3$, so the fluid-level regularisation
-introduces no new parameter.
+The IS bulk viscosity is $\ztilde = \KALz/3$, so the fluid-level layer
+introduces no new parameter. We show in Section~\ref{sec:Q1_stability} that this
+layer does \emph{not}, by itself, remove the instability of the closure
+$c^2_s=w$; what removes it is the field's own sound speed above.
 
 \emph{What is and is not fixed here (2026-09-07).} Only the \emph{ratio}
-enters the observable: $\ztilde/(\tauPi H_0) = \OmDE$, and since $\ztilde$ and
-$\tauPi$ share the factor $\KALz$, it cancels. The marginal-stability result
-$c^2_{s,\rm eff} = \wz + \OmDE = 0$ is therefore \emph{independent of}
+enters the observable: $\ztilde/(\tauPi H_0) = \sDE$, and since $\ztilde$ and
+$\tauPi$ share the factor $\KALz$, it cancels. The high-frequency result
+$c^2_{s,\rm eff} = \wz + \sDE = 0$ is therefore \emph{independent of}
 $\KALz$: replacing it by any positive constant returns the same $0$, which
-follows from the algebraic identity $\OmDE = |\wz|$ alone. The individual split
+follows from the algebraic identity $\sDE = |\wz|$ alone. The individual split
 $\ztilde = \KALz/3$ is consequently not determined by anything in \emph{this}
 observable, and is not claimed to be.
 
@@ -278,8 +276,8 @@ framework in three places that do move observables: $\omega_c =
 \KALz\,\omega_b\,n_s$ (a $10\%$ shift moves $\omega_c$ by $\sim\!10\sigma$
 against Planck); the neutrino sum $\Sigma m_\nu = R_2\,\omega_b\,(93.14)/(\tauPi
 H_0)$, where $\KALz$ appears \emph{squared} through $R_2 = \Omega/(\KALz T_r)$
-and $\tauPi H_0 = \KALz/(3\OmDE)$, so that $\KALz \to 1.1\,\KALz$ gives
-$\Sigma m_\nu = 0.0566$~eV, \emph{below} the oscillation floor $0.058$~eV and
+and $\tauPi H_0 = \KALz/(3\sDE)$, so that $\KALz \to 1.1\,\KALz$ gives
+$\Sigma m_\nu = \val{smnu_kal11}$~eV, \emph{below} the oscillation floor $0.058$~eV and
 therefore falsified; and Paper~10's screening functional. The cancellation
 above is thus local to $c^2_{s,\rm eff}$: $\tauPi$ itself is anchored, through
 $\Sigma m_\nu$, to within roughly $10\%$.
@@ -295,11 +293,11 @@ adiabatic, $\delta p - c^2_s\,\delta\rho = 0$ identically in $(c_1,c_2,X)$, so
 the entropy production of Eq.~\eqref{eq:entropy_prod} vanishes and $\zeta = 0$.
 The IS layer is therefore a repair of the $(w,c^2_s)$ \emph{parametrisation}
 imposed by Boltzmann codes, not a property of the field; the sector's own
-prediction is the field value $c^2_s = 0.021284$. The recurrence of $\KALz$ in
+prediction is the field value $c^2_s = \val{cs2_condensado_d6}$. The recurrence of $\KALz$ in
 $\ztilde$ is a resemblance across two different objects, not a derivation of one
 from the other, and is not claimed as one. See \textbf{OP-22b}.
 
-\subsection{The Israel-Stewart resolution}
+\subsection{The Israel--Stewart layer}
 \label{subsec:IS_intro}
 
 The first-order (Eckart) relativistic fluid theory \citep{Eckart1940} is acausal
@@ -319,25 +317,27 @@ Bulk-viscous cosmological models have been explored phenomenologically in
 SSEE identifies in Paper~1 a structural IS steady-state condition that fixes
 $\KALz$ as the dimensionless viscosity, implying specific values of both $\zeta$
 and $\tauPi$ with no additional freedom.
-The central claim of the present paper is that \emph{these algebraically determined
-IS parameters exactly neutralise the gradient instability}.
+Earlier versions of this paper claimed that \emph{these algebraically determined
+IS parameters exactly neutralise the gradient instability}. They neutralise it only
+for oscillations in the limit $\omega\tauPi\to\infty$; the growing branch survives
+(Section~\ref{sec:Q1_stability}). The claim is withdrawn, and the stability of
+the sector is assigned to the field.
 
 \subsection{Paper structure}
 \label{subsec:outline}
 
-Section~\ref{sec:theory} derives the IS perturbation equations from the entropy
-current divergence, establishes thermodynamic consistency, and introduces
-the quasi-static approximation.
-Section~\ref{sec:Q1_stability} establishes the marginal stability identity (under minimality) and
-characterises the critical wavenumber.
-Section~\ref{sec:Q2_MIRA} presents numerical integration results for the MIRA test.
-Section~\ref{sec:growth} derives the growth index, $\sigma_8$, and $S_8$
-prediction, addressing the weak-lensing tension.
-Section~\ref{sec:EFT} maps the IS mechanism to the EFT-of-dark-energy operator basis.
-Section~\ref{sec:discussion} discusses physical implications, and
-Section~\ref{sec:conclusions} states the falsifiable predictions.
-Appendices contain the full IS dispersion relation derivation (Appendix~\ref{app:dispersion})
-and the eigenvalue analysis of the perturbation matrix (Appendix~\ref{app:eigenvalues}).
+Section~\ref{sec:theory} sets out the IS equations, the normalisation of the
+viscosity, and why the quasi-static reduction is the Navier--Stokes limit.
+Section~\ref{sec:Q1_stability} separates the high-frequency identity from stability
+and shows that the growing branch of the closure $c^2_s=w$ survives the viscosity,
+while the field's sound speed removes it. Section~\ref{sec:Q2_MIRA} measures
+dark-energy clustering with the full IS system, including the passage through the
+phantom crossing. Section~\ref{sec:growth} gives the growth index, $\sigma_8$ and $S_8$.
+Section~\ref{sec:EFT} places the IS layer in the EFT-of-dark-energy language,
+Section~\ref{sec:discussion} discusses implications and collects the falsifiable
+predictions, and Section~\ref{sec:conclusions} concludes. Appendix~\ref{app:dispersion}
+derives the dispersion relation and Appendix~\ref{app:eigenvalues} gives the
+eigenvalues of the integrated system.
 
 %======================================================================
 \section{Israel-Stewart Theory for SSEE Dark Energy}
@@ -379,14 +379,14 @@ which reduces in the cosmologically relevant slow-variation limit
 This is the form used throughout this paper.
 Two properties follow immediately from Eq.~\eqref{eq:entropy_prod}:
 \begin{enumerate}
-  \item \textbf{Causality}: the IS relaxation limits signal propagation to
-    $v_{\rm sig} = \sqrt{\zeta/[\tauPi(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})]} < c$
+  \item \textbf{Causality}: the IS relaxation gives a finite characteristic speed,
+    $v^2_{\rm sig} = c^2_{s,\rm bare} + \zeta/[\tauPi(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})] \leq c^2$
     \citep{HiscockLindblom1983} --- the enthalpy again, as the inertia of the
     propagating mode.
   \item \textbf{Stability}: the entropy production rate is non-negative for all
     $\Pi$ provided $\tauPi > 0$ and $\zeta \geq 0$.
 \end{enumerate}
-Both conditions are satisfied in SSEE (established in Section~\ref{sec:Q1_stability}).
+Both conditions are satisfied in SSEE (Section~\ref{subsec:thermodynamic}).
 
 \subsection{SSEE IS parameters from algebraic structure constants}
 \label{subsec:IS_params}
@@ -396,8 +396,8 @@ $\Pi = -3\zeta H$.
 The dimensionless viscosity and relaxation time are defined by normalising to
 the dark-energy \emph{enthalpy} and the Hubble rate:
 \begin{align}
-  \ztilde &\equiv \frac{\zeta}{(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})\,H_0}
-           = \frac{\zeta}{\rho_{\mathrm{DE}}(1+\wz)\,H_0}, \\
+  \ztilde &\equiv \frac{\zeta\,H_0}{\rho_{\mathrm{DE}}+p_{\mathrm{DE}}}
+           = \frac{\zeta\,H_0}{\rho_{\mathrm{DE}}(1+\wz)}, \\
   \tauPi H_0 &\equiv \text{dimensionless IS relaxation time}.
 \end{align}
 The enthalpy $\rho+p$, not the density $\rho$, is the correct normalisation:
@@ -433,21 +433,17 @@ $\rho_{\rm DE}+p_{\rm DE}$ (enthalpy) & $\val{inv_1pw0_d6}$ \\
 the normalisation, and one of them points the other way. The steady-state
 ansatz as originally written, $\Pi = -\KALz\,\rho_{\rm DE}H$, gives
 $\zeta = \KALz\rho_{\rm DE}/3$ and hence
-$c^2_{s,\mathrm{eff}} = \wz + 5.248 = +4.41$: superluminal, and therefore not
-an option. The two operative appendices of this paper both require the other
-convention.
+$c^2_{s,\mathrm{eff}} = \wz + \val{inv_1pw0_m1_d3} = \val{cs2_rho_norm}$: superluminal, and therefore not
+an option. The dispersion appendix of this paper requires the other convention.
 
-\emph{The answer, from two independent witnesses inside this paper.}
+\emph{The answer from inside this paper.}
 The relativistic inertia of a sound wave is the enthalpy, so the dispersion
 relation of Appendix~\ref{app:dispersion} carries
 $\zeta/[\tauPi(\bar\rho+\bar p)]$; it reduces to $\ztilde/(\tauPi H_0)$
 \emph{only if} $\ztilde$ is enthalpy-normalised, $\zeta =
-\ztilde\,(\rho_{\rm DE}+p_{\rm DE})H_0$, which is what that appendix states.
-Independently, the eigenvalue analysis of Appendix~\ref{app:eigenvalues} uses
-$\mathcal{F}=(1-3c^2_s)+\ztilde(k/H)^2 \approx 186$ at $k=10$: the
-enthalpy normalisation returns $185.05$, whereas normalising to $\rho_{\rm crit}$
-returns $1370$, an order of magnitude off. Both appendices therefore use the
-same convention, and it is the enthalpy one.
+\ztilde\,(\rho_{\rm DE}+p_{\rm DE})/H_0$, which is what that appendix states.
+(Earlier versions cited a second witness, a friction coefficient $\approx186$ in
+the eigenvalue appendix; that number had no recorded computation and is withdrawn.)
 
 \emph{The resolution, and why it is not merely a choice.} We adopt the
 enthalpy form of the steady-state condition,
@@ -457,8 +453,8 @@ $\bar\rho+\bar p \to 0$: a cosmological constant carries no fluid degrees of
 freedom, so its bulk viscous pressure \emph{must} vanish. The enthalpy form
 gives $\Pi \to 0$ automatically; the $\rho_{\rm DE}$ form gives a finite
 viscous pressure for a cosmological constant, which is not a viable
-hydrodynamic limit. Two further reasons agree: it is what both appendices of
-this paper already use, and it is the form consistent with relativistic
+hydrodynamic limit. Two further reasons agree: it is what the dispersion appendix of
+this paper uses, and it is the form consistent with relativistic
 dissipative hydrodynamics, where the enthalpy is the inertia in the Euler
 equation and in the bulk-viscous transport alike
 \citep{Maartens1996,HiscockLindblom1985}. That the alternative is superluminal
@@ -466,15 +462,16 @@ is then a consequence, not the reason for choosing. The archived note in which
 the $\rho_{\rm DE}$ form was first written is superseded by this.
 
 \emph{Consequence.} $c^2_{s,\mathrm{eff}} = \wz + \ztilde/(\tauPi H_0)
-= \wz + \OmDE = 0$ stands: marginally stable, manifestly subluminal, and
-\textbf{not} an artefact. The $0$ is a result.
+= \wz + \sDE = 0$ stands as the \emph{high-frequency} sound speed of the IS fluid:
+subluminal, and not an artefact of normalisation. It is not a stability
+statement --- the growing branch is treated in Section~\ref{sec:Q1_stability}.
 
 \emph{What \emph{is} withdrawn.} The \emph{justification} of $\tauPi$ given in
 the EFT appendix of Paper~1 \citep{SSEE_Paper1}, which claimed to derive
-$\tauPi H_0 = \KALz/(3\OmDE)$ by saturating the causality bound written as
+$\tauPi H_0 = \KALz/(3\sDE)$ by saturating the causality bound written as
 $\zeta/(\rho_{\rm DE}\tauPi)\le 1$. That bound uses $\rho$ where the enthalpy
-belongs; imposed correctly it returns $\tauPi H_0 = \ztilde(1+\wz) = 0.2946$,
-not $2.191$. The factor between them is exactly $(1+\wz)^{-1}=6.248$. Nothing
+belongs; imposed correctly it returns $\tauPi H_0 = \ztilde(1+\wz) = \val{tau_saturado}$,
+not $\val{TAU_PI_H0_d3}$. The factor between them is exactly $(1+\wz)^{-1}=\val{inv_1pw0_d3}$. Nothing
 numerical moves --- $\tauPi H_0 = \KALz\Omega/T_r$ is algebra, and was already
 stated in that form in Eq.~\eqref{eq:IS_params} --- but causality does not
 \emph{derive} it, and Paper~1 no longer claims that it does.
@@ -486,8 +483,8 @@ carries two sound speeds for the dark-energy sector:
 \toprule
 mode & source & $c^2_s$ \\
 \midrule
-viscous fluid (this paper) & IS, $\wz+\OmDE$ & $0$ \\
-field, adiabatic & Paper~7 ghost condensate & $0.021284$ \\
+viscous fluid, $\omega\tauPi\to\infty$ (this paper) & IS, $\wz+\sDE$ & $0$ \\
+field, adiabatic & Paper~7 ghost condensate & $\val{cs2_condensado_d6}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -501,20 +498,22 @@ count \emph{one} mode, so the two numbers are two descriptions of the same
 wave and the field one is the fundamental of the pair: it comes from the
 action. The fluid description additionally borrows $c^2_{s,\rm ad}=\wz<0$,
 which is gradient-unstable on its own and is precisely what the viscosity
-rescues to $0$; the field needs no such rescue, returning $+0.021284$
+``rescues'' to $0$ only at high frequency; the field needs no such rescue, returning $+\val{cs2_condensado_d6}$
 directly. What remains open, and is now the whole of \textbf{OP-22b}, is
 narrower: the map from the field parameters to the effective fluid
 $(\ztilde,\tauPi)$ is not derived, so \emph{why} the fluid limit lands
-exactly on $0$ rather than on $0.021284$ is not established. The gap is the
+exactly on $0$ rather than on $\val{cs2_condensado_d6}$ is not established
+(and, since the $0$ is only a high-frequency limit, the physical value is the
+field's). The gap is the
 whole of Paper~7's prediction, so a measurement of $c^2_s$ remains sharp.
 \end{tcolorbox}
 
 \noindent With the steady-state condition as currently written, and combined
 with the IS equation, one obtains \citep{SSEE_Paper1}:
 \begin{equation}
-  \boxed{\ztilde = \frac{\KALz\,\Omega}{M_v} = \frac{\KALz}{3} \simeq 1.8405,
+  \boxed{\ztilde = \frac{\KALz\,\Omega}{M_v} = \frac{\KALz}{3} = \val{zeta_tilde_d4},
   \qquad
-  \tauPi H_0 = \frac{\KALz\,\Omega}{T_r} \simeq 2.191.}
+  \tauPi H_0 = \frac{\KALz\,\Omega}{T_r} = \val{TAU_PI_H0_d4}.}
   \label{eq:IS_params}
 \end{equation}
 Written this way the two are manifestly the \emph{same} construction, built
@@ -526,7 +525,7 @@ $\KALz = \beta+\pi$, $\Omega=\varphi+\pi$ and the sovereignties — no freedom
 remains.
 The ratio
 \begin{equation}
-  \frac{\ztilde}{\tauPi H_0} = \frac{\KALz/3}{\KALz/(3\OmDE)} = \OmDE = |\wz|
+  \frac{\ztilde}{\tauPi H_0} = \frac{\KALz/3}{\KALz/(3\sDE)} = \sDE = |\wz|
   \label{eq:ratio_identity}
 \end{equation}
 is an exact algebraic identity in SSEE; its stability consequence is derived
@@ -537,19 +536,18 @@ in Section~\ref{sec:Q1_stability}.
 
 The IS theory is thermodynamically consistent if and only if:
 \begin{enumerate}[label=(\roman*)]
-  \item $\tauPi > 0$: satisfied, $\tauPi H_0 = 2.191 > 0$.
-  \item $\zeta \geq 0$: satisfied, $\ztilde = 1.841 > 0$.
-  \item The signal speed $v_{\rm sig} = \sqrt{\zeta/(\tauPi\rho_{\mathrm{DE}})}
-    = \sqrt{\ztilde/(\tauPi H_0)/\OmDE}$:\\
-    in SSEE: $v_{\rm sig}/c = \sqrt{|\wz|/\OmDE} = \sqrt{1} = 1$,
-    so $v_{\rm sig} = c$ exactly. The signal speed saturates the causality bound.
+  \item $\tauPi > 0$: satisfied, $\tauPi H_0 = \val{TAU_PI_H0_d3} > 0$.
+  \item $\zeta \geq 0$: satisfied, $\ztilde = \val{zeta_tilde_d4} > 0$, with the
+    enthalpy of the field, $\rho_{\rm DE}(1+\wz)>0$, at all times.
+  \item The characteristic speed of the viscous mode,
+    $v^2_{\rm sig} = c^2_{s,\rm bare} + \zeta/[\tauPi(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})]
+    = \wz + \sDE = 0 \leq 1$: causal.
 \end{enumerate}
-The fact that $v_{\rm sig} = c$ is another algebraic consequence of
-Eq.~\eqref{eq:ratio_identity}: $\ztilde/(\tauPi H_0) = \OmDE = |\wz|$, and
-$v_{\rm sig}^2/c^2 = \ztilde/((\tauPi H_0)\OmDE) = 1$.
-This means SSEE dark energy perturbations propagate exactly at the speed of light
-in the IS high-$k$ limit — the maximally causal configuration consistent with
-thermodynamic stability.
+Earlier versions of this subsection divided by $\rho_{\rm DE}$ instead of the
+enthalpy, obtained $v_{\rm sig}=c$, and described the configuration as
+``maximally causal''. With the enthalpy normalisation adopted above the viscous
+contribution alone is $\sDE=\val{S_DE_d6}$ and the total characteristic speed is
+$0$: subluminal, not saturating.
 
 \subsection{Linearised perturbation equations in Newtonian gauge}
 \label{subsec:perturb_eqs}
@@ -561,139 +559,73 @@ limit $k \gg aH$ are \citep{Hu1998,Maartens1996}:
 \begin{align}
   \delta'_m &= -\frac{k}{aH}\,v_m + 3\Phi',
   \label{eq:deltam} \\
-  v'_m      &= -v_m - \frac{k}{aH}\,\Phi,
+  v'_m      &= -v_m + \frac{k}{aH}\,\Phi,
   \label{eq:vm} \\
-  \delta'_{\mathrm{DE}} &= -(1+w)\!\left[\frac{k}{aH}\,v_{\mathrm{DE}} - 3\Phi'\right],
+  \delta'_{\mathrm{DE}} &= -(1+\wz)\!\left[\frac{k}{aH}\,v_{\mathrm{DE}} - 3\Phi'\right],
   \label{eq:deltaDE} \\
   v'_{\mathrm{DE}} &= -(1-3c^2_s)\,v_{\mathrm{DE}}
-    - \frac{k}{aH}\!\left[\frac{c^2_s\,\delta_{\mathrm{DE}}}{1+w}
-    + \frac{\Phi}{1+w} - \Pitilde\right],
+    + \frac{k}{aH}\!\left[\frac{c^2_s\,\delta_{\mathrm{DE}}}{1+\wz}
+    + \Pitilde + \Phi\right],
   \label{eq:vDE} \\
-  \tauPi H\,\Pitilde' &= -\Pitilde - \ztilde\,\frac{k}{aH}\,v_{\mathrm{DE}},
+  \tauPi H\,\Pitilde' &= -\Pitilde - \ztilde\,\frac{k}{aH}\,\frac{H}{H_0}\,v_{\mathrm{DE}},
   \label{eq:Pi}
 \end{align}
-where $w = \wz + \wa(1-a)$ is the CPL equation of state,
-$\Pitilde$ is the dimensionless bulk viscous pressure perturbation normalised
-to $\rho_{\mathrm{DE}}$, and the Newtonian potential satisfies
+where $\Pitilde = \delta\Pi/[\rho_{\mathrm{DE}}(1+\wz)]$ is the bulk viscous pressure
+perturbation normalised to the enthalpy of the field, and the Newtonian potential satisfies
 \begin{equation}
-  \frac{k^2}{a^2}\Phi = -\frac{3H_0^2}{2a}\!\left[\Omega_m(a)\,\delta_m
-    + \OmDE\,f_{\mathrm{DE}}(a)\,\delta_{\mathrm{DE}}\right],
+  k^2\,\Phi = -\frac{3}{2}\,\frac{H_0^2}{c^2}\left[\frac{\Omega_m\,\delta_m}{a}
+    + a^2\,\OmDE\,f_{\mathrm{DE}}(a)\,\delta_{\mathrm{DE}}\right],
   \label{eq:Poisson}
 \end{equation}
-with $f_{\mathrm{DE}}(a) = \rho_{\mathrm{DE}}(a)/\rho_{\mathrm{DE},0}$.
-The $3\Phi'$ terms in Eqs.~\eqref{eq:deltam}--\eqref{eq:deltaDE} arise from the
-metric perturbation and are retained for completeness; in the deep sub-horizon
-limit $k \gg aH$ they are subdominant and we drop them in the numerical integration,
-consistent with standard practice \citep{Hu1998}.
+with comoving $k$ and $f_{\mathrm{DE}}(a) = \rho_{\mathrm{DE}}(a)/\rho_{\mathrm{DE},0}$.
+The inertia of the dark-energy perturbation is the enthalpy of the \emph{field},
+$\rho_{\rm DE}(1+\wz)>0$: in the closure of Paper~1 the field carries $w_0$ and the
+background viscous pressure carries the rest of $w(a)$, including the phantom
+crossing at $z_*=\val{z_cruce}$ (Section~\ref{subsec:crossing} treats the total
+inertia, which changes sign there). Earlier versions used $1+w(a)$ clipped at
+$10^{-6}$ in the phantom era, wrote the gravitational terms of
+Eqs.~\eqref{eq:vm}--\eqref{eq:vDE} with the opposite sign --- which made gravity
+repulsive in the integration --- and divided the dark-energy one by $1+w$; all three are corrected.
+The $3\Phi'$ terms arise from the metric perturbation and are dropped in the
+sub-horizon integration, consistent with standard practice \citep{Hu1998}.
 
-\subsection{Quasi-static IS approximation and stiffness reduction}
+\subsection{The quasi-static reduction is the Navier--Stokes limit}
 \label{subsec:QS}
 
-The IS relaxation eigenvalue is $\lambda_\Pi \approx -(\tauPi H)^{-1}$.
-At $z=0$, $\tauPi H = \tauPi H_0 \cdot (H/H_0) = 2.191$;
-at $z=99$, $H/H_0 \approx 556$, so $\tauPi H \approx 1218$ (Table~\ref{tab:background}).
-The Eq.~\eqref{eq:Pi} ODE is therefore stiff: the $\Pitilde$ mode relaxes
-on a timescale $\sim 1/(1218\, H)$ at early times, orders of magnitude faster
-than the growing mode.
-
-Setting $\Pitilde' = 0$ in Eq.~\eqref{eq:Pi} (quasi-static IS approximation,
-valid when $\tauPi H \gg 1$) yields the algebraic relation
+Earlier versions set $\Pitilde' = 0$ in Eq.~\eqref{eq:Pi}, obtaining
 \begin{equation}
-  \Pitilde_{\mathrm{QS}} = -\ztilde\,\frac{k}{aH}\,v_{\mathrm{DE}},
+  \Pitilde_{\mathrm{QS}} = -\ztilde\,\frac{k}{aH}\,\frac{H}{H_0}\,v_{\mathrm{DE}},
   \label{eq:PiQS}
 \end{equation}
-which substituted into Eq.~\eqref{eq:vDE} gives an effective velocity friction:
-\begin{equation}
-  v'_{\mathrm{DE}} = -\underbrace{\!\left[(1-3c^2_s)
-    + \ztilde\!\left(\frac{k}{aH}\right)^{\!2}\right]}_{\mathcal{F}(k,a)}\!
-    v_{\mathrm{DE}}
-    - \frac{k}{aH}\,\frac{c^2_s\,\delta_{\mathrm{DE}}}{1+w}
-    - \frac{k}{aH}\,\frac{\Phi}{1+w}.
-  \label{eq:vDE_QS}
-\end{equation}
-The effective friction $\mathcal{F} = (1-3c^2_s) + \ztilde(k/aH)^2$ is dominated
-at large $k$ by the viscous term $\ztilde(k/aH)^2 \propto k^2$, which grows without
-bound.
-This $k^2$ suppression is the physical mechanism behind IS stabilisation of
-DE perturbations.
-The 5-variable stiff ODE system
-(Eqs.~\ref{eq:deltam}--\ref{eq:Pi}) is thus reduced to a 4-variable system
-($\delta_m, v_m, \delta_{\mathrm{DE}}, v_{\mathrm{DE}}$) integrable with
-standard Runge-Kutta methods.
-
-\begin{table}[h!]
-\centering
-\caption{Background cosmology and IS relaxation parameters across cosmic history.
-  $H/H_0$ is computed from the SSEE CPL Friedmann equation with the matter
-  density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ and CPL dark energy.%
-% 2026-09-07: esta tabla se calculaba con Omega_m,dyn = 0.160050 en la ranura
-% de DENSIDAD de la ecuacion de Friedmann. Ese numero es 1+w_0, la ecuacion de
-% estado, y entra por la presion, nunca como densidad de materia (Paper 1
-% Sec. two_omega_m, donde el criterio de dos Omega_m se declara retirado; y es
-% el mismo bug que inflaba chi2_BAO a 726 antes del fix de geometria del
-% 2026-07-09). Recalculada con Omega_m = 0.308881: H/H_0 sube hasta un 38.9%
-% a alto z (400.1 -> 555.8 en z=99; 1.441 -> 1.768 en z=1; sin cambio en z=0,
-% donde E=1 por definicion), y tau_Pi H sube en la misma proporcion. La
-% CONCLUSION de la tabla no cambia: los valores corregidos son MAYORES, o sea
-% que la aproximacion cuasi-estatica es aun mejor de lo que se publicaba. Las
-% etiquetas de validez se conservan.
-  $\tauPi H$ shows that the quasi-static approximation ($\tauPi H \gg 1$) is
-  excellent at all redshifts.}
-\label{tab:background}
-\begin{tabular}{ccccc}
-\toprule
-$z$ & $a$ & $H/H_0$ & $\tauPi H$ & QS validity \\
-\midrule
-99   & 0.010 & 555.8 & 1218   & $\gg 1$ \\
-19   & 0.050 & 49.71 & 108.9  & excellent \\
-9    & 0.100 & 17.58 & 38.52  & excellent \\
-4    & 0.200 & 6.237 & 13.67  & very good \\
-1    & 0.500 & 1.768 & 3.873  & adequate \\
-0.25 & 0.800 & 1.157 & 2.534  & marginal \\
-0    & 1.000 & 1.000 & 2.191  & marginal \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{QS error estimate.}
-At $z=0$, $\tauPi H = 2.191$, so the adiabatic correction to the
-quasi-static approximation is of order $(\tauPi H)^{-1} \simeq 0.46$.
-However, this error in $\Pi$ propagates to matter growth through a
-two-step coupling: $\Delta\Pi \to \Delta v_{\mathrm{DE}} \to
-\Delta\delta_{\mathrm{DE}} \to \Delta\Phi \to \Delta\delta_m$.
-At sub-Hubble scales, the IS effective friction in the DE Euler equation
-is $\mathcal{F} \approx \ztilde(k/aH)^2$; for $k \geq 5\,H_0/c$ this
-gives $\mathcal{F} \geq 46$, so the fractional error in $v_{\mathrm{DE}}$
-is $\lesssim 0.46/46 \approx 1\%$.
-The resulting error in the growth factor $D_1$ is further suppressed by
-$\Omega_{\mathrm{DE}}\,\delta_{\mathrm{DE}}/(\Omega_m\,\delta_m) \lesssim
-5\%$ at $k \geq 5\,H_0/c$, giving $\Delta D_1/D_1 \lesssim 0.05\%$ for
-the BAO scales that dominate the $\sigma_8$ integral.
-Only super-Hubble modes ($k \sim H_0/c$) carry an $\mathcal{O}(25\%)$
-DE-sector error, but these modes contribute negligibly to $\sigma_8$
-(filtered by $W(8\,\mathrm{Mpc}/h)$).
-The QS approximation therefore introduces a sub-percent bias on all
-reported $\sigma_8$, $S_8$, and $f\sigma_8$ values.
+which turns the viscosity into a velocity friction
+$\mathcal{F}(k,a) = (1-3c^2_s) + \ztilde(k/aH)^2(H/H_0)$, and justified it by
+$\tauPi H \gg 1$. The condition is the reverse. Dropping $\tauPi H\,\Pitilde'$
+requires the viscous pressure to relax faster than the perturbation evolves,
+$\tauPi H \ll 1$; here $\tauPi H \geq \tauPi H_0 = \val{TAU_PI_H0_d3}$ at all times and grows
+into the past. Equation~\eqref{eq:PiQS} is first-order (Navier--Stokes) viscosity,
+the acausal limit that Israel--Stewart was built to replace, and in that limit the
+viscosity only damps: it bounds the growth rate of the $c^2_s=w_0$ branch at
+$1/(\tauPi H_0)=\val{p5_lamNS}$ per Hubble time, which is why the earlier integration
+showed nothing alarming. All results below integrate the full five-variable system
+(\texttt{LSODA}, relative tolerance $10^{-9}$).
 
 %======================================================================
-\section{Q1: Gradient Stability — Exact Marginal Stability Theorem}
+\section{Q1: Gradient Stability --- What the IS Identity Does and Does Not Do}
 \label{sec:Q1_stability}
 %======================================================================
 
 \subsection{IS dispersion relation from linear perturbation theory}
 \label{subsec:dispersion}
 
-For a relativistic viscous fluid with IS relaxation, the full dispersion relation
-for DE perturbations is (derived in Appendix~\ref{app:dispersion}):
+For a relativistic viscous fluid with IS relaxation, a perturbation
+$\propto e^{i(kx-\omega t)}$ obeys (Appendix~\ref{app:dispersion})
 \begin{equation}
-  \omega^2 = c^2_{s,\mathrm{bare}}\,k^2
-    + i\omega\,\frac{\zeta\,k^2}{\rho_{\mathrm{DE}}\,(\tauPi\omega + i)}
-    - \frac{k^2}{a^2}\,\frac{3H^2\OmDE}{k^2/a^2}.
+  \omega^2 = \left[c^2_{s,\mathrm{bare}}
+    + \frac{\zeta}{\tauPi(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})}\,
+      \frac{-i\omega\tauPi}{1-i\omega\tauPi}\right]k^2 .
   \label{eq:disprel_full}
 \end{equation}
-In the short-wavelength limit $k\tauPi \gg aH$ (IS regime,
-$|\omega|\tauPi \gg 1$), the damping term saturates and the dispersion relation
-simplifies to
+In the limit $|\omega|\tauPi \gg 1$ the viscous term becomes a pure stiffness and
 \begin{equation}
   \omega^2 = \left(c^2_{s,\mathrm{bare}} + \frac{\ztilde}{\tauPi H_0}\right)k^2
   \equiv c^2_{s,\mathrm{eff}}\,k^2.
@@ -710,45 +642,61 @@ IS ($k\to\infty$) limits is
 where $x$ is the dimensionless IS parameter measuring the ratio of the mode
 wavenumber to the IS relaxation scale.
 
-\subsection{Marginal stability under minimality}
+\subsection{The high-frequency identity}
 \label{subsec:identity}
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title={\textbf{SSEE Marginal Stability (given minimality)}}]
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title={\textbf{High-frequency marginality (not stability)}}]
 \textit{In the SSEE dark energy framework, the IS parameters satisfy}
 \begin{equation}
   \frac{\ztilde}{\tauPi H_0}
-  = \frac{\KALz/3}{\KALz/(3\,\OmDE)}
-  = \OmDE = |\wz|,
+  = \frac{\KALz/3}{\KALz/(3\,\sDE)}
+  = \sDE = |\wz|,
 \end{equation}
-\textit{and therefore}
+\textit{and therefore, for oscillations with $\omega\tauPi\to\infty$,}
 \begin{equation}
-  c^2_{s,\mathrm{eff}}(k\to\infty)
+  c^2_{s,\mathrm{eff}}
     = c^2_{s,\mathrm{bare}} + |\wz|
     = \wz + |\wz| = 0.
 \end{equation}
 \textit{This is an exact algebraic identity within the SSEE constants, not a
 numerical coincidence. It expresses a construction-level consistency rather
-than a theorem constraining all IS models: SSEE supports an IS embedding for
-which dark-energy perturbations are exactly marginally stable in the
-high-$k$ limit.}
+than a theorem constraining all IS models. It fixes the high-frequency sound
+speed of the fluid; it does not make the fluid stable (Section~\ref{subsec:growing}).}
 \end{tcolorbox}
 
 \vspace{6pt}
-The proof follows directly from Eq.~\eqref{eq:ratio_identity}.
-The numerical verification gives $|c^2_{s,\mathrm{eff}}| = 3.1\times 10^{-16}$
-(floating-point round-off, confirming machine-precision exactness).
+The identity follows directly from Eq.~\eqref{eq:ratio_identity}.
 
-The physical significance is the following:
-\begin{itemize}
-  \item The gradient instability present for $k < k_\mathrm{crit}$
-    (Navier-Stokes regime) is completely neutralised for $k > k_\mathrm{crit}$
-    (IS regime).
-  \item The neutralisation is \emph{exact}: $c^2_{s,\mathrm{eff}} = 0$ means
-    DE perturbations propagate as effectively pressureless dust at small scales,
-    exactly as required for consistency with CMB and LSS observations.
-  \item The result holds at all redshifts since $\ztilde$ and $\tauPi$ are
-    background-level constants in SSEE.
-\end{itemize}
+\subsection{The growing branch: the closure $c^2_s=w_0$ stays unstable}
+\label{subsec:growing}
+
+Stability is decided by modes that grow, not by modes that oscillate. For
+$e^{\lambda t}$ ($\omega=i\lambda$), Eq.~\eqref{eq:disprel_full} with
+$c^2_{s,\rm bare}=\wz=-\sDE$ gives
+\begin{equation}
+  \lambda^2 = k^2\left[\sDE - \sDE\,\frac{\lambda\tauPi}{1+\lambda\tauPi}\right]
+            = \frac{k^2\,\sDE}{1+\lambda\tauPi} > 0
+  \qquad\text{for every } k .
+  \label{eq:growing_branch}
+\end{equation}
+The viscous stiffness reaches $\sDE$ only as $\lambda\tauPi\to\infty$, so it never
+fully cancels the negative bare stiffness: at large $k$,
+$\lambda\simeq(k^2\sDE/\tauPi)^{1/3}$, which is $\val{p5_lamIS_k10}\,H_0$ at
+$k=10\,H_0/c$ and $\val{p5_lamIS_k100}\,H_0$ at $k=100\,H_0/c$ --- far faster than the
+expansion. The full cosmological integration agrees: with $c^2_{s,\rm bare}=\wz$ the
+ratio $\delta_{\rm DE}/\delta_m$ at $z=0$ reaches $\val{p5_rw0_k20}$ at $k=20\,H_0/c$ and
+$\val{p5_rw0_k100}$ at $k=100\,H_0/c$ (\texttt{src/p05\_IS/estabilidad\_IS\_completa.py};
+its controls --- $\zeta=0$ returns $\lambda=k\sqrt{\sDE}$, and the field's sound speed
+returns no growing mode --- both pass).
+
+\textbf{What stabilises the sector is the field.} Paper~7's ghost condensate has
+its own positive sound speed, $c^2_s=+\val{cs2_condensado_d6}$. With it in place of $\wz$,
+Eq.~\eqref{eq:disprel_full} has no growing root, with or without viscosity, and the
+full integration gives $|\delta_{\rm DE}/\delta_m|=\val{q2_r_k3}$ at $k=10\,H_0/c$, falling
+as $k^{-2}$ (Section~\ref{sec:Q2_MIRA}). The closure $c^2_s=w$ is the
+parametrisation a Boltzmann code imposes, not a property of the field
+(Section~\ref{subsec:instability}); the IS layer does not repair it, and it does not
+need to be repaired: the field never had the instability.
 
 \subsection{Uniqueness of the minimal-viscosity solution}
 \label{subsec:uniqueness}
@@ -756,7 +704,7 @@ The physical significance is the following:
 The condition $c^2_{s,\mathrm{eff}} = 0$ requires $\ztilde/(\tauPi H_0) = |c^2_{s,\mathrm{bare}}|$.
 For a general dark fluid with $w_0 < 0$, this is a \emph{fine-tuning} condition
 relating the viscosity to the equation of state.
-In SSEE both sides equal $\OmDE = |\wz|$, and the $\KALz$ dependence cancels
+In SSEE both sides equal $\sDE = |\wz|$, and the $\KALz$ dependence cancels
 in the ratio $\ztilde/(\tauPi H_0) = (\KALz\Omega/M_v)/(\KALz\Omega/T_r) = T_r/M_v$.
 No number is tuned.
 
@@ -768,234 +716,188 @@ background sector. Given those two, requiring $c^2_{s,\mathrm{eff}}=0$ leaves
 = \KALz\Omega/M_v$, with the $T_r$ cancelling identically. So $\ztilde$ is not
 an independent input.
 
-What remains an input is the \emph{requirement} of marginal stability itself,
-and it is a selection principle rather than a fitted number. Its justification
-is minimality: since $c^2_{s,\mathrm{bare}} = \wz < 0$ is a gradient
-instability, some viscosity is mandatory, and $\ztilde = \KALz\Omega/M_v$ is
-the \emph{smallest} value that removes it --- any less leaves the instability,
-any more is unmotivated surplus. We therefore state the result as a consequence
-of minimality, not as a prediction free of assumptions.
+What remains an input is the \emph{requirement} that the high-frequency sound
+speed vanish, a selection principle rather than a fitted number. Earlier versions
+justified it as the smallest viscosity that removes the instability;
+Section~\ref{subsec:growing} shows that no finite $\tauPi$ removes it on the growing
+branch, so that justification is withdrawn and the principle is stated as what it
+is: the choice that makes the fluid's high-frequency limit match marginality.
 
 \subsection{Critical wavenumber and observational window}
 \label{subsec:kcrit}
 
-The IS stabilisation transition occurs at $x = 1$, defining the critical wavenumber
+The transition between the Navier--Stokes and the IS regime of the oscillatory
+branch occurs at $x = 1$, defining
 \begin{equation}
-  k_\mathrm{crit}(a) = \frac{aH}{c\,\tauPi H_0}.
-\end{equation}
-At $z=0$ ($a=1$, $H=H_0$):
-\begin{equation}
-  \frac{k_\mathrm{crit}}{H_0/c}
-  = \frac{1}{\tauPi H_0}
-  = \frac{1}{2.191}
-  \simeq 0.456.
+  k_\mathrm{crit}(a) = \frac{aH}{c\,\tauPi H_0},
+  \qquad
+  \frac{k_\mathrm{crit}}{H_0/c}\bigg|_{z=0} = \frac{1}{\tauPi H_0} = \val{kcrit_p5}.
   \label{eq:kcrit_z0}
 \end{equation}
-Note: this differs from the expression $1/(\tauPi H_0 |c_s|)$ used in
-Section~\ref{sec:intro} because the $|c_s|$ factor enters the dispersion
-relation at the Navier-Stokes level; the IS transition properly occurs at $x=1$.
-Since $k_\mathrm{crit} \simeq 0.456\,H_0/c < H_0/c$, the critical scale
-lies \emph{below} the Hubble wavenumber.
-Every sub-horizon mode satisfies $k > aH/c = H_0/c$ at $z=0$,
-i.e.\ $k > k_\mathrm{crit}$: all sub-horizon modes are IS-stabilised.
-
-At higher redshift $k_\mathrm{crit}(z) = k_\mathrm{crit}(0) \times H(z)/H_0$,
-which grows with redshift.
-However, for a given comoving mode $k$, it entered the IS-stable regime at
-$a_\mathrm{stab}(k) = k\,c\,\tauPi H_0/H(a_\mathrm{stab})$.
-For BAO scales ($k \approx 0.1\,\mathrm{Mpc}^{-1} \approx \val{k_bao_c_H0}\,H_0/c$),
-$a_\mathrm{stab} \ll 10^{-3}$: these modes were IS-stable well before matter-radiation
-equality.
-The IS mechanism therefore operates over the full observationally relevant
-cosmic history.
+Earlier versions read $k_\mathrm{crit}<H_0/c$ as ``all sub-horizon modes are
+IS-stabilised''. That reading concerned the oscillatory branch only; the growing
+branch of the closure $c^2_s=\wz$ is unstable on both sides of $k_\mathrm{crit}$
+(Section~\ref{subsec:growing}).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{fig_paper5_IS_stability.pdf}
 \caption{\textbf{Left:} IS effective sound speed $c^2_{s,\mathrm{eff}}(k)$ at $z=0$
-  (blue solid line), interpolating from the bare value $c^2_s = w_0 \simeq -0.840$
+  of the oscillatory branch (blue solid line), interpolating from the bare value $c^2_s = w_0 = \val{W0_d6}$
   (red dashed) at $k \ll k_\mathrm{crit}$ to the IS limit
   $c^2_{s,\mathrm{eff}} = 0$ (green dashed) at $k \gg k_\mathrm{crit}$.
-  The red shaded region marks gradient instability ($c^2_{s,\mathrm{eff}} < 0$);
-  the green region marks stability.
-  The IS transition at $k_\mathrm{crit} \simeq 0.456\,H_0/c$ (grey dash-dot)
-  lies \emph{outside} the sub-horizon regime ($k > H_0/c$), so all
-  observationally accessible modes are stabilised.
+  The IS transition is at $k_\mathrm{crit} = \val{kcrit_p5}\,H_0/c$ (grey dash-dot).
+  This curve is the high-frequency sound speed; it does not decide stability, which
+  is set by the growing branch (Section~\ref{subsec:growing}).
   \textbf{Right:} Evolution of $\delta_{\mathrm{DE}}/\delta_m$ with scale factor $a$
-  for representative wavenumbers $k/(H_0/c) = 2, 3, 5, 10, 20, 50, 100$.
-  IS bulk viscous friction damps DE perturbations as $k^2$;
-  at $k = 20\,H_0/c$ the ratio $|\delta_{\mathrm{DE}}/\delta_m| < 10^{-3}$
-  throughout cosmic history.}
+  for representative wavenumbers $k/(H_0/c) = 2, 3, 5, 10, 20, 50, 100$, from the
+  full IS integration with the field's sound speed $c^2_s=\val{cs2_condensado_d6}$;
+  at $z=0$ the ratio is $\val{q2_r_k4}$ at $k = 20\,H_0/c$.}
 \label{fig:cs2eff}
 \end{figure}
 
 %======================================================================
-\section{Q2: Do IS Perturbations Link the Two Matter Sectors?}
+\section{Q2: How Much Does Dark Energy Cluster?}
 \label{sec:Q2_MIRA}
 %======================================================================
 
 \subsection{Numerical setup and initial conditions}
 \label{subsec:setup}
 
-We integrate Eqs.~\eqref{eq:deltam}--\eqref{eq:Poisson} with the quasi-static
-substitution~\eqref{eq:PiQS} from $a_{\rm ini}=0.05$ ($z=19$) to $a=1$ ($z=0$).
-At $z=19$, the dark energy density fraction $\OmDE f_{\mathrm{DE}}(a_{\rm ini})/(H/H_0)^2 \approx \val{frac_de_z19}$
-is negligible: the universe is matter-dominated and the initial conditions
-follow the growing mode exactly:
+We integrate Eqs.~\eqref{eq:deltam}--\eqref{eq:Poisson} with $\Pitilde$ dynamical
+and the field's sound speed $c^2_s=\val{cs2_condensado_d6}$, from $a_{\rm ini}=0.05$ ($z=19$)
+to $a=1$. At $z=19$ the dark energy density fraction is
+$\OmDE f_{\mathrm{DE}}(a_{\rm ini})/(H/H_0)^2 = \val{frac_de_z19}$ and the matter
+growing mode sets the initial conditions:
 \begin{equation}
   \delta_m(a_{\rm ini}) = a_{\rm ini}, \quad
-  v_m(a_{\rm ini}) = -a_{\rm ini}\,H(a_{\rm ini})/H_0, \quad
-  \delta_{\mathrm{DE}} = v_{\mathrm{DE}} = 0.
+  v_m(a_{\rm ini}) = -\frac{a_{\rm ini}\,H(a_{\rm ini})}{k}\,\delta_m(a_{\rm ini}), \quad
+  \delta_{\mathrm{DE}} = v_{\mathrm{DE}} = \Pitilde = 0,
   \label{eq:IC}
 \end{equation}
-(The precise normalisation of $\delta_m$ cancels in all ratios.)
-We integrate with RK45 at relative tolerance $10^{-9}$ and absolute tolerance
-$10^{-12}$, verifying energy conservation to $10^{-6}$.
+the velocity being the one for which $\delta'_m=\delta_m$ (earlier versions set
+$v_m=-a_{\rm ini}H/H_0$, too large by $k/aH$, which is why their $\delta_m(z=0)$
+grew with $k$). The normalisation of $\delta_m$ cancels in all ratios
+(\texttt{src/p05\_IS/ssee\_paper5\_IS\_perturbations.py}).
 
-\subsection{Required perturbation amplitude for MIRA}
+\subsection{The scale that a two-fold enhancement would need}
 \label{subsec:MIRA_requirement}
 
-The effective matter density measured by an observer using the gravitational
-Poisson equation is
+The effective matter density seen through the Poisson equation is
 \begin{equation}
   \Omega_{m,\mathrm{eff}} = \Omega_m + \Omega_{\mathrm{DE}}\,r,
   \quad r \equiv \frac{\delta_{\mathrm{DE}}}{\delta_m}\bigg|_{z=0},
   \qquad \Omega_m = \val{OMEGA_M_TOTAL_d6},\ \ \Omega_{\mathrm{DE}} = \val{OMDE_DENS_d6},
   \label{eq:Omeff}
 \end{equation}
-with the \emph{densities} in both slots. Until 2026-09-26 this equation carried
-$\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$ and $\Omega_{\mathrm{DE}}=\val{S_DE_d6}$, which are the
-saturations $s_m=1+w_0$ and $s_{\rm DE}=|w_0|$ --- equation-of-state numbers in a
-density slot, inside a Poisson source. The substitution does not move the
-measured $r$, which is the output of the perturbation integration and never
-touched these two constants; it moves only the normalisation of the ratio below.
-and we write $\mathcal{R} \equiv \Omega_{m,\mathrm{eff}}/\Omega_m$ for the
-enhancement this clustering would produce.
-
-\paragraph{What this section does and does not test (reframed 2026-09-26).}
+with the \emph{densities} in both slots (until 2026-09-26 it carried the saturations
+$s_m$ and $\sDE$), and we write $\mathcal{R} \equiv \Omega_{m,\mathrm{eff}}/\Omega_m$.
 Earlier versions posed $\mathcal{R}$ as a test of whether the perturbations
-\emph{reproduce} the algebraic $\mathrm{MIRA}=\val{MIRA_d4}$, under the mapping
-$\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}} = 0.3199$ then in force.
-That mapping was withdrawn on 2026-06-18 when OP-8 closed: there is no matter
-factor in the model, $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ is derived, and
-$\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation rather than a density. So there is no
-longer a factor of two for the perturbations to supply, and a
-``$50\%$ discrepancy'' from a withdrawn target is not a result.
-What the integration measures is unchanged and stands on its own: the level of
-dark-energy clustering, reported below as a \emph{bound}. The figure
-$r^*=0.4464$ is retained only as the scale that a two-fold enhancement would
-have demanded, which is what makes the smallness of the measured $r$ meaningful:
+reproduce $\mathrm{MIRA}=\val{MIRA_d4}$, under a matter factor
+$\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}$ withdrawn on
+2026-06-18 (OP-8). There is no factor of two to supply. The ratio a two-fold
+enhancement would have needed,
 \begin{equation}
   r^* = \frac{(\mathrm{MIRA}-1)\,\Omega_m}{\Omega_{\mathrm{DE}}}
   = \frac{\val{MIRA_m1_d6} \times \val{OMEGA_M_TOTAL_d6}}{\val{OMDE_DENS_d6}}
-  \simeq 0.4464.
+  = \val{r_star_q2},
   \label{eq:r_required}
 \end{equation}
-This corresponds to DE perturbations $\delta_{\mathrm{DE}} \approx 0.45\,\delta_m$
-at $z=0$ — a $45\%$-level DE clustering signal, which would be plainly
-detectable in the matter power spectrum via the Poisson
-equation~\eqref{eq:Poisson}.
+is kept only as the scale against which the measured $r$ is small.
 
 \subsection{Numerical results}
 \label{subsec:results_MIRA}
 
 \begin{table}[h!]
 \centering
-\caption{Linear IS perturbation growth results from $z=19$ to $z=0$.
-  $\delta_m(z=0)$ is normalised to the growing mode; $r = \delta_{\mathrm{DE}}/\delta_m$;
-  $\Omega_{m,\mathrm{eff}}$ via Eq.~\eqref{eq:Omeff}; $D_1 = \delta_m(z=0)/\delta_m(z_{\rm ini})$
-  is the linear growth factor normalised to $a_{\rm ini} = 0.05$.
-  The column ``IS regime'' marks the modes on which the bound is quoted,
-  $k \geq 10\,H_0/c$ --- well inside both the IS-stabilised and the sub-horizon
-  regimes. The three modes below it are listed for completeness and are
-  \emph{excluded} from the bound: their $|r|$ is large and the quasi-static
-  reduction used here does not hold there.}
+\caption{Full linear IS integration from $z=19$ to $z=0$ with the field's sound
+  speed. $\delta_m(z=0)$ for $\delta_m(z=19)=0.05$; $r = \delta_{\mathrm{DE}}/\delta_m$;
+  $\Omega_{m,\mathrm{eff}}$ via Eq.~\eqref{eq:Omeff}. The mean is over $k\geq10\,H_0/c$.}
 \label{tab:MIRA}
-\begin{tabular}{cccccc}
+\begin{tabular}{ccccc}
 \toprule
 $k\,[H_0/c]$ & $\delta_m(z=0)$ & $r = \delta_{\mathrm{DE}}/\delta_m$
-  & $\Omega_{m,\mathrm{eff}}$ & $\mathcal{R}$ & IS regime \\
+  & $\Omega_{m,\mathrm{eff}}$ & $\mathcal{R}$ \\
 \midrule
-2   & \val{q2_deltam_k0} & $-41.05$   & $-28.0595$ & $-90.8425$ & no  \\
-3   & \val{q2_deltam_k1} & $-11.63$   & $-7.7321$  & $-25.0326$ & no  \\
-5   & \val{q2_deltam_k2} & $-0.88612$ & $-0.3035$  & $-0.9827$  & no  \\
-10  & \val{q2_deltam_k3} & $-0.01753$ & $0.2968$   & $0.9608$   & yes \\
-20  & \val{q2_deltam_k4} & $-0.00072$ & $0.3084$   & $0.9984$   & yes \\
-50  & \val{q2_deltam_k5} & $-0.00008$ & $0.3088$   & $0.9998$   & yes \\
-100 & \val{q2_deltam_k6} & $-0.00002$ & $0.3089$   & $1.0000$   & yes \\
+2   & \val{q2_deltam_k0} & $\val{q2_r_k0}$ & \val{q2_Omeff_k0} & \val{q2_R_k0} \\
+3   & \val{q2_deltam_k1} & $\val{q2_r_k1}$ & \val{q2_Omeff_k1} & \val{q2_R_k1} \\
+5   & \val{q2_deltam_k2} & $\val{q2_r_k2}$ & \val{q2_Omeff_k2} & \val{q2_R_k2} \\
+10  & \val{q2_deltam_k3} & $\val{q2_r_k3}$ & \val{q2_Omeff_k3} & \val{q2_R_k3} \\
+20  & \val{q2_deltam_k4} & $\val{q2_r_k4}$ & \val{q2_Omeff_k4} & \val{q2_R_k4} \\
+50  & \val{q2_deltam_k5} & $\val{q2_r_k5}$ & \val{q2_Omeff_k5} & \val{q2_R_k5} \\
+100 & \val{q2_deltam_k6} & $\val{q2_r_k6}$ & \val{q2_Omeff_k6} & \val{q2_R_k6} \\
 \midrule
-\multicolumn{4}{l}{Mean ($k \geq 10\,H_0/c$, IS-stabilised):}
-  & $\val{R_media_k10_p5} \pm \val{R_sd_k10_p5}$ & \\
-\multicolumn{4}{l}{Would require ($r = r^* = 0.4464$):}
-  & $\val{MIRA_d4}$ & \\
-\multicolumn{4}{l}{$\Rightarrow$ bound: $|r| \leq 0.0175$ for $k\geq10$, i.e.\ $3.9\%$ of $r^*$}
-  &  & \\
+\multicolumn{4}{l}{Mean ($k \geq 10\,H_0/c$):}
+  & $\val{R_media_k10_p5} \pm \val{R_sd_k10_p5}$ \\
+\multicolumn{4}{l}{Would require ($r = r^*$):} & $\val{MIRA_d4}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The measured enhancement is $\mathcal{R} = \val{R_media_k10_p5} \pm \val{R_sd_k10_p5}$ at $k \geq 10\,H_0/c$:
-consistent with unity, i.e.\ \emph{no} enhancement. The content of that number is
-a bound on dark-energy clustering. Inside the IS-stabilised sub-horizon regime
-the ratio $r = \delta_{\mathrm{DE}}/\delta_m$ is small and \emph{negative},
-$|r| \leq 0.0175$ at $k = 10\,H_0/c$ and falling as $k^{-2}$ to
-$2\times10^{-5}$ by $k = 100\,H_0/c$ --- at most $3.9\%$ of the $r^*=0.4464$
-that a two-fold enhancement would have needed. The restriction to
-$k \geq 10\,H_0/c$ is deliberate: the three lowest modes of
-Table~\ref{tab:MIRA} lie outside that regime and their $|r|$ is \emph{not}
-small, so folding them into the bound would overstate it.
-Dark energy in this model does not cluster at the scales where the IS
-suppression operates, and a measurement of $\delta_{\rm DE}/\delta_m$ above the
-percent level at $z=0$ and $k \gtrsim 10\,H_0/c$ would falsify it.
-This reflects the IS suppression mechanism: the effective friction
-$\mathcal{F}(k,a) = (1-3c^2_s) + \ztilde(k/aH)^2$ grows as $k^2$,
-preventing DE from clustering at sub-horizon scales.
+The enhancement is $\mathcal{R} = \val{R_media_k10_p5} \pm \val{R_sd_k10_p5}$ at
+$k \geq 10\,H_0/c$: no enhancement. Its content is a bound on dark-energy clustering:
+$r = \val{q2_r_k3}$ at $k = 10\,H_0/c$, falling to $\val{q2_r_k6}$ at $k = 100\,H_0/c$,
+small and positive at every scale. The matter growth is the same at every $k$, as it
+must be for pressureless matter on sub-horizon scales. A measurement of
+$\delta_{\rm DE}/\delta_m$ at the per-cent level at $k \gtrsim 10\,H_0/c$ and $z=0$ would
+contradict the model.
+% ORIGEN-VALOR: 0.9897 — R de la integracion vieja (gravedad repulsiva, CI fuera del modo creciente, limite NS), RETIRADO 2026-10-11; log git:ce121c895b:results/logs/p5_IS_perturbations_Q2.json R_media_k10 (0.98974)
+Earlier versions reported $\mathcal{R}=0.9897\pm0.0167$ and a negative $r$ bounded by
+$0.0175$; those came from the integration with repulsive gravity, the
+growing-mode error in the initial velocity and the Navier--Stokes reduction, and are
+withdrawn.
 
-\subsection{Physical interpretation: IS damping hierarchy}
+\subsection{Why the ratio falls as $k^{-2}$}
 \label{subsec:damping}
 
-The IS velocity equation~\eqref{eq:vDE_QS} can be written as
-\begin{equation}
-  v'_{\mathrm{DE}} = -\mathcal{F}(k,a)\,v_{\mathrm{DE}} + \mathcal{S}(k,a),
-\end{equation}
-where $\mathcal{S}$ is the gravitational source.
-For $k \geq 10\,H_0/c$ at $z=0$: $\mathcal{F} \approx \ztilde\,(k/aH)^2 \approx 1.84\times 100 = 184$.
-The source $\mathcal{S} \approx (k/aH)\,\Phi/(1+w) \approx 10 \times 0.02/0.16 \approx 1.3$.
-Since $\mathcal{F} \gg \mathcal{S}$, the DE velocity is strongly damped:
-$v_{\mathrm{DE}} \approx \mathcal{S}/\mathcal{F} \propto k^{-1}$.
-Consequently $\delta_{\mathrm{DE}} \propto (k/aH)\,v_{\mathrm{DE}} \propto k^0$,
-while $\delta_m \propto a \propto k^0$ in the growing mode.
-The ratio $r = \delta_{\mathrm{DE}}/\delta_m \propto k^{-2}$ for large $k$,
-confirming the power-law decrease seen in Table~\ref{tab:MIRA}.
+With a positive sound speed the dark-energy perturbation below its sound horizon is
+a damped acoustic oscillation driven by the potential: the eigenvalues of the
+linearised system at $k=10\,H_0/c$, $z=0$ include the pair
+$\val{p5_eig2}\pm\val{p5_eig_im}\,i$ (Appendix~\ref{app:eigenvalues}). Its forced
+amplitude is $\delta_{\rm DE}\sim(1+\wz)\Phi/c^2_s$, and the Poisson
+equation~\eqref{eq:Poisson} gives $\Phi\propto\delta_m/k^2$, so $r\propto k^{-2}$
+--- the scaling in Table~\ref{tab:MIRA}.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\textwidth]{fig_paper5_MIRA_test.pdf}
-\caption{$\mathcal{R}(k) \equiv \Omega_{m,\mathrm{eff}}/\Omega_m$
-  (blue points with error bars) versus $k/(H_0/c)$; earlier versions of this
-  text, and of the figure axis, wrote this quantity $\mathrm{MIRA}_\mathrm{num}$
-  and divided by $s_m=1+w_0$ (then written $\Omega_{m,\mathrm{dyn}}$) in the label
-  while the code already divided by $\Omega_m$.
-  The former target $\mathrm{MIRA} = (3\varphi+\pi)/4 \simeq 1.999$ (red dashed)
-  is not approached: IS suppression drives $\mathcal{R} \to 1$
-  for $k \gg H_0/c$.
-  The grey dash-dotted line marks full DE clustering ($\mathcal{R}=1/\Omega_m$; an earlier
-  caption gave $1/s_m\simeq6.25$, which is not a clustering limit),
-  ruled out by all current observations.
-  The perturbation amplitude a two-fold enhancement would need is $r^* = 0.4464$
-  (Eq.~\ref{eq:r_required}), DE clustering at the $45\%$ level; the measured bound is
-  $|r|\leq0.0175$ ($3.9\%$ of $r^*$) --- \emph{not} produced by IS dynamics.
-  The conclusion stands: MIRA is \emph{not} reproduced by IS dynamics, at either
-  level --- linear perturbations give $\mathcal{R}\approx1$ and the background
-  IS Friedmann integration a ratio $\approx3.04$, neither of them $\val{MIRA_d4}$.
-  Both figures are recorded here as the \emph{historical} closing of a route
-  that is no longer open: the target $\val{MIRA_d4}$ was the matter factor
-  $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}$, withdrawn on
-  2026-06-18 when OP-8 closed. MIRA survives as the screening entity of
-  Paper~9, where it is not a matter factor and nothing here bears on it.
-  See Section~\ref{subsec:MIRA_background}.}
+\includegraphics[width=0.7\textwidth]{fig_paper5_DE_clustering.pdf}
+\caption{$|\delta_{\rm DE}/\delta_m|$ at $z=0$ from the full Israel--Stewart
+  integration. Blue: with the sound speed of the field of Paper~7,
+  $c^2_s=\val{cs2_condensado_d6}$; the ratio falls as $k^{-2}$
+  (Table~\ref{tab:MIRA}). Red: with the fluid closure $c^2_{s,\rm bare}=w_0$ and the
+  same viscosity; the growing branch of Eq.~\eqref{eq:growing_branch} drives it to
+  $\val{p5_rw0_k100}$ at $k=100\,H_0/c$. Earlier versions of this figure plotted
+  $\mathcal{R}(k)$ against the withdrawn target $\mathrm{MIRA}$.}
 \label{fig:MIRA_test}
 \end{figure}
+
+\subsection{Through the phantom crossing}
+\label{subsec:crossing}
+
+The CPL history crosses $w=-1$ at $z_*=\val{z_cruce}$ (Paper~1). The field cannot carry
+the crossing (its $c^2_s<0$ for $w<-1$, Paper~1); in the closure used here the
+background viscous pressure carries it, $1+w=(1+\wz)(1-c)$ with
+$c=|\Pi|/[\rho_{\rm DE}(1+\wz)]$. Two questions follow, and both are measured
+(\texttt{src/p05\_IS/cruce\_fantasma\_IS.py}).
+
+\emph{Do the perturbations cross?} With the \emph{total} inertia $1+w(a)$, which
+vanishes at $z_*$, the rest-frame variables are singular. Written in
+$U=(1+w)\theta/k$ with the pressure perturbation kept finite outside the rest frame
+\citep{KunzSapone2006}, and with the field's sound speed, they remain finite:
+$\delta_{\rm DE}/\delta_m = \val{p5_cruce_r_k2}$ at $k=2\,H_0/c$ and
+$\val{p5_cruce_r_k10}$ at $k=10\,H_0/c$ at $z=0$. The control with
+$c^2_s=\wz$ reaches $\val{p5_cruce_ctrl_k100}$ at $k=100\,H_0/c$.
+
+\emph{Is the crossing within Israel--Stewart?} The truncated (linear) theory is
+a near-equilibrium expansion, $|\Pi|\ll|p|$. Here
+$|\Pi|/|p| = |\wa|(1-a)/|\wz|$ is $\val{p5_Pip_zc}$ at the crossing,
+$\val{p5_Pip_z1}$ at $z=1$ and $\val{p5_Pip_z233}$ at $z=2.33$: beyond the linear
+theory for $z\gtrsim z_*$. That regime is the one of the nonlinear extension of
+\citet{MaartensMendez1997}, in which phantom solutions driven by bulk viscosity
+have been constructed \citep{CruzLepe2017,CruzCruzLepe2017}. The second law holds
+throughout, since $\zeta=\ztilde\rho_{\rm DE}(1+\wz)/H_0>0$. Whether the nonlinear
+theory with the algebraic $(\ztilde,\tauPi)$ returns $w_a=\val{WA_d6}$ is the open
+part of the question (OP-24).
 
 %======================================================================
 \section{Q3: Growth Rate, $\sigma_8$, and the $S_8$ Tension}
@@ -1006,10 +908,11 @@ confirming the power-law decrease seen in Table~\ref{tab:MIRA}.
 \label{subsec:growth_factor}
 
 The linear growth factor $D_1(a)$ satisfies, in the sub-horizon limit with
-IS-suppressed DE perturbations ($\delta_{\mathrm{DE}} \approx 0$):
+dark-energy perturbations neglected ($|\delta_{\mathrm{DE}}/\delta_m|\leq\val{q2_r_k3}$ for
+$k\geq10\,H_0/c$, Section~\ref{sec:Q2_MIRA}):
 \begin{equation}
   D_1'' + \left[2 + \frac{H'}{H}\right]D_1'
-  = \frac{3}{2}\,\frac{\Omega_m(a)}{1}\,D_1,
+  = \frac{3}{2}\,\Omega_m(a)\,D_1,
   \label{eq:D1_ode}
 \end{equation}
 where $\Omega_m(a) = \Omega_{m,\mathrm{cosm}}H_0^2/(H^2 a^3)$,
@@ -1028,11 +931,9 @@ $f(a) \approx \Omega_m(a)^\gamma$ \citep{Lahav1991,Linder2005}.
 \subsection{Numerical results for the SSEE growth index}
 \label{subsec:gamma_IS}
 
-We integrate Eq.~\eqref{eq:D1_ode} from $a=0.008131$ to $a=1$ using
-the SSEE Hubble rate (Table~\ref{tab:background}).
-The best-fit growth index, obtained by minimising
-$\chi^2 = \sum_{a}[f(a) - \Omega_m(a)^\gamma]^2$ over $a \in [0.3, 1]$
-(the observationally accessible range), is
+We integrate Eq.~\eqref{eq:D1_ode} from $a=10^{-3}$ to $a=1$ (\texttt{DOP853})
+with the SSEE Hubble rate. The growth index, from a least-squares fit of
+$\ln f = \gamma\ln\Omega_m(a)$ over $0\leq z\leq2$, is
 \begin{equation}
   \gamma_{\mathrm{IS}} = \val{p3_gamma_IS} \pm \val{p3_gamma_IS_sigma},
   \label{eq:gamma_IS}
@@ -1060,14 +961,14 @@ $z$ & $\Omega_m^{\mathrm{SSEE}}(a)$ & $f_{\mathrm{SSEE}}$ & $f_{\Lambda\mathrm{C
 \end{tabular}
 \end{table}
 
-The SSEE and $\Lambda$CDM growth rates are essentially identical at all redshifts,
-with differences of $\lesssim 2\%$ (and $\lesssim 1.6\%$ at $z=0.5$).
+The SSEE and $\Lambda$CDM growth rates differ at the per-cent level
+(Table~\ref{tab:growth}).
 With $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ in the Poisson source, the gravitational
 clustering environment is close to $\Lambda$CDM ($\Omega_{m,\Lambda\mathrm{CDM}}=0.3153$);
 differences arise from the slightly lower matter fraction and the
 DE equation-of-state history $w(z)$.
-Future Stage IV surveys (DESI full shape, Euclid) measuring $f\sigma_8(z)$ at
-the $1\%$ level will not distinguish SSEE from $\Lambda$CDM via the growth rate alone.
+Differences of this size are at the edge of what Stage IV surveys (DESI full
+shape, Euclid) will resolve in $f\sigma_8(z)$.
 
 \subsection{Linear growth factor and $\sigma_8$}
 \label{subsec:sigma8}
@@ -1078,21 +979,18 @@ The linear growth factor ratio relative to $\Lambda$CDM,
   \label{eq:G_factor}
 \end{equation}
 is computed by normalising both growth factors to the same initial conditions
-at $z=99$ (matter-dominated epoch, $D_1 \propto a$).
+at $a=10^{-3}$ (matter-dominated epoch, $D_1 \propto a$).
 We find
 \begin{equation}
-  \mathcal{G} = \val{p5_G} \pm 0.005.
+  \mathcal{G} = \val{p5_G}.
   \label{eq:G_value}
 \end{equation}
 SSEE grows \emph{marginally faster} than $\Lambda$CDM ($\sim$0.3\%).
-The tiny enhancement reflects the slightly different DE equation-of-state
-history $w(z)$ with $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$: the energy density transferred
-from DE to matter-like perturbations at intermediate redshifts slightly boosts
-$D_1$ relative to a $\Lambda$CDM universe with the same $\Omega_{m,\mathrm{cosm}}$.
-The $\omega_m$-direct background $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ is slightly
-\emph{below} $\Omega_{m,\Lambda\mathrm{CDM}}=0.3153$, so the net enhancement
-($0.3\%$) is smaller than under the superseded $\Omega_{m}=0.3199$ background
-($1.1\%$), and lies below near-term weak-lensing growth sensitivity.
+Two background effects compete: $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ is slightly
+\emph{below} $\Omega_{m,\Lambda\mathrm{CDM}}=0.3153$, which slows growth, while the CPL
+history ($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) has $w<-1$ for $z>z_*$, i.e.\ less dark
+energy than a cosmological constant in the past, which prolongs matter domination.
+The net is a small enhancement, below near-term weak-lensing growth sensitivity.
 
 The $\sigma_8$ parameter is defined by
 $\sigma_8^2 = \int_0^\infty \frac{dk}{k}\,\Delta^2(k)\,W^2(kR_8)$,
@@ -1109,11 +1007,11 @@ since both growth factors are normalised to identical growing-mode initial
 conditions at $z \simeq 10^3$ (matter-dominated epoch, $D_1 \propto a$).
 Using $\sigma_{8,\Lambda\mathrm{CDM}} = 0.811$ \citep{Planck2018}:
 \begin{equation}
-  \sigma_8^{\mathrm{SSEE}} = 0.811 \times \val{p5_G} = \val{p3_sigma8_IS} \pm 0.006.
+  \sigma_8^{\mathrm{SSEE}} = 0.811 \times \val{p5_G} = \val{p3_sigma8_IS} \pm \val{p5_sigma8_IS_sigma},
   \label{eq:sigma8_SSEE}
 \end{equation}
-This IS linear-growth amplitude gives $S_8^{\mathrm{IS}} = \val{p3_sigma8_IS}\sqrt{\val{OMEGA_M_TOTAL_d6}/0.3}
-= \val{p3_S8_IS}$ ($2.7\sigma$ KiDS-1000), milder than the conservative CLASS amplitude
+the error being Planck's on $\sigma_8$, propagated. This IS linear-growth amplitude gives $S_8^{\mathrm{IS}} = \val{p3_sigma8_IS}\sqrt{\val{OMEGA_M_TOTAL_d6}/0.3}
+= \val{p3_S8_IS}$ ($\val{p5_tS8_ssee_kids}\sigma$ from KiDS-1000), close to the conservative CLASS amplitude
 ceiling derived below.
 
 \subsection{$S_8$ prediction and the weak-lensing tension}
@@ -1128,8 +1026,10 @@ Key measurements are:
   S_8^{\mathrm{KiDS\text{-}1000}} &= \val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma} \quad\text{\citep{KiDS2021}}, \\
   S_8^{\mathrm{DES\text{-}Y3}} &= 0.776 \pm 0.017 \quad\text{(3$\times$2pt; \citep{DESY32022})}.
 \end{align}
-The Planck–lensing tension is $2.4\sigma$ with KiDS and $2.7\sigma$ with DES,
-representing one of the most persistent $\Lambda$CDM discrepancies \citep{Weinberg2013}.
+Planck's $\Lambda$CDM ($\sigma_8=0.811$, $\Omega_m=0.3153$, $S_8=\val{p5_S8_lcdm}$) lies
+$\val{p5_tS8_lcdm_kids}\sigma$ from KiDS-1000 and $\val{p5_tS8_lcdm_des}\sigma$ from DES-Y3 with the
+same error treatment as below, one of the most persistent $\Lambda$CDM
+discrepancies \citep{Weinberg2013}.
 
 For SSEE, the all-cold single sector uses the $\omega_m$-direct CMB density
 $\Omega_{m,\mathrm{CMB}} = \val{OMEGA_M_TOTAL_d6}$ ($=\omega_m/h^2$, no matter factor; the
@@ -1152,12 +1052,11 @@ $\sigma_8^{\mathrm{SSEE}} = \val{p3_sigma8_techo}$:
 \begin{equation}
   \boxed{S_8^{\mathrm{SSEE,\,ceiling}}
     = \val{p3_sigma8_techo} \times \sqrt{\frac{\val{OMEGA_M_TOTAL_d6}}{0.3}}
-    = \val{p3_sigma8_techo} \times 1.0147
-    = \val{p3_S8_techo} \pm 0.006.}
+    = \val{p3_S8_techo}.}
   \label{eq:S8_SSEE}
 \end{equation}
-This single-sector ceiling is $0.4\sigma$ above Planck~2018, $2.7\sigma$ above
-KiDS-1000, and $2.8\sigma$ above DES-Y3 ($S_8 = 0.776\pm0.017$, 3$\times$2pt).
+This single-sector ceiling is $\val{tension_s8_planck_techo}\sigma$ from Planck~2018, $\val{tension_s8_kids1000_techo}\sigma$ from
+KiDS-1000, and $\val{tension_s8_desy3_techo}\sigma$ from DES-Y3 ($S_8 = 0.776\pm0.017$, 3$\times$2pt).
 The all-cold limit therefore predicts \emph{more} structure than the data
 require. A $\varphi$-DM two-sector was once proposed to resolve this; it is
 retracted in Paper~6. The ceiling quoted here is computed with $A_s$
@@ -1168,38 +1067,33 @@ resolve.
 
 \begin{table}[h!]
 \centering
-\caption{$S_8$ comparison: SSEE prediction versus observations.
-  Tensions are quoted in units of $\sigma$.
-  SSEE single-sector ceiling uses $\Omega_{m,\mathrm{CMB}} = \val{OMEGA_M_TOTAL_d6}$
-  ($\omega_m$-direct) and $\sigma_8 = \val{p3_sigma8_techo}$.
-  Tensions use combined uncertainties $\sigma_{\rm tot} = \sqrt{\sigma_{\rm obs}^2 + \sigma_{\rm SSEE}^2}$.}
+\caption{$S_8$: the \SSEE\ single-sector ceiling ($A_s$ fixed to Planck,
+  $\Omega_{m,\mathrm{CMB}} = \val{OMEGA_M_TOTAL_d6}$, $\sigma_8 = \val{p3_sigma8_techo}$)
+  against observations, in units of the observational error
+  (\texttt{p5\_techo\_sigma8\_As\_fijo.json}).}
 \label{tab:S8}
-\begin{tabular}{lcccc}
+\begin{tabular}{lcc}
 \toprule
-Dataset & $S_8$ & $\sigma_{\rm tot}$ & $|S_8^{\mathrm{SSEE}} - S_8|/\sigma_{\rm tot}$ & tension \\
+Dataset & $S_8$ & $|S_8^{\mathrm{SSEE}} - S_8|/\sigma$ \\
 \midrule
-% Tensiones recomputadas 2026-09-08 con el techo 0.827 (antes 0.846):
-% 1.06/3.52/3.92 sigma pasan a 0.36/2.74/2.82.
-Planck 2018 & $0.832 \pm 0.013$ & 0.014 & \val{tension_s8_planck_techo} & $0.4\sigma$ \\
-KiDS-1000   & $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ & 0.025 & \val{tension_s8_kids1000_techo} & $2.7\sigma$ \\
-DES-Y3      & $0.776 \pm 0.017$ & 0.018 & 2.82 & $2.8\sigma$ \\
+Planck 2018 & $0.832 \pm 0.013$ & \val{tension_s8_planck_techo} \\
+KiDS-1000   & $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ & \val{tension_s8_kids1000_techo} \\
+DES-Y3      & $0.776 \pm 0.017$ & \val{tension_s8_desy3_techo} \\
 \midrule
-SSEE (ceiling, this work) & $\val{p3_S8_techo} \pm 0.006$ & — & — & — \\
+SSEE (ceiling, this work) & $\val{p3_S8_techo}$ & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The SSEE single-sector ceiling $S_8 = \val{p3_S8_techo}$ is $0.4\sigma$ above Planck 2018 and in
-$2.7\sigma$/$2.8\sigma$ tension with KiDS-1000/DES-Y3.
-This places SSEE in a similar position to $\Lambda$CDM ($S_8^{\Lambda\mathrm{CDM}}=0.831$,
-tensions $3.0\sigma$/$3.3\sigma$), marginally worse.
-The IS growth sector with the correct cosmological background $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
-neither resolves nor worsens the $S_8$ tension beyond the $\Lambda$CDM baseline.
-A confirmed measurement of $S_8 > 0.86$ would be \emph{favoured} by SSEE over $\Lambda$CDM;
-conversely, $S_8 < 0.80$ would disfavour both SSEE and $\Lambda$CDM at comparable
-significance, pointing to new physics in the matter sector.
-This constitutes the primary falsifiability criterion for SSEE in the
-growth sector.
+With the same error treatment for both models, the IS linear-growth $S_8$ is
+$\val{p5_tS8_ssee_kids}\sigma$/$\val{p5_tS8_ssee_des}\sigma$ from KiDS-1000/DES-Y3 and Planck's $\Lambda$CDM
+$\val{p5_tS8_lcdm_kids}\sigma$/$\val{p5_tS8_lcdm_des}\sigma$: with $A_s$ fixed to Planck the two are in the
+same position, \SSEE\ marginally less tense because its $\Omega_m$ is lower.
+(Earlier versions quoted $3.0\sigma$/$3.3\sigma$ for $\Lambda$CDM using only the
+observational error for it and the combined error for \SSEE; the asymmetry is
+corrected.) The falsification criterion of the growth sector is the one of
+Paper~6: a measurement placing $S_8$ more than $3\sigma$ from the prediction
+$S_8=\val{S8_leg_pred}$ made with $A_s$ fixed to the model's own CMB fit.
 
 \paragraph{Note on the amplitude convention, and on Paper~6.}
 The values quoted in this section hold $A_s$ fixed at the Planck-preferred
@@ -1262,7 +1156,7 @@ both models share the same gravitational clustering environment (Fig.~\ref{fig:f
     eBOSS DR16 \citep{Hou2021}.
     The SSEE prediction ($\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in growth equation)
     is essentially identical to $\Lambda$CDM at $z < 1$, with a mean tension
-    of $0.70\sigma$ across six data points (vs.\ $0.73\sigma$ for $\Lambda$CDM).}
+    of $\val{fs8_tmedia_ssee}\sigma$ across six data points (vs.\ $\val{fs8_tmedia_lcdm}\sigma$ for $\Lambda$CDM).}
   \label{fig:fsigma8}
 \end{figure}
 
@@ -1298,8 +1192,8 @@ The mean tension of $\val{fs8_tmedia_ssee}\sigma$ across six surveys is indistin
 from the $\Lambda$CDM baseline ($\val{fs8_tmedia_lcdm}\sigma$).
 SSEE and $\Lambda$CDM produce virtually identical $f\sigma_8(z)$ curves when
 $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ governs the Poisson source.
-The tiny $\sim$1\% difference in $\mathcal{G}$ propagates to at most $0.01\sigma$
-extra tension — well below the precision of current surveys.
+The small difference in $\mathcal{G}$ ($\val{p5_G}$) is well below the precision of
+current surveys.
 
 This result implies that $f\sigma_8$ measurements by Stage IV surveys
 (DESI full shape, Euclid) cannot distinguish SSEE from $\Lambda$CDM at
@@ -1316,99 +1210,31 @@ SSEE at this level of precision.
 \label{sec:EFT}
 %======================================================================
 
-\subsection{EFT of dark energy operator basis}
-\label{subsec:EFT_basis}
+In the effective field theory of dark energy \citep{Horndeski1974,Gubitosi2013,Bellini2015}
+the action of Paper~7, $S=\int\!\sqrt{-g}\,[M_{\rm Pl}^2R/2+K(X)]$ with
+$K=c_1X+c_2X^2$, is a shift-symmetric $k$-essence: the only non-vanishing
+Bellini--Sawicki function is the kineticity $\alpha_K$, with
+$\alpha_T=\alpha_B=\alpha_M=0$, and the sound speed is $c^2_s=\val{cs2_condensado_d6}$
+(Paper~7, verified there with \texttt{hi\_class}). Two consequences for the IS layer:
 
-The effective field theory of dark energy (EFT-DE) \citep{Horndeski1974,Gubitosi2013,Bellini2015}
-describes the most general scalar-tensor theory in the unitary gauge via the action
-\begin{align}
-  S &= \int d^4x\,\sqrt{-g}\,\bigg[\frac{M_{\rm Pl}^2}{2}f(t)R
-    - \Lambda(t) - c(t)\,g^{00}
-    + \frac{M_2^4(t)}{2}\,(\delta g^{00})^2 \notag \\
-  &\quad - \frac{\bar{M}_1^3(t)}{2}\,\delta K\,\delta g^{00}
-    - \frac{\bar{M}_2^2(t)}{2}\,\delta K^2
-    + \cdots \bigg],
-  \label{eq:EFT_action}
-\end{align}
-where $\delta K = K - 3H$ is the perturbation of the extrinsic curvature trace.
-The $\bar{M}_2^2$ operator (extrinsic-curvature-squared term; related to
-the running Planck mass $\alpha_M$ in the Bellini-Sawicki basis, distinct
-from the braiding operator $\bar{M}_1^3$) contributes an effective sound speed
-$c^2_s \to c^2_s + \bar{M}_2^2/(M_{\rm Pl}^2)$ at linear order.
-
-\subsection{Mapping IS viscosity to EFT operators}
-\label{subsec:EFT_mapping}
-
-The IS bulk viscous pressure $\Pi = -3\zeta H$ modifies the dark energy
-stress-energy tensor as
-\begin{equation}
-  T^{\mathrm{DE}}_{\mu\nu} \to T^{\mathrm{DE}}_{\mu\nu}
-  + \Pi\,(g_{\mu\nu} + u_\mu u_\nu),
-\end{equation}
-where $\Pi$ acts as an additional isotropic pressure.
-At the perturbation level, the bulk viscous pressure $\delta\Pi$ generates
-a term in the DE pressure perturbation:
-$\delta p_{\mathrm{DE}} = c^2_s\,\delta\rho_{\mathrm{DE}} + \delta\Pi$.
-
-Expanding $\delta\Pi$ using the IS equation~\eqref{eq:Pi} in the quasi-static
-approximation~\eqref{eq:PiQS}:
-\begin{equation}
-  \delta\Pi_{\mathrm{QS}} = -\ztilde\,\rho_{\mathrm{DE}}\,\frac{k}{aH}\,v_{\mathrm{DE}}
-  = -\frac{\ztilde\,\rho_{\mathrm{DE}}}{aH}\,(\text{div}\,\mathbf{v}),
-\end{equation}
-which is proportional to the DE velocity divergence — a structure analogous to
-the $\bar{M}_2^2$ operator in the EFT-DE action (note: true kinetic braiding
-corresponds to $\bar{M}_1^3 \delta K \delta g^{00}$ in the Bellini-Sawicki
-basis \citep{Bellini2015}; the mapping here is at the level of the effective
-DE pressure perturbation, not operator identification).
-The dimensional mapping is:
-\begin{equation}
-  \bar{M}_2^2/M_{\rm Pl}^2 = \frac{\ztilde}{\tauPi H_0} = \OmDE,
-  \label{eq:EFT_mapping}
-\end{equation}
-where we have used the SSEE identity~\eqref{eq:ratio_identity}.
-Equation~\eqref{eq:EFT_mapping} identifies the IS viscosity with a specific
-EFT operator combination: the EFT coefficient is exactly $\OmDE$,
-a pure algebraic prediction of SSEE.
-
-\subsection{Comparison with ghost condensate}
-\label{subsec:ghost}
-
-The ghost condensate \citep{Arkani-Hamed2004} achieves gradient stability via
-the EFT operator $M_{\rm Pl}^2\,\alpha_K\,(\delta g^{00})^2/2$, which generates
-$c^2_s = 1$ for the scalar perturbation — the opposite extreme from SSEE.
-Table~\ref{tab:EFT_compare} summarises the key differences.
-
-\begin{table}[h!]
-\centering
-\caption{Comparison of IS viscosity (SSEE) with ghost condensate and canonical
-  $k$-essence as gradient-instability regularisation mechanisms.}
-\label{tab:EFT_compare}
-\begin{tabular}{lccc}
-\toprule
-Property & SSEE IS & Ghost condensate & $k$-essence \\
-\midrule
-$c^2_{s,\mathrm{eff}}$ & $0$ (exact) & $1$ & $w_0 < 0$ \\
-Free parameters & 0 & $M_{\rm Pl}^2\alpha_K$ & $n$ \\
-Causal speed $v_{\rm sig}/c$ & $1$ (saturates) & $< 1$ & N/A \\
-EFT operator & $\bar{M}_2^2 \propto \OmDE$ & $M_{\rm Pl}^2\alpha_K$ & $c^2_s g^{00}$ \\
-DE clustering & $\delta_{\mathrm{DE}} \to 0$ & $\delta_{\mathrm{DE}} \sim \delta_m$ & unstable \\
-% 2026-09-08: esta fila decia "S_8 prediction". No lo es: 0.846 se obtiene
-% FIJANDO A_s al valor de Planck, y A_s es uno de los dos libres del modelo.
-% Rotularlo prediccion invitaba a leer un 3.5 sigma que no es del modelo.
-$S_8$ ceiling ($A_s$ fixed) & $\val{p3_S8_techo} \pm 0.006$ & $\sim 0.811$ & (unstable) \\
-DESI DR2 $\chi^2$ & $0.24\sigma$ & $> 3\sigma$ & $> 3\sigma$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The key distinction is that SSEE IS sits at \emph{marginal stability}
-($c^2_s = 0$) --- the minimal-viscosity solution --- which is the only value consistent simultaneously with
-causal propagation at speed $c$ (Section~\ref{subsec:thermodynamic}) and
-zero free parameters.
-Ghost condensation with $c^2_s = 1$ predicts DE clustering at the level of
-matter clustering ($\delta_{\mathrm{DE}} \sim \delta_m$), generating a large
-effective $S_8$ inconsistent with current weak-lensing data.
+\begin{itemize}
+  \item \textbf{No operator carries the viscosity.} For shift-symmetric $K(X)$ the
+    pressure perturbation is exactly adiabatic, $\delta p-c^2_s\delta\rho=0$
+    (Section~\ref{subsec:instability}), so the action produces no bulk viscosity.
+    The IS layer is a property of the fluid parametrisation used by Boltzmann codes
+    and maps to no term of the action. Earlier versions identified
+    $\ztilde/(\tauPi H_0)$ with $\bar M_2^2/M_{\rm Pl}^2$; that operator changes the
+    tensor speed, $\alpha_T\neq0$, which GW170817 excludes at
+    $|\alpha_T|\lesssim10^{-15}$ \citep{Abbott2017GW} and Paper~7 sets to zero. The
+    mapping is withdrawn.
+  \item \textbf{The ghost condensate is the SSEE sector, not an alternative.}
+    Earlier versions contrasted \SSEE\ with the ghost condensate
+    \citep{Arkani-Hamed2004} as a mechanism ``with $c^2_s=1$''. The ghost condensate
+    has $c^2_s=0$ at its condensate point, and Paper~7's realisation, displaced from
+    it to $X/X_{\min}=\val{X_sobre_Xmin_d6}$, has $c^2_s=\val{cs2_condensado_d6}$: it is
+    the dark-energy sector of \SSEE. The comparison table that accompanied the
+    contrast is withdrawn with it.
+\end{itemize}
 
 %======================================================================
 \section{Discussion}
@@ -1418,18 +1244,14 @@ effective $S_8$ inconsistent with current weak-lensing data.
 \subsection{The withdrawn CMB-to-$s_m$ ratio (historical)}
 \label{subsec:MIRA_background}
 
-The failure of linear IS perturbations to reproduce MIRA
-(Section~\ref{sec:Q2_MIRA}) raises the question of whether the factor arises at the background level.
-At the background level, the IS bulk viscous pressure modifies the Friedmann
-equations as \citep{Zimdahl1996,Maartens1996}:
-\begin{equation}
-  3H^2 M_{\rm Pl}^2 = \rho_m + \rho_{\mathrm{DE}} + \Pi_{\mathrm{bulk}},
-  \label{eq:Friedmann_IS}
-\end{equation}
-where in the SSEE steady state $\Pi_{\mathrm{bulk}} = -3\zeta H = -\KALz\,\rho_{\mathrm{DE}}H$.
-This viscous term effectively shifts the observed matter density. However, numerical integration of the background IS transport equations reveals that fitting an effective $\Omega_m$ to the resulting $H(z)$ evolution yields $\Omega_{m,\mathrm{fit}} / s_m \approx 3.04$ when using the SSEE viscous constant $\zeta = \KALz/3$. 
-
-This is $52\%$ higher than the algebraic MIRA factor ($\val{MIRA_d4}$). We therefore establish that $\mathrm{MIRA}$ \emph{cannot} be derived from the background Israel--Stewart viscous pressure; the classical IS route is ruled out at both the linear-perturbation and background levels. \textbf{Historical note (2026-09-26).} The quantity being chased here, the matter factor $\Omega_{m,\mathrm{CMB}} = \mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}=0.3199$, was withdrawn on 2026-06-18 when OP-8 closed: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ is derived with no factor, and $\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation, not a density. The $3.04$ and the $52\%$ are therefore the record of a route closing, not a live tension --- there is no longer a factor of two to derive. The negative result is kept because it is what shut the route.
+Earlier versions asked whether the factor between $\Omega_{m,\mathrm{CMB}}$ and
+$1+\wz$ could arise from the IS viscous pressure at the background level, and
+reported a background integration giving an effective ratio of $3.04$. No script
+or log of that integration survives, so the figure is withdrawn. The question
+itself no longer exists: the matter factor $\Omega_{m,\mathrm{CMB}} =
+\mathrm{MIRA}\times\Omega_{m,\mathrm{dyn}}$ was withdrawn on 2026-06-18 when OP-8 closed,
+$\Omega_{m,\mathrm{CMB}}=\omega_m/h^{2}=\val{OMEGA_M_TOTAL_d6}$ is derived with no factor,
+and $\Omega_{m,\mathrm{dyn}}=1+w_0$ is a saturation, not a density.
 
 The physical basis once attributed to Paper~6 is withdrawn, and the reason is
 worth recording because it is a result rather than a change of opinion.
@@ -1440,10 +1262,9 @@ a free-streaming cutoff.  But $\Omega_{m,\mathrm{dyn}} = \val{S_M_d6}$ is not a
 density: it is $1+w_0$, a quantity of the equation of state.  The subtraction
 is dimensionally well formed and physically empty --- it takes a measured
 density minus a number belonging to the equation of state --- so the sector it
-defined had nothing to be made of.  The near-equality
-$\Omega_{m,\mathrm{CMB}}/\Omega_{m,\mathrm{dyn}} \approx 1.93$, once read as
-an echo of $\mathrm{MIRA} \simeq 1.999$, is a ratio between objects of
-different kinds and carries no information.
+defined had nothing to be made of.  The near-equality of
+$\Omega_{m,\mathrm{CMB}}/\Omega_{m,\mathrm{dyn}}$ with $\mathrm{MIRA}$, once read as
+an echo, is a ratio between objects of different kinds and carries no information.
 
 Independently, the tension that motivated the second sector does not survive
 contact with raw data.  It was measured against the compressed statistic $S_8$,
@@ -1463,14 +1284,13 @@ none of them uses the second sector.
 \label{subsec:JWST}
 
 Dark-energy perturbations effectively vanish at sub-horizon scales in this
-model --- not because $c^2_{s,\mathrm{eff}}=0$, which alone would make the
-fluid cluster everywhere, but because the IS friction
-$\mathcal{F}(k,a)=(1-3c_s^2)+\tilde z\,(k/aH)^2$ grows as $k^2$
-(\S\ref{subsec:damping}) and drives $\delta_{\rm DE}/\delta_m\to0^-$.
+model, because the field's positive sound speed turns them into damped acoustic
+oscillations below the sound horizon, with $\delta_{\rm DE}/\delta_m\propto k^{-2}$
+($\val{q2_r_k3}$ at $k=10\,H_0/c$; \S\ref{subsec:damping}).
 On that smooth background the spherical-collapse threshold is
-$\delta_c^{\mathrm{SSEE}} = \val{deltac_ssee_z0}$ at $z_c=0$ and $1.68647$ at $z_c=10$,
-against $\Lambda$CDM's $\val{deltac_lcdm_z0} \to 1.68646$: the two are the same to
-$0.02\%$. The value $\delta_c^{\mathrm{SSEE}}=1.6284$ carried by earlier
+$\delta_c^{\mathrm{SSEE}} = \val{deltac_ssee_zc0}$ at $z_c=0$ and $\val{deltac_ssee_zc10}$ at $z_c=10$,
+against $\Lambda$CDM's $\val{deltac_lcdm_zc0} \to \val{deltac_lcdm_zc10}$: the two agree to the
+third decimal. The value $\delta_c^{\mathrm{SSEE}}=1.6284$ carried by earlier
 versions was a postulate of Paper~4, now \textbf{withdrawn} (OP-27); the
 model's own dynamics do not produce it. Matter
 clusters in a background with $\Omega_m = \val{OMEGA_M_TOTAL_d6}$ --- the one matter density
@@ -1535,10 +1355,11 @@ $f\sigma_8$ predictions align closely with $\Lambda$CDM:
 
 \begin{itemize}
   \item \textbf{$S_8$ (weak-lensing amplitude):}
-        The IS linear-growth estimate is $S_8 = \val{p3_S8_IS} \pm 0.006$, $2.7\sigma$
-        above KiDS-1000/DES-Y3 --- slightly \emph{better} than $\Lambda$CDM
-        ($3.0\sigma$/$3.3\sigma$); the conservative CLASS amplitude ceiling is
-        $S_8 = \val{p3_S8_techo}$ ($2.7\sigma$ KiDS-1000).
+        The IS linear-growth estimate is $S_8 = \val{p3_S8_IS} \pm \val{p5_S8_IS_sigma}$,
+          $\val{p5_tS8_ssee_kids}\sigma$/$\val{p5_tS8_ssee_des}\sigma$ from KiDS-1000/DES-Y3, against
+          $\val{p5_tS8_lcdm_kids}\sigma$/$\val{p5_tS8_lcdm_des}\sigma$ for Planck's $\Lambda$CDM with the same
+          error treatment; the conservative CLASS amplitude ceiling is
+          $S_8 = \val{p3_S8_techo}$ ($\val{tension_s8_kids1000_techo}\sigma$ KiDS-1000).
         Both numbers hold $A_s$ \emph{fixed} to Planck, which imports the
         Planck--shear discrepancy; $A_s$ is free in the model, and fitting it
         to the raw KiDS-1000 $\xi_\pm$ leaves $S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$,
@@ -1548,8 +1369,8 @@ $f\sigma_8$ predictions align closely with $\Lambda$CDM:
   \item \textbf{$f\sigma_8$ (RSD growth rate):}
         SSEE predicts $f\sigma_8(z=0.5) = \val{fs8_3_ssee}$, matching the
         BOSS DR12 value of $0.458 \pm 0.038$ at $\val{fs8_3_pull_ssee}\sigma$.
-        The mean tension across six RSD surveys is $0.70\sigma$, essentially
-        identical to $\Lambda$CDM ($0.73\sigma$).
+          The mean tension across six RSD surveys is $\val{fs8_tmedia_ssee}\sigma$, essentially
+          identical to $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$).
 \end{itemize}
 
 The two observables are consistent: once $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$
@@ -1574,27 +1395,24 @@ $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm\val{p9_hgl
 (the measured local rate is the input; the pure number $3(\varphi+\pi)^2$ is the
 comparison target, not an input \citep{SSEE_Paper4}), consistent with Planck 2018
 ($67.36 \pm 0.54$) at $\val{hglob_planck_sig}\sigma$ (errors combined) and with DESI DR2.
-The IS mechanism does not modify $H_0$ directly, since the viscous pressure
-$\Pi_{\mathrm{bulk}}$ averages to zero at early times ($z > 5$) when
-$\OmDE \to 0$.
-The $H_0$ tension between Planck and SH0ES therefore remains at the same
-level in SSEE as in $\Lambda$CDM — SSEE does not worsen nor resolve the
-$H_0$ tension, but introduces a new prediction for $\sigma_8$ and $S_8$
-that partially resolves the lensing tension.
+The IS layer does not enter the screening cascade of Paper~9, so nothing in this
+paper bears on the $H_0$ comparison; and, as Section~\ref{sec:growth} shows, it
+does not move $\sigma_8$ or $S_8$ either.
 
 \subsection{Causal structure and Hiscock-Lindblom stability}
 \label{subsec:HL}
 
-The IS theory satisfies the Hiscock-Lindblom stability criteria
-\citep{HiscockLindblom1983}: positivity of entropy production and causal
-propagation, provided $\tauPi > 0$, $\zeta \geq 0$.
-We have shown that SSEE satisfies these conditions (\S\ref{subsec:thermodynamic}).
-Moreover, the signal speed $v_{\rm sig} = c$ saturates the causality bound,
-meaning SSEE IS dark energy is maximally causal: perturbations propagate at
-the speed of light, with no superluminal modes.
-This distinguishes SSEE from first-order (Eckart) viscous theories, which are
-acausal \citep{HiscockLindblom1985} and would introduce spurious instabilities
-in the CMB power spectrum at $\ell > 1000$.
+The IS theory satisfies the Hiscock--Lindblom criteria \citep{HiscockLindblom1983}
+--- non-negative entropy production and causal propagation --- provided
+$\tauPi > 0$ and $\zeta \geq 0$, both of which hold here
+(\S\ref{subsec:thermodynamic}); the characteristic speed is
+$v^2_{\rm sig}=\wz+\sDE=0\leq c^2$. Those criteria concern the equilibrium state and
+the characteristic cone; they do not by themselves forbid a growing mode, and
+Section~\ref{subsec:growing} shows that the closure $c^2_s=\wz$ has one. Earlier
+versions stated that the signal speed ``saturates the causality bound'' and added
+that Eckart theories would produce instabilities in the CMB at $\ell>1000$; the
+first came from the $\rho$-normalisation abandoned above and the second had no
+calculation behind it. Both are withdrawn.
 
 \subsection{Falsifiable predictions summary}
 \label{subsec:falsifiable}
@@ -1609,12 +1427,12 @@ in the CMB power spectrum at $\ell > 1000$.
 \toprule
 Prediction & SSEE value & Test level & Dataset / Timeline \\
 \midrule
-$c^2_s$ of the dark-energy field (Paper~7; the IS fluid limit is $0$, OP-22b) & $\val{cs2_condensado_d6}$ & $|c^2_s| < 0.05$ & CMB lensing/$T_{\ell\ell'}$ cross \citep{Calabrese2011} / current \\
-$S_8$, $A_s$ fixed to the model's own CMB fit (Paper~6) & $\val{S8_leg_pred}$ (no free cosmological parameter) & $\val{S8_leg_tension}\sigma$ from KiDS-Legacy $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ & KiDS-Legacy / current; Euclid / 2027 \\
+$c^2_s$ of the dark-energy field (Paper~7; the IS high-frequency limit is $0$, OP-22b) & $\val{cs2_condensado_d6}$ & not yet measured & CMB lensing cross-correlations \citep{Calabrese2011} / forecast \\
+$S_8$, $A_s$ fixed to the model's own CMB fit (Paper~6) & $\val{S8_leg_pred}$ (no free cosmological parameter) & $>3\sigma$ (now $\val{S8_leg_tension}\sigma$ from KiDS-Legacy) & KiDS-Legacy / current; Euclid / 2027 \\
 $\gamma_{\rm IS}$ & $\val{p3_gamma_IS} \pm \val{p3_gamma_IS_sigma}$ & $\gamma$ degenerate with $\Lambda$CDM at current precision & DESI full shape, Euclid / 2026--2028 \\
 $f\sigma_8(z=0.5) = \val{fs8_3_ssee}$ & $\val{fs8_3_ssee}$ & $\val{fs8_3_pull_ssee}\sigma$ BOSS; mean $\val{fs8_tmedia_ssee}\sigma$ (6 surveys) & DESI full-shape / 2026 \\
-$D_1$ ratio $\mathcal{G}$ & $\val{p5_G}$ & $0.3\%$ enhancement; below near-term ($\gtrsim 1\%$) sensitivity & Euclid weak lensing / 2027 \\
-No DE clustering ($|\delta_{\mathrm{DE}}/\delta_m| < 10^{-3}$) & $< 10^{-3}$ at $k > 20\,H_0/c$ & cosmic variance & Future 21cm surveys / 2030+ \\
+$D_1$ ratio $\mathcal{G}$ & $\val{p5_G}$ & below near-term sensitivity & Euclid weak lensing / 2027 \\
+DE clustering $\delta_{\mathrm{DE}}/\delta_m$ at $z=0$ & $\val{q2_r_k3}$ at $k=10\,H_0/c$, $\propto k^{-2}$ & per-cent level excluded & Future 21cm surveys / 2030+ \\
 MIRA $= (3\varphi+\pi)/4$ (algebraic; the two-sector basis is retracted, Paper~6 --- see OP-8) & $\val{MIRA_d6}$ & enters only the local screening fraction $f_{\rm screen}$ (Paper~9), not $\Omega_m$ & local $H_0$ ladders (SH0ES, CCHP) / current \\
 \bottomrule
 \end{tabular}
@@ -1628,47 +1446,39 @@ MIRA $= (3\varphi+\pi)/4$ (algebraic; the two-sector basis is retracted, Paper~6
 We have performed a linear Israel-Stewart causal viscous perturbation analysis
 of SSEE dark energy in the sub-horizon regime, addressing three physically motivated questions.
 
-\paragraph{Q1 — Gradient stability (proved analytically).}
-The SSEE structure constants satisfy the exact algebraic identity
-$\ztilde/(\tauPi H_0) = \OmDE = |\wz|$, which forces
-$c^2_{s,\mathrm{eff}}(k\to\infty) = \wz + |\wz| = 0$ to machine precision.
-This is a construction-level identity within the SSEE constants — not a
-numerical coincidence or parameter tuning, but also not a theorem about
-arbitrary IS models. The critical wavenumber $k_\mathrm{crit} \simeq 0.456\,H_0/c < H_0/c$
-lies outside the sub-horizon regime; all observationally relevant modes are
-causally stabilised. The margin between $k_\mathrm{crit}$ and the horizon
-($\sim$ factor 2.2) is comfortable at tree level. A future one-loop
-treatment would test the robustness of this regime to QFT corrections;
-we record this as an open extension question rather
-than a current limitation.
-Moreover, the signal speed saturates the causality bound ($v_{\rm sig} = c$),
-placing SSEE at the maximally causal, minimally fine-tuned configuration
-consistent with thermodynamic stability.
+\paragraph{Q1 --- Gradient stability.}
+The SSEE structure constants satisfy $\ztilde/(\tauPi H_0) = \sDE = |\wz|$, so the
+high-frequency sound speed of the IS fluid vanishes, $\wz+\sDE=0$. That is not
+stability: on the growing branch the viscous stiffness never reaches $\sDE$, and the
+closure $c^2_s=\wz$ grows at every $k$ ($\lambda=\val{p5_lamIS_k100}\,H_0$ at
+$k=100\,H_0/c$). The dark-energy sector is stable because the field of Paper~7 has
+$c^2_s=+\val{cs2_condensado_d6}$; with it no mode grows. The quasi-static reduction of
+earlier versions was the Navier--Stokes limit and hid the growing branch.
 
-\paragraph{Q2 — MIRA factor (pure algebraic axiom).}
-Linear IS perturbations yield
-$\mathcal{R} = \val{R_media_k10_p5} \pm \val{R_sd_k10_p5}$ at $k\geq10\,H_0/c$, consistent with no
-enhancement. Its content is a bound on dark-energy clustering,
-$|r|\leq0.0175$ ($3.9\%$ of the $r^*=0.4464$ that the former target
-$\mathrm{MIRA}_{\mathrm{alg}} = \val{MIRA_d4}$ would have required): the MIRA
-factor is not a perturbative phenomenon. (That target was itself withdrawn in
-2026-06, OP-8, so no ``discrepancy'' against it is claimed.)
-Furthermore, numerical integration of the background IS Friedmann equations yields an effective ratio of $3.04$, failing to reproduce the matter factor at the background level --- a figure retained as the historical record of that route closing, since the factor it targeted was itself withdrawn in 2026-06 (OP-8).
-We conclude that the MIRA factor does not emerge from classical Israel--Stewart fluid mechanics. A two-sector dark matter structure was once proposed (Paper~6) as its physical basis, on the grounds that two near-equal densities would produce $\mathrm{MIRA}\approx2$ algebraically; that proposal is retracted, so MIRA has no proposed carrier at present and survives only as the algebraic invariant entering $f_{\rm screen}$ (Paper~9).
+\paragraph{Q2 --- Dark-energy clustering.}
+The full IS integration with the field's sound speed gives
+$\mathcal{R} = \val{R_media_k10_p5} \pm \val{R_sd_k10_p5}$ at $k\geq10\,H_0/c$ and
+$\delta_{\rm DE}/\delta_m=\val{q2_r_k3}$ at $k=10\,H_0/c$, falling as $k^{-2}$: a bound on
+dark-energy clustering. The perturbations cross the phantom divide at
+$z_*=\val{z_cruce}$ without divergence; the viscous pressure that carries the crossing
+exceeds the near-equilibrium range of linear Israel--Stewart for $z\gtrsim z_*$
+($|\Pi|/|p|=\val{p5_Pip_z1}$ at $z=1$), and whether the nonlinear theory returns $w_a$
+is open (OP-24). MIRA has no carrier in this sector and survives only as the
+algebraic invariant entering $f_{\rm screen}$ (Paper~9).
 
 \paragraph{Q3 — Growth rate and $S_8$ (SSEE tracks $\Lambda$CDM closely).}
 The IS growth index $\gamma_{\mathrm{IS}} = \val{p3_gamma_IS} \pm \val{p3_gamma_IS_sigma}$
 is numerically indistinguishable from $\gamma_{\Lambda\mathrm{CDM}} \simeq 0.55$.
 With $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ governing the Poisson source,
 the growth factor ratio is $\mathcal{G} = \val{p5_G}$, giving
-$\sigma_8^{\mathrm{SSEE}} = \val{p3_sigma8_IS} \pm 0.006$ and an IS linear-growth
-$S_8^{\mathrm{IS}} = \val{p3_S8_IS} \pm 0.006$ ($2.7\sigma$ above KiDS-1000, slightly
-\emph{better} than $\Lambda$CDM at $3.0\sigma$).
+$\sigma_8^{\mathrm{SSEE}} = \val{p3_sigma8_IS} \pm \val{p5_sigma8_IS_sigma}$ and an IS linear-growth
+$S_8^{\mathrm{IS}} = \val{p3_S8_IS} \pm \val{p5_S8_IS_sigma}$ ($\val{p5_tS8_ssee_kids}\sigma$ from KiDS-1000,
+against $\val{p5_tS8_lcdm_kids}\sigma$ for Planck's $\Lambda$CDM with the same error treatment).
 The conservative CLASS amplitude ceiling, $S_8^{\mathrm{ceiling}} = \val{p3_S8_techo}$
-($2.7\sigma$ KiDS-1000), coincides with the IS linear-growth estimate above:
+($\val{tension_s8_kids1000_techo}\sigma$ KiDS-1000), coincides with the IS linear-growth estimate above:
 once massive neutrinos are included, the two independent routes agree.
-The mean $f\sigma_8$ tension across six RSD surveys is $0.70\sigma$,
-essentially identical to $\Lambda$CDM ($0.73\sigma$).
+The mean $f\sigma_8$ tension across six RSD surveys is $\val{fs8_tmedia_ssee}\sigma$,
+essentially identical to $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$).
 There is no weak-lensing tension left for the IS sector to resolve: against
 the raw KiDS-Legacy $\xi_\pm$, with $A_s$ fixed to the value the model's own CMB
 fit supplies, a single matter sector with no free cosmological parameter
@@ -1680,11 +1490,13 @@ it.  The $\phi$-DM construction that once appeared here as the required
 resolution is retracted with the particle.
 
 Together, these results establish that SSEE dark energy is:
-(i) causally and thermodynamically stable (Q1),
+(i) stable, through the field's positive sound speed rather than through the IS
+    layer, which is causal and thermodynamically consistent but does not by itself
+    remove the instability of the closure $c^2_s=w$ (Q1),
 (ii) predictive of a growth history essentially identical to $\Lambda$CDM
     once $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ governs the growth equation (Q3),
-    with $f\sigma_8$ tension of $0.70\sigma$ (vs.\ $0.73\sigma$ for $\Lambda$CDM), and
-(iii) strictly bounded: the MIRA factor cannot be derived from IS dynamics (Q2); the physical basis previously attributed to Paper~6's two-sector $\phi$-dark matter construction is \textbf{withdrawn}: that construction and its particle are retracted (Paper~6). MIRA's algebraic value $(3\varphi+\pi)/4$ is unchanged and it survives in the model only through the screening fraction $f_{\rm screen}$ (Paper~9); \textbf{what remains open is what, if anything, provides its physical basis} --- an explicitly declared gap, not a filled one.
+    with $f\sigma_8$ tension of $\val{fs8_tmedia_ssee}\sigma$ (vs.\ $\val{fs8_tmedia_lcdm}\sigma$ for $\Lambda$CDM), and
+(iii) weakly clustered, $\delta_{\rm DE}/\delta_m\propto k^{-2}$ (Q2), with no MIRA factor to derive; the physical basis previously attributed to Paper~6's two-sector $\phi$-dark matter construction is \textbf{withdrawn}: that construction and its particle are retracted (Paper~6). MIRA's algebraic value $(3\varphi+\pi)/4$ is unchanged and it survives in the model only through the screening fraction $f_{\rm screen}$ (Paper~9); \textbf{what remains open is what, if anything, provides its physical basis} --- an explicitly declared gap, not a filled one.
 The primary falsifiable prediction in the growth sector is
 $S_8 = \val{S8_leg_pred}$, obtained with $A_s$ fixed to the value the model's own CMB fit
 supplies and no free cosmological parameter, against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ from the
@@ -1696,12 +1508,14 @@ retracted.
 \section*{Data Availability}
 %======================================================================
 
-The Python script \texttt{src/ssee\_paper5\_IS\_perturbations.py} (including
-the growth rate and $S_8$ computations) and all output figures are available in
+The Python scripts \texttt{src/p05\_IS/ssee\_paper5\_IS\_perturbations.py} (Q1--Q3,
+growth rate and $S_8$), \texttt{estabilidad\_IS\_completa.py} (growing branch) and
+\texttt{cruce\_fantasma\_IS.py} (phantom crossing), their logs, and all output figures are available in
 the SSEE repository at
 \url{https://github.com/mikealmeida1721/SSEE-Cosmologia}
 (Zenodo DOI: \href{https://doi.org/10.5281/zenodo.19654118}{10.5281/zenodo.19654118}).
-All computations use publicly available Python packages (NumPy, SciPy, Matplotlib).
+All computations use publicly available Python packages (NumPy, SciPy, Matplotlib)
+and, for the amplitude ceiling, CLASS.
 
 %======================================================================
 \section*{Acknowledgements}
@@ -1741,69 +1555,50 @@ The IS relaxation equation linearises to:
 \paragraph{Plane-wave ansatz.}
 For modes $e^{i(\mathbf{k}\cdot\mathbf{x} - \omega t)}$:
 \begin{equation}
-  \delta\Pi = -\frac{i\zeta k}{\tauPi(-i\omega)+1}\,v_\parallel,
+  \delta\Pi = -\frac{i\zeta k}{1-i\omega\tauPi}\,v_\parallel,
 \end{equation}
 where $v_\parallel = \mathbf{k}\cdot\mathbf{v}/k$ is the longitudinal velocity.
 
 \paragraph{Effective sound speed.}
-Combining with the Euler equation --- whose inertia is the enthalpy
+Combining with the continuity and Euler equations --- whose inertia is the enthalpy
 $\bar\rho+\bar p$, as written above, \emph{not} $\bar\rho$:
 \begin{equation}
   \omega^2 = \left[c^2_{s,\mathrm{bare}}
-  + \frac{\zeta/[\tauPi(\bar\rho+\bar p)]}{1+(\omega\tauPi)^{-2}}\right]k^2.
+    + \frac{\zeta}{\tauPi(\bar\rho+\bar p)}\,\frac{-i\omega\tauPi}{1-i\omega\tauPi}\right]k^2 .
 \end{equation}
-In the IS limit $|\omega|\tauPi \gg 1$ (short wavelengths):
+For $|\omega|\tauPi \gg 1$ the bracket tends to
+$c^2_{s,\mathrm{bare}} + \zeta/[\tauPi(\bar\rho+\bar p)]$. With the \SSEE\ normalisation
+$\zeta = \ztilde\,(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})/H_0$
+(Section~\ref{subsec:IS_params}) this is
 \begin{equation}
-  \omega^2 \approx \left(c^2_{s,\mathrm{bare}}
-  + \frac{\zeta}{\tauPi\,(\bar\rho+\bar p)}\right)k^2
-  = c^2_{s,\mathrm{eff}}\,k^2.
+  c^2_{s,\mathrm{eff}} = c^2_{s,\mathrm{bare}} + \frac{\ztilde}{\tauPi H_0},
 \end{equation}
-Using the SSEE normalisation
-$\zeta = \ztilde\,(\rho_{\mathrm{DE}}+p_{\mathrm{DE}})H_0$
-(Section~\ref{subsec:IS_params}):
-\begin{equation}
-  c^2_{s,\mathrm{eff}} = c^2_{s,\mathrm{bare}} + \frac{\ztilde H_0}{\tauPi}
-  = c^2_{s,\mathrm{bare}} + \frac{\ztilde}{\tauPi H_0},
-\end{equation}
-recovering Eq.~\eqref{eq:cs2_eff_def}.
-The full $k$-dependent interpolation
-$c^2_{s,\mathrm{eff}}(k) = c^2_{s,\mathrm{bare}} + (\ztilde/\tauPi H_0)\,x^2/(1+x^2)$
-follows from retaining the full $\omega$ dependence.
+recovering Eq.~\eqref{eq:cs2_eff_def}. For a growing mode, $\omega=i\lambda$, the
+factor $-i\omega\tauPi/(1-i\omega\tauPi)$ becomes $\lambda\tauPi/(1+\lambda\tauPi)<1$,
+which gives Eq.~\eqref{eq:growing_branch}. (Earlier versions wrote
+$\zeta=\ztilde(\rho+p)H_0$ and equated $\ztilde H_0/\tauPi$ with $\ztilde/(\tauPi H_0)$;
+the placement of $H_0$ is corrected, and the result is unchanged.)
 
 %======================================================================
 \section{Eigenvalue Analysis of the IS Perturbation Matrix}
 \label{app:eigenvalues}
 %======================================================================
 
-The quasi-static 4-variable system $\mathbf{Y} = [\delta_m, v_m, \delta_{\mathrm{DE}}, v_{\mathrm{DE}}]^\top$
-has Jacobian matrix $\mathbf{J}$ (evaluated at $z=0$, $k=10\,H_0/c$):
+The five-variable system $\mathbf{Y} = [\delta_m, v_m, \delta_{\mathrm{DE}},
+v_{\mathrm{DE}}, \Pitilde]^\top$ of Eqs.~\eqref{eq:deltam}--\eqref{eq:Poisson}, with the
+field's sound speed, is linear; its Jacobian with respect to $\ln a$, evaluated by the
+same code that integrates it at $z=0$ and $k=10\,H_0/c$
+(\texttt{p5\_IS\_perturbations\_Q2.json}, \texttt{autovalores\_k10\_z0}), has
+eigenvalues
 \begin{equation}
-  \mathbf{J} = \begin{pmatrix}
-    0 & -k/H & 0 & 0 \\
-    -3\Omega_m/2k & -1 & -3\OmDE/2k & 0 \\
-    0 & 0 & 0 & -(1+w)k/H \\
-    -3\Omega_m/(2k(1+w)) & 0 & -c^2_s k/((1+w)H) & -\mathcal{F}
-  \end{pmatrix},
+  \lambda = \val{p5_eig0},\quad \val{p5_eig1},\quad
+  \val{p5_eig2}\pm\val{p5_eig_im}\,i,\quad \val{p5_eig4}.
 \end{equation}
-where $\mathcal{F} = (1-3c^2_s) + \ztilde(k/H)^2 \approx 186$ at $k=10$, $z=0$.
-
-The eigenvalues $\lambda_i$ (computed numerically from $\det(\mathbf{J}-\lambda\mathbf{I})=0$):
-\begin{align}
-  \lambda_1 &\approx +0.15 \quad\text{(growing matter mode)}, \\
-  \lambda_2 &\approx -1.15 \quad\text{(decaying matter mode)}, \\
-  \lambda_3 &\approx +0.02 \quad\text{(IS-damped DE, slowly growing)}, \\
-  \lambda_4 &\approx -\mathcal{F} \approx -186 \quad\text{(fast IS relaxation)}.
-\end{align}
-The large negative eigenvalue $\lambda_4 \approx -186$ drives $v_{\mathrm{DE}}$
-to its quasi-static value on a timescale $\sim (186\,H)^{-1}$, justifying
-the quasi-static approximation.
-The small positive $\lambda_3 \approx +0.02$ means DE perturbations grow
-very slowly compared to matter ($\lambda_1 \approx 0.15$), consistent with
-$|\delta_{\mathrm{DE}}/\delta_m| \ll 1$ at $z=0$.
-No eigenvalue has a growth rate exceeding $\lambda_1$: the system is
-perturbatively stable with the matter growing mode dominating.
-
-
+The positive one is the matter growing mode at frozen coefficients and the most
+negative the decaying one; the complex pair is the damped acoustic oscillation of the
+dark-energy perturbation, which carries the $k^{-2}$ suppression of
+Section~\ref{subsec:damping}. No dark-energy mode grows. Earlier versions printed four
+eigenvalues for a different matrix with no recorded computation; they are withdrawn.
 
 %======================================================================
 \clearpage

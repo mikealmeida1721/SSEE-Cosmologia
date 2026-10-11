@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "98f48baf7b449baec40a7e75711c4a3225974fd1", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/ssee_paper5_IS_perturbations.py", "script_sha256": "31b85e472ce67a5245b13633a5193248869fb7838ca795e55da385a70e6242fa", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/ssee_paper5_IS_perturbations.py"], "fecha": "2026-10-11T11:43:27", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "22d2ad89a11f0026f892a38d33894454b1400620", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/ssee_paper5_IS_perturbations.py", "script_sha256": "f9f3f3c145039b45e7ef338dd8f8c64ab3c6d231c3fb18c36380a002a378031c", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/ssee_paper5_IS_perturbations.py"], "fecha": "2026-10-11T17:28:08", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 ====================================================================
 SSEE  Paper 5 — Israel-Stewart Causal Perturbative Analysis
 ====================================================================
@@ -73,13 +73,13 @@ Q2 — MIRA TEST: DE perturbation growth vs matter
   Required δ_DE/δ_m at z=0 for MIRA: r* = (MIRA-1)×Ω_m/Ω_DE = 0.4464
 
     k [H₀/c]      δ_m(z=0)     δ_DE(z=0)    r=δ_DE/δ_m     Ω_m,eff    MIRA_num  status
-        2.00        0.2105     -8.639812    -41.047052    -28.0595    -90.8425  ✗ IS-suppressed
-        3.00        0.1537     -1.788184    -11.634727     -7.7321    -25.0326  ✗ IS-suppressed
-        5.00        0.1711     -0.151599     -0.886122     -0.3035     -0.9827  ✗ IS-suppressed
-       10.00        0.2918     -0.005115     -0.017530      0.2968      0.9608  ✗ IS-suppressed
-       20.00        0.5426     -0.000392     -0.000723      0.3084      0.9984  ✗ IS-suppressed
-       50.00        1.2958     -0.000098     -0.000076      0.3088      0.9998  ✗ IS-suppressed
-      100.00        2.5510     -0.000048     -0.000019      0.3089      1.0000  ✗ IS-suppressed
+        2.00        0.7956      0.030124      0.037862      0.3350      1.0847  
+        3.00        0.7925      0.009600      0.012112      0.3173      1.0271  
+        5.00        0.7912      0.004059      0.005130      0.3124      1.0115  
+       10.00        0.7907      0.001150      0.001455      0.3099      1.0033  
+       20.00        0.7906      0.000259      0.000327      0.3091      1.0007  
+       50.00        0.7905      0.000038      0.000049      0.3089      1.0001  
+      100.00        0.7905      0.000012      0.000015      0.3089      1.0000  
 
 ════════════════════════════════════════════════════════════════════
 SUMMARY
@@ -93,9 +93,9 @@ SUMMARY
     -> log: /home/mike/Proyectos/SSEE/results/logs/p5_IS_perturbations_Q2.json
 
   Q2 — MIRA ratio (k ≥ 10 H₀/c, well inside IS + sub-horizon):
-    MIRA_numeric = 0.989737 ± 0.016731
+    MIRA_numeric = 1.001032 ± 0.001312
     MIRA_algebraic = 1.998924
-    Discrepancy = 1.009186  (50.5%)
+    Discrepancy = 0.997891  (49.9%)
     δ_DE/δ_m → 0 for large k: IS SUPPRESSES DE clustering
     ✗  MIRA NOT reproduced by linear IS perturbations
        Linear IS → Ω_m,eff ≈ Ω_m (no DE clustering)
@@ -127,8 +127,8 @@ Q3 — LINEAR GROWTH FACTOR, γ_IS, σ₈, S₈
 
   S₈ tension  SSEE vs DES-Y3  = 2.74σ
   S₈ tension  SSEE vs KiDS    = 2.69σ
-  S₈ tension  ΛCDM vs DES-Y3  = 3.26σ
-  S₈ tension  ΛCDM vs KiDS    = 3.02σ
+  S₈ tension  ΛCDM vs DES-Y3  = 3.07σ
+  S₈ tension  ΛCDM vs KiDS    = 2.92σ
 
   fσ₈(z=0.5):  SSEE = 0.4714
                ΛCDM = 0.4748
@@ -147,7 +147,7 @@ Q3 — LINEAR GROWTH FACTOR, γ_IS, σ₈, S₈
   Mean tension ΛCDM: 0.73σ
 
   Figure saved: /home/mike/Proyectos/SSEE/src/p05_IS/../../results/figures/fig_paper5_IS_stability.pdf
-  Figure saved: /home/mike/Proyectos/SSEE/src/p05_IS/../../results/figures/fig_paper5_MIRA_test.pdf
+  Figure saved: /home/mike/Proyectos/SSEE/src/p05_IS/../../results/figures/fig_paper5_DE_clustering.pdf
 
   Figure saved: /home/mike/Proyectos/SSEE/src/p05_IS/../../results/figures/fig_paper5_growth_rate.pdf
   Figure saved: /home/mike/Proyectos/SSEE/src/p05_IS/../../results/figures/fig_paper5_S8_comparison.pdf
@@ -160,7 +160,7 @@ FINAL SUMMARY  (Q1 + Q2 + Q3)
   Q1  c²_s,eff = 0.00e+00  (exact marginal stability, algebraic identity)
       k_crit   = 0.4564 H₀/c  < H₀/c  → all sub-horizon modes stable
 
-  Q2  MIRA_num (k≥10) = 0.9897  [algebraic = 1.9989]
+  Q2  MIRA_num (k≥10) = 1.0010  [algebraic = 1.9989]
       Linear IS suppresses DE clustering → MIRA is background effect ✓
 
   Q3  G = D₁^SSEE/D₁^ΛCDM = 1.0032

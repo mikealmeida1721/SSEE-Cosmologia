@@ -41,11 +41,6 @@
    "valor": 93.95742752749561,
    "uso": "ventana de e-folds, Paper 1"
   },
-  "N_star_rh": {
-   "formula": "58.25-math.log(3)/6",
-   "valor": 58.06689795188865,
-   "uso": "N_* con rho_rh = V_end, Paper 4"
-  },
   "sqrt_AURA": {
    "formula": "math.sqrt(AURA)",
    "valor": 1.999461755053029,
@@ -110,6 +105,36 @@
    "formula": "MIRA-1",
    "valor": 0.9989236549598695,
    "uso": "Paper 5 Q2"
+  },
+  "kcrit_p5": {
+   "formula": "1/TAU_PI_H0",
+   "valor": 0.4563781988778743,
+   "uso": "k de transicion NS-IS en z=0, Paper 5 (x=1)"
+  },
+  "zeta_tilde": {
+   "formula": "KAL0/3",
+   "valor": 1.8404686582532124,
+   "uso": "viscosidad adimensional, Paper 5"
+  },
+  "r_star_q2": {
+   "formula": "(MIRA-1)*OMEGA_M_TOTAL/OMDE_DENS",
+   "valor": 0.4464474382788986,
+   "uso": "r que haria falta para R=MIRA (blanco retirado), Paper 5 Q2"
+  },
+  "smnu_kal11": {
+   "formula": "SUM_MNU_EV/1.1**2",
+   "valor": 0.05660330578512395,
+   "uso": "Sigma m_nu con KAL0 -> 1.1 KAL0 (va como KAL0^-2), Paper 5"
+  },
+  "cs2_rho_norm": {
+   "formula": "W0+1/(1+W0)-1",
+   "valor": 4.408088787564077,
+   "uso": "c_s^2 con zeta normalizada a rho_DE (superluminico), Paper 5"
+  },
+  "tau_saturado": {
+   "formula": "KAL0/3*(1+W0)",
+   "valor": 0.2945674295861945,
+   "uso": "tau_Pi H0 de la saturacion causal con la entalpia, Paper 5"
   },
   "n_ssee": {
    "formula": "(1+W0)/(2*W0)",
@@ -307,9 +332,24 @@
    "uso": "corrimiento relativo en % al quitar omega_nu"
   },
   "Yp_ssee": {
-   "formula": "0.2471+0.96*(OMEGA_B_H2-0.02237)",
-   "valor": 0.24714584650985583,
+   "formula": "0.2471+0.0016*273.9*(OMEGA_B_H2-0.02237)",
+   "valor": 0.2471209289317492,
    "uso": "Y_p lineal, Paper 4"
+  },
+  "Yp_aver_sig": {
+   "formula": "abs(0.2471+0.0016*273.9*(OMEGA_B_H2-0.02237)-0.2449)/0.0040",
+   "valor": 0.5552322329372972,
+   "uso": "Y_p de SSEE frente a las regiones HII (P4)"
+  },
+  "eta_ssee_1e10": {
+   "formula": "273.9*OMEGA_B_H2",
+   "valor": 6.140223582343248,
+   "uso": "eta_10 = 1e10 n_b/n_gamma de SSEE (P4)"
+  },
+  "halg_planck_sig": {
+   "formula": "abs(H0_ALG-67.36)/0.54",
+   "valor": 1.1150691174246463,
+   "uso": "el numero puro 3(phi+pi)^2 leido en km/s/Mpc frente al H0 de Planck (P4)"
   },
   "Omega_b_alg": {
    "formula": "OMEGA_B_H2/(H0_ALG/100)**2",
@@ -401,6 +441,21 @@
    "valor": -1.5099246570171685,
    "uso": "w(a->0) de CPL (P1)"
   },
+  "wb_bbn_sig": {
+   "formula": "abs(OMEGA_B_H2-0.02218)/0.00055",
+   "valor": 0.43228505654518207,
+   "uso": "omega_b algebraico frente al prior BBN de DESI (P2)"
+  },
+  "w0_cmb_solo_sig": {
+   "formula": "(W0+1.57)/0.50",
+   "valor": 1.4601004573104421,
+   "uso": "w0 de SSEE frente al w constante de Planck CMB solo, error superior (P2)"
+  },
+  "h_glob": {
+   "formula": "H0_GLOBAL/100",
+   "valor": 0.6796214152203791,
+   "uso": "h adimensional del H global (P3)"
+  },
   "horizonte_cs_Mpc": {
    "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
    "valor": 643.5424922781127,
@@ -474,17 +529,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "e413a116af6e68a0f1209c87d81354833163b87c",
+  "commit": "482a75fe78ff23af6424bb33fbfd7033dc0a5e38",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "a1fee77bfed53db481989f827997f5095536639c9322cce70222bfcdf201224e",
+  "script_sha256": "55e8201946573090787302e632602462046d28a2cb4dc77768123528b405a790",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T12:12:03",
+  "fecha": "2026-10-11T17:20:52",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

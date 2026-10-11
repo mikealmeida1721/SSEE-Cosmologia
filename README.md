@@ -225,11 +225,11 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 
 | Result | Value | Status |
 |---|---|---|
-| c²_s,eff | 0 (exact algebraic) | Q1: all modes stable |
-| k_crit / (H₀/c) | 0.456 < 1 | Sub-Hubble stability window |
-| R = Ω_m,eff/Ω_m (k≥10) | 0.9897 ± 0.0167 | A bound on dark-energy clustering: \|r\| ≤ 0.0175, 3.9% of r* = 0.4464 |
+| c²_s,eff (IS fluid, ωτ→∞) | 0 (exact algebraic) | High-frequency limit only; the growing branch of the closure c²_s = w₀ stays unstable (λ = 15.5 H₀ at k = 100). Stability comes from the field of Paper 7, c²_s = +0.021284 |
+| k_crit / (H₀/c) | 0.456 | NS→IS transition of the oscillatory branch (not a stability window) |
+| R = Ω_m,eff/Ω_m (k≥10) | 1.0010 ± 0.0013 | Full IS integration with the field's c²_s: δ_DE/δ_m = 1.5×10⁻³ at k = 10 H₀/c, ∝ k⁻² (bound on DE clustering) |
 | γ_IS | 0.5504 ± 0.0003 | ≈ γ_ΛCDM = 0.55 |
-| G = D₁_SSEE/D₁_ΛCDM | 1.0032 ± 0.005 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.308881) |
+| G = D₁_SSEE/D₁_ΛCDM | 1.0032 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.308881) |
 | σ₈_SSEE (single-sector ceiling) | 0.8149 ± 0.006 | ODE linear growth gives 0.8136 |
 | S₈ with A_s fixed to **Planck** (ceiling, not a prediction) | 0.827 | imports the Planck–KiDS offset; the model's own prediction fixes A_s to its **own** CMB fit — see Paper 6 |
 | Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | ≈ ΛCDM (0.73σ); against the raw BOSS multipoles see Paper 6 |

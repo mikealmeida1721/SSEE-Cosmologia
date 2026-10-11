@@ -47,6 +47,8 @@ stages:
     - results/logs/growth_2026-07/base_sin_particula.json
     - results/logs/kids1000_control.json
     - results/logs/p5_IS_perturbations_Q2.json
+    - results/logs/p5_estabilidad_IS_completa.json
+    - results/logs/p5_cruce_fantasma_IS.json
     - results/logs/lcdm_conjunta.json
     - src/valores_tex.py
     - manuscript/valores.yaml

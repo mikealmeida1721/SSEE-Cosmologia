@@ -2643,6 +2643,26 @@ es cierta). Script `src/p07_eft/cruce_fantasma_quien_lo_lleva.py`, log
   Israel–Stewart. Si no cae, la vía viscosa también se cierra y wₐ tendría que
   salir de otro sitio. Es la siguiente pregunta de este OP.
 
+**Contestada 2026-10-11** (script `src/p05_IS/cruce_fantasma_IS.py`, log
+`results/logs/p5_cruce_fantasma_IS.json`; controles: c=1 y w_eff=−1 exactos en
+el cruce, el control con ĉ²=w₀ explota).
+- **Perturbaciones: 🟢 atraviesan el cruce.** Con la inercia TOTAL (1+w_eff, que
+  pasa por cero en z*=0.314) en la variable U=(1+w)θ/k de Kunz & Sapone (2006,
+  PRD 74, 123503) y el c²_s del campo como ĉ², todo es finito: |r| ≤ 0.11 en
+  k=2, 0.023 en k=10. La prescripción (δp finita fuera del sistema en reposo)
+  es la de Kunz–Sapone, no una elección nuestra.
+- **Validez: 🟠 fuera de IS lineal, dentro de IS no lineal.** La pregunta bien
+  puesta no es |Π| > ρ+p sino |Π| ≪ |p| (cerca del equilibrio). Medido:
+  |Π|/|p| = 0.19 en el cruce, 0.27 en z=0.5, 0.40 en z=1, 0.56 en z=2.33. No es
+  ≪1 ⟹ la teoría IS truncada no basta desde z≈0.3. Es el régimen de la
+  extensión no lineal de Maartens & Méndez (1997, PRD 55, 1937), con soluciones
+  fantasma publicadas (Cruz & Lepe 2017, PLB, arXiv:1607.04192; Cruz, Cruz &
+  Lepe 2017, PLB 769, 159). Segunda ley: ζ = ζ̃ρ(1+w₀)/H₀ > 0 siempre (entalpía
+  del campo), la producción de entropía no cambia de signo.
+- **Lo que queda de OP-24, ahora concreto:** escribir el fondo de SSEE en la IS
+  no lineal de Maartens–Méndez con (ζ̃, τ_Π) algebraicos y ver si devuelve
+  c(a) = 4.186(1−a), o sea wₐ = −0.669975. La vía viscosa NO se cierra.
+
 ## OP-23 — Dentro del acoplamiento conformal, ningún $\beta_c$ da $w_0$ sin pasarse de energía oscura temprana — ⚫ CERRADO POR DISOLUCIÓN (2026-09-06)
 
 > ## ⚫ DISUELTO AL DÍA SIGUIENTE — cayó su premisa, y cayó entera
@@ -3164,6 +3184,22 @@ predicción de Paper 7, así que una medida discrimina.
 
 **Severidad: Media.** No mueve un número publicado, pero es el eslabón que sostiene la
 predicción propia del sector.
+
+**Medido 2026-10-11 (quinta lectura de P5) — el parche de fluido NO estabiliza solo.**
+Script `src/p05_IS/estabilidad_IS_completa.py`, log `results/logs/p5_estabilidad_IS_completa.json`
+(tres controles pasan: ζ=0 da λ=k√s; el c²_s del campo no crece; s+w₀=0 a 1e-12).
+- El `0` de P5 (c²_eff = w₀ + s_DE) sólo vale para oscilaciones con ωτ→∞. Para un modo que
+  CRECE a ritmo λ la rigidez viscosa es s·λτ/(1+λτ) < s, y con |c²_bare| = s exacto queda
+  **λ² = k²s/(1+λτ) > 0 a todo k** (λ ≈ (k²s/τ)^{1/3}; 15.5 H₀ en k=100). Integración completa
+  de 5 variables: r = δ_DE/δ_m = 239 en k=100.
+- La aproximación cuasi-estática de Q2 (Π̃'=0) es el límite Navier–Stokes y exige τ_Π H ≪ 1;
+  P5 la daba por «excelente» con τ_Π H ≫ 1 (al revés). Acota la tasa a 1/τ_Π H₀ = 0.456 y por
+  eso no se veía nada. Además el script tenía la gravedad con el signo invertido (corregido).
+- **Con el c²_s del campo de Paper 7 (+0.021284) nada crece** (r = 1.5e-3 en k=10, cae ∝ k⁻²).
+  La estabilidad del sector la da el CAMPO; el fluido con c²_bare = w₀ es sólo el disfraz de
+  los códigos Boltzmann y, solo, es inestable. P5 reescrito así; ningún observable cambia.
+- Esto ESTRECHA el OP: ya no hace falta que el mapa campo→fluido «caiga en 0»; el valor
+  físico es el del campo, y el `0` era un límite, no un resultado de estabilidad.
 
 
 ---

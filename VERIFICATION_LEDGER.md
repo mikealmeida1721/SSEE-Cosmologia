@@ -635,7 +635,7 @@ Lo ABIERTO no es circularidad sino la *selección* única de 45α² entre rutas
    en el script. Si τ_Π se deriva de verdad independientemente, el resultado
    es no-trivial; tal como está, es la tautología w₀+|w₀|=0.
 3. **✓ Q2 — REENCUADRADO 2026-09-26:** el test daba
-   R = Ω_m,eff/Ω_m = 0.9897 ± 0.0167 (k≥10) vs el blanco 1.999, y de ahí
+   R = Ω_m,eff/Ω_m = 0.9897 ± 0.0167 (k≥10) vs el blanco 1.999, y de ahí <!-- R74: git:ce121c895b:results/logs/p5_IS_perturbations_Q2.json -->
    concluía «discrepancia del 50%». Pero ese blanco era el factor materia
    Ω_m,CMB = MIRA×Ω_m,dyn = 0.3199, **retirado el 2026-06-18** al cerrarse
    OP-8: ya no hay factor de dos que derivar, así que una discrepancia contra
@@ -650,6 +650,15 @@ Lo ABIERTO no es circularidad sino la *selección* única de 45α² entre rutas
    `results/logs/p5_IS_perturbations_Q2.json`.
    MIRA sigue viva como entidad de apantallamiento en Paper 9; nada de esto
    la toca.
+   **RE-HECHO 2026-10-11 (quinta lectura).** El 0.9897 ± 0.0167 y la cota <!-- R74: git:ce121c895b:results/logs/p5_IS_perturbations_Q2.json -->
+   |r| ≤ 0.0175 salían de una integración con la gravedad con el signo al
+   revés, la velocidad inicial fuera del modo creciente y la reducción
+   cuasi-estática (límite Navier–Stokes, no IS); valor viejo en
+   git:ce121c895b:results/logs/p5_IS_perturbations_Q2.json. Con el sistema IS
+   completo (5 variables) y el c²_s del campo de P7: R = 1.0010 ± 0.0013,
+   δ_DE/δ_m = 1.5e-3 en k=10, ∝ k⁻². Y Q1 cambia: con c²_bare = w₀ el modo
+   creciente es inestable a todo k (`p5_estabilidad_IS_completa.json`); la
+   estabilidad la da el campo, no la capa IS.
 
 **Veredicto:** c²_s,eff=0 es cierto pero se reduce a w₀=−Ω_DE; el aparato
 IS (ζ̃, τ_Π) está construido para reproducir esa identidad y su parte

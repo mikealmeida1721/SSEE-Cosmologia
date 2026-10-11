@@ -1,0 +1,175 @@
+{
+ "pregunta": "OP-24: cabe el cruce fantasma en IS y lo atraviesan las perturbaciones",
+ "a_cruce": 0.7611101071429058,
+ "z_cruce": 0.3138703462418222,
+ "cs2_campo": 0.021283701570524605,
+ "validez": [
+  {
+   "z": 0.0,
+   "c": 0.0,
+   "Pi_sobre_rho": 0.0,
+   "Pi_sobre_p": 0.0,
+   "w_eff": -0.839949771344779
+  },
+  {
+   "z": 0.3138703462418222,
+   "c": 1.0000000000000007,
+   "Pi_sobre_rho": 0.16005022865522112,
+   "Pi_sobre_p": 0.19054738046892614,
+   "w_eff": -1.0
+  },
+  {
+   "z": 0.5,
+   "c": 1.3953429730605476,
+   "Pi_sobre_rho": 0.22332496189079654,
+   "Pi_sobre_p": 0.26587894837241055,
+   "w_eff": -1.0632747332355756
+  },
+  {
+   "z": 1.0,
+   "c": 2.093014459590821,
+   "Pi_sobre_rho": 0.33498744283619475,
+   "Pi_sobre_p": 0.39881842255861577,
+   "w_eff": -1.1749372141809737
+  },
+  {
+   "z": 2.33,
+   "c": 2.9289631776856537,
+   "Pi_sobre_rho": 0.4687812263113116,
+   "Pi_sobre_p": 0.5581062609979428,
+   "w_eff": -1.3087309976560906
+  }
+ ],
+ "criterio_IS_lineal": "|Pi| << |p| (cerca del equilibrio); |Pi| ~ |p| = IS no lineal (Maartens & Mendez 1997)",
+ "perturbaciones_campo": [
+  {
+   "k": 2.0,
+   "exito": true,
+   "delta_m": 0.7719356098213304,
+   "r": -0.11137496713976834,
+   "r_en_cruce": -0.14918913585338328,
+   "finito": true
+  },
+  {
+   "k": 5.0,
+   "exito": true,
+   "delta_m": 0.783561491901247,
+   "r": -0.04343002380488415,
+   "r_en_cruce": -0.059652587136565176,
+   "finito": true
+  },
+  {
+   "k": 10.0,
+   "exito": true,
+   "delta_m": 0.7861092877998014,
+   "r": -0.022871803227938574,
+   "r_en_cruce": -0.035968855405475154,
+   "finito": true
+  },
+  {
+   "k": 20.0,
+   "exito": true,
+   "delta_m": 0.7885797760858712,
+   "r": -0.002337894053634663,
+   "r_en_cruce": -0.010528524338722624,
+   "finito": true
+  },
+  {
+   "k": 50.0,
+   "exito": true,
+   "delta_m": 0.7902703298432715,
+   "r": 0.0009877467539100306,
+   "r_en_cruce": -0.0003785486498856922,
+   "finito": true
+  },
+  {
+   "k": 100.0,
+   "exito": true,
+   "delta_m": 0.790462775082655,
+   "r": 0.00032185768308122395,
+   "r_en_cruce": -2.4223589346086217e-05,
+   "finito": true
+  }
+ ],
+ "control_c2_w0": [
+  {
+   "k": 2.0,
+   "exito": true,
+   "delta_m": 0.7618489269317129,
+   "r": -0.34514678166092044,
+   "r_en_cruce": -0.3180180916822237,
+   "finito": true
+  },
+  {
+   "k": 5.0,
+   "exito": true,
+   "delta_m": 0.5901902562510444,
+   "r": -9.218932520548073,
+   "r_en_cruce": -3.517029446318631,
+   "finito": true
+  },
+  {
+   "k": 10.0,
+   "exito": true,
+   "delta_m": -334.65743913359245,
+   "r": 90.94369293620503,
+   "r_en_cruce": 155.61528614432473,
+   "finito": true
+  },
+  {
+   "k": 20.0,
+   "exito": true,
+   "delta_m": -64607009928.10132,
+   "r": 338.9634758746263,
+   "r_en_cruce": 558.5670989242021,
+   "finito": true
+  },
+  {
+   "k": 50.0,
+   "exito": true,
+   "delta_m": -2.7416578808026524e+38,
+   "r": 2054.726485706262,
+   "r_en_cruce": 3357.1784970035815,
+   "finito": true
+  },
+  {
+   "k": 100.0,
+   "exito": true,
+   "delta_m": -1.6505742495719668e+86,
+   "r": 8154.63589612023,
+   "r_en_cruce": 13276.56592745914,
+   "finito": true
+  }
+ ],
+ "controles": {
+  "c_igual_1_en_cruce": true,
+  "w_eff_igual_menos1_en_cruce": true,
+  "campo_finito": true,
+  "control_crece": true
+ },
+ "_procedencia": {
+  "commit": "e4a379e6c6aeef3ef8d19a733aea426e664128ba",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p05_IS/cruce_fantasma_IS.py",
+  "script_sha256": "975588102596c27da906601ff34ecda656f85ce40448a661a35c50ae903dee61",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p05_IS/cruce_fantasma_IS.py"
+  ],
+  "fecha": "2026-10-11T17:19:49",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

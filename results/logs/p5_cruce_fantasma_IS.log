@@ -1,0 +1,12 @@
+z=0.000  w_eff=-0.8399  c=0.000  |Pi|/rho=0.000  |Pi|/|p|=0.000
+z=0.314  w_eff=-1.0000  c=1.000  |Pi|/rho=0.160  |Pi|/|p|=0.191
+z=0.500  w_eff=-1.0633  c=1.395  |Pi|/rho=0.223  |Pi|/|p|=0.266
+z=1.000  w_eff=-1.1749  c=2.093  |Pi|/rho=0.335  |Pi|/|p|=0.399
+z=2.330  w_eff=-1.3087  c=2.929  |Pi|/rho=0.469  |Pi|/|p|=0.558
+k=   2.0  campo r=-1.114e-01 (cruce -1.492e-01)  control w0 r=-3.451e-01
+k=   5.0  campo r=-4.343e-02 (cruce -5.965e-02)  control w0 r=-9.219e+00
+k=  10.0  campo r=-2.287e-02 (cruce -3.597e-02)  control w0 r=+9.094e+01
+k=  20.0  campo r=-2.338e-03 (cruce -1.053e-02)  control w0 r=+3.390e+02
+k=  50.0  campo r=+9.877e-04 (cruce -3.785e-04)  control w0 r=+2.055e+03
+k= 100.0  campo r=+3.219e-04 (cruce -2.422e-05)  control w0 r=+8.155e+03
+controles: {'c_igual_1_en_cruce': True, 'w_eff_igual_menos1_en_cruce': True, 'campo_finito': True, 'control_crece': True} -> /home/mike/Proyectos/SSEE/results/logs/p5_cruce_fantasma_IS.json

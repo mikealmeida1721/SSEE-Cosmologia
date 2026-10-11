@@ -83,12 +83,12 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: cb393e54503ca04dccd9f7f27a5d52c5
-      size: 85818
+      md5: c76bc708a8502b18fae5f90dbe5925b1
+      size: 94124
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 94e2897253bf79a9ccd37902e75176b2
-      size: 15246
+      md5: 447faf12ce6fc57680c30e3e72811deb
+      size: 16553
     - path: results/logs/b1_k2.json
       hash: md5
       md5: 92110af50831bb1faa0a88a5926c3bab
@@ -231,12 +231,20 @@ stages:
       size: 1396
     - path: results/logs/p5_IS_perturbations_Q2.json
       hash: md5
-      md5: e12c20bd6728375e2b6ab6859329de56
-      size: 2150
+      md5: 5771c25e382a2aa259822fe00b562b8e
+      size: 2550
     - path: results/logs/p5_IS_perturbations_Q3.json
       hash: md5
-      md5: ca137e61f23bc18012003b25183e3114
-      size: 1721
+      md5: 45e7e03977865cac0643a441e4db22e4
+      size: 2020
+    - path: results/logs/p5_cruce_fantasma_IS.json
+      hash: md5
+      md5: cf7f849a2e3b929807db3990cf3000bf
+      size: 3932
+    - path: results/logs/p5_estabilidad_IS_completa.json
+      hash: md5
+      md5: 47ace5565590f1dcb31d122bcedf60b6
+      size: 4530
     - path: results/logs/p5_techo_sigma8_As_fijo.json
       hash: md5
       md5: 10a09935854f896915e03a4b47f2d73d
@@ -308,8 +316,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: ad8bbd98f9ea038be66aed420cc7353e
-      size: 106417
+      md5: b2acca832d3573ee65d8ab2edcfd8808
+      size: 116933
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -317,8 +325,8 @@ stages:
     deps:
     - path: src/p05_IS/ssee_paper5_IS_perturbations.py
       hash: md5
-      md5: 09f7480b3100469734136dcae2ddda02
-      size: 43580
+      md5: b698b3614460cb69ce470b88b244dcfb
+      size: 44319
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -330,16 +338,16 @@ stages:
     outs:
     - path: results/logs/p5_IS_perturbations.log
       hash: md5
-      md5: 9e157bb4485de49b7e2aa97e0ac70148
-      size: 10833
+      md5: 9fe368df924ed06d411d38f7d29e712b
+      size: 10718
     - path: results/logs/p5_IS_perturbations_Q2.json
       hash: md5
-      md5: e12c20bd6728375e2b6ab6859329de56
-      size: 2150
+      md5: 5771c25e382a2aa259822fe00b562b8e
+      size: 2550
     - path: results/logs/p5_IS_perturbations_Q3.json
       hash: md5
-      md5: ca137e61f23bc18012003b25183e3114
-      size: 1721
+      md5: 45e7e03977865cac0643a441e4db22e4
+      size: 2020
   kids_publicados:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_publicados.py
@@ -492,8 +500,8 @@ stages:
     deps:
     - path: src/algebra_derivada.py
       hash: md5
-      md5: 9435b755d913c302c48e398743bdf170
-      size: 12843
+      md5: b840a411bf22ef0a5e8b7a6e542c619b
+      size: 13978
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -505,8 +513,8 @@ stages:
     outs:
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 94e2897253bf79a9ccd37902e75176b2
-      size: 15246
+      md5: 447faf12ce6fc57680c30e3e72811deb
+      size: 16553
   kids_legacy_bic:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_legacy_bic.py
@@ -5153,3 +5161,55 @@ stages:
       hash: md5
       md5: 3f2e87aeb2e45e879803660ec5b38767
       size: 5427
+  p5_estabilidad_IS_completa:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p05_IS/estabilidad_IS_completa.py > 
+      results/logs/p5_estabilidad_IS_completa.log 2>&1
+    deps:
+    - path: src/p05_IS/estabilidad_IS_completa.py
+      hash: md5
+      md5: f57607d0e1303a69a3829e57cb903e6a
+      size: 5623
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p5_estabilidad_IS_completa.json
+      hash: md5
+      md5: 47ace5565590f1dcb31d122bcedf60b6
+      size: 4530
+    - path: results/logs/p5_estabilidad_IS_completa.log
+      hash: md5
+      md5: bbd6c61608bc6441b9030c54760f09c8
+      size: 1173
+  p5_cruce_fantasma_IS:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p05_IS/cruce_fantasma_IS.py > results/logs/p5_cruce_fantasma_IS.log 
+      2>&1
+    deps:
+    - path: src/p05_IS/cruce_fantasma_IS.py
+      hash: md5
+      md5: bdaa7ec93f1e9f3952128d2de5c2a417
+      size: 4646
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p5_cruce_fantasma_IS.json
+      hash: md5
+      md5: cf7f849a2e3b929807db3990cf3000bf
+      size: 3932
+    - path: results/logs/p5_cruce_fantasma_IS.log
+      hash: md5
+      md5: 30146bd6447f2c17659623fc97453c0b
+      size: 948
