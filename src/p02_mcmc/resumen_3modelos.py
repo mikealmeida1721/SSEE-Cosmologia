@@ -70,6 +70,13 @@ for m, e in ETIQ.items():
     impreso[m] = dict(lnP_MAP=float(f.group(2)), BIC=float(f.group(3)), AIC=float(f.group(5)))
     # N_eff: lo calcula el MCMC con el tiempo de autocorrelacion de emcee; se toma de su log
     res[m]["N_eff_del_log"] = int(f.group(7))
+# diagnosticos de convergencia (tabla de P2), tal como los imprime el MCMC al cerrar cada modelo:
+# «[SSEE]  τ_max=31.9  N_eff≈78380  accept=0.714». Antes la tabla llevaba los de una corrida vieja
+# tecleados a mano (cuarta lectura, 2026-10-10).
+for m, e in {"ssee": "SSEE", "lcdm": "ΛCDM", "cpl": "CPL"}.items():
+    g = re.search(rf"\[{e}\]\s+τ_max=([0-9.]+)\s+N_eff≈(\d+)\s+accept=([0-9.]+)", txt)
+    res[m]["tau_max"], res[m]["aceptacion"] = float(g.group(1)), float(g.group(3))
+    res[m]["Ns_sobre_tau"] = 25000 / float(g.group(1))
 pasa = all(abs(res[m][q] - impreso[m][q]) <= 0.005 + 1e-9 for m in res for q in ("lnP_MAP", "BIC", "AIC"))
 out = dict(fecha=str(__import__("datetime").date.today()), N=N, modelos=res,
            tension_H0_ssee_planck=float(tension_H0), rho_w0_wa_cpl=rho_cpl,
