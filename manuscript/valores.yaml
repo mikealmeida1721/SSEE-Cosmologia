@@ -939,3 +939,4 @@ p5_cruce_r_k100: {fuente: "results/logs/p5_cruce_fantasma_IS.json#perturbaciones
 p5_cruce_rmax: {fuente: "results/logs/p5_cruce_fantasma_IS.json#perturbaciones_campo.0.r", formato: "+.2f"}
 p5_cruce_ctrl_k100: {fuente: "results/logs/p5_cruce_fantasma_IS.json#control_c2_w0.5.r", formato: "tex.1e"}
 tension_s8_desy3_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.DES-Y3", formato: ".2f"}
+dchi2_leg_unif_libre: {fuente: "results/logs/kids_legacy_bic.json#delta_chi2.unif_menos_libre", formato: "+.3f"}

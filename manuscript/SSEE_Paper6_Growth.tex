@@ -67,7 +67,7 @@ $\val{leg_logA_cmb}$ that \SSEE{}'s own CMB fit supplies (under the identical pi
 with the Planck background, $\val{leg_lcdm_vs_planck}\sigma$). Fixing the amplitude to the CMB
 value leaves the growth sector with \emph{no free cosmological parameter} and
 costs nothing: $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$ with the amplitude
-free, $\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$, and the nuisance parameters do not move to
+free, $\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of fixing it, and the nuisance parameters do not move to
 compensate. $S_8=\val{S8_leg_pred}$ is then an output of the algebra and the CMB, against
 a measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. KiDS-Legacy predates this analysis by sixteen
 months and no temporal priority is claimed: the result is a consistency of
@@ -83,7 +83,7 @@ BOSS DR12 multipoles (222 points, one-loop LPT) the algebraic and Planck
 backgrounds fit equally well within noise, $\Delta\chi^2=\val{bossR_dchi2}$ for \SSEE{} at equal freedom; clustering does not
 constrain the amplitude. This paper also retracts a second matter sector and
 an associated particle ($m_\phi=40.70$~eV) proposed in an earlier version: the
-sector was defined by subtracting $1+w_0\approx0.160$ --- a number of the
+sector was defined by subtracting $1+w_0=\val{S_M_d6}$ --- a number of the
 dark-energy equation of state, not a density --- from the matter density, and
 the $S_8$ tension it was built to close existed only in the compressed
 statistic, never in the raw data.
@@ -97,14 +97,15 @@ statistic, never in the raw data.
 \section{Introduction: why the growth sector needed re-examination}
 % ============================================================================
 
-The background sector of \SSEE{} --- the algebraic derivation of $H_0$,
-$\omega_b$, $\omega_c$, $n_s$, $w_0$ and $w_a$ from $\varphi$ and $\pi$ --- has
-been tested against Planck 2018, DESI DR2 BAO, and Pantheon+ in Papers~1--4,
-9--10. The growth-of-structure sector --- how matter perturbations evolve once
-the background is fixed --- is tested independently, against two late-time
-probes: weak gravitational lensing (cosmic shear, KiDS-1000) and redshift-space
-galaxy clustering (BOSS DR12). Both probes report their results as derived
-quantities: KiDS-1000 publishes $S_8\equiv\sigma_8\sqrt{\Omega_m/0.3}$, and BOSS
+The background sector of \SSEE{} --- the algebraic derivation of $\omega_b$,
+$\omega_c$, $n_s$, $w_0$ and $w_a$ from $\varphi$ and $\pi$, with the global $H_0$
+the output of the SH0ES screening cascade (Papers~9--10) --- has been tested
+against Planck 2018, DESI DR2 BAO, and Pantheon+ in Papers~1--4 and~9--10. The
+growth-of-structure sector --- how matter perturbations evolve once the
+background is fixed --- is tested independently, against two late-time probes:
+weak gravitational lensing (cosmic shear: KiDS-1000 and KiDS-Legacy) and
+redshift-space galaxy clustering (BOSS DR12). Both probes report their results as
+derived quantities: KiDS publishes $S_8\equiv\sigma_8\sqrt{\Omega_m/0.3}$, and BOSS
 publishes $f\sigma_8(z)$, the growth rate times the amplitude of clustering.
 
 Both derived quantities share a hidden dependency that matters for a model
@@ -120,8 +121,9 @@ Chevallier--Polarski--Linder \citep{ChevallierPolarski2001,Linder2003}
 equation of state $w_0=\val{W0_d6}$, not $-1$) imports part of the $\Lambda$CDM
 background into the comparison itself.
 
-This paper re-does both measurements on the raw data products --- KiDS-1000
-$\xi_\pm(\theta)$ (Asgari et al.~2021 \citep{Asgari2021}) and BOSS DR12 power-spectrum multipoles
+This paper re-does both measurements on the raw data products --- the KiDS-1000
+and KiDS-Legacy $\xi_\pm(\theta)$ (Asgari et al.~2021 \citep{Asgari2021}; Wright et
+al.~2025 \citep{Wright2025}) and BOSS DR12 power-spectrum multipoles
 $P_0,P_2,P_4(k)$ (Beutler et al.~2017 \citep{Beutler2017}) --- applying the model-dependent
 deformation (Alcock--Paczynski for BOSS; the non-linear matter power spectrum
 template for KiDS) to the \emph{theory prediction}, never to the data. This
@@ -142,8 +144,9 @@ The two-sector construction, retired here, rested on
   \qquad \Omega_{m,\rm dyn}\equiv 1+w_0.
 \end{equation}
 $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ is a measured density fraction, fixed
-by the CMB-calibrated background. $\Omega_{m,\rm dyn}=1+w_0\approx0.160050$ is,
-by construction, minus the dark-energy equation of state --- an algebraic
+by the CMB-calibrated background. $\Omega_{m,\rm dyn}=1+w_0=\val{S_M_d6}$ is,
+by construction, one plus the dark-energy equation of state (the saturation
+$s_m$ of Paper~1) --- an algebraic
 identity of the background sector's $w_0=-T_R/M_V$, entering the Friedmann
 equations as an equation-of-state parameter, never as a density. Both
 quantities are dimensionless, so the subtraction is arithmetically well
@@ -154,7 +157,7 @@ explicitly that $\Omega_{m,\rm dyn}$ ``is NOT a matter density: it is the
 dynamical cold sector ($1+w_0$)'' in the same breath as summing it
 with $\Omega_{\phi\rm DM}$ to recover $\Omega_{m,\rm CMB}$ --- an internal
 inconsistency once both statements are read together. ($1+w_0$ is
-dimensionless and is, by construction, minus the dark-energy equation of
+dimensionless and is, by construction, one plus the dark-energy equation of
 state; the parenthetical gloss is ours, not the source comment's.)
 
 \subsection{Falsifiability is not evidence of existence}
@@ -230,7 +233,7 @@ once, at the CMB, and carried to every other probe fixed
 
 To make this principle falsifiable rather than rhetorical, we perform the
 following test (a design due to M.~Almeida): the three probes --- Planck
-CMB, KiDS-1000 shear, BOSS DR12 clustering --- are combined with the shared
+CMB, KiDS-Legacy shear, DESI DR2 BAO --- are combined with the shared
 amplitude free, yielding the ingredient set the \emph{combination} prefers.
 That same ingredient set is then evaluated against each probe
 \emph{individually}, without re-fitting. Transporting parameters from a joint
@@ -243,9 +246,11 @@ probe's own statistical uncertainty predicts:
   \chi^2\big(\text{joint ingredients}\big) - \chi^2\big(\text{probe-fitted ingredients}\big).
 \end{equation}
 For \SSEE{}, $\Delta\chi^2\equiv0$ by construction on every background
-parameter except $A_s$: there is no ingredient to transport, because none of
-$\omega_b,\omega_c,h,n_s,w_0,w_a$ are free to begin with. For $\Lambda$CDM,
-$\Delta\chi^2>0$ is measured, not assumed. Results in
+parameter: there is no ingredient to transport, because none of
+$\omega_b,\omega_c,h,n_s,w_0,w_a$ are free to begin with. The one transported
+quantity is $A_s$, taken from the CMB; for the CMB that is its own fit, BAO does not
+depend on it, and for the shear the cost is measured (\S\ref{sec:legacy}). For
+$\Lambda$CDM, $\Delta\chi^2>0$ is measured, not assumed. Results in
 Table~\ref{tab:r7}.
 
 \begin{table}[h]
@@ -261,7 +266,7 @@ loss $\val{perdida_lcdm_conj}$ for $\val{gl_lcdm_conj}$ degrees of freedom
  & CMB (Planck) & shear (KiDS-Legacy) & BAO (DESI DR2) \\
 \midrule
 $\Lambda$CDM, $\Delta\chi^2$ & $\val{costo_cmb_conj}$ & $\val{costo_kids_conj}$ & $\val{costo_bao_conj}$ \\
-\SSEE{}, $\Delta\chi^2$ & 0 (by construction) & 0 (by construction) & 0 (by construction) \\
+\SSEE{}, $\Delta\chi^2$ & 0 (own fit) & $\val{dchi2_leg_unif_libre}$ (sampling noise) & 0 (no $A_s$) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -277,7 +282,7 @@ matter power spectrum (Mead et al.~2015 \citep{Mead2015}) with the one-parameter
 feedback prescription used in the official KiDS-1000 analysis, and the
 official redshift-distribution SOM covariance and $\delta_c$ priors. The
 pipeline reproduces the published maximum-posterior likelihood to $\val{k1000_control_pct}\%$
-(negative control: $\chi^2=\val{k1000_control_chi2}$ vs.\ \val{chi2_k1000_publicado} official, the latter from the
+(control: $\chi^2=\val{k1000_control_chi2}$ vs.\ \val{chi2_k1000_publicado} official, the latter from the
 public nested-sampling chain, MultiNest \citep{Feroz2009}).
 
 Eight nuisance parameters (baryon feedback amplitude, intrinsic alignment
@@ -353,8 +358,8 @@ they lower it by $\val{dchi2_k1000}$, and $p(\Delta\chi^2\ge \val{dchi2_k1000}\,
 The extra background freedom of $\Lambda$CDM is therefore not merely
 unnecessary on this dataset --- it is statistically indistinguishable from
 absent. Penalising it explicitly gives $\Delta\mathrm{AIC}=\val{dAIC_k1000}$ and
-$\Delta\mathrm{BIC}=\val{dBIC_k1000}$, both favouring \SSEE{}, the latter in the
-\emph{strong} range on the Jeffreys scale.
+$\Delta\mathrm{BIC}=\val{dBIC_k1000}$, both favouring \SSEE{}, the latter
+\emph{very strong} on the scale of \citet{KassRaftery1995}.
 
 The derived amplitudes are then a consequence rather than the test:
 $\Delta S_8 = \val{dS8_k1000}$, under a tenth of either error bar. Against the
@@ -496,7 +501,7 @@ the same way: the nuisance parameters do not move to compensate. Had the fixed
 $A_s$ been wrong, $\log T_{\rm AGN}$ and $A_{\rm scale}$ would have run to cover
 the gap; they shift by $\val{leg_dlogTAGN}$ and $\val{leg_dAscale}$, well inside their own posterior
 widths ($\val{leg_logTAGN_s}$ and $\val{leg_Ascale_s}$). We note for completeness that $\Delta\chi^2$ is formally negative
-($-0.365$), which cannot be a true improvement --- the fixed-parameter space is
+($\val{dchi2_leg_unif_libre}$), which cannot be a true improvement --- the fixed-parameter space is
 contained in the free one --- and measures the MCMC sampling noise: eight
 dimensions are explored more efficiently than nine. The honest statement is
 that the cost is indistinguishable from zero, not that fixing improves the fit.
@@ -508,7 +513,7 @@ The official Legacy $\xi_\pm$ posterior, computed from its own published chain
 as $\sigma_8\sqrt{\Omega_m/0.3}$, gives $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. Two caveats bound
 what this establishes: the agreement in $S_8$ and the $\val{logA_leg_vs_cmb}\sigma$ in $\log A$
 are the same fact in two variables and do not compound, and the $\pm\val{S8_legacy_dato_sigma}$
-width means any prediction between $0.809$ and $0.844$ would have agreed. The
+width means any prediction within one such width of the measured value would have agreed. The
 test is not sharp. What it does establish is that the growth sector takes its
 amplitude from the CMB and describes cosmic shear without adjusting anything.
 
@@ -610,13 +615,12 @@ other growth probe: with the background held fixed --- algebraically in
 galaxy clustering prefer, and at what $\chi^2$? The test is the $\chi^2$ over
 the 222 multipole points, \emph{not} $f\sigma_8$: $f\sigma_8$ is an output of
 the fit, and therefore a product of the model, the same lesson $S_8$ taught in
-\S\ref{sec:retraction}.
+\S\ref{sec:s8}.
 
 Both models carry identical freedom here: one shared amplitude
 $\ln(10^{10}A_s)$ plus $(b_1,b_2,b_s,\alpha_0,\alpha_2,{\rm SN_0})$ per
 $(z\text{-bin},\text{hemisphere})$, $37$ in total, of which the $18$ that
-enter the model linearly are marginalised in closed form
-(\S\ref{sec:boss-method}) and $19$ are sampled. So $\Delta k=0$: this
+enter the model linearly are marginalised analytically and $19$ are sampled. So $\Delta k=0$: this
 comparison carries no parsimony credit in either direction. \SSEE{}'s
 advantage in parameter count lives at the CMB ($k=2$ against $6$) and in the
 shear likelihood ($9$ against $13$), not here. What this run answers is
