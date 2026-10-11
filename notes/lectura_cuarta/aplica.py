@@ -76,7 +76,10 @@ def main():
                 v = lee(fu)
             except Exception as e:
                 rep["sin_fuente"].append({**x, "error": str(e)}); continue
-            s = format(v, fmt) if not isinstance(v, str) else v
+            try:
+                s = format(v, fmt) if not isinstance(v, str) else v
+            except (ValueError, TypeError):
+                rep["sin_fuente"].append({**x, "error": f"formato {fmt!r}"}); continue
             if s.lstrip("-") != num.lstrip("-") and not x.get("nuevo"):
                 rep["no_casa"].append({**x, "log_da": s}); continue
             if nom in vals and vals[nom]["fuente"] != fu:

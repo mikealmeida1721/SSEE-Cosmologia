@@ -733,3 +733,4 @@ p2_w0wa_lcdm_min: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26
 p2_w0wa_lcdm_max: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.lcdm_sigma", formato: ".1f"}
 p2_w0wa_ssee_ec28_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.ssee_sigma", formato: ".1f"}
 p2_w0wa_ssee_ec27_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.ssee_sigma", formato: ".1f"}
+# cuarta lectura P3 (2026-10-10, notes/lectura_cuarta/P3.yaml)

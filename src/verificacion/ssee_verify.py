@@ -7481,7 +7481,9 @@ try:
              # y su versión UV son el funcional de apantallamiento de P10, no la acción de EO
              re.compile(r"c_s\^2(?:\\!)?=(?:\\!)?1\$?\s*\((?:canonical|in the IR)"),
              re.compile(r"X/\\KALz\$\s*\(gradient-stable"),
-             re.compile(r"equal to \$1\$ in the IR limit")]
+             re.compile(r"equal to \$1\$ in the IR limit"),
+             # el H con unidades es H0_GLOBAL; H0_ALG es el número puro (mismo valor a 5 dec.)
+             re.compile(r"(?:H_0\s*=|\(1-f_\{\\rm screen\}\)\s*=)\s*\\val\{H0_ALG")]
 
     def _malos55e(_tx):
         _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
@@ -7509,6 +7511,8 @@ try:
           and len(_malos55e("Papers~7--10: $c_s^2\\!=\\!1$ (canonical); "
                             "$K(X)=X/\\KALz$ (gradient-stable, $c_s^2=1$)")) == 2
           and not _malos55e("ghost condensate with $c_s^2=\\val{cs2_condensado_d6}$")
+          and len(_malos55e("$H_0=\\val{H0_ALG_d5}$ km/s")) == 1
+          and not _malos55e("$3(\\varphi+\\pi)^2 = M_v\\times\\Omega = \\val{H0_ALG_d5}$")
           and not _malos55e(
               "$f_{\\rm scr}^{\\rm IR}=s_K^{\\rm IR}/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ Mirror Ratio"),
           "control R53")
