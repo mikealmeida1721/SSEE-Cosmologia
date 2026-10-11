@@ -177,6 +177,19 @@ stages:
         cache: false
     - results/logs/p5_IS_perturbations.log:
         cache: false
+  p5_estabilidad_IS_completa:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p05_IS/estabilidad_IS_completa.py > 
+      results/logs/p5_estabilidad_IS_completa.log 2>&1
+    deps:
+    - src/p05_IS/estabilidad_IS_completa.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    outs:
+    - results/logs/p5_estabilidad_IS_completa.json:
+        cache: false
+    - results/logs/p5_estabilidad_IS_completa.log:
+        cache: false
   kids_publicados:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_publicados.py
