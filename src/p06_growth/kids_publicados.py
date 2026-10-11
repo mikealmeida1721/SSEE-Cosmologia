@@ -168,6 +168,17 @@ logA = dict(
     k1000_vs_b1=(b1["logA"] - la) / math.hypot(sla, b1["logA_sigma"]),
     entre_entregas=(_pr["libre"]["logA"] - la) / math.hypot(sla, _pr["libre"]["logA_sigma"]))
 
+# P6 (§ KiDS-Legacy) citaba a mano «Ω_m 2.00 % más bajo que el de Planck» y «A_s
+# 1.88 % más alto» (auditoría del lector externo, 2026-10-11). El fondo Planck es
+# el que usa la cadena lcdmfijo.
+# ORIGEN: PLANCK_BG de src/p06_growth/cobaya_kids_legacy.py (ombh2 0.02237, omch2 0.1200,
+# h 0.6736, mnu 0.06 eV; ω_ν = Σm_ν/93.14 eV, PDG)
+import ssee_core as _S  # noqa: E402
+OM_PLANCK_BG = (0.02237 + 0.1200 + 0.06 / 93.14) / 0.6736**2
+logA["Om_planck_bg"] = OM_PLANCK_BG
+logA["Om_ssee_bajo_planck_bg_pct"] = 100 * (1 - _S.OMEGA_M_TOTAL / OM_PLANCK_BG)
+logA["As_legacy_sobre_planck_bg_pct"] = 100 * (math.exp(leg_ssee - leg_lcdm) - 1)
+
 
 def _t(a, sa, b, sb):
     return abs(a - b) / math.hypot(sa, sb)

@@ -73,7 +73,8 @@ def _dist(p):
     return dict(chi2=c2, sigma=float(_st.norm.isf(_st.chi2.sf(c2, 2) / 2)))
 
 
-dist_w0wa = dict(ssee=_dist([_S.W0, _S.WA]), lcdm=_dist([-1.0, 0.0]))
+dist_w0wa = dict(ssee=_dist([_S.W0, _S.WA]), lcdm=_dist([-1.0, 0.0]),
+                 rho=float(_C[0, 1] / np.sqrt(_C[0, 0] * _C[1, 1])))  # P2 lo citaba a mano (2026-10-11)
 out = dict(fecha=str(__import__("datetime").date.today()), cadenas=f"{BASE}/c1..c4",
            filas_tras_corte=int(len(d)), corte="30 % inicial por cadena",
            posteriores=res, tensiones=tens, distancia_w0wa=dist_w0wa, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))

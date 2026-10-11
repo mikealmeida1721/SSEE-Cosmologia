@@ -98,6 +98,18 @@ ALGEBRA = {
     "Yp_ssee":        ("0.2471+0.96*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — ancla Planck 2018; 0.96 — dY_p/d(omega_b) de AlterBBN (Pisanti 2008)
     "Omega_b_alg":    ("OMEGA_B_H2/(H0_ALG/100)**2", "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"),
     "Omega_b_alg_cerrada": ("1e4*(PI-PHI)/(27*OMEGA**6)", "la misma en forma cerrada (control)"),
+    # auditoría del lector externo (2026-10-11): cifras que P1/P2/P5/P8 tecleaban a mano
+    "hglob_residuo_rel": ("(H0_GLOBAL-H0_ALG)/H0_ALG", "residuo relativo de H_glob frente al numero puro (P1, P2)"),
+    "hglob_planck_sig": ("abs(H0_GLOBAL-67.36)/math.hypot(SIG_H0_GLOBAL,0.54)", "H_glob (con su sigma) frente al H0 de Planck, errores combinados (P5)"),   # ORIGEN-VALOR: 67.36, 0.54 — Planck 2018 VI Tabla 2
+    "k_bao_c_H0":     ("0.1*299792.458/H0_GLOBAL", "k = 0.1/Mpc en unidades de H0/c (P5)"),   # ORIGEN-VALOR: 0.1 — escala BAO de diseño; 299792.458 — c en km/s
+    "frac_de_z19":    ("(1-OMEGA_M_TOTAL)*20**(3*(1+W0+WA))*math.exp(-3*WA*19/20)/(OMEGA_M_TOTAL*20**3+(1-OMEGA_M_TOTAL)*20**(3*(1+W0+WA))*math.exp(-3*WA*19/20))", "fraccion de energia oscura en z=19, CPL (P5)"),
+    "ck_H0_AU":       ("299792.458/(H0_GLOBAL*4.84813681109536e-12)", "c k/H0 a k = 1/UA (P8)"),   # ORIGEN-VALOR: 4.84813681109536e-12 — 1 UA en Mpc (IAU 2012)
+    "quinta_fuerza_AU": ("(H0_GLOBAL*4.84813681109536e-12/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)", "F_phi/F_N cuasi-estatico a 1 UA (P8 eq. fifth_force_qs)"),
+    "quinta_fuerza_margen": ("1e-5/((H0_GLOBAL*4.84813681109536e-12/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL))", "margen frente a la cota de Cassini 1e-5 (P8)"),   # ORIGEN-VALOR: 1e-5 — Cassini (Will 2014)
+    "H_glob_IR_aditiva":     ("H0_SH0ES/(1+F_SCREEN_IR)", "forma aditiva del apantallamiento IR (P9 eq. H0local_add)"),
+    "H_glob_IR_aditiva_res": ("H0_SH0ES/(1+F_SCREEN_IR)-H0_ALG", "su residuo frente al numero puro (P9)"),
+    "H_glob_IR_aditiva_sig": ("(H0_SH0ES/(1+F_SCREEN_IR)-H0_ALG)/(SIG_H0_SH0ES*(1-F_SCREEN_IR))", "ese residuo en unidades del sigma SH0ES propagado (P9)"),
+    "H_glob_IR_aditiva_dif": ("H0_SH0ES/(1+F_SCREEN_IR)-H0_SH0ES*(1-F_SCREEN_IR)", "aditiva menos multiplicativa, km/s/Mpc (P9)"),
     "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
 }
 

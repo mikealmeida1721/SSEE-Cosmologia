@@ -582,11 +582,17 @@ else:
     print(f"    γ_ΛCDM = {gamma_LCDM_val:.4f}  (expected 0.55)")
     # Growth-rate comparison table (Paper 5 Table tab:growth)
     print(f"\n  Growth-rate table  z | Ω_m^SSEE(a) | f_SSEE | f_ΛCDM | Δf/f")
+    # 2026-10-11: interpolado en el z exacto (antes, punto de rejilla más cercano:
+    # Ω_m(0.5) salía 0.5877 en vez de 0.5894) y escrito al log para que la tabla
+    # vaya por \val (auditoría del lector externo, 2026-10-10).
+    _orden = np.argsort(z_g)
+    _Om_g = Omm_CMB / (H_arr_s**2 * a_g**3)
+    tabla_f = []
     for _zt in (1.0, 0.5, 0.0):
-        _i = np.argmin(np.abs(z_g - _zt))
-        _Oma = Omm_CMB / (H_arr_s[_i]**2 * a_g[_i]**3)
-        _df = (f_ssee[_i] - f_lcdm[_i]) / f_lcdm[_i]
-        print(f"    z={_zt:.1f}  Om={_Oma:.4f}  f_S={f_ssee[_i]:.4f}  f_L={f_lcdm[_i]:.4f}  Δf/f={_df*100:+.1f}%")
+        _Oma, _fS, _fL = (float(np.interp(_zt, z_g[_orden], _v[_orden])) for _v in (_Om_g, f_ssee, f_lcdm))
+        _df = (_fS - _fL) / _fL
+        tabla_f.append(dict(z=_zt, Om_ssee=_Oma, f_ssee=_fS, f_lcdm=_fL, df_pct=100*_df))
+        print(f"    z={_zt:.1f}  Om={_Oma:.4f}  f_S={_fS:.4f}  f_L={_fL:.4f}  Δf/f={_df*100:+.1f}%")
     print(f"\n  σ₈  (Planck 2018 ΛCDM)  = {sigma8_LCDM:.4f} ± {sigma8_LCDM_err:.4f}")
     print(f"  σ₈  (SSEE IS)           = {sigma8_SSEE:.4f} ± {sigma8_SSEE_err:.4f}")
     print(f"\n  Ω_m,CMB (ω_m-direct)    = {Omm_CMB:.6f}")
@@ -615,6 +621,7 @@ else:
             sigma8_SSEE=float(sigma8_SSEE), sigma8_SSEE_sigma=float(sigma8_SSEE_err),
             S8_SSEE=float(S8_SSEE_val), S8_SSEE_sigma=float(S8_SSEE_err_val),
             fsigma8_z05_SSEE=float(fσ8_SSEE_05), fsigma8_z05_LCDM=float(fσ8_LCDM_05),
+            tabla_f=tabla_f,
             nota='sigma8 con A_s FIJADO a Planck (techo); no es el S8 de Paper 6.'),
             __file__), _fh, indent=1)
     print(f"    -> log: {_log3}")

@@ -40,6 +40,13 @@ stages:
   valores_tex:
     cmd: .venv/bin/python3 src/valores_tex.py
     deps:
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - results/logs/deltac_spherical_collapse.json
+    - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
+    - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+    - results/logs/growth_2026-07/base_sin_particula.json
+    - results/logs/kids1000_control.json
+    - results/logs/p5_IS_perturbations_Q2.json
     - results/logs/lcdm_conjunta.json
     - src/valores_tex.py
     - manuscript/valores.yaml
