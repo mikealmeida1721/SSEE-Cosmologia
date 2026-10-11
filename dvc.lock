@@ -26,8 +26,8 @@ stages:
       size: 4435
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
-      md5: c5d1910b632d351fcc2d9da213e3697b
-      size: 4270
+      md5: bf2e377bfb5052bc5a797ec7311de0f5
+      size: 5207
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -39,8 +39,8 @@ stages:
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 97d699f40f2291cfb82bd7d27d3cf422
-      size: 3827
+      md5: 5078d85c578a336e57c074d78ad1f293
+      size: 4017
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
       src/p06_growth/s8_desde_b1.py

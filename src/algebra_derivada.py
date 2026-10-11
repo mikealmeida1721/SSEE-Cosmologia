@@ -116,6 +116,10 @@ ALGEBRA = {
     "c_cruce_coef":   ("-WA/(1+W0)", "c(a)=coef*(1-a): fraccion viscosa que reproduce CPL (P1)"),
     "c_cruce_z1":     ("-WA/(1+W0)*0.5", "esa fraccion en z=1 (P1)"),
     "w0_mas_wa":      ("W0+WA", "w(a->0) de CPL (P1)"),
+    # quinta lectura P2 (2026-10-11): cifras que P2 tecleaba a mano
+    "wb_bbn_sig":     ("abs(OMEGA_B_H2-0.02218)/0.00055", "omega_b algebraico frente al prior BBN de DESI (P2)"),   # ORIGEN-VALOR: 0.02218, 0.00055 — Schöneberg 2024 (prior BBN de DESI DR2)
+    "w0_cmb_solo_sig": ("(W0+1.57)/0.50", "w0 de SSEE frente al w constante de Planck CMB solo, error superior (P2)"),   # ORIGEN-VALOR: -1.57 +0.50 — Planck 2018 VI, w constante, TT,TE,EE+lowE+lensing
+    "h_glob":         ("H0_GLOBAL/100", "h adimensional del H global (P3)"),
     "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
 }
 

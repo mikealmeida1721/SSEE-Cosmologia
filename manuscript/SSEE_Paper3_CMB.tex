@@ -49,7 +49,7 @@ $\{A_s,\tau\}$ are treated as $k=2$ in the BIC analysis below (\textit{``On the 
 conservative accounting policy established in Paper~1 \S1.3.
 Previous work demonstrated that the SSEE dark-energy equation of state
 ($w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$) fits DESI~DR2 BAO data
-at $\val{p2_w0wa_ssee_ec26}\sigma$ (DESI+CMB+Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) \citep{DESI_DR2}, and galaxy-cluster dynamical masses in general relativity at the level of $\Lambda$CDM ($\val{clz_rgig_sig}\sigma$ vs.\ $\val{clz_lcig_sig}\sigma$, $\val{clz_rgig_N}$ systems; \citealt{Zhang2026}).
+at $\val{p2_w0wa_ssee_ec26}\sigma$ (DESI+CMB+Pantheon+; up to $\val{p2_w0wa_ssee_ec27_d1}\sigma$ across the other SN compilations) \citep{DESI_DR2}, and galaxy-cluster dynamical masses in general relativity at the level of $\Lambda$CDM ($\val{clz_rgig_sig}\sigma$ vs.\ $\val{clz_lcig_sig}\sigma$, $\val{clz_rgig_N}$ systems; \citealt{Zhang2026}).
 Here we show that the CMB matter density is fixed \emph{forward} by the SSEE
 algebra, with no factor relating it to the saturation $s_m$: the physical observable
 is $\omega_m=\omega_b+\omega_c+\omega_\nu$, where $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$
@@ -58,7 +58,7 @@ and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ are forward ide
 \begin{equation*}
   \Omega_{m,\mathrm{CMB}}
   = \frac{\omega_m}{h^2}
-  = \frac{\val{OMEGA_M_H2_d5}}{0.6796^2} = 0.3089,
+  = \frac{\val{OMEGA_M_H2_d5}}{\val{h_glob_d4}^2} = \val{OMEGA_M_TOTAL_d4},
 \end{equation*}
 within $\val{om_planck_sig}\sigma$ of the Planck~2018 value ($0.3153\pm0.0073$). There is a
 single matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the saturation
@@ -73,9 +73,9 @@ parameters (with $H_0$, $\omega_b$, $\omega_c$ and $n_s$ algebraically fixed) ag
 the $k=6$ $\Lambda$CDM baseline, the two models reach statistically indistinguishable
 best fits (minimum $\chi^2_{\rm SSEE}=\val{b1_chi2_ssee}$ vs.\ $\chi^2_{\Lambda\rm CDM}=\val{b1_chi2_lcdm}$ over
 $N=\val{b1_N}$ data points, $\Delta\chi^2_{\rm min}=\val{b1_dchi2}$), while the parameter-count economy
-yields $\Delta\mathrm{BIC}=\val{b1_dBIC}$, decisively favouring SSEE on the Jeffreys scale.
-(A \texttt{plik\_lite} point-estimate cross-check gives a more conservative
-$\Delta\mathrm{BIC}=\val{lite_dBIC}$.) The $\Delta\mathrm{BIC}$ is driven by parsimony, not by
+yields $\Delta\mathrm{BIC}=\val{b1_dBIC}$, very strong evidence for SSEE on the scale of
+\citet{KassRaftery1995}. (A \texttt{plik\_lite} cross-check, with $\{A_s,\tau\}$ also
+minimized, gives a more conservative $\Delta\mathrm{BIC}=\val{lite_dBIC}$.) The $\Delta\mathrm{BIC}$ is driven by parsimony, not by
 fit quality.
 SSEE is not falsified by the Planck~2018 CMB power spectra.
 \end{abstract}
@@ -130,8 +130,8 @@ $K_v$     & $\varphi+\pi+\Omega$ & $\val{K_V_d5}\ldots$ & Structural constraint 
 $T_r$     & $3(\varphi+\beta)$ & $\val{T_R_d5}\ldots$ & 3D saturation horizon \\
 $M_v$     & $\varphi+\pi+K_v$ & $\val{M_V_d5}\ldots$ & Maximal dimensional invariant \\
 \midrule
-$\mathrm{AURA}$ & $\varphi+\beta$ & $\val{AURA_d5}\ldots$ & Dimensional limit 1 \\
-$\mathrm{MIRA}$ & $\mathrm{AURA}/2$ & $\val{MIRA_d5}\ldots$ & Observational frequency \\
+$\mathrm{AURA}$ & $\varphi+\beta$ & $\val{AURA_d5}\ldots$ & Resonance limit \\
+$\mathrm{MIRA}$ & $\mathrm{AURA}/2$ & $\val{MIRA_d5}\ldots$ & Screening amplitude (Paper~9) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -210,12 +210,12 @@ with no factor relating it to the saturation $s_m$:
   \omega_c = \mathrm{KAL}_0\,\omega_b\,n_s = \val{OMEGA_C_H2_d6},
   \label{eq:omega_m_direct}
 \end{equation}
-with $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and $\omega_\nu=\Sigma m_\nu^{\rm active}/93.14=0.00074$
+with $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and $\omega_\nu=\Sigma m_\nu^{\rm active}/93.14=\val{OMEGA_NU_H2_d6}$
 (all forward identities of Paper~1). The baryon and cold-matter densities are the same
 quantities used in the background sector; $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ lies
 $\val{wc_ns_sigma_abs}\sigma$ from the Planck value. Hence
 \begin{equation}
-  \Omega_{m,\mathrm{CMB}} = \frac{\omega_m}{h^2} = \frac{\val{OMEGA_M_H2_d5}}{0.6796^2} = 0.3089
+  \Omega_{m,\mathrm{CMB}} = \frac{\omega_m}{h^2} = \frac{\val{OMEGA_M_H2_d5}}{\val{h_glob_d4}^2} = \val{OMEGA_M_TOTAL_d4}
   \qquad (H_0^{\rm glob} = \val{H0_GLOBAL_d5}).
 \end{equation}
 
@@ -257,11 +257,11 @@ The CMB matter density is a closed-form forward prediction:
 \begin{equation}
   \Omega_{m,\mathrm{CMB}} = \frac{\omega_m}{h^2}
     = \frac{\omega_b + \mathrm{KAL}_0\,\omega_b\,n_s + \omega_\nu}{h^2}
-    = 0.3089,
+    = \val{OMEGA_M_TOTAL_d4},
   \label{eq:om_cmb_algebraic}
 \end{equation}
 with every ingredient an algebraic identity of Paper~1. The coefficient
-$\mathrm{KAL}_0=\beta+\pi\approx5.521$ that sets
+$\mathrm{KAL}_0=\beta+\pi=\val{KAL0_d6}$ that sets
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ is fixed algebraically before any CMB
 data are consulted; no quantity is adjusted to match the measurement.
 Compared with $\Omega_m^{\mathrm{Planck}}=0.3153\pm0.0073$
@@ -273,10 +273,10 @@ Compared with $\Omega_m^{\mathrm{Planck}}=0.3153\pm0.0073$
 
 
 \paragraph{Falsifiability.}
-SSEE predicts a \emph{single} matter density, $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, at every
-redshift and for every probe. A weak-lensing or BAO analysis that required a
-background matter density significantly different from $0.3089$ --- in either
-direction, at any redshift --- would falsify the framework.
+SSEE predicts a \emph{single} present-day matter density, $\Omega_m=\val{OMEGA_M_TOTAL_d6}$
+(at $H_0^{\rm glob}$), the same for every probe. A weak-lensing or BAO analysis that
+required a background matter density significantly different from it --- in either
+direction --- would falsify the framework.
 
 
 \section{CAMB Implementation and Results}
@@ -297,8 +297,8 @@ We use CAMB v1.6.6 \citep{Seljak1996,Lewis2000,Howlett2012} with the following i
 Parameter & Value & Source \\
 \midrule
 $H_0$ [km/s/Mpc] & \val{H0_GLOBAL_d6} & $H_{\rm SH0ES}(1-f_{\rm screen})$ (Postulate~D, Paper~1); target $3(\varphi+\pi)^2$ \\
-$\Omega_b h^2$ & 0.02237 & Planck 2018 prior \\
-$\Omega_{m,\mathrm{CMB}}$ & 0.3089 & $\omega_m/h^2$ (forward) \\
+$\Omega_b h^2$ & \val{OMEGA_B_H2_d6} & $(\pi-\varphi)/[3(\varphi+\pi)^2]$ (Paper~4) \\
+$\Omega_c h^2$ & \val{OMEGA_C_H2_d6} & $\mathrm{KAL}_0\,\omega_b\,n_s$ (forward) \\
 $\sum m_\nu^{\rm active}$ [eV] & \val{SUM_MNU_EV_d6} & SSEE algebraic (Paper~4) \\
 $w_0$ & $\val{W0_d6}$ & $-T_r/M_v$ \\
 $w_a$ & $\val{WA_d6}$ & $-P_{sc}/I_g$ \\
@@ -318,20 +318,22 @@ $\tau$ & 0.054 & Planck 2018\footnotemark{} \\
   \texttt{plik\_lite} TTTEEE + lowT + lowE, with the remaining background
   fixed by the algebra, moves $\tau$ to $\val{tau_aj_ssee}$ and $\ln(10^{10}A_s)$ to
   $\val{logA_aj_ssee}$. The recovered $\tau$ sits
-  within $0.1\sigma$ of the Phase-B posterior $\val{b1_tau_ssee}\pm\val{b1_tau_ssee_s}$, so the fiducial
+  inside the Phase-B posterior $\val{b1_tau_ssee}\pm\val{b1_tau_ssee_s}$, so the fiducial
   choice is doing no work.}
 
-The baryon density is fixed to the Planck~2018 prior $\Omega_b h^2 = 0.02237$.
-The SSEE algebraic value derived in Paper~4, $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2]
-= \val{OMEGA_B_H2_d6}$, agrees with this prior at $0.3\sigma$ ($0.02237\pm0.00015$); the $0.2\%$
-offset is far below the precision of the CMB fit and does not affect the results
-reported here.
+The baryon density is the SSEE algebraic value of Paper~4,
+$\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$, which lies
+$\val{wb_planck_sig}\sigma$ from the Planck~2018 value $0.02237\pm0.00015$; each model
+runs with its own ingredients (the \LCDM\ reference uses the Planck~2018 parameters,
+with $\sum m_\nu=0.06$\,eV). An earlier version of this table listed the Planck value
+for \SSEE; the computation already used the algebraic one.
 
 The dark energy is implemented via the PPF (Parameterized Post-Friedmann)
 equation of state $w(a)=w_0+(1-a)w_a$ \citep{Chevallier2001,Linder2003,Fang2008}.
-Although $w_0+w_a=-1.510<-1$, this does not imply a phantom Big Rip:
-CPL is a local parametrisation only, and the \SSEE\ energy density saturates
-at the finite $T_r/M_v$ boundary at $a\to\infty$ (Paper~1 \S3.4 \citep{AlmeidaSSEE2026a}).
+Although $w_0+w_a=\val{w0_mas_wa}<-1$, this does not imply a phantom Big Rip:
+CPL is a local parametrisation only, its extrapolation to $a\to\infty$ is not a
+prediction of the model, and the stability of the field is that of the effective
+action of Paper~7 \citep{AlmeidaSSEE2026a}.
 We compute lensed TT, TE, and EE power spectra to $\ell_{\max}=2500$,
 with \texttt{lens\_potential\_accuracy=2} for the lensing potential.
 Lensing reconstruction data (Planck 2018 $C_L^{\phi\phi}$) were also evaluated
@@ -339,21 +341,21 @@ alongside temperature and polarisation.
 
 \subsection{Sound horizon}
 
-With $\Omega_{m,\mathrm{CMB}}=0.3089$ and the parameters above, CAMB yields:
+With $\omega_b$, $\omega_c$ and $\sum m_\nu$ of Table~\ref{tab:camb_params}, CAMB yields:
 \begin{equation}
 r_d^{\mathrm{SSEE}} = \val{p2_lyaB_rd} \;\mathrm{Mpc},
 \end{equation}
-in agreement with the Planck~2018 directly measured value
-$r_d^{\mathrm{obs}}=147.09\pm0.26$ Mpc \citep{Planck2018} at $\val{p3_rd_sig_post}\sigma$.
+in agreement with the value Planck~2018 derives under \LCDM,
+$r_d=147.09\pm0.26$ Mpc \citep{Planck2018}, at $\val{p3_rd_sig_post}\sigma$.
 The acoustic scale is likewise consistent: $100\theta_*=\val{p3_th100_post}$ (at the MCMC
 posterior $H_0=\val{h0_p2}$), $\val{p3_th_sig_post}\sigma$ from the Planck value
 % ORIGEN-VALOR: 6.66 — tension theta* HISTORICA con el sector frio 1+w0=0.160 metido en E(z) (bug V-L4-DESI, retirado 2026-07-09); se nombra como artefacto, no como resultado
 $1.04109\pm0.00030$ --- the earlier $6.66\sigma$ ``tension'' was an artefact of
-the cold sector $1+w_0=\val{S_M_d6}$ misplaced in $E(z)$, removed once the total
+the saturation $1+w_0=\val{S_M_d6}$ misplaced in $E(z)$, removed once the total
 $\Omega_{m,\mathrm{CMB}}$ sets the geometry.
 No Folding Symmetry multiplier and no matter factor are applied; the
-$\omega_m$-direct CMB matter density ($\Omega_{m,\mathrm{CMB}}=0.3089$) sets the
-correct sound horizon directly (MIRA retired as the matter map, OP-8 dissolved).
+$\omega_m$-direct densities set the sound horizon directly (MIRA retired as the
+matter map, OP-8 dissolved).
 
 \subsection{Acoustic peak positions}
 
@@ -492,23 +494,19 @@ Combined$^{\dagger}$ & \val{p3_N_tot} & \val{p3_chi2r_tot_ssee} & \val{p3_chi2r_
 {\footnotesize $^{\dagger}$Combined under independence approximation (upper bound; see \S\ref{sec:bic}).}
 \end{table}
 
-The TE and EE spectra show the smallest discrepancies ($|\Delta\chi^2_r|\le0.001$
-each), indicating that SSEE reproduces the polarization anisotropies
-almost identically to $\Lambda$CDM.
+The TE and EE spectra agree with \LCDM\ to the third decimal
+($\Delta\chi^2_r=\val{p3_dchi2r_TE}$ and $\val{p3_dchi2r_EE}$).
 TT is marginally better than $\Lambda$CDM ($\Delta\chi^2_r=\val{p3_dchi2r_TT_d4}$).
 In the lensing potential sector (PP, Fig.~\ref{fig:pp}), SSEE achieves
 $\chi^2_r=\val{p3_chi2r_PP_ssee}$ vs.\ $\val{p3_chi2r_PP_lcdm}$ for $\Lambda$CDM --- slightly \emph{better} agreement
 with the \val{p3_N_PP} Planck MV bandpowers, both $\chi^2_r<1$ indicating a good fit.
-All residuals are consistent with a non-parametric model.
 
 \subsection{Interpretation of residuals}
 
-The excess $\Delta\chi^2_r\lesssim0.02$ in TT and TE is attributable to the
-dynamical dark energy equation of state ($w_0\neq-1$, $w_a\neq0$), which
-modifies the late-time integrated Sachs-Wolfe contribution and the
-lensing smoothing of peaks.
-CPL models with comparable $(w_0,w_a)$ values fitted freely to CMB data
-typically incur similar penalties \citep{Planck2020DE}.
+There is no excess to explain: the dynamical equation of state ($w_0\neq-1$,
+$w_a\neq0$) changes the late-time integrated Sachs--Wolfe contribution and the
+lensing smoothing of the peaks, but at the level of these spectra the effect is
+below the third decimal of $\chi^2_r$ (cf.\ the CPL fits of \citealt{Planck2020DE}).
 
 The SSEE model is therefore \textbf{not falsified} by the Planck 2018 CMB
 power spectra in TT, TE, or EE.
@@ -543,7 +541,7 @@ SSEE & 2 & \val{p3_chi2r_tot_ssee} & $\val{p3_dBIC_diag}$ \\
 Under the diagonal approximation, SSEE is favoured ($\Delta\mathrm{BIC}=\val{p3_dBIC_diag}$):
 the combined $\chi^2_r=\val{p3_chi2r_tot_ssee}$ matches $\Lambda$CDM's $\val{p3_chi2r_tot_lcdm}$, so the
 parameter-count term ($\Delta k\,\ln N=\val{p3_pen_dklnN}$) dominates and rewards SSEE's
-smaller parameter set. This diagonal cross-check is evaluated at the global
+smaller parameter set. This diagonal cross-check is evaluated at the
 global rate $H_0=\val{H0_GLOBAL_d5}$ ($\omega_m$-direct, $\Omega_{m,\rm CMB}=\val{OMEGA_M_TOTAL_d6}$),
 consistent with the canonical \texttt{plik\_lite} evaluation
 (\S\ref{sec:cobaya}), so the diagonal and full-covariance treatments are
@@ -557,7 +555,7 @@ In prior iterations, SSEE was described as a zero-parameter model ($k=0$) in the
 The $\chi^2_r$ comparisons in \S\ref{sec:stats} use a simplified Gaussian diagonal approximation over the released Planck 2018 bandpowers for qualitative comparison. A formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} is presented in the following subsection.
 
 \paragraph{Robustness under off-diagonal covariance.}
-The diagonal approximation neglects bin-to-bin covariances in the Planck 2018 bandpowers. Based on the Planck 2018 likelihood analysis \citep{PlanckLikelihood2020}, off-diagonal elements contribute corrections of $\lesssim5\%$ to $\chi^2$ for $\ell>30$. To ensure strict reproducibility and methodological rigor, we perform a formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} in the following subsection.
+The diagonal approximation neglects bin-to-bin covariances in the Planck 2018 bandpowers \citep{PlanckLikelihood2020}, so its $\chi^2$ is only indicative. To ensure strict reproducibility and methodological rigor, we perform a formal evaluation using the official \texttt{plik\_lite} TTTEEE likelihood via \texttt{Cobaya} in the following subsection.
 
 \subsection{Cobaya \texttt{plik\_lite} unified evaluation}
 \label{sec:cobaya}
@@ -565,24 +563,24 @@ The diagonal approximation neglects bin-to-bin covariances in the Planck 2018 ba
 To establish a definitive baseline for model comparison that fully accounts for off-diagonal covariances, we evaluate the SSEE framework against the official Planck 2018 \texttt{plik\_lite} TTTEEE likelihood via \texttt{clik}/\texttt{clipy} \citep{Torrado2021}, over its $613$ compressed bandpowers, together with the low-$\ell$ TT and EE likelihoods ($28+28$ bins), for $N=669$ data points in total. The three pieces are all included in the $\chi^2$ quoted below, so all three are counted in $N$.
 
 \paragraph{Parameter counting ($\omega_m$-direct).}
-All SSEE dark energy parameters ($w_0, w_a$), the spectral index $n_s$, and --- under the 2026 $\omega_m$-direct reframe --- the baryon and cold-matter densities $\omega_b=(\pi-\varphi)/(3\Omega^2)=\val{OMEGA_B_H2_d6}$ and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ are algebraically fixed. The dimensional anchor is the global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ of the screening cascade (Papers~9--10), whose value reproduces the dimensionless target $3(\varphi+\pi)^2$ to $4.2\times10^{-6}$; it is not fitted to the CMB; the amplitude $A_s$ and reionization $\tau$ are borrowed inputs, not derived from $\{\varphi,\pi\}$, and are \emph{fitted} here (earlier versions of this work held them at their external Planck values while still counting them as free; fitting them is the self-consistent choice and is what we do below). The two quantities the framework borrows rather than derives are therefore $A_s$ and $\tau$, and we conservatively assign $k=2=\{A_s,\tau\}$. The standard $\Lambda$CDM baseline has $k=6$: $H_0$, $\Omega_b h^2$, $\Omega_c h^2$, $n_s$, $A_s$, and $\tau$ \citep{Planck2018}, all six free in the CMB fit. (The companion full MCMC of \S\ref{sec:b1_mcmc} additionally lets $H_0$ \emph{float} as a validation check: the chain recovers $H_0=\val{b1v_H0}\pm\val{b1v_H0_s}$, $\val{b1v_d}\sigma$ from the anchor, so fixing it costs no fit quality and the $k=2$ count is sound.)
+All SSEE dark energy parameters ($w_0, w_a$), the spectral index $n_s$, and --- under the 2026 $\omega_m$-direct reframe --- the baryon and cold-matter densities $\omega_b=(\pi-\varphi)/(3\Omega^2)=\val{OMEGA_B_H2_d6}$ and $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ are algebraically fixed. The dimensional anchor is the global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ of the screening cascade (Papers~9--10), whose value reproduces the dimensionless target $3(\varphi+\pi)^2$ to $\val{p9_hglob_residuo}$~km\,s$^{-1}$\,Mpc$^{-1}$; it is not fitted to the CMB; the amplitude $A_s$ and reionization $\tau$ are borrowed inputs, not derived from $\{\varphi,\pi\}$, and are \emph{fitted} here (earlier versions of this work held them at their external Planck values while still counting them as free; fitting them is the self-consistent choice and is what we do below). The two quantities the framework borrows rather than derives are therefore $A_s$ and $\tau$, and we conservatively assign $k=2=\{A_s,\tau\}$. The standard $\Lambda$CDM baseline has $k=6$: $H_0$, $\Omega_b h^2$, $\Omega_c h^2$, $n_s$, $A_s$, and $\tau$ \citep{Planck2018}, all six free in the CMB fit. (The companion full MCMC of \S\ref{sec:b1_mcmc} additionally lets $H_0$ \emph{float} as a validation check: the chain recovers $H_0=\val{b1v_H0}\pm\val{b1v_H0_s}$, $\val{b1v_d}\sigma$ from the anchor, so fixing it costs no fit quality and the $k=2$ count is sound.)
 
-Evaluating at the single global anchor $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{perfil_h0_d}\sigma$ from the \texttt{plik\_lite}-preferred value $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$ when $\omega_b,\omega_c$ are held at their algebraic values and $A_s,\tau$ are profiled; $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$), the effective $\chi^2$ for SSEE is $\val{lite_chi2_ssee}$, compared to $\val{lite_chi2_lcdm}$ for $\Lambda$CDM (with its own $\sum m_\nu=0.06$~eV), with $\{A_s,\tau\}$ minimized in both. The two models therefore fit \emph{equally well}: $\Delta\chi^2 = -0.010$, which is statistically zero over the $N=669$ data points ($613$ \texttt{plik\_lite} TTTEEE bandpowers plus $28$ lowT and $28$ lowE, counted directly from the likelihood files).
+Evaluating at the single global anchor $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{perfil_h0_d}\sigma$ from the \texttt{plik\_lite}-preferred value $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$ when $\omega_b,\omega_c$ are held at their algebraic values and $A_s,\tau$ are profiled; $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$), the effective $\chi^2$ for SSEE is $\val{lite_chi2_ssee}$, compared to $\val{lite_chi2_lcdm}$ for $\Lambda$CDM (with its own $\sum m_\nu=0.06$~eV), with $\{A_s,\tau\}$ minimized in both. The two models therefore fit \emph{equally well}: $\Delta\chi^2 = \val{lite_dchi2}$, which is statistically zero over the $N=669$ data points ($613$ \texttt{plik\_lite} TTTEEE bandpowers plus $28$ lowT and $28$ lowE, counted directly from the likelihood files).
 
 \paragraph{Definitive Bayesian Information Criterion.}
 Applying the BIC penalty for the differing degrees of freedom:
 \begin{equation}
     \label{eq:bic_cobaya}
-    \Delta\mathrm{BIC} = -0.010 + (2 - 6)\ln(669) = -26.03.
+    \Delta\mathrm{BIC} = \val{lite_dchi2} + (2 - 6)\ln(669) = \val{lite_dBIC}.
 \end{equation}
-A $\Delta\mathrm{BIC} < -10$ constitutes decisive evidence on the Jeffreys scale. Even under a hyper-conservative penalty where SSEE is assigned $k=4$ (additionally counting two algebraically-fixed inputs, $\omega_b$ and $H_0$, as if they were fitted), the result remains $\Delta\mathrm{BIC} = -0.010 + (4-6)\ln(669) = -13.02$, still strongly favouring the SSEE framework. This evaluation confirms that the geometric constraint of the SSEE background reproduces the CMB temperature and polarisation spectra without relying on diagonal approximations. (The earlier legacy minimization, which found $H_0=67.037$ with $\Delta\chi^2=+2.875$ and $\Delta\mathrm{BIC}=-32.2$, is superseded by this $\omega_m$-direct evaluation.)
+A $|\Delta\mathrm{BIC}|>10$ is very strong evidence on the scale of \citet{KassRaftery1995}. Even under a hyper-conservative penalty where SSEE is assigned $k=4$ (additionally counting two algebraically-fixed inputs, $\omega_b$ and $H_0$, as if they were fitted), the result remains $\Delta\mathrm{BIC} = \val{lite_dchi2} + (4-6)\ln(669) = \val{lite_dBIC_k4}$, still strongly favouring the SSEE framework. This evaluation confirms that the geometric constraint of the SSEE background reproduces the CMB temperature and polarisation spectra without relying on diagonal approximations. (The earlier legacy minimization, which found $H_0=67.037$ with $\Delta\chi^2=+2.875$ and $\Delta\mathrm{BIC}=-32.2$, is superseded by this $\omega_m$-direct evaluation.)
 
 % ===========================================================================
 \subsection{Full posterior sampling via Cobaya MCMC (B1)}
 \label{sec:b1_mcmc}
 % ===========================================================================
 
-The point-estimate scan of \S\ref{sec:cobaya} evaluates $\chi^2$ at the fixed global rate $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ while holding all remaining SSEE quantities algebraically fixed. To provide complete posterior distributions and a fully rigorous parameter-counting comparison, we perform a dedicated MCMC analysis using \texttt{Cobaya}'s built-in sampler against the full off-diagonal \texttt{plik} TTTEEE + lowl\,TT + lowl\,EE + lensing likelihood suite (evaluated through \texttt{clipy}).
+The fixed-anchor evaluation of \S\ref{sec:cobaya} evaluates $\chi^2$ at the fixed global rate $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ while holding all remaining SSEE quantities algebraically fixed. To provide complete posterior distributions and a fully rigorous parameter-counting comparison, we perform a dedicated MCMC analysis using \texttt{Cobaya}'s built-in sampler against the full off-diagonal \texttt{plik} TTTEEE + lowl\,TT + lowl\,EE + lensing likelihood suite (evaluated through \texttt{clipy}).
 
 \paragraph{Free parameters.}
 In the SSEE CMB sector, the dark-energy equation-of-state $(w_0,w_a)$, the spectral index $n_s = 1 - \phi^{-7} = \val{N_S_d6}$, the baryon density $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$, and the CDM density $\Omega_c h^2 = \mathrm{KAL}_0\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\omega_m$-direct) are all algebraically fixed, and the geometry anchor $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ is derived (Papers~9--10; it reproduces the dimensionless target $3(\varphi+\pi)^2$). The only two model parameters genuinely sampled are therefore:
@@ -591,7 +589,7 @@ In the SSEE CMB sector, the dark-energy equation-of-state $(w_0,w_a)$, the spect
     \item $\log(10^{10}A_s) \in [2.80, 3.25]$ (flat prior) — primordial amplitude;
     \item $\tau \in [0.02, 0.12]$ (flat prior) — optical depth to reionisation;
 \end{itemize}
-with the $\sim$20 \texttt{plik} nuisance parameters (dust, SZ, CIB, calibration $A_\mathrm{Planck}$) defined by the full likelihood and treated as nuisances common to both models, $\tau$ constrained by the lowl EE (SimAll) data. The likelihood is the full off-diagonal \texttt{plik} TTTEEE evaluated through the \texttt{clipy} pure-Python reimplementation of \texttt{clik} (validated to $|\Delta\ln\mathcal{L}|<10^{-5}$ against the released test point), so no \texttt{clik} binary is required. As an independent cross-check we also run a \emph{validation} chain in which $H_0$ is additionally floated on a flat prior $[64,72]$; that chain recovers $H_0=\val{b1v_H0}\pm\val{b1v_H0_s}$, $\val{b1v_d}\sigma$ from the algebraic anchor (see Fig.~\ref{fig:b1_h0}), so fixing it incurs no loss of fit and that the model count is $k=2=\{A_s,\tau\}$, not $k=3$.
+with the $\sim$20 \texttt{plik} nuisance parameters (dust, SZ, CIB, calibration $A_\mathrm{Planck}$) defined by the full likelihood and treated as nuisances common to both models, $\tau$ constrained by the lowl EE (SimAll) data. The likelihood is the full off-diagonal \texttt{plik} TTTEEE evaluated through the \texttt{clipy} pure-Python reimplementation of \texttt{clik}, so no \texttt{clik} binary is required. As an independent cross-check we also run a \emph{validation} chain in which $H_0$ is additionally floated on a flat prior $[64,72]$; that chain recovers $H_0=\val{b1v_H0}\pm\val{b1v_H0_s}$, $\val{b1v_d}\sigma$ from the algebraic anchor (see Fig.~\ref{fig:b1_h0}), so fixing it incurs no loss of fit and that the model count is $k=2=\{A_s,\tau\}$, not $k=3$.
 
 This gives $k_\mathrm{SSEE} = 2$ model parameters ($\log A_s$, $\tau$ --- the only quantities genuinely sampled, with $H_0$ fixed at $H_0^{\rm glob}$; the $\sim$20 \texttt{plik} nuisance parameters are common to both models and excluded from $\Delta k$), compared to the $\Lambda$CDM run with $k_\mathrm{\Lambda CDM} = 6$ free parameters ($H_0$, $\Omega_b h^2$, $\Omega_c h^2$, $n_s$, $\log A_s$, $\tau$). The $k=2$ vs $k=6$ BIC penalty over the $N=\val{b1_N}$ combined data points is $\Delta k \cdot \ln N = 4 \times \ln(\val{b1_N}) = \val{b1_penal}$, yielding:
 \begin{equation}
@@ -601,7 +599,7 @@ This gives $k_\mathrm{SSEE} = 2$ model parameters ($\log A_s$, $\tau$ --- the on
 where $\Delta\chi^2_\mathrm{min} = \chi^2_{\mathrm{SSEE,min}} - \chi^2_{\Lambda\mathrm{CDM,min}}$ is the difference in \emph{minimum} $\chi^2$ between the two models over the same $N=\val{b1_N}$ data points (evaluated through \texttt{clipy}; no \texttt{clik} binary required). The BIC requires the maximum likelihood of each model, so the minimum is obtained with the Cobaya BOBYQA minimiser started from the best sampled point of each model's four chains, over the cosmological and the $\sim$20 nuisance parameters alike; using the best \emph{sampled} $\chi^2$ instead would favour the model with fewer parameters, whose chains approach their minimum more closely.
 
 \paragraph{Convergence.}
-Chains are run to Gelman--Rubin criterion $R{-}1 < 0.02$ \citep{GelmanRubin1992} (production run) or $R{-}1 < 0.05$ (validation). The \texttt{ssee\_paper3\_b1\_mcmc.py} script is fully reproducible:
+All three runs (\SSEE, \LCDM\ and the validation chain) are stopped by the Cobaya Gelman--Rubin criterion $R{-}1 < 0.02$ \citep{GelmanRubin1992}. The \texttt{ssee\_paper3\_b1\_mcmc.py} script is fully reproducible:
 \begin{verbatim}
   python src/p03_cmb/ssee_paper3_b1_mcmc.py --mode both
 \end{verbatim}
@@ -615,7 +613,7 @@ The minimum $\chi^2$ of each model yields:
     \Delta\mathrm{BIC}_{k2} = \Delta\chi^2_\mathrm{min} + (2-6)\ln(\val{b1_N})
     = \Delta\chi^2_\mathrm{min} - \val{b1_penal},
 \end{equation}
-where $\Delta\chi^2_\mathrm{min}$ is taken over the $N=\val{b1_N}$ combined data points (full \texttt{plik} TTTEEE $2289$ + lowl\,TT $28$ + lowl\,EE $28$ + lensing $9$; the data-vector length, not the SimAll-normalised low-$\ell$ EE $\chi^2$). The minimiser gives $\chi^2_{\mathrm{SSEE,min}}=\val{b1_chi2_ssee}$ and $\chi^2_{\Lambda\mathrm{CDM,min}}=\val{b1_chi2_lcdm}$, i.e.\ $\Delta\chi^2_\mathrm{min}=\val{b1_dchi2}$: SSEE attains a minimum $\chi^2$ statistically \emph{indistinguishable} from $\Lambda$CDM (we do \emph{not} claim a superior fit). The $k=2$ versus $k=6$ comparison then gives $\Delta\mathrm{BIC}_{k2}=\val{b1_dBIC}$ (with the best sampled points instead of the minima, $\val{b1_dBIC_muestreado}$: same side, so the result does not hinge on the estimator), decisively below the Jeffreys threshold ($\Delta\mathrm{BIC}<-10$) and driven by parameter-count economy rather than fit quality. Even under a hyper-conservative $k=4$ assignment (additionally counting two of the algebraically-fixed inputs, $\omega_b$ and $H_0$, as if they were fitted), $\Delta\mathrm{BIC}_{k4}=\Delta\chi^2_\mathrm{min}+(4-6)\ln(\val{b1_N})=\val{b1_dBIC_k4}$, still decisively favouring SSEE.
+where $\Delta\chi^2_\mathrm{min}$ is taken over the $N=\val{b1_N}$ combined data points (full \texttt{plik} TTTEEE $2289$ + lowl\,TT $28$ + lowl\,EE $28$ + lensing $9$; the data-vector length, not the SimAll-normalised low-$\ell$ EE $\chi^2$). The minimiser gives $\chi^2_{\mathrm{SSEE,min}}=\val{b1_chi2_ssee}$ and $\chi^2_{\Lambda\mathrm{CDM,min}}=\val{b1_chi2_lcdm}$, i.e.\ $\Delta\chi^2_\mathrm{min}=\val{b1_dchi2}$: SSEE attains a minimum $\chi^2$ statistically \emph{indistinguishable} from $\Lambda$CDM (we do \emph{not} claim a superior fit). The $k=2$ versus $k=6$ comparison then gives $\Delta\mathrm{BIC}_{k2}=\val{b1_dBIC}$ (with the best sampled points instead of the minima, $\val{b1_dBIC_muestreado}$: same side, so the result does not hinge on the estimator), very strong evidence on the scale of \citet{KassRaftery1995} ($|\Delta\mathrm{BIC}|>10$) and driven by parameter-count economy rather than fit quality. Even under a hyper-conservative $k=4$ assignment (additionally counting two of the algebraically-fixed inputs, $\omega_b$ and $H_0$, as if they were fitted), $\Delta\mathrm{BIC}_{k4}=\Delta\chi^2_\mathrm{min}+(4-6)\ln(\val{b1_N})=\val{b1_dBIC_k4}$, still decisively favouring SSEE.
 
 \begin{table}[H]
 \centering
@@ -659,8 +657,8 @@ $\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=\val{b1_N}$) & $\val{b1_dBIC_k4}$ & (re
   $\val{b1v_H0}\pm\val{b1v_H0_s}$, $\val{b1v_d}\sigma$ from $H_0^{\rm glob}$; the model itself carries
   only two free parameters $\{A_s,\tau\}$, with $H_0$ derived. The narrow
   constraint ($\pm\val{b1v_H0_s}$\,km\,s$^{-1}$\,Mpc$^{-1}$) reflects the removal of
-  the $H_0$--$\Omega_m$ degeneracy by algebraically fixing
-  $\Omega_{m,\mathrm{CMB}}=0.3089$.}
+  the $H_0$--$\Omega_m$ degeneracy by algebraically fixing $\omega_b$ and
+  $\omega_c$.}
   \label{fig:b1_h0}
 \end{figure}
 
@@ -670,7 +668,7 @@ $\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=\val{b1_N}$) & $\val{b1_dBIC_k4}$ & (re
   \caption{Full posterior triangle plot for the SSEE CMB sector
   ($H_0$, $\log A_s$, $\tau$, $A_\mathrm{Planck}$) from the B1
   full \texttt{plik} MCMC. The narrow $H_0$ constraint ($\pm\val{b1v_H0_s}$\,km\,s$^{-1}$\,Mpc$^{-1}$)
-  reflects the geometric constraint imposed by $\Omega_{m,\mathrm{CMB}} = 0.3089$ (algebraically fixed),
+  reflects the geometric constraint imposed by the algebraically fixed $\omega_b$ and $\omega_c$,
   which eliminates the $H_0$--$\Omega_m$ degeneracy present in $\Lambda$CDM.
   All other marginals are consistent with the $\Lambda$CDM posteriors.}
   \label{fig:b1_corner_ssee}
@@ -680,8 +678,8 @@ $\Delta\mathrm{BIC}$ ($k=4$ vs $k=6$, $N=\val{b1_N}$) & $\val{b1_dBIC_k4}$ & (re
 \centering
 \caption{\textbf{Summary: CMB model selection across likelihood treatments.}
 SSEE vs.\ $\Lambda$CDM BIC under evaluations of increasing rigour. All favour SSEE;
-the full off-diagonal \texttt{plik} MCMC (evaluated at the global anchor
-$H_0=\val{H0_GLOBAL_d5}$, $\omega_m$-direct) is the canonical result.}
+the full off-diagonal \texttt{plik} minimum $\chi^2$ of each model (\SSEE\ at the
+global anchor $H_0=\val{H0_GLOBAL_d5}$, $\omega_m$-direct) is the canonical result.}
 \label{tab:bic_comparison}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccc}
@@ -689,14 +687,14 @@ $H_0=\val{H0_GLOBAL_d5}$, $\omega_m$-direct) is the canonical result.}
 Method & Spectra & $N$ & $k_{\rm SSEE}$ & $k_{\Lambda\rm CDM}$ & $\Delta\mathrm{BIC}$ \\
 \midrule
 Diagonal (approx.)        & TT+TE+EE+PP          & \val{p3_N_tot} & 2 & 6 & $\val{p3_dBIC_diag}$ (SSEE favoured) \\
-\texttt{plik\_lite} point est. & TTTEEE+lowl     & 669  & 2 & 6 & $\val{lite_dBIC}$ (SSEE decisively favoured) \\
-Full \texttt{plik} MCMC   & TTTEEE+lowl+lensing  & \val{b1_N} & 2 & 6 & $\mathbf{\val{b1_dBIC}}$ \emph{(canonical)} \\
+\texttt{plik\_lite} ($A_s,\tau$ min.) & TTTEEE+lowl     & 669  & 2 & 6 & $\val{lite_dBIC}$ (SSEE favoured) \\
+Full \texttt{plik} ($\chi^2$ min.) & TTTEEE+lowl+lensing  & \val{b1_N} & 2 & 6 & $\mathbf{\val{b1_dBIC}}$ \emph{(canonical)} \\
 Full \texttt{plik} (conserv.) & TTTEEE+lowl+lensing & \val{b1_N} & 4 & 6 & $\val{b1_dBIC_k4}$ (SSEE strongly favoured) \\
 \bottomrule
 \end{tabular}%
 }
 {\footnotesize Diagonal approximation assumes independence across spectra (upper bound on $\chi^2$).
-The full \texttt{plik} MCMC (Cobaya + \texttt{clipy}, official off-diagonal covariance) is the canonical result.
+The full \texttt{plik} minimum (Cobaya + \texttt{clipy}, official off-diagonal covariance) is the canonical result.
 $k=2=\{A_s,\tau\}$, the only sampled SSEE parameters; the conservative $k=4$ additionally counts two
 of the algebraically-fixed inputs ($\omega_b$, $H_0$) as if fitted.}
 \end{table}
@@ -834,10 +832,10 @@ minimally coupled and with no potential --- the Bellini--Sawicki kineticity is
   \label{eq:alphak_pred}
 \end{equation}
 with the dark-energy \emph{density} $\Omega_{\rm DE}=1-\Omega_m=\val{OMDE_DENS_d6}$, and the
-sound speed is $c_s^2=(M_v-T_r)/(5M_v+3T_r)=0.021284$. An independent
-\textsc{hi\_class} integration reproduces $c_s^2$ to $0.000\%$ and
-$\alpha_K(0)$ to $0.011\%$ (Paper~7). The kineticity is not observationally
-accessible: a factor $100$ change moves $\sigma_8$ by $0.007\%$. It must not be
+sound speed is $c_s^2=(M_v-T_r)/(5M_v+3T_r)=\val{cs2_condensado_d6}$. An independent
+\textsc{hi\_class} integration reproduces $c_s^2$ to $\val{p7_hc_cs2_pct}\%$ and
+$\alpha_K(0)$ to $\val{p7_hc_alphaK_pct}\%$ (Paper~7). The kineticity is not observationally
+accessible: a factor $100$ change moves $\sigma_8$ by $\val{p7_hc_s8_xk_pct}\%$. It must not be
 confused with $s_K=-3w_0(1+w_0)=3\,s_{\rm DE}\,s_m=\val{S_K_d6}$, the pressure
 dilution rate built from the saturations $s_{\rm DE}=\val{S_DE_d6}$ and
 $s_m=\val{S_M_d6}$ (numbers of the equation of state, not densities), which enters
@@ -864,9 +862,10 @@ SSEE makes the following testable predictions,
 each of which would \textbf{falsify} the framework if violated:
 
 \begin{enumerate}
-  \item \textbf{Peak positions:} $\ell_1=\val{p3_pico1_ssee}\pm3$, $\ell_2=\val{p3_pico2_ssee}\pm5$, $\ell_3=\val{p3_pico3_ssee}\pm8$.
-    A measurement placing $\ell_1$ outside this range by more than $2\sigma$
-    would falsify the $\omega_m$-direct CMB matter density.
+  \item \textbf{Acoustic scale:} at $H_0^{\rm glob}$ the algebraic densities give
+    $100\theta_*=\val{p3_th100_anc}$ ($\val{p3_th_sig_anc}\sigma$ from Planck~2018). A CMB
+    measurement placing $\theta_*$ more than $3\sigma$ from this value would falsify the
+    $\omega_m$-direct CMB matter density.
 
   \item \textbf{CMB $\chi^2_r$:} Must remain $<2$ when tested against future
     CMB datasets \citep{CMBS4_2016,SimonsObs2019}. A significant degradation
@@ -876,7 +875,7 @@ each of which would \textbf{falsify} the framework if violated:
     matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, not by the saturation
     $1+w_0=\val{S_M_d6}$; SSEE must continue to fit DESI DR2 BAO within $2\sigma$
     as new data arrive. The algebraic content being tested is the
-    equation of state: a joint fit requiring $w_0$ more than $2\sigma$
+    equation of state: a joint fit requiring $w_0$ more than $3\sigma$
     from $\val{W0_d6}$, or $w_a$ from $\val{WA_d6}$, would falsify the
     algebraic derivation. \emph{(An earlier version of this item placed
     $\Omega_{m,\mathrm{dyn}}=\val{S_M_d6}$ in the geometry slot; that is a
@@ -906,8 +905,8 @@ each of which would \textbf{falsify} the framework if violated:
 We have demonstrated that SSEE, with the CMB matter density set
 \emph{forward} by the SSEE algebra ($\omega_m$-direct,
 $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, no matter factor),
-reproduces the Planck 2018 CMB TT power spectrum without introducing fitted
-dimensionless parameters.
+reproduces the Planck 2018 CMB power spectra with only the two primordial
+parameters $\{A_s,\tau\}$ fitted.
 The key results are:
 
 \begin{itemize}
@@ -916,10 +915,10 @@ The key results are:
   \item TE/EE: $\chi^2_r=\val{p3_chi2r_TE_ssee}/\val{p3_chi2r_EE_ssee}$, essentially matching $\Lambda$CDM.
   \item Lensing (PP): $\chi^2_r=\val{p3_chi2r_PP_ssee}$ vs.\ $\val{p3_chi2r_PP_lcdm}$ for $\Lambda$CDM — SSEE marginally better (both $\chi^2_r<1$).
   \item \textbf{\texttt{plik\_lite} TTTEEE${}+{}$low-$\ell$ ($\omega_m$-direct):} $\chi^2_{\mathrm{eff}} = \val{lite_chi2_ssee}$ with $\{A_s,\tau\}$ minimized, at $H_0 = \val{H0_GLOBAL_d5}$ km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{perfil_h0_d}\sigma$ from the \texttt{plik\_lite} minimum $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$ with SSEE-fixed $\omega_b,\omega_c$); $\Lambda$CDM gives $\val{lite_chi2_lcdm}$ with six free parameters (its own $\sum m_\nu=0.06$~eV).
-  \item $\Delta\mathrm{BIC}=\val{lite_dBIC}$ ($k=2$ vs $k=6$, $N=669$), decisively favouring SSEE over $\Lambda$CDM at equal fit quality ($\Delta\chi^2=-0.010$).
-  \item \textbf{Full off-diagonal \texttt{plik} MCMC (canonical):} minimum $\chi^2=\val{b1_chi2_ssee}$ vs $\val{b1_chi2_lcdm}$ for $\Lambda$CDM over $N=\val{b1_N}$ points, $\Delta\mathrm{BIC}=\val{b1_dBIC}$ ($k=2$ vs $k=6$); $\val{b1_dBIC_k4}$ under the conservative $k=4$.
+  \item $\Delta\mathrm{BIC}=\val{lite_dBIC}$ ($k=2$ vs $k=6$, $N=669$), favouring SSEE over $\Lambda$CDM at equal fit quality ($\Delta\chi^2=\val{lite_dchi2}$).
+  \item \textbf{Full off-diagonal \texttt{plik}, minimum $\chi^2$ (canonical):} minimum $\chi^2=\val{b1_chi2_ssee}$ vs $\val{b1_chi2_lcdm}$ for $\Lambda$CDM over $N=\val{b1_N}$ points, $\Delta\mathrm{BIC}=\val{b1_dBIC}$ ($k=2$ vs $k=6$); $\val{b1_dBIC_k4}$ under the conservative $k=4$.
   \item $\Omega_{m,\mathrm{CMB}}=\val{OMEGA_M_TOTAL_d6}$ within $\val{om_planck_sig}\sigma$ of Planck 2018.
-  \item The sound horizon $r_d=\val{p2_lyaB_rd}$ Mpc matches $\Lambda$CDM to $0.05\%$.
+  \item The sound horizon $r_d=\val{p2_lyaB_rd}$ Mpc matches $\Lambda$CDM (ratio $\val{p2_rd_ratio}$).
 \end{itemize}
 
 Combined with the Paper~2 results ($\val{p2_w0wa_ssee_ec26}\sigma$ on the DESI~DR2 $w_0w_a$CDM posterior,
@@ -927,12 +926,12 @@ and galaxy-cluster dynamical masses in general relativity at the level of $\Lamb
 $\val{clz_rgig_sig}\sigma$ against $\val{clz_lcig_sig}\sigma$ over the $\val{clz_rgig_N}$ systems of \citet{Zhang2026}
 with their IGIMF baryon masses), SSEE is consistent with all three major
 cosmological probes — BAO, cluster masses, and CMB; the cluster masses do not discriminate it from $\Lambda$CDM. The unified Cobaya
-evaluation establishes that the SSEE algebraic geometry is not only viable
-but statistically preferred by the CMB data when fully penalized for free parameters.
+evaluation establishes that the SSEE algebraic geometry is viable and, fitting as
+well as \LCDM\ with fewer parameters, preferred on the BIC.
 Independently of the CMB sector, the SSEE screening cascade of Papers~9--10
 takes the measured SH0ES rate as input and, with the full screening fraction,
 returns $H_0^{\rm glob}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d6}$~km\,s$^{-1}$\,Mpc$^{-1}$,
-a residual of $+4.2\times10^{-6}$ from the pure-number target $3(\varphi+\pi)^2$
+a residual of $\val{p9_hglob_residuo}$~km\,s$^{-1}$\,Mpc$^{-1}$ from the pure-number target $3(\varphi+\pi)^2$
 \citep{Verde2019,DiValentino2021,Riess2022}; the propagated uncertainty is
 $\pm\val{p9_hglob_sigma}$.
 

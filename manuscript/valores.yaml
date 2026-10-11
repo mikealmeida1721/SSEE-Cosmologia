@@ -843,3 +843,17 @@ c_cruce_coef: {fuente: "results/logs/algebra_derivada.json#algebra.c_cruce_coef.
 c_cruce_z1: {fuente: "results/logs/algebra_derivada.json#algebra.c_cruce_z1.valor", formato: ".2f"}
 w0_mas_wa: {fuente: "results/logs/algebra_derivada.json#algebra.w0_mas_wa.valor", formato: ".3f"}
 IGNIS_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.IGNIS", formato: ".4f"}
+# quinta lectura P2 (2026-10-11)
+wb_bbn_sig:        {fuente: "results/logs/algebra_derivada.json#algebra.wb_bbn_sig.valor", formato: ".1f"}
+w0_cmb_solo_sig:   {fuente: "results/logs/algebra_derivada.json#algebra.w0_cmb_solo_sig.valor", formato: ".1f"}
+p2_ssee_Om_mediana: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.Om_derivado.mediana", formato: ".3f"}
+p2_ssee_Om_mas:     {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.Om_derivado.mas", formato: ".3f"}
+p2_ssee_Om_menos:   {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.Om_derivado.menos", formato: ".3f"}
+mf_filas:          {fuente: "results/logs/mcmc_full_posteriores.json#filas_tras_corte", formato: ",d"}
+mf_rminus1:        {fuente: "results/logs/mcmc_full_posteriores.json#gelman_rubin.rminus1", formato: ".3f"}
+# quinta lectura P3 (2026-10-11)
+OMEGA_NU_H2_d6:    {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_NU_H2", formato: ".6f"}
+OMEGA_M_TOTAL_d4:  {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f"}
+h_glob_d4:         {fuente: "results/logs/algebra_derivada.json#algebra.h_glob.valor", formato: ".4f"}
+lite_dBIC_k4:      {fuente: "results/logs/cmb_dbic_mnu_propia.json#dBIC_k4_conservador", formato: ".2f"}
+p3_th100_anc:      {fuente: "results/logs/p3_rd_reframe_omega_m.json#anchor.theta100", formato: ".5f"}
