@@ -5213,3 +5213,28 @@ stages:
       hash: md5
       md5: 30146bd6447f2c17659623fc97453c0b
       size: 948
+  p7_fondo_campo:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p07_eft/fondo_campo_p7.py > results/logs/p7_fondo_campo.log 2>&1
+    deps:
+    - path: src/p07_eft/fondo_campo_p7.py
+      hash: md5
+      md5: 6c7af8d989619c7186873cd562a2ea6b
+      size: 6543
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p7_fondo_campo.json
+      hash: md5
+      md5: f4d0bff1f64a1a201d029c71b72a1f13
+      size: 2087
+    - path: results/logs/p7_fondo_campo.log
+      hash: md5
+      md5: e3d3da189bc862a4e1c40188594ee785
+      size: 1355
