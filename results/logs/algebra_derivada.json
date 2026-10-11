@@ -291,6 +291,21 @@
    "valor": 1.1150691174246463,
    "uso": "el numero puro 3(phi+pi)^2 frente al H0 de Planck, en sigma"
   },
+  "WA_abs": {
+   "formula": "abs(WA)",
+   "valor": 0.6699748856723895,
+   "uso": "|w_a| = P_sc/IGNIS, para la busqueda look-elsewhere (Sealed)"
+  },
+  "Om_sin_nu": {
+   "formula": "(OMEGA_B_H2+OMEGA_C_H2)/(H0_GLOBAL/100)**2",
+   "valor": 0.30728879017780825,
+   "uso": "Omega_m sin omega_nu: muestra que el neutrino no es opcional (Sealed)"
+  },
+  "Om_sin_nu_pct": {
+   "formula": "100*OMEGA_M_H2/(OMEGA_B_H2+OMEGA_C_H2)-100",
+   "valor": 0.5180958392142117,
+   "uso": "corrimiento relativo en % al quitar omega_nu"
+  },
   "Yp_ssee": {
    "formula": "0.2471+0.96*(OMEGA_B_H2-0.02237)",
    "valor": 0.24714584650985583,
@@ -379,19 +394,19 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "739710231a02f85e74627e054330b89c4066c60f",
+  "commit": "7a7517c34122f084c6a0c50e8d10af6570f2d4df",
   "reproducible_desde_commit": false,
   "cambios_sin_commitear": [
    "M src/algebra_derivada.py"
   ],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "1527b0a3b1a47a7520a46491cf7dc55d213e87b4d24e466a745d56aa8502560b",
+  "script_sha256": "938ac4662b740abe90a0745c858b87fb2b1d65f27e863b040d90350e29ef14a7",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T11:17:39",
+  "fecha": "2026-10-11T11:20:44",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

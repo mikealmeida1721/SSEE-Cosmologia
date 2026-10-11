@@ -801,3 +801,8 @@ k1000_control_pct: {fuente: "results/logs/kids1000_control.json#desvio_pct", for
 boss_chi2_logA_cmb: {fuente: "results/logs/growth_2026-07/base_sin_particula.json#boss.6", formato: ".2f"}
 h0alg_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.H0alg_sigma_planck.valor", formato: ".2f"}
 F_SCREEN_IR_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN_IR", formato: ".4f"}
+# cuarta lectura Sealed (2026-10-11)
+WA_abs_d6: {fuente: "results/logs/algebra_derivada.json#algebra.WA_abs.valor", formato: ".6f"}
+Om_sin_nu_d5: {fuente: "results/logs/algebra_derivada.json#algebra.Om_sin_nu.valor", formato: ".5f"}
+Om_sin_nu_pct: {fuente: "results/logs/algebra_derivada.json#algebra.Om_sin_nu_pct.valor", formato: ".1f"}
+r_tensor_mil_d1: {fuente: "results/logs/algebra_derivada.json#algebra.r_tensor_mil.valor", formato: ".1f"}

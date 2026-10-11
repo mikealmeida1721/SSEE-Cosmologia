@@ -58,7 +58,7 @@ tightened, at $\val{p2_w0wa_ssee_ec26}\sigma$ from the newer DESI~DR2 posterior
 $\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$)---the prediction did not move while the data improved.
 Crucially, the two forward predictions that can \emph{refute} the core framework---this
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand on their own: neither the Hubble resolution nor the growth sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
-global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm0.968~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
+global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
 ($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). With the
 background of both models fixed in advance, DESI~DR2 BAO gives $\chi^2=\val{desi_clav_ssee}$ for SSEE and
 $\val{desi_clav_lcdm}$ for $\Lambda$CDM at its Planck values ($\val{desi_N}$ points); $\Lambda$CDM reaches
@@ -230,7 +230,7 @@ We confront Eq.~\eqref{eq:w0wa} with the four official DESI DR2 $w_0w_a$CDM
 posteriors \citep[eqs.~25--28]{AbdulKarim2025}. The tightest combination,
 DESI\,$+$\,CMB\,$+$\,Pantheon+, gives
 $w_0^{\rm bf}=-0.838\pm0.055$, $w_a^{\rm bf}=-0.62^{+0.22}_{-0.19}$
-(correlation $\rho=-0.894$, measured directly from the official DESI DR2
+(correlation $\rho=\val{p2_w0wa_rho_ec26}$, measured directly from the official DESI DR2
 chains, Zenodo record 16644577, burn-in $30\%$, chain weights). Because the two parameters are strongly
 correlated, the meaningful figure of merit is the \emph{joint} (Mahalanobis)
 distance rather than two separate one-dimensional offsets. Writing
@@ -246,8 +246,8 @@ covariance $\mathsf{C}$,
 \end{equation}
 The component offsets are $\Delta w_0=\val{p2_dw0_ec26}\sigma$ (essentially exact) and
 $\Delta w_a=\val{p2_dwa_ec26}\sigma$. Against the other official combinations (moments and
-correlations likewise measured from the official chains: $\rho=-0.905$ to
-$-0.978$) the joint
+correlations likewise measured from the official chains: $\rho=\val{p2_w0wa_rho_ec28}$ to
+$\val{p2_w0wa_rho_ec25}$) the joint
 distance is $\val{p2_w0wa_ssee_ec28}\sigma$ (DESY5), $\val{p2_w0wa_ssee_ec27}\sigma$ (Union3) and $\val{p2_w0wa_ssee_ec25}\sigma$
 (no-SN DESI$+$CMB): the algebraic point is consistent with all four, with the
 tension range $0.2$--$1.8\sigma$ set by the supernova compilation. The result
@@ -255,7 +255,7 @@ is robust to the correlation ($\rho\in[-0.92,-0.70]$ would shift the
 Pantheon+ figure by $<0.2\sigma$; the measured value is used). We stress that this agreement is obtained
 with \emph{zero} hand-tuned dark-energy parameters: the only inputs are
 $\varphi$ and $\pi$. The fixed $\Lambda$CDM point $(-1,0)$, by contrast, sits at
-$2.6$--$3.9\sigma$ from every official compilation
+$\val{p2_w0wa_lcdm_min}$--$\val{p2_w0wa_lcdm_max}\sigma$ from every official compilation
 (Table~\ref{tab:w0wa_ssee_vs_lcdm}): SSEE is closer to the data than
 $\Lambda$CDM for all four supernova compilations---a like-for-like comparison of
 two zero-parameter predictions against the same measurement, neither of which
@@ -263,7 +263,7 @@ tunes $(w_0,w_a)$.
 
 \begin{table}[ht]
   \centering
-  \caption{Mahalanobis distance of the fixed SSEE point $(-0.840,-0.670)$ and
+  \caption{Mahalanobis distance of the fixed SSEE point $(\val{W0_d3},\val{WA_d3})$ and
   the fixed $\Lambda$CDM point $(-1,0)$ from each official DESI~DR2 $w_0w_a$CDM
   best-fit ($2\times2$ covariance, correlation measured directly from the public
   chains, Zenodo~16644577). Neither point is fitted; both are predictions. SSEE
@@ -273,10 +273,10 @@ tunes $(w_0,w_a)$.
     \toprule
     DESI~DR2 combination & $\rho$ & SSEE distance & $\Lambda$CDM distance \\
     \midrule
-    DESI+CMB+Pantheon+ & $-0.894$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
-    DESI+CMB+DES~Y5    & $-0.905$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
-    DESI+CMB+Union3    & $-0.933$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
-    DESI+CMB (no SN)   & $-0.978$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
+    DESI+CMB+Pantheon+ & $\val{p2_w0wa_rho_ec26}$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
+    DESI+CMB+DES~Y5    & $\val{p2_w0wa_rho_ec28}$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
+    DESI+CMB+Union3    & $\val{p2_w0wa_rho_ec27}$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
+    DESI+CMB (no SN)   & $\val{p2_w0wa_rho_ec25}$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -297,13 +297,13 @@ that directly probes the dark-energy-dominated epoch.
   \centering
   \includegraphics[width=0.78\textwidth]{fig1_w0wa_plane.pdf}
   \caption{The SSEE prediction in the $w_0$--$w_a$ plane. The single point
-  $(w_0,w_a)=(-T_r/M_v,\,-P_{\rm sc}/I_g)=(-0.840,-0.670)$ is fixed entirely by
+  $(w_0,w_a)=(-T_r/M_v,\,-P_{\rm sc}/I_g)=(\val{W0_d3},\val{WA_d3})$ is fixed entirely by
   $\varphi$ and $\pi$, with no dark-energy parameters adjusted to the data. The
   shaded contours are the official DESI DR2 $w_0w_a$CDM posteriors
   (Pantheon+, DESY5, Union3). The SSEE point falls inside the Pantheon+
   $1\sigma$ region; the joint Mahalanobis distance is $\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$,
   an equivalent $\val{p2_w0wa_ssee_ec26}\sigma$ agreement (Eq.~\ref{eq:chi2}), and within
-  $1.5$--$1.8\sigma$ of the other compilations.}
+  $\val{p2_w0wa_ssee_ec28_d1}$--$\val{p2_w0wa_ssee_ec27_d1}\sigma$ of the other compilations.}
   \label{fig:w0wa}
 \end{figure}
 
@@ -331,7 +331,7 @@ share a value by construction---the $55$ names collapse to $25$ distinct numbers
 convergence at $3\Omega$); the count below deduplicates by value, so each
 distinct number is counted once.} The honest question is therefore: among
 \emph{all} ratios $A/B$ of named invariants in this fixed dictionary, how many
-land on $|w_0|=\val{S_DE_d6}$ and on $|w_a|=0.669975$?
+land on $|w_0|=\val{S_DE_d6}$ and on $|w_a|=\val{WA_abs_d6}$?
 
 Enumerating every ordered pair over the complete dictionary yields $490$ distinct
 ratios in the interval $(0,5]$. We then count how many fall within a tolerance of
@@ -343,7 +343,7 @@ $|w_a|=P_{\rm sc}/\mathrm{IGNIS}=\mathrm{PYROS}/(\pi+\mathrm{PYROS})$, both to m
 unique:
 \begin{equation}
   |w_0|=\val{S_DE_d6}:\ \text{1 of 490},\qquad
-  |w_a|=0.669975:\ \text{1 of 490}\quad(\pm0.0005).
+  |w_a|=\val{WA_abs_d6}:\ \text{1 of 490}\quad(\pm0.0005).
   \label{eq:lookelsewhere}
 \end{equation}
 Table~\ref{tab:lookelsewhere-tol} reports the full sensitivity to the tolerance,
@@ -367,7 +367,7 @@ within $\pm0.0005$ of either target.}
 \label{tab:lookelsewhere-tol}
 \begin{tabular}{lcc}
 \toprule
-Tolerance & hits on $|w_0|=\val{S_DE_d6}$ & hits on $|w_a|=0.669975$ \\
+Tolerance & hits on $|w_0|=\val{S_DE_d6}$ & hits on $|w_a|=\val{WA_abs_d6}$ \\
 \midrule
 $\pm0.0005$ & 1 & 1 \\
 $\pm0.001$  & 1 & 2 \\
@@ -393,7 +393,7 @@ in \S\ref{sec:open}.
 naming the one entry that turns the $|w_a|$ count from $1$ to $2$ as the band is
 loosened from $\pm0.0005$ to $\pm0.001$ (Table~\ref{tab:lookelsewhere-tol}): it is
 $\mathrm{SOLAR}/\mathrm{NYX}=\val{SOLAR_NYX_d5}$, which sits $|d|=6.4\times10^{-4}$ from
-$|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=0.669975$. Two independent facts demote it from
+$|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=\val{WA_abs_d6}$. Two independent facts demote it from
 rival to shadow. \emph{First, construction:} the canonical denominator
 $\mathrm{IGNIS}=2\Omega$ is an integer multiple of the same scaffold that carries
 $|w_0|$ ($M_v=3\Omega$), so $\mathrm{PYROS}/\mathrm{IGNIS}$ belongs to the shared
@@ -466,7 +466,7 @@ $R_2=\Omega/(\mathrm{KAL_0}T_r)$ (Paper~6). No independent neutrino parameter is
   \quad (h=H_0^{\rm glob}/100=0.67962).
   \label{eq:omcosm_breakdown}
 \end{equation}
-The neutrino piece is not optional: dropping it returns $0.30729$, a $0.6\%$
+The neutrino piece is not optional: dropping it returns $\val{Om_sin_nu_d5}$, a $\val{Om_sin_nu_pct}\%$
 shift, so a reader who reproduces the number must include all three terms
 (a three-second check ships in \texttt{ssee\_core.py}). The earlier presentation tied
 $\Om^{\mathrm{cosm}}$ to $\Om^{\mathrm{dyn}}$ through a factor-of-two bridge
@@ -518,7 +518,7 @@ walkers $\times\,25{,}000$ steps (seed $42$).
 early-time geometry at the CMB-optimal value
 \begin{equation}
   \begin{aligned}
-  H_0^{\rm glob} &= H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d3}\pm0.968~\kms ,\\
+  H_0^{\rm glob} &= H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}~\kms ,\\
   \frac{H_0^{\rm glob}}{\kms} &\simeq 3(\varphi+\pi)^2 ,
   \end{aligned}
   \label{eq:h0anchor}
@@ -677,7 +677,7 @@ Probe & Type & $N$ & fitted & $\chi^2_{\rm SSEE}$ & $\chi^2_{\Lambda\rm CDM}$ & 
   $\times\,25{,}000$ steps). With the entire dark-energy sector fixed by
   $\varphi$ and $\pi$, the chain samples only $H_0$ and $\Omega_b h^2$ against
   DESI DR2 BAO with $H_0^{\rm glob}$ as prior. The posterior is
-  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = 0.02198\pm0.00048$
+  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = \val{p2_obh2}\pm\val{p2_obh2_s}$
   (Eq.~\ref{eq:h0post}), agreeing with the anchor to $\val{h0_p2_dhglob}\sigma$. Dashed lines
   mark the prior centres ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}~\kms$ and the BBN $\Omega_b h^2 = 0.02218$~\cite{Schoneberg2024}); the
   $16/50/84\%$ quantiles are indicated.}
@@ -862,7 +862,7 @@ situation honestly, including a correction to what earlier versions of this
 document reported. With the Poisson source evaluated at the CMB-calibrated
 density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct, the model's single matter density), the growth factor is
 essentially that of $\Lambda$CDM,
-$G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=\val{p5_G}\pm0.005$, and the
+$G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=\val{p5_G}$, and the
 single-sector amplitude ceiling (CLASS forward) is
 \begin{equation}
   \label{eq:s8}
@@ -872,7 +872,7 @@ single-sector amplitude ceiling (CLASS forward) is
 % ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
 % control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
 % Log: results/logs/p5_techo_sigma8_As_fijo.json
-  \sigma_8=\val{p3_sigma8_techo}\pm0.006 , \qquad S_8=\val{p3_S8_techo}
+  \sigma_8=\val{p3_sigma8_techo} , \qquad S_8=\val{p3_S8_techo}
 \end{equation}
 when the primordial amplitude $A_s$ is held at the Planck-preferred value.
 That configuration was previously reported as a $3.5\sigma$ tension with
@@ -1005,10 +1005,10 @@ BAO distances, background fixed & Background & $\chi^2=\val{desi_clav_ssee}/\val
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ & CMB      & $\val{OMEGA_C_H2_d6}$                       & P1,3   & Retrodiction \\
 $\Om^{\rm cosm}=\omega_m/h^2$ & CMB               & $\val{OMEGA_M_TOTAL_d6}$                       & P1,3   & Retrodiction \\
 $n_s=1-\varphi^{-7}$          & Inflation / CMB   & $\val{N_S_d6}$                       & P1,3   & Retrodiction \\
-$r=\varphi^{-10}$             & Inflation         & $8.1\times10^{-3}$              & P1     & \textbf{Prediction} \\
+$r=\varphi^{-10}$             & Inflation         & $\val{r_tensor_mil_d1}\times10^{-3}$              & P1     & \textbf{Prediction} \\
 $\alpha_T=\alpha_M=\alpha_B$  & EFT               & $0$ (exact)                     & P7     & Retrodiction \\
 $\alpha_K=3\Omega_{\rm DE}(5-3w_0)$ & EFT & $\val{alpha_K_z0_d6}$ & P7 & Derived (unobservable on linear scales) \\
-$\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $0.550$                         & P5     & Retrodiction \\
+$\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $\val{p3_gamma_IS}$                         & P5     & Retrodiction \\
 $f\sigma_8$ (BOSS DR12, raw multipoles) & Growth & $\Delta\chi^2=\val{bossR_dchi2}$ vs.\ $\Lambda$CDM, equal freedom & P6 & Retrodiction \\
 \midrule
 \multicolumn{5}{l}{\textit{Built on the core --- growth, UV completion, strong gravity (no extension sector)}} \\
@@ -1068,12 +1068,12 @@ the underlying $\alpha$-attractor closes algebraically: with $N_*=2\varphi^7$
 and $\alpha=\varphi^4/3$ one obtains
 $r=12\alpha/N_*^2=12(\varphi^4/3)/(2\varphi^7)^2=\varphi^{-10}$ identically. The
 prediction is thus internally locked rather than independently adjustable. Its
-value, $r\simeq8.1\times10^{-3}$, lies squarely within the reach of LiteBIRD and
+value, $r\simeq\val{r_tensor_mil_d1}\times10^{-3}$, lies squarely within the reach of LiteBIRD and
 CMB-S4, which target $\sigma(r)\sim10^{-3}$. SSEE will be decisively tested by
 the next generation of $B$-mode experiments.
 
 \paragraph{A pre-registered DESI DR3 test.} The equation-of-state point is
-fixed forever at $(-0.840,-0.670)$; each DESI release is therefore a fresh
+fixed forever at $(\val{W0_d3},\val{WA_d3})$; each DESI release is therefore a fresh
 blind test of the \emph{same} target. The trajectory to date: against the legacy DR1 posterior the
 point sat at ${\sim}0.05\sigma$; against DR2,
 whose uncertainties are ${\sim}40\%$ tighter, it sits at $\val{p2_w0wa_ssee_ec26}\sigma$
@@ -1089,7 +1089,7 @@ Union3/DESY5-class combinations would sharpen to ${\sim}2.2$--$2.7\sigma$
 whose spread already dominates the range quoted in \S\ref{sec:desi-agreement}.
 The falsification line is pre-registered \emph{now}, before the DR3 release, and
 fixed to a specific supernova compilation so that no post-hoc choice of sample can
-rescue the model: a joint exclusion of $(-0.840,-0.670)$ at ${>}3\sigma$ in the
+rescue the model: a joint exclusion of $(\val{W0_d3},\val{WA_d3})$ at ${>}3\sigma$ in the
 DR3 $w_0$--$w_a$ plane for the DR3\,$+$\,CMB\,$+$\,\emph{Pantheon+} combination
 ---the same Pantheon+ compilation used for the headline agreement throughout this
 work---refutes the algebraic background. We will additionally report the
@@ -1194,7 +1194,7 @@ $w_0=\val{W0_d6}$ and $w_a=\val{WA_d6}$, and matches the DESI DR2 posterior at
 $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
 effective-field-theory description is canonical, with vanishing tensor, running,
 and braiding functions, $\alpha_K=\val{alpha_K_z0_d6}$ and $c_s^2=\val{cs2_condensado_d6}$; the inflationary sector
-predicts $n_s=\val{N_S_d6}$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation with its single matter density
+predicts $n_s=\val{N_S_d6}$ and $r=\val{r_tensor_mil_d1}\times10^{-3}$; and a Boltzmann calculation with its single matter density
 places the acoustic peaks where $\Lambda$CDM does.
 
 The framework's strength is its frugality and its consequent falsifiability.
@@ -1272,7 +1272,7 @@ $\mathrm{SOLAR}=\mathrm{MAR}=\val{phi_mas_2pi_d5}$. The look-elsewhere count of
 $55$ named nodes collapse to $25$ distinct numbers. The second
 equation-of-state ratio lives entirely on this branch,
 \begin{equation}
-  |w_a|=\frac{P_{\rm sc}}{\mathrm{IGNIS}}=\frac{\mathrm{PYROS}}{\pi+\mathrm{PYROS}}=0.669975 ,
+  |w_a|=\frac{P_{\rm sc}}{\mathrm{IGNIS}}=\frac{\mathrm{PYROS}}{\pi+\mathrm{PYROS}}=\val{WA_abs_d6} ,
 \end{equation}
 where the denominator is read as the $\pi$-branch node IGNIS rather than the
 scaffold copy $K_v$---the two coincide in value by Law~II.

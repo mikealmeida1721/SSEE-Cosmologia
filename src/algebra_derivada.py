@@ -92,6 +92,9 @@ ALGEBRA = {
     "ns_sigma_planck": ("abs(N_S-0.9649)/0.0042", "n_s = 1-phi^-7 frente a Planck, en sigma"),   # ORIGEN-VALOR: 0.9649, 0.0042 — Planck 2018 VI Tabla 2
     "Om_sigma_planck": ("abs(OMEGA_M_TOTAL-0.3153)/0.0073", "Omega_m = omega_m/h^2 frente a Planck, en sigma"),   # ORIGEN-VALOR: 0.3153, 0.0073 — Planck 2018 VI Tabla 2
     "H0alg_sigma_planck": ("abs(H0_ALG-67.36)/0.54", "el numero puro 3(phi+pi)^2 frente al H0 de Planck, en sigma"),   # ORIGEN-VALOR: 67.36, 0.54 — Planck 2018 VI Tabla 2
+    "WA_abs":          ("abs(WA)", "|w_a| = P_sc/IGNIS, para la busqueda look-elsewhere (Sealed)"),
+    "Om_sin_nu":       ("(OMEGA_B_H2+OMEGA_C_H2)/(H0_GLOBAL/100)**2", "Omega_m sin omega_nu: muestra que el neutrino no es opcional (Sealed)"),
+    "Om_sin_nu_pct":   ("100*OMEGA_M_H2/(OMEGA_B_H2+OMEGA_C_H2)-100", "corrimiento relativo en % al quitar omega_nu"),
     "Yp_ssee":        ("0.2471+0.96*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — ancla Planck 2018; 0.96 — dY_p/d(omega_b) de AlterBBN (Pisanti 2008)
     "Omega_b_alg":    ("OMEGA_B_H2/(H0_ALG/100)**2", "Omega_b = omega_b/h^2 con h = 3 Omega^2/100, Paper 4"),
     "Omega_b_alg_cerrada": ("1e4*(PI-PHI)/(27*OMEGA**6)", "la misma en forma cerrada (control)"),
