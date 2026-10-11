@@ -240,88 +240,49 @@ for a_ in a_arr:
     print(f"  z={z_:6.1f}  a={a_:.2f}  H/H₀={H_:.4f}  τ_Π H = {tau_Pi_H0*H_:.3f}")
 
 # ── 6. ODE SYSTEM — IS PERTURBATIONS ─────────────────────────────────────────
-def rhs_QS(x, Y, k_H0):
-    """
-    IS perturbation ODE — quasi-static Π̃ approximation.
+# 2026-10-11 (quinta lectura P5) — se integra el sistema IS COMPLETO.
+# Antes: aproximación cuasi-estática Π̃' = 0, que el paper declaraba válida
+# para τ_Π H ≫ 1; es al revés (exige relajación rápida, τ_Π H ≪ 1): era el
+# límite de Navier–Stokes, no el de Israel–Stewart. Además la gravedad iba con
+# el signo al revés, y 1+w(a) se recortaba a 1e-6 en la era fantasma (z>0.31).
+# Ahora:
+#   · 5 variables (δ_m, v_m, δ_DE, v_DE, Π̃), Π̃ dinámico;
+#   · inercia ρ_DE(1+w₀) > 0: el campo lleva w₀ y la viscosa el cruce
+#     (Paper 1 §phantom crossing, OP-24);
+#   · c²_s del CAMPO de Paper 7 (+0.021284). Con c²_bare = w₀ el fluido IS
+#     completo es inestable a todo k (λ² = k² s/(1+λτ)): estabilidad_IS_completa.py.
+# Π̃ = δΠ/(ρ_DE(1+w₀)); τ_Π Π̇ + Π = −ζθ con ζ = ζ̃(ρ+p)/H₀:
+#   τ_Π H Π̃' = −Π̃ − ζ̃ (k/aH)(H/H₀) v_DE
+cs2_campo = (1.0 + w0) / (5.0 - 3.0 * w0)   # Paper 7, = 0.021284
 
-    State: Y = [δ_m, v_m, δ_DE, v_DE]   (4 variables, no separate Π̃)
-    Valid when τ_Π H >> 1 (early times) and asymptotically (IS limit).
 
-    Quasi-static IS: Π̃_QS = −ζ̃ (k/aH) v_DE
-    This absorbs the stiff Π̃ ODE into an algebraic relation,
-    adding a k-dependent friction to the Euler equation:
-      friction: +(1−3c²_s + ζ̃ kH²) → +(1+2.52 + 1.84 kH²) at k=1, z=0
-
-    Autovalores (k=10, z=0): se calculan y van al log Q2
-    (autovalores_k10_z0). El modo de gradiente de DE sobrevive en este límite
-    cuasi-estático, con tasa → |w₀|/ζ̃ = 1/(τ_Π H₀) por e-fold a k grande.
-    Solution remains finite and integrable for k ≥ 1 H₀/c from a=0.05 to a=1.
-    """
+def rhs_IS(x, Y, k_H0, cs2=None):
     a   = np.exp(x)
     H   = H_interp(a)
-    w   = w0 + wa * (1.0 - a)
     fDE = rho_de_interp(a)
-
-    δm, vm, δDE, vDE = Y
-    one_plus_w = max(1.0 + w, 1e-6)   # guard against 1+w → 0
-
-    # 2026-10-11 (quinta lectura P5): la gravedad iba con el SIGNO AL REVÉS
-    # (dvm = -vm - kH·Phi con Phi<0 para δ>0 ⟹ repulsiva: autovalores de
-    # materia complejos con parte real negativa), el potencial llevaba 1/H² de
-    # más y el término de DE escalaba con 1/a en vez de a², la presión de DE
-    # tenía el signo invertido y la gravedad sobre DE iba dividida por (1+w).
-    # Con θ̇ = -ℋθ + k²ψ, k²ψ = -(3/2)ℋ²Σ Ω_i(a)δ_i (H₀=c=1, v=θ/k):
+    if cs2 is None:
+        cs2 = cs2_campo
+    δm, vm, δDE, vDE, Pit = Y
+    opw = 1.0 + w0
+    # θ̇ = -ℋθ + k²ψ, k²ψ = -(3/2)ℋ²Σ Ω_i(a)δ_i (H₀=c=1, v=θ/k)
     Phi = -(1.5 / k_H0**2) * (Omm * δm / a + a**2 * OmDE * fDE * δDE)
     kH  = k_H0 / (a * H)
+    dδm  = -kH * vm
+    dvm  = -vm + kH * Phi
+    dδDE = -opw * kH * vDE
+    dvDE = (-(1.0 - 3.0 * cs2) * vDE + kH * (cs2 * δDE / opw + Pit) + kH * Phi)
+    dPit = (-Pit - zeta_tilde * kH * H * vDE) / (tau_Pi_H0 * H)
+    return [dδm, dvm, dδDE, dvDE, dPit]
 
-    # Matter (pressureless CDM)
-    dδm = -kH * vm
-    dvm = -vm + kH * Phi
 
-    # Dark energy — quasi-static IS Π̃ absorbed as extra friction
-    # Pit_QS = -zeta_tilde * kH * vDE
-    eff_friction = (1.0 - 3.0 * cs2_bare) + zeta_tilde * kH**2
-    dδDE = -one_plus_w * kH * vDE
-    dvDE = (-eff_friction * vDE
-            + kH * cs2_bare * δDE / one_plus_w
-            + kH * Phi)
-
-    return [dδm, dvm, dδDE, dvDE]
-
-# ── 7. INTEGRATE AND EXTRACT MIRA RATIO ──────────────────────────────────────
-def integrate_growth(k_H0, a_ini=0.05, a_fin=1.0, n_pts=400):
-    """
-    Integrate IS perturbation equations (quasi-static approximation).
-
-    Start at a_ini = 0.05 (z=19): DE energy fraction ~ 0, IS firmly suppressing
-    DE perturbations (τ_Π H ≈ 22, quasi-static regime valid).
-
-    IC: adiabatic growing mode for matter; δ_DE = v_DE = 0.
-    The DE perturbation is sourced purely by gravitational coupling.
-    """
-    x_ini = np.log(a_ini)
-    x_fin = np.log(a_fin)
-
-    δm0 =  a_ini    # growing mode δ_m ∝ a
-    # modo creciente: δ' = δ ⟹ v = -δ/kH (antes v = -a_ini, k veces de más:
-    # de ahí que δ_m(z=0) creciera ∝ k)
-    vm0 = -a_ini * a_ini * H_interp(a_ini) / k_H0
-    Y0  = [δm0, vm0, 0.0, 0.0]
-
-    x_eval = np.linspace(x_ini, x_fin, n_pts)
-
-    sol = solve_ivp(
-        lambda x, Y: rhs_QS(x, Y, k_H0),
-        [x_ini, x_fin],
-        Y0,
-        method='RK45',
-        t_eval=x_eval,
-        rtol=1e-9,
-        atol=1e-12,
-        dense_output=False,
-        max_step=0.02,
-    )
-    return sol
+# ── 7. INTEGRATE ─────────────────────────────────────────────────────────────
+def integrate_growth(k_H0, a_ini=0.05, a_fin=1.0, n_pts=400, cs2=None):
+    """IC: modo creciente de materia (δ' = δ ⟹ v = -δ/kH); DE en reposo."""
+    x_ini, x_fin = np.log(a_ini), np.log(a_fin)
+    Y0 = [a_ini, -a_ini * a_ini * H_interp(a_ini) / k_H0, 0.0, 0.0, 0.0]
+    return solve_ivp(lambda x, Y: rhs_IS(x, Y, k_H0, cs2), [x_ini, x_fin], Y0,
+                     method='LSODA', t_eval=np.linspace(x_ini, x_fin, n_pts),
+                     rtol=1e-9, atol=1e-14)
 
 # ── 8. RUN FOR MULTIPLE k VALUES ─────────────────────────────────────────────
 print("\n" + "─" * 68)
@@ -360,12 +321,6 @@ for k_H0 in k_values:
     MIRA_num = Om_eff / Omm
 
     status = ""
-    if abs(MIRA_num - MIRA_alg) < 0.05:
-        status = "✓ MIRA"
-    elif abs(MIRA_num - MIRA_alg) < 0.20:
-        status = "~ close"
-    else:
-        status = "✗ IS-suppressed"
 
     results[k_H0] = dict(
         δm=δm_fin, δDE=δDE_fin, r=r,
@@ -399,17 +354,17 @@ if results:
         # que solo tiene sentido con Om = 0.160050. Nadie lo vio porque el
         # script no dejaba log y R35/R65 no tenian contra que comparar. Ahora
         # lo deja, y la tabla del .tex se genera de aqui.
-        # 2026-10-11: autovalores del sistema que se INTEGRA (rhs_QS), en z=0 y
+        # 2026-10-11: autovalores del sistema que se INTEGRA (rhs_IS), en z=0 y
         # k=10 H0/c; el apendice B de Paper 5 los traia a mano y con otra matriz.
         _k_eig = 10.0
-        _J = np.zeros((4, 4))
-        _f0 = np.array(rhs_QS(0.0, [0.0]*4, _k_eig))
-        for _j in range(4):
-            _e = np.zeros(4); _e[_j] = 1.0
-            _J[:, _j] = np.array(rhs_QS(0.0, list(_e), _k_eig)) - _f0
+        _J = np.zeros((5, 5))
+        _f0 = np.array(rhs_IS(0.0, [0.0]*5, _k_eig))
+        for _j in range(5):
+            _e = np.zeros(5); _e[_j] = 1.0
+            _J[:, _j] = np.array(rhs_IS(0.0, list(_e), _k_eig)) - _f0
         _lam = np.linalg.eigvals(_J)
         _lam = _lam[np.argsort(-_lam.real)]
-        _F_eig = (1.0 - 3.0 * cs2_bare) + zeta_tilde * (_k_eig / H_interp(1.0))**2
+        _F_eig = (1.0 - 3.0 * cs2_campo)
         import json as _json, os as _os
         _log = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
                              '..', '..', 'results', 'logs',
@@ -426,7 +381,7 @@ if results:
                 R_media_k10=float(MIRA_mean), R_sd_k10=float(MIRA_std),
                 autovalores_k10_z0=dict(k=_k_eig, F=float(_F_eig),
                     re=[float(v.real) for v in _lam], im=[float(v.imag) for v in _lam],
-                    nota='jacobiano de rhs_QS (lineal) en x=ln a=0; variable d/dln a'),
+                    nota='jacobiano de rhs_IS (5 variables, c2 del campo) en x=ln a=0; variable d/dln a; F = friccion de Hubble 1-3c2'),
                 nota=('R = Omega_m,eff/Omega_m con las DENSIDADES reales. '
                       'El blanco 1.998924 era el factor materia retirado el '
                       '2026-06-18 (OP-8); se conserva solo como registro.')),
@@ -777,31 +732,26 @@ if len(results) >= 3:
     MIRA_arr  = np.array([results[k]['MIRA_num'] for k in k_arr])
     Om_eff_arr = np.array([results[k]['Om_eff']  for k in k_arr])
 
-    ax2.semilogx(k_arr, MIRA_arr, 'bo-', lw=2, ms=7, label=r'$\mathcal{R}=\Omega_{m,\rm eff}/\Omega_m$ (IS)')
-    ax2.axhline(MIRA_alg, color='r', ls='--', lw=2,
-                label=rf'MIRA$=(3\varphi+\pi)/4={MIRA_alg:.4f}$ (algebraic)')
-    ax2.axhline(1.0, color='gray', ls=':', lw=1, label=r'no DE clustering')
-    ax2.axhline(1.0/Omm, color='gray', ls='-.', lw=1,
-                label=rf'full clustering ($1/\Omega_m={1/Omm:.2f}$)')
-    ax2.axvline(k_crit_H0, color='purple', ls=':', lw=1.5,
-                label=rf'$k_{{\rm crit}}={k_crit_H0:.3f}\,H_0/c$')
-
-    ax2.fill_between([k_crit_H0, k_arr.max()],
-                     [MIRA_alg*0.95]*2, [MIRA_alg*1.05]*2,
-                     alpha=0.15, color='red', label='±5% MIRA band')
-
+    # 2026-10-11: |r| con el c²_s del campo (estable) contra c²_bare = w₀
+    # (el fluido IS completo crece); antes, R(k) contra la banda MIRA.
+    r_campo = np.array([abs(results[k]['r']) for k in k_arr])
+    r_w0 = []
+    for _k in k_arr:
+        _s = integrate_growth(_k, cs2=cs2_bare)
+        r_w0.append(abs(_s.y[2, -1] / _s.y[0, -1]))
+    ax2.loglog(k_arr, r_campo, 'bo-', lw=2, ms=7,
+               label=rf'$c^2_s={cs2_campo:.4f}$ (field, Paper 7)')
+    ax2.loglog(k_arr, r_w0, 'rs--', lw=2, ms=7,
+               label=rf'$c^2_{{s,\rm bare}}=w_0={cs2_bare:.3f}$ (fluid closure)')
     ax2.set_xlabel(r'$k\,[H_0/c]$')
-    # 2026-09-26: el eje decia Omega_{m,dyn}, pero el codigo divide por Omm =
-    # 0.308881 desde el 2026-09-05. Etiqueta fosil, como las de Paper 2.
-    ax2.set_ylabel(r'$\mathcal{R} = \Omega_{m,\rm eff}/\Omega_m$')
-    ax2.set_title(r'MIRA Test: IS Growth $\to$ Effective Matter Density'
-                  '\n(SSEE Paper 5)')
+    ax2.set_ylabel(r'$|\delta_{\rm DE}/\delta_m|$ at $z=0$')
+    ax2.set_title('Full Israel--Stewart integration (SSEE Paper 5)')
     ax2.legend(fontsize=9, loc='upper right')
     ax2.grid(True, alpha=0.3)
     ax2.set_xlim(k_arr.min(), k_arr.max())
 
     fig2.tight_layout()
-    out2 = os.path.join(OUTDIR, 'fig_paper5_MIRA_test.pdf')
+    out2 = os.path.join(OUTDIR, 'fig_paper5_DE_clustering.pdf')
     fig2.savefig(out2, bbox_inches='tight')
     print(f"  Figure saved: {out2}")
 
