@@ -286,6 +286,11 @@
    "valor": 0.8793369021792969,
    "uso": "Omega_m = omega_m/h^2 frente a Planck, en sigma"
   },
+  "H0alg_sigma_planck": {
+   "formula": "abs(H0_ALG-67.36)/0.54",
+   "valor": 1.1150691174246463,
+   "uso": "el numero puro 3(phi+pi)^2 frente al H0 de Planck, en sigma"
+  },
   "Yp_ssee": {
    "formula": "0.2471+0.96*(OMEGA_B_H2-0.02237)",
    "valor": 0.24714584650985583,
@@ -374,19 +379,19 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "f3a87ebfe208f7bb4962f7eb3af590be0fb50a75",
+  "commit": "739710231a02f85e74627e054330b89c4066c60f",
   "reproducible_desde_commit": false,
   "cambios_sin_commitear": [
    "M src/algebra_derivada.py"
   ],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "8effe010bc4086989dae8343176135be7cf37d7df9d03c6526a5e62704a54ee3",
+  "script_sha256": "1527b0a3b1a47a7520a46491cf7dc55d213e87b4d24e466a745d56aa8502560b",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T11:02:15",
+  "fecha": "2026-10-11T11:17:39",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

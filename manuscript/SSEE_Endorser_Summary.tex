@@ -44,13 +44,13 @@ derived, not fitted, and is unobservable on linear scales. The dark-sector ans\"
 \midrule
 $w_0$ & $-T_r/M_v = \val{W0_d6}$ & DESI DR2+CMB+Pantheon+: $-0.838\pm0.055$ & $\val{p2_dw0_ec26}\sigma$ \\
 $w_a$ & $-P_{sc}/I_g = \val{WA_d6}$ & DESI DR2+CMB+Pantheon+: $-0.617\pm0.208$ & $\val{p2_dwa_ec26}\sigma$; joint 2D: $\val{p2_w0wa_ssee_ec26}\sigma$ \\
-$3(\varphi+\pi)^2$ (target) & pure number $= \val{H0_ALG_d5}$ & Planck 2018: $67.36\pm0.54$ & $1.11\sigma$ \\
+$3(\varphi+\pi)^2$ (target) & pure number $= \val{H0_ALG_d5}$ & Planck 2018: $67.36\pm0.54$ & $\val{h0alg_planck_sig}\sigma$ \\
 $\Omega_{m,\rm CMB}$ & $\omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct) & Planck 2018: $0.3153\pm0.0073$ & $\val{om_planck_sig}\sigma$ \\
 $r_d$ & CAMB ($\omega_m$-direct): $\val{mf_rdrag_alg}$ Mpc & Planck 2018: $147.09\pm0.26$ Mpc & $\val{p3_rd_sig_anc}\sigma$ \\
-$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-f_{\rm scr}) = \val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\varphi+\pi)^2 = \val{H0_ALG_d5}$ & residual $+4.2\times10^{-6}$ ($\sigma=0.968$) \\
+$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-f_{\rm scr}) = \val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\varphi+\pi)^2 = \val{H0_ALG_d5}$ & residual $+\val{p9_hglob_residuo}$ ($\sigma=\val{p9_hglob_sigma}$) \\
 $n_s$ & $1-\varphi^{-7} = \val{N_S_d6}$ & Planck 2018: $0.9649\pm0.0042$ & $\val{ns_planck_sig}\sigma$ \\
-$r$ & $\varphi^{-10} = 0.008131$ & BK18: $r<0.036$ & Prediction \\
-$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r) = 0.021284$ & dark-energy clustering (Euclid) & Prediction \\
+$r$ & $\varphi^{-10} = \val{R_TENSOR_d6}$ & BK18: $r<0.036$ & Prediction \\
+$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r) = \val{cs2_condensado_d6}$ & dark-energy clustering (Euclid) & Prediction \\
 $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) & KiDS-Legacy: $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ & $\val{S8_leg_tension}\sigma$ \\
 \bottomrule
 \end{tabularx}
@@ -76,13 +76,13 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
   \textbf{KiDS-Legacy} release (357 raw points; Wright et al.\ 2025,
   arXiv:2503.19441 --- \emph{published sixteen months before this analysis: no
   temporal priority is claimed}) the shear asks for
-  $\log(10^{10}A_s)=3.0255\pm0.0396$ against the $3.04483$ that the CMB fixes
-  under the \emph{same} algebraic background: $0.49\sigma$ (Planck background,
+  $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$ against the $\val{leg_logA_cmb}$ that the CMB fixes
+  under the \emph{same} algebraic background: $\val{logA_leg_vs_cmb}\sigma$ (Planck background,
   held equally rigid: $\val{leg_lcdm_vs_planck}\sigma$). Fixing $A_s$ to that CMB value therefore
-  costs nothing --- $\chi^2=417.97$ with \textbf{eight free parameters, all
-  nuisance, none cosmological}, against $418.34$ with $A_s$ free
-  ($\Delta\mathrm{BIC}=+6.24$) and $418.95$ for the $\Lambda$CDM-background
-  control ($+6.86$). $S_8=\val{S8_leg_pred}$ is then predicted, not fitted, against
+  costs nothing --- $\chi^2=\val{chi2_leg_unif}$ with \textbf{eight free parameters, all
+  nuisance, none cosmological}, against $\val{chi2_leg_libre}$ with $A_s$ free
+  ($\Delta\mathrm{BIC}=+\val{dBIC_leg_libre}$) and $\val{chi2_leg_lcdm}$ for the $\Lambda$CDM-background
+  control ($+\val{dBIC_leg_lcdm}$). $S_8=\val{S8_leg_pred}$ is then predicted, not fitted, against
   $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured: $\val{S8_leg_tension}\sigma$. The three $\chi^2$ span $1.0$, so
   the shear does \emph{not} discriminate between the models; what separates
   them is the parameter count. (Earlier, against KiDS-1000: $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$
@@ -92,11 +92,11 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
 
 \subsubsection*{III. Phenomenological Extensions \& Open Directions}
 \begin{itemize}
-  \item \textbf{Paper 5 (Israel--Stewart Perturbations)}: Causal bulk viscosity; $c_s^2=0$ as the minimal-viscosity solution (OP-21); $\gamma_{\rm IS}=0.5504\approx\gamma_{\Lambda\rm CDM}$. [31 pp]
+  \item \textbf{Paper 5 (Israel--Stewart Perturbations)}: Causal bulk viscosity; $c_s^2=0$ as the minimal-viscosity solution (OP-21); $\gamma_{\rm IS}=\val{p3_gamma_IS}\approx\gamma_{\Lambda\rm CDM}$. [31 pp]
   \item \textbf{Paper 7 (Canonical EFT Proposal)}: the action is a minimally
   coupled ghost condensate, $K(X)=c_1X+c_2X^2$, with no potential and no dark
   coupling; $\alpha_T=\alpha_M=\alpha_B=0$, $\alpha_K=\val{alpha_K_z0_d6}$ (not
-  observationally accessible) and sound speed $c_s^2=0.021284$. The same action
+  observationally accessible) and sound speed $c_s^2=\val{cs2_condensado_d6}$. The same action
   fixes $w_0$ but not $w_a$ (OP-24). [17 pp]
 \end{itemize}
 
@@ -108,10 +108,11 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
   distinct) and the canonical limit with EFT $\alpha_B=\alpha_M=\alpha_T=0$
   (residual fifth-force $\sim 10^{-15}$ at kpc, observable lensing recovers GR);
   selective coupling satisfies solar-system tests. Current SLACS/BELLS data
-  favour the canonical limit (OPEN\_PROBLEMS.md OP-13). A dimensional defect in
-  the Vainshtein-radius equation of this paper is open and under repair
-  (OP-4, reopened 2026-09); it does not enter the canonical-limit prediction,
-  which rests on $\omega_c$ and on $\alpha_B=\alpha_M=0$. [19 pp]
+  favour the canonical limit (OPEN\_PROBLEMS.md OP-13). No screening radius is
+  quoted: an earlier Vainshtein/k-mouflage radius formula was dimensionally
+  inconsistent and has been withdrawn (OP-4, closed 2026-10-03); the
+  canonical-limit prediction never used it and rests on $\omega_c$ and on
+  $\alpha_B=\alpha_M=0$. [19 pp]
   \item \textbf{Paper 9 (Hubble Tension)}: Algebraic local screening fraction
   $f_{\rm scr}^{\rm IR}=(\pi-\varphi)/(\varphi+\pi)^2=\val{F_SCREEN_IR_d6}$ applied to the
   measured SH0ES rate $73.04\pm1.04$ returns, with the IR term alone,
