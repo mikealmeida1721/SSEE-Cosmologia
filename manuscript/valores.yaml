@@ -706,3 +706,20 @@ costo_bao_conj:      {fuente: "results/logs/lcdm_conjunta.json#costo_por_sonda.b
 dchi2_ssee_lcdm_conj: {fuente: "results/logs/lcdm_conjunta.json#delta_ssee_menos_lcdm_conjunta", formato: ".2f"}
 dBIC_ssee_lcdm_conj: {fuente: "results/logs/lcdm_conjunta.json#seleccion.dBIC_ssee_menos_lcdm", formato: ".2f"}
 N_conj:              {fuente: "results/logs/lcdm_conjunta.json#seleccion.N", formato: "d"}
+# cuarta lectura P2 (2026-10-10, notes/lectura_cuarta/P2.yaml)
+sd_ztrunc_w0: {fuente: "results/logs/savage_cv.json#savage_dickey.Z_trunc_w0", formato: ".4f"}
+sd_ztrunc_wa: {fuente: "results/logs/savage_cv.json#savage_dickey.Z_trunc_wa", formato: ".4f"}
+# P2 tabla de convergencia (cuarta lectura 2026-10-10): de la corrida vigente de 3 modelos
+p2_tau_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.tau_max", formato: ".1f"}
+p2_tau_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.tau_max", formato: ".1f"}
+p2_tau_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.tau_max", formato: ".1f"}
+p2_acc_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.aceptacion", formato: ".3f"}
+p2_acc_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.aceptacion", formato: ".3f"}
+p2_acc_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.aceptacion", formato: ".3f"}
+p2_nstau_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.Ns_sobre_tau", formato: ".0f"}
+p2_nstau_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.Ns_sobre_tau", formato: ".0f"}
+p2_nstau_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.Ns_sobre_tau", formato: ".0f"}
+p2_neff_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.N_eff_del_log", formato: "d"}
+p2_neff_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.N_eff_del_log", formato: "d"}
+p2_neff_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.N_eff_del_log", formato: "d"}
+p2_neff_prod: {fuente: "results/logs/mcmc_paper2_reframe.json#N_eff", formato: ".0f"}

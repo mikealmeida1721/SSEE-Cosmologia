@@ -43,6 +43,22 @@ def main():
     nuevos, rep = {}, {k: [] for k in ("fuera_de_cadena", "no_casa", "choque", "ambiguo", "sin_fuente", "hecho")}
     archivos = {pathlib.Path(f).name: ROOT / f for f in inv.DOCS[doc]}
     texto = {n: p.read_text().split("\n") for n, p in archivos.items()}
+    # normaliza: «nombre (YA EXISTE)» → nombre; «ver línea N» hereda la decisión VAL de la
+    # línea N con el mismo número; una macro existente manda su fuente y formato.
+    porlinea = {}
+    for x in dec.get("numeros", []) or []:
+        if x.get("nombre"):
+            x["nombre"] = re.split(r"[\s(/]", str(x["nombre"]).strip())[0]
+        porlinea.setdefault((int(x["linea"]), str(x["num"]).lstrip("-")), x)
+    for x in dec.get("numeros", []) or []:
+        if x.get("decision") == "VAL" and not x.get("nombre"):
+            m = re.search(r"ver l[ií]nea (\d+)", x.get("nota") or "")
+            if m:
+                ref = porlinea.get((int(m.group(1)), str(x["num"]).lstrip("-")))
+                if ref and ref.get("nombre"):
+                    x["nombre"] = ref["nombre"]
+        if x.get("nombre") in vals:
+            x["fuente"] = vals[x["nombre"]]["fuente"]; x["formato"] = vals[x["nombre"]].get("formato", "")
     for x in dec.get("numeros", []) or []:
         d = x.get("decision")
         if d not in ("VAL", "FIX"):
@@ -71,7 +87,9 @@ def main():
             if num.startswith("-") is False and s.startswith("-"):
                 reemplazo = reemplazo  # el signo del texto se respeta tal cual
         else:
-            reemplazo = x["nuevo"]
+            reemplazo = str(x.get("nuevo") or "")
+            if not reemplazo or re.search(r"revisar|verificar|no coincide|PENDIENTE|recalc|≈", reemplazo, re.I):
+                rep.setdefault("fix_sin_latex", []).append(x); continue
         L = texto[f][ln - 1]
         fuera = re.sub(r"\\val\{[^}]*\}", lambda m: "\0" * len(m.group(0)), L)
         pos = [m.start() for m in re.finditer(rf"(?<![\w.]){re.escape(num)}(?![\w])", fuera)]

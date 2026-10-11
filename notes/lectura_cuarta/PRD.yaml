@@ -90,5 +90,20 @@ numeros:
   - {archivo: SSEE_PRD.tex, linea: 1178, num: "8.1e-3", decision: ALG, expr: "c.PHI**-10", nota: "repite la línea 989, en las Conclusiones; mismo caso, hardcodeado."}
   - {archivo: SSEE_PRD.tex, linea: 1040, num: "0.036", decision: CITA, nota: "repite la cota r<0.036 sin cita explícita; mismo caso que la línea 749."}
   - {archivo: SSEE_PRD.tex, linea: 1260, num: "0.669975", decision: VAL, nombre: "WA_abs_d6", nota: "cierre del Apéndice A, misma entidad que las líneas 316/328/351/378."}
+  - {archivo: SSEE_PRD.tex, linea: 49, num: "0.968", decision: ALG, expr: "c.SIG_H0_GLOBAL", nota: "HALLAZGO DE HERRAMIENTA: el script inventario.py NO detecta números precedidos por \\pm (el lookbehind \\w se come la 'm' de '\\pm'); encontrado por lectura manual. Confirmado: SIG_H0_GLOBAL=0.967698→0.968. Hardcodeado en vez de \\val."}
+  - {archivo: SSEE_PRD.tex, linea: 505, num: "0.968", decision: ALG, expr: "c.SIG_H0_GLOBAL", nota: "mismo caso que línea 49 (gap de herramienta, número tras \\pm); misma entidad, confirmado."}
+  - {archivo: SSEE_PRD.tex, linea: 324, num: "0.0005", decision: TRIVIAL, nota: "gap de herramienta (número tras \\pm); tolerancia de diseño del test look-elsewhere, coincide con results/logs/look_elsewhere_full.log (tol=0.0005, 1 hit en w0 y wa)."}
+  - {archivo: SSEE_PRD.tex, linea: 328, num: "0.0005", decision: TRIVIAL, nota: "mismo caso, repetición de la tolerancia en la Ec. de lookelsewhere."}
+  - {archivo: SSEE_PRD.tex, linea: 345, num: "0.0005", decision: TRIVIAL, nota: "mismo caso, pie de la Tabla lookelsewhere-tol."}
+  - {archivo: SSEE_PRD.tex, linea: 347, num: "0.0005", decision: TRIVIAL, nota: "mismo caso, pie de la Tabla lookelsewhere-tol (segunda mención)."}
+  - {archivo: SSEE_PRD.tex, linea: 353, num: "0.0005", decision: TRIVIAL, nota: "fila de la Tabla lookelsewhere-tol; confirmado exacto contra look_elsewhere_full.log (hits=1,1)."}
+  - {archivo: SSEE_PRD.tex, linea: 354, num: "0.001", decision: TRIVIAL, nota: "fila de la Tabla; confirmado exacto contra el log (hits=1,2)."}
+  - {archivo: SSEE_PRD.tex, linea: 355, num: "0.002", decision: TRIVIAL, nota: "fila de la Tabla; confirmado exacto contra el log (hits=1,4)."}
+  - {archivo: SSEE_PRD.tex, linea: 356, num: "0.005", decision: TRIVIAL, nota: "fila de la Tabla; confirmado exacto contra el log (hits=2,5)."}
+  - {archivo: SSEE_PRD.tex, linea: 357, num: "0.01", decision: TRIVIAL, nota: "fila de la Tabla; confirmado exacto contra el log (hits=4,9)."}
+  - {archivo: SSEE_PRD.tex, linea: 376, num: "0.0005", decision: TRIVIAL, nota: "párrafo del 'single near-value' (SOLAR/NYX); repite la tolerancia exacta."}
+  - {archivo: SSEE_PRD.tex, linea: 376, num: "0.001", decision: TRIVIAL, nota: "mismo párrafo, banda relajada donde SOLAR/NYX entra como segundo hit; confirmado contra el log (hits wa=2 a esa tolerancia)."}
+  - {archivo: SSEE_PRD.tex, linea: 846, num: "0.005", decision: VAL, nombre: "p5_G (sigma)", nota: "gap de herramienta (número tras \\pm); coincide exacto con la incertidumbre ya reportada para \\val{p5_G}=1.0032±0.005 en results/logs/p5_IS_perturbations_Q3.json#G. Hardcodeado en vez de ir con la propia macro."}
+  - {archivo: SSEE_PRD.tex, linea: 856, num: "0.006", decision: TRIVIAL, nota: "gap de herramienta; cifra de precisión del integrador CLASS (criterio del control: sigma8_LCDM=0.8111±0.006 fijado en el .ini antes de correr, results/logs/p5_techo_sigma8_As_fijo.json#control.criterio), no una barra de error MCMC de sigma8_techo (corrida CLASS determinista). Uso informal pero consistente con el control declarado."}
 
 afirmaciones: []
