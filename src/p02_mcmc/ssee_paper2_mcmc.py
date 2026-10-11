@@ -180,17 +180,22 @@ def lpost_ssee(theta):
     H0, ob_h2 = theta
     if not (40 < H0 < 100): return -np.inf
     if not (0.015 < ob_h2 < 0.030): return -np.inf
-    lp_bbn = -0.5*((ob_h2-0.02218)/0.00055)**2  # prior BBN de DESI (Schöneberg 2024)
-    lp_H0  = -0.5*((H0-PLANCK_H0[0])/PLANCK_H0[1])**2
     om_h2  = WM_ALG                # ω_m ALGEBRAICO fijo — la predicción de SSEE
     Om     = WM_ALG/(H0/100)**2    # Ω_m DERIVADO por muestra (no congelado)
+    # 2026-10-11: MISMOS DATOS que LCDM y CPL — el prior Planck 3D (H0, Omega_m, omega_b)
+    # entero, con el Omega_m derivado de cada muestra. Antes SSEE llevaba otro conjunto:
+    # el prior BBN de DESI en omega_b y solo la marginal de H0 de Planck, «porque Omega_m
+    # esta fijo». Pero Omega_m no esta fijo (es omega_m/h^2) y el BIC usa N = 13 + 3
+    # restricciones Planck para los tres: SSEE se libraba de dos terminos que los otros
+    # pagaban (estimado sobre la cadena vieja: dBIC +7.25 -> ~+5.8). Hallado en la
+    # quinta lectura de P2.
     lb = ll_bao_full(H0, om_h2, ob_h2, E_ssee, Om)
+    return ll_planck(H0, Om, ob_h2) + lb
     # 2026-10-01: SIN termino de cumulos. Era una constante (KAL0 y f_nu fijos, cero libres) que solo
     # llevaba SSEE: no movia el posterior, pero restaba chi2=0.49 al lnP_MAP de SSEE y no a LCDM/CPL,
     # con 4 datos que N_DATA no contaba. Ademas eran datos que no estan en la fuente citada y una formula
     # del marco MOND de abril (el SSEE vigente es RG: alpha_T=alpha_M=alpha_B=0). La prueba de cumulos
     # vive aparte, simetrica y sobre los 46 sistemas reales: src/p02_mcmc/cumulos_zhang2026.py
-    return lp_bbn + lp_H0 + lb
 
 def lpost_lcdm(theta):
     H0, Om, ob_h2 = theta

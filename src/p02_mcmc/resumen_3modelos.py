@@ -54,6 +54,12 @@ for m in res:
     # con el signo de Paper 2: Delta = SSEE - modelo (negativo favorece a SSEE)
     res[m]["dBIC_ssee_menos"] = res["ssee"]["BIC"] - res[m]["BIC"]
     res[m]["dAIC_ssee_menos"] = res["ssee"]["AIC"] - res[m]["AIC"]
+# Ω_m de SSEE no se muestrea: es ω_m algebraico / h² en cada muestra (P2 tab:posteriors
+# imprimía el valor del ancla, 0.308881, como si fuera el posterior; 2026-10-11)
+_om = S.OMEGA_M_H2 / (d["ssee_flat"][:, 0] / 100.0) ** 2
+_a, _b, _c = np.percentile(_om, [16, 50, 84])
+res["ssee"]["posterior"]["Om_derivado"] = dict(mediana=float(_b), mas=float(_c - _b), menos=float(_b - _a),
+                                               std=float(_om.std()))
 rho_cpl = float(np.corrcoef(d["cpl_flat"][:, 2], d["cpl_flat"][:, 3])[0, 1])
 # distancia del punto algebraico de SSEE a la mediana CPL, por eje, en sigmas
 pc = res["cpl"]["posterior"]

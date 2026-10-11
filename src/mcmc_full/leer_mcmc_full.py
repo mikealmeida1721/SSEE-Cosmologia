@@ -75,11 +75,28 @@ def _dist(p):
 
 dist_w0wa = dict(ssee=_dist([_S.W0, _S.WA]), lcdm=_dist([-1.0, 0.0]),
                  rho=float(_C[0, 1] / np.sqrt(_C[0, 0] * _C[1, 1])))  # P2 lo citaba a mano (2026-10-11)
+# Gelman-Rubin entre las 4 cadenas, sobre los 9 parametros muestreados (2026-10-11: P2
+# decia «R-1<0.003» sin log; Cobaya da R-1 por cadena en *.progress, no entre cadenas).
+# Igual que Cobaya: R-1 = autovalor maximo de W^-1 B, W = media de las covarianzas de
+# cada cadena, B = covarianza de sus medias.
+MUESTREADOS = ["H0", "ombh2", "omch2", "logA", "ns", "tau", "w", "wa", "A_planck"]
+_med, _cov = [], []
+for f_ in filas:
+    _w = f_[:, nombres.index("weight")]
+    _Y = np.vstack([f_[:, nombres.index(q)] for q in MUESTREADOS])
+    _med.append(np.average(_Y, axis=1, weights=_w))
+    _cov.append(np.cov(_Y, aweights=_w))
+_W = np.mean(_cov, axis=0)
+_B = np.atleast_2d(np.cov(np.array(_med).T))
+_L = np.linalg.cholesky(_W)
+_Li = np.linalg.inv(_L)
+rminus1 = float(np.max(np.abs(np.linalg.eigvalsh(_Li @ _B @ _Li.T))))
 out = dict(fecha=str(__import__("datetime").date.today()), cadenas=f"{BASE}/c1..c4",
            filas_tras_corte=int(len(d)), corte="30 % inicial por cadena",
-           posteriores=res, tensiones=tens, distancia_w0wa=dist_w0wa, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
+           posteriores=res, gelman_rubin=dict(rminus1=rminus1, parametros=MUESTREADOS, cadenas=4), tensiones=tens, distancia_w0wa=dist_w0wa, control=ctrl, control_pasa=all(c["coincide"] for c in ctrl.values()))
 json.dump(con_acta(out, __file__, entradas=[f"{BASE}/c{i}/ssee_full.1.txt" for i in (1, 2, 3, 4)] + [LYA]),
           open(os.path.join(R, "results/logs/mcmc_full_posteriores.json"), "w"), indent=1)
 for p in PAR:
     print(f"  {p:7s} {res[p]['media']:.5f} ± {res[p]['sigma']:.5f}")
+print(f"  R-1 (4 cadenas) = {rminus1:.4f}")
 print("  control:", {p: (c["tabla"], round(c["lector"], 5), c["coincide"]) for p, c in ctrl.items()})
