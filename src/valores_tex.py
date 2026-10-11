@@ -23,6 +23,7 @@ import json
 import pathlib
 import sys
 
+import re
 import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -48,6 +49,12 @@ def _lee(ref):
 
 def genera():
     defs = yaml.safe_load(DEF.read_text()) or {}
+    # un nombre repetido en valores.yaml: YAML se queda con el ultimo sin avisar (2026-10-10,
+    # p2_neff_* duplicados con otro formato). Se rechaza.
+    _noms = re.findall(r"^([A-Za-z_][\w]*):", DEF.read_text(), re.M)
+    _dup = sorted({n for n in _noms if _noms.count(n) > 1})
+    if _dup:
+        sys.exit(f"valores.yaml: nombres repetidos {_dup}")
     cadena = _cadena()
     fuentes = sorted({ROOT / d["fuente"].split("#")[0] for d in defs.values()} | {DEF})
     lineas = [cabecera(__file__, entradas=fuentes, comentario="%"),
