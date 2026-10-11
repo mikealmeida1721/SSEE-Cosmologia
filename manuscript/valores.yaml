@@ -754,7 +754,7 @@ deltac_ssee_zc0: {fuente: "results/logs/deltac_spherical_collapse.json#citado_de
 deltac_ssee_zc10: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_SSEE_zc10", formato: ".5f"}
 deltac_lcdm_zc0: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_LCDM_zc0", formato: ".5f"}
 deltac_lcdm_zc10: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_LCDM_zc10", formato: ".5f"}
-p9_hglob_residuo: {fuente: "results/logs/p9_cascada_control.json#sh0es.completo.residuo", formato: ".1e"}
+p9_hglob_residuo: {fuente: "results/logs/p9_cascada_control.json#sh0es.completo.residuo", formato: "tex.1e"}
 KAL0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.KAL0", formato: ".3f"}
 TAU_PI_H0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.TAU_PI_H0", formato: ".3f"}
 SUM_MNU_EV_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV", formato: ".4f"}
