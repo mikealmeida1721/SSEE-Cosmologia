@@ -88,6 +88,7 @@ def main():
             if nom in vals and vals[nom]["fuente"] != fu:
                 rep["choque"].append({**x, "existente": vals[nom]["fuente"]}); continue
             if nom not in vals:
+                fu = re.sub(r"\[(\d+)\]", r".\1", fu)   # valores_tex usa a.0.b, no a[0].b
                 nuevos[nom] = {"fuente": fu, "formato": fmt}; vals[nom] = nuevos[nom]
             reemplazo = rf"\val{{{nom}}}"
             if num.startswith("-") is False and s.startswith("-"):

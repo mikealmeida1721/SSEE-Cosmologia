@@ -625,8 +625,6 @@ lite_dchi2:     {fuente: "results/logs/cmb_dbic_mnu_propia.json#dchi2", formato:
 lite_dBIC:      {fuente: "results/logs/cmb_dbic_mnu_propia.json#dBIC", formato: ".2f"}
 lite_N:         {fuente: "results/logs/cmb_dbic_mnu_propia.json#N", formato: "d"}
 # H0 de DESI DR2 con prior Planck (re-corrida de 3 modelos) — PRD/Sealed §3 (2026-10-02; antes «67.61» tecleado)
-h0_3mod:    {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.H0.mediana", formato: ".2f"}
-h0_3mod_s:  {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.posterior.H0.std", formato: ".2f"}
 # Chequeo predictivo H(z) de Paper 2 contra los 32 cronometros de Moresco+2022 (2026-10-02; antes 11 tecleados con un punto BAO de WiggleZ)
 cc_N:          {fuente: "results/logs/ppc_cronometros.json#datos.N", formato: "d"}
 cc_chi2r_ssee: {fuente: "results/logs/ppc_cronometros.json#modelos.ssee.chi2r_32", formato: ".3f"}
@@ -734,3 +732,18 @@ p2_w0wa_lcdm_max: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28
 p2_w0wa_ssee_ec28_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.ssee_sigma", formato: ".1f"}
 p2_w0wa_ssee_ec27_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.ssee_sigma", formato: ".1f"}
 # cuarta lectura P3 (2026-10-10, notes/lectura_cuarta/P3.yaml)
+# cuarta lectura P5 (2026-10-10, notes/lectura_cuarta/P5.yaml)
+R_media_k10_p5: {fuente: "results/logs/p5_IS_perturbations_Q2.json#R_media_k10", formato: ".4f"}
+R_sd_k10_p5: {fuente: "results/logs/p5_IS_perturbations_Q2.json#R_sd_k10", formato: ".4f"}
+S8_SSEE_growth_ceiling_sigma: {fuente: "results/logs/p5_IS_perturbations_Q3.json#S8_SSEE_sigma", formato: ".4f"}
+q2_deltam_k0: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.0.delta_m", formato: ".4f"}
+q2_deltam_k1: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.1.delta_m", formato: ".4f"}
+q2_deltam_k2: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.2.delta_m", formato: ".4f"}
+q2_deltam_k3: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.3.delta_m", formato: ".4f"}
+q2_deltam_k4: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.4.delta_m", formato: ".4f"}
+q2_deltam_k5: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.5.delta_m", formato: ".4f"}
+q2_deltam_k6: {fuente: "results/logs/p5_IS_perturbations_Q2.json#filas.6.delta_m", formato: ".4f"}
+tension_s8_planck_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.Planck 2018", formato: ".2f"}
+tension_s8_kids1000_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.KiDS-1000", formato: ".2f"}
+deltac_ssee_z0: {fuente: "results/logs/press_schechter.json#delta_c.ssee", formato: ".5f"}
+deltac_lcdm_z0: {fuente: "results/logs/press_schechter.json#delta_c.lcdm", formato: ".5f"}
