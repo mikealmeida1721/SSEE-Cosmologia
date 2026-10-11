@@ -70,11 +70,11 @@ $c_s^2 > 0$ both hold.
 Within the Bellini--Sawicki classification the sector is minimal Horndeski
 ($\alpha_T = \alpha_B = \alpha_M = 0$) with kineticity
 $\alpha_K(z{=}0) = \val{alpha_K_z0_d6}$.
-An independent \textsc{hi\_class} integration reproduces $c_s^2$ to $0.000\%$
-and $\alpha_K(z{=}0)$ to $0.011\%$, and passes the internal stability
+An independent \textsc{hi\_class} integration reproduces $c_s^2$ to $\val{p7_hc_cs2_pct}\%$
+and $\alpha_K(z{=}0)$ to $\val{p7_hc_alphaK_pct}\%$, and passes the internal stability
 tests.
 We further show that $\alpha_K$ is \emph{not} observationally accessible ---
-a factor $100$ change moves $\sigma_8$ by $0.007\%$ and the TT spectrum only
+a factor $100$ change moves $\sigma_8$ by $\val{p7_hc_s8_xk_pct}\%$ and the TT spectrum only
 at $\ell < 10$, seven times below cosmic variance --- so the falsifiable
 content of this sector is $c_s^2$ and $w_0$, not $\alpha_K$.
 An exponential potential and a conformal dark-matter coupling
@@ -106,7 +106,7 @@ $w_0 = -T_r/M_v \approx -0.840$ and $w_a = -P_{sc}/I_g \approx -0.670$
 emerge algebraically from the golden ratio $\varphi = (1+\sqrt{5})/2$ and
 $\pi$, with no free parameters \citep{ssee_paper1,ssee_paper2}.
 The algebraic point $(w_0,w_a) = (-0.840,-0.670)$ falls within
-the DESI $1\sigma$ contour at $0.24\sigma$ (Pantheon+) \citep{ssee_paper2}.
+the DESI $1\sigma$ contour at $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+) \citep{ssee_paper2}.
 
 Papers 1--6 of this series established the phenomenological description,
 Bayesian validation (MCMC vs DESI+Planck), CMB confrontation, algebraic
@@ -114,7 +114,7 @@ $H_0$ derivation, interacting-sector perturbation theory, and a
 growth-sector analysis against raw survey data \citep{ssee_paper6}. That paper
 retracts an earlier two-sector $\phi$-DM model: measured against the raw
 KiDS-1000 $\xi_\pm$ with the primordial amplitude free, a single sector gives
-$S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$,\footnote{Updated 2026-09-20. Against the later \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points; Wright et al.\ 2025, arXiv:2503.19441 --- published sixteen months before this analysis, over which no temporal priority is claimed) the amplitude the shear asks for lies $0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic background, so $A_s$ need not be free either: fixed to that value, the growth sector carries \emph{no} free cosmological parameter and predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear does \emph{not} discriminate between the models; what separates them is the parameter count. See Paper~6.} matching the $\Lambda$CDM control with four fewer free
+$S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$,\footnote{Updated 2026-09-20. Against the later \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points; Wright et al.\ 2025, arXiv:2503.19441 --- published sixteen months before this analysis, over which no temporal priority is claimed) the amplitude the shear asks for lies $\val{logA_leg_vs_cmb}\sigma$ from the one the CMB fixes under the \emph{same} algebraic background, so $A_s$ need not be free either: fixed to that value, the growth sector carries \emph{no} free cosmological parameter and predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear does \emph{not} discriminate between the models; what separates them is the parameter count. See Paper~6.} matching the $\Lambda$CDM control with four fewer free
 parameters, so the $3.5\sigma$ ``tension'' it was built to resolve was an
 artefact of fixing $A_s$ to Planck. Meanwhile the
 $f\sigma_8$ growth-rate tension is already resolved at the single-sector
@@ -306,7 +306,7 @@ Earlier versions of this paper carried two structures that
 Eq.~(\ref{eq:accion}) no longer contains: an exponential potential
 $V(\phi)=V_0e^{-\alpha\phi}$ with $\alpha = \lambda/\sqrt{\KAL} \approx
 0.2948$, and a conformal dark-matter coupling with
-$\bc = -\AURA = -(3\phiG+\pi)/2 \approx -3.998$.
+$\bc = -\AURA = -(3\phiG+\pi)/2 \approx -\val{AURA_d3}$.
 Both are withdrawn.  We record why, because the reasons are results.
 
 \paragraph{The potential exponent was a tautology.}
@@ -333,9 +333,11 @@ shooting with the correct target gives $\bc = \val{p7_beta_c_ok}$: opposite sign
 and a factor of $17$ in magnitude.  The $0.199\%$ agreement was a
 property of the wrong normalisation.
 Three further results close the case.  First, the coupling is bounded by
-the cold-matter sector: any $|\bc| \gtrsim 0.027$ drives
+the cold-matter sector: a coupling of a few $\times10^{-2}$ already drives
 $\omega_c$ away from its forward value $\KAL\,\omega_b\,n_s$ by more than
-its Planck error, and $\AURA$ is $151$ times larger than that bound.
+its Planck error (scan archived with the withdrawn coupling,
+\texttt{archive/codigo/investigacion/beta\_c\_RETIRADO\_2026-09-07/}), and
+$\AURA\approx4$ lies two orders of magnitude above that.
 Second, no published SSEE number depends on $\bc$: it appears in no entry
 of the canonical constant register, and no production output is a function of
 it. \emph{(Wording corrected 2026-09-07: earlier text read ``it appears in no
@@ -354,7 +356,7 @@ is not part of this action either: Paper~8 keeps it only as a historical
 limit, and Paper~9 no longer uses it (its screening fraction is algebraic and
 its action on the measured rate is a postulate).
 So is $w_0$ itself, which is measured, not postulated: the algebraic
-point $(w_0,w_a)$ sits at $0.24\sigma$ of DESI~DR2 + Pantheon+
+point $(w_0,w_a)$ sits at $\val{p2_w0wa_ssee_ec26}\sigma$ of DESI~DR2 + Pantheon+
 \citep{desidr2_2025,ssee_paper2}.  What is lost with the coupling is one
 algebraic identification, $\bc = -\AURA$; what is gained is that the
 action no longer contains a term whose only support was a normalisation
@@ -584,7 +586,7 @@ $s_K$; this section is the only place $\alpha_K$ enters.
     $\alpha_K = \val{alpha_K_z0_d1}$ from $\alpha_K = \val{S_M_d6}$.
   \item The falsifiable content of this sector is therefore $c_s^2$ and
     $w_0$, not $\alpha_K$.  $w_0 = \val{W0_d6}$ is already measured, at
-    $0.24\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
+    $\val{p2_w0wa_ssee_ec26}\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
     will tighten it.  $c_s^2 = \val{cs2_condensado_d6}$ is a prediction awaiting a
     probe of dark-energy clustering.
 \end{itemize}
@@ -745,11 +747,11 @@ confront the model with data.  Specifically:
   \item $c_s^2 = \val{cs2_condensado_d6}$ leaves a maximum TT residual of $\val{p7_hc_TTcs2_l2}\%$ at
     $\ell = 2$ against a smooth-dark-energy reference, with a
     cosmic-variance floor of $\val{p7_hc_vc_l2}\%$ at that multipole, and below
-    $0.03\%$ for $\ell \geq 30$; $\sigma_8$ moves from $\val{p7_hc_s8_cs2_1}$ to
+    $\val{p7_hc_TTcs2_l30}\%$ for $\ell \geq 30$; $\sigma_8$ moves from $\val{p7_hc_s8_cs2_1}$ to
     $\val{p7_hc_s8_cs2_mod}$, a shift of $\val{p7_hc_s8_cs2_pct}\%$.  The prediction is untested, not
     confirmed.
   \item The equation of state was \emph{entered}, not derived by the
-    solver.  Its confrontation with data is Paper~2's, at $0.24\sigma$.
+    solver.  Its confrontation with data is Paper~2's, at $\val{p2_w0wa_ssee_ec26}\sigma$.
 \end{itemize}
 
 \paragraph{An earlier verification, withdrawn.}
@@ -782,7 +784,7 @@ not reproduced here, because they do not describe this model.
     $\alpha_T = \alpha_B = \alpha_M = 0$ exactly, hence
     $G_{\rm eff} = G_N$; $\alpha_K = 3\Omde(5-3w_0) = \val{alpha_K_z0_d6}$.
   \item \textbf{Independent verification:} \textsc{hi\_class} reproduces
-    $c_s^2$ to $0.000\%$ and $\alpha_K$ to $0.011\%$ and accepts the
+    $c_s^2$ to $\val{p7_hc_cs2_pct}\%$ and $\alpha_K$ to $\val{p7_hc_alphaK_pct}\%$ and accepts the
     model, while rejecting the four control configurations.
   \item \textbf{Label correction:} the constant $\val{S_K_d12}$ is
     $s_K = -3w_0(1+w_0)$, a pressure dilution rate, not $\alpha_K$.
@@ -834,7 +836,7 @@ is lost.  No published SSEE observable moves.
     Stage-IV detection above $2\sigma$ ($\sigma(c_M)\simeq0.06$,
     $\sigma(c_B)\simeq0.12$) falsifies the sector \citep{alonso2017}.
   \item \textbf{Equation of state:} $w_0 = \val{W0_d6}$, currently at
-    $0.24\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
+    $\val{p2_w0wa_ssee_ec26}\sigma$ of DESI~DR2 + Pantheon+ \citep{desidr2_2025}; DESI~DR3
     is the sharpest near-term test of this paper's central input.
   \item \textbf{Sound speed:} $c_s^2 = \val{cs2_condensado_d6}$, a clustered rather than
     smooth dark-energy sector with a sound horizon of $\approx \val{horizonte_cs_d0}$~Mpc.

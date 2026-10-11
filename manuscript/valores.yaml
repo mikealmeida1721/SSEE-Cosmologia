@@ -758,3 +758,6 @@ p9_hglob_residuo: {fuente: "results/logs/p9_cascada_control.json#sh0es.completo.
 KAL0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.KAL0", formato: ".3f"}
 TAU_PI_H0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.TAU_PI_H0", formato: ".3f"}
 SUM_MNU_EV_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV", formato: ".4f"}
+# cuarta lectura P7 (2026-10-10, notes/lectura_cuarta/P7.yaml)
+AURA_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.AURA", formato: ".3f"}
+p7_hc_TTcs2_l30: {fuente: "results/logs/hiclass_campo.json#canonico.pct.TT_cs2.30", formato: ".2f"}
