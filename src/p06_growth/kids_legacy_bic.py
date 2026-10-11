@@ -59,6 +59,9 @@ pasa = all(abs(v["log"] - v["canonical"]) < 1e-3 for v in ctl.values())
 out = dict(fecha=str(__import__("datetime").date.today()), corridas=res,
            deltaBIC=dict(libre_menos_unif=res["ssee"]["BIC"] - res["sseefijo"]["BIC"],
                          lcdm_menos_unif=res["lcdmfijo"]["BIC"] - res["sseefijo"]["BIC"]),
+           # 2026-10-11: el Δχ² fijo − libre (negativo = ruido del muestreo) que
+           # Paper 6 tecleaba a mano (-0.365) y que necesita su tabla de transporte.
+           delta_chi2=dict(unif_menos_libre=res["sseefijo"]["chi2_min"] - res["ssee"]["chi2_min"]),
            control=dict(contra_canonical=ctl, pasa=pasa))
 json.dump(con_acta(out, __file__, entradas=entradas + [os.path.join(_R, "CANONICAL_VALUES.yaml")]),
           open(os.path.join(_R, "results", "logs", "kids_legacy_bic.json"), "w"), indent=1)
