@@ -110,6 +110,12 @@ ALGEBRA = {
     "H_glob_IR_aditiva_res": ("H0_SH0ES/(1+F_SCREEN_IR)-H0_ALG", "su residuo frente al numero puro (P9)"),
     "H_glob_IR_aditiva_sig": ("(H0_SH0ES/(1+F_SCREEN_IR)-H0_ALG)/(SIG_H0_SH0ES*(1-F_SCREEN_IR))", "ese residuo en unidades del sigma SH0ES propagado (P9)"),
     "H_glob_IR_aditiva_dif": ("H0_SH0ES/(1+F_SCREEN_IR)-H0_SH0ES*(1-F_SCREEN_IR)", "aditiva menos multiplicativa, km/s/Mpc (P9)"),
+    # quinta lectura P1 (2026-10-11): el cruce fantasma de CPL lo tecleaba a mano
+    "a_cruce":        ("1+(1+W0)/WA", "factor de escala del cruce fantasma w(a*)=-1, CPL (P1)"),
+    "z_cruce":        ("-(1+W0)/WA/(1+(1+W0)/WA)", "z del cruce fantasma (P1)"),
+    "c_cruce_coef":   ("-WA/(1+W0)", "c(a)=coef*(1-a): fraccion viscosa que reproduce CPL (P1)"),
+    "c_cruce_z1":     ("-WA/(1+W0)*0.5", "esa fraccion en z=1 (P1)"),
+    "w0_mas_wa":      ("W0+WA", "w(a->0) de CPL (P1)"),
     "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
 }
 
