@@ -7476,7 +7476,12 @@ try:
              # carta de presentación: el envío activo es PRD (2026-10-10); la vieja iba a JCAP
              re.compile(r"\\begin\{letter\}\{[^}]*(?:JCAP|Journal of Cosmology)"),
              # w_a de DESI DR2+CMB+Pantheon+ es −0.617±0.208 (paper2_w0wa.json da dwa=−0.257σ con él)
-             re.compile(r"-0\.631\s*\\pm\s*0\.226")]
+             re.compile(r"-0\.631\s*\\pm\s*0\.226"),
+             # la acción de energía oscura es el condensado de P7 (c_s²=0.021284); K=X/KAL₀ (c_s²=1)
+             # y su versión UV son el funcional de apantallamiento de P10, no la acción de EO
+             re.compile(r"c_s\^2(?:\\!)?=(?:\\!)?1\$?\s*\((?:canonical|in the IR)"),
+             re.compile(r"X/\\KALz\$\s*\(gradient-stable"),
+             re.compile(r"equal to \$1\$ in the IR limit")]
 
     def _malos55e(_tx):
         _t = " ".join(_l for _l in _tx.split("\n") if not _l.lstrip().startswith("%"))
@@ -7501,6 +7506,9 @@ try:
           and not _malos55e("\\begin{letter}{The Editors\\\\Physical Review D}")
           and len(_malos55e("DESI DR2: $-0.631\\pm0.226$")) == 1
           and not _malos55e("DESI DR2+CMB+Pantheon+: $-0.617\\pm0.208$")
+          and len(_malos55e("Papers~7--10: $c_s^2\\!=\\!1$ (canonical); "
+                            "$K(X)=X/\\KALz$ (gradient-stable, $c_s^2=1$)")) == 2
+          and not _malos55e("ghost condensate with $c_s^2=\\val{cs2_condensado_d6}$")
           and not _malos55e(
               "$f_{\\rm scr}^{\\rm IR}=s_K^{\\rm IR}/(3\\,\\mathrm{MIRA})=(\\pi-\\varphi)/\\Om^2$ Mirror Ratio"),
           "control R53")

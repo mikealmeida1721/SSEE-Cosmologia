@@ -319,7 +319,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 |---|---|---|
 | α-attractor parameter | φ⁴/3 = 2.285 | exact (0.00e+00) |
 | e-folds N | 2φ⁷ ≈ 58.07 | from n_s = 1 − φ⁻⁷ |
-| Kähler curvature R | −φ⁻⁴ ≈ −0.146 | R = −2/(3α) |
+| Kähler curvature R | −2φ⁻⁴ ≈ −0.292 | R = −2/(3α) |
 | IS growth index γ_IS | 0.5504 ± 0.0003 | Paper 5 (the 0.657 of Paper 1 App. A came from the viscous IS background and is superseded) |
 | IS relaxation time τ_Π H₀ | KAL₀/(3Ω_DE) ≈ 2.191 | algebraic |
 | MIRA algebraic identity | (3φ+π)/4 = 1.9989 | exact (0.00e+00) |
