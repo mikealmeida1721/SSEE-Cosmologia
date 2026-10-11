@@ -67,7 +67,13 @@ def genera():
         if ruta not in cadena:
             errores.append(f"{nom}: {ruta} no esta en la cadena (dvc.yaml)")
             continue
-        s = format(v, d.get("formato", "")) if not isinstance(v, str) else v
+        fmt = d.get("formato", "")
+        if fmt.startswith("tex") and not isinstance(v, str):
+            # «tex.1e» → 4.2\times10^{-6} (notación científica legible en el PDF)
+            m, e = format(v, fmt[3:]).split("e")
+            s = rf"{m}\times10^{{{int(e)}}}"
+        else:
+            s = format(v, fmt) if not isinstance(v, str) else v
         lineas.append(rf"\expandafter\def\csname ssee@val@{nom}\endcsname{{{s}}}  % {d['fuente']}")
     if errores:
         sys.exit("valores_tex: " + "; ".join(errores))
