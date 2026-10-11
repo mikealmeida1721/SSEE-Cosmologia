@@ -100,7 +100,7 @@ canonical:
 
   # Control con fondo Planck clavado, misma rigidez (9 libres):
   chi2_min_kids_legacy_lcdmfijo: 418.955    # Δχ²=0.62 — NO distingue modelos
-  logA_kids_legacy_lcdmfijo:     3.0069     # ±0.0368 — 1.03σ de su propio blanco
+  logA_kids_legacy_lcdmfijo:     3.0069     # ±0.0368 — 1.01σ del logA de Planck 2018 (3.044); kids_publicados.json#s8.logA (era «1.03σ», sin log)
   # ══════════════════════════════════════════════════════════════════════
 
   # ── HISTÓRICO: KiDS-1000 (R3, canónico hasta 2026-09-19) ──────────────

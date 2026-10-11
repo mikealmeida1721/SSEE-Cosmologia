@@ -220,7 +220,7 @@ We confront Eq.~\eqref{eq:w0wa} with the four official DESI DR2 $w_0w_a$CDM
 posteriors \citep[eqs.~25--28]{AbdulKarim2025}. The tightest combination,
 DESI\,$+$\,CMB\,$+$\,Pantheon+, gives
 $w_0^{\rm bf}=-0.838\pm0.055$, $w_a^{\rm bf}=-0.62^{+0.22}_{-0.19}$
-(correlation $\rho=-0.894$, measured directly from the official DESI DR2
+(correlation $\rho=\val{p2_w0wa_rho_ec26}$, measured directly from the official DESI DR2
 chains, Zenodo record 16644577, burn-in $30\%$, chain weights). Because the two parameters are strongly
 correlated, the meaningful figure of merit is the \emph{joint} (Mahalanobis)
 distance rather than two separate one-dimensional offsets. Writing
@@ -236,15 +236,15 @@ covariance $\mathsf{C}$,
 \end{equation}
 The component offsets are $\Delta w_0=\val{p2_dw0_ec26}\sigma$ (essentially exact) and
 $\Delta w_a=\val{p2_dwa_ec26}\sigma$. Against the other official combinations (moments and
-correlations likewise measured from the official chains: $\rho=-0.905$ to
-$-0.978$) the joint
+correlations likewise measured from the official chains: $\rho=\val{p2_w0wa_rho_ec28}$ to
+$\val{p2_w0wa_rho_ec25}$) the joint
 distance is $\val{p2_w0wa_ssee_ec28}\sigma$ (DESY5), $\val{p2_w0wa_ssee_ec27}\sigma$ (Union3) and $\val{p2_w0wa_ssee_ec25}\sigma$ (no-SN DESI$+$CMB): the algebraic point is consistent with all four, with the
 tension range $0.2$--$1.8\sigma$ set by the supernova compilation. The result
 is robust to the correlation ($\rho\in[-0.92,-0.70]$ would shift the
 Pantheon+ figure by $<0.2\sigma$; the measured value is used). We stress that this agreement is obtained
 with \emph{zero} hand-tuned dark-energy parameters: the only inputs are
 $\varphi$ and $\pi$. The fixed $\Lambda$CDM point $(-1,0)$, by contrast, sits at
-$2.6$--$3.9\sigma$ from every official compilation
+$\val{p2_w0wa_lcdm_min}$--$\val{p2_w0wa_lcdm_max}\sigma$ from every official compilation
 (Table~\ref{tab:w0wa_ssee_vs_lcdm}): SSEE is closer to the data than
 $\Lambda$CDM for all four supernova compilations---a like-for-like comparison of
 two zero-parameter predictions against the same measurement, neither of which
@@ -262,10 +262,10 @@ tunes $(w_0,w_a)$.
     \toprule
     DESI~DR2 combination & $\rho$ & SSEE distance & $\Lambda$CDM distance \\
     \midrule
-    DESI+CMB+Pantheon+ & $-0.894$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
-    DESI+CMB+DES~Y5    & $-0.905$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
-    DESI+CMB+Union3    & $-0.933$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
-    DESI+CMB (no SN)   & $-0.978$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
+    DESI+CMB+Pantheon+ & $\val{p2_w0wa_rho_ec26}$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
+    DESI+CMB+DES~Y5    & $\val{p2_w0wa_rho_ec28}$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
+    DESI+CMB+Union3    & $\val{p2_w0wa_rho_ec27}$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
+    DESI+CMB (no SN)   & $\val{p2_w0wa_rho_ec25}$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -292,7 +292,7 @@ that directly probes the dark-energy-dominated epoch.
   (Pantheon+, DESY5, Union3). The SSEE point falls inside the Pantheon+
   $1\sigma$ region; the joint Mahalanobis distance is $\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$,
   an equivalent $\val{p2_w0wa_ssee_ec26}\sigma$ agreement (Eq.~\ref{eq:chi2}), and within
-  $1.5$--$1.8\sigma$ of the other compilations.}
+  $\val{p2_w0wa_ssee_ec28_d1}$--$\val{p2_w0wa_ssee_ec27_d1}\sigma$ of the other compilations.}
   \label{fig:w0wa}
 \end{figure}
 
@@ -436,7 +436,7 @@ longer tied by a factor.
 piece of $\omega_m$ is an SSEE algebraic value with no fit: the baryon density
 $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ and the cold-matter density
 $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ (a forward identity, already in
-Paper~1; $0.41\sigma$ from Planck). The neutrino term completes the total,
+Paper~1; $\val{wc_ns_sigma_abs}\sigma$ from Planck). The neutrino term completes the total,
 $\omega_\nu=\Sigma m_\nu^{\rm active}/C_\nu=0.06849/93.14=0.000735$, using the
 same active-neutrino sum $\Sigma m_\nu^{\rm active}=0.06849$~eV and the same
 relic closure constant $C_\nu=93.14$~eV (PDG, $N_{\rm eff}=3.046$),\footnote{$\Sigma m_\nu^{\rm active}$ is not
@@ -661,7 +661,7 @@ Probe & Type & $N$ & fitted & $\chi^2_{\rm SSEE}$ & $\chi^2_{\Lambda\rm CDM}$ & 
   $\times\,25{,}000$ steps). With the entire dark-energy sector fixed by
   $\varphi$ and $\pi$, the chain samples only $H_0$ and $\Omega_b h^2$ against
   DESI DR2 BAO with $H_0^{\rm glob}$ as prior. The posterior is
-  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = 0.02198\pm0.00048$
+  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = \val{p2_obh2}\pm0.00048$
   (Eq.~\ref{eq:h0post}), agreeing with the anchor to $\val{h0_p2_dhglob}\sigma$. Dashed lines
   mark the prior centres ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}~\kms$ and the BBN $\Omega_b h^2 = 0.02218$~\cite{Schoneberg2024}); the
   $16/50/84\%$ quantiles are indicated.}
@@ -891,7 +891,7 @@ temporal priority---closes the sector.  With the same algebraic background and
 $A_s$ free, the shear asks for $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, against the
 $\val{leg_logA_cmb}$ that the CMB fixes \emph{under that same background}: a distance of
 $\val{logA_leg_vs_cmb}\sigma$.  The control with the Planck background held equally rigid gives
-$1.01\sigma$.  Fixing $A_s$ to the CMB value therefore costs nothing:
+$\val{leg_lcdm_vs_planck}\sigma$.  Fixing $A_s$ to the CMB value therefore costs nothing:
 \begin{equation}
   \chi^2 = \val{chi2_leg_unif} \ \ (\text{8 free, all nuisance, \emph{none} cosmological})
   \quad\text{vs.}\quad

@@ -719,7 +719,17 @@ p2_acc_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.aceptacion"
 p2_nstau_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.Ns_sobre_tau", formato: ".0f"}
 p2_nstau_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.Ns_sobre_tau", formato: ".0f"}
 p2_nstau_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.Ns_sobre_tau", formato: ".0f"}
-p2_neff_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.N_eff_del_log", formato: "d"}
-p2_neff_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.N_eff_del_log", formato: "d"}
-p2_neff_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.N_eff_del_log", formato: "d"}
 p2_neff_prod: {fuente: "results/logs/mcmc_paper2_reframe.json#N_eff", formato: ".0f"}
+# KiDS-Legacy, control con fondo Planck (cadena lcdmfijo, A_s libre) — cuarta lectura 2026-10-10
+leg_lcdm_logA: {fuente: "results/logs/kids_publicados.json#s8.logA.legacy_lcdmfijo", formato: ".4f"}
+leg_lcdm_logA_s: {fuente: "results/logs/kids_publicados.json#s8.logA.legacy_lcdmfijo_sigma", formato: ".4f"}
+leg_lcdm_vs_planck: {fuente: "results/logs/kids_publicados.json#s8.logA.legacy_lcdmfijo_vs_planck", formato: ".2f"}
+p2_w0wa_rho_ec26: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.rho", formato: ".3f"}
+p2_w0wa_rho_ec28: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.rho", formato: ".3f"}
+p2_w0wa_rho_ec27: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.rho", formato: ".3f"}
+p2_w0wa_rho_ec25: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec25.rho", formato: ".3f"}
+# cuarta lectura PRD (2026-10-10, notes/lectura_cuarta/PRD.yaml)
+p2_w0wa_lcdm_min: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.lcdm_sigma", formato: ".1f"}
+p2_w0wa_lcdm_max: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.lcdm_sigma", formato: ".1f"}
+p2_w0wa_ssee_ec28_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.ssee_sigma", formato: ".1f"}
+p2_w0wa_ssee_ec27_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.ssee_sigma", formato: ".1f"}

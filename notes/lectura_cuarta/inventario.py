@@ -37,7 +37,7 @@ def limpia(tx):
     tx = tx.split(r"\begin{thebibliography}")[0].split(r"\bibliography{")[0]
     out = []
     for ln in tx.split("\n"):
-        ln = re.sub(r"(?<!\\)%.*", "", ln)
+        ln = re.sub(r"(?<!\\)%.*", "", ln).replace("\\pm", "\\pm ")
         for q in QUITA:
             ln = re.sub(q, " ", ln)
         out.append(ln)
