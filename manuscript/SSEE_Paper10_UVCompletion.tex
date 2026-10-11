@@ -45,6 +45,7 @@
 
 \sloppy
 \input{valores_generados.tex}
+\usepackage{adjustbox}
 \begin{document}
 \maketitle
 
@@ -457,6 +458,7 @@ IR vs.\ UV global rate returned by the cascade from the measured local
   screening fraction) dominates both.
 }
 \label{tab:H0}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lllll}
 \toprule
 Regime & $\sK$ & $\fsc$ & $H_0^{\rm glob}$ [km/s/Mpc] & vs.\ $3(\phiG+\pi)^2$ \\
@@ -468,6 +470,7 @@ SH0ES \citep{Riess2022} (\emph{input}) & --- & --- & $73.04 \pm 1.04$  & --- \\
 CCHP TRGB \citep{Freedman2024} (input) & --- & --- & $\val{p9_cchp_H0} \pm \val{p9_cchp_H0_s}$ & $\val{p9_cchp_sig}\sigma$ (UV) \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}
 
 Table~\ref{tab:H0} compares the IR and UV results.

@@ -46,6 +46,7 @@
 
 \sloppy
 \input{valores_generados.tex}
+\usepackage{adjustbox}
 \begin{document}
 \maketitle
 
@@ -676,6 +677,7 @@ Table~\ref{tab:lensing_numbers} summarises the key numerical predictions.
 \centering
 \caption{SSEE strong-lensing predictions compared to GR/$\Lambda$CDM.}
 \label{tab:lensing_numbers}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{llll}
 \toprule
 \textbf{Observable} & \textbf{GR/$\Lambda$CDM} & \textbf{SSEE} & \textbf{Scale} \\
@@ -698,6 +700,7 @@ GW speed anomaly ($\alpha_T$)
   & All \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}
 
 \subsection{Worked numerical example: cluster A1689}

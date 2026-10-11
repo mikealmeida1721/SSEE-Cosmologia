@@ -51,6 +51,7 @@ on Raw Survey Data}}
 \sloppy
 % Numeros generados desde los logs de la cadena de procedencia (src/valores_tex.py)
 \input{valores_generados.tex}
+\usepackage{adjustbox}
 \begin{document}
 \maketitle
 
@@ -385,6 +386,7 @@ What varies between determinations is only \emph{which dataset is asked to fix
 $A_s$}, and the datasets do not agree with each other:
 
 \begin{center}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lccc}
 \toprule
 $A_s$ determined by & $\log(10^{10}A_s)$ & $S_8$ & vs.\ published KiDS-1000$^\dagger$ \\
@@ -394,6 +396,7 @@ raw KiDS-1000 $\xi_\pm$ (this work) & $\val{logA_k1000}\pm\val{logA_k1000_sigma}
 $\Lambda$CDM-fitted Planck value (borrowed) & $\val{logA_b1_lcdm}$ & $\val{S8_b1_lcdm}\pm\val{S8_b1_lcdm_sigma}$ & $\val{tension_b1_lcdm}\sigma$ \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 
 \smallskip
 \footnotesize
@@ -528,6 +531,7 @@ left block: the likelihood of data neither model produced. The $S_8$ block is
 derived output, shown for continuity with the literature. $p$ is the
 probability to exceed of $\chi^2_{\rm min}$ at the stated dof.}
 \label{tab:s8}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lccccccc}
 \toprule
  & $k$ & dof & $\chi^2_{\rm min}$ & $\chi^2/$dof & $p$ & $\sigma_8$ & $S_8$ \\
@@ -541,6 +545,7 @@ $\Lambda$CDM (background free)  & 13 & 212 & $\val{chi2_k1000_lcdm}$ & $1.239$ &
 KiDS-1000 published & --- & --- & $\val{chi2_k1000_publicado}$ & --- & --- & --- & $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}
 
 The $\Lambda$CDM row is the methodological control (R4): the same pipeline,

@@ -31,6 +31,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -91,6 +92,20 @@ def main():
             problemas.append(f"falta docs/{doc}")
         elif s.exists() and _hash(d, "sha256") != _hash(s, "sha256"):
             problemas.append(f"docs/{doc} no es copia del compilado {fuente}")
+
+    # Maquetación (2026-10-10): una tabla o ecuación que se sale del margen se ve en
+    # el PDF publicado (el Endorser lo tenía y nadie lo vio). Se lee el .log de cada
+    # compilado: ningún «Overfull \hbox» de más de 15 pt (~5 mm).
+    for pre, doc, fuente in PAQUETE:
+        lg = (ROOT / fuente).with_suffix(".log")
+        if lg.exists():
+            anchos = [float(m) for m in re.findall(r"Overfull \\hbox \(([0-9.]+)pt too wide",
+                                                     lg.read_text(errors="ignore"))]
+            if anchos and max(anchos) > 15:
+                problemas.append(f"{fuente}: {sum(a > 15 for a in anchos)} líneas se salen del margen "
+                                 f"(máx {max(anchos):.0f} pt)")
+        else:
+            problemas.append(f"falta el .log de {fuente}: compilar antes de armar")
 
     if problemas:
         print("NO SE ARMA:\n  - " + "\n  - ".join(problemas))
