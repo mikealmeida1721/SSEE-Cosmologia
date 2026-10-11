@@ -747,3 +747,14 @@ tension_s8_planck_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#ten
 tension_s8_kids1000_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.KiDS-1000", formato: ".2f"}
 deltac_ssee_z0: {fuente: "results/logs/press_schechter.json#delta_c.ssee", formato: ".5f"}
 deltac_lcdm_z0: {fuente: "results/logs/press_schechter.json#delta_c.lcdm", formato: ".5f"}
+# cuarta lectura P4 (2026-10-10, notes/lectura_cuarta/P4.yaml)
+R_TENSOR_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.R_TENSOR", formato: ".6f"}
+p9_hglob_sigma: {fuente: "results/logs/p9_cascada_control.json#sh0es.completo.H_glob_s", formato: ".3f"}
+deltac_ssee_zc0: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_SSEE_zc0", formato: ".5f"}
+deltac_ssee_zc10: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_SSEE_zc10", formato: ".5f"}
+deltac_lcdm_zc0: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_LCDM_zc0", formato: ".5f"}
+deltac_lcdm_zc10: {fuente: "results/logs/deltac_spherical_collapse.json#citado_deltac_LCDM_zc10", formato: ".5f"}
+p9_hglob_residuo: {fuente: "results/logs/p9_cascada_control.json#sh0es.completo.residuo", formato: ".1e"}
+KAL0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.KAL0", formato: ".3f"}
+TAU_PI_H0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.TAU_PI_H0", formato: ".3f"}
+SUM_MNU_EV_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV", formato: ".4f"}

@@ -63,8 +63,8 @@ $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \
 $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck~2018),
 where the exponent~7 equals the number of primary structural registers in the \SSEE\ hierarchy;
 \item[(iv)] a local Hubble constant from the screening mechanism of Paper~9,
-$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = 68.13$~km\,s$^{-1}$\,Mpc$^{-1}$
-($0.17\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$),
+$H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = \val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$
+($\val{p9_sh0es_sig_IR}\sigma$ from the pure algebraic number $3(\varphi+\pi)^2=\val{H0_ALG_d6}$),
 taking \citet{Riess2022} as the input (2026 reframe); the earlier
 CMB-mapped register (via $H_0^{\rm MIRA}=67.037$) is superseded;
 see Section~\ref{sec:hubble_tension}).
@@ -77,7 +77,7 @@ In the static (Eckart) regime $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2 = \val{wc
 modulated by the IS inflationary factor $n_s = 1-\varphi^{-7}$ this becomes
 $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma}\sigma$ from Planck),
 within $1\sigma$ of the observed value.
-A falsifiable prediction $r = \varphi^{-10} = 0.008131$ is presented for the
+A falsifiable prediction $r = \varphi^{-10} = \val{R_TENSOR_d6}$ is presented for the
 LiteBIRD satellite mission ($\sim$2032).
 \end{abstract}
 
@@ -109,7 +109,7 @@ algebraically from $\varphi$ and $\pi$, with zero free parameters in that
 sector \citep{AlmeidaSSEE2026paper1,AlmeidaSSEE2026paper2,AlmeidaSSEE2026paper3}.
 Here we extend this programme to the entire cosmological background.
 The DESI DR2 BAO data \citep{desidr2_2025} independently favor the
-SSEE point at $0.24\sigma$ (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) in the $w_0$--$w_a$ plane \citep{AlmeidaSSEE2026paper2}.
+SSEE point at $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) in the $w_0$--$w_a$ plane \citep{AlmeidaSSEE2026paper2}.
 
 \paragraph{Peer-review notice.}
 An internal audit identified four vulnerabilities in a prior draft of this paper:
@@ -196,7 +196,7 @@ $K_v$ & $2\varphi+2\pi$                          & $\varphi+\pi+\Omega$ & \val{K
 $\pi+\mathrm{KAL}$ & $(\varphi+5\pi)/2$         & —              & \val{pi_mas_KAL_d6} \\
 $\varphi+\pi+\mathrm{KAL}$ & $(3\varphi+5\pi)/2$ & —             & \val{phi_pi_KAL_d6} \\
 $2\Omega+\varphi$ & $3\varphi+2\pi$              & —              & \val{dos_Omega_phi_d6} \\
-$\Omega_b h^2$ (BBN) & $(\pi-\varphi)/[3(\varphi+\pi)^2]$      & —              & 0.022420 \\
+$\Omega_b h^2$ (BBN) & $(\pi-\varphi)/[3(\varphi+\pi)^2]$      & —              & \val{OMEGA_B_H2_d6} \\
 $M_v$ & $3(\varphi+\pi)$           & $\varphi+\pi+K_v$ & \val{M_V_d6} \\
 \bottomrule
 \end{tabular}
@@ -251,7 +251,7 @@ Domain & SSEE formula & SSEE value & Observed & Deviation \\
 \midrule
 \textbf{Cosmology} & & & & \\
 \quad $H_0$ target (pure number) & $3(\varphi+\pi)^2$ & \val{H0_ALG_d6} & $67.4\pm0.5$ & $1.1\sigma$ \\
-\quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & 68.13  & $3(\varphi+\pi)^2$ & $0.17\sigma$ \\
+\quad $H_0^{\rm glob,IR}$ [km/s/Mpc] & $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})$ & \val{p9_sh0es_glob_IR}  & $3(\varphi+\pi)^2$ & $\val{p9_sh0es_sig_IR}\sigma$ \\
 \quad $\Omega_b$ & $\frac{10^4(\pi-\varphi)}{27(\varphi+\pi)^6}$ & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ \\
 \quad $n_s$ (inflation) & $1-\varphi^{-7}$ & \val{N_S_d6} & $0.9649\pm0.0042$ & $0.16\sigma$ \\
 \textbf{Hubble tension} & & & & \\
@@ -303,7 +303,7 @@ the global rate of the screening cascade as prior, $H_0^{\rm glob}=H_{\rm SH0ES}
 With the total gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ in the
 background geometry, the BAO-corrected posterior is consistent with the global
 rate $H_0^{\rm glob}$ at $\val{h0_p2_dhglob}\sigma$, and the \SSEE\ sound horizon matches \LCDM\
-($r_d^{\rm SSEE}=147.17$~Mpc vs.\ $r_d^{\rm \Lambda CDM}=147.10$~Mpc, CAMB): DESI~DR2
+($r_d^{\rm SSEE}=\val{p2_lyaB_rd}$~Mpc vs.\ $r_d^{\rm \Lambda CDM}=\val{p2_rd_lcdm}$~Mpc, CAMB): DESI~DR2
 is consistent with the global rate without singling it out. The $\sim$0.8~km\,s$^{-1}$\,Mpc$^{-1}$ downshift
 reported in earlier drafts was an artefact of using the cold sector
 $1+w_0=\val{S_M_d6}$ as the background density, now corrected.
@@ -397,19 +397,19 @@ When the Israel--Stewart inflationary correction is applied, the primordial spec
 factor $n_s = 1-\varphi^{-7}$ modulates the dark-matter density:
 \begin{equation}
 \boxed{\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s
-      = \val{KAL0_d6}\times 0.02242\times \val{N_S_d5} = \val{OMEGA_C_H2_d6}}
+      = \val{KAL0_d6}\times \val{OMEGA_B_H2_d6}\times \val{N_S_d5} = \val{OMEGA_C_H2_d6}}
 \label{eq:omch2_IS}
 \end{equation}
 \textbf{Note on $\Omega_b h^2$ input.}
-Both the static (Eq.~\ref{eq:omch2_static}) and IS formulas use the Planck~2018
-\emph{observed} value $\Omega_b h^2 = 0.02237\pm0.00015$.
-The \SSEE\ algebraic prediction $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$
-($0.32\sigma$ from Planck) can also be substituted: the IS formula gives
-$K_{\rm AL}\times0.02242\times n_s = 0.11952$ ($-0.4\sigma$), consistent with Planck.
-For transparency, the baseline calculation uses the Planck observed value.
+The static relation (Eq.~\ref{eq:omch2_static}) is evaluated with the Planck~2018
+\emph{observed} value $\Omega_b h^2 = 0.02237\pm0.00015$ \citep{PlanckCollaboration2020a}. The IS
+relation (Eq.~\ref{eq:omch2_IS}), which is the canonical one, uses the \SSEE\ algebraic
+$\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck)
+and gives $\Omega_c h^2 = \val{OMEGA_C_H2_d6}$, $\val{wc_ns_sigma_abs}\sigma$ from Planck: no
+observed input enters it.
 
 Planck~2018: $0.1200\pm0.0012$; deviation~$= -0.6\sigma$ (using Planck observed $\Omega_b h^2$).
-The IS modulation reduces the tension from $+2.9\sigma$ (Eckart) to $-0.6\sigma$ (IS),
+The IS modulation reduces the tension from $+\val{wc_estatico_sigma_d1}\sigma$ (Eckart) to $-0.6\sigma$ (IS),
 within $1\sigma$ of the observed value and consistent with zero tension at $1\sigma$.
 
 \subsection{Primordial Spectral Index and the Seven-Level Hierarchy}
@@ -482,7 +482,7 @@ $\rho_{\rm rh}=V_{\rm end}$ — gives $N_\ast = 58.25 - \ln(3)/6 = \val{N_star_r
 matching $2\varphi^7 = \val{dos_phi7_d6}$ to within $O(1/N_\ast)\approx 0.002$ e-folds.
 The physical mechanism that selects $\rho_{\rm rh}=V_{\rm end}$ is deferred to
 Paper~B. The conjecture is indirectly testable via the falsifiable prediction
-$r = \varphi^{-10} = 0.008131$ (Sec.~\ref{sec:r}): a CMB-S4 or LiteBIRD detection
+$r = \varphi^{-10} = \val{R_TENSOR_d6}$ (Sec.~\ref{sec:r}): a CMB-S4 or LiteBIRD detection
 inconsistent with this value would refute Conjecture~B.1.
 
 Planck~2018: $n_s = 0.9649\pm0.0042$; deviation $= 0.157\sigma$.
@@ -503,10 +503,10 @@ cluster on every sub-horizon scale. The dark energy of this model stays smooth
 \emph{despite} $c_s^2=0$, not because of it.}
 The result is
 \begin{equation}
-\delta_c^{\rm SSEE} = 1.67634\ (z_c{=}0) \;\longrightarrow\; 1.68647\ (z_c{=}10),
+\delta_c^{\rm SSEE} = \val{deltac_ssee_zc0}\ (z_c{=}0) \;\longrightarrow\; \val{deltac_ssee_zc10}\ (z_c{=}10),
 \label{eq:deltac}
 \end{equation}
-against $\Lambda$CDM's $1.67599 \to 1.68646$ on the same integrator: the two
+against $\Lambda$CDM's $\val{deltac_lcdm_zc0} \to \val{deltac_lcdm_zc10}$ on the same integrator: the two
 agree to $0.02\%$ at $z_c=0$ and to $0.001\%$ at $z_c=10$. The calculation
 reproduces the analytic Einstein--de~Sitter value to one part in $10^{5}$.
 
@@ -580,7 +580,7 @@ Substituting the explicit $\varphi,\pi$ expressions yields the closed-form predi
 Both values are uniquely determined; no free parameters enter.
 The algebraic point $(-0.840,-0.670)$ lies within the 68\% confidence region
 of DESI~DR2+CMB+DESY5 data \citep{desidr2_2025}
-(Mahalanobis $\chi^2_{2D}=0.42$, i.e.\ $0.24\sigma$ Pantheon+; Paper~2).
+(Mahalanobis $\chi^2_{2D}=\val{p2_chi2_2D_ec26}$, i.e.\ $\val{p2_w0wa_ssee_ec26}\sigma$ Pantheon+; Paper~2).
 
 \subsection{Open Parameters}
 
@@ -609,9 +609,9 @@ Planck~2018 \citep{PlanckCollaboration2020a} error bars.}
 Parameter & \SSEE & Planck 2018 & Deviation & Type \\
 \midrule
 $3(\varphi+\pi)^2$ (target)     & \val{H0_ALG_d6} & $67.4\pm0.5$  & $1.1\sigma$ & pure number (Type~P$^\dagger$) \\
-$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $+4.2\times10^{-6}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
+$H_0^{\rm glob}$ [km/s/Mpc]  & \val{H0_GLOBAL_d6} & vs $3(\varphi+\pi)^2$ & residual $+\val{p9_hglob_residuo}$ & SH0ES-screened, $f_{\rm screen}$ complete (IR$+$UV) \\
 $\Omega_b$          & \val{Omega_b_alg_d4} & \val{Omega_b_planck_d4} ($\omega_b/h^2$) & composite$^\ast$ & algebraic \\
-$\Omega_b h^2$      & 0.02242& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
+$\Omega_b h^2$      & \val{OMEGA_B_H2_d5}& $0.02237\pm0.00015$ & $0.32\sigma$ & algebraic \\
 $\Omega_{m,\rm CMB}$ & \val{OMEGA_M_TOTAL_d6} & $0.3153\pm0.0073$   & $0.88\sigma$ & $\omega_m/h^2$ ($\omega_m$-direct$^\ddagger$) \\
 $\Omega_c h^2$ (IS) & \val{OMEGA_C_H2_d5}& $0.1200\pm0.0012$   & $\val{wc_ns_sigma_abs}\sigma$ & algebraic (forward) \\
 $Y_p$               & \val{Yp_ssee_d4} & $0.2471\pm0.0003$   & $0.2\sigma$ & BBN (no fit) \\
@@ -661,7 +661,7 @@ positions follow from it.}
 \label{sec:hubble_tension}
 % ===========================================================================
 
-The dimensionless scalar $K=(\varphi+3\pi)/2 \approx 5.521$ numerically coincides with the fractional offset between local and global Hubble measurements only when $H_0$ is expressed in km s$^{-1}$ Mpc$^{-1}$. Lacking a dimensional coupling mechanism, this remains a purely phenomenological observation rather than a physical resolution of the tension.
+The dimensionless scalar $K=(\varphi+3\pi)/2 \approx \val{KAL0_d3}$ numerically coincides with the fractional offset between local and global Hubble measurements only when $H_0$ is expressed in km s$^{-1}$ Mpc$^{-1}$. Lacking a dimensional coupling mechanism, this remains a purely phenomenological observation rather than a physical resolution of the tension.
 
 The Hubble tension between early- and late-universe measurements
 \citep{Verde2019,Kamionkowski2023} is currently unresolved by $\Lambda$CDM.
@@ -684,7 +684,7 @@ With $\omega_b,\omega_c$ held at their algebraic values and $A_s,\tau$ profiled,
 the CMB places its own minimum at $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$,
 $\val{perfil_h0_d}\sigma$ from $H_0^{\rm glob}$ (Paper~3). (The earlier MIRA register $H_0^{\rm MIRA}=67.037$ is superseded.)
 Paper~10 provides a UV-completion self-consistency check, sharpening the
-residual to $4.2\times10^{-6}$ ($H_0^{\rm glob} = \val{H0_GLOBAL_d6}$ with the complete $f_{\rm screen}$, IR$+$UV),
+residual to $\val{p9_hglob_residuo}$ ($H_0^{\rm glob} = \val{H0_GLOBAL_d6}$ with the complete $f_{\rm screen}$, IR$+$UV),
 conditional on the UV--IR separability postulate.
 
 % ===========================================================================
@@ -698,7 +698,7 @@ conditional on the UV--IR separability postulate.
 By analogy with the seven-level spectral tilt, the tensor-to-scalar ratio is
 predicted at the tenth golden harmonic:
 \begin{equation}
-\boxed{r = \varphi^{-10} = 0.008131}
+\boxed{r = \varphi^{-10} = \val{R_TENSOR_d6}}
 \label{eq:r}
 \end{equation}
 Current limit: $r<0.036$ (BICEP/Keck, \citep{BICEPKeck2021}).
@@ -725,13 +725,13 @@ The active neutrino mass sum follows from the stability ratio
 $\mathcal{R}_2 = \Omega/(\mathrm{KAL}\cdot\mathrm{TRIAL}) = \val{R2_STABILITY_d6}$
 (with $\Omega=\pi+\varphi=\val{OMEGA_d6}$, $\mathrm{KAL}=\val{KAL0_d6}$, $\mathrm{TRIAL}=\val{T_R_d6}$),
 combined with the Israel--Stewart relaxation time
-$\tau_\Pi H_0 = \mathrm{KAL}/(3\,|w_0|) = 2.191$ (the saturation
+$\tau_\Pi H_0 = \mathrm{KAL}/(3\,|w_0|) = \val{TAU_PI_H0_d3}$ (the saturation
 ratio $|w_0|=T_r/M_v=\val{S_DE_d6}$, an equation-of-state quantity carrying no
 $H$, \emph{not} the density fraction $\Omega_{\rm DE}=\val{OMDE_DENS_d6}$):
 \begin{equation}
   \Sigma m_\nu^{\rm active}
     = \mathcal{R}_2\,\Omega_b h^2\,\frac{93.14~\mathrm{eV}}{\tau_\Pi H_0}
-    = 0.0685~\mathrm{eV},
+    = \val{SUM_MNU_EV_d4}~\mathrm{eV},
 \end{equation}
 testable with DESI~DR5 and Euclid (expected $\sigma\approx 0.015$~eV).\footnote{%
 The preliminary form $\Sigma m_\nu=\mathcal{A}/100=0.040~\mathrm{eV}$ used in
@@ -815,13 +815,13 @@ We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
   \item $\Omega_b h^2 = \val{OMEGA_B_H2_d6}$ ($0.32\sigma$ from Planck); $\Omega_b=\val{Omega_b_alg_d4}$ follows with $h=H_0/100$
   \item $n_s = 1-\varphi^{-7} = \val{N_S_d6}$ ($0.16\sigma$ from Planck)
   \item $\Omega_c h^2 = K_{\rm AL}\,\Omega_b h^2\,n_s = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck, forward)
-  \item $Y_p = 0.2472$ ($0.2\sigma$ from Planck CMB, $0.6\sigma$ from HII — no fit)
-  \item $\delta_c^{\rm SSEE} = 1.67634$ ($z_c{=}0$) from spherical collapse on the
+  \item $Y_p = \val{Yp_ssee_d4}$ ($0.2\sigma$ from Planck CMB, $0.6\sigma$ from HII — no fit)
+  \item $\delta_c^{\rm SSEE} = \val{deltac_ssee_zc0}$ ($z_c{=}0$) from spherical collapse on the
         model background, i.e.\ $\Lambda$CDM-like to $0.02\%$; the earlier
         $\delta_{c,\rm EdS}\times n_s = 1.6284$ and its JWST link are
         \textbf{withdrawn} (OP-27, \S\ref{sec:deltac})
-  \item $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = 68.13$ ($0.17\sigma$ from $3(\varphi+\pi)^2$, with Riess~2022 as the input; the MIRA register is superseded)
-  \item $r = \varphi^{-10} = 0.008131$ (falsifiable by LiteBIRD~2032)
+  \item $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR}) = \val{p9_sh0es_glob_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$ from $3(\varphi+\pi)^2$, with Riess~2022 as the input; the MIRA register is superseded)
+  \item $r = \varphi^{-10} = \val{R_TENSOR_d6}$ (falsifiable by LiteBIRD~2032)
 \end{itemize}
 
 The identification of $M_v=3\Omega$ as the maximal structural
