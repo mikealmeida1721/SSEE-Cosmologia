@@ -376,6 +376,31 @@
    "valor": 0.30954235739660874,
    "uso": "aditiva menos multiplicativa, km/s/Mpc (P9)"
   },
+  "a_cruce": {
+   "formula": "1+(1+W0)/WA",
+   "valor": 0.7611101071429058,
+   "uso": "factor de escala del cruce fantasma w(a*)=-1, CPL (P1)"
+  },
+  "z_cruce": {
+   "formula": "-(1+W0)/WA/(1+(1+W0)/WA)",
+   "valor": 0.31387034624182203,
+   "uso": "z del cruce fantasma (P1)"
+  },
+  "c_cruce_coef": {
+   "formula": "-WA/(1+W0)",
+   "valor": 4.186028919181642,
+   "uso": "c(a)=coef*(1-a): fraccion viscosa que reproduce CPL (P1)"
+  },
+  "c_cruce_z1": {
+   "formula": "-WA/(1+W0)*0.5",
+   "valor": 2.093014459590821,
+   "uso": "esa fraccion en z=1 (P1)"
+  },
+  "w0_mas_wa": {
+   "formula": "W0+WA",
+   "valor": -1.5099246570171685,
+   "uso": "w(a->0) de CPL (P1)"
+  },
   "horizonte_cs_Mpc": {
    "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
    "valor": 643.5424922781127,
@@ -449,17 +474,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "98f48baf7b449baec40a7e75711c4a3225974fd1",
+  "commit": "e413a116af6e68a0f1209c87d81354833163b87c",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "74d98d04cfd53b19e16e651b72f9cd74e62545276ee39644e77423e2d2a9ca8d",
+  "script_sha256": "a1fee77bfed53db481989f827997f5095536639c9322cce70222bfcdf201224e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T11:43:20",
+  "fecha": "2026-10-11T12:12:03",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

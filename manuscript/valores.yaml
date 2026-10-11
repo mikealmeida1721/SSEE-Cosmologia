@@ -836,3 +836,10 @@ p9_add_H: {fuente: "results/logs/algebra_derivada.json#algebra.H_glob_IR_aditiva
 p9_add_res: {fuente: "results/logs/algebra_derivada.json#algebra.H_glob_IR_aditiva_res.valor", formato: ".3f"}
 p9_add_sig: {fuente: "results/logs/algebra_derivada.json#algebra.H_glob_IR_aditiva_sig.valor", formato: ".2f"}
 p9_add_dif: {fuente: "results/logs/algebra_derivada.json#algebra.H_glob_IR_aditiva_dif.valor", formato: ".2f"}
+# quinta lectura P1 (2026-10-11)
+a_cruce: {fuente: "results/logs/algebra_derivada.json#algebra.a_cruce.valor", formato: ".3f"}
+z_cruce: {fuente: "results/logs/algebra_derivada.json#algebra.z_cruce.valor", formato: ".3f"}
+c_cruce_coef: {fuente: "results/logs/algebra_derivada.json#algebra.c_cruce_coef.valor", formato: ".3f"}
+c_cruce_z1: {fuente: "results/logs/algebra_derivada.json#algebra.c_cruce_z1.valor", formato: ".2f"}
+w0_mas_wa: {fuente: "results/logs/algebra_derivada.json#algebra.w0_mas_wa.valor", formato: ".3f"}
+IGNIS_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.IGNIS", formato: ".4f"}

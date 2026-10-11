@@ -54,8 +54,9 @@ Structural Self-Energy Expansion (SSEE)}}
 We introduce the Structural Self-Energy Expansion (SSEE), a purely algebraic framework that proposes a connection between cosmological expansion and galaxy-cluster dynamics using only two
 dimensionless geometric constants — $\pi$ and the golden ratio $\varphi$ — with a
 minimal effective parameter count and no WIMP, QCD-axion, or SUSY dark-matter particles.
-The background sector $(w_0,w_a,\Omega_{\rm DE})$ is fully algebraic
-(zero fitted dimensionless parameters). Phenomenological extensions in the
+The background sector --- the equation of state $(w_0,w_a)$ and the physical
+matter density $\omega_m$ --- is fixed algebraically (zero fitted dimensionless
+parameters). Phenomenological extensions in the
 dark-matter sector, proposed in an earlier version of Paper~6, have been
 \emph{retracted}: the matter sector is a single unpartitioned component
 $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, and the four register entries those extensions carried
@@ -65,9 +66,9 @@ questions, since the object they concerned was withdrawn
 From these two axioms, a closed set of seven structural registers is derived algebraically,
 culminating in the dark-energy equation of state
 \begin{equation*}
-  w_0 = -\frac{T_r}{M_v} = -\frac{3\varphi+\pi}{2(\varphi+\pi)} \approx -0.840,
+  w_0 = -\frac{T_r}{M_v} = -\frac{3\varphi+\pi}{2(\varphi+\pi)} \approx \val{W0_d3},
   \qquad
-  w_a = -\frac{P}{I_g} = -\frac{2\varphi+\pi}{2(\varphi+\pi)} \approx -0.670.
+  w_a = -\frac{P}{I_g} = -\frac{2\varphi+\pi}{2(\varphi+\pi)} \approx \val{WA_d3}.
 \end{equation*}
 Both reduced forms carry the same denominator $2(\varphi+\pi)=\val{K_V_d6}$, but they descend
 from \emph{distinct registers}: $w_0$ from $M_v=\varphi+\pi+K_v=\val{M_V_d6}$ and $w_a$ from
@@ -78,11 +79,11 @@ The asymptotic structural retention factor $\KALz = \beta + \pi \approx \val{KAL
 fixes the cold dark matter density via the forward identity
 $\omega_c = \KALz\,\omega_b\,n_s$, reproducing the observed cosmic
 dark-to-baryonic matter density ratio.
-These foundational parameters are tested against data in subsequent papers: a full Bayesian MCMC validation against DESI~DR2 \citep{AbdulKarim2025},
-Planck~2018 \citep{PlanckVI2020}, and galaxy-cluster mass data ($\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ for the dynamic
-sector relative to $\Lambda$CDM) is presented in the companion Paper~2 \citep{SSEE_paperII}, while CMB perturbations and phenomenological extensions are explored in Papers~3--10.
+These foundational parameters are tested against data in subsequent papers: a full Bayesian MCMC validation against DESI~DR2 \citep{AbdulKarim2025}
+with a Planck~2018 prior \citep{PlanckVI2020} ($\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ relative to $\Lambda$CDM) and a
+galaxy-cluster mass test are presented in the companion Paper~2 \citep{SSEE_paperII}, while CMB perturbations and phenomenological extensions are explored in Papers~3--10.
 The framework is falsifiable: a B-mode polarisation tensor-to-scalar ratio
-$r = \varphi^{-10} = 0.008131$ is predicted for LiteBIRD \citep{LiteBIRD2023} ($\sim$2032).
+$r = \varphi^{-10} = \val{R_TENSOR_d6}$ is predicted for LiteBIRD \citep{LiteBIRD2023} ($\sim$2032).
 \end{abstract}
 
 \clearpage
@@ -109,7 +110,7 @@ $\pi$ and $\varphi$. These fundamental scales dictate the macroscopic behaviour 
   \item $\boldsymbol{\KALz} = \beta+\pi \approx \val{KAL0_d4}$: Asymptotic Structural
   Retention. Its law is to \emph{retain}: raising $\KALz$ holds more cold matter
   ($\omega_c = \KALz\omega_b n_s$), lengthens the relaxation time
-  ($\tau_\Pi H_0 = \KALz/3\OmDE$), lowers the departure ratio
+  ($\tau_\Pi H_0 = \KALz M_v/3T_r$), lowers the departure ratio
   ($R_2 = \Omega/\KALz T_r$) and makes the field costlier to move
   ($X/\KALz$) --- four uses, one direction. In the hydrodynamic layer of
   Paper~5 that same retention is what a fluid calls \emph{viscosity}; the name
@@ -128,7 +129,7 @@ Throughout this work $=$ separates a register from its \emph{exact} definition, 
 
 These seven are the structural registers proper. One further register is needed
 below and is introduced here so that no symbol appears before its definition:
-$\boldsymbol{I_g}=\pi+P\approx9.5193$ (exactly $\pi+P$; the decimal is truncated), the \emph{saturation partner} of the
+$\boldsymbol{I_g}=\pi+P\approx\val{IGNIS_d4}$ (exactly $\pi+P$; the decimal is truncated), the \emph{saturation partner} of the
 dynamical scalar $P$, which is the denominator of $w_a$. It carries the same
 \emph{value} as $K_v$ ($\val{K_V_d6}$) while descending from a different
 construction, and the two are not interchangeable --- $K_v$ is a constraint
@@ -155,7 +156,7 @@ not a hand-picked subset, is scanned (reproducible via
 classifies each derivation by epistemic status. We make no claim of temporal priority
 over public datasets: the quantities compared with DESI~DR2 and Planck are
 postdictions or retrodictions; only those tested against not-yet-released data
-($k_{\mathrm{fs}}$, $r$, and the pre-registered DESI~DR3 test of the fixed
+($r$ and the pre-registered DESI~DR3 test of the fixed
 $(w_0,w_a)$ point) are genuine predictions. The DR3 entry is a genuine
 timestamped commitment: the point cannot move, so every tightening of the data
 is a test it must survive without adjustment. Between DR1 and DR2 the
@@ -167,9 +168,9 @@ with the mean of the asymmetric DR1 error on $w_a$: $0.063\times0.27\to0.055\tim
 inside it, at $\val{p2_w0wa_ssee_ec26}\sigma$ against the
 tighter DR2 (Pantheon+-class). Because the point is immobile, the tension scales
 as the inverse of the error bar, so the pre-registered arithmetic is explicit:
-a further tightening comparable to the DR1$\to$DR2 step leaves us near
-$0.4$--$0.5\sigma$, while a joint ${>}3\sigma$ exclusion refutes the algebraic
-background outright. DR3 (expected 2027) will settle it.
+a further tightening comparable to the DR1$\to$DR2 step leaves the point well
+inside $1\sigma$ unless the measured centre moves, while a joint ${>}3\sigma$
+exclusion refutes the algebraic background outright. DR3 (expected 2027) will settle it.
 
 \begin{table}[ht]
 \centering
@@ -197,10 +198,10 @@ $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$ & $\val{H0_GLOBAL_d3}\,\mathrm{
 \midrule
 \multicolumn{4}{l}{\textit{Paper 5 — IS causal perturbation theory}} \\
 $\gamma_{\mathrm{IS}}$ & $\val{p3_gamma_IS}$ & RSD surveys ($\gamma_{\Lambda\mathrm{CDM}}=0.55$) & Retrodiction \\
-$f\sigma_8(z{=}0.5)$ & $0.70\sigma$ mean tension & 6 RSD surveys, single-sector (BOSS/eBOSS/6dFGS) & Retrodiction \\
+$f\sigma_8(z{=}0.5)$ & $\val{fs8_tmedia_ssee}\sigma$ mean tension & 6 RSD surveys, single-sector (BOSS/eBOSS/6dFGS) & Retrodiction \\
 \midrule
 \multicolumn{4}{l}{\textit{Paper 6 — growth sector, single component}} \\
-$S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $\val{S8_leg_pred}$ predicted & measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$); \emph{no} free cosmological parameter & Prediction \\
+$S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $\val{S8_leg_pred}$ predicted & measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$); \emph{no} free cosmological parameter; data public since 2025, no priority claimed & Retrodiction \\
 \quad earlier: KiDS-1000, $A_s$ fitted (superseded by the row above) & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ & $\Lambda$CDM control, same data: $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ & Retrodiction \\
 \multicolumn{4}{l}{\quad\footnotesize\textit{($m_\phi$, $k_{\mathrm{fs}}$ and the two-sector $S_8$ are retracted; see \S\ref{sec:two_omega_m}.)}} \\
 \midrule
@@ -209,7 +210,7 @@ $\alpha_T=\alpha_M=\alpha_B=0$ (minimal coupling) & $0$ exact & GW170817 $|\alph
 $\alpha_K = 3\,\Omega_{\mathrm{DE}}(5-3w_0)$, $\Omega_{\mathrm{DE}}=\val{OMDE_DENS_d6}$ & $\val{alpha_K_z0_d6}$ & --- (kineticity is not constrained by linear-scale data) & Derived \\
 \midrule
 \multicolumn{4}{l}{\textit{Future}} \\
-$r = \varphi^{-10}$ & $0.008131$ & LiteBIRD ${\sim}2032$ & Prediction \\
+$r = \varphi^{-10}$ & $\val{R_TENSOR_d6}$ & LiteBIRD ${\sim}2032$ & Prediction \\
 \bottomrule
 \end{tabular}%
 }
@@ -248,10 +249,9 @@ these geometric invariants:
   Ignition/Processing phase (structure formation), and the Transcendental Saturation phase
   (dark energy asymptotic domination). The Hubble history $H(a)$ is bounded by:
   \begin{equation}
-    \lim_{a\to0} H^2(a) \propto \rho_{\rm bar},
+    \lim_{a\to0} H^2(a) \propto \rho_r+\rho_m,
     \qquad
-    \lim_{a\to\infty} H^2(a) = \frac{8\pi G}{3}\,\rho_{{\rm crit},0}
-    \left(\frac{T_r}{M_v}\right).
+    \lim_{a\to\infty} H^2(a) = H_\infty^2 = \text{const}.
   \end{equation}
 
   \item \textbf{Non-Self-Addition (Evolution by Difference):} Structural evolution proceeds
@@ -336,18 +336,22 @@ Define the \emph{saturation fraction}
   s \;\equiv\; \frac{T_r}{M_v} \;\in\;(0,1).
   \label{eq:sat_fraction}
 \end{equation}
-The dark sector is a one-parameter family in $s$, with the density fraction
-and the equation of state both fixed by it:
+The dark-energy equation of state today is fixed by it:
 \begin{equation}
-  \Omega_{\rm DE} = s, \qquad w_0 = -s.
+  w_0 = -s.
   \label{eq:sat_correspondence}
 \end{equation}
+$s$ is a saturation, a number of the equation of state, and \emph{not} the
+dark-energy density fraction: that one is $\Omega_{\rm DE}=1-\Omega_m=\val{OMDE_DENS_d6}$
+and carries a factor of $H$ through $\Omega_m=\omega_m/h^2$; $s$ carries none.
+\emph{(Corrected 2026-10-11: earlier versions wrote $\Omega_{\rm DE}=s$ here,
+which read literally makes $1+w_0$ a matter density --- the very conflation
+withdrawn in \S\ref{sec:two_omega_m}.)}
 The two endpoints are physically forced and require no assumption:
 \begin{itemize}\itemsep2pt
-  \item $s\to0$: $(\Omega_{\rm DE},w_0)\to(0,0)$ --- the Einstein--de~Sitter
-        (matter-only) limit;
-  \item $s\to1$: $(\Omega_{\rm DE},w_0)\to(1,-1)$ --- the exact de~Sitter
-        limit, already imposed by Principle~1.
+  \item $s\to0$: $w_0\to0$ --- a pressureless, matter-like component;
+  \item $s\to1$: $w_0\to-1$ --- a cosmological constant, the de~Sitter
+        endpoint already imposed by Principle~1.
 \end{itemize}
 An immediate consequence is the much-used identity
 \begin{equation}
@@ -516,7 +520,7 @@ $P(k)$-suppression prediction that depended on them. That prediction was
 genuinely falsifiable and is genuinely gone --- not falsified by data, but
 withdrawn because the construction generating it was not physical. The
 surviving pre-registered falsifiers of this suite are the tensor-to-scalar
-ratio $r=\varphi^{-10}=0.008131$ (LiteBIRD, CMB-S4) and the fixed
+ratio $r=\varphi^{-10}=\val{R_TENSOR_d6}$ (LiteBIRD, CMB-S4) and the fixed
 $(w_0,w_a)$ point against successive DESI releases.
 
 \paragraph{What is gained.} One postulate fewer, and four register entries
@@ -542,33 +546,32 @@ point and re-does both growth measurements on raw data products.
 \subsection{The \SSEE\ Effective Action}
 \label{sec:action}
 
-Instead of an arbitrary cosmological constant $\Lambda$, the vacuum energy density is
-fixed by the algebraic ratio $T_r/M_v$, leading to the background-level
-effective action:
+Instead of a cosmological constant $\Lambda$, the dark-energy sector is a
+minimally coupled k-essence scalar \citep{ArmendarizPicon2001} within the
+Horndeski class \citep{Horndeski1974,Gubitosi2013,Bellini2015}, with the
+two-term action of Paper~7 and no potential:
 \begin{equation}
-  S_{\SSEE}^{\rm bg} = \int d^4x\,\sqrt{-g}
-  \left[\frac{R}{16\pi G}
-        - \rho_{{\rm crit},0}\!\left(\frac{T_r}{M_v}\right)
-        + \mathcal{L}_{\rm matter}\right].
+  S_{\SSEE} = \int d^4x\,\sqrt{-g}
+  \left[\frac{R}{16\pi G} + c_1X + c_2X^2 + \mathcal{L}_{\rm matter}\right].
   \label{eq:action}
 \end{equation}
-This action encodes the background Friedmann dynamics only: the dark-energy
-density is constant at the background level and set by the algebraic
-ratio $T_r/M_v$.  It does not propagate scalar perturbations; the
-perturbation-level dynamics require a scalar-field extension, developed
-in the EFT embedding of Appendix~A (Eq.~\ref{eq:eft_action}).  Within the
-Horndeski class of scalar-tensor theories \citep{Horndeski1974,Gubitosi2013,Bellini2015},
-a minimally coupled k-essence scalar \citep{ArmendarizPicon2001} with the two-term
-action $K(X)=c_1X+c_2X^2$ and no potential reproduces $w_0$ algebraically while
-remaining ghost-free and gradient-stable: it is a ghost condensate with adiabatic
-$c_s^2=\val{cs2_condensado_d6}$ (Paper~7).
+It reproduces $w_0=-T_r/M_v$ algebraically while remaining ghost-free and
+gradient-stable: it is a ghost condensate with adiabatic
+$c_s^2=\val{cs2_condensado_d6}$ (Paper~7). Its density today is
+$\Omega_{\rm DE}=1-\Omega_m$; the ratio $T_r/M_v$ fixes its equation of state,
+not its amount. \emph{(Corrected 2026-10-11: earlier versions wrote here a
+constant vacuum term $\rho_{{\rm crit},0}\,T_r/M_v$, which has $w=-1$ and uses
+the saturation as a density.)}
 
 \medskip
 \noindent\textbf{Falsifiability.}\ The framework is strictly falsifiable. It would be
-refuted by: (1) direct detection of a collisionless dark-matter particle accounting for
-the missing mass; (2) definitive cosmological constraints proving $\wa=0$; or
-(3) high-significance confirmation of a normal neutrino hierarchy with
-$\sum m_\nu < 0.06$\,eV.
+refuted by: (1) definitive cosmological constraints proving $\wa=0$, or a
+${>}3\sigma$ exclusion of the fixed point $(w_0,w_a)$; (2) a cosmological
+measurement of $\sum m_\nu$ excluding the algebraic $\val{SUM_MNU_EV_d4}$\,eV; or
+(3) $r$ excluded at the LiteBIRD sensitivity. \emph{(Corrected 2026-10-11: the
+detection of a dark-matter particle was listed here as a falsifier; the model
+contains cold dark matter, $\omega_c=\KALz\,\omega_b\,n_s$, so such a detection
+would test what it is made of (OP-19), not refute it.)}
 
 \input{SSEE_EFT_section}
 
@@ -578,19 +581,19 @@ $\sum m_\nu < 0.06$\,eV.
 %--------------------------------------------------------------------
 
 \SSEE\ models dynamical dark energy via the Chevallier--Polarski--Linder (CPL) form
-\citep{Chevallier2001,Linder2003} $w(a)=\wz+\wa(1-a)$. Motivated by Eq.~\eqref{eq:action}, the expansion is subject to
-an effective geometric pressure:
+\citep{Chevallier2001,Linder2003} $w(a)=\wz+\wa(1-a)$. The expansion obeys
 \begin{equation}
-  H^2 = \frac{8\pi G}{3}\!\left(\rho_{\rm bar}+\rho_{\rm DE}\right),
+  H^2 = \frac{8\pi G}{3}\!\left(\rho_r+\rho_m+\rho_{\rm DE}\right),
   \qquad
-  \rho_{\rm DE} = \rho_{{\rm crit},0}\!\left(\frac{T_r}{M_v}\right).
+  \rho_{\rm DE}(a) = (1-\Omega_m)\,\rho_{{\rm crit},0}\;a^{-3(1+\wz+\wa)}e^{-3\wa(1-a)},
 \end{equation}
-The baseline state $\wz$ is set by the static geometric ratio $T_r/M_v$, and the evolution
+with the single matter density $\Omega_m=\omega_m/h^2$ (baryons, cold dark
+matter and neutrinos). The baseline state $\wz$ is set by the static geometric ratio $T_r/M_v$, and the evolution
 $\wa$ encodes the dynamical departure from saturation driven by $P/I_g$:
 \begin{equation}
-  \wz = -\frac{T_r}{M_v} \approx -0.840,
+  \wz = -\frac{T_r}{M_v} \approx \val{W0_d3},
   \qquad
-  \wa = -\frac{P}{I_g}  \approx -0.670.
+  \wa = -\frac{P}{I_g}  \approx \val{WA_d3}.
   \label{eq:ssee_pars}
 \end{equation}
 
@@ -620,12 +623,12 @@ contributions of $\varphi$ to the saturation horizon, while the common denominat
 $2(\varphi+\pi)$ is twice the Stability Metric $\Omega=\varphi+\pi$.
 
 \medskip
-\noindent\textbf{Asymptotic saturation and phantom crossing.}\ The values $w_0$ and $w_a$ are fixed algebraically and compared with data through the CPL form. While it yields $w_0+w_a=-1.510$, we employ it strictly within the low-redshift domain of validity $(z \le 2.3)$ for observational comparisons, noting that asymptotic stability at $a \to \infty$ requires the full non-linear saturation boundary $T_r/M_v$ rather than the linear CPL extrapolation.
+\noindent\textbf{Asymptotic saturation and phantom crossing.}\ The values $w_0$ and $w_a$ are fixed algebraically and compared with data through the CPL form. While it yields $w_0+w_a=\val{w0_mas_wa}$, we employ it strictly within the low-redshift domain of validity $(z \le 2.3)$ for observational comparisons, noting that asymptotic stability at $a \to \infty$ requires the full non-linear saturation boundary $T_r/M_v$ rather than the linear CPL extrapolation.
 
 The CPL form also predicts a \emph{phantom crossing}: setting $w(a_*)=-1$ gives
 \begin{equation}
-  a_* = 1 + \frac{1+\wz}{\wa} = 0.761
-  \quad (z_* = 0.314).
+  a_* = 1 + \frac{1+\wz}{\wa} = \val{a_cruce}
+  \quad (z_* = \val{z_cruce}).
   \label{eq:phantom_crossing}
 \end{equation}
 For $z > z_*$ the effective equation of state has $w < -1$; for $z < z_*$,
@@ -635,19 +638,20 @@ is $c_s^2=(1+w)/(5-3w)$ along the whole family of solutions, so any
 configuration of the field with $w<-1$ has $c_s^2<0$, a gradient instability
 (verified by direct differentiation of $K$, not from the closed form; log
 \texttt{cruce\_fantasma\_quien\_lo\_lleva.json}). The field itself sits at
-$w_\varphi=w_0>-1$, where $c_s^2=0.021284>0$. If the crossing is physical it
+$w_\varphi=w_0>-1$, where $c_s^2=\val{cs2_condensado_d6}>0$. If the crossing is physical it
 must be carried by the viscous pressure $\Pi$ rather than by the field. With the
 enthalpy normalisation of the Israel--Stewart sector (Paper~5),
 $1+w_{\rm eff}=(1+w_0)(1-c)$ with $c=|\Pi|/(\rho+p)$, and reproducing the CPL
-form requires $c(a)=-w_a(1-a)/(1+w_0)=4.186\,(1-a)$: the viscous pressure
-equals the enthalpy exactly at $z_*$ and exceeds it at all $z>z_*$ ($c=2.09$ at
+form requires $c(a)=-w_a(1-a)/(1+w_0)=\val{c_cruce_coef}\,(1-a)$: the viscous pressure
+equals the enthalpy exactly at $z_*$ and exceeds it at all $z>z_*$ ($c=\val{c_cruce_z1}$ at
 $z=1$). Whether that regime lies within the validity of Israel--Stewart theory
 is the open question of how $w_a$ is produced (OP-24).
 
 DESI~DR2 \citep{AbdulKarim2025} analyses indicate an evolving preference for dynamical
-dark energy. The \SSEE\ algebraic point $(\wz,\wa)=(-0.840,-0.670)$ falls within the
-68\% confidence contours of the combined BAO+CMB+DESY5 datasets
-(Mahalanobis $\chi^2_{2D}=0.42$, i.e.\ $0.24\sigma$ against DESI+CMB+Pantheon+, $0.2$--$1.8\sigma$ across SN compilations; quantified in Paper~2
+dark energy. The \SSEE\ algebraic point $(\wz,\wa)=(\val{W0_d3},\val{WA_d3})$ falls within the
+68\% confidence contour of DESI~DR2 BAO+CMB+Pantheon+
+(Mahalanobis $\chi^2_{2D}=\val{p2_chi2_2D_ec26}$, i.e.\ $\val{p2_w0wa_ssee_ec26}\sigma$), and at
+$\val{p2_w0wa_ssee_ec28_d1}$--$\val{p2_w0wa_ssee_ec27_d1}\sigma$ against the other supernova compilations (quantified in Paper~2
 \citep{SSEE_paperII}).
 
 %--------------------------------------------------------------------
@@ -742,10 +746,10 @@ applies uniformly to Papers~1--4.
   \item[\textbf{Dynamic sector} (low redshift, $z\lesssim2.3$).]
   Governed by $w_0=\val{W0_d6}$, $w_a=\val{WA_d6}$ ($s_m=1+w_0=\val{S_M_d6}$ is an
   EoS-sector identity, not a density).
-  Validated against: DESI~DR2 BAO (13 measurements, $0.295\leq z\leq2.33$),
-  galaxy-cluster mass data (IGIMF baseline, Paper~2).
+  Validated against: DESI~DR2 BAO (13 measurements, $0.295\leq z\leq2.33$)
+  with a Planck~2018 prior.
   \textit{Result}: $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring SSEE (Paper~2),
-  $0.24\sigma$ from the official DESI~DR2 $w_0w_a$CDM posterior (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) in the $w_0$--$w_a$ plane.
+  $\val{p2_w0wa_ssee_ec26}\sigma$ from the official DESI~DR2 $w_0w_a$CDM posterior (Pantheon+; $0.2$--$1.8\sigma$ across SN compilations) in the $w_0$--$w_a$ plane.
   With the total gravitating matter density in the background geometry the
   Cosmic-Chronometer check ($\val{cc_N}$ points) gives $\chi^2_r(H(z))=\val{cc_chi2r_ssee}$, comparable to
   $\Lambda$CDM ($\val{cc_chi2r_lcdm}$); the earlier $1.861$ was an artefact of the cold sector
@@ -761,7 +765,7 @@ applies uniformly to Papers~1--4.
   TTTEEE likelihood via Cobaya (Paper~3).
   \textit{Result}: $\chi^2_r=\val{p3_chi2r_TT_ssee}$ (TT, \val{p3_N_TT} multipoles);
   the canonical $\omega_m$-direct CMB fit gives $\Delta\mathrm{BIC}=\val{b1_dBIC}$
-  (full \texttt{plik} MCMC, $N=2354$) at the global rate
+  (full \texttt{plik}, $N=2354$) at the global rate
   $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($k=2$ vs $k=6$), with the
   \texttt{plik\_lite}${}+{}$low-$\ell$ point estimate at $\val{lite_dBIC}$ ($\chi^2_{\rm SSEE}=\val{lite_chi2_ssee}$). The
   earlier legacy Cobaya scan gave $\Delta\mathrm{BIC}=-32.2$ at the superseded
@@ -772,8 +776,8 @@ applies uniformly to Papers~1--4.
 
   \item[\textbf{Algebraic sector} (purely geometric).]
   All constants fixed from $\{\varphi,\pi\}$ with zero data input.
-  Cross-validated against: Planck 2018 ($n_s$, $\Omega_b h^2$, $H_0$),
-  LiteBIRD forecast ($r$), BBN ($\sum m_\nu$), Paper~4.
+  Cross-validated against: Planck 2018 ($n_s$, $\Omega_b h^2$, $\Omega_c h^2$),
+  BBN ($Y_p$, $\Omega_b h^2$), LiteBIRD forecast ($r$), Paper~4.
   \textit{Result}: most Type~A predictions in Appendix~B,
   Table~\ref{tab:derivation_chain} are within $2\sigma$ of published
   observational values (see Paper~4 for full compilation).
@@ -781,7 +785,7 @@ applies uniformly to Papers~1--4.
   ($\val{wb_planck_sig}\sigma$ from Planck~2018, $0.02237\pm0.00015$) is classified as a
   \emph{retrodiction}: its structural algebraic form was identified after the
   data, superseding the preliminary placeholder $3(\pi-\varphi)/200$
-  (documented in Table~\ref{tab:derivation_chain} and \texttt{AUDIT.md}).
+  (documented in Table~\ref{tab:derivation_chain}).
   \textit{Claim}: the algebraic sector is \emph{not falsified} by any
   currently available dataset at the $>3\sigma$ level. A future falsification would require
   $n_s\neq1-\varphi^{-7}$ at $>3\sigma$ from Planck~2018,
@@ -815,11 +819,11 @@ DESI DR2 + Planck prior & 16 & $\omega_m$-direct & 2 & 3 & $\mathbf{\val{p2_dBIC
   Total matter density in geometry; SSEE favoured (CPL $\val{p2_dBIC_cpl}$; DIC $\val{p2_dDIC_lcdm}$) \\[3pt]
 % Titular canonico: full plik MCMC off-diag TTTEEE+lowl+lensing (Cobaya+clipy), chi2 MINIMO SSEE vs LCDM (b1_k2.json), N=2354 -> DeltaBIC \val{b1_dBIC} (Paper 3 b1, 2026-10-01; era -32.9 sin log). plik_lite TTTEEE+lowl N=669 point est, A_s y tau ajustados -> -26.03 cross-check (ΛCDM con su mnu 0.06, 2026-09-29; era -26.21) (era -24.0 con N=613 y A_s,tau clavados). Diagonal N=5914 -> -35.0. Cobaya MIRA legacy -32.2 superseded.
 Full \texttt{plik} MCMC & \val{b1_N} & $\omega_m$-direct & 2 & 6 & $\mathbf{\val{b1_dBIC}}$ &
-  CMB parsimony, \textbf{canonical} (off-diag.\ TTTEEE+lowl+lensing, Paper~3 §b1) \\[3pt]
+  CMB parsimony, \textbf{canonical} (off-diag.\ TTTEEE+lowl+lensing, $\chi^2$ minimum of each model, Paper~3 §b1) \\[3pt]
 \texttt{plik\_lite} TTTEEE${}+{}$lowl & 669 & $\omega_m$-direct & 2 & 6 & $\val{lite_dBIC}$ &
   Compressed-nuisance point est., $\{A_s,\tau\}$ fitted (cross-check; $\Omega_m{=}\val{OMEGA_M_TOTAL_d6}$) \\[3pt]
 Planck 2018 diagonal & 5914 & $\omega_m$-direct & 2 & 6 & $\val{p3_dBIC_diag}$ &
-  CMB spectra, diagonal cov.\ (cross-check; $H_0{=}67.962$) \\[3pt]
+  CMB spectra, diagonal cov.\ (cross-check; $H_0{=}\val{H0_GLOBAL_d3}$) \\[3pt]
 \texttt{plik\_lite} TTTEEE & 613 & MIRA bg (legacy) & 2 & 6 & $-32.2$ &
   CMB parsimony; \emph{superseded by the $\omega_m$-direct rows above} \\
 \bottomrule
@@ -831,7 +835,7 @@ With the total gravitating matter density in the background geometry, the DESI
 DR2 comparison gives a single figure, $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring SSEE
 (the earlier ``$+206$'' penalty was an artefact of using the cold sector
 $1+w_0=\val{S_M_d6}$ as the background density).
-The canonical CMB result is the full \texttt{plik} MCMC row, $\Delta\mathrm{BIC}=\val{b1_dBIC}$
+The canonical CMB result is the full \texttt{plik} row, $\Delta\mathrm{BIC}=\val{b1_dBIC}$
 ($k=2$ vs $k=6$, $N=2354$, off-diagonal TTTEEE\,$+$\,lowl\,$+$\,lensing), with a
 best-fit $\chi^2$ statistically indistinguishable from $\Lambda$CDM
 ($\Delta\chi^2_\mathrm{BF}=\val{b1_dchi2}$); the preference is parsimony-driven, not a
@@ -859,7 +863,7 @@ in one sector cannot be repaired without modifying the axioms, which would
 change the predictions in all other sectors simultaneously.\\[4pt]
 \textbf{Corollary:} the sector-specific structure (dynamic / observational /
 algebraic) exists to delineate which datasets test which part of the
-framework, not to create rescue mechanisms.  If DESI~DR5+ excludes
+framework, not to create rescue mechanisms.  If DESI~DR3 or a later release excludes
 $w_0=\val{W0_d6}$ at $>3\sigma$, SSEE is rejected; the observational or
 algebraic sectors do not save it.
 \end{tcolorbox}
@@ -878,7 +882,7 @@ all four papers and cannot be re-interpreted post-hoc.
 \end{itemize}
 \textbf{Dynamic sector} is falsified if:
 \begin{itemize}[nosep,leftmargin=*]
-  \item DESI~DR5+ posterior excludes $(-0.840,-0.670)$ at $>3\sigma$; or
+  \item DESI~DR3 or a later posterior excludes $(\val{W0_d3},\val{WA_d3})$ at $>3\sigma$; or
   \item $\chi^2_r(H(z)) > 2.5$ with full systematic covariance and the
         background matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ (the geometry takes the
         \emph{total} matter density; $1+w_0$ enters as an equation of state,
@@ -930,12 +934,12 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
   $n_s \neq 1-\varphi^{-7}$ (Planck~2018) or $r \neq \varphi^{-10}$ (LiteBIRD) &
   Any tension arising from unit-convention mismatch \\[4pt]
 \textbf{Dynamic} &
-  DESI~DR2 $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$; $w_0,w_a$ within $0.24\sigma$ (Pantheon+) &
-  DESI~DR5+ excludes $(-0.840,-0.670)$; or $\chi^2_r(H(z))>2.5$ with full cov. &
+  DESI~DR2 $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$; $w_0,w_a$ within $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+) &
+  DESI~DR3+ excludes $(\val{W0_d3},\val{WA_d3})$; or $\chi^2_r(H(z))>2.5$ with full cov. &
   A $\chi^2>1$ from \LCDM-calibrated priors the model does not assume \\[4pt]
 \textbf{Observational} &
-  Planck~2018 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=\val{mf_rdrag_alg}$~Mpc ($\val{p3_rd_sig_anc}\sigma$) &
-  Euclid/KiDS $\Omega_m<0.25$ at $z<1$ &
+  Planck~2018 $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik}, $\omega_m$-direct canonical, $k=2$); $r_d^{\rm SSEE}=\val{mf_rdrag_alg}$~Mpc ($\val{p3_rd_sig_anc}\sigma$) &
+  $\Omega_m$ outside $[0.25,0.36]$ at $z<1$, or $S_8$ ${>}3\sigma$ from $\val{S8_leg_pred}$ &
   $\chi^2_r=\val{p3_chi2r_TT_ssee}$ vs \LCDM's $\val{p3_chi2r_TT_lcdm}$ (non-equivalent background) \\
 \bottomrule
 \end{tabularx}
@@ -945,7 +949,7 @@ Sector & Validated by & Falsified by ($>3\sigma$) & Not a falsification \\
 The $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ (DESI dynamic) and $\val{b1_dBIC}$ (CMB $\omega_m$-direct)
 are not directly comparable (different $N$, backgrounds, and $\Lambda$CDM $k$ counts).
 The canonical CMB value is the $\omega_m$-direct $\Delta\mathrm{BIC}=\val{b1_dBIC}$
-(full \texttt{plik} MCMC, $k=2$, $N=2354$), with the \texttt{plik\_lite} point
+(full \texttt{plik}, $k=2$, $N=2354$), with the \texttt{plik\_lite} point
 estimate at $\val{lite_dBIC}$ ($N=669$, with $\{A_s,\tau\}$ fitted rather than held at their
 Planck values) and the diagonal cross-check at $\val{p3_dBIC_diag}$ ($N=5914$).
 The legacy MIRA-background values ($-32.2$ Cobaya, aggressive $k{=}1$ $-41.0$)
@@ -1016,7 +1020,7 @@ $P_{sc}$  & $\Omega+\varphi$ & $\val{P_SC_d6}$ & Dyn.\ evolution & A \\
 AURA      & $\varphi+\beta$ & $\val{AURA_d6}$ & Resonance limit & A \\
 \midrule
 \multicolumn{5}{l}{\textit{Level 2 — Secondary Registers}} \\
-$\mathrm{KAL}_0$ & $\beta+\pi$ & $\val{KAL0_d6}$ & Viscosity; $M_{\rm cluster}$ & A \\
+$\mathrm{KAL}_0$ & $\beta+\pi$ & $\val{KAL0_d6}$ & Retention; $\omega_c$ & A \\
 $K_v$     & $\varphi+\pi+\Omega$ & $\val{K_V_d6}$ & Struct.\ constraint (entity KRYSTOS$_V$) & A \\
 $I_g$     & $\pi+P_{sc}$ & $\val{IGNIS_d6}$ & $w_a$ denominator (entity IGNIS; same value as $K_v$, distinct entity) & A \\
 $T_r$     & $3(\varphi+\beta)$ & $\val{T_R_d6}$ & Saturation horizon & A \\
@@ -1032,9 +1036,9 @@ $s_m$ & $(\pi-\varphi)/[2(\varphi+\pi)]$ & $\val{S_M_d6}$ & EoS sector; $1+w_0$ 
 $\Omega_m^{\rm CMB}$ & $\omega_m/h^2=(\Omega_b h^2{+}\Omega_c h^2{+}\omega_\nu)/h^2$ & $\val{OMEGA_M_TOTAL_d6}^\S$ & Planck 2018 & A \\
 $n_s$     & $1-\varphi^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & A \\
 $\Omega_b h^2$ & $(\pi-\varphi)/[3(\varphi+\pi)^2]$ & $\val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$) & Planck 2018 & A$^\ddagger$ \\
-$\Omega_c h^2$ & $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ & $\val{OMEGA_C_H2_d6}$ ($0.4\sigma$) & Planck 2018 & A \\
-$r$       & $\varphi^{-10}$ & $0.008131$ & LiteBIRD 2032 & A \\
-$\sum m_\nu^{\rm active}$ & $\mathcal{R}_2\,\Omega_b h^2\cdot93.14/(\tau_\Pi H_0)$ (Paper~4) & $\val{SUM_MNU_EV_d5}$ eV & Planck+BBN & A \\
+$\Omega_c h^2$ & $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ & $\val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$) & Planck 2018 & A \\
+$r$       & $\varphi^{-10}$ & $\val{R_TENSOR_d6}$ & LiteBIRD 2032 & A \\
+$\sum m_\nu^{\rm active}$ & $\mathcal{R}_2\,\Omega_b h^2\cdot93.14/(\tau_\Pi H_0)$ (Paper~4) & $\val{SUM_MNU_EV_d5}$ eV & Planck+DESI & A \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -1050,8 +1054,9 @@ density is the algebraic physical $\omega_m=\Omega_b h^2+\Omega_c h^2+\omega_\nu
 giving $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$; the EoS-sector identity
 $s_m=\val{S_M_d6}$ ($=1+w_0$) is not a density (OP-8 closed; the former
 two-$\Omega_m$ criterion is withdrawn, \S\ref{sec:two_omega_m}).
-Similarly, $\mathrm{KAL}_0$ is both a derived constant (Level~2) and
-a dynamical viscosity operator scaling cluster masses.
+Similarly, $\mathrm{KAL}_0$ is both a derived constant (Level~2) and the
+retention constant that fixes the cold-matter density, $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$
+(it does not amplify gravity).
 
 \footnotesize $^\ddagger$ $\Omega_b h^2=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ is at $\val{wb_planck_sig}\sigma$ from Planck 2018 ($0.02237\pm0.00015$).
 This is a \emph{retrodiction}: the structural form was identified after the data (OP-1, \texttt{OPEN\_PROBLEMS.md}),
@@ -1059,7 +1064,7 @@ superseding the preliminary placeholder $3(\pi-\varphi)/200=0.02285$ ($3.2\sigma
 algebraic $\{\varphi,\pi\}$ quantity.
 Using the algebraic input $\Omega_b h^2=\val{OMEGA_B_H2_d6}$, the formula
 $\mathrm{KAL}_0\times\Omega_b h^2\times n_s$ gives
-$\Omega_c h^2 = \val{KAL0_d6}\times\val{OMEGA_B_H2_d5}\times\val{N_S_d5} = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck $0.1200\pm0.0012$).
+$\Omega_c h^2 = \val{KAL0_d6}\times\val{OMEGA_B_H2_d6}\times\val{N_S_d6} = \val{OMEGA_C_H2_d6}$ ($\val{wc_ns_sigma_abs}\sigma$ from Planck $0.1200\pm0.0012$).
 
 \footnotesize $^\S$ Canonical CMB-sector matter density ($\omega_m$-direct reframe, 2026):
 $\Omega_{m,\rm CMB}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with $\omega_m=\Omega_b h^2+\Omega_c h^2
@@ -1167,10 +1172,10 @@ $\varphi$ & $\varphi$ & root & Intention & Golden ratio; $\alpha$-attractor infl
 $\pi$ & $\pi$ & root & Structure & Geometric $\pi$ & — \\
 $\Omega$ & $\varphi+\pi$ & root combination & Stability & Stability metric (OMEGA) & — \\
 $\beta$ & $(\varphi+\pi)/2$ & $\Omega/2$ — bifurcation & Heat / pulse & Base coupling scalar & — \\
-$\mathrm{AURA}$ & $(3\varphi+\pi)/2$ & $\varphi+\beta$ — copy & Portal / coupling & Disformal coupling (P8); cancels in $H_0$ cascade & $\times1$ \\
+$\mathrm{AURA}$ & $(3\varphi+\pi)/2$ & $\varphi+\beta$ — copy & Portal / coupling & Cancels in $H_0$ cascade (the coupling $\beta_c=-\mathrm{AURA}$ is withdrawn, P7) & $\times1$ \\
 $\mathrm{MIRA}$ & $(3\varphi+\pi)/4$ & $\mathrm{AURA}/2$ — copy & Reflection / mirror & Screening amplitude $f_{\rm screen}$ (P9) & $\times\tfrac12$ \\
 $\mathrm{DUAL}$ & $3\varphi+\pi$ & $\mathrm{AURA}\cdot2$ — copy & Duality & — & $\times2$ \\
-$\mathrm{TRIAL}$ & $(9\varphi+3\pi)/2$ & $\mathrm{AURA}\cdot3$ — copy & Matter / 3D limit & 3D saturation horizon $\to w_0,\Omega_{\rm DE}$ & $\times3$ \\
+$\mathrm{TRIAL}$ & $(9\varphi+3\pi)/2$ & $\mathrm{AURA}\cdot3$ — copy & Matter / 3D limit & 3D saturation horizon $\to w_0$ & $\times3$ \\
 $\mathrm{CUARTAL}$ & $6\varphi+2\pi$ & $\mathrm{AURA}\cdot4$ — copy & 4D time & — & $\times4$ \\
 $\mathrm{KAL}_0$ & $(\varphi+3\pi)/2$ & $\beta+\pi$ — non-self-add & Retention / anchor & Structural retention & — \\
 $P_{sc}$ & $2\varphi+\pi$ & $\Omega+\varphi$ — non-self-add & Forge / processing & Dynamical evolution scalar $\to w_a$ & — \\
@@ -1212,8 +1217,8 @@ Symbol & Full name & First defined \\
 $\varphi$ & Golden ratio $(1+\sqrt{5})/2$ & Paper 1 §1 \\
 $\Omega$ & Stability metric, entity OMEGA ($\varphi+\pi$) & Paper 1 §1 \\
 $\beta$ & Base coupling scalar & Paper 1 §1 \\
-AURA & Acoustic Unified Resonance Amplitude ($\varphi+\beta=(3\varphi+\pi)/2\approx3.998$) & Paper 1 §2 \\
-MIRA & Mirror Ratio ($\mathrm{AURA}/2=(3\varphi+\pi)/4\approx1.9989$) & Paper 3 §2.4 \\
+AURA & Acoustic Unified Resonance Amplitude ($\varphi+\beta=(3\varphi+\pi)/2\approx\val{AURA_d3}$) & Paper 1 §2 \\
+MIRA & Mirror Ratio ($\mathrm{AURA}/2=(3\varphi+\pi)/4\approx\val{MIRA_d4}$) & Paper 3 §2.4 \\
 $\mathrm{KAL}_0$ & Asymptotic structural retention factor ($\beta+\pi$) & Paper 1 §1 \\
 $P_{sc}$ & Dynamical evolution scalar ($\Omega+\varphi$) & Paper 1 §1 \\
 $K_v$ & Structural constraint invariant & Paper 1 §1 \\
@@ -1222,7 +1227,7 @@ $M_v$ & Maximal dimensional invariant ($\varphi+\pi+K_v$) & Paper 1 §1 \\
 $s_m$ & EoS-sector identity $1+w_0$ (not a density) & Paper 1 §1 \\
 $\Omega_{m,\rm CMB}$ & CMB-observed matter density ($\omega_m/h^2$, $\omega_m$-direct; no matter factor) & Paper 3 §2.4 \\
 $\gamma_{\rm IS}$ & Israel--Stewart growth index ($\val{p3_gamma_IS}\pm\val{p3_gamma_IS_sigma}$) & Paper 5 §6.1 \\
-$\tau_\Pi H_0$ & IS relaxation time (dimensionless, $\approx2.191$) & Paper 1 App.A \\
+$\tau_\Pi H_0$ & IS relaxation time (dimensionless, $\approx\val{TAU_PI_H0_d3}$) & Paper 1 App.A \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -1245,8 +1250,8 @@ categories (see also Table~\ref{tab:derivation_chain}, column ``Type''):
 
   \item \textbf{Type M — MCMC-validated:} The value is the median of
   the posterior distribution from the 100-walker \texttt{emcee}
-  pipeline described in Paper~2, using DESI~DR2 BAO, Planck~2018
-  priors, and galaxy-cluster mass data. These results reflect the
+  pipeline described in Paper~2, using DESI~DR2 BAO and Planck~2018
+  priors. These results reflect the
   empirical range accessible within the SSEE parameter family.
 
   \item \textbf{Type P — Prior-dependent:} The value depends on an
@@ -1284,9 +1289,10 @@ to enable independent assessment.
 
 All seven structural constants of \SSEE\ are derived from the two axioms
 in at most two layers of arithmetic ($+$, $\times$, integer scale).
-Four constants ($\Omega$, $\beta$, $K_v$, $M_v$) are Level~1 — direct
-combinations of $\varphi$ and $\pi$; three ($\mathrm{KAL}_0$, $P_{sc}$, $T_r$)
-are Level~2 — using Level~1 constants ($\Omega$, $\beta$) as intermediates:
+Following the levels of Table~\ref{tab:derivation_chain}, three constants
+($\Omega$, $\beta$, $P_{sc}$) are Level~1 --- one operation on $\varphi$, $\pi$ and
+their sum $\Omega$; four ($\mathrm{KAL}_0$, $K_v$, $T_r$, $M_v$) are Level~2 ---
+built on a Level~1 register ($\beta$ or $\Omega$) or, for $M_v$, on $K_v$:
 
 \begin{center}
 \small
@@ -1296,12 +1302,12 @@ Symbol & Name & Definition & Value & Layer\\
 \midrule
 $\Omega$ & OMEGA / Stability Metric & $\varphi+\pi$ & \val{OMEGA_d6} & L1\\
 $\beta$  & BIAL / Base Coupling     & $(\varphi+\pi)/2$ & \val{BETA_d6} & L1\\
-$K_v$    & KRYSTOS$_V$ / Structural Constraint & $\varphi+\pi+\Omega$ & \val{K_V_d6} & L1\\
-$M_v$    & ATLAS / Maximal Invariant & $\varphi+\pi+K_v$ & \val{M_V_d6} & L1\\
+$P_{sc}$ & PYROS / Dynamical Scalar & $\Omega+\varphi$ & \val{P_SC_d6} & L1\\
 \midrule
 $\mathrm{KAL}_0$ & Structural Retention & $\beta+\pi$ & \val{KAL0_d6} & L2\\
-$P_{sc}$ & PYROS / Dynamical Scalar & $\Omega+\varphi$ & \val{P_SC_d6} & L2\\
+$K_v$    & KRYSTOS$_V$ / Structural Constraint & $\varphi+\pi+\Omega$ & \val{K_V_d6} & L2\\
 $T_r$    & TRIAL / Saturation Horizon & $3(\varphi+\beta)$ & \val{T_R_d6} & L2\\
+$M_v$    & ATLAS / Maximal Invariant & $\varphi+\pi+K_v$ & \val{M_V_d6} & L2\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1310,7 +1316,7 @@ $T_r$    & TRIAL / Saturation Horizon & $3(\varphi+\beta)$ & \val{T_R_d6} & L2\\
 systematic enumeration of non-redundant, monotonically ordered arithmetic
 combinations of $\{\varphi,\pi\}$ up to two layers.
 The \emph{closure criterion} is exhaustiveness within this family: $M_v = 3(\varphi+\pi)$
-is the maximal element at Layer~1, and no additional Layer~2 combination
+is the maximal element, and no additional Layer~2 combination
 yields a new structurally independent register.
 Products and integer powers of $\{\varphi,\pi\}$ are excluded from the primary
 register; they would introduce additional structure beyond the stated axioms.
@@ -1320,11 +1326,11 @@ register; they would introduce additional structure beyond the stated axioms.
 \textbf{AURA} was defined in the original \SSEE-Unificado framework as
 \[
   \mathrm{AURA} = \mathrm{BIAL} + \varphi = \beta + \varphi
-  = \frac{\pi+\varphi}{2} + \varphi = \frac{3\varphi+\pi}{2} \approx 3.9978.
+  = \frac{\pi+\varphi}{2} + \varphi = \frac{3\varphi+\pi}{2} \approx \val{AURA_d5}.
 \]
 \textbf{MIRA} follows immediately as $\mathrm{MIRA} = \mathrm{AURA}/2$:
 \[
-  \mathrm{MIRA} = \frac{\beta+\varphi}{2} = \frac{3\varphi+\pi}{4} \approx 1.9989.
+  \mathrm{MIRA} = \frac{\beta+\varphi}{2} = \frac{3\varphi+\pi}{4} \approx \val{MIRA_d4}.
 \]
 Both were defined algebraically before any comparison with Planck 2018 data.
 MIRA's value $\val{MIRA_d4}$ is fixed by the algebraic construction
@@ -1355,8 +1361,8 @@ verified to machine precision ($<10^{-16}$ relative error):
   \mathrm{AURA}\big|_{\varphi\leftrightarrow\pi} &= \mathrm{KAL}_0 \label{eq:id_aura}
 \end{align}
 Identity~\eqref{eq:id_kal}--\eqref{eq:id_aura} is the deepest structural result:
-under the discrete exchange $\varphi\leftrightarrow\pi$, the scalar-kinetic constant
-$\mathrm{KAL}_0=(\varphi+3\pi)/2$ maps \emph{exactly} to the photon-sector constant
+under the discrete exchange $\varphi\leftrightarrow\pi$, the retention constant
+$\mathrm{KAL}_0=(\varphi+3\pi)/2$ maps \emph{exactly} to
 $\mathrm{AURA}=(3\varphi+\pi)/2$, and vice versa.
 The duality~\eqref{eq:id_kal}--\eqref{eq:id_aura} is an exact algebraic statement and
 stands on its own; the dark-energy action of Paper~7 contains no coupling of the
@@ -1366,23 +1372,21 @@ $P(X,\phi)$ action is catalogued as OP-7 (\texttt{OPEN\_PROBLEMS.md}).
 
 \subsection*{Spectral index $n_s = 1 - \varphi^{-7}$}
 
-The SSEE algebraic commitment is $n_s = 1 - \varphi^{-7}$, fixed by the
-register structure independently of any inflationary framework
-(Structural Constant Dictionary, Zenodo~10.5281/zenodo.20684908); we make no
-claim of temporal priority over the public Planck releases, which predate this work.
-It is not derived from the $\alpha$-attractor class
-\citep{Starobinsky1980,KalloshLinde2013,Ferrara2013}; rather, compatibility with
-that class is established \emph{a posteriori} in App.~A §A.5: the two
-independent SSEE axioms ($n_s = 1-\varphi^{-7}$ and $r = \varphi^{-10}$)
-determine $N = 2\varphi^7\approx58.07$ and $\alpha = \varphi^4/3$ exactly
-as a consistency check, not as a derivation.
+The value $n_s = 1 - \varphi^{-7}$ entered the Structural Constant Dictionary
+(Zenodo~10.5281/zenodo.20684908) as an algebraic commitment; we make no claim of
+temporal priority over the public Planck releases, which predate this work.
+Its physical embedding is Postulate~I (\S\ref{sec:scope}): an $\alpha$-attractor
+\citep{Starobinsky1980,KalloshLinde2013,Ferrara2013} with $\alpha=\varphi^4/3$ and
+$N_*=2\varphi^n$, where the inflation window selects $n=7$, $N_*=\val{dos_phi7_d6}$. From it
+$n_s=1-2/N_*=1-\varphi^{-7}$ follows, and $r=12\alpha/N_*^2=\varphi^{-10}$ is then a
+consequence of the postulated $\alpha$, not an independent axiom (App.~A §A.5).
 The Planck~2018 value \citep{Akrami2020} $n_s = 0.9649\pm0.0042$ is $\val{ns_planck_sig}\sigma$ from the
 SSEE algebraic value; this comparison was made after the axiom was committed.
 
 \subsection*{Baryon density $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2]$}
 
 The structural expression $(\pi-\varphi)/[3(\varphi+\pi)^2]$
-gives $0.02242$, at $\val{wb_planck_sig}\sigma$ from Planck~2018 ($0.02237\pm0.00015$).
+gives $\val{OMEGA_B_H2_d5}$, at $\val{wb_planck_sig}\sigma$ from Planck~2018 ($0.02237\pm0.00015$).
 Both sides are pure numbers, as they must be: $\Omega_b h^2$ is dimensionless and
 so is the ratio on the right.  The denominator coincides numerically with the global rate read in
 $\kmsu$, $H_0^{\rm glob}/\kmsu\simeq3(\varphi+\pi)^2$, but we do \emph{not} write the
