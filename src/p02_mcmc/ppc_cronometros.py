@@ -18,10 +18,11 @@ COMO. Las MISMAS fórmulas que ssee_paper2_mcmc.py, sección 8:
 Sólo la diagonal: Moresco+2022 pide usar la covarianza sistemática completa, y su
 código no está en el repositorio. El CSV lo dice en su cabecera.
 
-CONTROL (R53). (1) Con los 11 puntos viejos, leídos de ssee_paper2_mcmc.py EN EL COMMIT b14ff14,
-este script tiene que reproducir el χ²_r que imprime el log del MCMC
-(mcmc_paper2_3models_wmfix.log), a su precisión de 3 decimales. Eso prueba que el
-MAP y E(z) son los mismos y que el cambio viene sólo de los datos.
+CONTROL (R53). (1) Desde ef548ca el MCMC lee el MISMO CSV de 32 cronómetros, así que
+este script tiene que reproducir el χ²_r de 32 puntos que imprime el log del MCMC
+(mcmc_paper2_3models_wmfix.log), a su precisión de 3 decimales: prueba que el MAP
+y E(z) son los mismos. (Antes de ef548ca el log imprimía el de los 11 puntos viejos,
+leídos de ssee_paper2_mcmc.py en el commit b14ff14; esa cifra se sigue reportando.)
 (2) El otro lado: el mismo cálculo sin el punto de WiggleZ, para medir cuánto pesaba.
 """
 import ast
@@ -99,7 +100,7 @@ txt = open(LOG).read()
 blq = txt[txt.index("Cosmic Chronometers"):]
 ETIQ = {"ssee": "SSEE", "lcdm": "ΛCDM", "cpl": "CPL"}
 impreso = {m: float(re.search(rf"{e}\s*:\s*([0-9.]+)", blq).group(1)) for m, e in ETIQ.items()}
-pasa = all(abs(res[m]["chi2r_11_viejos"] - impreso[m]) <= 0.0005 + 1e-9 for m in res)
+pasa = all(abs(res[m]["chi2r_32"] - impreso[m]) <= 0.0005 + 1e-9 for m in res)
 
 out = dict(
     datos=dict(csv=os.path.relpath(CSV, _R), N=len(z32), covarianza="solo diagonal (la fuente pide la sistematica completa)"),
@@ -119,6 +120,6 @@ with open(TABLA, "w") as t:
     t.write("\\bottomrule\n")
 for m, r in res.items():
     print(f"{ETIQ[m]:5s} 32: chi2={r['chi2_32']:.3f} chi2_r={r['chi2r_32']:.3f} p={r['p_32']:.3f} | "
-          f"11 viejos {r['chi2r_11_viejos']:.4f} (log {impreso[m]}) | sin WiggleZ {r['chi2r_10_sin_wigglez']:.3f}")
+          f"32 log {impreso[m]} | 11 viejos {r['chi2r_11_viejos']:.4f} | sin WiggleZ {r['chi2r_10_sin_wigglez']:.3f}")
 print("CONTROL:", "PASA" if pasa else "NO PASA")
 sys.exit(0 if pasa else 1)
