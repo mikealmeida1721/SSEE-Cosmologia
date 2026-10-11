@@ -1,0 +1,153 @@
+doc: P9
+numeros:
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 50, num: "67.4", decision: LIT, nota: "H0 CMB citado como consenso de la tension (Verde2019 et al.); Planck 2018 TT+TE+EE+lowE+lensing da 67.36±0.54, 67.4±0.5 es el valor redondeado estandar en revisiones de tension (Verde+2019)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 50, num: "0.5", decision: LIT, nota: "misma fuente que 67.4 arriba."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 51, num: "73.04", decision: LIT, nota: "Riess et al. 2022 (ApJL 934 L7), SH0ES; = ssee_core.H0_SH0ES pero es un dato MEDIDO citado, no algebra SSEE."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 51, num: "1.04", decision: LIT, nota: "Riess 2022, incertidumbre SH0ES."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 62, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR", nota: "verificado: 0.067253 (ssee_core); redondeado .5f en texto."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 78, num: "73.04", decision: LIT, nota: "Riess 2022."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 78, num: "1.04", decision: LIT, nota: "Riess 2022."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 82, num: "73.04", decision: LIT, nota: "dato de entrada, Riess 2022."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 82, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 83, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)", nota: "verificado: 68.1278 (coincide con p10_uv_fscreen.json#H0_glob_IR_historico=68.12782113412541); H0^glob,IR regimen no canonico."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 86, num: "67.96214", decision: ALG, expr: "c.H0_ALG", nota: "3(phi+pi)^2, numero puro, blanco de comparacion (no entrada); existe macro H0_ALG_d5 ya usada en linea 110/147/437."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 86, num: "0.166", decision: DERIVADO, nota: "68.12782-67.96214=0.1657 -> redondea 0.166. Verificado con ssee_core + p10_uv_fscreen.json."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 87, num: "0.17", decision: DERIVADO, nota: "0.1657/0.9701(sigma propagado IR)=0.1708 -> 0.17sigma. Verificado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 90, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 94, num: "73.04", decision: LIT, nota: "Riess 2022, dato de entrada."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 96, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 99, num: "0.970", decision: ALG, expr: "c.SIG_H0_SH0ES*(1-c.F_SCREEN_IR)", nota: "1.04*(1-0.06725)=0.9701 -> 0.970."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 99, num: "0.968", decision: VAL, nombre: p10_sigma_H0_glob, fuente: "results/logs/p10_uv_fscreen.json#sigma_H0_glob", formato: ".3f", nota: "0.9676975 -> 0.968; no existe aun macro dedicado, el existente H0_glob cubre solo el valor central."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 108, num: "67.037", decision: HIS, nota: "explicitamente 'this is now superseded'; H0_MIRA retirado del registro canonico."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 108, num: "71.87", decision: HIS, nota: "recalculado: 67.037/(1-0.06725)=71.8705 -> 71.87, consistente con el valor historico citado; HIS por estar marcado superseded."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 108, num: "1.12", decision: HIS, nota: "(71.8705-73.04)/1.04=-1.1245 -> 1.12sigma; HIS, historico superseded."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 113, num: "0.15", decision: TRIVIAL, nota: "limite de regimen declarado (z<0.15), repetido en todo el paper; diseno, no resultado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 118, num: "4.2e-6", decision: VAL, nombre: p10_residuo, fuente: "results/logs/p10_uv_fscreen.json#residuo_vs_numero_puro", formato: ".1e", nota: "4.1986e-06 -> 4.2e-6; coincide con residuo del footnote y del Apendice P."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 137, num: "67.4", decision: LIT, nota: "misma cita Planck2020 que linea 50."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 137, num: "0.5", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 142, num: "73.04", decision: LIT, nota: "Riess1998/Perlmutter1999/Riess2019/Riess2022."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 142, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 142, num: "0.15", decision: TRIVIAL, nota: "rango de deteccion SH0ES, declarado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 150, num: "1.1", decision: DERIVADO, nota: "(67.96214-67.36)/0.54=1.115 -> 1.1sigma contra Planck (cita Paper2); tambien (67.962-67.4)/0.5=1.12, mismo redondeo."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 158, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 159, num: "73.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 159, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 160, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 161, num: "67.96214", decision: ALG, expr: "c.H0_ALG"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 161, num: "0.17", decision: DERIVADO, nota: "mismo 0.17sigma de linea 87."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 162, num: "67.96214", decision: VAL, nombre: H0_GLOBAL_d5, fuente: "results/logs/p10_uv_fscreen.json#H0_glob", formato: ".5f", nota: "el texto dice 'the model value, with the complete fsc' = H0_GLOBAL=67.962142 (macro H0_GLOBAL_d5 ya existe y da '67.96214'), NO H0_ALG; coincide a 5 cifras pero conceptualmente es la cascada, no el blanco. Usar \\val{H0_GLOBAL_d5} en vez del literal."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 218, num: "3.998", decision: VAL, nombre: AURA_d3, nuevo: true, fuente: "results/logs/algebra_derivada.json#nucleo.AURA", formato: ".3f", nota: "AURA=3.997847 -> 3.998. Inconsistente con la linea 219 inmediata (MIRA ya usa \\val{MIRA_d4}); crear macro AURA_d3 analogo."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 228, num: "0.840", decision: VAL, nombre: W0_d3, nuevo: true, fuente: "results/logs/algebra_derivada.json#nucleo.W0", formato: ".3f", nota: "W0=-0.839950 -> -0.840. Inconsistente con linea 229 (sDE ya usa \\val{S_DE_d6}); crear macro W0_d3 analogo."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 336, num: "1.1e-16", decision: DERIVADO, nota: "diferencia de redondeo de punto flotante entre la forma cerrada y -3w0(1+w0): verificado 0.0 en float64 (por debajo de 1.1e-16), consistente con 'machine zero'."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 373, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 433, num: "73.04", decision: LIT, nota: "Riess2022, entrada medida (tabla numeros)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 433, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 434, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 436, num: "68.44", decision: DERIVADO, nota: "73.04/(1+0.06725)=68.4374 -> 68.44, variante aditiva; verificado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 439, num: "0.17", decision: DERIVADO, nota: "repite el 0.17sigma IR."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 441, num: "67.037", decision: HIS, nota: "fila explicitamente marcada 'superseded'."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 441, num: "71.87", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 441, num: "1.12", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 485, num: "0.15", decision: TRIVIAL, nota: "limite de regimen declarado, repetido."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 486, num: "0.840", decision: VAL, nombre: S_DE_d3, nuevo: true, fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".3f", nota: "S_DE=0.839950 -> 0.840; mismo patron de macro faltante que AURA/W0."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 516, num: "73.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 516, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 525, num: "73.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 526, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 532, num: "68.44", decision: DERIVADO, nota: "igual que linea 436."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 537, num: "0.31", decision: DERIVADO, nota: "diferencia mult vs add: 68.4374-68.1278=0.3095 -> 0.31; verificado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 539, num: "67.96214", decision: ALG, expr: "c.H0_ALG"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 539, num: "0.166", decision: DERIVADO, nota: "igual que linea 86."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 540, num: "0.475", decision: DERIVADO, nota: "68.4374-67.96214=0.4752 -> 0.475; verificado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 541, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 541, num: "0.970", decision: ALG, expr: "c.SIG_H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 543, num: "0.17", decision: DERIVADO, nota: "0.1657/0.970=0.1708 -> 0.17."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 543, num: "0.49", decision: DERIVADO, nota: "0.4752/0.970=0.4899 -> 0.49."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 556, num: "67.037", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 556, num: "71.87", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 556, num: "1.12", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 560, num: "67.96214", decision: ALG, expr: "c.H0_ALG", nota: "el numero sigue vigente; lo retirado es solo el valor MIRA-mapped, no este."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 568, num: "69.96", decision: HIS, nota: "explicitamente 'earlier versions used...the estimate of the first arXiv version'; superseded por CCHP v3 (70.39)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 568, num: "1.54", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 570, num: "1.88", decision: HIS, nota: "explicitamente 'is superseded with it'; el vigente es p9_cchp_sig_IR=-1.28 (via \\val)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 607, num: "147.2", decision: VAL, nombre: rd_ssee_camb_d1, nuevo: true, fuente: "results/logs/rd_dual.json#rd_ssee_camb", formato: ".1f", nota: "147.17435 -> 147.2; ya existen macros a .2f (p2_lyaB_rd=147.17, mf_rdrag_alg=147.17) pero no a 1 decimal."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 624, num: "137.3", decision: FIX, nuevo: "r_{d,\\rm new} = r_d\\,(1-\\fsc) \\approx 137.3", nota: "INCONSISTENCIA: la formula escrita es r_d/(1+fsc_IR), que da 147.174/1.06725=137.90 Mpc, NO 137.3. El valor 137.3 solo reproduce con la forma MULTIPLICATIVA r_d*(1-fsc_IR)=147.174*(1-0.06725)=137.276 -> 137.3. La formula en el .tex no coincide con el numero impreso; hay que corregir la formula a la forma multiplicativa (consistente con el resto del paper, que adopta esa forma como postulado) o corregir el numero a 137.9."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 627, num: "0.15", decision: TRIVIAL}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 644, num: "67.037", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 647, num: "147.2", decision: VAL, nombre: rd_ssee_camb_d1, fuente: "results/logs/rd_dual.json#rd_ssee_camb", formato: ".1f"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 651, num: "0.8136", decision: VAL, nombre: p3_sigma8_IS, fuente: "results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE", formato: ".4f", nota: "macro ya existe (p3_sigma8_IS=0.8136) pero el texto usa literal; ademas coincide con fsigma8_canonico.json#sigma8_ssee=0.81360."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 651, num: "1.0032", decision: VAL, nombre: p5_G, fuente: "results/logs/p5_IS_perturbations_Q3.json#G", formato: ".4f", nota: "macro ya existe (p5_G=1.0032) pero el texto usa literal."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 654, num: "0.021284", decision: VAL, nombre: cs2_condensado, fuente: "results/logs/algebra_derivada.json#algebra.cs2_condensado.valor", formato: ".6f", nota: "coincide con el c_s^2=0.021284 del condensado fantasma de P7 (banner CLAUDE.md); confirmar si ya existe macro en valores_generados.tex (no encontrada, proponer nueva)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 681, num: "73.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 681, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 681, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 685, num: "67.96214", decision: ALG, expr: "c.H0_ALG"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 689, num: "0.17", decision: DERIVADO, nota: "repite 0.17sigma IR, cita Riess2022."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 695, num: "71.5", decision: TRIVIAL, nota: "umbral de falsacion declarado por Mike (criterio 1), no se reprodujo desde un log especifico; la pre-clasificacion automatica (planck2018_EE.txt) es una coincidencia de valor sin relacion, descartada."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 695, num: "74.2", decision: TRIVIAL, nota: "umbral de falsacion declarado (criterio 1); la pre-clasificacion a cruce_fantasma_quien_lo_lleva.json es coincidencia de valor, descartada."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 709, num: "1.6", decision: VAL, nombre: requiem_ratio_pct, nuevo: true, fuente: "results/logs/h0_lente_fondo_ssee.json#sistemas.0.razon_H0_SSEE_sobre_LCDM", formato: ".1f", nota: "(1-0.983752)*100=1.625% -> 1.6%; verificado para el sistema Encore/Requiem MACS J0138.0-2155 (arXiv:2509.12301)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 710, num: "69.1", decision: VAL, nombre: requiem_C_H0, fuente: "results/logs/h0_lente_fondo_ssee.json#requiem_fecha.SSEE_leida_LCDM.H0", formato: ".1f", nota: "macro ya existe (requiem_C_H0=69.1, usado en linea 728) pero aqui el texto usa literal; valor exacto 69.0846."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 757, num: "0.1", decision: LIT, nota: "f_EDE~0.1 es un orden de magnitud tipico de la literatura EDE (Poulin2019, Smith2020), no un numero SSEE."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 761, num: "72.5", decision: LIT, nota: "rango publicado EDE (Poulin2019, Smith2020, Hill2020)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 765, num: "1.6", decision: LIT, nota: "residuo tipico EDE citado (Hill2020)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 773, num: "71.8", decision: LIT, nota: "rango SIDR publicado (Kreisch2020, Aloni2022), nota ya marcada en el .tex como ORIGEN-VALOR en la tabla (linea 811)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 779, num: "0.1", decision: TRIVIAL, nota: "z<=0.1, rango descriptivo de la clase (c) de modelos, no numero SSEE."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 808, num: "0.1", decision: TRIVIAL, nota: "epoca SIDR en tabla comparativa, descriptivo."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 808, num: "0.15", decision: TRIVIAL, nota: "epoca SSEE en tabla comparativa, repite el regimen declarado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 812, num: "67.4", decision: LIT, nota: "misma cita Planck/Verde2019."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 812, num: "72.5", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 812, num: "71.8", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 813, num: "1.6", decision: LIT, nota: "residuo EDE publicado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 813, num: "0.17", decision: DERIVADO, nota: "resultado SSEE, repite 0.17sigma."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 836, num: "0.15", decision: TRIVIAL}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 841, num: "0.17", decision: DERIVADO}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 844, num: "0.00", decision: DERIVADO, nota: "4.1986e-6/0.9677=4.34e-6sigma -> redondea a 0.00sigma; verificado con p10_uv_fscreen.json."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 888, num: "0.023", decision: LIT, nota: "corte estandar Pantheon+ para evitar velocidades peculiares en el flujo de Hubble local."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 888, num: "0.15", decision: TRIVIAL, nota: "limite de regimen declarado, igual a z<0.15 del resto del paper."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 908, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 908, num: "0.17", decision: DERIVADO}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 911, num: "3.37", decision: VAL, nombre: sK_UV_pct, fuente: "results/logs/p10_uv_fscreen.json#s_K_UV_pct", formato: ".2f", nota: "macro YA EXISTE (sK_UV_pct=3.37) pero el texto usa literal '+3.37%'. Verificado: (0.416905-0.403302)/0.403302*100=3.3728."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 923, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 935, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 937, num: "0.17", decision: DERIVADO}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 939, num: "67.037", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 939, num: "1.12", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 941, num: "0.15", decision: TRIVIAL}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 957, num: "0.840", decision: VAL, nombre: W0_d3, nuevo: true, fuente: "results/logs/algebra_derivada.json#nucleo.W0", formato: ".3f"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 957, num: "0.670", decision: VAL, nombre: WA_d3, nuevo: true, fuente: "results/logs/algebra_derivada.json#nucleo.WA", formato: ".3f", nota: "WA=-0.669975 -> -0.670; no existe macro a 3 decimales (solo WA_d5, WA_d6)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 971, num: "12.5", decision: LIT, nota: "Valcin2021, Bond2013; edad minima de cumulos globulares, dato de literatura."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 973, num: "13.5", decision: LIT, nota: "Cimatti2023, restriccion de galaxias rojas."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 973, num: "0.55", decision: LIT, nota: "Cimatti2023, redshift de la restriccion."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 977, num: "15.52", decision: HIS, nota: "explicitamente 'Previous versions reported...withdrawn'; valor retirado, usaba Omega_m,dyn=0.160 como densidad y H0_SH0ES para una cantidad global."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 977, num: "1.72", decision: HIS, nota: "13.801(lcdm)+1.72=15.52, consistente con el calculo retirado; HIS."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 984, num: "73.04", decision: HIS, nota: "parte de la descripcion de los 'tres insumos erroneos' del calculo retirado de t0; el numero en si (SH0ES) es correcto pero su USO ahi (como entrada de una cantidad global) es lo retirado."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 987, num: "15.52", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1000, num: "73.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1000, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1001, num: "68.13", decision: ALG, expr: "c.H0_SH0ES*(1-c.F_SCREEN_IR)"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1001, num: "0.17", decision: DERIVADO}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1003, num: "4.2e-6", decision: VAL, nombre: p10_residuo, fuente: "results/logs/p10_uv_fscreen.json#residuo_vs_numero_puro", formato: ".1e"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1005, num: "0.968", decision: VAL, nombre: p10_sigma_H0_glob, fuente: "results/logs/p10_uv_fscreen.json#sigma_H0_glob", formato: ".3f"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1026, num: "73.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1027, num: "67.96214", decision: VAL, nombre: H0_GLOBAL_d5, fuente: "results/logs/p10_uv_fscreen.json#H0_glob", formato: ".5f", nota: "este es el resultado de la cadena inversa (H0_base), = H0_GLOBAL, no H0_ALG; usar \\val{H0_GLOBAL_d5}."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1034, num: "67.96214", decision: VAL, nombre: H0_GLOBAL_d5, fuente: "results/logs/p10_uv_fscreen.json#H0_glob", formato: ".5f"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1040, num: "67.96214", decision: ALG, expr: "c.H0_ALG", nota: "aqui si es H0_ALG (mikael*Omega_DNAV=3*Omega^2, identidad algebraica pura), distinto del par anterior que es H0_GLOBAL; ambos coinciden a 5 cifras."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1047, num: "0.0001", decision: DERIVADO, nota: "NO REPRODUCE con los valores canonicos actuales: H0_ALG=67.96213732 vs H0_GLOBAL(cascada completa)=67.96214152 difieren en -6.18e-6% (=-0.0000062%), no en -0.0001% como dice el texto (mas de un orden de magnitud de diferencia). Puede venir de una version anterior con otra precision en M_V/Omega_DNAV; requiere decision de Mike. Reportado tambien en afirmaciones."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1050, num: "67.96214", decision: ALG, expr: "c.H0_ALG"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1056, num: "67.037", decision: HIS}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1123, num: "0.31", decision: DERIVADO, nota: "mismo 0.31 km/s/Mpc de linea 537 (diferencia mult-add)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1144, num: "0.15", decision: HIS, nota: "parte de la descripcion del parrafo historico 'earlier versions...found a 56% variation', retirado junto con esa derivacion."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1160, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1160, num: "0.025", decision: FIX, nuevo: "\\;\\approx\\; \\fsc(0)\\left[1+\\frac{3w_a\\,\\bar z}{4}\\right],\\quad \\bar z\\approx 0.05", nota: "INCONSISTENCIA: con z_max=0.15 (el mismo simbolo usado en todo el paper, p.ej. lineas 142/485/627/836/888/941), 3*w_a*z_max/4 = 3*(-0.670)*0.15/4 = -0.0754, NO -0.025. El -0.025 solo reproduce con z~0.05 (un tercio de z_max, quizas el redshift efectivo/medio de la muestra). El simbolo z_max en la formula no corresponde al numero usado; se necesita aclarar si es z_max o un z promedio distinto, y renombrar la variable."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1161, num: "0.0656", decision: DERIVADO, nota: "0.06725*(1-0.025)=0.065569 -> 0.0656; aritmeticamente consistente CON el 0.025 impreso (aunque ese 0.025 mismo no reproduce de z_max=0.15, ver linea 1160)."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1163, num: "2.5", decision: FIX, nuevo: "", nota: "mismo problema que linea 1160 (0.025 = 2.5%); no reproduce con z_max=0.15, ver nota alli."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1164, num: "0.05", decision: DERIVADO, nota: "cota cualitativa: delta_fsc~0.0017 sobre H0_local~73 da un corrimiento de orden 0.1 km/s/Mpc, consistente con el techo '<0.05' declarado como cota superior, no un valor exacto reproducido."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1164, num: "1.04", decision: LIT}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1165, num: "0.06725", decision: ALG, expr: "c.F_SCREEN_IR"}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1167, num: "0.1", decision: DERIVADO, nota: "cota cualitativa de orden de magnitud (el corrimiento de 0.05 km/s/Mpc sobre H0~73 es ~0.07%, redondeado a '0.1%' como cota superior); no es un numero de alta precision reproducido por un script."}
+
+afirmaciones:
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 624, dice: "give $r_{d,\\rm new} = r_d/(1+\\fsc) \\approx 137.3$\\,Mpc", debe_decir: "give $r_{d,\\rm new} = r_d\\,(1-\\fsc) \\approx 137.3$\\,Mpc", evidencia: "r_d/(1+fsc_IR)=147.174/1.06725=137.90 Mpc; r_d*(1-fsc_IR)=147.174*0.93275=137.28 Mpc -> redondea a 137.3, el numero impreso. La formula escrita (division) y el numero impreso (multiplicacion) no son la misma cuenta; o se corrige la formula a la forma multiplicativa, o el numero a 137.9."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1159, dice: "\\bar\\fsc \\approx \\fsc(0)\\left[1 + \\frac{3w_a\\,z_{\\max}}{4}\\right] \\approx 0.06725\\times\\bigl(1 - 0.025\\bigr)", debe_decir: "(requiere que Mike defina si z_max=0.15 (como en el resto del paper) o un z representativo ~0.05; con z_max=0.15 la cuenta da (1-0.0754), no (1-0.025))", evidencia: "3*w_a*z_max/4 con w_a=-0.669975 y z_max=0.15 da -0.0754, no -0.025. Solo con z~0.05 (un tercio de z_max) se reproduce el -0.025 impreso. El simbolo 'z_max' se usa en todo el paper (lineas 142, 485, 627, 836, 888, 941) con el valor 0.15; aqui el numero no es consistente con ese mismo simbolo."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 1047, dice: "the agreement with the inverse-chain value~\\eqref{eq:Hbase_value} is $-0.0001\\%$", debe_decir: "(recalcular con los valores canonicos vigentes de ssee_core.py / algebra_derivada.json; el valor no reproduce)", evidencia: "Con H0_ALG=3*Omega^2=67.96213732 (algebra pura) y H0_GLOBAL (cascada completa, p10_uv_fscreen.json#H0_glob)=67.96214152, la diferencia relativa es -6.18e-6% = -0.0000062%, mas de un orden de magnitud menor que el -0.0001% impreso."}
+  - {archivo: SSEE_Paper9_HubbleTension.tex, linea: 218, dice: "\\AURA &= \\frac{3\\phiG+\\pi}{2} \\approx 3.998", debe_decir: "\\AURA &= \\frac{3\\phiG+\\pi}{2} \\approx \\val{AURA_d3}", evidencia: "La ecuacion inmediatamente despues (MIRA, linea 219) ya usa \\val{MIRA_d4}; AURA queda como literal hardcodeado sin pareja, pese a existir macros AURA_d5/d6/d10 (falta solo la de 3 decimales). Mismo patron en w0/sDE (lineas 228-229) y en w0/wa (linea 957)."}

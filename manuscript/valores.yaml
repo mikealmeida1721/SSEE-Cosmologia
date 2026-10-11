@@ -767,3 +767,9 @@ ns_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.ns_sigma_pla
 om_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.Om_sigma_planck.valor", formato: ".2f"}
 p5_techo_vs_kids: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.KiDS-1000", formato: ".1f"}
 p5_techo_vs_planck: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.Planck 2018", formato: ".1f"}
+# cuarta lectura P9 (2026-10-10, notes/lectura_cuarta/P9.yaml)
+W0_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.W0", formato: ".3f"}
+S_DE_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".3f"}
+rd_ssee_camb_d1: {fuente: "results/logs/rd_dual.json#rd_ssee_camb", formato: ".1f"}
+WA_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.WA", formato: ".3f"}
+p9_hglob_IR_sigma: {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.H_glob_s", formato: ".3f"}
