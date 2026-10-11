@@ -540,6 +540,6 @@ Referencia ΛCDM libre = 514.893 (minimizado); 518.096 es el máximo de la caden
 ## Cuarta lectura (2026-10-10) — re-sellar por DVC tras cola_1010
 Scripts tocados y re-corridos a mano (acta limpia, valores idénticos salvo lo nuevo):
 `resumen_3modelos` (τ, aceptación), `kids_publicados` (logA de las cadenas de KiDS-Legacy),
-y CANONICAL (comentario 1.03σ→1.01σ) ⟹ `dvc repro -s resumen_3modelos kids_publicados algebra_derivada
+y CANONICAL (comentario 1.03σ→1.01σ) ⟹ `dvc repro -s resumen_3modelos kids_publicados algebra_derivada kids1000_control kids1000_control
 s8_desde_b1 valores_tex` (o `dvc commit` si reproducen) y bajar R75 a lo medido.
 - R75b: añadir a deps de la etapa `valores_tex` en dvc.yaml los logs nuevos de valores.yaml (p5_IS_perturbations_Q2.json, p5_techo_sigma8_As_fijo.json, press_schechter.json, … — los que R75b liste).

@@ -76,3 +76,16 @@ print(f'[informativo, NO es la comparacion] -0.5*ln|2piC| = {-0.5*logdet:.4f}')
 _SAL = pathlib.Path(__file__).resolve().parents[2] / 'results' / 'control_theory.npy'
 np.save(_SAL, th)
 print(f'  vector teorico -> {_SAL}')
+
+# Persistido a log (cuarta lectura 2026-10-11): Paper 6 cita este chi2 como control negativo
+# y sólo vivía en la salida por pantalla.
+import json
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from procedencia import con_acta  # noqa: E402
+_LOG = pathlib.Path(__file__).resolve().parents[2] / 'results' / 'logs' / 'kids1000_control.json'
+json.dump(con_acta(dict(chi2=float(c2), ndata=int(m.sum()), chi2_publicado=float(-2 * LIKE_REF),
+                        desvio_pct=float(100 * (c2 + 2 * LIKE_REF) / (-2 * LIKE_REF)),
+                        punto="maxima posterior de la cadena oficial KiDS-1000 xi_pm, Blind C"),
+                   __file__, entradas=[_MAXPOST]),
+          open(_LOG, 'w'), indent=1, ensure_ascii=False)
+print(f'  log -> {_LOG}')

@@ -48,7 +48,23 @@
    "fuente": "Asgari et al. 2021, KiDS-1000 cosmic shear band powers"
   }
  },
- "fecha": "2026-10-10",
+ "nuisance": {
+  "k1000_A_baryon": 2.568735194554096,
+  "k1000_A_baryon_sigma": 0.30627261536786415,
+  "k1000_A_IA": 0.5422179581972616,
+  "k1000_A_IA_sigma": 0.2883730343249875,
+  "legacy_logT_AGN_libre": 7.90927495172843,
+  "legacy_logT_AGN_libre_sigma": 0.19709213606048323,
+  "legacy_logT_AGN_fijo": 7.9753007872846595,
+  "legacy_logT_AGN_fijo_sigma": 0.16571066385683178,
+  "legacy_logT_AGN_corrimiento": 0.06602583555622932,
+  "legacy_A_scale_libre": 1.3149639700668556,
+  "legacy_A_scale_libre_sigma": 0.7470906623829874,
+  "legacy_A_scale_fijo": 1.4135079434725102,
+  "legacy_A_scale_fijo_sigma": 0.6547519567998019,
+  "legacy_A_scale_corrimiento": 0.09854397340565457
+ },
+ "fecha": "2026-10-11",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -88,11 +104,13 @@
   }
  },
  "_procedencia": {
-  "commit": "a56c1bf93fa9fc88fd5f8859b7daed5f07dce9a4",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "4c5f87073eb5c7db860182db1b88c72525409377",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p06_growth/kids_publicados.py"
+  ],
   "script": "src/p06_growth/kids_publicados.py",
-  "script_sha256": "926d071b972216445a50146bd51fd3da49cea7187d86a3997fe37fcce54cca60",
+  "script_sha256": "a7e6725b01e1a0035dcfaa9d0d28bebc088e8ac24f3f2397a4dda769b0d3d3e9",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
@@ -105,7 +123,7 @@
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-10T21:00:04",
+  "fecha": "2026-10-11T11:11:45",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -113,7 +131,7 @@
    "scipy": "1.17.1"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

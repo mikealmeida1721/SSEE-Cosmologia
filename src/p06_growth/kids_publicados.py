@@ -120,6 +120,36 @@ def _logA_cadena(nombre, burn=0.3):
 
 
 leg_ssee, leg_ssee_s = _logA_cadena("ssee")
+
+def _col_cadena(carpeta, nombre, col, burn=0.3):
+    """Media y sigma ponderadas de una columna de las cadenas de Cobaya (burn-in por cadena)."""
+    import glob
+    W, X = [], []
+    for f in sorted(glob.glob(f"{carpeta}/{nombre}.[0-9].txt")):
+        cab = open(f).readline().split()[1:]
+        a = np.loadtxt(f)
+        a = a[int(burn * len(a)):]
+        W.append(a[:, 0]); X.append(a[:, cab.index(col)])
+    w, x = np.concatenate(W), np.concatenate(X)
+    m = float(np.average(x, weights=w))
+    return m, float(np.sqrt(np.average((x - m) ** 2, weights=w)))
+
+
+# Nuisance con sentido fisico que cita Paper 6 (cuarta lectura 2026-10-11: antes sólo vivían
+# en las cadenas, sin log). KiDS-1000 SSEE (R3): A_baryon (columna halo_A) y A_IA.
+# KiDS-Legacy: cuánto se mueven logT_AGN y A_scale al clavar A_s (ssee vs sseefijo).
+CADENAS_K1K = "/mnt/datos/SSEE_data/chains_p6/kids"
+nuis = {}
+for col, clave in (("halo_A", "A_baryon"), ("A_IA", "A_IA")):
+    m, sd = _col_cadena(CADENAS_K1K, "ssee", col)
+    nuis[f"k1000_{clave}"], nuis[f"k1000_{clave}_sigma"] = m, sd
+for col in ("logT_AGN", "A_scale"):
+    m1, s1 = _col_cadena(CADENAS_LEG, "ssee", col)
+    m2, s2 = _col_cadena(CADENAS_LEG, "sseefijo", col)
+    nuis[f"legacy_{col}_libre"], nuis[f"legacy_{col}_libre_sigma"] = m1, s1
+    nuis[f"legacy_{col}_fijo"], nuis[f"legacy_{col}_fijo_sigma"] = m2, s2
+    nuis[f"legacy_{col}_corrimiento"] = abs(m1 - m2)
+
 leg_lcdm, leg_lcdm_s = _logA_cadena("lcdmfijo")
 # blanco del fondo Planck: el logA que Planck 2018 da a ese mismo fondo
 # ORIGEN: Planck 2018 VI (arXiv:1807.06209), tabla 2, TT,TE,EE+lowE+lensing: ln(10^10 A_s) = 3.044 ± 0.014
@@ -159,6 +189,7 @@ s8 = dict(
                     fuente=r3["comparacion_KiDS"]["fuente"]))
 out = dict(
     s8=s8,
+    nuisance=nuis,
     fecha=str(__import__("datetime").date.today()),
     kids_legacy=dict(S8=media, S8_sigma=sig, S8_sin_nu_s8_input=media_col, desvio_max_identidad=desvio_identidad,
                      n_muestras=int(len(w)), n_eff=float(1.0 / np.sum(w ** 2)),

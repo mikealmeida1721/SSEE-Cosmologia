@@ -1,0 +1,131 @@
+doc: P6
+numeros:
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 25, num: "1.15", decision: TRIVIAL, nota: "interlineado \\setstretch, no es un resultado"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 65, num: "3.0255", decision: VAL, nombre: leg_logA, fuente: "results/logs/kids_publicados.json#s8.logA.legacy", formato: ".4f", nota: "ya existe macro \\val{leg_logA}=3.0255; el texto lo escribe a mano, proponer sustituir"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 65, num: "0.0396", decision: VAL, nombre: leg_logA_s, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_sigma", formato: ".4f", nota: "macro \\val{leg_logA_s}=0.0396 ya existe"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 65, num: "0.49", decision: VAL, nombre: logA_leg_vs_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_vs_cmb_blanco", formato: ".2f", nota: "macro \\val{logA_leg_vs_cmb}=0.49 ya existe; valor repetido a mano en 65,474,475,509,516,772"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 66, num: "3.04483", decision: VAL, nombre: leg_logA_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.cmb_blanco", formato: ".5f", nota: "macro \\val{leg_logA_cmb}=3.04483 ya existe"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 69, num: "417.97", decision: VAL, nombre: chi2_leg_unif, fuente: "results/logs/kids_legacy_bic.json#corridas.sseefijo.chi2_min", formato: ".2f", nota: "macro ya existe y se usa en la tabla de la Sec.5 (linea 462); en abstract/492/775 esta tecleado a mano con el mismo valor"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 69, num: "418.34", decision: VAL, nombre: chi2_leg_libre, fuente: "results/logs/kids_legacy_bic.json#corridas.ssee.chi2_min", formato: ".2f", nota: "idem anterior"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 75, num: "1.0", decision: DERIVADO, cuenta: "max(417.97,418.34,418.95)-min(...)=418.95467-417.9706=0.984<1.0 (el tercer valor es chi2_leg_lcdm=418.95, macro existente, results/logs/kids_legacy_bic.json#corridas.lcdmfijo.chi2_min)", nota: "confirmado: el rango de los tres chi2 de la tabla de la Sec.5 es 0.98<1.0; afirmacion correcta"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 85, num: "40.70", decision: HIS, nota: "masa de la particula retirada el 2026-08-01; narrada claramente como retractada en la misma frase"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 107, num: "0.3", decision: TRIVIAL, nota: "Omega_m fiducial=0.3 de la definicion estandar de S8 en toda la literatura de weak lensing, no es un resultado de SSEE"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 162, num: "40.70", decision: HIS, nota: "dup de linea 85, parrafo historico de la retraccion"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 164, num: "594.28", decision: HIS, nota: "multiplicador algebraico retirado (SOLAR^2*KRYSTOS_V); marcado 'retracted' en la misma frase"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 279, num: "0.4", decision: DERIVADO, cuenta: "(261.27-260.3147)/260.3147=0.367%, redondea a 0.4%", nota: "el 0.4% depende de 261.27, que NO tiene log vigente comprobable (ver linea 280); se acepta la cuenta pero el insumo esta senalado como hallazgo"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 280, num: "261.27", decision: VAL, nombre: "(pendiente — sin log JSON)", fuente: "src/p06_growth/control_kids.py (script vigente, no archivado; imprime 'chi2' por stdout pero NO lo persiste a results/logs/*.json); valor consistente con el comentario archivado archive/codigo/investigacion/particula_RETIRADA_2026-08-01/ssee_kids.py:16 ('chi2 261.27 vs 260.32 oficial, 0.4%')", nota: "HALLAZGO: es el unico numero de este paper sin JSON comprobable en resultados/logs. El script que lo produce (control_kids.py) corre CAMB, prohibido correr en esta lectura. Recomendacion: re-correr control_kids.py y guardar su salida en results/logs/control_kids.json antes de citar 261.27 con \\val"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 286, num: "0.03", decision: TRIVIAL, nota: "criterio de convergencia Gelman-Rubin R-1<0.03, umbral de diseño del MCMC, no un resultado"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 295, num: "0.38", decision: DATO, nota: "bin de redshift de BOSS DR12 (Beutler et al. 2017), diseño del survey"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 295, num: "0.51", decision: DATO, nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 295, num: "0.61", decision: DATO, nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 298, num: "0.31", decision: DATO, fuente: "src/p06_growth/boss_dr12_data.py linea 14: 'Fiducial DECLARADO en los headers: Omega_m=0.31, Omega_nu=0, w=-1, H0=100'", nota: "coincide letra a letra con el comentario del script que lee los headers de Beutler"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 306, num: "0.20", decision: TRIVIAL, nota: "k_max=0.20 h/Mpc, eleccion de diseño del one-loop LPT (velocileptors), no un resultado medido"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 323, num: "0.03", decision: TRIVIAL, nota: "dup de 286, mismo umbral R-1<0.03"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 327, num: "0.3", decision: TRIVIAL, nota: "dup de 107, formula de S8"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 330, num: "1.23", decision: DERIVADO, cuenta: "chi2_k1000_ssee/dof = 265.44/216 = 1.2289 -> redondea a 1.23 (results/logs/kids_publicados.json#PTE.ssee.chi2 y dof=216 de la tabla)", nota: "verificado tambien via results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json#chi2_min_por_dof=1.228888"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 332, num: "2.57", decision: VAL, nombre: A_baryon_k1000, fuente: "cadenas /mnt/datos/SSEE_data/chains_p6/kids/ssee.{1..4}.txt, columna halo_A, media ponderada por weight descartando 30% burn-in por cadena -> 2.5687", formato: ".2f", nota: "recalculado leyendo las 4 cadenas directamente (no esta en ningun JSON de results/logs/); coincide con el texto. Se propone generar un log para esto"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 332, num: "0.31", decision: VAL, nombre: A_baryon_k1000_sigma, fuente: "mismas cadenas, sigma ponderado columna halo_A -> 0.3063", formato: ".2f", nota: "idem anterior"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 332, num: "0.55", decision: VAL, nombre: A_IA_k1000, fuente: "mismas cadenas, columna A_IA, media ponderada -> 0.5422", formato: ".2f", nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 332, num: "0.29", decision: VAL, nombre: A_IA_k1000_sigma, fuente: "mismas cadenas, columna A_IA, sigma ponderado -> 0.2884", formato: ".2f", nota: "idem"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 360, num: "0.0016", decision: FIX, nuevo: "$\\Delta S_8 = \\val{dS8_k1000}$", nota: "HALLAZGO: S8_k1000_lcdm(0.757104620038561) - S8_k1000_ssee(0.7558882227821322) = 0.0012164, NO 0.0016. El log ya tiene la clave exacta: results/logs/kids_publicados.json#k1000_dS8_lcdm_menos_ssee=0.0012163972564288583. Proponer macro nueva dS8_k1000=0.0012 (.4f) y corregir las DOS apariciones (linea 360 y 569). El error no cambia la conclusion cualitativa ('bajo un decimo de cualquier barra de error': 0.0012 tambien lo es) pero el numero esta mal"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 368, num: "20.8", decision: DERIVADO, cuenta: "sqrt(2*216)=20.78 -> redondea a 20.8 (dof=216 de SSEE, chi2 esperado=dof+-sqrt(2*dof))", nota: "formula estandar de la desviacion esperada de chi2"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 368, num: "20.6", decision: DERIVADO, cuenta: "sqrt(2*212)=20.59 -> redondea a 20.6 (dof=212 de LCDM)", nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 373, num: "0.03", decision: TRIVIAL, nota: "rango aproximado 'p~0.01--0.03', declarado con '~' como estimacion, no un valor puntual a verificar"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 377, num: "0.9", decision: DERIVADO, cuenta: "(chi2_k1000_lcdm - chi2_k1000_publicado)/chi2_k1000_publicado = (262.7462-260.3147)/260.3147=0.934% -> redondea a 0.9%", nota: "confirmado con los dos macros existentes"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 381, num: "3.5", decision: LIT, nota: "magnitud de la tension Planck-KiDS citada en la literatura (p.ej. Heymans et al. 2021, DES Y3); se usa retoricamente para decir que SSEE nunca cargo esa tension, no es un resultado propio recalculado aqui"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 437, num: "2.39", decision: LIT, nota: "cita Wright2025 (KiDS-Legacy, arXiv:2503.19441) Apendice I; no se pudo releer el PDF original en este entorno (sin acceso a internet ni copia local), solo la entrada bib"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 437, num: "1.42", decision: LIT, nota: "idem, misma cita"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 438, num: "1.12", decision: LIT, nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 438, num: "0.85", decision: LIT, nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 438, num: "0.74", decision: LIT, nota: "idem"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 440, num: "2.3", decision: LIT, nota: "dentro de comillas textuales atribuidas a KiDS-Legacy, umbral de consistencia"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 441, num: "0.01", decision: LIT, nota: "dentro de la misma cita textual (probabilidad de exceder equivalente a 2.3 sigma)"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 474, num: "3.0255", decision: VAL, nombre: leg_logA, fuente: "results/logs/kids_publicados.json#s8.logA.legacy", formato: ".4f", nota: "dup de linea 65"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 474, num: "0.0396", decision: VAL, nombre: leg_logA_s, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_sigma", formato: ".4f", nota: "dup de linea 65"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 475, num: "3.04483", decision: VAL, nombre: leg_logA_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.cmb_blanco", formato: ".5f", nota: "dup de linea 66"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 475, num: "0.49", decision: VAL, nombre: logA_leg_vs_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_vs_cmb_blanco", formato: ".2f", nota: "dup de linea 65"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 479, num: "2.00", decision: DERIVADO, cuenta: "(0.3153-0.308881)/0.3153=2.034% (Omega_m Planck=0.3153, src/ssee_core.py LCDM_OMEGA_M; Omega_m SSEE=OMEGA_M_TOTAL_d6=0.308881)", nota: "el texto redondea a 2.00%; la cuenta exacta da 2.03%. Diferencia de 0.03 puntos, no cambia el argumento cualitativo pero no es un redondeo perfecto de 2.034->2.00 (deberia ser 2.03). Senalar como ajuste menor, no FIX grave"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 479, num: "1.88", decision: DERIVADO, cuenta: "exp(leg_logA - leg_lcdm_logA)-1 = exp(3.0255-3.0069)-1 = exp(0.0186)-1 = 1.878% -> redondea a 1.88%", nota: "confirmado exactamente con los macros leg_logA y leg_lcdm_logA existentes"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 492, num: "417.97", decision: VAL, nombre: chi2_leg_unif, fuente: "results/logs/kids_legacy_bic.json#corridas.sseefijo.chi2_min", formato: ".2f", nota: "dup de linea 69"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 492, num: "418.34", decision: VAL, nombre: chi2_leg_libre, fuente: "results/logs/kids_legacy_bic.json#corridas.ssee.chi2_min", formato: ".2f", nota: "dup de linea 69"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 497, num: "0.066", decision: VAL, nombre: shift_logTAGN_leg, fuente: "cadenas /mnt/datos/SSEE_data/chains_p6/kids_legacy/{ssee,sseefijo}.{1..4}.txt, columna logT_AGN, |media_libre-media_fijo| con burn-in 30% -> 0.0660", formato: ".3f", nota: "recalculado leyendo las cadenas; coincide exacto con el texto"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 497, num: "0.10", decision: VAL, nombre: shift_Ascale_leg, fuente: "mismas cadenas, columna A_scale, |media_libre-media_fijo| -> 0.0985", formato: ".2f", nota: "idem, redondea a 0.10"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 499, num: "0.365", decision: DERIVADO, cuenta: "chi2_leg_unif - chi2_leg_libre = 417.9706-418.33606 = -0.3655 -> |-0.365|", nota: "confirmado con los macros existentes"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 508, num: "0.3", decision: TRIVIAL, nota: "dup formula S8"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 509, num: "0.49", decision: VAL, nombre: logA_leg_vs_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_vs_cmb_blanco", formato: ".2f", nota: "dup"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 510, num: "0.0176", decision: VAL, nombre: S8_legacy_dato_sigma, fuente: "results/logs/kids_publicados.json#kids_legacy.S8_sigma", formato: ".4f", nota: "macro ya existe, texto lo repite a mano"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 511, num: "0.809", decision: DERIVADO, cuenta: "S8_legacy_dato - S8_legacy_dato_sigma = 0.8265-0.0176 = 0.8089 -> 0.809", nota: "confirmado"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 511, num: "0.844", decision: DERIVADO, cuenta: "0.8265+0.0176=0.8441 -> 0.844", nota: "confirmado"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 516, num: "0.49", decision: VAL, nombre: logA_leg_vs_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_vs_cmb_blanco", formato: ".2f", nota: "dup"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 520, num: "1.0", decision: DERIVADO, cuenta: "dup de linea 75, mismo rango 0.98<1.0", nota: "confirmado"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 539, num: "1.239", decision: VAL, nombre: chi2dof_k1000_lcdm, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#chi2_min_por_dof", formato: ".3f", nota: "valor exacto 1.2393688679245283; se propone macro nueva (hoy esta tecleado a mano en la tabla)"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 539, num: "0.875", decision: VAL, nombre: sigma8_k1000_lcdm, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#sigma8.media", formato: ".3f", nota: "valor exacto 0.8751755678831248; aparece tecleado a mano aqui y en linea 578"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 539, num: "0.089", decision: VAL, nombre: sigma8_k1000_lcdm_sigma, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#sigma8.sigma", formato: ".3f", nota: "valor exacto 0.08900932197580154"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 540, num: "1.229", decision: VAL, nombre: chi2dof_k1000_ssee, fuente: "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json#chi2_min_por_dof", formato: ".3f", nota: "valor exacto 1.228888287037037"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 569, num: "0.0016", decision: FIX, nuevo: "$\\Delta S_8 = \\val{dS8_k1000}$", nota: "mismo hallazgo que linea 360: el valor correcto es 0.0012 (results/logs/kids_publicados.json#k1000_dS8_lcdm_menos_ssee)"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 578, num: "0.875", decision: VAL, nombre: sigma8_k1000_lcdm, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#sigma8.media", formato: ".3f", nota: "dup de linea 539"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 578, num: "0.089", decision: VAL, nombre: sigma8_k1000_lcdm_sigma, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#sigma8.sigma", formato: ".3f", nota: "dup de linea 539"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 578, num: "0.231", decision: VAL, nombre: Omega_m_k1000_lcdm, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#Omega_m.media", formato: ".3f", nota: "valor exacto 0.231034222322688"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 578, num: "0.046", decision: VAL, nombre: Omega_m_k1000_lcdm_sigma, fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#Omega_m.sigma", formato: ".3f", nota: "valor exacto 0.045787736544540436"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 589, num: "40.70", decision: HIS, nota: "dup, parrafo 'historical note' explicito"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 589, num: "10.4", decision: HIS, nota: "supresion de sigma8 por la particula retirada; registro historico de la retraccion, no resultado vigente"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 590, num: "3.16", decision: HIS, nota: "incertidumbre de dato crudo citada en el mismo parrafo historico"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 594, num: "2.283", decision: HIS, nota: "ya documentado inline por un comentario ORIGEN-VALOR en el propio .tex (linea 593): 'exponente de la ley de supresion de la PARTICULA RETIRADA; el script que la ajusto no se guardo'. No reproducible y asi lo reconoce el documento"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 595, num: "70.3", decision: HIS, nota: "cota derivada de la ley de supresion retirada (linea 594), mismo parrafo historico"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 595, num: "1.73", decision: DERIVADO, cuenta: "70.3/40.70=1.727 -> 1.73 (ambos numeros HIS); consistente aritmeticamente dentro del registro historico", nota: "la cuenta cierra, pero ambos insumos son HIS (particula retirada)"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 597, num: "594.28", decision: HIS, nota: "dup de linea 164"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 629, num: "0.20", decision: TRIVIAL, nota: "dup de linea 306, k_max de diseño"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 635, num: "0.38", decision: DATO, nota: "dup de linea 295"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 635, num: "0.51", decision: DATO, nota: "dup"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 635, num: "0.61", decision: DATO, nota: "dup"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 639, num: "0.497", decision: LIT, nota: "BOSS DR12 consenso, Alam et al. 2017 (citet{Alam2017}), fila z=0.38"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 639, num: "0.045", decision: LIT, nota: "idem, error publicado z=0.38"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 639, num: "0.458", decision: LIT, nota: "idem, z=0.51"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 639, num: "0.038", decision: LIT, nota: "idem, error z=0.51"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 639, num: "0.436", decision: LIT, nota: "idem, z=0.61"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 639, num: "0.034", decision: LIT, nota: "idem, error z=0.61"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 661, num: "0.06", decision: TRIVIAL, nota: "Sigma m_nu=0.06 eV, convencion estandar de la literatura para el control LCDM (Planck baseline), no un resultado de SSEE"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 663, num: "0.06", decision: DERIVADO, cuenta: "207.638-207.576=0.062 -> +0.06", nota: "ya documentado inline por el propio .tex con comentario ORIGEN-VALOR (linea 664): archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json. Confirmado"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 673, num: "0.38", decision: DATO, nota: "dup bin z, ademas referencia bossR_pub_lcdm_z1 (macro, =1.55 sigma) para el calificativo 'weakest'"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 674, num: "0.020", decision: VAL, nombre: bossR_fs8_ssee_z1_sigma, fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z1.2", formato: ".3f", nota: "valores reales 0.0206/0.0207/0.0206 (z1,z2,z3); el texto los redondea juntos a 'pm0.020'. Redondeo correcto de 0.0206 a 3 decimales es 0.021, no 0.020 -- diferencia de 1 en el tercer decimal, no cambia el argumento ('menos de la mitad de 0.034-0.045') pero no es redondeo exacto"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 675, num: "0.034", decision: LIT, nota: "dup de linea 639, error publicado minimo (Alam2017, z=0.61)"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 675, num: "0.045", decision: LIT, nota: "dup de linea 639, error publicado maximo (Alam2017, z=0.38)"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 697, num: "0.63", decision: DERIVADO, cuenta: "198.07-bossR_perfil_chi2(197.4378892471293)=0.632 -> 0.63", nota: "confirmado"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 697, num: "198.07", decision: VAL, nombre: bossR_chi2_cmb_fijo, fuente: "results/logs/base_sin_particula.log (tabla logA/CMB/KiDS/BOSS/TOTAL), fila logA=3.0450, columna BOSS=198.07; ya citado por un comentario del propio .tex en la linea 684 ('chi2 BOSS con A_s del CMB = 198.07: results/logs/base_sin_particula.log, linea 75')", formato: ".2f", nota: "NO estaba en el inventario automatico (aparece pegado a un macro con \\to, el regex no lo separo), pero es un numero escrito a mano y se revisa igual. Coincide con el log citado en el propio documento"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 716, num: "0.01", decision: VAL, nombre: "(umbral de diseño, no macro)", fuente: "results/logs/perfil_wc_boss.json#control.criterio: '10 arranques aleatorios (semilla 20261001) en minimo y extremos no bajan mas de 0.01'", nota: "coincide letra a letra con el criterio del control del log"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 752, num: "0.92", decision: HIS, fuente: "archive/logs_superados/boss_kaiser_20260808/barrido_kmax_20260808.log linea 110: 'tension media con el publicado: 0.92 sigma' (control negativo k_max=0.08, creciemiento libre)", nota: "la seccion 6.1 dice explicitamente que esta corrida 'no publica' (exploratoria, archivada); confirmado contra el log archivado citado por nombre de carpeta"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 752, num: "1.048", decision: HIS, fuente: "mismo archivo, linea 109: 'chi2 total = 116.30  dof = 111  chi2/dof = 1.0477'", nota: "redondea a 1.048; confirmado"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 756, num: "0.08", decision: TRIVIAL, nota: "k>0.08 h/Mpc, el mismo k_max usado en la corrida exploratoria archivada (linea 752); limite de diseño, no resultado"}
+
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 772, num: "0.49", decision: VAL, nombre: logA_leg_vs_cmb, fuente: "results/logs/kids_publicados.json#s8.logA.legacy_vs_cmb_blanco", formato: ".2f", nota: "dup, en conclusiones"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 775, num: "417.97", decision: VAL, nombre: chi2_leg_unif, fuente: "results/logs/kids_legacy_bic.json#corridas.sseefijo.chi2_min", formato: ".2f", nota: "dup, en conclusiones"}
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 775, num: "418.34", decision: VAL, nombre: chi2_leg_libre, fuente: "results/logs/kids_legacy_bic.json#corridas.ssee.chi2_min", formato: ".2f", nota: "dup, en conclusiones"}
+
+afirmaciones:
+  - {archivo: SSEE_Paper6_Growth.tex, linea: 360, dice: "$\\Delta S_8 = 0.0016$, under a tenth of either error bar.", debe_decir: "$\\Delta S_8 = \\val{dS8_k1000}$, under a tenth of either error bar.", evidencia: "results/logs/kids_publicados.json#k1000_dS8_lcdm_menos_ssee=0.0012163972564288583 (=0.7571046-0.7558882); el texto dice 0.0016, el valor correcto redondeado es 0.0012. Repetido igual en linea 569. No cambia la conclusion cualitativa (0.0012 tambien es menos de un decimo de sigma~0.019) pero el numero esta mal y no tiene macro"}

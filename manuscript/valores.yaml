@@ -780,3 +780,22 @@ F_SCREEN_IR_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN_IR"
 F_SCREEN_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN", formato: ".5f"}
 R_TENSOR_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.R_TENSOR", formato: ".5f"}
 p9_sh0es_res_IR: {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.residuo", formato: ".3f"}
+# cuarta lectura P6 (2026-10-10, notes/lectura_cuarta/P6.yaml)
+chi2dof_k1000_lcdm: {fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#chi2_min_por_dof", formato: ".3f"}
+sigma8_k1000_lcdm: {fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#sigma8.media", formato: ".3f"}
+sigma8_k1000_lcdm_sigma: {fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#sigma8.sigma", formato: ".3f"}
+chi2dof_k1000_ssee: {fuente: "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json#chi2_min_por_dof", formato: ".3f"}
+Omega_m_k1000_lcdm: {fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#Omega_m.media", formato: ".3f"}
+Omega_m_k1000_lcdm_sigma: {fuente: "results/logs/growth_2026-07/R4_lcdm_kids_S8.json#Omega_m.sigma", formato: ".3f"}
+dS8_k1000: {fuente: "results/logs/kids_publicados.json#s8.k1000_dS8_lcdm_menos_ssee", formato: ".4f"}
+k1000_Abar: {fuente: "results/logs/kids_publicados.json#nuisance.k1000_A_baryon", formato: ".2f"}
+k1000_Abar_s: {fuente: "results/logs/kids_publicados.json#nuisance.k1000_A_baryon_sigma", formato: ".2f"}
+k1000_AIA: {fuente: "results/logs/kids_publicados.json#nuisance.k1000_A_IA", formato: ".2f"}
+k1000_AIA_s: {fuente: "results/logs/kids_publicados.json#nuisance.k1000_A_IA_sigma", formato: ".2f"}
+leg_dlogTAGN: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_logT_AGN_corrimiento", formato: ".3f"}
+leg_dAscale: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_A_scale_corrimiento", formato: ".2f"}
+leg_logTAGN_s: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_logT_AGN_libre_sigma", formato: ".2f"}
+leg_Ascale_s: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_A_scale_libre_sigma", formato: ".2f"}
+k1000_control_chi2: {fuente: "results/logs/kids1000_control.json#chi2", formato: ".2f"}
+k1000_control_pct: {fuente: "results/logs/kids1000_control.json#desvio_pct", formato: ".1f"}
+boss_chi2_logA_cmb: {fuente: "results/logs/growth_2026-07/base_sin_particula.json#boss.6", formato: ".2f"}

@@ -1829,6 +1829,16 @@ stages:
         cache: false
     - results/logs/cola_boss_aisla.log:
         cache: false
+  kids1000_control:
+    cmd: cd src/p06_growth && OMP_NUM_THREADS=1 nice -n 10 ../../.venv/bin/python3 control_kids.py
+    deps:
+    - src/p06_growth/control_kids.py
+    - src/p06_growth/kids_shear.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+    outs:
+    - results/logs/kids1000_control.json:
+        cache: false
   sello_base_sin_particula:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/base_sin_particula.py > results/logs/base_sin_particula.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/base_sin_particula.py results/logs/growth_2026-07/base_sin_particula.json
       results/logs/growth_2026-07/conjunta_tres_sondas.json /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc /mnt/datos/SSEE_data/boss_dr12/public_material_RSD /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat

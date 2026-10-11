@@ -1,0 +1,37 @@
+{
+ "chi2": 261.2668205722528,
+ "ndata": 225,
+ "chi2_publicado": 260.3147,
+ "desvio_pct": 0.36575751283073726,
+ "punto": "maxima posterior de la cadena oficial KiDS-1000 xi_pm, Blind C",
+ "_procedencia": {
+  "commit": "4c5f87073eb5c7db860182db1b88c72525409377",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p06_growth/control_kids.py"
+  ],
+  "script": "src/p06_growth/control_kids.py",
+  "script_sha256": "cfe9b0bc624390c573024acb0d5c73c0ac7df003ae023360c8693a0077777f69",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568"
+  },
+  "argv": [
+   "control_kids.py"
+  ],
+  "fecha": "2026-10-11T11:12:47",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
