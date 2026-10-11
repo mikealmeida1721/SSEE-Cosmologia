@@ -217,7 +217,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 
 | Metric | SSEE | ΛCDM |
 |---|---|---|
-| Growth index γ_IS (Paper 5, supersedes App.A) | 0.5504 ± 0.001 | 0.55 |
+| Growth index γ_IS (Paper 5, supersedes App.A) | 0.5504 ± 0.0003 | 0.55 |
 | S₈ (IS, single-sector ceiling) | 0.827 | 0.830 |
 | fσ8 χ²/N (6 canonical RSD surveys) | **0.766** | 0.860 |
 
@@ -228,7 +228,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | c²_s,eff | 0 (exact algebraic) | Q1: all modes stable |
 | k_crit / (H₀/c) | 0.456 < 1 | Sub-Hubble stability window |
 | R = Ω_m,eff/Ω_m (k≥10) | 0.9897 ± 0.0167 | A bound on dark-energy clustering: \|r\| ≤ 0.0175, 3.9% of r* = 0.4464 |
-| γ_IS | 0.5504 ± 0.001 | ≈ γ_ΛCDM = 0.55 |
+| γ_IS | 0.5504 ± 0.0003 | ≈ γ_ΛCDM = 0.55 |
 | G = D₁_SSEE/D₁_ΛCDM | 1.0032 ± 0.005 | ~0.3% enhancement (Poisson source Ω_m,CMB = 0.308881) |
 | σ₈_SSEE (single-sector ceiling) | 0.8149 ± 0.006 | ODE linear growth gives 0.8136 |
 | S₈ with A_s fixed to **Planck** (ceiling, not a prediction) | 0.827 | imports the Planck–KiDS offset; the model's own prediction fixes A_s to its **own** CMB fit — see Paper 6 |

@@ -1,0 +1,879 @@
+doc: P1
+numeros:
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 68
+  num: '0.840'
+  decision: ALG
+  expr: c.OMEGA_DE
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 70
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 85
+  num: '0.008131'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 163
+  num: '0.827'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 163
+  num: '0.75'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 163
+  num: '0.29'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 163
+  num: '0.25'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 164
+  num: '0.838'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 164
+  num: '0.617'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 166
+  num: '0.063'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 167
+  num: '0.05'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 167
+  num: '0.24'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 171
+  num: '0.4'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 171
+  num: '0.5'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 199
+  num: '0.550'
+  decision: VAL
+  nombre: p3_gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .3f
+  nota: era 0.5504; el texto trunca a 3 decimales. La fuente candidata automatica (union3_repro_compara.json#z[10])
+    era coincidencia de valor sin relacion (z de una fila de union3), no gamma_IS.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 199
+  num: '0.55'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 200
+  num: '0.5'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 200
+  num: '0.70'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 212
+  num: '0.008131'
+  decision: ALG
+  expr: c.R_TENSOR
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 320
+  num: '73.04'
+  decision: ALG
+  expr: c.H0_SH0ES
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 382
+  num: '93.14'
+  decision: LIT
+  nota: Constante estandar Sum_m_nu[eV]=93.14*omega_nu (Lesgourgues&Pastor / Planck 2018); no viene de
+    un log de este repo, coincidencia de valor con s8_kids_legacy_camb.json era espuria.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 415
+  num: '0.16'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 447
+  num: '0.0685'
+  decision: ALG
+  expr: c.SUM_MNU_EV
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 519
+  num: '0.008131'
+  decision: ALG
+  expr: c.R_TENSOR
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 572
+  num: '0.06'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 592
+  num: '0.840'
+  decision: ALG
+  expr: c.OMEGA_DE
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 594
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 624
+  num: '1.510'
+  decision: ALG
+  expr: c.W0 + c.WA
+  nota: w0+wa = -1.510 (suma de dos registros algebraicos)
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 624
+  num: '2.3'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 628
+  num: '0.761'
+  decision: ALG
+  expr: 1 + (1 + c.W0)/c.WA
+  nota: 'a_* del cruce fantasma: 1+(1+w0)/wa con W0,WA registros algebraicos (c.W0=-0.839950, c.WA=-0.669975)
+    -> 0.76110. El log cruce_fantasma_quien_lo_lleva.json#...control.a_star es un CONTROL que reproduce
+    el mismo numero, no la fuente primaria (que es algebra de W0,WA).'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 629
+  num: '0.314'
+  decision: ALG
+  expr: 1/(1 + (1 + c.W0)/c.WA) - 1
+  nota: z_* = 1/a_* - 1 con a_* de la linea 628 (algebra de W0,WA) -> 0.3139. El log es control, no fuente
+    primaria.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 639
+  num: '0.021284'
+  decision: ALG
+  expr: algebra_derivada:algebra.cs2_condensado.valor
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 643
+  num: '4.186'
+  decision: ALG
+  expr: -c.WA/(1 + c.W0)
+  nota: 'pendiente de c(a)=-wa(1-a)/(1+w0): coeficiente = -WA/(1+W0) = 0.669975/0.160050 = 4.1863. Algebra
+    pura de W0,WA; el log cruce_fantasma es control, no fuente primaria.'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 644
+  num: '2.09'
+  decision: DERIVADO
+  nota: 'c(z=1)=4.186*(1-a) con a=1/(1+z)=0.5 -> 2.093~2.09; MISMA fuente que linea 643 (cruce_fantasma_quien_lo_lleva.json#B_viscosa_entalpia.resultado),
+    NO h0_por_metodos.json (match de clasificacion.json era por coincidencia de valor, entidad distinta:
+    tirones TRGB/SH0ES de LCDM).'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 649
+  num: '0.840'
+  decision: ALG
+  expr: c.OMEGA_DE
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 649
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 651
+  num: '0.42'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 651
+  num: '0.24'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 651
+  num: '0.2'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 651
+  num: '1.8'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 746
+  num: '0.295'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+  nota: z=0.295 es el extremo inferior del rango de los 13 puntos BAO de DESI DR2 (Abdul-Karim et al.
+    2025), no un resultado nuestro. La fuente candidata automatica (lya_auditoria.json#ssee.pulls[0].z)
+    es una tabla DERIVADA de este mismo dato, no la fuente primaria; el dato primario es el CSV de DESI
+    DR2.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 749
+  num: '0.24'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 749
+  num: '0.2'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 749
+  num: '1.8'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 752
+  num: '1.861'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 767
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 767
+  num: '1003.586'
+  decision: VAL
+  nombre: lite_chi2_ssee
+  fuente: results/logs/cmb_dbic_mnu_propia.json#chi2_ssee
+  formato: .3f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 768
+  num: '32.2'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 769
+  num: '67.037'
+  decision: ALG
+  expr: c.H0_MIRA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 782
+  num: '0.32'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 782
+  num: '0.02237'
+  decision: LIT
+  nota: Valor publicado de Planck 2018 (omega_b h^2 = 0.02237 +- 0.00015, Planck VI 2020, tabla de parametros
+    base). La fuente candidata automatica (cmb_ajuste_conjunto_wc_ns.json#LCDM.w_b) es un re-ajuste nuestro
+    que REPRODUCE el valor de Planck, no la fuente primaria de la cita.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 820
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 822
+  num: '35.0'
+  decision: VAL
+  nombre: p3_dBIC_diag
+  fuente: results/logs/paper3_cmb_chi2.json#total.dBIC
+  formato: .1f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 823
+  num: '67.962'
+  decision: ALG
+  expr: c.H0_ALG
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 824
+  num: '32.2'
+  decision: HIS
+  nota: Fila de la tabla explicitamente marcada 'MIRA bg (legacy)... superseded by the omega_m-direct
+    rows above'. La fuente candidata automatica (data/raw/planck2018_EE.txt) es el espectro EE crudo de
+    Planck, sin relacion con un DeltaBIC; coincidencia de valor espuria.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 838
+  num: '1.8'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 839
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 840
+  num: '1003.586'
+  decision: VAL
+  nombre: lite_chi2_ssee
+  fuente: results/logs/cmb_dbic_mnu_propia.json#chi2_ssee
+  formato: .3f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 840
+  num: '1003.596'
+  decision: VAL
+  nombre: lite_chi2_lcdm
+  fuente: results/logs/cmb_dbic_mnu_propia.json#chi2_lcdm_mnu006
+  formato: .3f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 840
+  num: '0.06'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 841
+  num: '35.0'
+  decision: VAL
+  nombre: p3_dBIC_diag
+  fuente: results/logs/paper3_cmb_chi2.json#total.dBIC
+  formato: .1f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 843
+  num: '32.2'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 843
+  num: '41.0'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 844
+  num: '0.31993'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 882
+  num: '0.840'
+  decision: ALG
+  expr: c.OMEGA_DE
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 882
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 883
+  num: '2.5'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 890
+  num: '0.25'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 890
+  num: '0.36'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 934
+  num: '0.24'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 935
+  num: '0.840'
+  decision: ALG
+  expr: c.OMEGA_DE
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 935
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 935
+  num: '2.5'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 938
+  num: '147.17'
+  decision: VAL
+  nombre: mf_rdrag_alg
+  fuente: results/logs/mcmc_full_posteriores.json#tensiones.rdrag.algebraico
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 938
+  num: '0.32'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 939
+  num: '0.25'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 950
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 951
+  num: '35.0'
+  decision: VAL
+  nombre: p3_dBIC_diag
+  fuente: results/logs/paper3_cmb_chi2.json#total.dBIC
+  formato: .1f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 952
+  num: '32.2'
+  decision: HIS
+  nota: Mismo valor legacy retirado de la linea 824/768/843, marcado 'used the superseded Omega_m=0.31993
+    mapping and are retired'. Fuente candidata automatica (planck2018_EE.txt) espuria.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 952
+  num: '41.0'
+  decision: HIS
+  nota: Valor legacy retirado ('aggressive k=1 -41.0'), mismo que linea 843. Fuente candidata automatica
+    (cumulos_zhang2026.json#filas[13].M_tot_IG_menos) es una masa de cumulo, sin relacion; coincidencia
+    de valor espuria.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 953
+  num: '0.31993'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1031
+  num: '67.962'
+  decision: ALG
+  expr: c.H0_ALG
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1035
+  num: '0.32'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1036
+  num: '0.4'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1037
+  num: '0.008131'
+  decision: ALG
+  expr: c.R_TENSOR
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1057
+  num: '0.32'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1057
+  num: '0.02237'
+  decision: LIT
+  nota: 'Mismo caso que linea 782: valor publicado Planck 2018 (0.02237+-0.00015), citado, no calculado
+    por nosotros.'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1059
+  num: '0.02285'
+  decision: HIS
+  nota: Placeholder preliminar retirado (3(pi-phi)/200), explicitamente marcado 'superseding the preliminary
+    placeholder'. La fuente candidata automatica (cajones_algebra.json#identidades.ob_formula_vieja_P4.valor)
+    SI documenta este mismo valor retirado -- coincide en entidad, pero la decision correcta por instrucciones
+    es HIS (valor retirado narrado como historia), no VAL.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1059
+  num: '3.2'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1063
+  num: '0.1200'
+  decision: LIT
+  nota: Valor publicado de Planck 2018 (Omega_c h^2 = 0.1200 +- 0.0012, Planck VI 2020), citado como referencia
+    de comparacion. La fuente candidata automatica (cmb_perfil_wc.json#LCDM.wc[4]) es un perfil de likelihood
+    nuestro, no la fuente primaria del dato citado.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1069
+  num: '1003.586'
+  decision: VAL
+  nombre: lite_chi2_ssee
+  fuente: results/logs/cmb_dbic_mnu_propia.json#chi2_ssee
+  formato: .3f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1070
+  num: '1003.596'
+  decision: VAL
+  nombre: lite_chi2_lcdm
+  fuente: results/logs/cmb_dbic_mnu_propia.json#chi2_lcdm_mnu006
+  formato: .3f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1070
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1072
+  num: '0.32010'
+  decision: ALG
+  expr: c.OMEGA_M_CMB_GEOMETRIC
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1073
+  num: '0.31993'
+  decision: ALG
+  expr: c.OMEGA_M_CMB_MIRA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1074
+  num: '0.31076'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1162
+  num: '1.25'
+  decision: TRIVIAL
+  nota: '\renewcommand{\arraystretch}{1.25}: parametro de maquetacion LaTeX (espaciado de filas de tabla),
+    no un resultado. La fuente candidata automatica (cumulos_zhang2026.json#...razon) es coincidencia
+    de valor espuria.'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1217
+  num: '2.4'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1224
+  num: '2.4'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1225
+  num: '0.5504'
+  decision: VAL
+  nombre: p3_gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: Misma entidad que la linea 199 (gamma_IS de Paper 5), aqui a 4 decimales. La fuente candidata
+    automatica (press_schechter.json#gamma.ssee) es el gamma del formalismo Press-Schechter de OTRO calculo,
+    coincidencia de valor espuria.
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1225
+  num: '6.1'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1266
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  formato: .2f
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1267
+  num: '32.2'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1271
+  num: '4.4'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1324
+  num: '3.9978'
+  decision: ALG
+  expr: c.AURA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1328
+  num: '1.9989'
+  decision: ALG
+  expr: c.MIRA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1380
+  num: '0.9649'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1380
+  num: '0.16'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1386
+  num: '0.02242'
+  decision: ALG
+  expr: c.OMEGA_B_H2
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1386
+  num: '0.32'
+  decision: TRIVIAL
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1386
+  num: '0.02237'
+  decision: LIT
+  nota: 'Mismo caso que lineas 782/1057: valor publicado Planck 2018, citado.'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1396
+  num: '0.02285'
+  decision: HIS
+  nota: Mismo placeholder retirado que la linea 1059, explicitamente marcado como reemplazado ('replacing
+    the preliminary placeholder').
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1396
+  num: '3.2'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 28
+  num: '0.095'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 29
+  num: '0.84'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 91
+  num: '0.09527'
+  decision: ALG
+  expr: algebra_derivada:algebra.n_ssee.valor
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 112
+  num: '21.5'
+  decision: DERIVADO
+  nota: '21.5% = error de usar T_r/M_v=|w0|=0.839950 en la ranura donde va 1-Omega_m=0.691119: (0.839950-0.691119)/0.691119=0.2153.
+    Calculo directo a partir de dos registros ya verificados (S_DE/|w0| algebraico y OMEGA_M_TOTAL); no
+    viene de resumen_3modelos.json#modelos.lcdm.AIC (coincidencia de valor espuria, ese AIC no tiene relacion
+    con esta resta).'
+- archivo: SSEE_EFT_section.tex
+  linea: 118
+  num: '0.7'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 118
+  num: '0.8'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 145
+  num: '5.521'
+  decision: ALG
+  expr: c.KAL0
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 213
+  num: '0.223324961891'
+  decision: ALG
+  expr: c.P_SC/(3*c.IGNIS)
+  nota: Gamma = P_sc/(3 I_g); verificado con src/ssee_core.py (P_SC=6.37766, IGNIS=9.51925) -> 0.223325,
+    coincide a la precision escrita. La fuente candidata automatica (cruce_fantasma_quien_lo_lleva.json#...tabla[4])
+    es una tabla de control que reproduce el mismo numero, no la fuente primaria algebraica.
+- archivo: SSEE_EFT_section.tex
+  linea: 233
+  num: '0.00'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 244
+  num: '0.66997'
+  decision: ALG
+  expr: c.WA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 408
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 422
+  num: '0.2946'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_EFT_section.tex
+  linea: 422
+  num: '2.191'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_EFT_section.tex
+  linea: 423
+  num: '6.248'
+  decision: ALG
+  expr: algebra_derivada:algebra.inv_1pw0.valor
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 454
+  num: '0.1'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 466
+  num: '0.55'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 473
+  num: '0.837'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_EFT_section.tex
+  linea: 474
+  num: '0.3'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 474
+  num: '0.3199'
+  decision: ALG
+  expr: c.OMEGA_M_CMB_MIRA
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 479
+  num: '0.832'
+  decision: LIT
+  nota: Valor publicado de Planck 2018 para S8 (0.832+-0.013, Planck VI 2020), citado para notar que el
+    techo del modelo con A_s fijo reproduce la amplitud de Planck por construccion. La fuente candidata
+    automatica (cumulos_zhang2026.json#modelos.ssee_fnu_cosmico.peores[0].pred) es una prediccion de masa
+    de cumulo, sin relacion; coincidencia espuria.
+- archivo: SSEE_EFT_section.tex
+  linea: 483
+  num: '2.7'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 490
+  num: '2.7'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 493
+  num: '0.49'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 493
+  num: '1.0'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 500
+  num: '0.3199'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_EFT_section.tex
+  linea: 505
+  num: '0.3'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 506
+  num: '0.827'
+  decision: VAL
+  nombre: p3_S8_techo
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: Coincide con la macro \val{p3_S8_techo} ya usada mas abajo en el mismo parrafo (linea ~490) para
+    el mismo 'amplitude ceiling'; aqui esta tecleado a mano en la ecuacion eq:S8_IS en vez de usar la
+    macro. La fuente candidata automatica (s8_kids_legacy_camb.json#unif.S8) es el S8 del TITULAR de KiDS-Legacy
+    (0.8273), una entidad distinta -- coincidencia de valor espuria.
+- archivo: SSEE_EFT_section.tex
+  linea: 510
+  num: '1.1'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_EFT_section.tex
+  linea: 510
+  num: '0.832'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_EFT_section.tex
+  linea: 510
+  num: '0.013'
+  decision: LIT
+  nota: ''
+- archivo: SSEE_EFT_section.tex
+  linea: 544
+  num: '0.840'
+  decision: ALG
+  expr: c.OMEGA_DE
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 547
+  num: '0.24'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 547
+  num: '0.2'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 547
+  num: '1.8'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 596
+  num: '58.07'
+  decision: ALG
+  expr: algebra_derivada:algebra.dos_phi7.valor
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 617
+  num: '2.285'
+  decision: ALG
+  expr: c.ALPHA_ATT
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 628
+  num: '0.292'
+  decision: ALG
+  expr: -2*c.PHI**-4
+  nota: Curvatura de Kahler R=-2*phi^-4=-0.29180, redondea a -0.292. Verificado con src/ssee_core.py.
+    La fuente candidata automatica (p5_IS_perturbations_Q2.json#filas[3].delta_m) es un delta_m de perturbaciones,
+    sin relacion; coincidencia espuria.
+- archivo: SSEE_EFT_section.tex
+  linea: 644
+  num: '30.9'
+  decision: ALG
+  expr: c.OMEGA_M_CMB
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 654
+  num: '0.00356'
+  decision: ALG
+  expr: algebra_derivada:algebra.r_staro.valor
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 655
+  num: '2.28'
+  decision: ALG
+  expr: c.ALPHA_ATT
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 725
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  nota: verificado con src/ssee_core.py
+- archivo: SSEE_EFT_section.tex
+  linea: 726
+  num: '0.84'
+  decision: TRIVIAL
+- archivo: SSEE_EFT_section.tex
+  linea: 729
+  num: '0.827'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+- archivo: SSEE_EFT_section.tex
+  linea: 729
+  num: '0.758'
+  decision: HIS
+  nota: valor retirado, narrado como historia en el texto
+afirmaciones:
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 1031
+  dice: $H_0^{\rm MCMC}$ & CMB fit at fixed anchor (Paper~3) & $67.962$ (anchor, fixed) & Planck 2018
+    & M \\
+  debe_decir: '$H_0^{\rm MCMC}$ & Free-$H_0$ MCMC, prior $H_0^{\rm glob}$, DESI DR2+CAMB $r_d$ (Paper~2)
+    & $67.82\pm0.41$ & DESI DR2 / Planck 2018 & M \\ (nota: la fila canonica es el posterior LIBRE de
+    Paper 2, no el ancla fija usada en el cross-check de Paper 3)'
+  evidencia: 'CLAUDE.md / CANONICAL_VALUES: ''H0 SSEE (MCMC, prior H_glob=SH0ES.(1-f_screen)=67.962+-0.968,
+    DESI DR2, r_d CAMB - canonico 2026-09-28) = 67.82 +- 0.41''. La fila etiquetada ''M'' (MCMC-validated)
+    en la tabla maestra de P1 reporta en cambio 67.962 ''fixed'' (que es el ancla, no un posterior MCMC),
+    lo que puede leerse como si el H0 MCMC titular fuera 67.962 en vez de 67.82+-0.41.'
+- archivo: SSEE_Paper1_Framework.tex
+  linea: 542
+  dice: '\paragraph{The CMB-sector matter density under the single global anchor.}
+
+    \subsection{The \SSEE\ Effective Action}'
+  debe_decir: Quitar el \paragraph{} huerfano de la linea 542 (no tiene cuerpo antes de la siguiente \subsection)
+    o completarlo con contenido; tal como esta es un titulo de parrafo sin texto, residuo de una edicion.
+  evidencia: 'Lectura directa: linea 542 abre un \paragraph sin ningun texto despues, seguido inmediatamente
+    por \subsection{The SSEE Effective Action} en la linea 543. No es un numero, es un defecto estructural
+    de edicion.'
