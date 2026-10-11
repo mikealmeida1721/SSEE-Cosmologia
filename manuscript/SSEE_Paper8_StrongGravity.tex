@@ -191,11 +191,18 @@ Section~\ref{sec:conclusions} concludes.
 \label{sec:eft}
 %% ─────────────────────────────────────────────────────────────────────────────
 
-We adopt the SSEE canonical action from Paper~7 \citep{ssee_paper7}:
+The dark-energy action of Paper~7 \citep{ssee_paper7} is the two-term k-essence
+$K(X)=c_1X+c_2X^2$, minimally coupled to gravity and to matter, with no potential
+and no dark-sector coupling. It fixes $\alpha_B=\alpha_M=\alpha_T=0$, and that is
+the only input the canonical lensing prediction of this paper (limit~(b),
+Section~\ref{sec:double_protection}) uses. The alternative MOND-like limit~(a) needs
+more: a scalar sourced by dark matter. To state it we use, as a phenomenological
+extension that is \emph{not} part of Paper~7's action, the kinetic functional of
+Paper~10 \citep{SSEE10} with a disformal dark-matter coupling:
 \begin{equation}
   S \;=\; \int d^4x\sqrt{-g}\left[
       \frac{\Mpl^2}{2}R
-      \;+\; P(X,\phi)
+      \;+\; P(X)
   \right]
   \;+\; S_{\mathrm{DM}}\!\left[\tilde{g}_{\mu\nu};\,\psi_{\mathrm{DM}}\right]
   \;+\; S_b[g_{\mu\nu};\,\psi_b]\,,
@@ -204,9 +211,11 @@ We adopt the SSEE canonical action from Paper~7 \citep{ssee_paper7}:
 where $X = -\half g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi$ is the
 canonical kinetic invariant, and the $k$-essence kernel is
 \begin{equation}
-  P(X,\phi) \;=\; \frac{X}{\KAL} + \frac{X^2}{M^4} - V_0\,e^{-\lambda\phi/\Mpl}\,.
+  P(X) \;=\; \frac{X}{\KAL} + \frac{X^2}{M^4}\,.
   \label{eq:Pkernel}
 \end{equation}
+(The exponential potential $V_0e^{-\lambda\phi/\Mpl}$ that earlier versions carried
+here is withdrawn with Paper~7's, Section~3 of that paper.)
 Action~(\ref{eq:action}) is a $k$-essence model within the minimal
 Horndeski class \citep{horndeski1974,Crisostomi2018} ($G_3=G_4-\Mpl^2/2=G_5=0$).
 Baryons ($\psi_b$) couple to the physical metric $g_{\mu\nu}$; dark matter
@@ -536,7 +545,7 @@ $0.03\%$ level through the near-coincidence $\sqrt{\bc}\approx\MIRA$
 
 \subsection{Non-linear kinetic term}
 
-The $X^2/M^4$ term in the SSEE action~\eqref{eq:Pkernel} places SSEE in the
+The $X^2/M^4$ term of the limit-(a) functional~\eqref{eq:Pkernel} places that extension in the
 \emph{k-mouflage} class of kinetic screening theories \citep{brax2014},
 distinct from Galileon (DGP) \citep{deffayet2001} or Vainshtein
 screening \citep{vainshtein1972,babichev2013}; for a review of
@@ -560,8 +569,9 @@ numerical calculation.
 \subsection{GR compliance from selective coupling}
 \label{sec:gr_compliance}
 
-Solar-system gravitational tests are automatically satisfied by
-the \emph{selective coupling} structure of the action~\eqref{eq:action}:
+With Paper~7's action alone the scalar couples to no matter at all, and
+solar-system tests are satisfied trivially. In the limit-(a) extension they are
+satisfied by the \emph{selective coupling} structure of the action~\eqref{eq:action}:
 \begin{itemize}
   \item \textbf{Baryons} couple to the physical metric $g_{\mu\nu}$ only.
         They feel no direct force from the scalar gradient $\nabla\phi$.
