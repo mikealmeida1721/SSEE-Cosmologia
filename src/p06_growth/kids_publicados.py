@@ -100,7 +100,35 @@ la, sla = r3["logA"]["media"], r3["logA"]["sigma"]
 #  - contra el blanco del CMB del modelo (perfil, sin barra): la sigma es la de KiDS
 #  - contra el ajuste MCMC a plik (B1, con barra): en cuadratura
 #  - entre las dos entregas de KiDS, con el mismo fondo: en cuadratura
+# logA de las dos cadenas de KiDS-Legacy con A_s libre, leido de las propias cadenas (cuarta
+# lectura 2026-10-10: antes el de SSEE venia de CANONICAL tecleado y el del control con fondo
+# Planck no estaba en ningun log). Burn-in 30 % por cadena, pesos de Cobaya (columna 0).
+CADENAS_LEG = "/mnt/datos/SSEE_data/chains_p6/kids_legacy"
+
+
+def _logA_cadena(nombre, burn=0.3):
+    import glob
+    W, X = [], []
+    for f in sorted(glob.glob(f"{CADENAS_LEG}/{nombre}.[0-9].txt")):
+        cab = open(f).readline().split()[1:]
+        a = np.loadtxt(f)
+        a = a[int(burn * len(a)):]
+        W.append(a[:, 0]); X.append(a[:, cab.index("logA")])
+    w, x = np.concatenate(W), np.concatenate(X)
+    m = float(np.average(x, weights=w))
+    return m, float(np.sqrt(np.average((x - m) ** 2, weights=w)))
+
+
+leg_ssee, leg_ssee_s = _logA_cadena("ssee")
+leg_lcdm, leg_lcdm_s = _logA_cadena("lcdmfijo")
+# blanco del fondo Planck: el logA que Planck 2018 da a ese mismo fondo
+# ORIGEN: Planck 2018 VI (arXiv:1807.06209), tabla 2, TT,TE,EE+lowE+lensing: ln(10^10 A_s) = 3.044 ± 0.014
+LOGA_PLANCK = 3.044
 logA = dict(
+    legacy_cadena=leg_ssee, legacy_cadena_sigma=leg_ssee_s,
+    legacy_lcdmfijo=leg_lcdm, legacy_lcdmfijo_sigma=leg_lcdm_s, planck_blanco=LOGA_PLANCK,
+    legacy_lcdmfijo_vs_planck=(LOGA_PLANCK - leg_lcdm) / leg_lcdm_s,
+    control_legacy_cadena_vs_canonical=leg_ssee - _pr["libre"]["logA"],
     k1000=la, k1000_sigma=sla,
     legacy=_pr["libre"]["logA"], legacy_sigma=_pr["libre"]["logA_sigma"], cmb_blanco=_pr["unif"]["logA"],
     k1000_vs_cmb_blanco=(_pr["unif"]["logA"] - la) / sla,
