@@ -698,11 +698,11 @@ for idx, (k_H0, res) in enumerate(sorted(results.items())):
 # Target MIRA line
 r_MIRA = (MIRA_alg - 1) * Omm / OmDE
 ax.axhline(r_MIRA, color='k', ls='--', lw=1.5,
-           label=rf'$r^*={r_MIRA:.3f}$ (MIRA target)')
+           label=rf'$r^*={r_MIRA:.3f}$ (former MIRA target)')
 
 ax.set_xlabel(r'scale factor $a$')
 ax.set_ylabel(r'$\delta_{\rm DE}/\delta_m$')
-ax.set_title('DE Perturbation Growth\n(IS causal regularization)')
+ax.set_title('DE Perturbation Growth\n(full IS, field $c^2_s$)')
 ax.legend(fontsize=8, loc='upper left')
 ax.set_xlim(0, 1)
 ax.set_ylim(-0.05, max(r_MIRA * 2, 0.5))
