@@ -773,3 +773,10 @@ S_DE_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".3
 rd_ssee_camb_d1: {fuente: "results/logs/rd_dual.json#rd_ssee_camb", formato: ".1f"}
 WA_d3: {fuente: "results/logs/algebra_derivada.json#nucleo.WA", formato: ".3f"}
 p9_hglob_IR_sigma: {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.H_glob_s", formato: ".3f"}
+# cuarta lectura P10, a la precisión impresa (2026-10-11)
+M4_UV_d1: {fuente: "results/logs/algebra_derivada.json#nucleo._M4_UV", formato: ".1f"}
+KAL_KALeff2_d3: {fuente: "results/logs/algebra_derivada.json#algebra.KAL_KALeff2.valor", formato: ".3f"}
+F_SCREEN_IR_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN_IR", formato: ".5f"}
+F_SCREEN_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN", formato: ".5f"}
+R_TENSOR_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.R_TENSOR", formato: ".5f"}
+p9_sh0es_res_IR: {fuente: "results/logs/p9_cascada_control.json#sh0es.IR.residuo", formato: ".3f"}
