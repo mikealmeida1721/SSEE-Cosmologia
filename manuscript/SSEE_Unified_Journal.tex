@@ -93,16 +93,16 @@ official DESI~DR2 $w_0w_a$CDM posterior within $0.24\sigma$ (Pantheon+;
 $0.2$--$1.8\sigma$ across SN compilations)---a parameter-free postdiction, with no
 claim of temporal priority over DESI~DR2.
 A Bayesian MCMC analysis under the global rate $H_0^{\rm glob}$ as prior
-($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm0.968$~km\,s$^{-1}$\,Mpc$^{-1}$, which is also
+($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$~km\,s$^{-1}$\,Mpc$^{-1}$, which is also
 the value at which Planck~\texttt{plik\_lite} is minimised with SSEE-fixed $\omega_b,\omega_c$; Papers~3, 9--10) yields
 $H_0 = \val{h0_p2}^{+\val{h0_p2_mas}}_{-\val{h0_p2_menos}}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{h0_p2_dplanck}\sigma$ from Planck,
 $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$) and $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring
 \SSEE\ over \LCDM\ ($\val{p2_dBIC_cpl}$ over CPL).
 A complementary full-likelihood multi-probe MCMC (CAMB $+$ Planck
 \texttt{plik\_lite} $+$ lensing $+$ DESI~DR2 $+$ $f\sigma_8$, $w_0,w_a$ free and
-$H_0$ under a flat prior) places the model at $1.31\sigma$ in the $w_0$--$w_a$
-plane, where \LCDM\ is excluded at $3.22\sigma$; under this uncompressed CMB
-likelihood $H_0$ relaxes to $65.87\pm1.17$ ($1.79\sigma$ below the global rate).
+$H_0$ under a flat prior) places the model at $\val{mf_w0wa_ssee}\sigma$ in the $w_0$--$w_a$
+plane, where \LCDM\ is excluded at $\val{mf_w0wa_lcdm}\sigma$; under this uncompressed CMB
+likelihood $H_0$ relaxes to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$ ($\val{mf_H0_tens}\sigma$ below the global rate).
 
 The CMB-sector matter density is the standard physical observable
 $\OmmCMB = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ (Planck: $0.3153\pm 0.0073$), built
@@ -115,7 +115,7 @@ where \LCDM\ does (RMS residual $\val{cl_ssee_rms}\%$).
 A linear Israel-Stewart perturbation analysis with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in
 the Poisson equation yields a growth factor
 $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$ (Paper~5), giving a mean
-$\fsig$ tension of $0.70\sigma$ across six RSD surveys --- statistically identical
+$\fsig$ tension of $\val{fs8_tmedia_ssee}\sigma$ across six RSD surveys --- statistically identical
 to $\Lambda$CDM ($0.73\sigma$), resolving the growth-rate sector.
 In the lensing amplitude, against the $357$ \emph{raw} \textsc{KiDS-Legacy}
 $\xi_\pm$ points, with a \emph{single} unpartitioned matter sector, the
@@ -128,7 +128,7 @@ priority is claimed. Its recalibration of the source redshift distributions diss
 Planck--shear disagreement in the data themselves: re-running the KiDS-1000
 analysis under blinding, the collaboration's Appendix~I finds
 $2.39\sigma\to1.42\sigma$ from the $n(z)$ calibration alone. With $A_s$ left free, the amplitude the shear asks for lies
-$0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic
+$\val{logA_leg_vs_cmb}\sigma$ from the one the CMB fixes under the \emph{same} algebraic
 background. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear
 does \emph{not} discriminate between the models; what separates them is the
 parameter count.} \textbf{There is no $S_8$ tension}
@@ -137,7 +137,7 @@ parameter count.} \textbf{There is no $S_8$ tension}
 At the Bellini-Sawicki level the sector is minimal Horndeski,
 $\alphaT = \alphaM = \alphaB = 0$ (GW170817 compatible), with kineticity
 $\alphaK = \val{alpha_K_z0_d6}$ and a ghost-free, gradient-stable sound speed
-$c_s^2 = 0.021284$ (Paper~7).
+$c_s^2 = \val{cs2_condensado_d6}$ (Paper~7).
 
 We additionally summarise three theoretical extensions of the framework.
 In the strong-field regime Paper~8 analyses two limits: an alternative
@@ -151,10 +151,10 @@ OPEN\_PROBLEMS.md OP-13). A late-time local screening fraction
 $f_{\rm scr}^{\rm IR}=\alphaK/(3\MIRA)=(\pi-\phiG)/(\phiG+\pi)^2\simeq0.067$ relates
 the locally measured rate to the global background. The measured datum is the
 input and the global rate is the output:
-$H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})=68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-which sits $0.17\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$; with the
+$H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})=\val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$,
+which sits $\val{p9_sh0es_sig_IR}\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$; with the
 full infrared-plus-ultraviolet fraction $f_{\rm scr}^{\rm full}=\val{F_SCREEN_d6}$ the same
-operation returns $\val{H0_GLOBAL_d6}$, a residual of $+4.2\times10^{-6}$ against that
+operation returns $\val{H0_GLOBAL_d6}$, a residual of $+\val{p9_hglob_residuo}$~km/s/Mpc against that
 number, in both cases with zero free parameters (Papers~9 and~10).
 A UV completion $K(X)=X/\KAL+X^2/M^4$ with algebraic cutoff $M=9.68$~meV
 connects the dark-energy EFT to the inflationary $\alpha$-attractor (Paper~10).
@@ -400,9 +400,9 @@ recovered to $\le0.2\sigma$ --- an independent confirmation of the
 $\omega_m$-direct reframe from the full $C_\ell$ spectrum rather than from a
 compressed prior. The remaining parameters $(H_0,\Omega_m,w_0,w_a)$ sit
 $1.4$--$1.8\sigma$ from the algebraic values, the uncompressed CMB likelihood
-pulling $H_0$ down to $65.87\pm1.17$. In the dark-energy plane
-the free posterior $(w_0,w_a)=(-0.655,-1.104)$ \emph{excludes} the cosmological
-constant $(-1,0)$ at $3.22\sigma$, while the \SSEE\ algebraic point
+pulling $H_0$ down to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$. In the dark-energy plane
+the free posterior $(w_0,w_a)=(\val{mf_w_media},\val{mf_wa_media})$ \emph{excludes} the cosmological
+constant $(-1,0)$ at $\val{mf_w0wa_lcdm}\sigma$, while the \SSEE\ algebraic point
 $(-0.840,-0.670)$ lies at only $1.31\sigma$ in the correlated ($\rho=-0.93$)
 $w_0$--$w_a$ plane --- more than twice as close as \LCDM.\footnote{The
 $\sigma_8\approx0.80$, $S_8\approx0.84$ recovered here comes from this free-$(w_0,w_a)$
@@ -453,7 +453,7 @@ The complementary question --- how well the fixed algebraic model fits the CMB
 in absolute terms --- is answered in Paper~III: with $H_0,\omega_b,\omega_c,n_s$
 all algebraically fixed and only $(A_s,\tau)$ free, the full Planck
 \texttt{plik} likelihood yields $\Delta\mathrm{BIC}=\val{b1_dBIC}$ relative to the
-six-parameter \LCDM\ fit ($-24.0$ for the \texttt{plik\_lite} point estimate),
+six-parameter \LCDM\ fit ($\val{lite_dBIC}$ for the \texttt{plik\_lite} point estimate),
 decisively favouring \SSEE\ on the Jeffreys scale. The advantage is driven by
 parsimony ($k=2$ versus $k=6$), not by a lower $\chi^2$: the fixed model matches
 \LCDM\ spectrum-for-spectrum ($\chi^2_r\simeq1.04$) while spending four fewer
@@ -472,9 +472,8 @@ re-tuned per data set. A free CPL fit lands on a \emph{different} point for each
 probe; \SSEE\ uses \emph{one} point throughout and does not break on any of
 them. Fixing the model should have made it fragile --- it does not. (A faster
 cross-check replacing the full likelihood with the Planck compressed prior
-reproduces the same picture --- with the corrected DESI~DR2 vector, all five
-parameters lie within $\le1.25\sigma$ blind (mean $0.72\sigma$) --- and is
-retained only as an internal consistency check, not as a presented result.)
+was used during development as an internal consistency check only; it has no
+surviving log and no number from it is quoted here.)
 
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -596,11 +595,11 @@ $\Lambda$CDM background.
 \paragraph{Cosmic shear.} Against the $357$ unmasked \emph{raw} $\xi_\pm$ points
 of \textsc{KiDS-Legacy} (Wright et al.\ 2025, arXiv:2503.19441), with the
 background fixed by the algebra and the amplitude free, the shear asks for
-$\log(10^{10}A_s)=3.0255\pm0.0396$, $0.49\sigma$ from the $3.04483$ that the
+$\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, $\val{logA_leg_vs_cmb}\sigma$ from the $\val{leg_logA_cmb}$ that the
 model's own CMB fit supplies. Fixing $A_s$ to that CMB value leaves the growth
 sector with \emph{no} free cosmological parameter --- only the eight survey
-nuisance parameters --- and costs nothing: $\chi^2_{\rm min}=417.97$ against
-$418.34$ with $A_s$ free ($\Delta\mathrm{BIC}=6.24$ in favour of fixing it). The
+nuisance parameters --- and costs nothing: $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against
+$\val{chi2_leg_libre}$ with $A_s$ free ($\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of fixing it). The
 amplitude is then an output,
 \begin{equation}
   S_8 \equiv \sigma_8\sqrt{\Omm/0.3} = \val{S8_leg_pred} ,
@@ -757,9 +756,9 @@ particle (\S\ref{sec:growth_raw}).
 The equation of state of Paper~7, with the structural constants of the
 algebra, fixes a late-time \emph{local screening fraction}
 \begin{equation}
-\fscr = \frac{s_K}{3\,\MIRA}
+\fscr^{\rm IR} = \frac{s_K}{3\,\MIRA}
       = \frac{\pi-\phiG}{(\phiG+\pi)^2}
-      \approx 0.0673 ,
+      \approx \val{F_SCREEN_IR_d4} ,
 \end{equation}
 where $s_K = -3\wz(1+\wz) = \val{S_K_d6}$ is the pressure dilution rate of
 \S\ref{sec:eftcamb} and
@@ -774,15 +773,17 @@ expansion rate is the local one, $H_0^{\rm SH0ES}=73.04\pm1.04$
 measured, so SH0ES is the input and the global rate is the output,
 \begin{equation}
 H_0^{\rm glob,IR} = H_0^{\rm SH0ES}\,(1-\fscr^{\rm IR})
-                = 73.04\times(1-0.06725)
-                \approx 68.13~{\rm km\,s^{-1}\,Mpc^{-1}} ,
+                = 73.04\times(1-\val{F_SCREEN_IR_d5})
+                \approx \val{p9_sh0es_glob_IR}~{\rm km\,s^{-1}\,Mpc^{-1}} ,
 \end{equation}
-which lies $0.17\sigma$ from the pure algebraic number
+which lies $\val{p9_sh0es_sig_IR}\sigma$ from the pure algebraic number
 $3(\phiG+\pi)^2=\val{H0_ALG_d5}$ with zero free parameters. (With the model's
 $\omega_b,\omega_c$ fixed, plik\_lite places its own minimum at
 $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$, $\val{perfil_h0_d}\sigma$ from
 $H_0^{\rm glob}$; Paper~3.) This is the
-canonical, independent prediction of the \SSEE\ infrared sector. (The earlier MIRA anchor
+infrared regime ($M\to\infty$), not the canonical value: with the complete
+screening fraction of the UV completion (\S\ref{sec:ext-uv}) the single global
+rate is $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. (The earlier MIRA anchor
 $H_0^{\rm MIRA}=67.037$ gave $71.87$ at $1.12\sigma$, now superseded by the
 reframe.) The correction applies to local measurements of the rate; it does not modify the sound horizon $r_d$, the CMB peak positions, or the
 growth factor $\sigma_8$ established in the tiers above.
@@ -796,7 +797,7 @@ $\alpha$-attractor parameter $\alpha=\phiG^4/3$ (Paper~1, Appendix~A.5), which
 fixes the tensor-to-scalar ratio $r=12\alpha/N_*^2\approx0.00813$, also fixes the
 UV cutoff:
 \begin{equation}
-M^4 = 45\,\alpha^2\,\rho_c = 5\,\phiG^8\,\rho_c \approx 234.9\,\rho_c ,
+M^4 = 45\,\alpha^2\,\rho_c = 5\,\phiG^8\,\rho_c \approx \val{M4_UV_d1}\,\rho_c ,
 \qquad M \approx 9.68~{\rm meV} ,
 \end{equation}
 where the identity $45\alpha^2 = 5\phiG^8$ follows exactly from
@@ -840,7 +841,7 @@ $\Omega_{m,\mathrm{CMB}} \neq \val{OMEGA_M_TOTAL_d6}$ at $>3\sigma$;
 (iii) cosmic shear places $S_8$ more than $3\sigma$ from $\val{S8_leg_pred}$ --- the value predicted once $A_s$ is \emph{fixed} to what the CMB gives under the same background, leaving no free cosmological parameter and nowhere to absorb the discrepancy (superseding the weaker earlier form, $3\sigma$ from $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ with $A_s$ fitted)
 when the primordial amplitude is fitted to raw $\xi_\pm$ data with the \SSEE\
 background held fixed;
-(iv) $r \neq 0.00813$ as measured by LiteBIRD;
+(iv) $r \neq \val{R_TENSOR_d5}$ as measured by LiteBIRD;
 (v) the strong-lensing Einstein-radius ratio is inconsistent with
 $\sqrt{\AURA}\approx\MIRA$ at $>3\sigma$ in HST/JWST surveys.
 
@@ -871,7 +872,7 @@ $\gamma_{\rm IS} = 0.5504$ & $\approx \gamma_{\Lambda\rm CDM} = 0.55$ & RSD surv
 $\alphaT = \alphaM = \alphaB = 0$ & exact & GW170817 $|\alphaT|<10^{-15}$ & Retrodiction \\
 $S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $\val{S8_leg_pred}$ predicted & measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & \textbf{Prediction} \\
 \quad earlier: KiDS-1000, $A_s$ fitted (superseded) & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ & $\Lambda$CDM control: $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ & Retrodiction \\
-$\sigma_8$ ($A_s$ fixed to Planck; ceiling) & $0.8149$ & convention, not a prediction & --- \\
+$\sigma_8$ ($A_s$ fixed to Planck; ceiling) & $\val{p3_sigma8_techo}$ & convention, not a prediction & --- \\
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-\fscr^{\rm IR})$ & $\val{p9_sh0es_glob_IR}$ km/s/Mpc & $3(\phiG+\pi)^2=\val{H0_ALG_d5}$ ($\val{p9_sh0es_sig_IR}\sigma$; IR only, partial) & Retrodiction \\
 $H_0^{\rm glob} = H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$ (residual $+4.2{\times}10^{-6}$) & Retrodiction \\
 \midrule

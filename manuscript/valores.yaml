@@ -800,3 +800,4 @@ k1000_control_chi2: {fuente: "results/logs/kids1000_control.json#chi2", formato:
 k1000_control_pct: {fuente: "results/logs/kids1000_control.json#desvio_pct", formato: ".1f"}
 boss_chi2_logA_cmb: {fuente: "results/logs/growth_2026-07/base_sin_particula.json#boss.6", formato: ".2f"}
 h0alg_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.H0alg_sigma_planck.valor", formato: ".2f"}
+F_SCREEN_IR_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN_IR", formato: ".4f"}
