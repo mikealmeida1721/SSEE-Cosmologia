@@ -75,3 +75,12 @@ hecho sobre `f5388f0`. Cotejo contra `lectura-publico-2026-09-26` el 2026-10-11.
 
 Compilación: P1–P10, Unified, Sealed, PRD y carta, todos con 0 errores, 0 referencias indefinidas y 0 desbordes >15 pt.
 Guardián: 4 rojos, todos de sellado o publicación (R68 PDFs de `docs/`, R75×2 re-sellado pendiente de la cola 1010, R50 tope de R75). Ninguno es un número de un paper.
+
+## Control cruzado con tu `check_val_chain.py` (corrido aquí, ruta base cambiada)
+
+**781/787 OK.** Los 6 «CRITICO» son las 6 macros con formato `tex.Ne` (`p9_hglob_residuo`,
+`hglob_residuo_rel`, `frac_de_z19`, `ck_H0_AU`, `quinta_fuerza_AU`, `quinta_fuerza_margen`):
+su valor lleva llaves anidadas (`4.2\times10^{-6}`) y la expresión regular del script no lo
+lee. Están en `valores_generados.tex` y salen en el PDF. Falso positivo del verificador, no
+de la cadena. Además el script fija `BASE = ~/workspace/SSEE`; convendría tomarlo del
+directorio del propio script.
