@@ -82,6 +82,9 @@ def main():
                 rep["sin_fuente"].append({**x, "error": f"formato {fmt!r}"}); continue
             if s.lstrip("-") != num.lstrip("-") and not x.get("nuevo"):
                 rep["no_casa"].append({**x, "log_da": s}); continue
+            ctx = texto[f][ln - 1]
+            if nom.startswith("H0_ALG") and re.search(r"km|Mpc|SH0ES|screen|H_0\s*=", ctx):
+                rep.setdefault("entidad", []).append({**x, "motivo": "H con unidades es H0_GLOBAL, no el número puro"}); continue
             if nom in vals and vals[nom]["fuente"] != fu:
                 rep["choque"].append({**x, "existente": vals[nom]["fuente"]}); continue
             if nom not in vals:
