@@ -536,3 +536,9 @@ Dispersión del minimizador ≈ 0.65 en χ²: el veredicto (empate, |Δχ²| ≲
 TATT/NLA) no cambia. `sondas_ssee_vs_lcdm.py` re-corrido contra esos logs: reproduce la tabla
 (diferencias ≤ 2e-6, SPT). Pendiente tras la cola: `dvc commit des_y3_tatt` sobre los logs del 09-28.
 Referencia ΛCDM libre = 514.893 (minimizado); 518.096 es el máximo de la cadena DES, no un mínimo.
+
+## Cuarta lectura (2026-10-10) — re-sellar por DVC tras cola_1010
+Scripts tocados y re-corridos a mano (acta limpia, valores idénticos salvo lo nuevo):
+`resumen_3modelos` (τ, aceptación), `kids_publicados` (logA de las cadenas de KiDS-Legacy),
+y CANONICAL (comentario 1.03σ→1.01σ) ⟹ `dvc repro -s resumen_3modelos kids_publicados
+s8_desde_b1 valores_tex` (o `dvc commit` si reproducen) y bajar R75 a lo medido.
