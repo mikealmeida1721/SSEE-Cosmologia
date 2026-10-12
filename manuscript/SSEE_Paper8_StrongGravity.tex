@@ -137,7 +137,7 @@ $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, of which the cold dark matter is
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ (an algebraic forward identity,
 OP-8), together with the EFT
 Bellini--Sawicki structure $\alpha_B=\alpha_M=\alpha_T=0$, in which the
-fifth-force is suppressed to $F_\phi/F_N\sim 10^{-15}$ at sub-Mpc scales and
+fifth-force is suppressed to $F_\phi/F_N\sim\val{quinta_fuerza_Mpc}$ at $1\,\mathrm{Mpc}$ and $\sim\val{quinta_fuerza_10kpc}$ at the $10\,\mathrm{kpc}$ scale of galaxy Einstein radii, and
 the canonical observable lensing reduces to GR-with-DM.
 The two limits make incompatible physical assumptions; only limit~(b)
 describes the canonical SSEE model of Papers~1, 6, 7, and~10. We retain
@@ -153,7 +153,7 @@ The identities that \emph{do} use $\MIRA = \AURA/2$ exactly are purely algebraic
   \label{eq:mira_def}
 \end{equation}
 where $\bc \equiv \AURA = (3\phiG+\pi)/2$ is the disformal coupling
-constant fixed in Paper~7. Following the 2026 $\omega_m$-direct reframe
+constant of this paper (Section~\ref{sec:eft}; Paper~7 carries no coupling). Following the 2026 $\omega_m$-direct reframe
 (OP-8 dissolved), $\MIRA$ is realised physically as the Hubble \emph{screening
 amplitude} of Paper~9 ($f_{\rm screen}^{\rm IR}=s_K^{\rm IR}/(3\,\MIRA)$). A ratio
 $\Omega_m/(1+w_0)=\val{OMEGA_M_TOTAL_d6}/\val{S_M_d6}\approx1.93$ was also noted here as
@@ -225,15 +225,16 @@ Baryons ($\psi_b$) couple to the physical metric $g_{\mu\nu}$; dark matter
   \label{eq:disformal}
 \end{equation}
 
-The algebraic constants fixed by $\phiG$ and $\pi$ (Paper~7) are:
+The algebraic constants fixed by $\phiG$ and $\pi$ (Paper~1) are:
 \begin{align}
-  \KAL    &= \beta + \pi = \frac{\phiG+\pi}{2} + \pi \approx 5.521\,,
+  \KAL    &= \beta + \pi = \frac{\phiG+\pi}{2} + \pi \approx \val{KAL0_d3}\,,
               \label{eq:KAL}\\
-  \bc \equiv \AURA &= \frac{3\phiG+\pi}{2} \approx 3.998\,,
+  \bc \equiv \AURA &= \frac{3\phiG+\pi}{2} \approx \val{AURA_d3}\,,
               \label{eq:bc}\\
   \MIRA   &= \frac{\bc}{2} = \frac{3\phiG+\pi}{4} \approx \val{MIRA_d4}\,,
               \label{eq:MIRA}\\
-  M       &\approx \Mpl\quad\text{(free EFT parameter; we adopt $M=\Mpl$ as reference)}\,.
+  M       &= \phiG^2\,5^{1/4}\,\rhoc^{1/4} \approx \val{M_meV_d2}\,\mathrm{meV}
+              \quad\text{(Paper~10, conditional on its Postulate~C.1)}\,.
               \label{eq:M}
 \end{align}
 The parameter $\bc$ encodes the strength of the \emph{disformal} coupling of
@@ -304,8 +305,7 @@ yields the gradient closure relation
 \end{equation}
 This is the central structural relation of Paper~8: the scalar gradient
 tracks the Newtonian potential gradient with an algebraic coefficient
-% ORIGEN-VALOR: 44.15 — algebra: 2*KAL0*AURA = 2 x 5.521350 x 3.997847 = 44.147 (beta_c = +AURA, el acoplamiento disforme de este paper)
-$2\KAL\,\bc \approx 2\times5.521\times3.998 \approx 44.15$.
+$2\KAL\,\bc \approx 2\times\val{KAL0_d3}\times\val{AURA_d3} \approx \val{p8_grad_coef}$.
 
 Equation~\eqref{eq:grad_closure} implies that wherever there is a gravitational
 potential well, the scalar field $\phi$ builds up a corresponding profile.
@@ -327,8 +327,8 @@ The effective force on a dark matter particle in this scalar background is
 The total force on a dark matter test particle is
 $F_{\mathrm{tot}} = F_N + F_\phi = -(1 + 2\KAL\bc^2)\,\nabla\Phi_N$,
 corresponding to an effective gravitational enhancement of
-$G_{\mathrm{eff}}/G = 1 + 2\KAL\bc^2 \approx 1 + 2(5.521)(3.998)^2
-\approx 177$.
+$G_{\mathrm{eff}}/G = 1 + 2\KAL\bc^2 \approx 1 + 2(\val{KAL0_d3})(\val{AURA_d3})^2
+\approx \val{p8_Geff}$.
 This linear estimate belongs to the alternative MOND-like limit
 (Section~\ref{sec:geodesic}); in the canonical limit the EFT structure
 $\alpha_B=\alpha_M=0$ sets $\mu-1=0$ (Section~\ref{sec:double_protection})
@@ -345,7 +345,7 @@ The derivation in \S\ref{sec:geodesic}--\ref{sec:mira} assumes the
 sourced entirely by a scalar-force enhancement of the baryonic seed
 ($M_{\rm DM,eff}\propto\bc\cdot M_{\rm bary}$, no independent DM
 component). This is \emph{not} the canonical SSEE model. The canonical
-canonical limit (single matter component $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, plus EFT
+limit (single matter component $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, plus EFT
 $\alpha_B=\alpha_M=\alpha_T=0$) is treated in
 \S\ref{sec:vainshtein}--\S\ref{sec:double_protection} and yields
 $\thetaE^{\rm SSEE}\approx\thetaE^{\rm GR-with-DM}$ (no $\sqrt{\AURA}$ or
@@ -415,7 +415,7 @@ is, following the standard geodesic perturbation calculation
 \end{equation}
 where the second equality holds in the limit where the dark-matter
 distribution is entirely sourced by the scalar-force-enhanced coupling to
-the baryonic seed $M_{\mathrm{bary}}$, and $\bc \approx 3.998$ is the
+the baryonic seed $M_{\mathrm{bary}}$, and $\bc \approx \val{AURA_d3}$ is the
 disformal coupling.
 
 \textit{Caveat:} Equation~\eqref{eq:alpha_ssee} represents a working
@@ -431,7 +431,7 @@ dark matter accumulation.
 A figure here plotted the disformal lensing enhancement
 $\theta_E^{\rm SSEE}/\theta_E^{\rm GR}$ as a function of wavenumber, with a
 transition at a $\phi$-DM free-streaming scale: below it the ratio approached
-$\sqrt{\bc}=\sqrt{\mathcal{A}}\approx1.9995$, above it lensing recovered the GR
+$\sqrt{\bc}=\sqrt{\mathcal{A}}\approx\val{sqrt_AURA_d4}$, above it lensing recovered the GR
 baseline. \textbf{The figure is withdrawn}, because the scale that produced its
 entire $k$-dependence is retracted with the particle (Paper~6) and the matter
 sector is single and unpartitioned --- there is no such transition to plot. The
@@ -516,27 +516,22 @@ Concretely:
 The algebraic values give $\MIRA = \val{MIRA_d4}$ and $\bc = \val{AURA_d6}$, both
 differing from the integer approximation by $<0.06\%$.
 
-Therefore, to within $0.03\%$, the lensing amplification factor coincides
-with the CMB horizon mapping factor:
+Therefore, to within $0.03\%$, the limit-(a) lensing factor is numerically
+close to $\MIRA$,
 \begin{equation}
   \thetaE^{\mathrm{SSEE}} \;\approx\; \MIRA \times \thetaE^{\mathrm{GR}}\,,
   \label{eq:thetaE_mira}
 \end{equation}
-where the same $\MIRA$ (the ``Mirror Ratio'') appears in:
-\begin{itemize}
-  \item Paper~9: the Hubble screening fraction $f_{\rm scr}^{\rm IR} = s_K^{\rm IR}/(3\,\MIRA) = (\pi-\varphi)/\Omega^2$
-  \item This paper: $\thetaE^{\mathrm{SSEE}} \approx \MIRA \times \thetaE^{\mathrm{GR}}$
-\end{itemize}
-(Under the $\omega_m$-direct reframe, OP-8 dissolved, $\MIRA$ no longer enters
-the CMB matter sector: $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with no
-matter factor, and $r_d=\val{p2_lyaB_rd}$\,Mpc follows directly from $\omega_m$, both
-superseding the earlier MIRA-mapped forms.)
-
-This recurrence of $\MIRA$ across the Hubble-screening and
-strong-lensing sectors reflects a single structural input: $\MIRA$ is fixed
-algebraically by $\phiG$ and $\pi$, not tuned. The lensing entry holds at the
-$0.03\%$ level through the near-coincidence $\sqrt{\bc}\approx\MIRA$
-(Section~\ref{sec:mira}), not as an exact identity.
+but this is a near-coincidence, not a second appearance of $\MIRA$. $\MIRA$
+enters the framework in one place only, the Hubble screening amplitude of
+Paper~9, $f_{\rm scr}^{\rm IR} = s_K^{\rm IR}/(3\,\MIRA)$
+(Section~\ref{sec:discussion}); under the $\omega_m$-direct reframe (OP-8
+dissolved) it no longer enters the CMB matter sector either:
+$\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ with no matter factor, and
+$r_d=\val{p2_lyaB_rd}$\,Mpc follows directly from $\omega_m$. An earlier version read
+the near-coincidence as a recurrence of $\MIRA$ across the screening and
+lensing sectors; that reading is withdrawn (OP-13), and in the canonical
+limit neither $\sqrt{\AURA}$ nor $\MIRA$ enters the Einstein radius.
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \section{Solar-System Compliance}
@@ -585,8 +580,8 @@ satisfied by the \emph{selective coupling} structure of the action~\eqref{eq:act
 Therefore all standard solar-system tests (Cassini time delay, perihelion
 precession, lunar laser ranging \citep{will2014}) pass at leading order without
 requiring any non-linear screening.
-This mechanism operates independently of the value of $M$ and holds in both the
-IR ($M = \Mpl$) and UV ($M = 9.68\,\mathrm{meV}$) limits.
+This mechanism operates independently of the value of $M$: it holds in the
+IR limit $M\to\infty$ and at the Paper~10 value $M = \val{M_meV_d2}\,\mathrm{meV}$ alike.
 
 \subsection{EFT suppression of fifth-force corrections}
 \label{sec:double_protection}
@@ -636,14 +631,14 @@ The two GR-compliance mechanisms in SSEE are:
 
   \item \textbf{EFT Bellini-Sawicki structure ($\alpha_B=\alpha_M=\alpha_T=0$):}
         The effective Newton constant and gravitational slip both vanish exactly,
-        suppressing any residual fifth force to $F_\phi/F_N \sim 10^{-31}$
+        suppressing any residual fifth force to $F_\phi/F_N \sim \val{quinta_fuerza_AU}$
         at solar-system scales.
 \end{enumerate}
 
 No non-linear screening radius is invoked: the EFT suppression in
 equation~\eqref{eq:fifth_force_solar} is sufficient for all solar-system tests.
 The cosmological background Hubble flow remains in the linear kinetic regime
-($X_{\rm bg}^2/M^4 \approx 5.7\times10^{-4}$, Paper~10~\citep{SSEE10}),
+($X_{\rm bg}^2/M^4 \approx \val{eps_UV}$ in units $\rhoc=1$, Paper~10~\citep{SSEE10}),
 so the background equations of motion are unaffected by the UV completion.
 
 %% ─────────────────────────────────────────────────────────────────────────────
@@ -702,8 +697,8 @@ $\phi$-DM free-streaming scale (1 below, $1/\sqrt{\MIRA}\approx0.707$ above);}} 
 see \S\ref{sec:twosector_signature_withdrawn}.}} \\
 $M_{\mathrm{dyn}}/M_{\mathrm{lens}}$ ratio
   & 1 (GR)
-  & $> 1$ (fifth force on DM)
-  & Linear regime \\
+  & 1 ($\mu-1=0$; $>1$ only in limit~(a))
+  & All \\
 GW speed anomaly ($\alpha_T$)
   & 0
   & 0 (exact)
@@ -822,16 +817,25 @@ falsify the corresponding sector of the SSEE framework.
         (Paper~6): the second sector was defined by a subtraction that mixed a
         measured density with an equation-of-state number, so there is no
         free-streaming species to look for. The growth-sector falsifier is now
-        the shear amplitude itself, $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$\footnote{Updated 2026-09-20. Against the later \textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points; Wright et al.\ 2025, arXiv:2503.19441 --- published sixteen months before this analysis, over which no temporal priority is claimed) the amplitude the shear asks for lies $0.49\sigma$ from the one the CMB fixes under the \emph{same} algebraic background, so $A_s$ need not be free either: fixed to that value, the growth sector carries \emph{no} free cosmological parameter and predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear does \emph{not} discriminate between the models; what separates them is the parameter count. See Paper~6.} against raw
-        KiDS-1000 $\xi_\pm$ data.
+        the shear amplitude itself. Against the 357 raw $\xi_\pm$ points of
+        \textsc{KiDS-Legacy} (Wright et al.\ 2025, arXiv:2503.19441, published
+        sixteen months before this analysis; no temporal priority is claimed),
+        the amplitude the shear asks for lies $0.49\sigma$ from the one the CMB
+        fixes under the \emph{same} algebraic background, so $A_s$ is fixed to
+        that value: the growth sector then carries \emph{no} free cosmological
+        parameter and predicts $S_8=\val{S8_leg_pred}$ against
+        $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. The three $\chi^2$
+        compared span $1.0$ over 357 points, so the shear does \emph{not}
+        discriminate between the models; what separates them is the parameter
+        count (Paper~6). Against the earlier KiDS-1000 release, with $A_s$
+        free, $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$.
 
   \item \textbf{Lensing mass transition (canonical limit prediction)}:
         In the canonical single-sector model with EFT B-S structure
         (\S\ref{sec:double_protection}), the predicted observable lensing
         is $\thetaE^{\rm SSEE}\approx\thetaE^{\rm GR-with-DM-halo}$ at
         \emph{all} scales accessible to JWST/HST strong lensing, because
-        the residual fifth-force is suppressed to $F_\phi/F_N\sim 10^{-15}$
-        at sub-Mpc scales. This is consistent with current SLACS, BELLS,
+        the residual fifth-force is suppressed to $F_\phi/F_N\sim\val{quinta_fuerza_Mpc}$ at $1\,\mathrm{Mpc}$ and $\sim\val{quinta_fuerza_10kpc}$ at the $10\,\mathrm{kpc}$ scale of galaxy Einstein radii. This is consistent with current SLACS, BELLS,
         and BELLS GALLERY samples (mean total density slope
         $\gamma=2.078\pm 0.027$, \citealt{Auger2010}; M\textsubscript{E}/M\textsubscript{dyn}
         $\approx 1.21$ for SIS modelling, \citealt{Li2018} — both consistent with standard NFW+stellar
@@ -918,7 +922,7 @@ appearances, and both are withdrawn:
 \end{itemize}
 
 In the alternative MOND-like lensing limit (\S\ref{sec:geodesic}--\ref{sec:mira})
-the cantidad that emerges is $\sqrt{\AURA}\approx \val{sqrt_AURA_d5}$, which is
+the quantity that emerges is $\sqrt{\AURA}\approx \val{sqrt_AURA_d5}$, which is
 \emph{numerically close} to $\MIRA$ to within $0.03\%$ but is a different
 algebraic operation on $\AURA$ ($\sqrt{\AURA}$ vs $\AURA/2$). The
 near-coincidence is a consequence of $\AURA \approx 4$, which makes both
@@ -973,13 +977,14 @@ Several steps remain to complete the strong-gravity picture:
 
 The $X^2/M^4$ kinetic term in the SSEE action is the leading non-linear
 operator in a derivative expansion.
-Paper~10 of the SSEE series derives
+Paper~10 of the SSEE series obtains
 $M^4 = 45\alpha^2\,\rhoc = 5\phiG^8\,\rhoc$ from the inflationary $\alpha$-attractor
 parameter $\alpha = \phiG^4/3$, fixing
 \begin{equation}
-  M \;=\; \phiG^2\,5^{1/4}\,\rhoc^{1/4} \;\approx\; 9.68\;\mathrm{meV}
+  M \;=\; \phiG^2\,5^{1/4}\,\rhoc^{1/4} \;\approx\; \val{M_meV_d2}\;\mathrm{meV}
 \end{equation}
-algebraically without free parameters.
+with no free parameter, conditional on its Postulate~C.1 (UV--IR separability).
+None of the results of this paper depends on that value.
 This is a \emph{cosmological-scale} cutoff---thirty orders of magnitude
 below $\Mpl$---so no quantum-gravity UV completion is required.
 The EFT derivative expansion is valid over the entire cosmological regime;
@@ -994,29 +999,31 @@ We have derived the strong-gravity consequences of the SSEE disformal
 coupling and found:
 
 \begin{enumerate}
-  \item \textbf{Gradient closure}: In the quasi-static limit, the scalar
-        field profile tracks the Newtonian potential via
-        $\nabla\phi = 2\KAL\bc\Mpl\,\nabla\Phi_N$, with
-        $\KAL \approx 5.521$ and $\bc \approx 3.998$ fixed algebraically.
+  \item \textbf{Canonical lensing}: With real cold dark matter
+        ($\omega_c=\KAL\,\omega_b\,n_s$) and $\alpha_B=\alpha_M=\alpha_T=0$ from
+        Paper~7, $\mu-1=0$ and the Einstein radius is that of GR with a
+        dark-matter halo at all scales. For A1689 this gives $42.6''$ against
+        the observed $45''$.
 
-  \item \textbf{Lensing amplification}: The total deflection angle is
-        amplified by $\bc$ relative to the GR baryonic-mass prediction,
-        yielding $\thetaE^{\mathrm{SSEE}} \approx \sqrt{\bc} \approx \MIRA$
-        times the GR Einstein radius.
+  \item \textbf{The alternative limit as a contrast}: In the limit-(a)
+        extension the scalar gradient tracks the Newtonian one,
+        $\nabla\phi = 2\KAL\bc\Mpl\,\nabla\Phi_N$ with $\KAL \approx \val{KAL0_d3}$ and
+        $\bc \approx \val{AURA_d3}$, and the Einstein radius is
+        $\sqrt{\bc}=\sqrt{\AURA}\approx\val{sqrt_AURA_d4}$ times the baryonic GR one.
+        A1689 rejects it by a factor $\approx 1.9$.
 
-  \item \textbf{MIRA emergence}: The structural constant
-        $\MIRA = (3\phiG+\pi)/4 \approx \val{MIRA_d4}$, which enters the Hubble
-        screening amplitude of Paper~9, also matches the lensing
-        amplification of the alternative limit to within $0.03\%$ (via the
-        near-coincidence $\sqrt{\bc} \approx \MIRA$). The former ``two-sector
-        mass ratio'' reading is withdrawn with the partition.
+  \item \textbf{No MIRA in lensing}: $\sqrt{\AURA}$ lies within $0.03\%$ of
+        $\MIRA = \AURA/2$ only because $\AURA\approx4$; it is a different
+        operation, and $\MIRA$ enters the framework only through the Hubble
+        screening amplitude of Paper~9. The former ``two-sector mass ratio''
+        reading is withdrawn with the partition.
 
   \item \textbf{GR compliance}: Solar-system tests are satisfied by two
         independent mechanisms: selective coupling, under which baryons
         couple only to the physical metric $g_{\mu\nu}$
         (Section~\ref{sec:gr_compliance}), and the Bellini-Sawicki EFT
         structure $\alphaT = \alphaM = \alpha_B = 0$ from Paper~7, which
-        suppresses any residual fifth force to $F_\phi/F_N \sim 10^{-31}$
+        suppresses any residual fifth force to $F_\phi/F_N \sim \val{quinta_fuerza_AU}$
         at $1\,\mathrm{AU}$ (Section~\ref{sec:double_protection}).
 
   \item \emph{(A two-sector scale-dependent lensing signature was listed here;
@@ -1024,8 +1031,8 @@ coupling and found:
 \end{enumerate}
 
 Paper~8 thus extends the SSEE predictive reach from the linear cosmological
-regime into the non-linear strong-gravity regime, while maintaining the
-zero-free-parameter structure of the algebraic framework.
+regime into the non-linear strong-gravity regime without adding a free
+parameter: the framework's free parameters remain $\{A_s,\tau\}$ (Paper~1).
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \clearpage
@@ -1033,31 +1040,34 @@ zero-free-parameter structure of the algebraic framework.
 
 \bibitem[Almeida Vallejo(2025a)]{ssee_paper1}
   Almeida Vallejo, M.~E. (2025).
-  \textit{SSEE: Structural Self-Energy Expansion --- Framework,
-  Algebraic Constants, and $\alpha$-Attractor Embedding}.
+  \textit{A Minimal-Parameter Framework for Cosmological Dynamics and Galaxy
+  Cluster Mass Discrepancies via Structural Self-Energy Expansion (SSEE)}.
   Paper 1 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Almeida Vallejo(2025b)]{ssee_paper2}
   Almeida Vallejo, M.~E. (2025).
-  \textit{SSEE: Bayesian Validation Against DESI DR2, Planck, and
-  Galaxy Clusters}.
+  \textit{Bayesian MCMC Validation of the Structural Self-Energy Expansion
+  Framework (SSEE): Model Comparison against $\Lambda$CDM and CPL using
+  DESI~DR2, Planck~2018, and Galaxy-Cluster Mass Data}.
   Paper 2 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Almeida Vallejo(2025c)]{ssee_paper3}
   Almeida Vallejo, M.~E. (2025).
-  \textit{SSEE: CMB Confrontation with Planck 2018 via CAMB and CLASS}.
+  \textit{SSEE and the CMB Power Spectrum: Acoustic Peak Reproduction via
+  the $\omega_m$-Direct CMB Matter Density}.
   Paper 3 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Almeida Vallejo(2025d)]{ssee_paper4}
   Almeida Vallejo, M.~E. (2025).
-  \textit{SSEE: Nine Sovereignties --- Algebraic Derivation of CMB
-  Observables from $\varphi$ and $\pi$}.
+  \textit{Structural Self-Energy Expansion as a Two-Axiom Cosmology:
+  Algebraic Derivation of the CMB Background from $\varphi$ and $\pi$}.
   Paper 4 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Almeida Vallejo(2026a)]{ssee_paper5}
   Almeida Vallejo, M.~E. (2026).
-  \textit{SSEE: Israel--Stewart Causal Perturbations and the
-  $f\sigma_8$ Tension}.
+  \textit{Israel--Stewart Causal Viscous Perturbations in the SSEE Dark
+  Energy Framework: Stability from the Field, Weak Dark-Energy Clustering, and
+  $\Lambda$CDM-Consistent Structure Growth}.
   Paper 5 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Almeida Vallejo(2026b)]{ssee_paper6}
@@ -1068,14 +1078,15 @@ zero-free-parameter structure of the algebraic framework.
 
 \bibitem[Almeida Vallejo(2026c)]{ssee_paper7}
   Almeida Vallejo, M.~E. (2026).
-  \textit{SSEE as a Working Effective Field Theory: $K$-essence Action,
-  Algebraic Coupling, and Bellini-Sawicki Classification}.
+  \textit{The SSEE Dark-Energy Sector as a Ghost Condensate: Two-Term
+  K-essence, Algebraic Sound Speed, and Bellini--Sawicki Classification}.
   Paper 7 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Almeida Vallejo(2026d)]{SSEE10}
   Almeida Vallejo, M.~E. (2026).
-  \textit{SSEE UV Completion: $M^4 = 45\alpha^2\rho_{\rm crit}$ and
-  the Cross-Epoch Hubble Tension Resolution}.
+  \textit{UV Extension of SSEE Dark Energy: $M^4 = 45\alpha^2\rho_{\rm crit}
+  = 5\varphi^8\rho_{\rm crit}$ and a Conditional Self-Consistency Check on the
+  Hubble Tension}.
   Paper 10 of the SSEE series. Zenodo. \href{https://doi.org/10.5281/zenodo.19654118}{doi:10.5281/zenodo.19654118}
 
 \bibitem[Babichev \& Deffayet(2013)]{babichev2013}

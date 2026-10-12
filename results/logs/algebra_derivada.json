@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-11",
+ "fecha": "2026-10-12",
  "algebra": {
   "alpha_K_z0": {
    "formula": "3*OMDE_DENS*(5-3*W0)",
@@ -475,6 +475,36 @@
    "formula": "math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL",
    "valor": 643.5424922781127,
    "uso": "horizonte sonoro c_s c/H0 del condensado, Paper 7"
+  },
+  "p8_grad_coef": {
+   "formula": "2*KAL0*AURA",
+   "valor": 44.14747604633518,
+   "uso": "coeficiente del cierre de gradientes, limite (a) de Paper 8"
+  },
+  "p8_Geff": {
+   "formula": "1+2*KAL0*AURA**2",
+   "valor": 177.4948683515872,
+   "uso": "G_eff/G lineal sobre la materia oscura, limite (a) de Paper 8"
+  },
+  "quinta_fuerza_Mpc": {
+   "formula": "(H0_GLOBAL/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)",
+   "valor": 5.684626513960985e-09,
+   "uso": "F_phi/F_N cuasi-estatico a k = 1/Mpc (P8)"
+  },
+  "quinta_fuerza_10kpc": {
+   "formula": "(H0_GLOBAL*0.01/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)",
+   "valor": 5.684626513960985e-13,
+   "uso": "F_phi/F_N cuasi-estatico a k = 1/(10 kpc), radio de Einstein galactico (P8)"
+  },
+  "M_meV": {
+   "formula": "1e3*(5*PHI**8*3*(H0_GLOBAL*1e3/3.0856775814913673e22*6.582119569e-16)**2*2.435323e27**2)**0.25",
+   "valor": 9.680939791561842,
+   "uso": "M = (5 phi^8 rho_crit)^(1/4) en meV con H_glob (P8, P10)"
+  },
+  "eps_UV": {
+   "formula": "_X_UV**2/_M4_UV",
+   "valor": 0.0005667800105186602,
+   "uso": "X_bg^2/M^4 en unidades rho_crit = 1 (P8, P10)"
   }
  },
  "nucleo": {
@@ -544,17 +574,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "7525a4836422ac9b394b13ecaf3fd080b37a0162",
+  "commit": "0be5926f766b0237e9d8b445e14d529152e94b46",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "825f60992c6bd21fca8dff5aad8be908671698ed3ddcaf3cb3ace0733208e9f6",
+  "script_sha256": "e3d35a92ad6454507fbac8cf3b81f6f5adde77212d0de02b7e56c5830b47c670",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T17:59:39",
+  "fecha": "2026-10-12T00:56:37",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

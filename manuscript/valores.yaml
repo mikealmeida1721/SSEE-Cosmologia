@@ -813,6 +813,12 @@ frac_de_z19: {fuente: "results/logs/algebra_derivada.json#algebra.frac_de_z19.va
 ck_H0_AU: {fuente: "results/logs/algebra_derivada.json#algebra.ck_H0_AU.valor", formato: "tex.1e"}
 quinta_fuerza_AU: {fuente: "results/logs/algebra_derivada.json#algebra.quinta_fuerza_AU.valor", formato: "tex.1e"}
 quinta_fuerza_margen: {fuente: "results/logs/algebra_derivada.json#algebra.quinta_fuerza_margen.valor", formato: "tex.0e"}
+p8_grad_coef: {fuente: "results/logs/algebra_derivada.json#algebra.p8_grad_coef.valor", formato: ".2f"}
+p8_Geff: {fuente: "results/logs/algebra_derivada.json#algebra.p8_Geff.valor", formato: ".0f"}
+quinta_fuerza_Mpc: {fuente: "results/logs/algebra_derivada.json#algebra.quinta_fuerza_Mpc.valor", formato: "tex.0e"}
+quinta_fuerza_10kpc: {fuente: "results/logs/algebra_derivada.json#algebra.quinta_fuerza_10kpc.valor", formato: "tex.0e"}
+M_meV_d2: {fuente: "results/logs/algebra_derivada.json#algebra.M_meV.valor", formato: ".2f"}
+eps_UV: {fuente: "results/logs/algebra_derivada.json#algebra.eps_UV.valor", formato: "tex.1e"}
 p5_tf_z1_Om: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.Om_ssee", formato: ".3f"}
 p5_tf_z1_fS: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.f_ssee", formato: ".3f"}
 p5_tf_z1_fL: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.f_lcdm", formato: ".3f"}
