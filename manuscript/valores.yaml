@@ -955,3 +955,17 @@ p7_visc_afant: {fuente: "results/logs/p7_fondo_campo.json#B_campo_mas_viscosidad
 p7_barrido_sig: {fuente: "results/logs/p7_fondo_campo.json#C_barrido.mejor_estable.sigma", formato: ".1f"}
 p7_barrido_muere: {fuente: "results/logs/p7_fondo_campo.json#C_barrido.n_campo_muere", formato: "d"}
 p7_barrido_n: {fuente: "results/logs/p7_fondo_campo.json#C_barrido.n", formato: "d"}
+# P2, SSEE con nada libre (k = 0), 2026-10-11
+p2_k0_chi2_bao: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.chi2_BAO", formato: ".2f"}
+p2_k0_chi2_pl: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.chi2_Planck", formato: ".2f"}
+p2_k0_BIC: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.BIC", formato: ".2f"}
+p2_k0_dchi2: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.dchi2_vs_libre", formato: ".2f"}
+p2_k0_dBIC_libre: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.dBIC_vs_libre", formato: ".2f"}
+p2_k0_dBIC_lcdm: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.dBIC_ssee_menos_lcdm", formato: ".2f"}
+p2_k0_dBIC_cpl: {fuente: "results/logs/p2_ssee_fijo_k0.json#ssee_fijo.dBIC_ssee_menos_cpl", formato: ".2f"}
+p2_max_bao_ssee: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.ssee.chi2_BAO", formato: ".2f"}
+p2_max_pl_ssee: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.ssee.chi2_Planck", formato: ".2f"}
+p2_max_bao_lcdm: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.lcdm.chi2_BAO", formato: ".2f"}
+p2_max_pl_lcdm: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.lcdm.chi2_Planck", formato: ".2f"}
+p2_max_bao_cpl: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.cpl.chi2_BAO", formato: ".2f"}
+p2_max_pl_cpl: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.cpl.chi2_Planck", formato: ".2f"}

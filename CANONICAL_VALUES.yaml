@@ -272,7 +272,8 @@ canonical:
   #   número NO válido, no se cita.
   #   (lnB10=7.42 RETIRADO: era Laplace de una tabla huérfana, sin script vivo)
   H0_posterior_planckprior_km_s_Mpc: 67.87   # FUENTE: results/logs/resumen_3modelos.json — 67.869 ± 0.278, 3-modelos prior Planck común (2026-10-11; era 67.617 ± 0.349 con otro prior para SSEE)
-  deltaBIC_lcdm_minus_ssee: 5.81   # FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
+  deltaBIC_lcdm_minus_ssee_k0: 10.90  # FUENTE: results/logs/p2_ssee_fijo_k0.json — TITULAR: SSEE con nada libre (ω_b algebraico, H de la cascada); CPL: 9.32
+  deltaBIC_lcdm_minus_ssee: 5.81   # versión conservadora k=2 (H0 y ω_b muestreados). FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
                                    # su nombre), por eso >0 favorece SSEE. En los papers se cita con la
                                    # convención común: Δ(SSEE−LCDM) = −5.81 (CPL: −4.24). Era 7.25 con otro prior para SSEE, y 6.77 con el término de cúmulos solo en SSEE.
   deltaDIC_ssee_minus_lcdm: -5.02  # FUENTE: results/logs/dic_from_chains.json — era −6.47 (otro prior para SSEE) y −6.00 (con el término de cúmulos)

@@ -66,8 +66,8 @@ Structural Self-Energy Expansion (\SSEE) framework
 \citep{SSEE_paperI} against DESI~DR2 baryon acoustic oscillation data
 \citep{DESI_DR2} and a compressed Planck~2018 prior \citep{Planck2018}, with
 galaxy-cluster dynamical masses \citep{Zhang2026} as a separate consistency test. Using geometric constants fixed algebraically
-by $\pi$ and the golden ratio $\varphi$ — with $H_0$ and $\Omega_b h^2$ as the only
-sampled parameters — we compare the model against \LCDM\ and a free CPL
+by $\pi$ and the golden ratio $\varphi$ — evaluated at its algebraic point, and
+conservatively with $H_0$ and $\Omega_b h^2$ sampled — we compare the model against \LCDM\ and a free CPL
 parameterisation via posterior constraints, information criteria, and
 predictive checks, using \textsc{emcee} \citep{emcee,GoodmanWeare2010} with $N_{\rm walkers}=100$,
 $N_{\rm steps}=25{,}000$ ($2.5\times10^6$ total evaluations), and a same-bin correlated block-diagonal covariance approximation for the DESI~DR2 BAO measurements; convergence
@@ -88,11 +88,13 @@ Against all $\val{clz_rgimf_N}$ cluster dynamical masses of \citet{Zhang2026}, t
 with no free parameter, is consistent at $\val{clz_rgig_sig}\sigma$ with the IGIMF
 baryon baseline --- as is \LCDM\ ($\val{clz_lcig_sig}\sigma$): clusters test the matter
 content but do not discriminate between the two backgrounds.
-With $(w_0,w_a)$ fixed algebraically and two sampled parameters ($H_0$ and
-$\Omega_b h^2$), against the same DESI~DR2 data and the same compressed Planck prior as
-\LCDM\ and CPL, SSEE is favoured by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and
-$\val{p2_dBIC_cpl}$ over CPL, and predicts the DESI~DR2 test set better in leave-one-out
-cross-validation.
+In this test \SSEE\ has no free parameter: $(w_0,w_a)$ and $\omega_b$ are algebraic,
+$H_0$ is the output of the screening cascade, and its two free parameters $\{A_s,\tau\}$
+do not enter BAO distances or the compressed prior. Against the same DESI~DR2 data and
+the same compressed Planck prior as \LCDM\ and CPL, \SSEE\ at its algebraic point is
+favoured by $\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL with nothing free ($k=0$), and $\val{p2_dBIC_lcdm}$ and $\val{p2_dBIC_cpl}$ in the conservative version that samples $H_0$ and $\Omega_b h^2$ ($k=2$). Freeing $H_0$ and $\Omega_b h^2$ lowers $\chi^2$ by only
+$\val{p2_k0_dchi2}$: the data do not ask for them. \SSEE\ also predicts the DESI~DR2
+test set better in leave-one-out cross-validation.
 The background geometry uses the \emph{total} gravitating matter density
 $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct; no matter factor, OP-8
 dissolved), for which the SSEE sound horizon at the algebraic point matches that of
@@ -110,9 +112,7 @@ built piece-by-piece from SSEE algebra ($\omega_m$-direct; no matter factor,
 OP-8 dissolved; Paper~3). The saturation $s_m=1+w_0=\val{S_M_d6}$ is a number of
 the dark-energy equation of state, \emph{not} a matter density, and never enters
 $E(z)$. With the total density the SSEE sound horizon matches
-$\Lambda$CDM and model selection yields a single, unambiguous figure:
-$\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring SSEE over $\Lambda$CDM and $\val{p2_dBIC_cpl}$ over CPL
-(Section~\ref{sec:bic}).
+$\Lambda$CDM and model selection favours SSEE by $\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL with nothing free ($k=0$), and $\val{p2_dBIC_lcdm}$ and $\val{p2_dBIC_cpl}$ in the conservative version that samples $H_0$ and $\Omega_b h^2$ ($k=2$) (Section~\ref{sec:bic}).
 
 
 \clearpage
@@ -718,8 +718,7 @@ density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ with $1+w_0$, an equation-of-state num
 never partitioned anything. The matter density is single and unpartitioned.
 With OP-8 dissolved (no matter factor to derive; the residue is only that
 $\omega_b$ and the forward identity for $\omega_c$ hold), model selection
-favours SSEE by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and $\val{p2_dBIC_cpl}$ over CPL, with
-SSEE the most economical model (Section~\ref{sec:bic}).
+favours SSEE by $\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL with nothing free ($k=0$), and $\val{p2_dBIC_lcdm}$ and $\val{p2_dBIC_cpl}$ in the conservative version that samples $H_0$ and $\Omega_b h^2$ ($k=2$), with SSEE the most economical model (Section~\ref{sec:bic}).
 
 
 \paragraph{H$_0$: the global rate and the MCMC posterior.}
@@ -906,10 +905,35 @@ CPL        & 5 & $\val{p2_lnP_cpl}$ & \val{p2_BIC_cpl} & $\val{p2_dBIC_cpl}$ & $
 With the total gravitating matter density in the background geometry, \SSEE\ is
 the preferred model on every information criterion: $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$
 over \LCDM\ and $\val{p2_dBIC_cpl}$ over CPL, $\Delta\mathrm{AIC}=\val{p2_dAIC_lcdm}$ and $\val{p2_dAIC_cpl}$, and
-$\Delta\mathrm{DIC}=\val{p2_dDIC_lcdm}$ relative to \LCDM\ (Appendix~\ref{app:dic}). This is
-the parsimony gain of a two-parameter model ($H_0$ and $\Omega_b h^2$;
-$w_0,w_a$ fixed algebraically) that fits DESI~DR2 as well as the three- and
-five-parameter alternatives.
+$\Delta\mathrm{DIC}=\val{p2_dDIC_lcdm}$ relative to \LCDM\ (Appendix~\ref{app:dic}).
+
+\paragraph{The algebraic point, with nothing free.}
+Table~\ref{tab:model_comp} is the conservative version: it lets \SSEE\ sample $H_0$
+and $\Omega_b h^2$ and charges it $k=2$ for them. The model does not have those
+freedoms. $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]$ is algebraic, $H_0$ is the output
+of the screening cascade ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}$, Papers~9--10), and the two
+free parameters of the model, $\{A_s,\tau\}$, enter neither the BAO distances nor the
+compressed prior. Evaluated at that point, with $k=0$, \SSEE\ pays and earns on each
+probe as follows (each model at its maximum likelihood):
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & $k$ & $\chi^2_{\rm BAO}$ (13) & $\chi^2_{\rm Planck}$ (3) & BIC & $\Delta$BIC (\SSEE$_{k=0}-$model) \\
+\midrule
+\SSEE, algebraic point & 0 & $\val{p2_k0_chi2_bao}$ & $\val{p2_k0_chi2_pl}$ & $\val{p2_k0_BIC}$ & --- \\
+\SSEE, $H_0,\Omega_b h^2$ sampled & 2 & $\val{p2_max_bao_ssee}$ & $\val{p2_max_pl_ssee}$ & $\val{p2_BIC_ssee}$ & $\val{p2_k0_dBIC_libre}$ \\
+\LCDM & 3 & $\val{p2_max_bao_lcdm}$ & $\val{p2_max_pl_lcdm}$ & $\val{p2_BIC_lcdm}$ & $\val{p2_k0_dBIC_lcdm}$ \\
+CPL & 5 & $\val{p2_max_bao_cpl}$ & $\val{p2_max_pl_cpl}$ & $\val{p2_BIC_cpl}$ & $\val{p2_k0_dBIC_cpl}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Freeing $H_0$ and $\Omega_b h^2$ improves the fit by $\Delta\chi^2=\val{p2_k0_dchi2}$, far
+below the $2\ln 16$ it costs, so the algebraic point is where the data put \SSEE\ anyway.
+On the scale of \citet{KassRaftery1995} the preference is very strong over \LCDM\ and
+strong over CPL. \LCDM\ pays mainly in the Planck prior: following DESI pulls its $H_0$
+and $\Omega_m$ away from the CMB values (\S\ref{sec:results_cosmo}). Script and control:
+\texttt{src/p02\_mcmc/ssee\_fijo\_k0.py} (the same likelihood functions reproduce
+$\ln L_{\max}$ of every chain to $10^{-6}$).
 
 \paragraph{Not merely parameter counting.}
 The preference survives tests that penalise over-fitting directly. A nested
@@ -1066,9 +1090,8 @@ DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency t
 
   \item With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background,
     the \SSEE\ sound horizon matches \LCDM\ ($r_d=\val{p2_lyaB_rd}$ vs $\val{p2_rd_lcdm}$\,Mpc, CAMB) and \SSEE\ is
-    favoured on model selection by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and
-    $\val{p2_dBIC_cpl}$ over CPL, predicting the held-out BAO data better in
-    cross-validation. $\Omega_m$ agrees with Planck at $\val{om_planck_sig}\sigma$.
+    favoured on model selection by $\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL with nothing free ($k=0$), and $\val{p2_dBIC_lcdm}$ and $\val{p2_dBIC_cpl}$ in the conservative version that samples $H_0$ and $\Omega_b h^2$ ($k=2$), predicting the held-out BAO data
+    better in cross-validation. $\Omega_m$ agrees with Planck at $\val{om_planck_sig}\sigma$.
 
   \item The high-$z$ Ly-$\alpha$ forest BAO from DESI~DR2 ($z=2.33$) is
     reproduced at $\val{p2_lyaB_pull}\sigma$ ($D_H/r_d=\val{p2_lyaB_DHrd}$; Appendix~\ref{app:lya}).

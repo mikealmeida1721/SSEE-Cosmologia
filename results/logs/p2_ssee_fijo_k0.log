@@ -1,0 +1,24 @@
+# ACTA-PROCEDENCIA {"commit": "bcd160fefd6f315662ac7bfc75587b0edcf028b0", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p02_mcmc/ssee_fijo_k0.py", "script_sha256": "b9c3f25125ecb0abec25386cfe0c7c1484237dddf95a18fff36afbb602af21f6", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p02_mcmc/ssee_fijo_k0.py"], "fecha": "2026-10-11T21:30:45", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+[   0.0m] =================================================================
+[   0.0m] SSEE — MCMC PROFESIONAL (overnight)
+[   0.0m] =================================================================
+[   0.0m] w0=-0.8399  wa=-0.6700  Om_total=0.30888 (geometría, ÚNICA densidad)  s_m=1+w0=0.160050 (ecuación de estado, NO densidad)  KAL0=5.5214
+{
+ "ssee_fijo": {
+  "H0": 67.96214152203791,
+  "omega_b": 0.02241775678109985,
+  "Om": 0.30888084061409116,
+  "k": 0,
+  "chi2_BAO": 11.57629067334874,
+  "chi2_Planck": 1.3616597465398408,
+  "menos2lnL": 12.937950419888582,
+  "BIC": 12.937950419888582,
+  "dchi2_vs_libre": 0.4642931598127138,
+  "dBIC_vs_libre": -5.080884284666849,
+  "dBIC_ssee_menos_lcdm": -10.895566627010824,
+  "dBIC_ssee_menos_cpl": -9.322311703994652,
+  "dBIC_lcdm_vs": 10.895566627010824,
+  "dBIC_cpl_vs": 9.322311703994652
+ },
+ "control_pasa": true
+}

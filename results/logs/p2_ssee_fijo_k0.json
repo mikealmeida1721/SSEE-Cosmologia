@@ -1,0 +1,107 @@
+{
+ "N": 16,
+ "ssee_fijo": {
+  "H0": 67.96214152203791,
+  "omega_b": 0.02241775678109985,
+  "Om": 0.30888084061409116,
+  "k": 0,
+  "chi2_BAO": 11.57629067334874,
+  "chi2_Planck": 1.3616597465398408,
+  "menos2lnL": 12.937950419888582,
+  "BIC": 12.937950419888582,
+  "dchi2_vs_libre": 0.4642931598127138,
+  "dBIC_vs_libre": -5.080884284666849,
+  "dBIC_ssee_menos_lcdm": -10.895566627010824,
+  "dBIC_ssee_menos_cpl": -9.322311703994652,
+  "dBIC_lcdm_vs": 10.895566627010824,
+  "dBIC_cpl_vs": 9.322311703994652
+ },
+ "maximo_por_modelo": {
+  "ssee": {
+   "punto": [
+    67.86798862188579,
+    0.022321414873513204
+   ],
+   "chi2_BAO": 11.478655037876937,
+   "chi2_Planck": 0.9950022221989303,
+   "menos2lnL": 12.473657260075868,
+   "k": 2,
+   "BIC": 18.01883470455543
+  },
+  "lcdm": {
+   "punto": [
+    68.38687213431196,
+    0.3021751657898586,
+    0.022324470068711487
+   ],
+   "chi2_BAO": 11.688703003639366,
+   "chi2_Planck": 3.827047876540697,
+   "menos2lnL": 15.515750880180063,
+   "k": 3,
+   "BIC": 23.833517046899406
+  },
+  "cpl": {
+   "punto": [
+    67.18404664899096,
+    0.3177921036516807,
+    -0.8022387665489803,
+    -0.6153739782243438,
+    0.02237859606446223
+   ],
+   "chi2_BAO": 8.27290806780807,
+   "chi2_Planck": 0.12441044487625764,
+   "menos2lnL": 8.397318512684327,
+   "k": 5,
+   "BIC": 22.260262123883233
+  }
+ },
+ "control": {
+  "criterio": "ln L en el maximo de cada cadena = ln L_max de resumen_3modelos.json",
+  "modelos": {
+   "ssee": {
+    "lnL_max_resumen": -6.236828630037934,
+    "lnL_aqui": -6.236828630037934,
+    "dif": 0.0
+   },
+   "lcdm": {
+    "lnL_max_resumen": -7.757875440090031,
+    "lnL_aqui": -7.757875440090031,
+    "dif": 0.0
+   },
+   "cpl": {
+    "lnL_max_resumen": -4.198659256342164,
+    "lnL_aqui": -4.198659256342164,
+    "dif": 0.0
+   }
+  },
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "bcd160fefd6f315662ac7bfc75587b0edcf028b0",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p02_mcmc/ssee_fijo_k0.py",
+  "script_sha256": "b9c3f25125ecb0abec25386cfe0c7c1484237dddf95a18fff36afbb602af21f6",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "bcf5ad5fa07dba371d36956466f8450b577410b9f0e681ff76f2de2c3d568b29",
+   "results/logs/resumen_3modelos.json": "cd489d18b7a707a8fef747e688c594c9cfd5ea1724417617e468afe5c51c94ac"
+  },
+  "argv": [
+   "src/p02_mcmc/ssee_fijo_k0.py"
+  ],
+  "fecha": "2026-10-11T21:30:47",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}
