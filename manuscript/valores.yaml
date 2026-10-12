@@ -100,6 +100,7 @@ M_V_d9: {fuente: "results/logs/algebra_derivada.json#nucleo.M_V", formato: ".9f"
 N_S_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.N_S", formato: ".5f"}
 N_S_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.N_S", formato: ".6f"}
 OMDE_DENS_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.OMDE_DENS", formato: ".6f"}
+OMDE_DENS_d2: {fuente: "results/logs/algebra_derivada.json#nucleo.OMDE_DENS", formato: ".2f"}
 OMEGA_B_H2_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_B_H2", formato: ".6f"}
 OMEGA_C_H2_d5: {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_C_H2", formato: ".5f"}
 OMEGA_C_H2_d6: {fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_C_H2", formato: ".6f"}
@@ -819,6 +820,7 @@ quinta_fuerza_Mpc: {fuente: "results/logs/algebra_derivada.json#algebra.quinta_f
 quinta_fuerza_10kpc: {fuente: "results/logs/algebra_derivada.json#algebra.quinta_fuerza_10kpc.valor", formato: "tex.0e"}
 M_meV_d2: {fuente: "results/logs/algebra_derivada.json#algebra.M_meV.valor", formato: ".2f"}
 eps_UV: {fuente: "results/logs/algebra_derivada.json#algebra.eps_UV.valor", formato: "tex.1e"}
+frac_de_zstar: {fuente: "results/logs/algebra_derivada.json#algebra.frac_de_zstar.valor", formato: "tex.0e"}
 p5_tf_z1_Om: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.Om_ssee", formato: ".3f"}
 p5_tf_z1_fS: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.f_ssee", formato: ".3f"}
 p5_tf_z1_fL: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.f_lcdm", formato: ".3f"}

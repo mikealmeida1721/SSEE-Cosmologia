@@ -51,9 +51,9 @@ The Hubble tension between the CMB-inferred value $H_0^{\rm CMB} = 67.4\pm0.5$
 km/s/Mpc and the local distance-ladder measurement $H_0^{\rm SH0ES} = 73.04\pm1.04$
 km/s/Mpc remains one of the sharpest anomalies in modern cosmology.
 Within the Structural Self-Energy Expansion (SSEE) framework, the algebraic
-constants $\phiG$ (golden ratio) and $\pi$ determine all parameters with zero
-free parameters.
-We show that the equation of state of the SSEE dark-energy sector (Paper~7),
+constants $\phiG$ (golden ratio) and $\pi$ fix the background, leaving
+$\{A_s,\tau\}$ as the only free parameters.
+We show that the equation of state of the SSEE dark-energy sector (Paper~1),
 together with the structural constants of the algebra, fixes a
 \emph{local screening fraction}
 \[
@@ -110,13 +110,13 @@ superseded. The 2026 $\omega_m$-direct reframe adopts the pure number
 $3(\varphi+\pi)^2=\val{H0_ALG_d5}$ as the algebraic target shared by all
 sectors --- with \emph{no} matter factor, the CMB density following as
 $\Omega_{m,\rm CMB}=\omega_m/h^2$ (Paper~1).
-The correction operates at late times ($z < 0.15$) through the scalar kinetic
-energy contribution to the local expansion rate, and does not modify the
-sound horizon $r_d$, the CMB peak positions, or the growth factor $\sigma_8$
-derived in Papers~3 and~5.
-The UV completion of Paper~10 sharpens the residual to
-$\val{p9_hglob_residuo}$~km/s/Mpc ($H_0^{\rm glob,UV} = \val{H0_GLOBAL_d5}$), the small-scale
-refinement of the same cascade.
+The correction acts on locally measured rates only ($z < 0.15$) and does not
+modify the sound horizon $r_d$, the CMB peak positions, or the growth factor
+$\sigma_8$ derived in Papers~3 and~5.
+With the complete screening fraction of Paper~10 the same cascade gives the
+single model value $H_0^{\rm glob} = \val{H0_GLOBAL_d5}$, a residual of
+$\val{p9_hglob_residuo}$~km/s/Mpc against the pure number, far inside the
+propagated $\pm\val{p9_hglob_sigma}$.
 \end{abstract}
 
 \clearpage
@@ -147,14 +147,14 @@ The SSEE framework \citep{Paper1,Paper2,Paper3,Paper7} carries the pure number
   3(\phiG+\pi)^2 \;\approx\; \val{H0_ALG_d5}\qquad\text{(dimensionless)},
   \label{eq:H0alg}
 \end{equation}
-which, read in km/s/Mpc, lies $1.1\sigma$ from Planck \citep{Paper2}. It is a
+which, read in km/s/Mpc, lies $\val{h0alg_planck_sig}\sigma$ from Planck \citep{Paper2}. It is a
 comparison target, not a derived rate: a pure number cannot be the input of a
 dimensionful cascade, and no model has yet derived $H_0$ from first principles.
 The model's rate is the output of the SH0ES cascade developed below, and on its
 own the target does not, at first sight, resolve the local tension.
 
-In this paper we show that the same algebraic structure that produces
-$\Hzero^{\rm alg}$ also produces a local kinematic correction
+In this paper we show that the same algebraic structure that gives the pure
+number~\eqref{eq:H0alg} also gives a local correction
 $\fsc \approx \val{F_SCREEN_IR_d5}$ from the SSEE algebra. Applied to the measured
 local rate $H_0^{\rm SH0ES} = 73.04\pm1.04$~km/s/Mpc, this returns a global
 background rate $H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$ km/s/Mpc in the IR regime, to be
@@ -162,9 +162,9 @@ compared with the algebraic number $3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ ($\val{p9_
 the model value, with the complete $\fsc$, is $\val{H0_GLOBAL_d5}$ km/s/Mpc (footnote~\ref{fn:regime}).
 The value of $\fsc$ combines two algebraic ingredients:
 \begin{enumerate}
-  \item From Paper~7 \citep{Paper7}: the pressure-dilution rate
-        $\sK = -3w_0(1+w_0) = 3\,\sDE(1+w_0)$, a function of the equation
-        of state alone.
+  \item From the equation of state of Paper~1 \citep{Paper1}: the
+        pressure-dilution rate $\sK = -3w_0(1+w_0) = 3\,\sDE(1+w_0)$, a function
+        of $w_0$ alone (the field of Paper~7 reproduces $w_0$ today).
   \item The structural constant $\MIRA = \AURA/2 = (3\phiG+\pi)/4$, the half
         of $\AURA$ in the algebraic dictionary (Paper~1). Earlier versions
         obtained it from the disformal null geodesic of Paper~8
@@ -232,12 +232,14 @@ The dark-energy equation-of-state parameters derived in Paper~1 are
 The quantity entering the screening fraction is the fractional dilution rate
 of the dark-energy \emph{pressure} per e-fold,
 \begin{equation}
-  \sK \;\equiv\; -\frac{1}{\rho_\phi}\frac{dp_\phi}{dN}
+  \sK \;\equiv\; -\frac{1}{\rho_\phi}\frac{d|p_\phi|}{dN}\bigg|_{w=w_0}
       \;=\; -3w_0(1+w_0)\,, \qquad N = \ln a,
   \label{eq:sK_def}
 \end{equation}
-which carries only the equation of state: no factor of $H$, no density, and
-no kinetic function.  Section~\ref{sec:identity} gives its exact algebraic
+evaluated with the present $w_0$ held fixed: the term from the evolution of
+$w(a)$, $-w_a$ today, is not part of $\sK$, which is a number of the algebra
+rather than the full rate of change of the pressure. It carries only the
+equation of state: no factor of $H$, no density, and no kinetic function.  Section~\ref{sec:identity} gives its exact algebraic
 form.
 
 \paragraph{A label corrected.}
@@ -299,12 +301,12 @@ mechanism (§\ref{sec:withdrawn}).
 \subsection{Step 1: Exact expression for $\sK$}
 \label{sec:step1}
 
-With $p_\phi = w_0\rho_\phi$ and $w_0$ constant, the continuity equation
-$\rho_\phi' = -3(1+w_0)\rho_\phi$ gives
+With $p_\phi = w_0\rho_\phi$ at fixed $w_0<0$, $|p_\phi|=-w_0\rho_\phi$ and the
+continuity equation $\rho_\phi' = -3(1+w_0)\rho_\phi$ give
 \begin{equation}
-  \frac{1}{\rho_\phi}\frac{dp_\phi}{dN}
+  -\frac{1}{\rho_\phi}\frac{d|p_\phi|}{dN}
     = w_0\,\frac{\rho_\phi'}{\rho_\phi}
-    = -3w_0(1+w_0)\cdot(-1)\,,
+    = -3w_0(1+w_0)\,,
   \qquad\text{hence}\qquad
   \sK = -3w_0(1+w_0)\,.
   \label{eq:sK_exact}
@@ -401,7 +403,7 @@ It is a statement about observables, not a derivation:
 Appendix~\ref{app:hubble_integral} spells out what it implies for the
 luminosity distance, and Section~\ref{sec:prediction} lists the observations
 that can falsify it. The additive variant $H_0^{\rm glob}(1+\fsc)$ differs by
-$O(\fsc^2)\approx0.31$~km/s/Mpc, below the present SH0ES uncertainty, so the
+$O(\fsc^2)\approx\val{p9_add_dif}$~km/s/Mpc, below the present SH0ES uncertainty, so the
 choice moves no conclusion of this paper.
 
 \subsection{Numerical verification}
@@ -433,7 +435,7 @@ $\fsc = \sK/(3\MIRA)$ & $(\pi-\phiG)/\Omega^2$ & $\val{F_SCREEN_IR_d6}$ & Eq.~\e
 $H_0^{\rm SH0ES}$ (\emph{input}, measured) & --- & $73.04\pm1.04$ km/s/Mpc & \citet{Riess2022} \\
 $H_0^{\rm glob,IR}$ (Paper-9 IR regime, mult.) & $H_0^{\rm SH0ES}(1-\fsc^{\rm IR})$ & $\val{p9_sh0es_glob_IR}$ km/s/Mpc & Eq.~\eqref{eq:H0local} \\
 $H_0^{\rm glob}$ (\textbf{model value}, mult.) & $H_0^{\rm SH0ES}(1-\fsc^{\rm full})$ & $\mathbf{\val{H0_GLOBAL_d5}}$ km/s/Mpc & Paper~10, Eq.~(sKfullform) \\
-$H_0^{\rm glob,IR}$ (additive variant) & $H_0^{\rm SH0ES}/(1+\fsc^{\rm IR})$ & $68.44$ km/s/Mpc & --- \\
+$H_0^{\rm glob,IR}$ (additive variant) & $H_0^{\rm SH0ES}/(1+\fsc^{\rm IR})$ & $\val{p9_add_H}$ km/s/Mpc & --- \\
 $3\Omega^2$ (pure number, target) & $3(\phiG+\pi)^2$ & $\val{H0_ALG_d5}$ & Paper~1 (target, not input) \\
 $H_0^{\rm CCHP}$ (TRGB, adopted) & ---       & $\val{p9_cchp_H0}\pm\val{p9_cchp_H0_s}$ km/s/Mpc & \citet{Freedman2024} \\
 Residual vs $3(\phiG+\pi)^2$ (IR regime) & ---         & $\val{p9_sh0es_sig_IR}\sigma$   & --- \\
@@ -479,11 +481,13 @@ The Hubble tension arises because the two measurement methods probe
 different epochs:
 \begin{itemize}
   \item The CMB infers $H_0$ via the angular scale $\theta_* = r_d/D_A(z_*)$
-        at $z_* \approx 1100$, where the SSEE dark energy density is
-        $\Omde(z_*) \sim 10^{-9}$ and the scalar kinetic energy is negligible.
+        at $z_* \approx 1100$, where the SSEE dark energy is a fraction
+        $\Omde(z_*) < \val{frac_de_zstar}$ of the density and the scalar kinetic
+        energy is negligible.
         The inferred value is $H_0^{\rm glob}$, which coincides numerically with the pure number $3(\phiG+\pi)^2$.
   \item SH0ES measures $H_0$ via the distance ladder at $z < 0.15$, where
-        $\sDE \approx \val{S_DE_d3}$ and the scalar field is kinetically active.
+        dark energy is $\simeq\val{OMDE_DENS_d2}$ of the density today and the scalar
+        field is kinetically active.
 \end{itemize}
 
 The kinetic part of the scalar energy density is
@@ -583,7 +587,7 @@ $(1-\fsc)^{-1}$; Appendix~\ref{app:hubble_integral} shows that this is the same
 as a uniform compression $d_L^{\rm obs}=(1-\fsc)\,d_L^{\rm glob}$ at $O(z)$.
 The additive form~\eqref{eq:H0local_add} is its linearisation
 $(1-\fsc)^{-1}\approx1+\fsc$, with a second-order difference
-$O(\fsc^2)\approx0.31$\,km/s/Mpc. Since $\fsc$ is exactly constant
+$O(\fsc^2)\approx\val{p9_add_dif}$\,km/s/Mpc. Since $\fsc$ is exactly constant
 (Appendix, Step~4) no average over redshift is needed.
 
 \medskip
@@ -597,8 +601,8 @@ connection is withdrawn too, and $\MIRA$ plays no role here beyond its value.
 \subsection{Why the CMB is unaffected}
 \label{sec:CMBsafe}
 
-The correction $\fsc$ is a late-time effect generated by scalar kinetic energy
-that is negligible at $z \gg 1$.
+Under the postulate~\eqref{eq:screen_postulate} the correction acts only on
+locally measured rates; it does not enter the early-universe physics.
 Specifically:
 \begin{enumerate}
   \item \textbf{Sound horizon} $r_d$: not modified.
@@ -610,9 +614,9 @@ Specifically:
         The acoustic scale $\theta_* = r_d/D_A(z_*)$ is set at $z_* \approx 1100$
         (Paper~3) and is unchanged by the local kinematic correction.
   \item \textbf{Growth factor $\sigma_8$}: not modified.
-        The IS viscosity (Paper~5) operates through the growth equation,
-        not through $H_0$, so the growth results of Paper~6 (the $S_8$
-        prediction against KiDS-Legacy) are unaffected.
+        The growth computations of Papers~5 and~6 run on the global
+        background, so their results (the $S_8$ prediction against
+        KiDS-Legacy) are unaffected.
 \end{enumerate}
 
 \paragraph{Note on the EDE comparison.}
@@ -621,10 +625,10 @@ resolve the Hubble tension by reducing $r_d$
 (adding energy at $z > 1000$), which directly shifts CMB peak positions
 \citep{Hill2020}.
 A naive application of $\fsc$ as an EDE-like modification to $r_d$ would
-give $r_{d,\rm new} = r_d\,(1-\fsc) \approx 137.3$\,Mpc, a shift of the acoustic
-scale by the full $\fsc$ --- which is excluded by Paper~3.
-The present mechanism does \emph{not} modify $r_d$; it operates entirely
-at $z < 0.15$ through the scalar kinetic energy, a physically distinct sector.
+shorten $r_d$ by the full fraction $\fsc\approx\val{F_SCREEN_IR_d4}$, a shift of the
+acoustic scale that is excluded by Paper~3.
+The present correction does \emph{not} modify $r_d$: under the postulate it
+acts only on locally measured rates at $z < 0.15$.
 
 %% ─────────────────────────────────────────────────────────────────────────────
 \section{Consistency with the SSEE Series}
@@ -646,13 +650,13 @@ Paper & Key result & Affected by $\fsc$? \\
                MCMC measures the global background, not local \\
 3 (CMB)       & $r_d = \val{rd_ssee_camb_d1}$ Mpc, peaks at $\ell=\val{p3_pico1_ssee},\val{p3_pico2_ssee},\val{p3_pico3_ssee}$ & No —
                $\fsc$ does not shift $r_d$ or $\theta_*$ \\
-4 (Sovereignties) & $H_0^{\rm glob}$ as first sovereignty & No —
+4 (Two-axiom CMB) & $\omega_b$, $n_s$ and the CMB background from $\phiG,\pi$ & No ---
                $H_0^{\rm local}$ is a new sector \\
-5 (IS viscosity) & $\sigma_8 = \val{p3_sigma8_IS}$, $G = D_1^{\rm SSEE}/D_1^{\Lambda{\rm CDM}} = \val{p5_G}$ & No \\
+5 (IS perturbations) & $\sigma_8 = \val{p3_sigma8_IS}$, $G = D_1^{\rm SSEE}/D_1^{\Lambda{\rm CDM}} = \val{p5_G}$ & No \\
 6 (growth) & $S_8=\val{S8_leg_pred}$ predicted vs.\ KiDS-Legacy $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$; \emph{no} free cosmological parameter) & No \\
 6 (growth, earlier) & $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ vs.\ raw KiDS-1000 & No \\
-7 (EFT)       & $s_K = \val{S_K_d6}$, $c_s^2 = \val{cs2_condensado_d6}$ & Provides $s_K$
-               (input to Paper~9) \\
+7 (EFT)       & $\alpha_K = \val{alpha_K_z0_d6}$, $c_s^2 = \val{cs2_condensado_d6}$; the field reproduces $w_0$ today & No ---
+               $s_K$ follows from $w_0$ (Paper~1) \\
 8 (Strong gravity) & Lensing with $\mu-1=0$; the disformal limit is historical & No ---
                $\MIRA$ is no longer taken from Paper~8 (§\ref{sec:withdrawn}) \\
 \bottomrule
@@ -661,8 +665,8 @@ Paper & Key result & Affected by $\fsc$? \\
 
 Table~\ref{tab:consistency} confirms that the correction $\fsc$ does not
 retroactively modify any result in Papers~1--8.
-Its one input from the series is $\sK$ (Paper~7); $\MIRA$ is a structural
-constant of the dictionary. Paper~9 derives the value of their ratio and
+Its one input from the series is $w_0$ (Paper~1), through $\sK$; $\MIRA$ is a
+structural constant of the dictionary. Paper~9 derives the value of their ratio and
 postulates its action on the distance ladder.
 
 %% ─────────────────────────────────────────────────────────────────────────────
@@ -692,9 +696,10 @@ uncertainty \citep{Riess2022} propagated through the screening.
 
 \noindent\textbf{Falsification criteria:}
 \begin{enumerate}
-  \item If future SH0ES or SHOES-equivalent measurements (post-2027)
-        converge to $H_0^{\rm local} < 71.5$ or $> 74.2$ km/s/Mpc,
-        the prediction is excluded at $\geq 1\sigma$.
+  \item If future SH0ES or SH0ES-equivalent measurements (post-2027)
+        converge to a local rate whose cascade output $H_0^{\rm local}(1-\fsc)$
+        departs from $3(\phiG+\pi)^2$ by more than $3\sigma$ of the propagated
+        uncertainty, the prediction is excluded.
   \item If the CMB+BAO inference of $H_0$ shifts above $69$ km/s/Mpc
         (closing the tension from the early-universe side), the two-epoch
         mechanism of Section~\ref{sec:mechanism} would require revision.
@@ -811,7 +816,7 @@ Modifies $r_d$?        & ---       & Yes ($-$few\%) & Yes (via $\Delta N_{\rm ef
 Free parameters        & 0         & 3            & 1--3            & 2+      & \textbf{0} \\
 % ORIGEN-VALOR: 71.8 — rango SIDR publicado, Kreisch2020 y Aloni2022 (citados en el parrafo (b) de esta seccion)
 Local $H_0$ (km/s/Mpc) & $67.4$    & $71$--$72.5$ & $70$--$71.8$    & $\sim 72$ & \textbf{input} \\
-Residual                & $5\sigma$ & $1.6$--$2\sigma$ & $2$--$3\sigma$ & $\sim 1\sigma$ & $\mathbf{0.17\sigma}$ \\
+Residual                & $5\sigma$ & $1.6$--$2\sigma$ & $2$--$3\sigma$ & $\sim 1\sigma$ & $\mathbf{\val{p9_sh0es_sig_IR}\sigma}$ \\
 $S_8$ side-effect      & ---       & Worsens      & Mild            & Variable & \textbf{None} \\
 CMB peak shift         & ---       & Yes          & Yes             & No       & \textbf{No} \\
 \bottomrule
@@ -840,9 +845,13 @@ Table~\ref{tab:comparison}:
   \item \textbf{Sub-sigma residual, zero added parameters.}  The
         SSEE output $H_0^{\rm SH0ES}(1-\fsc^{\rm IR})$, compared against the pure
         number $3(\phiG+\pi)^2$, sits at $\val{p9_sh0es_sig_IR}\sigma$
-        from it when the IR cascade is applied to SH0ES --- better than every finalist of the
-        $H_0$ Olympics, \emph{and} achieves this with zero added parameters.
-        The UV completion (Paper~10) sharpens it to $0.00\sigma$.
+        from it when the IR cascade is applied to SH0ES, with zero added
+        parameters. The residual is not directly comparable with those of the
+        $H_0$ Olympics finalists, which predict the local rate rather than take
+        it as input (caption of Table~\ref{tab:comparison}). With the complete
+        $\fsc$ of Paper~10 the residual is $\val{p9_hglob_residuo}$~km/s/Mpc, which
+        is not quoted as a significance: the propagated
+        $\pm\val{p9_hglob_sigma}$~km/s/Mpc dominates it.
 \end{enumerate}
 
 \subsection{Honest caveats}
@@ -879,7 +888,7 @@ postulate~\eqref{eq:screen_postulate}. Earlier versions listed three arguments
 for it: a disformal path compression, a separate-universe step, and algebraic
 consistency. The first two are withdrawn (§\ref{sec:withdrawn}); the third
 fixes the value, not the form. The additive variant differs by
-$\fsc^2 H_0^{\rm glob}\approx0.31$\,km/s/Mpc, below the present SH0ES
+$\fsc^2 H_0^{\rm glob}\approx\val{p9_add_dif}$\,km/s/Mpc, below the present SH0ES
 uncertainty. Two tests of the mechanism were run against present data, with
 their criteria committed before the run:
 \begin{enumerate}[label=(\roman*),itemsep=2pt]
@@ -907,8 +916,9 @@ their criteria committed before the run:
 The algebraic identity $\fsc = \sK/(3\MIRA) = (\pi-\phiG)/(\Omega^2)$ does not
 depend on $M$ (it cancels in the ratio), so the IR-regime prediction
 $H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$\,km/s/Mpc ($\val{p9_sh0es_sig_IR}\sigma$ from $3(\phiG+\pi)^2$) is robust.
-Paper~10 of this series \citep{Paper10} derives $M^4 = 45\alpha^2\rho_{\rm crit} = 5\phiG^8\rho_{\rm crit}$
-from the same $\alpha$-attractor that governs inflation (Paper~1), yielding
+Paper~10 of this series \citep{Paper10} obtains $M^4 = 45\alpha^2\rho_{\rm crit} = 5\phiG^8\rho_{\rm crit}$
+from the same $\alpha$-attractor that governs inflation (Paper~1), conditional on its
+Postulate~C.1 (UV--IR separability), yielding
 $\sK^{\rm full} = \val{S_K_FULL_d5}$ ($+\val{sK_UV_pct}\%$ over the IR value) and the UV output
 the model value $H_0^{\rm glob} = \val{H0_GLOBAL_d5}$\,km/s/Mpc --- not a second
 $H_0^{\rm glob}$, but the same cascade with $\fsc$ complete.
@@ -918,7 +928,7 @@ $H_0^{\rm glob}$, but the same cascade with $\fsc$ complete.
 \label{sec:conclusions}
 %% ─────────────────────────────────────────────────────────────────────────────
 
-We have shown that the SSEE equation of state (Paper~7), with the structural
+We have shown that the SSEE equation of state (Paper~1), with the structural
 constants of the algebra, fixes an algebraically exact screening fraction:
 \begin{equation}
   \fsc = \frac{\sK}{3\,\MIRA} = \frac{\pi-\phiG}{(\phiG+\pi)^2} \approx \val{F_SCREEN_IR_d5}\,,
@@ -939,13 +949,12 @@ which is $\val{p9_sh0es_sig_IR}\sigma$ from the algebraic $3(\phiG+\pi)^2$ with 
 parameters, the SH0ES datum \citep{Riess2022} being the input.
 The earlier MIRA-mapped value $67.037\to71.87$ ($1.12\sigma$) is superseded by
 the single algebraic target under the 2026 reframe (Paper~1).
-The correction is a late-time effect ($z < 0.15$) driven by the scalar
-kinetic energy of the dark energy field; it does not modify the sound
-horizon $r_d$, the CMB peak structure, or the growth factor $\sigma_8$
-established in Papers~2--6.
+The correction acts on locally measured rates only ($z < 0.15$); it does
+not modify the sound horizon $r_d$, the CMB peak structure, or the growth
+factor $\sigma_8$ established in Papers~2--6.
 
-The result is pre-committed: both values were derived from
-the algebraic structure of SSEE before this comparison was made.
+The screening fraction has no parameter that could be tuned to the
+comparison: it is fixed by $\phiG$ and $\pi$.
 Future SH0ES measurements and upcoming DESI \citep{DESI2025} data will test
 this prediction.
 
@@ -1007,19 +1016,18 @@ $H_0^{\rm SH0ES}$ is $\pm\val{p9_hglob_sigma}$~km/s/Mpc and dominates it by five
 magnitude. The cascade reduces the $\sim 5\sigma$ Planck--SH0ES discrepancy to
 below the percent level with zero free parameters.
 
-This appendix supplies the independent self-consistency check that motivates
-adopting $\val{H0_ALG_d5}$ as the algebraic target: it works the screening chain
-\emph{backwards} from the SH0ES datum, assuming no algebraic value in advance,
-and recovers exactly the same number.
+This appendix records why $\val{H0_ALG_d5}$ is the algebraic target: it runs
+the cascade of the body from the SH0ES datum with the complete screening
+fraction, without using the target, and lands on it.
 
-\paragraph{Step P1: the inverse chain --- what background does SH0ES demand?}
+\paragraph{Step P1: what background does SH0ES demand?}
 The screening relation $H_0^{\rm local}=H_0^{\rm base}/(1-\fsc)$ inverts to
 \begin{equation}
   H_0^{\rm base} \;=\; H_0^{\rm SH0ES}\,(1-\fsc^{\rm UV})\,,
   \label{eq:inverse_chain}
 \end{equation}
-which asks, using only the measured datum and the derived screening fraction
-(no model constant): \emph{what homogeneous background expansion rate would,
+which asks, using only the measured datum and the screening fraction:
+\emph{what homogeneous background expansion rate would,
 seen through the SSEE screen~\eqref{eq:screen_postulate}, reproduce the local SH0ES slope
 exactly?} With $\fsc^{\rm UV}=\val{F_SCREEN_d6}$ from the $X^2/M^4$ correction of
 Paper~10,
@@ -1028,23 +1036,20 @@ Paper~10,
                  \;=\; \val{H0_GLOBAL_d5}\;\text{km/s/Mpc}\,.
   \label{eq:Hbase_value}
 \end{equation}
-This number is obtained by deducing \emph{backwards} from the data; $\phiG$ and
-$\pi$ have not yet been invoked.
+This number uses $\phiG$ and $\pi$ only through $\fsc$; the target
+$3(\phiG+\pi)^2$ has not been invoked.
 
-\paragraph{Step P2: the recovered value carries a double algebraic identity.}
-Only now do we ask whether $\val{H0_GLOBAL_d5}$~km/s/Mpc has structure in the closed
-$(\phiG,\pi)$ dictionary. It does, in two independent ways:
+\paragraph{Step P2: the recovered value and the pure number.}
+Only now do we compare $\val{H0_GLOBAL_d5}$~km/s/Mpc with the $(\phiG,\pi)$ dictionary:
 \begin{equation}
   \frac{H_0^{\rm base}}{\mathrm{km\,s^{-1}\,Mpc^{-1}}}
-  \;\simeq\; \underbrace{3(\pi+\phiG)^2}_{\text{algebraic expression}}
-  \;=\; \underbrace{\textsc{mikael}\times\Omega_{\rm DNAV}}_{\text{SSEE expression}}
+  \;\simeq\; 3(\pi+\phiG)^2 \;=\; M_v\,\Omega
   \;=\; \val{H0_ALG_d5}\,,
   \label{eq:double_identity}
 \end{equation}
-where $\Omega_{\rm DNAV}=\pi+\phiG=\val{OMEGA_d6}$ is the Stability Metric and
-$\textsc{mikael}=3\Omega_{\rm DNAV}=\val{M_V_d6}$ coincides in value with the Maximal
-Dimensional Invariant $M_v$ (one of the 25 Sovereign paths to $3\Omega$), generated in
-the lineage from $\textsc{mika}+\pi$ with $\textsc{mika}=K_v+\phiG=\val{dos_Omega_phi_d4}$. The inverse-chain value~\eqref{eq:Hbase_value} exceeds the pure number by
+where $\Omega=\pi+\phiG=\val{OMEGA_d6}$ and $M_v=3\Omega=\val{M_V_d6}$ is the maximal
+dimensional invariant of the dictionary. The two forms are the same expression,
+not two independent identities. The value~\eqref{eq:Hbase_value} exceeds the pure number by
 $\val{p9_hglob_residuo}$~km/s/Mpc, against a propagated uncertainty of
 $\pm\val{p9_hglob_sigma}$~km/s/Mpc; the pure number is the target the output is
 compared with, never an expansion rate.
@@ -1052,9 +1057,8 @@ compared with, never an expansion rate.
 \paragraph{Status.}
 The background that SH0ES requires for exact closure ($\val{H0_GLOBAL_d5}$~km/s/Mpc) coincides, to
 five figures, with the pure number $3(\phiG+\pi)^2$ already present in the
-SSEE dictionary (and independently with $\textsc{mikael}\times\Omega_{\rm DNAV}$).
-This double identity --- recognised a posteriori, not fitted --- is the
-self-consistency evidence that, under the 2026 reframe, justifies adopting
+SSEE dictionary. This coincidence --- recognised a posteriori, not fitted --- is
+the self-consistency evidence that, under the 2026 reframe, justifies adopting
 $\val{H0_ALG_d5}$ as the single algebraic target of the suite rather than the
 CMB-mapped $67.037$ of the earlier register. The dimensional origin of the
 absolute scale (Postulate~D) remains an open problem, as in $\Lambda$CDM.
@@ -1123,7 +1127,7 @@ A standard FLRW fit to $d_L^{\rm obs} = z/H_0^{\rm local}$ therefore returns
 This restates the postulate in terms of the observable $d_L$; it is not an independent derivation.
 The additive approximation $H_0^{\rm glob}(1+\fsc)$ follows from the
 Taylor expansion $(1-\fsc)^{-1}\approx 1+\fsc$ and carries a residual
-error $\fsc^2\,H_0^{\rm glob} \approx 0.31$\,km/s/Mpc.
+error $\fsc^2\,H_0^{\rm glob} \approx \val{p9_add_dif}$\,km/s/Mpc.
 
 \paragraph{Which end is measured.}
 Eq.~\eqref{eq:H0mult_derived} is a relation between two dimensionful rates,
@@ -1139,8 +1143,9 @@ is compared against.
 
 The compression~\eqref{eq:chi_compress} uses a $z$-independent $\fsc$.  With
 the corrected identification this needs no approximation: $\sK = -3w_0(1+w_0)$
-is built from $w_0$ alone, and $w_0$ is a constant of the model, so $\sK$ is a
-number and not a function of redshift.  Since $\MIRA$ is a structural
+is built from $w_0$ alone, and $w_0$ is an algebraic constant (the present
+value; it is $w(a)$ that evolves), so $\sK$ is a number and not a function of
+redshift.  Since $\MIRA$ is a structural
 constant, $\fsc = \sK/(3\MIRA)$ is constant \emph{exactly}, at all $z$.
 
 Earlier versions of this paragraph read $\alphaK(z) = 3\Omde(z)(1+w(z))$ and
@@ -1312,22 +1317,32 @@ Zumalac\'arregui, M., \& Garc\'ia-Bellido, J.\ 2014, \prd, 89, 064046.
 
 % ─── SSEE internal references ─────────────────────────────────────────────
 \bibitem[Almeida(Paper1)]{Paper1}
-Almeida Vallejo, M.E.\ 2026a, SSEE Paper~1: Framework (this series).
+Almeida Vallejo, M.E.\ 2026a, A Minimal-Parameter Framework for Cosmological
+Dynamics and Galaxy Cluster Mass Discrepancies via Structural Self-Energy
+Expansion (SSEE), Paper~1 of this series.
 
 \bibitem[Almeida(Paper2)]{Paper2}
-Almeida Vallejo, M.E.\ 2026b, SSEE Paper~2: MCMC DESI (this series).
+Almeida Vallejo, M.E.\ 2026b, Bayesian MCMC Validation of the Structural
+Self-Energy Expansion Framework (SSEE), Paper~2 of this series.
 
 \bibitem[Almeida(Paper3)]{Paper3}
-Almeida Vallejo, M.E.\ 2026c, SSEE Paper~3: CMB (this series).
+Almeida Vallejo, M.E.\ 2026c, SSEE and the CMB Power Spectrum: Acoustic Peak
+Reproduction via the $\omega_m$-Direct CMB Matter Density, Paper~3 of this series.
 
 \bibitem[Almeida(Paper7)]{Paper7}
-Almeida Vallejo, M.E.\ 2026g, SSEE Paper~7: EFT (this series).
+Almeida Vallejo, M.E.\ 2026g, The SSEE Dark-Energy Sector as a Ghost
+Condensate: Two-Term K-essence, Algebraic Sound Speed, and Bellini--Sawicki
+Classification, Paper~7 of this series.
 
 \bibitem[Almeida(Paper8)]{Paper8}
-Almeida Vallejo, M.E.\ 2026h, SSEE Paper~8: Strong Gravity (this series).
+Almeida Vallejo, M.E.\ 2026h, SSEE in the Strong-Gravity Regime: GR Lensing in
+the Canonical Limit, a Disformal Contrast, and Solar-System Compliance, Paper~8
+of this series.
 
 \bibitem[Almeida(Paper10)]{Paper10}
-Almeida Vallejo, M.E.\ 2026j, SSEE Paper~10: UV Completion (this series).
+Almeida Vallejo, M.E.\ 2026j, UV Extension of SSEE Dark Energy:
+$M^4 = 45\alpha^2\rho_{\rm crit}$ and a Conditional Self-Consistency Check on the
+Hubble Tension, Paper~10 of this series.
 
 \bibitem[Valcin et al.(2021)]{Valcin2021}
 Valcin, D., Jimenez, R., Verde, L., Bernal, J.~L., \& Wandelt, B.~D.\ 2021,
