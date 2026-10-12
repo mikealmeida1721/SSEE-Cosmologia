@@ -416,5 +416,14 @@ rep(r"""& $3(\phiG+\pi)^2$, residual $+4.2{\times}10^{-6}$ \\""",
 rep(r"""$M$ (UV cutoff) & $(5\phiG^8\rho_c)^{1/4}$ & $9.68$ meV & --- \\""",
     r"""$M$ (UV cutoff) & $(5\phiG^8\rho_c)^{1/4}$ (Conj.~C.1) & $\val{M_meV_d2}$ meV & --- \\""")
 
+# R37: toda igualdad con una constante SSEE va a 6 decimales
+for _o, _n in [(r"[2(\phiG+\pi)] = \val{W0_d3}$", r"[2(\phiG+\pi)] = \val{W0_d6}$"),
+               (r"and $\wa = \val{WA_d3}$ are fixed", r"and $\wa = \val{WA_d6}$ are fixed"),
+               (r"= -\frac{P_{\rm sc}}{\pi+P_{\rm sc}} = \val{WA_d5}.", r"= -\frac{P_{\rm sc}}{\pi+P_{\rm sc}} = \val{WA_d6}."),
+               (r"T_r/M_v = \val{S_DE_d4}$", r"T_r/M_v = \val{S_DE_d6}$"),
+               (r"$r=12\alpha/N_*^2=\val{R_TENSOR_d5}$", r"$r=12\alpha/N_*^2=\val{R_TENSOR_d6}$"),
+               (r"$(\wz, \wa) = (\val{W0_d3}, \val{WA_d3})$, fixed", r"$(\wz, \wa) = (\val{W0_d6}, \val{WA_d6})$, fixed")]:
+    rep(_o, _n)
+
 open(P, "w").write(s)
 print("Unified editado")

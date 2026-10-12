@@ -998,5 +998,5 @@ p2_w0wa_ssee_ec26_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.
 # Unified quinta lectura (2026-10-12)
 S_DE_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".4f"}
 mf_rho: {fuente: "results/logs/mcmc_full_posteriores.json#distancia_w0wa.rho", formato: ".2f"}
-mf_sigma8: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.sigma8.media", formato: ".2f"}
-mf_S8: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.S8.media", formato: ".2f"}
+mf_sigma8: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.sigma8.media", formato: ".3f"}
+mf_S8: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.S8.media", formato: ".3f"}
