@@ -33,8 +33,9 @@
 ## Errores de número (log manda)
 14. MCMC multi-sonda: **R−1 < 0.005** (×2) → el log da **0.020**; **«~7×10⁴ muestras
     efectivas»** con 53 116 filas en total → 53 116 tras el corte; **1.73σ** → 1.74σ.
-15. Tabla del apéndice: w₀ DESI **±0.057** → ±0.055; w_a **−0.617±0.208** → −0.62^{+0.22}_{−0.19}
-    (DESI DR2+CMB+Pantheon+, como PRD/Sealed).
+15. Tabla del apéndice: w₀ DESI **±0.057** (es el σ de la combinación DESY5) → ±0.055.
+    w_a −0.617±0.208 se queda: son los momentos de las cadenas oficiales que usa el χ²
+    de P2 (PRD/Sealed citan además el publicado −0.62^{+0.22}_{−0.19}; los dos son ciertos).
 
 ## A mano → macro
 −0.840/−0.670 (×4), 0.24σ (×3), 0.2–1.8σ, 0.8399, −0.66997, 1.0032 (×4), 0.8136 (×3),
@@ -52,6 +53,6 @@ El resumen y el cuerpo nombraban a s_m como Ω_m,dyn (×8) → s_m; 0.3199 (×3)
 Unified 20 pp., P5: 0 errores, 0 desbordes, 0 indefinidos. Releídos en el PDF.
 
 ## Registro cruzado (se suma)
-- Quinta fuerza: 6e-13 a 10 kpc, 2e-? a 1 Mpc (macros de P8), nunca 10⁻¹⁵.
+- Quinta fuerza: 6e-13 a 10 kpc y 6e-9 a 1 Mpc (macros de P8), nunca 10⁻¹⁵.
 - MCMC multi-sonda: R−1 = 0.020, 53 116 filas.
-- DESI DR2+CMB+Pantheon+: w₀ = −0.838 ± 0.055, w_a = −0.62^{+0.22}_{−0.19}.
+- DESI DR2+CMB+Pantheon+: w₀ = −0.838 ± 0.055 (nunca 0.057, que es DESY5); w_a momentos −0.617 ± 0.208, publicado −0.62^{+0.22}_{−0.19}.

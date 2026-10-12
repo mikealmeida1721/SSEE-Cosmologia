@@ -403,8 +403,8 @@ would falsify the sector), $r = 0.008131$ (LiteBIRD),""",
 would falsify the action of Paper~7), $r = \val{R_TENSOR_d6}$ (LiteBIRD),""")
 
 # 13. tabla del apéndice
-rep(r"""$-0.838\pm0.057$ (DESI) \\""", r"""$-0.838\pm0.055$ (DESI DR2+CMB+Pantheon+) \\""")
-rep(r"""$-0.617\pm0.208$ (DESI DR2+CMB+Pantheon+) \\""", r"""$-0.62^{+0.22}_{-0.19}$ (DESI DR2+CMB+Pantheon+) \\""")
+rep(r"""$-0.838\pm0.057$ (DESI) \\""", r"""$-0.838\pm0.055$ (DESI DR2+CMB+Pantheon+, chain moments) \\""")
+rep(r"""$-0.617\pm0.208$ (DESI DR2+CMB+Pantheon+) \\""", r"""$-0.617\pm0.208$ (DESI DR2+CMB+Pantheon+, chain moments) \\""")
 rep(r"""$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & --- \\""",
     r"""$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r)$ & $\val{cs2_condensado_d6}$ & --- \\""")
 rep(r"""$r$ & $\phiG^{-10}$ & $0.008131$ & $<0.036$ (BK18) \\""",
