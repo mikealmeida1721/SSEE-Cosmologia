@@ -283,8 +283,8 @@ p2_rho_cpl: {fuente: "results/logs/resumen_3modelos.json#rho_w0_wa_cpl", formato
 p2_dist_w0: {fuente: "results/logs/resumen_3modelos.json#dist_ssee_a_mediana_cpl_sigma.w0", formato: ".2f"}
 p2_dist_wa: {fuente: "results/logs/resumen_3modelos.json#dist_ssee_a_mediana_cpl_sigma.wa", formato: ".2f"}
 p2_B_sddr: {fuente: "results/logs/savage_cv.json#savage_dickey.B_sddr", formato: ".2f"}
-p2_lnB: {fuente: "results/logs/savage_cv.json#savage_dickey.ln_B", formato: ".2f"}
-p2_lnB_signo: {fuente: "results/logs/savage_cv.json#savage_dickey.ln_B", formato: "+.2f"}
+p2_lnB: {fuente: "results/logs/savage_cv.json#savage_dickey.ln_B", formato: ".3f"}
+p2_lnB_signo: {fuente: "results/logs/savage_cv.json#savage_dickey.ln_B", formato: "+.3f"}
 p2_lyaB_E: {fuente: "results/logs/lya_auditoria.json#ssee.E_lya", formato: ".3f"}
 p2_lyaB_DH: {fuente: "results/logs/lya_auditoria.json#ssee.DH_lya", formato: ".0f"}
 p2_lyaB_rd: {fuente: "results/logs/lya_auditoria.json#ssee.rd", formato: ".2f"}
@@ -940,3 +940,18 @@ p5_cruce_rmax: {fuente: "results/logs/p5_cruce_fantasma_IS.json#perturbaciones_c
 p5_cruce_ctrl_k100: {fuente: "results/logs/p5_cruce_fantasma_IS.json#control_c2_w0.5.r", formato: "tex.1e"}
 tension_s8_desy3_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.DES-Y3", formato: ".2f"}
 dchi2_leg_unif_libre: {fuente: "results/logs/kids_legacy_bic.json#delta_chi2.unif_menos_libre", formato: "+.3f"}
+# quinta lectura P7 (2026-10-11): el campo rueda; fondo con la viscosidad de Eckart
+p7_Xbg_pct: {fuente: "results/logs/algebra_derivada.json#algebra.p7_Xbg_pct.valor", formato: ".1f"}
+p7_norm_err_pct: {fuente: "results/logs/algebra_derivada.json#algebra.p7_norm_err_pct.valor", formato: ".1f"}
+p7_cuartal_pct: {fuente: "results/logs/algebra_derivada.json#algebra.p7_cuartal_pct.valor", formato: ".2f"}
+p7_wa_campo: {fuente: "results/logs/p7_fondo_campo.json#A_campo_solo.wa_local", formato: "+.2f"}
+p7_wphi_a05: {fuente: "results/logs/p7_fondo_campo.json#A_campo_solo.w_phi.a050", formato: "+.2f"}
+p7_wphi_a03: {fuente: "results/logs/p7_fondo_campo.json#A_campo_solo.w_phi.a030", formato: "+.2f"}
+p7_visc_w0: {fuente: "results/logs/p7_fondo_campo.json#B_campo_mas_viscosidad.cpl.w0", formato: "+.2f"}
+p7_visc_wa: {fuente: "results/logs/p7_fondo_campo.json#B_campo_mas_viscosidad.cpl.wa", formato: "+.2f"}
+p7_visc_sig: {fuente: "results/logs/p7_fondo_campo.json#B_campo_mas_viscosidad.sigma_desi", formato: ".1f"}
+p7_visc_zc: {fuente: "results/logs/p7_fondo_campo.json#B_campo_mas_viscosidad.z_cruce", formato: ".2f"}
+p7_visc_afant: {fuente: "results/logs/p7_fondo_campo.json#B_campo_mas_viscosidad.a_campo_fantasma", formato: ".2f"}
+p7_barrido_sig: {fuente: "results/logs/p7_fondo_campo.json#C_barrido.mejor_estable.sigma", formato: ".1f"}
+p7_barrido_muere: {fuente: "results/logs/p7_fondo_campo.json#C_barrido.n_campo_muere", formato: "d"}
+p7_barrido_n: {fuente: "results/logs/p7_fondo_campo.json#C_barrido.n", formato: "d"}

@@ -32,7 +32,8 @@ from scipy.integrate import solve_ivp
 
 sys.path.insert(0, '/home/mike/Proyectos/SSEE/src')
 import ssee_core as S
-from procedencia import con_acta  # noqa: E402
+from procedencia import cabecera, con_acta  # noqa: E402
+print(cabecera(__file__), flush=True)
 
 W0, WA = S.W0, S.WA
 PSC = 2 * S.PHI + S.PI

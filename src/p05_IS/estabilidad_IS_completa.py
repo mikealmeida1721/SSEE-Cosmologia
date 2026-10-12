@@ -30,7 +30,8 @@ from scipy.optimize import brentq
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
 import ssee_core as S  # noqa: E402
-from procedencia import con_acta  # noqa: E402
+from procedencia import cabecera, con_acta  # noqa: E402
+print(cabecera(__file__), flush=True)
 
 W0, WA, OM, KAL0, TAU = S.W0, S.WA, S.OMEGA_M_TOTAL, S.KAL0, S.TAU_PI_H0
 OD = 1.0 - OM

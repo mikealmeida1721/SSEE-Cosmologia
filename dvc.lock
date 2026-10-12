@@ -83,12 +83,12 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 07799564426d637f77b2c906456ce269
-      size: 94237
+      md5: 5ec3ece14f71671ca83af277ed0718ed
+      size: 95763
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 447faf12ce6fc57680c30e3e72811deb
-      size: 16553
+      md5: 4a20071fdc4e8c95c16fe977bd6f1bed
+      size: 17068
     - path: results/logs/b1_k2.json
       hash: md5
       md5: 92110af50831bb1faa0a88a5926c3bab
@@ -119,7 +119,7 @@ stages:
       size: 1852
     - path: results/logs/dic_from_chains.json
       hash: md5
-      md5: 93831f98c6929a2b3928fdcb61dfd1f1
+      md5: 22bfb1150e317866975a117cc7829c86
       size: 1460
     - path: results/logs/edad_universo.json
       hash: md5
@@ -223,7 +223,7 @@ stages:
       size: 1391
     - path: results/logs/p2_fig8_rd.json
       hash: md5
-      md5: bdcf48229d2339a835fa933b0b203374
+      md5: da6852e5718ea22f0401fe14521509d3
       size: 1305
     - path: results/logs/p3_rd_reframe_omega_m.json
       hash: md5
@@ -249,6 +249,10 @@ stages:
       hash: md5
       md5: 10a09935854f896915e03a4b47f2d73d
       size: 3512
+    - path: results/logs/p7_fondo_campo.json
+      hash: md5
+      md5: 0c0014ed889258942e585fd1a4e9139a
+      size: 2087
     - path: results/logs/p9_cascada_control.json
       hash: md5
       md5: 32715c8b9efec7484633bdfddbff5a5e
@@ -279,8 +283,8 @@ stages:
       size: 4022
     - path: results/logs/ppc_cronometros.json
       hash: md5
-      md5: f240ba39c1f5f4868a25ade475b92c0e
-      size: 2827
+      md5: d500dc1a54166f192c09b2ec1b9ce80e
+      size: 2830
     - path: results/logs/press_schechter.json
       hash: md5
       md5: a8a7fc5e58f5374e02f56efa0cc49adf
@@ -291,8 +295,8 @@ stages:
       size: 2444
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 30954b83e3ee26bd38228b59e506284f
-      size: 4520
+      md5: a48a6e2601b075935ea11ca2b45138c9
+      size: 4471
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: dbd22cd1e8f3c6d45e33c9055a6e0a85
@@ -303,8 +307,8 @@ stages:
       size: 1867
     - path: results/logs/savage_cv.json
       hash: md5
-      md5: 58c6b5f3b11b0eef8249bba13347200d
-      size: 2647
+      md5: 91e5c86f678206c6f36f9956b155c432
+      size: 2645
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
       md5: effad68c5c7922eda8beea7d69665476
@@ -316,8 +320,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 038ea3879b82c85ffd3fdb802650b8a7
-      size: 117070
+      md5: 732f252841f66e29690e332bb2af12df
+      size: 118936
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -2224,7 +2228,7 @@ stages:
     - path: 
         /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
-      md5: 4fa9bcabe46e5f0e355b759207809245
+      md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
     - path: data/raw/cosmic_chronometers.csv
       hash: md5
@@ -2232,12 +2236,12 @@ stages:
       size: 1413
     - path: results/logs/mcmc_paper2_3models_wmfix.log
       hash: md5
-      md5: febc767c5e63704cd040d8163c102558
+      md5: eabe024f6d0980fab7da8fbf6882578a
       size: 11579
     - path: src/p02_mcmc/ppc_cronometros.py
       hash: md5
-      md5: 6b30f826903a8b18132ed16f63ad8451
-      size: 6287
+      md5: cd56f49409aa10c4aa7c24b4b8fd845f
+      size: 6388
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -2249,12 +2253,12 @@ stages:
     outs:
     - path: manuscript/tabla_cronometros_generada.tex
       hash: md5
-      md5: 919e1eb75a00ba9992aca9ead9c9db2c
+      md5: 6895bf650eb21f451ebf40e50b0ff181
       size: 1639
     - path: results/logs/ppc_cronometros.json
       hash: md5
-      md5: f240ba39c1f5f4868a25ade475b92c0e
-      size: 2827
+      md5: d500dc1a54166f192c09b2ec1b9ce80e
+      size: 2830
   p2_fig7_fig8:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p02_mcmc/regenerate_fig7_fig8_p2.py
