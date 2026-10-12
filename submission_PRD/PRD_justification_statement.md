@@ -8,8 +8,8 @@ paper merits publication. Paste into the submission form.)*
 After DESI, a question has moved to the center of cosmology: is the dark-energy
 equation of state a quantity to be fitted, or one fixed by structure? This paper
 presents a minimal-parameter framework in which w0 = -0.840 and wa = -0.670 follow
-as bare ratios of two dimensionless constants, and tests this pre-registered point
-against DESI DR2 (0.24σ) and Planck 2018 (PR3 spectra, PR4 lensing), with a pre-committed DESI DR3 falsifier.
+as bare ratios of two dimensionless constants, and tests this fixed point
+against DESI DR2 (0.24σ) and Planck 2018, with a pre-committed DESI DR3 falsifier.
 Unlike ΛCDM extensions that add parameters, it removes them, yet stays consistent
 with BAO, CMB, and growth data. The result is a sharply falsifiable, parameter-frugal
 alternative that PRD readers working on dynamical dark energy will want to test.

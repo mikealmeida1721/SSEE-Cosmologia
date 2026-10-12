@@ -16,7 +16,7 @@ def rep(old, new, n=1):
 
 # 0. un solo H_glob; el residuo no es sigma; la fecha
 rep(r"H_0^{\rm glob,UV}", r"H_0^{\rm glob}", n=3)
-rep(r"\date{May 2026}", r"\date{\today}")
+# la fecha de portada no se toca: la mueve sólo preparar_publicacion.py
 
 # 1. resumen
 rep(r"""The dark energy equation of state $\wz = -(3\phiG+\pi)/[2(\phiG+\pi)] \simeq -0.840$
