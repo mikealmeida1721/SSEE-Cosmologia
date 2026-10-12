@@ -139,6 +139,8 @@ ALGEBRA = {
     "quinta_fuerza_10kpc": ("(H0_GLOBAL*0.01/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)", "F_phi/F_N cuasi-estatico a k = 1/(10 kpc), radio de Einstein galactico (P8)"),
     "M_meV":          ("1e3*(5*PHI**8*3*(H0_GLOBAL*1e3/3.0856775814913673e22*6.582119569e-16)**2*2.435323e27**2)**0.25", "M = (5 phi^8 rho_crit)^(1/4) en meV con H_glob (P8, P10)"),   # ORIGEN-VALOR: 3.0856775814913673e22 m = 1 Mpc (IAU 2015); 6.582119569e-16 eV s = hbar (CODATA 2018, exacta); 2.435323e27 eV = masa de Planck reducida (CODATA 2018 G)
     "eps_UV":         ("_X_UV**2/_M4_UV", "X_bg^2/M^4 en unidades rho_crit = 1 (P8, P10)"),
+    # quinta lectura P9 (2026-10-12)
+    "frac_de_zstar":  ("(1-OMEGA_M_TOTAL)*1090**(3*(1+W0+WA))*math.exp(-3*WA*1089/1090)/(OMEGA_M_TOTAL*1090**3+(1-OMEGA_M_TOTAL)*1090**(3*(1+W0+WA))*math.exp(-3*WA*1089/1090))", "fraccion de energia oscura en z*=1089, CPL sin radiacion: cota superior (P9)"),   # ORIGEN-VALOR: 1089 — z* de Planck 2018 VI (1089.9)
 }
 
 res, errores = {}, []
