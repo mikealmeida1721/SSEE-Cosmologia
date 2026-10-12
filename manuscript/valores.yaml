@@ -835,7 +835,6 @@ p10_f_1sig: {fuente: "results/logs/p10_barrido_M4.json#f_a_1sigma", formato: ".2
 p10_X_red_pct: {fuente: "results/logs/p10_barrido_M4.json#X_reduccion_pct", formato: ".1f"}
 p10_u_bg: {fuente: "results/logs/p10_barrido_M4.json#u_bg", formato: "tex.2e"}
 p10_cs2_func: {fuente: "results/logs/p10_barrido_M4.json#cs2_funcional", formato: ".3f"}
-p10_dw0: {fuente: "results/logs/p10_barrido_M4.json#dw0_primer_orden", formato: "tex.1e"}
 rhoc14_meV_d2: {fuente: "results/logs/p10_barrido_M4.json#rhoc14_meV", formato: ".2f"}
 p5_tf_z1_Om: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.Om_ssee", formato: ".3f"}
 p5_tf_z1_fS: {fuente: "results/logs/p5_IS_perturbations_Q3.json#tabla_f.0.f_ssee", formato: ".3f"}

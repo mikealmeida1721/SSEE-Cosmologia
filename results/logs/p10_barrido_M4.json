@@ -21,7 +21,6 @@
  "u_bg": 0.0015533585038186928,
  "cs2_funcional": 0.9673721485530675,
  "eps": 0.0005667800105186602,
- "dw0_primer_orden": 0.0023751184883811214,
  "rhoc14_meV": 2.4728611838071592,
  "control": {
   "criterio": "f = 1 reproduce H0_GLOBAL de ssee_core a 1e-10",
@@ -31,17 +30,17 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "8246d0363735dd2037cedfd39b8910785e612dd4",
+  "commit": "f17aaacd750110e4f937f53a710f3901d2d4582f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p10_uv/barrido_M4.py",
-  "script_sha256": "6cc8cea96ad78ff4ef8b647e7061ea337cdcf57153a8d163f1f14c703f8b4e45",
+  "script_sha256": "eecc8b9dc01964680613471d9ed977eac77b479b02974086d06f05661b1d0dbc",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p10_uv/barrido_M4.py"
   ],
-  "fecha": "2026-10-12T01:06:59",
+  "fecha": "2026-10-12T10:35:57",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

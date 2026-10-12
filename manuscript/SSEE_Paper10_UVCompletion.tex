@@ -293,36 +293,39 @@ against $c_2$.
 
 \subsection{Self-consistent background kinetic energy}
 
-The background equation of motion for $K(X) = X/\KAL + X^2/M^4$ is
+The background of the functional is imposed from the equation of state, not
+solved from $K(X)$: its kinetic term is required to reproduce $\sK$,
 \begin{equation}
-  2X K_X \;=\; \rho_\phi(1+w_0)\,,
+  2X K_X \;=\; \frac{\sK^{\rm IR}}{3} \;=\; s_{\rm DE}\,s_m\,,
   \quad
   K_X \;=\; \frac{1}{\KAL} + \frac{2X}{M^4}\,,
 \end{equation}
 giving a quadratic equation for the self-consistent $X_{\rm bg}$:
 \begin{equation}
   \frac{4\,X_{\rm bg}^2}{M^4} + \frac{2\,X_{\rm bg}}{\KAL}
-  - \rho_\phi(1+w_0) \;=\; 0\,.
+  - s_{\rm DE}\,s_m \;=\; 0\,.
   \label{eq:quadratic}
 \end{equation}
 The physical (positive) root is
 \begin{equation}
   X_{\rm bg}^{\rm UV}
-  \;=\; \frac{-1/\KAL + \sqrt{1/\KAL^2 + 4\,\rho_\phi(1+w_0)/M^4}}
+  \;=\; \frac{-1/\KAL + \sqrt{1/\KAL^2 + 4\,s_{\rm DE}s_m/M^4}}
              {4/M^4}\,.
 \end{equation}
-With $M^4 = 45\alpha^2\rhoc = \val{_M4_UV_d2}\rhoc$ and the SSEE background
-$\rho_\phi(1+w_0) = \sK^{\rm IR}/3 = s_{\rm DE}\,s_m = \val{sK_tercio_d5}$ (in units $\rhoc = 1$),
+With $M^4 = 45\alpha^2\rhoc = \val{_M4_UV_d2}\rhoc$ and
+$s_{\rm DE}\,s_m = \sK^{\rm IR}/3 = \val{sK_tercio_d5}$ (in units $\rhoc = 1$),
 we find
 \begin{equation}
   X_{\rm bg}^{\rm UV} \;=\; \val{_X_UV_d5}\,\rhoc\,,
   \quad
   \frac{X_{\rm bg}^{\rm UV}}{X_{\rm bg}^{\rm IR}} \;=\; \val{X_UV_sobre_IR_d4}\,,
 \end{equation}
-Here $\rho_\phi$ stands for the saturation $s_{\rm DE}=|w_0|$, not for the density
-fraction $1-\omega_m/h^2$: the density carries $h$, and nothing that enters $\fsc$
+The right-hand side contains $s_{\rm DE}=|w_0|$, the saturation, and no density:
+the density fraction $1-\omega_m/h^2$ carries $h$, and nothing that enters $\fsc$
 may carry $H$ (the only $H$ in the cascade is the measured SH0ES rate; Paper~9,
-Step~4). This is a \val{p10_X_red_pct}\% reduction from the IR value $X_{\rm bg}^{\rm IR} = \val{X_bg_IR_d5}\,\rhoc$.
+Step~4). Earlier versions wrote it as $\rho_\phi(1+w_0)$ with $\rho_\phi=|w_0|\rhoc$,
+from the time when $|w_0|$ was taken for the dark-energy density; that reading
+is withdrawn, and the numbers do not change. This is a \val{p10_X_red_pct}\% reduction from the IR value $X_{\rm bg}^{\rm IR} = \val{X_bg_IR_d5}\,\rhoc$.
 The UV correction is perturbative: $\varepsilon \equiv X_{\rm bg}^2/M^4
 \approx \val{eps_UV}$ (in units $\rhoc=1$).
 
@@ -886,28 +889,12 @@ i.e.\ through the cascade, and the cascade does not measure $M^4$
 from its IR limit.
 
 \paragraph{Effective equation of state.}
-The UV term $X^2/M^4$ in $K(X)$ modifies the effective pressure as
-\begin{equation}
-  p_\phi^{\rm UV} \;=\; \frac{X}{\KAL} + \frac{X^2}{M^4} - V(\phi)\,,
-  \qquad
-  \rho_\phi^{\rm UV} \;=\; \frac{X}{\KAL} + \frac{3X^2}{M^4} + V(\phi)\,,
-\end{equation}
-Under the background matching of Eq.~\eqref{eq:quadratic} --- which holds
-$\rho_\phi$ and $\rho_\phi(1+w_0)$ fixed at their IR values --- $w_0$ is
-unchanged by construction (the field value $X_{\rm bg}$ adjusts instead).
-A residual shift appears only if one holds the field configuration
-$(X_{\rm bg}, V)$ fixed when switching on the UV term, in which case the
-first-order estimate is
-\begin{equation}
-  \Delta w_0^{\rm UV}
-  \;=\; w_0^{\rm UV} - w_0^{\rm IR}
-  \;\approx\; \frac{(1-3w_0)\,X_{\rm bg}^2/M^4}{\rho_\phi}
-  \;\approx\; +\val{p10_dw0}\,.
-\end{equation}
-Either way, $|\Delta w_0| \lesssim \val{p10_dw0}$ lies well below the projected
-Euclid sensitivity ($\sigma_{w_0} \approx 0.01$): the UV term leaves the
-background equation of state observationally indistinguishable from the
-IR limit.
+The background of the functional is imposed from the equation of state
+(Eq.~\eqref{eq:quadratic}): $w_0$ is an input and $X_{\rm bg}$ adjusts, so the UV
+term does not shift $w_0$. An earlier version estimated a residual shift
+$\Delta w_0\approx+2.4\times10^{-3}$ by holding a potential $V(\phi)$ fixed and
+dividing by a density $\rho_\phi$; Paper~7 has no potential and the background
+here carries no density, so that estimate is withdrawn.
 
 \paragraph{Sound speed: one observable, one auxiliary number.}
 The sound speed of the dark-energy field, the one that controls whether dark

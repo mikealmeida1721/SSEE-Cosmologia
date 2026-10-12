@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 4cae1dc30dd5bb238d32cd6cd61bda32
-      size: 99551
+      md5: bc581a6732c5e958b60addda44ff1729
+      size: 99461
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: 7c9f0b5ee001413c8f1d11118a23ede0
@@ -219,12 +219,12 @@ stages:
       size: 1143
     - path: results/logs/p10_barrido_M4.json
       hash: md5
-      md5: dfea6fdc6bf29d4a4675d2aaf639f4bc
-      size: 1656
+      md5: b976f9f348e2ea1496b18d5295d861c6
+      size: 1612
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
-      md5: 2ee417e6284fc82db38228ed4dea3d87
-      size: 1391
+      md5: 6265b437f17d580ff53ea6967a201116
+      size: 1390
     - path: results/logs/p2_fig8_rd.json
       hash: md5
       md5: da6852e5718ea22f0401fe14521509d3
@@ -328,8 +328,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 5d6f177045062406b3bf05e04407b0bb
-      size: 123798
+      md5: dd63ace6e6171c582eb3f20ff11d399f
+      size: 123676
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -5298,8 +5298,8 @@ stages:
     deps:
     - path: src/p10_uv/barrido_M4.py
       hash: md5
-      md5: b242808e68c52c27e5bcc275d87254ae
-      size: 4750
+      md5: 0c2a12e60afc6fba64c064c018ba5721
+      size: 4613
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -5311,5 +5311,5 @@ stages:
     outs:
     - path: results/logs/p10_barrido_M4.json
       hash: md5
-      md5: dfea6fdc6bf29d4a4675d2aaf639f4bc
-      size: 1656
+      md5: b976f9f348e2ea1496b18d5295d861c6
+      size: 1612
