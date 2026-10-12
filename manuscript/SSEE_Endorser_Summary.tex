@@ -30,8 +30,9 @@
 
 \subsection*{Core idea in one sentence}
 
-The core cosmological background — $w_0$, $w_a$, $H_0$, $\Omega_m$, $n_s$ — is derived \emph{algebraically} from the
-golden ratio $\varphi=(1+\sqrt{5})/2$ and $\pi$ with \textbf{zero fitted dimensionless parameters at the background level}. The kineticity $\alpha_K=\val{alpha_K_z0_d6}$ of the dark-energy condensate (Paper~7) is
+The dimensionless core of the cosmological background — $w_0$, $w_a$, $\Omega_m$, $n_s$ — is derived \emph{algebraically} from the
+golden ratio $\varphi=(1+\sqrt{5})/2$ and $\pi$ with \textbf{zero fitted dimensionless parameters at the background level}; the
+one dimensionful input is the measured local rate (SH0ES), from which the global $H_0$ follows. The kineticity $\alpha_K=\val{alpha_K_z0_d6}$ of the dark-energy condensate (Paper~7) is
 derived, not fitted, and is unobservable on linear scales. The dark-sector ans\"atze that previously appeared here ($m_\varphi$, $\xi$) were retracted in 2026-08 together with the second matter sector, and their register entries (OP-9 through OP-12) close by dissolution; the MIRA matter mechanism (OP-8) had already dissolved under the $\omega_m$-direct reframe. The remaining open entries are listed in \texttt{OPEN\_PROBLEMS.md}.
 
 \subsection*{Key algebraic predictions}
@@ -46,7 +47,7 @@ $w_0$ & $-T_r/M_v = \val{W0_d6}$ & DESI DR2+CMB+Pantheon+: $-0.838\pm0.055$ & $\
 $w_a$ & $-P_{sc}/I_g = \val{WA_d6}$ & DESI DR2+CMB+Pantheon+: $-0.617\pm0.208$ & $\val{p2_dwa_ec26}\sigma$; joint 2D: $\val{p2_w0wa_ssee_ec26}\sigma$ \\
 $3(\varphi+\pi)^2$ (target) & pure number $= \val{H0_ALG_d5}$ & Planck 2018: $67.36\pm0.54$ & $\val{h0alg_planck_sig}\sigma$ \\
 $\Omega_{m,\rm CMB}$ & $\omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct) & Planck 2018: $0.3153\pm0.0073$ & $\val{om_planck_sig}\sigma$ \\
-$r_d$ & CAMB ($\omega_m$-direct): $\val{mf_rdrag_alg}$ Mpc & Planck 2018: $147.09\pm0.26$ Mpc & $\val{p3_rd_sig_anc}\sigma$ \\
+$r_d$ & CAMB ($\omega_m$-direct): $\val{mf_rdrag_alg}$ Mpc & Planck 2018: $\val{rd_planck}\pm\val{rd_planck_sigma}$ Mpc & $\val{p3_rd_sig_anc}\sigma$ \\
 $H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-f_{\rm scr}) = \val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\varphi+\pi)^2 = \val{H0_ALG_d5}$ & residual $+\val{p9_hglob_residuo}$ ($\sigma=\val{p9_hglob_sigma}$) \\
 $n_s$ & $1-\varphi^{-7} = \val{N_S_d6}$ & Planck 2018: $0.9649\pm0.0042$ & $\val{ns_planck_sig}\sigma$ \\
 $r$ & $\varphi^{-10} = \val{R_TENSOR_d6}$ & BK18: $r<0.036$ & Prediction \\
@@ -61,13 +62,13 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
 \subsubsection*{I. Derived Algebraic Background}
 \begin{itemize}
   \item \textbf{Paper 1 (Framework)}: Algebraic derivation of geometric constants; $\alpha$-attractor embedding ($\alpha=\varphi^4/3$). [35 pp]
-  \item \textbf{Paper 4 (Nine Sovereignties)}: CMB observables ($\ell_1$, $\ell_2$, $\ell_3$, $\theta_*$, $A_s$, $n_s$, $\tau$, $r$) bounded algebraically. [19 pp]
+  \item \textbf{Paper 4 (Two-Axiom Cosmology)}: CMB observables ($\ell_1$, $\ell_2$, $\ell_3$, $\theta_*$, $A_s$, $n_s$, $\tau$, $r$) bounded algebraically. [19 pp]
 \end{itemize}
 
 \subsubsection*{II. Tested Against Data}
 \begin{itemize}
-  \item \textbf{Paper 2 (MCMC)}: 100 walkers $\times$ 25\,000 steps vs.\ DESI DR2 + Planck (the cluster term was removed: cluster masses are tested separately, in general relativity, against the $\val{clz_rgig_N}$ systems of Zhang et al.\ 2026); $\Delta\text{BIC}=\val{p2_dBIC_lcdm}$ (SSEE favoured, $k_{\rm SSEE}=2$ vs.\ $k_{\Lambda\rm CDM}=3$), total matter density in the background geometry. [31 pp] Convention throughout this summary: $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours SSEE.
-  \item \textbf{Paper 3 (CMB Confrontation)}: CAMB $\omega_m$-direct ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$); Cobaya full \texttt{plik} MCMC; $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (canonical; $-26.03$ in the \texttt{plik\_lite} point estimate with $\{A_s,\tau\}$ fitted and $N=669$ measured from the likelihood), SSEE favoured under $k=2$ vs $k=6$ model comparison. [26 pp]
+  \item \textbf{Paper 2 (MCMC)}: 100 walkers $\times$ 25\,000 steps vs.\ DESI DR2 + Planck (the cluster term was removed: cluster masses are tested separately, in general relativity, against the $\val{clz_rgig_N}$ systems of Zhang et al.\ 2026); $\Delta\text{BIC}=\val{p2_k0_dBIC_lcdm}$ with nothing free ($k_{\rm SSEE}=0$ vs.\ $k_{\Lambda\rm CDM}=3$; $\val{p2_dBIC_lcdm}$ in the conservative version that samples $H_0$ and $\Omega_b h^2$), total matter density in the background geometry. [28 pp] Convention throughout this summary: $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours SSEE.
+  \item \textbf{Paper 3 (CMB Confrontation)}: CAMB $\omega_m$-direct ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$); Cobaya full \texttt{plik} MCMC; $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (canonical; $\val{lite_dBIC}$ in the \texttt{plik\_lite} point estimate with $\{A_s,\tau\}$ fitted and $N=\val{lite_N}$ measured from the likelihood), SSEE favoured under $k=2$ vs $k=6$ model comparison. [24 pp]
   \item \textbf{Paper 6 (Growth sector, against raw $\xi_\pm$)}: retracts an
   earlier two-sector $\varphi$-DM proposal and its particle --- the subtraction
   defining the second sector mixed a measured density with an
@@ -92,37 +93,38 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
 
 \subsubsection*{III. Phenomenological Extensions \& Open Directions}
 \begin{itemize}
-  \item \textbf{Paper 5 (Israel--Stewart Perturbations)}: Causal bulk viscosity; $c_s^2=0$ as the minimal-viscosity solution (OP-21); $\gamma_{\rm IS}=\val{p3_gamma_IS}\approx\gamma_{\Lambda\rm CDM}$. [31 pp]
+  \item \textbf{Paper 5 (Israel--Stewart Perturbations)}: Causal viscosity; the vanishing high-frequency sound speed is \emph{not} a stability result --- the dark-energy sector is stabilised by the sound speed of the field of Paper~7; $\gamma_{\rm IS}=\val{p3_gamma_IS}\approx\gamma_{\Lambda\rm CDM}$. [29 pp]
   \item \textbf{Paper 7 (Canonical EFT Proposal)}: the action is a minimally
   coupled ghost condensate, $K(X)=c_1X+c_2X^2$, with no potential and no dark
   coupling; $\alpha_T=\alpha_M=\alpha_B=0$, $\alpha_K=\val{alpha_K_z0_d6}$ (not
   observationally accessible) and sound speed $c_s^2=\val{cs2_condensado_d6}$. The same action
-  fixes $w_0$ but not $w_a$ (OP-24). [17 pp]
+  fixes $w_0$ and $c_s^2$ today but not $w_a$: the field rolls towards $w=-1$ and cannot cross it (OP-24). [18 pp]
 \end{itemize}
 
 \subsubsection*{IV. Strong-Field Regime, Hubble Tension \& UV Completion}
 \begin{itemize}
-  \item \textbf{Paper 8 (Strong Gravity)} [\emph{draft; its canonical lensing prediction rests on $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ and $\alpha_B=\alpha_M=0$ (Paper~7), and is unconditional}]: Disformal null geodesic analysed in
-  two limits: alternative MOND-like (deflection $\sqrt{\text{AURA}}\approx \val{sqrt_AURA_d4}$,
-  numerically close to $\mathcal{M}=\text{AURA}/2$ at $0.03\%$ but algebraically
-  distinct) and the canonical limit with EFT $\alpha_B=\alpha_M=\alpha_T=0$
-  (residual fifth-force $\sim 10^{-15}$ at kpc, observable lensing recovers GR);
-  selective coupling satisfies solar-system tests. Current SLACS/BELLS data
-  favour the canonical limit (OPEN\_PROBLEMS.md OP-13). No screening radius is
+  \item \textbf{Paper 8 (GR Lensing in the Canonical Limit)}: its canonical lensing prediction rests on $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ and $\alpha_B=\alpha_M=0$ (Paper~7), and is unconditional. In the canonical limit
+  the residual fifth force is $\sim\val{quinta_fuerza_10kpc}$ at $10$~kpc and the observable lensing is that of GR with
+  the model's cold matter; a disformal contrast (deflection $\sqrt{\text{AURA}}=\val{sqrt_AURA_d4}$) is kept
+  only for comparison and makes no prediction. Baryons do not couple to the scalar, so
+  solar-system tests are satisfied. Current SLACS/BELLS data are consistent with the
+  canonical limit (OPEN\_PROBLEMS.md OP-13). No screening radius is
   quoted: an earlier Vainshtein/k-mouflage radius formula was dimensionally
   inconsistent and has been withdrawn (OP-4, closed 2026-10-03); the
   canonical-limit prediction never used it and rests on $\omega_c$ and on
-  $\alpha_B=\alpha_M=0$. [19 pp]
+  $\alpha_B=\alpha_M=0$. [17 pp]
   \item \textbf{Paper 9 (Hubble Tension)}: Algebraic local screening fraction
   $f_{\rm scr}^{\rm IR}=(\pi-\varphi)/(\varphi+\pi)^2=\val{F_SCREEN_IR_d6}$ applied to the
   measured SH0ES rate $73.04\pm1.04$ returns, with the IR term alone,
   $H_0^{\rm glob,IR}=\val{p9_sh0es_glob_IR}$ km/s/Mpc, $\val{p9_sh0es_sig_IR}\sigma$ from the pure algebraic number
   $3(\varphi+\pi)^2=\val{H0_ALG_d5}$, the comparison target (SH0ES is the
-  input; no fitted parameters) (2026 reframe; the earlier CMB-mapped
-  $H_0^{\rm MIRA}=67.04$ is superseded). [20 pp]
+  input; no fitted parameters; the multiplicative screening is a postulate). With the
+  UV term of Paper~10 the same cascade gives the single global rate
+  $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. [22 pp]
   \item \textbf{Paper 10 (UV Completion)}: Higher-derivative operator
-  $K(X)=X/\mathrm{KAL}_0+X^2/M^4$ with algebraic cutoff $M=9.68$ meV; connects
-  the dark-energy EFT to the inflationary $\alpha$-attractor. [16 pp]
+  $K(X)=X/\mathrm{KAL}_0+X^2/M^4$ whose cutoff $M=\val{M_meV_d2}$ meV is conjectured to be set by
+  the inflationary $\alpha$-attractor (Conjecture~C.1); the Hubble cascade is consistent with
+  it but does not measure it. [16 pp]
 \end{itemize}
 
 \subsection*{Falsifiability (explicit)}
@@ -135,12 +137,12 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
     to absorb the discrepancy (KiDS, DES, Euclid).
   \item $\log(10^{10}A_s)$ — the amplitude the shear asks for must keep
     agreeing with the one the CMB fixes. KiDS-1000 asked for $\val{logA_k1000}\pm\val{logA_k1000_sigma}$
-    ($\val{logA_k1000_vs_cmb}\sigma$ away) and KiDS-Legacy for $3.0255\pm0.0396$ ($0.49\sigma$);
+    ($\val{logA_k1000_vs_cmb}\sigma$ away) and KiDS-Legacy for $\val{leg_logA}\pm\val{leg_logA_s}$ ($\val{logA_leg_vs_cmb}\sigma$);
     the two releases differ from each other by $\val{logA_entre_entregas}\sigma$. A future release
     returning to the lower value reopens the sector.
   \item $\alpha_T=\alpha_M=\alpha_B=0$ (Paper~7) — gravity is unmodified, $G_{\rm eff}=G_N$ and no gravitational slip; a detected slip or $\mu\neq1$ in Euclid/LSST lensing$\times$clustering would falsify the sector.
-  \item $r=\varphi^{-10}=0.008131$ — LiteBIRD ($\sim$2032) will confirm or refute the tensor-to-scalar ratio.
-  \item A $>3\sigma$ deviation of $w_0$ from $-0.840$ would falsify the corresponding background sector of the framework.
+  \item $r=\varphi^{-10}=\val{R_TENSOR_d6}$ — LiteBIRD will confirm or refute the tensor-to-scalar ratio.
+  \item A $>3\sigma$ deviation of $(w_0,w_a)$ from $(\val{W0_d3},\val{WA_d3})$ in DESI~DR3 would falsify the corresponding background sector of the framework.
 \end{itemize}
 
 \subsection*{What I am asking for}
