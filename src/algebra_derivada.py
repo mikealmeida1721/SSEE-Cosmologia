@@ -101,6 +101,7 @@ ALGEBRA = {
     "Om_sigma_planck": ("abs(OMEGA_M_TOTAL-0.3153)/0.0073", "Omega_m = omega_m/h^2 frente a Planck, en sigma"),   # ORIGEN-VALOR: 0.3153, 0.0073 — Planck 2018 VI Tabla 2
     "H0alg_sigma_planck": ("abs(H0_ALG-67.36)/0.54", "el numero puro 3(phi+pi)^2 frente al H0 de Planck, en sigma"),   # ORIGEN-VALOR: 67.36, 0.54 — Planck 2018 VI Tabla 2
     "WA_abs":          ("abs(WA)", "|w_a| = P_sc/IGNIS, para la busqueda look-elsewhere (Sealed)"),
+    "solarnyx_d":      ("abs(WA) - (PHI+2*PI)/((PHI+7*PI)/2)", "|d| entre |w_a| y el casi-valor SOLAR/NYX (PRD, Sealed)"),
     "Om_sin_nu":       ("(OMEGA_B_H2+OMEGA_C_H2)/(H0_GLOBAL/100)**2", "Omega_m sin omega_nu: muestra que el neutrino no es opcional (Sealed)"),
     "Om_sin_nu_pct":   ("100*OMEGA_M_H2/(OMEGA_B_H2+OMEGA_C_H2)-100", "corrimiento relativo en % al quitar omega_nu"),
     "Yp_ssee":        ("0.2471+0.0016*273.9*(OMEGA_B_H2-0.02237)", "Y_p lineal, Paper 4"),   # ORIGEN-VALOR: 0.2471 y 0.02237 — Y_p BBN de Planck 2018 VI en su omega_b; 0.0016 = dY_p/d(eta_10) y 273.9 = eta_10/omega_b — Steigman 2007 (ARNPS 57, 463). Era 0.96 «de AlterBBN (Pisanti 2008)»: 2.2 veces la sensibilidad publicada (quinta lectura P4, 2026-10-11); Y_p no cambia a 4 decimales
