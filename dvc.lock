@@ -83,7 +83,7 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 0abbf13472595b0d2c6dc8fa5e9bcc77
+      md5: 12832672383c7cf54c465d6c68876998
       size: 95763
     - path: results/logs/algebra_derivada.json
       hash: md5
@@ -119,8 +119,8 @@ stages:
       size: 1852
     - path: results/logs/dic_from_chains.json
       hash: md5
-      md5: 22bfb1150e317866975a117cc7829c86
-      size: 1460
+      md5: 18bd2847c0af166459d441431fab7eaa
+      size: 1459
     - path: results/logs/edad_universo.json
       hash: md5
       md5: 8d287577eefaeaf4f778ba3e1a8769ad
@@ -295,8 +295,8 @@ stages:
       size: 2444
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: a48a6e2601b075935ea11ca2b45138c9
-      size: 4471
+      md5: 41b5c664b2cf086f30aa3e52766b329e
+      size: 4779
     - path: results/logs/s8_desde_b1.json
       hash: md5
       md5: dbd22cd1e8f3c6d45e33c9055a6e0a85
@@ -320,7 +320,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: f8ce72c0572a4a597e1fe25e01fdfed1
+      md5: c0c1d1583cf77e6d3b387656c4f4c2bb
       size: 118938
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -690,8 +690,8 @@ stages:
       size: 3600
     - path: src/p02_mcmc/resumen_3modelos.py
       hash: md5
-      md5: b8fc56e2441dc1379c60179dc32b4bd2
-      size: 5539
+      md5: f3bcd651a70efc0017496db3b7741a7f
+      size: 6629
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -699,8 +699,8 @@ stages:
     outs:
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: a48a6e2601b075935ea11ca2b45138c9
-      size: 4471
+      md5: 41b5c664b2cf086f30aa3e52766b329e
+      size: 4779
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/estadistica/ssee_phase_d_savage_cv.py > 
@@ -742,8 +742,8 @@ stages:
       size: 260001506
     - path: src/estadistica/ssee_dic_from_chains.py
       hash: md5
-      md5: f63a4f32de414e295bf2bf3a40f022d8
-      size: 3496
+      md5: 5531bf2f21dfd2a6da2a29abc6e39691
+      size: 4027
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -751,12 +751,12 @@ stages:
     outs:
     - path: results/logs/dic_from_chains.json
       hash: md5
-      md5: 22bfb1150e317866975a117cc7829c86
-      size: 1460
+      md5: 18bd2847c0af166459d441431fab7eaa
+      size: 1459
     - path: results/logs/dic_from_chains.log
       hash: md5
-      md5: c134aa7f7ff825b0dd5f992c1ab6e0b5
-      size: 1242
+      md5: d78e6dcd0bf0d996ff6713f390f057ef
+      size: 1326
   hiclass_campo:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p07_eft/hiclass_campo.py

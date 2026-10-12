@@ -5,8 +5,11 @@
   "ssee": {
    "k": 2,
    "lnP_MAP": -6.236828630037934,
+   "lnL_max": -6.236828630037934,
    "BIC": 18.01883470455543,
    "AIC": 16.473657260075868,
+   "BIC_lnP": 18.01883470455543,
+   "AIC_lnP": 16.473657260075868,
    "posterior": {
     "H0": {
      "mediana": 67.8691090608892,
@@ -39,8 +42,11 @@
   "lcdm": {
    "k": 3,
    "lnP_MAP": -7.757875440090031,
+   "lnL_max": -7.757875440090031,
    "BIC": 23.833517046899406,
    "AIC": 21.515750880180065,
+   "BIC_lnP": 23.833517046899406,
+   "AIC_lnP": 21.515750880180065,
    "posterior": {
     "H0": {
      "mediana": 68.38966863228094,
@@ -73,8 +79,11 @@
   "cpl": {
    "k": 5,
    "lnP_MAP": -4.431926269564326,
-   "BIC": 22.72679615032756,
-   "AIC": 18.86385253912865,
+   "lnL_max": -4.198659256342164,
+   "BIC": 22.260262123883233,
+   "AIC": 18.39731851268433,
+   "BIC_lnP": 22.72679615032756,
+   "AIC_lnP": 18.86385253912865,
    "posterior": {
     "H0": {
      "mediana": 67.26125764451501,
@@ -107,10 +116,10 @@
      "std": 0.00015002738900504758
     }
    },
-   "dBIC_vs_ssee": 4.707961445772128,
-   "dAIC_vs_ssee": 2.390195279052783,
-   "dBIC_ssee_menos": -4.707961445772128,
-   "dAIC_ssee_menos": -2.390195279052783,
+   "dBIC_vs_ssee": 4.2414274193278025,
+   "dAIC_vs_ssee": 1.9236612526084613,
+   "dBIC_ssee_menos": -4.2414274193278025,
+   "dAIC_ssee_menos": -1.9236612526084613,
    "N_eff_del_log": 44343,
    "tau_max": 56.4,
    "aceptacion": 0.552,
@@ -145,11 +154,11 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "7525a4836422ac9b394b13ecaf3fd080b37a0162",
+  "commit": "8ae1a2702164f0761b0cf48710ac1c2b6eec704f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/resumen_3modelos.py",
-  "script_sha256": "531175ba762c37ed2a4d8bf156807bbe529e7b8ae85caebcaa22f0c439aede19",
+  "script_sha256": "b3093ed05d90aef6b99ba6e993be9e20a73039adbde0dfac3d61926b9f5e06cb",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "bcf5ad5fa07dba371d36956466f8450b577410b9f0e681ff76f2de2c3d568b29",
@@ -158,7 +167,7 @@
   "argv": [
    "src/p02_mcmc/resumen_3modelos.py"
   ],
-  "fecha": "2026-10-11T17:59:56",
+  "fecha": "2026-10-11T21:21:34",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

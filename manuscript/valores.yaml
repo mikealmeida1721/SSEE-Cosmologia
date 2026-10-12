@@ -222,19 +222,19 @@ p3_pico1_lcdm:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.lcdm.0",
 p3_pico2_lcdm:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.lcdm.1", formato: "d"}
 p3_pico3_lcdm:     {fuente: "results/logs/paper3_cmb_chi2.json#picos_TT.lcdm.2", formato: "d"}
 # Paper 2: 3 modelos, DIC, Savage-Dickey/CV, Ly-alpha (2026-09-30)
-p2_lnP_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.lnP_MAP", formato: ".2f"}
+p2_lnP_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.lnL_max", formato: ".2f"}
 p2_BIC_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.BIC", formato: ".2f"}
 p2_AIC_ssee: {fuente: "results/logs/resumen_3modelos.json#modelos.ssee.AIC", formato: ".2f"}
 p2_pD_ssee: {fuente: "results/logs/dic_from_chains.json#modelos.ssee.p_D", formato: ".2f"}
 p2_DIC_ssee: {fuente: "results/logs/dic_from_chains.json#modelos.ssee.DIC", formato: ".2f"}
 p2_cvchi2r_ssee: {fuente: "results/logs/savage_cv.json#cross_validation.ssee.chi2r_test", formato: ".2f"}
-p2_lnP_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.lnP_MAP", formato: ".2f"}
+p2_lnP_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.lnL_max", formato: ".2f"}
 p2_BIC_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.BIC", formato: ".2f"}
 p2_AIC_lcdm: {fuente: "results/logs/resumen_3modelos.json#modelos.lcdm.AIC", formato: ".2f"}
 p2_pD_lcdm: {fuente: "results/logs/dic_from_chains.json#modelos.lcdm.p_D", formato: ".2f"}
 p2_DIC_lcdm: {fuente: "results/logs/dic_from_chains.json#modelos.lcdm.DIC", formato: ".2f"}
 p2_cvchi2r_lcdm: {fuente: "results/logs/savage_cv.json#cross_validation.lcdm.chi2r_test", formato: ".2f"}
-p2_lnP_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.lnP_MAP", formato: ".2f"}
+p2_lnP_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.lnL_max", formato: ".2f"}
 p2_BIC_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.BIC", formato: ".2f"}
 p2_AIC_cpl: {fuente: "results/logs/resumen_3modelos.json#modelos.cpl.AIC", formato: ".2f"}
 p2_pD_cpl: {fuente: "results/logs/dic_from_chains.json#modelos.cpl.p_D", formato: ".2f"}

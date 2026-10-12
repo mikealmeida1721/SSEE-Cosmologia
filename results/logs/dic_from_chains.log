@@ -1,14 +1,15 @@
-# ACTA-PROCEDENCIA {"commit": "7525a4836422ac9b394b13ecaf3fd080b37a0162", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/ssee_dic_from_chains.py", "script_sha256": "0bb402b4ae917d7feeb001ad85ba1becb7e2d1eba27df92f6167263bc8354f7e", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/estadistica/ssee_dic_from_chains.py"], "fecha": "2026-10-11T17:59:59", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "8ae1a2702164f0761b0cf48710ac1c2b6eec704f", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/estadistica/ssee_dic_from_chains.py", "script_sha256": "663e583dffbed4a646e669b7750702dade31fe3404eb2f4ee55802cd45531573", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/estadistica/ssee_dic_from_chains.py"], "fecha": "2026-10-11T21:21:36", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 DIC desde cadenas — parametrización ω_m algebraico fijo (R25)
   fuente: results/logs/mcmc_chains_professional.npz
   DIC = -2·lnL(θ̂) + 2·p_D ,  p_D = 2·[lnL(θ̂) − <lnL>]
 
-  modelo  k    lnP_max      <lnP>     p_D       DIC
+  lnL = lnP - ln prior (el prior gaussiano de CPL en w0, wa no es dato; 2026-10-11)
+  modelo  k    lnL_max      <lnL>     p_D       DIC
   SSEE    2     -6.237     -7.239   2.005    16.483
   LCDM    3     -7.758     -9.255   2.994    21.505
-  CPL     5     -4.432     -6.930   4.996    18.855
+  CPL     5     -4.199     -6.645   4.893    18.184
 
   ΔDIC (SSEE − ΛCDM) = -5.02   (negativo = SSEE favorecido)
-  ΔDIC (SSEE − CPL)  = -2.37
+  ΔDIC (SSEE − CPL)  = -1.70
 
   Cordura: p_D ≈ k en los tres ⇒ posteriors casi gaussianos, DIC ≈ AIC.

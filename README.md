@@ -195,7 +195,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | χ²_2D (w₀-wₐ vs DESI DR2+CMB+Pantheon+) | 0.42 → 0.24σ (2D); 1.47σ DESY5, 1.77σ Union3 (ρ medidos de cadenas oficiales) |
 | Clusters, 46 real systems of Zhang+2026 (GR, M_dyn = (ω_m/ω_b)·M_bar = 6.364·M_bar, no free parameter) | IGIMF: SSEE 2.32σ vs ΛCDM 2.41σ · canonical IMF: 8.64σ vs 8.46σ — clusters test the baryon census, not the background (`results/logs/cumulos_zhang2026.json`) |
 | H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ from Planck, **0.34σ from H_glob** — DR2 is compatible with the prediction; ω_m algebraic and fixed, r_d from CAMB) |
-| ΔBIC (SSEE k=2 vs ΛCDM k=3) | −5.81 (SSEE favoured, «positive» on Kass–Raftery; CPL −4.71; ΔDIC −5.02; Savage-Dickey ln B = 2.38; 2026-10-11, SSEE with the same Planck prior as ΛCDM/CPL; supersedes −7.25, which gave SSEE a different prior; in cross-validation SSEE predicts better than ΛCDM) <!-- R74: git:60f1269575:results/logs/resumen_3modelos.json --> — `results/logs/resumen_3modelos.json` |
+| ΔBIC (SSEE k=2 vs ΛCDM k=3) | −5.81 (SSEE favoured, «positive» on Kass–Raftery; CPL −4.24, with BIC from the likelihood (CPL’s Gaussian w-prior removed); ΔDIC −5.02; Savage-Dickey ln B = 2.38; 2026-10-11, SSEE with the same Planck prior as ΛCDM/CPL; supersedes −7.25, which gave SSEE a different prior; in cross-validation SSEE predicts better than ΛCDM) <!-- R74: git:60f1269575:results/logs/resumen_3modelos.json --> — `results/logs/resumen_3modelos.json` |
 | r_d SSEE / χ²_r(H(z)) | 147.17 Mpc (CAMB, 0.32σ Planck) ≈ ΛCDM-Planck 147.10 / 0.472 ≈ ΛCDM 0.461 (32 cosmic chronometers, 3 models, `ppc_cronometros.json`) |
 
 ### Paper 3 (Planck 2018 CMB)

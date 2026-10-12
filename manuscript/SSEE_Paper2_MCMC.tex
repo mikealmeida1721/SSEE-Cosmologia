@@ -885,7 +885,7 @@ $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry). Scale of
 \citet{KassRaftery1995} for $\Delta$BIC. $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours \SSEE.
 Every entry comes from the same run, \texttt{mcmc\_paper2\_3models\_wmfix.log}
 ($\omega_m$ algebraic and fixed, R25), with the DIC column from
-\texttt{dic\_from\_chains.log} on the same chains. An earlier version of this
+\texttt{dic\_from\_chains.log} on the same chains. BIC, AIC and DIC use the likelihood, not the posterior: the Gaussian prior that CPL carries on $(w_0,w_a)$ is not data and is removed (it inflated CPL's BIC; SSEE and \LCDM\ have only flat bounds). An earlier version of this
 table carried the SSEE row ($\ln P_{\rm MAP}=-5.85$, BIC $17.24$, DIC $15.69$,
 hence $\Delta\mathrm{BIC}=-5.68$ and $\Delta\mathrm{AIC}=-4.91$) from the
 superseded run with $\Omega_m$ frozen in $E(z)$, while the other two rows and
@@ -894,7 +894,7 @@ therefore did not reconcile arithmetically.}
 \label{tab:model_comp}
 \begin{tabular}{lrrrrrr}
 \toprule
-Model & $k$ & $\ln P_{\rm MAP}$ & BIC & $\Delta$BIC & $\Delta$AIC & DIC \\
+Model & $k$ & $\ln L_{\max}$ & BIC & $\Delta$BIC & $\Delta$AIC & DIC \\
 \midrule
 \SSEE & 2 & $\val{p2_lnP_ssee}$ & \val{p2_BIC_ssee} & $0.00$  & $0.00$  & \val{p2_DIC_ssee} \\
 \LCDM      & 3 & $\val{p2_lnP_lcdm}$ & \val{p2_BIC_lcdm} & $\val{p2_dBIC_lcdm}$ & $\val{p2_dAIC_lcdm}$ & \val{p2_DIC_lcdm} \\
