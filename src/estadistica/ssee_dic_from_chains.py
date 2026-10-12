@@ -35,6 +35,14 @@ LOG = os.path.join(_REPO, "results", "logs", "dic_from_chains.log")
 
 _K = {"ssee": 2, "lcdm": 3, "cpl": 5}
 
+
+def _ln_prior(m, flat):
+    """ln prior no plano (2026-10-11): el DIC usa lnL, no lnP. CPL lleva un prior
+    gaussiano en (w0, wa) en ssee_paper2_mcmc.py (lpost_cpl); SSEE y LCDM, solo cotas."""
+    if m == "cpl":   # ORIGEN-VALOR: 0.5 y 1.0 — anchos del prior gaussiano de lpost_cpl
+        return -0.5 * ((flat[:, 2] + 1.0) / 0.5) ** 2 - 0.5 * (flat[:, 3] / 1.0) ** 2
+    return np.zeros(len(flat))
+
 if not os.path.exists(CHAINS):
     sys.exit(f"No existe {CHAINS} — correr antes src/p02_mcmc/ssee_paper2_mcmc.py")
 
@@ -51,16 +59,17 @@ log("DIC desde cadenas — parametrización ω_m algebraico fijo (R25)")
 log(f"  fuente: {os.path.relpath(CHAINS, _REPO)}")
 log("  DIC = -2·lnL(θ̂) + 2·p_D ,  p_D = 2·[lnL(θ̂) − <lnL>]")
 log("")
-log(f"  {'modelo':6s} {'k':>2s} {'lnP_max':>10s} {'<lnP>':>10s} {'p_D':>7s} {'DIC':>9s}")
+log("  lnL = lnP - ln prior (el prior gaussiano de CPL en w0, wa no es dato; 2026-10-11)")
+log(f"  {'modelo':6s} {'k':>2s} {'lnL_max':>10s} {'<lnL>':>10s} {'p_D':>7s} {'DIC':>9s}")
 
 _dic, _fil = {}, {}
 for _m, _k in _K.items():
-    _lp = _d[f"{_m}_lp"]
+    _lp = _d[f"{_m}_lp"] - _ln_prior(_m, _d[f"{_m}_flat"])
     _lp = _lp[np.isfinite(_lp)]
     _mx, _mn = _lp.max(), _lp.mean()
     _pD = 2.0 * (_mx - _mn)
     _dic[_m] = -2.0 * _mx + 2.0 * _pD
-    _fil[_m] = dict(k=_k, lnP_max=float(_mx), lnP_media=float(_mn), p_D=float(_pD), DIC=float(_dic[_m]))
+    _fil[_m] = dict(k=_k, lnL_max=float(_mx), lnL_media=float(_mn), p_D=float(_pD), DIC=float(_dic[_m]))
     _flag = "" if abs(_pD - _k) < 0.5 else "   ⚠ p_D lejos de k"
     log(f"  {_m.upper():6s} {_k:2d} {_mx:10.3f} {_mn:10.3f} {_pD:7.3f} {_dic[_m]:9.3f}{_flag}")
 

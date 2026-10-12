@@ -14,6 +14,14 @@ Posteriores: mediana y percentiles 16/84 de la cadena plana.
 CONTROL (R53): BIC y AIC de los tres modelos tienen que coincidir con la tabla
 impresa en results/logs/mcmc_paper2_3models_wmfix.log (a la precision impresa,
 0.005), y ln P_MAP con el del log.
+
+CORRECCION (2026-10-11, informe de la corrida de P2). El BIC y el AIC se definen
+con la VEROSIMILITUD maxima, no con el posterior. SSEE y LCDM solo tienen cotas
+planas (ln prior = 0 dentro), pero CPL lleva un prior gaussiano en (w0, wa)
+(ssee_paper2_mcmc.py, lpost_cpl): con ln P le cobraba a CPL 0.42 de chi2 que no
+son dato. Ahora BIC = k ln N - 2 ln L_max, con ln L = ln P - ln prior por muestra.
+Los BIC/AIC con ln P se conservan (BIC_lnP, AIC_lnP) solo para el control contra
+la tabla del log, que el MCMC imprime con ln P.
 """
 import json
 import os
@@ -37,14 +45,24 @@ NOMBRES = {"ssee": ["H0", "obh2"], "lcdm": ["H0", "Om", "obh2"],
            "cpl": ["H0", "Om", "w0", "wa", "obh2"]}
 ETIQ = {"ssee": "SSEE", "lcdm": "ΛCDM", "cpl": "CPL"}
 
+
+def ln_prior(m, flat):
+    """ln prior no plano de cada modelo, el MISMO de ssee_paper2_mcmc.py (lpost_*)."""
+    if m == "cpl":   # ORIGEN-VALOR: 0.5 y 1.0 — anchos del prior gaussiano de lpost_cpl en ssee_paper2_mcmc.py
+        return -0.5 * ((flat[:, 2] + 1.0) / 0.5) ** 2 - 0.5 * (flat[:, 3] / 1.0) ** 2
+    return np.zeros(len(flat))
+
 d = np.load(NPZ)
 res = {}
 for m, nom in NOMBRES.items():
     flat, lp = d[f"{m}_flat"], d[f"{m}_lp"]
     k = flat.shape[1]
     lpm = float(lp.max())
+    lL = lp - ln_prior(m, flat)
+    lLm = float(lL[np.isfinite(lL)].max())
     p16, p50, p84 = np.percentile(flat, [16, 50, 84], axis=0)
-    res[m] = dict(k=k, lnP_MAP=lpm, BIC=k * np.log(N) - 2 * lpm, AIC=2 * k - 2 * lpm,
+    res[m] = dict(k=k, lnP_MAP=lpm, lnL_max=lLm, BIC=k * np.log(N) - 2 * lLm, AIC=2 * k - 2 * lLm,
+                  BIC_lnP=k * np.log(N) - 2 * lpm, AIC_lnP=2 * k - 2 * lpm,
                   posterior={n: dict(mediana=float(b), mas=float(c - b), menos=float(b - a),
                                      std=float(s))
                              for n, a, b, c, s in zip(nom, p16, p50, p84, flat.std(axis=0))})
@@ -83,7 +101,8 @@ for m, e in {"ssee": "SSEE", "lcdm": "ΛCDM", "cpl": "CPL"}.items():
     g = re.search(rf"\[{e}\]\s+τ_max=([0-9.]+)\s+N_eff≈(\d+)\s+accept=([0-9.]+)", txt)
     res[m]["tau_max"], res[m]["aceptacion"] = float(g.group(1)), float(g.group(3))
     res[m]["Ns_sobre_tau"] = 25000 / float(g.group(1))
-pasa = all(abs(res[m][q] - impreso[m][q]) <= 0.005 + 1e-9 for m in res for q in ("lnP_MAP", "BIC", "AIC"))
+pasa = all(abs(res[m][q] - impreso[m][c]) <= 0.005 + 1e-9 for m in res
+           for q, c in (("lnP_MAP", "lnP_MAP"), ("BIC_lnP", "BIC"), ("AIC_lnP", "AIC")))
 out = dict(fecha=str(__import__("datetime").date.today()), N=N, modelos=res,
            tension_H0_ssee_planck=float(tension_H0), rho_w0_wa_cpl=rho_cpl,
            dist_ssee_a_mediana_cpl_sigma=dist_ssee_cpl,
