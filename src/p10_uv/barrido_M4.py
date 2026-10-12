@@ -15,7 +15,7 @@ raíz física de la cuadrática de fondo, unidades ρ_c = 1):
      pata de Hubble del test cruzado empieza a votar;
   3. la degeneración: cuánto M⁴ compensa un +1 % en KAL (s_K^full igual);
   4. cifras del fondo que P10 imprime: X_bg UV/IR, u = X/M⁴, c_s² del funcional,
-     Δw₀ de primer orden y ρ_c^(1/4) en meV.
+     y ρ_c^(1/4) en meV.
 
 CONTROL (R53). Con f = 1 y KAL sin tocar, el barrido tiene que devolver
 H0_GLOBAL de ssee_core a 1e-10; si no, no calcula la misma cascada.
@@ -88,7 +88,6 @@ X_uv, X_ir = x_bg(M4_NOM, S.KAL0), x_bg(math.inf, S.KAL0)
 u_bg = X_uv / M4_NOM
 cs2_func = (1.0 / S.KAL0 + 2.0 * u_bg) / (1.0 / S.KAL0 + 6.0 * u_bg)
 eps = X_uv ** 2 / M4_NOM
-dw0 = (1.0 - 3.0 * S.W0) * eps / S.OMEGA_DE      # ρ_φ del fondo saturado de P10 (= s_DE)
 H_eV = S.H0_GLOBAL * 1e3 / 3.0856775814913673e22 * 6.582119569e-16   # ORIGEN-VALOR: 1 Mpc (IAU 2015) y hbar (CODATA 2018)
 rhoc14_meV = 1e3 * (3.0 * H_eV ** 2 * 2.435323e27 ** 2) ** 0.25        # ORIGEN-VALOR: masa de Planck reducida, CODATA 2018
 
@@ -100,7 +99,7 @@ out = dict(
     f_a_1sigma=f_1sig, alfa_factor_1sigma=alfa_fac, r_nominal=r_nom, r_umbral_1sigma=r_umbral,
     degeneracion_dM4_pct_por_1pct_KAL=dM4_pct,
     X_UV_sobre_IR=X_uv / X_ir, X_reduccion_pct=100.0 * (1.0 - X_uv / X_ir),
-    u_bg=u_bg, cs2_funcional=cs2_func, eps=eps, dw0_primer_orden=dw0, rhoc14_meV=rhoc14_meV,
+    u_bg=u_bg, cs2_funcional=cs2_func, eps=eps, rhoc14_meV=rhoc14_meV,
     control=dict(criterio="f = 1 reproduce H0_GLOBAL de ssee_core a 1e-10", **control, pasa=pasa))
 print(json.dumps({k: v for k, v in out.items() if k != "barrido_H_glob"}, indent=1))
 assert pasa, "CONTROL NO PASA: el barrido no calcula la cascada de ssee_core"
