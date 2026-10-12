@@ -238,7 +238,7 @@ mecanismo de producción de la φ-DM **retirada** (m_φ=40.70 eV) que reproducí
 
 **Severidad: Media.** No mueve ningún número publicado —la cascada UV ya declara que no mide M⁴, con σ propagado ±0.968— pero deja sin fundamentar el corte sobre el que se reformuló el Postulado C.1.
 
-**Location:** Paper 10, Postulate C.1 / Conditional Theorem C.1.
+**Location:** Paper 10, Conjecture C.1 (formerly «Postulate C.1» / «Conditional Theorem C.1»; it is a conjecture: the cascade does not measure M⁴).
 
 > **Por qué se reabre.** No es una decisión nueva: `VERIFICATION_LEDGER.md`
 > §V-L3-OP3 lo tiene **ABIERTO** desde la campaña de verificación, con tres
@@ -519,7 +519,7 @@ peculiar (Δv/c), no a una corrección de densidad de energía oscura — físic
 - H₀,glob con el `f_screen` **IR solo** (0.067253) = 68.13 km/s/Mpc — 0.17σ,
   resultado **parcial**. El enunciado canónico usa el `f_screen` **completo**
   (IR+UV, 0.069522): 73.04 × (1 − 0.069522) = **67.962142**, residuo **+4.2e-06**
-- Con la corrección UV (Paper 10, condicional a Postulate C.1): 67.962142, residuo +4.2e-06 — pero σ propagado ±0.968 lo domina
+- Con la corrección UV (Paper 10, condicional a la Conjetura C.1): 67.962142, residuo +4.2e-06 — pero σ propagado ±0.968 lo domina
 
 **Cambios aplicados en Paper 9:**
 - §3: Derivación desde universo separado k-essence (primer principios)
