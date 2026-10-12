@@ -56,9 +56,8 @@ rep(r"""The equation of state~\eqref{eq:w0wa} fixes the combination that earlier
 versions called the \emph{dynamical} matter fraction,
 \begin{equation}
   \Om^{\mathrm{dyn}} \;=\; 1+w_0 \;=\; \val{S_M_d6} ,""",
-    r"""The equation of state~\eqref{eq:w0wa} fixes the combination
-$s_m$ (earlier versions wrote it $\Omega_m^{\rm dyn}$ and called it a ``dynamical''
-matter fraction; the name is withdrawn),
+    r"""The equation of state~\eqref{eq:w0wa} fixes $s_m$ (written
+$\Omega_m^{\rm dyn}$ in earlier versions; that name is withdrawn),
 \begin{equation}
   s_m \;=\; 1+w_0 \;=\; \val{S_M_d6} ,""")
 rep(r"""$\Om^{\mathrm{cosm}}$ to $\Om^{\mathrm{dyn}}$ through a factor-of-two bridge""",

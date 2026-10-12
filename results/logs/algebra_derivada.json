@@ -336,6 +336,11 @@
    "valor": 0.6699748856723895,
    "uso": "|w_a| = P_sc/IGNIS, para la busqueda look-elsewhere (Sealed)"
   },
+  "solarnyx_d": {
+   "formula": "abs(WA) - (PHI+2*PI)/((PHI+7*PI)/2)",
+   "valor": 0.0006404625468570124,
+   "uso": "|d| entre |w_a| y el casi-valor SOLAR/NYX (PRD, Sealed)"
+  },
   "Om_sin_nu": {
    "formula": "(OMEGA_B_H2+OMEGA_C_H2)/(H0_GLOBAL/100)**2",
    "valor": 0.30728879017780825,
@@ -604,17 +609,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "8246d0363735dd2037cedfd39b8910785e612dd4",
+  "commit": "4e00e1596de23c934fb8f8cb4350f4cc11205851",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "6ef3577f718b91ed2bfe748f8ab8d70bde2734c692d20d1e2264e8656adfbc61",
+  "script_sha256": "233f240d091bc21ec6c1dd22ad93762081bd9c6b030fb2a0db51ae03cd0cd796",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-12T01:07:01",
+  "fecha": "2026-10-12T12:12:43",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

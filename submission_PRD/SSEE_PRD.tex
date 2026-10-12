@@ -39,11 +39,9 @@ dimensionless constants, the golden ratio $\varphi=(1+\sqrt5)/2$ and $\pi$,
 rather than by tuned cosmological parameters. The equation of state follows as
 bare ratios of structural invariants, $w_0=-T_r/M_v=\val{W0_d6}$ and
 $w_a=-P_{\rm sc}/I_g=\val{WA_d6}$, with no fitted amplitude. The point was fixed in
-advance and survives \emph{two independent} DESI releases: it sits at
-$0.05\sigma$ from the DESI~DR1 $w_0w_a$CDM posterior and, after the uncertainties
-tightened, at $\val{p2_w0wa_ssee_ec26}\sigma$ from the newer DESI~DR2 posterior
-(Pantheon+; $0.2$--$1.8\sigma$ across supernova compilations,
-$\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$)---the prediction did not move while the data improved.
+advance and sits at $\val{p2_w0wa_ssee_ec26}\sigma$ from the DESI~DR2 $w_0w_a$CDM posterior
+(Pantheon+; $\val{p2_w0wa_ssee_ec26_d1}$--$\val{p2_w0wa_ssee_ec27_d1}\sigma$ across supernova compilations,
+$\chi^2_{\rm 2D}=\val{p2_chi2_2D_ec26}$).
 Crucially, the two forward predictions that can \emph{refute} the core framework---this
 fixed $(w_0,w_a)$ point and the tensor ratio $r=\varphi^{-10}$---stand on their own: neither the Hubble resolution nor the growth sector is invoked to state or to kill them. A Markov-chain analysis combining DESI BAO with the
 global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}~\kms$) yields $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$
@@ -57,8 +55,8 @@ $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
 \val{r_tensor_mil_d6}\times10^{-3}$ that is testable by LiteBIRD and CMB-S4. With its single matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$, fixed by the
 algebra, a Boltzmann calculation places the first three acoustic peaks at
 $\ell=\val{cl_ssee_l1},\val{cl_ssee_l2},\val{cl_ssee_l3}$, against $\val{cl_lcdm_l1},\val{cl_lcdm_l2},\val{cl_lcdm_l3}$ for $\Lambda$CDM.
-We are explicit about the framework's limits: the absolute vacuum scale enters
-as a single measured input, the growth amplitude shows no tension with weak lensing once measured on raw data---with $A_s$ fixed to the model's own CMB fit it predicts $S_8=\val{S8_leg_pred}$ against KiDS-Legacy's $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$---and the algebraic origin of the CMB matter density ($\omega_b$, $\omega_c$) is an open problem. Both core forward predictions bear on
+We are explicit about the framework's limits: the absolute scale enters
+as a single measured input (the local expansion rate), the growth amplitude shows no tension with weak lensing once measured on raw data---with $A_s$ fixed to the model's own CMB fit it predicts $S_8=\val{S8_leg_pred}$ against KiDS-Legacy's $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$---and the algebraic origin of the CMB matter density ($\omega_b$, $\omega_c$) is an open problem. Both core forward predictions bear on
 \emph{unreleased} data: the $(w_0,w_a)$ point is pre-registered to be excluded at
 $>3\sigma$ if DESI~DR3 shifts it, and $r=\varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3}$ is
 testable by LiteBIRD---either alone can refute the framework. The result is a falsifiable,
@@ -135,7 +133,7 @@ numerator by $I_g=\pi+P_{\mathrm{sc}}$.
 \begin{equation*}
 w_0=-\frac{T_r}{M_v}=\val{W0_d6},\qquad
 w_a=-\frac{P_{\mathrm{sc}}}{I_g}=\val{WA_d6},\qquad
-\Om^{\mathrm{dyn}}=1+w_0=\val{S_M_d6} .
+s_m=1+w_0=\val{S_M_d6} .
 \end{equation*}
 
 % ============================================================================
@@ -163,7 +161,7 @@ follow as bare ratios with no tuned amplitude.
 
 We are deliberate about what this does and does not claim. SSEE is a
 \emph{minimal-parameter} framework, not a zero-parameter one: the absolute scale
-of the vacuum enters as a single measured input (Postulate~D,
+enters as a single measured input, the local expansion rate of SH0ES (Postulate~D,
 \S\ref{sec:open}), reducing the count of free CMB inputs from $\Lambda$CDM's
 six to two ($A_s$ and $\tau$; $k=2$ vs $k=6$). The dark-sector \emph{shape}, however, carries no free
 parameter, and this is what makes the framework falsifiable. Once $\varphi$ and
@@ -208,11 +206,11 @@ invariants of Table~\ref{sec:notation}. Concretely,
 \end{equation}
 Both quantities are \emph{bare dimensionless numbers}: they are constructed
 entirely from $\varphi$ and $\pi$ and carry no free normalisation, no fitted
-amplitude, and no scale input. Under the Chevallier--Polarski--Linder
-parametrisation $w(a)=w_0+w_a(1-a)$, Eq.~\eqref{eq:w0wa} corresponds to an
-$\alpha$-attractor scalar sector with curvature $\alpha=\varphi^4/3$ (derived
-in \S\ref{sec:eft}), so the two CPL numbers are not independent fits but two
-projections of a single rolling field.
+amplitude, and no scale input. They enter as the two numbers of the Chevallier--Polarski--Linder
+parametrisation $w(a)=w_0+w_a(1-a)$. The field of Paper~7 fixes $w_0$ and the
+sound speed today but not $w(a)$: it rolls towards $w=-1$, and a single canonical
+field does not cross it, so the dynamical origin of $w_a$ is open (OP-24,
+\S\ref{sec:eft-functions}).
 
 \subsection{Agreement with DESI DR2}
 \label{sec:desi-agreement}
@@ -239,9 +237,7 @@ $\Delta w_a=\val{p2_dwa_ec26}\sigma$. Against the other official combinations (m
 correlations likewise measured from the official chains: $\rho=\val{p2_w0wa_rho_ec28}$ to
 $\val{p2_w0wa_rho_ec25}$) the joint
 distance is $\val{p2_w0wa_ssee_ec28}\sigma$ (DESY5), $\val{p2_w0wa_ssee_ec27}\sigma$ (Union3) and $\val{p2_w0wa_ssee_ec25}\sigma$ (no-SN DESI$+$CMB): the algebraic point is consistent with all four, with the
-tension range $0.2$--$1.8\sigma$ set by the supernova compilation. The result
-is robust to the correlation ($\rho\in[-0.92,-0.70]$ would shift the
-Pantheon+ figure by $<0.2\sigma$; the measured value is used). We stress that this agreement is obtained
+tension range $0.2$--$1.8\sigma$ set by the supernova compilation. The correlation is the one measured from the chains, not an assumed value. We stress that this agreement is obtained
 with \emph{zero} hand-tuned dark-energy parameters: the only inputs are
 $\varphi$ and $\pi$. The fixed $\Lambda$CDM point $(-1,0)$, by contrast, sits at
 $\val{p2_w0wa_lcdm_min}$--$\val{p2_w0wa_lcdm_max}\sigma$ from every official compilation
@@ -313,7 +309,7 @@ The $55$ names collapse to $25$ distinct numbers (e.g.\ $\mathrm{IGNIS}$ and
 $\mathrm{KRYSTOS}$ coincide, $\mathrm{SOLAR}=\mathrm{MAR}$), so the count
 deduplicates by value.} The honest question is therefore: among
 \emph{all} ratios $A/B$ of named invariants in this fixed dictionary, how many
-land on $|w_0|=\val{S_DE_d6}$ and on $|w_a|=0.669975$?
+land on $|w_0|=\val{S_DE_d6}$ and on $|w_a|=\val{WA_abs_d6}$?
 
 Enumerating every ordered pair over the complete dictionary yields $490$ distinct
 ratios in the interval $(0,5]$. We then count how many fall within a tolerance of
@@ -325,7 +321,7 @@ $|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=P_{\rm sc}/(\pi+P_{\rm sc})$, both to machi
 unique:
 \begin{equation}
   |w_0|=\val{S_DE_d6}:\ \text{1 of 490},\qquad
-  |w_a|=0.669975:\ \text{1 of 490}\quad(\pm0.0005).
+  |w_a|=\val{WA_abs_d6}:\ \text{1 of 490}\quad(\pm0.0005).
   \label{eq:lookelsewhere}
 \end{equation}
 Table~\ref{tab:lookelsewhere-tol} reports the full tolerance sensitivity:
@@ -364,9 +360,8 @@ ratio of the closed dictionary: $|w_0|=\mathrm{AURA}/\Omega$ is the copy-branch
 root over the scaffold, and $|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}$ has a
 denominator generated directly from its own numerator by the no-self-sum law
 ($\mathrm{IGNIS}=\pi+\mathrm{PYROS}$). The two CPL numbers are
-two projections of one rolling field (\S\ref{sec:w0wa-construction}), not two
-separately fitted constants, so the joint look-elsewhere is governed by a
-single shared structure rather than by two free choices. We report this as
+therefore not two separately fitted constants: the joint look-elsewhere is
+governed by a single shared dictionary rather than by two free choices. We report this as
 evidence of internal economy, not as a claim that the dictionary itself is
 derived from first principles---that derivation (the dynamical origin of the
 two lineage laws) remains the open mechanism tracked in \S\ref{sec:open}.
@@ -374,8 +369,8 @@ two lineage laws) remains the open mechanism tracked in \S\ref{sec:open}.
 \paragraph{The single near-value, and why it is not a rival.} Honesty requires
 naming the one entry that turns the $|w_a|$ count from $1$ to $2$ as the band is
 loosened from $\pm0.0005$ to $\pm0.001$ (Table~\ref{tab:lookelsewhere-tol}): it is
-$\mathrm{SOLAR}/\mathrm{NYX}=\val{SOLAR_NYX_d5}$, which sits $|d|=6.4\times10^{-4}$ from
-$|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=0.669975$. Two independent facts demote it from
+$\mathrm{SOLAR}/\mathrm{NYX}=\val{SOLAR_NYX_d5}$, which sits $|d|=\val{solarnyx_d}$ from
+$|w_a|=\mathrm{PYROS}/\mathrm{IGNIS}=\val{WA_abs_d6}$. Two independent facts demote it from
 rival to shadow. \emph{First, construction:} the canonical ratio
 $\mathrm{PYROS}/\mathrm{IGNIS}$ is intra-lineage---the denominator is generated
 directly from the numerator, $\mathrm{IGNIS}=\pi+\mathrm{PYROS}$, so numerator and
@@ -407,10 +402,10 @@ concerns exists.
 
 \subsection{The cosmic matter fraction: one matter density}
 \label{sec:two-omega}
-The equation of state~\eqref{eq:w0wa} fixes the combination that earlier
-versions called the \emph{dynamical} matter fraction,
+The equation of state~\eqref{eq:w0wa} fixes $s_m$ (written
+$\Omega_m^{\rm dyn}$ in earlier versions; that name is withdrawn),
 \begin{equation}
-  \Om^{\mathrm{dyn}} \;=\; 1+w_0 \;=\; \val{S_M_d6} ,
+  s_m \;=\; 1+w_0 \;=\; \val{S_M_d6} ,
   \label{eq:omdyn}
 \end{equation}
 a number from the equation of state, not a density. It is much lower than
@@ -437,23 +432,23 @@ piece of $\omega_m$ is an SSEE algebraic value with no fit: the baryon density
 $\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$ and the cold-matter density
 $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$ (a forward identity, already in
 Paper~1; $\val{wc_ns_sigma_abs}\sigma$ from Planck). The neutrino term completes the total,
-$\omega_\nu=\Sigma m_\nu^{\rm active}/C_\nu=0.06849/93.14=0.000735$, using the
-same active-neutrino sum $\Sigma m_\nu^{\rm active}=0.06849$~eV and the same
+$\omega_\nu=\Sigma m_\nu^{\rm active}/C_\nu=\val{OMEGA_NU_H2_d6}$, using the
+same active-neutrino sum $\Sigma m_\nu^{\rm active}=\val{SUM_MNU_EV_d5}$~eV and the same
 relic closure constant $C_\nu=93.14$~eV (PDG, $N_{\rm eff}=3.046$),\footnote{$\Sigma m_\nu^{\rm active}$ is not
 a fitted input: it follows from the algebraic chain
 $\Sigma m_\nu^{\rm active}=R_2\,\omega_b\,C_\nu/(\tau_\Pi H_0)$ with
-$R_2=\Omega/(\mathrm{KAL_0}T_r)$ (Paper~6). No independent neutrino parameter is introduced.} so that
+$R_2=\Omega/(\mathrm{KAL_0}T_r)$ (Paper~4). No independent neutrino parameter is introduced.} so that
 \begin{equation}
   \omega_m=\omega_b+\omega_c+\omega_\nu=\val{OMEGA_M_H2_d5},
   \qquad
   \Om^{\mathrm{cosm}}=\frac{\omega_m}{h^2}=\val{OMEGA_M_TOTAL_d6}
-  \quad (h=H_0^{\rm glob}/100=0.67962).
+  \quad (h=H_0^{\rm glob}/100).
   \label{eq:omcosm_breakdown}
 \end{equation}
-The neutrino piece is not optional: dropping it returns $0.30729$, a $0.6\%$
+The neutrino piece is not optional: dropping it returns $\val{Om_sin_nu_d5}$, a $\val{Om_sin_nu_pct}\%$
 shift, so a reader who reproduces the number must include all three terms
 (a three-second check ships in \texttt{ssee\_core.py}). The earlier presentation tied
-$\Om^{\mathrm{cosm}}$ to $\Om^{\mathrm{dyn}}$ through a factor-of-two bridge
+$\Om^{\mathrm{cosm}}$ to $s_m$ through a factor-of-two bridge
 $\mathrm{MIRA}=\mathrm{AURA}/2=\val{MIRA_d5}$, tracked as open problem OP-8; that
 bridge is now \emph{dissolved}---there is no matter factor to derive. The
 residual honest open question is only the UV origin of the $\omega_c$ identity.
@@ -499,7 +494,7 @@ prior, using the affine-invariant ensemble sampler~\citep{emcee}. We ran $100$
 walkers $\times\,25{,}000$ steps (seed $42$).
 
 \paragraph{$H_0$ as one quantity in two stages.} We first anchor the
-early-time geometry at the CMB-optimal value
+early-time geometry at the output of the screening cascade
 \begin{equation}
   \begin{aligned}
   H_0^{\rm glob} &= H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}~\kms ,\\
@@ -539,14 +534,14 @@ principles is an open problem for every cosmological model, not only ours,
 and we make no claim to have solved it. We therefore do not assert the pure
 number as physical and then show that it explains the data. Instead we start
 from the measured SH0ES \emph{local} rate,
-$H_0^{\rm SH0ES}=73.04\pm1.04~\kms$~\citep{Riess2022}, and de-screen it with
-the algebraically-derived (not fit) fraction $f_{\rm scr}^{\rm IR}=s_K^{\rm IR}/(3\,\mathrm{MIRA})=(\pi-\varphi)/\Om^2=\val{F_SCREEN_IR_d6}$
+$H_0^{\rm SH0ES}=73.04\pm1.04~\kms$~\citep{Riess2022}, and, under the screening postulate of Paper~9 (the correction acts only on
+locally measured rates), de-screen it with the algebraically-derived (not fit) fraction $f_{\rm scr}^{\rm IR}=s_K^{\rm IR}/(3\,\mathrm{MIRA})=(\pi-\varphi)/\Om^2=\val{F_SCREEN_IR_d6}$
 (Paper~9): $H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})=\val{p9_sh0es_glob_IR}~\kms$, within $\val{p9_sh0es_sig_IR}\sigma$ of
 the pure number $\val{H0_ALG_d3}$---the model-independent floor, using only the IR
 screening term and no free parameter. Paper~10 sharpens this: with the
 UV-completed fraction $f_{\rm scr}^{\rm UV}=s_K^{\rm full}/(3\,\mathrm{MIRA})=\val{F_SCREEN_d6}$
-(conditional on the derivation of $M^4=5\varphi^8\rho_{\rm crit}$ from UV--IR
-$\varphi/\pi$ separability, Postulate~C.1), the identical inversion gives
+(with the cutoff $M^4=5\varphi^8\rho_{\rm crit}$ of Conjecture~C.1; the cascade is
+consistent with that cutoff but does not measure it), the identical inversion gives
 $H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm UV})=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d5}~\kms$,
 reproducing the pure-number target $3(\varphi+\pi)^2=\val{H0_ALG_d4}$ to four decimals. We quote the
 comparison at four decimals and not further because the input is quoted at two:
@@ -554,7 +549,7 @@ $H_0^{\rm SH0ES}=73.04$. We do not quote the reverse operation $3(\varphi+\pi)^2
 is a pure number and carries no units, so it cannot serve as the input of a
 dimensionful cascade. The only directly measured expansion rate is the local
 one, and Planck's is inferred within $\Lambda$CDM rather than measured; SH0ES
-is therefore the input throughout. The leftover, $4\times10^{-6}~\kms$, lies below the resolution of
+is therefore the input throughout. The leftover, $\val{p9_hglob_residuo}~\kms$, lies below the resolution of
 the datum it is compared against; whether a future, more precisely quoted local
 measurement drives it down or opens it up is an empirical question, not one we
 can settle here. We say ``to the quoted precision'' rather than ``exactly''
@@ -565,7 +560,7 @@ input---but its two variants are one datum under two prescriptions, not two
 independent measurements. The CMB/BAO chain, which never touches SH0ES, adopts
 the anchor as its prior, so its posterior is a \emph{consistency} test rather
 than a third confirmation: its content is that DESI DR2 does not pull the value
-away ($\chi^2_{\rm BAO}=10.43$ over 13 points at the posterior, $\val{desi_clav_ssee}$ at the
+away ($\chi^2_{\rm BAO}=\val{desi_clav_ssee}$ over $\val{desi_N}$ points at the
 anchor, against $\simeq726$ for the incorrect background geometry), leaving a
 residual displacement of $\val{h0_p2_dhglob}\sigma$. Replacing the anchor prior with a Planck one removes even that
 dependence: the data then pull $H_0$ \emph{upward} from $67.36$ to
@@ -588,8 +583,8 @@ it. All early-time observables are simultaneously healthy---$r_d=\val{p2_lyaB_rd
 ($\val{p3_rd_sig_post}\sigma$) and, evaluating the acoustic scale at the posterior,
 $100\,\theta_\ast=\val{p3_th100_post}$ ($\val{p3_th_sig_post}\sigma$). The apparent $2.9\sigma$
 ``BAO--CMB split'' and the $13.9\sigma$ $\theta_\ast$ figure reported in earlier
-drafts were the footprint of a single error---placing the cold dynamical sector
-$\Om^{\mathrm{dyn}}=\val{S_M_d6}$ in the background geometry, where the total density
+drafts were the footprint of a single error---placing the equation-of-state
+number $s_m=\val{S_M_d6}$ in the background geometry, where the total density
 belongs. With that corrected, there is no split to report: the late-time BAO and
 the early-time acoustic geometry point to the same $H_0$.
 
@@ -599,8 +594,10 @@ against $\Lambda$CDM alone but against the whole family a referee would reach
 for. On the identical DESI~DR2 vector, the information criteria are:
 \begin{table}[h]
 \centering
-\caption{Bayesian model comparison on DESI~DR2 ($100$ walkers $\times\,25{,}000$
-steps). $\Delta$ values are relative to SSEE; positive favours SSEE.}
+\caption{Bayesian model comparison on DESI~DR2 BAO with the compressed Planck prior
+($100$ walkers $\times\,25{,}000$ steps), conservative version with $H_0$ and
+$\Omega_b h^2$ sampled in SSEE. $\Delta$ values are relative to SSEE; positive favours
+SSEE. With nothing free ($k=0$) the preference grows (text).}
 \label{tab:modelcomp}
 \begin{tabular}{lccccc}
 \toprule
@@ -612,6 +609,12 @@ CPL           & 5 & $\val{p2_lnP_cpl}$ & $\val{p2_BIC_cpl}$ & $\val{p2_dBIC_cpl_
 \bottomrule
 \end{tabular}
 \end{table}
+This is the conservative version: it lets SSEE sample $H_0$ and $\Omega_b h^2$ and
+charges it $k=2$ for them, although $\omega_b$ is algebraic and $H_0$ is the output of
+the cascade. Evaluated at its algebraic point with nothing free ($k=0$), SSEE is
+favoured by $\Delta\mathrm{BIC}(\text{SSEE}-\text{model})=\val{p2_k0_dBIC_lcdm}$ over $\Lambda$CDM and
+$\val{p2_k0_dBIC_cpl}$ over CPL (Paper~2); freeing $H_0$ and $\Omega_b h^2$ lowers $\chi^2$ by only
+$\val{p2_k0_dchi2}$. In the conservative version
 SSEE is favoured over both $\Lambda$CDM ($\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm_abs}$) and CPL
 ($\val{p2_dBIC_cpl_abs}$) by parsimony, with $\Delta\mathrm{DIC}=\val{p2_dDIC_lcdm}$ and a Savage--Dickey factor
 $\ln B=\val{p2_lnB}$ (substantial on the Jeffreys scale); a leave-one-out
@@ -661,7 +664,7 @@ Probe & Type & $N$ & fitted & $\chi^2_{\rm SSEE}$ & $\chi^2_{\Lambda\rm CDM}$ & 
   $\times\,25{,}000$ steps). With the entire dark-energy sector fixed by
   $\varphi$ and $\pi$, the chain samples only $H_0$ and $\Omega_b h^2$ against
   DESI DR2 BAO with $H_0^{\rm glob}$ as prior. The posterior is
-  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = \val{p2_obh2}\pm0.00048$
+  $H_0=\val{h0_p2}\pm\val{h0_p2_s}~\kms$ and $\Omega_b h^2 = \val{p2_obh2}\pm\val{p2_obh2_s}$
   (Eq.~\ref{eq:h0post}), agreeing with the anchor to $\val{h0_p2_dhglob}\sigma$. Dashed lines
   mark the prior centres ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}~\kms$ and the BBN $\Omega_b h^2 = 0.02218$~\cite{Schoneberg2024}); the
   $16/50/84\%$ quantiles are indicated.}
@@ -702,12 +705,14 @@ A distinct quantity, often confused with it, enters the Hubble screening of
 Paper~9:
 %
 \begin{equation}
-  s_K \equiv -\frac{1}{\rho_\phi}\frac{dp_\phi}{dN} = -3w_0(1+w_0)
+  s_K \equiv -\frac{1}{\rho_\phi}\frac{d|p_\phi|}{dN}\bigg|_{w=w_0} = -3w_0(1+w_0)
       = 3\,s_{\rm DE}\,s_m = \val{S_K_d6} ,
   \label{eq:sK_sealed}
 \end{equation}
 %
-the fractional dilution rate of the dark-energy \emph{pressure} per e-fold.
+the fractional dilution rate of the dark-energy \emph{pressure} per e-fold,
+evaluated with $w_0$ held fixed: the term from the evolution of $w(a)$ is not part
+of $s_K$, which is a number of the algebra rather than the full rate (Paper~9).
 Here $s_{\rm DE}=|w_0|=\val{S_DE_d6}$ and $s_m=1+w_0=\val{S_M_d6}$ are saturations ---
 numbers of the equation of state, carrying no $H$ --- not densities. Because
 $s_K$ is pure equation of state, the screening amplitude
@@ -746,7 +751,8 @@ The spectral index sits squarely on the Planck~2018 measurement
 ($n_s=0.9649\pm0.0042$;~\citealp{Planck2018}); the tensor-to-scalar ratio
 $r=\varphi^{-10}$ is a
 pre-committed, falsifiable prediction (\S\ref{sec:falsifiability}) well below
-the current bound $r<0.036$ and within reach of LiteBIRD and CMB-S4. We note
+the current bound $r<0.036$~\citep{BICEPKeck2021} and within reach of
+LiteBIRD~\citep{LiteBIRD2023} and CMB-S4. We note
 that, within the framework, $n_s$ and $r$ are postulated of this form and
 $\alpha=\varphi^4/3$ then follows as an exact algebraic consequence; we do not
 claim an independent derivation of the exponent~$7$ from the potential
@@ -755,9 +761,10 @@ claim an independent derivation of the exponent~$7$ from the potential
 \subsection{Confrontation with Planck 2018}
 \label{sec:cmb-confront}
 With the background of \S\ref{sec:core} and the EFT functions of
-Eq.~\eqref{eq:eft-alphas}, we computed the CMB angular power spectra with the
-\texttt{CLASS} Boltzmann code~\citep{Lesgourgues2011} and compared against
-Planck 2018~\citep{PlanckLikelihood2020} (TT, TE, EE and lensing).
+Eq.~\eqref{eq:eft-alphas}, we computed the CMB angular power spectra with \texttt{CAMB}~\citep{Lewis2000}
+(the Paper~3 pipeline) and compared against Planck
+2018~\citep{PlanckLikelihood2020} (TT, TE, EE and lensing); the peak positions
+are cross-checked with \texttt{CLASS}~\citep{Lesgourgues2011}.
 Table~\ref{tab:cmb} reports the reduced $\chi^2$.
 
 \begin{table}[t]
@@ -789,7 +796,7 @@ independent data points, and since the BIC penalty enters as $k\ln N$, it
 inflates precisely the term that rewards the smaller $k$. We therefore also
 evaluate the compressed Planck likelihood \texttt{plik\_lite}
 (TT+TE+EE, $613$ bandpowers, nuisance parameters marginalised by the Planck
-Collaboration) together with the low-$\ell$ TT and EE likelihoods, for $N=669$
+Collaboration) together with the low-$\ell$ TT and EE likelihoods, for $N=\val{lite_N}$
 data points, which gives $\chi^2_{\rm SSEE}=\val{lite_chi2_ssee}$ against
 $\chi^2_{\Lambda\rm CDM}=\val{lite_chi2_lcdm}$ (with its own $\sum m_\nu=0.06$~eV) with $\{A_s,\tau\}$ minimized in both---an
 equal fit ($\Delta\chi^2=\val{lite_dchi2}$, statistically zero) for four fewer free
@@ -914,7 +921,7 @@ future release returning to the lower amplitude would reopen the sector.
 
 The $\varphi$-DM component and its particle are retracted independently of
 this: the subtraction that defined the second sector's density,
-$\Omega_{\varphi\rm DM}=\Omega_{m,\rm CMB}-\Omega_{m,\rm dyn}$, took a measured
+$\Omega_{\varphi\rm DM}=\Omega_{m,\rm CMB}-s_m$, took a measured
 density minus $1+w_0$ --- a number from the equation of state, not a density.
 The subtraction is arithmetically well formed and physically empty, so the
 particle had nothing to be made of.
@@ -986,20 +993,20 @@ BAO distances, background fixed & Background & $\chi^2=\val{desi_clav_ssee}/\val
 $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$ & CMB      & $\val{OMEGA_C_H2_d6}$                       & P1,3   & Retrodiction \\
 $\Om^{\rm cosm}=\omega_m/h^2$ & CMB               & $\val{OMEGA_M_TOTAL_d6}$                       & P1,3   & Retrodiction \\
 $n_s=1-\varphi^{-7}$          & Inflation / CMB   & $\val{N_S_d6}$                       & P1,3   & Retrodiction \\
-$r=\varphi^{-10}$             & Inflation         & $8.1\times10^{-3}$              & P1     & \textbf{Prediction} \\
+$r=\varphi^{-10}$             & Inflation         & $\val{r_tensor_mil_d1}\times10^{-3}$              & P1     & \textbf{Prediction} \\
 $\alpha_T=\alpha_M=\alpha_B$  & EFT               & $0$ (exact)                     & P7     & Retrodiction \\
 $\alpha_K=3\Omega_{\rm DE}(5-3w_0)$ & EFT & $\val{alpha_K_z0_d6}$ & P7 & Derived (unobservable on linear scales) \\
-$\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $0.550$                         & P5     & Retrodiction \\
+$\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $\val{p3_gamma_IS}$                         & P5     & Retrodiction \\
 $f\sigma_8$ (BOSS DR12, raw multipoles) & Growth & $\Delta\chi^2=\val{bossR_dchi2}$ vs.\ $\Lambda$CDM, equal freedom & P6 & Retrodiction \\
 \midrule
 \multicolumn{5}{l}{\textit{Built on the core --- growth, UV completion, strong gravity (no extension sector)}} \\
 $S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $\val{S8_leg_pred}$ predicted vs.\ $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & P6 & \textbf{Prediction} \\
-$M=(5\varphi^8\rho_{\rm crit})^{1/4}$ & UV compl.  & $9.68\,$meV                    & P10    & Derived (UV) \\
+$M=(5\varphi^8\rho_{\rm crit})^{1/4}$ & UV compl.  & $\val{M_meV_d2}\,$meV                    & P10    & Conditional (Conj.~C.1) \\
 Lensing (canonical EFT)       & Strong gravity    & GR$+$DM (uncond.)              & P8     & Retrodiction \\
 \midrule
 \multicolumn{5}{l}{\textit{Measured input (not derived)}} \\
 $A_s,\ \tau$                  & CMB amplitude     & sampled ($k=2$)                & P1,3   & Measured \\
-$\rho_{\rm vac}$ (abs.\ scale) & Vacuum            & single measured input          & P1,10  & Measured \\
+$H_0^{\rm SH0ES}$ (abs.\ scale) & Background   & single measured input          & P1,9   & Measured \\
 \bottomrule
 \end{tabular}%
 }
@@ -1049,18 +1056,15 @@ the underlying $\alpha$-attractor closes algebraically: with $N_*=2\varphi^7$
 and $\alpha=\varphi^4/3$ one obtains
 $r=12\alpha/N_*^2=12(\varphi^4/3)/(2\varphi^7)^2=\varphi^{-10}$ identically. The
 prediction is thus internally locked rather than independently adjustable. Its
-value, $r\simeq8.1\times10^{-3}$, lies squarely within the reach of LiteBIRD and
+value, $r\simeq\val{r_tensor_mil_d1}\times10^{-3}$, lies squarely within the reach of LiteBIRD and
 CMB-S4, which target $\sigma(r)\sim10^{-3}$. SSEE will be decisively tested by
 the next generation of $B$-mode experiments.
 
 \paragraph{A pre-registered DESI DR3 test.} The equation-of-state point is
 fixed forever at $(-0.840,-0.670)$; each DESI release is therefore a fresh
-blind test of the \emph{same} target. The trajectory to date: against the legacy DR1 posterior the
-point sat at ${\sim}0.05\sigma$; against DR2,
-whose uncertainties are ${\sim}40\%$ tighter, it sits at $\val{p2_w0wa_ssee_ec26}\sigma$
-(Pantheon+; \S\ref{sec:desi-agreement})---the contour shrank and the fixed
-point stayed inside the $68\%$ region, which a fitted model can always do but
-a rigid one need not. We pre-commit, in advance of the DR3 release (expected
+blind test of the \emph{same} target. Against DR2 it sits at $\val{p2_w0wa_ssee_ec26}\sigma$
+(Pantheon+; \S\ref{sec:desi-agreement}), inside the $68\%$ region, which a fitted
+model can always arrange but a rigid one need not. We pre-commit, in advance of the DR3 release (expected
 2027), to the following quantitative expectations for
 DESI DR3, whose uncertainties are forecast to improve by ${\sim}1.5\times$:
 if the DR2 central values persist, the point will sit at ${\sim}0.5\sigma$ of
@@ -1098,8 +1102,9 @@ and constrains.
 \subsection{What is measured, not derived: the vacuum scale}
 
 SSEE does not predict the absolute energy density of the dark sector. The
-overall scale of the vacuum, $\rho_\Lambda\simeq6\times10^{-10}~\mathrm{J\,
-m^{-3}}$, enters as a single measured input, which we label \emph{Postulate~D}.
+only dimensionful input is a measured one, the local expansion rate
+$H_0^{\rm SH0ES}$ (\emph{Postulate~D}, as in Paper~1); everything with units descends
+from it through the screening cascade.
 What the algebra fixes is the \emph{shape} of the dark-energy sector---its
 equation-of-state ratios $w_0,w_a$, the matter density $\omega_m$, and the EFT
 function profile---not its amplitude. We make no claim to have solved the
@@ -1175,7 +1180,7 @@ $w_0=\val{W0_d6}$ and $w_a=\val{WA_d6}$, and matches the DESI DR2 posterior at
 $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+) without a single fitted dark-sector parameter. The
 effective-field-theory description is canonical, with vanishing tensor, running,
 and braiding functions, $\alpha_K=\val{alpha_K_z0_d6}$ and $c_s^2=\val{cs2_condensado_d6}$; the inflationary sector
-predicts $n_s=\val{N_S_d6}$ and $r=8.1\times10^{-3}$; and a Boltzmann calculation with its single matter density
+predicts $n_s=\val{N_S_d6}$ and $r=\val{r_tensor_mil_d1}\times10^{-3}$; and a Boltzmann calculation with its single matter density
 places the acoustic peaks where $\Lambda$CDM does.
 
 The framework's strength is its frugality and its consequent falsifiability.
@@ -1257,12 +1262,11 @@ $55$ named nodes collapse to $25$ distinct numbers. The second
 equation-of-state ratio lives entirely on this branch, with the denominator the
 $\pi$-branch node IGNIS (not the structural $K_v$, though the two coincide in value),
 \begin{equation}
-  |w_a|=\frac{\mathrm{PYROS}}{\mathrm{IGNIS}}=\frac{P_{\rm sc}}{\pi+P_{\rm sc}}=0.669975 .
+  |w_a|=\frac{\mathrm{PYROS}}{\mathrm{IGNIS}}=\frac{P_{\rm sc}}{\pi+P_{\rm sc}}=\val{WA_abs_d6} .
 \end{equation}
 
 \paragraph{Closure.} The set is finite because both laws terminate at the
-four-dimensional integration invariant $M_v=\varphi+\pi+K_v=\val{M_V_d6}$ (a Sovereign
-convergence coinciding in value with $3\Omega$), the maximal dimensional
+four-dimensional integration invariant $M_v=\varphi+\pi+K_v=\val{M_V_d6}$ (a convergence coinciding in value with $3\Omega$), the maximal dimensional
 invariant; no node exceeds it. This termination---not a
 choice made to fit data---is what bounds the dictionary to a fixed, enumerable
 set and licenses the conservative look-elsewhere denominator of

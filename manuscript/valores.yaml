@@ -992,3 +992,6 @@ p2_max_bao_lcdm: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.l
 p2_max_pl_lcdm: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.lcdm.chi2_Planck", formato: ".2f"}
 p2_max_bao_cpl: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.cpl.chi2_BAO", formato: ".2f"}
 p2_max_pl_cpl: {fuente: "results/logs/p2_ssee_fijo_k0.json#maximo_por_modelo.cpl.chi2_Planck", formato: ".2f"}
+# PRD quinta lectura (2026-10-12)
+solarnyx_d: {fuente: "results/logs/algebra_derivada.json#algebra.solarnyx_d.valor", formato: "tex.1e"}
+p2_w0wa_ssee_ec26_d1: {fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma", formato: ".1f"}
