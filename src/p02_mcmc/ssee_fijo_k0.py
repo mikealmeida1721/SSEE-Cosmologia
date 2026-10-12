@@ -36,6 +36,9 @@ RES = os.path.join(_R, "results", "logs", "resumen_3modelos.json")
 # las funciones de verosimilitud del MCMC, sin correr el MCMC (todo lo anterior a la seccion 6)
 _src = open(MC).read()
 G = {"__file__": MC, "__name__": "ssee_paper2_mcmc_funciones"}
+# el modulo escribe en su log al cargarse: se desvia a /dev/null para no tocar mcmc_professional.log
+_src = _src.replace('LOG_FILE = "results/logs/mcmc_professional.log"', "LOG_FILE = os.devnull")
+assert "LOG_FILE = os.devnull" in _src
 exec(_src[:_src.index("# 6. MCMC CON GUARDADO")], G)
 res = json.load(open(RES))
 N = res["N"]

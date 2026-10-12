@@ -5242,3 +5242,45 @@ stages:
       hash: md5
       md5: 695a0b6ea1dee21abb1f29aa3aae182f
       size: 2027
+  p2_ssee_fijo_k0:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p02_mcmc/ssee_fijo_k0.py > results/logs/p2_ssee_fijo_k0.log 2>&1
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+      hash: md5
+      md5: 9284281cfbc0047a92609ab5d2b791ef
+      size: 260001506
+    - path: results/logs/resumen_3modelos.json
+      hash: md5
+      md5: 41b5c664b2cf086f30aa3e52766b329e
+      size: 4779
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p02_mcmc/ssee_fijo_k0.py
+      hash: md5
+      md5: ec6894e2c522eb0cc6b16f71feb8a9a0
+      size: 4553
+    - path: src/p02_mcmc/ssee_paper2_mcmc.py
+      hash: md5
+      md5: 01a89c6702373167cdc1bae62c30ccdf
+      size: 21501
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p2_ssee_fijo_k0.json
+      hash: md5
+      md5: a00c1b45b6f5a6a0eb8114e870164dfd
+      size: 2793
+    - path: results/logs/p2_ssee_fijo_k0.log
+      hash: md5
+      md5: df5d0b44256f7efef2d9179a66be234d
+      size: 1523
