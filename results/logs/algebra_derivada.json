@@ -181,6 +181,21 @@
    "valor": 1.0454707614945529,
    "uso": "punto del condensado, Paper 7"
   },
+  "p7_Xbg_pct": {
+   "formula": "100*(-2*(1-W0)/(3*W0-1)-1)",
+   "valor": 4.547076149455287,
+   "uso": "X_bg sobre X_min en %, Paper 7"
+  },
+  "p7_norm_err_pct": {
+   "formula": "100*(S_DE/OMDE_DENS-1)",
+   "valor": 21.534725226126426,
+   "uso": "error de amplitud de la normalizacion vieja de K (s_DE en vez de Omega_DE), Paper 7"
+  },
+  "p7_cuartal_pct": {
+   "formula": "100*(4*AURA-3*OMDE_DENS*(5-3*W0))/(4*AURA)",
+   "valor": 2.5016802718676407,
+   "uso": "distancia de alpha_K a CUARTAL=4 AURA, Paper 7"
+  },
   "phi_mas_2pi": {
    "formula": "PHI+2*PI",
    "valor": 7.901219295929481,
@@ -529,17 +544,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "482a75fe78ff23af6424bb33fbfd7033dc0a5e38",
+  "commit": "7525a4836422ac9b394b13ecaf3fd080b37a0162",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "55e8201946573090787302e632602462046d28a2cb4dc77768123528b405a790",
+  "script_sha256": "825f60992c6bd21fca8dff5aad8be908671698ed3ddcaf3cb3ace0733208e9f6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-11T17:20:52",
+  "fecha": "2026-10-11T17:59:39",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

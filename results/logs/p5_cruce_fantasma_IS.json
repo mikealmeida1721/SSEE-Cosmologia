@@ -148,17 +148,17 @@
   "control_crece": true
  },
  "_procedencia": {
-  "commit": "e4a379e6c6aeef3ef8d19a733aea426e664128ba",
+  "commit": "07c4573baa024c7d6647c9359d48eb0734ead380",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p05_IS/cruce_fantasma_IS.py",
-  "script_sha256": "975588102596c27da906601ff34ecda656f85ce40448a661a35c50ae903dee61",
+  "script_sha256": "057a13e372f265eb3f055cf0a829c08f096829d0d396f2047af10f1e5e76ba1b",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p05_IS/cruce_fantasma_IS.py"
   ],
-  "fecha": "2026-10-11T17:19:49",
+  "fecha": "2026-10-11T21:12:38",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

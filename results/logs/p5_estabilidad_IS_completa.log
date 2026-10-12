@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "07c4573baa024c7d6647c9359d48eb0734ead380", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/estabilidad_IS_completa.py", "script_sha256": "8f6464cb1d9c9791c1a8e55386135ed98120c6efac7f51a844cb69dfbc548dcf", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/estabilidad_IS_completa.py"], "fecha": "2026-10-11T21:12:41", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 k=   2.0  lam_IS=   1.019  asint=   1.153  zeta0=   1.833  campoP7=0.000
 k=   5.0  lam_IS=   1.982  asint=   2.124  zeta0=   4.582  campoP7=0.000
 k=  10.0  lam_IS=   3.226  asint=   3.372  zeta0=   9.165  campoP7=0.000

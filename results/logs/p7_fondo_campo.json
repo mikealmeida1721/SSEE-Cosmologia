@@ -14,11 +14,11 @@
  },
  "A_campo_solo": {
   "w_phi": {
-   "0.30": 0.03753067615322953,
-   "0.50": -0.34349036667994737,
-   "0.70": -0.630797263068432,
-   "0.90": -0.7912065020668944,
-   "1.00": -0.8399497713447789
+   "a030": 0.03753067615322953,
+   "a050": -0.34349036667994737,
+   "a070": -0.630797263068432,
+   "a090": -0.7912065020668944,
+   "a100": -0.8399497713447789
   },
   "wa_local": 0.4135874242183757,
   "cpl": {
@@ -59,17 +59,17 @@
   "n_ok_1sigma_y_estable": 0
  },
  "_procedencia": {
-  "commit": "ca872f482470ad7c5095064aa0ccea2980935475",
+  "commit": "07c4573baa024c7d6647c9359d48eb0734ead380",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p07_eft/fondo_campo_p7.py",
-  "script_sha256": "5cf43aa4e393a95e33c147a00e715aede167b637f7fa78f01fd3ef3a9c7ade4f",
+  "script_sha256": "38d62fea8b2b338f3d60699f8d9eeed62a13eb53124f135333bf6709c18f722e",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p07_eft/fondo_campo_p7.py"
   ],
-  "fecha": "2026-10-11T17:48:33",
+  "fecha": "2026-10-11T21:12:44",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

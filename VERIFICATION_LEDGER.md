@@ -113,9 +113,9 @@ Cambian si el script o los datos cambian. Cada uno lleva su **procedencia**.
 | ΔBIC CMB (plik FULL, nuisances libres, k=3 vs 6 — cadena de VALIDACIÓN con H₀ libre, no el titular) | **−25.766** — χ²_SSEE=2770.443 vs χ²_ΛCDM=2772.917, Δχ²=−2.474 (SSEE ajusta MEJOR con 3 params menos), N=2354 | `ssee_paper3_b1_mcmc.py --mode both` (Cobaya, R−1=0.017) → `results/logs/b1_analyse.log` | 2026-07-27 |
 | H₀ posterior CMB (plik FULL, H₀ flotado k=3) | **67.8809 ± 0.1005 km/s/Mpc** — 0.81σ de H_glob=67.9621 (= el blanco 3(φ+π)²); la cadena RECUPERA H_glob, no lo asume; σ 5.3× más chico que ΛCDM (67.394±0.528) | `ssee_paper3_b1_mcmc.py` → `results/logs/b1_analyse.log` | 2026-07-27 |
 | H₀ MCMC posterior (prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2, ω_m algebraico fijo R25, r_d y distancias CAMB) | **67.8226 ± 0.4126 km/s/Mpc** — 0.34σ de H_glob, 0.68σ Planck (semilla fija en emcee: determinista, control de dos corridas idénticas 2026-10-01) · DESI sola (prior plano) 67.7843 ± 0.4554 (0.39σ H_glob; era 67.7931 ± 0.4603, log: git:513e84e:results/logs/h0_four_priors.json, sin semilla) | `ssee_paper2_mcmc_reframe.py` (100w×25k, N_eff=80365; re-corrido 2026-10-01 sin el término de cúmulos, que era constante: H₀ se movió 0.004 (ruido MC)) → `results/logs/mcmc_paper2_reframe.json`; distancias `src/p02_mcmc/h0_distancias.py` → `h0_distancias_hglob.json`; DESI sola `h0_four_priors.json` | 2026-09-28 (era 67.7869±0.352, log: git:513e84e:results/logs/mcmc_paper2_reframe.log, con prior número puro ±0.54 y r_d por fórmula; 67.9475 congelaba Ω_m; 66.41 bug 0.160; 67.159 DR1) | <!-- R74: git:509001df85:CANONICAL_VALUES.yaml -->
-| ΔBIC MCMC (ΛCDM−SSEE) | **+7.25** (CPL +6.14; ΔAIC +6.48/+3.82; ΔDIC -6.47; Savage-Dickey ln B = 2.34; re-corrido 2026-10-01 sin el término de cúmulos que solo llevaba SSEE — era +6.77) | `ssee_paper2_mcmc.py` → `mcmc_paper2_3models_wmfix.log`; resumen con acta `src/p02_mcmc/resumen_3modelos.py` → `results/logs/resumen_3modelos.json`; DIC `dic_from_chains.json`; SD `savage_cv.json` | 2026-09-30 (re-corrida completa, SSEE incluido; era +6.43/+6.35 del 07-25) <!-- R74: git:d11487679d:CANONICAL_VALUES.yaml -->
+| ΔBIC MCMC (ΛCDM−SSEE) | **+5.81** (CPL +4.71; ΔAIC +5.04/+2.39; ΔDIC −5.02; Savage-Dickey ln B = 2.38; re-corrido 2026-10-11 con SSEE bajo el mismo prior Planck que ΛCDM/CPL — era +7.25 <!-- R74: git:60f1269575:results/logs/resumen_3modelos.json -->, y +6.77 con el término de cúmulos) | `ssee_paper2_mcmc.py` → `mcmc_paper2_3models_wmfix.log`; resumen con acta `src/p02_mcmc/resumen_3modelos.py` → `results/logs/resumen_3modelos.json`; DIC `dic_from_chains.json`; SD `savage_cv.json` | 2026-09-30 (re-corrida completa, SSEE incluido; era +6.43/+6.35 del 07-25) <!-- R74: git:d11487679d:CANONICAL_VALUES.yaml -->
 | Ω_b h² (posterior MCMC reframe) | **0.02198 ± 0.00048** (≈BBN 0.02218) | `src/p02_mcmc/reframe_obh2.py` lee la cadena de `ssee_paper2_mcmc_reframe.py` (control: mediana H₀ = json) → `results/logs/mcmc_paper2_reframe_obh2.json` | 2026-09-29 (era 0.02207±0.00045 con prior número puro ±0.54) | <!-- R74: git:6fdfa3b03c:CANONICAL_VALUES.yaml -->
-| r_d,SSEE (MCMC, ω_m algebraico fijo R25) | 147.71 en la mediana del posterior (ΛCDM 147.59, ratio 1.001); en el punto algebraico 147.17 vs ΛCDM-Planck 147.10 (`rd_dual.json`, `lya_auditoria.json`) | `ssee_paper2_mcmc.py` → `results/logs/mcmc_paper2_3models_wmfix.log` | 2026-09-30 (148.15 con Ω_m congelado; el 175.16 era el bug 0.160 en E(z))
+| r_d,SSEE (MCMC, ω_m algebraico fijo R25) | 147.26 en el MAP (ΛCDM 147.59, ratio 0.998; `p2_fig8_rd.json`, 2026-10-11); en el punto algebraico 147.17 vs ΛCDM-Planck 147.10 (`rd_dual.json`, `lya_auditoria.json`) | `ssee_paper2_mcmc.py` → `results/logs/mcmc_paper2_3models_wmfix.log` | 2026-09-30 (148.15 con Ω_m congelado; el 175.16 era el bug 0.160 en E(z))
 | r_d (CAMB, reframe ω_m-directo @ H_glob=67.962, Ω_m,CMB=0.308881) | 147.17 Mpc — **0.32σ** (ΛCDM-Planck con su mν, mismo código: 147.10) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log`; ΛCDM `src/ssee_resolution_figures.py` → `rd_dual.json` | 2026-09-29 (re-corrido; sin mapping MIRA; era 146.73@67.037) | <!-- R74: git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
 | χ²_r CMB TT (SSEE) | 1.042 | `ssee_paper3_cmb.py` (reframe ω_m-directo @ H=67.962, Σm_ν=0.0685) → `results/logs/paper3_cmb_reframe.log` | 2026-06-19 (era 1.044 @67.04 legacy) | <!-- R74: git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
 | ΔBIC CMB diagonal (SSEE−ΛCDM) | −35.0 (SSEE favorecido) | `ssee_paper3_cmb.py` (etapa `paper3_cmb`) → `results/logs/paper3_cmb_chi2.json#total.dBIC` = −35.03 (el log de julio `p3_pr4_diag_nu_fix.log`, archivado 2026-10-03 en `archive/logs_superados/era_v36_mira_dr1/`, daba lo mismo) | 2026-07-25 (Σm_ν=0.06849 coherente; era −34.9 con 0.0690, −28.0 @67.04 legacy) |
@@ -1126,22 +1126,22 @@ DESI DR2 + geometría total Ω_m=0.308881, prior Planck común, r_d CAMB, cada m
 
 | Modelo | k | H₀ | ln P_MAP | BIC | ΔBIC |
 |---|---|---|---|---|---|
-| **SSEE** | 2 | 67.617 ± 0.349 | −5.52 | 16.58 | **0.00** |
-| ΛCDM | 3 | 68.387 ± 0.278 | −7.76 | 23.83 | +7.25 |
-| CPL | 5 | 67.264 ± 0.515 | −4.43 | 22.72 | +6.14 |
+| **SSEE** | 2 | 67.869 ± 0.278 | −6.24 | 18.02 | **0.00** |
+| ΛCDM | 3 | 68.390 ± 0.277 | −7.76 | 23.83 | +5.81 |
+| CPL | 5 | 67.261 ± 0.518 | −4.43 | 22.73 | +4.71 |
 
 1. **✓ aritmética BIC:** BIC = k·ln(16) − 2·lnP_MAP se recomputa exacto desde las cadenas —
-   **ΔBIC=+7.25 (ΛCDM), +6.14 (CPL) a favor de SSEE** (2026-10-01; era +6.77/+5.65 con el término de cúmulos asimétrico), el modelo más simple.
-   ΔAIC +5.99/+3.34, ΔDIC −6.00 / −3.34 (`dic_from_chains.json`),
-   Savage-Dickey lnB=2.34 (`savage_cv.json`; era 2.90 con la cadena CPL de julio).
+   **ΔBIC=+5.81 (ΛCDM), +4.71 (CPL) a favor de SSEE** (2026-10-11, SSEE con el mismo prior Planck que ΛCDM/CPL; era +7.25/+6.14 <!-- R74: git:60f1269575:results/logs/resumen_3modelos.json -->), el modelo más simple; «positivo» en Kass–Raftery.
+   ΔAIC +5.04/+2.39, ΔDIC −5.02 / −2.37 (`dic_from_chains.json`),
+   Savage-Dickey lnB=2.38 (`savage_cv.json`; era 2.34, y 2.90 con la cadena CPL de julio).
    (lnB₁₀=7.42 RETIRADO: Laplace de una tabla huérfana, sin script vivo.)
    Cross-val: SSEE χ²_r(test)=0.262 < ΛCDM 0.711; CPL NO se cita (su ajuste de
    entrenamiento queda en el borde H₀=50; `savage_cv.json#alguno_en_borde`).
-2. **✓ H₀ consistente:** 67.61±0.35 con prior Planck (0.40σ) y 67.82±0.41 con prior
+2. **✓ H₀ consistente:** 67.87±0.28 con prior Planck común (0.84σ; 2026-10-11) y 67.82±0.41 con prior
    H_glob (reframe, 2026-09-28). Suben del 66.41 con bug 0.160.
 3. **✓ Ω_b h² ≈ BBN:** posterior 0.02198±0.00048 vs OP-1 algebraico 0.02242 (0.91σ; `mcmc_paper2_reframe_obh2.json`, 2026-09-29).
    El "1.2σ menos barión" era el bug (0.02183/0.02285 con geometría 0.160). <!-- R74: git:6fdfa3b03c:results/logs/mcmc_professional.log -->
-4. **✓ r_d(SSEE)=147.71 Mpc** ≈ r_d(ΛCDM) 147.59 (ratio 1.001; medianas del posterior, CAMB). El 175.16 crudo
+4. **✓ r_d(SSEE)=147.26 Mpc** ≈ r_d(ΛCDM) 147.59 (ratio 0.998; MAP, CAMB; `p2_fig8_rd.json`). El 175.16 crudo
    era Ω_m,dyn=0.160 en E(z) — el bug de geometría; con la total es el estándar.
 5. **✓ Ω_m tensión = 0.88σ** (Ω_m,total=0.308881 vs Planck 0.315). La "21.3σ" era
    comparar el sector frío 0.160 con Planck — el bug dos-Ω_m, ahora DISUELTO.

@@ -173,17 +173,17 @@
  },
  "lectura": "Con |c2| = s exacto, el modo creciente tiene lambda^2 = k^2 s/(1+lambda tau) > 0 a todo k: IS NO estabiliza; c2_eff = 0 solo vale para oscilaciones con omega tau -> infinito. La cuasi-estatica es el limite NS y acota la tasa a 1/tau. Con el c2_s del campo de Paper 7 no hay modo creciente.",
  "_procedencia": {
-  "commit": "781b86bf3d6b31ac9bb1c1a2f7e7934d32e569a8",
+  "commit": "07c4573baa024c7d6647c9359d48eb0734ead380",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p05_IS/estabilidad_IS_completa.py",
-  "script_sha256": "be99b23abafae1a934350e8d746e3a4326efaab62db8cde2a332f213fb81ba86",
+  "script_sha256": "8f6464cb1d9c9791c1a8e55386135ed98120c6efac7f51a844cb69dfbc548dcf",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p05_IS/estabilidad_IS_completa.py"
   ],
-  "fecha": "2026-10-11T16:41:47",
+  "fecha": "2026-10-11T21:12:41",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

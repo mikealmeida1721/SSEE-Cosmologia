@@ -22,7 +22,7 @@
 #     deltaBIC_cmb_plik_full = −2.474 − 3·ln(2354) = −25.766 (Δk = −3)
 #     Delta_BIC_CMB          = −0.0096 − 4·ln(669) = −26.03  (Δk = −4; ΛCDM con SU mν 0.06, 2026-09-28)
 #     Delta_BIC_CMB_fullplik = −2.778 − 4·ln(2354) = −33.83  (Δk = −4)
-#     deltaBIC_lcdm_minus_ssee = +7.25 ⟹ Δ(SSEE−ΛCDM) = −7.25
+#     deltaBIC_lcdm_minus_ssee = +5.81 ⟹ Δ(SSEE−ΛCDM) = −5.81
 #   Este archivo llevaba la convención declarada sólo junto a dos claves
 #   (2026-09-25); de ahí salieron los signos opuestos entre Paper 1/2 y
 #   Paper 6/Sealed/Unified. Ahora se declara aquí y no se repite invertida.
@@ -263,19 +263,20 @@ canonical:
   # de julio), r_d por CAMB y cada modelo con SU mν. Valores de las cadenas, con acta:
   #   resumen_3modelos.json (src/p02_mcmc/resumen_3modelos.py; control contra la tabla del log),
   #   dic_from_chains.json, savage_cv.json, lya_auditoria.json.
-  #   H0: SSEE 67.62±0.35 (0.40σ Planck) · ΛCDM 68.39±0.28 · CPL 67.26±0.51
-  #   ΔBIC(SSEE−CPL) = −6.14 · ΔAIC −6.48 (ΛCDM) / −3.82 (CPL) · ΔDIC(SSEE−CPL) = -3.81  (2026-10-01, sin el término de cúmulos)
-  #   Savage-Dickey B=10.37 (lnB=2.339; era 18.34/2.91 con la cadena CPL de julio) — sigue > 2.3
+  #   RE-CORRIDA 2026-10-11 (a7fb5c9): SSEE con los MISMOS datos que ΛCDM/CPL (prior Planck 3D entero, sin BBN).
+  #   H0: SSEE 67.87±0.28 (0.84σ Planck) · ΛCDM 68.39±0.28 · CPL 67.26±0.52
+  #   ΔBIC(SSEE−CPL) = −4.71 · ΔAIC −5.04 (ΛCDM) / −2.39 (CPL) · ΔDIC(SSEE−CPL) = −2.37
+  #   Savage-Dickey B=10.80 (lnB=2.379) — sigue > 2.3. (Antes: ΔBIC −7.25/−6.14, ΔDIC −6.47, lnB 2.339, SSEE con otro prior R74: git:60f1269575:results/logs/resumen_3modelos.json)
   #   Cross-val LOO-z (z≥1.0): SSEE χ²_r=0.262 < ΛCDM 0.711; Δln L_test(SSEE−ΛCDM)=+1.35.
   #   CPL: su ajuste de entrenamiento queda en el borde H0=50 (savage_cv.json, alguno_en_borde) —
   #   número NO válido, no se cita.
   #   (lnB10=7.42 RETIRADO: era Laplace de una tabla huérfana, sin script vivo)
-  H0_posterior_planckprior_km_s_Mpc: 67.62   # FUENTE: results/logs/resumen_3modelos.json — 67.617 ± 0.349, 3-modelos prior Planck (era 67.615)
-  deltaBIC_lcdm_minus_ssee: 7.25   # FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
+  H0_posterior_planckprior_km_s_Mpc: 67.87   # FUENTE: results/logs/resumen_3modelos.json — 67.869 ± 0.278, 3-modelos prior Planck común (2026-10-11; era 67.617 ± 0.349 con otro prior para SSEE)
+  deltaBIC_lcdm_minus_ssee: 5.81   # FUENTE: results/logs/resumen_3modelos.json — OJO: esta clave SÍ es LCDM − SSEE (lo dice
                                    # su nombre), por eso >0 favorece SSEE. En los papers se cita con la
-                                   # convención común: Δ(SSEE−LCDM) = −7.25 (CPL: −6.14). Era 6.77 (con el término de cúmulos solo en SSEE).
-  deltaDIC_ssee_minus_lcdm: -6.47  # FUENTE: results/logs/dic_from_chains.json — era −6.00 (con el término de cúmulos)
-  lnB_savage_dickey: 2.34          # FUENTE: results/logs/savage_cv.json — 2.3387; B = 10.37
+                                   # convención común: Δ(SSEE−LCDM) = −5.81 (CPL: −4.71). Era 7.25 con otro prior para SSEE, y 6.77 con el término de cúmulos solo en SSEE.
+  deltaDIC_ssee_minus_lcdm: -5.02  # FUENTE: results/logs/dic_from_chains.json — era −6.47 (otro prior para SSEE) y −6.00 (con el término de cúmulos)
+  lnB_savage_dickey: 2.38          # FUENTE: results/logs/savage_cv.json — 2.3794; B = 10.80
 
   # ── Fase B / B1 — likelihood COMPLETA de Planck ───────────────────────
   # plik TTTEEE full + lowl TT + lowl EE + lensing, con los ~20 nuisances

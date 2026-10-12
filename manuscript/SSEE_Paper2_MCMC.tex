@@ -73,7 +73,7 @@ predictive checks, using \textsc{emcee} \citep{emcee,GoodmanWeare2010} with $N_{
 $N_{\rm steps}=25{,}000$ ($2.5\times10^6$ total evaluations), and a same-bin correlated block-diagonal covariance approximation for the DESI~DR2 BAO measurements; convergence
 diagnostics (including $N_{\rm eff}=\val{p2_neff_ssee}$ effective samples for \SSEE) are
 reported in Table~\ref{tab:convergence}.
-The \SSEE\ prediction $(\wz,\wa)=(-0.840,-0.670)$, fixed algebraically by the
+The \SSEE\ prediction $(\wz,\wa)=(\val{W0_d3},\val{WA_d3})$, fixed algebraically by the
 closed dictionary \citep{AlmeidaSSEE2026genesis} and not fitted to the data,
 lies within $\val{p2_w0wa_ssee_ec26}\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior
 (DESI+CMB+Pantheon+; arXiv:2503.14738, eq.~26) in the $\wz$--$\wa$ plane, and
@@ -88,14 +88,15 @@ Against all $\val{clz_rgimf_N}$ cluster dynamical masses of \citet{Zhang2026}, t
 with no free parameter, is consistent at $\val{clz_rgig_sig}\sigma$ with the IGIMF
 baryon baseline --- as is \LCDM\ ($\val{clz_lcig_sig}\sigma$): clusters test the matter
 content but do not discriminate between the two backgrounds.
-With $(w_0,w_a)$ fixed algebraically and one free parameter $H_0$, SSEE is
-favoured by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and $\val{p2_dBIC_cpl}$ over CPL, and
-predicts the DESI~DR2 test set better in leave-one-out cross-validation ---
-so the $\wz$--$\wa$ prediction is genuinely preferred by current BAO data.
+With $(w_0,w_a)$ fixed algebraically and two sampled parameters ($H_0$ and
+$\Omega_b h^2$), against the same DESI~DR2 data and the same compressed Planck prior as
+\LCDM\ and CPL, SSEE is favoured by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and
+$\val{p2_dBIC_cpl}$ over CPL, and predicts the DESI~DR2 test set better in leave-one-out
+cross-validation.
 The background geometry uses the \emph{total} gravitating matter density
 $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct; no matter factor, OP-8
-dissolved), for which the SSEE sound horizon matches \LCDM\
-($r_d^{\SSEE}/r_d^{\LCDM}=\val{p2_rd_ratio}$) and $\Omega_m$ agrees with Planck at
+dissolved), for which the SSEE sound horizon at the algebraic point matches that of
+\LCDM\ at the Planck~2018 parameters ($r_d^{\SSEE}/r_d^{\LCDM}=\val{p2_rd_ratio}$, CAMB) and $\Omega_m$ agrees with Planck at
 $\val{om_planck_sig}\sigma$. The saturation $s_m=1+w_0=\val{S_M_d6}$ is a number of the
 dark-energy equation of state, not a density, and does not enter the
 background geometry.
@@ -132,12 +133,11 @@ cosmological background as algebraic combinations of $\pi$ and
 $\varphi=(1+\sqrt{5})/2$.
 The background sector $(w_0,w_a,\Omega_{\rm DE},\Omega_m)$ tested in this
 paper carries zero dimensionless fitted parameters, and no WIMP, QCD-axion, or SUSY
-dark-matter particle is introduced; phenomenological extensions in the dark-matter
-sector (Paper~6) introduce ans\"atze tracked as open problems
-(see Paper~1, \S1.3, and \texttt{OPEN\_PROBLEMS.md}).
-Paper~1, Appendix~A provides a complete Lagrangian (k-essence + Israel--Stewart
-viscosity) derived algebraically from $\{\varphi,\pi\}$, with zero free parameters
-at the EFT background level.
+dark-matter particle is introduced (the cold dark matter density is the algebraic
+identity $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$; what it is made of is an open problem,
+see Paper~1, \S1.3, and \texttt{OPEN\_PROBLEMS.md}).
+The effective action of the dark-energy field is that of Paper~7; Paper~1,
+Appendix~A gives its motivation, not an independent Lagrangian.
 Its current operational status is that of a
 \emph{predictive phenomenology} — one whose central predictions are
 fixed before confronting data.
@@ -155,19 +155,18 @@ full Bayesian MCMC evaluation with four aims:
     Bayesian inference against \LCDM\ and free CPL alternatives.
   \item Test, symmetrically against \LCDM, whether galaxy-cluster dynamical
     masses are consistent with the \SSEE\ matter content.
-  \item Document why the naive $\OmDE^{\SSEE}\approx0.840$ vs
+  \item Document why the naive $\OmDE^{\SSEE}\approx\val{S_DE_d3}$ vs
     $\Omega_\Lambda\approx0.685$ comparison is a category error
     ($s_{\rm DE}$ vs.\ density fraction) and localise its origin in the
     retired two-sector framing (see \S\ref{sec:folding}).
-  \item Provide a roadmap for the modified Friedmann CMB analysis
-    and semi-linear transfer function required in Paper~3.
+  \item Prepare the full CMB likelihood test of the same background, carried
+    out in Paper~3.
 \end{enumerate}
 
 The framing is explicit: \textit{the goal of this paper is to test the
 ansatz against current data, not to defend it}. Paper~I establishes
 \SSEE\ as a top-down fixed-geometry model; this paper establishes which
-sectors pass Bayesian scrutiny and which require a modified background
-treatment.
+sectors pass Bayesian scrutiny.
 
 \section{SSEE Model Summary}
 \label{sec:model}
@@ -178,22 +177,21 @@ From $\pi$ and $\varphi=(1+\sqrt{5})/2$, the framework defines the
 structural retention $\KALz$ and the CPL \citep{Chevallier2001,Linder2003} parameters as:
 \begin{align}
   \KALz &= \frac{\pi+\varphi}{2}+\pi \approx \val{KAL0_d4}, \label{eq:kal0} \\
-  \wz^{\SSEE} &= -\frac{T_r}{M_v}\approx-0.840, \quad
-  \wa^{\SSEE} = -\frac{P_{sc}}{I_g}\approx-0.670.
+  \wz^{\SSEE} &= -\frac{T_r}{M_v}=\val{W0_d6}, \quad
+  \wa^{\SSEE} = -\frac{P_{sc}}{I_g}=\val{WA_d6}.
   \label{eq:ssee_pars}
 \end{align}
 All three quantities are fixed by geometry; no fitting is performed.
 Note that $\wz+\wa=-1.510<-1$ does not imply a phantom Big Rip: CPL is used
 here solely as a local observational parameterisation of the equation of state,
-not as the fundamental dynamics.  In the \SSEE\ framework, the dark-energy
-density saturates at the finite $T_r/M_v$ boundary of the action at
-$a\to\infty$, guaranteeing universal stability; see Paper~1 \S3.4
-\citep{SSEE_paperI} for the full stability argument.
-The equation-of-state-sector saturation quantity is similarly fixed:
-$s_{\rm DE}^{\SSEE}=T_r/M_v\approx0.840$ (not a density fraction), with the
-algebraic matter-sector complement
+not as the fundamental dynamics; its extrapolation to $a\to\infty$ is not a
+prediction of the model, and the stability of the field is that of the
+effective action of Paper~7 \citep{SSEE_paperI}.
+The equation-of-state saturation is similarly fixed:
+$s_{\rm DE}^{\SSEE}=T_r/M_v=\val{S_DE_d6}=-w_0$ (not a density fraction), with its
+complement, also a number of the equation of state,
 \begin{equation}
-  s_m = 1-s_{\rm DE}^{\SSEE} \approx 0.160.
+  s_m = 1-s_{\rm DE}^{\SSEE} = 1+w_0 = \val{S_M_d6}.
   \label{eq:om_eff}
 \end{equation}
 The fixed-geometry model is effectively parameter-free at the geometric
@@ -212,17 +210,17 @@ fixed \SSEE\ geometric parameters into observable distances.
 There is one matter density, $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$
 (\S\ref{sec:folding}; no matter factor, OP-8 dissolved), hence
 $\Omega_{\rm DE}=1-\Omega_m=\val{OMDE_DENS_d6}$.
-The only sampled cosmological parameter is $H_0$; the algebraic
+The sampled parameters are $H_0$ and $\Omega_b h^2$; the algebraic
 quantities ($\wz,\wa,s_{\rm DE}^{\SSEE},\KALz$) are fixed by geometry
-as described in Section~\ref{sec:model}. The equation-of-state-sector
-quantities $s_{\rm DE}^{\SSEE}=T_r/M_v\approx0.840$ and
-$s_m=1-s_{\rm DE}^{\SSEE}\approx0.160$ do not enter the background
+as described in Section~\ref{sec:model}. The equation-of-state
+quantities $s_{\rm DE}^{\SSEE}=T_r/M_v=\val{S_DE_d6}$ and
+$s_m=1-s_{\rm DE}^{\SSEE}=\val{S_M_d6}$ do not enter the background
 densities (see \S\ref{sec:folding}).
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.82\textwidth]{fig3_omega_de.pdf}
-  \caption{\textit{Left}: $s_{\rm DE}^{\SSEE}=T_r/M_v\approx0.840$ (red line),
+  \caption{\textit{Left}: $s_{\rm DE}^{\SSEE}=T_r/M_v=\val{S_DE_d6}$ (red line),
   the equation-of-state-sector saturation quantity (not a density fraction;
   the physical density is $\Omega_{\rm DE}=\val{OMDE_DENS_d6}$), shown against
   Planck~2018 $\Omega_\Lambda\approx0.685$ (blue) and
@@ -283,8 +281,8 @@ formerly written $\Omega_{m,\rm dyn}=\val{S_M_d6}$ is $1+w_0$, an equation-of-st
 parameter, and never was a density (Paper~1, \S1.4;
 the $\phi$-DM sector that once separated them is retracted in Paper~6).
 The falsifiable content therefore moves from the $|w_0|$ coincidence to the
-direct CMB fit of Paper~3 (canonical $\Delta\mathrm{BIC}=\val{b1_dBIC}$ full \texttt{plik}
-MCMC; $-26.03$ \texttt{plik\_lite} TTTEEE+low-$\ell$ point estimate): if that fit had yielded $\chi^2_r\gg1$ or excluded
+direct CMB fit of Paper~3 (canonical $\Delta\mathrm{BIC}=\val{b1_dBIC}$ full \texttt{plik}, minimum $\chi^2$ of
+each model; $\val{lite_dBIC}$ \texttt{plik\_lite} TTTEEE+low-$\ell$): if that fit had yielded $\chi^2_r\gg1$ or excluded
 $r_d^{\,\omega_m\text{-direct}}$, the construction would be falsified.
 
 %% 2026-10-01: retirada la figura de la interpolacion KAL(x) Newton-MOND (fig4_KAL_interpolation):
@@ -304,17 +302,13 @@ expansion history. The BAO log-likelihood uses a block-diagonal covariance incor
   \ln\mathcal{L}_{\rm BAO}
   = -\tfrac{1}{2} (\mathbf{q}^{\rm pred}-\mathbf{q}^{\rm obs})^\top \mathbf{C}^{-1} (\mathbf{q}^{\rm pred}-\mathbf{q}^{\rm obs}),
 \end{equation}
-with the sound horizon from a power-law expansion about the Planck~2018
-point \citep{Planck2018}, used here as an auxiliary approximation for model
-comparison. Its exponents are the local logarithmic derivatives of the
-\citet{EisensteinHu1998} fitting formula at that point, and its normalization
-is the Boltzmann value there (compare the global fit of
-\citealt{Aubourg2015}):
-\begin{equation}
-  r_d = 147.27\!\left(\frac{\Omega_m h^2}{0.1432}\right)^{\!-0.255}\!
-  \left(\frac{\Omega_b h^2}{0.02237}\right)^{\!-0.134}\!\text{Mpc}.
-  \label{eq:rd}
-\end{equation}
+with the sound horizon $r_d$ computed by CAMB for every sample, from its
+$(\omega_b,\omega_m)$ and each model's own $\sum m_\nu$ (the algebraic value for
+\SSEE, $0.06$\,eV for \LCDM\ and CPL). An earlier version used a power-law
+expansion of the \citet{EisensteinHu1998} formula about the Planck point
+\citep[compare][]{Aubourg2015}, whose normalization ran $0.13\%$ long; it is
+retired. The production chain of \S\ref{sec:prior_mira} also takes $D_M$ and $D_H$
+from CAMB; the three-model run integrates $E(z)$.
 
 \begin{table}[H]
 \centering
@@ -353,7 +347,9 @@ but the $H_0$ that the Planck~\texttt{plik\_lite} TTTEEE likelihood itself
 prefers under the SSEE background. With the baryon and cold-matter densities
 fixed by SSEE algebra ($\omega_b=(\pi-\varphi)/[3(\varphi+\pi)^2]=\val{OMEGA_B_H2_d6}$,
 $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s=\val{OMEGA_C_H2_d6}$; Paper~3, $\omega_m$-direct),
-the CMB $\chi^2$ is minimised at the global rate returned by the SSEE
+the CMB $\chi^2$ profile has its minimum at
+$H_0=\val{perfil_h0_min}\pm\val{perfil_h0_sig}$ (parabola through the grid; lowest node at the
+value below), $\val{perfil_h0_d}\sigma$ from the global rate returned by the SSEE
 screening cascade (Papers~9--10), which takes the measured SH0ES rate as input:
 \begin{equation}
   H_0^{\rm prior,SSEE} \;=\; H_0^{\rm glob} \;=\; H_{\rm SH0ES}\,(1-f_{\rm screen}) \;=\; \val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma} \;\text{km\,s}^{-1}\,\text{Mpc}^{-1},
@@ -362,7 +358,7 @@ screening cascade (Papers~9--10), which takes the measured SH0ES rate as input:
 where the uncertainty is the SH0ES error propagated through the (multiplicative)
 screening factor, and the central value reproduces the dimensionless algebraic
 target $3(\varphi+\pi)^2$ to $\val{p9_hglob_residuo}$~km\,s$^{-1}$\,Mpc$^{-1}$ (a relative $\val{hglob_residuo_rel}$). The background
-$H$ and the CMB anchor coincide --- they are not two numbers --- and the
+$H$ and the CMB anchor agree within the width of the CMB profile, and the
 matter density follows as $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$,
 with \emph{no} matter factor (the earlier MIRA mapping
 $\Omega_{m,\mathrm{CMB}}=\mathrm{MIRA}\,\Omega_{m,\mathrm{dyn}}=0.31993$ is
@@ -375,15 +371,16 @@ but reduced under the cosmological model actually being tested.
 The only sampled parameters in the SSEE chain are $H_0$ and $\Omega_b h^2$.
 The matter density is not sampled. The background geometry --- $E(z)$, the
 sound horizon $r_d$, and every BAO distance --- uses the \emph{total} algebraic
-matter density $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$
-(\S\ref{sec:folding}, \S\ref{sec:results_cosmo}); the value
+matter density $\omega_m=\val{OMEGA_M_H2_d5}$, fixed, with $\Omega_m=\omega_m/h^2$
+derived for each sample ($\val{OMEGA_M_TOTAL_d6}$ at $H_0^{\rm glob}$;
+\S\ref{sec:folding}, \S\ref{sec:results_cosmo}); the value
 $s_m=(\pi-\varphi)/[2(\varphi+\pi)]=1+w_0=\val{S_M_d6}$ is a saturation of the
 equation of state, not a density, and does \emph{not} enter $E(z)$. Thus $r_d$ is computed from
-$\omega_m = \Omega_{m,\mathrm{CMB}}(H_0/100)^2$ self-consistently.
+the algebraic $\omega_m$ at every sample.
 A BBN prior $\Omega_b h^2 = 0.02218\pm0.00055$ \citep{Schoneberg2024} is adopted
 for the baryon density, consistent with the SSEE algebraic value
 $\Omega_b h^2 = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ (Paper~4)
-at $0.4\sigma$.
+at $\val{wb_bbn_sig}\sigma$.
 Compared on the same footing --- total against total --- the SSEE matter
 density agrees with the $\Lambda$CDM-Planck value
 $\Omega_m = 0.3153\pm0.0073$ at $\val{om_planck_sig}\sigma$ ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$).
@@ -432,11 +429,13 @@ CPL        & $H_0,\;\Omega_m,\;\wz,\;\wa,\;\Omega_b h^2$ & --- & 5 \\
 \end{tabular}
 \end{table}
 
-All models share a BBN prior $\Omega_b h^2\sim\mathcal{N}(0.02218,\,0.00055^2)$ \citep{Schoneberg2024}.
-For \LCDM\ and CPL, the full 3D Planck prior is applied. For \SSEE,
-the Planck prior reduces to a marginal Gaussian on $H_0$ only, since
-$\Omega_m$ is fixed. CPL carries weakly informative priors
-$\wz\sim\mathcal{N}(-1,0.5^2)$ and $\wa\sim\mathcal{N}(0,1^2)$.
+In the three-model comparison all three models see the same data: the 13
+DESI~DR2 points and the full compressed Planck prior on $(H_0,\Omega_m,\omega_b)$.
+For \SSEE\ $\Omega_m=\omega_m/h^2$ is derived for each sample, not sampled. CPL
+carries in addition weakly informative priors $\wz\sim\mathcal{N}(-1,0.5^2)$ and
+$\wa\sim\mathcal{N}(0,1^2)$. The production chain of the \SSEE\ $H_0$ posterior
+(\S\ref{sec:prior_mira}) replaces the Planck prior by the $H_0^{\rm glob}$ prior and a
+BBN prior $\Omega_b h^2\sim\mathcal{N}(0.02218,\,0.00055^2)$ \citep{Schoneberg2024}.
 
 Table~\ref{tab:param_hierarchy} classifies every quantity in the \SSEE\
 MCMC by its structural role. The distinction between fixed-by-geometry,
@@ -450,18 +449,19 @@ additionally sample $\Omega_m$ (and $\wz,\wa$ for CPL).
 \caption{Parameter hierarchy in the \SSEE\ MCMC. Categories:
 \textbf{Fixed by geometry} = algebraically determined, never sampled;
 \textbf{Sampled} = inferred via MCMC; \textbf{Derived} = computed from
-sampled values; \textbf{Mapped} = structural hypothesis (acoustic-scale mapping), to be validated in Paper~3.}
+sampled values.}
 \label{tab:param_hierarchy}
-\begin{tabular}{@{}lllp{4.2cm}@{}}
+\small
+\begin{tabular}{@{}llp{3.3cm}p{4.6cm}@{}}
 \toprule
 Parameter & Category & Origin/Value & Notes \\
 \midrule
 $\wz,\,\wa$          & \textbf{Fixed by geometry} & Eqs.~\eqref{eq:ssee_pars} & $\pi,\varphi$ invariants; not fitted \\
 $s_{\rm DE},\,\KALz$  & \textbf{Fixed by geometry} & $T_r/M_v;\ \beta+\pi$     & Algebraically closed \\
-$H_0$                & \textbf{Sampled}           & $\mathcal{U}[60,80]$      & Only cosmological free parameter \\
-$\Omega_b h^2$       & \textbf{Sampled}           & BBN prior                 & Shared with \LCDM, CPL \\
-$r_d$                & \textbf{Derived}           & Friedmann background      & Eq.~\eqref{eq:rd}; carries background mismatch \\
-$\rdeff$             & \textbf{Mapped (hypothesis)}& Acoustic-scale hypothesis & Eq.~\eqref{eq:rd_mapping}; Paper~3 test \\
+$H_0$                & \textbf{Sampled}           & Gaussian, $40<H_0<100$ & Planck (3 models); $H_0^{\rm glob}$ (production) \\
+$\Omega_b h^2$       & \textbf{Sampled}           & Gaussian                  & Planck (3 models); BBN (production) \\
+$\Omega_m$           & \textbf{Derived}           & $\omega_m/h^2$            & $\omega_m$ algebraic, fixed \\
+$r_d$                & \textbf{Derived}           & CAMB, $(\omega_b,\omega_m,\sum m_\nu)$ & Eq.~\eqref{eq:rd_mapping} at the algebraic point \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -524,15 +524,15 @@ $H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$]
   & $\val{p2_lcdm_H0_mediana}^{+\val{p2_lcdm_H0_mas}}_{-\val{p2_lcdm_H0_menos}}$
   & $\val{p2_cpl_H0_mediana}^{+\val{p2_cpl_H0_mas}}_{-\val{p2_cpl_H0_menos}}$ \\[3pt]
 $\Omega_m$
-  & $\val{OMEGA_M_TOTAL_d6}\ [\mathrm{total}]$
+  & $\val{p2_ssee_Om_mediana}^{+\val{p2_ssee_Om_mas}}_{-\val{p2_ssee_Om_menos}}\ [\mathrm{derived}]$
   & $\val{p2_lcdm_Om_mediana}^{+\val{p2_lcdm_Om_mas}}_{-\val{p2_lcdm_Om_menos}}$
   & $\val{p2_cpl_Om_mediana}^{+\val{p2_cpl_Om_mas}}_{-\val{p2_cpl_Om_menos}}$ \\[3pt]
 $\wz$
-  & $-0.840\ [\mathrm{alg.}]$
+  & $\val{W0_d3}\ [\mathrm{alg.}]$
   & $-1\ [\mathrm{fixed}]$
   & $\val{p2_cpl_w0_mediana}^{+\val{p2_cpl_w0_mas}}_{-\val{p2_cpl_w0_menos}}$ \\[3pt]
 $\wa$
-  & $-0.670\ [\mathrm{alg.}]$
+  & $\val{WA_d3}\ [\mathrm{alg.}]$
   & $0\ [\mathrm{fixed}]$
   & $\val{p2_cpl_wa_mediana}^{+\val{p2_cpl_wa_mas}}_{-\val{p2_cpl_wa_menos}}$ \\[3pt]
 $\Omega_b h^2$
@@ -553,9 +553,9 @@ under the algebraic prior (Eq.~\ref{eq:H0_prior_alg}) the reframe run gives the
 headline $H_0=\HZeroPosterior$ ($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from the
 prediction $H_0^{\rm glob}=\val{H0_GLOBAL_d3}$). With the total matter density
 $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry, the DESI~DR2 posterior
-\emph{coincides} with $H_0^{\rm glob}$ rather than pulling away from it: the
-earlier ``$2.9\sigma$ below anchor'' reading was the cold sector $0.160$
-misplaced in $E(z)$, now corrected. Marginalised posteriors are shown in
+\emph{coincides} with $H_0^{\rm glob}$ rather than pulling away from it: an
+earlier reading of a shift below the anchor came from the saturation
+$1+w_0=\val{S_M_d6}$ misplaced in $E(z)$, now corrected. Marginalised posteriors are shown in
 Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
 
 \begin{figure}[H]
@@ -566,8 +566,8 @@ Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
   ($H_0^{\rm glob}=\val{H0_GLOBAL_d3}$, BBN $\Omega_b h^2=0.02218$~\citep{Schoneberg2024}). With the total matter density
   $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in $E(z)$, the $H_0$ posterior ($\HZeroPosterior$) is
   consistent with $H_0^{\rm glob}$ ($\val{h0_p2_dhglob}\sigma$) and lies $\val{h0_p2_dplanck}\sigma$ from
-  Planck; the earlier ``$2.9\sigma$ below anchor'' reading was the cold sector
-  $0.160$ misplaced in $E(z)$, now corrected.}
+  Planck; an earlier reading of a shift below the anchor came from the saturation
+  $1+w_0=\val{S_M_d6}$ misplaced in $E(z)$, now corrected.}
   \label{fig:corner_ssee}
 \end{figure}
 
@@ -584,23 +584,22 @@ Figures~\ref{fig:corner_ssee} and~\ref{fig:corner_lcdm}.
 
 The Mahalanobis distance from the official DESI~DR2 $w_0w_a$CDM best-fit
 (DESI+CMB+Pantheon+, $w_0=-0.838\pm0.055$, $w_a=-0.617\pm0.208$;
-arXiv:2503.14738, eq.~26; moments and $\rho=-0.894$ measured directly from the
+arXiv:2503.14738, eq.~26; moments and $\rho=\val{p2_w0wa_rho_ec26}$ measured directly from the
 official DESI chains, Zenodo record 16644577) is:
 \begin{equation}
   \chi^2_{2\rm D}
-  = \Delta\mathbf{w}^\top\mathbf{C}^{-1}\Delta\mathbf{w} = 0.42
+  = \Delta\mathbf{w}^\top\mathbf{C}^{-1}\Delta\mathbf{w} = \val{p2_chi2_2D_ec26}
   \;\Rightarrow\; \val{p2_w0wa_ssee_ec26}\sigma.
 \end{equation}
 Against the other official DR2 combinations the distance is $\val{p2_w0wa_ssee_ec28}\sigma$
 (DESY5), $\val{p2_w0wa_ssee_ec27}\sigma$ (Union3) and $\val{p2_w0wa_ssee_ec25}\sigma$ (no-SN DESI+CMB; all with
-chain-measured correlations $\rho=-0.905$ to $-0.978$): the
+chain-measured correlations $\rho=\val{p2_w0wa_rho_ec28}$ to $\val{p2_w0wa_rho_ec25}$): the
 algebraic point is consistent with all four, with the tension range
 $0.2$--$1.8\sigma$ set by the supernova compilation, and $w_0$ essentially
-exact against Pantheon+ ($\Delta w_0=-0.04\sigma$). The result is robust to
-the correlation ($\rho\in[-0.92,-0.70]$ would shift Pantheon+ by
-$<0.2\sigma$; the chain-measured value is used).
-This distance means the \SSEE\ algebraic point $(-0.840,-0.670)$ falls
-well inside the DESI~DR2 $1\sigma$ contour in the $\wz$--$\wa$ plane.
+exact against Pantheon+ ($\Delta w_0=\val{p2_dw0_ec26}\sigma$); the chain-measured
+correlation is used throughout.
+This distance means the \SSEE\ algebraic point $(\val{W0_d3},\val{WA_d3})$ falls
+inside the $1\sigma$ contour of the DESI~DR2+CMB+Pantheon+ posterior in the $\wz$--$\wa$ plane.
 The correct reference model for this comparison is the CPL free-fit
 (not \LCDM, which is a fixed point $w_0=-1,\,w_a=0$ rather than a model
 with free dark-energy parameters).  The $\val{p2_w0wa_ssee_ec26}\sigma$ quoted above is the Mahalanobis distance of the \SSEE\
@@ -618,7 +617,7 @@ CPL posterior independently confirms dynamical dark energy.
 A single, decisive summary of this section is that the \emph{fixed}
 $\Lambda$CDM point $(w_0,w_a)=(-1,0)$ is disfavoured against \emph{every}
 official DESI~DR2 supernova compilation, whereas the parameter-free \SSEE\
-algebraic point $(-0.840,-0.670)$ is consistent with all four. Because
+algebraic point $(\val{W0_d3},\val{WA_d3})$ is consistent with all four. Because
 neither model tunes $(w_0,w_a)$ to the data --- both are fixed points, one at
 the cosmological constant and one derived from $\varphi$ and $\pi$ --- this is
 a like-for-like comparison of two zero-free-parameter predictions against the
@@ -626,7 +625,7 @@ same measurement.
 
 \begin{table}[H]
   \centering
-  \caption{Mahalanobis distance of the fixed \SSEE\ point $(-0.840,-0.670)$
+  \caption{Mahalanobis distance of the fixed \SSEE\ point $(\val{W0_d3},\val{WA_d3})$
   and the fixed \LCDM\ point $(-1,0)$ from each official DESI~DR2
   $w_0w_a$CDM best-fit (2$\times$2 covariance, correlation measured directly
   from the public chains, Zenodo~16644577). Neither point is fitted; both are
@@ -637,10 +636,10 @@ same measurement.
     \toprule
     DESI~DR2 combination & $\rho$ & \SSEE\ distance & \LCDM\ distance \\
     \midrule
-    DESI+CMB+Pantheon+ & $-0.894$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
-    DESI+CMB+DES~Y5    & $-0.905$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
-    DESI+CMB+Union3    & $-0.933$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
-    DESI+CMB (no SN)   & $-0.978$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
+    DESI+CMB+Pantheon+ & $\val{p2_w0wa_rho_ec26}$ & $\mathbf{\val{p2_w0wa_ssee_ec26}\sigma}$ & $\val{p2_w0wa_lcdm_ec26}\sigma$ \\
+    DESI+CMB+DES~Y5    & $\val{p2_w0wa_rho_ec28}$ & $\mathbf{\val{p2_w0wa_ssee_ec28}\sigma}$ & $\val{p2_w0wa_lcdm_ec28}\sigma$ \\
+    DESI+CMB+Union3    & $\val{p2_w0wa_rho_ec27}$ & $\mathbf{\val{p2_w0wa_ssee_ec27}\sigma}$ & $\val{p2_w0wa_lcdm_ec27}\sigma$ \\
+    DESI+CMB (no SN)   & $\val{p2_w0wa_rho_ec25}$ & $\mathbf{\val{p2_w0wa_ssee_ec25}\sigma}$ & $\val{p2_w0wa_lcdm_ec25}\sigma$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -659,7 +658,7 @@ same measurement.
 For a constant equation of state, the Planck~2018 CMB-alone posterior
 (TT,TE,EE+lowE+lensing) is $w_0=-1.57^{+0.50}_{-0.40}$ (68\%~CL, table of
 one-parameter extensions in \citealt{Planck2018}); the \SSEE\ value
-$w_0=\val{W0_d6}$ lies $(-0.840+1.57)/0.50\simeq1.5\sigma$ from it.  The tight
+$w_0=\val{W0_d6}$ lies $(w_0+1.57)/0.50=\val{w0_cmb_solo_sig}\sigma$ from it.  The tight
 $w_0=-1.028\pm0.031$ quoted in the same paper is \emph{not} a CMB-alone
 result: it combines Planck with SNe and BAO and fixes $w_a=0$, i.e.\ it
 constrains a constant-$w$ model, and cannot be compared with \SSEE, whose
@@ -690,7 +689,7 @@ it never enters $E(z)$.
 With the total density the SSEE sound horizon (computed with CAMB at the
 algebraic $\omega_b$, $\omega_m$ and $\sum m_\nu$) matches the Planck measurement,
 \begin{equation}
-  r_d^{\SSEE}=147.17\ \text{Mpc},\quad
+  r_d^{\SSEE}=\val{p2_lyaB_rd}\ \text{Mpc},\quad
   r_d^{\rm Planck}=147.09\pm0.26\ \text{Mpc}\quad(\val{p3_rd_sig_post}\sigma),
   \label{eq:rd_ratio}
 \end{equation}
@@ -709,10 +708,10 @@ Planck prior the three-model run gives $H_0^{\SSEE}=\val{p2_ssee_H0_mediana}\pm\
 Compared on the same footing --- total against total --- the SSEE matter
 density agrees with Planck at $\val{om_planck_sig}\sigma$
 ($\Omega_m=\val{OMEGA_M_TOTAL_d6}$ vs $0.3153\pm0.0073$). An earlier ``$21.3\sigma$ tension''
-arose only from comparing the cold \emph{sector} ($1+w_0=\val{S_M_d6}$) against the
-Planck \emph{total} $\Omega_m$ --- a category error of matching a partial
-density to a full one, traced to the dynamical value being used in the
-background geometry where the total belongs (corrected here). There is no
+arose only from comparing $1+w_0=\val{S_M_d6}$, a number of the equation of state,
+against the Planck matter density $\Omega_m$ --- a category error, traced to that
+number being used in the background geometry where the matter density belongs
+(corrected here). There is no
 background discrepancy to resolve. The two-sector split formerly attributed to
 Paper~6 is \emph{retracted}: the subtraction defining it mixed the measured
 density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ with $1+w_0$, an equation-of-state number, so it
@@ -728,9 +727,10 @@ The global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d
 returned by the screening cascade (Papers~9--10), whose central value reproduces the
 dimensionless target $3(\varphi+\pi)^2$, is not a
 mere coincidence: with the baryon and cold-matter densities fixed by SSEE
-algebra, the Planck~\texttt{plik\_lite} likelihood is minimised exactly at
-that value (Paper~3, \S\ref{sec:prior_mira}). The background $H$ and the
-CMB anchor therefore coincide --- they are the same number, $H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$ ---
+algebra, the Planck~\texttt{plik\_lite} profile has its minimum at
+$\val{perfil_h0_min}\pm\val{perfil_h0_sig}$, $\val{perfil_h0_d}\sigma$ from that value
+(\S\ref{sec:prior_mira}). The background $H$ and the CMB anchor therefore agree,
+$H_0^{\rm glob}=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$,
 superseding the earlier MIRA-mapped anchor $H_0^{\rm MIRA}=67.037$.
 With the \emph{total} matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background
 geometry, the MCMC posterior reported above,
@@ -738,8 +738,8 @@ $H_0^{\rm MCMC}=\HZeroPosterior$\,km\,s$^{-1}$\,Mpc$^{-1}$, \emph{coincides}
 with the anchor: it lies $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$ and $\val{h0_p2_dplanck}\sigma$
 from the $\Lambda$CDM-calibrated Planck value. The DESI~DR2 data are therefore
 \emph{consistent} with $H_0^{\rm glob}$ rather than pulling against it. The earlier
-reading --- a $2.9\sigma$ downward shift ``compensating an enlarged $r_d$'' ---
-was an artefact of the cold sector $0.160$ misplaced in $E(z)$: with the correct
+reading --- a downward shift ``compensating an enlarged $r_d$'' ---
+was an artefact of the saturation $1+w_0=\val{S_M_d6}$ misplaced in $E(z)$: with the correct
 total density there is no enlarged $r_d$
 ($r_d^{\SSEE}=\val{p2_lyaB_rd}$\,Mpc, $\val{p3_rd_sig_post}\sigma$ from Planck) and no compensation to make
 (see \S\ref{sec:model_comparison}).
@@ -785,7 +785,7 @@ used; the systematic covariance recommended by \citet{Moresco2022} would
 correlate the points, so $\chi^2_r<1$ here reflects conservative diagonal
 errors rather than a goodness of fit, and the meaningful comparison is between
 models on the same data. The apparent $\chi^2_r\approx1.86$ ($\sim3\sigma$) reported in earlier
-drafts was an artefact of placing the cold sector $1+w_0=\val{S_M_d6}$ in the
+drafts was an artefact of placing the saturation $1+w_0=\val{S_M_d6}$ in the
 background geometry: with that spuriously low density the matter-dominated
 deceleration was too weak and the matter-to-dark-energy transition occurred too
 early ($0.5\lesssim z\lesssim1.5$). With the correct total density the strain
@@ -869,9 +869,9 @@ clusters hold, and we inherit its systematic uncertainty from \citet{Zhang2026}.
 \paragraph{What the test does establish.}
 The \SSEE\ cold dark matter density is not fitted: it is the algebraic identity
 $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$, already consistent with Planck (Paper~1) and
-with the BOSS galaxy clustering (Paper~6). Virialised clusters confirm, at a
-third and independent scale, that the matter-to-baryon ratio it implies is the
-one structures actually carry.
+with the BOSS galaxy clustering (Paper~6). Virialised clusters are consistent,
+at a third and independent scale and given the IGIMF baryon census, with the
+matter-to-baryon ratio it implies.
 
 \section{Model Comparison}
 \label{sec:model_comparison}
@@ -881,8 +881,8 @@ one structures actually carry.
 \centering
 \caption{BIC \citep{Schwarz1978}, AIC, and DIC at MAP ($N_{\rm data}=16$), from
 the joint three-model MCMC (DESI~DR2 + common Planck prior, total matter density
-$\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry). Jeffreys scale
-\citep{Jeffreys1961}. $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours \SSEE.
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background geometry). Scale of
+\citet{KassRaftery1995} for $\Delta$BIC. $\Delta\equiv\mathrm{SSEE}-\Lambda\mathrm{CDM}$; negative $\Delta$ favours \SSEE.
 Every entry comes from the same run, \texttt{mcmc\_paper2\_3models\_wmfix.log}
 ($\omega_m$ algebraic and fixed, R25), with the DIC column from
 \texttt{dic\_from\_chains.log} on the same chains. An earlier version of this
@@ -914,7 +914,8 @@ five-parameter alternatives.
 \paragraph{Not merely parameter counting.}
 The preference survives tests that penalise over-fitting directly. A nested
 Bayes factor (Savage--Dickey) gives $\ln B=\val{p2_lnB}$ for the SSEE point within the
-CPL posterior --- strong evidence on the Jeffreys scale --- and leave-one-out
+CPL posterior ($B=\val{p2_B_sddr}$: at the threshold of ``strong'' on Jeffreys'
+original scale, ``weak'' on the stricter scale of \citealt{Trotta2008}) --- and leave-one-out
 predictive cross-validation on the high-redshift half of the BAO vector
 ($z\geq1.0$) yields $\chi^2_r=\val{p2_cvchi2r_ssee}$ for \SSEE\ versus $\val{p2_cvchi2r_lcdm}$ (\LCDM):
 \SSEE\ \emph{predicts} the held-out data better (Appendix~\ref{app:sddr_cv}). CPL is
@@ -927,17 +928,17 @@ CMB power-spectrum likelihood under the \SSEE\ background (companion Paper~3)
 independently favours \SSEE\ at $\chi^2_r=\val{p3_chi2r_TT_ssee}$ (TT) and $\Delta\mathrm{BIC}=
 \val{lite_dBIC}$ (\texttt{plik\_lite} TTTEEE+low-$\ell$, $\omega_m$-direct). An earlier ``$+206$''
 full-model penalty reported in superseded drafts was an artefact of using the
-cold sector $1+w_0=\val{S_M_d6}$ as the background matter density; with the correct
+saturation $1+w_0=\val{S_M_d6}$ as the background matter density; with the correct
 total density it does not occur.
 
 \section{Robustness Checks}
 \label{sec:robustness}
 
 \paragraph{Prior sensitivity.}
-Removing the Planck $H_0$ prior shifts the \SSEE\ posterior by
-$<0.3\sigma$. The BAO data dominate the $H_0$ constraint.
-\textit{This confirms that the quoted posteriors are driven by the BAO
-geometry rather than the CMB prior, making them robust to prior choice.}
+Under the compressed Planck prior the \SSEE\ posterior is
+$H_0=\val{p2_ssee_H0_mediana}\pm\val{p2_ssee_H0_std}$; with a flat prior (DESI~DR2 and a BBN prior
+on $\omega_b$ only) it is $\val{h0_desi_plano}\pm\val{h0_desi_plano_s}$. The BAO data carry
+most of the constraint; the prior narrows it but does not move it.
 
 %% 2026-10-01: retirado el parrafo «Neutrino mass» de cumulos: su numero no tenia log y
 %% describia la formula con f_nu, retirada. Los neutrinos entran ahora en omega_m/omega_b
@@ -955,11 +956,12 @@ To confirm that the compressed-prior posteriors of §\ref{sec:results_cosmo} are
 artefact of the Planck distance-prior approximation, we ran an independent MCMC with the
 \emph{full} CMB likelihood (CAMB with Planck \texttt{plik\_lite} TTTEEE + lensing),
 combined with DESI~DR2 BAO and $f\sigma_8$, sampling $\wz,\wa$ \emph{freely}
-(four chains, $\sim$53k post-burn-in samples, Gelman--Rubin $R-1<0.003$).
-The free-fit posterior $(\wz,\wa)=(-0.655,-1.104)$ \emph{excludes} the cosmological
+(four chains, $\val{mf_filas}$ samples after discarding the first $30\%$ of each,
+Gelman--Rubin $R-1=\val{mf_rminus1}$ across the four chains).
+The free-fit posterior $(\wz,\wa)=(\val{mf_w_media},\val{mf_wa_media})$ \emph{excludes} the cosmological
 constant $(-1,0)$ at $\val{mf_w0wa_lcdm}\sigma$, independently confirming a dynamical equation of
 state; under this uncompressed likelihood $H_0$ relaxes to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$. The
-\SSEE\ algebraic point $(-0.840,-0.670)$ lies at $\val{mf_w0wa_ssee}\sigma$ from this posterior
+\SSEE\ algebraic point $(\val{W0_d3},\val{WA_d3})$ lies at $\val{mf_w0wa_ssee}\sigma$ from this posterior
 --- more than twice closer than $\Lambda$CDM (Fig.~\ref{fig:degeneracy}).
 The $\wz$--$\wa$ posterior is strongly anticorrelated ($\rho=\val{p2_rho_w0wa_full}$) and \SSEE\ falls
 within its $2\sigma$ region. The full CMB power-spectrum treatment is developed in
@@ -970,7 +972,7 @@ replacement of the compressed prior by the complete likelihood.
   \centering
   \includegraphics[width=0.70\textwidth]{fig_w0wa_degeneracy.pdf}
   \caption{Full-likelihood $\wz$--$\wa$ posterior (CAMB + Planck \texttt{plik\_lite}
-  + lensing + DESI~DR2 + $f\sigma_8$, with $\wz,\wa$ free; $R-1<0.003$). The \SSEE\
+  + lensing + DESI~DR2 + $f\sigma_8$, with $\wz,\wa$ free; $R-1=\val{mf_rminus1}$). The \SSEE\
   algebraic prediction (red star) lies at $\val{mf_w0wa_ssee}\sigma$, inside the $2\sigma$ contour,
   while $\Lambda$CDM ($\wz=-1,\wa=0$; grey cross) is excluded at $\val{mf_w0wa_lcdm}\sigma$. The data
   favour a dynamical dark-energy equation of state, and \SSEE\ is the parameter-free
@@ -984,7 +986,7 @@ The \SSEE\ global rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_G
 the dimensionless target $3(\varphi+\pi)^2$ and at which the
 Planck \texttt{plik\_lite} likelihood is minimised under the $\omega_m$-direct
 reframe (\S\ref{sec:results_cosmo}) ---
-lies within $1.1\sigma$ of Planck~2018 and is consistent with the DESI~DR2+CMB joint inference
+lies $\val{hglob_planck_sig}\sigma$ from Planck~2018 (errors combined) and is consistent with the DESI~DR2+CMB joint inference
 \citep[$H_0\approx68$\,km\,s$^{-1}$\,Mpc$^{-1}$;][]{DESI_DR2}.
 The SH0ES distance-ladder rate
 \citep[$H_0=73.04\pm1.04$\,km\,s$^{-1}$\,Mpc$^{-1}$;][]{Riess2022} is the \emph{input} of that
@@ -999,7 +1001,7 @@ does not pull away from it ($\val{h0_p2_dhglob}\sigma$).
 \subsection{The dynamical sector and the background}
 
 \begin{itemize}
-  \item \textbf{Dark-energy sector}: $(\wz,\wa)=(-0.840,-0.670)$, fixed by the
+  \item \textbf{Dark-energy sector}: $(\wz,\wa)=(\val{W0_d3},\val{WA_d3})$, fixed by the
     algebra with no fitted parameter, lies $\val{p2_w0wa_ssee_ec26}\sigma$ from the official
     DESI~DR2 posterior (Pantheon+) and $\val{p2_w0wa_ssee_ec28}$--$\val{p2_w0wa_ssee_ec27}\sigma$ from the other three
     official combinations. The CPL free-fit posterior $(\val{p2_cpl_w0_mediana},\val{p2_cpl_wa_mediana})$
@@ -1037,11 +1039,11 @@ would constitute decisive falsification:
     $\val{W0_d6}$, or $\wa$ from $\val{WA_d6}$, refutes the algebraic equation of
     state.
   \item \textbf{If cosmological or Ly-$\alpha$ forest bounds exclude}
-    $\sum m_\nu^{\rm active}=0.0685$\,eV at $>3\sigma$, the algebraic neutrino
+    $\sum m_\nu^{\rm active}=\val{SUM_MNU_EV_d4}$\,eV at $>3\sigma$, the algebraic neutrino
     mass sum is refuted.
-  \item \textbf{If future high-$z$ BAO or CMB measure} $r_d$ outside
-    $147\pm3$\,Mpc, the $\omega_m$-direct construction
-    ($r_d=\val{p2_lyaB_rd}$\,Mpc from the algebraic $\omega_m$) is falsified ---
+  \item \textbf{If a determination of} $r_d$ that does not assume \LCDM\ places it
+    more than $3\sigma$ from $\val{p2_lyaB_rd}$\,Mpc, the $\omega_m$-direct construction
+    (CAMB from the algebraic $\omega_m$) is falsified ---
     the sound horizon is a sharp, prior-independent prediction.
 \end{itemize}
 
@@ -1052,7 +1054,7 @@ We have conducted a Bayesian MCMC validation of \SSEE against
 DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency test.
 
 \begin{enumerate}
-  \item The zero-free-parameter prediction $(\wz,\wa)=(-0.840,-0.670)$
+  \item The zero-free-parameter prediction $(\wz,\wa)=(\val{W0_d3},\val{WA_d3})$
     lies within $\val{p2_w0wa_ssee_ec26}\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior
     (Pantheon+; $\val{p2_w0wa_ssee_ec28}$--$\val{p2_w0wa_ssee_ec27}\sigma$ across the other official combinations).
 
@@ -1063,7 +1065,7 @@ DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency t
     matter-to-baryon ratio, not the background.
 
   \item With the total matter density $\Omega_m=\val{OMEGA_M_TOTAL_d6}$ in the background,
-    the \SSEE\ sound horizon matches \LCDM\ ($r_d=\val{p2_lyaB_rd}$ vs $147.10$\,Mpc, CAMB) and \SSEE\ is
+    the \SSEE\ sound horizon matches \LCDM\ ($r_d=\val{p2_lyaB_rd}$ vs $\val{p2_rd_lcdm}$\,Mpc, CAMB) and \SSEE\ is
     favoured on model selection by $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and
     $\val{p2_dBIC_cpl}$ over CPL, predicting the held-out BAO data better in
     cross-validation. $\Omega_m$ agrees with Planck at $\val{om_planck_sig}\sigma$.
@@ -1072,13 +1074,14 @@ DESI~DR2 and Planck~2018, with galaxy-cluster masses as a separate consistency t
     reproduced at $\val{p2_lyaB_pull}\sigma$ ($D_H/r_d=\val{p2_lyaB_DHrd}$; Appendix~\ref{app:lya}).
 
   \item The companion Paper~3 confirms the background against the full CMB
-    likelihood ($\Delta\mathrm{BIC}=\val{b1_dBIC}$, full \texttt{plik} MCMC).
+    likelihood ($\Delta\mathrm{BIC}=\val{b1_dBIC}$, full \texttt{plik}, minimum $\chi^2$ of each model).
 \end{enumerate}
 
 \noindent\textbf{Central finding}: an algebraic background with no fitted
-dark-energy parameter describes DESI~DR2, the CMB and galaxy-cluster masses as
-well as \LCDM, and is preferred on every information criterion because it
-does so with fewer free parameters.
+dark-energy parameter describes DESI~DR2 and the compressed Planck prior as well as
+\LCDM, and is preferred on every information criterion because it does so with
+fewer free parameters; galaxy-cluster masses, tested separately, are consistent
+with its matter content as with that of \LCDM.
 
 \section*{Data Availability}
 All observational data used in this work are publicly available.
@@ -1118,7 +1121,7 @@ parameters. From the chains,
   p_D(\mathrm{\LCDM}) &= \val{p2_pD_lcdm} \approx 3\quad\checkmark \\
   p_D(\mathrm{CPL})  &= \val{p2_pD_cpl} \approx 5\quad\checkmark
 \end{align}
-confirming that all three chains are well-converged. The DIC comparison gives
+as expected for data-dominated, near-Gaussian posteriors. The DIC comparison gives
 \begin{equation}
   \Delta\mathrm{DIC}(\mathrm{SSEE}-\mathrm{\LCDM}) = \val{p2_dDIC_lcdm},\quad
   \Delta\mathrm{DIC}(\mathrm{SSEE}-\mathrm{CPL}) = \val{p2_dDIC_cpl},
@@ -1134,7 +1137,7 @@ main text.
   Bayesian model comparison from the three-model MCMC (total matter density in
   the background). $N_{\rm data}=16$ (13 BAO + 3 Planck). Negative $\Delta$
   (BIC, AIC, DIC) favours \SSEE\ relative to \LCDM.
-  Jeffreys criterion: $|\Delta| > 5$ = strong.
+  Scale of \citet{KassRaftery1995} for $\Delta$BIC: 2--6 positive, 6--10 strong.
 }
 \label{tab:bic_dic_rigorous}
 \begin{tabular}{lrrrr}
@@ -1156,7 +1159,7 @@ and CPL while fixing $w_0,w_a$ algebraically, so the parsimony of a
 two-parameter background is rewarded across BIC, AIC, and DIC. With the total
 matter density in the geometry the sound horizon matches \LCDM\ and no
 background-structure penalty arises; the full CMB likelihood (Paper~3)
-independently favours \SSEE\ at $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik} MCMC).
+independently favours \SSEE\ at $\Delta\mathrm{BIC}=\val{b1_dBIC}$ (full \texttt{plik}, minimum $\chi^2$ of each model).
 
 \section{Nested Bayes Factor and Predictive Cross-Validation}
 \label{app:sddr_cv}
@@ -1170,9 +1173,9 @@ cross-validation} on the DESI~DR2 BAO data.
 \subsection*{B.1 Savage--Dickey density ratio}
 
 SSEE is nested within CPL: the SSEE dynamic sector is CPL evaluated at
-the algebraic point $(w_0,w_a)=(-0.840,-0.670)$.  For nested models,
+the algebraic point $(w_0,w_a)=(\val{W0_d3},\val{WA_d3})$.  For nested models,
 the marginal Bayes factor for the null hypothesis $\mathcal{H}_0:
-(w_0,w_a)=(-0.840,-0.670)$ versus the unconstrained CPL is given
+(w_0,w_a)=(\val{W0_d3},\val{WA_d3})$ versus the unconstrained CPL is given
 exactly by the Savage--Dickey density
 ratio~\cite{Verdinelli1995,Trotta2008}:
 \begin{equation}
@@ -1188,9 +1191,10 @@ $\mathcal{N}(-1,0.5^2)\times\mathcal{N}(0,1^2)$ clipped to the MCMC
 sampling box $w_0\in(-2.5,0.5)$, $w_a\in(-3,2)$; truncation factors
 are $(\val{sd_ztrunc_w0},\val{sd_ztrunc_wa})$, negligible corrections.
 
-On the Jeffreys scale~\cite{Trotta2008} $\ln B=\val{p2_lnB_signo}$ ($>2.3$) constitutes
-\emph{strong} evidence in favour of the SSEE dynamic sector within
-the CPL framework.  The CPL posterior median
+With $B=\val{p2_B_sddr}$ ($\ln B=\val{p2_lnB_signo}$) the evidence for the SSEE dynamic sector
+within the CPL framework sits at the threshold of ``strong'' on Jeffreys' original
+scale ($B>10$; \citealt{Jeffreys1961}) and is ``weak'' on the stricter scale of
+\citet{Trotta2008} ($1<\ln B<2.5$); we read it as positive, not decisive.  The CPL posterior median
 $(w_0^{\rm CPL}=\val{p2_cpl_w0_mediana}\pm\val{p2_cpl_w0_std},\;w_a^{\rm CPL}=\val{p2_cpl_wa_mediana}\pm\val{p2_cpl_wa_std})$ places
 the SSEE algebraic point at $(\val{p2_dist_w0}\sigma,\val{p2_dist_wa}\sigma)$, consistent with
 the $\val{p2_w0wa_ssee_ec26}\sigma$ joint tension quoted in Section~\ref{sec:w0wa}.
@@ -1367,6 +1371,11 @@ Ensemble samplers with affine invariance.
 Schwarz, G.\ (1978).
 Estimating the dimension of a model.
 \textit{Ann.\ Statist.} \textbf{6}, 461.
+
+\bibitem[Kass \& Raftery(1995)]{KassRaftery1995}
+Kass, R.~E., \& Raftery, A.~E.\ (1995).
+Bayes factors.
+\textit{J.~Am.\ Statist.\ Assoc.} \textbf{90}, 773.
 
 \bibitem[Jeffreys(1961)]{Jeffreys1961}
 Jeffreys, H.\ (1961).

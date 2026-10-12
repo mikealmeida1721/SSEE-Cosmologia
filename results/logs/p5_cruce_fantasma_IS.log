@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "07c4573baa024c7d6647c9359d48eb0734ead380", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p05_IS/cruce_fantasma_IS.py", "script_sha256": "057a13e372f265eb3f055cf0a829c08f096829d0d396f2047af10f1e5e76ba1b", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p05_IS/cruce_fantasma_IS.py"], "fecha": "2026-10-11T21:12:38", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 z=0.000  w_eff=-0.8399  c=0.000  |Pi|/rho=0.000  |Pi|/|p|=0.000
 z=0.314  w_eff=-1.0000  c=1.000  |Pi|/rho=0.160  |Pi|/|p|=0.191
 z=0.500  w_eff=-1.0633  c=1.395  |Pi|/rho=0.223  |Pi|/|p|=0.266
