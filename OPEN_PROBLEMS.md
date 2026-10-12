@@ -2663,6 +2663,37 @@ el cruce, el control con ĉ²=w₀ explota).
   no lineal de Maartens–Méndez con (ζ̃, τ_Π) algebraicos y ver si devuelve
   c(a) = 4.186(1−a), o sea wₐ = −0.669975. La vía viscosa NO se cierra.
 
+**Medido 2026-10-11 — el campo de P7 RUEDA, y la viscosa de Eckart sobre él no da wₐ**
+(quinta lectura de P7; script `src/p07_eft/fondo_campo_p7.py`, etapa DVC
+`p7_fondo_campo`, log `results/logs/p7_fondo_campo.json`; controles: Γ=0 conserva
+(y−1)√y·a³ a 1e-9 (Scherrer 2004), y el campo de un término con la misma Γ
+devuelve wₐ = −P_sc/I_g exacto, la tautología de `fondo_viscoso.py`).
+- **🔴 «w_φ constante en el condensado» era falso.** Sin potencial, a³K_Xφ̇ se
+  conserva y X rueda hacia X_min (w = −1). Con y = X/X_min: w_φ = +0.04 (a=0.3),
+  −0.34 (a=0.5), −0.840 (hoy), → −1 (futuro); wₐ propio **+0.41** (signo
+  contrario). Ya estaba medido el 09-27 (`eft_dos_campos_phi_pi.json`, wa_que_da
+  0.4135), pero P7 seguía diciendo «w constante ⟹ wₐ = 0». Corregido en P7, en la
+  sección EFT de P1 y en P5.
+- **🔴 El cierre de P1 (campo con w₀ + viscosa con el resto) sólo existe con el
+  campo de UN término**, que tiene w constante pero c_s² = w₀ < 0: el inestable.
+  Ningún campo puramente cinético hace las dos cosas (w constante ≠ −1 exige una
+  sola potencia). Con el campo ESTABLE de P7 y Π = −3Γ(1−a)ρ_DE (Γ = P_sc/(3I_g))
+  en su continuidad: CPL en 0.30 ≤ a ≤ 0.773 da **(−0.49, −1.34), 7.8σ de DESI**,
+  cruce en z = 0.66 (no 0.314), y el campo se vuelve fantasma (c_s² < 0) para
+  a < 0.33. Barrido Γ ∈ [0,1]: 72/101 anulan ρ_φ antes de a = 0.3; el mejor del
+  resto queda a 4.7σ. Ningún Γ entra a 1σ con el campo estable.
+- **Lo que NO cambia:** toda comparación con datos usa w(a) = w₀ + wₐ(1−a) como
+  fluido; esos números siguen en pie. La estabilidad de P5 tampoco: sin viscosa
+  el campo tiene y > 1 siempre, c_s² > 0 y creciente hacia el pasado (0.11 en a=0.5).
+- **Decisión de Mike (2026-10-11):** «w₀ no es fijo, por eso es dinámico»; la
+  pregunta es **por qué ocurre el cruce fantasma**. Intentos ya medidos, ninguno
+  cierra: dos campos con φ y π (el segundo carga casi todo y su w no es
+  constante, `eft_dos_campos_phi_pi.json`); dos fluidos de w constante (la mezcla
+  siempre decrece, SSEE pide que crezca, `eft_dos_campos_genericos.json`); dos
+  acoplados (mejor desvío 0.15, `eft_dos_campos_acoplados.json`); campo + Eckart
+  (arriba). **Queda sin probar:** IS no lineal con tiempo de relajación
+  (Maartens–Méndez) actuando sobre el campo de P7.
+
 ## OP-23 — Dentro del acoplamiento conformal, ningún $\beta_c$ da $w_0$ sin pasarse de energía oscura temprana — ⚫ CERRADO POR DISOLUCIÓN (2026-09-06)
 
 > ## ⚫ DISUELTO AL DÍA SIGUIENTE — cayó su premisa, y cayó entera
@@ -2701,8 +2732,10 @@ el cruce, el control con ĉ²=w₀ explota).
 > $c_s^2$ a **0.000 %**, $\alpha_K$ a **0.011 %**, acepta el modelo y rechaza
 > los cuatro controles.
 >
-> **Lo que este cierre NO resuelve:** de dónde sale $w_a$. En el punto del
-> condensado $w_\phi$ es constante, así que la acción da $w_a=0$. El
+> **Lo que este cierre NO resuelve:** de dónde sale $w_a$. ~~En el punto del
+> condensado $w_\phi$ es constante, así que la acción da $w_a=0$.~~ *(Retirado
+> 2026-10-11: el campo rueda hacia $X_{\min}$ y su $w_a$ propio es $+0.41$, de signo
+> contrario; ver OP-24, «Medido 2026-10-11».)* El
 > $w_a=-P_{sc}/I_g$ viene de la viscosidad IS, cuya amplitud quedó cerrada el
 > mismo día ($\Gamma=P_{sc}/(3I_g)$, dif $0.00\mathrm{e}{+}00$) pero cuyo
 > *ansatz* sigue siendo **OP-22**. Es ahí donde vive ahora el hueco.

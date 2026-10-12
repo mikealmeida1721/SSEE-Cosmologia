@@ -260,6 +260,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | α_T = α_B = α_M | 0 exact | GW170817 \|α_T\| < 10⁻¹⁵ ✓ |
 | α_K(z=0) | 15.591336 (`algebra_derivada.json#algebra.alpha_K_z0`) | hi_class reproduces it to 0.011% (c_s² to 0.000%); **not observationally accessible** |
 | s_K = 3(−w₀)(1+w₀) | 0.403302 | a different quantity: pure equation of state; it enters f_screen (Papers 9–10), not α_K |
+| The field rolls | w_φ = +0.04 (a=0.3), −0.34 (a=0.5), −0.840 today, → −1; own w_a = +0.41 | with no potential a³K_Xφ̇ is conserved (Scherrer 2004): the action fixes w₀ and c_s² today, not w(a). A single field cannot cross w = −1 (Vikman 2005); the Eckart viscosity of Paper 1 on this field gives (−0.49, −1.34), 7.8σ from DESI. What drives the phantom crossing is OPEN (OP-24) — `results/logs/p7_fondo_campo.json` |
 
 ### CLASS Boltzmann Validation (Fases 1–3)
 
