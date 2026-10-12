@@ -50,6 +50,7 @@ stages:
     - results/logs/p5_estabilidad_IS_completa.json
     - results/logs/p5_cruce_fantasma_IS.json
     - results/logs/p7_fondo_campo.json
+    - results/logs/p2_ssee_fijo_k0.json
     - results/logs/lcdm_conjunta.json
     - src/valores_tex.py
     - manuscript/valores.yaml
@@ -358,6 +359,22 @@ stages:
     - results/logs/mcmc_paper2_3models_wmfix.log
     outs:
     - results/logs/resumen_3modelos.json:
+        cache: false
+  p2_ssee_fijo_k0:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_fijo_k0.py
+      > results/logs/p2_ssee_fijo_k0.log 2>&1
+    deps:
+    - src/p02_mcmc/ssee_fijo_k0.py
+    - src/p02_mcmc/ssee_paper2_mcmc.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - src/desi_dr2_data.py
+    - /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - results/logs/resumen_3modelos.json
+    outs:
+    - results/logs/p2_ssee_fijo_k0.json:
+        cache: false
+    - results/logs/p2_ssee_fijo_k0.log:
         cache: false
   ppc_cronometros:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ppc_cronometros.py
