@@ -132,6 +132,13 @@ ALGEBRA = {
     "w0_cmb_solo_sig": ("(W0+1.57)/0.50", "w0 de SSEE frente al w constante de Planck CMB solo, error superior (P2)"),   # ORIGEN-VALOR: -1.57 +0.50 — Planck 2018 VI, w constante, TT,TE,EE+lowE+lensing
     "h_glob":         ("H0_GLOBAL/100", "h adimensional del H global (P3)"),
     "horizonte_cs_Mpc": ("math.sqrt((1+W0)/(5-3*W0))*299792.458/H0_GLOBAL", "horizonte sonoro c_s c/H0 del condensado, Paper 7"),   # ORIGEN-VALOR: 299792.458 — c en km/s (definicion SI)
+    # quinta lectura P8 (2026-10-12): cifras que P8 tecleaba a mano
+    "p8_grad_coef":   ("2*KAL0*AURA", "coeficiente del cierre de gradientes, limite (a) de Paper 8"),
+    "p8_Geff":        ("1+2*KAL0*AURA**2", "G_eff/G lineal sobre la materia oscura, limite (a) de Paper 8"),
+    "quinta_fuerza_Mpc":   ("(H0_GLOBAL/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)", "F_phi/F_N cuasi-estatico a k = 1/Mpc (P8)"),
+    "quinta_fuerza_10kpc": ("(H0_GLOBAL*0.01/299792.458)**2*abs(1+W0)*(1-OMEGA_M_TOTAL)", "F_phi/F_N cuasi-estatico a k = 1/(10 kpc), radio de Einstein galactico (P8)"),
+    "M_meV":          ("1e3*(5*PHI**8*3*(H0_GLOBAL*1e3/3.0856775814913673e22*6.582119569e-16)**2*2.435323e27**2)**0.25", "M = (5 phi^8 rho_crit)^(1/4) en meV con H_glob (P8, P10)"),   # ORIGEN-VALOR: 3.0856775814913673e22 m = 1 Mpc (IAU 2015); 6.582119569e-16 eV s = hbar (CODATA 2018, exacta); 2.435323e27 eV = masa de Planck reducida (CODATA 2018 G)
+    "eps_UV":         ("_X_UV**2/_M4_UV", "X_bg^2/M^4 en unidades rho_crit = 1 (P8, P10)"),
 }
 
 res, errores = {}, []
