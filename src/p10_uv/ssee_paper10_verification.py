@@ -27,7 +27,7 @@ import os as _reloc_os, sys as _reloc_sys  # reloc: anclar src/
 _reloc_sys.path.insert(0, _reloc_os.path.dirname(_reloc_os.path.dirname(_reloc_os.path.abspath(__file__))))
 from ssee_core import (
     PHI as phi, PI as pi, OMEGA as Omega, AURA, KAL0 as KAL, MIRA,
-    W0 as w0, OMEGA_DE as Omega_DE, H0_ALG as H0_alg,
+    W0 as w0, S_DE as s_DE, H0_ALG as H0_alg,
 )
 # Identidades: w₀ = -AURA/Ω = -Tr/Mv ;  Ω_DE = AURA/Ω ;  H₀^alg = 3(φ+π)²
 
@@ -69,9 +69,9 @@ identity = abs(45 * alpha_attr**2 - 5 * phi**8)
 # ── Step 2: IR (Paper 9) reference values ────────────────────────────────────
 # s_K_IR — RENOMBRADA 2026-08-10: NO es s_K (kineticidad Bellini-Sawicki,
 # que es 3*v^2/KAL, evoluciona, hoy 0.150703). s_K es puro EoS y no evoluciona.
-# Omega_DE aqui es ALIAS de S_DE = 0.839950 (saturacion, NO densidad).
-s_K_IR = 3 * Omega_DE * (1 + w0)          # = 3AURA(π−φ)/(2Ω²)  [dimensionless]
-rho_DE_1pw = (s_K_IR / 3) * RHO            # = Ω_DE·(1+w₀)·ρ_crit  [meV⁴]
+# s_DE = |w0| = 0.839950 es la SATURACION (sin H), NO la densidad 1-omega_m/h^2 (esa lleva h).
+s_K_IR = 3 * s_DE * (1 + w0)              # = 3AURA(π−φ)/(2Ω²)  [dimensionless]
+rho_DE_1pw = (s_K_IR / 3) * RHO            # = s_DE·(1+w₀)·ρ_crit  [meV⁴]: SATURACION, sin H (no la densidad 1−ω_m/h²)
 X_bg_IR    = s_K_IR * KAL / 6 * RHO        # self-consistent X, IR limit  [meV⁴]
 
 # f_screen_IR from Paper 9 (AURA cancels)
