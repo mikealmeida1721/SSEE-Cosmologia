@@ -61,6 +61,7 @@ stages:
     - results/logs/s8_desde_b1.json
     - results/logs/kids_publicados.json
     - results/logs/p10_uv_fscreen.json
+    - results/logs/p10_barrido_M4.json
     - results/logs/algebra_derivada.json
     - results/logs/kids_legacy_bic.json
     - results/logs/paper3_cmb_chi2.json
@@ -243,6 +244,16 @@ stages:
     - src/ssee_core.py
     outs:
     - results/logs/p10_uv_fscreen.json:
+        cache: false
+  p10_barrido_M4:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/barrido_M4.py
+      > /dev/null
+    deps:
+    - src/p10_uv/barrido_M4.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    outs:
+    - results/logs/p10_barrido_M4.json:
         cache: false
   prueba_equivalencia_hglob:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
