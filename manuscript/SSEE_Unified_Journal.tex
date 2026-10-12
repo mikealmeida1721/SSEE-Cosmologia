@@ -63,7 +63,7 @@ Effective Field Theory Stability Analysis}}
 \small ORCID: \href{https://orcid.org/0009-0008-2195-7836}{0009-0008-2195-7836}
 }
 
-\date{May 2026}
+\date{\today}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \sloppy
@@ -87,17 +87,19 @@ via $\omega_c=\mathrm{KAL}_0\,\omega_b\,n_s$, $n_s=1-\phiG^{-7}$, and the global
 rate $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$ from the measured SH0ES input, which lands on the pure number $3(\phiG+\pi)^2$), leaving only the primordial amplitude $A_s$ and the
 optical depth $\tau$ ($k=2$ versus $k=6$, the count used in the Paper~3 model
 comparison).
-The dark energy equation of state $\wz = -(3\phiG+\pi)/[2(\phiG+\pi)] \simeq -0.840$
-and $\wa \simeq -0.670$ are fixed by the algebraic construction and agree with the
-official DESI~DR2 $w_0w_a$CDM posterior within $0.24\sigma$ (Pantheon+;
-$0.2$--$1.8\sigma$ across SN compilations)---a parameter-free postdiction, with no
+The dark energy equation of state $\wz = -(3\phiG+\pi)/[2(\phiG+\pi)] = \val{W0_d3}$
+and $\wa = \val{WA_d3}$ are fixed by the algebraic construction and agree with the
+official DESI~DR2 $w_0w_a$CDM posterior within $\val{p2_w0wa_ssee_ec26}\sigma$ (Pantheon+;
+$\val{p2_w0wa_ssee_ec26_d1}$--$\val{p2_w0wa_ssee_ec27_d1}\sigma$ across SN compilations)---a parameter-free postdiction, with no
 claim of temporal priority over DESI~DR2.
 A Bayesian MCMC analysis under the global rate $H_0^{\rm glob}$ as prior
-($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$~km\,s$^{-1}$\,Mpc$^{-1}$, which is also
-the value at which Planck~\texttt{plik\_lite} is minimised with SSEE-fixed $\omega_b,\omega_c$; Papers~3, 9--10) yields
+($H_0^{\rm prior,SSEE}=H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})=\val{H0_GLOBAL_d3}\pm\val{p9_hglob_sigma}$~km\,s$^{-1}$\,Mpc$^{-1}$, which lies
+$\val{perfil_h0_d}\sigma$ from the value at which Planck~\texttt{plik\_lite} is minimised with SSEE-fixed $\omega_b,\omega_c$; Papers~3, 9--10) yields
 $H_0 = \val{h0_p2}^{+\val{h0_p2_mas}}_{-\val{h0_p2_menos}}$~km\,s$^{-1}$\,Mpc$^{-1}$ ($\val{h0_p2_dplanck}\sigma$ from Planck,
-$\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$) and $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ favouring
-\SSEE\ over \LCDM\ ($\val{p2_dBIC_cpl}$ over CPL).
+$\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). Model selection favours \SSEE\ by
+$\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL with nothing free
+($k=0$), and $\val{p2_dBIC_lcdm}$ and $\val{p2_dBIC_cpl}$ in the conservative version that samples
+$H_0$ and $\Omega_b h^2$ ($k=2$).
 A complementary full-likelihood multi-probe MCMC (CAMB $+$ Planck
 \texttt{plik\_lite} $+$ lensing $+$ DESI~DR2 $+$ $f\sigma_8$, $w_0,w_a$ free and
 $H_0$ under a flat prior) places the model at $\val{mf_w0wa_ssee}\sigma$ in the $w_0$--$w_a$
@@ -112,11 +114,13 @@ the DESI BAO equation of state and is not a density at all.
 With this single density, full-sky CLASS Boltzmann runs place the acoustic peaks
 where \LCDM\ does (RMS residual $\val{cl_ssee_rms}\%$).
 
-A linear Israel-Stewart perturbation analysis with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in
-the Poisson equation yields a growth factor
-$\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$ (Paper~5), giving a mean
+A linear perturbation analysis with $\Omega_{m,\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ in
+the Poisson equation, with the dark-energy sector stabilised by the sound speed of
+the field of Paper~7, yields a growth factor
+$\mathcal{G} = \val{p5_G}$ (Paper~5) and, with $A_s$ held at Planck's value,
+$\sigma_8 = \val{p3_sigma8_IS}$, giving a mean
 $\fsig$ tension of $\val{fs8_tmedia_ssee}\sigma$ across six RSD surveys --- statistically identical
-to $\Lambda$CDM ($0.73\sigma$), resolving the growth-rate sector.
+to $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$).
 In the lensing amplitude, against the $357$ \emph{raw} \textsc{KiDS-Legacy}
 $\xi_\pm$ points, with a \emph{single} unpartitioned matter sector, the
 background fixed by the algebra and $A_s$ fixed to the value the model's own
@@ -140,24 +144,25 @@ $\alphaK = \val{alpha_K_z0_d6}$ and a ghost-free, gradient-stable sound speed
 $c_s^2 = \val{cs2_condensado_d6}$ (Paper~7).
 
 We additionally summarise three theoretical extensions of the framework.
-In the strong-field regime Paper~8 analyses two limits: an alternative
-MOND-like limit in which the photon deflection is amplified by
-$\sqrt{\AURA}\approx \val{sqrt_AURA_d4}$ (numerically close to $\MIRA$ at $0.03\%$ but
-algebraically distinct), and the canonical limit with EFT
-$\alpha_B=\alpha_M=\alpha_T=0$ in which the residual fifth-force is
-suppressed to $F_\phi/F_N\sim 10^{-15}$ and the observable lensing recovers
-GR; current SLACS/BELLS data favour the canonical limit (Paper~8;
+In the strong-field regime Paper~8 keeps a disformal contrast, in which the photon
+deflection would be amplified by $\sqrt{\AURA}=\val{sqrt_AURA_d4}$ (numerically
+$\val{sqrtAURA_MIRA_d5}\,\MIRA$ but algebraically distinct) and which makes no
+prediction of the model, and derives the canonical limit with EFT
+$\alpha_B=\alpha_M=\alpha_T=0$, in which the residual fifth force is
+suppressed to $F_\phi/F_N\sim\val{quinta_fuerza_10kpc}$ at $10$~kpc and the observable lensing is
+that of GR with the model's cold matter; current SLACS/BELLS data are consistent with it (Paper~8;
 OPEN\_PROBLEMS.md OP-13). A late-time local screening fraction
-$f_{\rm scr}^{\rm IR}=\alphaK/(3\MIRA)=(\pi-\phiG)/(\phiG+\pi)^2\simeq0.067$ relates
-the locally measured rate to the global background. The measured datum is the
+$f_{\rm scr}^{\rm IR}=s_K/(3\MIRA)=(\pi-\phiG)/(\phiG+\pi)^2=\val{F_SCREEN_IR_d4}$ relates,
+under the screening postulate of Paper~9, the locally measured rate to the global background. The measured datum is the
 input and the global rate is the output:
 $H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-f_{\rm scr}^{\rm IR})=\val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$,
 which sits $\val{p9_sh0es_sig_IR}\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$; with the
 full infrared-plus-ultraviolet fraction $f_{\rm scr}^{\rm full}=\val{F_SCREEN_d6}$ the same
 operation returns $\val{H0_GLOBAL_d6}$, a residual of $+\val{p9_hglob_residuo}$~km/s/Mpc against that
-number, in both cases with zero free parameters (Papers~9 and~10).
-A UV completion $K(X)=X/\KAL+X^2/M^4$ with algebraic cutoff $M=9.68$~meV
-connects the dark-energy EFT to the inflationary $\alpha$-attractor (Paper~10).
+number, far inside the propagated $\pm\val{p9_hglob_sigma}$, in both cases with zero free
+parameters (Papers~9 and~10). A UV completion $K(X)=X/\KAL+X^2/M^4$ whose cutoff
+$M=\val{M_meV_d2}$~meV is conjectured to be set by the inflationary $\alpha$-attractor
+(Conjecture~C.1, Paper~10) is consistent with the cascade, which does not measure it.
 All model parameters are falsifiable by named forthcoming experiments.
 \end{abstract}
 
@@ -172,14 +177,14 @@ All model parameters are falsifiable by named forthcoming experiments.
 % ─────────────────────────────────────────────────────────────────────────────
 
 The DESI~DR2 baryon acoustic oscillation data \citep{AbdulKarim2025} provide
-compelling evidence for dynamical dark energy at $>3\sigma$, with a CPL
-equation-of-state posterior centred near $(\wz,\wa) \approx (-0.84, -0.67)$.
-This remarkable coincidence motivates systematic testing of models that predict
+evidence for dynamical dark energy at $2.8$--$4.2\sigma$ depending on the supernova
+sample, with the DESI\,$+$\,CMB\,$+$\,Pantheon+ posterior centred at
+$(\wz,\wa)=(-0.838,-0.62)$. This motivates systematic testing of models that predict
 the dark energy equation of state from theoretical principles rather than fitting it.
 
 The \SSEE framework proposes that the macroscopic universe obeys an
-algebraic closure condition: all cosmological background parameters are uniquely
-determined by two dimensionless geometric constants, the golden ratio
+algebraic closure condition: the dimensionless background parameters are
+fixed by two dimensionless geometric constants, the golden ratio
 $\phiG = (1+\sqrt{5})/2 \simeq \val{PHI_d4}$ and $\pi \simeq \val{PI_d4}$.
 No optimisation over formula space was performed: the parameter values are fixed
 by the algebraic construction \citep{AlmeidaSSEE2026genesis}, not adjusted to the
@@ -205,12 +210,12 @@ We report four independent validation tiers:
   KiDS-Legacy $\xi_\pm$, with $A_s$ fixed by the model's own CMB fit and no free
   cosmological parameter, it predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$.
 \item \textbf{EFT stability} (\S\ref{sec:eft}): the Paper~7 ghost condensate,
-  gradient-stable with $c_s^2=0.021284$, and gravitational-wave compatibility
+  gradient-stable with $c_s^2=\val{cs2_condensado_d6}$, and gravitational-wave compatibility
   ($\alphaT = \alphaM = \alphaB = 0$).
 \end{enumerate}
 Section~\ref{sec:extensions} then summarises three theoretical extensions of the
-framework --- the strong-field lensing regime, an algebraic resolution of the
-Hubble tension, and a UV completion --- which are developed in full in the
+framework --- the strong-field lensing regime, an algebraic screening account of
+the Hubble tension (under a postulate), and a UV completion --- which are developed in full in the
 companion Papers~8--10 and are presented here in condensed form.
 
 Throughout, we distinguish three epistemic statuses: \textit{postdiction}
@@ -240,17 +245,17 @@ registers derived from $\phiG$ and $\pi$:
   M_v      &= \phiG + \pi + K_v           \simeq \val{M_V_d4}\quad (\text{Maximal Dimensional Invariant})
   \label{eq:registers}
 \end{align}
-From these seven scalars, the dark energy equation of state is derived uniquely:
+From these seven scalars, the dark energy equation of state is fixed:
 \begin{equation}
   \wz = -\frac{T_r}{M_v}
      = -\frac{3\phiG+\pi}{2(\phiG+\pi)} \simeq \val{W0_d5},
   \qquad
   \wa = -\frac{P_{\rm sc}}{I_g}
-     = -\frac{P_{\rm sc}}{\pi+P_{\rm sc}} \simeq -0.66997.
+     = -\frac{P_{\rm sc}}{\pi+P_{\rm sc}} = \val{WA_d5}.
   \label{eq:wde}
 \end{equation}
 The dark-energy saturation follows algebraically:
-$s_{\rm DE} = |{\wz}| = T_r/M_v \simeq 0.8399$ --- a number of the equation of
+$s_{\rm DE} = |{\wz}| = T_r/M_v = \val{S_DE_d4}$ --- a number of the equation of
 state, not the density $\Omde = 1-\OmmCMB = \val{OMDE_DENS_d6}$.
 
 \subsection{Derived cosmological parameters}
@@ -287,12 +292,11 @@ However, the CMB angular-diameter distance is sensitive to the
 in agreement with Planck~2018 ($0.3153\pm 0.0073$) at $\val{om_planck_sig}\sigma$. There is
 \emph{no} matter factor: $\sm=\val{S_M_d6}$ (a number of the equation of state,
 tested by DESI through $w_0$) and $\omega_m$ (a density, tested by the CMB) are two
-independent SSEE predictions, of two different kinds. (The earlier, now superseded MIRA mapping
-$\MIRA=(3\phiG+\pi)/4\simeq1.9989$ gave $\OmmCMB=\MIRA\times\sm=0.3199$, superseded;
-$\MIRA$ now enters only the Hubble screening fraction, Paper~9.)
+independent SSEE predictions, of two different kinds. (The earlier mapping $\OmmCMB=\MIRA\times\sm$, with $\MIRA=(3\phiG+\pi)/4$,
+is withdrawn; $\MIRA$ now enters only the Hubble screening fraction, Paper~9.)
 The physical interpretation of these two independent predictions --- the
 earlier reading as a ``two-sector split'' is superseded by the
-$\omega_m$-direct construction --- is examined in Papers~3 and~5 \citep{AlmeidaSSEE2026P3,AlmeidaSSEE2026P5}.
+$\omega_m$-direct construction --- is examined in Papers~3 and~6 \citep{AlmeidaSSEE2026P3,AlmeidaSSEE2026P6}.
 Section~\ref{sec:cmb} checks this density against the acoustic peaks.
 
 
@@ -318,7 +322,11 @@ The likelihood combines:
   \item as a separate consistency test outside the likelihood, the dynamical
     masses of all $\val{clz_rgimf_N}$ clusters in Tables~II--III of \citet{Zhang2026}.
 \end{itemize}
-For \SSEE, $H_0$ is the sole free parameter; $(\wz,\wa)$ are fixed algebraically.
+For \SSEE, $(\wz,\wa)$ are fixed algebraically; $H_0$ and $\Omega_b h^2$ are sampled
+in this conservative version ($k=2$), although $\omega_b$ is algebraic and $H_0$ is the
+output of the cascade. With nothing free ($k=0$) \SSEE\ is favoured by
+$\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL, and freeing
+$H_0$ and $\Omega_b h^2$ lowers $\chi^2$ by only $\val{p2_k0_dchi2}$ (Paper~2).
 For \LCDM, $(H_0, \Omm)$ are free. For CPL, $(H_0,\Omm,\wz,\wa)$ are free.
 
 \subsection{Results}
@@ -354,13 +362,12 @@ With the total gravitating matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TO
 background geometry, \SSEE\ is favoured on every information criterion:
 $\Delta\mathrm{BIC}=\val{p2_dBIC_lcdm}$ over \LCDM\ and $\val{p2_dBIC_cpl}$ over CPL, $\Delta\mathrm{DIC}=
 \val{p2_dDIC_lcdm}$ and $\val{p2_dDIC_cpl}$. The \SSEE\ sound horizon then matches \LCDM\
-($r_d=147.17$ vs $147.10$~Mpc, CAMB) and the $H_0$ posterior sits $\val{p2_tH0_planck}\sigma$ from
+($r_d=\val{p2_lyaB_rd}$ vs $\val{p2_rd_lcdm}$~Mpc, CAMB) and the $H_0$ posterior sits $\val{p2_tH0_planck}\sigma$ from
 Planck, so no background-structure penalty arises. An earlier ``$+206$''
-full-background penalty was an artefact of placing the cold sector
+full-background penalty was an artefact of placing the equation-of-state number
 $1+w_0=\val{S_M_d6}$ in $E(z)$ where the total density belongs; with the correct total
-density it does not occur.
-The $\omega_m$-direct two-$\Omega_m$ construction (\S\ref{sec:mira}) resolves
-the background tension, validated in \S\ref{sec:cmb} below.
+density it does not occur. The single matter density (\S\ref{sec:mira}) is checked
+against the acoustic peaks in \S\ref{sec:cmb} below.
 
 \subsection{Galaxy-cluster mass sector}
 \label{sec:clusters}
@@ -393,19 +400,19 @@ compression.
 We run an MCMC with CAMB $+$ Planck \texttt{plik\_lite} TTTEEE $+$ lensing $+$ a
 $\tau$ prior, combined with DESI~DR2 BAO and $f\sigma_8$, sampling
 $(H_0,\Omega_bh^2,\Omega_c h^2,n_s,\tau,w_0,w_a)$ with \emph{flat} priors ($H_0$
-free in $[60,80]$; four chains, $\sim$53k post-burn-in samples, Gelman--Rubin
-$R-1<0.005$). Table~\ref{tab:mcmc_full} lists the recovered posteriors: the
+free in $[60,80]$; four chains, \val{mf_filas} samples after a $30\%$ burn-in per chain,
+Gelman--Rubin $R-1=\val{mf_rminus1}$). Table~\ref{tab:mcmc_full} lists the recovered posteriors: the
 tightly constrained CMB combinations $\omega_b,\omega_c,r_{\rm drag}$ are
 recovered to $\le0.2\sigma$ --- an independent confirmation of the
 $\omega_m$-direct reframe from the full $C_\ell$ spectrum rather than from a
 compressed prior. The remaining parameters $(H_0,\Omega_m,w_0,w_a)$ sit
-$1.4$--$1.8\sigma$ from the algebraic values, the uncompressed CMB likelihood
+$\val{mf_wa_tens}$--$\val{mf_H0_tens}\sigma$ from the algebraic values, the uncompressed CMB likelihood
 pulling $H_0$ down to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$. In the dark-energy plane
 the free posterior $(w_0,w_a)=(\val{mf_w_media},\val{mf_wa_media})$ \emph{excludes} the cosmological
 constant $(-1,0)$ at $\val{mf_w0wa_lcdm}\sigma$, while the \SSEE\ algebraic point
-$(-0.840,-0.670)$ lies at only $1.31\sigma$ in the correlated ($\rho=-0.93$)
+$(\val{W0_d3},\val{WA_d3})$ lies at only $\val{mf_w0wa_ssee}\sigma$ in the correlated ($\rho=\val{mf_rho}$)
 $w_0$--$w_a$ plane --- more than twice as close as \LCDM.\footnote{The
-$\sigma_8\approx0.80$, $S_8\approx0.84$ recovered here comes from this free-$(w_0,w_a)$
+$\sigma_8=\val{mf_sigma8}$, $S_8=\val{mf_S8}$ recovered here comes from this free-$(w_0,w_a)$
 fit and is not the model's growth amplitude, which is $S_8=\val{S8_leg_pred}$
 (\S\ref{sec:growth_raw}).}
 
@@ -414,8 +421,8 @@ fit and is not the model's growth amplitude, which is $S_8=\val{S8_leg_pred}$
 \caption{Full-likelihood multi-probe MCMC (CAMB $+$ Planck \texttt{plik\_lite}
 TTTEEE $+$ lensing $+$ $\tau$ prior $+$ DESI~DR2 $+$ $f\sigma_8$, with $w_0,w_a$
 free and $H_0$ under a flat prior $[60,80]$): posteriors vs.\ algebraic \SSEE\
-values. Four independent chains, Gelman--Rubin $R-1<0.005$ for all parameters,
-$\sim7\times10^4$ effective samples. DESI~DR2-corrected vector (V-L4-DESI).}
+values. Four independent chains, Gelman--Rubin $R-1=\val{mf_rminus1}$,
+\val{mf_filas} samples after burn-in. DESI~DR2-corrected vector (V-L4-DESI).}
 \label{tab:mcmc_full}
 \begin{tabular}{p{0.3\textwidth} c c c}
 \toprule
@@ -440,11 +447,11 @@ sits at $H_0=\val{mf_H0_media}\pm\val{mf_H0_sigma}$, some $\val{mf_H0_tens}\sigm
 $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. This mild downward pull is a known feature of
 $w_0w_a$CDM under the uncompressed CMB likelihood and is stated openly. The key
 model-comparison statement is unchanged and in fact sharper: the fixed
-algebraic point $(-0.840,-0.670)$ lies $1.31\sigma$ from the joint $w_0$--$w_a$
+algebraic point $(\val{W0_d3},\val{WA_d3})$ lies $\val{mf_w0wa_ssee}\sigma$ from the joint $w_0$--$w_a$
 posterior, whereas the cosmological-constant point $(-1,0)$ is excluded at
-$3.22\sigma$. The joint distance is smaller than the individual $w_0,w_a$
-marginals ($1.73\sigma,\,1.43\sigma$) because the algebraic offset lies
-\emph{along} the strong $w_0$--$w_a$ degeneracy ($\rho=-0.93$), not across it.
+$\val{mf_w0wa_lcdm}\sigma$. The joint distance is smaller than the individual $w_0,w_a$
+marginals ($\val{mf_w_tens}\sigma,\,\val{mf_wa_tens}\sigma$) because the algebraic offset lies
+\emph{along} the strong $w_0$--$w_a$ degeneracy ($\rho=\val{mf_rho}$), not across it.
 Corner plots and trace diagnostics are archived at Zenodo
 \citep{AlmeidaSSEE2026zenodo}.
 
@@ -456,16 +463,16 @@ all algebraically fixed and only $(A_s,\tau)$ free, the full Planck
 six-parameter \LCDM\ fit ($\val{lite_dBIC}$ for the \texttt{plik\_lite} point estimate),
 decisively favouring \SSEE\ on the Jeffreys scale. The advantage is driven by
 parsimony ($k=2$ versus $k=6$), not by a lower $\chi^2$: the fixed model matches
-\LCDM\ spectrum-for-spectrum ($\chi^2_r\simeq1.04$) while spending four fewer
+\LCDM\ spectrum-for-spectrum ($\chi^2_r(\mathrm{TT})=\val{p3_chi2r_TT_ssee}$) while spending four fewer
 parameters. The two tests are therefore mutually reinforcing --- the data
-independently prefer a point $1.31\sigma$ from \SSEE\ (with \LCDM\ excluded at
-$3.22\sigma$), and imposing \SSEE\ exactly costs no fit quality while gaining
+independently prefer a point $\val{mf_w0wa_ssee}\sigma$ from \SSEE\ (with \LCDM\ excluded at
+$\val{mf_w0wa_lcdm}\sigma$), and imposing \SSEE\ exactly costs no fit quality while gaining
 a substantial parsimony advantage.
 
 \paragraph{The same fixed values in every reading.}
 Both tests share a defining feature: the \SSEE\ background carries \emph{the
 same fixed values into every probe}. The pair $w_0=\val{W0_d6},\,w_a=\val{WA_d6}$
-confronts DESI (Paper~II, $0.24\sigma$ Pantheon+), the Planck 2018 CMB
+confronts DESI (Paper~II, $\val{p2_w0wa_ssee_ec26}\sigma$ Pantheon+), the Planck 2018 CMB
 (Paper~III, $\Delta\mathrm{BIC}=\val{b1_dBIC}$), the $f\sigma_8$ compilation
 ($\val{fs8_tmedia_ssee}\sigma$) and the cluster masses ($\val{clz_rgig_sig}\sigma$) without ever being
 re-tuned per data set. A free CPL fit lands on a \emph{different} point for each
@@ -547,8 +554,8 @@ Figure~\ref{fig:cmb_tt} shows the TT power spectrum for SSEE and \LCDM.
 The CAMB-based analysis of Paper~3 computes the \SSEE\ drag horizon from the
 full $\omega_m$-direct CMB density $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ (OP-8 dissolved, no matter
 factor): the physical drag horizon is
-$r_d = 147.17$~Mpc, within $1\sigma$ of the Planck~2018 measurement
-$r_d = 147.09\pm0.26$~Mpc \citep{Planck2018} (TT,TE,EE+lowE+lensing, Table~2; no BAO prior).
+$r_d = \val{p2_lyaB_rd}$~Mpc, $\val{rd_ssee_sig_planck}\sigma$ from the Planck~2018 value
+$r_d = \val{rd_planck}\pm\val{rd_planck_sigma}$~Mpc \citep{Planck2018} (TT,TE,EE+lowE+lensing, Table~2; no BAO prior).
 The same full CMB-sector matter density that restores the acoustic peaks
 (\S\ref{sec:cmb}) also sets the physical sound horizon; the earlier
 interpretation as a $|\wz|$ mapping of the geometric scale is superseded.
@@ -566,17 +573,19 @@ Because $\wz = \val{W0_d6} < -1/3$, a naive $k$-essence interpretation yields
 a bare sound speed $c_{s,\mathrm{bare}}^2 = \wz \simeq -0.840$, implying
 catastrophic gradient instability on all sub-horizon scales.
 Paper~5 \citep{AlmeidaSSEE2026P5} performs a causal Israel-Stewart (IS)
-analysis \citep{IsraelStewart1979} and demonstrates analytically that the
-\SSEE\ structure constants satisfy an algebraic identity that forces the
-effective IS sound speed to zero:
-$c_{s,\mathrm{eff}}^2(k\to\infty) = 0$, to floating-point precision.
+analysis \citep{IsraelStewart1979}. The \SSEE\ structure constants make the
+high-frequency IS sound speed vanish, $c_{s,\mathrm{eff}}^2(\omega\tau_\Pi\to\infty)=0$,
+but that is \emph{not} a stability result: with $c^2_{s,\rm bare}=\wz$ the growing
+mode is unstable at every $k$. The stability of the dark-energy sector is carried
+instead by the field of Paper~7, whose own sound speed is
+$c_s^2=+\val{cs2_condensado_d6}$; with it no mode grows.
 
-Integrating the full IS linear growth ODE from $z=19$ to $z=0$
+Integrating the linear growth equation from $z=19$ to $z=0$
 with $\Omega_{m,\mathrm{cosm}} = \val{OMEGA_M_TOTAL_d6}$ in the Poisson source:
 \begin{equation}
-  \mathcal{G} = D_1^{\mathrm{SSEE}}/D_1^{\Lambda\mathrm{CDM}} = 1.0032,
+  \mathcal{G} = D_1^{\mathrm{SSEE}}/D_1^{\Lambda\mathrm{CDM}} = \val{p5_G},
   \qquad
-  \sigma_8^{\mathrm{SSEE}} = 0.811 \times \mathcal{G} = 0.8136.
+  \sigma_8^{\mathrm{SSEE}} = \val{p3_sigma8_IS} \;\;(A_s\ \text{held at Planck's value}).
   \label{eq:G_IS}
 \end{equation}
 The IS growth index $\gamma_{\mathrm{IS}} = \val{p3_gamma_IS}\pm\val{p3_gamma_IS_sigma}$, consistent with
@@ -618,9 +627,9 @@ them is the parameter count.
 \label{sec:tension_table}
 
 At the single-sector level with the Poisson source at $\OmmCMB=\val{OMEGA_M_TOTAL_d6}$
-(Paper~5), the growth factor is $\mathcal{G}=1.0032$ and the mean $\fsig$
-tension across six RSD surveys is $0.70\sigma$ --- statistically
-indistinguishable from $\Lambda$CDM ($0.73\sigma$). Against the \emph{raw}
+(Paper~5), the growth factor is $\mathcal{G}=\val{p5_G}$ and the mean $\fsig$
+tension across six RSD surveys is $\val{fs8_tmedia_ssee}\sigma$ --- statistically
+indistinguishable from $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$). Against the \emph{raw}
 BOSS DR12 redshift-space multipoles ($222$ points, one-loop LPT to
 $k_{\max}=0.20\,h\,$Mpc$^{-1}$, Alcock--Paczynski applied to the model), the
 algebraic background and the Planck background reach $\chi^2=\val{bossR_chi2_ssee}$ and
@@ -629,8 +638,8 @@ $\sum m_\nu$: $\Delta\chi^2=\val{bossR_dchi2}$, a mild, not decisive, preference
 for the algebraic background (Paper~6).
 
 This analysis operates at the linear-growth level for the growth index;
-non-linear effects (baryonic feedback beyond HMcode, halo bias) may modify the
-predictions at the $10\%$--$20\%$ level.
+non-linear effects (baryonic feedback beyond HMcode, halo bias) are not
+included.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{EFT Stability Analysis}
@@ -665,15 +674,15 @@ The solution requires $c_1<0$ and $c_2>0$: the field is a ghost condensate,
 stabilised at $X/X_{\min}=\val{X_sobre_Xmin_d6}$, where the no-ghost condition
 $K_X+2XK_{XX}>0$ holds. Its sound speed is fixed by the same algebra,
 \begin{equation}
-  c_s^2 = \frac{M_v-T_r}{5M_v+3T_r} = 0.021284 > 0,
+  c_s^2 = \frac{M_v-T_r}{5M_v+3T_r} = \val{cs2_condensado_d6} > 0,
   \label{eq:Qs}
 \end{equation}
 so the sector is gradient-stable. An independent \textsc{hi\_class}
-integration reproduces $c_s^2$ to $0.000\%$ and $\alphaK$ to $0.011\%$, with
+integration reproduces $c_s^2$ to $\val{p7_hc_cs2_pct}\%$ and $\alphaK$ to $\val{p7_hc_alphaK_pct}\%$, with
 the internal stability tests enabled (Paper~7). The kineticity itself is
 \emph{not} observationally accessible: a factor $100$ change moves $\sigma_8$ by
-$0.007\%$ and the TT spectrum only at $\ell<10$, seven times below cosmic
-variance. The falsifiable content of this sector is therefore $c_s^2$ and
+$\val{p7_hc_s8_xk_pct}\%$ and the TT spectrum only at the lowest multipoles, below cosmic
+variance (Paper~7). The falsifiable content of this sector is therefore $c_s^2$ and
 $\wz$, not $\alphaK$.
 
 The quantity $\val{S_K_d6}$ that appears elsewhere in this journal is not a
@@ -687,27 +696,24 @@ the equation of state, not densities). It enters $f_{\rm screen}$
 \label{sec:phantom}
 
 When the CPL EoS $w(z) = \wz + \wa z/(1+z)$ is used in the EFTCAMB run,
-the phantom boundary $w = -1$ is crossed at $z \simeq 0.31$.
+the phantom boundary $w = -1$ is crossed at $z = \val{z_cruce}$.
 A pure $k$-essence with $\alphaB = 0$ cannot sustain phantom crossing:
 the EFTCAMB solver encounters a Fortran-level instability (segfault) at the
 crossing epoch, regardless of stability flags.
 Earlier versions read this as evidence that completing the SSEE action in the
 phantom regime requires $\alphaB \neq 0$, to supply a degree of freedom able
-to absorb the null-energy-condition violation.  That reading is superseded,
-and the reason is that the phantom regime itself is gone.  In the revised
-action of Paper~7 the field is minimally coupled and its equation of state is
-constant at $\wz = \val{W0_d6} > -1$: the null energy condition holds at all
-times and there is no crossing for $\alphaB$ to absorb.  The phantom crossing
-of earlier versions was produced by the conformal dark-sector coupling, which
-is withdrawn.
+to absorb the null-energy-condition violation.  That reading is superseded.
+In the action of Paper~7 the field is minimally coupled and fixes $w_0$ and $c_s^2$
+today, but it is not static: it rolls towards $w=-1$, with its own
+$w_a^\phi=\val{p7_wa_campo}$, and a single canonical field cannot cross $w=-1$. The
+algebraic $w(a)$ does cross it; what produces the crossing is open (OP-24). The
+conformal dark-sector coupling of earlier versions, which produced a crossing, is
+withdrawn.
 
-The prediction survives, with its sign reversed and its status improved.
-SSEE now predicts $\alphaB = \alphaM = 0$ \emph{exactly and
-unconditionally}, so a detection of $\alphaB \neq 0$ above $2\sigma$ by
-DESI~Y3 or Euclid ($\sigma \simeq 0.05$) would \emph{falsify} the sector
-rather than support it.  What was a discriminating prediction conditional on
-a two-sector picture --- an extension withdrawn on 2026-08-01 --- is now an
-unconditional one.
+For the action of Paper~7, $\alphaB = \alphaM = 0$ exactly, so a detection of
+$\alphaB \neq 0$ by DESI~Y3 or Euclid would falsify that action. What was a
+discriminating prediction conditional on a two-sector picture --- an extension
+withdrawn on 2026-08-01 --- is now a test of the action itself.
 
 
 
@@ -724,10 +730,10 @@ explicitly: the strong-field lensing signature (\S\ref{sec:ext-sg}) is a
 falsifiable prediction; the Hubble-tension screening fraction
 (\S\ref{sec:ext-ht}) is a zero-parameter algebraic result compared to existing
 data; and the UV completion (\S\ref{sec:ext-uv}) contains one quantity ---
-$H_0^{\rm glob,UV} = H_{\rm SH0ES}(1-f_{\rm screen}) = 67.96214$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+4.2{\times}10^{-6}$ against the dimensionless target $3(\varphi+\pi)^2$,
-not a significance: the propagated uncertainty is $\pm\val{p9_hglob_sigma}$) --- that is explicitly
-conditional on a separability postulate and is therefore presented as a
-self-consistency check, not an independent prediction.
+$H_0^{\rm glob} = H_{\rm SH0ES}(1-f_{\rm screen}) = \val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+\val{p9_hglob_residuo}$ against the dimensionless target $3(\varphi+\pi)^2$,
+not a significance: the propagated uncertainty is $\pm\val{p9_hglob_sigma}$) --- whose UV
+term rests on Conjecture~C.1 and is therefore presented as a
+consistency check, not an independent prediction.
 
 \subsection{Strong-field regime: lensing in the canonical limit}
 \label{sec:ext-sg}
@@ -742,7 +748,7 @@ there only as a historical contrast and makes no prediction of the model.
 $\omega_c = \mathrm{KAL}_0\,\omega_b\,n_s$ (Paper~1, OP-8 closed) plus the
 Bellini--Sawicki structure $\alpha_B=\alpha_M=\alpha_T=0$ of Paper~7, which
 gives $\mu-1=0$ --- the residual fifth-force is
-suppressed to $F_\phi/F_N\sim(H/k)^2\sim 10^{-15}$ at kpc scales and the
+suppressed to $F_\phi/F_N\sim(H/k)^2\sim\val{quinta_fuerza_10kpc}$ at $10$~kpc and the
 canonical observable lensing reduces to $\thetaE^{\rm SSEE}\approx
 \thetaE^{\rm GR-with-DM}$. Current SLACS/BELLS samples (mean total slope
 $\gamma=2.078\pm 0.027$; $M_E/M_{\rm dyn}\approx 1.21$ for SIS) are consistent
@@ -753,7 +759,7 @@ particle (\S\ref{sec:growth_raw}).
 \subsection{The Hubble tension: an algebraic local screening fraction}
 \label{sec:ext-ht}
 
-The equation of state of Paper~7, with the structural constants of the
+The equation of state of Paper~1, with the structural constants of the
 algebra, fixes a late-time \emph{local screening fraction}
 \begin{equation}
 \fscr^{\rm IR} = \frac{s_K}{3\,\MIRA}
@@ -783,41 +789,37 @@ $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$, $\val{perfil_h0_d}\sigma$ from
 $H_0^{\rm glob}$; Paper~3.) This is the
 infrared regime ($M\to\infty$), not the canonical value: with the complete
 screening fraction of the UV completion (\S\ref{sec:ext-uv}) the single global
-rate is $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. (The earlier MIRA anchor
-$H_0^{\rm MIRA}=67.037$ gave $71.87$ at $1.12\sigma$, now superseded by the
-reframe.) The correction applies to local measurements of the rate; it does not modify the sound horizon $r_d$, the CMB peak positions, or the
+rate is $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$. (The earlier MIRA anchor is
+superseded by the reframe.) The correction applies to local measurements of the rate; it does not modify the sound horizon $r_d$, the CMB peak positions, or the
 growth factor $\sigma_8$ established in the tiers above.
 
 \subsection{UV completion: the \texorpdfstring{$X^2/M^4$}{X2/M4} operator}
 \label{sec:ext-uv}
 
-The infrared kinetic Lagrangian $K(X)=X/\KAL$ is extended by the leading
-higher-derivative operator, $K(X)=X/\KAL + X^2/M^4$. The inflationary
-$\alpha$-attractor parameter $\alpha=\phiG^4/3$ (Paper~1, Appendix~A.5), which
-fixes the tensor-to-scalar ratio $r=12\alpha/N_*^2\approx0.00813$, also fixes the
-UV cutoff:
+The infrared screening uses only the equation of state. Paper~10 adds a kinetic
+function with a higher-derivative operator, $K(X)=X/\KAL + X^2/M^4$, and conjectures
+(Conjecture~C.1) that the inflationary $\alpha$-attractor parameter
+$\alpha=\phiG^4/3$ (Paper~1, Appendix~A.5), which fixes the tensor-to-scalar ratio
+$r=12\alpha/N_*^2=\val{R_TENSOR_d5}$, also sets the UV cutoff:
 \begin{equation}
 M^4 = 45\,\alpha^2\,\rho_c = 5\,\phiG^8\,\rho_c \approx \val{M4_UV_d1}\,\rho_c ,
-\qquad M \approx 9.68~{\rm meV} ,
+\qquad M = \val{M_meV_d2}~{\rm meV} ,
 \end{equation}
 where the identity $45\alpha^2 = 5\phiG^8$ follows exactly from
 $\alpha=\phiG^4/3$. With this cutoff the full pressure-dilution rate (not the Bellini--Sawicki kineticity $\alphaK$) becomes
 $s_K^{\rm full}=\val{S_K_FULL_d5}$ ($+\val{sK_UV_pct}\%$ over the IR value). Applied to the
-measured SH0ES rate this gives the canonical UV value
-$H_0^{\rm glob,UV}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+4.2{\times}10^{-6}$ against $3(\varphi+\pi)^2$, $\sigma=0.968$;
-the earlier MIRA-anchored $72.05$ at $0.96\sigma$ is superseded by the reframe).
+measured SH0ES rate this gives the single global rate
+$H_0^{\rm glob}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+\val{p9_hglob_residuo}$ against $3(\varphi+\pi)^2$; propagated $\pm\val{p9_hglob_sigma}$;
+the earlier MIRA-anchored value is superseded by the reframe).
 
-We state the epistemic status of these figures plainly: the UV value is
-\emph{conditional on Postulate~C.1} (UV--IR $\phiG/\pi$ separability) and is
-\emph{not independent of SH0ES}, since the postulate was formulated with the
-SH0ES central value as its target. It is a self-consistency check, not a
-prediction. The independent prediction remains the IR-regime value
-$H_0^{\rm glob,IR}=68.13$~km\,s$^{-1}$\,Mpc$^{-1}$ ($0.17\sigma$) of \S\ref{sec:ext-ht}, which does
-not rely on the postulate. The construction does, however, supply a falsifiable
-cross-epoch consistency test: the same $\alpha$ governs inflation at $z\sim10^{60}$
-and the dark-energy UV scale today, so a LiteBIRD measurement of $r\neq0.00813$
-would shift both $\alpha$ and $M$ and change the predicted $H_0^{\rm glob}$
-accordingly.
+We state the epistemic status of these figures plainly: the UV term rests on
+Conjecture~C.1 and is \emph{not independent of SH0ES}, which is the input of the
+cascade. The cascade does not measure the cutoff: varying $M^4$ from $0.2\times$ its
+value to infinity moves the output by at most $\val{p10_mueve_M4}$~km\,s$^{-1}$\,Mpc$^{-1}$, inside
+the propagated uncertainty. The IR value $H_0^{\rm glob,IR}=\val{p9_sh0es_glob_IR}$ of
+\S\ref{sec:ext-ht} is the same cascade with the IR term alone, not a second rate. The
+construction does supply a cross-epoch test, but its decisive leg is $r$: the
+Hubble leg would vote only if LiteBIRD found $r<\val{p10_r_umbral}$ (Paper~10).
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Falsifiability and Prediction Register}
@@ -838,12 +840,12 @@ falsified at the theory level if \textit{any} of the following were established:
 (i) $(\wz, \wa)$ is inconsistent with the DESI~DR2 posterior at $>3\sigma$;
 (ii) a future CLASS MCMC with Planck+DESI likelihoods requires
 $\Omega_{m,\mathrm{CMB}} \neq \val{OMEGA_M_TOTAL_d6}$ at $>3\sigma$;
-(iii) cosmic shear places $S_8$ more than $3\sigma$ from $\val{S8_leg_pred}$ --- the value predicted once $A_s$ is \emph{fixed} to what the CMB gives under the same background, leaving no free cosmological parameter and nowhere to absorb the discrepancy (superseding the weaker earlier form, $3\sigma$ from $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ with $A_s$ fitted)
-when the primordial amplitude is fitted to raw $\xi_\pm$ data with the \SSEE\
-background held fixed;
+(iii) cosmic shear places $S_8$ more than $3\sigma$ from $\val{S8_leg_pred}$ --- the value predicted once $A_s$ is \emph{fixed} to what the CMB gives under the same background, leaving no free cosmological parameter and nowhere to absorb the discrepancy (superseding the weaker earlier form, $3\sigma$ from $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ with $A_s$
+fitted to raw $\xi_\pm$ data and the \SSEE\ background held fixed);
 (iv) $r \neq \val{R_TENSOR_d5}$ as measured by LiteBIRD;
-(v) the strong-lensing Einstein-radius ratio is inconsistent with
-$\sqrt{\AURA}\approx\MIRA$ at $>3\sigma$ in HST/JWST surveys.
+(v) strong-lensing Einstein radii depart from GR with the model's cold matter
+at $>3\sigma$ in HST/JWST surveys (the $\sqrt{\AURA}$ ratio belongs to the
+non-canonical disformal contrast of Paper~8 and is not a prediction).
 
 \begin{table}[htbp]
 \centering
@@ -861,25 +863,25 @@ Quantity (algebraic formula) & Value & Test / Instrument & Status \\
 \multicolumn{4}{l}{\textit{Background sector (algebraic dictionary)}} \\
 $w_0 = -T_r/M_v$ & $\val{W0_d6}$ & DESI DR2 CPL posterior & Postdiction \\
 $w_a = -P_{\rm sc}/I_g$ & $\val{WA_d6}$ & DESI DR2 CPL posterior & Postdiction \\
-$\MIRA = (3\phiG+\pi)/4$ & $\val{MIRA_d6}$ & $\fscr=\alphaK/(3\MIRA)$ (Papers 8, 9) & Postdiction \\
+$\MIRA = (3\phiG+\pi)/4$ & $\val{MIRA_d6}$ & $\fscr=s_K/(3\MIRA)$ (Paper 9) & Postdiction \\
 \midrule
 \multicolumn{4}{l}{\textit{Retrodictions (derived independently, compared to existing data)}} \\
 $H_0^{\rm glob}=H_{\rm SH0ES}(1-f_{\rm screen})$, target $3(\phiG+\pi)^2$ & $\val{H0_GLOBAL_d5}$ km/s/Mpc & Planck 2018 & Retrodiction \\
 $n_s = 1-\phiG^{-7}$ & $\val{N_S_d6}$ & Planck 2018 & Retrodiction \\
 $\OmmCMB = \omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & Planck 2018 & Retrodiction \\
 $r_d$ (CAMB, $\omega_m$-direct) & $\val{mf_rdrag_alg}$ Mpc & Planck 2018 $r_d$ ($\val{p3_rd_sig_anc}\sigma$) & Retrodiction \\
-$\gamma_{\rm IS} = 0.5504$ & $\approx \gamma_{\Lambda\rm CDM} = 0.55$ & RSD surveys & Retrodiction \\
+$\gamma_{\rm IS}$ & $\val{p3_gamma_IS}$ ($\gamma_{\Lambda\rm CDM}\simeq0.55$) & RSD surveys & Retrodiction \\
 $\alphaT = \alphaM = \alphaB = 0$ & exact & GW170817 $|\alphaT|<10^{-15}$ & Retrodiction \\
 $S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $\val{S8_leg_pred}$ predicted & measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & \textbf{Prediction} \\
 \quad earlier: KiDS-1000, $A_s$ fitted (superseded) & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ & $\Lambda$CDM control: $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ & Retrodiction \\
 $\sigma_8$ ($A_s$ fixed to Planck; ceiling) & $\val{p3_sigma8_techo}$ & convention, not a prediction & --- \\
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-\fscr^{\rm IR})$ & $\val{p9_sh0es_glob_IR}$ km/s/Mpc & $3(\phiG+\pi)^2=\val{H0_ALG_d5}$ ($\val{p9_sh0es_sig_IR}\sigma$; IR only, partial) & Retrodiction \\
-$H_0^{\rm glob} = H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$ (residual $+4.2{\times}10^{-6}$) & Retrodiction \\
+$H_0^{\rm glob} = H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$ (residual $+\val{p9_hglob_residuo}$) & Retrodiction \\
 \midrule
 \multicolumn{4}{l}{\textit{Predictions (not yet observationally accessible)}} \\
 
-$c_s^2 = (M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & dark-energy clustering (Euclid, LSST) & Prediction \\
-$r = \phiG^{-10}$ & $0.008131$ & LiteBIRD $\sim$2032 & Prediction \\
+$c_s^2 = (M_v-T_r)/(5M_v+3T_r)$ & $\val{cs2_condensado_d6}$ & dark-energy clustering (Euclid, LSST) & Prediction \\
+$r = \phiG^{-10}$ & $\val{R_TENSOR_d6}$ & LiteBIRD & Prediction \\
 $\theta_E^{\rm SSEE}/\theta_E^{\rm GR}|_{\rm alt} = \sqrt{\AURA}$ & $\val{sqrt_AURA_d4}$ (alt.\ MOND-like limit only) & HST/JWST strong lensing & Conditional prediction (not canonical; OP-13) \\
 \bottomrule
 \end{tabular}%
@@ -917,12 +919,12 @@ non-linear level.
 The coincidence between the measured cascade $H_0^{\rm glob}$ and the pure number $3(\phiG+\pi)^2$ is a
 comparison, not a derivation: deriving $H_0$ from first-principles quantum field theory remains open, for this and every model.
 Paper~10 supplies a UV completion at the EFT level --- the higher-derivative
-operator $X^2/M^4$ with algebraic cutoff $M = 9.68$~meV --- but a derivation of
+operator $X^2/M^4$ with cutoff $M = \val{M_meV_d2}$~meV (Conjecture~C.1) --- but a derivation of
 the full $P(X,\phi)$ Lagrangian from $\phiG$ and $\pi$ alone remains open.
 Under the $\omega_m$-direct reframe (OP-8 dissolved) the CMB matter density is
 the standard $\Omega_{m,\mathrm{CMB}} = \omega_m/h^2 = \val{OMEGA_M_TOTAL_d6}$, with no matter
-factor; the earlier MIRA-mapped $0.31993$ and geometric
-$(\pi-\phiG)/(\pi+\phiG)=0.32010$ forms are superseded. The residual open
+factor; the earlier MIRA-mapped and geometric $(\pi-\phiG)/(\pi+\phiG)$ forms are
+superseded. The residual open
 problem is now only the UV origin of the algebraic $\omega_c=\mathrm{KAL_0}\,\omega_b\,n_s$
 identity.
 
@@ -937,25 +939,26 @@ across four observational tiers.
 
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
 \item \textbf{Background sector.} The algebraic prediction
-  $(\wz, \wa) = (-0.840, -0.670)$, fixed by construction (not fitted), lies within
-  $0.24\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior (Pantheon+).
+  $(\wz, \wa) = (\val{W0_d3}, \val{WA_d3})$, fixed by construction (not fitted), lies within
+  $\val{p2_w0wa_ssee_ec26}\sigma$ of the official DESI~DR2 $w_0w_a$CDM posterior (Pantheon+).
   A Bayesian MCMC yields
   $H_0 = \val{h0_p2}\pm\val{h0_p2_s}$~km\,s$^{-1}$\,Mpc$^{-1}$ under $H_0^{\rm glob}$
-  as prior ($\val{h0_p2_dhglob}\sigma$ from it), and $\Delta\mathrm{BIC} = \val{p2_dBIC_lcdm}$ favouring \SSEE\ over \LCDM.
+  as prior ($\val{h0_p2_dhglob}\sigma$ from it), and $\Delta\mathrm{BIC} = \val{p2_k0_dBIC_lcdm}$ favouring \SSEE\ over \LCDM\
+  with nothing free ($\val{p2_dBIC_lcdm}$ in the conservative $k=2$ version).
   A complementary full-likelihood multi-probe MCMC ($w_0,w_a$ free, $H_0$
   free under the uncompressed CMB likelihood) recovers the CMB combinations
   $\omega_b,\omega_c,r_{\rm drag}$ to $\le0.2\sigma$ and places \SSEE\ at
-  $1.31\sigma$ in the $w_0$--$w_a$ plane, where \LCDM\ is excluded at $3.22\sigma$.
+  $\val{mf_w0wa_ssee}\sigma$ in the $w_0$--$w_a$ plane, where \LCDM\ is excluded at $\val{mf_w0wa_lcdm}\sigma$.
 
 \item \textbf{CMB Boltzmann.} With the single $\omega_m$-direct matter density
   ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$), CLASS places the acoustic peaks where \LCDM\ does.
   With the full $\omega_m$-direct density, peak positions agree with \LCDM\ to
   within $\Delta\ell \le 1$ (RMS $= \val{cl_ssee_rms}\%$).
 
-\item \textbf{Structure growth.} The IS perturbation analysis
-  ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ in Poisson) gives $\mathcal{G} = 1.0032$ and $\sigma_8 = 0.8136$,
-  with mean $f\sigma_8$ tension $0.70\sigma$ (Paper~5) --- statistically identical
-  to $\Lambda$CDM ($0.73\sigma$). In the lensing amplitude, with $A_s$ fixed to the
+\item \textbf{Structure growth.} The linear perturbation analysis
+  ($\OmmCMB=\val{OMEGA_M_TOTAL_d6}$ in Poisson) gives $\mathcal{G} = \val{p5_G}$ and, with $A_s$ at Planck's
+  value, $\sigma_8 = \val{p3_sigma8_IS}$, with mean $f\sigma_8$ tension $\val{fs8_tmedia_ssee}\sigma$ (Paper~5) --- statistically identical
+  to $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$). In the lensing amplitude, with $A_s$ fixed to the
   value the model's own CMB fit supplies and no free cosmological parameter,
   a single matter sector predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ from
   raw KiDS-Legacy $\xi_\pm$ (Paper~6). Against raw BOSS DR12 multipoles the
@@ -963,7 +966,7 @@ across four observational tiers.
   freedom).
 
 \item \textbf{EFT stability.} The two-term $k$-essence of Paper~7 is a ghost
-  condensate, ghost-free and gradient-stable with $c_s^2 = 0.021284$;
+  condensate, ghost-free and gradient-stable with $c_s^2 = \val{cs2_condensado_d6}$;
   $\alphaT = \alphaM = \alphaB = 0$ exactly (GW170817 compatible) and
   $\alphaK = \val{alpha_K_z0_d6}$, which is not observationally accessible. A detection of
   $\alphaB \neq 0$ would falsify the sector. The same action fixes $\wz$ but
@@ -971,22 +974,22 @@ across four observational tiers.
 
 \item \textbf{Theoretical extensions.} In the strong-field regime the canonical
   lensing is that of GR with the model's cold matter ($\mu-1=0$, Paper~8). An algebraic late-time screening fraction
-  $\fscr^{\rm IR}=(\pi-\phiG)/(\phiG+\pi)^2\approx0.067$ takes the measured SH0ES
-  rate as input and returns the global background
-  $H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-\fscr^{\rm IR})=68.13$~km\,s$^{-1}$\,Mpc$^{-1}$,
-  $0.17\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$, with
-  zero free parameters (Paper~9). A UV completion $K(X)=X/\KAL+X^2/M^4$ with
-  algebraic cutoff $M=9.68$~meV connects the dark-energy EFT to the inflationary
-  $\alpha$-attractor; the associated $H_0^{\rm glob,UV}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$
-  ($4.3{\times}10^{-6}\sigma$ from $3(\varphi+\pi)^2$; the earlier MIRA-anchored $72.05$ at $0.96\sigma$ is superseded)
-  is a self-consistency check conditional on a separability postulate, not an
-  independent prediction (Paper~10).
+  $\fscr^{\rm IR}=(\pi-\phiG)/(\phiG+\pi)^2=\val{F_SCREEN_IR_d4}$ takes, under the screening
+  postulate of Paper~9, the measured SH0ES rate as input and returns
+  $H_0^{\rm glob,IR}=H_0^{\rm SH0ES}(1-\fscr^{\rm IR})=\val{p9_sh0es_glob_IR}$~km\,s$^{-1}$\,Mpc$^{-1}$
+  with the IR term alone, $\val{p9_sh0es_sig_IR}\sigma$ from the pure number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$, with
+  zero free parameters (Paper~9). A UV completion $K(X)=X/\KAL+X^2/M^4$ whose cutoff
+  $M=\val{M_meV_d2}$~meV is conjectured to be set by the inflationary $\alpha$-attractor
+  (Conjecture~C.1) completes the fraction; the single global rate
+  $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+\val{p9_hglob_residuo}$ against
+  $3(\varphi+\pi)^2$, propagated $\pm\val{p9_hglob_sigma}$) is a consistency check, not an
+  independent prediction, and does not measure $M$ (Paper~10).
 \end{enumerate}
 
 The framework generates four near-term falsifiable predictions, under the stated
 assumptions (a fifth, a $\phi$-DM free-streaming scale in $P(k)$, is withdrawn
-with the particle; \S\ref{sec:growth_raw}): the dark-energy sound speed $c_s^2 = 0.021284$, $\alphaB = 0$ (a detection
-would falsify the sector), $r = 0.008131$ (LiteBIRD), and $S_8 = \val{S8_leg_pred}$ with no
+with the particle; \S\ref{sec:growth_raw}): the dark-energy sound speed $c_s^2 = \val{cs2_condensado_d6}$, $\alphaB = 0$ (a detection
+would falsify the action of Paper~7), $r = \val{R_TENSOR_d6}$ (LiteBIRD), and $S_8 = \val{S8_leg_pred}$ with no
 free cosmological parameter (Paper~6).
 All analytical scripts, CLASS configuration files, and EFTCAMB inputs are archived
 at Zenodo \citep{AlmeidaSSEE2026zenodo}.
@@ -1009,8 +1012,8 @@ at Zenodo \citep{AlmeidaSSEE2026zenodo}.
 \toprule
 Parameter & Formula & SSEE value & Observed \\
 \midrule
-$w_0$ & $-T_r/M_v = -(3\phiG+\pi)/[2(\phiG+\pi)]$ & $\val{W0_d6}$ & $-0.838\pm0.057$ (DESI) \\
-$w_a$ & $-P_{\rm sc}/I_g$ & $\val{WA_d6}$ & $-0.617\pm0.208$ (DESI DR2+CMB+Pantheon+) \\
+$w_0$ & $-T_r/M_v = -(3\phiG+\pi)/[2(\phiG+\pi)]$ & $\val{W0_d6}$ & $-0.838\pm0.055$ (DESI DR2+CMB+Pantheon+) \\
+$w_a$ & $-P_{\rm sc}/I_g$ & $\val{WA_d6}$ & $-0.62^{+0.22}_{-0.19}$ (DESI DR2+CMB+Pantheon+) \\
 $H_0^{\rm glob}$ & $H_{\rm SH0ES}(1-f_{\rm screen})$, target $3(\phiG+\pi)^2$ & $\val{H0_GLOBAL_d5}$ km/s/Mpc & $67.36\pm0.54$ (Planck) \\
 $n_s$ & $1-\phiG^{-7}$ & $\val{N_S_d6}$ & $0.9649\pm0.0042$ (Planck) \\
 $\OmmCMB$ & $\omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & $0.3153\pm0.0073$ (Planck) \\
@@ -1022,16 +1025,16 @@ $\MIRA$ & $(3\phiG+\pi)/4$ (Mirror Ratio; enters $\fscr$) & $\val{MIRA_d6}$ & --
 $\KAL$ & $\beta + \pi = (\phiG+3\pi)/2$ & $\val{KAL0_d6}$ & --- \\
 $\alphaK$ & $3\,\Omde(5-3w_0)$ & $\val{alpha_K_z0_d6}$ & not accessible \\
 $s_K$ & $-3w_0(1+w_0)$ & $\val{S_K_d6}$ & --- (enters $\fscr$) \\
-$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r)$ & $0.021284$ & --- \\
+$c_s^2$ & $(M_v-T_r)/(5M_v+3T_r)$ & $\val{cs2_condensado_d6}$ & --- \\
 $\alphaT = \alphaM = \alphaB$ & minimal coupling & $0$ & $|\alphaT|<10^{-15}$ (GW170817) \\
 \midrule
 $S_8$ & KiDS-Legacy, $A_s$ fixed by the CMB & $\val{S8_leg_pred}$ predicted & $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ (KiDS-Legacy) \\
 $S_8$ & earlier: KiDS-1000, $A_s$ fitted (superseded) & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ & $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ (KiDS-1000) \\
-$r$ & $\phiG^{-10}$ & $0.008131$ & $<0.036$ (BK18) \\
+$r$ & $\phiG^{-10}$ & $\val{R_TENSOR_d6}$ & $<0.036$ \citep{BICEPKeck2021} \\
 \midrule
-$\fscr$ & $(\pi-\phiG)/(\phiG+\pi)^2$ & $0.0673$ & --- \\
-$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$, residual $+4.2{\times}10^{-6}$ \\
-$M$ (UV cutoff) & $(5\phiG^8\rho_c)^{1/4}$ & $9.68$ meV & --- \\
+$\fscr^{\rm IR}$ & $(\pi-\phiG)/(\phiG+\pi)^2$ & $\val{F_SCREEN_IR_d4}$ & --- \\
+$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-\fscr^{\rm full})$ & $\val{H0_GLOBAL_d6}$ km/s/Mpc & $3(\phiG+\pi)^2$, residual $+\val{p9_hglob_residuo}$ \\
+$M$ (UV cutoff) & $(5\phiG^8\rho_c)^{1/4}$ (Conj.~C.1) & $\val{M_meV_d2}$ meV & --- \\
 \bottomrule
 \end{tabular}%
 }
