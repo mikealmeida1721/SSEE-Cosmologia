@@ -18,17 +18,17 @@
  },
  "nota": "f_screen COMPLETO = IR + correccion UV; es el canonico. El IR solo es el regimen M->inf (Papers 1-9).",
  "_procedencia": {
-  "commit": "b08f141446a0c065d32285745618cfc9a44fe172",
+  "commit": "c61c8cbdadeaa0ccedec5834496f502527e67b6c",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p10_uv/ssee_paper10_verification.py",
-  "script_sha256": "d4d73e834d6bf4c5d54394e702c5edbb126fa174375b240415a07c1d21d34310",
+  "script_sha256": "2855cba61a299b359088f1348fade66f3248d7659c06cc36aa2693530ed45f15",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p10_uv/ssee_paper10_verification.py"
   ],
-  "fecha": "2026-10-03T13:29:15",
+  "fecha": "2026-10-12T10:25:32",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
