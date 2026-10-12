@@ -15,7 +15,7 @@
 
 <img src="results/figures/fig1_w0wa_plane.png" width="520" alt="SSEE algebraic point (w0, wa) vs DESI DR2 contours — 0.24σ (Pantheon+)"/>
 
-*The algebraic point (w₀, wₐ) = (−0.840, −0.670) — derived from φ and π with zero fitting — vs the official DESI DR2 w₀wₐCDM contours: **0.24σ** (DESI+CMB+Pantheon+), and within **1.2–1.5σ** of the DESY5/Union3/no-SN combinations (arXiv:2503.14738, eqs. 25–28).*
+*The algebraic point (w₀, wₐ) = (−0.840, −0.670) — derived from φ and π with zero fitting — vs the official DESI DR2 w₀wₐCDM contours: **0.24σ** (DESI+CMB+Pantheon+), and within **1.5–1.8σ** of the DESY5/Union3/no-SN combinations (arXiv:2503.14738, eqs. 25–28).*
 
 </div>
 
@@ -30,14 +30,14 @@
 | Observable | SSEE (algebraic) | Observed | Separation | |
 |---|---|---|---|---|
 | (w₀, wₐ) | (−0.840, −0.670) | DESI DR2+CMB+Pantheon+: (−0.838±0.055, −0.617±0.208) | 0.24σ (2D); range 0.2–1.8σ across SN compilations (official chains) | ✅ |
-| CMB first peak | ℓ₁ = 221 | Planck 2018: ~220 | Δℓ = 1 | ✅ |
+| CMB first peak | ℓ₁ = 220 | Planck 2018: ~220 (ΛCDM, same code: 220) | Δℓ = 0 | ✅ |
 | Ωm,CMB | 0.308881 (= ωm/h², ωm-direct) | Planck 2018: 0.3153 | 0.88σ | ✅ |
 | n_s | 1 − φ⁻⁷ = 0.96556 | Planck 2018: 0.9649 | 0.16σ | ✅ |
 | αT (GW speed) | 0 exact | GW170817: \|αT\| < 10⁻¹⁵ | exact match | ✅ |
 | **S₈ (single sector, A_s FIXED by the CMB — no free cosmological parameter)** | **0.8273 predicted** | KiDS-Legacy: 0.8265±0.0176 | **0.04σ** | ✅ |
 | S₈ — earlier, superseded: KiDS-1000, A_s free, MCMC vs raw ξ± | 0.7559 ± 0.0189 | KiDS-1000: 0.759±0.024 | 0.10σ | ✅ |
 | c_s² (dark-energy sound speed, Paper 7) | (M_v−T_r)/(5M_v+3T_r) = 0.021284 | not yet constrained | the falsifiable content of the EFT sector is c_s² and w₀; α_K is not observationally accessible (Paper 7) | ⏳ |
-| **(w₀, wₐ) vs DESI DR3** | **same fixed point (−0.840, −0.670)** | **DR3 w₀wₐCDM (2027)** — trajectory 0.05σ (DR1) → 0.24σ (DR2, errors −40%, still inside 68%); ~0.5σ expected if DR2 centrals persist; >3σ joint exclusion falsifies | **pre-registered** | ⏳ |
+| **(w₀, wₐ) vs DESI DR3** | **same fixed point (−0.840, −0.670)** | **DR3 w₀wₐCDM (2027)** — 0.24σ against DR2 (inside 68%); ~0.5σ expected if DR2 centrals persist; >3σ joint exclusion falsifies | **pre-registered** | ⏳ |
 
 **Future falsifiers:** r = φ⁻¹⁰ = 0.00813 (LiteBIRD ~2032).
 
@@ -53,7 +53,7 @@
 > the open:** the three χ² compared span 1.0 over 357 points, so the shear does
 > **not** discriminate between these models — what separates them is the
 > parameter count; and KiDS-1000 had asked for log(10¹⁰A_s) = 2.864 ± 0.050,
-> 3.5σ away, with the two releases differing from each other by 2.5σ. What
+> 3.6σ away, with the two releases differing from each other by 2.5σ. What
 > changed is the data, not the model: KiDS-Legacy recalibrated the source
 > redshift distributions n(z), and re-running the KiDS-1000 analysis under
 > blinding with the new calibration alone takes the Planck–shear disagreement
@@ -72,17 +72,17 @@ reasons are documented in [RETRACTIONS.md](RETRACTIONS.md).
 | # | Title | Pages | Status | PDF |
 |---|---|---|---|---|
 | 1 | A Minimal-Parameter Framework for Cosmological Dynamics and Galaxy Cluster Mass Discrepancies via Structural Self-Energy Expansion (SSEE) | 35 | arXiv-ready | [docs/](docs/SSEE_Paper1_Framework.pdf) |
-| 2 | Bayesian MCMC Validation of SSEE — Model Comparison against ΛCDM and CPL using DESI DR2, Planck 2018 and Galaxy-Cluster Mass Data | 31 | arXiv-ready | [docs/](docs/SSEE_Paper2_MCMC.pdf) |
-| 3 | SSEE and the CMB Power Spectrum — Acoustic Peak Reproduction via the ω_m-Direct CMB Matter Density | 26 | arXiv-ready | [docs/](docs/SSEE_Paper3_CMB.pdf) |
+| 2 | Bayesian MCMC Validation of SSEE — Model Comparison against ΛCDM and CPL using DESI DR2, Planck 2018 and Galaxy-Cluster Mass Data | 28 | arXiv-ready | [docs/](docs/SSEE_Paper2_MCMC.pdf) |
+| 3 | SSEE and the CMB Power Spectrum — Acoustic Peak Reproduction via the ω_m-Direct CMB Matter Density | 24 | arXiv-ready | [docs/](docs/SSEE_Paper3_CMB.pdf) |
 | 4 | SSEE as a Two-Axiom Cosmology — Algebraic Derivation of the CMB Background from φ and π | 19 | Preprint | [docs/](docs/SSEE_Paper4_ToE.pdf) |
-| 5 | Israel-Stewart Causal Viscous Perturbations in the SSEE Dark Energy Framework — Exact Marginal Stability, ΛCDM-Consistent Structure Growth, and the Amplitude Ceiling *(the two-sector matter section is RETIRED, 2026-08-01)* | 31 | Preprint | [docs/](docs/SSEE_Paper5_IS.pdf) |
+| 5 | Israel-Stewart Causal Viscous Perturbations in the SSEE Dark Energy Framework — Stability from the Field, Weak Dark-Energy Clustering, and ΛCDM-Consistent Structure Growth *(rewritten 2026-10-11: the stability comes from the field of Paper 7)* | 29 | Preprint | [docs/](docs/SSEE_Paper5_IS.pdf) |
 | 6 | SSEE and the Growth Sector Re-examined — No Second Matter Component, and No S₈ Tension, on Raw Survey Data *(rewritten 2026-08-01; the φ-DM version is retired to `archive/`)* | 17 | Preprint | [docs/](docs/SSEE_Paper6_Growth.pdf) |
-| 7 | The SSEE Dark-Energy Sector as a Ghost Condensate — Two-Term K-essence, Algebraic Sound Speed, and Bellini-Sawicki Classification *(β_c = −AURA RETIRED 2026-09-07; the correctly normalised shooting gives β_c = +0.235068, `results/logs/fondos_exponenciales.json`, and the coupling left Paper 7 with the potential)* | 17 | Preprint | [docs/](docs/SSEE_Paper7_EFT.pdf) |
-| 8 | SSEE in the Strong-Gravity Regime — Disformal Geodesics, MIRA Emergence, and k-mouflage Screening | 19 | Preprint | [docs/](docs/SSEE_Paper8_StrongGravity.pdf) |
+| 7 | The SSEE Dark-Energy Sector as a Ghost Condensate — Two-Term K-essence, Algebraic Sound Speed, and Bellini-Sawicki Classification *(β_c = −AURA RETIRED 2026-09-07; the correctly normalised shooting gives β_c = +0.235068, `results/logs/fondos_exponenciales.json`, and the coupling left Paper 7 with the potential)* | 18 | Preprint | [docs/](docs/SSEE_Paper7_EFT.pdf) |
+| 8 | SSEE in the Strong-Gravity Regime — GR Lensing in the Canonical Limit, a Disformal Contrast, and Solar-System Compliance | 17 | Preprint | [docs/](docs/SSEE_Paper8_StrongGravity.pdf) |
 | 9 | SSEE and the Hubble Tension — An Algebraic Local Screening Fraction | 22 | Preprint | [docs/](docs/SSEE_Paper9_HubbleTension.pdf) |
 | 10 | UV Extension of SSEE Dark Energy: M⁴ = 45α²ρ_crit = 5φ⁸ρ_crit, and a Conditional Self-Consistency Check on the Hubble Tension | 16 | Preprint | [docs/](docs/SSEE_Paper10_UVCompletion.pdf) |
-| — | **Unified Journal Paper** (consolidation of Papers 1–10 + CLASS + MCMC Phase 4) | 24 | Journal submission candidate | [docs/](docs/SSEE_Unified_Journal.pdf) |
-| ★ | **Sealed Journal** — consolidated late-universe dark-energy paper (φ → w₀, wₐ; closed-dictionary look-elsewhere; two-stage H₀; honest accounting of ~3 vs 6 parameters) | 21 | **Sealed — external-audit candidate** | [docs/](docs/SSEE_Sealed_Journal.pdf) |
+| — | **Unified Journal Paper** (consolidation of Papers 1–10 + CLASS + MCMC Phase 4) | 20 | Journal submission candidate | [docs/](docs/SSEE_Unified_Journal.pdf) |
+| ★ | **Sealed Journal** — consolidated late-universe dark-energy paper (φ → w₀, wₐ; closed-dictionary look-elsewhere; two-stage H₀; honest accounting of k = 2 vs 6 parameters) | 23 | **Sealed — external-audit candidate** | [docs/](docs/SSEE_Sealed_Journal.pdf) |
 
 ---
 
@@ -148,7 +148,7 @@ large disk when present, else to `results/data/`. Override the output location w
 export SSEE_DATA_DIR=/path/to/large/disk    # optional; default is portable
 ```
 
-**Paper 2 — MCMC validation** (100-walker, N_eff ≈ 637,500 for SSEE):
+**Paper 2 — MCMC validation** (100 walkers, N_eff ≈ 79,203 for SSEE):
 ```bash
 python src/p02_mcmc/ssee_paper2_mcmc.py
 ```
@@ -192,7 +192,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 
 | Metric | Value |
 |---|---|
-| χ²_2D (w₀-wₐ vs DESI DR2+CMB+Pantheon+) | 0.42 → 0.24σ (2D); 1.47σ DESY5, 1.77σ Union3 (ρ medidos de cadenas oficiales) |
+| χ²_2D (w₀-wₐ vs DESI DR2+CMB+Pantheon+) | 0.42 → 0.24σ (2D); 1.46σ DESY5, 1.76σ Union3 (ρ medidos de cadenas oficiales) |
 | Clusters, 46 real systems of Zhang+2026 (GR, M_dyn = (ω_m/ω_b)·M_bar = 6.364·M_bar, no free parameter) | IGIMF: SSEE 2.32σ vs ΛCDM 2.41σ · canonical IMF: 8.64σ vs 8.46σ — clusters test the baryon census, not the background (`results/logs/cumulos_zhang2026.json`) |
 | H₀ SSEE (MCMC, prior H_glob = SH0ES·(1−f_screen) = 67.962 ± 0.968, DESI DR2) | 67.82 ± 0.41 km/s/Mpc (0.68σ from Planck, **0.34σ from H_glob** — DR2 is compatible with the prediction; ω_m algebraic and fixed, r_d from CAMB) |
 | ΔBIC, SSEE with nothing free (k=0: ω_b algebraic, H from the cascade) | −10.90 vs ΛCDM, −9.32 vs CPL (freeing H₀ and ω_b lowers χ² by only 0.46) — `results/logs/p2_ssee_fijo_k0.json` |
@@ -219,7 +219,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | Metric | SSEE | ΛCDM |
 |---|---|---|
 | Growth index γ_IS (Paper 5, supersedes App.A) | 0.5504 ± 0.0003 | 0.55 |
-| S₈ (IS, single-sector ceiling) | 0.827 | 0.830 |
+| S₈ with A_s fixed to Planck (CLASS ceiling) | 0.827 | — |
 | fσ8 χ²/N (6 canonical RSD surveys) | **0.766** | 0.860 |
 
 ### Paper 5 (Israel-Stewart Causal Perturbations)
@@ -240,7 +240,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | Result | Value | Status |
 |---|---|---|
 | Ω_m = ω_m/h² (one matter sector, no partition) | 0.308881 | ω_m-direct; the same value enters background and growth |
-| Σm_ν = R₂ · ω_b · C_ν / (τ_Π · H₀) | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
+| Σm_ν = R₂ · ω_b · C_ν / (τ_Π · H₀) (chain of Paper 4) | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
 | **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
 | log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
 | σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7449 ± 0.0186, 0.7559 ± 0.0189 | 0.10σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
@@ -273,7 +273,6 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | CMB peak 2 (ℓ) | **536** | 536 | CLASS = CAMB |
 | CMB peak 3 (ℓ) | **813** | 813 | CLASS = CAMB |
 | RMS vs ΛCDM | **0.18%** | — | TT lensed, ℓ = 30–2500 |
-| IS cs² effect on σ₈ | 0.03% | — | Negligible ✓ |
 
 *Withdrawn 2026-10-03: an earlier column ran CLASS with s_m = 1+w₀ = 0.160 as the matter density and read the ~325× degradation as proof that the full density is "necessary". s_m is an equation-of-state number, not a density, so that run was never a version of the model.*
 
@@ -283,10 +282,10 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 |---|---|---|---|
 | Ω_b h² | 0.02242 | 0.02243 ± 0.00013 | **0.08σ** ✅ |
 | Ω_c h² | 0.11951 | 0.11935 ± 0.00082 | **0.20σ** ✅ |
-| r_drag (Mpc) | 147.17 | 147.20 ± 0.21 | **0.14σ** ✅ |
+| r_drag (Mpc) | 147.17 | 147.20 ± 0.21 | **0.10σ** ✅ |
 | H₀ (km/s/Mpc) | 67.96 | 65.87 ± 1.17 | **1.79σ** ✅ |
 | Ω_m,CMB | 0.308881 | 0.3288 ± 0.0118 | **1.69σ** ✅ |
-| w₀ | −0.840 | −0.655 ± 0.107 | **1.73σ** ✅ |
+| w₀ | −0.840 | −0.655 ± 0.107 | **1.74σ** ✅ |
 | wₐ | −0.670 | −1.104 ± 0.304 | **1.43σ** ✅ |
 
 *Full-likelihood MCMC (CAMB + Planck plik_lite + lensing + DESI DR2 + fσ8). The uncompressed CMB likelihood pulls H₀ down, but the key model comparison is preserved: the SSEE algebraic point lies 1.31σ from the joint w₀-wₐ posterior, while ΛCDM is excluded at 3.22σ.*
@@ -300,18 +299,17 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | Ωm (geometric identity, *superseded* by ωm-direct 0.308881) | (π−φ)/(π+φ) = 0.3201 | 0.3153 ± 0.0073 | 0.66σ |
 | Ωb h² | (π−φ)/(3Ω²) = 0.02242 | 0.02237 ± 0.00015 | 0.32σ |
 | Ωc h² | KAL₀ × Ωb h² × n_s = 0.11951 | 0.1200 ± 0.0012 | −0.40σ |
-| Y_p (BBN) | CAMB BBN (PArthENoPE, Ωb h²=0.02242) = 0.2472 | 0.2449 ± 0.0040 (Aver+2015) | 0.58σ |
+| Y_p (BBN) | linear BBN sensitivity at Ωb h² = 0.02242 (Paper 4) = 0.2471 | 0.2449 ± 0.0040 (Aver+2015) | 0.6σ |
 | δc | **1.67634** (z=0) — spherical collapse on the model's background | 1.67599 (ΛCDM, same integrator) | 0.02 % — indistinguishable. *(δc,EdS × n_s = 1.6284 is RETIRED 2026-09-25: OP-27)* |
 
 **Press-Schechter halo counts** at z=10 (`src/p02_mcmc/ssee_press_schechter.py`), with the **derived** δc:
 
-| Halo mass | σ_M(z=10) | n_SSEE/n_ΛCDM |
-|---|---|---|
-| 3×10^10 M☉ | 1.442 | 0.998 |
-| 10^11 M☉ | 1.005 | 0.990 |
-| 3×10^11 M☉ | 0.723 | 0.976 |
-| 10^12 M☉ | 0.504 | 0.945 |
-| 3×10^12 M☉ | 0.362 | 0.892 |
+| Halo mass | n_SSEE/n_ΛCDM (z=10) |
+|---|---|
+| 3×10^10 M☉ | 0.998 |
+| 10^11 M☉ | 0.990 |
+| 10^12 M☉ | 0.945 |
+| 3×10^12 M☉ | 0.892 |
 
 *There is no enhancement, and the sign is the opposite of what was published earlier: with the threshold the model actually produces, SSEE forms **slightly fewer** massive early haloes than ΛCDM. The cause is not the amplitude — SSEE has the larger σ₈ (0.8153 vs 0.811) — but D(z): the lower Ω_m and the CPL background grow less up to high z. At the masses JWST measures (~10^10.8 M☉) the ratio is 0.99, indistinguishable. **The model does not explain the JWST excess.** See OP-27.*
 
@@ -323,7 +321,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | e-folds N | 2φ⁷ ≈ 58.07 | from n_s = 1 − φ⁻⁷ |
 | Kähler curvature R | −2φ⁻⁴ ≈ −0.292 | R = −2/(3α) |
 | IS growth index γ_IS | 0.5504 ± 0.0003 | Paper 5 (the 0.657 of Paper 1 App. A came from the viscous IS background and is superseded) |
-| IS relaxation time τ_Π H₀ | KAL₀/(3Ω_DE) ≈ 2.191 | algebraic |
+| IS relaxation time τ_Π H₀ | KAL₀/(3\|w₀\|) ≈ 2.191 | algebraic |
 | MIRA algebraic identity | (3φ+π)/4 = 1.9989 | exact (0.00e+00) |
 
 ---
@@ -347,7 +345,7 @@ A copy here used to drift out of date, so none is kept.
 **Foundational postulates (Paper 1, Postulates D & S):** the measured SH0ES rate is the
 single dimensional input (zero *dimensionless* fitted parameters); the pure number
 3(φ+π)² is the target the output is compared with, not an input; the
-saturation correspondence (Ω_DE, w₀) = (s, −s) interpolates matter ↔ de Sitter. These are
+saturation correspondence (s_DE, w₀) = (s, −s) interpolates matter ↔ de Sitter. These are
 pre-registered axioms, not derived theorems — see OPEN_PROBLEMS.md and Paper 1.
 
 ---
@@ -355,8 +353,8 @@ pre-registered axioms, not derived theorems — see OPEN_PROBLEMS.md and Paper 1
 ## 🧬 Provenance
 
 - **Constant dictionary**: the closed algebraic set is documented in
-  [`zenodo_dictionary/SSEE_Constant_Dictionary.md`](zenodo_dictionary/SSEE_Constant_Dictionary.md) — 31 invariants
-  generated from φ and π by two lineage laws (copy / no-self-sum), fixed **independently
+  [`zenodo_dictionary/SSEE_Constant_Dictionary.md`](zenodo_dictionary/SSEE_Constant_Dictionary.md) — 55 named invariants
+  (25 distinct values) generated from φ and π by two lineage laws (copy / no-self-sum), fixed **independently
   of any cosmological dataset**. MIRA = (3φ+π)/4 is one such structural invariant, derived,
   not fitted. **No claim of temporal priority over public data** (DESI DR1/DR2, Planck 2018)
   is made — the agreement is a parameter-free postdiction; timestamped predictions are
@@ -386,12 +384,13 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
       CMB derivation, IS causal perturbations, growth against raw data (Paper 6),
       canonical EFT, strong-gravity regime, Hubble-tension screening, UV completion
 - [x] CLASS Boltzmann validation — peaks and TT spectrum match CAMB (RMS 0.18% vs ΛCDM), σ₈, IS viscosity
-- [x] Multi-probe MCMC (corrected DESI DR2 + Planck + fσ8 + clusters, blind flat w0/wa) — SSEE algebraic point 1.31σ from joint w₀-wₐ posterior
+- [x] Multi-probe MCMC (corrected DESI DR2 + Planck + fσ8, blind flat w0/wa) — SSEE algebraic point 1.31σ from joint w₀-wₐ posterior
 - [x] Bibliography brought to JCAP/PRD standard — all papers 36–42 refs, 0 orphans
 - [x] OPEN_PROBLEMS OP-2/3/4 resolved; OP-1/5 partial; OP-6 reopened as a postulate (2026-10-03)
 - [x] Paper 1 Postulates D (SH0ES as the single dimensional input) & S (saturation correspondence)
 - [x] Hostile-referee overclaim sweep across all 10 papers
 - [x] Zenodo — earlier versions archived (concept DOI 10.5281/zenodo.19654118)
+- [x] Fifth page-by-page reading (2026-10-12): every paper and consolidated document read whole and cross-checked against the others; every number traced to its log
 - [x] Third page-by-page reading (2026-10-10): every paper, citation checked against arXiv/Crossref, reproducibility manifest of all external data (`data/manifiesto_externos.json`)
 - [x] Internal hostile-referee audit — guardian fully green; figure-level
       pdftotext sweep across all compiled PDFs; arXiv source tarballs (10/10)
