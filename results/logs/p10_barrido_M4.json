@@ -1,0 +1,55 @@
+{
+ "barrido_H_glob": {
+  "0.1": 66.83511477802342,
+  "0.2": 67.39401089533037,
+  "0.5": 67.80701992096216,
+  "1": 67.96214152203791,
+  "2": 68.0435785139748,
+  "10": 68.11073945802369,
+  "inf": 68.12782113412541
+ },
+ "sigma_prop": 0.9676975244101783,
+ "mueve_max_02_inf": 0.5681306267075428,
+ "rango_02_inf": -0.7338102387950443,
+ "f_a_1sigma": 0.11835722311343619,
+ "alfa_factor_1sigma": 0.34403084616562535,
+ "r_nominal": 0.008130618755783347,
+ "r_umbral_1sigma": 0.0027971836504022485,
+ "degeneracion_dM4_pct_por_1pct_KAL": 2.0099999999999563,
+ "X_UV_sobre_IR": 0.9831358327321386,
+ "X_reduccion_pct": 1.686416726786144,
+ "u_bg": 0.0015533585038186928,
+ "cs2_funcional": 0.9673721485530675,
+ "eps": 0.0005667800105186602,
+ "dw0_primer_orden": 0.0023751184883811214,
+ "rhoc14_meV": 2.4728611838071592,
+ "control": {
+  "criterio": "f = 1 reproduce H0_GLOBAL de ssee_core a 1e-10",
+  "H_f1": 67.96214152203791,
+  "H0_GLOBAL": 67.96214152203791,
+  "dif": 0.0,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "8246d0363735dd2037cedfd39b8910785e612dd4",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p10_uv/barrido_M4.py",
+  "script_sha256": "6cc8cea96ad78ff4ef8b647e7061ea337cdcf57153a8d163f1f14c703f8b4e45",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/p10_uv/barrido_M4.py"
+  ],
+  "fecha": "2026-10-12T01:06:59",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

@@ -506,6 +506,31 @@
    "valor": 0.0005667800105186602,
    "uso": "X_bg^2/M^4 en unidades rho_crit = 1 (P8, P10)"
   },
+  "N_star": {
+   "formula": "2*PHI**7",
+   "valor": 58.06888370749728,
+   "uso": "e-folds N_* = 2 phi^7 (Paper 1), Paper 10"
+  },
+  "M4_r2": {
+   "formula": "2*S_K*KAL0**2/3",
+   "valor": 8.1966987238065,
+   "uso": "M^4 de la Ruta B (naturalidad) en rho_crit, Paper 10"
+  },
+  "KALeff2_sobre_KAL2": {
+   "formula": "(PHI**2*math.sqrt(5/2)/KAL0)**2",
+   "valor": 0.5620710381095876,
+   "uso": "factor que tendria que dar el jacobiano de la Ruta A, Paper 10"
+  },
+  "KAL_KALeff_pct": {
+   "formula": "100*(KAL0/(PHI**2*math.sqrt(5/2))-1)",
+   "valor": 33.38420235743256,
+   "uso": "discrepancia de la Ruta A en la normalizacion, %, Paper 10"
+  },
+  "KAL_KALeff2_pct": {
+   "formula": "100*((KAL0/(PHI**2*math.sqrt(5/2)))**2-1)",
+   "valor": 77.91345438528516,
+   "uso": "discrepancia de la Ruta A en el corte, %, Paper 10"
+  },
   "frac_de_zstar": {
    "formula": "(1-OMEGA_M_TOTAL)*1090**(3*(1+W0+WA))*math.exp(-3*WA*1089/1090)/(OMEGA_M_TOTAL*1090**3+(1-OMEGA_M_TOTAL)*1090**(3*(1+W0+WA))*math.exp(-3*WA*1089/1090))",
    "valor": 2.9040549885058745e-13,
@@ -579,17 +604,17 @@
   "errores": []
  },
  "_procedencia": {
-  "commit": "7c71c0686a7025f4838680f84d0e787a75034804",
+  "commit": "8246d0363735dd2037cedfd39b8910785e612dd4",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/algebra_derivada.py",
-  "script_sha256": "ee54e94da67e281ad2e653e1192c7c40cf4ff5e49dccb8170a9e36854fbbe50c",
+  "script_sha256": "6ef3577f718b91ed2bfe748f8ab8d70bde2734c692d20d1e2264e8656adfbc61",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/algebra_derivada.py"
   ],
-  "fecha": "2026-10-12T01:02:11",
+  "fecha": "2026-10-12T01:07:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

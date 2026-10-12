@@ -83,12 +83,12 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 2fdde71824e47b289d85bad9c95d49d3
-      size: 98009
+      md5: 4cae1dc30dd5bb238d32cd6cd61bda32
+      size: 99551
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 81f11e93a93157e28489516ff341c5d4
-      size: 18500
+      md5: 7c9f0b5ee001413c8f1d11118a23ede0
+      size: 19326
     - path: results/logs/b1_k2.json
       hash: md5
       md5: 92110af50831bb1faa0a88a5926c3bab
@@ -217,6 +217,10 @@ stages:
       hash: md5
       md5: 5e772a3455217f48c22194d565041c10
       size: 1143
+    - path: results/logs/p10_barrido_M4.json
+      hash: md5
+      md5: dfea6fdc6bf29d4a4675d2aaf639f4bc
+      size: 1656
     - path: results/logs/p10_uv_fscreen.json
       hash: md5
       md5: 2ee417e6284fc82db38228ed4dea3d87
@@ -324,8 +328,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: bf952183ef5aac339dcdc606d6d3d6b0
-      size: 121766
+      md5: 5d6f177045062406b3bf05e04407b0bb
+      size: 123798
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -508,8 +512,8 @@ stages:
     deps:
     - path: src/algebra_derivada.py
       hash: md5
-      md5: 891add17135060b9f66df5d0cc9b3e9d
-      size: 15701
+      md5: 196d87c1e848a8cdc4385fafba7d5838
+      size: 16298
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -521,8 +525,8 @@ stages:
     outs:
     - path: results/logs/algebra_derivada.json
       hash: md5
-      md5: 81f11e93a93157e28489516ff341c5d4
-      size: 18500
+      md5: 7c9f0b5ee001413c8f1d11118a23ede0
+      size: 19326
   kids_legacy_bic:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/kids_legacy_bic.py
@@ -5288,3 +5292,24 @@ stages:
       hash: md5
       md5: fa5076caa4de515ea3d4fa597ea465c8
       size: 1523
+  p10_barrido_M4:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/barrido_M4.py
+      > /dev/null
+    deps:
+    - path: src/p10_uv/barrido_M4.py
+      hash: md5
+      md5: b242808e68c52c27e5bcc275d87254ae
+      size: 4750
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/p10_barrido_M4.json
+      hash: md5
+      md5: dfea6fdc6bf29d4a4675d2aaf639f4bc
+      size: 1656

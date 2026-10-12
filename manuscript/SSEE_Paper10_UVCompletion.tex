@@ -50,8 +50,8 @@
 \maketitle
 
 \begin{abstract}
-Within the Structural Self-Energy Expansion (SSEE), the infrared (IR) kinetic
-Lagrangian $K(X) = X/\KAL$ produces a local Hubble correction
+Within the Structural Self-Energy Expansion (SSEE), the dark-energy equation
+of state fixes a local Hubble correction
 $H_0^{\rm glob} = H_0^{\rm local}(1-f_{\rm scr})$ with $f_{\rm scr}\approx \val{F_SCREEN_IR_d5}$
 (Paper~9). Run on the only directly measured rate, $H_0^{\rm SH0ES}=73.04\pm1.04$,
 this gives $H_0^{\rm glob,IR}=\val{p9_sh0es_glob_IR}$ km/s/Mpc, $\val{p9_sh0es_sig_IR}\sigma$ from the dimensionless
@@ -59,12 +59,11 @@ algebraic number $3(\phiG+\pi)^2=\val{H0_ALG_d5}$ (the comparison target, not an
 earlier MIRA-mapped anchor $67.037$ is superseded
 by the 2026 reframe.
 We extend the EFT to include the leading higher-derivative operator
-$K(X) = X/\KAL + X^2/M^4$ and identify the unique algebraic value of the
-UV cutoff $M$ such that the theory remains connected to the inflationary
-$\alpha$-attractor of Paper~1.
-The $\alpha$-attractor parameter $\alpha = \phiG^4/3$, which fixes the
-inflationary tensor-to-scalar ratio $r = 12\alpha/N^2 \approx \val{R_TENSOR_d5}$
-(a pre-committed LiteBIRD target), also determines
+$K(X) = X/\KAL + X^2/M^4$ and propose (Conjecture~C.1) that its UV cutoff $M$
+is set by the inflationary $\alpha$-attractor of Paper~1: the parameter
+$\alpha = \phiG^4/3$, which fixes the inflationary tensor-to-scalar ratio
+$r = 12\alpha/N^2 \approx \val{R_TENSOR_d5}$ (a pre-committed LiteBIRD target), would
+also determine
 \begin{equation*}
   \boxed{M^4 \;=\; 45\,\alpha^2\,\rhoc \;=\; 5\,\phiG^8\,\rhoc
          \;\approx\; \val{M4_UV_d1}\,\rhoc}\,,
@@ -74,16 +73,17 @@ $\alpha = \phiG^4/3$ (not a numerical coincidence, but an algebraic consequence)
 With this cutoff, the full screening rate becomes
 $\sK^{\rm full} = \val{S_K_FULL_d5}$ ($+\val{sK_UV_pct}\%$ over the IR value). Run on the SH0ES
 datum $73.04\pm1.04$ km/s/Mpc \citep{Riess2022}, the cascade returns
-$H_0^{\rm glob,UV} = \val{H0_GLOBAL_d5}$ km/s/Mpc, which differs from the pure number
-$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ by $\val{p9_hglob_residuo}$ --- the headline UV
-result of this paper, refining the IR residual $\val{p9_sh0es_res_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$).
+$H_0^{\rm glob} = \val{H0_GLOBAL_d5}$ km/s/Mpc, which differs from the pure number
+$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ by $\val{p9_hglob_residuo}$, far inside the propagated
+$\pm\val{p9_hglob_sigma}$: the cascade is consistent with the cutoff but does not
+measure it (§\ref{sec:hubble}).
 \textbf{The UV value is conditional on Postulate~C.1 (UV-IR $\varphi/\pi$
 separability; §\ref{sec:theorem})}, which fixes $\sK^{\rm full}$ via the
 cutoff $M$; the IR value is independent of it.
-The same $\alpha$ that governs inflation at $z \sim 10^{60}$ thus fixes the
-dark-energy UV scale today, providing a falsifiable cross-epoch consistency test:
-if LiteBIRD measures $r \neq \val{R_TENSOR_d5}$, both $\alpha$ and $M$ change, and the
-predicted $H_0^{\rm glob}$ changes accordingly.  The IR result
+If the conjecture holds, the same $\alpha$ that governs inflation fixes the
+dark-energy UV scale today. The decisive leg of the resulting cross-epoch test
+is $r$ itself; the Hubble leg votes only if LiteBIRD finds
+$r < \val{p10_r_umbral}$ (§\ref{sec:cross}).  The IR result
 $H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$ km/s/Mpc ($\val{p9_sh0es_sig_IR}\sigma$; Paper~9) is
 independent of this postulate and stands on its own.
 \end{abstract}
@@ -105,7 +105,7 @@ $H_0 = 67.36 \pm 0.54$ km/s/Mpc \citep{Planck2018} and local distance-ladder
 measurements \citep{Verde2019,Kamionkowski2023}---has
 resisted resolution through conventional extensions of $\Lambda$CDM.
 Paper~9 of this series~\citep{SSEE9} showed that within SSEE, the dark-energy
-pressure-dilution rate $\sK = -3w_0(1+w_0) = \val{S_K_d6}$ \citep{SSEE7,SSEE8} and the lensing factor
+pressure-dilution rate $\sK = -3w_0(1+w_0) = \val{S_K_d6}$ \citep{SSEE1,SSEE9} and the structural constant
 $\MIRA = \AURA/2$ combine to produce an algebraic screening fraction
 \begin{equation}
   \fsc \;=\; \frac{\sK}{3\,\MIRA}
@@ -127,12 +127,13 @@ CMB matter density is the standard $\Omega_{m,\mathrm{CMB}}=\omega_m/h^2=\val{OM
 the single number $\val{H0_ALG_d5}$ matches the cascade output and lies $\val{perfil_h0_d}\sigma$ from the CMB-preferred value
 $\val{perfil_h0_min}\pm\val{perfil_h0_sig}$ (\texttt{plik\_lite} with $\omega_b,\omega_c$ fixed; Paper~3).
 
-That IR result uses the kinetic Lagrangian $K(X) = X/\KAL$ (the leading term),
-and the UV cutoff $M \to \infty$ is implicit.
+That IR result uses $w_0$ alone. Describing its UV correction requires a
+kinetic functional with a cutoff $M$, and the IR result is its limit
+$M\to\infty$.
 This paper asks: \emph{what is $M$ physically?}
 
 The leading higher-derivative correction is $K(X) = X/\KAL + X^2/M^4$.
-We show that the unique algebraically consistent value of $M$ is
+We propose (Conjecture~C.1, §\ref{sec:theorem}) that the cutoff is
 \begin{equation}
   M^4 \;=\; 45\,\alpha^2\,\rhoc \;=\; 5\,\phiG^8\,\rhoc\,,
   \label{eq:M4main}
@@ -142,14 +143,14 @@ Paper~1~\citep{SSEE1}, and the equality $45\alpha^2 = 5\phiG^8$ is an exact alge
 following from the definition of $\alpha$.
 With this value, the global rate returned from the SH0ES datum
 $73.04\pm1.04$ km/s/Mpc \citep{Riess2022} is
-$H_0^{\rm glob,UV} = \val{H0_GLOBAL_d5}$ km/s/Mpc, coincident with $3(\phiG+\pi)^2$ to
+$H_0^{\rm glob} = \val{H0_GLOBAL_d5}$ km/s/Mpc, coincident with $3(\phiG+\pi)^2$ to
 $\val{p9_hglob_residuo}$ and refining the IR residual $\val{p9_sh0es_res_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$). The UV value
 is conditional on Postulate~C.1 (see §\ref{sec:theorem}), which fixes
 $\sK^{\rm full}$ via the cutoff $M$; the IR value is independent of it.
 
-The physical picture is intriguing: the \emph{same curvature parameter $\alpha$
-that shaped the inflationary plateau at $z \sim 10^{60}$} provides the speed
-limit $M$ for the dark-energy kinetic term today.
+If the conjecture holds, the \emph{same curvature parameter $\alpha$ that shaped
+the inflationary plateau} provides the speed limit $M$ of the screening
+functional today.
 Section~\ref{sec:cross} makes this a falsifiable cross-epoch prediction.
 
 
@@ -171,15 +172,16 @@ where $\phiG = (1+\sqrt{5})/2$ is the golden ratio.
 In the Starobinsky-like limit \citep{Starobinsky1980,Kallosh2013,Galante2015}, this predicts a tensor-to-scalar ratio
 \begin{equation}
   r \;=\; \frac{12\alpha}{N^2}
-    \;\approx\; \frac{12 \times \val{ALPHA_ATT_d4}}{58.07^2}
+    \;\approx\; \frac{12 \times \val{ALPHA_ATT_d4}}{\val{N_star_d2}^2}
     \;\approx\; \val{R_TENSOR_d5}
   \label{eq:r}
 \end{equation}
-for $N = 2\varphi^7 \approx 58.07$ e-folds, the algebraic e-fold count of
+for $N = 2\varphi^7 \approx \val{N_star_d2}$ e-folds, the algebraic e-fold count of
 SSEE inflation (Paper~1), consistent with the standard window \citep{LiddleLeach2003}.
 This prediction lies below the current upper bound $r < 0.036$
-\citep{Akrami2020} and is within the anticipated sensitivity of LiteBIRD
-\citep{LiteBIRD2020} (target $\sigma_r \sim 0.002$, expected results 2032)
+\citep{BK2021} (Planck~2018 with BK15 gave $r<0.056$~\citep{Akrami2020}) and
+is within the anticipated sensitivity of LiteBIRD \citep{LiteBIRD2020} (total
+uncertainty $\delta r < 0.001$; launch planned for the early 2030s)
 and a future CMB-S4 survey \citep{CMBS4_2016}, making
 Eq.~\eqref{eq:r} a pre-committed falsification criterion.
 
@@ -202,12 +204,12 @@ $\phiG = (1+\sqrt{5})/2$, so $5 = (2\phiG - 1)^2$.
 Equivalently,
 \begin{equation}
   M \;=\; \phiG^2 \times 5^{1/4} \times \rhoc^{1/4}
-    \;\approx\; 9.68 \text{ meV}\,,
+    \;\approx\; \val{M_meV_d2} \text{ meV}\,,
   \label{eq:Mmev}
 \end{equation}
-where $\rhoc^{1/4} \approx 2.47$ meV is the SSEE critical-density scale today,
-evaluated at the model's physical Hubble rate $H_0 = \val{H0_GLOBAL_d5}$~km/s/Mpc
-(the CMB-anchored value of Paper~III).\footnote{Convention note: in the
+where $\rhoc^{1/4} \approx \val{rhoc14_meV_d2}$ meV is the SSEE critical-density scale today,
+evaluated at the model's global rate $H_0^{\rm glob} = \val{H0_GLOBAL_d5}$~km/s/Mpc
+(the output of the SH0ES cascade, Paper~9).\footnote{Convention note: in the
 dimensionless formulation of §\ref{sec:EFT} we work in units $\rhoc = 1$, where
 $M^4 = 5\phiG^8$ is a pure number ($\approx \val{_M4_UV_d2}$) and all downstream
 observables ($s_K$, $f_{\rm screen}$, $\varepsilon$) are dimensionless
@@ -218,7 +220,7 @@ scale $\rho_\Lambda^{1/4}\approx 2.25$~meV (which would give the inconsistent
 $M\approx \val{M_meV_rhoLambda_d2}$~meV). Crucially, the meV value of $M$ is a display scale only:
 the Hubble cascade of §\ref{sec:hubble} runs on the dimensionless ratio
 $M^4/\rhoc = 5\phiG^8 = \val{_M4_UV_d6}$, so the UV Hubble prediction
-($H_0^{\rm glob,UV}=\val{H0_GLOBAL_d5}$ from the SH0ES datum) is
+($H_0^{\rm glob}=\val{H0_GLOBAL_d5}$ from the SH0ES datum) is
 unchanged under any choice of reference density.}
 
 Table~\ref{tab:identity} summarises the equivalent forms of the identity.
@@ -233,7 +235,7 @@ Form & Expression & Numerical value \\
 \midrule
 $\alpha$-form & $M^4 = 45\,\alpha^2\,\rhoc$ & $\val{_M4_UV_d2}\,\rhoc$ \\
 $\phiG$-form  & $M^4 = 5\,\phiG^8\,\rhoc$  & $\val{_M4_UV_d2}\,\rhoc$ \\
-Root form     & $M = \phiG^2\,5^{1/4}\,\rhoc^{1/4}$ & $9.68$ meV \\
+Root form     & $M = \phiG^2\,5^{1/4}\,\rhoc^{1/4}$ & $\val{M_meV_d2}$ meV \\
 $(2\phiG{-}1)^2$ form & $M^4 = (2\phiG{-}1)^2 \phiG^8\,\rhoc$ & $\val{_M4_UV_d2}\,\rhoc$ \\
 \bottomrule
 \end{tabular}
@@ -257,12 +259,12 @@ k-essence functional \citep{ArmendarizPicon2001}
   \label{eq:KX}
 \end{equation}
 where $X = -\tfrac{1}{2}g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi$,
-$\KAL = (\phiG+3\pi)/2 \approx 5.521$ is the SSEE structural retention
-(Papers 1--7), and $M^4 = 45\alpha^2\rhoc$ is the UV cutoff introduced in
+$\KAL = (\phiG+3\pi)/2 \approx \val{KAL0_d3}$ is the SSEE structural retention
+(Paper~1), and $M^4 = 45\alpha^2\rhoc$ is the UV cutoff of Conjecture~C.1,
 Eq.~\eqref{eq:M4main}.
-The IR limit $M \to \infty$ recovers $K(X) = X/\KAL$, which reproduces
-$\sK^{\rm IR} = \val{S_K_d6}$ exactly and is the description used in
-Papers~1--9.
+The IR limit $M \to \infty$ reduces it to $K(X) = X/\KAL$, whose background
+reproduces $\sK^{\rm IR} = \val{S_K_d6}$; Papers~1--9 take $\sK^{\rm IR}$ directly from
+$w_0$.
 
 \paragraph{Units.}
 Throughout this section we work in units $\rhoc = 1$. In those units $X$,
@@ -278,8 +280,8 @@ enters only as a ratio, and no factor of $H_0$ reaches $\fsc$ through $M$.
 Paper~7 describes the dark-energy field as a ghost condensate,
 $K = c_1 X + c_2 X^2$ with no potential and $c_2 X/c_1 = \val{u_condensado_d6}$; in
 Eq.~\eqref{eq:KX} the same ratio is $+\val{c2X_c1_KX_d6}$. The two functionals do
-different jobs: Paper~7's action reproduces $w_0$ and $c_s^2$ from the
-Lagrangian, whereas Eq.~\eqref{eq:KX} transports the cutoff $M$ into the
+different jobs: Paper~7's action reproduces $w_0$ and $c_s^2$ today from the
+Lagrangian (its field rolls toward $w=-1$), whereas Eq.~\eqref{eq:KX} transports the cutoff $M$ into the
 screening rate. They are not interchangeable --- evaluating
 Eq.~\eqref{eq:sKfullform} below with Paper~7's coefficients returns
 $\val{sK_con_KX_de_P7_d3}$ instead of $\val{S_K_FULL_d5}$, a factor of $\val{factor_dos_KX_d1}$. Whether one theory
@@ -317,14 +319,15 @@ we find
   \quad
   \frac{X_{\rm bg}^{\rm UV}}{X_{\rm bg}^{\rm IR}} \;=\; \val{X_UV_sobre_IR_d4}\,,
 \end{equation}
-a 1.7\% reduction from the IR value $X_{\rm bg}^{\rm IR} = \val{X_bg_IR_d5}\,\rhoc$.
+a \val{p10_X_red_pct}\% reduction from the IR value $X_{\rm bg}^{\rm IR} = \val{X_bg_IR_d5}\,\rhoc$.
 The UV correction is perturbative: $\varepsilon \equiv X_{\rm bg}^2/M^4
-\approx 5.7\times10^{-4}$.
+\approx \val{eps_UV}$ (in units $\rhoc=1$).
 
 \subsection{The Screening Rate $\sK$ and its UV Correction}
 
 The screening rate $\sK$ is the fractional dilution of the dark-energy
-\emph{pressure} per e-fold. It follows from the continuity equation and is
+\emph{pressure} per e-fold at fixed $w_0$ (Paper~9: the term from the evolution
+of $w(a)$ is not part of it). It follows from the continuity equation and is
 fixed by the equation of state alone,
 \begin{equation}
   \sK \;=\; -3w_0(1+w_0) \;=\; 3\,s_{\rm DE}\,s_m \;=\; \val{S_K_d6}\,,
@@ -380,8 +383,8 @@ $c_s^2 = K_X/(K_X + 2XK_{XX}) \in (1/3,\,1)$ for all $X > 0$, with:
   X \to 0:    &\quad c_s^2 \to 1 \quad &\text{(IR limit)},\\
   X \to \infty: &\quad c_s^2 \to 1/3 \quad &\text{(UV conformal limit)}.
 \end{alignat}
-At the cosmological background $\varepsilon \equiv X_{\rm bg}^2/M^4 \approx 5.7\times10^{-4}$,
-the full K(X) formula gives $c_s^2 \approx 0.967$ (see \S\ref{sec:consistency}), well above $1/3$.
+At the cosmological background $\varepsilon \equiv X_{\rm bg}^2/M^4 \approx \val{eps_UV}$,
+the full K(X) formula gives $c_s^2 \approx \val{p10_cs2_func}$ (see \S\ref{sec:consistency}), well above $1/3$.
 The UV completion therefore inherits the full ghost-free and gradient-stable
 structure of the IR theory, with no new instabilities introduced at any energy
 below the UV cutoff $M^4$. These are conditions on the screening functional
@@ -394,18 +397,18 @@ the Paper~7 condensate, $c_s^2=\val{cs2_condensado_d6}>0$, which is also stable.
   \caption{%
     Kinetic function $K(X)/X = 1/\mathrm{KAL}_0 + X/M^4$ vs the dimensionless
     kinetic ratio $u \equiv X/M^4$.
-    At the cosmological background ($u_{\rm bg} = X_{\rm bg}/M^4 \approx 1.55\times10^{-3}$,
-    dash-dotted; equivalently $\varepsilon \equiv X_{\rm bg}^2/M^4 \approx 5.7\times10^{-4}$
+    At the cosmological background ($u_{\rm bg} = X_{\rm bg}/M^4 \approx \val{p10_u_bg}$,
+    dash-dotted; equivalently $\varepsilon \equiv X_{\rm bg}^2/M^4 \approx \val{eps_UV}$
     in $\rhoc$ units), the IR term dominates and the Hubble flow is in the linear
     kinetic regime.
-    Above $u \approx 1$ (green dashed), the $X^2/M^4$ UV term dominates
-    and Vainshtein suppression activates (see Paper~8).
+    Above $u \approx 1$ (green dashed), the $X^2/M^4$ UV term dominates: the
+    k-mouflage regime, for which Paper~8 quotes no screening radius.
   }
   \label{fig:KX_profile}
 \end{figure}
 
 % ═══════════════════════════════════════════════════════════════════════════════
-\section{UV Completion of the Hubble Tension Resolution}
+\section{UV Correction of the Hubble Cascade}
 \label{sec:hubble}
 % ═══════════════════════════════════════════════════════════════════════════════
 
@@ -420,26 +423,28 @@ The screening fraction (Paper~9) generalises in the UV to
   \label{eq:fUV}
 \end{equation}
 a $+\val{sK_UV_pct}\%$ increase over the IR value $\fsc^{\rm IR} = \val{F_SCREEN_IR_d5}$.
-The local Hubble constant is
+The global rate returned from the SH0ES datum is
 \begin{equation}
-  H_0^{\rm glob,UV}
+  H_0^{\rm glob}
   \;=\; H_0^{\rm SH0ES}\,(1 - \fsc^{\rm UV})
   \;=\; 73.04\times(1 - \val{F_SCREEN_d7})
   \;=\; \val{H0_GLOBAL_d5} \text{ km/s/Mpc}\,,
   \label{eq:H0UV}
 \end{equation}
 the headline UV result: it differs from the pure number
-$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ by $\val{p9_hglob_residuo}$, refining the IR residual
-$\val{p9_sh0es_res_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$) by a factor of $4\times10^4$ with the same input.
+$3(\phiG+\pi)^2 = \val{H0_ALG_d5}$ by $\val{p9_hglob_residuo}$, against the IR residual
+$\val{p9_sh0es_res_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$) with the same input. What this does
+and does not constrain follows.
 
 \paragraph{What this agreement does and does not constrain.}
 The SH0ES uncertainty propagates to $\pm\val{p9_hglob_sigma}$ km/s/Mpc on the output, which is
 far larger than the $\val{p9_hglob_residuo}$ residual. Varying the cutoff over
 $M^4 \in [0.2, \infty)\times 45\alpha^2\rhoc$ moves the output by at most
-$0.57$ km/s/Mpc, so the cascade is compatible with that entire range: it
+$\val{p10_mueve_M4}$ km/s/Mpc, so the cascade is compatible with that entire range: it
 \emph{excludes} a cutoff ten times smaller, but it does not measure $M^4$.
 Nor does it fix the pair $(1/\KAL, 1/M^4)$ separately --- a $1\%$ increase in
-$\KAL$ is compensated by a $2.01\%$ increase in $M^4$. The value
+$\KAL$ is compensated by a $\val{p10_dM4_pct}\%$ increase in $M^4$
+(\texttt{src/p10\_uv/barrido\_M4.py}). The value
 $M^4 = 45\alpha^2\rhoc$ is therefore an input from the inflationary sector
 ($\alpha=\phiG^4/3$, Paper~1), tested for consistency here and not derived
 from the Hubble cascade.
@@ -451,9 +456,9 @@ from the Hubble cascade.
 \caption{%
 IR vs.\ UV global rate returned by the cascade from the measured local
   rate, compared with the dimensionless target $3(\phiG+\pi)^2 = \val{H0_ALG_d5}$
-  (the measured SH0ES rate is the input, Postulate~D). The UV completion with $M^4 = 45\alpha^2\rhoc$ sharpens the
-  residual from $\val{p9_sh0es_sig_IR}\sigma$ (IR) to $4.3\times10^{-6}\sigma$ (UV),
-  conditional on Postulate~C.1 (see §\ref{sec:theorem}). The propagated SH0ES
+  (the measured SH0ES rate is the input, Postulate~D). With $M^4 = 45\alpha^2\rhoc$ the
+  residual goes from $\val{p9_sh0es_sig_IR}\sigma$ (IR) to $\val{p9_hglob_residuo}$~km/s/Mpc (UV),
+  which is not quoted as a significance; conditional on Postulate~C.1 (see §\ref{sec:theorem}). The propagated SH0ES
   uncertainty ($\pm\val{p9_hglob_IR_sigma}$ km/s/Mpc in the IR regime, $\pm\val{p9_hglob_sigma}$ with the full
   screening fraction) dominates both.
 }
@@ -464,7 +469,7 @@ IR vs.\ UV global rate returned by the cascade from the measured local
 Regime & $\sK$ & $\fsc$ & $H_0^{\rm glob}$ [km/s/Mpc] & vs.\ $3(\phiG+\pi)^2$ \\
 \midrule
 IR ($M\to\infty$, Papers 1--9) & \val{S_K_d5} & \val{F_SCREEN_IR_d5} & \val{p9_sh0es_glob_IR} & $\val{p9_sh0es_sig_IR}\sigma$ \\
-UV ($M^4=45\alpha^2\rhoc$, this paper) & \val{S_K_FULL_d5} & \val{F_SCREEN_d5} & \textbf{\val{H0_GLOBAL_d5}} & $4.3{\times}10^{-6}\sigma$ (cond.$^{a}$) \\
+UV ($M^4=45\alpha^2\rhoc$, this paper) & \val{S_K_FULL_d5} & \val{F_SCREEN_d5} & \textbf{\val{H0_GLOBAL_d5}} & $\val{p9_hglob_residuo}$ km/s/Mpc (cond.$^{a}$) \\
 \midrule
 SH0ES \citep{Riess2022} (\emph{input}) & --- & --- & $73.04 \pm 1.04$  & --- \\
 CCHP TRGB \citep{Freedman2024} (input) & --- & --- & $\val{p9_cchp_H0} \pm \val{p9_cchp_H0_s}$ & $\val{p9_cchp_sig}\sigma$ (UV) \\
@@ -475,7 +480,7 @@ CCHP TRGB \citep{Freedman2024} (input) & --- & --- & $\val{p9_cchp_H0} \pm \val{
 
 Table~\ref{tab:H0} compares the IR and UV results.
 Under Postulate~C.1 (§\ref{sec:theorem}), $M^4 = 45\alpha^2\rhoc$ gives, from
-the SH0ES datum, $H_0^{\rm glob,UV} = \val{H0_GLOBAL_d5}$ km/s/Mpc --- the headline UV
+the SH0ES datum, $H_0^{\rm glob} = \val{H0_GLOBAL_d5}$ km/s/Mpc --- the headline UV
 result, refining the IR residual $\val{p9_sh0es_res_IR}$ ($\val{p9_sh0es_sig_IR}\sigma$) to
 $\val{p9_hglob_residuo}$, and reproducing $3(\phiG+\pi)^2$ to the seventh digit.
 
@@ -510,11 +515,11 @@ Step & Expression & Value & Source \\
 Seed & $\phiG = (1+\sqrt{5})/2$ & \val{PHI_d8} & --- \\
 $\alpha$-attractor & $\alpha = \phiG^4/3$ & \val{ALPHA_ATT_d8} & Paper 1 \\
 UV cutoff & $M^4 = 45\alpha^2\rhoc$ & $\val{_M4_UV_d2}\,\rhoc$ & Eq.~\eqref{eq:M4main} \\
-$M$ in meV & $M = \phiG^2\,5^{1/4}\,\rhoc^{1/4}$ & 9.68 meV & Eq.~\eqref{eq:Mmev} \\
+$M$ in meV & $M = \phiG^2\,5^{1/4}\,\rhoc^{1/4}$ & \val{M_meV_d2} meV & Eq.~\eqref{eq:Mmev} \\
 $\sK^{\rm full}$ & quadratic + cutoff & \val{S_K_FULL_d5} & Eq.~\eqref{eq:sKfullform} \\
 $\fsc^{\rm UV}$ & $\sK^{\rm full}/(3\MIRA)$ & \val{F_SCREEN_d5} & this paper \\
 SH0ES (\emph{input}) & $73.04 \pm 1.04$ km/s/Mpc & (obs.) & Riess 2022 \\
-$H_0^{\rm glob,UV}$ & $H_0^{\rm SH0ES}(1-\fsc^{\rm UV})$ & \textbf{\val{H0_GLOBAL_d5}} & Eq.~\eqref{eq:H0UV} \\
+$H_0^{\rm glob}$ & $H_0^{\rm SH0ES}(1-\fsc^{\rm UV})$ & \textbf{\val{H0_GLOBAL_d5}} & Eq.~\eqref{eq:H0UV} \\
 $3(\phiG+\pi)^2$ (pure, target) & --- & $\val{H0_ALG_d5}$ & Paper~1 \\
 \bottomrule
 \end{tabular}
@@ -530,28 +535,32 @@ The central prediction of this paper is a cross-epoch consistency test.
 If $\alpha = \phiG^4/3$ is the correct inflationary curvature, then
 simultaneously:
 \begin{enumerate}
-  \item LiteBIRD (2032) should measure $r \approx \val{R_TENSOR_d5}$
+  \item LiteBIRD should measure $r \approx \val{R_TENSOR_d5}$
         [from Eq.~\eqref{eq:r}].
   \item The cascade run on the measured local rate should return
         $H_0^{\rm glob} = \val{H0_GLOBAL_d5}$ km/s/Mpc, reproducing $3(\phiG+\pi)^2$
         [Eq.~\eqref{eq:H0UV}].
 \end{enumerate}
 
-These are \emph{independent observables} at vastly different epochs
-($z \sim 10^{60}$ vs.\ $z \lesssim 0.15$) linked only through $\alpha$.
-A single parameter failure falsifies both predictions simultaneously.
+These are \emph{independent observables} at vastly different epochs, linked
+only through $\alpha$ --- but they do not carry equal weight. The cascade does
+not measure $M^4$ (§\ref{sec:hubble}): its output moves by one propagated
+$\sigma$ only if $M^4$ falls to $\val{p10_f_1sig}$ of its nominal value, that is, if
+$\alpha$ falls below $\val{p10_alfa_fac}$ of $\phiG^4/3$.
 
 \paragraph{Quantitative falsification criteria.}
 If LiteBIRD measures $r_{\rm obs}$, the implied $\alpha_{\rm obs}
-= r_{\rm obs} N^2/12$, and one predicts
+= r_{\rm obs} N^2/12$, and the cascade returns
 \begin{equation}
-  H_0^{\rm local}(\alpha_{\rm obs})
-  \;=\; \frac{H_0}{1 - \sK^{\rm full}(\alpha_{\rm obs})\,/\,(3\MIRA)}\,.
+  H_0^{\rm glob}(\alpha_{\rm obs})
+  \;=\; H_0^{\rm SH0ES}\left[1 - \sK^{\rm full}(\alpha_{\rm obs})\,/\,(3\MIRA)\right]\,.
   \label{eq:Hpred}
 \end{equation}
-If this differs from SH0ES by more than $1\sigma$ (i.e., if
-$|H_0^{\rm local}(\alpha_{\rm obs}) - 73.04| > 1.04$ km/s/Mpc),
-the UV-completion proposal is falsified at $1\sigma$.
+If this departs from $3(\phiG+\pi)^2$ by more than the propagated $1\sigma$,
+the UV proposal is disfavoured at $1\sigma$; with present SH0ES errors that
+requires $r_{\rm obs} < \val{p10_r_umbral}$. Any other $r_{\rm obs} \neq \val{R_TENSOR_d5}$
+falsifies $\alpha = \phiG^4/3$ directly through Eq.~\eqref{eq:r}, and
+Conjecture~C.1 with it; the Hubble leg would then be silent.
 
 \begin{figure}[ht]
   \centering
@@ -580,11 +589,11 @@ the UV-completion proposal is falsified at $1\sigma$.
 \label{sec:firstprinciples}
 % ═══════════════════════════════════════════════════════════════════════════════
 
-The identity $M^4 = 45\alpha^2\rhoc$ has been \emph{found} numerically and
-verified algebraically (Section~\ref{sec:alpha}).
-Its \emph{derivation} from first principles---without using SH0ES as
-input---remains under investigation.
-We outline three candidate routes.
+The identity $45\alpha^2 = 5\phiG^8$ is exact (Section~\ref{sec:alpha}); that the
+cutoff equals $45\alpha^2\rhoc$ is Conjecture~C.1. A derivation of it that uses
+neither the value of $M^4$ nor SH0ES is open (OP-3). We record three routes:
+Routes~A and~B do not give it, and Route~C is a consistency reading, not a
+derivation.
 
 \subsection{Route~A: Lagrangian matching with $K_\alpha(X)$}
 
@@ -600,10 +609,10 @@ $X/\KAL$), the matching condition is
   \frac{1}{M^4} \;=\; \frac{1}{6\alpha\,\KAL^2}\,,
   \qquad\Rightarrow\qquad
   M^4_{\rm A} \;=\; 6\alpha\,\KAL^2 \;=\; 2\phiG^4\,\KAL^2
-  \;\approx\; 418\,\rhoc\,.
+  \;\approx\; \val{seis_alfa_KAL2_d0}\,\rhoc\,.
   \label{eq:MA}
 \end{equation}
-Route~A gives $M^4_{\rm A} \approx 418\,\rhoc$, a factor $\approx 1.78$ above
+Route~A gives $M^4_{\rm A} \approx \val{seis_alfa_KAL2_d0}\,\rhoc$, a factor $\approx \val{KAL_KALeff2_d3}$ above
 the target $5\phiG^8\rhoc \approx \val{M4_UV_d1}\,\rhoc$.
 The discrepancy is
 \begin{equation}
@@ -635,7 +644,7 @@ Evaluating with the IR background: $X_{\rm bg}^{\rm IR} = \sK^{\rm IR}\KAL/6$,
   M^4_{\rm B}
   \;\sim\; \frac{24\,(\sK^{\rm IR}\KAL/6)^2}{\sK^{\rm IR}}
   \;=\; \frac{2\,\sK^{\rm IR}\,\KAL^2}{3}
-  \;=\; M^4_{\rm r2} \;\approx\; 8.20\,\rhoc\,.
+  \;=\; M^4_{\rm r2} \;\approx\; \val{M4_r2_d2}\,\rhoc\,.
 \end{equation}
 Route~B gives the self-coupling scale $M^4_{\rm r2}$, not $5\phiG^8\rhoc$.
 The correct $M^4 = 5\phiG^8\rhoc$ corresponds to the regime where the UV
@@ -665,7 +674,7 @@ where $\alpha = \phiG^4/3$ is the $\alpha$-attractor curvature fixed by
 the inflationary sector and $\rhoc = 3\Mpl^2 H_0^2$ uses the global rate
 $H_0^{\rm glob}=H_0^{\rm SH0ES}(1-f_{\rm scr})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$
 (Postulate~D, Paper~1), which equals the pure number $3(\phiG+\pi)^2$ to
-$4\times10^{-6}$, so $M$ does not depend on which of the two is used at the
+$\val{p9_hglob_residuo}$, so $M$ does not depend on which of the two is used at the
 quoted precision. The ratio $M^4/\rhoc=5\phiG^8$ itself carries no $H_0$ at all;
 only the conversion of $M$ to meV does. The statement is about the
 cutoff $M$ of Eq.~\eqref{eq:KX}, not about the coefficients of the
@@ -674,9 +683,10 @@ question.}
 \end{quote}
 
 \medskip
-Conjecture~C.1 is promoted below to a conditional theorem (Conditional
-Theorem~C.1), under the UV-IR separability postulate; the UV-completion chain
-then closes within the SSEE algebraic structure:
+Below we show that Conjecture~C.1 is consistent with a UV-IR separability
+postulate; it is not derived from it, because the argument uses the value of
+$M^4$ (OP-3). Under the conjecture the chain closes within the SSEE algebraic
+structure:
 \begin{equation}
   \phiG \;\xrightarrow{\alpha = \phiG^4/3}\; \alpha
         \;\xrightarrow{M^4 = 45\alpha^2\rhoc}\; M
@@ -692,7 +702,7 @@ result is not unconditional.
 
 \paragraph{Diagnosing the Route~A discrepancy.}
 Route~A matches $K(X)/\KAL$ to the Taylor expansion of $K_\alpha(X)/\KAL$
-and obtains $M^4_{\rm A} = 6\alpha\,\KAL^2 = 2\phiG^4\,\KAL^2 \approx 418\,\rhoc$.
+and obtains $M^4_{\rm A} = 6\alpha\,\KAL^2 = 2\phiG^4\,\KAL^2 \approx \val{seis_alfa_KAL2_d0}\,\rhoc$.
 The discrepancy with the UV value is
 \begin{equation}
   \frac{M^4_{\rm A}}{M^4_{\rm UV}}
@@ -715,13 +725,13 @@ Starobinsky--Higgs embedding).
 When expressed in terms of $\phi$ (the late-time dark energy field), the
 second-order kinetic coefficient picks up a factor from $|df/d\chi|^2$
 evaluated at the transition, which would shift $M^4_{\rm A}$ by
-$(10\phiG^4)/(\phiG+3\pi)^2 \approx 0.562$ --- precisely the inverse of
+$(10\phiG^4)/(\phiG+3\pi)^2 \approx \val{KALeff2_sobre_KAL2_d3}$ --- precisely the inverse of
 the Route~A discrepancy.
 
-\paragraph{UV-IR separability and the conditional derivation.}
+\paragraph{UV-IR separability: a consistency reading.}
 
-We now show that Conjecture~C.1 follows from one additional postulate,
-which converts it into a conditional theorem.
+We now show what Conjecture~C.1 implies for the kinetic normalisation, and
+that the result is compatible with one additional postulate.
 
 The $\alpha$-attractor kinetic Lagrangian is
 \begin{equation}
@@ -760,7 +770,7 @@ so
   \label{eq:M4_KALeff}
 \end{equation}
 Route~A is the special case $\KALeff = \KAL$, giving
-$M^4_{\rm A} = 6\alpha\,\KAL^2 \approx 418\,\rhoc$
+$M^4_{\rm A} = 6\alpha\,\KAL^2 \approx \val{seis_alfa_KAL2_d0}\,\rhoc$
 --- too large by the factor $(\phiG+3\pi)^2/(10\phiG^4)\approx \val{KAL_KALeff2_d3}$
 derived in Eq.~\eqref{eq:routeA_ratio}.
 
@@ -783,14 +793,15 @@ involve $\pi$.
 \end{quote}
 
 Under this postulate, $\KALeff^2$ must be a polynomial in $\phiG$ with rational
-coefficients.
-The constraint Eq.~\eqref{eq:M4_KALeff} then reads
+coefficients --- but the postulate does not say which: every rational multiple
+of a power of $\phiG$ qualifies.
+The constraint Eq.~\eqref{eq:M4_KALeff} reads
 \begin{equation}
   \KALeff^2 \;=\; \frac{M^4}{6\alpha} \;=\; \frac{M^4}{2\phiG^4}\,.
   \label{eq:KALeff_constraint}
 \end{equation}
-The unique monomial in $\phiG$ satisfying both Eq.~\eqref{eq:KALeff_constraint}
-and the empirically established $M^4 = 5\phiG^8\,\rhoc$ is
+Given the conjectured $M^4 = 5\phiG^8\,\rhoc$ (the cascade does not measure it,
+§\ref{sec:hubble}), Eq.~\eqref{eq:KALeff_constraint} is solved by
 \begin{equation}
   \KALeff^2 \;=\; \frac{5\phiG^8}{2\phiG^4} \;=\; \frac{5}{2}\,\phiG^4
               \;=\; \frac{15}{2}\,\alpha\,,
@@ -803,21 +814,22 @@ a rational, with no $\pi$, confirming the postulate is self-consistent. The
 factor $\rhoc$ is carried by $\KALeff^2$ and not by the rational: the
 dimensionless content of the whole construction is the single number
 $M^4/(2\phiG^4\rhoc) = 5/2$.
-Substituting back into Eq.~\eqref{eq:M4_KALeff}:
+Substituting back into Eq.~\eqref{eq:M4_KALeff} returns the input, as it must:
 \begin{equation}
   M^4 \;=\; 6\alpha \times \tfrac{15}{2}\,\alpha
       \;=\; 45\alpha^2\,\rhoc
       \;=\; 5\phiG^8\,\rhoc\,.
   \label{eq:M4_conditional}
 \end{equation}
-This is precisely Conjecture~C.1.
+This is Conjecture~C.1 again: the argument is a consistency check, not a
+derivation, because $M^4$ was used to fix $\KALeff$ (OP-3).
 
 The Route~A discrepancy is now transparent. Since $M^4 \propto \KALeff^2$, a
 ratio $r$ in the normalisation appears as $r^2$ in the cutoff:
 $\KAL/\KALeff = \val{KAL_KALeff_d6}$ and $(\KAL/\KALeff)^2 = \val{KAL_KALeff2_d6}$, which is exactly
 the factor by which Route~A overshoots ($\val{seis_alfa_KAL2_d2}\,\rhoc$ against
-$\val{_M4_UV_d2}\,\rhoc$). The discrepancy is thus $33\%$ in the normalisation and
-$78\%$ in the cutoff: the same discrepancy seen at two powers. This ratio is
+$\val{_M4_UV_d2}\,\rhoc$). The discrepancy is thus $\val{KAL_KALeff_pct}\%$ in the normalisation and
+$\val{KAL_KALeff2_pct}\%$ in the cutoff: the same discrepancy seen at two powers. This ratio is
 the field-redefinition factor --- the ``missing'' $\pi$-dependent normalisation
 between the inflationary and dark-energy kinematic bases. It is taken in units
 $\rhoc = 1$; $\KAL$ is dimensionless while $\KALeff$ carries $\rhoc^{1/2}$, so
@@ -826,17 +838,16 @@ comparison between them.
 
 \medskip
 \begin{quote}
-\textbf{Conditional Theorem~C.1.}
-\textit{If the effective kinetic normalisation $\KALeff$ at the
-inflaton-to-quintessence transition is polynomial in $\phiG$ (the
-UV-IR separability postulate), then the unique solution to
-$M^4 = 6\alpha\,\KALeff^2$ consistent with the inflationary
-$\alpha$-attractor $K_\alpha$ is
+\textbf{Consistency statement~C.1.}
+\textit{If $M^4 = 45\alpha^2\rhoc$ (Conjecture~C.1), the effective kinetic
+normalisation at the inflaton-to-quintessence transition is
+$\KALeff = \phiG^2\sqrt{5/2}$, a polynomial in $\phiG$ alone, as the UV-IR
+separability postulate requires, and Route~A ($\KALeff=\KAL$) is excluded:
 \begin{equation}
-  M^4 \;=\; 45\alpha^2\,\rhoc \;=\; 5\phiG^8\,\rhoc\,.
+  M^4 \;=\; 6\alpha\,\KALeff^2 \;=\; 45\alpha^2\,\rhoc \;=\; 5\phiG^8\,\rhoc\,.
   \label{eq:CT1}
 \end{equation}
-The UV ladder closes:
+Under the conjecture the UV ladder closes:
 $\phiG \to \alpha = \phiG^4/3 \to M^4 = 5\phiG^8\rhoc
 \to \sK^{\rm full} = \val{S_K_FULL_d5}
 \to \fsc^{\rm UV} \to H_0^{\rm glob} = \val{H0_GLOBAL_d5}\;\mathrm{km/s/Mpc}$
@@ -845,11 +856,12 @@ conditional on Postulate C.1),
 entirely within the $\{\phiG,\pi\}$ algebraic structure of SSEE.}
 \end{quote}
 
-The unconditional proof requires an explicit derivation of $\KALeff$
-from the $P(X,\phi)$ Lagrangian at the inflationary transition ---
-specifically, showing that the field-space Jacobian $\partial\phi/\partial\chi|_{\rm transition}$
-evaluates to $\phiG^2\sqrt{5/2}$ rather than $\KAL = (\phiG+3\pi)/2$.
-This is deferred to Paper~B of the SSEE series.
+A derivation requires the number $5/2$ from a source of its own ---
+equivalently $\KALeff$ from the $P(X,\phi)$ Lagrangian at the inflationary
+transition, the field-space Jacobian $\partial\phi/\partial\chi|_{\rm transition}$
+evaluating to $\phiG^2\sqrt{5/2}$ rather than $\KAL = (\phiG+3\pi)/2$ --- without
+using the value of $M^4$ or SH0ES. It is open, with a pre-registered closing
+criterion (OP-3).
 
 
 % ═══════════════════════════════════════════════════════════════════════════════
@@ -861,12 +873,14 @@ Beyond $H_0$, the UV completion $M^4 = 45\alpha^2\rhoc$ modifies several
 EFT observables.
 
 \paragraph{Screening rate $\sK$.}
-The UV-corrected screening rate $\sK^{\rm full} = \val{S_K_FULL_d5}$ is measurable
-through the equation of state, since $\sK^{\rm IR} = -3w_0(1+w_0)$.
-Current constraints from DESI DR2 BAO \citep{AbdulKarim2025} set the background
-context; forthcoming Euclid and DESI~Y5 data will probe $w_0$, and hence $\sK$, at the
-$\sim1\%$ level, distinguishing the UV-completed theory from the IR limit by
-$3.4\,\sigma_{\rm syst}$.
+The UV-corrected screening rate $\sK^{\rm full} = \val{S_K_FULL_d5}$ is \emph{not}
+observable through the equation of state: the background matching below holds
+$w_0$ fixed, and what a measurement of $w_0$ gives is $\sK^{\rm IR} = -3w_0(1+w_0)$.
+Forthcoming Euclid and DESI~Y5 data \citep{AbdulKarim2025} will sharpen $w_0$,
+and hence $\sK^{\rm IR}$, but not the UV term, which enters only through $\fsc$,
+i.e.\ through the cascade, and the cascade does not measure $M^4$
+(§\ref{sec:hubble}). No present observable separates the UV-extended theory
+from its IR limit.
 
 \paragraph{Effective equation of state.}
 The UV term $X^2/M^4$ in $K(X)$ modifies the effective pressure as
@@ -885,12 +899,12 @@ first-order estimate is
   \Delta w_0^{\rm UV}
   \;=\; w_0^{\rm UV} - w_0^{\rm IR}
   \;\approx\; \frac{(1-3w_0)\,X_{\rm bg}^2/M^4}{\rho_\phi}
-  \;\approx\; +2.4\times10^{-3}\,.
+  \;\approx\; +\val{p10_dw0}\,.
 \end{equation}
-Either way, $|\Delta w_0| \lesssim 0.002$ lies well below the projected
+Either way, $|\Delta w_0| \lesssim \val{p10_dw0}$ lies well below the projected
 Euclid sensitivity ($\sigma_{w_0} \approx 0.01$): the UV term leaves the
 background equation of state observationally indistinguishable from the
-IR limit, and the discriminating observable remains $\sK$.
+IR limit.
 
 \paragraph{Sound speed: one observable, one auxiliary number.}
 The sound speed of the dark-energy field, the one that controls whether dark
@@ -907,7 +921,7 @@ Eq.~\eqref{eq:KX} has its own propagation speed,
 \begin{equation}
   \frac{K_X}{K_X + 2X K_{XX}}
           \;=\; \frac{1/\KAL + 2X/M^4}{1/\KAL + 6X/M^4}
-          \;\approx\; 0.967\,,
+          \;\approx\; \val{p10_cs2_func}\,,
 \end{equation}
 but Eq.~\eqref{eq:KX} is not the dark-energy action (see the paragraph after Eq.~\eqref{eq:KX}), so this
 number is a property of the device that transports the cutoff $M$ into $\sK$,
@@ -934,14 +948,14 @@ Paper & Result used & UV impact \\
 \midrule
 Paper 1 & $\alpha = \phiG^4/3$ → $r = \val{R_TENSOR_d6}$ & \textbf{Direct input:} $M^4 = 45\alpha^2\rhoc$ \\
 Paper 5 & IS: $c_s^2 \approx 0$ (fluid description) & Compatible: same wave as Paper~7's field value $c_s^2=\val{cs2_condensado_d6}$; Eq.~\eqref{eq:KX} is not the DE action \\
-Paper 7 & Ghost condensate: $w_0$, $c_s^2$ from the Lagrangian & Independent: $\sK^{\rm IR}$ comes from $w_0$, not from the action \\
-Paper 8 & $\MIRA = \AURA/2$; strong-field regime & GR recovered through $\alpha_B=\alpha_M=0$ (Paper~7); no screening radius is quoted (the earlier formula was dimensionally inconsistent and is withdrawn there) \\
-Paper 9 & $H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$ (\val{p9_sh0es_sig_IR}$\sigma$) & UV closes to $\val{H0_GLOBAL_d5}$ ($4.3{\times}10^{-6}\sigma$; conditional$^{a}$) \\
+Paper 7 & Ghost condensate: $w_0$, $c_s^2$ today from the Lagrangian (the field rolls) & Independent: $\sK^{\rm IR}$ comes from $w_0$, not from the action \\
+Paper 8 & Lensing with $\mu-1=0$; strong-field regime & GR recovered through $\alpha_B=\alpha_M=0$ (Paper~7); no screening radius is quoted (the earlier formula was dimensionally inconsistent and is withdrawn there) \\
+Paper 9 & $H_0^{\rm glob,IR} = \val{p9_sh0es_glob_IR}$ (\val{p9_sh0es_sig_IR}$\sigma$) & UV closes to $\val{H0_GLOBAL_d5}$ (residual $\val{p9_hglob_residuo}$; conditional$^{a}$) \\
 Papers 2--4,6 & CMB, MCMC, $\sigma_8$, $f\sigma_8$ & $M$ only modifies $\sK$; the algebraic constant $\MIRA = (3\phiG+\pi)/4$ is scale-invariant and unchanged by UV flow \\
 \bottomrule
 \end{tabular}%
 }
-\footnotesize{$^{a}$ Canonical UV result $H_0^{\rm glob,UV}=\val{H0_GLOBAL_d5}$ km/s/Mpc, obtained by running
+\footnotesize{$^{a}$ Canonical UV result $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$ km/s/Mpc, obtained by running
 the lens on the measured SH0ES rate, conditional on Postulate C.1 (UV-IR separability,
 §\ref{sec:theorem}). The propagated uncertainty is $\pm\val{p9_hglob_sigma}$ km/s/Mpc and dominates the
 $\val{p9_hglob_residuo}$ residual; the absolute-scale origin (Postulate~D) remains open, as in $\Lambda$CDM.}
@@ -950,7 +964,7 @@ $\val{p9_hglob_residuo}$ residual; the absolute-scale origin (Postulate~D) remai
 The AURA cancellation of Paper~9 ($\AURA$ drops out of $\sK/(3\MIRA)$
 in the IR limit) is technically broken in the UV because $\sK^{\rm full}$
 acquires an AURA-dependent correction.
-The canonical UV result $H_0^{\rm glob,UV} = \val{H0_GLOBAL_d5}$ km/s/Mpc,
+The canonical UV result $H_0^{\rm glob} = \val{H0_GLOBAL_d5}$ km/s/Mpc,
 conditional on Postulate~C.1, indicates that the UV correction is a
 consistent completion rather than a destabilisation of the IR identity. As stressed
 throughout, the absolute dimensional scale (Postulate~D) is not an independent prediction
@@ -961,8 +975,9 @@ throughout, the absolute dimensional scale (Postulate~D) is not an independent p
 \section{Summary and Conclusions}
 % ═══════════════════════════════════════════════════════════════════════════════
 
-We have shown that the SSEE dark-energy Lagrangian $K(X) = X/\KAL + X^2/M^4$
-admits a unique algebraically consistent UV cutoff
+We have proposed (Conjecture~C.1) that the screening functional
+$K(X) = X/\KAL + X^2/M^4$ --- not the dark-energy action of Paper~7 --- has the
+UV cutoff
 \begin{equation}
   M^4 \;=\; 45\,\alpha^2\,\rhoc \;=\; 5\,\phiG^8\,\rhoc
       \;\approx\; \val{M4_UV_d1}\,\rhoc\,,
@@ -971,27 +986,29 @@ where $\alpha = \phiG^4/3$ is the inflationary $\alpha$-attractor parameter of
 Paper~1.
 With this cutoff, the full screening rate is
 $\sK^{\rm full} = \val{S_K_FULL_d5}$ and the global rate returned from the SH0ES datum is
-$H_0^{\rm glob,UV} = \val{H0_GLOBAL_d5}$ km/s/Mpc, conditional on
-Postulate~C.1, reproducing $3(\phiG+\pi)^2$ to the seventh digit.
+$H_0^{\rm glob} = \val{H0_GLOBAL_d5}$ km/s/Mpc, conditional on
+Postulate~C.1, reproducing $3(\phiG+\pi)^2$ to the seventh digit, far inside the
+propagated $\pm\val{p9_hglob_sigma}$.
 
 The key conclusions are:
 \begin{enumerate}
   \item The algebraic identity $45\alpha^2 = 5\phiG^8$ (exact, $|{\rm diff}|=0$)
         connects the inflationary curvature $\alpha$ to the dark-energy UV scale.
   \item The UV correction to $\sK$ is perturbative
-        ($\varepsilon \approx 5.7\times10^{-4}$) and shifts $\sK$ by $+\val{sK_UV_pct}\%$.
+        ($\varepsilon \approx \val{eps_UV}$) and shifts $\sK$ by $+\val{sK_UV_pct}\%$.
   \item The canonical IR Hubble residual of Paper~9
         ($H_0^{\rm glob,IR}=\val{p9_sh0es_glob_IR}$, $\val{p9_sh0es_sig_IR}\sigma$) is reduced to
-        $H_0^{\rm glob,UV}=\val{H0_GLOBAL_d5}$ ($\val{p9_hglob_residuo}$) by the UV
+        $H_0^{\rm glob}=\val{H0_GLOBAL_d5}$ ($\val{p9_hglob_residuo}$) by the UV
         completion, conditional on Postulate~C.1 (§\ref{sec:theorem}).
         The cascade does not thereby measure $M^4$: see
         §\ref{sec:hubble}.
-  \item The same $\alpha$ predicts $r \approx \val{R_TENSOR_d5}$ (LiteBIRD 2032),
+  \item The same $\alpha$ predicts $r \approx \val{R_TENSOR_d5}$ (LiteBIRD),
         enabling a cross-epoch falsification test independent of Hubble tension
         measurements.
-  \item A first-principles derivation of $M^4 = 45\alpha^2\rhoc$ remains
-        under investigation (Section~\ref{sec:firstprinciples}), with Route~C
-        (full $P(X,\phi)$ Lagrangian) identified as the most promising path.
+  \item A derivation of $M^4 = 45\alpha^2\rhoc$ that uses neither its value
+        nor SH0ES remains open (Section~\ref{sec:firstprinciples}; OP-3):
+        Routes~A and~B do not give it, and the separability reading of
+        Route~C is a consistency check, not a derivation.
 \end{enumerate}
 
 \paragraph{Acknowledgements.}
@@ -1005,7 +1022,8 @@ publication strategy of this series.
 
 \bibitem{SSEE1}
 M.~E.~Almeida Vallejo,
-\emph{SSEE: Algebraic Framework, EFT, and $\alpha$-Attractor Inflation},
+\emph{A Minimal-Parameter Framework for Cosmological Dynamics and Galaxy
+Cluster Mass Discrepancies via Structural Self-Energy Expansion (SSEE)},
 SSEE Paper~1 (2026).
 
 \bibitem{SSEE7}
@@ -1016,13 +1034,13 @@ SSEE Paper~7 (2026).
 
 \bibitem{SSEE8}
 M.~E.~Almeida Vallejo,
-\emph{Strong-Gravity Regime: Disformal Geodesics and $\MIRA$ Lensing},
+\emph{SSEE in the Strong-Gravity Regime: GR Lensing in the Canonical Limit,
+a Disformal Contrast, and Solar-System Compliance},
 SSEE Paper~8 (2026).
 
 \bibitem{SSEE9}
 M.~E.~Almeida Vallejo,
-\emph{Hubble Tension via Algebraic Screening Fraction:
-$\fsc = \sK/(3\MIRA) = (\pi-\phiG)/(\phiG+\pi)^2$},
+\emph{SSEE and the Hubble Tension: An Algebraic Local Screening Fraction},
 SSEE Paper~9 (2026).
 
 \bibitem{Riess2022}
@@ -1066,6 +1084,12 @@ Phys.\ Rev.\ Lett.\ \textbf{114} (2015) 141302 [arXiv:1412.3797].
 A.~R.~Liddle \& S.~M.~Leach,
 \emph{How long before the end of inflation were observable perturbations produced?},
 Phys.\ Rev.\ D \textbf{68} (2003) 103503 [arXiv:astro-ph/0305263].
+
+\bibitem{BK2021}
+P.~A.~R.~Ade et al.\ (BICEP/Keck Collaboration),
+\emph{Improved Constraints on Primordial Gravitational Waves using Planck,
+WMAP, and BICEP/Keck Observations through the 2018 Observing Season},
+Phys.\ Rev.\ Lett.\ \textbf{127}, 151301 (2021) [arXiv:2110.00483].
 
 \bibitem{Akrami2020}
 Planck Collaboration (Y.~Akrami et al.),
