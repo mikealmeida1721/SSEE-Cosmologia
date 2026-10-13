@@ -152,19 +152,19 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "28fd340df92d7940b8fcc2ee05835140887e0eb2",
+  "commit": "9233d841830f70a7be2fd3230f79a4986e8b7468",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/perfil_h0_ancla.py",
   "script_sha256": "bff035ee312c46dc23a685703e2f5c35009dbbc7a5b557af7b3c9b482baa060c",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123"
+   "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64"
   },
   "argv": [
    "src/p03_cmb/perfil_h0_ancla.py"
   ],
-  "fecha": "2026-10-01T23:48:45",
+  "fecha": "2026-10-10T17:28:15",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

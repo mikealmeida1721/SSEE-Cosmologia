@@ -60,9 +60,9 @@
     "fuente": "CANONICAL_VALUES.yaml obs_KiDS_S8",
     "tension_sigma": 0.06147497585397447
   },
-  "tiempo_analisis_seg": 28920.83465051651,
+  "tiempo_analisis_seg": 28841.55050301552,
   "_procedencia": {
-    "commit": "ca2b6181aede8f8c78caaf770f15d254b1ec98a6",
+    "commit": "306f18df1081972981d2b675a1db8e10a86e0f06",
     "reproducible_desde_commit": true,
     "cambios_sin_commitear": [],
     "script": "src/p06_growth/analiza_lcdm_R4.py",
@@ -75,12 +75,12 @@
       "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt": "9ec7ab035d4a559db1c07a598ba681f67a1974161c1f1254dc1df70ac0f72be9",
       "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.progress": "2e2fbc827cb17790dede4bec98baa382dc0c4be8330f74de722f07af75dfbcfa",
       "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.updated.yaml": "85b43915372bd0dd54bb4ede0ce1c44b615b8c3b0a4bfeaa8425e61e006de322",
-      "CANONICAL_VALUES.yaml": "08bdd82aa039a4f7e05c95579c8db0abd7da4a2e861d291de02ce0f49897123f"
+      "CANONICAL_VALUES.yaml": "f36f8f9e5686d1f3ed3b2d54ea08397a6024a5b4423441e273c2919e5dbc9992"
     },
     "argv": [
       "src/p06_growth/analiza_lcdm_R4.py"
     ],
-    "fecha": "2026-10-03T23:59:28",
+    "fecha": "2026-10-12T22:15:47",
     "host": "mike-System-Product-Name",
     "python": "3.12.3",
     "versiones": {

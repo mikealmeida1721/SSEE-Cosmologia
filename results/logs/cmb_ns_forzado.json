@@ -137,28 +137,28 @@
  },
  "control_metodo": {
   "wc_algebraico": 0.1193319521630124,
-  "perfil_wc0": 0.11933407705591019,
-  "perfil_sigma": 0.0002459119627714555,
-  "dsigma": -0.008640868357284564,
+  "perfil_wc0": 0.11933406694491495,
+  "perfil_sigma": 0.0002459119792488515,
+  "dsigma": -0.008599751459907675,
   "pasa": true
  },
  "metodo": "min chi2 Planck plik_lite TTTEEE+lowT+lowE sobre (w_c, logA, tau), resto del fondo fijo; pendiente = ajuste lineal de ln w_c contra ln x",
  "script": "src/p03_cmb/cmb_identidad_forzada.py",
  "_procedencia": {
-  "commit": "ca2b6181aede8f8c78caaf770f15d254b1ec98a6",
+  "commit": "e8d24c7f1fb0af393a0a99439da0aeb5090a0f4c",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/cmb_identidad_forzada.py",
   "script_sha256": "19bbbd4a66281fcd34d2509a46de46b6edcb50a44f5f025d2c45dc037898e1b4",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/cmb_perfil_wc.json": "eddd61e01249cef47e4bf41362aabcc7e14ee4ee3c988b6cafecdea3be459bf9"
+   "results/logs/cmb_perfil_wc.json": "9663794d3914dfd83ba63d10ca274693dcd3b4ffc141ed278674fdd9b5270511"
   },
   "argv": [
    "src/p03_cmb/cmb_identidad_forzada.py",
    "ns"
   ],
-  "fecha": "2026-10-03T18:34:09",
+  "fecha": "2026-10-10T13:48:58",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -167,8 +167,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

@@ -1298,7 +1298,7 @@
   "criterio": "|S8-0.86|<1 sigma_nuestro y minimo fuera del borde (declarado antes, tercer intento)"
  },
  "_procedencia": {
-  "commit": "e1dd1df5346af069301087fd86336473ac404577",
+  "commit": "9233d841830f70a7be2fd3230f79a4986e8b7468",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/erosita_cr.py",
@@ -1311,7 +1311,7 @@
    "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt": "b2ec77a66bfbf8368824c23de10b7b9a664ef0e8c831e8ffc61f0addd3ff981a",
    "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits": "e79c392e2d7b9e26105ead7d56787713465aa853feb040a227891fb9571b9a54",
    "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz": "53a2e07f55b3bc8c783fe071d8039c75f5682d04975ff310909abef37612789b",
-   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
    "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex": "358dcead976d417820201debcb56b987f8c9dc9ab9bd27a3f250a80b1fa41755",
    "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits": "fe2310495ce2fdba5876e248ab3415012d6f2e79280d87c8bfd1177ca11a779e"
   },
@@ -1329,7 +1329,7 @@
    "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex",
    "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits"
   ],
-  "fecha": "2026-10-03T08:19:50",
+  "fecha": "2026-10-10T17:06:14",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

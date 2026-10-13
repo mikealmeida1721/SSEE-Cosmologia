@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-10",
  "preliminar": false,
  "pregunta": "Corrida CONJUNTA con el fondo clavado por algebra y logA clavado al del CMB: da a cada sonda el mismo chi2 que su corrida individual?",
  "logA_clavo": 3.0448340130228546,
@@ -12,9 +12,9 @@
  "por_sonda": [
   {
    "sonda": "cmb",
-   "individual": 1003.5860397789045,
+   "individual": 1003.5861181208386,
    "conjunta": 1003.5945,
-   "delta": 0.008460221095560883,
+   "delta": 0.008381879161447614,
    "min_en_cadena_conjunta": 1003.586
   },
   {
@@ -71,17 +71,17 @@
   "nota": "constante: fuera del muestreador, no puede mover nada"
  },
  "total_conjunta": 1518.9880067689369,
- "total_individual": 1515.5987705478412,
- "total_delta": 3.3892362210956435,
+ "total_individual": 1515.5988488897754,
+ "total_delta": 3.38915787916153,
  "_procedencia": {
-  "commit": "c759d6940478f8fce3de268023be31abe99de45d",
+  "commit": "9233d841830f70a7be2fd3230f79a4986e8b7468",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/leer_conjunta.py",
   "script_sha256": "d8fa691b4e1dc18e5da158fc0ab38fca08a0876710ba1159f6df0c1e60c1a741",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/cmb_dbic_tau_ajustado.json": "1c4c4ae0b9232624c95eba751a9be667b2bcabe184aa2c0534c7e1814f879123",
+   "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
    "results/logs/multisonda_fondo_clavado.json": "75951b47a51aed852532e270f536f8aec174fed82fca96d41eecb3a04c9bb37e",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt": "8d05d679213064564d2d2ea19e0ef05cb713bd969cd5e6ad2a831e0b274d4eef",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt": "d0d0a52550e4e3c5fe1f695d2dc2046325368c2d4d72a8047a7d3786655cae77",
@@ -95,7 +95,7 @@
   "argv": [
    "src/p06_growth/leer_conjunta.py"
   ],
-  "fecha": "2026-10-03T12:56:22",
+  "fecha": "2026-10-10T16:49:22",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

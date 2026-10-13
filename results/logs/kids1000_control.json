@@ -5,11 +5,9 @@
  "desvio_pct": 0.36575751283073726,
  "punto": "maxima posterior de la cadena oficial KiDS-1000 xi_pm, Blind C",
  "_procedencia": {
-  "commit": "4c5f87073eb5c7db860182db1b88c72525409377",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "M src/p06_growth/control_kids.py"
-  ],
+  "commit": "306f18df1081972981d2b675a1db8e10a86e0f06",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/p06_growth/control_kids.py",
   "script_sha256": "cfe9b0bc624390c573024acb0d5c73c0ac7df003ae023360c8693a0077777f69",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
@@ -19,7 +17,7 @@
   "argv": [
    "control_kids.py"
   ],
-  "fecha": "2026-10-11T11:12:47",
+  "fecha": "2026-10-12T22:16:33",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -28,7 +26,7 @@
    "camb": "1.6.5"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

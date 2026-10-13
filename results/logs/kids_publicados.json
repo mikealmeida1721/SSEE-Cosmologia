@@ -67,7 +67,7 @@
   "legacy_A_scale_fijo_sigma": 0.6547519567998019,
   "legacy_A_scale_corrimiento": 0.09854397340565457
  },
- "fecha": "2026-10-11",
+ "fecha": "2026-10-12",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -107,7 +107,7 @@
   }
  },
  "_procedencia": {
-  "commit": "98f48baf7b449baec40a7e75711c4a3225974fd1",
+  "commit": "a2d54a64fe7b27abf209a7bba30e22a07be99a67",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
@@ -124,7 +124,7 @@
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-11T11:43:20",
+  "fecha": "2026-10-12T14:13:09",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

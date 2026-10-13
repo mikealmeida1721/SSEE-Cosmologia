@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-12",
  "H_glob": 67.96214152203791,
  "sig_H_glob": 0.9676975244101783,
  "Planck": {
@@ -21,7 +21,7 @@
  "script": "src/p02_mcmc/h0_distancias.py",
  "plano_vs_posterior_sigmas": 0.06229419455332523,
  "_procedencia": {
-  "commit": "f2ac1945e349055465f1417c7b25322001885665",
+  "commit": "306f18df1081972981d2b675a1db8e10a86e0f06",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/h0_distancias.py",
@@ -30,7 +30,7 @@
   "entradas": {
    "results/logs/mcmc_paper2_reframe.json": "c4f32b358ca3400428340b3bd4d7422ad70625af3d2a53ba2eae0d8baeeb260e",
    "results/logs/h0_four_priors.json": "7ac8cc6e34b14fb0a254fcc00670cbcc19b2dfa54744dbbab453e02aa8f3d33e",
-   "src/p02_mcmc/ssee_paper2_mcmc.py": "07002316473e967077c70792a62fff661f5322a8bce538122d412c9d1f4cbea9"
+   "src/p02_mcmc/ssee_paper2_mcmc.py": "24a7abd965a88d43f43e9e642edc4d49028c19d5d5fddfe2be2d0ecbd32b2bca"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -40,7 +40,7 @@
    "results/logs/h0_four_priors.json",
    "src/p02_mcmc/ssee_paper2_mcmc.py"
   ],
-  "fecha": "2026-10-03T08:00:23",
+  "fecha": "2026-10-12T22:15:49",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

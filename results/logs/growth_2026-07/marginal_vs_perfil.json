@@ -26,8 +26,8 @@
    "papel": "CONTROL — aqui SI hay desplazamiento medido por otra via (perfil - marginal = 0.1834)",
    "publicado": 2.7614232200495397,
    "reproduce_publicado": true,
-   "perfil_conocido": 2.9447867806062953,
-   "perfil_menos_marginal": 0.18336356055675562
+   "perfil_conocido": 2.9447867903117566,
+   "perfil_menos_marginal": 0.18336357026221695
   },
   "kids": {
    "marginal": 2.8636678493268715,
@@ -47,14 +47,14 @@
  "alcance": "mide si la media marginal se aparta del mejor ajuste. NO sustituye a la cola #23 (dato sintetico con la verdad conocida), que es la unica que dice cual estimador es INSESGADO",
  "veredicto": "el diagnostico no ve el desplazamiento que YA se sabe que existe en BOSS: no absuelve a KiDS",
  "_procedencia": {
-  "commit": "111d5e99d9f140e039d0dd5c92b50fb1476754ee",
+  "commit": "e8d24c7f1fb0af393a0a99439da0aeb5090a0f4c",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/marginal_vs_perfil.py",
   "script_sha256": "f26db77bb7d0ffb8ece8203cf43cee4716cb7388bccb615153c64d3b4f8aacb6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "9c05a038a080ce015b0ff83ad6d5c3a5be9d4aca2e1d5ecb103c1d43d88ce270",
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "ef69c0f77e8eaaa35ffdbd2f04a3c7b47d9e699c0a296041dfa6c0e05e05c968",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
    "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
@@ -80,14 +80,14 @@
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt"
   ],
-  "fecha": "2026-10-04T00:00:28",
+  "fecha": "2026-10-10T10:03:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

@@ -41,6 +41,21 @@
    "sigma": 0.010318038116805473
   }
  },
+ "gelman_rubin": {
+  "rminus1": 0.019879396009590714,
+  "parametros": [
+   "H0",
+   "ombh2",
+   "omch2",
+   "logA",
+   "ns",
+   "tau",
+   "w",
+   "wa",
+   "A_planck"
+  ],
+  "cadenas": 4
+ },
  "tensiones": {
   "ombh2": {
    "algebraico": 0.02241775678109985,
@@ -113,11 +128,11 @@
  },
  "control_pasa": true,
  "_procedencia": {
-  "commit": "98f48baf7b449baec40a7e75711c4a3225974fd1",
+  "commit": "a7fb5c9bfaa41e17ee6b262f3477b3f9edb71cb6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/mcmc_full/leer_mcmc_full.py",
-  "script_sha256": "807316096b20e5987a116f36df688dd7ea5e6b7418391e1bc13b6070588844d0",
+  "script_sha256": "49bd616c91c5c85c429eebe40d0ce47223c6bb3abd53917295f490fcde8ce066",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt": "77e6956834c7e42363b9b1b67ce93c08cc224a8131150dd453ccd4c7aca28cb6",
@@ -129,7 +144,7 @@
   "argv": [
    "src/mcmc_full/leer_mcmc_full.py"
   ],
-  "fecha": "2026-10-11T11:43:37",
+  "fecha": "2026-10-11T16:00:45",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
