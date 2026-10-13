@@ -32,7 +32,7 @@
   "ve_As": true
  },
  "_procedencia": {
-  "commit": "9b0610834193d7684acacb5d609474342c4ed416",
+  "commit": "e708dabf6144f01275fb2268fe8a56fc5ffbc8bf",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/spt3g_kk.py",
@@ -40,7 +40,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
-   "results/logs/multisonda_fondo_clavado.json": "75951b47a51aed852532e270f536f8aec174fed82fca96d41eecb3a04c9bb37e",
+   "results/logs/multisonda_fondo_clavado.json": "f2e832205926f1d4db54023566fc2bcf828963808d0d5012791fed6396c82e19",
    "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml": "35f72bb7166f101257f615989b37a0205e788d8bdc0f34a6cdd86f803141d1d3"
   },
   "argv": [
@@ -51,7 +51,7 @@
    "results/logs/multisonda_fondo_clavado.json",
    "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml"
   ],
-  "fecha": "2026-10-04T08:38:24",
+  "fecha": "2026-10-12T22:22:02",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

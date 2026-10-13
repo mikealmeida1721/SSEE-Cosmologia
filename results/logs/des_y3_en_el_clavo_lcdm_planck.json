@@ -1,6 +1,7 @@
 {
- "fecha": "2026-09-27",
+ "fecha": "2026-10-12",
  "caso": "lcdm_planck",
+ "alineamientos": "TATT",
  "cosmologia": {
   "h0": 0.6736,
   "ombh2": 0.02237,
@@ -11,14 +12,43 @@
   "w": -1.0,
   "wa": 0.0
  },
- "chi2_2pt": 517.2899287075871,
+ "chi2_2pt": 517.2856966043742,
  "Omega_m": 0.31519398744052785,
  "sigma_8": 0.8125694494935639,
  "S8": 0.8328922572249731,
  "lcdm_libre_chi2": 518.0961246556549,
- "diferencia_vs_lcdm_libre": -0.8061959480677388,
+ "diferencia_vs_lcdm_libre": -0.8104280512807236,
  "mejor_ini": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_planck_mejor.ini",
  "libres_cosmologicos": 0,
- "convergido": true,
- "nota": "nuisances minimizados con sus priors DES (max_posterior=T); el chi2 reportado es el del vector de datos"
+ "convergido": false,
+ "nota": "nuisances minimizados con sus priors DES (max_posterior=T); el chi2 reportado es el del vector de datos",
+ "_procedencia": {
+  "commit": "a6adb8546558c8523ce59a91b97dbd7639b795a9",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p11_sondas/des_y3_en_el_clavo.py",
+  "script_sha256": "a83d544ba456a986d9aafaf853499e04b4348aa88f167f55efe569533593b7f7",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/des_y3_calibrador.json": "d3cc23460d14e0bb5241f436cadb3fcb0327a96c795a640b3a210b2bd3d7032f",
+   "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_planck_mejor.ini": "03d40d73896be69d0b00ae1a3ba50d3d93e0a4539db4124216aee4b440be38f2"
+  },
+  "argv": [
+   "src/p11_sondas/des_y3_en_el_clavo.py",
+   "lcdm_planck",
+   "evalua"
+  ],
+  "fecha": "2026-10-12T22:25:40",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "2",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

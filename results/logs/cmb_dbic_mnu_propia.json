@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-10",
+ "fecha": "2026-10-12",
  "N": 669,
  "chi2_ssee": 1003.5861181208386,
  "k_ssee": 2,
@@ -20,7 +20,7 @@
  },
  "dBIC_k4_conservador": -13.021134308833426,
  "_procedencia": {
-  "commit": "9233d841830f70a7be2fd3230f79a4986e8b7468",
+  "commit": "e708dabf6144f01275fb2268fe8a56fc5ffbc8bf",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/cmb_dbic_mnu_propia.py",
@@ -28,12 +28,12 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
-   "results/logs/lcdm_conjunta_cmb.json": "000f2b67d3d9aa1d6acef6cb9445af1be5ea3651b9ddb626db730567629577cd"
+   "results/logs/lcdm_conjunta_cmb.json": "857fc4ff136f3103402fa061a714fd79af4b98607624334bd8018c2993a58387"
   },
   "argv": [
    "src/p11_sondas/cmb_dbic_mnu_propia.py"
   ],
-  "fecha": "2026-10-10T16:48:42",
+  "fecha": "2026-10-12T22:22:20",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

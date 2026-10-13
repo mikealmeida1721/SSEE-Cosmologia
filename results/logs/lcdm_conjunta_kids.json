@@ -31,7 +31,7 @@
  "convergido": true,
  "control_no_peor_que_arranque": true,
  "_procedencia": {
-  "commit": "a7c2a1d82d040c283db096b716a25b8f649c7fa6",
+  "commit": "27b3b72b69eb46f6c1fbf593088e2dfc94fc1922",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
@@ -43,7 +43,7 @@
    "src/p11_sondas/lcdm_conjunta.py",
    "results/logs/lcdm_conjunta_kids.json"
   ],
-  "fecha": "2026-10-04T04:40:41",
+  "fecha": "2026-10-12T22:28:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
