@@ -187,7 +187,7 @@ def main():
                    mejor_ini=mejor, libres_cosmologicos=0,
                    convergido=convergio(caso),
                    nota="nuisances minimizados con sus priors DES (max_posterior=T); "
-                        "el chi2 reportado es el del vector de datos"), __file__, entradas=[CAL]),
+                        "el chi2 reportado es el del vector de datos"), __file__, entradas=[CAL, mejor]),
               open(os.path.join(_R, "results", "logs", f"des_y3_en_el_clavo_{caso}.json"), "w"),
               indent=1, ensure_ascii=False)
 

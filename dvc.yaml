@@ -1842,10 +1842,17 @@ stages:
     outs:
     - results/logs/spt3g_kk_en_el_clavo.json:
         cache: false
+  # 2026-10-12: la etapa EVALUA el mejor punto guardado de cada caso (modo «evalua»);
+  # la minimizacion de nuisances (modos «nuevo»/«continua», dias de CPU y dependiente
+  # del arranque) corre fuera de DVC y su producto son los tres .ini, declarados como
+  # entradas y con su hash en el acta. Igual que un lector de cadenas MCMC.
   des_y3_tatt:
-    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py ssee && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck
-      && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_libre
+    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py ssee evalua && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck evalua
+      && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_libre evalua
     deps:
+    - /mnt/datos/SSEE_data/des_y3/calibrador/clavo_ssee_mejor.ini
+    - /mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_planck_mejor.ini
+    - /mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_libre_mejor.ini
     - src/p11_sondas/des_y3_en_el_clavo.py
     - src/p11_sondas/lcdm_planck.py
     - src/ssee_core.py
