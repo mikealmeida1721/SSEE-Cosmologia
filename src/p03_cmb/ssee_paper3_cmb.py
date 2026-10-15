@@ -322,7 +322,7 @@ def plot_lensing(ells_s, Cl_s, ells_l, Cl_l, ell_obs, Cl_obs, sigma_obs):
 def plot_peak_zoom(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
     fig, axes = plt.subplots(1, 3, figsize=(13, 4))
     ranges = [(150, 350, 220), (420, 650, 540), (700, 950, 810)]
-    labels = ["1er pico", "2do pico", "3er pico"]
+    labels = ["1st peak", "2nd peak", "3rd peak"]
 
     for ax, (lo, hi, expected), lbl in zip(axes, ranges, labels):
         if ell_obs is not None:
