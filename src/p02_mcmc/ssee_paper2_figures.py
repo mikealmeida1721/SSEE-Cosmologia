@@ -245,20 +245,20 @@ for i, (dname, (om, sig)) in enumerate(omega_obs.items()):
 ax3a.axvline(OMEGA_DE_SSEE, color="#E6002B", lw=2.0, ls="-",
              label=fr"$\Omega_{{DE,SSEE}} = 1-\Omega_m = {OMEGA_DE_SSEE:.4f}$")
 ax3a.axvline(S_DE_SSEE, color="#7A5C9E", lw=1.6, ls="--",
-             label=fr"$s_{{DE}}=|w_0|={S_DE_SSEE:.4f}$ — NO es densidad")
+             label=fr"$s_{{DE}}=|w_0|={S_DE_SSEE:.4f}$ — not a density")
 ax3a.axvline(0.6847, color="black", lw=1.0, ls=":",
              label=r"$\Omega_\Lambda$ Planck 2018")
 
 ax3a.set_yticks(x3)
 ax3a.set_yticklabels([k.replace("\n", " ") for k in omega_obs.keys()], fontsize=10)
 ax3a.set_xlabel(r"$\Omega_{DE}$")
-ax3a.set_title(r"$\Omega_{DE,SSEE}=1-\Omega_m$ vs restricciones observacionales")
+ax3a.set_title(r"$\Omega_{DE,SSEE}=1-\Omega_m$ vs observational constraints")
 ax3a.set_xlim(0.63, 0.88)
 ax3a.legend(fontsize=9, loc="upper left")
 
 # Anotación de la diferencia estructural
 ax3a.annotate(
-    "$s_{DE}=T_r/M_v$ es $|w_0|$,\nun número de la ecuación\nde estado. No vive en\neste eje.",
+    "$s_{DE}=T_r/M_v$ is $|w_0|$,\nan equation-of-state\nnumber. It does not\nlive on this axis.",
     xy=(S_DE_SSEE, 2), xytext=(0.700, 2.55),
     fontsize=8.0, color="#7A5C9E",
     arrowprops=dict(arrowstyle="->", color="#7A5C9E", lw=1.0),
@@ -305,7 +305,7 @@ legend_handles = [
 ]
 ax3b.legend(handles=legend_handles, loc="lower center",
             bbox_to_anchor=(0.5, -0.22), fontsize=8.5, ncol=2)
-ax3b.set_title("Descomposición energética\n(externo=SSEE, interno=ΛCDM)", fontsize=10)
+ax3b.set_title("Energy budget\n(outer=SSEE, inner=ΛCDM)", fontsize=10)
 
 fig3.tight_layout()
 fig3.savefig(_outpath("fig3_omega_de.pdf"))
