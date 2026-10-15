@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-12",
+ "fecha": "2026-10-15",
  "caso": "lcdm_libre",
  "alineamientos": "TATT",
  "cosmologia": {},
@@ -14,7 +14,7 @@
  "convergido": true,
  "nota": "nuisances minimizados con sus priors DES (max_posterior=T); el chi2 reportado es el del vector de datos",
  "_procedencia": {
-  "commit": "a6adb8546558c8523ce59a91b97dbd7639b795a9",
+  "commit": "e98027985b380f3f78b1c1026759b0d7bd85dcff",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/des_y3_en_el_clavo.py",
@@ -29,7 +29,7 @@
    "lcdm_libre",
    "evalua"
   ],
-  "fecha": "2026-10-12T22:26:05",
+  "fecha": "2026-10-15T16:35:45",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -68,7 +68,7 @@ que lo supera 0.5504; w_a de DESI −0.631±0.226 (es −0.617±0.208). Repórta
 - ΔBIC CMB: plik completo −33.83 (b1_k2.json), plik_lite −26.03 (N=669).
 - k = 2 {A_s, τ} (k=1 si A_s se clava, P6).
 - γ_IS = 0.5504 (P5); el 0.657/0.658 viene del fondo viscoso IS y está superado.
-- DES Y3: SSEE 516.108, ΛCDM-Planck 517.290 (logs del 09-28; empate).
+- DES Y3: SSEE 516.753, ΛCDM-Planck 517.290 (re-evaluados desde los .ini, 2026-10-12; empate, Δχ² −0.54).
 
 ## Formato de `notes/lectura_cuarta/<DOC>.yaml`
 ```yaml

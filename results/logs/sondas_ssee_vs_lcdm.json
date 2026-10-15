@@ -111,10 +111,10 @@
    "fondo_lcdm": "Planck clavado",
    "ajustados_lcdm": 0,
    "SSEE": {
-    "chi2": 17.763662338256836,
+    "chi2": 17.76366424560547,
     "dof": 10,
-    "PTE": 0.05908360995086155,
-    "sigma": 1.8875706754536747
+    "PTE": 0.05908357560546616,
+    "sigma": 1.8875709310811166
    },
    "LCDM_Planck": {
     "chi2": 18.306447982788086,
@@ -122,7 +122,7 @@
     "PTE": 0.05000913541492094,
     "sigma": 1.959885836670983
    },
-   "dchi2": -0.54278564453125,
+   "dchi2": -0.5427837371826172,
    "ve_As": true,
    "nota": "7 nuisance minimizados igual en los dos modelos"
   },
@@ -153,13 +153,13 @@
   "tipo": "cizalla + agrupamiento",
   "fondo_lcdm": "Planck clavado",
   "ajustados_lcdm": 0,
-  "dchi2": -1.182427231050724,
-  "dchi2_TATT": -1.182427231050724,
+  "dchi2": -0.5373863382593527,
+  "dchi2_TATT": -0.5373863382593527,
   "dchi2_NLA": 0.4054747367327991,
   "SSEE": {
-   "chi2": 516.1075014765364,
+   "chi2": 516.7525423693278,
    "chi2_NLA": 520.255703366371,
-   "S8": 0.8291249483287166
+   "S8": 0.8291249122291107
   },
   "LCDM_Planck": {
    "chi2": 517.2899287075871,
@@ -200,13 +200,13 @@
    "ajustados_lcdm": 6,
    "ajustados_ssee": 2,
    "SSEE": {
-    "chi2": 1003.5860397789045
+    "chi2": 1003.5861181208386
    },
    "LCDM": {
     "chi2": 1003.5956843094156
    },
-   "dchi2": -0.009644530511081939,
-   "dBIC": -26.03278077102391
+   "dchi2": -0.00956618857696867,
+   "dBIC": -26.032702429089795
   },
   {
    "sonda": "Planck plik completo",
@@ -248,30 +248,30 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "6f514de7c4b6a233460feed031baaecbe446aa28",
+  "commit": "e98027985b380f3f78b1c1026759b0d7bd85dcff",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
   "script_sha256": "a9fd9d3afe8f01a13163f5b6f0dcefd9cc7f8d84bc52aeb2db1ed524552029f9",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/sn_geometria_en_el_clavo.json": "7de94d3605dcd14861ef461ec30239c776804bd5f33c14afdec86737784915ec",
+   "results/logs/sn_geometria_en_el_clavo.json": "4dcc43481d9220ebff0aaaa781136c6d02d59d1b5107e3af1fc8a6ad5cb647f8",
    "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
-   "results/logs/act_dr6_en_el_clavo.json": "f0aeb83d3b50937fc80ad17795e02e80513a2dc49b281b4f99b2e37b6d954448",
-   "results/logs/spt3g_kk_en_el_clavo.json": "6f5a2b55112774a05826d6bd5780c6b3f633221effecd386af169cfffcef055f",
+   "results/logs/act_dr6_en_el_clavo.json": "9f06cddc4a871af54ccd0fbce927cd12ef5396826861a2e807fe375b1e437b74",
+   "results/logs/spt3g_kk_en_el_clavo.json": "8d8a51ffa53af7cadb8b563b9ea4ffc56dfd530cc288eaac5bbac4f55b8f6124",
    "results/logs/bao_lcdm_libre.json": "7635b3351b03c4668db3576e33a57f3fd0ea2cf507458cc2fef6322da57b7202",
-   "results/logs/des_y3_en_el_clavo_ssee.json": "a14a2368ea014ea844deee8f3c9fe886099a8df56208b7a0b2d017c485342050",
-   "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "dd7ac6cd8431fa9b23748e4ed61ddc1cd5ebd3d04de3eb74881f00d9ff93e750",
+   "results/logs/des_y3_en_el_clavo_ssee.json": "5134279d5c047ebac673855297dcaba38f4cffddcc2f7aab17f0d53f2d58df39",
+   "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "128afbcca0d6d1f3c79ce2fb02383669935e2c20e63078d4c32740cd247f8167",
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "8e7645b20e92586a1a14f403404ffbdee4832b78bdb9710fab57ec59f53d2d49",
    "results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json": "0b3e1bcc757acb36290d936213ad2720b3b8daccfe83dc70001ecd837b445dcd",
-   "results/logs/cmb_dbic_mnu_propia.json": "04f8428abc1e4c20e83a805df0203d84139a83b2c86d07654cb32e75a5e5fa54",
+   "results/logs/cmb_dbic_mnu_propia.json": "7b3c6d74bfed8f46ea202b92e4845e274dbe6b797f7345a82ce018287aee6383",
    "results/logs/b1_k2.json": "948a4a6e4108e14e560fe35c8a3c5e8d378a5b7669b4c5e56f648aec257225f9",
-   "results/logs/kids_legacy_bic.json": "68e01c09b470df2d3e594b34f53227e1ebe19bc335bdf3731011610a379ae421"
+   "results/logs/kids_legacy_bic.json": "0eae5c2a12778684e5f3b5730ed7353927eb7956d3017bb4ee2022774f6aee5f"
   },
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-04T04:44:01",
+  "fecha": "2026-10-15T16:35:49",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

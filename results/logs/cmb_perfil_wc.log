@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "e98027985b380f3f78b1c1026759b0d7bd85dcff", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p03_cmb/perfil_wc_cmb.py", "script_sha256": "d225d1b2aabc45419bc1747a9c3945f45ee66e65b7db2acab337e14dd238567f", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat": "dac0d9d493213e77c940a10a968cf0da3c5730bae60e1356c4cd8bcff96377ff"}, "argv": ["src/procedencia_sella.py", "src/p03_cmb/perfil_wc_cmb.py", "results/logs/cmb_perfil_wc.log", "/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat"], "fecha": "2026-10-13T01:03:06", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 
 === SSEE  (w=-0.839950, wa=-0.669975) ===
  w_c          chi2
@@ -9,15 +10,15 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
-0.118714    1009.4157   [651s]
-0.118914    1005.9239   [626s]
-0.119114    1003.7912   [525s]
-0.119314    1003.0124   [848s]
-0.119514    1003.5837   [486s]
-0.119714    1005.4185   [516s]
-0.119914    1008.6105   [639s]
-0.120114    1013.0939   [452s]
-0.120314    1018.8797   [558s]
+0.118714    1009.4157   [593s]
+0.118914    1005.9239   [521s]
+0.119114    1003.7912   [498s]
+0.119314    1003.0124   [808s]
+0.119514    1003.5837   [469s]
+0.119714    1005.4185   [491s]
+0.119914    1008.6105   [555s]
+0.120114    1013.0939   [433s]
+0.120314    1018.8797   [541s]
   parabola: w_c = 0.119334 +- 0.000246
   identidad KAL0*w_b*n_s = 0.119514  ->  0.73 sigma
 
@@ -31,15 +32,15 @@ Checking likelihood '/home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.
 ----
 before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
-0.119200    1008.8284   [675s]
-0.119400    1005.9943   [497s]
-0.119600    1004.4330   [463s]
-0.119800    1004.1454   [455s]
-0.120000    1005.1150   [468s]
-0.120200    1007.2851   [530s]
-0.120400    1010.7761   [533s]
-0.120600    1015.5318   [445s]
-0.120800    1021.5507   [568s]
+0.119200    1008.8284   [624s]
+0.119400    1005.9943   [454s]
+0.119600    1004.4330   [447s]
+0.119800    1004.1454   [442s]
+0.120000    1005.1150   [454s]
+0.120200    1007.2851   [511s]
+0.120400    1010.7761   [518s]
+0.120600    1015.5318   [429s]
+0.120800    1021.5507   [547s]
   parabola: w_c = 0.119748 +- 0.000252
 
 CONTROL (R53): sigma_SSEE / sigma_LCDM = 0.977

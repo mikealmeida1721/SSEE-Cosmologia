@@ -537,6 +537,15 @@ TATT/NLA) no cambia. `sondas_ssee_vs_lcdm.py` re-corrido contra esos logs: repro
 (diferencias ≤ 2e-6, SPT). Pendiente tras la cola: `dvc commit des_y3_tatt` sobre los logs del 09-28.
 Referencia ΛCDM libre = 514.893 (minimizado); 518.096 es el máximo de la cadena DES, no un mínimo.
 
+**CORREGIDO 2026-10-12/15.** Lo de arriba tenía dos fallas. (1) El minimizador corre con
+`max_posterior=T`: busca la posterior máxima (χ² de datos + prior), no el χ² de datos más bajo, así
+que «manda el χ² más bajo» no era el criterio. (2) El 516.108 del 09-28 no se puede reproducir: el
+log no tenía acta y su `.ini` lo sobrescribió la vuelta del 10-04. Ahora la etapa `des_y3_tatt` sólo
+EVALÚA los mejores puntos guardados, con el hash de cada `.ini` en el acta (a6adb85), y la
+minimización corre fuera de DVC. ΛCDM-Planck se volvió a minimizar hasta converger (`continua`,
+10-12/13): 517.290. Vigentes y reproducibles: SSEE **516.753**, ΛCDM-Planck **517.290**, ΛCDM libre
+**514.893** ⟹ Δχ² TATT = **−0.54** (era −1.18). El veredicto no cambia: empate.
+
 ## Cuarta lectura (2026-10-10) — re-sellar por DVC tras cola_1010
 Scripts tocados y re-corridos a mano (acta limpia, valores idénticos salvo lo nuevo):
 `resumen_3modelos` (τ, aceptación), `kids_publicados` (logA de las cadenas de KiDS-Legacy),
