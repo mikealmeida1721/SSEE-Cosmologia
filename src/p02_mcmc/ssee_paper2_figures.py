@@ -188,7 +188,7 @@ for j, c in enumerate(cnames):
 ax2.set_xticks(x_pos)
 ax2.set_xticklabels(cnames, fontsize=11)
 ax2.set_ylabel(r"Masa efectiva $[10^{14}\,M_\odot]$")
-ax2.set_title("Sensibilidad de masas de cúmulos por escenario SSEE")
+ax2.set_title("Cluster-mass sensitivity by SSEE scenario")
 ax2.legend(loc="upper left", ncol=2, framealpha=0.9)
 ax2.set_ylim(0, 17)
 
@@ -343,7 +343,7 @@ ax4a.axvspan(1.0, 1e2,  alpha=0.06, color="#2166AC",  label="Newtonian")
 
 ax4a.set_xlabel(r"$x = |\nabla\Phi| / a_0$")
 ax4a.set_ylabel(r"$\mathrm{KAL}(x)$")
-ax4a.set_title(r"Retención estructural $\mathrm{KAL}(x)$ — SSEE")
+ax4a.set_title(r"Structural retention $\mathrm{KAL}(x)$ — SSEE")
 ax4a.set_ylim(0.8, KAL0 + 0.5)
 ax4a.legend(fontsize=9, loc="center right")
 
@@ -356,7 +356,7 @@ ax4b.axvline(1.0, color="black", ls="-.", lw=0.8, alpha=0.5)
 
 ax4b.set_xlabel(r"$x = |\nabla\Phi| / a_0$")
 ax4b.set_ylabel(r"$\mu(x)$")
-ax4b.set_title(r"$\mu_\mathrm{SSEE}$ vs $\mu_\mathrm{MOND}$ — dualidad asimétrica")
+ax4b.set_title(r"$\mu_\mathrm{SSEE}$ vs $\mu_\mathrm{MOND}$ — asymmetric duality")
 ax4b.set_ylim(-0.05, 1.15)
 ax4b.legend(fontsize=10)
 

@@ -341,7 +341,7 @@ def plot_peak_zoom(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
         ax.grid(True, alpha=0.3)
 
     axes[0].set_ylabel(r"$D_\ell^{TT}$ [$\mu$K$^2$]")
-    plt.suptitle("SSEE: Zoom en Picos Acústicos vs Planck 2018", fontsize=13)
+    plt.suptitle("SSEE: acoustic-peak zoom vs Planck 2018", fontsize=13)
     plt.tight_layout()
     out = os.path.join(FIG_DIR, "fig_cmb_peaks_zoom.pdf")
     plt.savefig(out, bbox_inches="tight")
