@@ -984,7 +984,11 @@ combined with DESI~DR2 BAO and $f\sigma_8$, sampling $\wz,\wa$ \emph{freely}
 Gelman--Rubin $R-1=\val{mf_rminus1}$ across the four chains).
 The free-fit posterior $(\wz,\wa)=(\val{mf_w_media},\val{mf_wa_media})$ \emph{excludes} the cosmological
 constant $(-1,0)$ at $\val{mf_w0wa_lcdm}\sigma$, independently confirming a dynamical equation of
-state; under this uncompressed likelihood $H_0$ relaxes to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$. The
+state. Parameter by parameter, the tightly constrained combinations $\omega_b$, $\omega_c$ and
+$r_{\rm drag}$ are recovered at $\val{mf_ombh2_tens}\sigma$, $\val{mf_omch2_tens}\sigma$ and $\val{mf_rdrag_tens}\sigma$ from the algebraic values,
+while the remaining ones sit further away: $H_0$ relaxes to $\val{mf_H0_media}\pm\val{mf_H0_sigma}$
+($\val{mf_H0_tens}\sigma$ below $H_0^{\rm glob}$), $\Omega_m$ to $\val{mf_omegam_media}\pm\val{mf_omegam_sigma}$ ($\val{mf_omegam_tens}\sigma$), and the marginal
+$\wz$ and $\wa$ lie $\val{mf_w_tens}\sigma$ and $\val{mf_wa_tens}\sigma$ from $(\val{W0_d3},\val{WA_d3})$. The
 \SSEE\ algebraic point $(\val{W0_d3},\val{WA_d3})$ lies at $\val{mf_w0wa_ssee}\sigma$ from this posterior
 --- more than twice closer than $\Lambda$CDM (Fig.~\ref{fig:degeneracy}).
 The $\wz$--$\wa$ posterior is strongly anticorrelated ($\rho=\val{p2_rho_w0wa_full}$) and \SSEE\ falls
@@ -1217,7 +1221,9 @@ are $(\val{sd_ztrunc_w0},\val{sd_ztrunc_wa})$, negligible corrections.
 With $B=\val{p2_B_sddr}$ ($\ln B=\val{p2_lnB_signo}$) the evidence for the SSEE dynamic sector
 within the CPL framework sits at the threshold of ``strong'' on Jeffreys' original
 scale ($B>10$; \citealt{Jeffreys1961}) and is ``weak'' on the stricter scale of
-\citet{Trotta2008} ($1<\ln B<2.5$); we read it as positive, not decisive.  The CPL posterior median
+\citet{Trotta2008} ($1<\ln B<2.5$); we read it as positive, not decisive. Unlike the BIC, which uses the likelihood alone, $B$ depends on
+the prior: it scales inversely with the prior density at the \SSEE\ point, so wider priors on $(w_0,w_a)$
+raise it and narrower ones lower it. This is why the model comparison above rests on the BIC.  The CPL posterior median
 $(w_0^{\rm CPL}=\val{p2_cpl_w0_mediana}\pm\val{p2_cpl_w0_std},\;w_a^{\rm CPL}=\val{p2_cpl_wa_mediana}\pm\val{p2_cpl_wa_std})$ places
 the SSEE algebraic point at $(\val{p2_dist_w0}\sigma,\val{p2_dist_wa}\sigma)$, consistent with
 the $\val{p2_w0wa_ssee_ec26}\sigma$ joint tension quoted in Section~\ref{sec:w0wa}.
