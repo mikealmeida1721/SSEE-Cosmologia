@@ -601,7 +601,7 @@ SSEE. With nothing free ($k=0$) the preference grows (text).}
 \label{tab:modelcomp}
 \begin{tabular}{lccccc}
 \toprule
-Model & $k$ & $\ln P_{\rm MAP}$ & BIC & $\Delta$BIC & $\Delta$AIC \\
+Model & $k$ & $\ln L_{\max}$ & BIC & $\Delta$BIC & $\Delta$AIC \\
 \midrule
 SSEE          & 2 & $\val{p2_lnP_ssee}$ & $\val{p2_BIC_ssee}$ & $0.00$  & $0.00$  \\
 $\Lambda$CDM  & 3 & $\val{p2_lnP_lcdm}$ & $\val{p2_BIC_lcdm}$ & $\val{p2_dBIC_lcdm_mas}$ & $\val{p2_dAIC_lcdm_mas}$ \\
@@ -850,7 +850,7 @@ run is not a version of the model and the comparison is withdrawn.
 
 The same linear EFT predicts the growth of structure, and here we report the
 situation honestly, including a correction to what earlier versions of this document reported. With the Poisson source evaluated at the CMB-calibrated density $\Om^{\mathrm{cosm}}=\val{OMEGA_M_TOTAL_d6}$ ($\omega_m$-direct, the model's single matter density), the growth factor is essentially that of $\Lambda$CDM,
-$G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=\val{p5_G}\pm0.005$, and the
+$G\equiv D_1^{\rm SSEE}/D_1^{\Lambda\rm CDM}=\val{p5_G}$, and the
 single-sector amplitude ceiling (CLASS forward) is
 \begin{equation}
   \label{eq:s8}
@@ -860,7 +860,7 @@ single-sector amplitude ceiling (CLASS forward) is
 % ellos sobra un 2.3% de grumo. Re-corrido con config/class/techo_ssee_canonico.ini;
 % control con criterio previo (baseline Planck debe dar 0.8111+/-0.006) da 0.810851.
 % Log: results/logs/p5_techo_sigma8_As_fijo.json
-  \sigma_8=\val{p3_sigma8_techo}\pm0.006 , \qquad S_8=\val{p3_S8_techo}
+  \sigma_8=\val{p3_sigma8_techo} , \qquad S_8=\val{p3_S8_techo}
 \end{equation}
 when the primordial amplitude $A_s$ is held at the Planck-preferred value.
 That configuration was previously reported as a $3.5\sigma$ tension with
