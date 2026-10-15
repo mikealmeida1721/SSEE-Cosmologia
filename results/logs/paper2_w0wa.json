@@ -42,7 +42,7 @@
   }
  },
  "_procedencia": {
-  "commit": "21d754517d45b0aeb521b6e266a5aa81a6d960ce",
+  "commit": "6eaf0f499ba9ed4883f4f9ae0356349affb6297d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_paper2_analysis.py",
@@ -52,7 +52,7 @@
   "argv": [
    "src/p02_mcmc/ssee_paper2_analysis.py"
   ],
-  "fecha": "2026-10-03T05:34:28",
+  "fecha": "2026-10-15T18:01:02",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -60,7 +60,7 @@
    "scipy": "1.17.1"
   },
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

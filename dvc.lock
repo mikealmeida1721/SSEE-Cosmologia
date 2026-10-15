@@ -619,8 +619,8 @@ stages:
       size: 1083
     - path: src/p03_cmb/ssee_paper3_cmb.py
       hash: md5
-      md5: dbe64cfb3f8e25b3aa326e9702171973
-      size: 20544
+      md5: 970d367f7d2ed8d7429acc3f5053b55b
+      size: 20538
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -632,11 +632,11 @@ stages:
     outs:
     - path: results/logs/paper3_cmb_chi2.json
       hash: md5
-      md5: 0b96cab184256e7135861e79a3d46752
+      md5: b095f63d879569c83f8668a5bd74f450
       size: 2176
     - path: results/logs/paper3_cmb_reframe.log
       hash: md5
-      md5: 1a9de9f0a1d526f5d1b474a07923da09
+      md5: 86dff88591f48210726271c5981b8edf
       size: 3331
   lya_auditoria:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1297,12 +1297,12 @@ stages:
     outs:
     - path: results/logs/paper2_analysis.log
       hash: md5
-      md5: 1325c82357d183745677d63a1e06ec1b
-      size: 6139
+      md5: 6725b60c3097361857a1712178cb8736
+      size: 6140
     - path: results/logs/paper2_w0wa.json
       hash: md5
-      md5: 1327f36fbb7dc8ad2b1240ddc4e715f6
-      size: 1949
+      md5: d276c4b16bc40f500fb09792af1a30e4
+      size: 1950
   fsigma8_canonico:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p03_cmb/recalc_fsigma8_canonical.py
@@ -1343,8 +1343,8 @@ stages:
       size: 809
     - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
       hash: md5
-      md5: 70c46a37f87d44fa318abbd341e6a9f8
-      size: 2279
+      md5: 2b8e5f705e86aa54f5dd5e7b1f428b18
+      size: 10636
     - path: src/p06_growth/analiza_boss_R1R2.py
       hash: md5
       md5: ed3d552860d48719259964e197abc61c
@@ -1364,12 +1364,12 @@ stages:
     outs:
     - path: results/logs/analiza_boss_R1R2.log
       hash: md5
-      md5: e25a830d2fb2c8446df32f858ebc5736
-      size: 1702
+      md5: 70a8494ffac084a05cb26f6896a41bce
+      size: 1504
     - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
       hash: md5
-      md5: 667868b20ed6c8696917ac54b95a45bd
-      size: 4420
+      md5: 8b67d50800acab28c90498a75eeeff13
+      size: 4424
   multisonda_fondo_clavado:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/multisonda_fondo_clavado.py
@@ -2580,7 +2580,7 @@ stages:
     deps:
     - path: results/logs/h0_por_metodos.json
       hash: md5
-      md5: dbc8114bbb730b616b89ba64fe6590ee
+      md5: beb9b092f496915e1bee98f440eefa1e
       size: 9674
     - path: src/p09_hubble/ssee_paper9_figures.py
       hash: md5
@@ -2597,15 +2597,15 @@ stages:
     outs:
     - path: results/figures/fig_paper9_h0_tension.pdf
       hash: md5
-      md5: d5a5c247527afc874902a3cc3415063f
+      md5: 65219b28014feb7deec8983a9fa0b93e
       size: 27417
     - path: results/figures/fig_paper9_h0_tension.png
       hash: md5
-      md5: 9302dbd84bfba1161e7620ee755bd3ed
+      md5: 34d96fa73ff6fbce2209a381f4f888f6
       size: 95420
     - path: results/logs/p9_cascada_control.json
       hash: md5
-      md5: 32715c8b9efec7484633bdfddbff5a5e
+      md5: 33b9fc01a3cf3c72758de96b36e786a3
       size: 1860
   reframe_obh2:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
