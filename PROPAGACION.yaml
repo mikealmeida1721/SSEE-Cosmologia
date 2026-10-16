@@ -219,10 +219,8 @@ historicos:
   #    son fuente de ningun numero vigente. Se conservan como registro; si
   #    algun dia hicieran falta, se rehacen con script (como R3 y el ajuste
   #    conjunto w_c,n_s), no se citan.
-  - particula_que_prefiere_kids    # particula: retirada 2026-08-01
   - cmb_ns_forzado                 # 01d4369, sin script
   - cmb_wb_forzado                 # 01d4369, sin script
-  - cmb_tau_flotado                # 01d4369, marcado «NO USAR» (EoS clavada, R64)
   - cmb_ajuste_conjunto_wc_ns      # 01d4369, sin script; REHECHO con script en cmb_ajuste_conjunto_wc_ns_{SSEE,LCDM}
   - R1R2_boss_lpt_cobaya           # sin script; el R1R2 vigente es R1R2_boss_lpt_kmax0.200 (boss_lpt_R1R2.py)
   # ── Control de memory_sync (2026-09-30): LISTA valores retirados a proposito
@@ -233,8 +231,6 @@ historicos:
   #    del corte queda congelado: no se re-corre, se conserva como registro
   #    de que la cadena continuo y no empezo de cero.
   # ── Retirados 2026-09-07 — su script está en archive/, no se re-corren ──
-  - mcmc_paper2_3models_om308
-  - mcmc_professional
                           # por b1_full_run convergido a R−1=0.017 (2026-07-27)
 
 # Figuras REGENERADAS y verificadas byte-idénticas al PDF ya commiteado: el
@@ -398,7 +394,7 @@ bitacoras:
   - cola_r35_1001
   - cola_rapidas
   - cola_tras_boss
-  - lcdm_conjunta_cola
+  - cola_lcdm_conjunta              # 2026-10-16: renombrada (era lcdm_conjunta_cola), prefijo de orquestación
   - vigilante_conjunta
   # 2026-10-16: colas de las pasadas de re-sellado R75 y de la tanda pesada (10-03…10-16)
   - cola_1010

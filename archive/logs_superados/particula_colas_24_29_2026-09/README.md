@@ -17,7 +17,8 @@ del modelo sin partícula): la partícula quedó **innecesaria** (ver banner de 
 | `precio_cmb_rejilla_extendida.json` / `.log` | cola #29: ABORTADA (su control de la base no cerró; nada que leer) |
 | `pinza_conjunta.py` | combinación KiDS+CMB de la #24 y la #25 |
 
-**Lo que se queda en `src/`, a propósito:** `particula_que_prefiere_kids.py` (+ su json) lo
+**Lo que se queda en `src/`, a propósito:** `particula_que_prefiere_kids.py` (su json llegó
+aquí el 2026-10-16: nadie lo lee; el script, sin salida viva, sólo documenta la traducción) lo
 nombran los docstrings de `cmb_eval.py` y `kids_shear.py`, que son dependencias de muchas
 etapas; editarlos invalidaría sus actas. `conjunta_tres_sondas.py` (+ json) es entrada de
 `base_sin_particula.py`, cuya casilla `om_x = 0` (χ² BOSS 198.07) cita Paper 6.
@@ -25,6 +26,7 @@ etapas; editarlos invalidaría sus actas. `conjunta_tres_sondas.py` (+ json) es 
 
 **Archivos de esta carpeta** (lista exacta, la que comprueba R77):
 - `boss_con_particula.py`
+- `particula_que_prefiere_kids.json`
 - `pinza_conjunta.py`
 - `precio_cmb_de_la_particula.json`
 - `precio_cmb_de_la_particula.py`

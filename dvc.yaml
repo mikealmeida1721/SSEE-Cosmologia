@@ -1689,7 +1689,7 @@ stages:
         cache: false
   # ── LCDM conjunta: las MINIMIZACIONES (2026-10-04). Cuestan de horas a dias
   # (la conjunta: 30-sep -> 4-oct, 1 nucleo). Se corrieron FUERA de dvc en la
-  # cola (lcdm_conjunta_cola.log) con el codigo de minimiza() de 42feaac, que no
+  # cola (cola_lcdm_conjunta.log; antes lcdm_conjunta_cola.log) con el codigo de minimiza() de 42feaac, que no
   # ha cambiado (R35 poda por camino lo vigila); se registraron con `dvc commit`
   # y su acta con procedencia_sella, el mismo precedente que cmb_ns/wb_forzado.
   # Re-correr una: dvc repro -s -f lcdm_conjunta_min_<modo>.

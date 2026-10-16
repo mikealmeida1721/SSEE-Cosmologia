@@ -80,7 +80,7 @@ LO QUE ESTA CORRIDA NO HACE
   KiDS, y eso se cruza después con lo que Planck permite.
 - NINGUNA cifra entra en ningún paper.
 
-FUENTE: results/logs/growth_2026-07/particula_que_prefiere_kids.json
+FUENTE: archive/logs_superados/particula_colas_24_29_2026-09/particula_que_prefiere_kids.json (archivada 2026-10-16)
 """
 import json
 import multiprocessing as mp

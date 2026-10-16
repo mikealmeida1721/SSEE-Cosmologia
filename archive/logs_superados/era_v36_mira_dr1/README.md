@@ -16,9 +16,9 @@ H₀ 67.82±0.41), CMB de P3 (`paper3_cmb_chi2.json`, ΔBIC diagonal −35.03) y
 | `paper3_cmb_canonical.log`, `p3_pr4_diag_nu_fix.log`, `p3_cmb_reframe_nu_fix.log`, `p3_rd_reframe_nu_fix.log` | P3 de julio («PR4», que era PR3; ΔBIC −24.02 con A_s/τ prestados; r_d por fórmula). Reemplazos: `paper3_cmb_chi2.json`, `cmb_dbic_tau_ajustado.json`, `rd_dual.json` |
 | `b1_mcmc_reframe.log` | B1 «fast» del 2026-06-20, cortado a 150 358 pasos |
 
-`mcmc_paper2_3models_om308.log` se queda en `results/logs/` porque lo nombra un comentario
-de `CANONICAL_VALUES.yaml`; editarlo re-sella ~30 etapas. Se archiva con el próximo cambio
-físico de ese archivo.
+`mcmc_paper2_3models_om308.log` (3 modelos con Ω_m congelado en E(z), 2026-07-09; da el
+ΔBIC 5.68 ya superado) llegó aquí el 2026-10-16. `CANONICAL_VALUES.yaml` lo nombra sólo como
+historia, sin ruta; el vigente es `resumen_3modelos.json`.
 
 **Archivos de esta carpeta** (lista exacta, la que comprueba R77):
 - `b1_mcmc_reframe.log`
@@ -26,13 +26,14 @@ físico de ese archivo.
 - `lcdm_baseline_om308.log`
 - `mcmc_om320_run.log`
 - `mcmc_paper2_3models_dr2.log`
+- `mcmc_paper2_3models_om308.log`
 - `mcmc_paper2_mira.log`
 - `mcmc_paper2_reframe_dr2.log`
 - `mcmc_paper2_reframe_om308.log`
 - `mcmc_professional2.log`
-- `mcmc_run_20260420.txt`
-- `mcmc_run2.log`
 - `mcmc_run.log`
+- `mcmc_run2.log`
+- `mcmc_run_20260420.txt`
 - `p3_cmb_reframe_nu_fix.log`
 - `p3_pr4_diag_nu_fix.log`
 - `p3_rd_reframe_nu_fix.log`
