@@ -7627,6 +7627,58 @@ try:
 except Exception as _e:            # noqa: BLE001
     check("R77 la capa de archivo declarado corrió", False, f"excepción: {_e}", nivel=5)
 
+print("\nCapa R78 — el presupuesto de postulados se dice igual en todos los documentos")
+# POR QUÉ EXISTE (2026-10-16). Paper 1 contaba «three postulates in total» (D, S, I)
+# mientras Paper 9 declara postulado la FORMA multiplicativa de la lente
+# (H_local = H_glob/(1-f)), que el propio enunciado de D usaba sin contarla. Un
+# árbitro que leyera P9 encontraba un cuarto supuesto que P1 no tenía. Además
+# dos nombres sumaban supuestos que no lo son: «Postulate~P» en P9 era una
+# comprobación, y la «Conjecture B.1» de P4 es el Postulado I con la ventana.
+# Cuenta vigente: D, S (fundacionales) + I, F (auxiliares) = cuatro; C.1 de P10
+# queda FUERA del presupuesto porque lo que depende de ella va marcado condicional.
+import re as _re78
+try:
+    _REPO78 = ROOT.parent
+    _VIEJOS78 = [
+        _re78.compile(r"\b(three|two)\s+(register-level\s+)?postulates\s+(in\s+total|\(D,\s*S,\s*I\))", _re78.I),
+        _re78.compile(r"three\s+total,\s+all\s*dimensionless", _re78.I),
+        _re78.compile(r"\\section\{Postulate~?P\b"),
+        _re78.compile(r"plus\s+one\s+auxiliary\s+register-level\s+postulate", _re78.I),
+    ]
+    _NUEVO78 = [
+        _re78.compile(r"\\textbf\{four\s+postulates\s+in\s+total\}"),
+        _re78.compile(r"four\s+register-level\s+postulates\s*\(D,\s*S,\s*I,\s*F\)"),
+        _re78.compile(r"Postulate~F\s+\(Form of the screening\)"),
+    ]
+
+    def _conteo78(_textos, _p1):
+        """-> lista de hallazgos: conteo viejo en cualquier doc, o P1 sin el vigente."""
+        _out = []
+        for _n, _t in _textos.items():
+            for _rx in _VIEJOS78:
+                for _m in _rx.finditer(_t):
+                    _out.append(f"{_n}: «{_m.group(0)}»")
+        for _rx in _NUEVO78:
+            if not _rx.search(_p1):
+                _out.append(f"P1 sin «{_rx.pattern[:40]}»")
+        return _out
+
+    _docs78 = sorted((_REPO78 / "manuscript").glob("*.tex")) + [_REPO78 / "submission_PRD" / "SSEE_PRD.tex"]
+    _txt78 = {_p.name: _p.read_text(errors="ignore") for _p in _docs78 if _p.exists()}
+    _p1_78 = _txt78.get("SSEE_Paper1_Framework.tex", "")
+    _hall78 = _conteo78(_txt78, _p1_78)
+    check("R78 el conteo de postulados es el mismo en todos los documentos (D, S, I, F; C.1 condicional)",
+          not _hall78 and len(_txt78) > 10,
+          "; ".join(_hall78[:4]) if _hall78 else f"{len(_txt78)} documentos, conteo único")
+    # Control (R53): el conteo viejo se marca; el vigente pasa.
+    _malo78 = _conteo78({"x.tex": "made precise by \\textbf{three postulates in total}"}, _p1_78)
+    _bueno78 = _conteo78({"x.tex": "made precise by \\textbf{four postulates in total}"}, _p1_78)
+    check("R78 el detector marca el conteo viejo y deja pasar el vigente",
+          len(_malo78) == 1 + len(_hall78) and _bueno78 == _hall78,
+          "2 casos: «three postulates in total» marcado; «four» limpio")
+except Exception as _e:            # noqa: BLE001
+    check("R78 la capa de conteo de postulados corrió", False, f"excepción: {_e}")
+
 print("\nCapa R72 — ninguna saturación ocupa ranura de densidad en los MANUSCRITOS")
 # Por qué existe. R52/R52b vigilan lo mismo pero SÓLO en código .py. El error de
 # categoría vive igual —y más tiempo— en los .tex, donde nadie lo ejecuta:

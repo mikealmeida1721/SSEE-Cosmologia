@@ -63,7 +63,7 @@ QUÉ AFIRMA EL MODELO (para que sepas qué atacar, NO para que lo aceptes):
 - Diccionario regido por una LEY DE CARGA conservada (q(φ)=+1, q(π)=−1) + reglas de copia /
   no-auto-suma / Ω-once, en 4 capas (Postulados/Leyes/Restricciones/Teoremas). Zenodo
   concept DOI 10.5281/zenodo.20684908 (v1.4).
-- Se declara "minimal-parameter" (NO "cero parámetros"), con 3 postulados (D,S,I) y
+- Se declara "minimal-parameter" (NO "cero parámetros"), con 4 postulados (D,S,I,F; F = forma multiplicativa de la lente, P9; C.1 de P10 condicional, fuera del conteo) y
   problemas abiertos OP-1..OP-19 rastreados explícitamente.
 - Usa un sistema algebraico de nombres ("genesis"/linaje: KAL, AURA, KRYSTOS_V=φ+π+Ω, etc.).
 
@@ -122,7 +122,7 @@ QUÉ AFIRMA EL MODELO (para saber qué atacar, NO para aceptarlo):
   ~~Extensión φ-DM: m_φ=40.70 eV y Ω_φDM=0.14889 = predicciones FORWARD (no libres; el MCMC de
   Paper 6 que las flota es test de consistencia, 0.24σ), k_fs=0.754 h/Mpc (forward pre-registrado),
   S₈=0.758 (0.04σ KiDS).~~ **RETIRADO 2026-08-01.**
-  "Minimal-parameter", 3 postulados (D,S,I), OP-1..OP-19 declarados.
+  "Minimal-parameter", 4 postulados (D,S,I,F; F = forma multiplicativa de la lente, P9; C.1 de P10 condicional, fuera del conteo), OP-1..OP-19 declarados.
 - Diccionario cerrado de constantes: 55 nombres / 25 valores / 490 razones, regido por ley de
   carga q(φ)=+1,q(π)=−1 + copia/no-auto-suma/Ω-once; look-elsewhere w₀,wₐ = 1 de 490 a ±0.0005
   (identidades exactas |d|=0); competidor wₐ (SOLAR/NYX) declarado abiertamente. Repo del
@@ -206,7 +206,7 @@ QUÉ AFIRMA EL MODELO (para saber qué juzgar, NO para aceptarlo):
 - ~~Extensión φ-DM: m_φ=40.70 eV y Ω_φDM=0.14889 son predicciones FORWARD (no libres);
   predicción pre-registrada FALSABLE k_fs=0.754 h/Mpc (dato aún no medido: DESI Y3/Euclid);
   S8=0.758 (0.04σ KiDS).~~ **RETIRADO 2026-08-01** — ver el aviso de arriba.
-- "Minimal-parameter framework", 3 postulados (D,S,I), problemas abiertos OP-1..OP-19
+- "Minimal-parameter framework", 4 postulados (D,S,I,F; F = forma multiplicativa de la lente, P9; C.1 de P10 condicional, fuera del conteo), problemas abiertos OP-1..OP-19
   DECLARADOS explícitamente. Diccionario algebraico cerrado (55 nombres/25 valores/490
   razones); look-elsewhere w0,wa = 1 de 490 a ±0.0005 (identidades exactas), con el único
   competidor near-miss (wa) declarado abiertamente.

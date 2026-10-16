@@ -571,6 +571,17 @@ REGLAS = {
                    "- `SSEE_Paper2_MCMC_Validation_v1.pdf` — llegó en",
                    "- (entrada borrada) — llegó en")],
     ),
+    "R78": dict(
+        capa="R78 — el presupuesto de postulados se dice igual en todos los documentos",
+        intencion="conteo-postulados-unico",
+        ambito="manuscript/*.tex y submission_PRD/SSEE_PRD.tex",
+        archivo="manuscript/SSEE_Paper1_Framework.tex",
+        exenciones=[],
+        # P1 contaba tres (D, S, I) mientras P9 postula la forma de la lente (2026-10-16).
+        mutacion=[("el conteo de postulados vuelve a tres en Paper 1",
+                   "\\textbf{four postulates in total}",
+                   "\\textbf{three postulates in total}")],
+    ),
     "R59": dict(
         capa="R59 — ninguna ruta de script citada en la prosa apunta al vacío",
         intencion="ruta-viva",

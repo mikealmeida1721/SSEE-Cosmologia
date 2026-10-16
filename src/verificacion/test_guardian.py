@@ -58,6 +58,15 @@ def perturbed(relpath, transform):
 
 def expect_red(name, relpath, transform, must_contain):
     global _passed, _failed
+    # Ancla perdida (2026-10-16): R29 y R30 inyectaban sobre literales que el PRD
+    # ya había pasado a \val; el reemplazo no cambiaba nada, el guardián daba
+    # VERDE con razón y la prueba fallaba sin decir por qué. Un caso que no
+    # inyecta nada no prueba nada: se marca como tal.
+    _txt = (REPO / relpath).read_text(encoding="utf-8", errors="ignore")
+    if transform(_txt) == _txt:
+        print(f"  [FALLA] {name}\n        ancla perdida: la inyección no cambia {relpath}")
+        _failed += 1
+        return
     with perturbed(relpath, transform):
         rc, out = run_guardian()
     low = out
@@ -252,8 +261,8 @@ expect_red("R28 espejo: la copia del repo deriva del diccionario citable → ROJ
 # —copiada y nunca verificada— la tabla mentiría justo donde promete transparencia.
 expect_red("R29 notación: la reducción en φ,π no da el valor de su fila → ROJO",
            "submission_PRD/SSEE_PRD.tex",
-           lambda t: t.replace(r"$2(\varphi+\pi)$            & $9.519253$",
-                               r"$2(\varphi+3\pi)$           & $9.519253$", 1),
+           lambda t: t.replace(r"$2(\varphi+\pi)$            & $\val{K_V_d6}$",
+                               r"$2(\varphi+3\pi)$           & $\val{K_V_d6}$", 1),
            ["R29", "ROJO"])
 
 expect_red("R29 notación: la tabla del PRD llama IGNIS a K_v → ROJO",
@@ -267,8 +276,8 @@ expect_red("R29 notación: la tabla del PRD llama IGNIS a K_v → ROJO",
 # el umbral: 0.30889 dista 9.1e-6 de 0.308881, más de 5e-6.
 expect_red("R30 redondeo: Ω_m mostrado ≠ redondeo correcto del exacto → ROJO",
            "submission_PRD/SSEE_PRD.tex",
-           lambda t: t.replace(r"\omega_m/h^2\n        \;=\;", "XX", 1).replace(
-               "0.308881", "0.30889", 1),
+           lambda t: t.replace(r"single matter density $\Omega_m=\omega_m/h^2=\val{OMEGA_M_TOTAL_d6}$",
+                               r"single matter density $\Omega_m=\omega_m/h^2=0.30889$", 1),
            ["R30", "ROJO"])
 
 # R30b — falsa precisión: una constante MEDIDA rellenada hasta el techo de 6

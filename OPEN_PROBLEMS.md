@@ -3047,6 +3047,11 @@ ese paso usaba la identidad falsa 1+w₀ = Ω_m. Desde el 2026-10-03 Paper 9 la 
 postulado (`eq:screen_postulate`). La variante aditiva difiere en f²·H ≈ 0.31 km/s/Mpc,
 por debajo de la incertidumbre actual de SH0ES.
 
+**En el presupuesto (2026-10-16).** Paper 1 la cuenta ahora como **Postulado F** (forma de la
+lente): D, S, I, F = cuatro postulados; la Conjecture C.1 de Paper 10 (OP-3) queda fuera del
+conteo porque lo que depende de ella va marcado condicional. Antes P1 decía «three» mientras
+D ya usaba la forma sin contarla. Guardián **R78** vigila que el conteo sea uno en todos los documentos.
+
 **Lo que falta.** Un mecanismo que dé la forma desde la acción de Paper 7. El viejo paso
 también tomaba δ_local = 2 (sobredensidad del Grupo Local) como insumo observacional y
 una expresión de δρ_φ asertada, no derivada.
