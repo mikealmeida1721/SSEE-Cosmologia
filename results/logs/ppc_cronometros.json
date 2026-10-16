@@ -65,7 +65,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "6d1a9c7c647fb8849f648fe44ae7351bb03dd447",
+  "commit": "dbc913ad143997d7bb9c676dfed28df66e13b40b",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ppc_cronometros.py",
@@ -74,12 +74,12 @@
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "bcf5ad5fa07dba371d36956466f8450b577410b9f0e681ff76f2de2c3d568b29",
    "data/raw/cosmic_chronometers.csv": "057781c6683bc5c75b5df730c58e7c46f59aea8b5d0fbb0baa00fd2146b0137c",
-   "results/logs/mcmc_paper2_3models_wmfix.log": "e11c0ac71724ca9e8f66b3382c570de9e798a566003c4b0258eac590d273772a"
+   "results/logs/mcmc_paper2_3models_wmfix.log": "ef195f89405a51367e3cfa4a334e4cccc0c898090c9beacb4303633d05e4066b"
   },
   "argv": [
    "src/p02_mcmc/ppc_cronometros.py"
   ],
-  "fecha": "2026-10-11T18:01:15",
+  "fecha": "2026-10-16T12:10:23",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

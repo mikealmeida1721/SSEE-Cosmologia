@@ -361,6 +361,31 @@ stages:
     outs:
     - results/logs/hiclass_campo.json:
         cache: false
+  # ── MCMC de Paper 2, los tres modelos (2026-10-16). Cuesta ~2 h (1 núcleo). Se corrió
+  # FUERA de dvc el 2026-10-11 (16:00-17:54) con ssee_paper2_mcmc.py de a7fb5c9, que no ha
+  # cambiado; se registró con `dvc commit` y su acta con procedencia_sella, el mismo
+  # precedente que lcdm_conjunta_min_* y cmb_ns/wb_forzado. El script AÑADE a
+  # mcmc_professional.log; por eso se borra antes y se renombra después: la salida es la
+  # transcripción de UNA corrida (la del 11-10, byte a byte; la bitácora acumulada de ese
+  # día está en archive/logs_superados/p2_mcmc_bitacora_2026-10-11/).
+  # Re-correr: dvc repro -s -f mcmc_paper2_3models.
+  mcmc_paper2_3models:
+    cmd: rm -f results/logs/mcmc_professional.log
+      && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc.py
+      && mv results/logs/mcmc_professional.log results/logs/mcmc_paper2_3models_wmfix.log
+      && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/ssee_paper2_mcmc.py results/logs/mcmc_paper2_3models_wmfix.log
+    deps:
+    - src/p02_mcmc/ssee_paper2_mcmc.py
+    - src/ssee_core.py
+    - src/rd_camb.py
+    - src/desi_dr2_data.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - data/raw/desi_dr2_bao.csv
+    - data/raw/cosmic_chronometers.csv
+    outs:
+    - results/logs/mcmc_paper2_3models_wmfix.log:
+        cache: false
   resumen_3modelos:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p02_mcmc/resumen_3modelos.py

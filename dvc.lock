@@ -239,7 +239,7 @@ stages:
       size: 1305
     - path: results/logs/p2_ssee_fijo_k0.json
       hash: md5
-      md5: 3638df07b332e3126730c854e7ef9c87
+      md5: 088e89242960052676ef05fdf6e214bb
       size: 2793
     - path: results/logs/p3_rd_reframe_omega_m.json
       hash: md5
@@ -299,7 +299,7 @@ stages:
       size: 4021
     - path: results/logs/ppc_cronometros.json
       hash: md5
-      md5: d500dc1a54166f192c09b2ec1b9ce80e
+      md5: 0053815aacc39562ea5a2160ea384ad9
       size: 2830
     - path: results/logs/press_schechter.json
       hash: md5
@@ -311,7 +311,7 @@ stages:
       size: 2446
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 41b5c664b2cf086f30aa3e52766b329e
+      md5: 1190739c3c8ca04ea6bb2543e4932b67
       size: 4779
     - path: results/logs/s8_desde_b1.json
       hash: md5
@@ -336,7 +336,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 8ad0ebc86ddb4e92c394f4628209b550
+      md5: 6743e6bb1a5218f9c07f071774ec89b8
       size: 125759
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -698,8 +698,8 @@ stages:
       size: 260001506
     - path: results/logs/mcmc_paper2_3models_wmfix.log
       hash: md5
-      md5: eabe024f6d0980fab7da8fbf6882578a
-      size: 11579
+      md5: 8cefd62b5e5c1ae47b94319d15d48ce4
+      size: 12297
     - path: src/desi_dr2_data.py
       hash: md5
       md5: f99d77b763872407c2b2126980e46e22
@@ -715,7 +715,7 @@ stages:
     outs:
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 41b5c664b2cf086f30aa3e52766b329e
+      md5: 1190739c3c8ca04ea6bb2543e4932b67
       size: 4779
   savage_cv:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -2260,8 +2260,8 @@ stages:
       size: 1413
     - path: results/logs/mcmc_paper2_3models_wmfix.log
       hash: md5
-      md5: eabe024f6d0980fab7da8fbf6882578a
-      size: 11579
+      md5: 8cefd62b5e5c1ae47b94319d15d48ce4
+      size: 12297
     - path: src/p02_mcmc/ppc_cronometros.py
       hash: md5
       md5: cd56f49409aa10c4aa7c24b4b8fd845f
@@ -2277,11 +2277,11 @@ stages:
     outs:
     - path: manuscript/tabla_cronometros_generada.tex
       hash: md5
-      md5: 6895bf650eb21f451ebf40e50b0ff181
+      md5: 55dc59548c2ed7b6379bccb0485c7405
       size: 1639
     - path: results/logs/ppc_cronometros.json
       hash: md5
-      md5: d500dc1a54166f192c09b2ec1b9ce80e
+      md5: 0053815aacc39562ea5a2160ea384ad9
       size: 2830
   p2_fig7_fig8:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -5407,7 +5407,7 @@ stages:
       size: 260001506
     - path: results/logs/resumen_3modelos.json
       hash: md5
-      md5: 41b5c664b2cf086f30aa3e52766b329e
+      md5: 1190739c3c8ca04ea6bb2543e4932b67
       size: 4779
     - path: src/desi_dr2_data.py
       hash: md5
@@ -5432,11 +5432,11 @@ stages:
     outs:
     - path: results/logs/p2_ssee_fijo_k0.json
       hash: md5
-      md5: 3638df07b332e3126730c854e7ef9c87
+      md5: 088e89242960052676ef05fdf6e214bb
       size: 2793
     - path: results/logs/p2_ssee_fijo_k0.log
       hash: md5
-      md5: fa5076caa4de515ea3d4fa597ea465c8
+      md5: 7c6094b3da90152b61929badb4f9aa17
       size: 1523
   p10_barrido_M4:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/barrido_M4.py
@@ -5590,3 +5590,48 @@ stages:
       hash: md5
       md5: 320dfc18ea8d855f15495c65299d7824
       size: 2122
+  mcmc_paper2_3models:
+    cmd: rm -f results/logs/mcmc_professional.log && OMP_NUM_THREADS=1 nice -n 
+      10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc.py && mv 
+      results/logs/mcmc_professional.log 
+      results/logs/mcmc_paper2_3models_wmfix.log && .venv/bin/python3 
+      src/procedencia_sella.py src/p02_mcmc/ssee_paper2_mcmc.py 
+      results/logs/mcmc_paper2_3models_wmfix.log
+    deps:
+    - path: data/raw/cosmic_chronometers.csv
+      hash: md5
+      md5: 687ae6927e506b6ac7798bc0d934a460
+      size: 1413
+    - path: data/raw/desi_dr2_bao.csv
+      hash: md5
+      md5: 2bff7b22cc0db2c876403fd913c42746
+      size: 2650
+    - path: src/desi_dr2_data.py
+      hash: md5
+      md5: f99d77b763872407c2b2126980e46e22
+      size: 3600
+    - path: src/p02_mcmc/ssee_paper2_mcmc.py
+      hash: md5
+      md5: 01a89c6702373167cdc1bae62c30ccdf
+      size: 21501
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    - path: src/procedencia_sella.py
+      hash: md5
+      md5: 5801950e54b88d692b08360bdef9e6a9
+      size: 1994
+    - path: src/rd_camb.py
+      hash: md5
+      md5: b415ae755ec1f801122eb920e7faa797
+      size: 5764
+    - path: src/ssee_core.py
+      hash: md5
+      md5: d6ef8a580870ee72a5de7ca4b2a18632
+      size: 17307
+    outs:
+    - path: results/logs/mcmc_paper2_3models_wmfix.log
+      hash: md5
+      md5: 8cefd62b5e5c1ae47b94319d15d48ce4
+      size: 12297

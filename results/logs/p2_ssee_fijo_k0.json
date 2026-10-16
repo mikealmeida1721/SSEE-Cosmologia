@@ -77,7 +77,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "bcd160fefd6f315662ac7bfc75587b0edcf028b0",
+  "commit": "dbc913ad143997d7bb9c676dfed28df66e13b40b",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_fijo_k0.py",
@@ -85,12 +85,12 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz": "bcf5ad5fa07dba371d36956466f8450b577410b9f0e681ff76f2de2c3d568b29",
-   "results/logs/resumen_3modelos.json": "cd489d18b7a707a8fef747e688c594c9cfd5ea1724417617e468afe5c51c94ac"
+   "results/logs/resumen_3modelos.json": "26d0df13621262c574b5c7373cd24ecddd2f2cfacb800e1afa346d8058d11387"
   },
   "argv": [
    "src/p02_mcmc/ssee_fijo_k0.py"
   ],
-  "fecha": "2026-10-11T21:30:47",
+  "fecha": "2026-10-16T12:10:48",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
