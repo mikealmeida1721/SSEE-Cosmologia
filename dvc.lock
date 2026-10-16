@@ -3938,7 +3938,7 @@ stages:
     deps:
     - path: results/logs/cmb_perfil_wc.json
       hash: md5
-      md5: f591037c322980c3cce994e3b44e504c
+      md5: 5a4338c403c9bcf4df2b1a8fed36cbfc
       size: 2098
     - path: src/p03_cmb/cmb_eval.py
       hash: md5
@@ -3963,7 +3963,7 @@ stages:
     outs:
     - path: results/logs/cmb_ns_forzado.json
       hash: md5
-      md5: fc7860f45ebe5875f5ba7b1a9f2ca726
+      md5: 50612e5e07ec7978948f51ff30c7d750
       size: 3406
   cmb_wb_forzado:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -3971,7 +3971,7 @@ stages:
     deps:
     - path: results/logs/cmb_perfil_wc.json
       hash: md5
-      md5: f591037c322980c3cce994e3b44e504c
+      md5: 5a4338c403c9bcf4df2b1a8fed36cbfc
       size: 2098
     - path: src/p03_cmb/cmb_eval.py
       hash: md5
@@ -3996,7 +3996,7 @@ stages:
     outs:
     - path: results/logs/cmb_wb_forzado.json
       hash: md5
-      md5: 4805981d87d21fbc9760ebbdf27732df
+      md5: 200daeebf672068c094291b55264a7c9
       size: 3421
   marginal_vs_perfil:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

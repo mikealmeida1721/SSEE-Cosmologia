@@ -145,20 +145,20 @@
  "metodo": "min chi2 Planck plik_lite TTTEEE+lowT+lowE sobre (w_c, logA, tau), resto del fondo fijo; pendiente = ajuste lineal de ln w_c contra ln x",
  "script": "src/p03_cmb/cmb_identidad_forzada.py",
  "_procedencia": {
-  "commit": "9233d841830f70a7be2fd3230f79a4986e8b7468",
+  "commit": "2b11c0b4133152eb02c41c0b5f0f8db48aeb9225",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/cmb_identidad_forzada.py",
   "script_sha256": "19bbbd4a66281fcd34d2509a46de46b6edcb50a44f5f025d2c45dc037898e1b4",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/cmb_perfil_wc.json": "9663794d3914dfd83ba63d10ca274693dcd3b4ffc141ed278674fdd9b5270511"
+   "results/logs/cmb_perfil_wc.json": "69196df553e0e8e5e5bff68be67ae338730b6fd8956bffbab4af44e31d98e442"
   },
   "argv": [
    "src/p03_cmb/cmb_identidad_forzada.py",
    "wb"
   ],
-  "fecha": "2026-10-10T16:48:38",
+  "fecha": "2026-10-15T22:21:48",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
