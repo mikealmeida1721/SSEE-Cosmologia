@@ -117,6 +117,32 @@ if _sucio:
     print("  de un residuo, que es justo lo que la prueba existe para evitar.")
     sys.exit(1)
 
+
+# EFECTOS COLATERALES (2026-10-16). Un caso puede ensuciar archivos que NO muta:
+# con el nucleo alterado, algo calculo r_d con otra Σm_ν y la escribio en el
+# cache data/processed/rd_camb_tabla.json. El `finally` solo restaura el archivo
+# mutado, asi que el cache quedo cambiado, R75 lo vio al final y el control
+# negativo salio ROJO «sin defecto»: ruido de la propia suite. Ahora, tras cada
+# caso, todo archivo rastreado que no estaba sucio al empezar y lo esta ahora se
+# devuelve a su version de git, y se nombra el caso que lo ensucio.
+def _sucios():
+    _o = subprocess.run(["git", "status", "--porcelain", "--untracked-files=no"],
+                        capture_output=True, text=True, cwd=REPO).stdout
+    return {_l[3:] for _l in _o.splitlines() if _l[3:] and not _l[3:].startswith("sandbox_unificado")}
+
+
+_SUCIOS0 = _sucios()
+colaterales = []
+
+
+def _limpia_colaterales(etiqueta):
+    _nuevos = sorted(_sucios() - _SUCIOS0)
+    if _nuevos:
+        subprocess.run(["git", "checkout", "--"] + _nuevos, cwd=REPO, check=True)
+        colaterales.append(f"{etiqueta}: {', '.join(_nuevos)}")
+        print(f"      (efecto colateral restaurado: {', '.join(_nuevos)})")
+
+
 orig = TEX.read_text()
 verde, _, _ = corre()
 print(f"línea base: {'VERDE' if verde else 'ROJO'}")
@@ -142,6 +168,7 @@ for regla, info in _reg.REGLAS.items():
     finally:
         subprocess.run([sys.executable, str(_EST), info["estado"], "restaura"],
                        cwd=REPO, check=True)
+        _limpia_colaterales(etiqueta)
     if not fallos and "comprobaciones" not in salida:
         problemas.append(f"{etiqueta}: el guardian se CAYO")
         print(f"  [  CAIDA  ] {etiqueta}")
@@ -177,6 +204,7 @@ for regla, info in _reg.REGLAS.items():
         finally:
             destino.write_text(base)      # restaurar SIEMPRE
             _EN_CURSO.update(archivo=None, base=None)
+            _limpia_colaterales(etiqueta)
         # CAIDA != NO DETECTADO. Si el guardian ni siquiera llego al veredicto
         # —el nucleo mutado no importa, por ejemplo— no hay lista de fallos, y
         # la version anterior lo contaba como «nadie lo detecta (VERDE por
@@ -206,6 +234,10 @@ if not verde:
     problemas.append("control negativo: hay ruido sobre el documento correcto")
 
 assert TEX.read_text() == orig, "¡el archivo NO volvió a su estado original!"
+if colaterales:
+    print("\nefectos colaterales (restaurados; no son defectos del guardian):")
+    for _c in colaterales:
+        print("   ·", _c)
 print("\narchivo restaurado idéntico ✓")
 
 if problemas:

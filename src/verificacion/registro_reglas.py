@@ -164,8 +164,9 @@ REGLAS = {
         archivo="VERIFICATION_LEDGER.md",
         prefijos=["procedencia", "Procedencia"],
         mutacion=[("un valor de pipeline que su log no respalda",
-                   "**67.7869 ⁺⁰·³⁵¹/₋₀·³⁵² km/s/Mpc**",
-                   "**66.1234 ⁺⁰·³⁵¹/₋₀·³⁵² km/s/Mpc**")],
+                   # ancla al dia 2026-10-16: el 67.7869 era el valor anterior del Registro
+                   "**67.8226 ± 0.4126 km/s/Mpc**",
+                   "**66.1234 ± 0.4126 km/s/Mpc**")],
     ),
     "R20": dict(
         capa="R20 — anclas observacionales (código ⊆ CANONICAL_VALUES.yaml)",
@@ -208,8 +209,11 @@ REGLAS = {
         exenciones=[("el nombre del cajón se busca como subcadena, no como entrada", None)],
         archivo="archive/README.md",
         prefijos=["archivo"],
-        mutacion=[("el único cajón mencionado una vez, borrado de la bitácora",
-                   "manuscript_superseded", "manuscript_XXXXXXXXXX")],
+        # 2026-10-16: manuscript_superseded ya sale 3 veces; se usa datos_retirados
+        # y se borran sus DOS menciones (encabezado y ruta), que son todas.
+        mutacion=[("un cajón borrado de la bitácora (todas sus menciones)",
+                   '### `datos_retirados/` — datos crudos que la fuente contradice (2026-10-02)\n- `cluster_masses_2026-10-02.csv`: las masas de cúmulos (Coma, A2029, A478 y Bullet) que citaban a Zhang+2026. Al cotejarlas con la fuente (R76), Coma y Bullet no aparecen y A2029 y A478 vienen con otros números. Nadie lo usaba ya. Lo reemplaza `data/raw/zhang2026/tablas_II_III.tex`, leído por `src/p02_mcmc/cumulos_zhang2026.py`. El detalle está en `archive/datos_retirados/README.md`.',
+                   '### `datos_XXXXXXXXXX/` — datos crudos que la fuente contradice (2026-10-02)\n- `cluster_masses_2026-10-02.csv`: las masas de cúmulos (Coma, A2029, A478 y Bullet) que citaban a Zhang+2026. Al cotejarlas con la fuente (R76), Coma y Bullet no aparecen y A2029 y A478 vienen con otros números. Nadie lo usaba ya. Lo reemplaza `data/raw/zhang2026/tablas_II_III.tex`, leído por `src/p02_mcmc/cumulos_zhang2026.py`. El detalle está en `archive/datos_XXXXXXXXXX/README.md`.')],
     ),
     "diccionario": dict(
         capa="Diccionario — integridad de nodos (script ⊆ maestro)",
@@ -308,8 +312,9 @@ REGLAS = {
         ambito="prosa .tex, cantidades CON unidades",
         exenciones=[("precisión declarada en el texto («to three decimals»)", None)],
         mutacion=[("misma cantidad dimensional con dos precisiones",
-                   "3(\\varphi+\\pi)^2 \\approx 67.962",
-                   "3(\\varphi+\\pi)^2 \\approx 67.9621")],
+                   # 2026-10-16: P1 pasa el numero por \\val; el guardian lo ve expandido
+                   "3(\\varphi+\\pi)^2\\approx\\val{H0_ALG_d3}$ (see Appendix",
+                   "3(\\varphi+\\pi)^2\\approx67.9621$ (see Appendix")],
     ),
     "R37": dict(
         capa="R37 — igualdades de constantes SSEE a 6 decimales",
@@ -321,8 +326,8 @@ REGLAS = {
         # quien lo cazaba era R38 —cuyo ámbito son las tablas— y no R37. Un
         # defecto detectado por la regla equivocada deja a la propia sin probar.
         mutacion=[("constante SSEE en prosa a 5 decimales",
-                   "\\times0.96556 = 0.119514$",
-                   "\\times0.96556 = 0.11951$")],
+                   "\\times\\val{N_S_d6} = \\val{OMEGA_C_H2_d6}$ (",
+                   "\\times\\val{N_S_d6} = 0.11951$ (")],
     ),
     "R38": dict(
         capa="R38 — igualdades que cruzan celdas de tabla",
@@ -332,16 +337,16 @@ REGLAS = {
                     ("unidad pegada al valor", "R41"),
                     ("\\ldots explícito", None)],
         mutacion=[("valor MAL, error 4e-4 (el que se escapó)",
-                   "$n_s = 1-\\varphi^{-7}$ & $0.965558$",
+                   "$n_s = 1-\\varphi^{-7}$ & $\\val{N_S_d6}$",
                    "$n_s = 1-\\varphi^{-7}$ & $0.965123$"),
                   ("valor MAL, error 1e-5 (último dígito)",
-                   "$n_s = 1-\\varphi^{-7}$ & $0.965558$",
+                   "$n_s = 1-\\varphi^{-7}$ & $\\val{N_S_d6}$",
                    "$n_s = 1-\\varphi^{-7}$ & $0.965548$"),
                   ("valor MAL, error 3e-2 (grosero)",
-                   "$n_s = 1-\\varphi^{-7}$ & $0.965558$",
+                   "$n_s = 1-\\varphi^{-7}$ & $\\val{N_S_d6}$",
                    "$n_s = 1-\\varphi^{-7}$ & $0.935558$"),
                   ("valor MAL en otra fila y otra fórmula",
-                   "$w_0 = -T_r/M_v$ & $-0.839950$",
+                   "$w_0 = -T_r/M_v$ & $\\val{W0_d6}$",
                    "$w_0 = -T_r/M_v$ & $-0.812340$")],
     ),
     "R40": dict(
@@ -350,21 +355,24 @@ REGLAS = {
         ambito="prosa .tex, símbolo↔fórmula↔decimal",
         exenciones=[],
         mutacion=[("igualdad exacta escondida bajo un «≈»",
-                   "\\item $\\boldsymbol{\\Omega} = \\pi+\\varphi \\approx 4.7596$",
-                   "\\item $\\boldsymbol{\\Omega}$ ($\\pi+\\varphi \\approx 4.7596$)")],
+                   "\\item $\\boldsymbol{\\Omega} = \\pi+\\varphi \\approx \\val{OMEGA_d4}$",
+                   "\\item $\\boldsymbol{\\Omega}$ ($\\pi+\\varphi \\approx \\val{OMEGA_d4}$)")],
     ),
     "R42": dict(
         capa="R42 — tipo dimensional: número puro vs cantidad física",
         intencion="tipo-dimensional",
         ambito="prosa .tex, H_0 y cocientes adimensionales",
         exenciones=[("mención negada («we do not write it as…»)", None)],
+        # 2026-10-16: el «anchor $H_0/\\kmsu=…$» ya no esta en P1; se usa la forma
+        # vigente con «\\simeq», y el defecto es el «=» pelado (con «\\simeq»,
+        # una similitud, R42 con razon no dispara).
         mutacion=[("igualdad sin unidad",
-                   "anchor $H_0/\\kmsu=3(\\varphi+\\pi)^2$ (derived, Paper~9)",
-                   "anchor $H_0=3(\\varphi+\\pi)^2$ (derived, Paper~9)"),
+                   "$H_0^{\\rm glob}/\\kmsu\\simeq3(\\varphi+\\pi)^2$",
+                   "$H_0^{\\rm glob}=3(\\varphi+\\pi)^2$"),
                   ("CONFLICTO: ¿la exención de mención enmascara?",
-                   "anchor $H_0/\\kmsu=3(\\varphi+\\pi)^2$ (derived, Paper~9)",
-                   "This is not a fitted quantity: the anchor "
-                   "$H_0=3(\\varphi+\\pi)^2$ (derived, Paper~9)")],
+                   "$\\kmsu$, $H_0^{\\rm glob}/\\kmsu\\simeq3(\\varphi+\\pi)^2$",
+                   "$\\kmsu$. This is not a fitted quantity: "
+                   "$H_0^{\\rm glob}=3(\\varphi+\\pi)^2$")],
     ),
     "R43": dict(
         capa="R43 — potencias de φ: el decimal tras «=» es el valor",
@@ -372,7 +380,7 @@ REGLAS = {
         ambito="prosa .tex, expresiones φ^n",
         exenciones=[("≈/≃ (truncamiento declarado)", "R30")],
         mutacion=[("potencia de φ truncada con «=»",
-                   "$2\\varphi^7=58.068884$", "$2\\varphi^7=58.07$")],
+                   "$N_*=\\val{dos_phi7_d6}$. From it", "$N_*=2\\varphi^7=58.07$. From it")],
     ),
     "R44": dict(
         capa="R44 — constantes de la lectura con «=» a 6 decimales",
@@ -380,8 +388,8 @@ REGLAS = {
         ambito="prosa .tex, constantes incorporadas por la lectura",
         exenciones=[("documentos aún no leídos (deuda contada, sólo baja)", None)],
         mutacion=[("Ω_m,dyn a 3 decimales",
-                   "$\\Omega_{m,\\rm dyn}=0.160050$ (DESI)",
-                   "$\\Omega_{m,\\rm dyn}=0.160$ (DESI)")],
+                   "$\\Omega_{m,\\rm dyn}=\\val{S_M_d6}$ and",
+                   "$\\Omega_{m,\\rm dyn}=0.160$ and")],
         # SEGUNDO CASO RETIRADO (2026-09-08). Vigilaba SOLAR2_KRYSTOS_V, que
         # es (phi+2pi)^2 * 2Omega = 594.28 — el multiplicador de la particula.
         # Al retirarse esta el 2026-08-01 sus sitios quedaron EXENTOS por la
@@ -653,8 +661,8 @@ REGLAS = {
         archivo="src/p03_cmb/cmb_eval.py",
         exenciones=[("la cabecera que EXPLICA el bug cita el literal", None)],
         mutacion=[("la ecuacion de estado de SSEE clavada en el dict del modelo",
-                   "'mnu': _MNU, 'omk': 0.0,",
-                   "'w': -0.8399, 'wa': -0.6700, 'mnu': _MNU, 'omk': 0.0,")],
+                   "'mnu': _MNU if mnu is None else float(mnu), 'omk': 0.0,",
+                   "'w': -0.8399, 'wa': -0.6700, 'mnu': _MNU if mnu is None else float(mnu), 'omk': 0.0,")],
     ),
     "R67": dict(
         capa="R67 — ninguna regla teclea su propia lista de fixtures",
@@ -678,7 +686,7 @@ REGLAS = {
         intencion="regla-con-control", ambito="los checks del propio guardian",
         archivo="src/verificacion/ssee_verify.py", exenciones=[],
         mutacion=[("el tope de reglas sin control, aflojado",
-                   "_DEUDA_R53 = 26", "_DEUDA_R53 = 31")],
+                   "_DEUDA_R53 = 25   #", "_DEUDA_R53 = 31   #")],
     ),
     "R47": dict(
         capa="R47 — piezas declaradas como supuesto: ¿rastreadas?",
@@ -709,10 +717,12 @@ REGLAS = {
         capa="R51 — etiqueta de figura vs variable graficada: ¿misma ancla?",
         intencion="etiqueta-concuerda-con-lo-graficado", ambito="src/**.py con matplotlib",
         archivo="src/p09_hubble/ssee_paper9_figures.py", exenciones=[],
+        # 2026-10-16: la curva f_screen(z) se retiro de la figura de P9; el
+        # defecto se inyecta en un sitio cuya ventana no nombra ya otra ancla.
         mutacion=[("la etiqueta nombra un ancla distinta de la que se grafica",
-                   "ax1.plot(z, fscreen_z, 'k-', lw=2, label=r'$f_{\\rm screen}(z)$')",
-                   "curva = H0_alg * fscreen_z\nax1.plot(z, curva, 'k-', lw=2, "
-                   "label=r'MIRA anchor $f(z)$')")],
+                   "ax.set_xlim(60, 82)",
+                   "curva = H0_alg\nax.plot(z, curva, 'k-', lw=2, "
+                   "label='MIRA anchor')\nax.set_xlim(60, 82)")],
     ),
     "R57": dict(
         capa="R57 — ninguna figura se escribe fuera de results/figures",
@@ -740,15 +750,18 @@ REGLAS = {
         archivo="src/p02_mcmc/regenerate_fig8_bao_residuals.py",
         exenciones=[("identificadores de arXiv y DOI, que no son resultados", None)],
         mutacion=[("un numero que el log declarado como fuente no contiene",
-                   "H0=67.52954", "H0=67.51111")],   # ORIGEN-VALOR: 67.52954 — numero de PRUEBA de la mutacion, no un resultado
+                   # 2026-10-16: el script ya lee H0 de su log (_P); el defecto es teclearlo
+                   '"SSEE": dict(H0=_P["SSEE"]["H0"], Om=', '"SSEE": dict(H0=67.51111, Om=')],   # ORIGEN-VALOR: 67.52954 — numero de PRUEBA de la mutacion, no un resultado
     ),
     "R36": dict(
         capa="R36 — figura del PRD vs el script que la produce",
         intencion="artefacto-no-mas-viejo-que-su-fuente", ambito="results/figures/*.pdf citadas por el PRD",
-        archivo="src/estadistica/ssee_phase_d_savage_cv.py",
+        # 2026-10-16: R36 compara fechas de COMMIT; el script mutado tiene que
+        # ser MAS NUEVO que la figura (fig_cmb_spectrum se regenero el 10-15).
+        archivo="src/p04_toe/barrido_omega_b.py",
         exenciones=[("cambios que solo tocan prosa: se compara el AST", None)],
         mutacion=[("la figura del PRD se atribuye a un script mas nuevo que ella",
-                   "import warnings", "import warnings\n_FIG36 = 'fig_cmb_spectrum'")],
+                   "import json\n", "import json\n_FIG36 = 'fig_cmb_spectrum'  # plt.savefig(_FIG36)\n")],
     ),
     "R27": dict(
         capa="R27 — look-elsewhere: lo afirmado == lo recomputado",

@@ -469,12 +469,27 @@ check("L2 identidad  f_screen = s_K/(3*MIRA) = (pi-phi)/Om^2",
 # modelo: queda como comparacion anotada, sin prioridad. R55b vigila los textos.
 import importlib.util as _ilu06
 _sp06 = _ilu06.spec_from_file_location("_core06", ROOT / "ssee_core.py")
-_c06 = _ilu06.module_from_spec(_sp06); _sp06.loader.exec_module(_c06)
-check("V-L2-06 el H con unidades es la SALIDA de la cascada (3*Omega^2 es el blanco puro)",
-      abs(_c06.H0_GLOBAL - _c06.H0_SH0ES * (1 - _c06.F_SCREEN)) < 1e-12
-      and abs(_c06.H0_GLOBAL - 3 * Omega ** 2) < 1e-4,
-      f"H_glob = {_c06.H0_SH0ES}*(1-{_c06.F_SCREEN:.6f}) = {_c06.H0_GLOBAL:.6f}; "
-      f"blanco 3*Omega^2 = {3 * Omega ** 2:.6f}")
+_c06 = _ilu06.module_from_spec(_sp06)
+# Carga PROTEGIDA (2026-10-16). Esta carga, agregada el 10-10, iba a pelo: con
+# una constante del nucleo alterada sus _sanity_checks abortaban y el guardian
+# moria con traceback en la linea 472, antes de llegar al check «canon» que
+# existe justo para convertir esa caida en veredicto. Lo destapo la mutacion
+# `canon` (la suite lo leia como CAIDA). Si no importa, V-L2-06 falla con la
+# causa y «canon», mas abajo, detiene la corrida con veredicto.
+try:
+    _sp06.loader.exec_module(_c06)
+except BaseException as _e06:          # AssertionError incluida
+    _c06 = None
+    _err06 = f"{type(_e06).__name__}: {_e06}"
+if _c06 is not None:
+    check("V-L2-06 el H con unidades es la SALIDA de la cascada (3*Omega^2 es el blanco puro)",
+          abs(_c06.H0_GLOBAL - _c06.H0_SH0ES * (1 - _c06.F_SCREEN)) < 1e-12
+          and abs(_c06.H0_GLOBAL - 3 * Omega ** 2) < 1e-4,
+          f"H_glob = {_c06.H0_SH0ES}*(1-{_c06.F_SCREEN:.6f}) = {_c06.H0_GLOBAL:.6f}; "
+          f"blanco 3*Omega^2 = {3 * Omega ** 2:.6f}")
+else:
+    check("V-L2-06 el H con unidades es la SALIDA de la cascada (3*Omega^2 es el blanco puro)",
+          False, f"el nucleo no importa ({_err06}); ver «canon»")
 # V-L2-10: la fórmula CANÓNICA (forward-prediction 40.70 eV SOLAR²·KRYSTOS) es dimensionalmente
 # consistente — [eV]*(número puro) = [eV]. El antiguo ansatz Sigma_m_nu*H0^alg
 # (5.60 eV) está retirado. Lo abierto es el Lagrangiano φ-DM (OP-9), no la dimensión.
@@ -5268,9 +5283,18 @@ try:
         _hits = [str(_p.relative_to(_REPO)) for _p in (_REPO / "src").rglob("*.py")
                  if "archive" not in _p.parts and _p.name not in _FIXTURES
                  and _nm36 in _p.read_text(errors="ignore")]
+        # PRODUCTOR DETERMINISTA (2026-10-16). Era `_hits[0]`: el primero que
+        # devolvia rglob, en orden del sistema de archivos. Para fig_cmb_spectrum
+        # (figura del PRD) ese primero era registro_reglas.py, no su productor
+        # ssee_paper3_cmb.py, y R36 la comparaba contra el archivo equivocado.
+        # Ahora: fuera los archivos del propio guardian (nombran figuras, no las
+        # hacen); se prefieren los que guardan figuras; y entre ellos el commit
+        # MAS RECIENTE, que es la eleccion conservadora.
+        _hits = sorted(_h for _h in _hits if not _h.startswith("src/verificacion/"))
         if not _hits:
             continue
-        _scr = _hits[0]
+        _prod36 = [_h for _h in _hits if "savefig" in (_REPO / _h).read_text(errors="ignore")] or _hits
+        _scr = max(_prod36, key=lambda _h: _commit_ts(_h) or 0)
         _tf = _commit_ts(f"results/figures/{_fg.name}")
         _ts36 = _commit_ts(_scr)
         if not (_tf and _ts36 and _ts36 > _tf):
@@ -7817,7 +7841,11 @@ except Exception as _e:            # noqa: BLE001
           f"excepción: {_e}", nivel=5)
 
 print("\nCapa R46 — el guardián hizo todo el trabajo que dice hacer")
-_PISO_CHECKS = 278          # +4 procedencia (JSON + redondeo + control); solo SUBE
+_PISO_CHECKS = 345          # 278 -> 345 (2026-10-16): con 350 ejecutadas, el piso
+                            # viejo dejaba 72 de holgura y la mutacion R46 (la seccion
+                            # B del Registro sin recorrer: 350 -> 330) pasaba VERDE.
+                            # Margen 5 para checks condicionales; solo SUBE
+                            # +4 procedencia (JSON + redondeo + control); solo SUBE
                             # control, -1 R53; +2 R61 antes; solo SUBE
                             # (2026-09-05); sólo SUBE
 check(f"R46 se ejecutaron al menos {_PISO_CHECKS} comprobaciones",
