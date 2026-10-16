@@ -497,7 +497,7 @@ stages:
     - src/procedencia.py
     - src/ssee_core.py
     - src/p11_sondas/lcdm_planck.py
-    - results/logs/cmb_ajuste_conjunto_wc_ns.json
+    - data/referencias/cmb_ajuste_conjunto_wc_ns_01d4369.json
     outs:
     - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json:
         cache: false
@@ -510,7 +510,7 @@ stages:
     - src/procedencia.py
     - src/ssee_core.py
     - src/p11_sondas/lcdm_planck.py
-    - results/logs/cmb_ajuste_conjunto_wc_ns.json
+    - data/referencias/cmb_ajuste_conjunto_wc_ns_01d4369.json
     outs:
     - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json:
         cache: false
@@ -1993,4 +1993,90 @@ stages:
     - results/logs/growth_2026-07/base_sin_particula.json:
         cache: false
     - results/logs/base_sin_particula.log:
+        cache: false
+  # ── R75, 2026-10-16: cuatro logs con script vigente que no eran salida de ninguna
+  # etapa. Se RE-CORREN (no se registran) y se comparan número a número con el log
+  # anterior, guardado en el scratchpad de la sesión antes de la corrida.
+  #   quien_mide_As (KiDS-1000 vs CMB sobre logA, 1.5 h): cambió sólo H0_ALG -> H0_GLOBAL.
+  #   boss_lpt_kmax020 (perfil logA de BOSS con LPT, 7 min): cambió sólo om_x (por defecto 0).
+  #   conjunta_control (cableado de la conjunta, minutos).
+  #   conjunta_tres_sondas (cola #28, 16.6 h, 4 procesos): cambió sólo H0_ALG -> H0_GLOBAL;
+  #     es el control de base_sin_particula, que se re-corre después.
+  quien_mide_As_kids:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/quien_mide_As.py
+      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/quien_mide_As.py results/logs/growth_2026-07/quien_mide_As.json
+    deps:
+    - src/p06_growth/quien_mide_As.py
+    - src/p06_growth/cobaya_kids.py
+    - src/p06_growth/kids_shear.py
+    - src/p03_cmb/cmb_eval.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
+    - /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
+    - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    outs:
+    - results/logs/growth_2026-07/quien_mide_As.json:
+        cache: false
+  boss_lpt_kmax020:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/boss_lpt_R1R2.py 0.20
+      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/boss_lpt_R1R2.py results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
+    deps:
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/p06_growth/boss_dr12_data.py
+    - src/p06_growth/boss_rsd_model.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+    outs:
+    - results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json:
+        cache: false
+  conjunta_control:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/cobaya_conjunta.py control
+      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/cobaya_conjunta.py results/logs/conjunta_control.json
+    deps:
+    - src/p06_growth/cobaya_conjunta.py
+    - src/p06_growth/cobaya_kids_legacy.py
+    - src/p06_growth/cobaya_boss.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/p06_growth/boss_dr12_data.py
+    - src/p06_growth/boss_rsd_model.py
+    - src/p06_growth/kids_shear.py
+    - src/p03_cmb/cmb_eval.py
+    - src/p11_sondas/lcdm_planck.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - results/logs/cmb_dbic_tau_ajustado.json
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release
+    - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    outs:
+    - results/logs/conjunta_control.json:
+        cache: false
+  conjunta_tres_sondas:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/conjunta_tres_sondas.py
+      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/conjunta_tres_sondas.py results/logs/growth_2026-07/conjunta_tres_sondas.json
+    deps:
+    - src/p06_growth/conjunta_tres_sondas.py
+    - src/p06_growth/cobaya_kids.py
+    - src/p06_growth/kids_shear.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/p06_growth/boss_dr12_data.py
+    - src/p06_growth/boss_rsd_model.py
+    - src/p03_cmb/cmb_eval.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
+    - /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
+    - /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+    - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    outs:
+    - results/logs/growth_2026-07/conjunta_tres_sondas.json:
         cache: false

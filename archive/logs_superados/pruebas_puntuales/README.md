@@ -11,11 +11,16 @@ resultados del modelo.
 | `conjunta_vs_individual_preliminar.json` | lectura PRELIMINAR de la multisonda (R−1 0.41, sin converger, 09-28); la reemplaza `leer_conjunta_b3` (etapa) |
 | `multisonda_un_solo_As.json` | 09-26, «un solo A_s clavado»: sumaba corridas individuales, no podía ver degeneración; la reemplaza `multisonda_fondo_clavado` (etapa) |
 
+**`memory_sync_control_2026-09-30.log`** (llegó 2026-10-16): control R53 de una sola vez, al pasar memory_sync de
+unidad párrafo a unidad frase sobre el árbol de d23a954^ (15/17 sitios de −26.21 vistos contra 1/17).
+Es la evidencia de las palabras de exención que lista `CANONICAL_VALUES.yaml`; no es un resultado.
+
 **Archivos de esta carpeta** (lista exacta, la que comprueba R77):
 - `clik_install.log`
 - `conjunta_vs_individual_preliminar.json`
 - `equivalencia_kids_cache.log`
 - `equivalencia_kids_lcdm.log`
+- `memory_sync_control_2026-09-30.log`
 - `multisonda_un_solo_As.json`
 - `prueba_equivalencia_kids_cache.py`
 - `prueba_equivalencia_kids_lcdm.py`

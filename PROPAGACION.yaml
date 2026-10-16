@@ -94,7 +94,6 @@ logs:
   look_elsewhere_full:        src/estadistica/look_elsewhere_full.py
   phase_d_savage_cv_wmfix:    src/estadistica/ssee_phase_d_savage_cv.py
   h0_four_priors:             src/p09_hubble/ssee_h0_prior_experiment.py   # 2026-10-01: era h0_four_priors_wmfix (copia de pantalla del 07-25); ahora etapa DVC
-  mcmc_paper2_lcdm_baseline:  src/p02_mcmc/ssee_paper2_mcmc_lcdm_baseline.py
   # ── Añadidos 2026-09-07 (tarde): las tres corridas de la sesión R1/R2 ──
   boss_cobaya_lcdm:           src/p06_growth/cobaya_boss.py
   boss_cobaya_ssee:           src/p06_growth/cobaya_boss.py
@@ -221,11 +220,9 @@ historicos:
   #    conjunto w_c,n_s), no se citan.
   - cmb_ns_forzado                 # 01d4369, sin script
   - cmb_wb_forzado                 # 01d4369, sin script
-  - cmb_ajuste_conjunto_wc_ns      # 01d4369, sin script; REHECHO con script en cmb_ajuste_conjunto_wc_ns_{SSEE,LCDM}
   - R1R2_boss_lpt_cobaya           # sin script; el R1R2 vigente es R1R2_boss_lpt_kmax0.200 (boss_lpt_R1R2.py)
   # ── Control de memory_sync (2026-09-30): LISTA valores retirados a proposito
   #    (es su trabajo: probar que el comprobador los caza). No es un computo.
-  - memory_sync_control_2026-09-30
   # ── Corte del 2026-09-19 — la maquina se reinicio por el driver NVIDIA y
   #    las dos corridas vivas se reanudaron con KIDS_REANUDAR=1. Lo de antes
   #    del corte queda congelado: no se re-corre, se conserva como registro

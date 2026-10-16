@@ -546,7 +546,7 @@ context_markers:
   # frase siguen eximiendo frases vivas en ingles («−26.21 … with A_s fitted
   # rather than held»). Control: 15/17 sitios de −26.21 vistos (con el corte «\\\\») vs 7 con
   # ellas y 1/17 con la unidad parrafo; cero falsos positivos nuevos en el arbol
-  # actual. Log: results/logs/memory_sync_control_2026-09-30.log
+  # actual. Log: archive/logs_superados/pruebas_puntuales/memory_sync_control_2026-09-30.log
   - "rancio"
   - "was once"
   - "once proposed"

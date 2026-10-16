@@ -9,5 +9,10 @@ commit a7fb5c9 (SSEE con los mismos datos que ΛCDM/CPL). La tercera es, byte a 
 `mcmc_paper2_3models` (con acta). La cadena vigente es
 `/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz` (11-10 17:54).
 
+**`mcmc_paper2_lcdm_baseline.log`** (llegó 2026-10-16): ΛCDM sola del 2026-09-29, «para ΔBIC vs SSEE-MIRA»,
+con N distinto (16 contra 15) y ΔBIC sólo orientativo. La reemplaza la corrida de los tres modelos con
+los MISMOS datos (`resumen_3modelos.json`).
+
 **Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `mcmc_paper2_lcdm_baseline.log`
 - `mcmc_professional.log`

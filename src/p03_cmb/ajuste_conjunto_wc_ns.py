@@ -4,7 +4,7 @@
 POR QUE (2026-09-30). Paper 8 (comentario junto a la identidad
 w_c = KAL0*w_b*n_s) apoya su w_c en DOS medidas independientes: el perfil
 chi2(w_c) (perfil_wc_cmb.py -> cmb_perfil_wc.json) y un ajuste conjunto con
-n_s libre (results/logs/cmb_ajuste_conjunto_wc_ns.json). El segundo log entro
+n_s libre (hoy data/referencias/cmb_ajuste_conjunto_wc_ns_01d4369.json). El segundo log entro
 en el commit 01d4369 SIN el script que lo produjo (codigo suelto, perdido).
 Una segunda medida que nadie puede re-correr no confirma nada: este script la
 rehace.
@@ -48,7 +48,7 @@ FONDOS = {
     "LCDM": dict(ombh2=LP["ombh2"], H0=LP["H0"], w=-1.0, wa=0.0,   # Planck 2018 (lcdm_planck.py)
                  arranque=[LP["omch2"], LP["ns"], 3.044, 0.054]),     # ORIGEN-VALOR: 3.044, 0.054 — arranque del minimizador (Planck 2018 logA, tau)
 }
-VIEJO = os.path.join(_R, "results", "logs", "cmb_ajuste_conjunto_wc_ns.json")
+VIEJO = os.path.join(_R, "data", "referencias", "cmb_ajuste_conjunto_wc_ns_01d4369.json")
 SIG_WC = 0.000246   # ORIGEN-VALOR: 0.000246 — anchura del perfil chi2(w_c), results/logs/cmb_perfil_wc.json
 
 nombre = sys.argv[1]
