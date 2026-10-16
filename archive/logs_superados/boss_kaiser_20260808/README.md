@@ -6,8 +6,11 @@ con k_max = 0.06, 0.08, 0.10, 0.12).
 
 **Por qué se archiva.** Era un SONDEO con teoría lineal de Kaiser para ver si el resultado
 dependía del corte en k. Lo superó la corrida LPT (velocileptors) R1/R2 hasta k_max = 0.20
-(`results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json`, en la cadena). Ningún paper, `\val`
-ni log vigente lo cita.
+(`results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json`, en la cadena). Ningún `\val`
+ni log vigente lo cita. **Corrección 2026-10-16:** P6 §«limitation-kaiser» SÍ citaba el
+control de k_max = 0.08 (0.92σ, χ²/dof 1.048, sub-predicción 9–16 %) como prueba de la maquinaria;
+la lectura fría de P6 lo vio. Ahora lo cita como historia, con esta carpeta como fuente y
+diciendo que no se reproduce al re-correrlo.
 
 **Lo que mostró la re-ejecución (recorre_logs, 2026-10-03).** Re-corridos CON su k_max, no
 reproducen: σ(fσ₈) se mueve 2–25 %, el χ² 1–2 unidades y el nuisance `sv` salta órdenes de

@@ -1,0 +1,993 @@
+doc: P2
+archivo_principal: manuscript/SSEE_Paper2_MCMC.tex
+numeros:
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 73
+  num: 2.5\times10^6
+  decision: TRIVIAL
+  nota: 100 walkers × 25000 steps = 2.5e6; aritmética directa, consistente con Tabla convergencia (N_s=25000, N_w=100).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1185
+  num: 2.5\times10^6
+  decision: TRIVIAL
+  nota: misma cuenta para la cadena CPL (100×25000).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 76
+  num: '0.840'
+  decision: ALG
+  expr: c.W0
+  nota: ssee_core.W0=-0.839950 → -0.840 (.3f). Repetido en líneas 181,531,602,621,629,662,962,1002,1055,1173,1175 con el mismo valor y la misma expresión -T_r/M_v; no se repite nota por línea.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 76
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+  nota: ssee_core.WA=-0.669975 → -0.670 (.3f). Repetido en líneas 182,535,602,621,629,962,1002,1055,1173,1175.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 186
+  num: '1.510'
+  decision: DERIVADO
+  nota: w0+wa = -0.839950-0.669975 = -1.509925 → -1.510 (.3f). Consistente.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 196
+  num: '0.160'
+  decision: ALG
+  expr: 1 - c.OMEGA_DE
+  nota: s_m=1-0.839950=0.160050→0.160. Coincide con \val{S_M_d6}=0.160050 (manuscript/valores_generados.tex); podría citarse por \val en vez de a mano, pero aquí es la definición misma (eq. 2), aceptable
+    como texto algebraico.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 662
+  num: '1.57'
+  decision: LIT
+  nota: Planck 2018 VI, w0 CMB-alone (TT,TE,EE+lowE+lensing) de la tabla de extensiones de un parámetro; no verificado dígito a dígito contra la tabla (fuera de alcance ligero), pero la cita es correcta
+    y consistente con el uso.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 660
+  num: '0.50'
+  decision: LIT
+  nota: idem, error +0.50 del w0 CMB-alone Planck.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 660
+  num: '0.40'
+  decision: LIT
+  nota: idem, error -0.40.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 663
+  num: '1.028'
+  decision: LIT
+  nota: Planck 2018 w0 constante (CMB+SNe+BAO), citado correctamente como 'no CMB-alone'.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 662
+  num: '0.50'
+  decision: DERIVADO
+  nota: '(-0.840+1.57)/0.50=1.46≈1.5σ: aritmética correcta con los números de la propia frase.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 299
+  num: '0.295'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+  nota: z mínimo de la tabla; coincide.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 300
+  num: '0.3'
+  decision: TRIVIAL
+  nota: redondeo descriptivo de 0.295.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 300
+  num: '2.3'
+  decision: TRIVIAL
+  nota: redondeo descriptivo de 2.330.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 302
+  num: '0.3'
+  decision: TRIVIAL
+  nota: idem, en la nota de la covarianza.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 302
+  num: '2.3'
+  decision: TRIVIAL
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 328
+  num: '0.295'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 328
+  num: '7.942'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 328
+  num: '0.075'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 329
+  num: '0.510'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 329
+  num: '13.588'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 329
+  num: '0.167'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 330
+  num: '21.863'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 330
+  num: '0.425'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 331
+  num: '0.706'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 331
+  num: '17.351'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 331
+  num: '0.177'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 332
+  num: '19.455'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 332
+  num: '0.330'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 333
+  num: '0.934'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 333
+  num: '21.576'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 333
+  num: '0.152'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 334
+  num: '17.641'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 334
+  num: '0.193'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 335
+  num: '1.321'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 335
+  num: '27.601'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 335
+  num: '0.318'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 336
+  num: '14.176'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 336
+  num: '0.221'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 337
+  num: '1.484'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 337
+  num: '30.512'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 337
+  num: '0.760'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 338
+  num: '12.817'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 338
+  num: '0.516'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 339
+  num: '2.330'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 339
+  num: '38.988'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 339
+  num: '0.531'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 340
+  num: '8.632'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 340
+  num: '0.101'
+  decision: DATO
+  fuente: data/raw/desi_dr2_bao.csv
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1071
+  num: '2.33'
+  decision: TRIVIAL
+  nota: redondeo de z=2.330 de la tabla; repetido en 1198,1201,1210,1213(×2),1215.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 314
+  num: '147.27'
+  decision: LIT
+  nota: normalización de Eisenstein&Hu 1998 / Aubourg 2015, fórmula auxiliar para la covarianza, no el r_d canónico (que es 147.17 vía CAMB, \val{OMEGA_M_TOTAL_d6}).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 314
+  num: '0.1432'
+  decision: LIT
+  nota: Ωmh² de referencia de la fórmula EH98; distinto del ωm algebraico del modelo (0.14267, \val{OMEGA_M_H2_d5}) — es sólo el punto de expansión de la fórmula, correctamente descrito como 'power-law
+    expansion about the Planck point'.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 314
+  num: '0.255'
+  decision: LIT
+  nota: exponente de la fórmula EH98/Aubourg2015.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 315
+  num: '0.02237'
+  decision: LIT
+  nota: Ωbh² de referencia de la fórmula; no es \val{OMEGA_B_H2_d6}=0.022418 (que es el algebraico SSEE) — son entidades distintas y el texto no los confunde.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 315
+  num: '0.134'
+  decision: LIT
+  nota: exponente de la fórmula EH98/Aubourg2015.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 270
+  num: '147.17'
+  decision: VAL
+  nombre: p2_lyaB_rd (o similar ya existente)
+  fuente: results/logs/rd_camb_control.json#ssee.camb
+  formato: .2f
+  nota: 147.17 Mpc CAMB; coincide con \val{OMEGA_M_TOTAL_d6} usado en todo el documento. Repetido a mano en líneas 693,744,828,1044,1066 con el mismo valor — podría ir siempre por \val en vez de hardcodeado
+    (ya existe \val{p2_lyaB_rd} usado en 671,756,766,1209,1212,1216).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 271
+  num: '0.32'
+  decision: VAL
+  nombre: p3_rd_sig_post / rd_ssee_sig_planck (ya existen)
+  fuente: results/logs/rd_camb_control.json
+  formato: .2f
+  nota: 0.32σ Planck; repetido a mano en 694,744. El documento ya usa \val{p3_rd_sig_post} en la línea 671 para el mismo número — las otras 2 apariciones deberían usar el mismo \val.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 693
+  num: '147.17'
+  decision: VAL
+  nota: idéntico a línea 270; ver nota ahí.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 694
+  num: '147.09'
+  decision: LIT
+  nota: r_d Planck 2018 publicado (147.09±0.26 Mpc); repetido en 671.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 694
+  num: '0.32'
+  decision: VAL
+  nota: ver línea 271.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 671
+  num: '147.09'
+  decision: LIT
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 744
+  num: '147.17'
+  decision: VAL
+  nota: ver línea 270.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 744
+  num: '0.32'
+  decision: VAL
+  nota: ver línea 271.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 828
+  num: '147.17'
+  decision: VAL
+  nota: ver línea 270.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1044
+  num: '147.17'
+  decision: VAL
+  nota: ver línea 270; aparece en el párrafo de falsabilidad junto con '147±3' (banda de tolerancia, TRIVIAL, diseño del test).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1066
+  num: '147.17'
+  decision: VAL
+  nota: ver línea 270.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1066
+  num: '147.10'
+  decision: LIT
+  nota: r_d ΛCDM-Planck mismo código CAMB (147.10), consistente con banner CLAUDE.md (147.10 ≈ 147.09 redondeos distintos del mismo valor Planck/CAMB); no es un tercer número independiente.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 351
+  num: '67.36'
+  decision: LIT
+  nota: H0 Planck 2018 ΛCDM-calibrado publicado; correcto, 67.36±0.54.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 364
+  num: 4.2\times10^{-6}
+  decision: ALG
+  nombre: (verificar si existe val para el residuo)
+  fuente: algebra_derivada.json o similar
+  nota: residuo H0_GLOBAL − 3(φ+π)² = 4.2e-6 (ssee_core)
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 368
+  num: '0.31993'
+  decision: HIS
+  nota: Ω_m,CMB=MIRA·Ω_m,dyn=0.31993, explícitamente narrado como 'superseded' (OP-8 dissolved) en la misma frase. Correcto, no vigente.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 383
+  num: '0.02218'
+  decision: LIT
+  nota: BBN prior Schoneberg2024, Ωbh²=0.02218±0.00055; repetido en 435,566. Correcto.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 386
+  num: '0.4'
+  decision: DERIVADO
+  nota: 'tensión 0.4σ entre BBN 0.02218±0.00055 y el algebraico \val{OMEGA_B_H2_d6}=0.022418: (0.022418-0.02218)/0.00055=0.433→0.4σ (.1f). Consistente.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 389
+  num: '0.3153'
+  decision: LIT
+  nota: Ωm Planck 2018 ΛCDM publicado (0.3153±0.0073); repetido en 711. Coincide con ssee_core.LCDM_OMEGA_M=0.3153.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 389
+  num: '0.88'
+  decision: DERIVADO
+  nota: (0.3153-0.308881)/0.0073≈0.90, redondea a 0.88 en el texto — diferencia pequeña, posiblemente por el valor exacto de OMEGA_M_TOTAL usado en el script vs 0.308881 mostrado (6 decimales redondeados);
+    dentro de tolerancia de redondeo, no se marca FIX. Repetido en 710,1013,1069.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 435
+  num: '0.00055'
+  decision: LIT
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 439
+  num: '0.5'
+  decision: TRIVIAL
+  nota: ancho del prior CPL declarado por diseño (w0~N(-1,0.5²)); no es resultado, es definición del prior.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 475
+  num: '0.25'
+  decision: TRIVIAL
+  nota: rango de aceptación citado como diagnóstico cualitativo ('óptimo'); los valores puntuales (0.38/0.41/0.35, línea 500-502) caen dentro, pero no se pudo verificar el origen de esos valores puntuales
+    (ver hallazgo FIX más abajo).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 475
+  num: '0.50'
+  decision: TRIVIAL
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 500
+  num: '0.38'
+  decision: '?'
+  nota: 'Tabla convergencia SSEE: <a>=0.38, tau_max=32.7, N_s/tau=183.5, N_eff=4402. Busqué en TODOS los .json/.log de results/logs/ y archive/: ningún archivo reproduce estos 4 números juntos. El script
+    que define la metodología (src/p02_mcmc/ssee_paper2_mcmc.py) calcula N_eff=N_walkers*N_steps/tau_max; con N_w=100,N_s=25000,tau_max=32.7 da N_eff=76,452, no 4402. Las columnas de la propia tabla tampoco
+    reconcilian entre sí: N_s/tau_max debería ser 25000/32.7=764.5 (no 183.5), y N_eff debería ser N_w×(N_s/tau_max)=18,350 (no 4402) — hay un factor ~4.17 de diferencia interno, IGUAL en las 3 filas (SSEE/ΛCDM/CPL),
+    lo que sugiere una definición distinta de N_eff (p.ej. con thinning, o N_w efectivo=24) nunca documentada. El run más cercano que SÍ corre hoy (mcmc_paper2_3models_wmfix.log) da para estos mismos 3
+    modelos: tau_max=(31.9,39.1,57.3), N_eff=(78380,64007,43637), accept=(0.714,0.646,0.550) — el tau_max de CPL coincide (57.3) pero N_eff y accept NO. Es decir: la Tabla de convergencia del PDF describe
+    una corrida que ya no es la vigente en el repo, o usa una definición de N_eff sin documentar.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 500
+  num: '32.7'
+  decision: '?'
+  nota: ver nota de 0.38 arriba.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 500
+  num: '183.5'
+  decision: '?'
+  nota: ver nota de 0.38 arriba.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 501
+  num: '0.41'
+  decision: '?'
+  nota: fila ΛCDM de la misma tabla; mismo problema de trazabilidad.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 501
+  num: '41.5'
+  decision: '?'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 501
+  num: '144.6'
+  decision: '?'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 502
+  num: '0.35'
+  decision: '?'
+  nota: fila CPL; tau_max=57.3 SÍ coincide con mcmc_paper2_3models_wmfix.log, pero accept=0.35 (log da 0.550) y N_s/tau=104.7 (debería ser 25000/57.3=436.3).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 502
+  num: '57.3'
+  decision: LOG
+  fuente: results/logs/mcmc_paper2_3models_wmfix.log
+  nota: único valor de la tabla que SÍ coincide con un log existente (τ_max CPL=57.3).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 502
+  num: '104.7'
+  decision: '?'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 74
+  num: 4.402\times10^3 (4{,}402)
+  decision: '?'
+  nota: mismo N_eff=4402 citado en el ABSTRACT como cifra de convergencia titular; hereda el mismo problema de trazabilidad que la tabla (línea 500).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 531
+  num: '0.840'
+  decision: ALG
+  expr: c.W0
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 535
+  num: '0.670'
+  decision: ALG
+  expr: c.WA
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 557
+  num: '2.9'
+  decision: HIS
+  nota: '''2.9σ below anchor'' narrado explícitamente como lectura vieja (artefacto del sector frío 0.160 mal puesto en E(z)), ya corregida. Repetido en 569,741 con la misma narración. Correcto.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 557
+  num: '0.160'
+  decision: HIS
+  nota: ver nota de 2.9 arriba. Repetido en 570,742.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 566
+  num: '0.02218'
+  decision: LIT
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 586
+  num: '0.838'
+  decision: LIT
+  nota: w0 DESI+CMB+Pantheon+ (DR2 eq.26, arXiv:2503.14738); no verificado dígito a dígito contra el paper DESI (fuera de alcance ligero sin acceso al chain original), pero consistente con el eq.26 citado.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 586
+  num: '0.617'
+  decision: LIT
+  nota: wa de la misma combinación.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 587
+  num: '0.894'
+  decision: LIT
+  nota: ρ medido de las cadenas oficiales DESI (Zenodo 16644577), coincide con paper2_w0wa.json#...ec26.rho=-0.894 (ver abajo).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 591
+  num: '0.42'
+  decision: DERIVADO
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_chi2_2D
+  nota: 0.4163→0.42 (.2f); coincide con el log exactamente.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 592
+  num: '0.24'
+  decision: VAL
+  nombre: p2_w0wa_ssee_ec26 (YA EXISTE, no se usa aquí)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma
+  formato: .2f
+  nota: '0.2378→0.24σ, coincide con el log. FIX: ya existe \val{p2_w0wa_ssee_ec26}=0.24 en valores_generados.tex pero esta línea (y 78,606,614,654,676,1003,1056,1196,640) lo escribe a mano en vez de citarlo.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 78
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592; mismo valor, mismo macro disponible y no usado.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 594
+  num: '1.46'
+  decision: VAL
+  nombre: p2_w0wa_ssee_ec28 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.ssee_sigma
+  nota: coincide (1.4646→1.46); el documento SÍ usa \val{p2_w0wa_ssee_ec28} en el abstract (línea 80) pero lo vuelve a hardcodear aquí y en 614,641,1004,1057.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 595
+  num: '1.76'
+  decision: VAL
+  nombre: p2_w0wa_ssee_ec27 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.ssee_sigma
+  nota: coincide (1.7644→1.76); hardcodeado también en 614,642,1004,1057 pese a existir el macro.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 595
+  num: '1.68'
+  decision: VAL
+  nombre: p2_w0wa_ssee_ec25 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec25.ssee_sigma
+  nota: coincide (1.6756→1.68); hardcodeado también en 643.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 596
+  num: '0.905'
+  decision: LOG
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.rho
+  nota: coincide.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 596
+  num: '0.978'
+  decision: LOG
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec25.rho
+  nota: coincide.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 598
+  num: '0.2'
+  decision: TRIVIAL
+  nota: rango descriptivo redondeado de 0.24-1.76σ.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 598
+  num: '1.8'
+  decision: TRIVIAL
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 599
+  num: '0.04'
+  decision: DERIVADO
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_dw0
+  nota: ssee_dw0=-0.0353, dividido por el std de w0 en la combinación (~0.84σ aprox); orden de magnitud correcto, no se verificó el std exacto.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 600
+  num: '0.92'
+  decision: TRIVIAL
+  nota: banda de sensibilidad declarada para el análisis de robustez (ρ∈[-0.92,-0.70]); diseño del test, no resultado.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 600
+  num: '0.70'
+  decision: TRIVIAL
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 601
+  num: '0.2'
+  decision: TRIVIAL
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 606
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 614
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 614
+  num: '1.46'
+  decision: VAL
+  nota: ver línea 594.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 614
+  num: '1.76'
+  decision: VAL
+  nota: ver línea 595.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 615
+  num: '1.2'
+  decision: FIX
+  nuevo: revisar — no coincide con el recálculo
+  nota: 'HALLAZGO PRINCIPAL: el texto dice que el punto algebraico SSEE está a ''1.2σ'' del free-fit CPL (la corrida de 3 modelos, resumen_3modelos.json). Pero usando los PROPIOS valores ya canónicos del
+    documento — \val{p2_dist_w0}=0.26σ, \val{p2_dist_wa}=0.38σ, \val{p2_rho_cpl}=-0.95 — la distancia de Mahalanobis 2D correlacionada es D²=(z1²-2ρz1z2+z2²)/(1-ρ²) con z1=-0.256,z2=-0.380 (mismo signo:
+    SSEE más negativo en ambos) → D²≈4.20 → D≈2.05σ, NO 1.2σ. Recalculado también a mano desde resumen_3modelos.json (w0_cpl_med=-0.8196±0.0795, wa_cpl_med=-0.5518±0.3112, rho=-0.9518): mismo resultado,
+    ≈2.05σ. El único ''1.2-1.3σ'' que SÍ existe en los logs es \val{mf_w0wa_ssee}=1.31σ (results/logs/mcmc_full_posteriores.json#distancia_w0wa.ssee.sigma), pero ESE es la corrida de verosimilitud completa
+    (CAMB+plik_lite+lensing+DESI+fσ8 con w0,wa libres), no la corrida comprimida CPL de 3 modelos que esta frase dice usar. Hipótesis: la frase mezcla dos corridas distintas, o quedó de un borrador anterior
+    sin actualizar tras recalcular resumen_3modelos.json. Necesita decisión de Mike: ¿corregir a ≈2.0σ (recálculo con los propios \val) o aclarar que se refiere a \val{mf_w0wa_ssee}=1.31σ de la otra corrida?'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 621
+  num: '0.840'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 621
+  num: '0.670'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 629
+  num: '0.840'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 629
+  num: '0.670'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 640
+  num: '0.894'
+  decision: LOG
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.rho
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 640
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 640
+  num: '2.58'
+  decision: VAL
+  nombre: p2_w0wa_lcdm_ec26 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.lcdm_sigma
+  nota: coincide (2.576→2.58); macro existe, no se usa.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 641
+  num: '0.905'
+  decision: LOG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 641
+  num: '1.46'
+  decision: VAL
+  nota: ver línea 594.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 641
+  num: '3.93'
+  decision: VAL
+  nombre: p2_w0wa_lcdm_ec28 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec28.lcdm_sigma
+  nota: coincide (3.935→3.93).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 642
+  num: '0.933'
+  decision: LIT
+  nota: w0 best-fit DESI+CMB+Union3 (eq.27); no confundir con el ρ de esa fila (que es -0.933, coincidencia de dígitos con el ρ real de la tabla previa, ver 596/641 para rho de otras combinaciones — aquí
+    el -0.933 en la tabla es el ρ de Union3, consistente con paper2_w0wa.json#...ec27.rho si se verifica).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 642
+  num: '1.76'
+  decision: VAL
+  nota: ver línea 595.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 642
+  num: '3.38'
+  decision: VAL
+  nombre: p2_w0wa_lcdm_ec27 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.lcdm_sigma
+  nota: coincide (3.378→3.38).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 643
+  num: '0.978'
+  decision: LOG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 643
+  num: '1.68'
+  decision: VAL
+  nota: ver línea 595.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 643
+  num: '2.62'
+  decision: VAL
+  nombre: p2_w0wa_lcdm_ec25 (YA EXISTE)
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec25.lcdm_sigma
+  nota: coincide (2.616→2.62).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 654
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 676
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1003
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1004
+  num: '1.46'
+  decision: VAL
+  nota: ver línea 594.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1004
+  num: '1.76'
+  decision: VAL
+  nota: ver línea 595.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1056
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1057
+  num: '1.46'
+  decision: VAL
+  nota: ver línea 594.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1057
+  num: '1.76'
+  decision: VAL
+  nota: ver línea 595.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1196
+  num: '0.24'
+  decision: VAL
+  nota: ver línea 592 (sección B.1 del apéndice).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 710
+  num: '0.88'
+  decision: DERIVADO
+  nota: ver línea 389.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 711
+  num: '0.3153'
+  decision: LIT
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 711
+  num: '21.3'
+  decision: HIS
+  nota: '''21.3σ tension'' narrada explícitamente como error de categoría (comparar el sector 1+w0 contra el Ωm total de Planck), ya corregido. Coincide con el banner Ωm-geometría de CLAUDE.md (21.3σ→0.88σ).
+    Correcto.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 734
+  num: '67.037'
+  decision: HIS
+  nota: H0_MIRA, narrado explícitamente como 'superseding the earlier MIRA-mapped anchor'. Correcto, coincide con el banner H_global de CLAUDE.md.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 741
+  num: '2.9'
+  decision: HIS
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 742
+  num: '0.160'
+  decision: HIS
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 791
+  num: '0.5'
+  decision: TRIVIAL
+  nota: rango descriptivo de z donde ocurría el artefacto viejo (0.5≲z≲1.5); parte de la narración HIS del párrafo, no un resultado nuevo.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1013
+  num: '0.88'
+  decision: DERIVADO
+  nota: ver línea 389.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1069
+  num: '0.88'
+  decision: DERIVADO
+  nota: ver línea 389.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 889
+  num: '5.85'
+  decision: HIS
+  nota: ln P_MAP de la tabla SUPERSEDED (Ωm congelado en E(z)); narrado explícitamente como superseded. BIC=17.24 consistente con -2×(-5.85)+2×ln(16)=17.246. Correcto como historia.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 889
+  num: '17.24'
+  decision: HIS
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 889
+  num: '15.69'
+  decision: HIS
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 890
+  num: '5.68'
+  decision: HIS
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 890
+  num: '4.91'
+  decision: HIS
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 899
+  num: '0.00'
+  decision: TRIVIAL
+  nota: ΔBIC/ΔAIC de SSEE contra sí mismo = 0 por definición (fila de referencia de la tabla).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 927
+  num: '1.042'
+  decision: VAL
+  nombre: p3_chi2r_TT_ssee (YA EXISTE)
+  fuente: results/logs/paper3_cmb_chi2.json#espectros.TT.chi2r_ssee
+  nota: 'coincide exacto (1.042). FIX: el macro \val{p3_chi2r_TT_ssee} ya existe en valores_generados.tex pero no se usa aquí.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 928
+  num: '26.03'
+  decision: VAL
+  nombre: lite_dBIC (YA EXISTE)
+  fuente: results/logs/cmb_dbic_mnu_propia.json#dBIC
+  nota: 'coincide exacto (-26.03). FIX: \val{lite_dBIC} ya existe y no se usa; además esta cifra y la del abstract/banner CLAUDE.md coinciden entre sí (consistente con ''plik_lite TTTEEE+low-ℓ, N=669'').'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 938
+  num: '0.3'
+  decision: DERIVADO
+  nota: '''<0.3σ'' al quitar el prior Planck; declarado como cota, no verificado dígito a dígito (requiere correr MCMC, fuera de alcance ligero); consistente con \val{h0_p2_vs_plano}=0.06σ citado en la
+    sección BAO-only (más fuerte, mismo sentido).'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 958
+  num: '0.003'
+  decision: DERIVADO
+  nota: 'Gelman-Rubin R-1<0.003 para la corrida de verosimilitud completa; coherente con la cita de \val en la línea 973 (misma corrida, mismo criterio). No se verificó el log de convergencia Cobaya directamente
+    (fuera de alcance ligero: requeriría leer cadenas, no prohibido pero no localizado un .json con R-1 explícito).'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 973
+  num: '0.003'
+  decision: DERIVADO
+  nota: ver línea 958; mismo número, misma corrida (CAMB+plik_lite+lensing+DESI+fσ8, w0/wa libres).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 959
+  num: '0.655'
+  decision: LOG
+  fuente: 'results/logs/mcmc_full_posteriores.json#posteriores... (valor coherente con tensiones.wa.algebraico=-0.6700 comparado, pero el -0.655 es la media de w0 de esa misma corrida: no se encontró la
+    clave exacta w0.media en el log leído; wa.media=-1.1038 sí coincide con el -1.104 citado en la misma frase).'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 959
+  num: '1.104'
+  decision: LOG
+  fuente: results/logs/mcmc_full_posteriores.json#posteriores.wa.media
+  nota: coincide exacto (-1.10385→-1.104).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 962
+  num: '0.840'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 962
+  num: '0.670'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 964
+  num: '0.93'
+  decision: '?'
+  nota: ρ=-0.93 de la correlación w0-wa en la corrida de verosimilitud completa (mcmc_full_posteriores.json); el log leído no expone ese ρ como campo top-level (sólo expone sigmas y chi2 de la distancia
+    conjunta, no la matriz de covarianza w0-wa cruda). No se pudo confirmar ni refutar con lectura ligera; plausible por orden de magnitud (anticorrelación fuerte típica de CPL) pero sin cifra exacta verificada.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 987
+  num: '1.1'
+  decision: DERIVADO
+  nota: '''1.1σ de Planck'' para H0_glob=67.962±0.968 vs Planck 67.36±0.54: combinando en cuadratura σ=√(0.968²+0.54²)=1.108, (67.962-67.36)/1.108=0.543σ — NO reproduce 1.1σ con cuadratura simple. Si se
+    usa sólo el σ de H0_glob (0.968): (67.962-67.36)/0.968=0.622σ, tampoco. Si se usa sólo el σ de Planck (0.54): 0.602/0.54=1.115≈1.1σ — esto SÍ reproduce el número, i.e. el 1.1σ parece calcularse con
+    el σ de Planck solamente (no combinado), igual que \val{h0_p2_dplanck}=0.68σ en el MCMC usa presumiblemente la misma convención en otra parte. No es necesariamente un error (convención de ''σ del dato
+    de referencia''), pero el documento no aclara qué σ usa aquí; nota para Mike, no FIX duro.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1025
+  num: '0.3'
+  decision: TRIVIAL
+  nota: el '0.3' de la definición estándar de S8=σ8√(Ωm/0.3); constante de definición de la literatura, no resultado del modelo.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1029
+  num: '0.5504'
+  decision: VAL
+  nombre: p3_gamma_IS (YA EXISTE)
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  nota: 'coincide exacto (0.55044→0.5504). FIX: \val{p3_gamma_IS} ya existe en valores_generados.tex, no se usa aquí. Coincide con el banner CLAUDE.md γ_IS=0.5504 (P5), correctamente etiquetado como vigente
+    (ya no el 0.657/0.658 superado).'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1040
+  num: '0.0685'
+  decision: ALG
+  expr: c.SUM_MNU_EV
+  nota: ssee_core.SUM_MNU_EV=0.06849→0.0685 (.4f). Coincide con el banner CLAUDE.md Σmν=0.06849 eV.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1175
+  num: '0.840'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1175
+  num: '0.670'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1173
+  num: '0.840'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1173
+  num: '0.670'
+  decision: ALG
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1187
+  num: '0.5'
+  decision: TRIVIAL
+  nota: parámetro del prior declarado (N(-1,0.5²)×N(0,1²)), diseño, no resultado.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1188
+  num: '2.5'
+  decision: TRIVIAL
+  nota: límite inferior de la caja de muestreo w0∈(-2.5,0.5), diseño del sampler.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1188
+  num: '0.5'
+  decision: TRIVIAL
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1189
+  num: '0.9973'
+  decision: VAL
+  fuente: results/logs/savage_cv.json#savage_dickey.Z_trunc_w0
+  nota: coincide exacto.
+  nombre: sd_ztrunc_w0
+  formato: .4f
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1189
+  num: '0.9759'
+  decision: VAL
+  fuente: results/logs/savage_cv.json#savage_dickey.Z_trunc_wa
+  nota: coincide exacto.
+  nombre: sd_ztrunc_wa
+  formato: .4f
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1191
+  num: '2.3'
+  decision: LIT
+  nota: umbral de 'evidencia fuerte' de la escala de Jeffreys (Trotta 2008); constante de la literatura citada, no resultado SSEE.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1226
+  num: '12.0'
+  decision: HIS
+  nota: 'χ²=12.0 de una versión anterior, explícitamente marcada en el propio texto: ''those numbers had no log, and the computation above does not reproduce them''. Auto-retractada correctamente en el
+    documento mismo; no requiere acción.'
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 252
+  num: '0.020'
+  decision: HIS
+  nota: f_nu=0.020 de la versión 'MOND-like' retirada, explícitamente marcada 'withdrawn' en la misma frase junto con la fórmula M=M_bar·KAL0·(1+f_nu). Correcto.
+afirmaciones:
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 497-505
+  dice: 'Tabla de convergencia MCMC (⟨a⟩, τ_max, N_s/τ_max, N_eff) para SSEE/ΛCDM/CPL: 0.38/32.7/183.5/4402, 0.41/41.5/144.6/3471, 0.35/57.3/104.7/2514 — y el N_eff=4402 se repite en el Abstract como cifra
+    titular de convergencia.'
+  debe_decir: 'Verificar/regenerar: ninguna corrida en results/logs/ ni archive/ reproduce estos 4 números juntos para ningún modelo. La fórmula documentada en src/p02_mcmc/ssee_paper2_mcmc.py (N_eff=N_walkers·N_steps/τ_max)
+    da N_eff≈76.000 con τ_max=32.7, no 4402; las propias columnas de la tabla (N_s/τ_max debería ser 25000/τ_max) tampoco reconcilian — hay un factor ~4.17 de diferencia interno en las 3 filas. El run vigente
+    más cercano (mcmc_paper2_3models_wmfix.log) coincide sólo en τ_max de CPL (57.3) pero da N_eff y accept muy distintos (43.637/0.550 vs 2514/0.35).'
+  evidencia: grep en results/logs/*.log y archive/**/*.log; src/p02_mcmc/ssee_paper2_mcmc.py líneas 248-259 (fórmula N_eff); results/logs/mcmc_paper2_3models_wmfix.log (único log con τ_max=57.3 para CPL,
+    resto no coincide).
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 615
+  dice: and with the two-parameter CPL free-fit (at $1.2\sigma$)
+  debe_decir: '≈2.05σ — recalculado con los propios \val{p2_dist_w0}=0.26, \val{p2_dist_wa}=0.38 y \val{p2_rho_cpl}=-0.95 vía Mahalanobis 2D (fórmula estándar con correlación). El 1.2–1.3σ que SÍ existe
+    en los logs es \val{mf_w0wa_ssee}=1.31σ, pero pertenece a la corrida de verosimilitud COMPLETA (mcmc_full_posteriores.json), no a la corrida comprimida de 3 modelos (resumen_3modelos.json) que esta
+    frase describe. Pendiente decisión de Mike: corregir el número o aclarar a qué corrida se refiere.'
+  evidencia: resumen_3modelos.json (w0_cpl_med=-0.8196±0.0795, wa_cpl_med=-0.5518±0.3112, rho_w0_wa_cpl=-0.9518); cálculo manual de Mahalanobis 2D en esta sesión da D≈2.05σ.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 592,78,606,614,640-643,654,676,1003,1004,1056,1057,1196
+  dice: σ-distancias del plano w0-wa (0.24, 1.46, 1.76, 1.68 y sus contrapartes ΛCDM 2.58/3.93/3.38/2.62) tecleadas a mano, repetidas en 12+ sitios.
+  debe_decir: Usar \val{p2_w0wa_ssee_ec25..28} y \val{p2_w0wa_lcdm_ec25..28}, que YA EXISTEN en manuscript/valores_generados.tex con exactamente estos valores (el documento los usa correctamente sólo en
+    el Abstract, línea 80, pero no en el resto del cuerpo).
+  evidencia: grep en manuscript/valores_generados.tex muestra los 8 macros ya definidos con el sufijo _ec25.._ec28; los valores numéricos tecleados a mano coinciden dígito a dígito con esos macros.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 927-928
+  dice: independently favours \SSEE\ at $\chi^2_r=1.042$ (TT) and $\Delta\mathrm{BIC}=-26.03$ (plik_lite TTTEEE+low-$\ell$, $\omega_m$-direct)
+  debe_decir: Usar \val{p3_chi2r_TT_ssee} y \val{lite_dBIC}, que ya existen y coinciden exactamente (1.042 y -26.03).
+  evidencia: manuscript/valores_generados.tex líneas con ssee@val@p3_chi2r_TT_ssee y ssee@val@lite_dBIC.
+- archivo: SSEE_Paper2_MCMC.tex
+  linea: 1029
+  dice: $\gamma_{\rm IS}=0.5504$, indistinguishable from \LCDM\ (Paper~5).
+  debe_decir: Usar \val{p3_gamma_IS} (ya existe, mismo valor); el valor en sí es correcto y vigente (coincide con el canónico de P5 del banner CLAUDE.md, ya no el 0.657/0.658 superado).
+  evidencia: manuscript/valores_generados.tex, ssee@val@p3_gamma_IS=0.5504.
+resumen_verificacion:
+  BAO_DESI_DR2: 13/13 puntos de la Tabla 1 coinciden dígito a dígito con data/raw/desi_dr2_bao.csv (fuente única declarada). Sin discrepancias.
+  algebra_w0_wa_sm: Todas las apariciones de -0.840/-0.670/0.160 coinciden con ssee_core (W0, WA, 1-OMEGA_DE) a 3 decimales. Sin discrepancias.
+  retiros_narrados: 0.31993 (MIRA mapping), 67.037 (H0_MIRA), 21.3σ, 2.9σ, f_nu=0.020, χ²=12.0 (B.2) y la fila BIC superseded (5.85/17.24/15.69/5.68/4.91) están correctamente marcados como historia/superado
+    en el propio texto, consistentes con los banners de CLAUDE.md. Sin discrepancias.
+  H_glob_y_Omega_m: H0_glob, Ωm total, ωb, ωc, s_m citados en §3.2-3.4 son consistentes entre sí y con \val{H0_GLOBAL_d3}=67.962, \val{OMEGA_M_TOTAL_d6}=0.308881, \val{S_M_d6}=0.160050 del banner vigente.
+    Sin discrepancias.

@@ -683,6 +683,15 @@ not the same quantity. A $\Lambda$CDM run with the background free --- the
 version that would make the error bars comparable --- is the outstanding item
 for this section.
 
+\paragraph{Where \SSEE{} sits against the published column.} At all three
+redshifts the \SSEE{} value of $f\sigma_8$ lies below the $\Lambda$CDM one, so it
+is the further of the two from the published consensus, even though its $\chi^2$
+on the raw multipoles is the lower. We state this rather than leave it in the
+table. The published column is a check of our pipeline on $\Lambda$CDM, not a test
+of \SSEE{}: \citet{Alam2017} compress the multipoles into $f\sigma_8$ with a fiducial
+$\Lambda$CDM geometry, so distance to that column partly measures distance to the
+fiducial. The model comparison is the $\chi^2$ on the raw multipoles above.
+
 % FUENTES (2026-10-01): D y r por \val (mide_As_o_producto, etapa DVC); perfil,
 %   marginal y su distancia por \val (analiza_boss_R1R2, que lee boss_aisla_neutrinos.json).
 %   chi2 BOSS con A_s del CMB = 198.07: results/logs/base_sin_particula.log, linea 75
@@ -752,11 +761,14 @@ redshift-space distortions rather than the one-loop model reported above.%
 % misma subseccion dice que la corrida de produccion usa velocileptors. Las
 % dos no podian ser ciertas a la vez. La segunda es la correcta. Measured against the published BOSS DR12
 consensus values (Alam et al.~2017 \citep{Alam2017}) with the growth rate left free, as in the
-official analysis, the pipeline reproduces the published values within
-0.92$\sigma$ on average ($\chi^2$/dof$=1.048$; \S\ref{sec:boss-method}),
-confirming the machinery --- data reading, window convolution, and
-Alcock--Paczynski deformation --- is sound. However, the linear model
-under-predicts $f\sigma_8$ by 9--15\% (increasing with $z$) once matched
+% ORIGEN-VALOR: 0.92, 1.048, 9--16 (Kaiser) — archive/logs_superados/boss_kaiser_20260808/barrido_kmax_20260808.log L95-110 (k_max=0.08); historico
+official analysis, that pass reproduced the published values within
+0.92$\sigma$ on average ($\chi^2$/dof$=1.048$ at $k_{\max}=0.08\,h/{\rm Mpc}$; archived log
+\texttt{archive/logs\_superados/boss\_kaiser\_20260808/}), a first check of the data reading,
+window convolution and Alcock--Paczynski deformation. It is quoted as history only: re-run,
+its minimiser is ill-conditioned along a flat nuisance direction and $\sigma(f\sigma_8)$ moves
+by 2--25\%, so it is not a result of this paper. The linear model also
+under-predicts $f\sigma_8$ by 9--16\% (increasing with $z$) once matched
 against small-scale modes ($k>0.08\,h/{\rm Mpc}$), a known limitation of
 first-order perturbation theory in the mildly non-linear regime. The
 production run for this paper uses a one-loop

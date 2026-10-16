@@ -908,7 +908,11 @@ $\val{neff_k1000}$ effective samples) gives
   \sigma_8 = \val{sigma8_k1000_ssee}\pm\val{sigma8_k1000_ssee_sigma}, \qquad S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma},
 \end{equation}
 i.e.\ $\val{S8_k1000_ssee_tension}\sigma$ from the KiDS-1000 value $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ --- and, in the like-for-like comparison, $\Delta S_8=\val{S8_k1000_dS8}$ from the $\Lambda$CDM control run through the same pipeline ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$), with
-$\chi^2_{\rm min}=\val{chi2_k1000_ssee}$ over $216$ degrees of freedom. \textbf{There is no
+$\chi^2_{\rm min}=\val{chi2_k1000_ssee}$ over $216$ degrees of freedom. In absolute terms this fit is
+poor (probability to exceed $\val{PTE_k1000_ssee}$), and so is the $\Lambda$CDM control
+($\chi^2=\val{chi2_k1000_lcdm}$, PTE $\val{PTE_k1000_lcdm}$) and the best fit published by
+KiDS itself ($\chi^2=\val{chi2_k1000_publicado}$): the excess belongs to the data set and its
+likelihood, shared by every model run through it, not to SSEE. \textbf{There is no
 $S_8$ tension to resolve, and therefore nothing for a second sector to do.}
 
 \paragraph{The same test against KiDS-Legacy.}
@@ -927,8 +931,8 @@ $\val{leg_lcdm_vs_planck}\sigma$.  Fixing $A_s$ to the CMB value therefore costs
 \end{equation}
 over the same 357 points, giving $\Delta\mathrm{BIC}=+\val{dBIC_leg_libre}$ in favour of the
 fixed-amplitude model, and $+\val{dBIC_leg_lcdm}$ against the $\Lambda$CDM-background control
-($\val{chi2_leg_lcdm}$).  With no free cosmological parameter left, $S_8=\val{S8_leg_pred}$ is a
-prediction rather than a fit, against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured---$\val{S8_leg_tension}\sigma$.
+($\val{chi2_leg_lcdm}$).  With no free cosmological parameter left, $S_8=\val{S8_leg_pred}$ is computed
+rather than fitted, against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured---$\val{S8_leg_tension}\sigma$.
 
 Two cautions belong with this result.  The three $\chi^2$ values span $1.0$
 over 357 points: \textbf{the shear does not discriminate between these
@@ -1021,7 +1025,7 @@ $\gamma_{\rm IS}$ (Israel--Stewart) & Growth      & $\val{p3_gamma_IS}$         
 $f\sigma_8$ (BOSS DR12, raw multipoles) & Growth & $\Delta\chi^2=\val{bossR_dchi2}$ vs.\ $\Lambda$CDM, equal freedom & P6 & Retrodiction \\
 \midrule
 \multicolumn{5}{l}{\textit{Built on the core --- growth, UV completion, strong gravity (no extension sector)}} \\
-$S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $\val{S8_leg_pred}$ predicted vs.\ $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & P6 & \textbf{Prediction} \\
+$S_8$ (KiDS-Legacy, $A_s$ fixed by CMB) & growth & $\val{S8_leg_pred}$ predicted vs.\ $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & P6 & Retrodiction (nothing fitted) \\
 $M=(5\varphi^8\rho_{\rm crit})^{1/4}$ & UV compl.  & $\val{M_meV_d2}\,$meV                    & P10    & Conditional (Conj.~C.1) \\
 Lensing (canonical EFT)       & Strong gravity    & GR$+$DM (uncond.)              & P8     & Retrodiction \\
 \midrule
@@ -1038,7 +1042,7 @@ derived independently, then compared to an existing measurement. ``Prediction'':
 fixed now, tested against not-yet-released data. ``Measured'': an input, not a
 derivation. ``Internal check'': a same-paper consistency quantity, not itself
 tested against external data. No optimisation over the algebraic formula space
-was performed. The detailed
+was performed except for the form of $\omega_b$, chosen among \val{p4_wb_candidatos} expressions (OP-1). The detailed
 per-sector registers follow below and in the Predictive Register of Paper~1.}
 \label{tab:master}
 \end{table}

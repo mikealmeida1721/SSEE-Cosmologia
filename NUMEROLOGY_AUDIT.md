@@ -42,7 +42,7 @@ con propiedades verificables. Siguiendo a Popper, su rasgo **definitorio** es la
   (`look_elsewhere_joint.py`). Un ajustador con 2 perillas independientes NO tiene esta
   rigidez; SSEE la tiene por construcción.
 - **Diccionario ACOTADO:** ley de no-auto-suma + techo de cierre M_v=3Ω, alcanzado por
-  **exactamente 20 rutas** (conjunto finito, enumerable — Paper 4 App. independencia). No
+  **exactamente 24 rutas = 8+13+3** (conjunto finito, enumerable — `src/p04_toe/rutas_mv.py`, `results/logs/p04_rutas_mv.json`; era «20 = 6+11+3» a mano, corregido 2026-10-15). No
   es un espacio abierto donde "todo cabe".
 
 **A favor de la acusación (dónde el referí anota — y el modelo lo CONCEDE):**
@@ -195,7 +195,7 @@ crédito estadístico. Esto es exactamente lo que separa una frontera declarada 
 
 **Principio de gramática-antes-del-dato (para el núcleo):** donde el look-elsewhere ES el
 argumento, la gramática se fija por las reglas de construcción del diccionario — las MISMAS que
-generan las 20 rutas al techo M_v=3Ω y que existen independientemente de los blancos w₀wₐ. No
+generan las 24 rutas al techo M_v=3Ω y que existen independientemente de los blancos w₀wₐ. No
 es una gramática elegida para acertar; es la gramática que ya rige todo el diccionario. Donde la
 gramática es débil (el multiplicador), el peso descansa en el dato. Esta separación es la
 respuesta referee-proof, y por eso m_φ vive **fuera del core register** del Sealed Journal.

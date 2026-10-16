@@ -66,7 +66,7 @@ Tensión con Planck 2018: **0.32σ** (mejora de factor 10×).
 no un parámetro libre. El factor φ¹¹ ≈ 199.005 explica por qué 200 era una aproximación.
 
 **Scan de unicidad:** (π−φ)/(3Ω²) es el único candidato SSEE con tensión < 1σ
-(7 candidatos evaluados en `archive/codigo/investigacion/open_problems/ssee_op1_baryon_density.py`).
+(7 candidatos evaluados en `archive/codigo/investigacion/open_problems/ssee_op1_baryon_density.py`; reproducido y sellado por `src/p04_toe/barrido_omega_b.py` → `results/logs/p04_barrido_omega_b.json`: el segundo mejor queda a 3.22σ).
 
 **Interpretación física:** (π−φ) = asimetría CP del sector bariogénico; 3Ω² = H₀_SSEE =
 escala de expansión cosmológica. El ratio expresa la fracción bariónica como violación CP / expansión.
@@ -780,8 +780,8 @@ it returns to ≤2 (only $H_0$ and $\Omega_b h^2$ as observation-tunable).
 <details><summary>Registro histórico (la pregunta tal como estaba planteada)</summary>
 
 
-> [!nota] ESTADO CANÓNICO ÚNICO (2026-07-12) — leer esto, ignorar redacciones antiguas abajo.
-> **Estado en UNA palabra: OP-9 está ABIERTO.** No lo llamamos "cerrado" en ninguna mitad —
+> [!nota] HISTÓRICO — estado al 2026-07-12, SUPERADO por el cierre por disolución del 2026-08-01 (ver arriba).
+> **Estado en UNA palabra, en julio: OP-9 estaba ABIERTO.** No lo llamamos "cerrado" en ninguna mitad —
 > eso confundía. Lo que existe es una partícula usable y una derivación pendiente; solo la
 > segunda es OP-9.
 >

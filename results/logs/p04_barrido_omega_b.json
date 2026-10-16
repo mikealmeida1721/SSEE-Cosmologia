@@ -1,0 +1,79 @@
+{
+ "que": "barrido de candidatos phi,pi para omega_b frente a Planck (paso [5] del script OP-1 archivado)",
+ "dato": {
+  "omega_b_planck": 0.02237,
+  "sigma": 0.00015,
+  "fuente": "Planck 2018 VI Tabla 2"
+ },
+ "n_candidatos": 7,
+ "n_bajo_1sigma": 1,
+ "elegido": "(pi-phi)/(3 Omega^2)",
+ "elegido_sigma": 0.31837854066564997,
+ "segundo": "3(pi-phi)/200",
+ "segundo_sigma": 3.222533150656487,
+ "tabla": [
+  {
+   "expresion": "(pi-phi)/(3 Omega^2)",
+   "valor": 0.02241775678109985,
+   "sigma": 0.31837854066564997
+  },
+  {
+   "expresion": "3(pi-phi)/200",
+   "valor": 0.022853379972598474,
+   "sigma": 3.222533150656487
+  },
+  {
+   "expresion": "3(pi-phi)/phi^11",
+   "valor": 0.02296764111634175,
+   "sigma": 3.9842741089449882
+  },
+  {
+   "expresion": "(pi-phi)/(Omega K_v)",
+   "valor": 0.03362663517164977,
+   "sigma": 75.04423447766516
+  },
+  {
+   "expresion": "(pi-phi)^2/(MIRA Omega^3)",
+   "valor": 0.010769697251366598,
+   "sigma": 77.33535165755603
+  },
+  {
+   "expresion": "(pi-phi)/phi^11",
+   "valor": 0.007655880372113916,
+   "sigma": 98.09413085257391
+  },
+  {
+   "expresion": "(pi-phi)/(T_r MIRA)",
+   "valor": 0.06354999435025163,
+   "sigma": 274.53329566834424
+  }
+ ],
+ "lectura": "seleccion entre candidatos, no derivacion; el residuo es OP-1",
+ "control_pasa": true,
+ "_procedencia": {
+  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "?? src/p04_toe/barrido_omega_b.py"
+  ],
+  "script": "src/p04_toe/barrido_omega_b.py",
+  "script_sha256": "b02eadd1ff3fdcb56a484037a47062a6f8b3bb5d2f6db16f5cf014d0a24406a1",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "archive/codigo/investigacion/open_problems/ssee_op1_baryon_density.py": "0cef229123b0f5436524647cd65e203f9e9144d83b82b2672fbcc3c65e098a25"
+  },
+  "argv": [
+   "src/p04_toe/barrido_omega_b.py"
+  ],
+  "fecha": "2026-10-16T00:41:27",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

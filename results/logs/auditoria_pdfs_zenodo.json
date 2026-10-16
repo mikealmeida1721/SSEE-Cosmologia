@@ -1,399 +1,332 @@
 {
  "patrones": 87,
  "vivos": 0,
- "narrados": 55,
+ "narrados": 42,
  "por_documento": {
   "SSEE_Cover.pdf": {
-   "caracteres": 520,
+   "caracteres": 535,
    "vivos": [],
    "narrados": []
   },
   "SSEE_Cover_Letter.pdf": {
-   "caracteres": 4404,
+   "caracteres": 3814,
    "vivos": [],
    "narrados": []
   },
   "SSEE_Endorser_Summary.pdf": {
-   "caracteres": 7203,
+   "caracteres": 7962,
    "vivos": [],
    "narrados": []
   },
   "SSEE_PRD.pdf": {
-   "caracteres": 63214,
+   "caracteres": 64002,
    "vivos": [],
    "narrados": [
     {
      "patron": "66.53",
-     "pos": 23884,
+     "pos": 23643,
      "texto": "and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sec"
     },
     {
      "patron": "67.159",
-     "pos": 23903,
+     "pos": 23662,
      "texto": "matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sector 0.160 in the ge"
     },
     {
      "patron": "66.533",
-     "pos": 23884,
+     "pos": 23643,
      "texto": "and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sec"
     },
     {
      "patron": "67.037",
-     "pos": 23877,
+     "pos": 23636,
      "texto": "terior\u0016and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the c"
     }
    ]
   },
   "SSEE_Paper10_UVCompletion.pdf": {
-   "caracteres": 37152,
+   "caracteres": 39570,
    "vivos": [],
    "narrados": [
     {
      "patron": "71.87",
-     "pos": 4773,
+     "pos": 4715,
      "texto": "t of the cascade, only its benchmark. The earlier register used the MIRA-mapped CMB anchor HMIRA 0 = 67.037 (→71.87, 1.12σ); this is now superseded. Under the ωm-direct reframe the CMB matter density is the standard Ωm,C"
     },
     {
      "patron": "67.037",
-     "pos": 707,
-     "texto": "dimensionless algebraic number 3(φ + π)2 = 67.96214 (Postulate D, Pa- per 1); the earlier MIRA-mapped anchor 67.037 is superseded by the 2026 re- frame. We extend the EFT to include the leading higher-derivative operato"
+     "pos": 705,
+     "texto": "ic number 3(φ + π)2 = 67.96214 (the comparison target, not an input; Paper 1); the earlier MIRA-mapped anchor 67.037 is superseded by the 2026 reframe. We extend the EFT to include the leading higher-derivative operator"
     },
     {
      "patron": "67.037",
-     "pos": 4764,
+     "pos": 4706,
      "texto": "the input of the cascade, only its benchmark. The earlier register used the MIRA-mapped CMB anchor HMIRA 0 = 67.037 (→71.87, 1.12σ); this is now superseded. Under the ωm-direct reframe the CMB matter density is the stan"
     }
    ]
   },
   "SSEE_Paper1_Framework.pdf": {
-   "caracteres": 91842,
+   "caracteres": 93424,
    "vivos": [],
    "narrados": [
     {
      "patron": "67.037",
-     "pos": 59581,
-     "texto": ".03 (χ2 SSEE = 1003.586). The earlier legacy Cobaya scan gave ∆BIC = −32.2 at the superseded MIRA anchor H0 = 67.037. Claim: SSEE is not falsified by the Planck 2018 CMB spectra. This claim is sector-specific: it refers"
+     "pos": 60811,
+     "texto": ".03 (χ2 SSEE = 1003.586). The earlier legacy Cobaya scan gave ∆BIC = −32.2 at the superseded MIRA anchor H0 = 67.037. Claim: SSEE is not falsified by the 22 Planck 2018 CMB spectra. This claim is sector-specific: it ref"
     },
     {
      "patron": "0.31076",
-     "pos": 69624,
-     "texto": "ometric (π −φ)/(π + φ) = 0.32010, MIRA mapping Ωm,dyn × MIRA = 0.31993, and an intermediate factor π/φ giving 0.31076 — are all superseded by the ωm-direct construction. † H0/km s−1 Mpc−1 = 3(φ + π)2 ≈67.962 is the globa"
+     "pos": 70980,
+     "texto": "ometric (π −φ)/(π + φ) = 0.32010, MIRA mapping Ωm,dyn × MIRA = 0.31993, and an intermediate factor π/φ giving 0.31076 — are all superseded by the ωm-direct construction. † The global background rate shared by every secto"
     },
     {
      "patron": "0.31993",
-     "pos": 62639,
-     "texto": "cross-checks. The legacy MIRA-background values (−32.2 Cobaya, −41.0 aggressive k=1) used the superseded Ωm = 0.31993 mapping and are retired. No single BIC summarises the entire framework: each answers a specific physic"
+     "pos": 63893,
+     "texto": "s-checks. The legacy MIRA-background values (−32.2 Cobaya, −41.0 aggressive k=1) 23 used the superseded Ωm = 0.31993 mapping and are retired. No single BIC summarises the entire framework: each answers a specific physic"
     },
     {
      "patron": "0.31993",
-     "pos": 66815,
+     "pos": 68113,
      "texto": "0 (N = 5914). The legacy MIRA-background values (−32.2 Cobaya, aggressive k=1 −41.0) used the superseded Ωm = 0.31993 mapping and are retired (see Paper 3). The authoritative reference is Table 3. Acknowledgements The au"
     },
     {
      "patron": "0.31993",
-     "pos": 69577,
-     "texto": "canonical −33.83). Earlier register forms — geometric (π −φ)/(π + φ) = 0.32010, MIRA mapping Ωm,dyn × MIRA = 0.31993, and an intermediate factor π/φ giving 0.31076 — are all superseded by the ωm-direct construction. † H"
+     "pos": 70933,
+     "texto": "canonical −33.83). Earlier register forms — geometric (π −φ)/(π + φ) = 0.32010, MIRA mapping Ωm,dyn × MIRA = 0.31993, and an intermediate factor π/φ giving 0.31076 — are all superseded by the ωm-direct construction. † T"
     },
     {
      "patron": "0.3199",
-     "pos": 42719,
-     "texto": "ck–KiDS 2Corrected 2026-09-26. The previously quoted S8 = 0.837 evaluated σ8 p Ωm/0.3 at Ωm = Ωm,dyn × MIRA = 0.3199; the MIRA matter factor was withdrawn on 2026-06-18 when OP-8 closed and Ωm,CMB = ωm/h2 = 0.308881 beca"
+     "pos": 44460,
+     "texto": "(a) and the CMB-sector matter density Ωm,CMB = ωm/h2 = 0.308881 (ωm-direct, Paper 3; the earlier MIRA mapping 0.3199 is superseded), SIS, ceiling 8 ≡σ8,IS r Ωm,CMB 0.3 ≈0.827, (30) the all-cold single-sector ceiling, 0.4"
     },
     {
      "patron": "0.3199",
-     "pos": 43583,
-     "texto": "(a) and the CMB-sector matter density Ωm,CMB = ωm/h2 = 0.308881 (ωm-direct, Paper 3; the earlier MIRA mapping 0.3199 is superseded), SIS, ceiling 8 ≡σ8,IS r Ωm,CMB 0.3 ≈0.827, (32) the all-cold single-sector ceiling, 1.1"
+     "pos": 45859,
+     "texto": "tions). 2Corrected 2026-09-26. The previously quoted S8 = 0.837 evaluated σ8 p Ωm/0.3 at Ωm = Ωm,dyn × MIRA = 0.3199; the MIRA matter factor was withdrawn on 2026-06-18 when OP-8 closed and Ωm,CMB = ωm/h2 = 0.308881 beca"
     },
     {
      "patron": "0.3199",
-     "pos": 62639,
-     "texto": "cross-checks. The legacy MIRA-background values (−32.2 Cobaya, −41.0 aggressive k=1) used the superseded Ωm = 0.31993 mapping and are retired. No single BIC summarises the entire framework: each answers a specific physic"
+     "pos": 63893,
+     "texto": "s-checks. The legacy MIRA-background values (−32.2 Cobaya, −41.0 aggressive k=1) 23 used the superseded Ωm = 0.31993 mapping and are retired. No single BIC summarises the entire framework: each answers a specific physic"
     },
     {
      "patron": "0.3199",
-     "pos": 66815,
+     "pos": 68113,
      "texto": "0 (N = 5914). The legacy MIRA-background values (−32.2 Cobaya, aggressive k=1 −41.0) used the superseded Ωm = 0.31993 mapping and are retired (see Paper 3). The authoritative reference is Table 3. Acknowledgements The au"
     },
     {
      "patron": "0.3199",
-     "pos": 69577,
-     "texto": "canonical −33.83). Earlier register forms — geometric (π −φ)/(π + φ) = 0.32010, MIRA mapping Ωm,dyn × MIRA = 0.31993, and an intermediate factor π/φ giving 0.31076 — are all superseded by the ωm-direct construction. † H"
+     "pos": 70933,
+     "texto": "canonical −33.83). Earlier register forms — geometric (π −φ)/(π + φ) = 0.32010, MIRA mapping Ωm,dyn × MIRA = 0.31993, and an intermediate factor π/φ giving 0.31076 — are all superseded by the ωm-direct construction. † T"
     }
    ]
   },
   "SSEE_Paper2_MCMC.pdf": {
-   "caracteres": 57472,
+   "caracteres": 60983,
    "vivos": [],
    "narrados": [
     {
      "patron": "67.037",
-     "pos": 31256,
-     "texto": "e — they are the same number, Hglob 0 = 67.962 ± 0.968 — superseding the earlier MIRA-mapped anchor HMIRA 0 = 67.037. With the total matter density Ωm = 0.308881 in the background geometry, the MCMC posterior reported ab"
+     "pos": 32311,
+     "texto": "CMB anchor therefore agree, Hglob 0 = 67.962 ± 0.968, supersed- ing the earlier MIRA-mapped anchor HMIRA 0 = 67.037. With the total matter den- sity Ωm = 0.308881 in the background geometry, the MCMC posterior reported"
     },
     {
      "patron": "0.31993",
-     "pos": 16575,
-     "texto": "follows as Ωm,CMB = ωm/h2 = 0.308881, with no matter factor (the earlier MIRA mapping Ωm,CMB = MIRA Ωm,dyn = 0.31993 is superseded; OP- 8 dissolved). Adopting this prior eliminates the otherwise unavoidable cross-framew"
+     "pos": 17107,
+     "texto": "are likewise not propagated, standard practice for compressed BAO-only comparisons. 7 Ωm,CMB = MIRA Ωm,dyn = 0.31993 is superseded; OP-8 dissolved). Adopting this prior eliminates the otherwise unavoidable cross-framewo"
     },
     {
      "patron": "0.3199",
-     "pos": 16575,
-     "texto": "follows as Ωm,CMB = ωm/h2 = 0.308881, with no matter factor (the earlier MIRA mapping Ωm,CMB = MIRA Ωm,dyn = 0.31993 is superseded; OP- 8 dissolved). Adopting this prior eliminates the otherwise unavoidable cross-framew"
+     "pos": 17107,
+     "texto": "are likewise not propagated, standard practice for compressed BAO-only comparisons. 7 Ωm,CMB = MIRA Ωm,dyn = 0.31993 is superseded; OP-8 dissolved). Adopting this prior eliminates the otherwise unavoidable cross-framewo"
     }
    ]
   },
   "SSEE_Paper3_CMB.pdf": {
-   "caracteres": 49368,
+   "caracteres": 49818,
    "vivos": [],
    "narrados": [
     {
      "patron": "67.037",
-     "pos": 24765,
-     "texto": "sation spectra without relying on diagonal approximations. (The earlier legacy minimization, which found H0 = 67.037 with ∆χ2 = +2.875 and ∆BIC = −32.2, is superseded by this ωm-direct evaluation.) 13 Table 6: Prelimina"
+     "pos": 24756,
+     "texto": "sation spectra without relying on diagonal approximations. (The earlier legacy minimization, which found H0 = 67.037 with ∆χ2 = +2.875 and ∆BIC = −32.2, is superseded by this ωm-direct evaluation.) 5.6 Full posterior sam"
     }
    ]
   },
   "SSEE_Paper4_ToE.pdf": {
-   "caracteres": 42838,
+   "caracteres": 41809,
    "vivos": [],
    "narrados": [
     {
      "patron": "67.037",
-     "pos": 1764,
-     "texto": "2137), taking Riess et al. [2022] as the input (2026 reframe); the earlier CMB-mapped register (via HMIRA 0 = 67.037) is superseded; see Section 6). These background predictions are number-to-number comparisons with zero"
+     "pos": 2063,
+     "texto": "the IR term alone, Hglob,IR 0 = 68.13, 0.17σ from 3(φ + π)2); the earlier CMB-mapped register (via HMIRA 0 = 67.037) is superseded; see Section 6). These background predictions are number-to-number comparisons with zero"
     },
     {
      "patron": "67.037",
-     "pos": 10027,
-     "texto": ")2 = 67.962137; the full UV cascade closes to 67.96214 (Paper 10). The earlier CMB-mapped register (HMIRA 0 = 67.037) is superseded. Consistent with Paper 1 / Paper 9 policy (single anchor shared by every sector). ∗Ωb ="
+     "pos": 10303,
+     "texto": "l IR+UV cascade gives the canonical Hglob 0 = 67.96214 (Paper 10). The earlier CMB-mapped register (HMIRA 0 = 67.037) is superseded. Consistent with Paper 1 / Paper 9 policy (single target shared by every sector; the mea"
     },
     {
      "patron": "67.037",
-     "pos": 27250,
+     "pos": 25166,
      "texto": "MB places its own minimum at 67.87 ± 0.10, 0.90σ from Hglob 0 (Paper 3). (The earlier MIRA register HMIRA 0 = 67.037 is superseded.) Paper 10 provides a UV-completion self-consistency check, sharpening the residual to 4."
     },
     {
      "patron": "0.31993",
-     "pos": 15436,
-     "texto": "0.160 (= 1+w0) is an equation- of-state-sector identity, not a density. (The earlier MIRA mapping MIRA × sm = 0.31993 and the geometric route (π −φ)/(π + φ) = 0.3201 are both superseded.) The cold dark matter density can"
+     "pos": 15615,
+     "texto": "0050 (= 1 + w0) is an equation-of-state-sector identity, not a density. (The earlier MIRA mapping MIRA × sm = 0.31993 and the geometric route (π −φ)/(π + φ) = 0.3201 are both superseded.) The cold dark matter density can"
     },
     {
      "patron": "0.31993",
-     "pos": 25858,
-     "texto": "Ωm,CMB = ωm/h2 (the former Two-Ωm criterion is withdrawn; see Paper 1, Sec. 1.4). The earlier MIRA mapping to 0.31993 and geometric route 0.3201 are superseded; OP-8 dissolved). Mpc−1. Lacking a dimensional coupling mech"
+     "pos": 24257,
+     "texto": "Ωm,CMB = ωm/h2 (the former Two-Ωm criterion is withdrawn; see Paper 1, Sec. 1.4). The earlier MIRA mapping to 0.31993 and geometric route 0.3201 are superseded; OP-8 dissolved). 5 CMB Power Spectrum Prediction 6 Note on"
     },
     {
      "patron": "0.3199",
-     "pos": 15436,
-     "texto": "0.160 (= 1+w0) is an equation- of-state-sector identity, not a density. (The earlier MIRA mapping MIRA × sm = 0.31993 and the geometric route (π −φ)/(π + φ) = 0.3201 are both superseded.) The cold dark matter density can"
+     "pos": 15615,
+     "texto": "0050 (= 1 + w0) is an equation-of-state-sector identity, not a density. (The earlier MIRA mapping MIRA × sm = 0.31993 and the geometric route (π −φ)/(π + φ) = 0.3201 are both superseded.) The cold dark matter density can"
     },
     {
      "patron": "0.3199",
-     "pos": 25858,
-     "texto": "Ωm,CMB = ωm/h2 (the former Two-Ωm criterion is withdrawn; see Paper 1, Sec. 1.4). The earlier MIRA mapping to 0.31993 and geometric route 0.3201 are superseded; OP-8 dissolved). Mpc−1. Lacking a dimensional coupling mech"
+     "pos": 24257,
+     "texto": "Ωm,CMB = ωm/h2 (the former Two-Ωm criterion is withdrawn; see Paper 1, Sec. 1.4). The earlier MIRA mapping to 0.31993 and geometric route 0.3201 are superseded; OP-8 dissolved). 5 CMB Power Spectrum Prediction 6 Note on"
     }
    ]
   },
   "SSEE_Paper5_IS.pdf": {
-   "caracteres": 78024,
+   "caracteres": 74741,
    "vivos": [],
-   "narrados": [
-    {
-     "patron": "0.3199",
-     "pos": 11189,
-     "texto": "om the algebraic ωm = ωb +ωc +ων, in 0.88σ agreement with Planck 2018. (The earlier MIRA mapping Ωm,dyn×MIRA ≃0.3199 is superseded.) The present paper confronts a fundamental question that must be answered before SSEE ca"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 34897,
-     "texto": "f whether the perturbations reproduce the algebraic MIRA = 1.9989, under the mapping Ωm,CMB = MIRA × Ωm,dyn = 0.3199 then in force. That map- ping was withdrawn on 2026-06-18 when OP-8 closed: there is no matter factor i"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 40107,
-     "texto": "is the gravitational background density (ωm-direct = ωm/h2, the CMB-inferred value; the earlier MIRA-enhanced 0.3199 is superseded), and primes denote d/d ln a. We define the growth rate f(a) ≡d ln D1 d ln a , (33) and p"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 42401,
-     "texto": "1 is slightly below Ωm,ΛCDM = 0.3153, so the net enhancement (0.3%) is smaller than under the superseded Ωm = 0.3199 background (1.1%), and lies below near-term weak-lensing growth sensitivity. The σ8 parameter is define"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 43918,
-     "texto": "le sector uses the ωm-direct CMB density Ωm,CMB = 0.308881 (= ωm/h2, no matter factor; the earlier MIRA value 0.3199 is superseded) and the CLASS amplitude ceiling σSSEE 8 = 0.8149: SSSEE, ceiling 8 = 0.8149 × r 0.308881"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 55278,
-     "texto": "els. Historical note (2026-09-26). The quantity being chased here, the matter factor Ωm,CMB = MIRA × Ωm,dyn = 0.3199, was withdrawn on 2026-06-18 when OP-8 closed: Ωm,CMB = ωm/h2 = 0.308881 is derived with no factor, and"
-    }
-   ]
+   "narrados": []
   },
   "SSEE_Paper6_Growth.pdf": {
-   "caracteres": 39581,
+   "caracteres": 40200,
    "vivos": [],
    "narrados": []
   },
   "SSEE_Paper7_EFT.pdf": {
-   "caracteres": 36208,
+   "caracteres": 39715,
    "vivos": [],
    "narrados": []
   },
   "SSEE_Paper8_StrongGravity.pdf": {
-   "caracteres": 42329,
+   "caracteres": 43908,
    "vivos": [],
    "narrados": []
   },
   "SSEE_Paper9_HubbleTension.pdf": {
-   "caracteres": 50010,
+   "caracteres": 51166,
    "vivos": [],
    "narrados": [
     {
      "patron": "71.87",
-     "pos": 3231,
-     "texto": "the suite (2026 reframe). The earlier register used the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ); this is now superseded. The 2026 ωm-direct reframe adopts the single algebraic anchor 3(φ+π)2 ="
+     "pos": 3270,
+     "texto": "the suite (2026 reframe). The earlier register used the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ); this is now superseded. The 2026 ωm-direct reframe adopts the pure number 3(φ + π)2 = 67.96214"
     },
     {
      "patron": "71.87",
-     "pos": 16099,
-     "texto": "idual from SH0ES (IR regime) — 0.17σ — Residual from CCHP (IR regime) — −1.28σ — superseded: HMIRA 0 =67.037 →71.87 MIRA mapping 1.12σ old register A figure withdrawn. Earlier versions plotted fscreen(z), obtained by sca"
+     "pos": 16636,
+     "texto": "ual vs 3(φ + π)2 (IR regime) — 0.17σ — Residual from CCHP (IR regime) — −1.28σ — superseded: HMIRA 0 =67.037 →71.87 MIRA mapping 1.12σ old register A figure withdrawn. Earlier versions plotted fscreen(z), obtained by sca"
     },
     {
      "patron": "71.87",
-     "pos": 20653,
-     "texto": ". The earlier register applied the same mechanism to the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ). Under the 2026 ωm-direct reframe the suite adopts the single algebraic anchor 3(φ + π)2 = 67.96"
+     "pos": 21304,
+     "texto": ". The earlier register applied the same mechanism to the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ). Under the 2026 ωm-direct reframe the suite adopts the pure number 3(φ + π)2 = 67.96214 as the a"
     },
     {
      "patron": "71.87",
-     "pos": 36942,
-     "texto": "free parameters, the SH0ES datum [Riess et al., 2022] being the input. The earlier MIRA-mapped value 67.037 →71.87 (1.12σ) is superseded by the single algebraic target under the 2026 reframe (Paper 1). The correction is"
+     "pos": 38036,
+     "texto": "free parameters, the SH0ES datum [Riess et al., 2022] being the input. The earlier MIRA-mapped value 67.037 →71.87 (1.12σ) is superseded by the single algebraic target under the 2026 reframe (Paper 1). The correction ac"
     },
     {
      "patron": "67.037",
-     "pos": 3205,
-     "texto": "shared by every sector of the suite (2026 reframe). The earlier register used the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ); this is now superseded. The 2026 ωm-direct reframe adopts the single"
+     "pos": 3244,
+     "texto": "shared by every sector of the suite (2026 reframe). The earlier register used the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ); this is now superseded. The 2026 ωm-direct reframe adopts the pure nu"
     },
     {
      "patron": "67.037",
-     "pos": 16091,
-     "texto": "024] Residual from SH0ES (IR regime) — 0.17σ — Residual from CCHP (IR regime) — −1.28σ — superseded: HMIRA 0 =67.037 →71.87 MIRA mapping 1.12σ old register A figure withdrawn. Earlier versions plotted fscreen(z), obtaine"
+     "pos": 16628,
+     "texto": "5] Residual vs 3(φ + π)2 (IR regime) — 0.17σ — Residual from CCHP (IR regime) — −1.28σ — superseded: HMIRA 0 =67.037 →71.87 MIRA mapping 1.12σ old register A figure withdrawn. Earlier versions plotted fscreen(z), obtaine"
     },
     {
      "patron": "67.037",
-     "pos": 20627,
-     "texto": "perseded MIRA-mapped value. The earlier register applied the same mechanism to the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ). Under the 2026 ωm-direct reframe the suite adopts the single algebrai"
+     "pos": 21278,
+     "texto": "perseded MIRA-mapped value. The earlier register applied the same mechanism to the CMB-mapped value HMIRA 0 = 67.037, giving Hlocal 0 = 71.87 (1.12σ). Under the 2026 ωm-direct reframe the suite adopts the pure number 3(φ"
     },
     {
      "patron": "67.037",
-     "pos": 24881,
-     "texto": "— a pure number, the target the cascade output is compared against (Postulate D); the superseded MIRA- mapped 67.037 is retired 2 (MCMC DESI) MCMC posterior H0 = 67.82±0.41 (prior Hglob 0 ) No — MCMC measures the global"
+     "pos": 25334,
+     "texto": ", the target the cascade output is compared against (not an input of Postulate D); the superseded MIRA-mapped 67.037 is retired 2 (MCMC DESI) MCMC posterior H0 = 67.82±0.41 (prior Hglob 0 ) No — MCMC measures the global"
     },
     {
      "patron": "67.037",
-     "pos": 36934,
+     "pos": 38028,
      "texto": "ith zero free parameters, the SH0ES datum [Riess et al., 2022] being the input. The earlier MIRA-mapped value 67.037 →71.87 (1.12σ) is superseded by the single algebraic target under the 2026 reframe (Paper 1). The corre"
     },
     {
      "patron": "67.037",
-     "pos": 42181,
+     "pos": 42971,
      "texto": "6 reframe, justifies adopting 67.96214 as the single algebraic target of the suite rather than the CMB-mapped 67.037 of the earlier register. The dimensional origin of the absolute scale (Postulate D) remains an open pro"
     }
    ]
   },
   "SSEE_Sealed_Journal.pdf": {
-   "caracteres": 66125,
+   "caracteres": 67896,
    "vivos": [],
    "narrados": [
     {
      "patron": "66.53",
-     "pos": 25560,
+     "pos": 25546,
      "texto": "and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sec"
     },
     {
      "patron": "67.159",
-     "pos": 25579,
+     "pos": 25565,
      "texto": "matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sector 0.160 in the ge"
     },
     {
      "patron": "66.533",
-     "pos": 25560,
+     "pos": 25546,
      "texto": "and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the cold sec"
     },
     {
      "patron": "67.037",
-     "pos": 25553,
+     "pos": 25539,
      "texto": "terior\u0016and with the total matter density in the background geometry they coincide. (The earlier MIRA-anchored 67.037/66.533 stages, the 67.159 posterior from the mislabelled DR1 vector, and the 66.412 obtained with the c"
     }
    ]
   },
   "SSEE_Unified_Journal.pdf": {
-   "caracteres": 49233,
+   "caracteres": 50940,
    "vivos": [],
-   "narrados": [
-    {
-     "patron": "71.87",
-     "pos": 32586,
-     "texto": "canonical, independent prediction of the ssee infrared sector. (The earlier MIRA anchor HMIRA 0 = 67.037 gave 71.87 at 1.12σ, now superseded by the reframe.) The correction applies to local measurements of the rate; it d"
-    },
-    {
-     "patron": "72.05",
-     "pos": 33570,
-     "texto": "0.069522) = 67.96214 km s−1 Mpc−1 (residual +4.2×10−6 against 3(φ + π)2, σ = 0.968; the earlier MIRA-anchored 72.05 at 0.96σ is superseded by the reframe). We state the epistemic status of these figures plainly: the UV v"
-    },
-    {
-     "patron": "72.05",
-     "pos": 41820,
-     "texto": "actor; the associated Hglob,UV 0 = 67.96214 km s−1 Mpc−1 (4.3×10−6σ from 3(φ + π)2; the earlier MIRA-anchored 72.05 at 0.96σ is superseded) is a self-consistency check conditional on a separability postulate, not an inde"
-    },
-    {
-     "patron": "67.037",
-     "pos": 32574,
-     "texto": "This is the canonical, independent prediction of the ssee infrared sector. (The earlier MIRA anchor HMIRA 0 = 67.037 gave 71.87 at 1.12σ, now superseded by the reframe.) The correction applies to local measurements of th"
-    },
-    {
-     "patron": "0.31993",
-     "pos": 39198,
-     "texto": "CMB matter density is the standard Ωm,CMB = ωm/h2 = 0.308881, with no matter factor; the earlier MIRA-mapped 0.31993 and geometric (π−φ)/(π+φ) = 0.32010 forms are superseded. The residual open problem is now only the UV"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 12216,
-     "texto": "o different 5 kinds. (The earlier, now superseded MIRA mapping M = (3φ + π)/4 ≃1.9989 gave Ωm,CMB = M × sm = 0.3199, superseded; M now enters only the Hubble screening fraction, Paper 9.) The physical interpretation of"
-    },
-    {
-     "patron": "0.3199",
-     "pos": 39198,
-     "texto": "CMB matter density is the standard Ωm,CMB = ωm/h2 = 0.308881, with no matter factor; the earlier MIRA-mapped 0.31993 and geometric (π−φ)/(π+φ) = 0.32010 forms are superseded. The residual open problem is now only the UV"
-    }
-   ]
+   "narrados": []
   }
  },
  "_procedencia": {
-  "commit": "9159962c63d18c34cd0f307be641a29cbfdd1246",
+  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/audita_pdfs_zenodo.py",
   "script_sha256": "c1d4990b96b644bd98d3f013e097b146ebaf6a35764898c36992f44577c44d4a",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "08bdd82aa039a4f7e05c95579c8db0abd7da4a2e861d291de02ce0f49897123f",
-   "docs/SSEE_Cover.pdf": "8f5b7601a8e9919e6fbe36b93d6c05d3012e6dc53db7f1776b814804fbceeeca",
-   "docs/SSEE_Cover_Letter.pdf": "074fc9fea2ed1782953bdad912009eca6d0029e03d8f77e61118a64e84dc0807",
-   "docs/SSEE_Endorser_Summary.pdf": "bfb7dde4f822a21486c44c96ebf0d83d9bcd7b279bfffc9e82f411da1520f0aa",
-   "docs/SSEE_PRD.pdf": "8ac1ce745a00862be6f2df476c2ffef02c59978c92a9fbde3281caf8672ea8b4",
-   "docs/SSEE_Paper10_UVCompletion.pdf": "39d632f8df19e759364b5f5c301209c5291c3d9fc911d1065a1b5281bcd8dfb2",
-   "docs/SSEE_Paper1_Framework.pdf": "08af7a8eea1b3f95bd2ebc1a05cbfa899b88d8d7aecea4dbdd7ec59081532eba",
-   "docs/SSEE_Paper2_MCMC.pdf": "6fde36a1396fb6dd1a5488d5b1c23bd550c291e2bac5a044462028d873f6973b",
-   "docs/SSEE_Paper3_CMB.pdf": "4f0fb588f3c2e345038dcddbc90ab2b8cd599e7af41f98f465fa9198dcf581b6",
-   "docs/SSEE_Paper4_ToE.pdf": "14fe56630b3b8275fedde29687dc1010522d23863323a1ea01752f3a9247888a",
-   "docs/SSEE_Paper5_IS.pdf": "b724aa41ba1cddf1ed1dbc917c1492165a323fdd379ed846f50fb92c59b365ed",
-   "docs/SSEE_Paper6_Growth.pdf": "3d8335f8d30336a21b3d23b8644dc4d379079cdd08857e63c2ba3ff1d2ae43e5",
-   "docs/SSEE_Paper7_EFT.pdf": "8e7a09eef28f54d24c4a5fb5682e8cf56455d687fec01777adc48de17b241a7c",
-   "docs/SSEE_Paper8_StrongGravity.pdf": "15504f51caaef000e74f11881f988cb75694434d27846399856fbdf4c9e4071e",
-   "docs/SSEE_Paper9_HubbleTension.pdf": "5e4e0a45776426f401e4bc649a6d7b2652af943233ac6255bb0ead3c56b773a1",
-   "docs/SSEE_Sealed_Journal.pdf": "daaffc58d826c9bb2e8e49b64cc72622ed33153f2537f7688c44e87f1b603f7f",
-   "docs/SSEE_Unified_Journal.pdf": "938207074eed307f5a5c890c4853c19975c1448986073ef53c3714bd5456930c"
+   "CANONICAL_VALUES.yaml": "f36f8f9e5686d1f3ed3b2d54ea08397a6024a5b4423441e273c2919e5dbc9992",
+   "docs/SSEE_Cover.pdf": "14e84f78d740b1cb071c7cc828e4fa45bd1194e8ef06e7026366345715933d41",
+   "docs/SSEE_Cover_Letter.pdf": "acfcd4b3d4994dad19c1a0093663d7819e3e83b0fe8747991936204dabddde4b",
+   "docs/SSEE_Endorser_Summary.pdf": "e6c333c4e9b38cd4fd3656a05d60386cf8ce46d90cb86e22a81c0312c8c49a81",
+   "docs/SSEE_PRD.pdf": "4168d6523327db169fe4300c1026755a29996c3941485e831e09098542e0599b",
+   "docs/SSEE_Paper10_UVCompletion.pdf": "487a5e0e759801bed96ca3ee9c53cf9aee26f9d41ccd1e281a2d8c0fc51c6fa5",
+   "docs/SSEE_Paper1_Framework.pdf": "b19f3e157db0ec810d890a2033dcd514368d75df1ab2cf9636d6cd42cff25d38",
+   "docs/SSEE_Paper2_MCMC.pdf": "0d1bc7c2d943bfca890eb69712f9a43f4d3820dba8c77c3f1de77417c7c2ed04",
+   "docs/SSEE_Paper3_CMB.pdf": "b326d639efab26cbb2530237ef57e8f3e1c2f4d34584089ad8f9642e16a086db",
+   "docs/SSEE_Paper4_ToE.pdf": "b54b335cb52f15e8e18f49ed7b2216f3157458d5652b2294e98f324c909bcf0d",
+   "docs/SSEE_Paper5_IS.pdf": "9140120e897dfd33572ac5806ef3e45aab632cdbab5a71f8fbad55ea17dd339f",
+   "docs/SSEE_Paper6_Growth.pdf": "b7c53626f7d7ebea4cda177d460888fd1c34dd1e554b9eaac1a9d3389ec3f3d4",
+   "docs/SSEE_Paper7_EFT.pdf": "b54165cbd75df675199cb3a203394e69c990b7e7305c20e810d57946fbe48644",
+   "docs/SSEE_Paper8_StrongGravity.pdf": "1463610f1c398c4dcdf676a01e5af35f55cb316ba5e4575e28a1ae0eb94d2b5c",
+   "docs/SSEE_Paper9_HubbleTension.pdf": "674f19fe0b85e17a104aa19df109112b73dbfe3c5910d33bced270b1f58170c6",
+   "docs/SSEE_Sealed_Journal.pdf": "a5b56ef1e36dfb98a01a529b01ceac1d373a5564443642f1dce36026e9859757",
+   "docs/SSEE_Unified_Journal.pdf": "762c5102d51dbb0a6fe7226a88e272dea69eba572bdfe196b7875c4fdc07dc22"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -417,12 +350,12 @@
    "docs/SSEE_Sealed_Journal.pdf",
    "docs/SSEE_Unified_Journal.pdf"
   ],
-  "fecha": "2026-10-04T02:16:16",
+  "fecha": "2026-10-16T02:02:09",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

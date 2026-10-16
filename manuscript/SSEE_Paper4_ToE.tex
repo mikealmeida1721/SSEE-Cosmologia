@@ -57,7 +57,7 @@ From these two axioms --- and, for the Hubble rate, the measured SH0ES rate as t
 dimensional input --- we derive, without fitting:
 \begin{enumerate}
 \item[(i)] the pure number $3(\varphi+\pi)^2 = \val{H0_ALG_d6}$, which read in km\,s$^{-1}$\,Mpc$^{-1}$ lies $\val{halg_planck_sig}\sigma$ from Planck~2018. It is the comparison \emph{target} of the Hubble sector, not an input: the model's rate is the output of the SH0ES cascade in (iv), and it lands on this number (Paper~10),
-where $M_v=3\Omega$ is the maximal structural invariant of the dictionary, reached by twenty distinct additive routes under the no-self-sum construction law (Appendix~\ref{app:independence}); this multiplicity is consistent with, but does not by itself prove, the absence of post-hoc tuning;
+where $M_v=3\Omega$ is the maximal structural invariant of the dictionary, reached by \val{p4_rutas_total} distinct additive routes under the no-self-sum construction law (Appendix~\ref{app:independence}); this multiplicity is consistent with, but does not by itself prove, the absence of post-hoc tuning;
 \item[(ii)] the physical baryon density
 $\Omega_b h^2 = (\pi-\varphi)/(3\Omega^2) = (\pi-\varphi)/[3(\varphi+\pi)^2] = \val{OMEGA_B_H2_d6}$ ($\val{wb_planck_sig}\sigma$ from Planck~2018);
 \item[(iii)] the primordial spectral index
@@ -167,8 +167,8 @@ parents, with no constant added to itself---it is the closure value at which the
 dictionary terminates, coinciding through $M_v=3\Omega$ with the copy-law ceiling.
 
 A direct enumeration under this law shows that $M_v$ is reached by
-\emph{twenty} distinct additive routes built from the named constants: six using
-two constants, eleven using three, and three using four (Appendix~\ref{app:independence}).
+\emph{\val{p4_rutas_total}} distinct additive routes built from the named constants: \val{p4_rutas_dos} using
+two constants, \val{p4_rutas_tres} using three, and \val{p4_rutas_cuatro} using four (Appendix~\ref{app:independence}).
 Representative routes, in neutral notation, are
 \begin{equation}
 \Omega+K_v,\quad \beta+\mathrm{KAL}+P_{sc},\quad P_{sc}+\Omega+\pi,\quad \varphi+\pi+K_v ,
@@ -346,8 +346,9 @@ Paper~1 the dimensional input is the measured SH0ES rate). Second,
 $\eta_B$ and $\Omega_b h^2$ differ by the standard photon-entropy factor
 ($\eta_B \simeq 2.74\times10^{-8}\,\Omega_b h^2$), so the proportionality fixes
 the algebraic \emph{form} only, not the absolute normalisation.
-The formula was chosen among a handful of $\varphi,\pi$ monomials compared with Planck
-(an early scan, archived without a log): a selection statement, not a dynamical
+The formula was chosen among \val{p4_wb_candidatos} $\varphi,\pi$ expressions compared with Planck;
+it is the only one within $1\sigma$, the next being at $\val{p4_wb_segundo_sig}\sigma$ (the scan is
+reproduced by \texttt{src/p04\_toe/barrido\_omega\_b.py}). This is a selection statement, not a dynamical
 derivation. A derivation of $\omega_b$ from first principles is the residual part of OP-1.
 $\Omega_b^{\rm SSEE} = \val{Omega_b_alg_d4}$ is $\val{Omega_b_pct_vs_planck}\%$ from the Planck $\Lambda$CDM value
 $\val{Omega_b_planck_d4}$ ($=\omega_b/h^2$ with Planck's own inputs). $\Omega_b=\omega_b/h^2$ is composite: its two inputs are compared separately ($\omega_b$ at $\val{wb_planck_sig}\sigma$, $h$ through $H_0$), so this
@@ -767,7 +768,7 @@ We have presented a two-axiom ($\varphi$, $\pi$) algebraic system that predicts:
 \end{itemize}
 
 The identification of $M_v=3\Omega$ as the maximal structural
-invariant of the dictionary --- reached by twenty additive routes under the
+invariant of the dictionary --- reached by \val{p4_rutas_total} additive routes under the
 no-self-sum construction law (Appendix~\ref{app:independence}) --- motivates taking
 $M_v \times \Omega$ as the target against which the global rate is compared.
 The internal consistency of these cosmological predictions, taken together
@@ -791,15 +792,16 @@ The author thanks the Planck and DESI Collaborations for publicly available data
 
 % ===========================================================================
 \appendix
-\section{The Twenty Additive Routes to \texorpdfstring{$M_v$}{M_v}}
+\section{The Additive Routes to \texorpdfstring{$M_v$}{M_v}}
 \label{app:independence}
 % ===========================================================================
 
 Under the no-self-sum construction law---each route is a sum of \emph{distinct}
 named constants, none added to itself, with every summand below the closure
 ceiling---the maximal invariant $M_v=3(\varphi+\pi)$ is reached by
-exactly \emph{twenty} additive routes: six of two constants, eleven of three,
-and three of four. Representative routes, in neutral notation, are
+exactly \emph{\val{p4_rutas_total}} additive routes: \val{p4_rutas_dos} of two constants, \val{p4_rutas_tres} of three,
+and \val{p4_rutas_cuatro} of four. The count is read by \texttt{src/p04\_toe/rutas\_mv.py} from the
+same code that defines the constant dictionary. Representative routes, in neutral notation, are
 \begin{align}
 \text{(two)}\quad   & \Omega+K_v,\;\; P_{sc}+(\varphi+2\pi),\;\; \mathrm{AURA}+\tfrac{3\varphi+5\pi}{2}; \nonumber\\
 \text{(three)}\quad & \beta+\mathrm{KAL}+P_{sc},\;\; P_{sc}+\Omega+\pi,\;\; \varphi+\pi+K_v; \nonumber\\
@@ -809,16 +811,22 @@ and three of four. Representative routes, in neutral notation, are
 \paragraph{Distinct routes, shared expansions.}
 Because the constants span the two-dimensional lattice generated by $\varphi$
 and $\pi$, distinct routes may share the same $\varphi,\pi$ expansion---for
-instance $K_v+\Omega$ and $\Omega+K_v$, or the two hierarchy traversals that
+instance $\Omega+K_v$ and $\Omega+I_g$ (with $K_v=I_g=2\Omega$ by value), or the two hierarchy traversals that
 both reach $\varphi+2\pi$. Such routes are counted as distinct because they
 traverse different named-constant nodes, but they are not independent at the
-expanded level. The multiplicity is a structural consequence of
+expanded level. This is the dictionary's identity rule: a constant is identified by
+its construction, not by its value. $K_v=\varphi+\pi+\Omega$ (the base plus its own
+metric) and $I_g=\pi+P_{sc}$ (built on the dynamical scalar $P_{sc}$) coincide in value
+and remain distinct entities, as two different arguments reaching the same conclusion
+remain two arguments. For the statistics the count is by value instead: the
+look-elsewhere search of Paper~1 removes ratios that repeat a value already present, so
+counting entities by lineage adds no trials and no hits. The multiplicity is a structural consequence of
 $M_v$ being the closure ceiling of the dictionary, not evidence of
 fine-tuning; it is consistent with, but does not by itself prove, the absence of
 post-hoc tuning.
 
 \paragraph{Verification.}
-All twenty routes have been verified numerically to 16 significant digits; none
+All \val{p4_rutas_total} routes have been verified numerically to 16 significant digits; none
 deviates from $M_v = \val{M_V_d15}$ by more than floating-point
 rounding ($<10^{-14}$). All constants are derived algebraically from $\varphi$
 and $\pi$; no external data file is required.

@@ -186,7 +186,7 @@ The \SSEE framework proposes that the macroscopic universe obeys an
 algebraic closure condition: the dimensionless background parameters are
 fixed by two dimensionless geometric constants, the golden ratio
 $\phiG = (1+\sqrt{5})/2 \simeq \val{PHI_d4}$ and $\pi \simeq \val{PI_d4}$.
-No optimisation over formula space was performed: the parameter values are fixed
+No optimisation over formula space was performed, with one declared exception: $\omega_b$, whose form was chosen among \val{p4_wb_candidatos} $(\varphi,\pi)$ expressions compared with Planck (Paper~4; OP-1): the parameter values are fixed
 by the algebraic construction \citep{AlmeidaSSEE2026genesis}, not adjusted to the
 data. We make no claim of temporal priority over DESI~DR2 (public from 2025 March);
 the agreement reported below is a parameter-free \emph{postdiction}, and the only
@@ -635,7 +635,11 @@ $k_{\max}=0.20\,h\,$Mpc$^{-1}$, Alcock--Paczynski applied to the model), the
 algebraic background and the Planck background reach $\chi^2=\val{bossR_chi2_ssee}$ and
 $\val{bossR_chi2_lcdm}$ with the same $37$ free parameters, each with its own
 $\sum m_\nu$: $\Delta\chi^2=\val{bossR_dchi2}$, a mild, not decisive, preference
-for the algebraic background (Paper~6).
+for the algebraic background (Paper~6). Against the \emph{published} BOSS
+$\fsig$ column \citep{Alam2017}, which assumes a $\Lambda$CDM fiducial geometry, the
+order reverses: both pipelines fall low at $z=0.38$, the algebraic background at
+$\val{bossR_pub_ssee_z1}\sigma$ and the Planck one at $\val{bossR_pub_lcdm_z1}\sigma$;
+the comparison that decides is the $\chi^2$ on the raw multipoles above.
 
 This analysis operates at the linear-growth level for the growth index;
 non-linear effects (baryonic feedback beyond HMcode, halo bias) are not
@@ -751,7 +755,7 @@ gives $\mu-1=0$ --- the residual fifth-force is
 suppressed to $F_\phi/F_N\sim(H/k)^2\sim\val{quinta_fuerza_10kpc}$ at $10$~kpc and the
 canonical observable lensing reduces to $\thetaE^{\rm SSEE}\approx
 \thetaE^{\rm GR-with-DM}$. Current SLACS/BELLS samples (mean total slope
-$\gamma=2.078\pm 0.027$; $M_E/M_{\rm dyn}\approx 1.21$ for SIS) are consistent
+$\gamma=2.078\pm 0.027$, \citealt{Auger2010}; $M_E/M_{\rm dyn}\approx 1.21$ for SIS, \citealt{Li2018}) are consistent
 with the canonical limit. A $\sim\MIRA$ matter-power suppression above a $\phi$-DM free-streaming scale
 was previously listed here as a falsifiable prediction; it is retracted with the
 particle (\S\ref{sec:growth_raw}).
@@ -829,7 +833,8 @@ Hubble leg would vote only if LiteBIRD found $r<\val{p10_r_umbral}$ (Paper~10).
 A common objection to algebraically derived frameworks is post-hoc selection:
 that combinations of $\phiG$ and $\pi$ are chosen to match known values.
 The defence is \emph{structural}, not chronological: the constants are drawn from a
-closed dictionary fixed by construction, with no optimisation over formula space.
+closed dictionary fixed by construction, with no optimisation over formula space
+except for $\omega_b$ (chosen among \val{p4_wb_candidatos} expressions; OP-1).
 Table~\ref{tab:register} classifies each derivation by epistemic status. We make no
 claim of temporal priority over public data: results compared with DESI~DR2 and Planck
 are postdictions or retrodictions; only those tested against unreleased data are
@@ -872,7 +877,7 @@ $\OmmCMB = \omega_m/h^2$ ($\omega_m$-direct) & $\val{OMEGA_M_TOTAL_d6}$ & Planck
 $r_d$ (CAMB, $\omega_m$-direct) & $\val{mf_rdrag_alg}$ Mpc & Planck 2018 $r_d$ ($\val{p3_rd_sig_anc}\sigma$) & Retrodiction \\
 $\gamma_{\rm IS}$ & $\val{p3_gamma_IS}$ ($\gamma_{\Lambda\rm CDM}\simeq0.55$) & RSD surveys & Retrodiction \\
 $\alphaT = \alphaM = \alphaB = 0$ & exact & GW170817 $|\alphaT|<10^{-15}$ & Retrodiction \\
-$S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $\val{S8_leg_pred}$ predicted & measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & \textbf{Prediction} \\
+$S_8$ (KiDS-Legacy, $A_s$ fixed by the CMB) & $\val{S8_leg_pred}$ predicted & measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ ($\val{S8_leg_tension}\sigma$) & Retrodiction (nothing fitted) \\
 \quad earlier: KiDS-1000, $A_s$ fitted (superseded) & $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ & $\Lambda$CDM control: $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ & Retrodiction \\
 $\sigma_8$ ($A_s$ fixed to Planck; ceiling) & $\val{p3_sigma8_techo}$ & convention, not a prediction & --- \\
 $H_0^{\rm glob,IR} = H_0^{\rm SH0ES}(1-\fscr^{\rm IR})$ & $\val{p9_sh0es_glob_IR}$ km/s/Mpc & $3(\phiG+\pi)^2=\val{H0_ALG_d5}$ ($\val{p9_sh0es_sig_IR}\sigma$; IR only, partial) & Retrodiction \\

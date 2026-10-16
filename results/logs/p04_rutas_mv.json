@@ -1,0 +1,302 @@
+{
+ "que": "rutas aditivas con nombre al techo M_v = 3(phi+pi), leidas del codigo del diccionario",
+ "M_v": 14.278879927019064,
+ "total": 24,
+ "dos": 8,
+ "tres": 13,
+ "cuatro": 3,
+ "copia_pura": "TRISTAL = 3*OMEGA (producto; no es ruta aditiva)",
+ "max_desvio": 1.7763568394002505e-15,
+ "rutas": [
+  {
+   "nombre": "EUNOMIA",
+   "padres": [
+    "HARMONIA",
+    "OMEGA"
+   ],
+   "n_padres": 2,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "HESPERA",
+   "padres": [
+    "AURA",
+    "GALENE"
+   ],
+   "n_padres": 2,
+   "desvio": -1.7763568394002505e-15,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "ICEBERG",
+   "padres": [
+    "MAR",
+    "PYROS"
+   ],
+   "n_padres": 2,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "LUCIFER",
+   "padres": [
+    "PHITA",
+    "AURA"
+   ],
+   "n_padres": 2,
+   "desvio": 1.7763568394002505e-15,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "LUCY",
+   "padres": [
+    "SOLAR",
+    "PYROS"
+   ],
+   "n_padres": 2,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "MAAT",
+   "padres": [
+    "KRYSTOS_V",
+    "OMEGA"
+   ],
+   "n_padres": 2,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "MIKAEL",
+   "padres": [
+    "MIKA",
+    "PI"
+   ],
+   "n_padres": 2,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "PHOENIX",
+   "padres": [
+    "IGNIS",
+    "OMEGA"
+   ],
+   "n_padres": 2,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "ATLAS",
+   "padres": [
+    "PHI",
+    "PI",
+    "KRYSTOS_V"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "EIRENE",
+   "padres": [
+    "HARMONIA",
+    "PI",
+    "PHI"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "EROS",
+   "padres": [
+    "BIAL",
+    "PHI",
+    "PHITA"
+   ],
+   "n_padres": 3,
+   "desvio": 1.7763568394002505e-15,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "ERVN",
+   "padres": [
+    "BIAL",
+    "KAL",
+    "PYROS"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "GIGAROJ",
+   "padres": [
+    "PYROS",
+    "OMEGA",
+    "PI"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "HADES",
+   "padres": [
+    "BIAL",
+    "MAR",
+    "AURA"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "HEFESTO",
+   "padres": [
+    "IGNIS",
+    "PHI",
+    "PI"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "HERA",
+   "padres": [
+    "OMEGA",
+    "KAL",
+    "AURA"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "NEREUS",
+   "padres": [
+    "BIAL",
+    "GALENE",
+    "PHI"
+   ],
+   "n_padres": 3,
+   "desvio": -1.7763568394002505e-15,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "RA",
+   "padres": [
+    "SOLAR",
+    "OMEGA",
+    "PHI"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "TIAMAT",
+   "padres": [
+    "MAR",
+    "OMEGA",
+    "PHI"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "VENUS",
+   "padres": [
+    "AURA",
+    "PHI",
+    "VITA"
+   ],
+   "n_padres": 3,
+   "desvio": 1.7763568394002505e-15,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "VESTA",
+   "padres": [
+    "BIAL",
+    "SOLAR",
+    "AURA"
+   ],
+   "n_padres": 3,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "GAIA",
+   "padres": [
+    "PHI",
+    "PI",
+    "KAL",
+    "AURA"
+   ],
+   "n_padres": 4,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "ISIS",
+   "padres": [
+    "PHI",
+    "OMEGA",
+    "BIAL",
+    "KAL"
+   ],
+   "n_padres": 4,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  },
+  {
+   "nombre": "PTAH",
+   "padres": [
+    "PI",
+    "OMEGA",
+    "BIAL",
+    "AURA"
+   ],
+   "n_padres": 4,
+   "desvio": 0.0,
+   "sin_auto_suma": true
+  }
+ ],
+ "declarado_diccionario": {
+  "2": 8,
+  "3": 13,
+  "4": 3
+ },
+ "control_pasa": true,
+ "_procedencia": {
+  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p04_toe/rutas_mv.py",
+  "script_sha256": "42d3cc005dd0f2533f6c0422f8aae9ce75c44b8c0c552837168826d8697bb8da",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "src/estadistica/look_elsewhere_full.py": "55c090ba40ba52157408ea510873578941074e6e683c8fecc17b68d249ca01be",
+   "zenodo_dictionary/SSEE_Constant_Dictionary.md": "0bc9046810e4408fee1f5f85c17ba9b373f9ff8ee1f9e7f742023db9cff6a1ec"
+  },
+  "argv": [
+   "src/p04_toe/rutas_mv.py"
+  ],
+  "fecha": "2026-10-16T00:37:34",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

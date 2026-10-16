@@ -1,0 +1,186 @@
+doc: P3
+numeros:
+  # ---- Abstract (línea 52) ----
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 52, num: "0.24", decision: VAL, nombre: p2_w0wa_ssee_ec26, fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma", formato: ".2f", nota: "0.23776→0.24; hoy escrito a mano, existe macro \\val{p2_w0wa_ssee_ec26}. FIX recomendado: usar el macro."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 52, num: "0.2", decision: DERIVADO, nota: "mínimo de los 4 combos oficiales (ec25=1.676,ec26=0.238,ec27=1.764,ec28=1.465 en paper2_w0wa.json): min=0.238→0.2 a 1 decimal."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 52, num: "1.8", decision: DERIVADO, nota: "máximo de los 4 combos oficiales: ec27=1.764→1.8 a 1 decimal (paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec27.ssee_sigma)."}
+
+  # ---- Ω_m,CMB derivada (líneas 61-63) ----
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 61, num: "0.6796", decision: VAL, nombre: H0_GLOBAL_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_GLOBAL", formato: ".4f (h=H0/100)", nota: "67.96214/100=0.679621→0.6796. Escrito a mano; existe \\val{H0_GLOBAL_d5}=67.96214, falta macro de h a 4 decimales."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 61, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: "0.308881→0.3089. Ya existe \\val{OMEGA_M_TOTAL_d6}=0.308881 en el mismo documento; aquí está tecleado a mano con otro redondeo."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 63, num: "0.88", decision: DERIVADO, nota: "|0.308881-0.3153|/0.0073=0.877→0.88σ. Consistente con línea 271."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 63, num: "0.3153", decision: ALG, expr: "c.LCDM_OMEGA_M", nota: "0.3153 = Planck 2018 Ω_m, constante de referencia en ssee_core/algebra_derivada.json#nucleo.LCDM_OMEGA_M."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 63, num: "0.0073", decision: LIT, nota: "σ(Ω_m) Planck 2018 TT+TE+EE+lowE+lensing (Planck2018 VI, tabla 2)."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 78, num: "26.03", decision: VAL, nombre: nuevo_dBIC_plik_lite, fuente: "results/logs/sondas_ssee_vs_lcdm.json#filas_lcdm_ajusta[0].dBIC", formato: ".2f", nota: "dBIC=-26.0328→-26.03. Confirmado; coincide con \\S\\ref{sec:bic_cobaya} ec.(577) y con tab:bic_comparison (693, \\val-free)."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 156, num: "73.04", decision: ALG, expr: "c.H0_SH0ES", nota: "H_SH0ES=73.04 (constante de entrada, Postulado D)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 156, num: "0.968", decision: ALG, expr: "c.SIG_H0_GLOBAL", nota: "σ propagado = 0.9676975→0.968 (algebra_derivada.json#nucleo.SIG_H0_GLOBAL)."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 213, num: "93.14", decision: LIT, nota: "Factor de conversión estándar Σm_ν[eV]=93.14·ω_ν (Planck 2018 XIII / convención cosmológica estándar). NO es un resultado de log (pre-clasificación automática lo ligaba por coincidencia a s8_kids_legacy_camb.json#control_Omega_m.C_nu_nucleo — se abrió y es ese mismo factor de conversión usado como insumo interno, no el origen)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 213, num: "0.00074", decision: DERIVADO, nota: "ω_ν=Σm_ν/93.14=0.06849/93.14=0.0007353→0.00074 (algebra_derivada.json#nucleo.OMEGA_NU_H2=0.0007353446)."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 218, num: "0.6796", decision: VAL, nombre: H0_GLOBAL_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_GLOBAL", formato: ".4f (h)", nota: "repite el caso de línea 61."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 218, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: "repite caso de línea 61."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 260, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: "mismo caso."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 267, num: "0.3153", decision: ALG, expr: "c.LCDM_OMEGA_M", nota: "igual a línea 63."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 267, num: "0.0073", decision: LIT, nota: "igual a línea 63."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 271, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: "ecuación completa 0.88σ, confirmada."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 271, num: "0.3153", decision: ALG, expr: "c.LCDM_OMEGA_M", nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 271, num: "0.0073", decision: LIT, nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 271, num: "0.88", decision: DERIVADO, nota: "|0.3089-0.3153|/0.0073=0.877→0.88, cálculo correcto."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 278, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 300, num: "0.02237", decision: LIT, nota: "Ω_b h² prior Planck 2018 (tabla 2, TT+TE+EE+lowE+lensing); usado como INSUMO fijo en CAMB, no derivado de un log. La coincidencia con cmb_ajuste_conjunto_wc_ns.json#LCDM.w_b=0.02237 es que ese log usa el mismo prior como config, no que lo calcule."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 301, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 306, num: "3.044", decision: LIT, nota: "ln(10^10 A_s)=3.044 es el valor fiducial PLANCK 2018 (no un ajuste propio); la pre-clasificación automática lo ligaba a cmb_ajuste_conjunto_wc_ns.json#SSEE.logA=3.0439 por coincidencia de valor — abierto y descartado: ese campo es la salida de un AJUSTE conjunto posterior (§Cobaya), no el fiducial de esta tabla."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 307, num: "0.054", decision: LIT, nota: "τ=0.054 valor fiducial Planck 2018. La pre-clasificación lo ligaba por coincidencia a un campo 'corto'; es el fiducial declarado en la nota al pie de la tabla, no un ajuste."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 319, num: "0.05546", decision: VAL, nombre: nuevo_tau_minimiz_wbwc_fijos, fuente: "results/logs/cmb_tau_flotado.json#SSEE.tau", formato: ".5f", nota: "0.0554555→0.05546. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 320, num: "3.04484", decision: VAL, nombre: nuevo_logA_minimiz_wbwc_fijos, fuente: "results/logs/cmb_tau_flotado.json#SSEE.logA", formato: ".5f", nota: "3.0448382→3.04484. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 320, num: "1.84", decision: DERIVADO, nota: "chi2_fijo - chi2 = 1005.3600-1003.5238=1.836→1.84 (cmb_tau_flotado.json#SSEE.chi2_fijo y SSEE.chi2). Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 321, num: "0.24", decision: FIX, nuevo: "recompute: ver nota", nota: "INCONSISTENTE con el log vigente. El 'Phase-B posterior' (§sec:b1_mcmc) hoy es results/logs/b1_k2.json#SSEE.posterior.tau = 0.055546±0.0066284 (macros \\val{b1_tau_ssee}=0.056, \\val{b1_tau_ssee_s}=0.007), NO 0.054±0.006. Con el log vigente: |0.05546-0.055546|/0.0066284=0.013σ, no 0.24σ. El 0.24σ cuadra EXACTAMENTE con el par obsoleto (0.054,0.006): |0.05546-0.054|/0.006=0.243. El footnote quedó sin actualizar tras un re-corrido de b1_k2.json. El argumento del párrafo (que el fiducial no hace trabajo) se sostiene aún más fuerte con el número correcto (0.01σ en vez de 0.24σ), pero el valor escrito está caduco."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 321, num: "0.054", decision: FIX, nuevo: "\\val{b1_tau_ssee}", nota: "Debe ser 0.056 (b1_k2.json#SSEE.posterior.tau.media=0.055546), no 0.054. Ver nota de la entrada 0.24 en esta misma línea."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 321, num: "0.006", decision: FIX, nuevo: "\\val{b1_tau_ssee_s}", nota: "Debe ser 0.007 (b1_k2.json#SSEE.posterior.tau.semiancho=0.0066284), no 0.006."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 323, num: "0.47", decision: VAL, nombre: nuevo_lcdm_tau_minimiz_gana, fuente: "archive/logs_superados/punto_de_fuga_2026-09-08/cmb_tau_flotado_lcdm.json#chi2_fijo-chi2", formato: ".2f", nota: "1005.5837-1005.1159=0.468→0.47. CONFIRMADO EN VALOR pero la fuente vive en ARCHIVO (no en results/logs); el control ΛCDM correspondiente en results/logs/cmb_tau_flotado.json está marcado INVALIDO (corrió con w0/wa de SSEE por bug, detectado 2026-09-07). El control válido sólo quedó en el archivo del 2026-09-08 y nunca se recanonizó en results/logs. Recomiendo re-correr el control ΛCDM y loguearlo en results/logs/cmb_tau_flotado_lcdm.json para que esta cifra tenga procedencia DVC, no sólo un archivo histórico."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 325, num: "0.02237", decision: LIT, nota: "igual a línea 300, prior Planck 2018."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 327, num: "0.3", decision: DERIVADO, nota: "|0.022418-0.02237|/0.00015=0.32→0.3σ (OMEGA_B_H2 algebraico vs prior Planck). Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 327, num: "0.02237", decision: LIT, nota: "prior Planck 2018."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 327, num: "0.00015", decision: LIT, nota: "σ(Ω_b h²) Planck 2018 (tabla 2)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 327, num: "0.2", decision: DERIVADO, nota: "(0.022418-0.02237)/0.02237=0.00215→0.2% de diferencia relativa. Confirmado."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 333, num: "1.510", decision: DERIVADO, expr: "c.W0+c.WA", nota: "-0.839950+-0.669975=-1.509925→-1.510. Confirmado contra algebra_derivada.json#nucleo.W0,WA."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 343, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 345, num: "147.17", decision: VAL, nombre: nuevo_rd_ssee_camb, fuente: "results/logs/rd_camb_control.json#ssee.camb", formato: ".2f", nota: "147.17429→147.17. Confirmado; coincide con \\val{p2_fig8...} de otros papers y con 924."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 348, num: "147.09", decision: LIT, nota: "r_d observado Planck 2018 = 147.09±0.26 Mpc (Planck2018 VI, tabla 2)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 348, num: "0.26", decision: LIT, nota: "σ(r_d) Planck 2018."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 352, num: "1.04109", decision: LIT, nota: "100θ* observado Planck 2018 = 1.04109±0.00030 (Planck2018 VI, tabla 2)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 352, num: "0.00030", decision: LIT, nota: "σ(100θ*) Planck 2018."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 352, num: "6.66", decision: HIS, nota: "tensión HISTÓRICA retirada: artefacto del sector frío s_m=0.160 puesto en E(z) (bug V-L4-DESI, retirado 2026-07-09). Correctamente narrada como historia, no como resultado vigente."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 356, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 372, num: "0.315", decision: ALG, expr: "round(c.LCDM_OMEGA_M,3)", nota: "0.3153→0.315, control ΛCDM-Planck en la tabla de picos."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 389, num: "0.309", decision: VAL, nombre: nuevo_omega_m_cmb_d3, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".3f", nota: "0.308881→0.309 (pie de figura, tercer redondeo distinto de 0.3089/0.3153 usados en el cuerpo). Consistente, pero sería mejor un solo macro con el redondeo que corresponda en cada sitio."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 538, num: "0.0", decision: TRIVIAL, nota: "ΔBIC de referencia (baseline) = 0 por definición, no es un resultado medido."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 548, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "tecleado a mano repetidamente en el documento en vez de \\val{H0_ALG_d5} (que ya existe y se usa en línea 159)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 555, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "mismo caso que 548."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 569, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "mismo caso."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 569, num: "4.2\\times10^{-6}", decision: DERIVADO, nota: "|67.962142-67.96213732|/67.96213732 ≈ 4.2e-6 (algebra_derivada.json#nucleo.H0_GLOBAL vs H0_ALG). Confirmado, coincide con el banner canónico de CLAUDE.md."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 571, num: "1003.586", decision: VAL, nombre: nuevo_chi2_ssee_plik_lite, fuente: "results/logs/lcdm_conjunta.json#ssee.cmb", formato: ".3f", nota: "1003.58604→1003.586. También en sondas_ssee_vs_lcdm.json#filas_lcdm_ajusta[0].SSEE.chi2. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 571, num: "1003.596", decision: VAL, nombre: nuevo_chi2_lcdm_plik_lite, fuente: "results/logs/lcdm_conjunta.json#minimos.cmb.chi2", formato: ".3f", nota: "1003.59568→1003.596. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 571, num: "0.06", decision: LIT, nota: "Σm_ν=0.06 eV, el valor estándar fijo de ΛCDM-Planck (no de SSEE), usado por el control."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 571, num: "0.010", decision: DERIVADO, nota: "Δχ²=1003.586-1003.596=-0.0096→-0.010. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 577, num: "0.010", decision: DERIVADO, nota: "mismo Δχ² de la línea 571."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 577, num: "26.03", decision: DERIVADO, nota: "-0.010+(2-6)ln(669)=-0.010-26.023=-26.03. ln(669)=6.5057, (2-6)*6.5057=-26.023. Confirmado."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 579, num: "0.010", decision: DERIVADO, nota: "mismo Δχ² reutilizado en el cálculo k=4."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 579, num: "13.02", decision: DERIVADO, nota: "-0.010+(4-6)ln(669)=-0.010-13.011=-13.02. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 579, num: "67.037", decision: HIS, nota: "H0_MIRA histórico retirado (reframe 2026-06-18), citado explícitamente como superseded. OK."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 579, num: "2.875", decision: HIS, nota: "Δχ² de la minimización legacy (escenario MIRA), marcado como superseded. OK."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 579, num: "32.2", decision: HIS, nota: "ΔBIC legacy (escenario MIRA), marcado como superseded. OK — coincide con CLAUDE.md 'ΔBIC MIRA legacy -32.2, PENDIENTE re-confirmar' citado aquí correctamente como historia, no como vigente."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 589, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "mismo caso que 548."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 592, num: "2.80", decision: TRIVIAL, nota: "límite inferior del prior plano de log(10^10 A_s), diseño del MCMC, no un resultado. La pre-clasificación automática lo ligaba por coincidencia a cmb_wb_forzado.json#wb[6] — abierto y descartado: ese campo es un barrido de ω_b, no un límite de prior."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 592, num: "3.25", decision: TRIVIAL, nota: "límite superior del prior plano, diseño; la pre-clasificación (cmb_wb_forzado.json#control_lcdm.logA[7]) es coincidencia, descartada."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 593, num: "0.02", decision: TRIVIAL, nota: "límite inferior del prior plano de τ, diseño del MCMC."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 593, num: "0.12", decision: TRIVIAL, nota: "límite superior del prior plano de τ, diseño."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 605, num: "0.02", decision: TRIVIAL, nota: "criterio de convergencia Gelman-Rubin R-1<0.02 de la corrida de producción; umbral metodológico propio, no un dato de literatura (la pre-clasificación LIT es incorrecta: R-1<0.02 no está tomado de una fuente externa, es nuestro criterio)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 605, num: "0.05", decision: TRIVIAL, nota: "criterio de convergencia para la corrida de validación; mismo caso que el anterior."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 625, num: "0.02", decision: TRIVIAL, nota: "repite el criterio de convergencia de la línea 605 (pie de la Tabla B1)."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 664, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 674, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 685, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "mismo caso que 548."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 693, num: "26.03", decision: VAL, nombre: nuevo_dBIC_plik_lite, fuente: "results/logs/sondas_ssee_vs_lcdm.json#filas_lcdm_ajusta[0].dBIC", formato: ".2f", nota: "repite caso de línea 78."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 716, num: "0.55", decision: LIT, nota: "γ_ΛCDM≈0.55, valor estándar de la literatura de crecimiento lineal (Linder 2005 y sucesores), no un ajuste propio."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 718, num: "0.618", decision: ALG, expr: "1/c.PHI", nota: "φ^-1=0.618034→0.618. Confirmado, citado explícitamente como SUPERADO por γ_IS=0.5504 (Paper 5). Correcto como historia marcada."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 723, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "mismo caso que 548."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 737, num: "0.3", decision: TRIVIAL, nota: "pivote convencional Ω_m/0.3 de la definición estándar de S_8 (Heymans et al., convención universal de la literatura de cizalla), no un ajuste."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 737, num: "0.5", decision: TRIVIAL, nota: "exponente 0.5 de la definición estándar de S_8, convención de literatura."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 754, num: "0.811", decision: LIT, nota: "σ_8 Planck 2018 (Planck2020, tabla 2 TT+TE+EE+lowE+lensing)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 754, num: "0.006", decision: LIT, nota: "σ(σ_8) Planck 2018."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 754, num: "0.832", decision: LIT, nota: "S_8 Planck 2018."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 754, num: "0.013", decision: LIT, nota: "σ(S_8) Planck 2018."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 757, num: "0.776", decision: LIT, nota: "S_8 DES Y3 (DES2022), valor publicado estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 757, num: "0.017", decision: LIT, nota: "σ(S_8) DES Y3."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 779, num: "0.5504", decision: VAL, nombre: p3_gamma_IS, fuente: "results/logs/p5_IS_perturbations_Q3.json#gamma_IS", formato: ".4f", nota: "YA EXISTE el macro \\val{p3_gamma_IS}=0.5504 (usado en línea 715); aquí está repetido a mano en vez de usar el macro. FIX de estilo recomendado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 779, num: "0.8136", decision: VAL, nombre: p3_sigma8_IS, fuente: "results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE", formato: ".4f", nota: "YA EXISTE \\val{p3_sigma8_IS}=0.8136; tecleado a mano aquí. Mismo FIX de estilo."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 787, num: "0.067", decision: LIT, nota: "z_eff 6dFGRS (Beutler+2012), valor publicado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 787, num: "0.423", decision: LIT, nota: "fσ8 observado 6dFGRS=0.423±0.055 (Beutler et al. 2012), valor estándar citado en toda la literatura de RSD. La pre-clasificación lo ligaba por coincidencia a resumen_3modelos.json#modelos.lcdm.posterior.Om.mas — abierto y descartado: ese campo es un posterior de Ω_m de un MCMC distinto, no tiene relación con esta fila de la tabla."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 787, num: "0.055", decision: LIT, nota: "σ(fσ8) 6dFGRS, Beutler+2012."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 788, num: "0.150", decision: LIT, nota: "z_eff SDSS MGS (Howlett+2015)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 788, num: "0.490", decision: LIT, nota: "fσ8 observado SDSS MGS=0.490±0.145 (Howlett et al. 2015), valor publicado estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 788, num: "0.145", decision: LIT, nota: "σ(fσ8) SDSS MGS."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 789, num: "0.380", decision: LIT, nota: "z_eff BOSS DR12 (Alam+2017, consenso)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 789, num: "0.497", decision: LIT, nota: "fσ8 observado BOSS DR12 z=0.38=0.497±0.045 (Alam et al. 2017, consenso), valor estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 789, num: "0.045", decision: LIT, nota: "σ(fσ8) BOSS DR12 z=0.38."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 790, num: "0.510", decision: LIT, nota: "z_eff BOSS DR12 (Alam+2017)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 790, num: "0.458", decision: LIT, nota: "fσ8 observado BOSS DR12 z=0.51=0.458±0.038 (Alam et al. 2017), estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 790, num: "0.038", decision: LIT, nota: "σ(fσ8) BOSS DR12 z=0.51."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 791, num: "0.610", decision: LIT, nota: "z_eff BOSS DR12 (Alam+2017)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 791, num: "0.436", decision: LIT, nota: "fσ8 observado BOSS DR12 z=0.61=0.436±0.034 (Alam et al. 2017), estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 791, num: "0.034", decision: LIT, nota: "σ(fσ8) BOSS DR12 z=0.61."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 792, num: "1.480", decision: LIT, nota: "z_eff eBOSS DR16 cuásares (Hou+2021)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 792, num: "0.462", decision: LIT, nota: "fσ8 observado eBOSS DR16=0.462±0.045 (Hou et al. 2021), estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 792, num: "0.045", decision: LIT, nota: "σ(fσ8) eBOSS DR16."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 813, num: "0.5504", decision: VAL, nombre: p3_gamma_IS, fuente: "results/logs/p5_IS_perturbations_Q3.json#gamma_IS", formato: ".4f", nota: "mismo caso de línea 779: usar \\val{p3_gamma_IS} en vez del número a mano."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 813, num: "0.8136", decision: VAL, nombre: p3_sigma8_IS, fuente: "results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE", formato: ".4f", nota: "mismo caso de línea 779."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 836, num: "0.021284", decision: ALG, expr: "(1+c.W0)/(5-3*c.W0)", nota: "c_s²=(M_v-T_r)/(5M_v+3T_r)=0.0212837→0.021284. Confirmado contra algebra_derivada.json#algebra.cs2_condensado.valor; identidad algebraica equivalente a (1+w0)/(5-3w0)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 837, num: "0.000", decision: VAL, nombre: nuevo_cs2_hiclass_dif_pct, fuente: "results/logs/hiclass_campo.json#canonico.campo.cs2_dif_rel", formato: ".3f%", nota: "cs2_dif_rel=-1.21e-9 → 0.000%. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 838, num: "0.011", decision: VAL, nombre: nuevo_alphaK_hiclass_dif_pct, fuente: "results/logs/hiclass_campo.json#canonico.campo.alpha_K_dif_rel", formato: ".3f%", nota: "alpha_K_dif_rel=-0.00011324 → 0.011%. Confirmado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 839, num: "0.007", decision: VAL, nombre: nuevo_alphaK_sigma8_cambio_pct, fuente: "results/logs/hiclass_campo.json#canonico.alpha_K_sigma8_cambio_rel", formato: ".3f%", nota: "7.403e-5 → ~0.007%. Confirmado (factor ×100 en α_K mueve σ_8 un 0.007%)."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 853, num: "90.3", decision: VAL, nombre: nuevo_chi2r_sm_dinamico_class, fuente: "archive/codigo/investigacion/huerfanos_2026-10-02/logs/hiclass_check.log", formato: ".1f", nota: "χ²_r=90.315→90.3. CONFIRMADO EN VALOR, pero la fuente es un script ARCHIVADO (ssee_paper3_hiclass_check.py, archivado 2026-10-02 precisamente porque metía Ω_m,dyn=0.160 en CLASS como densidad — ver CLAUDE.md). Aquí se usa deliberadamente como ejemplo de la ranura EQUIVOCADA (contraste pedagógico con el ajuste correcto que sigue), consistente con el 'Withdrawn framing' de la \\S\\ref{sec:problem}. Recomendado: mover este número a un log declarado en results/logs/ con nota de que es el control deliberadamente mal puesto, para que tenga procedencia DVC propia en vez de depender de un script archivado."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 855, num: "1.04", decision: VAL, nombre: p3_chi2r_TT_ssee, fuente: "results/logs/paper3_cmb_chi2.json#espectros.TT.chi2r_ssee", formato: ".2f", nota: "1.042→1.04. YA EXISTE \\val{p3_chi2r_TT_ssee}=1.042; aquí tecleado a mano. La pre-clasificación automática (ssee_core.SIG_H0_SH0ES=1.04) es COINCIDENCIA DE VALOR, no la fuente real — descartada tras abrir el contexto (es el χ²_r de TT, no una incertidumbre de H0)."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 856, num: "0.3089", decision: VAL, nombre: OMEGA_M_TOTAL_d6, fuente: "results/logs/algebra_derivada.json#nucleo.OMEGA_M_TOTAL", formato: ".4f", nota: ""}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 899, num: "0.50", decision: TRIVIAL, nota: "umbral de falsabilidad declarado por el modelo (γ<0.50), no un resultado medido."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 899, num: "0.70", decision: TRIVIAL, nota: "umbral de falsabilidad declarado (γ>0.70), no medido."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 920, num: "1003.586", decision: VAL, nombre: nuevo_chi2_ssee_plik_lite, fuente: "results/logs/lcdm_conjunta.json#ssee.cmb", formato: ".3f", nota: "repite caso de línea 571."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 920, num: "67.96214", decision: VAL, nombre: H0_ALG_d5, fuente: "results/logs/algebra_derivada.json#nucleo.H0_ALG", formato: ".5f", nota: "mismo caso que 548."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 920, num: "1003.596", decision: VAL, nombre: nuevo_chi2_lcdm_plik_lite, fuente: "results/logs/lcdm_conjunta.json#minimos.cmb.chi2", formato: ".3f", nota: "repite caso de línea 571."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 920, num: "0.06", decision: LIT, nota: "Σm_ν ΛCDM=0.06 eV, estándar."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 921, num: "26.03", decision: VAL, nombre: nuevo_dBIC_plik_lite, fuente: "results/logs/sondas_ssee_vs_lcdm.json#filas_lcdm_ajusta[0].dBIC", formato: ".2f", nota: "repite caso de línea 78."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 921, num: "0.010", decision: DERIVADO, nota: "mismo Δχ² de 571/577."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 923, num: "0.88", decision: DERIVADO, nota: "repite caso de línea 63/271."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 924, num: "147.17", decision: VAL, nombre: nuevo_rd_ssee_camb, fuente: "results/logs/rd_camb_control.json#ssee.camb", formato: ".2f", nota: "repite caso de línea 345."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 924, num: "0.05", decision: DERIVADO, nota: "|147.17-147.10|/147.10=0.00048→0.05% (r_d SSEE vs r_d ΛCDM-Planck mismo código, CLAUDE.md: 147.10). Confirmado."}
+
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 927, num: "0.24", decision: VAL, nombre: p2_w0wa_ssee_ec26, fuente: "results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma", formato: ".2f", nota: "repite caso de línea 52: existe macro, debería usarse en vez del número a mano."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 936, num: "73.04", decision: ALG, expr: "c.H0_SH0ES", nota: "repite caso de línea 156."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 937, num: "4.2\\times10^{-6}", decision: DERIVADO, nota: "repite caso de línea 569."}
+  - {archivo: SSEE_Paper3_CMB.tex, linea: 939, num: "0.968", decision: ALG, expr: "c.SIG_H0_GLOBAL", nota: "repite caso de línea 156."}
+
+afirmaciones:
+  - archivo: SSEE_Paper3_CMB.tex
+    linea: 321
+    dice: "$0.24\\sigma$ from the Phase-B posterior $0.054\\pm0.006$"
+    debe_decir: "$0.01\\sigma$ from the Phase-B posterior $0.056\\pm0.007$ (\\val{b1_tau_ssee}\\pm\\val{b1_tau_ssee_s})"
+    evidencia: "results/logs/b1_k2.json#SSEE.posterior.tau: media=0.055546, semiancho=0.0066284 (hoy \\val{b1_tau_ssee}=0.056, \\val{b1_tau_ssee_s}=0.007). Con el log vigente |0.05546-0.055546|/0.0066284=0.013σ≈0.01σ, no 0.24σ. El 0.24σ escrito cuadra sólo con el par obsoleto (0.054,0.006), que ya no coincide con la cadena \\val del propio documento (línea 629 usa \\val{b1_tau_ssee}\\pm\\val{b1_tau_ssee_s} correctamente). El argumento del párrafo —que el A_s,τ fiducial no hace trabajo— se sostiene igual o mejor con el número correcto; sólo la cifra está caduca tras un re-corrido de b1_k2.json."
+  - archivo: SSEE_Paper3_CMB.tex
+    linea: 779
+    dice: "with $\\gamma_\\mathrm{IS}=0.5504$ and $\\sigma_8=0.8136$ (single-sector)"
+    debe_decir: "with $\\gamma_\\mathrm{IS}=\\val{p3_gamma_IS}$ and $\\sigma_8=\\val{p3_sigma8_IS}$ (single-sector)"
+    evidencia: "Ya existen los macros \\val{p3_gamma_IS}=0.5504 y \\val{p3_sigma8_IS}=0.8136 (results/logs/p5_IS_perturbations_Q3.json), usados correctamente en la línea 715/727 del mismo documento; aquí y en la línea 813 están repetidos a mano. No es un error de valor, es violación de la regla 'nada de números tecleados a mano' con macro ya disponible."
+  - archivo: SSEE_Paper3_CMB.tex
+    linea: 853
+    dice: "the raw SSEE \\emph{dynamical} background ($s_m=\\val{S_M_d6}$) fed directly to CLASS gives $\\chi^2_r=90.3$ against Planck 2018 TT."
+    debe_decir: "(mismo texto; mover la procedencia del 90.3 a un log en results/logs/ con nota explícita, en vez de depender de un script archivado)"
+    evidencia: "El 90.3 sólo existe en archive/codigo/investigacion/huerfanos_2026-10-02/logs/hiclass_check.log, del script ssee_paper3_hiclass_check.py que el propio CLAUDE.md dice archivado 2026-10-02 'por archivar sólo con nota del porqué + guardián'. El número en sí es correcto y se usa apropiadamente como contraste pedagógico (la ranura equivocada), pero su cadena de procedencia DVC quedó rota al archivar el script sin re-generar el resultado en results/logs/."
+

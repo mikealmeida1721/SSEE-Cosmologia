@@ -1,0 +1,1097 @@
+# Cuarta lectura -- P4 (SSEE_Paper4_ToE.tex) -- generado 2026-10-10
+doc: P4
+numeros:
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 58
+  num: '1.1'
+  decision: DERIVADO
+  cuenta: (H0_ALG-67.36)/0.54 = (67.962137-67.36)/0.54 = 1.115 ~ 1.1 (ssee_core.H0_ALG; Planck 2018 H0=67.36+-0.54)
+  resultado: '1.1'
+  nota: consistente en L58,253,611,814
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 61
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 63
+  num: '0.16'
+  decision: DERIVADO
+  cuenta: (N_S-0.9649)/0.0042 = (0.965558-0.9649)/0.0042 = 0.157 -> redondea 0.16 (ssee_core.N_S vs Planck
+    2018 n_s)
+  resultado: '0.16'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 66
+  num: '68.13'
+  decision: VAL
+  nombre: p9_sh0es_glob_IR
+  fuente: results/logs/p9_cascada_control.json#sh0es.IR.H_glob
+  formato: .2f
+  nota: ya existe en valores.yaml; aqui esta escrito a mano en vez de \val
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 67
+  num: '0.17'
+  decision: VAL
+  nombre: p9_sh0es_sig_IR
+  fuente: results/logs/p9_cascada_control.json#sh0es.IR.sigma
+  formato: .2f
+  nota: ya existe en valores.yaml; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 69
+  num: '67.037'
+  decision: HIS
+  nota: H0^MIRA=67.037 retirado (reframe omega_m-directo 2026-06-18); el texto lo marca explicitamente
+    como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 80
+  num: '0.008131'
+  decision: VAL
+  nombre: R_TENSOR_d6 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.R_TENSOR
+  formato: .6f
+  nuevo: '0.008131'
+  nota: 'R_TENSOR=phi**-10=0.0081306 -> redondea 0.008131; coincide, pero no hay macro val: proponer R_TENSOR_d6'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 106
+  num: '0.840'
+  decision: VAL
+  nombre: W0_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.W0
+  formato: .6f
+  nota: macro existente da -0.839950 -> -0.840; aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 106
+  num: '0.670'
+  decision: VAL
+  nombre: WA_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.WA
+  formato: .6f
+  nota: macro existente da -0.669975 -> -0.670; aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 112
+  num: '0.24'
+  decision: VAL
+  nombre: p2_w0wa_ssee_ec26
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma
+  formato: .2f
+  nota: macro existente da 0.24 (ssee_sigma); aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 112
+  num: '0.2'
+  decision: LIT
+  nota: rango 0.2-1.8 sigma segun compilado SN citado en Paper 2 (banner CLAUDE.md lo confirma)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 112
+  num: '1.8'
+  decision: LIT
+  nota: idem, extremo superior del rango de compilados SN
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 134
+  num: '1.618033988'
+  decision: TRIVIAL
+  nota: expansion decimal truncada de phi; definicion, no resultado (puntos suspensivos lo marcan); hay
+    comentario ORIGEN-VALOR en L130
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 136
+  num: '3.141592653'
+  decision: TRIVIAL
+  nota: expansion decimal truncada de pi; definicion, no resultado; comentario ORIGEN-VALOR en L131
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 199
+  num: '0.022420'
+  decision: FIX
+  nombre: OMEGA_B_H2_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.OMEGA_B_H2
+  formato: .6f
+  nuevo: \val{OMEGA_B_H2_d6}
+  nota: ssee_core.OMEGA_B_H2=0.0224178 -> redondea 0.022418, NO 0.022420; la tabla tiene el valor mal
+    al 6o decimal; reemplazar por macro existente
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 253
+  num: '67.4'
+  decision: LIT
+  nota: Planck 2018 TT+TE+EE+lowE+lensing H0=67.36+-0.54 redondeado a 67.4+-0.5 para la fila de la tabla
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 253
+  num: '0.5'
+  decision: LIT
+  nota: idem, error redondeado de Planck 2018 H0
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 253
+  num: '1.1'
+  decision: DERIVADO
+  cuenta: (H0_ALG-67.36)/0.54 = (67.962137-67.36)/0.54 = 1.115 ~ 1.1 (ssee_core.H0_ALG; Planck 2018 H0=67.36+-0.54)
+  resultado: '1.1'
+  nota: consistente en L58,253,611,814
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 254
+  num: '68.13'
+  decision: VAL
+  nombre: p9_sh0es_glob_IR
+  fuente: results/logs/p9_cascada_control.json#sh0es.IR.H_glob
+  formato: .2f
+  nota: ya existe en valores.yaml; aqui esta escrito a mano en vez de \val
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 254
+  num: '0.17'
+  decision: VAL
+  nombre: p9_sh0es_sig_IR
+  fuente: results/logs/p9_cascada_control.json#sh0es.IR.sigma
+  formato: .2f
+  nota: ya existe en valores.yaml; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 256
+  num: '0.9649'
+  decision: LIT
+  nota: Planck 2018 inflation n_s=0.9649+-0.0042 (PlanckInflation2018), valor estandar citado en el propio
+    texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 256
+  num: '0.0042'
+  decision: LIT
+  nota: idem, error de Planck n_s
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 256
+  num: '0.16'
+  decision: DERIVADO
+  cuenta: (N_S-0.9649)/0.0042 = (0.965558-0.9649)/0.0042 = 0.157 -> redondea 0.16 (ssee_core.N_S vs Planck
+    2018 n_s)
+  resultado: '0.16'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 258
+  num: '8.12'
+  decision: ALG
+  expr: (c.PHI+3*c.PI)/(6*(c.PHI+c.PI)**2)*100
+  nota: = 8.1242% -> redondea 8.12%; confirmado con ssee_core (K/H0, K=KAL0)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 260
+  num: '73.04'
+  decision: LIT
+  nota: SH0ES Riess et al. 2022, H0=73.04+-1.04 km/s/Mpc; medido, no derivado
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 261
+  num: '67.037'
+  decision: HIS
+  nota: H0^MIRA=67.037 retirado (reframe omega_m-directo 2026-06-18); el texto lo marca explicitamente
+    como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 302
+  num: '0.968'
+  decision: VAL
+  nombre: p9_hglob_sigma (nueva)
+  fuente: results/logs/p9_cascada_control.json#sh0es.completo.H_glob_s
+  formato: .3f
+  nuevo: '0.968'
+  nota: 0.9676975 -> redondea 0.968; coincide con el banner CLAUDE.md pero no hay macro val para esta
+    sigma propagada completa (IR+UV)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 306
+  num: '147.17'
+  decision: VAL
+  nombre: p2_lyaB_rd
+  fuente: results/logs/lya_auditoria.json#ssee.rd
+  formato: .2f
+  nota: macro existente da 147.17 (CAMB); escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 306
+  num: '147.10'
+  decision: VAL
+  nombre: p2_rd_lcdm
+  fuente: results/logs/lya_auditoria.json#lcdm_planck.rd
+  formato: .2f
+  nota: macro existente da 147.10; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 307
+  num: '0.8'
+  decision: HIS
+  nota: describe la magnitud del downshift que era artefacto de usar s_m=0.160 como densidad de fondo
+    (bug ya corregido, narrado como historia)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 329
+  num: '0.02237'
+  decision: LIT
+  nota: Planck 2018 Omega_b h^2 = 0.02237+-0.00015, valor estandar citado por el propio texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 329
+  num: '0.00015'
+  decision: LIT
+  nota: idem, error de Planck Omega_b h^2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 329
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 354
+  num: 2.74\times10^{-8}
+  decision: LIT
+  nota: factor de conversion eta_B=2.74e-8*Omega_b h^2 (Steigman 2006, IJMPE 15,1); unificado en todo
+    el doc segun comentario L132 (antes 2.73 en otros docs, corregido 2026-10-02)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 367
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 379
+  num: '0.67962'
+  decision: ALG
+  expr: c.H0_GLOBAL/100
+  nota: H0_GLOBAL=67.962142 -> h=0.6796214 -> redondea 0.67962; confirmado con ssee_core
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 382
+  num: '0.88'
+  decision: DERIVADO
+  cuenta: abs(OMEGA_M_TOTAL-0.3153)/0.0073 = abs(0.308881-0.3153)/0.0073 = 0.879 -> redondea 0.88 (ssee_core.OMEGA_M_TOTAL
+    vs Planck Omega_m)
+  resultado: '0.88'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 383
+  num: '0.3153'
+  decision: LIT
+  nota: Planck 2018 Omega_m=0.3153+-0.0073 (o +-0.007 redondeado, L383), valor estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 383
+  num: '0.007'
+  decision: LIT
+  nota: Planck Omega_m error redondeado a 1 decimal extra menos que L615 (0.0073); inconsistencia de precision,
+    no de valor -- reportar en afirmaciones
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 385
+  num: '1.4'
+  decision: TRIVIAL
+  nota: referencia a Paper 1, Sec. 1.4 (numero de seccion, no resultado)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 386
+  num: '0.160'
+  decision: VAL
+  nombre: S_M_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.S_M
+  formato: .6f
+  nota: macro existente da 0.160050 -> redondea 0.160; escrito a mano aqui (equivalente a 1+w0)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 388
+  num: '0.31993'
+  decision: HIS
+  nota: mapeo MIRA*s_m=0.31993 retirado (reframe omega_m-directo, OP-8 disuelto); marcado explicitamente
+    como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 389
+  num: '0.3201'
+  decision: HIS
+  nota: ruta geometrica (pi-phi)/(pi+phi)=0.3201 retirada; marcada explicitamente como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 400
+  num: '0.02242'
+  decision: VAL
+  nombre: OMEGA_B_H2_d5
+  fuente: results/logs/algebra_derivada.json#nucleo.OMEGA_B_H2
+  formato: .5f
+  nota: macro existente da 0.02242 (5 decimales); el valor escrito a mano coincide pero deberia ir por
+    \val
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 405
+  num: '0.02237'
+  decision: LIT
+  nota: Planck 2018 Omega_b h^2 = 0.02237+-0.00015, valor estandar citado por el propio texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 405
+  num: '0.00015'
+  decision: LIT
+  nota: idem, error de Planck Omega_b h^2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 407
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 408
+  num: '0.11952'
+  decision: FIX
+  nombre: OMEGA_C_H2_d5 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.OMEGA_C_H2
+  formato: .5f
+  nuevo: '0.11951'
+  nota: KAL0*OMEGA_B_H2_d5*N_S = 0.119514 -> redondea 0.11951, NO 0.11952 (calculado con ssee_core); error
+    de redondeo
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 408
+  num: '0.4'
+  decision: VAL
+  nombre: wc_ns_sigma_abs
+  fuente: results/logs/algebra_derivada.json#algebra.wc_ns_sigma_abs.valor
+  formato: .2f
+  nota: macro existente da 0.40; escrito a mano como "-0.4sigma" (coincide en redondeo a 1 decimal)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 411
+  num: '0.1200'
+  decision: LIT
+  nota: Planck 2018 Omega_c h^2 = 0.1200+-0.0012, valor estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 411
+  num: '0.0012'
+  decision: LIT
+  nota: idem, error de Planck Omega_c h^2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 411
+  num: '0.6'
+  decision: DERIVADO
+  cuenta: (KAL0*0.02237*N_S - 0.1200)/0.0012 = (0.119260-0.1200)/0.0012 = -0.617 -> redondea -0.6 (sustituyendo
+    el omega_b de PLANCK en la formula IS)
+  resultado: '-0.6'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 412
+  num: '2.9'
+  decision: VAL
+  nombre: wc_estatico_sigma_d1 (nueva, d1)
+  fuente: results/logs/algebra_derivada.json#algebra.wc_estatico_sigma.valor
+  formato: +.1f
+  nuevo: '+2.9'
+  nota: formula (KAL0*0.02237-0.1200)/0.0012=2.928 -> redondea 2.9; ya hay macro wc_estatico_sigma_d1
+    usada en L393; aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 412
+  num: '0.6'
+  decision: DERIVADO
+  cuenta: igual que L411 (-0.6sigma, sustituyendo omega_b de Planck en formula IS)
+  resultado: '-0.6'
+  nota: par consistente con L411 (Eckart +2.9 -> IS -0.6, ambos con omega_b de Planck)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 420
+  num: '0.9649'
+  decision: LIT
+  nota: Planck 2018 inflation n_s=0.9649+-0.0042 (PlanckInflation2018), valor estandar citado en el propio
+    texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 420
+  num: '0.0042'
+  decision: LIT
+  nota: idem, error de Planck n_s
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 462
+  num: '58.07'
+  decision: VAL
+  nombre: dos_phi7_d6
+  fuente: results/logs/algebra_derivada.json#algebra.dos_phi7.valor
+  formato: .6f
+  nota: macro existente da 58.068884 -> redondea 58.07; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 470
+  num: '58.07'
+  decision: VAL
+  nombre: dos_phi7_d6
+  fuente: results/logs/algebra_derivada.json#algebra.dos_phi7.valor
+  formato: .6f
+  nota: macro existente da 58.068884 -> redondea 58.07; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 473
+  num: 9.4\times10^{15}
+  decision: ALG
+  expr: (30/(pi**2*g_star))**0.25 * V_end**0.25
+  nota: 'NO verificado en esta pasada: requiere V_end de la inflacion (fuera de ssee_core; estaria en
+    un script de potencial V(phi) tipo op2_spectral_index.py que no corri por ser pesado). Pendiente.'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 481
+  num: '58.25'
+  decision: TRIVIAL
+  nota: constante de entrada de la formula de Liddle-Leach (rho_end=3V_end) mostrada en el propio texto;
+    no es resultado SSEE sino insumo estandar de inflacion con reheating
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 482
+  num: '0.002'
+  decision: DERIVADO
+  cuenta: abs(2*PHI**7 - (58.25-log(3)/6)) = abs(58.068884-58.066885) = 0.002 e-folds
+  resultado: '0.002'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 485
+  num: '0.008131'
+  decision: VAL
+  nombre: R_TENSOR_d6 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.R_TENSOR
+  formato: .6f
+  nuevo: '0.008131'
+  nota: 'R_TENSOR=phi**-10=0.0081306 -> redondea 0.008131; coincide, pero no hay macro val: proponer R_TENSOR_d6'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 488
+  num: '0.9649'
+  decision: LIT
+  nota: Planck 2018 inflation n_s=0.9649+-0.0042 (PlanckInflation2018), valor estandar citado en el propio
+    texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 488
+  num: '0.0042'
+  decision: LIT
+  nota: idem, error de Planck n_s
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 488
+  num: '0.157'
+  decision: DERIVADO
+  cuenta: (N_S-0.9649)/0.0042 = (0.965558-0.9649)/0.0042 = 0.1567 -> redondea 0.157
+  resultado: '0.157'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 494
+  num: '1.6865'
+  decision: ALG
+  expr: 3/20*(12*c.PI)**(2/3)
+  nota: = 1.686470 -> redondea 1.6865; confirmado con ssee_core.PI (formula EdS estandar, no especifica
+    a SSEE)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 506
+  num: '1.67634'
+  decision: VAL
+  nombre: deltac_ssee_zc0 (nueva)
+  fuente: results/logs/deltac_spherical_collapse.json#citado_deltac_SSEE_zc0
+  formato: .5f
+  nota: log da 1.676337 -> coincide exacto con el citado 1.67634 en el propio JSON (campo citado_deltac_SSEE_zc0)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 506
+  num: '1.68647'
+  decision: VAL
+  nombre: deltac_ssee_zc10 (nueva)
+  fuente: results/logs/deltac_spherical_collapse.json#citado_deltac_SSEE_zc10
+  formato: .5f
+  nota: log confirma 1.68647 exacto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 509
+  num: '1.67599'
+  decision: VAL
+  nombre: deltac_lcdm_zc0 (nueva)
+  fuente: results/logs/deltac_spherical_collapse.json#citado_deltac_LCDM_zc0
+  formato: .5f
+  nota: log confirma 1.67599 exacto (control LCDM, mismo integrador)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 509
+  num: '1.68646'
+  decision: VAL
+  nombre: deltac_lcdm_zc10 (nueva)
+  fuente: results/logs/deltac_spherical_collapse.json#citado_deltac_LCDM_zc10
+  formato: .5f
+  nota: log confirma 1.68646 exacto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 510
+  num: '0.02'
+  decision: DERIVADO
+  cuenta: (1.676337-1.675987)/1.675987*100 = 0.0209% -> redondea 0.02% (zc=0, SSEE vs LCDM, log deltac_spherical_collapse.json)
+  resultado: 0.02%
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 510
+  num: '0.001'
+  decision: DERIVADO
+  cuenta: (1.686468-1.686456)/1.686456*100 = 0.00074% -> redondea a 0.001% solo si se redondea hacia arriba
+    (el valor exacto es mas cercano a 0.0007%); verificar redondeo, nota en afirmaciones
+  resultado: 0.0007%
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 516
+  num: '1.6284'
+  decision: HIS
+  nota: delta_c = delta_EdS * n_s = 1.6284 retirado como prediccion (OP-27); el propio texto lo marca
+    "withdrawn"; coincide con postulado_retirado_OP27=1.628414 del log
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 517
+  num: '2.9'
+  decision: DERIVADO
+  cuenta: (1.628385-1.676337)/1.676337*100 = -2.86% -> redondea 2.9% de distancia (delta_EdS*n_s vs el
+    delta_c dinamico SSEE)
+  resultado: 2.9%
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 528
+  num: '1.5'
+  decision: LIT
+  nota: rango x1.2-1.5 de exceso de halos JWST citado como reclamo externo que el modelo NO reproduce
+    (parrafo lo dice explicitamente); confirmar cita original de JWST en Paper 5
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 546
+  num: '0.96'
+  decision: LIT
+  nota: sensibilidad lineal dYp/d(Omega_b h^2)=0.96 de PArthENoPE (Pisanti2008), valor estandar de BBN
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 547
+  num: '0.2471'
+  decision: LIT
+  nota: ancla Planck 2018 Yp=0.2471+-0.0003, valor estandar BBN+CMB
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 547
+  num: '0.02237'
+  decision: LIT
+  nota: Planck 2018 Omega_b h^2 = 0.02237+-0.00015, valor estandar citado por el propio texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 549
+  num: '0.2471'
+  decision: LIT
+  nota: ancla Planck 2018 Yp=0.2471+-0.0003, valor estandar BBN+CMB
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 549
+  num: '0.96'
+  decision: LIT
+  nota: idem L546, reutilizado en la formula boxed
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 549
+  num: '0.02237'
+  decision: LIT
+  nota: Planck 2018 Omega_b h^2 = 0.02237+-0.00015, valor estandar citado por el propio texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 552
+  num: '0.2471'
+  decision: LIT
+  nota: ancla Planck 2018 Yp=0.2471+-0.0003, valor estandar BBN+CMB
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 552
+  num: '0.0003'
+  decision: LIT
+  nota: idem, error de Yp Planck
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 552
+  num: '0.2'
+  decision: DERIVADO
+  cuenta: (Yp_ssee-0.2471)/0.0003; con Yp_ssee=0.2471+0.96*(0.022418-0.02237)=0.247146 -> (0.247146-0.2471)/0.0003=0.15
+    -> redondea 0.2 (aprox. coincide con "+0.2sigma")
+  resultado: ~0.2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 553
+  num: '0.2449'
+  decision: LIT
+  nota: 'Yp HII regions, Aver et al. 2015: 0.2449+-0.0040'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 553
+  num: '0.0040'
+  decision: LIT
+  nota: idem, error de Aver 2015
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 553
+  num: '0.6'
+  decision: DERIVADO
+  cuenta: (0.247146-0.2449)/0.0040 = 0.56 -> redondea 0.6 (Yp SSEE vs HII Aver2015)
+  resultado: '0.6'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 581
+  num: '0.840'
+  decision: VAL
+  nombre: W0_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.W0
+  formato: .6f
+  nota: macro existente da -0.839950 -> -0.840; aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 581
+  num: '0.670'
+  decision: VAL
+  nombre: WA_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.WA
+  formato: .6f
+  nota: macro existente da -0.669975 -> -0.670; aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 583
+  num: '0.42'
+  decision: VAL
+  nombre: p2_chi2_2D_ec26
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_chi2_2D
+  formato: .2f
+  nota: macro existente da 0.42; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 583
+  num: '0.24'
+  decision: VAL
+  nombre: p2_w0wa_ssee_ec26
+  fuente: results/logs/paper2_w0wa.json#w0wa_ssee_vs_lcdm.ec26.ssee_sigma
+  formato: .2f
+  nota: macro existente da 0.24 (ssee_sigma); aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 611
+  num: '67.4'
+  decision: LIT
+  nota: Planck 2018 TT+TE+EE+lowE+lensing H0=67.36+-0.54 redondeado a 67.4+-0.5 para la fila de la tabla
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 611
+  num: '0.5'
+  decision: LIT
+  nota: idem, error redondeado de Planck 2018 H0
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 611
+  num: '1.1'
+  decision: DERIVADO
+  cuenta: (H0_ALG-67.36)/0.54 = (67.962137-67.36)/0.54 = 1.115 ~ 1.1 (ssee_core.H0_ALG; Planck 2018 H0=67.36+-0.54)
+  resultado: '1.1'
+  nota: consistente en L58,253,611,814
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 612
+  num: 4.2\times10^{-6}
+  decision: VAL
+  nombre: p9_hglob_residuo (nueva)
+  fuente: results/logs/p9_cascada_control.json#sh0es.completo.residuo
+  formato: .1e
+  nuevo: '4.2e-6'
+  nota: log da 4.1986e-6 -> redondea 4.2e-6; coincide pero no hay macro val para este residuo especifico
+    (distinto del "sigma")
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 614
+  num: '0.02242'
+  decision: VAL
+  nombre: OMEGA_B_H2_d5
+  fuente: results/logs/algebra_derivada.json#nucleo.OMEGA_B_H2
+  formato: .5f
+  nota: macro existente da 0.02242 (5 decimales); el valor escrito a mano coincide pero deberia ir por
+    \val
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 614
+  num: '0.02237'
+  decision: LIT
+  nota: Planck 2018 Omega_b h^2 = 0.02237+-0.00015, valor estandar citado por el propio texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 614
+  num: '0.00015'
+  decision: LIT
+  nota: idem, error de Planck Omega_b h^2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 614
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 615
+  num: '0.3153'
+  decision: LIT
+  nota: Planck 2018 Omega_m=0.3153+-0.0073 (o +-0.007 redondeado, L383), valor estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 615
+  num: '0.0073'
+  decision: LIT
+  nota: Planck Omega_m error, version con 2 decimales significativos
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 615
+  num: '0.88'
+  decision: DERIVADO
+  cuenta: abs(OMEGA_M_TOTAL-0.3153)/0.0073 = abs(0.308881-0.3153)/0.0073 = 0.879 -> redondea 0.88 (ssee_core.OMEGA_M_TOTAL
+    vs Planck Omega_m)
+  resultado: '0.88'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 616
+  num: '0.1200'
+  decision: LIT
+  nota: Planck 2018 Omega_c h^2 = 0.1200+-0.0012, valor estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 616
+  num: '0.0012'
+  decision: LIT
+  nota: idem, error de Planck Omega_c h^2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 617
+  num: '0.2471'
+  decision: LIT
+  nota: ancla Planck 2018 Yp=0.2471+-0.0003, valor estandar BBN+CMB
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 617
+  num: '0.0003'
+  decision: LIT
+  nota: idem, error de Yp Planck
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 617
+  num: '0.2'
+  decision: DERIVADO
+  cuenta: (Yp_ssee-0.2471)/0.0003; con Yp_ssee=0.2471+0.96*(0.022418-0.02237)=0.247146 -> (0.247146-0.2471)/0.0003=0.15
+    -> redondea 0.2 (aprox. coincide con "+0.2sigma")
+  resultado: ~0.2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 618
+  num: '0.9649'
+  decision: LIT
+  nota: Planck 2018 inflation n_s=0.9649+-0.0042 (PlanckInflation2018), valor estandar citado en el propio
+    texto
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 618
+  num: '0.0042'
+  decision: LIT
+  nota: idem, error de Planck n_s
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 618
+  num: '0.16'
+  decision: DERIVADO
+  cuenta: (N_S-0.9649)/0.0042 = (0.965558-0.9649)/0.0042 = 0.157 -> redondea 0.16 (ssee_core.N_S vs Planck
+    2018 n_s)
+  resultado: '0.16'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 619
+  num: '3.044'
+  decision: LIT
+  nota: Planck 2018 ln(10^10 As)=3.044+-0.014, valor estandar citado como comparacion en la tabla (no
+    es el ajuste propio de SSEE, que va por \val{b1_logA_ssee})
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 619
+  num: '0.014'
+  decision: LIT
+  nota: idem, error de Planck logA
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 620
+  num: '0.054'
+  decision: LIT
+  nota: Planck 2018 tau=0.0544 redondeado a 0.054 (columna "Planck 2018" de la tabla, no el ajuste propio)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 620
+  num: '0.007'
+  decision: LIT
+  nota: idem, error de Planck tau redondeado a 0.007 (el valor publicado es 0.0073)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 629
+  num: '0.160'
+  decision: VAL
+  nombre: S_M_d6
+  fuente: results/logs/algebra_derivada.json#nucleo.S_M
+  formato: .6f
+  nota: macro existente da 0.160050 -> redondea 0.160; escrito a mano aqui (equivalente a 1+w0)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 631
+  num: '1.4'
+  decision: TRIVIAL
+  nota: referencia a Paper 1, Sec. 1.4 (numero de seccion, no resultado)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 631
+  num: '0.31993'
+  decision: HIS
+  nota: mapeo MIRA*s_m=0.31993 retirado (reframe omega_m-directo, OP-8 disuelto); marcado explicitamente
+    como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 632
+  num: '0.3201'
+  decision: HIS
+  nota: ruta geometrica (pi-phi)/(pi+phi)=0.3201 retirada; marcada explicitamente como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 664
+  num: '5.521'
+  decision: VAL
+  nombre: KAL0_d3 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.KAL0
+  formato: .3f
+  nuevo: '5.521'
+  nota: KAL0=5.521406 -> redondea 5.521; K=(phi+3pi)/2 es literalmente KAL0, mismo numero con otro nombre
+    en esta seccion
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 668
+  num: '8.12'
+  decision: ALG
+  expr: (c.PHI+3*c.PI)/(6*(c.PHI+c.PI)**2)*100
+  nota: = 8.1242% -> redondea 8.12%; confirmado con ssee_core (K/H0, K=KAL0)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 670
+  num: '73.04'
+  decision: LIT
+  nota: SH0ES Riess et al. 2022, H0=73.04+-1.04 km/s/Mpc; medido, no derivado
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 670
+  num: '1.04'
+  decision: LIT
+  nota: Riess 2022, error de SH0ES H0 = 1.04 km/s/Mpc
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 670
+  num: '0.4'
+  decision: DERIVADO
+  cuenta: pred = H0_ALG*(1+K/H0) = 67.962137*1.081242 = 73.4835; (73.4835-73.04)/1.04 = 0.426 -> redondea
+    0.4sigma (prediccion local corregida por K vs SH0ES medido)
+  resultado: '0.4'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 679
+  num: '73.04'
+  decision: LIT
+  nota: SH0ES Riess et al. 2022, H0=73.04+-1.04 km/s/Mpc; medido, no derivado
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 679
+  num: '1.04'
+  decision: LIT
+  nota: Riess 2022, error de SH0ES H0 = 1.04 km/s/Mpc
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 685
+  num: '67.037'
+  decision: HIS
+  nota: H0^MIRA=67.037 retirado (reframe omega_m-directo 2026-06-18); el texto lo marca explicitamente
+    como superseded
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 687
+  num: 4.2\times10^{-6}
+  decision: VAL
+  nombre: p9_hglob_residuo (nueva)
+  fuente: results/logs/p9_cascada_control.json#sh0es.completo.residuo
+  formato: .1e
+  nuevo: '4.2e-6'
+  nota: log da 4.1986e-6 -> redondea 4.2e-6; coincide pero no hay macro val para este residuo especifico
+    (distinto del "sigma")
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 701
+  num: '0.008131'
+  decision: VAL
+  nombre: R_TENSOR_d6 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.R_TENSOR
+  formato: .6f
+  nuevo: '0.008131'
+  nota: 'R_TENSOR=phi**-10=0.0081306 -> redondea 0.008131; coincide, pero no hay macro val: proponer R_TENSOR_d6'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 704
+  num: '0.036'
+  decision: LIT
+  nota: limite BICEP/Keck 2021 r<0.036 (95% CL), citacion estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 707
+  num: '0.004'
+  decision: TRIVIAL
+  nota: criterio de falsacion elegido por el autor (banda alrededor de r=0.008131); no es un resultado
+    calculado sino un umbral de diseño
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 707
+  num: '0.015'
+  decision: TRIVIAL
+  nota: criterio de falsacion elegido por el autor (banda alrededor de r=0.008131); no es un resultado
+    calculado sino un umbral de diseño
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 708
+  num: '0.001'
+  decision: TRIVIAL
+  nota: criterio de falsacion elegido por el autor (banda alrededor de r=0.008131); no es un resultado
+    calculado sino un umbral de diseño
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 713
+  num: 2.74\times10^{-8}
+  decision: LIT
+  nota: factor de conversion eta_B=2.74e-8*Omega_b h^2 (Steigman 2006, IJMPE 15,1); unificado en todo
+    el doc segun comentario L132 (antes 2.73 en otros docs, corregido 2026-10-02)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 715
+  num: 2.74\times10^{-8}
+  decision: LIT
+  nota: factor de conversion eta_B=2.74e-8*Omega_b h^2 (Steigman 2006, IJMPE 15,1); unificado en todo
+    el doc segun comentario L132 (antes 2.73 en otros docs, corregido 2026-10-02)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 716
+  num: 2.74\times10^{-8}
+  decision: LIT
+  nota: factor de conversion eta_B=2.74e-8*Omega_b h^2 (Steigman 2006, IJMPE 15,1); unificado en todo
+    el doc segun comentario L132 (antes 2.73 en otros docs, corregido 2026-10-02)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 716
+  num: 6.14\times10^{-10}
+  decision: DERIVADO
+  cuenta: 2.74e-8 * OMEGA_B_H2_d5(0.02242) = 6.1468e-10 -> redondea 6.14e-10
+  resultado: '6.14e-10'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 718
+  num: 6.1\times10^{-10}
+  decision: LIT
+  nota: Planck 2018, eta medido = 6.1e-10 (valor estandar BBN+CMB)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 719
+  num: 5.8\times10^{-10}
+  decision: TRIVIAL
+  nota: banda de falsacion elegida por el autor alrededor del eta medido; umbral de diseño, no calculo
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 719
+  num: 6.5\times10^{-10}
+  decision: TRIVIAL
+  nota: banda de falsacion elegida por el autor alrededor del eta medido; umbral de diseño, no calculo
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 728
+  num: '2.191'
+  decision: VAL
+  nombre: TAU_PI_H0_d3 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.TAU_PI_H0
+  formato: .3f
+  nuevo: '2.191'
+  nota: ssee_core.TAU_PI_H0=2.191165 -> redondea 2.191; confirmado, no existe macro val todavia
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 733
+  num: '93.14'
+  decision: LIT
+  nota: factor estandar Sigma_m_nu[eV]=93.14*Omega_nu h^2 (relacion cosmologica standard, no SSEE)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 734
+  num: '0.0685'
+  decision: VAL
+  nombre: SUM_MNU_EV_d4 (nueva, reusa SUM_MNU_EV)
+  fuente: results/logs/algebra_derivada.json#nucleo.SUM_MNU_EV
+  formato: .4f
+  nota: macro SUM_MNU_EV_d5 existente da 0.06849; a 4 decimales redondea 0.0685; aqui escrito a mano
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 736
+  num: '0.015'
+  decision: LIT
+  nota: forecast de sigma esperado DESI DR5 / Euclid para Sigma m_nu, cifra de la literatura de forecasting
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 737
+  num: '0.040'
+  decision: HIS
+  nota: forma preliminar Sigma m_nu=A/100=0.040 eV, explicitamente marcada "superseded" por quedar bajo
+    el piso de oscilaciones
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 742
+  num: '0.12'
+  decision: LIT
+  nota: cota superior Planck 2018 Sigma m_nu<0.12 eV, valor estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 752
+  num: '93.14'
+  decision: LIT
+  nota: factor estandar Sigma_m_nu[eV]=93.14*Omega_nu h^2 (relacion cosmologica standard, no SSEE)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 752
+  num: '93.14'
+  decision: LIT
+  nota: factor estandar Sigma_m_nu[eV]=93.14*Omega_nu h^2 (relacion cosmologica standard, no SSEE)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 754
+  num: '0.12'
+  decision: LIT
+  nota: cota superior Planck 2018 Sigma m_nu<0.12 eV, valor estandar
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 755
+  num: '0.058'
+  decision: LIT
+  nota: piso de oscilacion de neutrinos en ordenamiento normal (~0.058-0.06 eV), valor estandar de oscilaciones
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 792
+  num: '3.2'
+  decision: HIS
+  nota: formula preliminar 3(pi-phi)/200 retirada, a 3.2sigma de Planck; marcada explicitamente superseded;
+    consistente con banner CLAUDE.md
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 793
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 814
+  num: '1.1'
+  decision: DERIVADO
+  cuenta: (H0_ALG-67.36)/0.54 = (67.962137-67.36)/0.54 = 1.115 ~ 1.1 (ssee_core.H0_ALG; Planck 2018 H0=67.36+-0.54)
+  resultado: '1.1'
+  nota: consistente en L58,253,611,814
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 815
+  num: '0.32'
+  decision: DERIVADO
+  cuenta: (OMEGA_B_H2-0.02237)/0.00015 = (0.0224178-0.02237)/0.00015 = 0.318 ~ 0.32 (ssee_core.OMEGA_B_H2
+    vs Planck 2018 wb)
+  resultado: '0.32'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 816
+  num: '0.16'
+  decision: DERIVADO
+  cuenta: (N_S-0.9649)/0.0042 = (0.965558-0.9649)/0.0042 = 0.157 -> redondea 0.16 (ssee_core.N_S vs Planck
+    2018 n_s)
+  resultado: '0.16'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 818
+  num: '0.2472'
+  decision: FIX
+  nombre: Yp_ssee_d4
+  fuente: results/logs/algebra_derivada.json#algebra.Yp_ssee.valor
+  formato: .4f
+  nuevo: \val{Yp_ssee_d4}
+  nota: macro Yp_ssee_d4 existente da 0.2471 (ya usado en L549,617); la lista de conclusiones dice 0.2472,
+    un digito distinto al resto del documento -- inconsistencia interna
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 818
+  num: '0.2'
+  decision: DERIVADO
+  cuenta: igual que L552 (~0.2sigma vs Planck CMB)
+  resultado: ~0.2
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 818
+  num: '0.6'
+  decision: DERIVADO
+  cuenta: igual que L553 (~0.6sigma vs HII Aver2015)
+  resultado: ~0.6
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 819
+  num: '1.67634'
+  decision: VAL
+  nombre: deltac_ssee_zc0 (nueva)
+  fuente: results/logs/deltac_spherical_collapse.json#citado_deltac_SSEE_zc0
+  formato: .5f
+  nota: log da 1.676337 -> coincide exacto con el citado 1.67634 en el propio JSON (campo citado_deltac_SSEE_zc0)
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 820
+  num: '0.02'
+  decision: DERIVADO
+  cuenta: (1.676337-1.675987)/1.675987*100 = 0.0209% -> redondea 0.02% (zc=0, SSEE vs LCDM, log deltac_spherical_collapse.json)
+  resultado: 0.02%
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 821
+  num: '1.6284'
+  decision: HIS
+  nota: delta_c = delta_EdS * n_s = 1.6284 retirado como prediccion (OP-27); el propio texto lo marca
+    "withdrawn"; coincide con postulado_retirado_OP27=1.628414 del log
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 823
+  num: '68.13'
+  decision: VAL
+  nombre: p9_sh0es_glob_IR
+  fuente: results/logs/p9_cascada_control.json#sh0es.IR.H_glob
+  formato: .2f
+  nota: ya existe en valores.yaml; aqui esta escrito a mano en vez de \val
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 823
+  num: '0.17'
+  decision: VAL
+  nombre: p9_sh0es_sig_IR
+  fuente: results/logs/p9_cascada_control.json#sh0es.IR.sigma
+  formato: .2f
+  nota: ya existe en valores.yaml; escrito a mano aqui
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 824
+  num: '0.008131'
+  decision: VAL
+  nombre: R_TENSOR_d6 (nueva)
+  fuente: results/logs/algebra_derivada.json#nucleo.R_TENSOR
+  formato: .6f
+  nuevo: '0.008131'
+  nota: 'R_TENSOR=phi**-10=0.0081306 -> redondea 0.008131; coincide, pero no hay macro val: proponer R_TENSOR_d6'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 841
+  num: '1.5'
+  decision: TRIVIAL
+  nota: version minima de la libreria camb (requisito de software, no resultado fisico)
+afirmaciones:
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 818
+  dice: Y_p = 0.2472 (0.2\sigma from Planck CMB, 0.6\sigma from HII — no fit)
+  debe_decir: Y_p = \val{Yp_ssee_d4} (0.2\sigma from Planck CMB, 0.6\sigma from HII — no fit)
+  evidencia: La macro Yp_ssee_d4 (results/logs/algebra_derivada.json#algebra.Yp_ssee.valor) da 0.2471,
+    el mismo valor usado en L549 y L617 del propio documento; la lista de conclusiones (L818) escribe
+    0.2472 a mano, un digito distinto, sin fuente.
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 199
+  dice: $\Omega_b h^2$ (BBN) & ... & 0.022420 \\
+  debe_decir: $\Omega_b h^2$ (BBN) & ... & \val{OMEGA_B_H2_d6} \\
+  evidencia: ssee_core.OMEGA_B_H2 = 0.0224178 -> redondea a 0.022418 (macro OMEGA_B_H2_d6 ya usada en
+    el resto del documento), no 0.022420. Error en el 6o decimal de la Tabla 1.
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 408
+  dice: $K_{\rm AL}\times0.02242\times n_s = 0.11952$ ($-0.4\sigma$)
+  debe_decir: $K_{\rm AL}\times\val{OMEGA_B_H2_d5}\times n_s = 0.11951$ ($\val{wc_ns_sigma}\sigma$)
+  evidencia: KAL0 * OMEGA_B_H2 * N_S = 0.119514 -> redondea 0.11951, no 0.11952 (calculado con src/ssee_core.py);
+    el mismo numero ya esta correctamente en la macro OMEGA_C_H2_d6=0.119514 usada en L400/617/801/817.
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 403
+  dice: Both the static (Eq. omch2_static) and IS formulas use the Planck 2018 observed value Omega_b
+    h^2 = 0.02237+-0.00015.
+  debe_decir: '(revisar manualmente la redaccion: la ecuacion boxed de L399-400 usa 0.02242, el valor
+    ALGEBRAICO de SSEE, no 0.02237 de Planck; la nota que dice "both use Planck observed" contradice la
+    propia ecuacion que acaba de mostrar)'
+  evidencia: 'La ec. boxed (L399-401) usa literalmente "0.02242" (=OMEGA_B_H2 algebraico de SSEE), pero
+    el parrafo de L403-405 afirma que "both formulas use Planck observed value 0.02237". Son dos numeros
+    distintos: 0.02242 (SSEE) vs 0.02237 (Planck). El parrafo no describe la ecuacion que tiene al lado;
+    o la ecuacion deberia mostrar 0.02237, o el texto debe decir que usa el valor algebraico de SSEE.'
+- archivo: SSEE_Paper4_ToE.tex
+  linea: 510
+  dice: the two agree to $0.02\%$ at $z_c=0$ and to $0.001\%$ at $z_c=10$
+  debe_decir: 'verificar redondeo: results/logs/deltac_spherical_collapse.json da una diferencia relativa
+    de 0.0007% en z_c=10 (no 0.001%); revisar si el autor redondeo hacia arriba a 1 cifra significativa
+    o si hay un calculo distinto'
+  evidencia: (1.6864683-1.6864558)/1.6864558*100 = 0.00074%, que redondea a 0.0007%, no exactamente a
+    0.001% salvo que se tome 1 cifra significativa generosa. Discrepancia menor, posible redondeo laxo.

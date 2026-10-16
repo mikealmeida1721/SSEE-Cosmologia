@@ -57,6 +57,8 @@ stages:
     - results/logs/rd_dual.json
     - results/logs/p2_fig8_rd.json
     - results/logs/paper4_toe.json
+    - results/logs/p04_rutas_mv.json
+    - results/logs/p04_barrido_omega_b.json
     - results/logs/cmb_dbic_mnu_propia.json
     - results/logs/s8_desde_b1.json
     - results/logs/kids_publicados.json
@@ -1056,6 +1058,30 @@ stages:
     - results/logs/is_growth_gamma.json:
         cache: false
     - results/logs/is_growth_gamma.log:
+        cache: false
+  # 2026-10-16: P4 decia «early scan, archived without a log»; el barrido es el paso [5]
+  # del script OP-1 archivado (7 candidatos). Se reproduce y se sella aqui.
+  p04_barrido_omega_b:
+    cmd: .venv/bin/python3 src/p04_toe/barrido_omega_b.py
+    deps:
+    - src/p04_toe/barrido_omega_b.py
+    - src/procedencia.py
+    - src/ssee_core.py
+    - archive/codigo/investigacion/open_problems/ssee_op1_baryon_density.py
+    outs:
+    - results/logs/p04_barrido_omega_b.json:
+        cache: false
+  # 2026-10-15: P4 decia «veinte rutas (6+11+3)» a mano; el diccionario y este conteo
+  # leido del mismo codigo dan 24 = 8+13+3 (lectura fria de P4).
+  p04_rutas_mv:
+    cmd: .venv/bin/python3 src/p04_toe/rutas_mv.py
+    deps:
+    - src/p04_toe/rutas_mv.py
+    - src/procedencia.py
+    - src/estadistica/look_elsewhere_full.py
+    - zenodo_dictionary/SSEE_Constant_Dictionary.md
+    outs:
+    - results/logs/p04_rutas_mv.json:
         cache: false
   # 2026-10-02 (R36/R75): figuras de P3 (hi_class), P4 y P7 (EFTCAMB) rancias desde
   # c8d1566 (H0_ALG -> H0_GLOBAL); ahora etapas con acta en el PDF y log. 1 nucleo.

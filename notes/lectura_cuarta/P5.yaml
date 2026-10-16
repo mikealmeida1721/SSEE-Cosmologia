@@ -1,0 +1,2062 @@
+doc: P5
+numeros:
+- archivo: SSEE_Paper5_IS.tex
+  linea: 65
+  num: '0.8399'
+  decision: ALG
+  expr: 'c.S_DE  # = |w0|, OMEGA_DE'
+  nota: w0=-0.8399 (OMEGA_DE); redondeo .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 65
+  num: '0.6700'
+  decision: ALG
+  expr: c.WA
+  nota: redondeo .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 68
+  num: '0.24'
+  decision: LIT
+  nota: DESI DR2 w0waCDM posterior vs Pantheon+, citep SSEE_Paper2/AbdulKarim2025
+- archivo: SSEE_Paper5_IS.tex
+  linea: 68
+  num: '0.2'
+  decision: LIT
+  nota: rango 0.2-1.8sigma segun compilado SN, banner CLAUDE.md
+- archivo: SSEE_Paper5_IS.tex
+  linea: 68
+  num: '1.8'
+  decision: LIT
+  nota: rango 0.2-1.8sigma
+- archivo: SSEE_Paper5_IS.tex
+  linea: 76
+  num: '0.840'
+  decision: ALG
+  expr: c.S_DE
+  nota: w0 redondeado .3f; = bare c2_s
+- archivo: SSEE_Paper5_IS.tex
+  linea: 103
+  num: '0.456'
+  decision: DERIVADO
+  nota: k_crit/H0 = 1/tauPi H0 = 1/2.191 = 0.4564; NO es erosita_conteos_erass1.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 106
+  num: '0.46'
+  decision: DERIVADO
+  nota: redondeo a 2 decimales de 0.456
+- archivo: SSEE_Paper5_IS.tex
+  linea: 106
+  num: '2.2'
+  decision: DERIVADO
+  nota: 1/0.456 ~ 2.19, redondeado a "factor 2.2"
+- archivo: SSEE_Paper5_IS.tex
+  linea: 114
+  num: '0.9897'
+  decision: VAL
+  nombre: R_media_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_media_k10
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 114
+  num: '0.0167'
+  decision: VAL
+  nombre: R_sd_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_sd_k10
+  formato: .4f
+  nota: log da 0.016731; NO es lcdm_conjunta.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 122
+  num: '0.160'
+  decision: ALG
+  expr: 'c.OMEGA_CDM_SECTOR  # = 1+w0 = s_m'
+  nota: s_m, NO densidad; confirma banner CLAUDE.md
+- archivo: SSEE_Paper5_IS.tex
+  linea: 128
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 128
+  num: '0.0003'
+  decision: VAL
+  nombre: gamma_IS_sigma
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS_sigma
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 129
+  num: '0.55'
+  decision: LIT
+  nota: gamma_LCDM citep Linder2005, valor de literatura estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 130
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 136
+  num: '0.3'
+  decision: TRIVIAL
+  nota: definicion estandar de S8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 136
+  num: '0.5'
+  decision: TRIVIAL
+  nota: exponente 1/2 de la definicion estandar de S8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 138
+  num: '0.8256'
+  decision: VAL
+  nombre: S8_SSEE_growth_ceiling
+  fuente: results/logs/p5_IS_perturbations_Q3.json#S8_SSEE
+  formato: .4f
+  nota: sigma8*(Om/0.3)^0.5 con A_s fijado a Planck; ceiling, no prediccion (asi lo etiqueta el propio
+    texto)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 138
+  num: '0.0061'
+  decision: VAL
+  nombre: S8_SSEE_growth_ceiling_sigma
+  fuente: results/logs/p5_IS_perturbations_Q3.json#S8_SSEE_sigma
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 139
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 146
+  num: '0.49'
+  decision: VAL
+  nombre: S8_leg_tension_antes_val
+  fuente: notar que ya existe \val{S8_leg_tension} mas abajo para el mismo numero en otros lugares del
+    documento; aqui aparece codificado a mano
+  nota: 0.49sigma del logA de la cizalla KiDS-Legacy vs el CMB propio del modelo; coherente con 0.8273
+    vs 0.8265 (CLAUDE.md, kids_publicados.json)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 154
+  num: '2.39'
+  decision: LIT
+  nota: KiDS-Legacy Appendix I (Wright+2025), 2.39->1.42 por calibracion n(z); cita de literatura, no
+    resultado propio
+- archivo: SSEE_Paper5_IS.tex
+  linea: 154
+  num: '1.0'
+  decision: TRIVIAL
+  nota: span de chi2 "1.0 sobre 357 puntos", declaracion de rango, no medicion puntual
+- archivo: SSEE_Paper5_IS.tex
+  linea: 159
+  num: '0.70'
+  decision: VAL
+  nombre: fsigma8_tension_ssee_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_ssee en las 6 filas = 0.6963)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 160
+  num: '0.73'
+  decision: VAL
+  nombre: fsigma8_tension_lcdm_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_lcdm en las 6 filas = 0.7251)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 189
+  num: '0.8399'
+  decision: ALG
+  expr: c.S_DE
+  nota: igual a linea 65
+- archivo: SSEE_Paper5_IS.tex
+  linea: 197
+  num: '0.24'
+  decision: LIT
+  nota: igual que 68
+- archivo: SSEE_Paper5_IS.tex
+  linea: 199
+  num: '1.062'
+  decision: LIT
+  nota: chi2_r <= 1.062 citep SSEE_Paper3
+- archivo: SSEE_Paper5_IS.tex
+  linea: 211
+  num: '0.88'
+  decision: LOG
+  nombre: om_m_cmb_tension_planck
+  fuente: resultado ya documentado como VAL en otros docs (0.88sigma Omega_m,CMB vs Planck); revisar \val
+    existente antes de hardcodear
+  nota: coherente con banner Omega_m-GEOMETRIA de CLAUDE.md (0.88sigma)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 227
+  num: '0.840'
+  decision: ALG
+  expr: c.S_DE
+  nota: igual a linea 76
+- archivo: SSEE_Paper5_IS.tex
+  linea: 229
+  num: '0.840'
+  decision: ALG
+  expr: c.S_DE
+  nota: igual a linea 76
+- archivo: SSEE_Paper5_IS.tex
+  linea: 248
+  num: '0.021284'
+  decision: ALG
+  expr: 'algebra_derivada.algebra.cs2_condensado  # (1+w0)/(5-3 w0)'
+  fuente: results/logs/algebra_derivada.json#algebra.cs2_condensado.valor
+  formato: .6f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 254
+  num: '0.60'
+  decision: HIS
+  nota: '"Earlier versions... quoted c2_s,ad in [0.60,1]" -- correction note, correctamente narrado como
+    retirado'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 257
+  num: '0.008577'
+  decision: ALG
+  expr: algebra_derivada.algebra.c2X_c1_KX
+  fuente: results/logs/algebra_derivada.json#algebra.c2X_c1_KX.valor
+  formato: .6f
+  nota: coeficiente de K(X) Paper 10, distinto del condensado de P7
+- archivo: SSEE_Paper5_IS.tex
+  linea: 278
+  num: '93.14'
+  decision: LIT
+  nota: factor estandar de conversion Sigma m_nu = 93.14 Omega_nu h^2 eV (no especifico de SSEE)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 280
+  num: '1.1'
+  decision: TRIVIAL
+  nota: factor de perturbacion de sensibilidad (10%), no un resultado
+- archivo: SSEE_Paper5_IS.tex
+  linea: 281
+  num: '0.0566'
+  decision: LOG
+  nombre: sum_mnu_KALx1p1
+  fuente: results/logs/cajones_algebra.json#identidades.sum_mnu_KALx1p1.valor
+  formato: .4f
+  nota: 'sensibilidad: KAL0 -> 1.1 KAL0'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 281
+  num: '0.058'
+  decision: LIT
+  nota: piso de oscilaciones de neutrinos, literatura estandar (~0.058 eV, jerarquia normal)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 297
+  num: '0.021284'
+  decision: ALG
+  expr: algebra_derivada.algebra.cs2_condensado
+  fuente: results/logs/algebra_derivada.json#algebra.cs2_condensado.valor
+  formato: .6f
+  nota: repite linea 248
+- archivo: SSEE_Paper5_IS.tex
+  linea: 426
+  num: '1.000000'
+  decision: TRIVIAL
+  nota: rho_DE/rho_DE = 1 por definicion (fila de la tabla de divisores)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 436
+  num: '5.248'
+  decision: ALG
+  expr: algebra_derivada.algebra.inv_1pw0_m1
+  fuente: results/logs/algebra_derivada.json#algebra.inv_1pw0_m1.valor
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 436
+  num: '4.41'
+  decision: DERIVADO
+  nota: c2_s,eff = w0 + 5.248 = -0.8399+5.248 = 4.408 -> redondeo 4.41; NO es savage_cv.json (coincidencia
+    de valor, descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 448
+  num: '185.05'
+  decision: DERIVADO
+  nota: '(1-3*0) + zeta_marginal*(k/H)^2 con k=10 -> 1 + 1.840469*100 = 185.05 (zeta_marginal: results/logs/cajones_algebra.json#identidades.zeta_marginal.valor)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 476
+  num: '0.2946'
+  decision: LOG
+  nombre: zeta_fisica_coef
+  fuente: results/logs/cajones_algebra.json#identidades.zeta_fisica_coef.valor
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 477
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 477
+  num: '6.248'
+  decision: ALG
+  expr: algebra_derivada.algebra.inv_1pw0
+  fuente: results/logs/algebra_derivada.json#algebra.inv_1pw0.valor
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 490
+  num: '0.021284'
+  decision: ALG
+  expr: algebra_derivada.algebra.cs2_condensado
+  fuente: results/logs/algebra_derivada.json#algebra.cs2_condensado.valor
+  formato: .6f
+  nota: repite linea 248
+- archivo: SSEE_Paper5_IS.tex
+  linea: 504
+  num: '0.021284'
+  decision: ALG
+  expr: algebra_derivada.algebra.cs2_condensado
+  fuente: results/logs/algebra_derivada.json#algebra.cs2_condensado.valor
+  formato: .6f
+  nota: repite linea 248
+- archivo: SSEE_Paper5_IS.tex
+  linea: 508
+  num: '0.021284'
+  decision: ALG
+  expr: algebra_derivada.algebra.cs2_condensado
+  fuente: results/logs/algebra_derivada.json#algebra.cs2_condensado.valor
+  formato: .6f
+  nota: repite linea 248
+- archivo: SSEE_Paper5_IS.tex
+  linea: 515
+  num: '1.8405'
+  decision: LOG
+  nombre: zeta_marginal
+  fuente: results/logs/cajones_algebra.json#identidades.zeta_marginal.valor
+  formato: .4f
+  nota: -w0*tauPi H0 (condicion c2_eff=0)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 517
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 540
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 541
+  num: '1.841'
+  decision: LOG
+  nombre: zeta_marginal
+  fuente: results/logs/cajones_algebra.json#identidades.zeta_marginal.valor
+  formato: .3f
+  nota: mismo valor que linea 515 a 3 decimales; NO es erosita_extlike (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 593
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 647
+  num: '0.010'
+  decision: TRIVIAL
+  nota: a=1/(1+z=99), definicion estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 647
+  num: '555.8'
+  decision: DERIVADO
+  nota: 'H/H0 en z=99: calculado con c.OMEGA_M_TOTAL, c.WA, c.W0 (friedmann E(a)); verificado numericamente
+    = 555.8 (ver tabla de fondo, src/ssee_core.py)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 648
+  num: '0.050'
+  decision: TRIVIAL
+  nota: a=1/(1+z=19), definicion estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 648
+  num: '49.71'
+  decision: DERIVADO
+  nota: 'H/H0 en z=19: calculado con c.OMEGA_M_TOTAL, c.WA, c.W0 (friedmann E(a)); verificado numericamente
+    = 49.71 (ver tabla de fondo, src/ssee_core.py)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 648
+  num: '108.9'
+  decision: DERIVADO
+  nota: tauPi*H = c.TAU_PI_H0 * E(a) en z=19; verificado numericamente = 108.9
+- archivo: SSEE_Paper5_IS.tex
+  linea: 649
+  num: '0.100'
+  decision: TRIVIAL
+  nota: a=1/(1+z=9), definicion estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 649
+  num: '17.58'
+  decision: DERIVADO
+  nota: 'H/H0 en z=9: calculado con c.OMEGA_M_TOTAL, c.WA, c.W0 (friedmann E(a)); verificado numericamente
+    = 17.58 (ver tabla de fondo, src/ssee_core.py)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 649
+  num: '38.52'
+  decision: DERIVADO
+  nota: tauPi*H = c.TAU_PI_H0 * E(a) en z=9; verificado numericamente = 38.52
+- archivo: SSEE_Paper5_IS.tex
+  linea: 650
+  num: '0.200'
+  decision: TRIVIAL
+  nota: a=1/(1+z=4), definicion estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 650
+  num: '6.237'
+  decision: DERIVADO
+  nota: 'H/H0 en z=4: calculado con c.OMEGA_M_TOTAL, c.WA, c.W0 (friedmann E(a)); verificado numericamente
+    = 6.237 (ver tabla de fondo, src/ssee_core.py)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 650
+  num: '13.67'
+  decision: DERIVADO
+  nota: tauPi*H = c.TAU_PI_H0 * E(a) en z=4; verificado numericamente = 13.67
+- archivo: SSEE_Paper5_IS.tex
+  linea: 651
+  num: '0.500'
+  decision: TRIVIAL
+  nota: a=1/(1+z=1), definicion estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 651
+  num: '1.768'
+  decision: DERIVADO
+  nota: 'H/H0 en z=1: calculado con c.OMEGA_M_TOTAL, c.WA, c.W0 (friedmann E(a)); verificado numericamente
+    = 1.768 (ver tabla de fondo, src/ssee_core.py)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 651
+  num: '3.873'
+  decision: DERIVADO
+  nota: tauPi*H = c.TAU_PI_H0 * E(a) en z=1; verificado numericamente = 3.873
+- archivo: SSEE_Paper5_IS.tex
+  linea: 652
+  num: '0.25'
+  decision: TRIVIAL
+  nota: z=0.25, etiqueta de fila (a=0.8)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 652
+  num: '0.800'
+  decision: TRIVIAL
+  nota: a=1/(1+z=0.25), definicion estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 652
+  num: '1.157'
+  decision: DERIVADO
+  nota: 'H/H0 en z=0.25: calculado con c.OMEGA_M_TOTAL, c.WA, c.W0 (friedmann E(a)); verificado numericamente
+    = 1.157 (ver tabla de fondo, src/ssee_core.py)'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 652
+  num: '2.534'
+  decision: DERIVADO
+  nota: tauPi*H = c.TAU_PI_H0 * E(a) en z=0.25; verificado numericamente = 2.534
+- archivo: SSEE_Paper5_IS.tex
+  linea: 653
+  num: '1.000'
+  decision: TRIVIAL
+  nota: a=1 y H/H0=1 en z=0, por definicion (no es sqrtAURA_MIRA; coincidencia de valor descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 653
+  num: '1.000'
+  decision: TRIVIAL
+  nota: a=1 y H/H0=1 en z=0, por definicion (no es sqrtAURA_MIRA; coincidencia de valor descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 653
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+  nota: fila z=0 de la tabla de fondo
+- archivo: SSEE_Paper5_IS.tex
+  linea: 659
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 660
+  num: '0.46'
+  decision: DERIVADO
+  nota: (tauPi H)^-1 = 1/2.191 = 0.4564 en z=0
+- archivo: SSEE_Paper5_IS.tex
+  linea: 667
+  num: '0.46'
+  decision: DERIVADO
+  nota: mismo 0.456 reutilizado en la propagacion de error
+- archivo: SSEE_Paper5_IS.tex
+  linea: 670
+  num: '0.05'
+  decision: TRIVIAL
+  nota: cota ilustrativa de error de la aproximacion QS (<5%), no una medicion
+- archivo: SSEE_Paper5_IS.tex
+  linea: 738
+  num: '3.1'
+  decision: TRIVIAL
+  nota: 3.1e-16, ruido de punto flotante ilustrando precision de maquina, no un resultado fisico
+- archivo: SSEE_Paper5_IS.tex
+  linea: 790
+  num: '2.191'
+  decision: ALG
+  expr: c.TAU_PI_H0
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 791
+  num: '0.456'
+  decision: DERIVADO
+  nota: repite 1/2.191=0.456, deducido en linea 790-791 del propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 797
+  num: '0.456'
+  decision: DERIVADO
+  nota: repite 1/2.191=0.456, deducido en linea 790-791 del propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 806
+  num: '0.1'
+  decision: TRIVIAL
+  nota: escala BAO tipica k~0.1 Mpc^-1, dato de contexto estandar
+- archivo: SSEE_Paper5_IS.tex
+  linea: 816
+  num: '0.840'
+  decision: ALG
+  expr: c.S_DE
+  nota: pie de figura, igual a linea 76
+- archivo: SSEE_Paper5_IS.tex
+  linea: 821
+  num: '0.456'
+  decision: DERIVADO
+  nota: repite 1/2.191=0.456, deducido en linea 790-791 del propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 841
+  num: '0.05'
+  decision: TRIVIAL
+  nota: a_ini=0.05 (z=19), eleccion de diseno de la integracion numerica
+- archivo: SSEE_Paper5_IS.tex
+  linea: 878
+  num: '0.3199'
+  decision: ALG
+  expr: c.MIRA*c.OMEGA_CDM_SECTOR
+  nota: identidad historica OMEGA_M_CMB_MIRA; el propio parrafo la marca "then in force" (narrativa),
+    consistente con ssee_core.OMEGA_M_CMB_MIRA≈0.31983
+- archivo: SSEE_Paper5_IS.tex
+  linea: 886
+  num: '0.4464'
+  decision: DERIVADO
+  nota: r* = (MIRA-1)*Omega_m/Omega_DE = (1.9989-1)*0.308881/0.691119 = 0.4464; formula dada en el propio
+    texto linea 888-889
+- archivo: SSEE_Paper5_IS.tex
+  linea: 891
+  num: '0.4464'
+  decision: DERIVADO
+  nota: repite el calculo de r* de la linea 886-891
+- archivo: SSEE_Paper5_IS.tex
+  linea: 894
+  num: '0.45'
+  decision: DERIVADO
+  nota: delta_DE ~ 0.45 delta_m, orden de magnitud de la perturbacion de DE en el regimen super-horizonte,
+    discutido cualitativamente
+- archivo: SSEE_Paper5_IS.tex
+  linea: 907
+  num: '0.05'
+  decision: TRIVIAL
+  nota: misma eleccion de a_ini=0.05
+- archivo: SSEE_Paper5_IS.tex
+  linea: 919
+  num: '0.2105'
+  decision: VAL
+  nombre: q2_deltam_k0
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[0].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 919
+  num: '41.05'
+  decision: VAL
+  nombre: q2_r_k0
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[0].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 919
+  num: '28.0595'
+  decision: VAL
+  nombre: q2_omeff_k0
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[0].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 919
+  num: '90.8425'
+  decision: VAL
+  nombre: q2_R_k0
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[0].R
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 920
+  num: '0.1537'
+  decision: VAL
+  nombre: q2_deltam_k1
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[1].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 920
+  num: '11.63'
+  decision: VAL
+  nombre: q2_r_k1
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[1].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 920
+  num: '7.7321'
+  decision: VAL
+  nombre: q2_omeff_k1
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[1].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 920
+  num: '25.0326'
+  decision: VAL
+  nombre: q2_R_k1
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[1].R
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 921
+  num: '0.1711'
+  decision: VAL
+  nombre: q2_deltam_k2
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[2].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 921
+  num: '0.88612'
+  decision: VAL
+  nombre: q2_r_k2
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[2].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 921
+  num: '0.3035'
+  decision: VAL
+  nombre: q2_omeff_k2
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[2].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 921
+  num: '0.9827'
+  decision: VAL
+  nombre: q2_R_k2
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[2].R
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 922
+  num: '0.2918'
+  decision: VAL
+  nombre: q2_deltam_k3
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[3].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 922
+  num: '0.01753'
+  decision: VAL
+  nombre: q2_r_k3
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[3].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 922
+  num: '0.2968'
+  decision: VAL
+  nombre: q2_omeff_k3
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[3].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 922
+  num: '0.9608'
+  decision: VAL
+  nombre: q2_R_k3
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[3].R
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 923
+  num: '0.5426'
+  decision: VAL
+  nombre: q2_deltam_k4
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[4].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 923
+  num: '0.00072'
+  decision: VAL
+  nombre: q2_r_k4
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[4].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 923
+  num: '0.3084'
+  decision: VAL
+  nombre: q2_omeff_k4
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[4].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 923
+  num: '0.9984'
+  decision: VAL
+  nombre: q2_R_k4
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[4].R
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 924
+  num: '1.2958'
+  decision: VAL
+  nombre: q2_deltam_k5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[5].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 924
+  num: '0.00008'
+  decision: VAL
+  nombre: q2_r_k5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[5].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 924
+  num: '0.3088'
+  decision: VAL
+  nombre: q2_omeff_k5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[5].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 924
+  num: '0.9998'
+  decision: VAL
+  nombre: q2_R_k5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[5].R
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 925
+  num: '2.5510'
+  decision: VAL
+  nombre: q2_deltam_k6
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[6].delta_m
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 925
+  num: '0.00002'
+  decision: VAL
+  nombre: q2_r_k6
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[6].r
+  nota: valor absoluto de r (negativo en el log)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 925
+  num: '0.3089'
+  decision: VAL
+  nombre: q2_omeff_k6
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[6].Omega_m_eff
+  nota: valor absoluto (negativo en el log para k=2,3,5)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 925
+  num: '1.0000'
+  decision: ALG
+  expr: c.OMEGA_M_TOTAL/c.OMEGA_M_TOTAL
+  nota: columna R en k=100 -> 1.0000 por definicion de la convergencia; NO cmb_wb_forzado.json (coincidencia
+    descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 928
+  num: '0.9897'
+  decision: VAL
+  nombre: R_media_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_media_k10
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 928
+  num: '0.0167'
+  decision: VAL
+  nombre: R_sd_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_sd_k10
+  formato: .4f
+  nota: log da 0.016731; NO es lcdm_conjunta.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 929
+  num: '0.4464'
+  decision: DERIVADO
+  nota: repite el calculo de r* de la linea 886-891
+- archivo: SSEE_Paper5_IS.tex
+  linea: 931
+  num: '0.0175'
+  decision: VAL
+  nombre: q2_r_k3_abs
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[3].r
+  nota: '|r| en k=10, valor absoluto de -0.017530'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 931
+  num: '3.9'
+  decision: DERIVADO
+  nota: 0.0175/0.4464=3.92% -> redondeado 3.9%
+- archivo: SSEE_Paper5_IS.tex
+  linea: 937
+  num: '0.9897'
+  decision: VAL
+  nombre: R_media_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_media_k10
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 937
+  num: '0.0167'
+  decision: VAL
+  nombre: R_sd_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_sd_k10
+  formato: .4f
+  nota: log da 0.016731; NO es lcdm_conjunta.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 941
+  num: '0.0175'
+  decision: VAL
+  nombre: q2_r_k3_abs
+  fuente: results/logs/p5_IS_perturbations_Q2.json#filas[3].r
+- archivo: SSEE_Paper5_IS.tex
+  linea: 942
+  num: '3.9'
+  decision: DERIVADO
+  nota: repite 0.0175/0.4464=3.9%
+- archivo: SSEE_Paper5_IS.tex
+  linea: 942
+  num: '0.4464'
+  decision: DERIVADO
+  nota: repite r*
+- archivo: SSEE_Paper5_IS.tex
+  linea: 962
+  num: '1.84'
+  decision: DERIVADO
+  nota: 'zeta_marginal*(k/aH)^2 aprox = 1.8405*100 = 184.05 ~ "1.84x100=184" del texto; zeta_marginal:
+    cajones_algebra.json'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 963
+  num: '0.02'
+  decision: TRIVIAL
+  nota: orden de magnitud ilustrativo del potencial Phi, no una medicion
+- archivo: SSEE_Paper5_IS.tex
+  linea: 963
+  num: '0.16'
+  decision: ALG
+  expr: c.OMEGA_CDM_SECTOR
+  nota: =1+w0=s_m, reutilizado aqui como "(1+w)" en el denominador ilustrativo
+- archivo: SSEE_Paper5_IS.tex
+  linea: 963
+  num: '1.3'
+  decision: DERIVADO
+  nota: 10*0.02/0.16=1.25, redondeado a 1.3 (estimacion de orden de magnitud)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 979
+  num: '1.999'
+  decision: ALG
+  expr: c.MIRA
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 985
+  num: '0.4464'
+  decision: DERIVADO
+  nota: repite el calculo de r* de la linea 886-891
+- archivo: SSEE_Paper5_IS.tex
+  linea: 987
+  num: '3.9'
+  decision: DERIVADO
+  nota: repite 0.0175/0.4464=3.9%
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1018
+  num: '0.3199'
+  decision: HIS
+  nota: '"MIRA-enhanced 0.3199 is superseded" -- correctamente narrado'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1031
+  num: '0.008131'
+  decision: TRIVIAL
+  nota: a_ini de la integracion numerica (eleccion de diseno, materia-dominada); coincide por casualidad
+    con phi^-10=R_TENSOR (tensor-to-scalar ratio de otro observable) - NO es la misma entidad, coincidencia
+    descartada
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1034
+  num: '0.3'
+  decision: TRIVIAL
+  nota: rango de ajuste a in [0.3,1] (rango observacionalmente accesible), eleccion de diseno del ajuste
+    de gamma
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1037
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1037
+  num: '0.0003'
+  decision: VAL
+  nombre: gamma_IS_sigma
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS_sigma
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1040
+  num: '0.55'
+  decision: LIT
+  nota: Linder2005
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1040
+  num: '0.01'
+  decision: LIT
+  nota: Linder2005, barra de error de literatura
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1049
+  num: '0.315'
+  decision: ALG
+  expr: round(c.LCDM_OMEGA_M,3)
+  nota: 0.3153 redondeado a 3 decimales
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1050
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1056
+  num: '1.0'
+  decision: TRIVIAL
+  nota: z=1.0, etiqueta de fila de la tabla de crecimiento
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1056
+  num: '0.790'
+  decision: VAL
+  nombre: om_ssee_z_1056
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1056
+  num: '0.880'
+  decision: VAL
+  nombre: f_ssee_z_1056
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1056
+  num: '0.876'
+  decision: VAL
+  nombre: f_lcdm_z_1056
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1056
+  num: '0.4'
+  decision: TRIVIAL
+  nota: porcentaje Delta f/f ya mostrado en la fila (0.880 vs 0.876)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1057
+  num: '0.5'
+  decision: TRIVIAL
+  nota: z=0.5, etiqueta de fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1057
+  num: '0.588'
+  decision: VAL
+  nombre: om_ssee_z_1057
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1057
+  num: '0.747'
+  decision: VAL
+  nombre: f_ssee_z_1057
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1057
+  num: '0.760'
+  decision: VAL
+  nombre: f_lcdm_z_1057
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1057
+  num: '1.6'
+  decision: TRIVIAL
+  nota: porcentaje Delta f/f de la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1058
+  num: '0.0'
+  decision: TRIVIAL
+  nota: z=0, etiqueta de fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1058
+  num: '0.309'
+  decision: ALG
+  expr: c.OMEGA_M_TOTAL
+  formato: .3f
+  nota: Omega_m(a=1)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1058
+  num: '0.521'
+  decision: VAL
+  nombre: f_lcdm_z0
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+  nota: 'f_LCDM(z=0); NO es cajones_algebra.alfa_sat_SSEE=0.5212 (entidad distinta: alfa de saturacion
+    de P8, coincidencia de valor descartada). Falta log dedicado para la tabla de crecimiento (ver afirmaciones).'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1058
+  num: '0.527'
+  decision: VAL
+  nombre: f_lcdm_ref_z0
+  fuente: src/p05_IS/ssee_paper5_IS_perturbations.py (tabla growth, sin JSON dedicado)
+  nota: NO es erosita_cr_v3.json (coincidencia descartada); mismo gap de log que 0.521
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1058
+  num: '1.3'
+  decision: TRIVIAL
+  nota: porcentaje Delta f/f de la fila z=0
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1064
+  num: '1.6'
+  decision: TRIVIAL
+  nota: repite el 1.6% de la fila z=0.5
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1064
+  num: '0.5'
+  decision: TRIVIAL
+  nota: redshift citado de la tabla
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1066
+  num: '0.3153'
+  decision: ALG
+  expr: c.LCDM_OMEGA_M
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1084
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1084
+  num: '0.005'
+  decision: TRIVIAL
+  nota: barra +/-0.005 heredada, no recomputada en esta corrida (ver nota linea 1151 del propio tex para
+    el caso S8)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1087
+  num: '0.3'
+  decision: TRIVIAL
+  nota: 0.3% ya mostrado en G=1.0032
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1093
+  num: '0.3153'
+  decision: ALG
+  expr: c.LCDM_OMEGA_M
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1094
+  num: '0.3'
+  decision: HIS
+  nota: compara contra el 1.1% del fondo MIRA retirado; el propio texto lo marca superseded
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1094
+  num: '0.3199'
+  decision: HIS
+  nota: fondo MIRA retirado explicitamente en el texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1095
+  num: '1.1'
+  decision: HIS
+  nota: realce bajo el fondo MIRA retirado (0.3199), marcado como superseded en el propio parrafo
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1105
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1110
+  num: '0.811'
+  decision: LIT
+  nota: igual a 1112
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1112
+  num: '0.811'
+  decision: LIT
+  nota: Planck 2018 sigma8=0.811 (citep Planck2018); coincide con ssee_core.LCDM_SIGMA8=0.8111 redondeado
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1112
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1112
+  num: '0.8136'
+  decision: VAL
+  nombre: sigma8_ssee_growth
+  fuente: results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1112
+  num: '0.006'
+  decision: TRIVIAL
+  nota: redondeo a 3 decimales de la barra 0.006019 (sigma8_SSEE_sigma del log Q3)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1115
+  num: '0.8136'
+  decision: VAL
+  nombre: sigma8_ssee_growth
+  fuente: results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1115
+  num: '0.3'
+  decision: TRIVIAL
+  nota: definicion estandar de S8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1116
+  num: '0.8256'
+  decision: VAL
+  nombre: S8_SSEE_growth_ceiling
+  fuente: results/logs/p5_IS_perturbations_Q3.json#S8_SSEE
+  formato: .4f
+  nota: sigma8*(Om/0.3)^0.5 con A_s fijado a Planck; ceiling, no prediccion (asi lo etiqueta el propio
+    texto)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1116
+  num: '2.7'
+  decision: DERIVADO
+  nota: repite tension 2.7sigma de S8=0.8256 vs KiDS-1000 (ver linea 1538)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1122
+  num: '0.3'
+  decision: TRIVIAL
+  nota: definicion estandar de S8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1122
+  num: '0.5'
+  decision: TRIVIAL
+  nota: exponente de la definicion
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1127
+  num: '0.832'
+  decision: LIT
+  nota: Planck2018
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1127
+  num: '0.013'
+  decision: LIT
+  nota: Planck2018
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1129
+  num: '0.776'
+  decision: LIT
+  nota: DESY32022
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1129
+  num: '0.017'
+  decision: LIT
+  nota: DESY32022, barra de error
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1131
+  num: '2.4'
+  decision: LIT
+  nota: tension Planck-KiDS generica de literatura, citep Weinberg2013 contexto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1131
+  num: '2.7'
+  decision: LIT
+  nota: tension Planck-DES generica de literatura
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1136
+  num: '0.3199'
+  decision: HIS
+  nota: marcado "superseded" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1137
+  num: '0.8149'
+  decision: VAL
+  nombre: sigma8_techo_p5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#sigma8_techo
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1154
+  num: '0.8149'
+  decision: VAL
+  nombre: sigma8_techo_p5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#sigma8_techo
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1154
+  num: '0.3'
+  decision: TRIVIAL
+  nota: 0.3 en el denominador de la convencion S8=sigma8(Om/0.3)^0.5 (definicion estandar del observable)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1155
+  num: '0.8149'
+  decision: VAL
+  nombre: sigma8_techo_p5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#sigma8_techo
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1155
+  num: '1.0147'
+  decision: DERIVADO
+  nota: (Omega_m_CMB/0.3)^0.5 = (0.308881/0.3)^0.5 = 1.01467 -> redondeo 1.0147; NO es s8_desde_b1.json
+    (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1156
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1156
+  num: '0.006'
+  decision: TRIVIAL
+  nota: barra heredada del calculo de 0.8256 (no recomputada para el ceiling CLASS; ver comentario margen
+    linea 1151)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1159
+  num: '0.4'
+  decision: DERIVADO
+  nota: (0.827-0.832)/0.014 -> 0.36sigma, redondeado a 0.4; tensiones_S8_sigmas.Planck=0.361 en el log
+    techo
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1159
+  num: '2.7'
+  decision: DERIVADO
+  nota: tensiones_S8_sigmas.KiDS-1000=2.742 del log techo, redondeado a 2.7
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1160
+  num: '2.8'
+  decision: DERIVADO
+  nota: tensiones_S8_sigmas.DES-Y3=2.819 del log techo, redondeado a 2.8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1160
+  num: '0.776'
+  decision: LIT
+  nota: DES-Y3 S8 citep DESY32022; coincide por casualidad con des_y3_barrido.json (archivo no relacionado
+    con este dato de literatura)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1160
+  num: '0.017'
+  decision: LIT
+  nota: DESY32022
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1174
+  num: '0.8149'
+  decision: VAL
+  nombre: sigma8_techo_p5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#sigma8_techo
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1183
+  num: '0.832'
+  decision: LIT
+  nota: Planck2018; coincide por casualidad con cumulos_zhang2026.json (archivo no relacionado, descartado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1183
+  num: '0.013'
+  decision: LIT
+  nota: Planck2018
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1183
+  num: '0.014'
+  decision: DERIVADO
+  nota: sigma_tot=sqrt(0.013^2+0.006^2)=0.0143, redondeado 0.014
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1183
+  num: '0.36'
+  decision: VAL
+  nombre: tension_s8_planck_techo
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.Planck 2018
+  formato: .2f
+  nota: NO es cumulos_zhang2026.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1183
+  num: '0.4'
+  decision: DERIVADO
+  nota: redondeo de 0.36 a 1 decimal
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1184
+  num: '0.025'
+  decision: DERIVADO
+  nota: sigma_tot=sqrt(sigma_KiDS1000^2+0.006^2); consistente con tensiones_S8_sigmas del log
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1184
+  num: '2.74'
+  decision: VAL
+  nombre: tension_s8_kids1000_techo
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.KiDS-1000
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1184
+  num: '2.7'
+  decision: DERIVADO
+  nota: redondeo de 2.74
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1185
+  num: '0.776'
+  decision: LIT
+  nota: igual a 1160
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1185
+  num: '0.017'
+  decision: LIT
+  nota: DESY32022
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1185
+  num: '0.018'
+  decision: DERIVADO
+  nota: sigma_tot=sqrt(0.017^2+0.006^2)=0.018
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1185
+  num: '2.82'
+  decision: DERIVADO
+  nota: tensiones_S8_sigmas.DES-Y3=2.8194 del log techo, mas decimales que la version redondeada de la
+    tabla; NO es rd_camb_control.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1185
+  num: '2.8'
+  decision: DERIVADO
+  nota: repite 1160
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1187
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1187
+  num: '0.006'
+  decision: TRIVIAL
+  nota: barra heredada del calculo de 0.8256 (no recomputada para el ceiling CLASS; ver comentario margen
+    linea 1151)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1192
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1192
+  num: '0.4'
+  decision: DERIVADO
+  nota: igual a 1159
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1193
+  num: '2.7'
+  decision: DERIVADO
+  nota: repite 1159
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1193
+  num: '2.8'
+  decision: DERIVADO
+  nota: repite 1160
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1194
+  num: '0.831'
+  decision: DERIVADO
+  nota: S8_LCDM = sigma8_LCDM*(Om_LCDM/0.3)^0.5 = 0.811*(0.3153/0.3)^0.5 = 0.8310; NO es erosita_cr_v3.json
+    (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1195
+  num: '3.0'
+  decision: DERIVADO
+  nota: 'tension LCDM-KiDS: (0.831-0.759)/sqrt(0.006^2+0.024^2)~2.9-3.0sigma'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1195
+  num: '3.3'
+  decision: DERIVADO
+  nota: 'tension LCDM-DES: (0.831-0.776)/sqrt(0.006^2+0.017^2)~3.0-3.3sigma'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1198
+  num: '0.86'
+  decision: TRIVIAL
+  nota: umbral de falsabilidad declarado por los autores, no un resultado medido
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1199
+  num: '0.80'
+  decision: TRIVIAL
+  nota: umbral de falsabilidad declarado por los autores
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1213
+  num: '0.758'
+  decision: HIS
+  nota: '"once quoted here; it is retracted" -- correctamente narrado'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1265
+  num: '0.70'
+  decision: VAL
+  nombre: fsigma8_tension_ssee_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_ssee en las 6 filas = 0.6963)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1265
+  num: '0.73'
+  decision: VAL
+  nombre: fsigma8_tension_lcdm_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_lcdm en las 6 filas = 0.7251)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1285
+  num: '0.067'
+  decision: LIT
+  nota: redshift de la encuesta, citado en Table fsigma8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1285
+  num: '0.423'
+  decision: LIT
+  nota: valor observado fsigma8, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1285
+  num: '0.055'
+  decision: LIT
+  nota: barra de error observada, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1286
+  num: '0.150'
+  decision: LIT
+  nota: redshift de la encuesta, citado en Table fsigma8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1286
+  num: '0.490'
+  decision: LIT
+  nota: valor observado fsigma8, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1286
+  num: '0.145'
+  decision: LIT
+  nota: barra de error observada, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1287
+  num: '0.380'
+  decision: LIT
+  nota: redshift de la encuesta, citado en Table fsigma8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1287
+  num: '0.497'
+  decision: LIT
+  nota: valor observado fsigma8, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1287
+  num: '0.045'
+  decision: LIT
+  nota: barra de error observada, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1288
+  num: '0.510'
+  decision: LIT
+  nota: redshift de la fila BOSS DR12
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1288
+  num: '0.458'
+  decision: LIT
+  nota: BOSS DR12 z=0.51, Alam2017
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1288
+  num: '0.038'
+  decision: LIT
+  nota: BOSS DR12 z=0.51 error
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1289
+  num: '0.610'
+  decision: LIT
+  nota: redshift de la encuesta, citado en Table fsigma8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1289
+  num: '0.436'
+  decision: LIT
+  nota: valor observado fsigma8, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1289
+  num: '0.034'
+  decision: LIT
+  nota: barra de error observada, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1290
+  num: '1.480'
+  decision: LIT
+  nota: redshift de la encuesta, citado en Table fsigma8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1290
+  num: '0.462'
+  decision: LIT
+  nota: valor observado fsigma8, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1290
+  num: '0.045'
+  decision: LIT
+  nota: barra de error observada, literatura citada en la fila
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1301
+  num: '0.01'
+  decision: DERIVADO
+  nota: diferencia de G (~1%) propagada a sigma; coherente con la diferencia 0.70 vs 0.73 de las medias
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1311
+  num: '0.1'
+  decision: TRIVIAL
+  nota: rango observacional z de las encuestas RSD citadas
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1311
+  num: '2.1'
+  decision: TRIVIAL
+  nota: rango observacional z de las encuestas RSD citadas
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1399
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1399
+  num: '0.006'
+  decision: TRIVIAL
+  nota: barra heredada del calculo de 0.8256 (no recomputada para el ceiling CLASS; ver comentario margen
+    linea 1151)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1399
+  num: '0.811'
+  decision: LIT
+  nota: Planck 2018 sigma8=0.811 (citep Planck2018); coincide con ssee_core.LCDM_SIGMA8=0.8111 redondeado
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1400
+  num: '0.24'
+  decision: LIT
+  nota: repite DESI DR2 0.24sigma de la fila de la tabla falsifiable; vs ">3sigma" que es un umbral declarado
+    (TRIVIAL), no LIT
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1430
+  num: '3.04'
+  decision: LOG
+  nombre: Omega_m_fit_sobre_sm_bg
+  fuente: resultado de integracion numerica de fondo IS descrita en el texto; no se localizo un log JSON
+    dedicado (ver afirmaciones)
+  nota: 'CLAUDE.md banner lo cita igual: "3(φ+π)²... IR" no aplica aqui; este 3.04 es el ratio de fondo
+    IS retirado, coherente con nota historica del propio parrafo'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1432
+  num: '0.3199'
+  decision: HIS
+  nota: nota historica explicita en el propio parrafo (OP-8 cerrado 2026-06-18)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1432
+  num: '3.04'
+  decision: HIS
+  nota: marcado "historical record of a route closing" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1444
+  num: '1.93'
+  decision: DERIVADO
+  nota: Omega_m,CMB/Omega_m,dyn = 0.308881/0.160 = 1.9305; division de dos magnitudes de clase distinta,
+    marcada por el propio texto como "no informativa"
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1445
+  num: '1.999'
+  decision: ALG
+  expr: c.MIRA
+  formato: .3f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1471
+  num: '1.67634'
+  decision: VAL
+  nombre: deltac_ssee_z0
+  fuente: results/logs/press_schechter.json#delta_c.ssee
+  formato: .5f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1471
+  num: '1.68647'
+  decision: LOG
+  nombre: deltac_ssee_z10_EdS
+  fuente: results/logs/deltac_spherical_collapse.json#control_EdS_analitico
+  formato: .5f
+  nota: verificar que esta clave corresponde a z_c=10 SSEE y no solo al control EdS generico
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1472
+  num: '1.67599'
+  decision: VAL
+  nombre: deltac_lcdm_z0
+  fuente: results/logs/press_schechter.json#delta_c.lcdm
+  formato: .5f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1472
+  num: '1.68646'
+  decision: LOG
+  nombre: deltac_lcdm_z10_EdS
+  fuente: results/logs/deltac_spherical_collapse.json#deltac.EdS[0]
+  formato: .5f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1473
+  num: '0.02'
+  decision: HIS
+  nota: '"the two are the same to 0.02%" -- diferencia marginal citada como cierre, no resultado nuevo'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1473
+  num: '1.6284'
+  decision: HIS
+  nota: '"carried by earlier... versions" -- retirado, correctamente narrado'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1483
+  num: '2.0'
+  decision: HIS
+  nota: rango "1.4-2.0" marcado como artefacto del modelo retirado en linea 1514
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1488
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1510
+  num: '0.3153'
+  decision: ALG
+  expr: c.LCDM_OMEGA_M
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1512
+  num: '10.8'
+  decision: TRIVIAL
+  nota: escala de masa ilustrativa M~10^10.8 Msun, tipica de literatura de halos, no una medicion propia
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1514
+  num: '1.4'
+  decision: HIS
+  nota: '"was an artefact of the withdrawn..." -- correctamente narrado'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1514
+  num: '2.0'
+  decision: HIS
+  nota: idem
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1521
+  num: '0.811'
+  decision: LIT
+  nota: Planck 2018 sigma8=0.811 (citep Planck2018); coincide con ssee_core.LCDM_SIGMA8=0.8111 redondeado
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1538
+  num: '0.8256'
+  decision: VAL
+  nombre: S8_SSEE_growth_ceiling
+  fuente: results/logs/p5_IS_perturbations_Q3.json#S8_SSEE
+  formato: .4f
+  nota: sigma8*(Om/0.3)^0.5 con A_s fijado a Planck; ceiling, no prediccion (asi lo etiqueta el propio
+    texto)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1538
+  num: '0.006'
+  decision: TRIVIAL
+  nota: redondeo a 3 decimales de la misma barra 0.0061/0.0061
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1538
+  num: '2.7'
+  decision: DERIVADO
+  nota: (0.8256-0.759)/sqrt(0.0061^2+0.024^2)~2.7sigma vs KiDS-1000 (0.759+-0.024); consistente con tensiones_S8_sigmas
+    del log techo
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1540
+  num: '3.0'
+  decision: DERIVADO
+  nota: tension LCDM propia vs KiDS-1000, S8_LCDM=0.831 (ver linea 1194)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1540
+  num: '3.3'
+  decision: DERIVADO
+  nota: tension LCDM propia vs DES-Y3
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1541
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1541
+  num: '2.7'
+  decision: DERIVADO
+  nota: repite 1159
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1549
+  num: '0.5'
+  decision: TRIVIAL
+  nota: redshift z=0.5 citado en la frase; el valor en si es \val{fs8_3_ssee}
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1550
+  num: '0.458'
+  decision: LIT
+  nota: BOSS DR12 z=0.51, Alam2017; coincide por casualidad con h0_por_metodos.json (archivo no relacionado,
+    descartado)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1550
+  num: '0.038'
+  decision: LIT
+  nota: BOSS DR12 z=0.51 error, Alam2017
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1551
+  num: '0.70'
+  decision: VAL
+  nombre: fsigma8_tension_ssee_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_ssee en las 6 filas = 0.6963)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1552
+  num: '0.73'
+  decision: VAL
+  nombre: fsigma8_tension_lcdm_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_lcdm en las 6 filas = 0.7251)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1559
+  num: '0.3'
+  decision: TRIVIAL
+  nota: 0.3% ya mostrado en G y sigma8
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1573
+  num: '0.968'
+  decision: LOG
+  nombre: sig_h0_global
+  fuente: ya existe \val para este numero en otros documentos (H_glob = 67.962142 +/- 0.968, banner CLAUDE.md);
+    aqui aparece codificado a mano en vez de \val{SIG_H0_GLOBAL} o similar
+  nota: ver banner "BANNER DIRECCION DE CASCADA" de CLAUDE.md; macro ya deberia existir, revisar valores_generados.tex
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1576
+  num: '67.36'
+  decision: ALG
+  expr: c.LCDM_H0
+  nota: = valor Planck citado, coincide con constante LCDM_H0 del repo
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1576
+  num: '0.54'
+  decision: LIT
+  nota: Planck2018 H0 barra de error citada (67.36+-0.54)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1576
+  num: '1.1'
+  decision: DERIVADO
+  nota: (67.962-67.36)/sqrt(0.968^2+0.54^2)~1.1sigma
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1612
+  num: '0.05'
+  decision: TRIVIAL
+  nota: umbral de prueba declarado |c2_s|<0.05, no un resultado medido
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1613
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1613
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1613
+  num: '0.006'
+  decision: TRIVIAL
+  nota: barra heredada del calculo de 0.8256 (no recomputada para el ceiling CLASS; ver comentario margen
+    linea 1151)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1613
+  num: '0.86'
+  decision: TRIVIAL
+  nota: repite umbral de falsabilidad de la linea 1198 (declarado por los autores)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1614
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1614
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1614
+  num: '0.0003'
+  decision: VAL
+  nombre: gamma_IS_sigma
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS_sigma
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1615
+  num: '0.5'
+  decision: TRIVIAL
+  nota: z=0.5, ya via \val en la fila (fs8_3_ssee); el 0.5 es la etiqueta de redshift
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1615
+  num: '0.70'
+  decision: VAL
+  nombre: fsigma8_tension_ssee_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_ssee en las 6 filas = 0.6963)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1616
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1616
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1616
+  num: '0.005'
+  decision: TRIVIAL
+  nota: misma barra heredada de G
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1616
+  num: '0.3'
+  decision: TRIVIAL
+  nota: porcentaje de realce ya mostrado (1.0032)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1637
+  num: '0.456'
+  decision: DERIVADO
+  nota: repite 1/2.191=0.456, deducido en linea 790-791 del propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1640
+  num: '2.2'
+  decision: DERIVADO
+  nota: repite 106
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1650
+  num: '0.9897'
+  decision: VAL
+  nombre: R_media_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_media_k10
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1650
+  num: '0.0167'
+  decision: VAL
+  nombre: R_sd_k10_p5
+  fuente: results/logs/p5_IS_perturbations_Q2.json#R_sd_k10
+  formato: .4f
+  nota: log da 0.016731; NO es lcdm_conjunta.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1652
+  num: '3.9'
+  decision: DERIVADO
+  nota: repite 0.0175/0.4464=3.9%
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1652
+  num: '0.4464'
+  decision: DERIVADO
+  nota: repite el calculo de r* de la linea 886-891
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1656
+  num: '3.04'
+  decision: HIS
+  nota: marcado "historical record of a route closing" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1660
+  num: '0.5504'
+  decision: VAL
+  nombre: gamma_IS
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS
+  formato: .4f
+  nota: tambien en press_schechter.json#gamma.ssee (mismo valor, misma corrida)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1660
+  num: '0.0003'
+  decision: VAL
+  nombre: gamma_IS_sigma
+  fuente: results/logs/p5_IS_perturbations_Q3.json#gamma_IS_sigma
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1661
+  num: '0.55'
+  decision: LIT
+  nota: Linder2005
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1663
+  num: '1.0032'
+  decision: VAL
+  nombre: G_factor
+  fuente: results/logs/p5_IS_perturbations_Q3.json#G
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1664
+  num: '0.8136'
+  decision: VAL
+  nombre: sigma8_ssee_growth
+  fuente: results/logs/p5_IS_perturbations_Q3.json#sigma8_SSEE
+  formato: .4f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1664
+  num: '0.006'
+  decision: TRIVIAL
+  nota: idem
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1665
+  num: '0.8256'
+  decision: VAL
+  nombre: S8_SSEE_growth_ceiling
+  fuente: results/logs/p5_IS_perturbations_Q3.json#S8_SSEE
+  formato: .4f
+  nota: sigma8*(Om/0.3)^0.5 con A_s fijado a Planck; ceiling, no prediccion (asi lo etiqueta el propio
+    texto)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1665
+  num: '0.006'
+  decision: TRIVIAL
+  nota: redondeo a 3 decimales de la misma barra 0.0061/0.0061
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1665
+  num: '2.7'
+  decision: DERIVADO
+  nota: repite 1538
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1666
+  num: '3.0'
+  decision: DERIVADO
+  nota: igual a 1540
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1667
+  num: '0.827'
+  decision: VAL
+  nombre: S8_techo_classp5
+  fuente: results/logs/p5_techo_sigma8_As_fijo.json#S8_techo
+  formato: .3f
+  nota: ceiling CLASS con A_s fijado a Planck (con neutrinos masivos, re-corrido 2026-09-08); etiquetado
+    "not a prediction" en el propio texto
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1668
+  num: '2.7'
+  decision: DERIVADO
+  nota: repite 1159
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1670
+  num: '0.70'
+  decision: VAL
+  nombre: fsigma8_tension_ssee_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_ssee en las 6 filas = 0.6963)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1671
+  num: '0.73'
+  decision: VAL
+  nombre: fsigma8_tension_lcdm_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_lcdm en las 6 filas = 0.7251)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1677
+  num: '0.8256'
+  decision: VAL
+  nombre: S8_SSEE_growth_ceiling
+  fuente: results/logs/p5_IS_perturbations_Q3.json#S8_SSEE
+  formato: .4f
+  nota: sigma8*(Om/0.3)^0.5 con A_s fijado a Planck; ceiling, no prediccion (asi lo etiqueta el propio
+    texto)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1686
+  num: '0.70'
+  decision: VAL
+  nombre: fsigma8_tension_ssee_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_ssee en las 6 filas = 0.6963)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1686
+  num: '0.73'
+  decision: VAL
+  nombre: fsigma8_tension_lcdm_media
+  fuente: results/logs/fsigma8_canonico.json (media de t_lcdm en las 6 filas = 0.7251)
+  formato: .2f
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1792
+  num: '0.15'
+  decision: LOG
+  nombre: lambda1_eigen
+  fuente: Appendix eigenvalues del propio documento (no se localizo JSON dedicado); valor ilustrativo
+    lambda_1~+0.15
+  nota: 'ver afirmaciones: falta log para el analisis de autovalores del Apendice'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1793
+  num: '1.15'
+  decision: LOG
+  nombre: lambda2_eigen
+  fuente: Appendix eigenvalues del propio documento (no se localizo JSON dedicado); valor ilustrativo
+    lambda_2~-1.15
+  nota: NO es union3_repro_compara.json (coincidencia descartada)
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1794
+  num: '0.02'
+  decision: LOG
+  nombre: lambda3_eigen
+  fuente: Appendix eigenvalues del propio documento (no se localizo JSON dedicado); valor ilustrativo
+    lambda_3~+0.02
+  nota: 'ver afirmaciones: falta log'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1800
+  num: '0.02'
+  decision: LOG
+  nombre: lambda3_eigen
+  fuente: idem 1794
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1801
+  num: '0.15'
+  decision: LOG
+  nombre: lambda1_eigen
+  fuente: idem 1792
+  nota: repite lambda_1~0.15
+afirmaciones:
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1613
+  dice: '$S_8 = 0.827$ (single-sector ceiling) & $0.827 \pm 0.006$ & $S_8 > 0.86$: favours SSEE over $\Lambda$CDM
+    & KiDS-1000, DES-Y3 / current'
+  debe_decir: $S_8 = \val{S8_leg_pred}$ ($A_s$ clavado al CMB del modelo; ver \S\ref{subsec:S8}) & $\val{S8_leg_pred}\pm\text{...}$
+    & $\val{S8_leg_tension}\sigma$ de KiDS-Legacy ($\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$);
+    el 0.827 es un TECHO con $A_s$ fijado a Planck, no la prediccion & KiDS-Legacy / current
+  evidencia: 'El resto del documento (abstract L138-148, nota de margen L1138-1151, \S1204-1226, footnote
+    L149-156) etiqueta explicitamente el S8=0.827 (A_s fijado a Planck) como ''ceiling under an imported
+    normalisation, NOT a prediction'', y da la prediccion vigente con A_s libre o clavado al CMB propio
+    (S8_leg_pred=0.8273 vs 0.8265+-0.0176, 0.04sigma, Paper 6 / CLAUDE.md ''S8 titular''). La tabla de
+    predicciones falsables (tab:falsifiable, la que fija el criterio de falsacion del modelo) sigue usando
+    el techo retirado como ''SSEE value'' y como blanco de falsacion (S8>0.86 favorece SSEE), sin la salvedad
+    ni el numero titular. Esto repite exactamente el patron que motivo esta cuarta lectura (fila ''c_s^2=1
+    canonical'' que sobrevivio tres lecturas): una tabla de resumen/falsabilidad queda desactualizada
+    aunque el cuerpo del texto ya se corrigio.'
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1056
+  dice: Tabla de crecimiento (tab:growth, filas f_SSEE/f_LCDM/Omega_m^SSEE en z=1,0.5,0) y tabla de fondo
+    (tab:background, H/H0 y tauPi H) no tienen un archivo results/logs/*.json dedicado citable
+  debe_decir: Generar (o apuntar a) un log results/logs/p5_growth_table.json y results/logs/p5_background_table.json
+    con las filas exactas, para que ambas tablas sean \val-ables y no dependan de reabrir el script cada
+    vez
+  evidencia: src/p05_IS/ssee_paper5_IS_perturbations.py linea ~392 dice explicitamente 'la tabla del .tex
+    se genera de aqui', pero no se encontro un JSON con esas filas por separado (Q2.json y Q3.json solo
+    llevan los resultados agregados, no la serie f(z) ni la tabla H/H0). Los numeros de la tabla de fondo
+    SI se reprodujeron aqui de forma independiente con ssee_core (OMEGA_M_TOTAL, W0, WA, TAU_PI_H0) y
+    coinciden exactamente, asi que no son incorrectos, pero carecen de procedencia citable via \val.
+- archivo: SSEE_Paper5_IS.tex
+  linea: 1792
+  dice: Apendice de autovalores (lambda_1~+0.15, lambda_2~-1.15, lambda_3~+0.02) sin fuente abierta
+  debe_decir: Añadir una celda de log (o referencia al script del Apendice) para los tres autovalores,
+    igual que se hizo para zeta_marginal y el resto de la seccion de estabilidad
+  evidencia: No se localizo un JSON en results/logs/ con estos tres numeros; son plausibles cualitativamente
+    (modo creciente, decreciente, DE amortiguado) pero no se pudo verificar la cifra exacta contra un
+    artefacto reproducible dentro del alcance de solo-lectura de esta tarea.

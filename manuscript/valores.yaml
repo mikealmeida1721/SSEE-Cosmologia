@@ -611,6 +611,13 @@ b1v_d:    {fuente: "results/logs/b1_k2.json#validacion_k3.distancia_a_Hglob_sigm
 perfil_h0_min: {fuente: "results/logs/perfil_h0_ancla.json#SSEE.H0_min_parabola", formato: ".2f"}
 perfil_h0_sig: {fuente: "results/logs/perfil_h0_ancla.json#SSEE.sigma_H0", formato: ".2f"}
 perfil_h0_d:   {fuente: "results/logs/perfil_h0_ancla.json#SSEE.distancia_a_Hglob_sigma", formato: ".2f"}
+# P4 rutas aditivas a M_v — src/p04_toe/rutas_mv.py (etapa p04_rutas_mv, 2026-10-15)
+p4_rutas_total:  {fuente: "results/logs/p04_rutas_mv.json#total", formato: "d"}
+p4_rutas_dos:    {fuente: "results/logs/p04_rutas_mv.json#dos", formato: "d"}
+p4_rutas_tres:   {fuente: "results/logs/p04_rutas_mv.json#tres", formato: "d"}
+p4_rutas_cuatro: {fuente: "results/logs/p04_rutas_mv.json#cuatro", formato: "d"}
+p4_wb_candidatos:   {fuente: "results/logs/p04_barrido_omega_b.json#n_candidatos", formato: "d"}
+p4_wb_segundo_sig:  {fuente: "results/logs/p04_barrido_omega_b.json#segundo_sigma", formato: ".1f"}
 # P4 figura TT — src/p04_toe/ssee_paper4_toe.py (etapa paper4_toe, 2026-10-02): picos calculados, cada modelo con sus ingredientes
 p4_pico1_ssee:  {fuente: "results/logs/paper4_toe.json#picos.SSEE.0", formato: "d"}
 p4_pico2_ssee:  {fuente: "results/logs/paper4_toe.json#picos.SSEE.1", formato: "d"}
@@ -660,6 +667,10 @@ prof_N_cal:        {fuente: "results/logs/h0_por_profundidad.json#N_calibradores
 prof_def_ssee:     {fuente: "results/logs/h0_por_profundidad.json#modelos.SSEE.deficit_sigma", formato: ".2f"}
 prof_def_lcdm:     {fuente: "results/logs/h0_por_profundidad.json#modelos.LCDM_Planck.deficit_sigma", formato: ".2f"}
 prof_frac_max:     {fuente: "results/logs/h0_por_profundidad.json#modelos.SSEE.fraccion_max_3sigma", formato: ".2f"}
+met_trgb_shoes:  {fuente: "results/logs/h0_por_metodos.json#medidas.trgb_shoes.H0", formato: ".1f"}
+met_jagb_shoes:  {fuente: "results/logs/h0_por_metodos.json#medidas.jagb_shoes.H0", formato: ".1f"}
+met_trgb_cchp:  {fuente: "results/logs/h0_por_metodos.json#medidas.trgb_cchp.H0", formato: ".2f"}
+met_jagb_cchp:  {fuente: "results/logs/h0_por_metodos.json#medidas.jagb_cchp.H0", formato: ".1f"}
 met_s_hoy:         {fuente: "results/logs/h0_por_metodos.json#sigma_combinado_hoy", formato: ".2f"}
 met_s_nec:         {fuente: "results/logs/h0_por_metodos.json#sigma_combinado_necesario", formato: ".2f"}
 # PRD/Sealed: números que estaban tecleados (2026-10-03)
