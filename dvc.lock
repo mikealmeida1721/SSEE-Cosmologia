@@ -4277,8 +4277,8 @@ stages:
       size: 408951
     - path: docs/SSEE_Paper1_Framework.pdf
       hash: md5
-      md5: 554a04c4e3ebb1cc3842872736c35812
-      size: 522989
+      md5: b26018eb2af39ae5d25e7a512b2a3e89
+      size: 524688
     - path: docs/SSEE_Paper2_MCMC.pdf
       hash: md5
       md5: 3056e68f566300a5de2ed20149348f65
@@ -4289,8 +4289,8 @@ stages:
       size: 871282
     - path: docs/SSEE_Paper4_ToE.pdf
       hash: md5
-      md5: c224f5ecf154ec8d13b6fd277d2f186b
-      size: 411733
+      md5: efb21d8c42ceed5557e4ac5a516063d5
+      size: 411913
     - path: docs/SSEE_Paper5_IS.pdf
       hash: md5
       md5: 57db1d39fcadea83db792be4bbe8401d
@@ -4305,12 +4305,12 @@ stages:
       size: 343370
     - path: docs/SSEE_Paper8_StrongGravity.pdf
       hash: md5
-      md5: e0f311345eba0910671daa84653a4965
-      size: 341118
+      md5: c3b2822b02cb8bbd977ab4d7cde69df5
+      size: 341239
     - path: docs/SSEE_Paper9_HubbleTension.pdf
       hash: md5
-      md5: 73eb7e1dd81e11f6ffbfdac7f1bdd8cc
-      size: 403359
+      md5: c59db16c0115a5bb0b154b28118b892c
+      size: 403327
     - path: docs/SSEE_Sealed_Journal.pdf
       hash: md5
       md5: 90373463c949f47debc06b4daa91fa50
@@ -4334,8 +4334,8 @@ stages:
     outs:
     - path: results/logs/auditoria_pdfs_zenodo.json
       hash: md5
-      md5: 498a16c40118cecd5e5c3ad1e081d1d6
-      size: 17207
+      md5: 35ca0583f8d807133538533e842821f2
+      size: 17209
   lcdm_conjunta_lee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p11_sondas/lcdm_conjunta.py lee > results/logs/lcdm_conjunta_lee.log 
