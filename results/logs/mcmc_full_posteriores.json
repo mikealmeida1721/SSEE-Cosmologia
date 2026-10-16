@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-11",
+ "fecha": "2026-10-16",
  "cadenas": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1..c4",
  "filas_tras_corte": 53116,
  "corte": "30 % inicial por cadena",
@@ -128,7 +128,7 @@
  },
  "control_pasa": true,
  "_procedencia": {
-  "commit": "a7fb5c9bfaa41e17ee6b262f3477b3f9edb71cb6",
+  "commit": "cbf4000b3222d0c5e2cd53161ff68396e3330626",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/mcmc_full/leer_mcmc_full.py",
@@ -139,12 +139,12 @@
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt": "755cb5c82c23e4ab2e3bc787286fd52efa20ce67b7903151f3eef7851b8ae354",
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt": "8512b4f4345594e0e0a752d15d9c2889723ab61519f78ced9c97003675c7c77c",
    "/mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt": "1a69270dd4c73feb103d33bc48f36486e78c989c0a1d92437d2cc37a3a3cf64f",
-   "results/logs/lya_auditoria.json": "83ffc8da38af36b8d338c961df534e2a96d72e1852e7977b84a31f9fa5b0f240"
+   "results/logs/lya_auditoria.json": "e39562a1e5f146cee7cd2072230b25054d1b0dcbc0ceb29c71ab07788b620ed3"
   },
   "argv": [
    "src/mcmc_full/leer_mcmc_full.py"
   ],
-  "fecha": "2026-10-11T16:00:45",
+  "fecha": "2026-10-16T06:35:59",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

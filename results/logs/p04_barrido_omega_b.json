@@ -51,11 +51,9 @@
  "lectura": "seleccion entre candidatos, no derivacion; el residuo es OP-1",
  "control_pasa": true,
  "_procedencia": {
-  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "?? src/p04_toe/barrido_omega_b.py"
-  ],
+  "commit": "cbf4000b3222d0c5e2cd53161ff68396e3330626",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/p04_toe/barrido_omega_b.py",
   "script_sha256": "b02eadd1ff3fdcb56a484037a47062a6f8b3bb5d2f6db16f5cf014d0a24406a1",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
@@ -65,7 +63,7 @@
   "argv": [
    "src/p04_toe/barrido_omega_b.py"
   ],
-  "fecha": "2026-10-16T00:41:27",
+  "fecha": "2026-10-16T06:34:46",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

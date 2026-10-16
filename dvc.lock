@@ -22,7 +22,7 @@ stages:
       size: 11979011
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 82d27fc46289b13777cae59b69bdac0d
+      md5: e63fae56369d47a2a1b131d32397f44b
       size: 4435
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
@@ -39,7 +39,7 @@ stages:
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 5078d85c578a336e57c074d78ad1f293
+      md5: 7c381d931266dfcae15637f179aedd2b
       size: 4017
   s8_desde_b1:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
@@ -95,7 +95,7 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 8968f8fab54a24cb8fac70120ac757f2
+      md5: 638c62e92f9c62992831dbb1142ba582
       size: 2052
     - path: results/logs/class_picos.json
       hash: md5
@@ -135,8 +135,8 @@ stages:
       size: 2861
     - path: results/logs/ganancia_wc_libre.json
       hash: md5
-      md5: 3c982f68aaf9d14ac49250aa8a735bd1
-      size: 2487
+      md5: 5e805b445e21941511e937c54816fb9e
+      size: 2489
     - path: results/logs/growth_2026-07/As_medido_o_producto.json
       hash: md5
       md5: ec3810fe92d496c154f6342a7a400ce8
@@ -199,15 +199,15 @@ stages:
       size: 5010
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: 34e7a512de0de7d1dbc5bb6dc2d1fc03
+      md5: 8b9edbcd8a59b2618b820eabcd49ad4c
       size: 5520
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: 82d27fc46289b13777cae59b69bdac0d
+      md5: e63fae56369d47a2a1b131d32397f44b
       size: 4435
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 5078d85c578a336e57c074d78ad1f293
+      md5: 7c381d931266dfcae15637f179aedd2b
       size: 4017
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -219,8 +219,8 @@ stages:
       size: 1143
     - path: results/logs/p04_barrido_omega_b.json
       hash: md5
-      md5: 45f276602256c2fadf8a27f5747a30d1
-      size: 2165
+      md5: 320dfc18ea8d855f15495c65299d7824
+      size: 2122
     - path: results/logs/p04_rutas_mv.json
       hash: md5
       md5: f6f612e5330c3346ef44dfd993bcea1d
@@ -243,7 +243,7 @@ stages:
       size: 2793
     - path: results/logs/p3_rd_reframe_omega_m.json
       hash: md5
-      md5: f2a4de08add67bbfa5c78c9fe603b890
+      md5: 1303b60cb3d75588d9890baa771f2cf5
       size: 1396
     - path: results/logs/p5_IS_perturbations_Q2.json
       hash: md5
@@ -327,7 +327,7 @@ stages:
       size: 2645
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 06e424043a810ea6e8df1ccf30f9aa42
+      md5: e38dfc315964d9270fb71b1e0b0d717e
       size: 8013
     - path: src/valores_tex.py
       hash: md5
@@ -336,7 +336,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 4f3e21098e162f4f78736e160a20cccb
+      md5: 8cf6d3cca4b9bdb86940b695c8b17336
       size: 125759
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -1767,7 +1767,7 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 8968f8fab54a24cb8fac70120ac757f2
+      md5: 638c62e92f9c62992831dbb1142ba582
       size: 2052
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
@@ -1816,11 +1816,11 @@ stages:
     outs:
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 06e424043a810ea6e8df1ccf30f9aa42
+      md5: e38dfc315964d9270fb71b1e0b0d717e
       size: 8013
     - path: results/logs/sondas_ssee_vs_lcdm.log
       hash: md5
-      md5: 031abb96856d97c5bda07e875ba65277
+      md5: d48737eca0845995fb7c8257bc6b162a
       size: 1723
   mcmc_paper2_reframe:
     cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
@@ -2066,7 +2066,7 @@ stages:
       size: 2650
     - path: results/logs/bao_camb_control.json
       hash: md5
-      md5: f522576fde1d883baa7ea9002608d6f3
+      md5: be9b53df631366bef9215fa636f53f1e
       size: 1401
     - path: src/p06_growth/multisonda_fondo_clavado.py
       hash: md5
@@ -2091,11 +2091,11 @@ stages:
     outs:
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 8968f8fab54a24cb8fac70120ac757f2
+      md5: 638c62e92f9c62992831dbb1142ba582
       size: 2052
     - path: results/logs/bao_lcdm_libre.log
       hash: md5
-      md5: c61979abf3cd124e602f87e20ed66956
+      md5: c5ddb903ba96dbe975f7f8d8bf20e667
       size: 1259
   des_y3_nla:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -2149,7 +2149,7 @@ stages:
       size: 5010
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 5078d85c578a336e57c074d78ad1f293
+      md5: 7c381d931266dfcae15637f179aedd2b
       size: 4017
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -2170,7 +2170,7 @@ stages:
     outs:
     - path: results/figures/fig_readme_tensions.png
       hash: md5
-      md5: a1f981db67848feee96b1a9113381f2c
+      md5: d86d758d56e760a770b672fcd21d37bd
       size: 106062
   coteja_crudos:
     cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
@@ -2421,11 +2421,11 @@ stages:
     deps:
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 8968f8fab54a24cb8fac70120ac757f2
+      md5: 638c62e92f9c62992831dbb1142ba582
       size: 2052
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 06e424043a810ea6e8df1ccf30f9aa42
+      md5: e38dfc315964d9270fb71b1e0b0d717e
       size: 8013
     - path: src/p11_sondas/tabla_sondas_tex.py
       hash: md5
@@ -2438,7 +2438,7 @@ stages:
     outs:
     - path: manuscript/tabla_sondas_generada.tex
       hash: md5
-      md5: 91fdd1056f9a466dd8c5944e03a9eae4
+      md5: 0b880140a991f28907ac8844bb7a8768
       size: 1876
   op19_adm_masa:
     cmd: .venv/bin/python3 src/op19/op19_adm_masa.py
@@ -4261,24 +4261,24 @@ stages:
       size: 740166
     - path: docs/SSEE_Cover_Letter.pdf
       hash: md5
-      md5: 734f669ad09e174ce05139ee7df36140
-      size: 118739
+      md5: 78ac8088c23a0908d4484e591cda4d34
+      size: 118733
     - path: docs/SSEE_Endorser_Summary.pdf
       hash: md5
       md5: 3fa3bd98faa5c6da63f5d24f92f12e53
       size: 225799
     - path: docs/SSEE_PRD.pdf
       hash: md5
-      md5: 4f3f3f7fa0653b00cae18ae5db0ea99a
-      size: 683494
+      md5: 15543bb80a0e0720f456e7e785384027
+      size: 683596
     - path: docs/SSEE_Paper10_UVCompletion.pdf
       hash: md5
-      md5: 94f2e71ba39e977e53511c7ce8266ce8
-      size: 409155
+      md5: 35cb7404506a3bdaa54ccfebc2301d5f
+      size: 408951
     - path: docs/SSEE_Paper1_Framework.pdf
       hash: md5
-      md5: 52f9b5158de63778ada066155f23a86f
-      size: 522703
+      md5: 554a04c4e3ebb1cc3842872736c35812
+      size: 522989
     - path: docs/SSEE_Paper2_MCMC.pdf
       hash: md5
       md5: 3056e68f566300a5de2ed20149348f65
@@ -4289,36 +4289,36 @@ stages:
       size: 871282
     - path: docs/SSEE_Paper4_ToE.pdf
       hash: md5
-      md5: 81c58c6c22b60e3b4e0f09fddbc3e147
-      size: 410929
+      md5: c224f5ecf154ec8d13b6fd277d2f186b
+      size: 411733
     - path: docs/SSEE_Paper5_IS.pdf
       hash: md5
       md5: 57db1d39fcadea83db792be4bbe8401d
       size: 543629
     - path: docs/SSEE_Paper6_Growth.pdf
       hash: md5
-      md5: 908a54df1618560a16cf5a9419a17ecc
-      size: 380881
+      md5: 10a04348c671f2f3e7f919e167cf5584
+      size: 383979
     - path: docs/SSEE_Paper7_EFT.pdf
       hash: md5
       md5: 128b82b3d0eba4ee6fc1e5a8515a7ea5
       size: 343370
     - path: docs/SSEE_Paper8_StrongGravity.pdf
       hash: md5
-      md5: 409ad27316705679d508f1f3b48296f7
-      size: 340762
+      md5: e0f311345eba0910671daa84653a4965
+      size: 341118
     - path: docs/SSEE_Paper9_HubbleTension.pdf
       hash: md5
-      md5: 65c7546d3d5c7f3c82647ff99bd7276e
-      size: 402460
+      md5: 73eb7e1dd81e11f6ffbfdac7f1bdd8cc
+      size: 403359
     - path: docs/SSEE_Sealed_Journal.pdf
       hash: md5
-      md5: 95ef6a043fe048e6aa8745974b968ad9
-      size: 727513
+      md5: 90373463c949f47debc06b4daa91fa50
+      size: 727604
     - path: docs/SSEE_Unified_Journal.pdf
       hash: md5
-      md5: 85c31ece2f6f8aafa138c945b83754cd
-      size: 364568
+      md5: 3ae4db91ea23d8d2fc0ed093e161a280
+      size: 366759
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -4334,8 +4334,8 @@ stages:
     outs:
     - path: results/logs/auditoria_pdfs_zenodo.json
       hash: md5
-      md5: 74add73a9602471e1d0c56d838f2a9bc
-      size: 17209
+      md5: 498a16c40118cecd5e5c3ad1e081d1d6
+      size: 17207
   lcdm_conjunta_lee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p11_sondas/lcdm_conjunta.py lee > results/logs/lcdm_conjunta_lee.log 
@@ -4375,7 +4375,7 @@ stages:
       size: 2650
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 8968f8fab54a24cb8fac70120ac757f2
+      md5: 638c62e92f9c62992831dbb1142ba582
       size: 2052
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -4428,11 +4428,11 @@ stages:
     outs:
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: 34e7a512de0de7d1dbc5bb6dc2d1fc03
+      md5: 8b9edbcd8a59b2618b820eabcd49ad4c
       size: 5520
     - path: results/logs/lcdm_conjunta_lee.log
       hash: md5
-      md5: fa0343d158c9d726cdde5e1099b57f57
+      md5: dba86a4889fe4ef2fc7d142f8771c4bb
       size: 1318
   lcdm_conjunta_control:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -5588,5 +5588,5 @@ stages:
     outs:
     - path: results/logs/p04_barrido_omega_b.json
       hash: md5
-      md5: 45f276602256c2fadf8a27f5747a30d1
-      size: 2165
+      md5: 320dfc18ea8d855f15495c65299d7824
+      size: 2122
