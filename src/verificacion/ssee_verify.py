@@ -2594,11 +2594,26 @@ def _lock_75(lock_txt, base):
             for _e in _d.get(_tipo) or []:
                 _p = pathlib.Path(_e["path"])
                 _p = _p if _p.is_absolute() else base / _p
-                if not _p.is_file():
+                # Una CARPETA de datos (md5 «….dir», 2026-10-16): antes se
+                # reportaba «falta» aunque existiera. Se verifica con el mismo
+                # hash de arbol que DVC, no se exime.
+                if str(_e.get("md5", "")).endswith(".dir") and _p.is_dir():
+                    if _md5dir_75(_p) != _e["md5"][:-4]:
+                        _mal.append(f"{_st}: {_tipo[:-1]} cambiado {_e['path']}")
+                elif not _p.is_file():
                     _mal.append(f"{_st}: falta {_e['path']}")
                 elif "md5" in _e and _md5_75(_p) != _e["md5"]:
                     _mal.append(f"{_st}: {_tipo[:-1]} cambiado {_e['path']}")
     return _mal
+
+
+def _md5dir_75(d):
+    """Hash de arbol de DVC 3: md5 del JSON (sort_keys) de [{md5, relpath}]
+    ordenado por relpath. Cotejado con el lock real (public_material_RSD,
+    89 archivos, a980051f…) al escribirlo."""
+    _ent = sorted(({"md5": _md5_75(_q), "relpath": _q.relative_to(d).as_posix()}
+                   for _q in d.rglob("*") if _q.is_file()), key=lambda _x: _x["relpath"])
+    return _h75.md5(_json26.dumps(_ent, sort_keys=True).encode()).hexdigest()
 
 
 _REPO75 = ROOT.parent
@@ -2606,6 +2621,21 @@ _lk75 = (_REPO75 / "dvc.lock")
 _mal75 = _lock_75(_lk75.read_text(), _REPO75) if _lk75.exists() else ["no hay dvc.lock"]
 check("R75 cada resultado de la cadena es el que su lock dice (nadie lo edito, sus entradas intactas)",
       not _mal75, "; ".join(_mal75[:6]) if _mal75 else "dvc.lock cuadra byte a byte con el disco")
+# CONTROL (R53), 2026-10-16: una carpeta de datos intacta pasa; la misma con un
+# archivo alterado se marca «cambiado» (no se exime por ser carpeta).
+import tempfile as _tfd75
+with _tfd75.TemporaryDirectory() as _dd75:
+    _cd75 = pathlib.Path(_dd75) / "datos"
+    (_cd75 / "sub").mkdir(parents=True)
+    (_cd75 / "a.dat").write_text("1 2 3\n")
+    (_cd75 / "sub" / "b.dat").write_text("4 5 6\n")
+    _lkd75 = _y75.safe_dump({"stages": {"s": {"deps": [{"path": str(_cd75), "md5": _md5dir_75(_cd75) + ".dir"}]}}})
+    _bien75 = _lock_75(_lkd75, pathlib.Path(_dd75))
+    (_cd75 / "sub" / "b.dat").write_text("4 5 7\n")
+    _malo75 = _lock_75(_lkd75, pathlib.Path(_dd75))
+check("R75 una carpeta de datos se verifica por su hash de arbol (control: intacta pasa, alterada falla)",
+      not _bien75 and any("cambiado" in _m for _m in _malo75),
+      f"intacta={_bien75 or 'ok'}; alterada={_malo75 or 'NO DETECTADA'}")
 _outs75 = [o if isinstance(o, str) else list(o)[0]
            for _d in ((_y75.safe_load((_REPO75 / "dvc.yaml").read_text()) or {}).get("stages") or {}).values()
            for o in (_d.get("outs") or [])] if (_REPO75 / "dvc.yaml").exists() else []
