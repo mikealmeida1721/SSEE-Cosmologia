@@ -223,7 +223,7 @@ stages:
       size: 2122
     - path: results/logs/p04_rutas_mv.json
       hash: md5
-      md5: f6f612e5330c3346ef44dfd993bcea1d
+      md5: dfcc650eda2b523e8a08e179c420837b
       size: 4904
     - path: results/logs/p10_barrido_M4.json
       hash: md5
@@ -336,7 +336,7 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 8cf6d3cca4b9bdb86940b695c8b17336
+      md5: 8ad0ebc86ddb4e92c394f4628209b550
       size: 125759
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
@@ -5558,12 +5558,12 @@ stages:
       size: 5420
     - path: zenodo_dictionary/SSEE_Constant_Dictionary.md
       hash: md5
-      md5: a36d048efe1559b95eb44682b17c609d
-      size: 39741
+      md5: a5439b37df94d73a01d4e2f70c06b8af
+      size: 39834
     outs:
     - path: results/logs/p04_rutas_mv.json
       hash: md5
-      md5: f6f612e5330c3346ef44dfd993bcea1d
+      md5: dfcc650eda2b523e8a08e179c420837b
       size: 4904
   p04_barrido_omega_b:
     cmd: .venv/bin/python3 src/p04_toe/barrido_omega_b.py

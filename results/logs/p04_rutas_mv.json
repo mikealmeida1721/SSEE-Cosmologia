@@ -275,7 +275,7 @@
  },
  "control_pasa": true,
  "_procedencia": {
-  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
+  "commit": "2f32e5084a5d9100f1637b514e42d92aa10e5aa6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p04_toe/rutas_mv.py",
@@ -283,12 +283,12 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "src/estadistica/look_elsewhere_full.py": "55c090ba40ba52157408ea510873578941074e6e683c8fecc17b68d249ca01be",
-   "zenodo_dictionary/SSEE_Constant_Dictionary.md": "0bc9046810e4408fee1f5f85c17ba9b373f9ff8ee1f9e7f742023db9cff6a1ec"
+   "zenodo_dictionary/SSEE_Constant_Dictionary.md": "2b01f81093342c04bfd505ba0c113a44136827bb2a241947879bafe994c9b91a"
   },
   "argv": [
    "src/p04_toe/rutas_mv.py"
   ],
-  "fecha": "2026-10-16T00:37:34",
+  "fecha": "2026-10-16T07:39:36",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
