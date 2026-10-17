@@ -8,7 +8,7 @@
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19654118-blue.svg)](https://doi.org/10.5281/zenodo.19654118)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](requirements.txt)
+[![Python](https://img.shields.io/badge/Python-3.12-yellow.svg)](requirements-lock.txt)
 [![Papers](https://img.shields.io/badge/Papers-10_+_2_consolidated-8A2BE2.svg)](docs/)
 [![Status](https://img.shields.io/badge/Audit-guardian_green-success.svg)](VERIFICATION_LEDGER.md)
 [![Prediction](https://img.shields.io/badge/Pre--registered-r_%3D_%CF%86%E2%81%BB%C2%B9%E2%81%B0_%3D_0.00813-critical.svg)](OPEN_PROBLEMS.md)
@@ -119,7 +119,8 @@ SSEE/
 ├── archive/                        # superseded drafts (historical)
 ├── notes/                          # internal work-notes & attack plans (not load-bearing)
 ├── archive/codigo/build_arxiv_packages.py  # regenerates submission_packages/ (moved to archive/)
-├── requirements.txt · environment.yml   # reproducible Python environment
+├── requirements-lock.txt           # exact versions that ran the pipeline (requirements.txt: minimums)
+├── entorno_ssee.sh                 # sandbox: your folders at the paths the pipeline ran with
 ├── submission_PRD/                 # Physical Review D manuscript (active submission)
 ├── dvc.yaml · dvc.lock             # the whole pipeline: data → script → log → \val → PDF
 ├── AUDIT.md                        # how to audit and reproduce, step by step
@@ -127,42 +128,80 @@ SSEE/
 ├── VERIFICATION_LEDGER.md          # canonical values and how each was verified
 ├── OPEN_PROBLEMS.md                # physics gaps OP-1..OP-27 with status
 ├── CHANGELOG.md · CITATION.cff · LICENSE
-└── (eftcamb_ssee/ — EFTCAMB fork, not versioned: clone separately)
+└── (eftcamb_ssee/ — EFTCAMB at commit 16d9c4e, installed as `camb` from requirements-lock.txt)
 ```
 
 </details>
 
 ---
 
-## ⚙️ How to reproduce
+## ⚙️ Verify SSEE yourself
 
-Standard install (all dependencies pinned):
+You do not have to trust any number in this repository. Each one can be traced and
+re-run on your own machine, with the exact code, data and library versions that
+produced it. Four steps, on any Linux, without administrator rights:
+
 ```bash
-pip install -r requirements.txt
+# 1. the code
+git clone https://github.com/mikealmeida1721/SSEE-Cosmologia.git && cd SSEE-Cosmologia
+
+# 2. three empty folders of yours and the sandbox that maps them
+export SSEE_DATOS=~/ssee/datos COBAYA_PACKAGES_PATH=~/ssee/cobaya SSEE_HICLASS=~/ssee/hi_class
+mkdir -p $SSEE_DATOS $COBAYA_PACKAGES_PATH $SSEE_HICLASS      # needs `bwrap` (package bubblewrap)
+
+# 3. the exact library versions, inside the sandbox
+./entorno_ssee.sh bash -c "python3.12 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt"
+
+# 4. every external input, from its owner, checked by sha256
+./entorno_ssee.sh .venv/bin/python3 src/verificacion/baja_externos.py baja --paquete <SSEE data package>
 ```
 
-**Portability — runs from any machine.** Scripts derive all in-repo paths from their
-own location (no hardcoded absolute paths). Heavy MCMC chains (~GB) default to a
-large disk when present, else to `results/data/`. Override the output location with:
+Then, inside the sandbox (`./entorno_ssee.sh` opens a shell):
+
 ```bash
-export SSEE_DATA_DIR=/path/to/large/disk    # optional; default is portable
+.venv/bin/dvc status                          # every stage up to date ⇒ every log matches its inputs
+.venv/bin/dvc repro -f -s <stage>             # re-run any result and compare
+.venv/bin/python3 src/verificacion/ssee_verify.py   # the guardian: ~350 checks
 ```
 
-**Paper 2 — MCMC validation** (100 walkers, N_eff ≈ 79,203 for SSEE):
-```bash
-python src/p02_mcmc/ssee_paper2_mcmc.py
-```
+**Tested end to end (2026-10-17)** on a fresh clone with empty data folders filled
+only by these commands: **252 of 252** external files identical to the ones every
+result was computed from; `dvc status` → *Data and pipelines are up to date*; two
+stages re-run from scratch (one through the freshly compiled hi_class) give the same
+numbers — only the commit and date of their provenance record change. Measured cost:
+the environment 1.7 GB; the data 2.1 GB plus a 1.6 GB download cache you may delete;
+Planck 0.12 GB; hi_class 0.2 GB. The downloads took 2 h 44 min here, 2 h 40 min of it a
+single 1.3 GB file (the official DESI DR2 chains on Zenodo, served at ~135 kB/s);
+everything else, about 6 minutes.
 
-**Paper 3 — CMB power spectrum** (Cobaya MCMC, TT+TE+EE+lowl):
-You can set the `COBAYA_PACKAGES_PATH` environment variable to point to your local Planck 2018 data:
-```bash
-export COBAYA_PACKAGES_PATH=/path/to/your/cobaya_packages
-python src/p03_cmb/b1_minimiza.py   # chi2 minimo de cada modelo (full plik); ssee_paper3_cobaya_unified.py es solo biblioteca
-```
+**What each piece does.**
+- [`entorno_ssee.sh`](entorno_ssee.sh): the pipeline names the paths it ran with
+  (`/mnt/datos/SSEE_data/…`), and every log's provenance records them. Rather than
+  rewriting them — which would change the scripts and void every provenance record —
+  the sandbox (bubblewrap) makes *your* folders appear at those paths. Inside it, the
+  code is byte for byte the code that produced each result.
+- [`requirements-lock.txt`](requirements-lock.txt): the exact versions of the
+  environment that ran the pipeline (`camb` is EFTCAMB at a fixed commit, not the
+  PyPI package). [`requirements.txt`](requirements.txt) only states minimum versions.
+- [`src/verificacion/baja_externos.py`](src/verificacion/baja_externos.py) reads
+  [`data/manifiesto_externos.json`](data/manifiesto_externos.json): 126 inputs that live
+  outside git, each with its origin and a recipe. Public data are downloaded **from
+  their owners** (SDSS, KiDS, DESI on Zenodo, eROSITA, the Pantheon+/DES-SN/Union3
+  repositories at fixed commits, arXiv at fixed versions, Planck through
+  `cobaya-install`); hi_class is compiled at its commit. Then every file is compared,
+  by sha256, with the file each result was computed from. `verifica` does the same
+  check on data you obtained yourself.
+- **SSEE data package** (Zenodo): what no third party can provide — the project's own
+  MCMC chains (Papers 2, 3, 6 and the ACT/SPT calibrators), the DES nuisance best fit,
+  the Union3 reproduction, the exact dictionary copy, and two arXiv abstracts and one
+  catalogue page quoted by the eROSITA stages. 176 files, 336 MB compressed; built
+  deterministically by
+  [`src/verificacion/empaqueta_datos_propios.py`](src/verificacion/empaqueta_datos_propios.py).
 
-**Full pipeline and audit trail.** Every result is a DVC stage (`dvc.yaml`, hashes in `dvc.lock`); every log carries its provenance (commit, script and input sha256); every number in the papers is a `\val{}` macro that names its log; every external dataset has its download origin and sha256 in [`data/manifiesto_externos.json`](data/manifiesto_externos.json). Step-by-step instructions to check any number, re-run any result and run the guardian: **[AUDIT.md](AUDIT.md)**.
-
-See [VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md) for expected values and [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) for known limitations.
+Step-by-step auditing (from a number in a paper to its log, from a log to its script
+and commit): **[AUDIT.md](AUDIT.md)**. Expected values:
+[VERIFICATION_LEDGER.md](VERIFICATION_LEDGER.md). Known limitations:
+[OPEN_PROBLEMS.md](OPEN_PROBLEMS.md).
 
 ---
 
@@ -364,18 +403,18 @@ pre-registered axioms, not derived theorems — see OPEN_PROBLEMS.md and Paper 1
 
 ## 🗺️ Roadmap
 
-**Status (2026-10-10):** all 10 papers + consolidated journal documents complete and
+**Status (2026-10-17):** all 10 papers + consolidated journal documents complete and
 compile clean (0 LaTeX errors, 0 orphan bibitems, 0 undefined citations). The
-verification guardian runs 288 checks with no regressions; its own 30 self-tests, the
-55 meta-guardian layers and the 51 injected-defect mutation tests are green.
+verification guardian runs 350 checks with no regressions; its own 30 simulated-failure
+self-tests and 62 injected-defect mutation tests are green. A clean external verifier
+reproduces the whole pipeline state (see *Verify SSEE yourself* above).
 
 Its verdict is reported on three separate lines, and only the last one paints the
-colour: **regressions** (none), **unsolved physics** (14 fronts across 12 declared
+colour: **regressions** (none), **unsolved physics** (9 fronts across 8 declared
 OPEN_PROBLEMS entries, each with its own severity — these do not paint the semaphore,
-they are declared), and **pending work** (what is finishable and still unfinished).
-Mixing the last two is what used to pin the semaphore at amber for ever: "nobody has
-derived H from first principles" is not the same kind of thing as "12 figures need
-regenerating".
+they are declared), and **pending work** (none). Mixing the last two is what used to
+pin the semaphore at amber for ever: "nobody has derived H from first principles" is
+not the same kind of thing as "12 figures need regenerating".
 
 Full development history in [CHANGELOG.md](CHANGELOG.md).
 
@@ -396,6 +435,7 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
       pdftotext sweep across all compiled PDFs; arXiv source tarballs (10/10)
 
 **Pending**
+- [ ] SSEE data package on Zenodo (own MCMC chains, 336 MB; `src/verificacion/empaqueta_datos_propios.py`)
 - [ ] New Zenodo version — Papers 1–10 + Unified + Sealed + PRD manuscript (`src/verificacion/armar_zenodo.py`)
 - [ ] Journal submission — Physical Review D (`submission_PRD/`)
 - [ ] Paper B — ab-initio baryogenesis (OP-1 closure)
