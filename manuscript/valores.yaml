@@ -809,7 +809,8 @@ leg_logTAGN_s: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_logT_
 leg_Ascale_s: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_A_scale_libre_sigma", formato: ".2f"}
 k1000_control_chi2: {fuente: "results/logs/kids1000_control.json#chi2", formato: ".2f"}
 k1000_control_pct: {fuente: "results/logs/kids1000_control.json#desvio_pct", formato: ".1f"}
-boss_chi2_logA_cmb: {fuente: "results/logs/growth_2026-07/base_sin_particula.json#boss.6", formato: ".2f"}
+boss_chi2_logA_cmb: {fuente: "results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json#chi2_en_logA_cmb", formato: ".2f"}
+boss_cuesta_clavar: {fuente: "results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json#cuesta_clavar", formato: ".2f"}
 h0alg_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.H0alg_sigma_planck.valor", formato: ".2f"}
 F_SCREEN_IR_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN_IR", formato: ".4f"}
 # cuarta lectura Sealed (2026-10-11)

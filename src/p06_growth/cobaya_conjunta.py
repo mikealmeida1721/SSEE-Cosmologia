@@ -46,7 +46,8 @@ acompanada por construccion, y por la razon mas fuerte que existe: no depende de
 nada que se mueva.
 
 LO QUE YA SE SABIA DE BOSS, Y QUE NO HAY QUE VOLVER A DESCUBRIR
-BOSS casi no ve A_s. Medido el 2026-09-13 en `base_sin_particula.log`, que YA
+BOSS casi no ve A_s. Medido el 2026-09-13 en `archive/logs_superados/particula_colas_24_29_2026-09/base_sin_particula.log` (archivado 2026-10-17 con la partícula; hoy el
+0.63 es 0.60 en el logA medido del CMB, `boss_chi2_en_logA_cmb.json`), que YA
 era una corrida conjunta con un solo A_s compartido (3 sondas, 1.01 h):
 
        logA        CMB       KiDS       BOSS        TOTAL
@@ -120,7 +121,7 @@ CAD = "/mnt/datos/SSEE_data/chains_p6/conjunta"
 #   CMB  : results/logs/cmb_dbic_tau_ajustado.json -> SSEE/chi2_min
 #   KiDS : CANONICAL_VALUES chi2_min_ssee_unif (corrida sseefijo)
 #   BAO  : results/logs/multisonda_fondo_clavado.json, cero libres
-# ORIGEN: results/logs/base_sin_particula.log  (la tabla de BOSS del docstring)
+# ORIGEN: archive/logs_superados/particula_colas_24_29_2026-09/base_sin_particula.log  (la tabla de BOSS del docstring)
 REF = dict(cmb=1003.5860397789045, kids=417.971, bao=10.858822657229455)
 
 # ── el fondo, del nucleo. Nada de esto se ajusta en ningun sitio ────────────

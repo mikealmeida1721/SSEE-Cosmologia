@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: a819b5181be7493043b8c7439d88f0a7
-      size: 101127
+      md5: 68c9d39eb16ba3287b9ab4dc10f30433
+      size: 101257
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: c9c970430cf1f8f85617f4488b9bed0e
@@ -153,10 +153,10 @@ stages:
       hash: md5
       md5: d38e58277f6f57753991b3ec9a9ea262
       size: 2966
-    - path: results/logs/growth_2026-07/base_sin_particula.json
+    - path: results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json
       hash: md5
-      md5: 9a5eb88e7f12ad26b71c31c25b22c768
-      size: 13780
+      md5: da0edbd5cf59b64f91b78e599dd9ca87
+      size: 1786
     - path: results/logs/h0_four_priors.json
       hash: md5
       md5: 452a28d03f400637e87b2a7f6ad8c27f
@@ -336,8 +336,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 5ede66d986f2302b5c2230757a8f95a0
-      size: 125759
+      md5: ff1fd837d176d1d39077be3be95662c7
+      size: 125915
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -5168,156 +5168,6 @@ stages:
       hash: md5
       md5: 2b8e5f705e86aa54f5dd5e7b1f428b18
       size: 10636
-  sello_base_sin_particula:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/base_sin_particula.py > results/logs/base_sin_particula.log
-      2>&1 && .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/base_sin_particula.py 
-      results/logs/growth_2026-07/base_sin_particula.json 
-      results/logs/growth_2026-07/conjunta_tres_sondas.json 
-      /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
-      /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat
-      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
-      && .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/base_sin_particula.py results/logs/base_sin_particula.log 
-      results/logs/growth_2026-07/conjunta_tres_sondas.json 
-      /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
-      /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat
-      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
-    deps:
-    - path: 
-        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
-      hash: md5
-      md5: 690b6b708572bf00486db3250ea988d8
-      size: 37393
-    - path: /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
-      hash: md5
-      md5: a980051fef75199131b1fab7ed87fa0a.dir
-      size: 4717270
-      nfiles: 89
-    - path: 
-        /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
-      hash: md5
-      md5: 1ded5c5923caae256d79ddb27d76d2ef
-      size: 622080
-    - path: 
-        /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
-      hash: md5
-      md5: bdfd8d2f1f9eb1931deae9ad2ad1b987
-      size: 295
-    - path: results/logs/growth_2026-07/conjunta_tres_sondas.json
-      hash: md5
-      md5: ad774226089ea3ed34a33a496a5269a0
-      size: 26777
-    - path: src/p03_cmb/cmb_eval.py
-      hash: md5
-      md5: e73f4105b5471f44af1b8f7975e5f491
-      size: 5101
-    - path: src/p06_growth/base_sin_particula.py
-      hash: md5
-      md5: 8cfe994bee282f1bf4392f100af5c25c
-      size: 7131
-    - path: src/p06_growth/boss_dr12_data.py
-      hash: md5
-      md5: 0fca273fcf595f2cedf01f92119e251c
-      size: 5156
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/cobaya_kids.py
-      hash: md5
-      md5: 71f6e99ae37f976fa8edb6b98ca1ab0b
-      size: 15432
-    - path: src/p06_growth/conjunta_tres_sondas.py
-      hash: md5
-      md5: e5db5b787fc3095e9b180c054a960e5c
-      size: 10420
-    - path: src/p06_growth/kids_shear.py
-      hash: md5
-      md5: f9d3dcd78f647eccfc69497ac8b411d6
-      size: 12385
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    - path: src/ssee_core.py
-      hash: md5
-      md5: d6ef8a580870ee72a5de7ca4b2a18632
-      size: 17307
-    outs:
-    - path: results/logs/base_sin_particula.log
-      hash: md5
-      md5: 6a85b40544048bb48534dd0fb5766eea
-      size: 14358
-    - path: results/logs/growth_2026-07/base_sin_particula.json
-      hash: md5
-      md5: 9a5eb88e7f12ad26b71c31c25b22c768
-      size: 13780
   p5_estabilidad_IS_completa:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p05_IS/estabilidad_IS_completa.py > 
@@ -5787,8 +5637,8 @@ stages:
       size: 10979
     - path: src/p06_growth/cobaya_conjunta.py
       hash: md5
-      md5: 1b4432ee96cf609d64af9ec088e82b0d
-      size: 16114
+      md5: b9287af397ad6a248406708f2976bbe0
+      size: 16325
     - path: src/p06_growth/cobaya_kids_legacy.py
       hash: md5
       md5: 4fb3a20f68aefac83de472acad81875e
@@ -5816,8 +5666,8 @@ stages:
     outs:
     - path: results/logs/conjunta_control.json
       hash: md5
-      md5: 8bb4bd4516afb2d396e46e51f94bc2fb
-      size: 969
+      md5: b144355072e5c75b49a00d4289769df2
+      size: 1014
   coteja_transcripciones:
     cmd: .venv/bin/python3 src/verificacion/coteja_transcripciones.py
     deps:
@@ -5998,3 +5848,27 @@ stages:
       hash: md5
       md5: ebc47dfd0eaf6f224f02a5e48cfb0c3b
       size: 6450
+  boss_chi2_en_logA_cmb:
+    cmd: .venv/bin/python3 src/p06_growth/boss_chi2_en_logA_cmb.py
+    deps:
+    - path: results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
+      hash: md5
+      md5: e6e71446975205762d775291436c1fc6
+      size: 7141
+    - path: results/logs/growth_2026-07/quien_mide_As.json
+      hash: md5
+      md5: 5c71f08f3c05c863e5bd8b6b4533ec78
+      size: 1422
+    - path: src/p06_growth/boss_chi2_en_logA_cmb.py
+      hash: md5
+      md5: 970b270aee5a3c9e8e0a2f32eefe8696
+      size: 3776
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json
+      hash: md5
+      md5: da0edbd5cf59b64f91b78e599dd9ca87
+      size: 1786

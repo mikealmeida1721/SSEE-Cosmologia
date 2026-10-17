@@ -20,12 +20,22 @@ del modelo sin partícula): la partícula quedó **innecesaria** (ver banner de 
 **Lo que se queda en `src/`, a propósito:** `particula_que_prefiere_kids.py` (su json llegó
 aquí el 2026-10-16: nadie lo lee; el script, sin salida viva, sólo documenta la traducción) lo
 nombran los docstrings de `cmb_eval.py` y `kids_shear.py`, que son dependencias de muchas
-etapas; editarlos invalidaría sus actas. `conjunta_tres_sondas.py` (+ json) es entrada de
-`base_sin_particula.py`, cuya casilla `om_x = 0` (χ² BOSS 198.07) cita Paper 6.
+etapas; editarlos invalidaría sus actas. Hasta el 2026-10-17 también se quedaban `conjunta_tres_sondas.py` (+ json, cola #28) y
+`base_sin_particula.py` (+ json y log), porque Paper 6 citaba de ahí el χ² de BOSS en el
+logA del CMB (198.07). Ese número es SÓLO de BOSS y no necesita la partícula: ahora sale de
+`src/p06_growth/boss_chi2_en_logA_cmb.py`, que lee el perfil de BOSS sellado y lo evalúa en
+el logA medido del CMB (198.04; el 198.07 era el nodo 3.045 de la rejilla, no ese logA). Con
+eso los cinco llegaron aquí (Mike, 2026-10-17: «está probándose algo que el modelo ya no
+dice»). Re-correr la #28 eran 16.6 h + 3.3 h para un concepto retirado.
 `boss_lpt_R1R2.py` L92 aún nombra el control C0 de `boss_con_particula.py` en un comentario.
 
 **Archivos de esta carpeta** (lista exacta, la que comprueba R77):
+- `base_sin_particula.json`
+- `base_sin_particula.log`
+- `base_sin_particula.py`
 - `boss_con_particula.py`
+- `conjunta_tres_sondas.json`
+- `conjunta_tres_sondas.py`
 - `particula_que_prefiere_kids.json`
 - `pinza_conjunta.py`
 - `precio_cmb_de_la_particula.json`

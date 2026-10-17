@@ -105,7 +105,6 @@ logs:
   # y ensució estos dos, que salen de `loglike_lcdm_fijo`.
 
   # ── Añadidos 2026-09-19: la cola #28 (tres sondas, un solo A_s) ──
-  base_sin_particula:           src/p06_growth/base_sin_particula.py::main
   # 2026-09-09: la corrida sin reparto rapido/lento se archivo (cadenas en
   # chains_p6/kids/sin_reparto_2026-09-08/) y se relanzo declarandole a Cobaya
   # que 7 de los 9 libres NO tocan CAMB. Los DOS logs quedan declarados: el
@@ -184,7 +183,7 @@ logs:
   # sobre las cadenas pegadas); ya no es fuente de nada, el vigente es el rehecho.
   R3_ssee_kids_S8:            src/p06_growth/analiza_ssee_R3.py
   boss_aisla_neutrinos:       src/p06_growth/boss_aisla_neutrinos.py
-  conjunta_tres_sondas:       src/p06_growth/conjunta_tres_sondas.py
+  boss_chi2_en_logA_cmb:      src/p06_growth/boss_chi2_en_logA_cmb.py
   marginal_vs_perfil:         src/p06_growth/marginal_vs_perfil.py
   quien_mide_As:              src/p06_growth/quien_mide_As.py
   termino_volumen_boss:       src/p06_growth/mide_termino_volumen.py
