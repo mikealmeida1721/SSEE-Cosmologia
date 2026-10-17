@@ -160,7 +160,8 @@ def receta(nombre, r, necesarios, R, args, cache):
                 shutil.copyfileobj(src, dst)
     elif t == "cobaya":
         cob = ROOT / ".venv" / "bin" / "cobaya-install"
-        subprocess.run([str(cob), r["componente"], "--packages-path", os.environ["COBAYA_PACKAGES_PATH"]], check=True)
+        comp = r["componente"] if isinstance(r["componente"], list) else [r["componente"]]
+        subprocess.run([str(cob), *comp, "--packages-path", os.environ["COBAYA_PACKAGES_PATH"]], check=True)
     elif t == "compila":
         en = local(r["en"], R)
         _git(r["repo"], r["commit"], en)

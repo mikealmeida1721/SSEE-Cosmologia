@@ -80,7 +80,11 @@ RECETAS = {
                  "url": f"{GH}/des-science/DES-SN5YR/c9a4fcafc4cbd19bd750dee47fc76194a45c181f/4_DISTANCES_COVMAT/DES-Dovekie_HD.csv"},
     "dessn_cov": {"tipo": "url", "en": f"{D}/sn_ia/des_sn5yr/STAT+SYS.npz",
                   "url": f"{GH}/des-science/DES-SN5YR/c9a4fcafc4cbd19bd750dee47fc76194a45c181f/4_DISTANCES_COVMAT/STAT+SYS.npz"},
-    "planck_plik_lite": {"tipo": "cobaya", "componente": "planck_2018_highl_plik.TTTEEE_lite_native"},
+    # la versión clik (la que leen cmb_eval y b1) y, de una vez, todo lo que los scripts piden a
+    # cobaya, para que el verificador también pueda RE-CORRER (no sólo cotejar huellas)
+    "planck_plik_lite": {"tipo": "cobaya", "componente": ["planck_2018_highl_plik.TTTEEE_lite",
+                         "planck_2018_highl_plik.TTTEEE", "planck_2018_lowl.TT", "planck_2018_lowl.EE",
+                         "planck_2018_highl_plik.TTTEEE_lite_native"]},
     "planck_lensing": {"tipo": "cobaya", "componente": "planck_2018_lensing.native"},
     "hi_class": {"tipo": "compila", "repo": "https://github.com/miguelzuma/hi_class_public.git",
                  "commit": "0009f51d89e6465c79e570b496c66fc90058fa77",

@@ -1,8 +1,8 @@
 {
  "_procedencia": {
   "script": "src/verificacion/manifiesto_externos.py",
-  "commit": "67c2bb5b85ee79157f0f449b2a763cad0c8c3c73",
-  "fecha_utc": "2026-10-17T08:43:08+00:00",
+  "commit": "ee5a58bf8ed6ada9ba74ae5b9cf16079456d196b",
+  "fecha_utc": "2026-10-17T11:37:43+00:00",
   "fuente_de_origenes": "notes/lectura_tercera/MANIFIESTO_EXTERNOS.md"
  },
  "resumen": {
@@ -145,7 +145,13 @@
   },
   "planck_plik_lite": {
    "tipo": "cobaya",
-   "componente": "planck_2018_highl_plik.TTTEEE_lite_native"
+   "componente": [
+    "planck_2018_highl_plik.TTTEEE_lite",
+    "planck_2018_highl_plik.TTTEEE",
+    "planck_2018_lowl.TT",
+    "planck_2018_lowl.EE",
+    "planck_2018_highl_plik.TTTEEE_lite_native"
+   ]
   },
   "planck_lensing": {
    "tipo": "cobaya",
