@@ -1,8 +1,8 @@
 {
  "_procedencia": {
   "script": "src/verificacion/manifiesto_externos.py",
-  "commit": "6e1c18fa07fbbffd1552e7b70578eefabb364b19",
-  "fecha_utc": "2026-10-17T08:39:52+00:00",
+  "commit": "67c2bb5b85ee79157f0f449b2a763cad0c8c3c73",
+  "fecha_utc": "2026-10-17T08:43:08+00:00",
   "fuente_de_origenes": "notes/lectura_tercera/MANIFIESTO_EXTERNOS.md"
  },
  "resumen": {
@@ -155,7 +155,7 @@
    "tipo": "compila",
    "repo": "https://github.com/miguelzuma/hi_class_public.git",
    "commit": "0009f51d89e6465c79e570b496c66fc90058fa77",
-   "make": "make class",
+   "make": "make class && /home/mike/Proyectos/SSEE/.venv/bin/pip install --no-deps .",
    "en": "/mnt/datos/hi_class"
   },
   "paquete_ssee": {

@@ -27,5 +27,7 @@ exec bwrap --dev-bind / / \
   --bind "$REPO" /home/mike/Proyectos/SSEE \
   --bind "$COBAYA_PACKAGES_PATH" /home/mike/cobaya_packages \
   --setenv COBAYA_PACKAGES_PATH /home/mike/cobaya_packages \
+  --setenv SSEE_DATOS /mnt/datos/SSEE_data \
+  --setenv SSEE_HICLASS /mnt/datos/hi_class \
   --chdir /home/mike/Proyectos/SSEE \
   "${@:-bash}"
