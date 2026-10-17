@@ -4272,52 +4272,52 @@ stages:
       size: 683596
     - path: docs/SSEE_Paper10_UVCompletion.pdf
       hash: md5
-      md5: 35cb7404506a3bdaa54ccfebc2301d5f
+      md5: b6203af66849f8683dce5b57132fc6c7
       size: 408951
     - path: docs/SSEE_Paper1_Framework.pdf
       hash: md5
-      md5: b26018eb2af39ae5d25e7a512b2a3e89
-      size: 524688
+      md5: cd3bbb7461d2cd20ac6b4d976925adbb
+      size: 524698
     - path: docs/SSEE_Paper2_MCMC.pdf
       hash: md5
-      md5: 3056e68f566300a5de2ed20149348f65
-      size: 763911
+      md5: 5b3491fb4dc349dae08852ab5b85fcd4
+      size: 763912
     - path: docs/SSEE_Paper3_CMB.pdf
       hash: md5
-      md5: 926b3fa35632eee62260d8ddfaacc728
-      size: 871282
+      md5: 883cf1f192466de6306229f69164e989
+      size: 871286
     - path: docs/SSEE_Paper4_ToE.pdf
       hash: md5
-      md5: efb21d8c42ceed5557e4ac5a516063d5
-      size: 411913
+      md5: 920bc5ef4a9ae3356a02c5324d5aa523
+      size: 411929
     - path: docs/SSEE_Paper5_IS.pdf
       hash: md5
-      md5: 57db1d39fcadea83db792be4bbe8401d
-      size: 543629
+      md5: 0028c6186e12a4e4f531534055edef13
+      size: 543634
     - path: docs/SSEE_Paper6_Growth.pdf
       hash: md5
-      md5: 3faf9066340d827479dcbaad2b47041a
+      md5: 3bbcde3ee64b7f6ff293800c094644b0
       size: 383979
     - path: docs/SSEE_Paper7_EFT.pdf
       hash: md5
-      md5: 128b82b3d0eba4ee6fc1e5a8515a7ea5
+      md5: 2252a7102513289aae2beb11a7e26b71
       size: 343370
     - path: docs/SSEE_Paper8_StrongGravity.pdf
       hash: md5
-      md5: c3b2822b02cb8bbd977ab4d7cde69df5
-      size: 341239
+      md5: 562fbfc9f06061fe62ca6d6e9bb0c846
+      size: 341237
     - path: docs/SSEE_Paper9_HubbleTension.pdf
       hash: md5
-      md5: c59db16c0115a5bb0b154b28118b892c
-      size: 403327
+      md5: dc32c2db12786292f94a768d41191f03
+      size: 403323
     - path: docs/SSEE_Sealed_Journal.pdf
       hash: md5
-      md5: 90373463c949f47debc06b4daa91fa50
-      size: 727604
+      md5: 597a324257f01e074751f8f0dac86174
+      size: 727140
     - path: docs/SSEE_Unified_Journal.pdf
       hash: md5
-      md5: 3ae4db91ea23d8d2fc0ed093e161a280
-      size: 366759
+      md5: 6d5937f9478363a6b113684ed347293f
+      size: 366772
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -4333,7 +4333,7 @@ stages:
     outs:
     - path: results/logs/auditoria_pdfs_zenodo.json
       hash: md5
-      md5: 187cd8f822a9fad0dc5dc62ee03459a9
+      md5: 5936a5a835bd620b5f03fe216db97e1e
       size: 17209
   lcdm_conjunta_lee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
