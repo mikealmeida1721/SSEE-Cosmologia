@@ -1,20 +1,195 @@
 {
  "_procedencia": {
   "script": "src/verificacion/manifiesto_externos.py",
-  "commit": "08aab6c90ecde8b255804151646ff82c0b1be4bf",
-  "fecha_utc": "2026-10-10T19:04:59+00:00",
+  "commit": "6e1c18fa07fbbffd1552e7b70578eefabb364b19",
+  "fecha_utc": "2026-10-17T08:39:52+00:00",
   "fuente_de_origenes": "notes/lectura_tercera/MANIFIESTO_EXTERNOS.md"
  },
  "resumen": {
-  "rutas": 110,
+  "rutas": 126,
   "sin_origen": [],
   "no_existen": [],
   "por_clase": {
-   "A": 54,
-   "B": 47,
-   "C": 8,
+   "A": 37,
+   "B": 72,
+   "C": 16,
    "S": 1,
    "?": 0
+  },
+  "por_receta": {
+   "arxiv:1710.05835v1": 1,
+   "arxiv:1807.06209v4": 1,
+   "arxiv:2001.09213v2": 1,
+   "arxiv:2101.02221v2": 1,
+   "arxiv:2112.04510v3": 1,
+   "arxiv:2202.04077v2": 1,
+   "arxiv:2304.05202v3": 1,
+   "arxiv:2402.08458v2": 1,
+   "arxiv:2408.06153v3": 1,
+   "arxiv:2408.11770v2": 1,
+   "arxiv:2506.03023v4": 1,
+   "arxiv:2602.20483v2": 1,
+   "arxiv:2608.31136v1": 1,
+   "boss_dr12": 1,
+   "des_y3_cadena": 1,
+   "desi_dr2": 16,
+   "dessn_cov": 1,
+   "dessn_hd": 1,
+   "efeds": 1,
+   "erass1_cosmo": 1,
+   "erass1_primary": 1,
+   "hi_class": 1,
+   "kcap": 1,
+   "kids1000": 2,
+   "kids_legacy": 3,
+   "pantheon_cov": 1,
+   "pantheon_dat": 1,
+   "paquete_ssee": 75,
+   "planck_lensing": 1,
+   "planck_plik_lite": 1,
+   "spt3g": 2,
+   "union3_pipeline": 1,
+   "union3_release": 1
+  }
+ },
+ "recetas": {
+  "boss_dr12": {
+   "tipo": "url",
+   "desempaca": "tar",
+   "en": "/mnt/datos/SSEE_data/boss_dr12",
+   "url": "https://data.sdss.org/sas/dr12/boss/papers/clustering/Beutler_etal_DR12COMBINED_fullshape_powspec.tar.gz"
+  },
+  "kids1000": {
+   "tipo": "url",
+   "desempaca": "tar",
+   "en": "/mnt/datos/SSEE_data/kids1000",
+   "url": "https://kids.strw.leidenuniv.nl/DR4/data_files/KiDS1000_cosmic_shear_data_release.tgz"
+  },
+  "kcap": {
+   "tipo": "git",
+   "repo": "https://github.com/KiDS-WL/kcap.git",
+   "commit": "36b40c55394caf26021408e71ff74538bfa3d51e",
+   "en": "/mnt/datos/SSEE_data/kids1000/kcap"
+  },
+  "kids_legacy": {
+   "tipo": "url",
+   "desempaca": "tar",
+   "en": "/mnt/datos/SSEE_data/kids_legacy",
+   "url": "https://kids.strw.leidenuniv.nl/sci_data/KiDS_Legacy_cosmic_shear_data_release.tar.gz"
+  },
+  "desi_dr2": {
+   "tipo": "url",
+   "desempaca": "zip",
+   "interno": "dr2-bao-zenodo/cosmology_chains.zip",
+   "en": "/mnt/datos/SSEE_data/desi_dr2_official",
+   "url": "https://zenodo.org/api/records/16644577/files/dr2-bao-zenodo.zip/content"
+  },
+  "spt3g": {
+   "tipo": "git",
+   "repo": "https://github.com/SouthPoleTelescope/spt_candl_data.git",
+   "commit": "efe35b7bfd815a115d5123e210a6849a4175bc81",
+   "en": "/mnt/datos/SSEE_data/cmb_lensing/spt3g"
+  },
+  "des_y3_cadena": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt",
+   "url": "https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/chain_3x2pt_lcdm_SR_maglim.txt"
+  },
+  "erass1_primary": {
+   "tipo": "url",
+   "desempaca": "tar",
+   "en": "/mnt/datos/SSEE_data/erosita/erass1",
+   "url": "https://erosita.mpe.mpg.de/dr1/AllSkySurveyData_dr1/Catalogues_dr1/BulbulE_DR1/erass1cl_primary_v3.2.fits.tgz"
+  },
+  "erass1_cosmo": {
+   "tipo": "url",
+   "desempaca": "tar",
+   "en": "/mnt/datos/SSEE_data/erosita/erass1",
+   "url": "https://erosita.mpe.mpg.de/dr1/AllSkySurveyData_dr1/Catalogues_dr1/BulbulE_DR1/erass1cl_cosmology_v1.1.fits.tgz"
+  },
+  "efeds": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
+   "url": "https://erosita.mpe.mpg.de/edr/eROSITAObservations/Catalogues/liuA/eFEDS_clusters_V3.2.fits.gz"
+  },
+  "union3_release": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits",
+   "url": "https://raw.githubusercontent.com/rubind/union3_release/f5c387349b68f3535fdabf0fbc4f45cd407f9084/mu_mat_union3_cosmo=2_mu.fits"
+  },
+  "union3_pipeline": {
+   "tipo": "git",
+   "repo": "https://github.com/rubind/union3.git",
+   "commit": "850dab25cead339ba6c5355abca96529697b59a2",
+   "en": "/mnt/datos/SSEE_data/sn_ia/union3/pipeline"
+  },
+  "pantheon_dat": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat",
+   "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/Pantheon+_Data/4_DISTANCES_AND_COVAR/Pantheon+SH0ES.dat"
+  },
+  "pantheon_cov": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov",
+   "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/Pantheon+_Data/4_DISTANCES_AND_COVAR/Pantheon+SH0ES_STAT+SYS.cov"
+  },
+  "dessn_hd": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv",
+   "url": "https://raw.githubusercontent.com/des-science/DES-SN5YR/c9a4fcafc4cbd19bd750dee47fc76194a45c181f/4_DISTANCES_COVMAT/DES-Dovekie_HD.csv"
+  },
+  "dessn_cov": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz",
+   "url": "https://raw.githubusercontent.com/des-science/DES-SN5YR/c9a4fcafc4cbd19bd750dee47fc76194a45c181f/4_DISTANCES_COVMAT/STAT+SYS.npz"
+  },
+  "planck_plik_lite": {
+   "tipo": "cobaya",
+   "componente": "planck_2018_highl_plik.TTTEEE_lite_native"
+  },
+  "planck_lensing": {
+   "tipo": "cobaya",
+   "componente": "planck_2018_lensing.native"
+  },
+  "hi_class": {
+   "tipo": "compila",
+   "repo": "https://github.com/miguelzuma/hi_class_public.git",
+   "commit": "0009f51d89e6465c79e570b496c66fc90058fa77",
+   "make": "make class",
+   "en": "/mnt/datos/hi_class"
+  },
+  "paquete_ssee": {
+   "tipo": "paquete",
+   "url": null,
+   "nota": "paquete de datos de SSEE en Zenodo; la URL se fija al publicarlo"
+  }
+ },
+ "entornos": {
+  "cosmosis_des_y3": {
+   "etapas": [
+    "des_y3_tatt",
+    "des_y3_nla",
+    "sello_des_y3_calibrador"
+   ],
+   "en": "/mnt/datos/SSEE_data/des_y3/entorno",
+   "pasos": [
+    "micromamba create -p <en>/cosmosis --file data/entornos/cosmosis_des_y3.explicit.txt",
+    "git clone https://github.com/joezuntz/cosmosis-standard-library <en>/csl && git -C <en>/csl checkout 9e3dd611fc20bf39489d43bf4afeb503d26b4e79",
+    "cd <en>/csl && source cosmosis-configure && make"
+   ],
+   "nota": "CosmoSIS 3.25.2 (conda-forge, 231 paquetes con md5); src/p11_sondas/des_y3_calibra.py"
+  },
+  "venv_erosita": {
+   "etapas": [
+    "sello_erosita_conteos_erass1",
+    "sello_erosita_conteos_efeds",
+    "sello_erosita_cr_v3"
+   ],
+   "en": "/mnt/datos/SSEE_data/erosita/venv",
+   "pasos": [
+    "python3.12 -m venv <en> && <en>/bin/pip install -r data/entornos/erosita_venv.txt"
+   ],
+   "nota": "pyccl 3.3.6 + astropy; las etapas lo llaman por su ruta"
   }
  },
  "ficheros": [
@@ -23,8 +198,10 @@
    "clase": "A",
    "origen": "cobaya-install planck_2018_highl_plik.TTTEEE_lite_native --packages-path $COBAYA_PACKAGES_PATH",
    "cita": "Planck 2018 (PR3)",
+   "receta": "planck_plik_lite",
    "etapas": [
-    "sello_base_sin_particula",
+    "conjunta_control",
+    "quien_mide_As_kids",
     "sello_cmb_dbic_tau_ajustado",
     "sello_cmb_perfil_wc"
    ],
@@ -41,6 +218,7 @@
    "clase": "A",
    "origen": "cobaya-install planck_2018_lensing.native --packages-path $COBAYA_PACKAGES_PATH",
    "cita": "Planck 2018 lensing",
+   "receta": "planck_lensing",
    "etapas": [
     "coteja_crudos"
    ],
@@ -57,8 +235,9 @@
    "clase": "A",
    "origen": "https://data.sdss.org/sas/dr12/boss/papers/clustering/",
    "cita": "Beutler et al. 2017, MNRAS 466, 2242 (arXiv:1607.03149)",
+   "receta": "boss_dr12",
    "etapas": [
-    "sello_base_sin_particula",
+    "boss_lpt_kmax020",
     "sello_boss_aisla_neutrinos"
    ],
    "archivos": [
@@ -513,9 +692,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_boss_R1R2",
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -530,8 +711,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -546,8 +729,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -562,8 +747,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -578,9 +765,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_boss_R1R2",
+    "coteja_transcripciones",
     "marginal_vs_perfil",
     "mide_As_o_producto",
     "multisonda_fondo_clavado"
@@ -597,8 +786,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
@@ -614,8 +805,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
@@ -631,8 +824,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
@@ -648,7 +843,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta",
     "leer_conjunta_b3"
@@ -665,7 +861,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta",
     "leer_conjunta_b3"
@@ -682,7 +879,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta",
     "leer_conjunta_b3"
@@ -699,7 +897,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta",
     "leer_conjunta_b3"
@@ -716,7 +915,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta"
    ],
@@ -732,7 +932,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta"
    ],
@@ -748,7 +949,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta"
    ],
@@ -764,7 +966,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta"
    ],
@@ -780,7 +983,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta_b3"
    ],
@@ -796,7 +1000,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta_b3"
    ],
@@ -812,7 +1017,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta_b3"
    ],
@@ -828,7 +1034,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "leer_conjunta_b3"
    ],
@@ -841,12 +1048,31 @@
    ]
   },
   {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.input.yaml",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "coteja_transcripciones"
+   ],
+   "archivos": [
+    {
+     "rel": "conjunta_b3.input.yaml",
+     "bytes": 4974,
+     "sha256": "d49789559d5de074dfc63433f2989e34c2f95ca6d12a9157a64467310bf06866"
+    }
+   ]
+  },
+  {
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_lcdm_R4",
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -861,9 +1087,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_lcdm_R4",
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -878,9 +1106,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_lcdm_R4",
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -895,9 +1125,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_lcdm_R4",
+    "coteja_transcripciones",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -912,7 +1144,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.progress",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_lcdm_R4"
    ],
@@ -928,7 +1161,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.updated.yaml",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "analiza_lcdm_R4"
    ],
@@ -944,7 +1178,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
     "marginal_vs_perfil",
@@ -962,7 +1197,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
     "marginal_vs_perfil",
@@ -980,7 +1216,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
     "marginal_vs_perfil",
@@ -998,7 +1235,8 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
     "marginal_vs_perfil",
@@ -1016,8 +1254,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_control",
     "lcdm_conjunta_min_bao",
@@ -1037,8 +1277,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_control",
     "lcdm_conjunta_min_bao",
@@ -1058,8 +1300,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_control",
     "lcdm_conjunta_min_bao",
@@ -1079,8 +1323,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_control",
     "lcdm_conjunta_min_bao",
@@ -1100,8 +1346,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "multisonda_fondo_clavado"
    ],
@@ -1117,8 +1365,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic"
    ],
    "archivos": [
@@ -1133,8 +1383,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic"
    ],
    "archivos": [
@@ -1149,8 +1401,10 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "coteja_transcripciones",
     "kids_legacy_bic"
    ],
    "archivos": [
@@ -1165,8 +1419,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "conjunta_control",
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
    ],
@@ -1182,8 +1439,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "conjunta_control",
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
    ],
@@ -1199,8 +1459,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "conjunta_control",
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
    ],
@@ -1216,8 +1479,11 @@
    "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
+    "conjunta_control",
+    "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
    ],
@@ -1231,9 +1497,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/act_dr6_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por ACT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_act_dr6_calibrador"
    ],
@@ -1247,9 +1514,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/act_dr6_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por ACT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_act_dr6_calibrador"
    ],
@@ -1263,9 +1531,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/act_dr6_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por ACT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_act_dr6_calibrador"
    ],
@@ -1279,9 +1548,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/act_dr6_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por ACT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_act_dr6_calibrador"
    ],
@@ -1295,9 +1565,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "C",
+   "origen": "https://arxiv.org/abs/2304.05202v3",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2304.05202v3",
    "etapas": [
     "sello_act_dr6_calibrador"
    ],
@@ -1311,9 +1582,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "C",
+   "origen": "https://arxiv.org/abs/2608.31136v1",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2608.31136v1",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1330,6 +1602,7 @@
    "clase": "A",
    "origen": "https://github.com/SouthPoleTelescope/spt_candl_data.git (commit efe35b7)",
    "cita": "SPT-3G D1 lensing",
+   "receta": "spt3g",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1346,6 +1619,7 @@
    "clase": "A",
    "origen": "https://github.com/SouthPoleTelescope/spt_candl_data.git (commit efe35b7)",
    "cita": "SPT-3G D1 lensing",
+   "receta": "spt3g",
    "etapas": [
     "sello_spt3g_kk_en_el_clavo"
    ],
@@ -1359,9 +1633,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.1.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/spt3g_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por SPT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1375,9 +1650,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.2.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/spt3g_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por SPT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1391,9 +1667,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.3.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/spt3g_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por SPT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1407,9 +1684,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.4.txt",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/spt3g_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por SPT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1423,9 +1701,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/cmb_lensing/spt3g_calibrador/spt_lcdm.progress",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo cmb_lensing)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: cadenas ΛCDM de src/p11_sondas/spt3g_calibra.py",
+   "cita": "calibrador: reproduce el ΛCDM publicado por SPT antes de meter SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "spt3g_calibrador"
    ],
@@ -1442,6 +1721,7 @@
    "clase": "A",
    "origen": "https://des.ncsa.illinois.edu/releases/y3a2/Y3key-products (cadenas 3x2pt)",
    "cita": "DES Collaboration 2022, PRD 105, 023520 (arXiv:2105.13549)",
+   "receta": "des_y3_cadena",
    "etapas": [
     "sello_des_y3_barrido",
     "sello_des_y3_barrido_masa",
@@ -1456,10 +1736,62 @@
    ]
   },
   {
+   "ruta": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_libre_mejor.ini",
+   "clase": "B",
+   "origen": "producto propio: mejor punto de nuisances de DES (des_y3_en_el_clavo.py nuevo/continua)",
+   "cita": "la minimización corre fuera de DVC (días de CPU); la etapa evalúa este punto",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "des_y3_tatt"
+   ],
+   "archivos": [
+    {
+     "rel": "clavo_lcdm_libre_mejor.ini",
+     "bytes": 1851,
+     "sha256": "bbe9f548732715e687fef018b6d1a58e08b882b41b6e4673419d7e0032bd66a8"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_planck_mejor.ini",
+   "clase": "B",
+   "origen": "producto propio: mejor punto de nuisances de DES (des_y3_en_el_clavo.py nuevo/continua)",
+   "cita": "la minimización corre fuera de DVC (días de CPU); la etapa evalúa este punto",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "des_y3_tatt"
+   ],
+   "archivos": [
+    {
+     "rel": "clavo_lcdm_planck_mejor.ini",
+     "bytes": 1690,
+     "sha256": "a5a70d070df3bfdb203cace8bc77461e55ec40b41f3e9cc4724d6798eb30f6ad"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/des_y3/calibrador/clavo_ssee_mejor.ini",
+   "clase": "B",
+   "origen": "producto propio: mejor punto de nuisances de DES (des_y3_en_el_clavo.py nuevo/continua)",
+   "cita": "la minimización corre fuera de DVC (días de CPU); la etapa evalúa este punto",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "des_y3_tatt"
+   ],
+   "archivos": [
+    {
+     "rel": "clavo_ssee_mejor.ini",
+     "bytes": 1778,
+     "sha256": "1dc65bec3e42b6185c7762b1b991c918421c7e8d4947e6b3a2b5bd3a10e5b387"
+    }
+   ]
+  },
+  {
    "ruta": "/mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1476,6 +1808,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1492,6 +1825,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1508,6 +1842,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1524,6 +1859,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1540,6 +1876,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1556,6 +1893,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1572,6 +1910,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1588,6 +1927,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1604,6 +1944,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1620,6 +1961,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1636,6 +1978,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1652,6 +1995,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1668,6 +2012,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1684,6 +2029,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1700,6 +2046,7 @@
    "clase": "A",
    "origen": "https://doi.org/10.5281/zenodo.16644577",
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
+   "receta": "desi_dr2",
    "etapas": [
     "desi_dr2_w0wa_momentos"
    ],
@@ -1713,9 +2060,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt",
-   "clase": "A",
-   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
-   "cita": "Bulbul et al. 2024",
+   "clase": "C",
+   "origen": "extracto de literatura (resumen de arXiv o ficha pública del catálogo)",
+   "cita": "texto citado; va en el paquete de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_erosita_conteos_efeds",
     "sello_erosita_conteos_erass1",
@@ -1731,9 +2079,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt",
-   "clase": "A",
-   "origen": "CDS/VizieR (Bahar et al. 2022)",
-   "cita": "eFEDS clusters V3.2",
+   "clase": "C",
+   "origen": "extracto de literatura (resumen de arXiv o ficha pública del catálogo)",
+   "cita": "texto citado; va en el paquete de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_erosita_conteos_efeds",
     "sello_erosita_conteos_erass1",
@@ -1750,8 +2099,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz",
    "clase": "A",
-   "origen": "CDS/VizieR (Bahar et al. 2022)",
+   "origen": "eROSITA EDR (Liu et al. 2022)",
    "cita": "eFEDS clusters V3.2",
+   "receta": "efeds",
    "etapas": [
     "sello_erosita_completitud",
     "sello_erosita_conteos_efeds",
@@ -1769,8 +2119,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits",
    "clase": "A",
-   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "origen": "https://erosita.mpe.mpg.de/dr1/ (eRASS1)",
    "cita": "Bulbul et al. 2024",
+   "receta": "erass1_cosmo",
    "etapas": [
     "sello_erosita_completitud",
     "sello_erosita_cr_v3"
@@ -1786,8 +2137,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits",
    "clase": "A",
-   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
+   "origen": "https://erosita.mpe.mpg.de/dr1/ (eRASS1)",
    "cita": "Bulbul et al. 2024",
+   "receta": "erass1_primary",
    "etapas": [
     "erosita_extlike",
     "sello_erosita_conteos_efeds",
@@ -1804,9 +2156,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html",
-   "clase": "A",
-   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
-   "cita": "Bulbul et al. 2024",
+   "clase": "C",
+   "origen": "extracto de literatura (resumen de arXiv o ficha pública del catálogo)",
+   "cita": "texto citado; va en el paquete de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_erosita_conteos_efeds",
     "sello_erosita_conteos_erass1",
@@ -1822,9 +2175,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex",
-   "clase": "A",
-   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
-   "cita": "Bulbul et al. 2024",
+   "clase": "C",
+   "origen": "https://arxiv.org/abs/2602.20483v2",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2602.20483v2",
    "etapas": [
     "sello_erosita_conteos_efeds",
     "sello_erosita_conteos_erass1",
@@ -1840,9 +2194,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex",
-   "clase": "A",
-   "origen": "https://erosita.mpe.mpg.de/ (eRASS1 data release)",
-   "cita": "Bulbul et al. 2024",
+   "clase": "C",
+   "origen": "https://arxiv.org/abs/2402.08458v2",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2402.08458v2",
    "etapas": [
     "sello_erosita_cr_v3"
    ],
@@ -1857,9 +2212,11 @@
   {
    "ruta": "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt",
    "clase": "A",
-   "origen": "https://kids.strw.leidenuniv.nl/ (KiDS-1000 cosmic shear data release)",
+   "origen": "https://kids.strw.leidenuniv.nl/DR4/ (KiDS-1000 cosmic shear data release)",
    "cita": "Asgari et al. 2021, A&A 645, A104 (arXiv:2007.15633)",
+   "receta": "kids1000",
    "etapas": [
+    "kids1000_control",
     "kids_publicados"
    ],
    "archivos": [
@@ -1873,10 +2230,11 @@
   {
    "ruta": "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits",
    "clase": "A",
-   "origen": "https://kids.strw.leidenuniv.nl/ (KiDS-1000 cosmic shear data release)",
+   "origen": "https://kids.strw.leidenuniv.nl/DR4/ (KiDS-1000 cosmic shear data release)",
    "cita": "Asgari et al. 2021, A&A 645, A104 (arXiv:2007.15633)",
+   "receta": "kids1000",
    "etapas": [
-    "sello_base_sin_particula"
+    "quien_mide_As_kids"
    ],
    "archivos": [
     {
@@ -1889,10 +2247,11 @@
   {
    "ruta": "/mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc",
    "clase": "A",
-   "origen": "https://kids.strw.leidenuniv.nl/ (KiDS-1000 cosmic shear data release)",
+   "origen": "https://github.com/KiDS-WL/kcap.git (commit 36b40c5)",
    "cita": "Asgari et al. 2021, A&A 645, A104 (arXiv:2007.15633)",
+   "receta": "kcap",
    "etapas": [
-    "sello_base_sin_particula"
+    "quien_mide_As_kids"
    ],
    "archivos": [
     {
@@ -1903,10 +2262,233 @@
    ]
   },
   {
+   "ruta": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
+   "cita": "Wright et al. 2025 (arXiv:2503.19441)",
+   "receta": "kids_legacy",
+   "etapas": [
+    "conjunta_control"
+   ],
+   "archivos": [
+    {
+     "rel": "README.txt",
+     "bytes": 4313,
+     "sha256": "c719a808a5831095d732a115fbe938a8ee4a74b8c55693801debc28cdc4dd070"
+    },
+    {
+     "rel": "chains_and_config_files/bandpowers/KiDS_Legacy_bandpowers_pipeline.ini",
+     "bytes": 6498,
+     "sha256": "3eb1fe206be5e1f6570c83b9003a835e7010f0bc54f43b55f249c830774a8b11"
+    },
+    {
+     "rel": "chains_and_config_files/bandpowers/KiDS_Legacy_priors.ini",
+     "bytes": 750,
+     "sha256": "cdcb3e59714a94748ca0ab6030b832f2bd9e391806ef3eb37e8fd0a43b701669"
+    },
+    {
+     "rel": "chains_and_config_files/bandpowers/KiDS_Legacy_values.ini",
+     "bytes": 1151,
+     "sha256": "01098b2491f13dfff4a74605f375d725cf81a7fdcfed4c8e58029f45d23e5081"
+    },
+    {
+     "rel": "chains_and_config_files/bandpowers/output_nautilus_bandpowers_Fiducial.txt",
+     "bytes": 109174240,
+     "sha256": "ec7fbb3155b68170277c8621bff720093ed0bf3b652d51aaa9ab7af6a273df34"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis/KiDS_Legacy_cosebis_pipeline.ini",
+     "bytes": 6611,
+     "sha256": "1599665bf28701508d37864ec0a5f84de82d3281dd425e9394084e267d907243"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis/KiDS_Legacy_priors.ini",
+     "bytes": 750,
+     "sha256": "cdcb3e59714a94748ca0ab6030b832f2bd9e391806ef3eb37e8fd0a43b701669"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis/KiDS_Legacy_values.ini",
+     "bytes": 1151,
+     "sha256": "01098b2491f13dfff4a74605f375d725cf81a7fdcfed4c8e58029f45d23e5081"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis/output_nautilus_cosebis_Fiducial.txt",
+     "bytes": 15050366,
+     "sha256": "c92f55eaf599f8eacd98618ad982fa99e929e036d923f16412d26842827e2331"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis_plus_external/KiDS_Legacy_cosebis_plus_external_pipeline.ini",
+     "bytes": 11123,
+     "sha256": "68d11f50516c950fa228bffb3497cfc955ac39a5b575e636fc01f290416294d7"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis_plus_external/KiDS_Legacy_priors.ini",
+     "bytes": 1038,
+     "sha256": "34d6a0046ff75bddf3d2cbbc2d16a06967d10ea2f183856a5dfd69be2671209d"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis_plus_external/KiDS_Legacy_values.ini",
+     "bytes": 1537,
+     "sha256": "51b04875664896181bef767ff92a849deeeaedd7d23c7f1d2175f9b89b911e9c"
+    },
+    {
+     "rel": "chains_and_config_files/cosebis_plus_external/output_nautilus_cosebis_plus_external.txt",
+     "bytes": 39700913,
+     "sha256": "c42a7aed8f812132a0557427f7aa6c36a2e51ea5cebc433cbcc4cd6492488e6a"
+    },
+    {
+     "rel": "chains_and_config_files/xipm/KiDS_Legacy_priors.ini",
+     "bytes": 750,
+     "sha256": "cdcb3e59714a94748ca0ab6030b832f2bd9e391806ef3eb37e8fd0a43b701669"
+    },
+    {
+     "rel": "chains_and_config_files/xipm/KiDS_Legacy_values.ini",
+     "bytes": 1151,
+     "sha256": "01098b2491f13dfff4a74605f375d725cf81a7fdcfed4c8e58029f45d23e5081"
+    },
+    {
+     "rel": "chains_and_config_files/xipm/KiDS_Legacy_xipm_pipeline.ini",
+     "bytes": 7149,
+     "sha256": "a4609b02ef696274b1134f49e458f41e84c62307c8416f2233df51f5315b32b1"
+    },
+    {
+     "rel": "chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt",
+     "bytes": 105084314,
+     "sha256": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac"
+    },
+    {
+     "rel": "data/KiDS_Legacy_bandpowers.fits",
+     "bytes": 947520,
+     "sha256": "6b2a3e1be3854ddf5deb63c4bdaba4219d9eea951623c8ab816c3b47930ca53d"
+    },
+    {
+     "rel": "data/KiDS_Legacy_cosebis.fits",
+     "bytes": 5705280,
+     "sha256": "28a02a6c33199bd3073d3598232af3be20f326a2f36466e8a5a825334294bdb3"
+    },
+    {
+     "rel": "data/KiDS_Legacy_xipm.fits",
+     "bytes": 1186560,
+     "sha256": "aeedfec802c83f468a7459b11be7b9978029fd87985c9e3930cd3d8be38a664d"
+    },
+    {
+     "rel": "data/Nz_covariance.txt",
+     "bytes": 768,
+     "sha256": "a84722e6170ddb74232f9b392fefecb1273d610e2893ee1c704a16ac4bad2cfa"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin1.ascii",
+     "bytes": 223333,
+     "sha256": "072a36b954c05b06bebf7c79b081fab27c97de819d437c8186ead005717f167f"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin2.ascii",
+     "bytes": 223183,
+     "sha256": "c1c187ea2ca25a79a9187c3fd9481b317028252755ca982161e45bce9bc68aac"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin3.ascii",
+     "bytes": 223247,
+     "sha256": "6b265eca649bdf98d2615be4e0489b37cc52d36ab9d77b530328d26b8433f16a"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin4.ascii",
+     "bytes": 223387,
+     "sha256": "d5ad8193d8b4213b3687fa86a96e2064f8c3b0f6f76b4a9b1ed0971c8c3c3c7b"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin5.ascii",
+     "bytes": 223296,
+     "sha256": "9f3f053b039e5959e98c50c5e4a43bfa7e6f500bff0825f5be03b46435d50a11"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin6.ascii",
+     "bytes": 223209,
+     "sha256": "fe3c5f91c0c702b3a3ea68161362bc9c8ea22e08827cc2de94a8a8a79b3ae4bc"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin2.ascii",
+     "bytes": 223222,
+     "sha256": "ff13ddab5e8417910ec6bf969600ed682d1fafe01571e1059ca2220e4c79dc9e"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin3.ascii",
+     "bytes": 223222,
+     "sha256": "01dfa7637f01eebb00960e5f61b6d8741555f7ccb1907e61d5db23efcff84960"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin4.ascii",
+     "bytes": 223091,
+     "sha256": "b457ab4779ccaaebcebe5c2bf1241c26bc3a8400a0fc51213d1374ac5d610d41"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin5.ascii",
+     "bytes": 223155,
+     "sha256": "89ec03afe05b5109f1a8f0cf92c8fce5f3dc165223a1a430bef531345572256b"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin6.ascii",
+     "bytes": 223188,
+     "sha256": "7f682cd8a62ce0c39fa1f9196e56b71a01702469f3d1abf78f22032614a84b23"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin3.ascii",
+     "bytes": 223359,
+     "sha256": "a0aedbae56365a104c5c28a3b7ce9480fff4083f52f8b810c3b42aa25d6eb66d"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin4.ascii",
+     "bytes": 223042,
+     "sha256": "c8d004c4bf4b30bf670f0c936dae548acc445bc72f6162cc70cbb5837ec5b571"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin5.ascii",
+     "bytes": 223094,
+     "sha256": "f4e92040ec75a71aa1d5497728665d87dca619e6e60de998fff22153bbe4c64b"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin6.ascii",
+     "bytes": 223255,
+     "sha256": "e379e1c319f48ac408e3a5b16f5e191b8075e7d5b229c607fbcd39342d25e779"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin4.ascii",
+     "bytes": 223146,
+     "sha256": "8a3d8502acb24fcee5ab169c73e97279ec771ddac0e05e772d7f4a0b380026da"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin5.ascii",
+     "bytes": 222961,
+     "sha256": "ce3d811b0b59218a15447bdffe04b261dd69a394a116196e7feaf6349a1c4cc4"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin6.ascii",
+     "bytes": 223047,
+     "sha256": "79163717938e5490416898bb37ec3cd3b352948ea1c10afb83fa6acf0cd07ac1"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin5_Bin5.ascii",
+     "bytes": 223089,
+     "sha256": "9b80615890b2f5fcfb41d011c9842e7272a31c356e644ef35df14befe1286239"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin5_Bin6.ascii",
+     "bytes": 222921,
+     "sha256": "25da22b3111ed47d7cb08af20c7087b0ba6350eab809e2b269e80205de48ca94"
+    },
+    {
+     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin6_Bin6.ascii",
+     "bytes": 223058,
+     "sha256": "03e11d46edecb4667834f9947291d6c07f8645d6f28e23b81e86ea6c267847a5"
+    }
+   ]
+  },
+  {
    "ruta": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt",
    "clase": "A",
    "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
    "cita": "Wright et al. 2025 (arXiv:2503.19441)",
+   "receta": "kids_legacy",
    "etapas": [
     "kids_publicados",
     "sello_control_legacy"
@@ -1924,6 +2506,7 @@
    "clase": "A",
    "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
    "cita": "Wright et al. 2025 (arXiv:2503.19441)",
+   "receta": "kids_legacy",
    "etapas": [
     "sello_control_legacy"
    ],
@@ -1938,8 +2521,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/1807.06209/ms.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/1807.06209v4",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:1807.06209v4",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -1954,8 +2538,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/1710.05835/main.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/1710.05835v1",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:1710.05835v1",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -1970,8 +2555,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2001.09213/main.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/2001.09213v2",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2001.09213v2",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -1986,8 +2572,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2101.02221/main.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/2101.02221v2",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2101.02221v2",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -2002,8 +2589,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2112.04510/shoes6.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/2112.04510v3",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2112.04510v3",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -2018,8 +2606,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2408.06153/Ho2024.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/2408.06153v3",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2408.06153v3",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -2034,8 +2623,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2408.11770/main.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/2408.11770v2",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2408.11770v2",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -2050,8 +2640,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/literatura/h0_metodos/2506.03023/main.tex",
    "clase": "C",
-   "origen": "arXiv (id = nombre de la carpeta)",
-   "cita": "sólo lectura de fuentes; no se redistribuye",
+   "origen": "https://arxiv.org/abs/2506.03023v4",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2506.03023v4",
    "etapas": [
     "h0_por_metodos"
    ],
@@ -2067,7 +2658,8 @@
    "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "mcmc_full_posteriores"
    ],
@@ -2083,7 +2675,8 @@
    "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "mcmc_full_posteriores"
    ],
@@ -2099,7 +2692,8 @@
    "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "mcmc_full_posteriores"
    ],
@@ -2115,7 +2709,8 @@
    "ruta": "/mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "mcmc_full_posteriores"
    ],
@@ -2131,11 +2726,13 @@
    "ruta": "/mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC (ver etapa DVC que lo produce)",
-   "cita": "regenerable; o dataset aparte",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
    "etapas": [
     "dic_from_chains",
     "p2_corners",
     "p2_fig7_fig8",
+    "p2_ssee_fijo_k0",
     "ppc_cronometros",
     "resumen_3modelos",
     "savage_cv"
@@ -2144,15 +2741,16 @@
     {
      "rel": "mcmc_chains_professional.npz",
      "bytes": 260001506,
-     "sha256": "105a3703b83ffb026ffd35ed042c805d7982d6f3a3bc9b57f33b6f4ed311d141"
+     "sha256": "bcf5ad5fa07dba371d36956466f8450b577410b9f0e681ff76f2de2c3d568b29"
     }
    ]
   },
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv",
    "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "origen": "https://github.com/des-science/DES-SN5YR",
+   "cita": "DES-SN5YR (Dovekie)",
+   "receta": "dessn_hd",
    "etapas": [
     "sello_sn_geometria"
    ],
@@ -2167,8 +2765,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz",
    "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "origen": "https://github.com/des-science/DES-SN5YR",
+   "cita": "DES-SN5YR (Dovekie)",
+   "receta": "dessn_cov",
    "etapas": [
     "sello_sn_geometria"
    ],
@@ -2183,8 +2782,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat",
    "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "origen": "https://github.com/PantheonPlusSH0ES/DataRelease",
+   "cita": "Scolnic et al. 2022 (arXiv:2112.03863)",
+   "receta": "pantheon_dat",
    "etapas": [
     "h0_por_profundidad",
     "sello_sn_geometria"
@@ -2200,8 +2800,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov",
    "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "origen": "https://github.com/PantheonPlusSH0ES/DataRelease",
+   "cita": "Brout et al. 2022 (arXiv:2202.04077)",
+   "receta": "pantheon_cov",
    "etapas": [
     "h0_por_profundidad",
     "sello_sn_geometria"
@@ -2216,9 +2817,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/papers/2202.04077/main.tex",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "clase": "C",
+   "origen": "https://arxiv.org/abs/2202.04077v2",
+   "cita": "fuente del e-print (se coteja la transcripción)",
+   "receta": "arxiv:2202.04077v2",
    "etapas": [
     "h0_por_profundidad"
    ],
@@ -2233,8 +2835,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits",
    "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "origen": "https://github.com/rubind/union3_release",
+   "cita": "Rubin et al. 2023 (arXiv:2311.12098)",
+   "receta": "union3_release",
    "etapas": [
     "sello_union3_en_el_clavo"
    ],
@@ -2249,8 +2852,9 @@
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits",
    "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "origen": "https://github.com/rubind/union3.git (commit 850dab2)",
+   "cita": "Rubin et al. 2023",
+   "receta": "union3_pipeline",
    "etapas": [
     "sello_union3_en_el_clavo",
     "sello_union3_repro_compara"
@@ -2265,9 +2869,10 @@
   },
   {
    "ruta": "/mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits",
-   "clase": "A",
-   "origen": "ver data/manifiesto_descargas_T2.json (grupo sn_ia/union3)",
-   "cita": "",
+   "clase": "B",
+   "origen": "producto propio: reproducción de Union3.1 (src/p11_sondas/union3_repro_compara.py)",
+   "cita": "se compara con el release publicado",
+   "receta": "paquete_ssee",
    "etapas": [
     "sello_union3_repro_compara"
    ],
@@ -2284,10 +2889,214 @@
    "clase": "S",
    "origen": "https://github.com/miguelzuma/hi_class_public.git (commit 0009f51d8; compilar)",
    "cita": "binario compilado: se reconstruye, no se compara por sha256",
+   "receta": "hi_class",
    "etapas": [
     "hiclass_campo"
    ],
    "archivos": []
+  },
+  {
+   "ruta": "results/chains/lcdm_cmb.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_analyse",
+    "b1_k2",
+    "b1_min_lcdm",
+    "coteja_transcripciones",
+    "s8_desde_b1"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm_cmb.1.txt",
+     "bytes": 94529491,
+     "sha256": "b829716d9ea3bca7f73f62b7da02979090488ddbd233d2f9021625ca5c244285"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/lcdm_cmb.input.yaml",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_k2"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm_cmb.input.yaml",
+     "bytes": 1562,
+     "sha256": "24ab7828a275793ef161aa62e22f5c67d6746e8fdbc8c2dbce9e9c35fc6b7c36"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/lcdm_cmb.updated.yaml",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_min_lcdm"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm_cmb.updated.yaml",
+     "bytes": 11346,
+     "sha256": "1f0a51d8fb62c305defe9b2dd560c3eb7bebcdbac702f3c2f1394c248711ff9e"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_analyse",
+    "b1_k2",
+    "coteja_transcripciones",
+    "multisonda_fondo_clavado",
+    "s8_desde_b1"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb.1.txt",
+     "bytes": 49485923,
+     "sha256": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb_k2.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_k2",
+    "b1_min_ssee",
+    "coteja_transcripciones"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb_k2.1.txt",
+     "bytes": 48984375,
+     "sha256": "413fa67a3fde0d5c1158da88563ad9c34de2403398eac9a4a2df1866670583c6"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb_k2.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_k2",
+    "b1_min_ssee",
+    "coteja_transcripciones"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb_k2.2.txt",
+     "bytes": 49358067,
+     "sha256": "1b96b062248abc3056c4c529afde8c1deb8b1ffdaaece2deda67b6e7b7506173"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb_k2.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_k2",
+    "b1_min_ssee",
+    "coteja_transcripciones"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb_k2.3.txt",
+     "bytes": 50297313,
+     "sha256": "744e71cab137fb9a822e858262aa201d90acacf140c1f268cb303a188e9c985d"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb_k2.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_k2",
+    "b1_min_ssee",
+    "coteja_transcripciones"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb_k2.4.txt",
+     "bytes": 49699155,
+     "sha256": "057a1c038019ea308d00109bbb0404891f266b5d77c3b0c2735302b7c78205f3"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb_k2.input.yaml",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_k2"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb_k2.input.yaml",
+     "bytes": 1108,
+     "sha256": "56a0247855abd57a606e531123beb143af3041505303ad9dcf0521e044e5565d"
+    }
+   ]
+  },
+  {
+   "ruta": "results/chains/ssee_cmb_k2.updated.yaml",
+   "clase": "B",
+   "origen": "producto propio: cadenas CMB de B1 (src/p03_cmb/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "b1_min_ssee"
+   ],
+   "archivos": [
+    {
+     "rel": "ssee_cmb_k2.updated.yaml",
+     "bytes": 10878,
+     "sha256": "7f3a08add1f0cb8a2c46d5c02e969884f718bb37d39f658623fa0c229ec6a992"
+    }
+   ]
+  },
+  {
+   "ruta": "zenodo_dictionary/SSEE_Constant_Dictionary.md",
+   "clase": "B",
+   "origen": "diccionario de constantes (repo aparte, concept DOI 10.5281/zenodo.20684908)",
+   "cita": "la copia exacta con que corrió la etapa va en el paquete de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "p04_rutas_mv"
+   ],
+   "archivos": [
+    {
+     "rel": "SSEE_Constant_Dictionary.md",
+     "bytes": 39834,
+     "sha256": "2b01f81093342c04bfd505ba0c113a44136827bb2a241947879bafe994c9b91a"
+    }
+   ]
   }
  ]
 }
