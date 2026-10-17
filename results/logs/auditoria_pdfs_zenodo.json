@@ -19,7 +19,7 @@
    "narrados": []
   },
   "SSEE_PRD.pdf": {
-   "caracteres": 64077,
+   "caracteres": 64493,
    "vivos": [],
    "narrados": [
     {
@@ -143,7 +143,7 @@
    ]
   },
   "SSEE_Paper3_CMB.pdf": {
-   "caracteres": 49820,
+   "caracteres": 49866,
    "vivos": [],
    "narrados": [
     {
@@ -271,7 +271,7 @@
    ]
   },
   "SSEE_Sealed_Journal.pdf": {
-   "caracteres": 68247,
+   "caracteres": 68683,
    "vivos": [],
    "narrados": [
     {
@@ -297,13 +297,13 @@
    ]
   },
   "SSEE_Unified_Journal.pdf": {
-   "caracteres": 51955,
+   "caracteres": 52135,
    "vivos": [],
    "narrados": []
   }
  },
  "_procedencia": {
-  "commit": "b9c7875b24ef9b49b419334410667875116c2549",
+  "commit": "2fa1cc4278ab02c9a23d7d31e87e4bd8582b8ab2",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/audita_pdfs_zenodo.py",
@@ -314,19 +314,19 @@
    "docs/SSEE_Cover.pdf": "14e84f78d740b1cb071c7cc828e4fa45bd1194e8ef06e7026366345715933d41",
    "docs/SSEE_Cover_Letter.pdf": "f0dec9920b8a735503ed588457ccd7c00d9f436d11b118d51ac6d279cac4f2de",
    "docs/SSEE_Endorser_Summary.pdf": "e6c333c4e9b38cd4fd3656a05d60386cf8ce46d90cb86e22a81c0312c8c49a81",
-   "docs/SSEE_PRD.pdf": "ab246d6bf4e7ef7c14ba6ea4cc83029723caeb76ae41b58f522c35bdf7728c44",
+   "docs/SSEE_PRD.pdf": "ea6d8868c71c96e35fcd46490d54683acb7e82d1e8122062c04f435d0f875675",
    "docs/SSEE_Paper10_UVCompletion.pdf": "cf4aa5d2131fc160e583db1b99a23c4f421a927fd5259d9cd44a27c11d437308",
    "docs/SSEE_Paper1_Framework.pdf": "21dab9f7650d24611829db1c9952e7215fcad38d27809c648a263fc6ba0853be",
    "docs/SSEE_Paper2_MCMC.pdf": "136f096e747af712e1fd4163cfeaf617af76c6b5c808716978fe0d816abaf55e",
-   "docs/SSEE_Paper3_CMB.pdf": "d2fb1fcb7ffdf3b6c17a3a0092396b67978e95f949e05de44510d45b835e4d2b",
+   "docs/SSEE_Paper3_CMB.pdf": "98e7356b0f8e3a59548e8a452820d3819554de671c2abca7c73fc0ea73082d07",
    "docs/SSEE_Paper4_ToE.pdf": "058ff926e2aa406363252181bdfbb7b634ceb052b274e23ca7068f8d0e3ef0cb",
    "docs/SSEE_Paper5_IS.pdf": "a0b657e85f1a2103b43f71a65905e755df4e1e4a698dad570a072e0f645e452e",
    "docs/SSEE_Paper6_Growth.pdf": "deaea8144534a7df0d55a7dd1e59aa295928682991f26779a901cf5fba1eb3d1",
    "docs/SSEE_Paper7_EFT.pdf": "30c2637c9f8b376cc37cd8d7635274cb1e3d84b6a0620a9eeb3a6bf2ec6f2a36",
    "docs/SSEE_Paper8_StrongGravity.pdf": "1f0c2093f0153e013ec680a9a23ce2f718ba29bafcb48a61a0377f80a64366dd",
    "docs/SSEE_Paper9_HubbleTension.pdf": "46e72266c7b9af581e577fa1a99ddd962c4946c72af1693b4137ace46c857b27",
-   "docs/SSEE_Sealed_Journal.pdf": "38d9c06047a54f8272f3d8b2542dd0e93e41e6cd82990e0d12d0756dbcdd5fc0",
-   "docs/SSEE_Unified_Journal.pdf": "9e635a742fd8beef1a4346590f85260083f1dc9f35a91b1f5ab2d54d519da4e7"
+   "docs/SSEE_Sealed_Journal.pdf": "dc9095b84490eca7ac517d842cc74f8d2ccb9be94449eb294c6a8265abb870b3",
+   "docs/SSEE_Unified_Journal.pdf": "afdb1f0c99f7d43d0928f736896248712a433a9131253a1197ad3017e9711b5e"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -350,7 +350,7 @@
    "docs/SSEE_Sealed_Journal.pdf",
    "docs/SSEE_Unified_Journal.pdf"
   ],
-  "fecha": "2026-10-17T13:31:29",
+  "fecha": "2026-10-17T14:52:58",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

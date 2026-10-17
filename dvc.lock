@@ -83,8 +83,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: 68c9d39eb16ba3287b9ab4dc10f30433
-      size: 101257
+      md5: e769320ab6e8053eb1e561343c480e34
+      size: 101343
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: c9c970430cf1f8f85617f4488b9bed0e
@@ -336,8 +336,8 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: ff1fd837d176d1d39077be3be95662c7
-      size: 125915
+      md5: 8e28e53038fcf91219526d18e3e23cb0
+      size: 126012
   p5_IS_perturbations:
     cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
       src/p05_IS/ssee_paper5_IS_perturbations.py > 
@@ -4268,8 +4268,8 @@ stages:
       size: 225799
     - path: docs/SSEE_PRD.pdf
       hash: md5
-      md5: 15543bb80a0e0720f456e7e785384027
-      size: 683596
+      md5: dcf2d3d59d40f5b26fd1450c47fa8673
+      size: 684632
     - path: docs/SSEE_Paper10_UVCompletion.pdf
       hash: md5
       md5: b6203af66849f8683dce5b57132fc6c7
@@ -4284,8 +4284,8 @@ stages:
       size: 763912
     - path: docs/SSEE_Paper3_CMB.pdf
       hash: md5
-      md5: 883cf1f192466de6306229f69164e989
-      size: 871286
+      md5: 9524e6ebbd34b0086ea16081b4d49c76
+      size: 871359
     - path: docs/SSEE_Paper4_ToE.pdf
       hash: md5
       md5: 920bc5ef4a9ae3356a02c5324d5aa523
@@ -4312,12 +4312,12 @@ stages:
       size: 403323
     - path: docs/SSEE_Sealed_Journal.pdf
       hash: md5
-      md5: 597a324257f01e074751f8f0dac86174
-      size: 727140
+      md5: 0d476f0ec949fce3a1d8b722178aedbb
+      size: 727827
     - path: docs/SSEE_Unified_Journal.pdf
       hash: md5
-      md5: 6d5937f9478363a6b113684ed347293f
-      size: 366772
+      md5: 769dd39113897006b3c1846e5fbc0016
+      size: 366961
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -4333,7 +4333,7 @@ stages:
     outs:
     - path: results/logs/auditoria_pdfs_zenodo.json
       hash: md5
-      md5: 5936a5a835bd620b5f03fe216db97e1e
+      md5: eacd4e5731e28f4a0179bb3fb22dbac1
       size: 17209
   lcdm_conjunta_lee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

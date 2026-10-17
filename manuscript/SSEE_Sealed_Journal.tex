@@ -567,7 +567,7 @@ $H_0^{\rm SH0ES}=73.04$. We do not quote the reverse operation $3(\varphi+\pi)^2
 is a pure number and carries no units, so it cannot serve as the input of a
 dimensionful cascade. The only directly measured expansion rate is the local
 one, and Planck's is inferred within $\Lambda$CDM rather than measured; SH0ES
-is therefore the input throughout. The leftover, $\val{p9_hglob_residuo}~\kms$, lies below the resolution of
+is therefore the input throughout. The leftover, $\val{p9_hglob_residuo}~\kms$ (computed with the unrounded $f_{\rm scr}^{\rm UV}=\val{F_SCREEN_d12}$), lies below the resolution of
 the datum it is compared against; whether a future, more precisely quoted local
 measurement drives it down or opens it up is an empirical question, not one we
 can settle here. We say ``to the quoted precision'' rather than ``exactly''
@@ -615,7 +615,9 @@ for. On the identical DESI~DR2 vector, the information criteria are:
 \caption{Bayesian model comparison on DESI~DR2 ($100$ walkers $\times\,25{,}000$
 steps), with the compressed Planck prior; conservative version with $H_0$ and
 $\Omega_b h^2$ sampled in SSEE. $\Delta\equiv\mathrm{SSEE}-\mathrm{model}$; negative $\Delta$
-favours SSEE. With nothing free ($k=0$) the preference grows (text).}
+favours SSEE. The BIC uses $N=\val{p2_N_bic}$: the DESI~DR2 BAO points plus the three
+compressed-Planck constraints ($H_0$, $\Omega_m$, $\Omega_b h^2$). With nothing free ($k=0$)
+the preference grows (text).}
 \label{tab:modelcomp}
 \begin{tabular}{lccccc}
 \toprule
@@ -893,8 +895,10 @@ First, fixing $A_s$ to Planck is not a neutral choice: $A_s$ is one of the two
 free parameters this model retains at CMB level, so a number obtained that way
 reports the Planck--shear disagreement rather than a property of the model.
 That disagreement is real and is not resolved here --- asking this model's own
-CMB fit to set $A_s$, rather than borrowing Planck's, still leaves
-$\val{logA_k1000_vs_b1}\sigma$ against the shear determination. Second, the target itself was model-conditioned: the published $S_8$
+CMB fit to set $A_s$, rather than borrowing Planck's, still leaves the
+amplitude the KiDS-1000 shear asks for, $\log(10^{10}A_s)=\val{logA_k1000}\pm\val{logA_k1000_sigma}$,
+$\val{logA_k1000_vs_b1_dif}\pm\val{logA_k1000_vs_b1_dif_sigma}$ below the CMB value ($\val{logA_k1000_vs_b1}\sigma$, a
+separation in $\log A_s$, not in $S_8$). Second, the target itself was model-conditioned: the published $S_8$
 is a compressed statistic whose data-reduction pipeline assumes a $\Lambda$CDM
 background, so fitting to it compares a non-$\Lambda$CDM model against a
 partly-$\Lambda$CDM number.
@@ -1303,7 +1307,7 @@ observational band of either $w_0$ or $w_a$.
 
 % ----------------------------------------------------------------------------
 \section*{Acknowledgments}
-The author acknowledges the use of the cosmological codes \textsc{class} \citep{Blas2011}, \textsc{camb} \citep{Lewis2000}, and the Markov Chain Monte Carlo sampler \textsc{Cobaya} \citep{Torrado2021} for the numerical validation of the SSEE framework. The author also acknowledges the use of the \textsc{GetDist} package \citep{Lewis2019} for the analysis and plotting of posterior distributions.
+The author acknowledges the use of the cosmological codes \textsc{class} \citep{Blas2011}, \textsc{camb} \citep{Lewis2000}, the affine-invariant ensemble sampler \textsc{emcee} \citep{emcee}, which ran the DESI~DR2 BAO chains of the model comparison, and the Markov Chain Monte Carlo framework \textsc{Cobaya} \citep{Torrado2021}, which ran the CMB, weak-lensing and BOSS chains. The author also acknowledges the use of the \textsc{GetDist} package \citep{Lewis2019} for the analysis and plotting of posterior distributions.
 
 \section*{Data and Code Availability}
 The SSEE framework is fully transparent and reproducible. The complete code repository, including the \textsc{class} and \textsc{camb} configuration files, the \textsc{Cobaya} MCMC chains, the explicit record of Open Theoretical Problems (OP), and the cosmological validation ledgers, are publicly available at the GitHub repository: \url{https://github.com/mikealmeida1721/SSEE-Cosmologia} and permanently archived on Zenodo, DOI \href{https://doi.org/10.5281/zenodo.19654118}{10.5281/zenodo.19654118} (concept DOI, all versions).

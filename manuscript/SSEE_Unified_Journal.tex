@@ -813,7 +813,7 @@ where the identity $45\alpha^2 = 5\phiG^8$ follows exactly from
 $\alpha=\phiG^4/3$. With this cutoff the full pressure-dilution rate (not the Bellini--Sawicki kineticity $\alphaK$) becomes
 $s_K^{\rm full}=\val{S_K_FULL_d5}$ ($+\val{sK_UV_pct}\%$ over the IR value). Applied to the
 measured SH0ES rate this gives the single global rate
-$H_0^{\rm glob}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+\val{p9_hglob_residuo}$ against $3(\varphi+\pi)^2$; propagated $\pm\val{p9_hglob_sigma}$;
+$H_0^{\rm glob}=73.04\times(1-\val{F_SCREEN_d6})=\val{H0_GLOBAL_d5}$~km\,s$^{-1}$\,Mpc$^{-1}$ (residual $+\val{p9_hglob_residuo}$ against $3(\varphi+\pi)^2$, with the unrounded $f=\val{F_SCREEN_d12}$; propagated $\pm\val{p9_hglob_sigma}$;
 the earlier MIRA-anchored value is superseded by the reframe).
 
 We state the epistemic status of these figures plainly: the UV term rests on
@@ -1048,7 +1048,7 @@ $M$ (UV cutoff) & $(5\phiG^8\rho_c)^{1/4}$ (Conj.~C.1) & $\val{M_meV_d2}$ meV & 
 % ─────────────────────────────────────────────────────────────────────────────
 % ----------------------------------------------------------------------------
 \section*{Acknowledgments}
-The author acknowledges the use of the cosmological codes \textsc{class} \citep{Blas2011}, \textsc{eftcamb} \citep{Hu2014}, and the Markov Chain Monte Carlo sampler \textsc{Cobaya} \citep{Torrado2021} for the numerical validation of the SSEE framework. The author also acknowledges the use of the \textsc{GetDist} package \citep{Lewis2019} for the analysis and plotting of posterior distributions.
+The author acknowledges the use of the cosmological codes \textsc{class} \citep{Blas2011}, \textsc{eftcamb} \citep{Hu2014}, the affine-invariant ensemble sampler \textsc{emcee} \citep{emcee}, which ran the DESI~DR2 BAO chains of the model comparison, and the Markov Chain Monte Carlo framework \textsc{Cobaya} \citep{Torrado2021}, which ran the CMB, weak-lensing and BOSS chains. The author also acknowledges the use of the \textsc{GetDist} package \citep{Lewis2019} for the analysis and plotting of posterior distributions.
 
 \section*{Data and Code Availability}
 The \SSEE\ framework is fully transparent and reproducible. All DESI~DR2 BAO data used in this analysis are publicly available at \url{https://data.desi.lbl.gov/}, and the Planck~2018 cosmological parameter chains at the Planck Legacy Archive (\url{https://pla.esac.esa.int/}). The complete code repository --- including the \textsc{class} and \textsc{eftcamb} configuration files, the \textsc{Cobaya} MCMC chains, the explicit record of Open Theoretical Problems (OP), and the cosmological validation ledgers --- is publicly available at the GitHub repository \url{https://github.com/mikealmeida1721/SSEE-Cosmologia} and archived at Zenodo: \url{https://doi.org/10.5281/zenodo.19654118}.

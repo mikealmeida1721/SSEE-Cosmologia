@@ -649,7 +649,7 @@ desi_libre_Om:        {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.Om",
 desi_libre_Om_s:      {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.Om_err", formato: ".3f"}
 desi_libre_dchi2:     {fuente: "results/logs/bao_lcdm_libre.json#delta_chi2_camb_ssee_menos_lcdm_libre", formato: ".2f"}
 sondas_umbral:        {fuente: "results/logs/sondas_ssee_vs_lcdm.json#umbral_discrimina_dchi2", formato: ".0f"}
-sondas_desy3_nla:     {fuente: "results/logs/sondas_ssee_vs_lcdm.json#des_y3.dchi2_NLA", formato: ".2f"}
+sondas_desy3_nla:     {fuente: "results/logs/sondas_ssee_vs_lcdm.json#des_y3.dchi2_NLA", formato: "+.2f"}
 # SN Requiem: H0 que leería un análisis LCDM plano bajo la lectura P (lente ve el valor local) y bajo C (global) — P9 criterio 5 (2026-10-03)
 requiem_P_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.json#requiem_fecha.P_plano_leida_LCDM.H0", formato: ".1f"}
 requiem_C_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.json#requiem_fecha.SSEE_leida_LCDM.H0", formato: ".1f"}
@@ -1012,3 +1012,4 @@ S_DE_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.S_DE", formato: ".4
 mf_rho: {fuente: "results/logs/mcmc_full_posteriores.json#distancia_w0wa.rho", formato: ".2f"}
 mf_sigma8: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.sigma8.media", formato: ".3f"}
 mf_S8: {fuente: "results/logs/mcmc_full_posteriores.json#posteriores.S8.media", formato: ".3f"}
+p2_N_bic:             {fuente: "results/logs/resumen_3modelos.json#N", formato: "d"}
