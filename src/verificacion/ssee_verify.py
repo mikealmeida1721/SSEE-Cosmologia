@@ -7669,6 +7669,9 @@ try:
         _re78.compile(r"three\s+total,\s+all\s*dimensionless", _re78.I),
         _re78.compile(r"\\section\{Postulate~?P\b"),
         _re78.compile(r"plus\s+one\s+auxiliary\s+register-level\s+postulate", _re78.I),
+        # 2026-10-17: el README decía «rests on 3 postulates (D, S fundamentals + I…» y
+        # R78 no lo veía: sólo leía .tex y sólo la cifra en letras
+        _re78.compile(r"\b[23]\s+postulates\s*\(D,\s*S\b", _re78.I),
     ]
     _NUEVO78 = [
         _re78.compile(r"\\textbf\{four\s+postulates\s+in\s+total\}"),
@@ -7689,6 +7692,8 @@ try:
         return _out
 
     _docs78 = sorted((_REPO78 / "manuscript").glob("*.tex")) + [_REPO78 / "submission_PRD" / "SSEE_PRD.tex"]
+    # y lo que un externo lee primero (2026-10-17)
+    _docs78 += [_REPO78 / _n for _n in ("README.md", "AUDIT.md", "OPEN_PROBLEMS.md", "VERIFICATION_LEDGER.md")]
     _txt78 = {_p.name: _p.read_text(errors="ignore") for _p in _docs78 if _p.exists()}
     _p1_78 = _txt78.get("SSEE_Paper1_Framework.tex", "")
     _hall78 = _conteo78(_txt78, _p1_78)
@@ -7696,11 +7701,13 @@ try:
           not _hall78 and len(_txt78) > 10,
           "; ".join(_hall78[:4]) if _hall78 else f"{len(_txt78)} documentos, conteo único")
     # Control (R53): el conteo viejo se marca; el vigente pasa.
-    _malo78 = _conteo78({"x.tex": "made precise by \\textbf{three postulates in total}"}, _p1_78)
+    _base78 = _conteo78({}, _p1_78)   # sólo lo que diga P1, sin los documentos reales
+    _malo78 = _conteo78({"x.tex": "made precise by \\textbf{three postulates in total}",
+                         "x.md": "the framework rests on 3 postulates (D, S fundamentals + I"}, _p1_78)
     _bueno78 = _conteo78({"x.tex": "made precise by \\textbf{four postulates in total}"}, _p1_78)
     check("R78 el detector marca el conteo viejo y deja pasar el vigente",
-          len(_malo78) == 1 + len(_hall78) and _bueno78 == _hall78,
-          "2 casos: «three postulates in total» marcado; «four» limpio")
+          len(_malo78) == 2 + len(_base78) and _bueno78 == _base78,
+          "3 casos: «three postulates in total» y «3 postulates (D, S…» marcados; «four» limpio")
 except Exception as _e:            # noqa: BLE001
     check("R78 la capa de conteo de postulados corrió", False, f"excepción: {_e}")
 
