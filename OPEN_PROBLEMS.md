@@ -1,10 +1,39 @@
-# SSEE-V3.6 — Open Problems and Known Limitations
+# SSEE — Open Problems and Known Limitations
 
 This document records the open theoretical questions and **frontiers in progress** of the
 SSEE framework. These are **not** hidden flaws: they are declared, in-process work — the
 opposite of numerology (which would pretend they are solved). Ver `NUMEROLOGY_AUDIT.md`.
 
-Last updated: 2026-07-12
+Last updated: 2026-10-17
+
+## Resumen (2026-10-17) — cuántos quedan abiertos de verdad
+
+Este documento conserva TODAS las fichas, también las cerradas y disueltas, porque el
+registro de cómo se cerró cada una es parte de la evidencia. Por eso el número total de
+fichas (33) **no** es el número de problemas abiertos:
+
+| Estado | Fichas |
+|---|---|
+| ✅ Cerrados, resueltos o medidos (10) | OP-2, 4, 8, 8b, 13, 14, 20, 22, 25, 26 |
+| ⚫ Disueltos o retirados — la pregunta dejó de existir (9) | OP-5, 9, 10, 10b, 11, 12, 15, 17, 23 |
+| ↪ Trasladado a su resto (1) | OP-6 → OP-6b |
+| 🟡 Parciales (5) | OP-1, 3, 7, 21, **24** |
+| ⚪ Abiertos (8) | OP-2b, 5b, 6b, 16, 18, 19, 22b, 27 |
+
+**Lo que se le exige a cualquier modelo cosmológico** —ajustar CMB, BAO, supernovas y
+crecimiento con su propio fondo; ser estable; dar δc por colapso esférico; predicciones
+falsables— está **cerrado** en SSEE. Ninguno de los 13 problemas abiertos o parciales es un
+requisito que otros modelos cumplan y SSEE no, y ningún titular depende de ellos (0
+debilidades, ver la leyenda). Se clasifican por la razón que tiene el modelo para responderlos:
+
+| Categoría | Qué significa | Fichas |
+|---|---|---|
+| **Debería poder responder** | importante; frontera abierta para TODO modelo de su clase, no un requisito | OP-24 (wₐ desde un mecanismo: w₀ ya sale del campo de P7) · OP-6b (forma multiplicativa de la lente, Postulado F) |
+| **Decide responder** | no se le exige, pero el modelo busca fundamentar lo que ya usa | OP-1 (ω_b) · OP-2b (N* = 2φ⁷) · OP-3 (el 5/2 de M⁴) · OP-7 (roles desde QFT) · OP-21 y OP-22b (campo → fluido) · OP-5b (S₈ no lineal, N-body) |
+| **Quiere responder** | la búsqueda: ir hacia cero parámetros libres y hacia «de qué está hecho» | OP-18 (A_s desde φ, π) · OP-19 (de qué está hecha la materia oscura; ΛCDM tampoco lo sabe) · OP-16 (protón, especulativo) · OP-27 (δc × n_s, conjetura) |
+
+Quien quiera resolver cualquiera de ellos está invitado: cada ficha dice qué se probó, qué
+se midió y qué la cerraría.
 
 ---
 
@@ -2588,7 +2617,22 @@ trazable.
 
 ---
 
-## OP-24 — Ningún fondo reproduce $w_a = -0.669975$ — 🟡 **ABIERTO (2026-09-07)**
+## OP-24 — Ningún fondo reproduce $w_a = -0.669975$ — 🟡 **PARCIAL** (abierto 2026-09-07; estado 2026-10-17)
+
+> **Estado (2026-10-17).** La mitad está respondida: **w₀ sale del mecanismo** —el campo de
+> P7 fija w₀ y c_s² hoy— y coincide con el álgebra (w₀ = −T_r/M_v). **wₐ = −P_sc/K_v** sale del
+> álgebra y coincide con DESI, pero ningún mecanismo probado la reproduce: potenciales,
+> acoplamiento, un solo campo (no cruza w = −1), dos campos (φ y π, genéricos, acoplados;
+> 2026-10-11) y la viscosa IS (abajo). Es frontera para toda energía oscura dinámica frente a
+> DESI —CPL no tiene campo detrás—, no un requisito que otros modelos cumplan.
+>
+> **Vía sin probar (Mike, 2026-10-17): preguntarle al modelo por sus roles.** Todos los
+> intentos fueron la ruta estándar; ninguno partió de lo que SSEE dice de sí mismo. Las
+> constantes llevan roles que nunca se reinterpretaron (sólo cambiaron de nombre):
+> P_sc es el *escalar de evolución dinámica* y K_v la *restricción estructural*. Leída así,
+> wₐ = −P_sc/K_v es «la evolución frenada por la restricción»: dos entidades con papel propio,
+> lo que sugiere un mecanismo de dos componentes construido DESDE esos roles (no un segundo
+> campo genérico, que ya se probó). Dirección de investigación, no resultado.
 
 **Por qué se abre ahora.** OP-23 preguntaba si algún `β_c` del acoplamiento
 conformal daba `w₀` sin exceso de energía oscura temprana, y quedó **cerrado
@@ -2944,7 +2988,14 @@ región donde el fondo acoplado admite solución.
 
 ---
 
-## OP-25 — R44 no mira las celdas de tabla — ⚪ ABIERTO (2026-09-08)
+## OP-25 — R44 no mira las celdas de tabla — ✅ CERRADO 2026-09-19 (regla R44b)
+
+> **Cierre (anotado 2026-10-17; la ficha se había quedado sin actualizar).** Se tomó una
+> variante de la salida 2: la regla **R44b** (`ssee_verify.py`, 2026-09-08) mira las celdas
+> exigiendo el SÍMBOLO de la constante en la misma fila (así el «50» inicial resultó ser 20:
+> el resto eran coincidencias numéricas), exime la cifra que se declara aproximada en su
+> propia celda, y el 2026-09-19 las 20 celdas se llevaron a 6 decimales: deuda 20 → 0, tope 0,
+> con su control (3 casos). Lo de abajo queda como registro.
 
 > *(Renumerado de OP-24 a OP-25 el 2026-09-08: el 24 ya estaba ocupado por «ningún fondo reproduce $w_a$», abierto el día anterior. La colisión la creé yo al abrir éste sin mirar la lista.)*
 
@@ -3189,7 +3240,13 @@ declaración explícita de que MIRA es un valor algebraico sin dinámica asociad
 
 ---
 
-## OP-10b — P7 y P10 usan el mismo símbolo M⁴ para dos cosas — 🟡 ABIERTO (resto de OP-10)
+## OP-10b — P7 y P10 usan el mismo símbolo M⁴ para dos cosas — ⚫ DISUELTO (anotado 2026-10-17)
+
+> **Disuelto.** El M⁴ = ρ_crit de P7 pertenecía al potencial exponencial y al acoplamiento
+> β_c, retirados el 2026-09-07: hoy P7 sólo lo nombra en «What is withdrawn», y el script que
+> lo usaba (`ssee_eft_verification.py`) está en
+> `archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/`. Queda un solo M⁴ vivo, el de
+> P10 (5φ⁸ρ_crit): ya no hay dos cosas con el mismo símbolo. Lo de abajo queda como registro.
 
 **De dónde viene.** OP-10 cerró por disolución. Pero `ssee_eft_verification.py` usa
 `M⁴ = ρ_crit` (= 1 en sus unidades) y `ssee_paper10_verification.py` usa `M⁴ = 5φ⁸ρ_crit`

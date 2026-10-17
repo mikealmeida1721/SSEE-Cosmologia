@@ -1275,7 +1275,7 @@ check("V-L3-EFT  identidad V0 = Om_DE * rho_crit",
 
 # UV completion K(X) (P10) — la identidad 45 alpha^2 = 5 phi^8 es exacta;
 # la normalización física de M^4 está calibrada a SH0ES (admisión del propio
-# script de P10) y es inconsistente con M^4 = rho_crit usado en P7.
+# script de P10). (El M^4 = rho_crit de P7 se retiro el 2026-09-07: OP-10b disuelto.)
 check("V-L3-KX  identidad 45 alpha^2 = 5 phi^8  (M^4/rho_crit)",
       abs(45 * alpha_attr ** 2 - 5 * phi ** 8) < 1e-9,
       f"M^4/rho_crit = {5 * phi ** 8:.4f}")
@@ -1283,10 +1283,10 @@ track_open("V-L3-KX  M^4 = 5 phi^8 rho_crit calibrado a SH0ES",
            "ssee_paper10_verification.py admite: normalizacion fisica de M^4 "
            "calibrada a SH0ES, no derivada; Ruta A da M^4~418 != 234.9",
            op="OP-3")
-track_open("V-L3-EFT  M^4 inconsistente entre P7 y P10",
-           "ssee_eft_verification.py usa M^4 = rho_crit (=1); "
-           "ssee_paper10_verification.py usa M^4 = 5 phi^8 rho_crit (=234.9)",
-           op="OP-10b")
+# V-L3-EFT (M^4 de P7 contra el de P10, OP-10b): DISUELTO 2026-10-17. El M^4 = rho_crit de
+# P7 era del potencial y del acoplamiento retirados el 2026-09-07; su script
+# (ssee_eft_verification.py) esta en archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/
+# y P7 solo lo nombra en «What is withdrawn». Queda un solo M^4 vivo, el de P10.
 
 # Israel-Stewart (P5) — c²_s,eff = 0. La corrección IS zeta/tau_Pi se reduce
 # a Om_DE porque el factor KAL0/3 se cancela (zeta = KAL0/3, tau_Pi =
