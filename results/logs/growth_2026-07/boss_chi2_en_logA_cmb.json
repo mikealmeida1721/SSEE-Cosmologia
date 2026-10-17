@@ -1,0 +1,62 @@
+{
+ "que_mide": "chi2 del perfil de BOSS (SSEE, sin particula) en el logA del CMB del modelo",
+ "logA_cmb": 3.0432036204741,
+ "sigma_logA_cmb": 0.01454368660281805,
+ "logA_min_boss": 2.9447867903117655,
+ "sigma_logA_boss": 0.1238500775890765,
+ "chi2_min_boss": 197.43788924712965,
+ "chi2_en_logA_cmb": 198.03680702809123,
+ "cuesta_clavar": 0.5989177809615853,
+ "nodos_usados": [
+  3.0,
+  3.05,
+  3.1
+ ],
+ "parabola": [
+  51.2215264624723,
+  -300.2796020730226,
+  637.4817010278834
+ ],
+ "metodo": {
+  "nodos_otra_terna": [
+   2.95,
+   3.0,
+   3.05
+  ],
+  "chi2_otra_terna": 198.03519488548625,
+  "diferencia": -0.0016121426049835463
+ },
+ "control": {
+  "residuo_en_nodos": 3.979039320256561e-13,
+  "lineal_en_nodo_3045": 198.0691114571885,
+  "referencia_base_sin_particula": 198.07,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "15772b3b316b16c41b848edeeaf91f869ce08743",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/boss_chi2_en_logA_cmb.py",
+  "script_sha256": "f6211cb48eaaf4857432ab36637772e0bc5af3c3d271240a0078c48fcf5ef62d",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json": "1e5270b780107ca8a23cb27a8069c51ecb4b01ca9bbbb1e8c8704270885f7b56",
+   "results/logs/growth_2026-07/quien_mide_As.json": "8e0ec6b0443b01dfa9682d5d4eac901c57ed676abbe7b5f64dbaa845b85acf49"
+  },
+  "argv": [
+   "src/p06_growth/boss_chi2_en_logA_cmb.py"
+  ],
+  "fecha": "2026-10-17T00:52:03",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

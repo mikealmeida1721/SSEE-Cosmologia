@@ -8,11 +8,11 @@
  "hilos": "1",
  "pasa": true,
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "376c8d2a01ebf2b8971494efc206c5a88324d8d6",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/cobaya_conjunta.py",
-  "script_sha256": "684a92bd3bf1be58e56b30497f77395ccafc453ecc51939d8a10892d4b122b09",
+  "script_sha256": "7a4d86eb65134a5bb30587d5900789d39c0af547db70ccb6de3b1a9ef3482995",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
@@ -20,7 +20,7 @@
    "src/p06_growth/cobaya_conjunta.py",
    "results/logs/conjunta_control.json"
   ],
-  "fecha": "2026-10-16T21:08:25",
+  "fecha": "2026-10-17T00:56:19",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

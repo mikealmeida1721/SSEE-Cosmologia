@@ -2,7 +2,7 @@
 
 **Escrito:** 2026-09-11, 04:20. Los tres controles PASARON, las 16 casillas en
 marcha, ninguna terminada. **No he visto ningun resultado de casilla.**
-**Corrida:** `src/p06_growth/conjunta_tres_sondas.py`
+**Corrida:** `archive/logs_superados/particula_colas_24_29_2026-09/conjunta_tres_sondas.py` (archivado 2026-10-17 con la partícula)
 **Autor de la pregunta:** Mike. Yo la anoto y la mido.
 **No toca ningun paper.**
 
@@ -101,4 +101,4 @@ Lo que si es fiable con este paso: **si mejora o no, y cual particula gana.**
 ---
 
 **Ninguna cifra de aqui entra en ningun paper.**
-FUENTE: `results/logs/growth_2026-07/conjunta_tres_sondas.json`
+FUENTE: `archive/logs_superados/particula_colas_24_29_2026-09/conjunta_tres_sondas.json`

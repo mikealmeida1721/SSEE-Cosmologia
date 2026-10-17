@@ -5666,8 +5666,8 @@ stages:
     outs:
     - path: results/logs/conjunta_control.json
       hash: md5
-      md5: b144355072e5c75b49a00d4289769df2
-      size: 1014
+      md5: cce98a85d678281f7ef86902f5d34406
+      size: 969
   coteja_transcripciones:
     cmd: .venv/bin/python3 src/verificacion/coteja_transcripciones.py
     deps:
