@@ -2005,14 +2005,11 @@ stages:
   #   quien_mide_As (KiDS-1000 vs CMB sobre logA, 1.5 h): cambió sólo H0_ALG -> H0_GLOBAL.
   #   boss_lpt_kmax020 (perfil logA de BOSS con LPT, 7 min): cambió sólo om_x (por defecto 0).
   #   conjunta_control (cableado de la conjunta, minutos).
-  #   conjunta_tres_sondas (cola #28, 16.6 h, 4 procesos): NO se re-corre ni es etapa
-  #     (decisión 2026-10-16, Mike: no repetir lo largo sin medir si el cambio importa).
-  #     Desde su corrida (8c9f166) el único cambio que toca el cálculo es H0_ALG -> H0_GLOBAL,
-  #     6.2e-8 relativo. MEDIDO en su mejor punto: Δχ²_CMB = -2.5e-5, Δχ²_KiDS = -6.6e-6
-  #     (sus lecturas se deciden con Δχ² de orden 1). Ponerle acta cambiaría sus bytes y
-  #     rompería el acta de base_sin_particula (sellada, la lee como entrada, y es su
-  #     control R53, ya corrido con el código de hoy). Queda FUERA de la cadena y R75 la
-  #     cuenta como tal: no se exime.
+  #   conjunta_tres_sondas (cola #28, 16.6 h, 4 procesos): SE RE-CORRE (decisión de Mike,
+  #     2026-10-17): que todo número salga del código tal como está en el repositorio, sin
+  #     excepciones, para quien lo verifique desde afuera. Desde 8c9f166 sólo cambió
+  #     H0_ALG -> H0_GLOBAL (6.2e-8); efecto medido antes de correr: dchi2_CMB -2.5e-5,
+  #     dchi2_KiDS -6.6e-6. Después se re-corre base_sin_particula (3.3 h), que la lee.
   quien_mide_As_kids:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/quien_mide_As.py
       && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/quien_mide_As.py results/logs/growth_2026-07/quien_mide_As.json
@@ -2069,6 +2066,27 @@ stages:
     - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
     outs:
     - results/logs/conjunta_control.json:
+        cache: false
+  conjunta_tres_sondas:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/conjunta_tres_sondas.py
+      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/conjunta_tres_sondas.py results/logs/growth_2026-07/conjunta_tres_sondas.json
+    deps:
+    - src/p06_growth/conjunta_tres_sondas.py
+    - src/p06_growth/cobaya_kids.py
+    - src/p06_growth/kids_shear.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/p06_growth/boss_dr12_data.py
+    - src/p06_growth/boss_rsd_model.py
+    - src/p03_cmb/cmb_eval.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - src/procedencia_sella.py
+    - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
+    - /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
+    - /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
+    - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    outs:
+    - results/logs/growth_2026-07/conjunta_tres_sondas.json:
         cache: false
   # ── R75, 2026-10-16: las transcripciones de cadenas MCMC no se re-corren (días, varias
   # reanudadas tras el reinicio del 19-09); se COTEJAN contra su cadena: N aceptados ==
