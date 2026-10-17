@@ -5996,5 +5996,5 @@ stages:
     outs:
     - path: results/logs/coteja_transcripciones.json
       hash: md5
-      md5: 17b017521143e2aae92c150e87fe1754
-      size: 6505
+      md5: ebc47dfd0eaf6f224f02a5e48cfb0c3b
+      size: 6450

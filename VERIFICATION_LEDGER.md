@@ -116,7 +116,7 @@ Cambian si el script o los datos cambian. Cada uno lleva su **procedencia**.
 | ΔBIC SSEE con nada libre (k=0, ω_b algebraico, H de la cascada) | **+10.90** (ΛCDM) / **+9.32** (CPL); χ² BAO 11.58 + Planck 1.36; soltar H₀ y ω_b baja χ² sólo 0.46 | `src/p02_mcmc/ssee_fijo_k0.py` → `results/logs/p2_ssee_fijo_k0.json` (control: ln L_max de las tres cadenas a 1e-6) | 2026-10-11 (pregunta de Mike: H y ω_b son fijos en el modelo) |
 | ΔBIC MCMC (ΛCDM−SSEE), versión conservadora k=2 | **+5.81** (CPL +4.24 con BIC por ln L, sin el prior gaussiano de CPL; ΔAIC +5.04/+1.92; ΔDIC −5.02 (CPL −1.70); Savage-Dickey ln B = 2.38; re-corrido 2026-10-11 con SSEE bajo el mismo prior Planck que ΛCDM/CPL — era +7.25 <!-- R74: git:60f1269575:results/logs/resumen_3modelos.json -->, y +6.77 con el término de cúmulos) | `ssee_paper2_mcmc.py` → `mcmc_paper2_3models_wmfix.log`; resumen con acta `src/p02_mcmc/resumen_3modelos.py` → `results/logs/resumen_3modelos.json`; DIC `dic_from_chains.json`; SD `savage_cv.json` | 2026-09-30 (re-corrida completa, SSEE incluido; era +6.43/+6.35 del 07-25) <!-- R74: git:d11487679d:CANONICAL_VALUES.yaml -->
 | Ω_b h² (posterior MCMC reframe) | **0.02198 ± 0.00048** (≈BBN 0.02218) | `src/p02_mcmc/reframe_obh2.py` lee la cadena de `ssee_paper2_mcmc_reframe.py` (control: mediana H₀ = json) → `results/logs/mcmc_paper2_reframe_obh2.json` | 2026-09-29 (era 0.02207±0.00045 con prior número puro ±0.54) | <!-- R74: git:6fdfa3b03c:CANONICAL_VALUES.yaml -->
-| r_d,SSEE (MCMC, ω_m algebraico fijo R25) | 147.26 en el MAP (ΛCDM 147.59, ratio 0.998; `p2_fig8_rd.json`, 2026-10-11); en el punto algebraico 147.17 vs ΛCDM-Planck 147.10 (`rd_dual.json`, `lya_auditoria.json`) | `ssee_paper2_mcmc.py` → `results/logs/mcmc_paper2_3models_wmfix.log` | 2026-09-30 (148.15 con Ω_m congelado; el 175.16 era el bug 0.160 en E(z))
+| r_d,SSEE (MCMC, ω_m algebraico fijo R25) | 147.26 en el MAP (ΛCDM 147.59, ratio 0.998; `p2_fig8_rd.json`, 2026-10-11); en el punto algebraico 147.17 vs ΛCDM-Planck 147.10 (`rd_dual.json`, `lya_auditoria.json`) | `ssee_paper2_mcmc.py` → `results/logs/mcmc_paper2_3models_wmfix.log` | 2026-09-30 (148.15 con Ω_m congelado; el 175.16 era el bug 0.160 en E(z)) <!-- R74: git:f6dca47:results/logs/mcmc_paper2_3models_om308.log -->
 | r_d (CAMB, reframe ω_m-directo @ H_glob=67.962, Ω_m,CMB=0.308881) | 147.17 Mpc — **0.32σ** (ΛCDM-Planck con su mν, mismo código: 147.10) | `run_p3_rd_reframe.py` → `results/logs/p3_rd_reframe_omega_m.log`; ΛCDM `src/ssee_resolution_figures.py` → `rd_dual.json` | 2026-09-29 (re-corrido; sin mapping MIRA; era 146.73@67.037) | <!-- R74: git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
 | χ²_r CMB TT (SSEE) | 1.042 | `ssee_paper3_cmb.py` (reframe ω_m-directo @ H=67.962, Σm_ν=0.0685) → `results/logs/paper3_cmb_reframe.log` | 2026-06-19 (era 1.044 @67.04 legacy) | <!-- R74: git:f6dca4727c:results/logs/paper3_cmb_canonical.log -->
 | ΔBIC CMB diagonal (SSEE−ΛCDM) | −35.0 (SSEE favorecido) | `ssee_paper3_cmb.py` (etapa `paper3_cmb`) → `results/logs/paper3_cmb_chi2.json#total.dBIC` = −35.03 (el log de julio `p3_pr4_diag_nu_fix.log`, archivado 2026-10-03 en `archive/logs_superados/era_v36_mira_dr1/`, daba lo mismo) | 2026-07-25 (Σm_ν=0.06849 coherente; era −34.9 con 0.0690, −28.0 @67.04 legacy) |
@@ -260,9 +260,9 @@ dimensional pasa.
   no el estatus de coincidencia (ya disuelto).
 - **V-L2-10 m_φ = Σm_ν^active · (Ω⁴+AURA·KAL₀)** — forward-prediction canónica:
   `[eV]·(número puro)=[eV]`, dimensionalmente **consistente**. Con
-  Σm_ν^active = (Ω/(KAL₀·T_r))·0.960318 eV = 0.069023 eV y multiplicador
+  Σm_ν^active = (Ω/(KAL₀·T_r))·0.960318 eV = 0.069023 eV y multiplicador <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
   Ω⁴+AURA·KAL₀ = 535.2795 → m_φ = 36.9463 eV (cero fiteo). *(Cadena **RETIRADA**:
-  factor 0.960318 ⇒ C_ν≈93.86 SIN FUENTE, y multiplicador viejo. La cadena que la
+  factor 0.960318 ⇒ C_ν≈93.86 SIN FUENTE, y multiplicador viejo. La cadena que la <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
   sucedió —Σm_ν 0.06849 · SOLAR²·KRYSTOS_V = 40.70 eV— **también está RETIRADA**
   desde el 2026-08-01, con la partícula entera: su densidad salía de restar
   0.308881 − 0.160, y ese 0.160 es 1+w₀, no una densidad. Las dos se conservan
@@ -502,7 +502,7 @@ alcanza al párrafo de abajo, que es el mismo defecto del vecino que exonera.)*
    en IR (−1.28σ) y 65.50 completo (−1.37σ) — `results/logs/p9_cascada_control.json`
    (2026-10-03). El viejo «69.96 → 65.26, 1.88σ» usaba la v1 de ese artículo, <!-- R74: git:f6dca4727c:results/logs/mcmc_run.log -->
    superada por la v3. Las rutas H₀^MIRA
-   (71.87/72.05) quedan **superadas** por partida doble.
+   (71.87/72.05) quedan **superadas** por partida doble. <!-- R74: git:8d03a3f:src/p09_hubble/ssee_paper9_figures.py --> <!-- R74: git:8d03a3f:src/p10_uv/ssee_paper10_verification.py -->
    H_alg es un anchor **DERIVADO** (de-screened SH0ES × f_screen; el cargo Type-P
    quedó disuelto, ver V-L2-06 arriba), no una coincidencia.
 2. **✓ forma:** que la corrección sea **multiplicativa** sí sigue de la
@@ -534,10 +534,10 @@ No es "RESUELTO" pleno. **PARCIAL.**
 = 40.70 eV — forward-prediction, cero fiteo".
 
 1. **✓ numérico:** *(cadena **RETIRADA** — registro histórico del multiplicador
-   viejo Ω⁴+AURA·KAL₀ y del factor 0.960318 (C_ν≈93.86, sin fuente); superada por SOLAR²·KRYSTOS_V con
+   viejo Ω⁴+AURA·KAL₀ y del factor 0.960318 (C_ν≈93.86, sin fuente); superada por SOLAR²·KRYSTOS_V con <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
    C_ν=93.14 PDG → Σm_ν=0.06849 eV, m_φ=40.70 eV. Conservada para trazar el linaje.)*
-   Σm_ν^active = (Ω/(KAL₀·T_r))·0.960318 eV
-   = 0.071875·0.960318 = 0.069023 eV (valor **anterior**, C_ν viejo); multiplicador
+   Σm_ν^active = (Ω/(KAL₀·T_r))·0.960318 eV <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
+   = 0.071875·0.960318 = 0.069023 eV (valor **anterior**, C_ν viejo); multiplicador <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
    Ω⁴+AURA·KAL₀ = 535.2795; m_φ = 0.069023·535.2795 = 36.9463 eV.
 2. **✓ dimensional:** `[eV]·(número puro)=[eV]`. El multiplicador es
    combinación de constantes adimensionales (Ω, AURA, KAL₀). Reemplaza la vieja
@@ -596,7 +596,7 @@ M⁴ tiene dos valores incompatibles según el paper. **PARCIAL.**
 
 ## V-L3-KX — completación UV K(X) (Paper 10) — **ABIERTO (M⁴=5φ⁸ subdeterminado; anchor-free, NO calibrado a SH0ES)**
 
-*Claim CLAUDE.md:* "Paper 10: M⁴=5φ⁸ρ_crit exacto; H₀^UV: la cascada devuelve 67.96214 desde SH0ES (residuo +4.2e-06); condicional C.1. Viejo 72.05 vía MIRA=67.037/0.96σ superado".
+*Claim CLAUDE.md:* "Paper 10: M⁴=5φ⁸ρ_crit exacto; H₀^UV: la cascada devuelve 67.96214 desde SH0ES (residuo +4.2e-06); condicional C.1. Viejo 72.05 vía MIRA=67.037/0.96σ superado". <!-- R74: git:8d03a3f:src/p10_uv/ssee_paper10_verification.py -->
 
 1. **✓ identidad 45α² = 5φ⁸:** exacta a precisión de máquina (α=φ⁴/3 →
    45α²=45φ⁸/9=5φ⁸=234.89). El *valor numérico* de M⁴/ρ_crit cierra.

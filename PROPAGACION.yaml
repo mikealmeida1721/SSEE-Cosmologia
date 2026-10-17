@@ -103,8 +103,6 @@ logs:
   # qué función sale cada uno, R35 compara sólo ese camino y las funciones que
   # él llama. Caso que lo motivó: el commit 8f49b48 arregló `loglike_ssee_wc_h`
   # y ensució estos dos, que salen de `loglike_lcdm_fijo`.
-  kids_lcdm_fondofijo_reparto:               src/p06_growth/cobaya_kids.py::loglike_lcdm_fijo
-  kids_ssee_wc_h:                            src/p06_growth/cobaya_kids.py::loglike_ssee_wc_h
 
   # ── Añadidos 2026-09-19: la cola #28 (tres sondas, un solo A_s) ──
   base_sin_particula:           src/p06_growth/base_sin_particula.py::main
@@ -396,6 +394,7 @@ bitacoras:
   # 2026-10-16: colas de las pasadas de re-sellado R75 y de la tanda pesada (10-03…10-16)
   - cola_1010
   - cola_1012
+  - cola_1016
   - cola_act_spt
   - cola_boss2
   - cola_boss2_dvc

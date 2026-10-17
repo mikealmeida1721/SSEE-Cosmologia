@@ -6,5 +6,29 @@
  "kids_ref": 417.971,
  "bao": 10.858822657229455,
  "hilos": "1",
- "pasa": true
+ "pasa": true,
+ "_procedencia": {
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/cobaya_conjunta.py",
+  "script_sha256": "684a92bd3bf1be58e56b30497f77395ccafc453ecc51939d8a10892d4b122b09",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p06_growth/cobaya_conjunta.py",
+   "results/logs/conjunta_control.json"
+  ],
+  "fecha": "2026-10-16T21:08:25",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

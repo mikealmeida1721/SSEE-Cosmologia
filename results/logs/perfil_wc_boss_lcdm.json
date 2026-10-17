@@ -135,20 +135,20 @@
   "dist_sigma": 1.3991468361225867
  },
  "_procedencia": {
-  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/perfil_wc_boss_lcdm.py",
   "script_sha256": "a5091c56282c544c4b1ea053433d8794dfa1b62e858698be23a55da6c9947ad0",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json": "35625071f9fd3cb8fdc7fe2ada005d3173d0215a4a38e8624401000e9fa84b3a",
+   "results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json": "14e639ab70ea15edd4e35677d6637e189fabb9a79c737f90032b38c96f0f144d",
    "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "05cc75b75624d2ce0975f44865a9118d41ea2d52d4cff7d5c190ae86344c2f6a"
   },
   "argv": [
    "src/p06_growth/perfil_wc_boss_lcdm.py"
   ],
-  "fecha": "2026-10-16T01:48:02",
+  "fecha": "2026-10-16T21:41:06",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-12",
+ "fecha": "2026-10-16",
  "preliminar": false,
  "pregunta": "Corrida CONJUNTA con el fondo clavado por algebra y logA clavado al del CMB: da a cada sonda el mismo chi2 que su corrida individual?",
  "logA_clavo": 3.0448340130228546,
@@ -74,7 +74,7 @@
  "total_individual": 1515.5988488897754,
  "total_delta": 2.1183268791614864,
  "_procedencia": {
-  "commit": "e708dabf6144f01275fb2268fe8a56fc5ffbc8bf",
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/leer_conjunta.py",
@@ -82,7 +82,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
-   "results/logs/multisonda_fondo_clavado.json": "f2e832205926f1d4db54023566fc2bcf828963808d0d5012791fed6396c82e19",
+   "results/logs/multisonda_fondo_clavado.json": "75593f5a8cc43ff732c44d9d9f2402f567950f2d1017cf56afea309e5ada251e",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt": "9c21d624eb7e69c1388311d0e64bec0bf31275cf9b29a06a117537dc82e17781",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt": "27def7ed764798d78bfce4db0d4d301485c49b5a933041e57c867f6b32755735",
    "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt": "cdfd6dbf4451867fe9a52946676c4ee55bab2c6c636c5f9bf495e4e780b8511e",
@@ -96,7 +96,7 @@
    "src/p06_growth/leer_conjunta.py",
    "b3"
   ],
-  "fecha": "2026-10-12T22:22:18",
+  "fecha": "2026-10-16T21:44:21",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

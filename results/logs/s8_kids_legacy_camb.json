@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-12",
+ "fecha": "2026-10-16",
  "fondo": "SSEE_BG (cobaya_kids_legacy)",
  "Omega_m_camb": 0.3088825088809709,
  "control_Omega_m": {
@@ -30,21 +30,21 @@
   "S8_sigma": 0.016223975916730304
  },
  "_procedencia": {
-  "commit": "784a68a20b39b64fcb1baf30a13594bbc643a375",
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/s8_kids_legacy_camb.py",
   "script_sha256": "0ddf9da141bdae553fd75b9aae458cd8d18bf133f846df37273729ca59d58653",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "f36f8f9e5686d1f3ed3b2d54ea08397a6024a5b4423441e273c2919e5dbc9992",
+   "CANONICAL_VALUES.yaml": "f181f62de0c7b424914a23c243b71bf207791833660a8930ab1c17c209c5997c",
    "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21",
    "src/p06_growth/kids_shear.py": "02f1d23d74c1f6a8e76e8d6e0d73aec4b777a617c54adaf4d6a0aff69c047063"
   },
   "argv": [
    "src/p06_growth/s8_kids_legacy_camb.py"
   ],
-  "fecha": "2026-10-12T14:15:02",
+  "fecha": "2026-10-16T20:25:28",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

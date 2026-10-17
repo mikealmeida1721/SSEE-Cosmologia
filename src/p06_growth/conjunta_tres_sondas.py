@@ -57,6 +57,7 @@ import cobaya_kids as C, kids_shear as K, cmb_eval as E, ssee_core as S
 import boss_lpt_R1R2 as B
 
 SALIDA = REPO/"results"/"logs"/"growth_2026-07"/"conjunta_tres_sondas.json"
+# ORIGEN-VALOR: 94.0641 — C_nu medido del propio CAMB (94.06410581), results/logs/growth_2026-07/particula_que_prefiere_kids.json en c12f5fb (hoy en archive/, partícula retirada)
 C_NU = 94.0641
 LOGA_CMB, SIG_CMB = 3.04320, 0.01454
 LIMITE = 2.0 * SIG_CMB                     # fijado ANTES de mirar

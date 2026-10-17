@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-12",
+ "fecha": "2026-10-16",
  "umbral": "derivado",
  "delta_c": {
   "ssee": 1.6763371290815952,
@@ -42,7 +42,7 @@
   }
  },
  "_procedencia": {
-  "commit": "a2d54a64fe7b27abf209a7bba30e22a07be99a67",
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_press_schechter.py",
@@ -50,14 +50,14 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/deltac_spherical_collapse.json": "3f6776f1574c618c501d7acc47a5250d30c65a0cca47d96f5f01b7d64efeb012",
-   "CANONICAL_VALUES.yaml": "f36f8f9e5686d1f3ed3b2d54ea08397a6024a5b4423441e273c2919e5dbc9992",
+   "CANONICAL_VALUES.yaml": "f181f62de0c7b424914a23c243b71bf207791833660a8930ab1c17c209c5997c",
    "results/logs/p5_IS_perturbations_Q3.json": "bf36b4afed41e9c5c6d857068743c0adc239585c4b482540057e4f61f8930753",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70"
   },
   "argv": [
    "src/p02_mcmc/ssee_press_schechter.py"
   ],
-  "fecha": "2026-10-12T14:13:20",
+  "fecha": "2026-10-16T20:25:36",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

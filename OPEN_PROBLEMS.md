@@ -975,7 +975,7 @@ diagnostic output. log (archivado 2026-10-03): `archive/codigo/investigacion/par
 
 **Falsifiable anchor:** $k_{\rm fs} = 0.754\,h/$Mpc (analytic; CLASS-measured half-mode
 $k_{1/2} = 0.339\,h/$Mpc), set by $m_\phi = 40.70$ eV (SOLAR²·KRYSTOS_V; the prediction
-*updates* with the particle — was 0.798 at 42.47, 0.659 at the old 36.95 eV). The whole chain is forward:
+*updates* with the particle — was 0.798 at 42.47, 0.659 at the old 36.95 eV). The whole chain is forward: <!-- R74: git:f6dca47:results/logs/op9_multiplier_search.log -->
 $\Sigma m_\nu=0.069$ eV is itself a prediction ($\mathcal{R}_2$), comfortably allowed in
 the dynamical-DE background (the tight DESI $\Sigma m_\nu\lesssim0.064$–$0.072$ eV bound
 is $\Lambda$CDM-specific; with $w_0,w_a$ free it relaxes to $\sim0.13$–$0.16$ eV). If
@@ -2549,12 +2549,12 @@ OP-8 (disuelto), OP-10 (UV). Script a crear: `op19_omega_c_mechanism.py` (explor
 
 ---
 
-## OP-20 — El factor `0.960318` no tiene fuente (histórico, ya retirado del cálculo)
+## OP-20 — El factor `0.960318` no tiene fuente (histórico, ya retirado del cálculo) <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
 
 **Estado:** CERRADO en el código (2026-07-25), ABIERTO como registro de procedencia.
 
 **Qué es.** Hasta 2026-07-25 la cadena del neutrino se escribía
-`Σm_ν^active = R₂ · 0.960318 eV`. Ese `0.960318` es dimensional (eV) y nunca
+`Σm_ν^active = R₂ · 0.960318 eV`. Ese `0.960318` es dimensional (eV) y nunca <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
 tuvo derivación documentada.
 
 **Qué se verificó.** Si se lo lee como `ω_b · C_ν / τ_Π`, el C_ν implicado es
@@ -2569,8 +2569,8 @@ horneado» eran **incorrectas** (94.07 daría 0.962428) y se corrigieron. <!-- R
 **Por qué importaba.** C_ν aparece arriba (cadena SSEE de Σm_ν) y abajo
 (conversión ω_ν = Σm_ν/C_ν), así que **se cancela**: ω_ν es INVARIANTE bajo la
 elección de C_ν. El único modo de obtener un ω_ν distinto era usar valores
-distintos en los dos lados — que es exactamente lo que ocurría (0.960318 arriba,
-93.14 abajo), dando ω_ν = 0.000741 en vez de 0.000735 (0.78%).
+distintos en los dos lados — que es exactamente lo que ocurría (0.960318 arriba, <!-- R74: git:103617b:archive/codigo/investigacion/open_problems/ssee_op10_seesaw_search.py -->
+93.14 abajo), dando ω_ν = 0.000741 en vez de 0.000735 (0.78%). <!-- R74: git:14737e2:src/ssee_core.py -->
 
 **Resolución.** La cadena se escribe ahora explícita, `Σm_ν = R₂·ω_b·C_ν/τ_Π`
 con C_ν = 93.14 eV en ambos lados, y la cancelación se cumple. Vigilado por

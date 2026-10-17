@@ -1,27 +1,51 @@
 {
- "corrida": "quien mide mejor A_s \u2014 misma regla, dato crudo",
+ "corrida": "quien mide mejor A_s — misma regla, dato crudo",
  "regla": "se barre logA, se perfila el resto, sigma = anchura a dchi2=1",
  "CMB": {
   "npts": 669,
-  "logA": 3.0432036174108936,
-  "sigma": 0.014543683651408566,
+  "logA": 3.0432036204741,
+  "sigma": 0.01454368660281805,
   "libres_ademas": [
    "tau"
   ]
  },
  "KiDS": {
   "npts": 225,
-  "logA": 2.8558335690985075,
-  "sigma": 0.054358099433848305,
+  "logA": 2.855833638890778,
+  "sigma": 0.05435806423646352,
   "libres_ademas": [
    "halo_A",
    "A_IA",
    "delta_c"
   ]
  },
- "razon_sigma_kids_sobre_cmb": 3.7375743818921476,
- "separacion_logA": 0.18737004831238613,
- "separacion_en_sigmas_de_kids": 3.446957312045249,
- "separacion_en_sigmas_del_cmb": 12.88325934497614,
- "segundos": 5579.707929849625
+ "razon_sigma_kids_sobre_cmb": 3.737571203296615,
+ "separacion_logA": 0.18736998158332208,
+ "separacion_en_sigmas_de_kids": 3.4469583164007127,
+ "separacion_en_sigmas_del_cmb": 12.883252142343085,
+ "segundos": 5633.156767606735,
+ "_procedencia": {
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/quien_mide_As.py",
+  "script_sha256": "446ac6bf05f67ec9e8fcb949236da5d942eaf47b6902d10862881b30fa35ed26",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {},
+  "argv": [
+   "src/procedencia_sella.py",
+   "src/p06_growth/quien_mide_As.py",
+   "results/logs/growth_2026-07/quien_mide_As.json"
+  ],
+  "fecha": "2026-10-16T13:50:37",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {},
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
 }

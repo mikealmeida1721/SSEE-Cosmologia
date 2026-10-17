@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-10",
+ "fecha": "2026-10-16",
  "H_viejo": 67.96213732340931,
  "H_nuevo": 67.96214152203791,
  "dH": 4.198628602125609e-06,
@@ -29,7 +29,7 @@
  },
  "pasa": true,
  "_procedencia": {
-  "commit": "9be7a97c4c326cd4ec7e11f1e907eafd41b394bf",
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/prueba_equivalencia_hglob.py",
@@ -37,14 +37,14 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
-   "src/p03_cmb/cmb_eval.py": "36b480f0db20d8da770a75ca588618f41ae749a9036ec70c1637075b0c729365",
+   "src/p03_cmb/cmb_eval.py": "9332f3ad6c16eb27dad9c5de66ad18fa4f7db9c27e821112147ce584dc99da36",
    "src/p02_mcmc/chi2_bao_posterior.py": "c3523a50d562bfec7d6ab4b96750cabd5e6af7642e8406aaa1b6358dd5341dab",
    "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21"
   },
   "argv": [
    "src/verificacion/prueba_equivalencia_hglob.py"
   ],
-  "fecha": "2026-10-10T09:58:09",
+  "fecha": "2026-10-16T21:55:11",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

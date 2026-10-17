@@ -20,20 +20,20 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "9a3d3f1a378e5a8b448abed013f35a2d5c642779",
+  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/ajuste_conjunto_wc_ns.py",
-  "script_sha256": "f4010e7c83422d099327c71225c243f883ac4f58fb05f02803c9ea6063670b50",
+  "script_sha256": "d3360847cc99e94a6826a75eee623aa34d5ec8f75917864a0fedfa9129ec5b65",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/cmb_ajuste_conjunto_wc_ns.json": "0f786cb32bc625526afc082712125cc5e586f4807a68968a0e891ddfc91abc16"
+   "data/referencias/cmb_ajuste_conjunto_wc_ns_01d4369.json": "0f786cb32bc625526afc082712125cc5e586f4807a68968a0e891ddfc91abc16"
   },
   "argv": [
    "src/p03_cmb/ajuste_conjunto_wc_ns.py",
    "LCDM"
   ],
-  "fecha": "2026-10-01T11:56:47",
+  "fecha": "2026-10-16T12:57:21",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -45,8 +45,8 @@
   },
   "nucleos": {
    "OMP_NUM_THREADS": "1",
-   "MKL_NUM_THREADS": "1",
-   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
   }
  }

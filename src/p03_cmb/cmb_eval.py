@@ -14,6 +14,8 @@ mantiene un objeto por (w, wa) para no reconstruir CAMB en cada evaluacion.
 
 Vigilado por R64.
 """
+# ORIGEN-VALOR: 0.840015 — el literal VIEJO que describe el docstring (retirado 2026-09-08); w0 sale hoy de ssee_core (-0.839950)
+# ORIGEN-VALOR: 0.670141 — el literal VIEJO que describe el docstring (retirado 2026-09-08); wa sale hoy de ssee_core (-0.669975)
 import os, logging
 import numpy as np
 import sys as _s66

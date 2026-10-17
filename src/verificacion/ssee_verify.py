@@ -2734,11 +2734,36 @@ check("R75 cada resultado de la cadena trae acta valida (commit y sha del script
 # registran horas y PIDs de las colas, no resultados; ningun numero sale de ellos.
 _tod75 = [p for p in (_REPO75 / "results/logs").rglob("*") if p.is_file() and p.suffix in (".log", ".json", ".txt", ".csv")
           and not p.name.startswith(_r74.ORQUESTACION)]
-_fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in set(_outs75)])
-_TOPE_R75 = 25   # 2026-10-12: 30 -> 25 (R50: medido 25 tras la quinta lectura; ninguna etapa nueva). 2026-10-10: 42 -> 30 (R50: medido 30; ninguna etapa nueva, sólo se ajusta el trinquete a lo real). 2026-10-04 (2): 47 -> 42 (LCDM conjunta a la cadena: 4 minimizaciones registradas con acta, su control re-corrido por DVC, etapa lee). 2026-10-04: 58 -> 47 (etapas ligeras sueltas a la cadena: b1_analyse, analiza_lcdm_R4, R3_rehecho, marginal_vs_perfil, desi_dr2_w0wa_momentos, erosita_extlike, auditoria_pdfs_zenodo, cmb_ns/wb_forzado). 2026-10-03 (4): 117 -> 59 (clasificacion por lo que buscaban, regla de Mike: 57 historicos archivados con README por carpeta, termino_volumen_boss sellado, s8_barra_kids con no_circular en un segundo pase; los 59 que quedan, con su porque, en VERIFICATION_LEDGER V-L5-CLASIF). 2026-10-03 (3): 118 -> 117 (p3_cmb_reframe_omega_m.log, Fase B vieja con control (pi/phi)*s_m, archivado). 2026-10-03 (2): 128 -> 118 (barrido Kaiser de BOSS (8 json + su .log ignorado) y erosita_cr.json archivados en archive/logs_superados/, superados y sin cita). 2026-10-03: 156 -> 128 (recorre_logs: 25 logs re-corridos, comparados numero a numero y sellados con etapa y acta; V-L5-RECORRE). 2026-10-02 noche: 157 -> 156 (DES Y3 NLA a la cadena: etapa des_y3_nla). 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
+# Transcripciones de cadenas MCMC (2026-10-16): no se re-corren (dias; varias reanudadas
+# tras el reinicio del 19-09). Entran a la cuenta como DENTRO de la cadena solo si la etapa
+# sellada `coteja_transcripciones` las verifico contra su cadena (N aceptados == filas en
+# disco, convergio, y una etapa sellada lee esa cadena) y su acta es valida. Una
+# transcripcion editada rompe el lock (es dependencia de esa etapa): la caza el check del lock.
+def _cotejadas75(_cot):
+    if not _cot or not _cot.get("pasa"):
+        return set()
+    _ok = {_t for _t, _v in (_cot.get("transcripciones") or {}).items() if _v.get("pasa")}
+    if (_cot.get("cabecera_b3") or {}).get("pasa"):
+        _ok.add("results/logs/conjunta_b3_bloques.json")
+    return _ok
+
+
+_COT75 = _REPO75 / "results/logs/coteja_transcripciones.json"
+_cot75 = {}
+if _COT75.exists() and "results/logs/coteja_transcripciones.json" in set(_outs75) and _verifica75(_COT75)[0]:
+    _cot75 = _js75.loads(_COT75.read_text())
+_dentro75 = set(_outs75) | _cotejadas75(_cot75)
+_fuera75 = len([p for p in _tod75 if str(p.relative_to(_REPO75)) not in _dentro75])
+# CONTROL (R53): una transcripcion con pasa=false, o un cotejo global fallido, no entra.
+_c75 = dict(pasa=True, transcripciones={"a.log": dict(pasa=True), "b.log": dict(pasa=False)},
+            cabecera_b3=dict(pasa=False))
+check("R75 el detector solo cuenta como dentro lo que el cotejo verifico",
+      _cotejadas75(_c75) == {"a.log"} and _cotejadas75(dict(_c75, pasa=False)) == set(),
+      "2 casos: transcripcion que pasa, dentro; la que falla y el cotejo fallido, fuera")
+_TOPE_R75 = 1   # 2026-10-16: 25 -> 1 (R50: medido 1, tras el cotejo de transcripciones; entran a la cadena quien_mide_As_kids, boss_lpt_kmax020, conjunta_control, ajuste_conjunto SSEE/LCDM, el cotejo de transcripciones y las de 910f1d0/6f5b824/dbc913a; conjunta_tres_sondas queda FUERA a proposito: re-correrla son 16.6 h por un cambio de H0 de 6e-8 cuyo efecto medido es dchi2 2.5e-5, ver dvc.yaml). 2026-10-12: 30 -> 25 (R50: medido 25 tras la quinta lectura; ninguna etapa nueva). 2026-10-10: 42 -> 30 (R50: medido 30; ninguna etapa nueva, sólo se ajusta el trinquete a lo real). 2026-10-04 (2): 47 -> 42 (LCDM conjunta a la cadena: 4 minimizaciones registradas con acta, su control re-corrido por DVC, etapa lee). 2026-10-04: 58 -> 47 (etapas ligeras sueltas a la cadena: b1_analyse, analiza_lcdm_R4, R3_rehecho, marginal_vs_perfil, desi_dr2_w0wa_momentos, erosita_extlike, auditoria_pdfs_zenodo, cmb_ns/wb_forzado). 2026-10-03 (4): 117 -> 59 (clasificacion por lo que buscaban, regla de Mike: 57 historicos archivados con README por carpeta, termino_volumen_boss sellado, s8_barra_kids con no_circular en un segundo pase; los 59 que quedan, con su porque, en VERIFICATION_LEDGER V-L5-CLASIF). 2026-10-03 (3): 118 -> 117 (p3_cmb_reframe_omega_m.log, Fase B vieja con control (pi/phi)*s_m, archivado). 2026-10-03 (2): 128 -> 118 (barrido Kaiser de BOSS (8 json + su .log ignorado) y erosita_cr.json archivados en archive/logs_superados/, superados y sin cita). 2026-10-03: 156 -> 128 (recorre_logs: 25 logs re-corridos, comparados numero a numero y sellados con etapa y acta; V-L5-RECORRE). 2026-10-02 noche: 157 -> 156 (DES Y3 NLA a la cadena: etapa des_y3_nla). 2026-10-02: 158 -> 157 (cmb_dbic_mnu_propia a la cadena). 2026-10-01 cierre: 160 -> 158 (perfil H0 ancla e is_growth_gamma a la cadena). 2026-10-01 madrugada: 162 -> 160 (MCMC P2 y sondas SSEE vs LCDM a la cadena). 2026-10-01: 167 -> 162 (BOSS R1/R2, mide_As, fnu, leer_conjunta_b3 a la cadena). Antes: 2026-09-30 noche: 193 logs de resultado, 26 en la cadena (era 169)
 _DEUDA_REAL["R75"] = _fuera75
 _DEUDA_MAX["R75"] = _TOPE_R75
-check("R75 la cantidad de logs FUERA de la cadena de procedencia no crece",
+check("R75 la cantidad de logs FUERA de la cadena de procedencia (ni salida de etapa ni transcripcion cotejada) no crece",
       _fuera75 <= _TOPE_R75, f"{_fuera75} de {len(_tod75)} (tope {_TOPE_R75})")
 # CONTROL (R53): un lock sintetico sobre archivos temporales: el intacto pasa,
 # el editado a mano y la entrada cambiada se marcan.
