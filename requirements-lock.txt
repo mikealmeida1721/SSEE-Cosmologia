@@ -1,5 +1,8 @@
 # requirements-lock.txt — las versiones EXACTAS del .venv con que corrió cada resultado
 # (pip freeze, 2026-10-17). requirements.txt dice qué hace falta; éste, con qué se corrió.
+# SÓLO lo que el pipeline usa y sus dependencias (cierre transitivo desde requirements.txt y los
+# paquetes de verosimilitud): el .venv de trabajo tiene además 28 paquetes de otros usos (audio,
+# PDF, web) que ningún script importa; uno de ellos exigía una biblioteca de audio del sistema.
 # Para verificar SSEE, instala ÉSTE, dentro de entorno_ssee.sh:
 #     python3.12 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt
 # Tres paquetes no salen de PyPI:
@@ -24,9 +27,6 @@ atpublic==8.0.1
 attrs==26.1.0
 beartype==0.22.9
 billiard==4.3.0
-brotli==1.2.0
-cairocffi==1.7.1
-CairoSVG==2.9.0
 candl-like==2.2.0
 celery==5.6.3
 certifi==2026.4.22
@@ -45,9 +45,7 @@ configobj==5.0.9
 contourpy==1.3.3
 corner==2.2.3
 cryptography==50.0.2
-cssselect2==0.9.0
 cycler==0.12.1
-defusedxml==0.7.1
 dictdiffer==0.10.0
 dill==0.4.1
 diskcache==5.6.3
@@ -65,7 +63,6 @@ emcee==3.1.6
 entrypoints==0.4
 equinox==0.13.8
 filelock==4.0.7
-flatbuffers==25.12.19
 flatten-dict==0.5.0
 flufl.lock==9.2.0
 fonttools==4.62.1
@@ -80,7 +77,6 @@ grandalf==0.8
 gto==1.10.1
 hydra-core==1.3.7
 idna==3.13
-img2pdf==0.6.3
 iniconfig==2.3.0
 iterative-telemetry==0.0.10
 jax==0.10.2
@@ -90,12 +86,10 @@ joblib==1.6.0
 kiwisolver==1.5.0
 kombu==5.6.2
 lineax==0.1.1
-lxml==6.1.3
 markdown-it-py==4.2.0
 matplotlib==3.10.8
 mcfit==0.0.22
 mdurl==0.1.2
-mido==1.3.3
 ml_dtypes==0.6.0
 mpi4py==4.1.2
 mpmath==1.3.0
@@ -106,8 +100,6 @@ networkx==3.7
 numpy==2.4.4
 numpyro==0.22.0
 omegaconf==2.3.1
-onnxruntime==1.30.0
-opencv-python-headless==5.0.0.93
 opt_einsum==3.4.0
 optax==0.2.8
 orjson==3.12.0
@@ -115,16 +107,12 @@ packaging==26.1
 pandas==3.0.2
 paramax==0.0.5
 pathspec==1.1.1
-pathvalidate==3.3.1
-pikepdf==10.13.0.post1
 pillow==12.2.0
-piper-tts==1.8.0
 platformdirs==4.12.2
 pluggy==1.6.0
 portalocker==3.2.0
 prompt_toolkit==3.0.53
 propcache==0.5.4
-protobuf==7.36.2
 psutil==7.2.2
 Py-BOBYQA==1.5.0
 pycparser==3.0
@@ -132,20 +120,16 @@ pydantic==2.13.5
 pydantic-settings==2.15.0
 pydantic_core==2.46.5
 pydot==4.0.1
-pydyf==0.12.1
 pyerfa==2.0.1.5
 pyFFTW==0.15.1
 pygit2==1.20.1
 Pygments==2.21.0
 pygtrie==2.6.2
-pymupdf==1.28.0
 pyparsing==3.3.2
-pyphen==0.18.1
 pytest==9.1.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.3
 PyYAML==6.0.3
-qrcode==8.2
 RapidFuzz==3.14.5
 requests==2.33.1
 rich==15.0.0
@@ -159,14 +143,10 @@ shortuuid==1.0.13
 shtab==1.12.1
 six==1.17.0
 smmap==5.0.3
-soundfile==0.14.0
 sqltrie==0.11.3
 sympy==1.14.0
 tabulate==0.10.0
 threadpoolctl==3.7.0
-tinycss2==1.5.1
-tinyhtml5==2.1.0
-tinysoundfont==0.3.7
 tomlkit==0.15.1
 tqdm==4.67.3
 typing-inspection==0.4.4
@@ -179,10 +159,7 @@ vine==5.1.0
 voluptuous==0.16.0
 wadler_lindig==0.1.7
 wcwidth==0.9.1
-weasyprint==70.0
-webencodings==0.5.1
 yarl==1.25.1
 zc.lockfile==4.0
-zopfli==0.4.3
 camb @ git+https://github.com/EFTCAMB/EFTCAMB.git@16d9c4e9f85751e30efd0a53b177941713078904
 spt_candl_data @ git+https://github.com/SouthPoleTelescope/spt_candl_data.git@efe35b7bfd815a115d5123e210a6849a4175bc81
