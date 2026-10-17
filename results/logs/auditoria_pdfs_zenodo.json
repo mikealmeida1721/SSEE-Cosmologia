@@ -303,7 +303,7 @@
   }
  },
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "36094bc4ce9be25b37baf44b327b815d328933aa",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/audita_pdfs_zenodo.py",
@@ -321,7 +321,7 @@
    "docs/SSEE_Paper3_CMB.pdf": "b326d639efab26cbb2530237ef57e8f3e1c2f4d34584089ad8f9642e16a086db",
    "docs/SSEE_Paper4_ToE.pdf": "1084829d08c2fc289b069967fc85141a05ea62c720bbf4163f39ee22f8cdfb22",
    "docs/SSEE_Paper5_IS.pdf": "9140120e897dfd33572ac5806ef3e45aab632cdbab5a71f8fbad55ea17dd339f",
-   "docs/SSEE_Paper6_Growth.pdf": "48daaca14141ec10cfeabe9f50d7aa18cb3bdba962392a7f06772c58130057ec",
+   "docs/SSEE_Paper6_Growth.pdf": "bdd296dcbf50d7ed317e9eef1f71e77b2abcd3dec029e96b5d300d7f2f4c285e",
    "docs/SSEE_Paper7_EFT.pdf": "b54165cbd75df675199cb3a203394e69c990b7e7305c20e810d57946fbe48644",
    "docs/SSEE_Paper8_StrongGravity.pdf": "3e978df34b4f518b6b4faedd438e27f2d6ccfdad5a6f8363bbda55fa54d2927c",
    "docs/SSEE_Paper9_HubbleTension.pdf": "3118e7fbfaa0987c0b9cf99f0eb30decc385ffd0bbfee4df5f021f256b96b512",
@@ -350,7 +350,7 @@
    "docs/SSEE_Sealed_Journal.pdf",
    "docs/SSEE_Unified_Journal.pdf"
   ],
-  "fecha": "2026-10-16T21:46:17",
+  "fecha": "2026-10-17T00:57:55",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

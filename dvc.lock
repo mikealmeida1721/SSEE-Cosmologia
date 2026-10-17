@@ -4296,7 +4296,7 @@ stages:
       size: 543629
     - path: docs/SSEE_Paper6_Growth.pdf
       hash: md5
-      md5: 10a04348c671f2f3e7f919e167cf5584
+      md5: 3faf9066340d827479dcbaad2b47041a
       size: 383979
     - path: docs/SSEE_Paper7_EFT.pdf
       hash: md5
@@ -4333,7 +4333,7 @@ stages:
     outs:
     - path: results/logs/auditoria_pdfs_zenodo.json
       hash: md5
-      md5: 08e6a7bc723bd7f4ebd9ef37522e164c
+      md5: 187cd8f822a9fad0dc5dc62ee03459a9
       size: 17209
   lcdm_conjunta_lee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
