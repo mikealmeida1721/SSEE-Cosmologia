@@ -25,7 +25,7 @@
  },
  "pasa": true,
  "_procedencia": {
-  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
@@ -37,12 +37,12 @@
    "src/p11_sondas/lcdm_conjunta.py",
    "results/logs/lcdm_conjunta_control.json"
   ],
-  "fecha": "2026-10-18T08:53:51",
+  "fecha": "2026-10-20T14:05:57",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

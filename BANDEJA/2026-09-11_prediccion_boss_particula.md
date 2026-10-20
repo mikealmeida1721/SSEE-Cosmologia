@@ -1,5 +1,7 @@
 # PREDICCIÓN DE MIKE — BOSS con la partícula, registrada ANTES de correr
 
+> 🔴 **RETIRADO 2026-10-20.** Esta nota mide BOSS sobre los espectros de Beutler+2017 (tres errores de método: bines solapados, A_s lineal a un lazo, normalización de 2017). Sus números no son vigentes; script y log en `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/` y `archive/logs_superados/boss_beutler17_2026-10-20/`. BOSS vigente: `results/logs/growth_2026-07/boss_chen21.json` (OP-26).
+
 **Escrito:** 2026-09-11, con la corrida sin lanzar.
 **Autor de la predicción:** Mike. Yo la anoto, la afilo en números y la mido.
 **Corrida:** `archive/logs_superados/particula_colas_24_29_2026-09/boss_con_particula.py` · **No toca ningún paper.**

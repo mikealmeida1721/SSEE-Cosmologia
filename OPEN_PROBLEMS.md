@@ -2429,8 +2429,31 @@ resultante lleva el prefactor $\mathrm{KAL_0}\cdot n_s$; (c) conectar con la
 UV-completion (OP-10) y la dualidad de transporte (OP-7). Es frontera abierta de la misma
 clase que OP-1/OP-9: puede no cerrar con los recursos actuales, y eso está declarado.
 
-**REFUERZO 2026-09-08 — la identidad cae MÁS CERCA del dato de estructura que
-el valor de Planck.**
+**RE-MEDIDO 2026-10-20 con el BOSS vigente — la identidad es COMPATIBLE con el dato de
+estructura (0.85σ), pero NO cae más cerca que Planck (0.05σ).** El «refuerzo» de abajo queda
+retirado: corría sobre los espectros de Beutler+2017 (normalización desajustada ~10 %, que
+bajaba la amplitud y con ella el `ω_c` que se pedía).
+
+Montaje de Chen, Vlah y White 2022 (el mismo de OP-26), cada modelo con TODO su fondo
+clavado —SSEE: álgebra y `ln(10¹⁰A_s)` de su CMB; ΛCDM: Planck 2018— y una sola cosa suelta,
+`ω_c` (Ω_m se recalcula con h fijo). Perfil del χ² CRUDO de 144 puntos, sesgos minimizados en
+cada nodo:
+
+| modelo | `ω_c` que pide BOSS | su referencia | distancia |
+|---|---|---|---|
+| control: ΛCDM libre en su mejor punto | 0.12377 ± 0.00499 | 0.12364 (ese mismo punto) | +0.03σ — PASA |
+| SSEE | 0.12416 ± 0.00548 | `KAL₀·ω_b·n_s` = 0.11951 | +0.85σ |
+| ΛCDM-Planck | 0.12032 ± 0.00525 | Planck 0.12005 | +0.05σ |
+
+Log `results/logs/growth_2026-07/perfil_wc_boss_chen21.json` (etapa `perfil_wc_boss_chen21`).
+Lectura: BOSS no tensiona la identidad (menos de 1σ), y tampoco la favorece frente a Planck.
+Las dos barras (±0.005) son unas diez veces la diferencia entre las referencias (0.0005):
+el clustering no separa los dos valores de `ω_c`. El argumento independiente del CMB que
+se anunciaba aquí no existe con el dato corregido.
+
+~~**REFUERZO 2026-09-08 — la identidad cae MÁS CERCA del dato de estructura que
+el valor de Planck.**~~ **RETIRADO 2026-10-20** (BOSS de 2017; ver el bloque de arriba).
+Se conserva como historia:
 
 El perfil de `ω_c` en BOSS DR12 (§`par:wc-profile` de Paper 6) pregunta lo
 simétrico de lo ya sabido: con la amplitud clavada, ¿qué `ω_c` pide una
@@ -2441,10 +2464,10 @@ encuesta de galaxias a `z≈0.5`? Con cada modelo en su propia amplitud:
 | SSEE | 0.117450 ± 0.004079 | `KAL₀·ω_b·n_s` = 0.119514 | **0.51σ** | <!-- R74: git:69cc773:results/logs/perfil_wc_boss.json -->
 | ΛCDM | 0.114346 ± 0.004041 | Planck 0.1200 | 1.40σ | <!-- R74: git:69cc773:results/logs/perfil_wc_boss_lcdm.json -->
 
-*(Re-corrido 2026-10-01 con minimización robusta; fuente `results/logs/perfil_wc_boss*.json`.)*
+*(Re-corrido 2026-10-01 con minimización robusta; fuente archivada en `archive/logs_superados/boss_beutler17_2026-10-20/`.)*
 
-**El `ω_c` que sale de φ y π queda más cerca de lo que pide el dato de
-estructura que el que Planck ajusta dentro de ΛCDM.** No estaba buscado, y es
+~~El `ω_c` que sale de φ y π queda más cerca de lo que pide el dato de
+estructura que el que Planck ajusta dentro de ΛCDM.~~ (retirado 2026-10-20) No estaba buscado, y es
 un argumento **independiente del CMB**: hasta ahora la identidad sólo se había
 confrontado con Planck (0.08σ). Ahora también con clustering de galaxias, que
 es otra época, otro sistemático y otro instrumento.
@@ -2452,7 +2475,7 @@ es otra época, otro sistemático y otro instrumento.
 Control (R53) pre-registrado en el script y pasa: al devolverle a cada modelo
 su propia amplitud, `ω_c` vuelve hacia su referencia (SSEE 1.74σ→0.51σ; ΛCDM
 2.27σ→1.42σ), luego el perfil mide el dato y no el borde de la
-parametrización. Logs: `results/logs/perfil_wc_boss.log` y
+parametrización. Logs (archivados): `archive/logs_superados/boss_beutler17_2026-10-20/perfil_wc_boss.log` y
 `perfil_wc_boss_lcdm.log`. Informes: `BANDEJA/2026-09-08_perfil_wc_boss*.md`.
 
 **Lo que NO dice.** No es una derivación, sigue siendo una identidad observada
@@ -3299,7 +3322,7 @@ Script `src/p05_IS/estabilidad_IS_completa.py`, log `results/logs/p5_estabilidad
 
 ---
 
-## OP-26 — fσ₈ contra el dato crudo de BOSS — ✅ MEDIDO (R1/R2 LPT 2026-09-07, re-corrido con los ingredientes de cada modelo 2026-10-01)
+## OP-26 — fσ₈ contra el dato crudo de BOSS — ✅ MEDIDO CON CONTROL (montaje de Chen+22, 2026-10-20; lo de R1/R2 de 2026-09 y 10-01 quedó retirado)
 
 > **MEDIDO CON CONTROL 2026-10-20 — vigente.** Tercer error: los espectros de Beutler+2017 tienen un
 > desajuste de normalización con su ventana (~10 %; P₀ viejo/nuevo 0.90–0.92) que da σ₈ bajo. Se pasó al
@@ -3317,27 +3340,27 @@ Script `src/p05_IS/estabilidad_IS_completa.py`, log `results/logs/p5_estabilidad
 > ahora sólo z1 y z3 (148 puntos, 25 libres), como los análisis publicados; guardián R79. (2) A_s se
 > aplicaba como factor lineal sobre la salida LPT a un lazo, que no es exacto; ahora las tablas se
 > construyen en 13 nodos de logA y se interpolan (`interpolacion_logA.json`); guardián R80.
-> - χ²_real mínimo: SSEE 133.73 vs ΛCDM 133.94 → **Δχ² = −0.21**, empate, a igual número de libres. <!-- R74: archive/logs_superados/boss_beutler17_2026-10-20/growth_2026-07/R1R2_boss_lpt_cobaya.json -->
-> - fσ₈ de SSEE en z = 0.38 / 0.61: 0.394 / 0.394 (± 0.027); contra Alam+2017 1.96σ / 0.98σ; <!-- R74: archive/logs_superados/boss_beutler17_2026-10-20/growth_2026-07/R1R2_boss_lpt_cobaya.json -->
+> - χ²_real mínimo: SSEE 133.73 vs ΛCDM 133.94 → **Δχ² = −0.21**, empate, a igual número de libres. <!-- R74: git:c777ff9:archive/logs_superados/boss_beutler17_2026-10-20/growth_2026-07/R1R2_boss_lpt_cobaya.json -->
+> - fσ₈ de SSEE en z = 0.38 / 0.61: 0.394 / 0.394 (± 0.027); contra Alam+2017 1.96σ / 0.98σ; <!-- R74: git:c777ff9:archive/logs_superados/boss_beutler17_2026-10-20/growth_2026-07/R1R2_boss_lpt_cobaya.json -->
 >   ΛCDM (fondo Planck fijo) 1.76σ / 0.87σ. Chen, Vlah & White 2022, con el mismo código, también
 >   quedan bajo en z = 0.38: es del método LPT de forma completa, no de SSEE.
 > - **BOSS sigue sin votar en A_s:** perfil vs marginal 1.26σ; clavar A_s al CMB cuesta 0.90.
 > - Control ΛCDM con fondo LIBRE contra Chen+2022: en curso (`cobaya_boss_lcdm_libre.py`).
 > El bloque de abajo (−2.03, 1.82σ, 222 puntos) es la medición vieja con los dos errores; se conserva
-> como historia. <!-- R74: archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json -->
+> como historia. <!-- R74: git:c777ff9:archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json -->
 
-> **CIERRE (anotado 2026-10-03; la medición es del 2026-10-01).** Este OP quedó escrito como abierto
+> **CIERRE (anotado 2026-10-03; la medición es del 2026-10-01) — SUPERADO, retirado el 2026-10-20.** Este OP quedó escrito como abierto
 > después de que se midiera, y el banner de CLAUDE.md lo repetía: el 2026-10-03 se citó a Mike como
-> «pendiente» por leer la ficha y no el log. Medido (`results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json`,
-> `analiza_boss_R1R2.py`, velocileptors LPT, k ≤ 0.20, 222 puntos, SSEE con Σm_ν 0.06849 y ΛCDM con 0.06):
-> - χ²_real mínimo: SSEE 205.55 vs ΛCDM 207.58 → Δχ² = -2.03, a igual número de libres. <!-- R74: archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json -->
-> - fσ₈ de SSEE en z = 0.38 / 0.51 / 0.61: 0.410 / 0.411 / 0.409 (± 0.021). <!-- R74: archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json -->
+> «pendiente» por leer la ficha y no el log. Medido (log y script hoy en `archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json` y
+> `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/analiza_boss_R1R2.py`, velocileptors LPT, k ≤ 0.20, 222 puntos, SSEE con Σm_ν 0.06849 y ΛCDM con 0.06):
+> - χ²_real mínimo: SSEE 205.55 vs ΛCDM 207.58 → Δχ² = -2.03, a igual número de libres. <!-- R74: git:c777ff9:archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json -->
+> - fσ₈ de SSEE en z = 0.38 / 0.51 / 0.61: 0.410 / 0.411 / 0.409 (± 0.021). <!-- R74: git:c777ff9:archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json -->
 >   Contra el fσ₈ comprimido publicado (Alam+2017): 1.76σ / 1.08σ / 0.68σ; ΛCDM, con el mismo pipeline: 1.55σ / 0.91σ / 0.55σ. El pipeline queda bajo en z = 0.38 con los DOS modelos: es del método, no de SSEE.
 > - Control del otro lado: ΛCDM reproduce su propia cadena (logA y fσ₈ a < 0.004σ, χ² idéntico).
 > - **BOSS no vota en A_s:** el logA de perfil y el marginal difieren 1.82σ ⟹ el valor central se mueve con el estimador (ver `memory/feedback_check_repo_before_deriving.md`).
-> Ya está en Paper 6 por `\val` (`bossR_*`). Lo que queda vivo es sólo de lectura: la cizalla discrimina en A_s, BOSS no.
+> (Aquello entró a Paper 6 por `\val` `bossR_*`; hoy Paper 6 cita `bossC_*`, de `boss_chen21.json`.)
 
-**Texto original (2026-09-19), conservado:**
+**Texto original (2026-09-19), conservado — SUPERADO: lo que pedía se cumplió el 2026-10-20 (bloque de arriba):**
 
 
 **De dónde viene.** Era el último punto vivo de la Fase B del reframe ω_m-directo. Los otros

@@ -1,5 +1,7 @@
 # NO fueron los neutrinos: el 98% del desplazamiento del A_s de BOSS es el MÉTODO
 
+> 🔴 **RETIRADO 2026-10-20.** Esta nota mide BOSS sobre los espectros de Beutler+2017 (tres errores de método: bines solapados, A_s lineal a un lazo, normalización de 2017). Sus números no son vigentes; script y log en `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/` y `archive/logs_superados/boss_beutler17_2026-10-20/`. BOSS vigente: `results/logs/growth_2026-07/boss_chen21.json` (OP-26).
+
 **Corrida:** `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/boss_aisla_neutrinos.py` ·
 **Log:** `results/logs/growth_2026-07/boss_aisla_neutrinos.json` · 55 min ·
 **Pedida por Mike:** *«cuando algo cambia así, incluso si son buenas noticias,

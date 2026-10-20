@@ -49,6 +49,30 @@ GH = "https://raw.githubusercontent.com"
 RECETAS = {
     "boss_dr12": {"tipo": "url", "desempaca": "tar", "en": f"{D}/boss_dr12",
                   "url": "https://data.sdss.org/sas/dr12/boss/papers/clustering/Beutler_etal_DR12COMBINED_fullshape_powspec.tar.gz"},
+    # 2026-10-20: el BOSS vigente (montaje de Chen+22). Espectros, ventanas y matrices de
+    # Beutler & McDonald 2021 desde su página, pk_tools a commit fijo, y la covarianza
+    # conjunta de Chen a commit fijo. Las 19 huellas se comprobaron bajando de estas URL.
+    "boss_dr12_bm21": {"tipo": "url", "en": f"{D}/boss_dr12_bm21", "urls": {
+            "C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+            "C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+            "C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+            "C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+            "M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+            "M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+            "M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+            "M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+            "W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+            "W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+            "W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+            "W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+            "pk_tools.py": f"{GH}/fbeutler/pk_tools/707eb2a6a4691c34eae19d7f72047ca4892f528e/pk_tools.py",
+            "ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+            "ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat",
+            "ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+            "ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat"}},
+    "chen22_cov": {"tipo": "url", "en": f"{D}/boss_dr12_bm21/chen22_cov", "urls": {
+            z: f"{GH}/sfschen/BOSSxPlanck/0755be427f079463c02673db64216011c7b69a30/rsd_data/covariances/{z}"
+            for z in ("cov_joint_NGCSGCXi_z1.dat", "cov_joint_NGCSGCXi_z3.dat")}},
     "kids1000": {"tipo": "url", "desempaca": "tar", "en": f"{D}/kids1000",
                  "url": "https://kids.strw.leidenuniv.nl/DR4/data_files/KiDS1000_cosmic_shear_data_release.tgz"},
     "kcap": {"tipo": "git", "repo": "https://github.com/KiDS-WL/kcap.git",
@@ -136,6 +160,10 @@ ARXIV = {
 ORIGENES = [
     (f"{D}/boss_dr12/", "A", "https://data.sdss.org/sas/dr12/boss/papers/clustering/",
      "Beutler et al. 2017, MNRAS 466, 2242 (arXiv:1607.03149)", "boss_dr12"),
+    (f"{D}/boss_dr12_bm21/chen22_cov/", "A", "https://github.com/sfschen/BOSSxPlanck (commit 0755be4)",
+     "Chen, Vlah & White 2022, JCAP 07, 041 (arXiv:2110.05530)", "chen22_cov"),
+    (f"{D}/boss_dr12_bm21/", "A", "https://fbeutler.github.io/hub/deconv_paper.html",
+     "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)", "boss_dr12_bm21"),
     (f"{D}/desi_dr2_official/", "A", "https://doi.org/10.5281/zenodo.16644577",
      "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)", "desi_dr2"),
     (f"{D}/cmb_lensing/spt3g/", "A", "https://github.com/SouthPoleTelescope/spt_candl_data.git (commit efe35b7)",

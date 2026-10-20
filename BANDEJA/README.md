@@ -31,8 +31,8 @@ Un archivo por corrida, `AAAA-MM-DD_<corrida>.md`, con:
 | informe | corrida | estado | listo para traspaso |
 |---|---|---|---|
 | `2026-09-08_R4_lcdm_kids.md` | `analiza_lcdm_R4` | ✅ completa, control PASA | **no hace falta** — ningún número se mueve; sólo repone el log |
-| `2026-09-08_perfil_wc_boss.md` | `perfil_wc_boss` | ✅ completa, control PASA | ✅ **TRASPASADO 2026-09-08** — Paper 6 §par:wc-profile, OP-19, Registro |
-| `2026-09-08_perfil_wc_boss_lcdm.md` | `perfil_wc_boss_lcdm` | ✅ completa, control PASA | ✅ **TRASPASADO 2026-09-08** — junto con su hermano |
+| `2026-09-08_perfil_wc_boss.md` | `perfil_wc_boss` | ✅ completa, control PASA | 🔴 **RETIRADO 2026-10-20** (BOSS de 2017; re-medido en el montaje de Chen+22: `perfil_wc_boss_chen21.json`) · antes: ✅ **TRASPASADO 2026-09-08** — Paper 6 §par:wc-profile, OP-19, Registro |
+| `2026-09-08_perfil_wc_boss_lcdm.md` | `perfil_wc_boss_lcdm` | ✅ completa, control PASA | 🔴 **RETIRADO 2026-10-20** (ídem) · antes: ✅ **TRASPASADO 2026-09-08** — junto con su hermano |
 
 ## Corriendo mientras Mike duerme (2026-09-08)
 

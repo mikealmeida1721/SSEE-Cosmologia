@@ -1,5 +1,7 @@
 # KiDS **sí** mide A_s. BOSS **no**. Y KiDS lo mide gracias a que tu fondo es rígido
 
+> 🔴 **2026-10-20:** la mitad de BOSS de esta nota corría sobre las cadenas de los espectros de Beutler+2017 (retiradas; ver `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/LEEME.md`). La de KiDS sigue vigente y la re-mide `mide_As_o_producto.py`, ya sin BOSS. Que BOSS no fija A_s (degenerado con el sesgo) lo confirma el montaje vigente: `boss_chen21.json`.
+
 **Corrida:** `src/p06_growth/mide_As_o_producto.py` ·
 **Log:** `results/logs/growth_2026-07/As_medido_o_producto.json` ·
 **Control PASA** · sobre cadenas ya corridas, no se corrió nada nuevo.

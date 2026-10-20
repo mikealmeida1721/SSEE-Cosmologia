@@ -53,7 +53,7 @@ Moved here verbatim when the README was rewritten to lead with the current model
 ### Paper 5 section (S₈ ceiling row and diagnostic)
 
 | **S₈_SSEE (ceiling, A_s FIXED to Planck)** | **0.827** | the old "3.5σ KiDS challenge" — an artefact of fixing A_s (now 2.7σ). The two-sector answer is RETIRED (2026-08-01); with A_s free: 0.7555, 0.11σ |
-| Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | the two-sector variant (0.93σ) is RETIRED with the particle (2026-08-01); canonical fσ₈ vs raw BOSS is pending (R1/R2) |
+| Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | the two-sector variant (0.93σ) is RETIRED with the particle (2026-08-01); raw BOSS is now measured with a control (2026-10-20, see the BOSS row below) |
 
 **Diagnostic:** with A_s *fixed* to Planck the model predicts an S₈ above weak-lensing surveys.
 That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of the model (k=2), and with A_s free the MCMC against raw KiDS-1000 ξ± gives S₈ = 0.7555 ± 0.0192 — **0.11σ, no tension**. The two-sector φ-DM extension that formerly closed it (S₈ = 0.758) is RETIRED. **Update 2026-09-20:** against KiDS-Legacy the amplitude the shear asks for lands 0.49σ from the one the CMB fixes under the same background, so A_s need not be free either — fixed, the sector predicts S₈ = 0.8273 against 0.8265 ± 0.0176 measured, with **no free cosmological parameter**.
@@ -86,7 +86,7 @@ That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of th
 > correr, exige que la línea base de Planck dé σ₈=0.8111±0.006 y da **0.810851**.
 > Log: `results/logs/p5_techo_sigma8_As_fijo.json`
 
-| fσ₈ vs raw BOSS DR12 multipoles | pending (R1/R2) | single-sector baseline 0.70σ |
+| fσ₈ vs raw BOSS DR12 multipoles | measured 2026-10-20 (Chen+22 setup; ΛCDM-free control reproduces the published result): SSEE fully fixed χ² = 117.10 vs free ΛCDM 114.26 on 144 raw points (Δχ² +2.84, ΔBIC −12.1); predicted fσ₈ 0.472 / 0.471 at z = 0.38 / 0.61. Earlier values on the 2017 spectra (Δχ² −2.03, −0.21) are RETRACTED | single-sector baseline 0.70σ | <!-- R74: git:c777ff9:results/logs/growth_2026-07/boss_chen21.json -->
 
 > **Note (2026-08-01):** there is **one** matter sector, Ω_m = 0.308881, with no
 > partition — no second φ-DM sector and no particle. What closes S₈ is not extra

@@ -63,7 +63,7 @@ donde vienen los errores que luego encontramos a mano.
 
 ### 2º Corridas
 
-- [ ] `fσ₈` contra BOSS crudo (R1/R2)
+- [x] `fσ₈` contra BOSS crudo — hecho 2026-10-20 con el montaje de Chen+22 y su control (`boss_chen21.json`); el R1/R2 de 2017 quedó retirado
 - [ ] control metodológico ΛCDM (R4)
 - [ ] regenera `fig_b1_*` (4 figuras, salen del MCMC de Paper 3)
 

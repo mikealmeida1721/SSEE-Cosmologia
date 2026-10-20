@@ -1,17 +1,17 @@
 {
  "_procedencia": {
   "script": "src/verificacion/manifiesto_externos.py",
-  "commit": "ee5a58bf8ed6ada9ba74ae5b9cf16079456d196b",
-  "fecha_utc": "2026-10-17T11:37:43+00:00",
+  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "fecha_utc": "2026-10-20T18:29:04+00:00",
   "fuente_de_origenes": "notes/lectura_tercera/MANIFIESTO_EXTERNOS.md"
  },
  "resumen": {
-  "rutas": 126,
+  "rutas": 138,
   "sin_origen": [],
   "no_existen": [],
   "por_clase": {
-   "A": 37,
-   "B": 72,
+   "A": 54,
+   "B": 67,
    "C": 16,
    "S": 1,
    "?": 0
@@ -30,7 +30,8 @@
    "arxiv:2506.03023v4": 1,
    "arxiv:2602.20483v2": 1,
    "arxiv:2608.31136v1": 1,
-   "boss_dr12": 1,
+   "boss_dr12_bm21": 17,
+   "chen22_cov": 2,
    "des_y3_cadena": 1,
    "desi_dr2": 16,
    "dessn_cov": 1,
@@ -41,10 +42,10 @@
    "hi_class": 1,
    "kcap": 1,
    "kids1000": 2,
-   "kids_legacy": 3,
+   "kids_legacy": 2,
    "pantheon_cov": 1,
    "pantheon_dat": 1,
-   "paquete_ssee": 75,
+   "paquete_ssee": 70,
    "planck_lensing": 1,
    "planck_plik_lite": 1,
    "spt3g": 2,
@@ -58,6 +59,37 @@
    "desempaca": "tar",
    "en": "/mnt/datos/SSEE_data/boss_dr12",
    "url": "https://data.sdss.org/sas/dr12/boss/papers/clustering/Beutler_etal_DR12COMBINED_fullshape_powspec.tar.gz"
+  },
+  "boss_dr12_bm21": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/boss_dr12_bm21",
+   "urls": {
+    "C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+    "C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+    "C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+    "C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz": "https://fbeutler.github.io/hub/C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+    "M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+    "M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+    "M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+    "M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz": "https://fbeutler.github.io/hub/M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+    "W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+    "W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+    "W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+    "W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz": "https://fbeutler.github.io/hub/W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+    "pk_tools.py": "https://raw.githubusercontent.com/fbeutler/pk_tools/707eb2a6a4691c34eae19d7f72047ca4892f528e/pk_tools.py",
+    "ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+    "ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat",
+    "ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+    "ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat": "https://fbeutler.github.io/hub/ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat"
+   }
+  },
+  "chen22_cov": {
+   "tipo": "url",
+   "en": "/mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov",
+   "urls": {
+    "cov_joint_NGCSGCXi_z1.dat": "https://raw.githubusercontent.com/sfschen/BOSSxPlanck/0755be427f079463c02673db64216011c7b69a30/rsd_data/covariances/cov_joint_NGCSGCXi_z1.dat",
+    "cov_joint_NGCSGCXi_z3.dat": "https://raw.githubusercontent.com/sfschen/BOSSxPlanck/0755be427f079463c02673db64216011c7b69a30/rsd_data/covariances/cov_joint_NGCSGCXi_z3.dat"
+   }
   },
   "kids1000": {
    "tipo": "url",
@@ -206,7 +238,6 @@
    "cita": "Planck 2018 (PR3)",
    "receta": "planck_plik_lite",
    "etapas": [
-    "conjunta_control",
     "quien_mide_As_kids",
     "sello_cmb_dbic_tau_ajustado",
     "sello_cmb_perfil_wc"
@@ -237,836 +268,635 @@
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD",
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
    "clase": "A",
-   "origen": "https://data.sdss.org/sas/dr12/boss/papers/clustering/",
-   "cita": "Beutler et al. 2017, MNRAS 466, 2242 (arXiv:1607.03149)",
-   "receta": "boss_dr12",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
    "etapas": [
-    "boss_lpt_kmax020",
-    "sello_boss_aisla_neutrinos"
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "._Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_window_z1_NGC.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_window_z1_SGC.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_window_z2_NGC.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_window_z2_SGC.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_window_z3_NGC.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "._Beutleretal_window_z3_SGC.dat",
-     "bytes": 171,
-     "sha256": "d77e265e4e35c81d17761bfbc47c7fae3d45141b55fe63a407e4bf92d69ffbb3"
-    },
-    {
-     "rel": "Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat",
-     "bytes": 45933,
-     "sha256": "2e40c75e72a79dc66aa0c4f3652daa307a35268f84cb596314f4430510ca69d8"
-    },
-    {
-     "rel": "Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat",
-     "bytes": 46146,
-     "sha256": "ad49763652014855b3a55c68cf1f935b1c2464d803f45ff137f15c71f11b16f9"
-    },
-    {
-     "rel": "Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat",
-     "bytes": 44643,
-     "sha256": "30345e14b478086f58d37a015b6a644d4093dd7b40550352f13b4315b72f1cf5"
-    },
-    {
-     "rel": "Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat",
-     "bytes": 46053,
-     "sha256": "19c34c3314ec8a25c262487300b6d6387b81ceb666919a8cc6963835aacfb336"
-    },
-    {
-     "rel": "Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat",
-     "bytes": 45916,
-     "sha256": "d5f14088f46e3229c0f114a5c871f516f1ef339f74b182562a7e9f84ede94e8f"
-    },
-    {
-     "rel": "Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat",
-     "bytes": 45899,
-     "sha256": "0513aadfa749bf744439f226bb8eecc91c3194a73405a68ec409231b930e68e0"
-    },
-    {
-     "rel": "Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat",
-     "bytes": 1044,
-     "sha256": "6254eed8e4a8671dcbcedde6f57205cbfd8ee94919840f73dc1c9fd02a6b89bc"
-    },
-    {
-     "rel": "Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat",
-     "bytes": 1043,
-     "sha256": "fd6ce87d65c65d9587d0946fde46abb4d13a4e8b879b0fac4d71ba9771f4b8c9"
-    },
-    {
-     "rel": "Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat",
-     "bytes": 1040,
-     "sha256": "df5d8e51735759fdecd822eec259b5ee4e26ede96720f5e6c9f3364be6d45d1e"
-    },
-    {
-     "rel": "Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat",
-     "bytes": 1043,
-     "sha256": "44a3c8e36f316f85b4c0a401f984d6d44a87bb1bd6b94753a47b747353364d8c"
-    },
-    {
-     "rel": "Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat",
-     "bytes": 1046,
-     "sha256": "5691a0a9fc3eb966824239c7b40e5385b86496a5246774c7004082e933a31c56"
-    },
-    {
-     "rel": "Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat",
-     "bytes": 1042,
-     "sha256": "1088c663d253ae45a532a962988bdc6de02c0779cf9b2393d3ec8f9cdfea0196"
-    },
-    {
-     "rel": "Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat",
-     "bytes": 1251,
-     "sha256": "9c3212045d1f566b037006d0bf009bd4083e19b65cd10912ea048b19572ad085"
-    },
-    {
-     "rel": "Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat",
-     "bytes": 1253,
-     "sha256": "253e381d3d55f34e6c4c90bc2cd683e7421c9f81bf5b3b2140adb5da60a7fc87"
-    },
-    {
-     "rel": "Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat",
-     "bytes": 1253,
-     "sha256": "4eb6697014bfe3eb386a125b38397a58be4296c3b512c20d18501684176139e0"
-    },
-    {
-     "rel": "Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat",
-     "bytes": 1252,
-     "sha256": "a928fd177acc877f678067b02b95ebc11393559c8573aef5f11dac9f7c845305"
-    },
-    {
-     "rel": "Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat",
-     "bytes": 1249,
-     "sha256": "58a5f7387a6980169c0e7f87ee6742a4aeb3fa374d12107ab4873e0df333bcfd"
-    },
-    {
-     "rel": "Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat",
-     "bytes": 1252,
-     "sha256": "aea626b17952dc7eb58633399951b46490b6c5ec8abd6c33cf6bfabe0a64f269"
-    },
-    {
-     "rel": "Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat",
-     "bytes": 1248,
-     "sha256": "8d8f70a587f947601b4ef310fe8aef9a779bdc57b69506b2dfa3f6babdf3836a"
-    },
-    {
-     "rel": "Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat",
-     "bytes": 1250,
-     "sha256": "1d32ebcbf6a4a5b519222130c28298da0fc6a13adfdc92aaa30499ac57d9dd82"
-    },
-    {
-     "rel": "Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat",
-     "bytes": 1248,
-     "sha256": "42a768ba38af0159c7e356f202a03a356cbbf8b736bacdea1f5c20f37c197bef"
-    },
-    {
-     "rel": "Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat",
-     "bytes": 1247,
-     "sha256": "feab0f16f22fbfdcb36387f3acabb5c12a00ca9b651d8992f6ed63acba671570"
-    },
-    {
-     "rel": "Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat",
-     "bytes": 1246,
-     "sha256": "5067baa22279b813e5d610af031fd710ab3e9d637e9c12c15e6f4b80cbf400f1"
-    },
-    {
-     "rel": "Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat",
-     "bytes": 1249,
-     "sha256": "fc4db482d8e14e786554afe5aea3038def7f219ba32cf5443086f27594878e2e"
-    },
-    {
-     "rel": "Beutleretal_window_z1_NGC.dat",
-     "bytes": 250337,
-     "sha256": "396a3d8c5f86cde2647c765c48eea580c65babb992e9acaca9b445527493ee51"
-    },
-    {
-     "rel": "Beutleretal_window_z1_SGC.dat",
-     "bytes": 255975,
-     "sha256": "6105eb74e7bb0ca002a0a5209b2df6d0c2a8f17e211f5e7b96223ed8dc691917"
-    },
-    {
-     "rel": "Beutleretal_window_z2_NGC.dat",
-     "bytes": 254630,
-     "sha256": "94c98856d60fb6ae71757bd47f64e799fa1bdc5a207a24754e9141efae7df27d"
-    },
-    {
-     "rel": "Beutleretal_window_z2_SGC.dat",
-     "bytes": 260738,
-     "sha256": "fb949ab254d41d203ddd97de9be128ed55bbc2a44258198bebaea1be144f2729"
-    },
-    {
-     "rel": "Beutleretal_window_z3_NGC.dat",
-     "bytes": 258440,
-     "sha256": "8704b095421aad847b0a816e2bd013717ad6dc9af7c8df8183978a1fa9a8832f"
-    },
-    {
-     "rel": "Beutleretal_window_z3_SGC.dat",
-     "bytes": 262211,
-     "sha256": "ce4d571c58845e02b0b46d740848bae065527c3b348963f2b0f896cf5e61da6a"
-    },
-    {
-     "rel": "paper_figures/.DS_Store",
-     "bytes": 6148,
-     "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
-    },
-    {
-     "rel": "paper_figures/._.DS_Store",
-     "bytes": 120,
-     "sha256": "74694443e1068dda8cb89e61b380ea27bcf410293bb68b4680e9d1253da73d4d"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_alpha_perp_alpha_para_patchy_z1.eps",
-     "bytes": 177,
-     "sha256": "0fa72080f575c36b2547e7397e3b39172f4c7a3a454c946ae017bb9fc252bbfd"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_alpha_perp_alpha_para_patchy_z2.eps",
-     "bytes": 177,
-     "sha256": "ec2debd06034f82eee358ac4a6c5da6b61f43efed760b5b0cadda2b595b478d2"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_alpha_perp_alpha_para_patchy_z3.eps",
-     "bytes": 177,
-     "sha256": "21a2c74045f5247b703f2d2abe700d8e4bd3b1d41147c9c3f78022c1bb92299a"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_alpha_perp_fsig8_patchy_z1.eps",
-     "bytes": 177,
-     "sha256": "6964ca6e59eed4126a7c26179a005948671b15c4e16aacd1b3b3793772db135b"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_alpha_perp_fsig8_patchy_z2.eps",
-     "bytes": 177,
-     "sha256": "ec2debd06034f82eee358ac4a6c5da6b61f43efed760b5b0cadda2b595b478d2"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_alpha_perp_fsig8_patchy_z3.eps",
-     "bytes": 177,
-     "sha256": "ec2debd06034f82eee358ac4a6c5da6b61f43efed760b5b0cadda2b595b478d2"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_chi2_BAOfit_z1.eps",
-     "bytes": 177,
-     "sha256": "989808e3bdfb05a3bf265369db7fa314680dbd80b777c6bbedbc008f0aed6e7e"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_my_challenge4.eps",
-     "bytes": 177,
-     "sha256": "b654b51160e967ed02b1f9f9a30fcfab59164c9c3b9661cbc1692733757ea11d"
-    },
-    {
-     "rel": "paper_figures/._Beutleretal_win_mono.eps",
-     "bytes": 177,
-     "sha256": "d92679dda8ca655468144fb629955b8e4d29570f3ec2846c2b5606036165327d"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_Well_z1_NGC.pdf",
-     "bytes": 90035,
-     "sha256": "f16c2bfb82cfed0ac04d6ff4fad9f6decc1b371832aabc003ba4f5b123361a51"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_Well_z1_SGC.pdf",
-     "bytes": 89761,
-     "sha256": "66cfa090a6efa278f8066925b2a0ab8105c49a1eeadb6d00c38ffd2027ca833e"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_Well_z2_NGC.pdf",
-     "bytes": 89869,
-     "sha256": "1ac70106294ad4c6cdc5af372e7714ed94ae9497aec5146a56e50ed597338324"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_Well_z2_SGC.pdf",
-     "bytes": 89731,
-     "sha256": "5f6caa825acde7e0f60ed9343e344a01487d6189ed67de00e23e89e05820c807"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_Well_z3_NGC.pdf",
-     "bytes": 90261,
-     "sha256": "c8d64dda458f37a76d8ca4b2e88c23fcc74abd14d12f4b64f9fca038c423a043"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_Well_z3_SGC.pdf",
-     "bytes": 90110,
-     "sha256": "80b7098844550edee7b5b4b8de81ea641827d03a34198fd5dd6bf7c43c4076a6"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_alpha_perp_alpha_para_patchy_z1.eps",
-     "bytes": 45728,
-     "sha256": "df12f6112cbadb45fc5303810331ee937b82704d184da64bbaef9f7f08e58a75"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_alpha_perp_alpha_para_patchy_z2.eps",
-     "bytes": 45863,
-     "sha256": "92666e792c1898338be847c32e80b8d0c4fd15f928850e99663ef2506e2af55f"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_alpha_perp_alpha_para_patchy_z3.eps",
-     "bytes": 45560,
-     "sha256": "bef6e4c528c14e8e3cd987c95027940e8187846627600a9132ff456e2c0db880"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_alpha_perp_fsig8_patchy_z1.eps",
-     "bytes": 45090,
-     "sha256": "26c3eb42aec6318216b76f12f15c1fc0890d2943173127a675135804abcbfd15"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_alpha_perp_fsig8_patchy_z2.eps",
-     "bytes": 45362,
-     "sha256": "6582ebc78923ad6329dab5bd122f30d19c61dff96331976a021dc47eb2dca0bd"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_alpha_perp_fsig8_patchy_z3.eps",
-     "bytes": 45374,
-     "sha256": "e2f4451c1c86338d3add6838921e196c171d055c6044e9bd3ee02c2836487b97"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_best_fit_z1_RSD.pdf",
-     "bytes": 97381,
-     "sha256": "23244619ceee6c6377dfa7864ef97b962bbc9788d449521c593d39e22703739d"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_best_fit_z2_RSD.pdf",
-     "bytes": 97292,
-     "sha256": "be513bea7e2298158b2b4e10b218715cfc5528b3f7be46ead0ec25bb5f56dfb2"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_best_fit_z3_RSD.pdf",
-     "bytes": 96948,
-     "sha256": "a2a0ad3f1ae80afba81093e928d9f32b9ea535dcda3d3707e93ab33248524aed"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_binning.pdf",
-     "bytes": 86773,
-     "sha256": "3991830fbc42e75960d3d8214dc0bb6421f72a11fc60e8e32c09740aa9d2d665"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_chi2_BAOfit_z1.eps",
-     "bytes": 7279,
-     "sha256": "f89d9cf92c8aac425f8efac91f7ff58fe7d8f69dc3cc40689ad3c32e76f40bc5"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_chi2_BAOfit_z2.eps",
-     "bytes": 7319,
-     "sha256": "430899cd9871d2dd36f52a54434beb6d37bad7e82754747cc1dd8a5532f18b02"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_chi2_BAOfit_z3.eps",
-     "bytes": 7304,
-     "sha256": "b869bd8a39236bc80fffcc6d778c29aef55db429359f6b6ca2ea906f95a370b2"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_cov_z1_NGC.pdf",
-     "bytes": 80606,
-     "sha256": "67663c6379dff2379d4db12724a289074b56a2c882de970f6bdbc5e8bed2f2fd"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_cov_z1_SGC.pdf",
-     "bytes": 80682,
-     "sha256": "02c73243432c6c987d8ac869dc31eb6b73038bd467848c238502b9090e166988"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_cov_z2_NGC.pdf",
-     "bytes": 80264,
-     "sha256": "ec9a9edc3758d6d3bb3ef420fb39940e09cf3d37a9233146430cc44f1ae7d2dd"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_cov_z2_SGC.pdf",
-     "bytes": 80573,
-     "sha256": "2287ea8203b985c062a0ab420f2accda62a61ace7a4e5cf7f44a3902743e1468"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_cov_z3_NGC.pdf",
-     "bytes": 80692,
-     "sha256": "5d5b3c03f6eb7c52b0321ab4513382cd2eee241536b026d031b86a41c6f8b6a3"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_cov_z3_SGC.pdf",
-     "bytes": 80457,
-     "sha256": "f2b78ff82dd82217b4c6a74cafea173c25ffc5e979dbcb52bf9bc36312d17c05"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_my_challenge4.eps",
-     "bytes": 8982,
-     "sha256": "c9d818a7638550dbc85b368513d63ddf6b9928acf5bb2dc9ce36618e25ac7404"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_my_fsig8_F.pdf",
-     "bytes": 147372,
-     "sha256": "4ac4dcdc85e3e81ffbf246f5e68f8ebda3626a63f1e1ce26102ccbecbf525f35"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_nbar.pdf",
-     "bytes": 76763,
-     "sha256": "0202d5b7b910a9ee8cb04b0b1c95091f520a12c175dd1aa1764dee23c3bf8a84"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_sim_cmp_1_NGC.pdf",
-     "bytes": 91665,
-     "sha256": "871f807c41a9504596ba4f67afcc12a078e28309e01c5ed5d333c21114dbae75"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_sim_cmp_1_SGC.pdf",
-     "bytes": 91819,
-     "sha256": "eb6d5027c68f5a60ee445d5910bfa8dadeb5689cd3817c485bcc44a5087c283a"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_sim_cmp_2_NGC.pdf",
-     "bytes": 91621,
-     "sha256": "19c01c50bb59ce6fadc8b0c1d952de88cd0e2f127ee1e0c3a13cf1710567e776"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_sim_cmp_2_SGC.pdf",
-     "bytes": 91849,
-     "sha256": "46c959c394a3c3138f8ee89c4b73ac254529450653122b0f595647a13e86f9ab"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_sim_cmp_3_NGC.pdf",
-     "bytes": 91662,
-     "sha256": "4f2c3c23a505ae4aa92fe7b7c95c80d37dbdc0f2dd88d51f8412a0b90cb6434d"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_sim_cmp_3_SGC.pdf",
-     "bytes": 91907,
-     "sha256": "714e60810854c120f5d08e1aa3ed99d68f438d7b9d49a5e6152f2c0fa12667ed"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_test_RSD_z1.pdf",
-     "bytes": 56304,
-     "sha256": "b0e607aa06cd526c402821fddec4bb2cfaeed4430c9cdaf466f2a0a0966d593e"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_test_RSD_z2.pdf",
-     "bytes": 63988,
-     "sha256": "88acebc2ffb28e8b15bb886ce85cef95bee812413e3e07aa4d57d6ea10e28e8b"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_test_RSD_z3.pdf",
-     "bytes": 59309,
-     "sha256": "85f329e6c3fc26dff848ea8c5cc6ce7929e07f8d70aafb077a8bbf1218c78706"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_win_mono.eps",
-     "bytes": 9867,
-     "sha256": "8516c8c315bfc02a8072fcf0435264855525767b3283f18d3a7eb289e1a37f97"
-    },
-    {
-     "rel": "paper_figures/Beutleretal_window_test_Ncutsky_diff.pdf",
-     "bytes": 200271,
-     "sha256": "a192cadb351f158de9f70b11bcc0558ac6dab1a8264873f0e43e04256a2649f6"
+     "rel": "C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+     "bytes": 435818,
+     "sha256": "40cac0b4e29e808fbaea79d23316e10cd24258c44aa0438359eabbf233dd16ea"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+     "bytes": 435310,
+     "sha256": "9857c7694f12c575c03022e2fc8d3d267e9355cac881332817413e465f989064"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+     "bytes": 435481,
+     "sha256": "ca129eb802ab84dc226e5ae04b5365937e9f0b697d5572ff0c6fbeecc18dabee"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz",
+     "bytes": 435394,
+     "sha256": "7d16ae37fe9bf40ad52b6f4fd6daf640d85e209831d2cc7a1e5fd10f535ea5e7"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+     "bytes": 177514,
+     "sha256": "95c027c7326cb62659fec4d5aacfff98e6b245caa920560e138aa14791f91998"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+     "bytes": 177530,
+     "sha256": "5ae173a446deb3bb5d3a98b620e148ea77f3590ce96f442ce43b13560f1c74f9"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+     "bytes": 177514,
+     "sha256": "d5dadcf5b0baba8d2e0039e04e7748ae68d0e0f43f03021d64d994771dd44ee0"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz",
+     "bytes": 177530,
+     "sha256": "54457d342e644ffd1de7e892990a087b79523aa7ce23ba822afe1768f6817744"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+     "bytes": 4475765,
+     "sha256": "3f3a9dc7b0354cb8b7928f1b935cf44f4f7ebbfa78f1f41be3bb5d8c974ca85a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+     "bytes": 4471636,
+     "sha256": "2aaba3a6ecc725ee5e44ca8f36425384edaa6e7f517cfd6ac219e6a03ad8edcc"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+     "bytes": 4484704,
+     "sha256": "684b09039a60897a33da00f6d089ab7dfd2ebe536155ae4a2ae2db1ec443a45f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz",
+     "bytes": 4481577,
+     "sha256": "1e947108a2a0eda3098aa56b05f7231a27632fb62b61e1e60035e42f0858c480"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z1.dat",
+   "clase": "A",
+   "origen": "https://github.com/sfschen/BOSSxPlanck (commit 0755be4)",
+   "cita": "Chen, Vlah & White 2022, JCAP 07, 041 (arXiv:2110.05530)",
+   "receta": "chen22_cov",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "cov_joint_NGCSGCXi_z1.dat",
+     "bytes": 1369066,
+     "sha256": "43bb88dea1f2764e82a0cd11d39f618e9cf2ea8c3700be4b20c568328ccba785"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z3.dat",
+   "clase": "A",
+   "origen": "https://github.com/sfschen/BOSSxPlanck (commit 0755be4)",
+   "cita": "Chen, Vlah & White 2022, JCAP 07, 041 (arXiv:2110.05530)",
+   "receta": "chen22_cov",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "cov_joint_NGCSGCXi_z3.dat",
+     "bytes": 1369748,
+     "sha256": "6cae1840884ca1d06823c15a9d730b874e7c12cc79c93c055e99643b9d2fddd2"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/pk_tools.py",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "pk_tools.py",
+     "bytes": 3159,
+     "sha256": "818898a7f952d2398ac232126336743965ca24fc6616ecdc556fdbdf6c76c069"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+     "bytes": 42865,
+     "sha256": "e9e887ceb2ead430800cc140e5c70bdb909d1c347d8d040f924038b29ba7e80f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat",
+     "bytes": 42796,
+     "sha256": "3153a8c54513c4c4d8881116a7264006654d5da90fa29abce7264fc8e682f49f"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat",
+     "bytes": 42868,
+     "sha256": "a107bebcdbeafeaa5212cc1edd4812e7412853d89c76da764e0f9d6a1b77f103"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat",
+   "clase": "A",
+   "origen": "https://fbeutler.github.io/hub/deconv_paper.html",
+   "cita": "Beutler & McDonald 2021, JCAP 11, 031 (arXiv:2106.06324)",
+   "receta": "boss_dr12_bm21",
+   "etapas": [
+    "analiza_boss_chen21",
+    "perfil_wc_boss_chen21",
+    "prueba_malla_boss_chen21"
+   ],
+   "archivos": [
+    {
+     "rel": "ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat",
+     "bytes": 42798,
+     "sha256": "7cabe0998fb068be65f38a50c2ccf48a2fa9f985c1d00673c0e93259290fd6a6"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "analiza_boss_R1R2",
-    "coteja_transcripciones",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "lcdm.1.txt",
-     "bytes": 18875962,
-     "sha256": "fe26a3506e693d18cf6604843bcdc477d33c33f8ab5d61d4afb21056dec58275"
+     "rel": "fijo_LCDM_PLANCK.1.txt",
+     "bytes": 26159400,
+     "sha256": "e239da8faa5fdcf2d1fd167b554ce8116aff98aff0bd1e1b8b09d5c4eafeccec"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "coteja_transcripciones",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "lcdm.2.txt",
-     "bytes": 15252867,
-     "sha256": "4ce61f10dc45fbd2262601e36bb174aa967bc2c02b5378800d7012a7dad8e094"
+     "rel": "fijo_LCDM_PLANCK.2.txt",
+     "bytes": 26611560,
+     "sha256": "90ee109bc7ff49d5d73e21669663e507496939c2e52c28cc4c55c8a9947c84fc"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "coteja_transcripciones",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "lcdm.3.txt",
-     "bytes": 17425870,
-     "sha256": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef"
+     "rel": "fijo_LCDM_PLANCK.3.txt",
+     "bytes": 27135000,
+     "sha256": "bb311593bfdcb1ea5a37cb3f5d5131369def779f8bdec88acaa61b97dd9b0313"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "coteja_transcripciones",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "lcdm.4.txt",
-     "bytes": 16231978,
-     "sha256": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157"
+     "rel": "fijo_LCDM_PLANCK.4.txt",
+     "bytes": 26721000,
+     "sha256": "5ef688d17a9db9f37b1ecd91c9f6634805e8c5f8caadbebe0886ffd8f39685e4"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.progress",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "analiza_boss_R1R2",
-    "coteja_transcripciones",
-    "marginal_vs_perfil",
-    "mide_As_o_producto",
-    "multisonda_fondo_clavado"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "ssee.1.txt",
-     "bytes": 10385067,
-     "sha256": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861"
+     "rel": "fijo_LCDM_PLANCK.progress",
+     "bytes": 9501,
+     "sha256": "dd5da02e18060b702ee83877dafa953b924cebc4650420f9c3e9ace5c49bbbc8"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "coteja_transcripciones",
-    "marginal_vs_perfil",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "ssee.2.txt",
-     "bytes": 11298420,
-     "sha256": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259"
+     "rel": "fijo_SSEE.1.txt",
+     "bytes": 31971600,
+     "sha256": "e8936e5081d3ee0607b91ed0def6ac9cd41c39d9fe9da4dd7043e74a8f74d5c2"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "coteja_transcripciones",
-    "marginal_vs_perfil",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "ssee.3.txt",
-     "bytes": 14076909,
-     "sha256": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f"
+     "rel": "fijo_SSEE.2.txt",
+     "bytes": 31826520,
+     "sha256": "c5ab2715526a627315c2fe903e1d34a66d3964af136e2f9ce68d783c6ed77622"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "coteja_transcripciones",
-    "marginal_vs_perfil",
-    "mide_As_o_producto"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "ssee.4.txt",
-     "bytes": 11409013,
-     "sha256": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da"
+     "rel": "fijo_SSEE.3.txt",
+     "bytes": 32041440,
+     "sha256": "70a9334bdf3c741c519a2b43b8bf37f83f093c265c45bce67bb91db27f44ce36"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta",
-    "leer_conjunta_b3"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "boss_clavado.1.txt",
-     "bytes": 10256785,
-     "sha256": "3989696c4513d8f0a0e83919eee5abb0426256d49e26dfacced8b0696f718021"
+     "rel": "fijo_SSEE.4.txt",
+     "bytes": 31968360,
+     "sha256": "94c8d5be40bf06b3d5bb1e4d3ffe2d22aa753ff333bc1793c1226d6c6c7c2f3b"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.progress",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta",
-    "leer_conjunta_b3"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "boss_clavado.2.txt",
-     "bytes": 11070675,
-     "sha256": "679789c840e6b23bdc0aab5221c1414e01140f5d7b60ca3a53eb82b8c305fbcf"
+     "rel": "fijo_SSEE.progress",
+     "bytes": 11838,
+     "sha256": "b4bbbc2da23e23cd1554662284c3633a5ef6c1a0cae650f146465fab0ba4ac77"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta",
-    "leer_conjunta_b3"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "boss_clavado.3.txt",
-     "bytes": 14593810,
-     "sha256": "fd1dfd287bc5f48742f3e9cd9bb771db6443fd9932efcce894f60ca009f64fbc"
+     "rel": "lcdm_chen21_covchen.1.txt",
+     "bytes": 13161209,
+     "sha256": "e4386a69df11b23efbdb734de2847134b4d3d07dbd772039320f8649762c36d7"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta",
-    "leer_conjunta_b3"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "boss_clavado.4.txt",
-     "bytes": 17590265,
-     "sha256": "cb2ecd3752ea98919788b13f3c22b78e94768e9500d0df33c46646b1ff5abf8d"
+     "rel": "lcdm_chen21_covchen.2.txt",
+     "bytes": 13073219,
+     "sha256": "3b1a04115eea0f1122d9caedad4ac17e6e4fad3370ff2179da76ebe9a93a2b03"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "conjunta.1.txt",
-     "bytes": 13503270,
-     "sha256": "8d05d679213064564d2d2ea19e0ef05cb713bd969cd5e6ad2a831e0b274d4eef"
+     "rel": "lcdm_chen21_covchen.3.txt",
+     "bytes": 12904781,
+     "sha256": "1d89786ef992f55e3bc8e88fcd2792b5799721c4b2df948a05c3b74659a1e341"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "conjunta.2.txt",
-     "bytes": 4230501,
-     "sha256": "d0d0a52550e4e3c5fe1f695d2dc2046325368c2d4d72a8047a7d3786655cae77"
+     "rel": "lcdm_chen21_covchen.4.txt",
+     "bytes": 12924474,
+     "sha256": "d1e0ff47838c6cd1628f2dd84320c1c33da32e872be5f5609524b5536a74d565"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.progress",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta"
+    "analiza_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "conjunta.3.txt",
-     "bytes": 13637349,
-     "sha256": "e928ff40f16eab2e2dc0af6e1ad8997d3fee18f279de6e67724f1f64a6146965"
+     "rel": "lcdm_chen21_covchen.progress",
+     "bytes": 3353,
+     "sha256": "da9ee01165e6229c4ca65d0da1d2a6bebec35daa41703d549031d652213fe7a7"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/boss_chen21/malla_7x7x13.pkl",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "leer_conjunta"
+    "prueba_malla_boss_chen21"
    ],
    "archivos": [
     {
-     "rel": "conjunta.4.txt",
-     "bytes": 13668765,
-     "sha256": "b892b47019315f0a2322dece523b17aed2079d4e0266b3f64229f68aa4304570"
-    }
-   ]
-  },
-  {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt",
-   "clase": "B",
-   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "paquete de datos de SSEE",
-   "receta": "paquete_ssee",
-   "etapas": [
-    "leer_conjunta_b3"
-   ],
-   "archivos": [
-    {
-     "rel": "conjunta_b3.1.txt",
-     "bytes": 10968111,
-     "sha256": "9c21d624eb7e69c1388311d0e64bec0bf31275cf9b29a06a117537dc82e17781"
-    }
-   ]
-  },
-  {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt",
-   "clase": "B",
-   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "paquete de datos de SSEE",
-   "receta": "paquete_ssee",
-   "etapas": [
-    "leer_conjunta_b3"
-   ],
-   "archivos": [
-    {
-     "rel": "conjunta_b3.2.txt",
-     "bytes": 10906401,
-     "sha256": "27def7ed764798d78bfce4db0d4d301485c49b5a933041e57c867f6b32755735"
-    }
-   ]
-  },
-  {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt",
-   "clase": "B",
-   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "paquete de datos de SSEE",
-   "receta": "paquete_ssee",
-   "etapas": [
-    "leer_conjunta_b3"
-   ],
-   "archivos": [
-    {
-     "rel": "conjunta_b3.3.txt",
-     "bytes": 11309199,
-     "sha256": "cdfd6dbf4451867fe9a52946676c4ee55bab2c6c636c5f9bf495e4e780b8511e"
-    }
-   ]
-  },
-  {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt",
-   "clase": "B",
-   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "paquete de datos de SSEE",
-   "receta": "paquete_ssee",
-   "etapas": [
-    "leer_conjunta_b3"
-   ],
-   "archivos": [
-    {
-     "rel": "conjunta_b3.4.txt",
-     "bytes": 12422223,
-     "sha256": "823bd98707479d3c968495eefb6f03a2445b0e02ade9386e9ea16fb6c8240b1b"
-    }
-   ]
-  },
-  {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.input.yaml",
-   "clase": "B",
-   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
-   "cita": "paquete de datos de SSEE",
-   "receta": "paquete_ssee",
-   "etapas": [
-    "coteja_transcripciones"
-   ],
-   "archivos": [
-    {
-     "rel": "conjunta_b3.input.yaml",
-     "bytes": 4974,
-     "sha256": "d49789559d5de074dfc63433f2989e34c2f95ca6d12a9157a64467310bf06866"
+     "rel": "malla_7x7x13.pkl",
+     "bytes": 104570607,
+     "sha256": "6d17aee7cf4423b9ce377de5496c2a32d344a089a7a757d138c3b07589998e3c"
     }
    ]
   },
@@ -1188,7 +1018,6 @@
    "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
-    "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -1207,7 +1036,6 @@
    "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
-    "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -1226,7 +1054,6 @@
    "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
-    "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -1245,7 +1072,6 @@
    "receta": "paquete_ssee",
    "etapas": [
     "R3_rehecho",
-    "marginal_vs_perfil",
     "mide_As_o_producto"
    ],
    "archivos": [
@@ -1428,7 +1254,6 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "conjunta_control",
     "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
@@ -1448,7 +1273,6 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "conjunta_control",
     "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
@@ -1468,7 +1292,6 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "conjunta_control",
     "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
@@ -1488,7 +1311,6 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
-    "conjunta_control",
     "coteja_transcripciones",
     "kids_legacy_bic",
     "lcdm_conjunta_lee"
@@ -2264,228 +2086,6 @@
      "rel": "SOM_cov_multiplied.asc",
      "bytes": 295,
      "sha256": "7a0a36040e065f43131f4a208fbda8f8290868eb9867bd2704a86b00f1cad5f1"
-    }
-   ]
-  },
-  {
-   "ruta": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release",
-   "clase": "A",
-   "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
-   "cita": "Wright et al. 2025 (arXiv:2503.19441)",
-   "receta": "kids_legacy",
-   "etapas": [
-    "conjunta_control"
-   ],
-   "archivos": [
-    {
-     "rel": "README.txt",
-     "bytes": 4313,
-     "sha256": "c719a808a5831095d732a115fbe938a8ee4a74b8c55693801debc28cdc4dd070"
-    },
-    {
-     "rel": "chains_and_config_files/bandpowers/KiDS_Legacy_bandpowers_pipeline.ini",
-     "bytes": 6498,
-     "sha256": "3eb1fe206be5e1f6570c83b9003a835e7010f0bc54f43b55f249c830774a8b11"
-    },
-    {
-     "rel": "chains_and_config_files/bandpowers/KiDS_Legacy_priors.ini",
-     "bytes": 750,
-     "sha256": "cdcb3e59714a94748ca0ab6030b832f2bd9e391806ef3eb37e8fd0a43b701669"
-    },
-    {
-     "rel": "chains_and_config_files/bandpowers/KiDS_Legacy_values.ini",
-     "bytes": 1151,
-     "sha256": "01098b2491f13dfff4a74605f375d725cf81a7fdcfed4c8e58029f45d23e5081"
-    },
-    {
-     "rel": "chains_and_config_files/bandpowers/output_nautilus_bandpowers_Fiducial.txt",
-     "bytes": 109174240,
-     "sha256": "ec7fbb3155b68170277c8621bff720093ed0bf3b652d51aaa9ab7af6a273df34"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis/KiDS_Legacy_cosebis_pipeline.ini",
-     "bytes": 6611,
-     "sha256": "1599665bf28701508d37864ec0a5f84de82d3281dd425e9394084e267d907243"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis/KiDS_Legacy_priors.ini",
-     "bytes": 750,
-     "sha256": "cdcb3e59714a94748ca0ab6030b832f2bd9e391806ef3eb37e8fd0a43b701669"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis/KiDS_Legacy_values.ini",
-     "bytes": 1151,
-     "sha256": "01098b2491f13dfff4a74605f375d725cf81a7fdcfed4c8e58029f45d23e5081"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis/output_nautilus_cosebis_Fiducial.txt",
-     "bytes": 15050366,
-     "sha256": "c92f55eaf599f8eacd98618ad982fa99e929e036d923f16412d26842827e2331"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis_plus_external/KiDS_Legacy_cosebis_plus_external_pipeline.ini",
-     "bytes": 11123,
-     "sha256": "68d11f50516c950fa228bffb3497cfc955ac39a5b575e636fc01f290416294d7"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis_plus_external/KiDS_Legacy_priors.ini",
-     "bytes": 1038,
-     "sha256": "34d6a0046ff75bddf3d2cbbc2d16a06967d10ea2f183856a5dfd69be2671209d"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis_plus_external/KiDS_Legacy_values.ini",
-     "bytes": 1537,
-     "sha256": "51b04875664896181bef767ff92a849deeeaedd7d23c7f1d2175f9b89b911e9c"
-    },
-    {
-     "rel": "chains_and_config_files/cosebis_plus_external/output_nautilus_cosebis_plus_external.txt",
-     "bytes": 39700913,
-     "sha256": "c42a7aed8f812132a0557427f7aa6c36a2e51ea5cebc433cbcc4cd6492488e6a"
-    },
-    {
-     "rel": "chains_and_config_files/xipm/KiDS_Legacy_priors.ini",
-     "bytes": 750,
-     "sha256": "cdcb3e59714a94748ca0ab6030b832f2bd9e391806ef3eb37e8fd0a43b701669"
-    },
-    {
-     "rel": "chains_and_config_files/xipm/KiDS_Legacy_values.ini",
-     "bytes": 1151,
-     "sha256": "01098b2491f13dfff4a74605f375d725cf81a7fdcfed4c8e58029f45d23e5081"
-    },
-    {
-     "rel": "chains_and_config_files/xipm/KiDS_Legacy_xipm_pipeline.ini",
-     "bytes": 7149,
-     "sha256": "a4609b02ef696274b1134f49e458f41e84c62307c8416f2233df51f5315b32b1"
-    },
-    {
-     "rel": "chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt",
-     "bytes": 105084314,
-     "sha256": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac"
-    },
-    {
-     "rel": "data/KiDS_Legacy_bandpowers.fits",
-     "bytes": 947520,
-     "sha256": "6b2a3e1be3854ddf5deb63c4bdaba4219d9eea951623c8ab816c3b47930ca53d"
-    },
-    {
-     "rel": "data/KiDS_Legacy_cosebis.fits",
-     "bytes": 5705280,
-     "sha256": "28a02a6c33199bd3073d3598232af3be20f326a2f36466e8a5a825334294bdb3"
-    },
-    {
-     "rel": "data/KiDS_Legacy_xipm.fits",
-     "bytes": 1186560,
-     "sha256": "aeedfec802c83f468a7459b11be7b9978029fd87985c9e3930cd3d8be38a664d"
-    },
-    {
-     "rel": "data/Nz_covariance.txt",
-     "bytes": 768,
-     "sha256": "a84722e6170ddb74232f9b392fefecb1273d610e2893ee1c704a16ac4bad2cfa"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin1.ascii",
-     "bytes": 223333,
-     "sha256": "072a36b954c05b06bebf7c79b081fab27c97de819d437c8186ead005717f167f"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin2.ascii",
-     "bytes": 223183,
-     "sha256": "c1c187ea2ca25a79a9187c3fd9481b317028252755ca982161e45bce9bc68aac"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin3.ascii",
-     "bytes": 223247,
-     "sha256": "6b265eca649bdf98d2615be4e0489b37cc52d36ab9d77b530328d26b8433f16a"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin4.ascii",
-     "bytes": 223387,
-     "sha256": "d5ad8193d8b4213b3687fa86a96e2064f8c3b0f6f76b4a9b1ed0971c8c3c3c7b"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin5.ascii",
-     "bytes": 223296,
-     "sha256": "9f3f053b039e5959e98c50c5e4a43bfa7e6f500bff0825f5be03b46435d50a11"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin6.ascii",
-     "bytes": 223209,
-     "sha256": "fe3c5f91c0c702b3a3ea68161362bc9c8ea22e08827cc2de94a8a8a79b3ae4bc"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin2.ascii",
-     "bytes": 223222,
-     "sha256": "ff13ddab5e8417910ec6bf969600ed682d1fafe01571e1059ca2220e4c79dc9e"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin3.ascii",
-     "bytes": 223222,
-     "sha256": "01dfa7637f01eebb00960e5f61b6d8741555f7ccb1907e61d5db23efcff84960"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin4.ascii",
-     "bytes": 223091,
-     "sha256": "b457ab4779ccaaebcebe5c2bf1241c26bc3a8400a0fc51213d1374ac5d610d41"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin5.ascii",
-     "bytes": 223155,
-     "sha256": "89ec03afe05b5109f1a8f0cf92c8fce5f3dc165223a1a430bef531345572256b"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin6.ascii",
-     "bytes": 223188,
-     "sha256": "7f682cd8a62ce0c39fa1f9196e56b71a01702469f3d1abf78f22032614a84b23"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin3.ascii",
-     "bytes": 223359,
-     "sha256": "a0aedbae56365a104c5c28a3b7ce9480fff4083f52f8b810c3b42aa25d6eb66d"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin4.ascii",
-     "bytes": 223042,
-     "sha256": "c8d004c4bf4b30bf670f0c936dae548acc445bc72f6162cc70cbb5837ec5b571"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin5.ascii",
-     "bytes": 223094,
-     "sha256": "f4e92040ec75a71aa1d5497728665d87dca619e6e60de998fff22153bbe4c64b"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin6.ascii",
-     "bytes": 223255,
-     "sha256": "e379e1c319f48ac408e3a5b16f5e191b8075e7d5b229c607fbcd39342d25e779"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin4.ascii",
-     "bytes": 223146,
-     "sha256": "8a3d8502acb24fcee5ab169c73e97279ec771ddac0e05e772d7f4a0b380026da"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin5.ascii",
-     "bytes": 222961,
-     "sha256": "ce3d811b0b59218a15447bdffe04b261dd69a394a116196e7feaf6349a1c4cc4"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin6.ascii",
-     "bytes": 223047,
-     "sha256": "79163717938e5490416898bb37ec3cd3b352948ea1c10afb83fa6acf0cd07ac1"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin5_Bin5.ascii",
-     "bytes": 223089,
-     "sha256": "9b80615890b2f5fcfb41d011c9842e7272a31c356e644ef35df14befe1286239"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin5_Bin6.ascii",
-     "bytes": 222921,
-     "sha256": "25da22b3111ed47d7cb08af20c7087b0ba6350eab809e2b269e80205de48ca94"
-    },
-    {
-     "rel": "data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin6_Bin6.ascii",
-     "bytes": 223058,
-     "sha256": "03e11d46edecb4667834f9947291d6c07f8645d6f28e23b81e86ea6c267847a5"
     }
    ]
   },

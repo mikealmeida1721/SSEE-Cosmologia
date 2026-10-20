@@ -1,5 +1,7 @@
 # Gemelo ΛCDM del perfil de `ω_c` — el desplazamiento es del DATO
 
+> 🔴 **RETIRADO 2026-10-20.** Esta nota mide BOSS sobre los espectros de Beutler+2017 (tres errores de método: bines solapados, A_s lineal a un lazo, normalización de 2017). Sus números no son vigentes; script y log en `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/` y `archive/logs_superados/boss_beutler17_2026-10-20/`. BOSS vigente: `results/logs/growth_2026-07/boss_chen21.json` (OP-26).
+
 **Corrida:** `perfil_wc_boss_lcdm.py`, terminada 2026-09-08 06:38.
 **Coste medido:** 18 puntos × ~51 s = **16 min**.
 **Estado:** ✅ completa, **control PASA**. Dos lecturas, las dos a favor.

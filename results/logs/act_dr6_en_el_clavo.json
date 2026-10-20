@@ -29,7 +29,7 @@
   "ve_As": true
  },
  "_procedencia": {
-  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/act_dr6_lensing.py",
@@ -37,7 +37,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
-   "results/logs/multisonda_fondo_clavado.json": "beee7c946a0c5de9f90ab8ae3c6903f6bf211f9458ebeb6268c0ee26f9077f3c"
+   "results/logs/multisonda_fondo_clavado.json": "7d5d1575af1ea4e8d5201a2c4d278d9499cc533a35bc439026b05e0ec6c41a73"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -46,12 +46,12 @@
    "results/logs/cmb_dbic_tau_ajustado.json",
    "results/logs/multisonda_fondo_clavado.json"
   ],
-  "fecha": "2026-10-18T09:00:54",
+  "fecha": "2026-10-20T14:14:15",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": null,
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

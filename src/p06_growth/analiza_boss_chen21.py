@@ -38,10 +38,14 @@ from scipy.optimize import minimize
 _ARGV = list(sys.argv)
 sys.argv = [sys.argv[0]]
 sys.path.insert(0, '/home/mike/Proyectos/SSEE/src/p06_growth')
+sys.path.insert(0, '/home/mike/Proyectos/SSEE/src')
+if __name__ == '__main__':                # el acta va en la PRIMERA linea del log
+    from procedencia import cabecera as _cab
+    print(_cab(__file__), flush=True)
 import cobaya_boss_chen21 as C          # noqa: E402
 import cobaya_boss_chen21_fijo as F     # noqa: E402
 sys.path.insert(0, '/home/mike/Proyectos/SSEE/src')
-from procedencia import con_acta        # noqa: E402
+from procedencia import cabecera, con_acta   # noqa: E402
 sys.argv = _ARGV
 
 CH = '/mnt/datos/SSEE_data/chains_p6/boss_chen21'

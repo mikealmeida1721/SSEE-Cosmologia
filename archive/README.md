@@ -407,4 +407,4 @@ registrado**: vale entonces el de su cajón en el Catálogo de arriba.
 
 ### `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/` y `archive/logs_superados/boss_beutler17_2026-10-20/`
 - BOSS DR12 sobre los espectros de Beutler+2017 (R1/R2, perfiles de logA y de `ω_c`, término de volumen, neutrinos aislados, conjuntas con BOSS): retirado el 2026-10-20 por tres errores de método (bines solapados, A_s lineal a un lazo, normalización de 2017). Lo reemplaza el montaje de Chen+22 con control (`analiza_boss_chen21`). Detalle en el `LEEME.md` de cada carpeta.
-
+- `archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json` y `archive/logs_superados/R1R2_boss_lpt_kmax0.200_20261015_3bines_As_escalado.json` — el R1/R2 de BOSS con los tres bines solapados (Δχ² −2.03) y con A_s escalado sobre la salida, guardados el 2026-10-17 antes de corregir esos dos errores; retirados con todo el BOSS de 2017 el 2026-10-20.

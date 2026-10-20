@@ -56,56 +56,56 @@ SSEE {
  },
  "k": 12,
  "chi2_cadena": -26.468048,
- "chi2_min": -27.241144730878048,
- "chi2_crudo_min": 117.10227185475932,
+ "chi2_min": -27.241144731411815,
+ "chi2_crudo_min": 117.10227149340596,
  "mejor_crudo": {
-  "bsig8_z1NGC": 1.537303462880796,
-  "b2_z1NGC": -0.44748147349129574,
-  "bs_z1NGC": -0.3125169398757858,
-  "bsig8_z1SGC": 1.5236019945470587,
-  "b2_z1SGC": -0.1209769823439592,
-  "bs_z1SGC": 1.2182923290098753,
-  "bsig8_z3NGC": 1.5880597816830626,
-  "b2_z3NGC": -2.6181587023950765,
-  "bs_z3NGC": -0.06816591726640858,
-  "bsig8_z3SGC": 1.6142663415575165,
-  "b2_z3SGC": -0.5040091202335113,
-  "bs_z3SGC": -1.580624646141991
+  "bsig8_z1NGC": 1.5373111769892562,
+  "b2_z1NGC": -0.44738782829418544,
+  "bs_z1NGC": -0.31240861228217104,
+  "bsig8_z1SGC": 1.523588530464196,
+  "b2_z1SGC": -0.1211406014525767,
+  "bs_z1SGC": 1.2186862088214283,
+  "bsig8_z3NGC": 1.5880547926039794,
+  "b2_z3NGC": -2.617774841901274,
+  "bs_z3NGC": -0.06858622313690248,
+  "bsig8_z3SGC": 1.614230689059314,
+  "b2_z3SGC": -0.5045186265368719,
+  "bs_z3SGC": -1.5806458884833994
  },
  "rastro_crudo": [
   {
    "metodo": "Powell",
-   "chi2": 117.10228232157259,
+   "chi2": 117.10228232169639,
    "evaluaciones": 140
   },
   {
    "metodo": "L-BFGS-B",
-   "chi2": 117.10228219250848,
+   "chi2": 117.10228219249453,
    "evaluaciones": 39
   },
   {
    "metodo": "Nelder-Mead",
-   "chi2": 117.10227192030293,
-   "evaluaciones": 726
+   "chi2": 117.10227151499987,
+   "evaluaciones": 1036
   },
   {
    "metodo": "Powell",
-   "chi2": 117.10227185475932,
-   "evaluaciones": 152
+   "chi2": 117.10227149340596,
+   "evaluaciones": 148
   }
  ],
  "k_crudo": 28,
  "chi2_crudo_por_muestra": {
-  "z1": 61.01199444496075,
-  "z3": 56.090277409798574
+  "z1": 61.01199438273069,
+  "z3": 56.090277110675274
  },
- "dchi2_crudo_vs_lcdm_libre": 2.8382143477094246,
- "dBIC_crudo_vs_lcdm_libre": -12.071225551018578,
+ "dchi2_crudo_vs_lcdm_libre": 2.8382139863560667,
+ "dBIC_crudo_vs_lcdm_libre": -12.071225912371936,
  "sigma8_vs_control_sigma": 1.9885630143841075,
  "logA_vs_control_sigma": 1.809924016322956,
  "sigma8_vs_publicado_sigma": 1.6100943451910141,
- "dchi2_vs_lcdm_libre": 5.676594601641284,
- "dBIC_vs_lcdm_libre": -9.232845297086719
+ "dchi2_vs_lcdm_libre": 5.676594601107517,
+ "dBIC_vs_lcdm_libre": -9.232845297620486
 }
 LCDM_PLANCK {
  "Rminus1": 0.009543,
@@ -121,57 +121,57 @@ LCDM_PLANCK {
  },
  "k": 12,
  "chi2_cadena": -29.38801,
- "chi2_min": -30.16878708567556,
- "chi2_crudo_min": 115.34239310271076,
+ "chi2_min": -30.16878708509728,
+ "chi2_crudo_min": 115.34239309991841,
  "mejor_crudo": {
-  "bsig8_z1NGC": 1.5788792502732771,
-  "b2_z1NGC": -0.6281104347161292,
-  "bs_z1NGC": 0.3010228536549036,
-  "bsig8_z1SGC": 1.568261128322104,
-  "b2_z1SGC": -0.4482127568267675,
-  "bs_z1SGC": 1.207068442729365,
-  "bsig8_z3NGC": 1.6369161401712617,
-  "b2_z3NGC": -2.5421783771487143,
-  "bs_z3NGC": 0.09166660767434412,
-  "bsig8_z3SGC": 1.6839048856533116,
-  "b2_z3SGC": 0.41749450845414326,
-  "bs_z3SGC": 1.0635182214173762
+  "bsig8_z1NGC": 1.5788787073043007,
+  "b2_z1NGC": -0.6281096136431862,
+  "bs_z1NGC": 0.3010034761476557,
+  "bsig8_z1SGC": 1.568258914997234,
+  "b2_z1SGC": -0.44818749049397527,
+  "bs_z1SGC": 1.2071015283253246,
+  "bsig8_z3NGC": 1.6369168692877873,
+  "b2_z3NGC": -2.542188902596018,
+  "bs_z3NGC": 0.09168547772303241,
+  "bsig8_z3SGC": 1.6839042397620527,
+  "b2_z3SGC": 0.4174553167414177,
+  "bs_z3SGC": 1.0635664195349168
  },
  "rastro_crudo": [
   {
    "metodo": "Powell",
-   "chi2": 115.34239374288876,
-   "evaluaciones": 155
+   "chi2": 115.34239374349372,
+   "evaluaciones": 151
   },
   {
    "metodo": "L-BFGS-B",
-   "chi2": 115.34239361776241,
+   "chi2": 115.34239361823855,
    "evaluaciones": 39
   },
   {
    "metodo": "Nelder-Mead",
-   "chi2": 115.34239311061552,
-   "evaluaciones": 428
+   "chi2": 115.34239310229052,
+   "evaluaciones": 437
   },
   {
    "metodo": "Powell",
-   "chi2": 115.34239310271076,
-   "evaluaciones": 165
+   "chi2": 115.34239309991841,
+   "evaluaciones": 194
   }
  ],
  "k_crudo": 28,
  "chi2_crudo_por_muestra": {
-  "z1": 58.522254851497486,
-  "z3": 56.82013825121327
+  "z1": 58.52225485063987,
+  "z3": 56.820138249278536
  },
- "dchi2_crudo_vs_lcdm_libre": 1.0783355956608602,
- "dBIC_crudo_vs_lcdm_libre": -13.831104303067143,
+ "dchi2_crudo_vs_lcdm_libre": 1.0783355928685125,
+ "dBIC_crudo_vs_lcdm_libre": -13.83110430585949,
  "sigma8_vs_control_sigma": 1.8958006187011873,
  "logA_vs_control_sigma": 1.8031070478530413,
  "sigma8_vs_publicado_sigma": 1.523371800227766,
- "dchi2_vs_lcdm_libre": 2.7489522468437713,
- "dBIC_vs_lcdm_libre": -12.160487651884232
+ "dchi2_vs_lcdm_libre": 2.7489522474220536,
+ "dBIC_vs_lcdm_libre": -12.16048765130595
 }
 crudo: libre 114.264  SSEE 117.102  Planck 115.342
-resumen {"npts": 144, "k_libre": 31, "k_fijo": 28, "chi2_libre": 114.2640575070499, "chi2_ssee": 117.10227185475932, "chi2_planck": 115.34239310271076, "gl_libre": 113, "gl_fijo": 116, "chi2gl_libre": 1.0111863496199105, "chi2gl_ssee": 1.0095023435755115, "chi2gl_planck": 0.9943309750233686, "dchi2_ssee_libre": 2.8382143477094246, "dchi2_planck_libre": 1.0783355956608602, "dchi2_ssee_planck": 1.7598787520485644, "dBIC_ssee_libre": -12.071225551018578, "dBIC_planck_libre": -13.831104303067143, "dchi2_ssee_planck_z1": 2.4897395934632627, "dchi2_ssee_planck_z3": -0.7298608414146983, "ctl_Rm1": 0.028296, "ctl_logA": 2.8234012446812558, "ctl_Om": 0.3040025119492465, "ctl_H0": 68.38312066333036, "ctl_sigma8": 0.7260484138745947, "ctl_logA_sig": 0.12234368202454264, "ctl_Om_sig": 0.010221746059652573, "ctl_H0_sig": 1.1126177985765344, "ctl_sigma8_sig": 0.04487467284118824, "ctl_logA_dist": -0.1276827332211085, "ctl_Om_dist": -0.09974880507535033, "ctl_H0_dist": -0.10625394242694595, "ctl_sigma8_dist": -0.24899137761260948, "sigma8_ssee": 0.8152845285691687, "sigma8_planck": 0.8111218464109328, "fs8_ssee_z1": 0.47176912249130665, "fs8_ssee_z3": 0.4708061995793872, "fs8_planck_z1": 0.47725030939833046, "fs8_planck_z3": 0.4701101809224357, "s8_ssee_vs_ctl": 1.9885630143841075, "s8_planck_vs_ctl": 1.8958006187011873, "logA_ssee_vs_ctl": 1.809924016322956, "Rm1_ssee": 0.009566, "Rm1_planck": 0.009543}
+resumen {"npts": 144, "k_libre": 31, "k_fijo": 28, "chi2_libre": 114.2640575070499, "chi2_ssee": 117.10227149340596, "chi2_planck": 115.34239309991841, "gl_libre": 113, "gl_fijo": 116, "chi2gl_libre": 1.0111863496199105, "chi2gl_ssee": 1.0095023404603962, "chi2gl_planck": 0.9943309749992967, "dchi2_ssee_libre": 2.8382139863560667, "dchi2_planck_libre": 1.0783355928685125, "dchi2_ssee_planck": 1.7598783934875541, "dBIC_ssee_libre": -12.071225912371936, "dBIC_planck_libre": -13.83110430585949, "dchi2_ssee_planck_z1": 2.489739532090823, "dchi2_ssee_planck_z3": -0.7298611386032618, "ctl_Rm1": 0.028296, "ctl_logA": 2.8234012446812558, "ctl_Om": 0.3040025119492465, "ctl_H0": 68.38312066333036, "ctl_sigma8": 0.7260484138745947, "ctl_logA_sig": 0.12234368202454264, "ctl_Om_sig": 0.010221746059652573, "ctl_H0_sig": 1.1126177985765344, "ctl_sigma8_sig": 0.04487467284118824, "ctl_logA_dist": -0.1276827332211085, "ctl_Om_dist": -0.09974880507535033, "ctl_H0_dist": -0.10625394242694595, "ctl_sigma8_dist": -0.24899137761260948, "sigma8_ssee": 0.8152845285691687, "sigma8_planck": 0.8111218464109328, "fs8_ssee_z1": 0.47176912249130665, "fs8_ssee_z3": 0.4708061995793872, "fs8_planck_z1": 0.47725030939833046, "fs8_planck_z3": 0.4701101809224357, "s8_ssee_vs_ctl": 1.9885630143841075, "s8_planck_vs_ctl": 1.8958006187011873, "logA_ssee_vs_ctl": 1.809924016322956, "Rm1_ssee": 0.009566, "Rm1_planck": 0.009543}
 escrito /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/boss_chen21.json

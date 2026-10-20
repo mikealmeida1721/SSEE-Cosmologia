@@ -45,7 +45,7 @@
 
 ---
 
-## Bloque 3 — Físicas abiertas (NO son acomodo; van con R1/R2)
+## Bloque 3 — Físicas abiertas (NO son acomodo; iban con R1/R2, que se cerró el 2026-10-20 con el montaje de Chen+22)
 
 | # | Qué | Estado |
 |---|---|---|
@@ -53,7 +53,7 @@
 | 3.1b-i | ⚠️ **ARREGLO RETIRADO** — era prematuro: el Ap. A de Paper 5 escribe bien la ecuación de Euler (inercia = ρ+p) pero al despejar la sustituye por ρ. Con la ζ̃ *tal como la define el paper*, c²_s,eff = **+4.41 → superlumínico**. Resolución: ζ̃ debe normalizarse por la **entalpía** (ρ+p); entonces c²_s = 0 exacto y todo se sostiene. Renombrar el símbolo NO resolvía nada: la ζ **física** la fija el ansatz Π=−KAL₀ρ_DE·H, así que el +4.41 no se movía, y mi nota al pie contradecía al párrafo siguiente. **Retirado.** Lo que SÍ queda aplicado y es firme: la corrección de la inercia (ρ→ρ+p) en el Apéndice A. El problema real es **OP-22** | 🔴 → OP-22 |
 | 3.1b-ii | Derivar `τ_Π H₀ = KAL₀·Ω/T_r` del Lagrangiano, y justificar el principio de minimalidad | 🔴 abierto |
 | ~~3.1c~~ | Papers: «c²_s=0 exacto» → «c²_s=0 por minimalidad» | 8 ediciones en P5 (títulos de §, teorema, §unicidad con el párrafo que separa lo determinado de lo supuesto) + Endorser. Barrido en P7/Unified/Sealed/PRD: **sin claims que corregir**. Extra: el Unified llamaba «single sector» a Ω_m=0.160 en una corrida de diagnóstico — reetiquetada | ✅ |
-| 3.2 | **Veta A_s** — las tres determinaciones (CMB / cizalla / clustering). Requiere R1/R2 | ⏳ bloqueado por corridas |
+| 3.2 | **Veta A_s** — las tres determinaciones (CMB / cizalla / clustering) | ✅ medido: la cizalla pide el A_s del CMB (0.49σ, KiDS-Legacy); el clustering no lo fija (degenerado con el sesgo) y clavarlo al del CMB le cuesta Δχ² +2.84 frente a ΛCDM libre (`boss_chen21.json`, 2026-10-20) |
 | 3.3 | **OP-18** — derivar A_s. Bloqueado *por* 3.2: no se puede validar una derivación contra un blanco que tiene dos valores | ⏳ bloqueado |
 
 ---
@@ -69,7 +69,7 @@
   el paper**, y «lo dejé listo» sin barrido es una afirmación, no un hecho.
 - **No** publicar ni sellar hasta que Mike termine la lectura página por página
   (regla R39, `project_publication_gate`).
-- **No** buscar mecanismo para la veta A_s antes de R1/R2.
+- ~~**No** buscar mecanismo para la veta A_s antes de R1/R2.~~ (R1/R2 cerrado el 2026-10-20: ver 3.2)
 
 ---
 

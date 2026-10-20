@@ -135,7 +135,12 @@ def _git(repo, commit, en):
 
 def receta(nombre, r, necesarios, R, args, cache):
     t = r["tipo"]
-    if t == "url":
+    if t == "url" and r.get("urls"):          # varios archivos sueltos en una carpeta (2026-10-20)
+        en = local(r["en"], R)
+        en.mkdir(parents=True, exist_ok=True)
+        for rel, u in r["urls"].items():
+            shutil.copyfile(_descarga(u, cache), en / rel)
+    elif t == "url":
         a = _descarga(r["url"], cache)
         if r.get("desempaca"):
             n = _extrae(a, r["desempaca"], local(r["en"], R), necesarios, r.get("interno"))

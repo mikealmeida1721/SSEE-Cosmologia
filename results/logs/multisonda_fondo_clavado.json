@@ -215,11 +215,9 @@
   ],
   "control_positivo_ve": true,
   "_procedencia": {
-    "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
-    "reproducible_desde_commit": false,
-    "cambios_sin_commitear": [
-      "M src/p06_growth/multisonda_fondo_clavado.py"
-    ],
+    "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+    "reproducible_desde_commit": true,
+    "cambios_sin_commitear": [],
     "script": "src/p06_growth/multisonda_fondo_clavado.py",
     "script_sha256": "2084188dcd859bcd7136c69064ba31c8753663720b6957b8d74c08ac9f26b40c",
     "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
@@ -229,12 +227,12 @@
       "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47",
       "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188",
       "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2",
-      "CANONICAL_VALUES.yaml": "051e036620058719921f1033cc3277af9c8a65063a9109fee034d59d06ee8000"
+      "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5"
     },
     "argv": [
       "src/p06_growth/multisonda_fondo_clavado.py"
     ],
-    "fecha": "2026-10-20T13:57:00",
+    "fecha": "2026-10-20T14:13:04",
     "host": "mike-System-Product-Name",
     "python": "3.12.3",
     "versiones": {

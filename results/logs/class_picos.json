@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-16",
+ "fecha": "2026-10-20",
  "modelos": {
   "lcdm": {
    "picos": [
@@ -34,20 +34,20 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/class_picos.py",
   "script_sha256": "f6acb3c0e2786f2752b80af323774bf8acc646315c441e983a281b1074ba9e3d",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "f181f62de0c7b424914a23c243b71bf207791833660a8930ab1c17c209c5997c",
+   "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5",
    "results/logs/paper3_cmb_chi2.json": "0598db97d751abf24b3c6a6f880572e776e3536cff99fa74fc271c948d83f77e"
   },
   "argv": [
    "src/p03_cmb/class_picos.py"
   ],
-  "fecha": "2026-10-16T20:25:51",
+  "fecha": "2026-10-20T14:12:56",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

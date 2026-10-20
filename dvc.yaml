@@ -735,6 +735,23 @@ stages:
     - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.progress
     - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z1.dat
     - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z3.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/pk_tools.py
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat
     outs:
     - results/logs/growth_2026-07/boss_chen21.json:
         cache: false
@@ -750,10 +767,68 @@ stages:
     - src/p06_growth/boss_lpt_R1R2.py
     - src/procedencia.py
     - /mnt/datos/SSEE_data/chains_p6/boss_chen21/malla_7x7x13.pkl
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z1.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z3.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/pk_tools.py
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat
     outs:
     - results/logs/growth_2026-07/boss_chen21_malla.json:
         cache: false
     - results/logs/boss_chen21_malla.log:
+        cache: false
+  # 2026-10-20: el ω_c que pide BOSS con todo lo demás clavado, en el montaje de Chen+22
+  # (reemplaza a perfil_wc_boss*, archivados). Control: el mejor punto del ΛCDM libre.
+  perfil_wc_boss_chen21:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/perfil_wc_boss_chen21.py
+      > results/logs/perfil_wc_boss_chen21.log 2>&1
+    deps:
+    - src/p06_growth/perfil_wc_boss_chen21.py
+    - src/p06_growth/analiza_boss_chen21.py
+    - src/p06_growth/cobaya_boss_chen21.py
+    - src/p06_growth/cobaya_boss_chen21_fijo.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/ssee_core.py
+    - src/procedencia.py
+    - CANONICAL_VALUES.yaml
+    - results/logs/growth_2026-07/boss_chen21.json
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z1.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z3.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/C_2048_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_200_prerecon.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/M_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_1200_2000.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_NGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z1_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/W_BOSS_DR12_SGC_z3_V6C_1_1_1_1_1_10_200_2000_averaged_v1.matrix.gz
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/pk_tools.py
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_NGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z1_COMPnbar_TSC_700_700_700_400_renorm.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/ps1D_BOSS_DR12_SGC_z3_COMPnbar_TSC_700_700_700_400_renorm.dat
+    outs:
+    - results/logs/growth_2026-07/perfil_wc_boss_chen21.json:
+        cache: false
+    - results/logs/perfil_wc_boss_chen21.log:
         cache: false
   fsigma8_canonico:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 

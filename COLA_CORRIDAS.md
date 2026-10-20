@@ -1,5 +1,7 @@
 # Cola de corridas
 
+> 🔴 **2026-10-20:** toda corrida de BOSS de esta cola (R1/R2, `perfil_wc_boss*`, `boss_aisla_neutrinos`, término de volumen, conjuntas con BOSS, «BOSS ΛCDM con fondo libre») corrió sobre los espectros de Beutler+2017 y quedó **retirada**; se conserva como registro. BOSS vigente: montaje de Chen+22 con control, `results/logs/growth_2026-07/boss_chen21.json`.
+
 **Abierto 2026-09-07.** Nace de una regla de Mike: *«dejarlo anotado no
 significa que se vaya a hacer».* Una corrida que no está en esta cola con su
 coste no existe — se olvida. Y como la máquina no puede con todas a la vez,

@@ -141,7 +141,7 @@ guardian's messages are in Spanish.
 | DESI DR2 BAO with both backgrounds fixed | see stage in `dvc.yaml` | `results/logs/bao_lcdm_libre.json` |
 | Each probe, background fixed in advance | `dvc repro -s sondas_ssee_vs_lcdm` | `results/logs/sondas_ssee_vs_lcdm.json` |
 | S₈ vs raw KiDS-Legacy, A_s fixed to the CMB | see stages in `dvc.yaml` | `results/logs/kids_legacy_bic.json`, `kids_publicados.json` |
-| fσ₈ vs raw BOSS DR12 multipoles | see stages in `dvc.yaml` | `results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json` |
+| fσ₈ vs raw BOSS DR12 multipoles (Chen+22 setup, with control) | `dvc repro -s analiza_boss_chen21` | `results/logs/growth_2026-07/boss_chen21.json` |
 | Paper 2 MCMC (DESI + prior H_glob) | `python src/p02_mcmc/ssee_paper2_mcmc.py` | `results/logs/mcmc_paper2_reframe.json` |
 
 `dvc.yaml` is the authoritative list: every stage gives the exact command,

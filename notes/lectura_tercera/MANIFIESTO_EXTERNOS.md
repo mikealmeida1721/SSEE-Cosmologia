@@ -241,7 +241,7 @@ verificación manual de citas; el patrón ya establecido en el proyecto (ver
 
 Cadenas Cobaya de Paper 6 (crecimiento de estructura), generadas y leídas por los
 scripts en `src/p06_growth/` (`multisonda_fondo_clavado.py`, `leer_conjunta.py`,
-`conjunta_perfil_logA.py`, `cobaya_kids_legacy.py`, `analiza_boss_R1R2.py`, entre otros).
+`cobaya_kids_legacy.py`, `cobaya_boss_chen21.py`, `analiza_boss_chen21.py`, entre otros; las cadenas de `boss/` y `conjunta/` son del BOSS de 2017, retirado el 2026-10-20).
 
 - Tamaño total: **440 MB**
 - Subgrupos: `boss/` (lcdm+ssee ×4), `kids/` (lcdm+ssee ×4 + progress/updated.yaml),

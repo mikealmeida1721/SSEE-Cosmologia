@@ -67,7 +67,7 @@
   "legacy_A_scale_fijo_sigma": 0.6547519567998019,
   "legacy_A_scale_corrimiento": 0.09854397340565457
  },
- "fecha": "2026-10-16",
+ "fecha": "2026-10-20",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -107,7 +107,7 @@
   }
  },
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
@@ -118,13 +118,13 @@
    "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
    "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "a8a00bace0a3e55cf79a164f03ed1f390e41cf630961ded5b729f9718cf025b2",
-   "results/logs/s8_kids_legacy_camb.json": "729d53f9804c32af68351b053d733adbf6828da88667826530445060055af163",
-   "results/logs/s8_desde_b1.json": "93a23aa4adadae2d1a9d4fa7cfa5512493c1fec1e5d93001d8f9bb56addcfed7"
+   "results/logs/s8_kids_legacy_camb.json": "181438c8b9833595d30698652ea37becb897869d8c02146c4ea4c19fc68a0152",
+   "results/logs/s8_desde_b1.json": "baf57e8acd1c8889f66552fa712f681c368d757024ada4d5fbbb617b40026eeb"
   },
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-16T21:44:15",
+  "fecha": "2026-10-20T14:12:31",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

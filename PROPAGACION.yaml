@@ -131,6 +131,7 @@ logs:
   boss_chen21:                src/p06_growth/analiza_boss_chen21.py
   analiza_boss_chen21:        src/p06_growth/analiza_boss_chen21.py
   boss_chen21_malla:          src/p06_growth/cobaya_boss_chen21.py
+  perfil_wc_boss_chen21:      src/p06_growth/perfil_wc_boss_chen21.py
   # 2026-10-16: corridas del 10-11 (P2 k=0, P5 reescrito, P7 el campo rueda)
   p2_ssee_fijo_k0:            src/p02_mcmc/ssee_fijo_k0.py
   p5_cruce_fantasma_IS:       src/p05_IS/cruce_fantasma_IS.py
@@ -379,6 +380,16 @@ bitacoras:
   # 2026-10-16: colas de las pasadas de re-sellado R75 y de la tanda pesada (10-03…10-16)
   - cola_1010
   - cola_1012
+  - cola_1017b
+  - cola_1017c
+  - cola_1017d
+  - cola_1017e
+  - cola_1018
+  - cola_1018c
+  - cola_1018d
+  - cola_1019
+  - cola_1020
+  - cola_1020b
   - cola_1016
   - cola_1017
   - cola_act_spt

@@ -66,6 +66,9 @@ from scipy.special import hyp2f1
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.insert(0, os.path.join(_R, 'src'))
 sys.path.insert(0, os.path.join(_R, 'src', 'p06_growth'))
+if __name__ == '__main__' and sys.argv[1:2] in (['prueba'], []):   # el acta va en la PRIMERA linea del log
+    from procedencia import cabecera as _cab
+    print(_cab(__file__), flush=True)
 np.seterr(all='ignore')
 _ARGV = list(sys.argv)
 sys.argv = [sys.argv[0], '0.20']

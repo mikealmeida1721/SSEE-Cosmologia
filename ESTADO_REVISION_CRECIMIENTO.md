@@ -16,9 +16,9 @@
 > (0.05σ)**. Lo de abajo se conserva como el registro de cómo se llegó ahí:
 > es la mesa de trabajo de aquella revisión, no el estado del modelo.
 >
-> **Lo único que sigue vivo de este documento es el «Pendiente» del final:**
-> el modelo de RSD contra BOSS crudo (R1/R2 con LPT). Eso NO se ha hecho.
-> Ficha viva: OP-26.
+> El «Pendiente» del final (el modelo de RSD contra BOSS crudo) **se hizo el 2026-10-20**
+> con el montaje de Chen+22 y su control: `results/logs/growth_2026-07/boss_chen21.json`,
+> ficha OP-26. Este documento ya no tiene nada vivo.
 
 ## Qué se midió (contra datos CRUDOS, no contra valores publicados)
 
