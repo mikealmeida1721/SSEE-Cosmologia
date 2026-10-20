@@ -3,8 +3,8 @@
  "mecanismo": "boss_lpt_R1R2.chi2_marg_set L262-291 devuelve c + ln det F; F = T^T Cinv T + Lambda con T ∝ e^logA (L277), asi que el volumen de las molestias lineales depende de A_s",
  "control": {
   "criterio": "0 < pendiente <= 36 (techo algebraico: F es 3x3, T ∝ e^logA, 6 conjuntos)",
-  "pendiente": 32.75267051569632,
-  "residuo_recta": 0.061074653295946746,
+  "pendiente": 14.558623039340215,
+  "residuo_recta": 0.0469927852756058,
   "pasa": true
  },
  "rejilla": [
@@ -19,44 +19,46 @@
   3.1
  ],
  "ln_det_F": [
-  -134.36362842599823,
-  -132.7733906029047,
-  -131.16823968407954,
-  -129.54894546335052,
-  -127.91627367737483,
-  -126.27098163621909,
-  -124.6138141396323,
-  -122.94549974169777,
-  -121.26674741413758
+  -87.40406531807032,
+  -86.71253462111255,
+  -86.00961476508154,
+  -85.29585213058081,
+  -84.57179769995659,
+  -83.83800436291406,
+  -83.09502450383545,
+  -82.34340792324224,
+  -81.58370013450758
  ],
  "c": [
-  402.28978408445835,
-  328.93117954594084,
-  274.14488867862144,
-  238.11874166425125,
-  221.1194934561636,
-  223.52221061268702,
-  245.84037501106633,
-  288.75656439610515,
-  353.1536609752996
+  253.77687893080082,
+  210.68576883635927,
+  178.50190968141064,
+  157.3491645148975,
+  147.38578682261647,
+  148.81976079755376,
+  161.92394793954858,
+  187.0508982250961,
+  224.6472368325825
  ],
  "alcance": "mide de donde sale el desplazamiento. NO dice cual estimador es insesgado — eso es la cola #23, con dato sintetico",
  "prediccion": {
-  "curvatura_perfil": 130.3879417144036,
-  "sigma_perfil": 0.1238500775890765,
-  "desplazamiento_predicho": 0.2511940144544687,
-  "desplazamiento_observado": 0.18336357026222583,
-  "razon": 1.3699232300900308
+  "curvatura_perfil": 57.074271121747806,
+  "sigma_perfil": 0.18719524411686886,
+  "desplazamiento_predicho": 0.2550820668087821,
+  "desplazamiento_observado": 0.17414193490126983,
+  "razon": 1.4647940311068752
  },
  "_procedencia": {
-  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p06_growth/mide_termino_volumen.py"
+  ],
   "script": "src/p06_growth/mide_termino_volumen.py",
-  "script_sha256": "f72b3de427b819325702e2cd08adf89b45d8f1ee0e326696d3af33085d265483",
+  "script_sha256": "13f54ee21e988e57c6a0c28b49ec4d113260ab0b1a93af91a58386a4a5d47a37",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "05cc75b75624d2ce0975f44865a9118d41ea2d52d4cff7d5c190ae86344c2f6a"
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "1dfeb2fbd768ed94d9ff1f6d61bb5b5c0c45de4fde2cae77b752541c9e0a4b36"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -64,12 +66,12 @@
    "results/logs/growth_2026-07/termino_volumen_boss.json",
    "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"
   ],
-  "fecha": "2026-10-16T00:42:16",
+  "fecha": "2026-10-18T06:44:12",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

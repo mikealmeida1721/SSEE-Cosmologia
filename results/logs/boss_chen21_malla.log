@@ -1,0 +1,9 @@
+  z1 NGC: 36 puntos (l=0,2; 0.026-0.195)
+  z1 SGC: 36 puntos (l=0,2; 0.026-0.195)
+  z3 NGC: 36 puntos (l=0,2; 0.026-0.195)
+  z3 SGC: 36 puntos (l=0,2; 0.026-0.195)
+  Om=0.2926 h=0.7017 logA=2.6741: exacto 572.1310  interpolado +2.39e-02  viejo +2.82e+02
+  Om=0.3067 h=0.6782 logA=3.0789: exacto 4.2806  interpolado -1.26e-03  viejo -9.42e-01
+  Om=0.3269 h=0.6700 logA=2.9938: exacto 12.3380  interpolado +1.72e-02  viejo +3.99e+00
+  Om=0.2999 h=0.6844 logA=2.6718: exacto 697.2083  interpolado -3.14e-02  viejo +3.26e+02
+  peor interpolado 3.14e-02 (criterio 0.05) · peor viejo 3.26e+02 -> PASA

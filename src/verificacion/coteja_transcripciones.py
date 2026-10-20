@@ -14,9 +14,9 @@ QUÉ COMPRUEBA, por cada «Sampling complete after N accepted steps» de cobaya:
   2. que la suma de filas de prefijo.<k>.txt sea EXACTAMENTE N;
   3. que la transcripción diga «The run has converged!» antes de terminar;
   4. que alguna etapa de dvc.yaml lea esa cadena (la cadena está en la cadena).
-Y para la cabecera de la conjunta b3 (`conjunta_b3_bloques.json`): que su
-sobremuestreo y su covmat sean los que registra la propia configuración de la
-cadena (`conjunta_b3.input.yaml`).
+(2026-10-20: salieron las dos transcripciones del BOSS de Beutler+2017 y la
+cabecera de la conjunta b3, archivadas con su montaje en
+archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/.)
 
 CONTROL (R53): una transcripción sintética con N de más se marca; la misma con el N
 correcto pasa. Si el control falla, la salida dice pasa=false.
@@ -40,15 +40,11 @@ TRANSCRIPCIONES = [
     "results/logs/b1_full_run.log",
     "results/logs/b1_lcdm_run.log",
     "results/logs/b1_k2_run.log",
-    "results/logs/boss_cobaya_ssee.log",
-    "results/logs/boss_cobaya_lcdm.log",
     "results/logs/kids_legacy_ssee.log",
     "results/logs/kids_legacy_sseefijo.log",
     "results/logs/kids_legacy_lcdmfijo.log",
     "results/logs/R4_lcdm_resume_20260805.log",
 ]
-CABECERA_B3 = "results/logs/conjunta_b3_bloques.json"
-YAML_B3 = "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.input.yaml"
 
 _PREF = [re.compile(r"Output to be read-from/written-into folder '([^']+)', with prefix '([^']+)'"),
          re.compile(r"Output prefix: (\S+)")]
@@ -103,16 +99,6 @@ def coteja(texto, contar=filas, stages=None):
     return segs
 
 
-def coteja_b3():
-    cab = json.load(open(ROOT / CABECERA_B3))
-    s = yaml.safe_load(open(YAML_B3))["sampler"]["mcmc"]
-    fact = [b[0] for b in s["blocking"]]
-    esperado = [cab["sobremuestreo"][k] for k in ("lentos", "kids", "boss")]
-    return dict(sobremuestreo_cabecera=esperado, sobremuestreo_cadena=fact,
-                covmat_cabecera=cab["covmat"], covmat_cadena=s.get("covmat"),
-                pasa=bool(fact == esperado and cab["covmat"] == s.get("covmat")))
-
-
 def control():
     with tempfile.TemporaryDirectory() as d:
         pref = pathlib.Path(d) / "x"
@@ -125,7 +111,7 @@ def control():
 
 if __name__ == "__main__":
     stages = yaml.safe_load(open(ROOT / "dvc.yaml"))["stages"]
-    res = dict(transcripciones={}, cabecera_b3=None, control=control())
+    res = dict(transcripciones={}, control=control())
     for t in TRANSCRIPCIONES:
         segs = coteja((ROOT / t).read_text(errors="ignore"), stages=stages)
         res["transcripciones"][t] = dict(segmentos=segs)
@@ -137,16 +123,14 @@ if __name__ == "__main__":
             s["convergio_en_alguna"] = s["prefijo"] in conv
             s["pasa"] = bool(s["N_declarado"] == s["filas"] and s["convergio_en_alguna"] and s["etapas_que_leen"])
         v["pasa"] = bool(v["segmentos"]) and all(s["pasa"] for s in v["segmentos"])
-    res["cabecera_b3"] = coteja_b3()
-    res["pasa"] = bool(res["control"] and res["cabecera_b3"]["pasa"]
+    res["pasa"] = bool(res["control"]
                        and all(v["pasa"] for v in res["transcripciones"].values()))
     for t, v in res["transcripciones"].items():
         print(f"{'PASA' if v['pasa'] else 'FALLA'} {t}: " + "; ".join(
             f"{pathlib.Path(s['prefijo']).name} N={s['N_declarado']} filas={s['filas']} conv={s['convergio']} leen={s['etapas_que_leen']}"
             for s in v["segmentos"]) if v["segmentos"] else f"FALLA {t}: sin «Sampling complete»")
-    print(("PASA" if res["cabecera_b3"]["pasa"] else "FALLA"), "cabecera b3:", res["cabecera_b3"])
     print("control:", "PASA" if res["control"] else "FALLA")
     out = ROOT / "results" / "logs" / "coteja_transcripciones.json"
-    entradas = [ROOT / t for t in TRANSCRIPCIONES] + [ROOT / CABECERA_B3]
+    entradas = [ROOT / t for t in TRANSCRIPCIONES]
     json.dump(con_acta(res, __file__, entradas=[str(e) for e in entradas]), open(out, "w"), indent=1)
     sys.exit(0 if res["pasa"] else 1)

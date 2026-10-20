@@ -30,12 +30,16 @@ MONTAJE
     CMB plik_lite TTTEEE+lowT+lowE  tau            (1)   1003.586
     KiDS-Legacy xi_pm               logT_AGN,A_scale,
                                     dz1..dz6       (8)    417.971
-    BOSS DR12 P(k) LPT              b1,b2,bs x 6   (18)   la mide `boss_clavado`
-                                    (escala MARGINAL; en escala real es
-                                     197.438 libre / 198.07 clavado = 0.63)
+    BOSS DR12 P(k) LPT              b1,b2,bs x 4   (12)   la mide `boss_clavado`
+                                    (escala MARGINAL; en escala real el
+                                     costo de clavar es boss_chi2_en_logA_cmb.json)
     BAO DESI DR2                    ninguno        (0)     10.859
                                                    --
-                                                   27 muestreados
+                                                   21 muestreados
+    (Hasta el 2026-10-17 BOSS llevaba 6 conjuntos, 18 sesgos y 27 muestreados:
+    tres bines z SOLAPADOS contados como independientes, y A_s escalado sobre la
+    salida LPT. Las cadenas de entonces estan en
+    chains_p6/conjunta_BOSS_viejo_RETIRADO_2026-10-18/.)
 
 BAO queda FUERA del muestreador. No es un atajo: con cero libres su chi2 es una
 constante, y una constante en el log-verosimil no puede mover el posterior de

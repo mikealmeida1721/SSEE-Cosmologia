@@ -3,23 +3,23 @@
  "pregunta": "M. Almeida — cuando algo cambia asi, aunque sea a mejor, se reverifica antes de pasarlo al paper",
  "control": {
   "criterio": "la repeticion devuelve el mismo logA a <1e-5",
-  "A": 2.9447867903117655,
-  "C": 2.9447867903117655,
+  "A": 2.9062226209910067,
+  "C": 2.9062226209910067,
   "dif": 0.0,
   "pasa": true
  },
  "A_canonico": {
   "mnu": 0.06849,
-  "logA": 2.9447867903117655,
-  "sig_logA": 0.1238500775890765,
-  "chi2": 197.43788924712965,
+  "logA": 2.9062226209910067,
+  "sig_logA": 0.15097216255778229,
+  "chi2": 197.19400302123978,
   "dof": 185
  },
  "B_prestada": {
   "mnu": 0.06,
-  "logA": 2.9418126642977325,
-  "sig_logA": 0.12166318130622786,
-  "chi2": 197.5589936072571,
+  "logA": 2.9036409178788842,
+  "sig_logA": 0.15102065410948648,
+  "chi2": 197.31950203283895,
   "dof": 185
  },
  "viejo_mcmc": {
@@ -28,19 +28,21 @@
   "fuente": "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json"
  },
  "descomposicion": {
-  "total": 0.18114712920317633,
-  "por_neutrinos": 0.0029741260140330184,
-  "por_metodo": 0.1781730031891433,
-  "frac_neutrinos": 0.01641828952584289,
-  "frac_metodo": 0.9835817104741571
+  "total": 0.14258295988241754,
+  "por_neutrinos": 0.0025817031121224687,
+  "por_metodo": 0.14000125677029507,
+  "frac_neutrinos": 0.018106673576221845,
+  "frac_metodo": 0.9818933264237781
  },
  "alcance": "mide de que fue el desplazamiento. NO decide si el numero nuevo entra en Paper 6 — eso es decision de Mike",
  "_procedencia": {
-  "commit": "e98027985b380f3f78b1c1026759b0d7bd85dcff",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p06_growth/boss_aisla_neutrinos.py"
+  ],
   "script": "src/p06_growth/boss_aisla_neutrinos.py",
-  "script_sha256": "d9b3e0f34ed49e52a989d974f038282237694f4de8856beea3819056cc17eac7",
+  "script_sha256": "b92d7a7c85361d94268415ef4806cc8a3e918cc5b386b952bcb8db9cf97933c3",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json": "5b8ea2afaeac8c701580fce7bab57623b76d3cbccda31a127343c0dc7a04bee8",
@@ -111,12 +113,12 @@
    "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat",
    "/mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat"
   ],
-  "fecha": "2026-10-13T02:07:53",
+  "fecha": "2026-10-18T08:52:29",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

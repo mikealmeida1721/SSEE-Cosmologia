@@ -283,7 +283,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
 | log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
 | σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7449 ± 0.0186, 0.7559 ± 0.0189 | 0.10σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
-| fσ₈ vs raw BOSS DR12 multipoles (LPT, each model with its own ingredients) | Δχ² = −2.03 (SSEE − ΛCDM, equal freedom) | measured; BOSS does not constrain A_s (profile vs marginal 1.82σ) — `results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json` |
+| fσ₈ vs raw BOSS DR12 multipoles (one-loop LPT, Chen+22 setup) | SSEE with every cosmological parameter fixed: χ² = 117.10 vs 114.26 for free ΛCDM (Δχ² = +2.84, ΔBIC −12.1); Planck-fixed ΛCDM 115.34 | 144 points; a free-ΛCDM control first reproduces Chen, Vlah & White 2022 (all four parameters within 0.3σ) — `results/logs/growth_2026-07/boss_chen21.json` |
 
 > **Methodological point:** a published S₈ is the output of a fit that assumes a
 > ΛCDM background. Before treating a number with an error bar as a target, ask
@@ -338,7 +338,7 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 | Ωm (geometric identity, *superseded* by ωm-direct 0.308881) | (π−φ)/(π+φ) = 0.3201 | 0.3153 ± 0.0073 | 0.66σ |
 | Ωb h² | (π−φ)/(3Ω²) = 0.02242 | 0.02237 ± 0.00015 | 0.32σ |
 | Ωc h² | KAL₀ × Ωb h² × n_s = 0.11951 | 0.1200 ± 0.0012 | −0.40σ |
-| Y_p (BBN) | linear BBN sensitivity at Ωb h² = 0.02242 (Paper 4) = 0.2471 | 0.2449 ± 0.0040 (Aver+2015) | 0.6σ |
+| Y_p (BBN) | linear BBN sensitivity at Ωb h² = 0.02242 (Paper 4) = 0.2471 | 0.2449 ± 0.0040 (Aver+2015) | 0.6σ | <!-- R74: git:69cc773:results/logs/algebra_derivada.json -->
 | δc | **1.67634** (z=0) — spherical collapse on the model's background | 1.67599 (ΛCDM, same integrator) | 0.02 % — indistinguishable. *(δc,EdS × n_s = 1.6284 is RETIRED 2026-09-25: OP-27)* |
 
 **Press-Schechter halo counts** at z=10 (`src/p02_mcmc/ssee_press_schechter.py`), with the **derived** δc:

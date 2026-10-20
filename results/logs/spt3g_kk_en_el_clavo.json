@@ -32,7 +32,7 @@
   "ve_As": true
  },
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/spt3g_kk.py",
@@ -40,7 +40,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
-   "results/logs/multisonda_fondo_clavado.json": "75593f5a8cc43ff732c44d9d9f2402f567950f2d1017cf56afea309e5ada251e",
+   "results/logs/multisonda_fondo_clavado.json": "beee7c946a0c5de9f90ab8ae3c6903f6bf211f9458ebeb6268c0ee26f9077f3c",
    "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml": "35f72bb7166f101257f615989b37a0205e788d8bdc0f34a6cdd86f803141d1d3"
   },
   "argv": [
@@ -51,12 +51,12 @@
    "results/logs/multisonda_fondo_clavado.json",
    "/mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml"
   ],
-  "fecha": "2026-10-16T21:46:01",
+  "fecha": "2026-10-18T09:01:45",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

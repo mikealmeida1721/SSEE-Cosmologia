@@ -9,25 +9,25 @@
  },
  "control": {
   "criterio": "ve el desplazamiento conocido de BOSS (>0.05)",
-  "medido": 0.008497979950460532,
-  "pasa": false
+  "medido": 0.07530648439312193,
+  "pasa": true
  },
  "casos": {
   "boss": {
-   "marginal": 2.7614232200495397,
-   "sigma": 0.10100907523901899,
-   "mejor_punto": 2.7699212,
-   "desplazamiento": 0.008497979950460532,
-   "en_sigmas": 0.08413085586964994,
-   "chi2_mejor": 73.413456,
-   "n_efectivo": 557534.0,
+   "marginal": 2.681228215606878,
+   "sigma": 0.1381867220683369,
+   "mejor_punto": 2.7565347,
+   "desplazamiento": 0.07530648439312193,
+   "en_sigmas": 0.5449617970956785,
+   "chi2_mejor": 47.104687,
+   "n_efectivo": 286598.0,
    "d_muestreadas": 19,
-   "dchi2_esperado_del_mejor": 2.416388882605597,
-   "papel": "CONTROL — aqui SI hay desplazamiento medido por otra via (perfil - marginal = 0.1834)",
-   "publicado": 2.7614232200495397,
+   "dchi2_esperado_del_mejor": 2.61621497347027,
+   "papel": "CONTROL — aqui SI hay desplazamiento medido por otra via (perfil - marginal = 0.1741)",
+   "publicado": 2.681228215606878,
    "reproduce_publicado": true,
-   "perfil_conocido": 2.9447867903117655,
-   "perfil_menos_marginal": 0.18336357026222583
+   "perfil_conocido": 2.855370150508148,
+   "perfil_menos_marginal": 0.17414193490126983
   },
   "kids": {
    "marginal": 2.8636678493268715,
@@ -45,21 +45,21 @@
   }
  },
  "alcance": "mide si la media marginal se aparta del mejor ajuste. NO sustituye a la cola #23 (dato sintetico con la verdad conocida), que es la unica que dice cual estimador es INSESGADO",
- "veredicto": "el diagnostico no ve el desplazamiento que YA se sabe que existe en BOSS: no absuelve a KiDS",
+ "veredicto": "KiDS: la media marginal se aparta del mejor ajuste +0.01948 (+0.39 sigma)",
  "_procedencia": {
-  "commit": "c456179c1b3c3ca64681508232aaa1e9e076f003",
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/marginal_vs_perfil.py",
   "script_sha256": "f26db77bb7d0ffb8ece8203cf43cee4716cb7388bccb615153c64d3b4f8aacb6",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "05cc75b75624d2ce0975f44865a9118d41ea2d52d4cff7d5c190ae86344c2f6a",
+   "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json": "1dfeb2fbd768ed94d9ff1f6d61bb5b5c0c45de4fde2cae77b752541c9e0a4b36",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "dd8b63f3da7c7addc9ba0b9ab884cb5106dc29e8f739506932819dc94071be3c",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "387dba81f6ff9be5b262dff4ea85300b7d154c7bfc0d645f3ef52959b6539238",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "6c73937f3c2112ec536db71a633c347998a6a04fd90bb1336aea0e548d6e2e35",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "a212772d9ac721944709dee2755fa58ad4250047474ccfaf5c3119912946cd4c",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt": "ed4d0c1d818775d439726e51a4f38445066ee896d3a2b12a3a436bd393d351d0",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt": "680990c1342bfb000f29b7ef25370a05adba2ee3e97848605ea14c91dbd3841a",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt": "2fe41d979a46279acb23dfa438c6176eb4ef72a3c3f0d248934c82d17281eeb9",
@@ -80,12 +80,12 @@
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt"
   ],
-  "fecha": "2026-10-16T01:48:06",
+  "fecha": "2026-10-18T06:44:18",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

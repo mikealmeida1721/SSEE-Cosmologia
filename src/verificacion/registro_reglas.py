@@ -589,8 +589,8 @@ REGLAS = {
         archivo="VERIFICATION_LEDGER.md",
         exenciones=[],
         mutacion=[("una ruta de script que ya no existe",
-                   "src/p06_growth/perfil_wc_boss.py",
-                   "src/p06_growth/perfil_wc_boss_VIEJO.py")],
+                   "src/p06_growth/analiza_boss_chen21.py",
+                   "src/p06_growth/analiza_boss_chen21_VIEJO.py")],
     ),
     "R60": dict(
         capa="R60 — los papers están limpios de todo lo retirado",

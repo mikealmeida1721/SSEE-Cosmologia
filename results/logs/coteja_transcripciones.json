@@ -73,44 +73,6 @@
    ],
    "pasa": true
   },
-  "results/logs/boss_cobaya_ssee.log": {
-   "segmentos": [
-    {
-     "prefijo": "/mnt/datos/SSEE_data/chains_p6/boss/ssee",
-     "N_declarado": 110463,
-     "filas": 110463,
-     "convergio": true,
-     "etapas_que_leen": [
-      "analiza_boss_R1R2",
-      "coteja_transcripciones",
-      "marginal_vs_perfil",
-      "mide_As_o_producto",
-      "multisonda_fondo_clavado"
-     ],
-     "pasa": true,
-     "convergio_en_alguna": true
-    }
-   ],
-   "pasa": true
-  },
-  "results/logs/boss_cobaya_lcdm.log": {
-   "segmentos": [
-    {
-     "prefijo": "/mnt/datos/SSEE_data/chains_p6/boss/lcdm",
-     "N_declarado": 158747,
-     "filas": 158747,
-     "convergio": true,
-     "etapas_que_leen": [
-      "analiza_boss_R1R2",
-      "coteja_transcripciones",
-      "mide_As_o_producto"
-     ],
-     "pasa": true,
-     "convergio_en_alguna": true
-    }
-   ],
-   "pasa": true
-  },
   "results/logs/kids_legacy_ssee.log": {
    "segmentos": [
     {
@@ -137,7 +99,6 @@
      "filas": 14510,
      "convergio": true,
      "etapas_que_leen": [
-      "conjunta_control",
       "coteja_transcripciones",
       "kids_legacy_bic",
       "lcdm_conjunta_lee"
@@ -189,46 +150,30 @@
    "pasa": true
   }
  },
- "cabecera_b3": {
-  "sobremuestreo_cabecera": [
-   1,
-   5,
-   208
-  ],
-  "sobremuestreo_cadena": [
-   1,
-   5,
-   208
-  ],
-  "covmat_cabecera": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.covmat",
-  "covmat_cadena": "/mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.covmat",
-  "pasa": true
- },
  "control": true,
  "pasa": true,
  "_procedencia": {
-  "commit": "103617b524f8d78634b0b58607726d96613b7d35",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/verificacion/coteja_transcripciones.py"
+  ],
   "script": "src/verificacion/coteja_transcripciones.py",
-  "script_sha256": "623f00137bbf9279b440ac5c3cbf3f68d6e7d9b6909e13c095ae7df5b449ec25",
+  "script_sha256": "87df686df4b5586ab8251cbfd2bf6fa1875ec33cdff255db947cbd0d27f02ff5",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/b1_full_run.log": "7368c2d67205e7c9cf9d658ded3c004febf39400bdf41fcb4fd5e4e39b3257a5",
    "results/logs/b1_lcdm_run.log": "9c7d46861862f8c4898418270d1cc6ffd84c3bd12ec5941d3bb763629c627e72",
    "results/logs/b1_k2_run.log": "fae95466612de1d9c4c9499efd3189e69e25485fc184714ca86a07d6db603b0b",
-   "results/logs/boss_cobaya_ssee.log": "ea3fccbd9bea2d01dfae3749cff353932f41bd5c9e7bbdb876c7a489f453464d",
-   "results/logs/boss_cobaya_lcdm.log": "8c9130375cf70aad92db635206caa26d5e025ecce387002325314119184dcba1",
    "results/logs/kids_legacy_ssee.log": "893621f3cc5c4e29dfd76e08e190a108135102a51db7bc3873a557da48037198",
    "results/logs/kids_legacy_sseefijo.log": "56897b2b75103db4393ae9029f7e41a4e5d46b8eb946557048cd51b09355b686",
    "results/logs/kids_legacy_lcdmfijo.log": "4aaa3294b886068506b5ccfa3733f18bc1e7341e0c5e409271b60a4175c068fa",
-   "results/logs/R4_lcdm_resume_20260805.log": "7a50998b005232cc39744ef9e3120a3809d5d593b4c4f57289ae5b8e9ee50b84",
-   "results/logs/conjunta_b3_bloques.json": "eb713f23f0acd4f580a97a653a02a123a195925da8508417e532982f88d0db5f"
+   "results/logs/R4_lcdm_resume_20260805.log": "7a50998b005232cc39744ef9e3120a3809d5d593b4c4f57289ae5b8e9ee50b84"
   },
   "argv": [
    "src/verificacion/coteja_transcripciones.py"
   ],
-  "fecha": "2026-10-16T21:55:30",
+  "fecha": "2026-10-20T13:56:54",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LAS CUATRO SONDAS A LA VEZ, CON EL FONDO UNIFICADO CLAVADO.
+LAS SONDAS A LA VEZ, CON EL FONDO UNIFICADO CLAVADO.
 
 ===========================================================================
 QUE PREGUNTA ES ESTA, Y QUE PREGUNTA NO ES  (encargo de Mike, 2026-09-26)
@@ -29,10 +29,10 @@ Con el fondo clavado al 100% y cada sonda con SUS PROPIOS nuisances, el chi2
 conjunto es IDENTICAMENTE la suma de los individuales. Sumar no aporta nada:
 el numero saldria bien por construccion. Lo que hace que la pregunta tenga
 contenido es que hay un parametro COMPARTIDO de verdad: la amplitud A_s, que
-ven el CMB, KiDS-Legacy y BOSS. El eje de la prueba es ese.
+ven el CMB y KiDS-Legacy (BOSS salio el 2026-10-20, ver abajo). El eje de la prueba es ese.
 
-  · CMB, KiDS-Legacy, BOSS -> cada una mide logA por su cuenta, con el MISMO
-    fondo clavado y con sus propios nuisances marginalizados. Si las tres
+  · CMB, KiDS-Legacy -> cada una mide logA por su cuenta, con el MISMO
+    fondo clavado y con sus propios nuisances marginalizados. Si las dos
     miden la misma cantidad y discrepan, eso es sesgo entre sondas.
   · BAO no ve A_s: es geometria pura. Entra por el otro eje, como bondad de
     ajuste del fondo clavado, y se dice explicitamente que no vota en A_s.
@@ -41,7 +41,7 @@ ven el CMB, KiDS-Legacy y BOSS. El eje de la prueba es ese.
 LOS DOS ESTADISTICOS
 ===========================================================================
 Sea logA_i +- sigma_i la medida de cada sonda del eje amplitud (i = CMB,
-KiDS-Legacy, BOSS), todas con el MISMO fondo clavado.
+KiDS-Legacy), todas con el MISMO fondo clavado.
 
   ESTADISTICO 1 — DISCORDIA ENTRE SONDAS  (el que Mike pidio)
       logA_comun = sum(logA_i/sigma_i^2) / sum(1/sigma_i^2)
@@ -58,7 +58,7 @@ CONTROL DEL OTRO LADO (R53) — sin esto el numero no vale
 ===========================================================================
 Un T_sondas pequeno no significa nada si el estadistico no sabe detectar una
 discordia cuando la hay. Se repite el MISMO calculo con las cadenas de fondo
-LCDM-clavado (kids_legacy/lcdmfijo, boss/lcdm), que son las mismas sondas con
+LCDM-clavado (kids_legacy/lcdmfijo), que son las mismas sondas con
 la misma rigidez y otro fondo. Si T_sondas sale igual en los dos, el
 estadistico no discrimina y no se puede concluir nada de el.
 
@@ -68,9 +68,20 @@ DE DONDE SALE CADA NUMERO — nada tecleado (R65)
   CMB           results/chains/ssee_cmb.[1-4].txt         col logA, col chi2
   KiDS-Legacy   chains_p6/kids_legacy/ssee.[1-4].txt      col logA, col chi2
   KiDS clavado  chains_p6/kids_legacy/sseefijo.[1-4].txt  logA FIJO -> chi2
-  BOSS          chains_p6/boss/ssee.[1-4].txt             col logA, col chi2
   BAO           chi2_bao_posterior.chi2_bao(H0, obh2), 13 pts DESI DR2
   logA clavado  CANONICAL_VALUES.yaml : logA_cmb_ssee
+
+===========================================================================
+BOSS SALE DE ESTA PRUEBA (2026-10-20)
+===========================================================================
+Las cadenas que leia (chains_p6/boss, espectros de Beutler+2017 con tres
+bines solapados) quedaron RETIRADAS: el montaje de BOSS se rehizo con el de
+Chen, Vlah y White 2022 y su control reproduce lo publicado
+(analiza_boss_chen21.py, growth_2026-07/boss_chen21.json). BOSS ademas nunca
+votaba aqui en amplitud (no mide A_s: su logA se movia con el estimador). Su
+bondad de ajuste con el fondo clavado vive ahora en boss_chen21.json. La
+version con BOSS esta en archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/.
+Lo que leen otras etapas (la sigma del CMB, bao_en_el_clavo) no cambia.
 """
 import glob
 import json
@@ -285,13 +296,11 @@ def main():
     di(f"  burn-in descartado: {_QUEMA:.0%} de cada cadena")
     di("")
 
-    # ── eje AMPLITUD: las tres que ven A_s ──────────────────────────────────
+    # ── eje AMPLITUD: las que ven A_s ──────────────────────────────────
     global PATRONES
     PATRONES = [os.path.join(_REPO, "results", "chains", "ssee_cmb.[0-9].txt"),
-                f"{_CAD}/kids_legacy/ssee.[0-9].txt",
-                f"{_CAD}/boss/ssee.[0-9].txt"]
-    ETIQ = ["CMB (plik_lite TTTEEE+lowl+lensing)", "KiDS-Legacy xi_pm",
-            "BOSS DR12 P(k) LPT"]
+                f"{_CAD}/kids_legacy/ssee.[0-9].txt"]
+    ETIQ = ["CMB (plik_lite TTTEEE+lowl+lensing)", "KiDS-Legacy xi_pm"]
     med = [medida(p_, e_) for p_, e_ in zip(PATRONES, ETIQ)]
     di("EJE AMPLITUD — cada sonda mide logA con el MISMO fondo clavado")
     di(f"  {'sonda':38s} {'logA':>10s} {'sigma':>8s} {'muestras':>9s}")
@@ -310,8 +319,8 @@ def main():
         di(f"  {g['sonda']:38s} {g['marginal']:8.5f} {g['condicional']:8.5f}"
            f" {g['D']:7.2f}  {con}")
     di("")
-    di("  LO QUE ESTO OBLIGA A CAMBIAR. El CMB es la MAS degenerada de las tres")
-    di("  (D=11 con tau, la degeneracion A_s e^-2tau de siempre), no BOSS. Con")
+    di("  LO QUE ESTO OBLIGA A CAMBIAR. El CMB es la mas degenerada")
+    di("  (D=11 con tau, la degeneracion A_s e^-2tau de siempre). Con")
     di("  degeneraciones tan distintas, comparar MEDIAS MARGINALES compara cosas")
     di("  que no son la misma: la media se desplaza hacia donde hay volumen de")
     di("  prior. Por eso abajo se calcula tambien por PERFIL, que no tiene ese")
@@ -351,51 +360,13 @@ def main():
     di("-" * 78)
     di("")
 
-    # ── PUERTA: solo vota en amplitud quien MIDE la amplitud ────────────────
-    # Lo senalo Mike: «BOSS no ve A_s, no se por que jalarla si esta fija». Y no
-    # es una opinion suya: ya estaba MEDIDO en el repo antes de esta corrida
-    # (mide_As_o_producto.py, memoria project_As_kids_measures_boss_slides):
-    #   · BOSS D = 4.01, enredado con b1 a r = -0.89.
-    #   · Su logA se DESPLAZO 1.85 sigma de su propia barra (2.7636 -> 2.9448)
-    #     al pasar de media marginal a minimo de perfil. 98% metodo, 2% neutrinos.
-    #   · Y esta escrito como regla: «nunca promediar KiDS con BOSS para el A_s:
-    #     mezcla una medicion con un numero degenerado».
-    # Meter a BOSS en el estadistico era exactamente eso. La puerta lo impide, y
-    # se decide por la D MEDIDA de cada sonda, no por quien sea.
-    # La puerta NO puede ser un umbral en D que me invente yo. Una D alta sola no
-    # descalifica: la companera del CMB es tau, que ESTA medida por lowE, mientras
-    # que la de BOSS es un sesgo que se mueve con ella. El sintoma que SI decide, y
-    # que ya esta MEDIDO en el repo, es otro: ¿se mueve el valor central al cambiar
-    # de estimador? Un numero que depende de con que regla lo mires no es una medida.
-    DESLIZA = {   # ORIGEN: mide_As_o_producto.py + boss_aisla_neutrinos.py (09-09)
-        "BOSS DR12 P(k) LPT": (1.85, "2.7636 (media marginal) -> 2.9448 (minimo de "
-                                     "perfil); 98% metodo, 2% neutrinos"),
-    }
-    vota = [m["sonda"] not in DESLIZA for m in med]
-    di("-" * 78)
-    di("PUERTA DE VOTO — ¿es el logA de esta sonda una MEDIDA de A_s?")
-    di("  Criterio: que su valor central NO dependa del estimador. Medido antes")
-    di("  de esta corrida, no decidido aqui.")
-    for m, g, v in zip(med, degs, vota):
-        if v:
-            di(f"  {m['sonda']:38s} D={g['D']:6.2f}   VOTA")
-        else:
-            _sg, _pq = DESLIZA[m["sonda"]]
-            di(f"  {m['sonda']:38s} D={g['D']:6.2f}   NO VOTA — se desplazo "
-               f"{_sg} sigma de su propia barra")
-            di(f"  {'':38s}          {_pq}")
-    di("  Lo de BOSS no es un juicio de esta corrida: esta medido en")
-    di("  mide_As_o_producto.py y escrito como regla — «nunca promediar KiDS con")
-    di("  BOSS para el A_s: mezcla una medicion con un numero degenerado».")
-    di("  La D del CMB es alta (11.1) pero su companera es tau, que SI esta medida")
-    di("  por lowE; la de BOSS es un sesgo que se desliza con ella. Por eso D sola")
-    di("  no sirve de puerta.")
-    di("-" * 78)
-    di("")
+    # ── PUERTA de voto: RETIRADA con BOSS (2026-10-20). Era la unica sonda que
+    # no votaba (su logA se desplazaba con el estimador); CMB y KiDS-Legacy
+    # votan las dos, como antes.
+    vota = [True for _ in med]
 
     med_voto = [m for m, v in zip(med, vota) if v]
     est = estadisticos(med_voto)
-    est_todas = estadisticos(med)          # solo para ENSENAR el dano de incluirla
     est_pf = estadisticos(prof)            # NO se publica si el perfil no valida
     di("TIRONES respecto del clavo (el SIGNO es lo que informa)")
     di(f"  {'sonda':38s} {'delta':>9s} {'sigmas':>8s}  direccion")
@@ -412,11 +383,6 @@ def main():
     di("  Quita el modo comun: NO puede castigar al modelo. Mide SOLO si las")
     di("  sondas se contradicen entre ellas.")
     di("")
-    di(f"  [para ver el dano] metiendo tambien a BOSS: T = {est_todas['T_sondas']:.3f}"
-       f" ({est_todas['gl_sondas']} g.l.) -> {est_todas['sigmas_sondas']:.2f} sigma.")
-    di("  Ese numero NO se publica: es lo que sale de promediar una medicion con")
-    di("  un numero degenerado, y es justo lo que la regla del repo prohibe.")
-    di("")
     di("ESTADISTICO 2 — el modo comun contra el clavo  [PRUEBA DEL MODELO]")
     di(f"  T_modelo = {est['T_modelo']:.3f} (1 g.l.)  ->  {est['sigmas_modelo']:.2f} sigma")
     di("  Va aparte y etiquetado: NO es la prueba que se pidio.")
@@ -428,7 +394,6 @@ def main():
         chi2_en_el_clavo(os.path.join(_REPO, "results", "chains", "ssee_cmb.[0-9].txt"),
                          "CMB (plik_lite TTTEEE+lowl+lensing)"),
         chi2_en_el_clavo(f"{_CAD}/kids_legacy/sseefijo.[0-9].txt", "KiDS-Legacy xi_pm"),
-        chi2_en_el_clavo(f"{_CAD}/boss/ssee.[0-9].txt", "BOSS DR12 P(k) LPT"),
         bao_en_el_clavo(),
     ]
     di("BONDAD DE AJUSTE con logA EN EL CLAVO, sonda por sonda")
@@ -445,9 +410,6 @@ def main():
                        "libres = tau + 23 nuisances Planck (logA CLAVADO)"),
         "KiDS-Legacy xi_pm":
             (357, 8, "N: 357 puntos xi_pm; libres = logT_AGN, A_scale, dz1..dz6"),
-        "BOSS DR12 P(k) LPT":
-            (222, 18, "N: 222 puntos P(k) k<=0.20; libres = 18 sesgos "
-                      "(b1,b2,bs x 3z x 2 hemisferios); logA CLAVADO"),
         "BAO DESI DR2":
             (13, 0, "N: 13 puntos DESI DR2; CERO libres, el fondo va clavado"),
     }
@@ -462,14 +424,12 @@ def main():
         for _et, _pat in (
                 ("CMB (plik_lite TTTEEE+lowl+lensing)",
                  os.path.join(_REPO, "results", "chains", "lcdm_cmb.[0-9].txt")),
-                ("KiDS-Legacy xi_pm", f"{_CAD}/kids_legacy/lcdmfijo.[0-9].txt"),
-                ("BOSS DR12 P(k) LPT", f"{_CAD}/boss/lcdm.[0-9].txt")):
+                ("KiDS-Legacy xi_pm", f"{_CAD}/kids_legacy/lcdmfijo.[0-9].txt")):
             _c, _a, _ = lee(_pat)
             # MISMA REGLA EN LOS DOS LADOS. Si el chi2 de SSEE se lee CON logA
             # clavado, el de LCDM tambien tiene que leerse clavado. Comparar
             # «SSEE clavado» contra «LCDM en su minimo libre» regala al segundo
-            # toda la libertad de la amplitud: eso fabricaba un Delta=+14.0 en
-            # BOSS donde con la misma regla hay +3.4.
+            # toda la libertad de la amplitud.
             if "logA" in _c:
                 _x = _a[:, _c.index("logA")]
                 _sel = np.abs(_x - LOGA_CLAVADO) < 0.015
@@ -500,40 +460,17 @@ def main():
         di(f"  {c['sonda']:38s} {c['chi2']:9.3f} {n:5d} {k:7d} {gl:5d}"
            f" {c['chi2'] / gl:8.4f} {_rs} {_ds}")
     pte_tot = float(_chi2dist.sf(tot, gtot))
-    di(f"  {'TOTAL (4 sondas)':38s} {tot:9.3f} "
+    di(f"  {'TOTAL (3 sondas)':38s} {tot:9.3f} "
        f"{sum(f['N'] for f in filas):5d} {sum(f['libres'] for f in filas):7d}"
        f" {gtot:5d} {tot / gtot:8.4f} {'—':>9s} {'—':>8s}")
-    # El total de Delta se da SOLO sobre las tres que tienen referencia con la
+    # El total de Delta se da SOLO sobre las que tienen referencia con la
     # MISMA rigidez. No se le suma BAO poniendo su propio chi2 como si fuera el
     # de LCDM: eso seria fabricar un Delta=0 gratis para esa fila.
     _con_ref = [f for f in filas if f.get("chi2_lcdm") is not None]
     _dtot = sum(f["delta_vs_lcdm"] for f in _con_ref)
-    di(f"  {'Delta total (solo las 3 con referencia)':38s} {'':9s} {'':5s} {'':7s}"
+    di(f"  {'Delta total (solo las 2 con referencia)':38s} {'':9s} {'':5s} {'':7s}"
        f" {'':5s} {'':8s} {'':9s} {_dtot:+8.3f}")
     di("")
-    di("")
-    di("  LO QUE BOSS SI PUEDE DECIR, ya que no vota en amplitud: cuanto le")
-    di("  CUESTA que la amplitud vaya clavada, y si ese coste depende del fondo.")
-    try:
-        _cs, _as_, _ = lee(f"{_CAD}/boss/ssee.[0-9].txt")
-        _cl, _al, _ = lee(f"{_CAD}/boss/lcdm.[0-9].txt")
-        _costes = {}
-        for _et, _c, _a in (("SSEE", _cs, _as_), ("LCDM", _cl, _al)):
-            _x = _a[:, _c.index("logA")]
-            _y = _a[:, _c.index("chi2")]
-            _sel = np.abs(_x - LOGA_CLAVADO) < 0.015
-            _costes[_et] = (float(_y.min()), float(_y[_sel].min()))
-            di(f"    BOSS con fondo {_et:5s}: min libre {_y.min():8.3f}"
-               f"   con logA clavado {_y[_sel].min():8.3f}"
-               f"   coste {_y[_sel].min() - _y.min():+7.3f}")
-        di(f"    El coste es parecido con los dos fondos "
-           f"({_costes['SSEE'][1] - _costes['SSEE'][0]:+.2f} contra "
-           f"{_costes['LCDM'][1] - _costes['LCDM'][0]:+.2f}): BOSS quiere menos")
-        di("    amplitud de la que el CMB fija, y la quiere igual en los dos. Eso")
-        di("    NO es un problema del fondo unificado, y tampoco es una medida de")
-        di("    A_s: es el sintoma conocido de su degeneracion con el sesgo.")
-    except Exception as _e:                                  # noqa: BLE001
-        di(f"    (no disponible: {_e})")
     di("")
     di("  COMO SE LEE, que es la pregunta literal de Mike:")
     di("  Con el fondo clavado NO hay libres cosmologicos en ninguna sonda: estos")
@@ -544,15 +481,9 @@ def main():
     di("  del arte. Y el chi2 conjunto es la SUMA de los individuales por")
     di("  construccion —cada sonda tiene sus nuisances y el fondo no se mueve—,")
     di("  asi que la suma no es un dato nuevo. El reparto si: CMB y KiDS-Legacy")
-    di("  prefieren el fondo de SSEE (Delta negativo) y BOSS el de LCDM por +3.4,")
-    di("  con los mismos libres y LA MISMA REGLA en los dos lados (los dos chi2")
-    di("  leidos con logA clavado). Nada de eso es grande.")
-    di("")
-    di("  CORRECCION DE ESTA MISMA CORRIDA. La primera version dio +14.0 para")
-    di("  BOSS. Era una mezcla de reglas: comparaba el chi2 de SSEE CON logA")
-    di("  clavado contra el de LCDM en su minimo LIBRE, regalandole al segundo")
-    di("  toda la libertad de la amplitud. Con la misma regla en los dos lados el")
-    di("  numero es +3.414 clavado, o +1.550 si se dejan libres los dos.")
+    di("  prefieren el fondo de SSEE (Delta negativo), con los mismos libres y")
+    di("  LA MISMA REGLA en los dos lados (los dos chi2 leidos con logA clavado).")
+    di("  BOSS se mide aparte con su propio control: growth_2026-07/boss_chen21.json.")
     di("")
 
     # ── CONTROL DEL OTRO LADO (R53) ─────────────────────────────────────────
@@ -585,7 +516,6 @@ def main():
             medida(os.path.join(_REPO, "results", "chains", "lcdm_cmb.[0-9].txt"),
                    "CMB (fondo LCDM)"),
             medida(f"{_CAD}/kids_legacy/lcdmfijo.[0-9].txt", "KiDS-Legacy (fondo LCDM)"),
-            medida(f"{_CAD}/boss/lcdm.[0-9].txt", "BOSS (fondo LCDM)"),
         ]
         for m in med_c:
             di(f"  {m['sonda']:38s} {m['logA']:10.5f} {m['sigma']:8.5f}")

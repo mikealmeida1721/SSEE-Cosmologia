@@ -183,7 +183,8 @@ canonical:
   gamma_IS:             0.5504     # FUENTE: results/logs/p5_IS_perturbations_Q3.json — Paper 5 índice de crecimiento IS (fit ODE; ±0.0003; ≈ΛCDM 0.55)
   G_growth:            1.0032     # FUENTE: results/logs/p5_IS_perturbations_Q3.json — D₁_SSEE/D₁_ΛCDM (Paper 5 ODE @ Ω_m,cosm=0.308881; era 1.011 @0.31983 — SÍ depende del fondo, que bajó en el reframe ω_m-directo)
   fsigma8_single_sigma:     0.70  # P5 single-sector σ8=0.8136 SIN free-streaming
-  # fsigma8 canónico un-sector contra BOSS crudo: PENDIENTE R1/R2
+  # fsigma8 un-sector contra BOSS crudo: MEDIDO CON CONTROL (2026-10-20, montaje Chen+22, chi2 crudo de
+  # 144 pts; SSEE todo clavado vs LCDM libre). Vive en results/logs/growth_2026-07/boss_chen21.json (P6 por \val bossC_*).
 
   # ── Anclas OBSERVACIONALES (el DATO, no la predicción) ────────────────
   # Fuente única para R20: cualquier constante observacional hardcodeada en
@@ -605,6 +606,7 @@ coincidencias:
   - {pattern: "0.618", archivo: "manuscript/SSEE_Paper3_CMB.tex", contexto: "phi^{-1}", razon: "γ_alg = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
   - {pattern: "0.618", archivo: "manuscript/SSEE_Paper3_CMB.tex", contexto: "gamma_\\mathrm{alg}", razon: "γ_alg = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
   - {pattern: "0.618", archivo: "project_theoretical_directions.md", contexto: "φ⁻¹ = 0.618", razon: "γ = φ⁻¹, no el p(Δχ²) de KiDS-1000"}
+  - {pattern: "1.011", archivo: "manuscript/SSEE_Paper6_Growth.tex", contexto: "background free & 3", razon: "χ²/gl de ΛCDM libre en BOSS (boss_chen21.json#resumen.chi2gl_libre), no el G_growth 1.011 retirado"}
 
 historical_sections:
   # Encabezado que declara TODO lo que cuelga de él como registro histórico.

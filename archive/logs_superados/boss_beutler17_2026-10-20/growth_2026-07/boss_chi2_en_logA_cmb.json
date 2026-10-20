@@ -1,0 +1,65 @@
+{
+ "que_mide": "chi2 del perfil de BOSS (SSEE, sin particula) en el logA del CMB del modelo",
+ "logA_cmb": 3.0432036204741,
+ "sigma_logA_cmb": 0.01454368660281805,
+ "logA_min_boss": 2.855370150508148,
+ "sigma_logA_boss": 0.18719524411686886,
+ "chi2_min_boss": 128.45833699360352,
+ "chi2_en_logA_cmb": 129.35613953248128,
+ "cuesta_clavar": 0.8978025388777553,
+ "nodos_usados": [
+  3.0,
+  3.05,
+  3.1
+ ],
+ "parabola": [
+  30.16918120577699,
+  -173.55299440180366,
+  378.11379008888684
+ ],
+ "metodo": {
+  "nodos_otra_terna": [
+   2.95,
+   3.0,
+   3.05
+  ],
+  "chi2_otra_terna": 129.35595936537914,
+  "diferencia": -0.0001801671021439688
+ },
+ "control": {
+  "residuo_en_nodos": 3.694822225952521e-13,
+  "lineal_en_nodo_3045_perfil_viejo": 198.0691114571885,
+  "referencia_base_sin_particula": 198.07,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p06_growth/boss_chi2_en_logA_cmb.py"
+  ],
+  "script": "src/p06_growth/boss_chi2_en_logA_cmb.py",
+  "script_sha256": "fba179aabdacd33da8b3d312f13a74e6dd9f949e49d99fc45e16d31907b73055",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json": "f0bb3678b3133069dddcd0d33042e40d4f8610b69ce38f783405ca9ad6ecbd3b",
+   "results/logs/growth_2026-07/quien_mide_As.json": "8e0ec6b0443b01dfa9682d5d4eac901c57ed676abbe7b5f64dbaa845b85acf49",
+   "archive/logs_superados/R1R2_boss_lpt_kmax0.200_20261015_3bines_As_escalado.json": "1e5270b780107ca8a23cb27a8069c51ecb4b01ca9bbbb1e8c8704270885f7b56"
+  },
+  "argv": [
+   "src/p06_growth/boss_chi2_en_logA_cmb.py"
+  ],
+  "fecha": "2026-10-18T04:54:24",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

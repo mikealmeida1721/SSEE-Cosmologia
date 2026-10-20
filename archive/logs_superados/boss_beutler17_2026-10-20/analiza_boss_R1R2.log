@@ -1,0 +1,13 @@
+# ACTA-PROCEDENCIA {"commit": "69cc77392b63e11bed7374cdf3966b8263307b2f", "reproducible_desde_commit": false, "cambios_sin_commitear": ["M src/p06_growth/analiza_boss_R1R2.py"], "script": "src/p06_growth/analiza_boss_R1R2.py", "script_sha256": "5a696383faaa3962b5b4cd79a9169a0ad93f2d726c93edf204d5c5843a478cc9", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/analiza_boss_R1R2.py", "ambos"], "fecha": "2026-10-18T08:54:30", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+/home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/mcfit.py:130: UserWarning: use backend='jax' if desired
+  warnings.warn("use backend='jax' if desired")
+  LCDM: logA 2.70923 +- 0.13288  chi2_marg_min 46.995369 (re-evaluado 46.995369)  chi2_real_min 133.9399  n 47769
+  SSEE: logA 2.68123 +- 0.13819  chi2_marg_min 47.104687 (re-evaluado 47.104686)  chi2_real_min 133.7260  n 41674
+  control LCDM: cableado 2.8e-07, sigma 0.1329 >= 0.0945, dlogA 0.86 sigma -> PASA
+  control SSEE: cableado 6.5e-07, sigma 0.1382 >= 0.1010, dlogA 0.79 sigma -> PASA
+  dchi2_real SSEE-LCDM -0.214; perfil-marginal 1.26 sigma
+  escrito -> results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json

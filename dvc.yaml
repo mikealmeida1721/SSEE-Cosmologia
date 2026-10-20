@@ -44,7 +44,7 @@ stages:
     - results/logs/deltac_spherical_collapse.json
     - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
     - results/logs/growth_2026-07/R4_lcdm_kids_S8.json
-    - results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json
+    - results/logs/growth_2026-07/boss_chen21.json
     - results/logs/kids1000_control.json
     - results/logs/p5_IS_perturbations_Q2.json
     - results/logs/p5_estabilidad_IS_completa.json
@@ -98,11 +98,7 @@ stages:
     - results/logs/perfil_h0_ancla.json
     - results/logs/mcmc_full_posteriores.json
     - results/logs/fsigma8_canonico.json
-    - results/logs/ganancia_wc_libre.json
     - results/logs/growth_2026-07/As_medido_o_producto.json
-    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    - results/logs/perfil_wc_boss.json
-    - results/logs/perfil_wc_boss_lcdm.json
     outs:
     - manuscript/valores_generados.tex:
         cache: false
@@ -644,14 +640,6 @@ stages:
     deps:
     - src/p06_growth/mide_As_o_producto.py
     - src/procedencia.py
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
@@ -664,31 +652,6 @@ stages:
     - results/logs/growth_2026-07/As_medido_o_producto.json:
         cache: false
     - results/logs/growth_2026-07/As_medido_o_producto.log:
-        cache: false
-  leer_conjunta_b3:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 
-      2>&1
-    deps:
-    - src/p06_growth/leer_conjunta.py
-    - src/procedencia.py
-    - src/ssee_core.py
-    - src/bao_camb.py
-    - src/rd_camb.py
-    - results/logs/cmb_dbic_tau_ajustado.json
-    - results/logs/multisonda_fondo_clavado.json
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
-    outs:
-    - results/logs/conjunta_b3_vs_individual.json:
-        cache: false
-    - results/logs/leer_conjunta_b3.log:
         cache: false
   b1_min_ssee:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -745,23 +708,52 @@ stages:
         cache: false
     - results/logs/b1_k2.log:
         cache: false
-  analiza_boss_R1R2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/analiza_boss_R1R2.py ambos > 
-      results/logs/analiza_boss_R1R2.log 2>&1
+  analiza_boss_chen21:
+    cmd: OMP_NUM_THREADS=3 .venv/bin/python3 src/p06_growth/analiza_boss_chen21.py >
+      results/logs/analiza_boss_chen21.log 2>&1
     deps:
-    - src/p06_growth/analiza_boss_R1R2.py
-    - src/p06_growth/cobaya_boss.py
+    - src/p06_growth/analiza_boss_chen21.py
+    - src/p06_growth/cobaya_boss_chen21.py
+    - src/p06_growth/cobaya_boss_chen21_fijo.py
     - src/p06_growth/boss_lpt_R1R2.py
     - src/procedencia.py
-    - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
-    - results/logs/growth_2026-07/boss_aisla_neutrinos.json
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
+    - CANONICAL_VALUES.yaml
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.progress
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.progress
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.progress
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z1.dat
+    - /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z3.dat
     outs:
-    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json:
+    - results/logs/growth_2026-07/boss_chen21.json:
         cache: false
-    - results/logs/analiza_boss_R1R2.log:
+    - results/logs/analiza_boss_chen21.log:
+        cache: false
+  # 2026-10-20: la malla (Om, h, logA) de tablas LPT del control de BOSS contra tablas
+  # exactas, con el método viejo (salida escalada por A_s) como control. La lee R80.
+  prueba_malla_boss_chen21:
+    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p06_growth/cobaya_boss_chen21.py
+      prueba > results/logs/boss_chen21_malla.log 2>&1
+    deps:
+    - src/p06_growth/cobaya_boss_chen21.py
+    - src/p06_growth/boss_lpt_R1R2.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/chains_p6/boss_chen21/malla_7x7x13.pkl
+    outs:
+    - results/logs/growth_2026-07/boss_chen21_malla.json:
+        cache: false
+    - results/logs/boss_chen21_malla.log:
         cache: false
   fsigma8_canonico:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -794,52 +786,6 @@ stages:
         cache: false
     - results/figures/fig_s8_resolution.pdf:
         cache: false
-  termino_volumen_boss:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/mide_termino_volumen.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p06_growth/mide_termino_volumen.py 
-      results/logs/growth_2026-07/termino_volumen_boss.json 
-      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    deps:
-    - src/p06_growth/mide_termino_volumen.py
-    - src/p06_growth/boss_lpt_R1R2.py
-    - src/procedencia.py
-    - src/procedencia_sella.py
-    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    outs:
-    - results/logs/growth_2026-07/termino_volumen_boss.json:
-        cache: false
-  perfil_wc_boss:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
-    deps:
-    - src/p06_growth/perfil_wc_boss.py
-    - src/p06_growth/minimo_sesgos.py
-    - src/p06_growth/boss_lpt_R1R2.py
-    - src/procedencia.py
-    - results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
-    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    outs:
-    - results/logs/perfil_wc_boss.json:
-        cache: false
-    - results/logs/perfil_wc_boss.log:
-        cache: false
-  perfil_wc_boss_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/perfil_wc_boss_lcdm.py > 
-      results/logs/perfil_wc_boss_lcdm.log 2>&1
-    deps:
-    - src/p06_growth/perfil_wc_boss_lcdm.py
-    - src/p06_growth/minimo_sesgos.py
-    - src/p06_growth/boss_lpt_R1R2.py
-    - src/procedencia.py
-    - results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
-    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    outs:
-    - results/logs/perfil_wc_boss_lcdm.json:
-        cache: false
-    - results/logs/perfil_wc_boss_lcdm.log:
-        cache: false
   multisonda_fondo_clavado:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p06_growth/multisonda_fondo_clavado.py
@@ -847,25 +793,12 @@ stages:
     - src/p06_growth/multisonda_fondo_clavado.py
     - src/procedencia.py
     - CANONICAL_VALUES.yaml
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
     - /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
     - results/chains/ssee_cmb.1.txt
     outs:
     - results/logs/multisonda_fondo_clavado.json:
         cache: false
     - results/logs/multisonda_fondo_clavado.log:
-        cache: false
-  ganancia_wc_libre:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/ganancia_wc_libre.py
-    deps:
-    - src/p06_growth/ganancia_wc_libre.py
-    - src/procedencia.py
-    - results/logs/perfil_wc_boss.json
-    - results/logs/perfil_wc_boss_lcdm.json
-    - results/logs/multisonda_fondo_clavado.log
-    outs:
-    - results/logs/ganancia_wc_libre.json:
         cache: false
   fondos_exponenciales:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
@@ -1187,33 +1120,6 @@ stages:
     - results/logs/mcmc_paper2_reframe.json
     outs:
     - results/logs/chi2_bao_posterior.log:
-        cache: false
-  leer_conjunta:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/leer_conjunta.py > results/logs/leer_conjunta.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/leer_conjunta.py results/logs/leer_conjunta.log
-      results/logs/cmb_dbic_tau_ajustado.json results/logs/multisonda_fondo_clavado.json /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt
-      /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
-      /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
-    deps:
-    - src/p06_growth/leer_conjunta.py
-    - src/ssee_core.py
-    - src/procedencia.py
-    - src/procedencia_sella.py
-    - src/bao_camb.py
-    - src/rd_camb.py
-    - results/logs/cmb_dbic_tau_ajustado.json
-    - results/logs/multisonda_fondo_clavado.json
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
-    outs:
-    - results/logs/leer_conjunta.log:
-        cache: false
-    - results/logs/conjunta_vs_individual.json:
         cache: false
   sello_control_legacy:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_legacy.py > results/logs/control_legacy.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/growth_2026-07/control_legacy.json
@@ -1599,25 +1505,6 @@ stages:
         cache: false
     - results/logs/analiza_lcdm_R4.log:
         cache: false
-  marginal_vs_perfil:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/marginal_vs_perfil.py && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/marginal_vs_perfil.py results/logs/growth_2026-07/marginal_vs_perfil.json results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-    deps:
-    - src/p06_growth/marginal_vs_perfil.py
-    - src/procedencia.py
-    - src/procedencia_sella.py
-    - results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    - results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-    outs:
-    - results/logs/growth_2026-07/marginal_vs_perfil.json:
-        cache: false
   desi_dr2_w0wa_momentos:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/momentos_desi_dr2_w0wa.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/momentos_desi_dr2_w0wa.py results/logs/desi_dr2_w0wa_momentos.log /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
     deps:
@@ -1950,22 +1837,6 @@ stages:
         cache: false
     - results/logs/cmb_perfil_wc.log:
         cache: false
-  sello_boss_aisla_neutrinos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/boss_aisla_neutrinos.py > results/logs/cola_boss_aisla.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/boss_aisla_neutrinos.py results/logs/growth_2026-07/boss_aisla_neutrinos.json archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_NGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_SGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_NGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_SGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/boss_aisla_neutrinos.py results/logs/cola_boss_aisla.log archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_NGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_SGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_NGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_SGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat
-    deps:
-    - src/p06_growth/boss_aisla_neutrinos.py
-    - src/p06_growth/boss_lpt_R1R2.py
-    - src/p06_growth/boss_dr12_data.py
-    - src/ssee_core.py
-    - src/procedencia.py
-    - src/procedencia_sella.py
-    - archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
-    - /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
-    outs:
-    - results/logs/growth_2026-07/boss_aisla_neutrinos.json:
-        cache: false
-    - results/logs/cola_boss_aisla.log:
-        cache: false
   kids1000_control:
     cmd: cd src/p06_growth && OMP_NUM_THREADS=1 nice -n 10 ../../.venv/bin/python3 control_kids.py
     deps:
@@ -1975,26 +1846,6 @@ stages:
     - /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
     outs:
     - results/logs/kids1000_control.json:
-        cache: false
-  # ── R75, 2026-10-16: cuatro logs con script vigente que no eran salida de ninguna
-  # etapa. Se RE-CORREN (no se registran) y se comparan número a número con el log
-  # anterior, guardado en el scratchpad de la sesión antes de la corrida.
-  #   quien_mide_As (KiDS-1000 vs CMB sobre logA, 1.5 h): cambió sólo H0_ALG -> H0_GLOBAL.
-  #   boss_lpt_kmax020 (perfil logA de BOSS con LPT, 7 min): cambió sólo om_x (por defecto 0).
-  #   conjunta_control (cableado de la conjunta, minutos).
-  # ── 2026-10-17: lo que le cuesta a BOSS clavar A_s al del CMB (Paper 6 §BOSS). Antes salía
-  # de base_sin_particula, control sin partícula de la rejilla #28 (partícula retirada; esa
-  # familia está en archive/logs_superados/particula_colas_24_29_2026-09/). Lee el perfil de
-  # BOSS ya sellado y lo evalúa en el logA del CMB: segundos, sin corrida nueva.
-  boss_chi2_en_logA_cmb:
-    cmd: .venv/bin/python3 src/p06_growth/boss_chi2_en_logA_cmb.py
-    deps:
-    - src/p06_growth/boss_chi2_en_logA_cmb.py
-    - src/procedencia.py
-    - results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
-    - results/logs/growth_2026-07/quien_mide_As.json
-    outs:
-    - results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json:
         cache: false
   quien_mide_As_kids:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/quien_mide_As.py
@@ -2013,46 +1864,10 @@ stages:
     outs:
     - results/logs/growth_2026-07/quien_mide_As.json:
         cache: false
-  boss_lpt_kmax020:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/boss_lpt_R1R2.py 0.20
-      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/boss_lpt_R1R2.py results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
-    deps:
-    - src/p06_growth/boss_lpt_R1R2.py
-    - src/p06_growth/boss_dr12_data.py
-    - src/p06_growth/boss_rsd_model.py
-    - src/ssee_core.py
-    - src/procedencia.py
-    - src/procedencia_sella.py
-    - /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
-    outs:
-    - results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json:
-        cache: false
-  conjunta_control:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/cobaya_conjunta.py control
-      && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/cobaya_conjunta.py results/logs/conjunta_control.json
-    deps:
-    - src/p06_growth/cobaya_conjunta.py
-    - src/p06_growth/cobaya_kids_legacy.py
-    - src/p06_growth/cobaya_boss.py
-    - src/p06_growth/boss_lpt_R1R2.py
-    - src/p06_growth/boss_dr12_data.py
-    - src/p06_growth/boss_rsd_model.py
-    - src/p06_growth/kids_shear.py
-    - src/p03_cmb/cmb_eval.py
-    - src/p11_sondas/lcdm_planck.py
-    - src/ssee_core.py
-    - src/procedencia.py
-    - src/procedencia_sella.py
-    - results/logs/cmb_dbic_tau_ajustado.json
-    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
-    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release
-    - /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
-    outs:
-    - results/logs/conjunta_control.json:
-        cache: false
+  # ── 2026-10-20: BOSS rehecho con el montaje de Chen+22 (etapa analiza_boss_chen21).
+  # Las 14 etapas del BOSS de Beutler+2017 (R1/R2, perfiles de logA y de w_c, término
+  # de volumen, neutrinos aislados, conjuntas con BOSS) salieron con sus scripts y logs a
+  # archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/ (LEEME.md).
   # ── R75, 2026-10-16: las transcripciones de cadenas MCMC no se re-corren (días, varias
   # reanudadas tras el reinicio del 19-09); se COTEJAN contra su cadena: N aceptados ==
   # filas en disco, convergió, y una etapa sellada lee la cadena. Ver el docstring.
@@ -2064,28 +1879,16 @@ stages:
     - results/logs/b1_full_run.log
     - results/logs/b1_lcdm_run.log
     - results/logs/b1_k2_run.log
-    - results/logs/boss_cobaya_ssee.log
-    - results/logs/boss_cobaya_lcdm.log
     - results/logs/kids_legacy_ssee.log
     - results/logs/kids_legacy_sseefijo.log
     - results/logs/kids_legacy_lcdmfijo.log
     - results/logs/R4_lcdm_resume_20260805.log
-    - results/logs/conjunta_b3_bloques.json
-    - /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.input.yaml
     - results/chains/lcdm_cmb.1.txt
     - results/chains/ssee_cmb.1.txt
     - results/chains/ssee_cmb_k2.1.txt
     - results/chains/ssee_cmb_k2.2.txt
     - results/chains/ssee_cmb_k2.3.txt
     - results/chains/ssee_cmb_k2.4.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-    - /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt
     - /mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt

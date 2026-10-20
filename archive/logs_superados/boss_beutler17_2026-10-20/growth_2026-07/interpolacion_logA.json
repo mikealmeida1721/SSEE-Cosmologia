@@ -1,0 +1,156 @@
+{
+ "criterio": "|chi2 interpolado - chi2 exacto| < 0.01 en cada (modelo, punto)",
+ "nodos": [
+  4.0,
+  3.965925826289068,
+  3.866025403784439,
+  3.7071067811865475,
+  3.5,
+  3.2588190451025207,
+  3.0,
+  2.7411809548974793,
+  2.5,
+  2.2928932188134525,
+  2.133974596215561,
+  2.034074173710932,
+  2.0
+ ],
+ "puntos": [
+  2.4,
+  2.76,
+  3.0445,
+  3.3,
+  3.6
+ ],
+ "modelos": {
+  "SSEE": [
+   {
+    "logA": 2.4,
+    "chi2_interpolado": 641.461605175676,
+    "chi2_exacto": 641.4616189677927,
+    "chi2_viejo_escalado": 654.8400018068377,
+    "dif_interpolado": -1.3792116646982322e-05,
+    "dif_viejo": 13.378382839045003
+   },
+   {
+    "logA": 2.76,
+    "chi2_interpolado": 95.70472349125342,
+    "chi2_exacto": 95.70472501363666,
+    "chi2_viejo_escalado": 93.50097976031807,
+    "dif_interpolado": -1.5223832434685391e-06,
+    "dif_viejo": -2.203745253318587
+   },
+   {
+    "logA": 3.0445,
+    "chi2_interpolado": 102.30792165902024,
+    "chi2_exacto": 102.30792310756873,
+    "chi2_viejo_escalado": 102.30825143047606,
+    "dif_interpolado": -1.4485484882698074e-06,
+    "dif_viejo": 0.00032832290733608716
+   },
+   {
+    "logA": 3.3,
+    "chi2_interpolado": 512.2738060846767,
+    "chi2_exacto": 512.2738011307973,
+    "chi2_viejo_escalado": 494.74042661640505,
+    "dif_interpolado": 4.953879397362471e-06,
+    "dif_viejo": -17.53337451439228
+   },
+   {
+    "logA": 3.6,
+    "chi2_interpolado": 1729.4160513496543,
+    "chi2_exacto": 1729.4160616848187,
+    "chi2_viejo_escalado": 1628.20363449861,
+    "dif_interpolado": -1.0335164461139357e-05,
+    "dif_viejo": -101.21242718620874
+   }
+  ],
+  "LCDM": [
+   {
+    "logA": 2.4,
+    "chi2_interpolado": 648.82086785421,
+    "chi2_exacto": 648.8208801566833,
+    "chi2_viejo_escalado": 667.5341762934872,
+    "dif_interpolado": -1.230247335115564e-05,
+    "dif_viejo": 18.713296136803933
+   },
+   {
+    "logA": 2.76,
+    "chi2_interpolado": 95.13213567561968,
+    "chi2_exacto": 95.13213722707277,
+    "chi2_viejo_escalado": 93.96950323567972,
+    "dif_interpolado": -1.5514530957716488e-06,
+    "dif_viejo": -1.1626339913930508
+   },
+   {
+    "logA": 3.0445,
+    "chi2_interpolado": 106.21780945496387,
+    "chi2_exacto": 106.21781034335935,
+    "chi2_viejo_escalado": 106.21817513317711,
+    "dif_interpolado": -8.883954762950452e-07,
+    "dif_viejo": 0.0003647898177661091
+   },
+   {
+    "logA": 3.3,
+    "chi2_interpolado": 535.8783836884813,
+    "chi2_exacto": 535.8783791249012,
+    "chi2_viejo_escalado": 518.5346173475263,
+    "dif_interpolado": 4.563580091598851e-06,
+    "dif_viejo": -17.343761777374993
+   },
+   {
+    "logA": 3.6,
+    "chi2_interpolado": 1802.6498163929393,
+    "chi2_exacto": 1802.649830071873,
+    "chi2_viejo_escalado": 1708.687582697782,
+    "dif_interpolado": -1.3678933783012326e-05,
+    "dif_viejo": -93.96224737409102
+   }
+  ]
+ },
+ "peor_interpolado": 1.3792116646982322e-05,
+ "control_viejo": {
+  "en_A_REF": 0.0003647898177661091,
+  "maximo": 101.21242718620874,
+  "pasa": true
+ },
+ "pasa": true,
+ "_procedencia": {
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "?? src/p06_growth/mide_interpolacion_logA.py"
+  ],
+  "script": "src/p06_growth/mide_interpolacion_logA.py",
+  "script_sha256": "c2545a15463192ab55e3f1764b7fecaf6ca78aa4d8b78c14e51718617b6d5806",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "dd8b63f3da7c7addc9ba0b9ab884cb5106dc29e8f739506932819dc94071be3c",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "387dba81f6ff9be5b262dff4ea85300b7d154c7bfc0d645f3ef52959b6539238",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "6c73937f3c2112ec536db71a633c347998a6a04fd90bb1336aea0e548d6e2e35",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "a212772d9ac721944709dee2755fa58ad4250047474ccfaf5c3119912946cd4c",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt": "febdf2cd6692499fa4fc9ab795a845e8cd6c2c52fea09f4db0b2a87a776e34f4",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt": "f6bbe876f763f72c9cd74e4e1b19d0fbbda74c4044b844bc4213f46ac69f434c",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "3ca4b98b911966e79d214dd443cd4a379df0ca1093d6a69c7610602c1013d503",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "e5a34a1ed08ab6b1aad109c2684ab439e720481683557ff932df5f775b48d357"
+  },
+  "argv": [
+   "src/p06_growth/mide_interpolacion_logA.py",
+   "0.20"
+  ],
+  "fecha": "2026-10-18T10:58:39",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

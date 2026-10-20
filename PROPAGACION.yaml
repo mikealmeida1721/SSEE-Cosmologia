@@ -24,7 +24,6 @@
 logs:
   # ── 2026-10-02: logs con ACTA cuya fuente faltaba aqui. El script se LEE del
   #    acta de la primera linea de cada log, no se teclea.
-  analiza_boss_R1R2:          src/p06_growth/analiza_boss_R1R2.py
   b1_k2:                      src/p03_cmb/b1_k2_lee.py
   b1_min_lcdm:                src/p03_cmb/b1_minimiza.py
   b1_min_ssee:                src/p03_cmb/b1_minimiza.py
@@ -32,8 +31,6 @@ logs:
   fnu_tremaine_gunn:          src/p02_mcmc/fnu_tremaine_gunn.py
   fondos_exponenciales:       src/p07_eft/fondos_exponenciales.py
   hmcode_bariones:            src/p05_IS/hmcode_bariones.py
-  leer_conjunta:              src/p06_growth/leer_conjunta.py
-  leer_conjunta_b3:           src/p06_growth/leer_conjunta.py
   p5_IS_perturbations:        src/p05_IS/ssee_paper5_IS_perturbations.py
   paper2_analysis:            src/p02_mcmc/ssee_paper2_analysis.py
   perfil_h0_ancla:            src/p03_cmb/perfil_h0_ancla.py
@@ -95,8 +92,6 @@ logs:
   phase_d_savage_cv_wmfix:    src/estadistica/ssee_phase_d_savage_cv.py
   h0_four_priors:             src/p09_hubble/ssee_h0_prior_experiment.py   # 2026-10-01: era h0_four_priors_wmfix (copia de pantalla del 07-25); ahora etapa DVC
   # ── Añadidos 2026-09-07 (tarde): las tres corridas de la sesión R1/R2 ──
-  boss_cobaya_lcdm:           src/p06_growth/cobaya_boss.py
-  boss_cobaya_ssee:           src/p06_growth/cobaya_boss.py
   # Con PUNTO DE ENTRADA (2026-09-19): `cobaya_kids.py` sirve a cuatro
   # corridas distintas, así que comparar el fichero entero marcaba estos dos
   # logs como rancios cada vez que se tocaba OTRA de las cuatro. Declarando de
@@ -112,8 +107,6 @@ logs:
   # el que produce el resultado.
   # 2026-09-08: el script vivia en el scratchpad; se sube al repo porque su
   # resultado es publicable y un log sin fuente versionada no vale.
-  perfil_wc_boss:             src/p06_growth/perfil_wc_boss.py
-  perfil_wc_boss_lcdm:        src/p06_growth/perfil_wc_boss_lcdm.py
   cmb_perfil_wc:              src/p03_cmb/perfil_wc_cmb.py
 
   # ── KiDS-Legacy (2026-09-19) ────────────────────────────────────────────
@@ -132,9 +125,12 @@ logs:
   # muestreador sino el lanzador que lo invoca; ahi vive su fuente.
   cola_kids_legacy:           src/p06_growth/lanzar_kids_legacy.sh
   multisonda_fondo_clavado:   src/p06_growth/multisonda_fondo_clavado.py
-  # 2026-10-16: se llama «cola_» pero es la salida sellada de la etapa
-  # sello_boss_aisla_neutrinos (trae acta legitima): resultado, no bitacora.
-  cola_boss_aisla:            src/p06_growth/boss_aisla_neutrinos.py
+  # 2026-10-20: BOSS en el montaje de Chen+22. Los logs del BOSS de Beutler+2017
+  # (R1/R2, perfiles, conjuntas con BOSS, cola_boss_aisla…) salieron a
+  # archive/logs_superados/boss_beutler17_2026-10-20/ con sus scripts.
+  boss_chen21:                src/p06_growth/analiza_boss_chen21.py
+  analiza_boss_chen21:        src/p06_growth/analiza_boss_chen21.py
+  boss_chen21_malla:          src/p06_growth/cobaya_boss_chen21.py
   # 2026-10-16: corridas del 10-11 (P2 k=0, P5 reescrito, P7 el campo rueda)
   p2_ssee_fijo_k0:            src/p02_mcmc/ssee_fijo_k0.py
   p5_cruce_fantasma_IS:       src/p05_IS/cruce_fantasma_IS.py
@@ -153,9 +149,6 @@ logs:
   cmb_quien_mide_As:          src/p03_cmb/quien_mide_As.py
   cmb_ajuste_conjunto_wc_ns_SSEE: src/p03_cmb/ajuste_conjunto_wc_ns.py
   cmb_ajuste_conjunto_wc_ns_LCDM: src/p03_cmb/ajuste_conjunto_wc_ns.py
-  conjunta_b3_bloques:        src/p06_growth/cobaya_conjunta.py
-  conjunta_control:           src/p06_growth/cobaya_conjunta.py
-  conjunta_vs_individual:     src/p06_growth/leer_conjunta.py
   cruce_fantasma_quien_lo_lleva: src/p07_eft/cruce_fantasma_quien_lo_lleva.py
   deltac_spherical_collapse:  src/p02_mcmc/spherical_collapse_deltac.py
   des_y3_barrido:             src/p11_sondas/des_y3_barrido.py
@@ -176,17 +169,12 @@ logs:
   erosita_cr_v3:              src/p11_sondas/erosita_cr.py
   erosita_extlike:            src/p11_sondas/erosita_extlike.py
   As_medido_o_producto:       src/p06_growth/mide_As_o_producto.py
-  R1R2_boss_lpt_kmax0.200:    src/p06_growth/boss_lpt_R1R2.py
   R4_lcdm_kids_S8:            src/p06_growth/analiza_lcdm_R4.py
   R3_ssee_kids_S8_rehecho:    src/p06_growth/analiza_ssee_R3.py
   # R3 viejo (2026-10-02): lo REPRODUCE el control de analiza_ssee_R3.py (burn-in
   # sobre las cadenas pegadas); ya no es fuente de nada, el vigente es el rehecho.
   R3_ssee_kids_S8:            src/p06_growth/analiza_ssee_R3.py
-  boss_aisla_neutrinos:       src/p06_growth/boss_aisla_neutrinos.py
-  boss_chi2_en_logA_cmb:      src/p06_growth/boss_chi2_en_logA_cmb.py
-  marginal_vs_perfil:         src/p06_growth/marginal_vs_perfil.py
   quien_mide_As:              src/p06_growth/quien_mide_As.py
-  termino_volumen_boss:       src/p06_growth/mide_termino_volumen.py
   h0_four_priors:             src/p09_hubble/ssee_h0_prior_experiment.py
   lcdm_conjunta:              src/p11_sondas/lcdm_conjunta.py
   lcdm_conjunta_bao:          src/p11_sondas/lcdm_conjunta.py
@@ -217,7 +205,6 @@ historicos:
   #    conjunto w_c,n_s), no se citan.
   - cmb_ns_forzado                 # 01d4369, sin script
   - cmb_wb_forzado                 # 01d4369, sin script
-  - R1R2_boss_lpt_cobaya           # sin script; el R1R2 vigente es R1R2_boss_lpt_kmax0.200 (boss_lpt_R1R2.py)
   # ── Control de memory_sync (2026-09-30): LISTA valores retirados a proposito
   #    (es su trabajo: probar que el comprobador los caza). No es un computo.
   # ── Corte del 2026-09-19 — la maquina se reinicio por el driver NVIDIA y
@@ -389,7 +376,6 @@ bitacoras:
   - cola_rapidas
   - cola_tras_boss
   - cola_lcdm_conjunta              # 2026-10-16: renombrada (era lcdm_conjunta_cola), prefijo de orquestación
-  - vigilante_conjunta
   # 2026-10-16: colas de las pasadas de re-sellado R75 y de la tanda pesada (10-03…10-16)
   - cola_1010
   - cola_1012

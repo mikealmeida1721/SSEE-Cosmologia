@@ -27,6 +27,12 @@ mismo logA que A hasta la 5a cifra. Si el metodo no se reproduce a si mismo,
 ninguna diferencia medida despues significa nada y se aborta.
 
 FUENTE: results/logs/growth_2026-07/boss_aisla_neutrinos.json
+
+TRES BINES, A PROPOSITO (2026-10-17). Esta medicion es de cuando BOSS usaba
+los tres bines solapados, y se compara con la cadena vieja de tres bines. Por
+eso su etapa la corre con BOSS_ZBINS=z1,z2,z3: es historica y responde solo su
+pregunta (neutrinos o metodo). Ya no alimenta a P6: el perfil que cita
+analiza_boss_R1R2 sale de boss_lpt_kmax020, con z1+z3.
 """
 import json
 import pathlib

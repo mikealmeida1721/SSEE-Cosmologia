@@ -19,31 +19,36 @@ cobaya_kids.py. El modelo no cambia; cambia quien lo recorre.
 LOS DOS FONDOS VAN FIJOS. SSEE por algebra, LCDM por Planck. No es la misma
 eleccion que en KiDS (alli LCDM llevaba el fondo LIBRE, 13 vs 9 libres) y la
 razon es de coste, no de gusto: con el fondo libre habria que reconstruir los
-templates LPT en cada muestra (~3 s por conjunto, ~18 s por llamada), lo que
-pone la cadena en cientos de horas. Con el fondo fijo los templates se calculan
-UNA vez y la llamada baja a milisegundos.
+templates LPT en cada muestra. MEDIDO el 2026-10-17 (fondo LCDM-Planck, 1 hilo):
+CAMB 1.2 s + make_pltable 2.3-3.0 s por redshift, ~9.5 s por llamada con
+los tres z (~6.8 s con z1+z3). Eso pone la cadena en cientos de horas.
+(Antes aqui decia ~18 s por llamada, sin medir.) Con el fondo fijo las tablas LPT se
+construyen UNA vez, en los nodos de logA (boss_lpt_R1R2.tablas_logA), y la llamada
+baja a milisegundos. El CONTROL con el fondo LIBRE existe aparte, con las tablas
+en una malla (Omega_m, h, logA): cobaya_boss_lcdm_libre.py (2026-10-17).
 
 Consecuencia honesta, que hay que escribir en el paper: aqui Delta k = 0. Los
-dos modelos llevan exactamente los mismos 37 libres y la comparacion es de
+dos modelos llevan exactamente los mismos 25 libres (37 con los tres bines
+solapados, hasta el 2026-10-17) y la comparacion es de
 chi2 puro, sin credito por parsimonia. La ventaja en numero de parametros de
 SSEE vive donde se gana de verdad --- el CMB (k=2 frente a 6) y la cizalla de
 KiDS (9 frente a 13) ---, no aqui. Lo que esta corrida contesta es mas estrecho
 y mas limpio: con la MISMA libertad de molestia, el fondo algebraico ajusta el
 agrupamiento crudo tan bien como el de Planck?
 
-LIBRES (37), de los que se MUESTREAN 19:
+LIBRES (25 con z1+z3), de los que se MUESTREAN 13 (con los tres bines: 37 y 19):
     logA                      (1)   amplitud primordial ln(1e10 A_s), COMPARTIDA
-    b1, b2, bs                (18)  bias por (z_bin, hemisferio); b1 es LAGRANGIANO
-    alpha0, alpha2            (12)  contraterminos EFT   --- marginalizados
-    SN0                        (6)  ruido de disparo residual --- marginalizado
+    b1, b2, bs                (12)  bias por (z_bin, hemisferio); b1 es LAGRANGIANO
+    alpha0, alpha2             (8)  contraterminos EFT   --- marginalizados
+    SN0                        (4)  ruido de disparo residual --- marginalizado
 
-POR QUE SE MARGINALIZAN 18. Entran LINEALES en el modelo, asi que su integral
+POR QUE SE MARGINALIZAN (12 con z1+z3; eran 18). Entran LINEALES en el modelo, asi que su integral
 tiene forma cerrada (R.chi2_marg_set) y muestrearlos no aporta nada. Y eran
 justo los que impedian converger: R-1 por familia tras 45 min de la primera
 cadena LCDM (4 cadenas, mitad de burn-in) daba
     a0 1.955   a2 1.502   sn 0.919  |  b1 0.524  b2 0.579  bs 0.618  logA 0.218
 --- los tres peores son los tres lineales. La cuenta de libres que se declara
-en el paper sigue siendo 37: marginalizar no es fijar.
+en el paper es 25: marginalizar no es fijar.
 
 PRIORS. Se declaran SOLO aqui, en Cobaya, y NO se suma ningun termino de prior
 dentro de loglike. Es la leccion del bug que cobaya_kids.py documenta en su
@@ -80,7 +85,7 @@ NSET = len(SETS)
 NPTS = sum(st['npts'] for st in SETS)
 NMUESTRA = 1 + 3 * NSET      # logA + (b1,b2,bs) x conjunto
 NMARG = 3 * NSET             # (a0,a2,sn), integrados en cerrado
-NFREE = NMUESTRA + NMARG     # 37: la cuenta que va en el paper
+NFREE = NMUESTRA + NMARG     # 25 con z1+z3: la cuenta que va en el paper
 
 
 # ACANTILADOS DE LA VENTANA --- MEDIDOS, Y YA CORREGIDOS (2026-09-07).

@@ -113,13 +113,14 @@ def main():
             veredicto="el metodo no detecta una degeneracion conocida"), indent=1))
         return
 
+    # BOSS salio el 2026-10-20: sus cadenas (chains_p6/boss, espectros de
+    # Beutler+2017, bines solapados) quedaron RETIRADAS y estan en
+    # archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/. El BOSS
+    # vigente (montaje de Chen+22) es growth_2026-07/boss_chen21.json.
     FUENTES = {
         "KiDS (SSEE)": "/mnt/datos/SSEE_data/chains_p6/kids/ssee.[1-4].txt",
-        "BOSS (SSEE)": "/mnt/datos/SSEE_data/chains_p6/boss/ssee.[1-4].txt",
         "KiDS (LCDM, fondo libre)":
             "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.[1-4].txt",
-        "BOSS (LCDM, fondo libre)":
-            "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.[1-4].txt",
     }
 
     out, usadas = {}, []
@@ -161,7 +162,7 @@ def main():
 
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
     SALIDA.write_text(json.dumps(con_acta(dict(
-        corrida="¿KiDS y BOSS miden A_s o ven un producto?",
+        corrida="¿KiDS mide A_s o ve un producto? (BOSS retirado 2026-10-20)",
         pregunta="M. Almeida — si A_s es primordial y el CMB lo mide bien, "
                  "¿por que las sondas tardias ven menos en su misma epoca? "
                  "¿es fisica, o es que no pueden separarlo de su acompañante?",
@@ -172,7 +173,7 @@ def main():
                               "puesta a mano, y D=1 en el parametro libre",
                      D=list(map(float, Dc)), pasa=True),
         fuentes=out,
-        alcance="diagnostico sobre cadenas existentes; lo cita Paper 6 por \\val (2026-10-01)"),
+        alcance="diagnostico sobre cadenas existentes; lo lee src/p03_cmb/quien_mide_As.py (la parte de KiDS)"),
         __file__, entradas=usadas), indent=1))
     print("escrito -> %s" % SALIDA.relative_to(REPO), flush=True)
 

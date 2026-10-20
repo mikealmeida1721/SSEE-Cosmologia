@@ -110,7 +110,7 @@
   "consistencia_sigma": 0.8477878229907357
  },
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
@@ -121,7 +121,7 @@
    "results/logs/lcdm_conjunta_kids.json": "79a13ab35ff003ac922c21955ab09b946668790f6fbfb96a949002bf05e4e71f",
    "results/logs/lcdm_conjunta_bao.json": "8ef544a3215e6fa7c7ea5980cf8e0a93fcfcfe60cd27e3a43b78a5874c2eac0f",
    "results/logs/lcdm_conjunta_conjunta.json": "94ecc34f923b5b01de3afe2af6d6e7c80ea6198ea48faeee17980834d82b56d7",
-   "results/logs/bao_lcdm_libre.json": "8e68c6cd526ac9f86b74ba1f56b5058f7d8bfba10a7afe2d44564a06056262cb",
+   "results/logs/bao_lcdm_libre.json": "fc2169ea25600dd3d453c333a402f36f58778b8332ea13e165a52507c1b8aac9",
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
    "results/logs/kids_legacy_bic.json": "7b2daa35907d2003802f80db26973e6c235f2bdf249aa37401f7c46937d5c2a2",
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
@@ -147,12 +147,12 @@
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
    "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt"
   ],
-  "fecha": "2026-10-16T21:46:04",
+  "fecha": "2026-10-18T08:54:27",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
   "nucleos": {
-   "OMP_NUM_THREADS": null,
+   "OMP_NUM_THREADS": "1",
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null

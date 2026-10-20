@@ -248,18 +248,18 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
   "script_sha256": "a9fd9d3afe8f01a13163f5b6f0dcefd9cc7f8d84bc52aeb2db1ed524552029f9",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/sn_geometria_en_el_clavo.json": "3e738fb7e28536084b251c3664cec07d60b70341d238750b0fe16ca8cb032c82",
+   "results/logs/sn_geometria_en_el_clavo.json": "6564e48385e6de60445d4f1ee6d5025b185f019da23f57fb9520f2b3d33dd3e5",
    "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
-   "results/logs/act_dr6_en_el_clavo.json": "99b659233ee3507f73490a671f9a5cf6013fc77a6f6f761da9d2af6d709012b5",
-   "results/logs/spt3g_kk_en_el_clavo.json": "83b31c3ebd6d1bfac6586cb96e20553f93ea770720895d2e08c635a0cd6406a4",
-   "results/logs/bao_lcdm_libre.json": "8e68c6cd526ac9f86b74ba1f56b5058f7d8bfba10a7afe2d44564a06056262cb",
+   "results/logs/act_dr6_en_el_clavo.json": "e2fdf7e458488fa26c9d6e8b855f0ce3ec670d910aa303c5e4efdb5cbb2bb474",
+   "results/logs/spt3g_kk_en_el_clavo.json": "7c5593d889a1a682721219d43f62ae9a94c36a8b9e40ee5e13cfc17a3c136eb5",
+   "results/logs/bao_lcdm_libre.json": "fc2169ea25600dd3d453c333a402f36f58778b8332ea13e165a52507c1b8aac9",
    "results/logs/des_y3_en_el_clavo_ssee.json": "5134279d5c047ebac673855297dcaba38f4cffddcc2f7aab17f0d53f2d58df39",
    "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "128afbcca0d6d1f3c79ce2fb02383669935e2c20e63078d4c32740cd247f8167",
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "b5f247f6acc4866bba81590113dd06c421d8f3c42b2119cd11284d6db7b899e8",
@@ -271,7 +271,7 @@
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-16T21:46:42",
+  "fecha": "2026-10-18T09:01:49",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

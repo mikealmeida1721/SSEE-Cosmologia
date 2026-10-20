@@ -1,5 +1,5 @@
 {
- "corrida": "\u00bfKiDS y BOSS miden A_s o ven un producto?",
+ "corrida": "\u00bfKiDS mide A_s o ve un producto? (BOSS retirado 2026-10-20)",
  "pregunta": "M. Almeida \u2014 si A_s es primordial y el CMB lo mide bien, \u00bfpor que las sondas tardias ven menos en su misma epoca? \u00bfes fisica, o es que no pueden separarlo de su acompa\u00f1ante?",
  "metodo": "D = sigma_marginal / sigma_condicional sobre las cadenas ya corridas. D~1 medido por si mismo; D>>1 lo que se mide es una combinacion",
  "control": {
@@ -82,147 +82,6 @@
    "combinacion_mejor_medida": "+1.00\u00b7delta_c -0.00\u00b7dz1 +0.00\u00b7dz3",
    "sigma_de_esa_combinacion": 0.00016427946939217165,
    "logA_D": 1.1585218984012469
-  },
-  "BOSS (SSEE)": {
-   "n_muestras": 55232,
-   "parametros": {
-    "logA": {
-     "marginal": 0.10003545756723381,
-     "condicional": 0.02422554658188844,
-     "D": 4.129337483845362,
-     "socio": "b1_z1NGC",
-     "correlacion": -0.9002117877946774
-    },
-    "b1_z1NGC": {
-     "marginal": 0.13874471590274837,
-     "condicional": 0.054626265162107154,
-     "D": 2.539890206497076,
-     "socio": "logA",
-     "correlacion": -0.9002117877946774
-    },
-    "b2_z1NGC": {
-     "marginal": 1.1506005217257107,
-     "condicional": 0.9283960021143421,
-     "D": 1.2393423917221928,
-     "socio": "bs_z1NGC",
-     "correlacion": -0.46604083773761873
-    },
-    "bs_z1NGC": {
-     "marginal": 1.4645794721780128,
-     "condicional": 1.2775637418855834,
-     "D": 1.1463846571102658,
-     "socio": "b2_z1NGC",
-     "correlacion": -0.46604083773761873
-    },
-    "b1_z1SGC": {
-     "marginal": 0.1620574728410525,
-     "condicional": 0.09987422299074762,
-     "D": 1.6226156057911516,
-     "socio": "logA",
-     "correlacion": -0.777687709377438
-    },
-    "b2_z1SGC": {
-     "marginal": 1.3519132248161783,
-     "condicional": 1.2365717315008102,
-     "D": 1.0932752143503877,
-     "socio": "bs_z1SGC",
-     "correlacion": -0.3854645861030442
-    },
-    "bs_z1SGC": {
-     "marginal": 1.9676257016014749,
-     "condicional": 1.7889459825775778,
-     "D": 1.0998798850071756,
-     "socio": "b2_z1SGC",
-     "correlacion": -0.3854645861030442
-    },
-    "b1_z2NGC": {
-     "marginal": 0.15478721364372622,
-     "condicional": 0.07239842551796154,
-     "D": 2.1379914347077147,
-     "socio": "logA",
-     "correlacion": -0.8737594797207561
-    },
-    "b2_z2NGC": {
-     "marginal": 1.4498498139022569,
-     "condicional": 1.369382611189338,
-     "D": 1.0587616653340088,
-     "socio": "b1_z2NGC",
-     "correlacion": 0.21294796025819618
-    },
-    "bs_z2NGC": {
-     "marginal": 1.8527919357287241,
-     "condicional": 1.784385899173297,
-     "D": 1.0383358984102706,
-     "socio": "b2_z2NGC",
-     "correlacion": -0.18759620389525392
-    },
-    "b1_z2SGC": {
-     "marginal": 0.157227605444061,
-     "condicional": 0.0916725260460945,
-     "D": 1.7151006111144391,
-     "socio": "logA",
-     "correlacion": -0.801413106040656
-    },
-    "b2_z2SGC": {
-     "marginal": 1.3850747302051918,
-     "condicional": 1.2935098078228413,
-     "D": 1.0707879614275728,
-     "socio": "bs_z2SGC",
-     "correlacion": -0.3284203287441612
-    },
-    "bs_z2SGC": {
-     "marginal": 2.0077205939751783,
-     "condicional": 1.849383404338277,
-     "D": 1.085616205523135,
-     "socio": "b2_z2SGC",
-     "correlacion": -0.3284203287441612
-    },
-    "b1_z3NGC": {
-     "marginal": 0.182051957287877,
-     "condicional": 0.10379478225925408,
-     "D": 1.7539605876637956,
-     "socio": "logA",
-     "correlacion": -0.8154010460442509
-    },
-    "b2_z3NGC": {
-     "marginal": 1.9136748753877812,
-     "condicional": 1.8581333721929514,
-     "D": 1.0298910207555663,
-     "socio": "bs_z3NGC",
-     "correlacion": 0.19182212636690996
-    },
-    "bs_z3NGC": {
-     "marginal": 2.7032772380144694,
-     "condicional": 2.6202283744760044,
-     "D": 1.031695276773374,
-     "socio": "b2_z3NGC",
-     "correlacion": 0.19182212636690996
-    },
-    "b1_z3SGC": {
-     "marginal": 0.16013521016239388,
-     "condicional": 0.0852939127007471,
-     "D": 1.8774518027356393,
-     "socio": "logA",
-     "correlacion": -0.8352250803495261
-    },
-    "b2_z3SGC": {
-     "marginal": 1.4043902073373926,
-     "condicional": 1.3139444969336975,
-     "D": 1.0688352594913748,
-     "socio": "bs_z3SGC",
-     "correlacion": -0.34523046325577217
-    },
-    "bs_z3SGC": {
-     "marginal": 1.9983250919930844,
-     "condicional": 1.819888509151697,
-     "D": 1.0980480847832605,
-     "socio": "b2_z3SGC",
-     "correlacion": -0.34523046325577217
-    }
-   },
-   "combinacion_mejor_medida": "+0.95\u00b7logA +0.26\u00b7b1_z1NGC +0.12\u00b7b1_z2NGC",
-   "sigma_de_esa_combinacion": 0.02296439977859624,
-   "logA_D": 4.129337483845362
   },
   "KiDS (LCDM, fondo libre)": {
    "n_muestras": 33552,
@@ -322,179 +181,32 @@
    "combinacion_mejor_medida": "+1.00\u00b7delta_c -0.00\u00b7ombh2 +0.00\u00b7dz3",
    "sigma_de_esa_combinacion": 0.00015228479067042744,
    "logA_D": 4.726818171467714
-  },
-  "BOSS (LCDM, fondo libre)": {
-   "n_muestras": 79375,
-   "parametros": {
-    "logA": {
-     "marginal": 0.09442134883811545,
-     "condicional": 0.02397934894469831,
-     "D": 3.9376110275500804,
-     "socio": "b1_z1NGC",
-     "correlacion": -0.8829965149708929
-    },
-    "b1_z1NGC": {
-     "marginal": 0.13235538722780532,
-     "condicional": 0.05658020257906418,
-     "D": 2.3392526218486798,
-     "socio": "logA",
-     "correlacion": -0.882996514970893
-    },
-    "b2_z1NGC": {
-     "marginal": 1.2206200710737947,
-     "condicional": 0.9945873211211831,
-     "D": 1.2272628507849952,
-     "socio": "bs_z1NGC",
-     "correlacion": -0.4734026387871172
-    },
-    "bs_z1NGC": {
-     "marginal": 1.4684151418721363,
-     "condicional": 1.285700270640139,
-     "D": 1.1421131156338833,
-     "socio": "b2_z1NGC",
-     "correlacion": -0.4734026387871172
-    },
-    "b1_z1SGC": {
-     "marginal": 0.15304030255350415,
-     "condicional": 0.09097521528557966,
-     "D": 1.6822197350464785,
-     "socio": "logA",
-     "correlacion": -0.7967339568441006
-    },
-    "b2_z1SGC": {
-     "marginal": 1.2926355282990043,
-     "condicional": 1.1957318686930367,
-     "D": 1.0810412954133986,
-     "socio": "bs_z1SGC",
-     "correlacion": -0.3664913331584729
-    },
-    "bs_z1SGC": {
-     "marginal": 1.8835572114617007,
-     "condicional": 1.7279458693617376,
-     "D": 1.0900556810598716,
-     "socio": "b2_z1SGC",
-     "correlacion": -0.3664913331584729
-    },
-    "b1_z2NGC": {
-     "marginal": 0.1500512172990896,
-     "condicional": 0.073575279312149,
-     "D": 2.0394243651116204,
-     "socio": "logA",
-     "correlacion": -0.862588353449581
-    },
-    "b2_z2NGC": {
-     "marginal": 1.4583205356972062,
-     "condicional": 1.3784818077368908,
-     "D": 1.0579178684203239,
-     "socio": "b1_z2NGC",
-     "correlacion": 0.23473834901718413
-    },
-    "bs_z2NGC": {
-     "marginal": 1.90806291173933,
-     "condicional": 1.8484643580846134,
-     "D": 1.0322421979055483,
-     "socio": "b2_z2NGC",
-     "correlacion": -0.21330606641322353
-    },
-    "b1_z2SGC": {
-     "marginal": 0.1531215887645813,
-     "condicional": 0.08717201987379952,
-     "D": 1.7565451504537595,
-     "socio": "logA",
-     "correlacion": -0.810021112682571
-    },
-    "b2_z2SGC": {
-     "marginal": 1.3848054957193587,
-     "condicional": 1.2867633219031442,
-     "D": 1.0761928570292232,
-     "socio": "bs_z2SGC",
-     "correlacion": -0.35863862275855996
-    },
-    "bs_z2SGC": {
-     "marginal": 2.050089622786024,
-     "condicional": 1.8655069869959344,
-     "D": 1.098945025173734,
-     "socio": "b2_z2SGC",
-     "correlacion": -0.35863862275855996
-    },
-    "b1_z3NGC": {
-     "marginal": 0.1716949632125737,
-     "condicional": 0.10161159002251673,
-     "D": 1.689718300584872,
-     "socio": "logA",
-     "correlacion": -0.7991954950895737
-    },
-    "b2_z3NGC": {
-     "marginal": 1.8598343880069756,
-     "condicional": 1.8238072434158719,
-     "D": 1.019753811550626,
-     "socio": "bs_z3NGC",
-     "correlacion": 0.14045061382638635
-    },
-    "bs_z3NGC": {
-     "marginal": 2.6158234774994558,
-     "condicional": 2.54540560700286,
-     "D": 1.0276646952858373,
-     "socio": "b2_z3NGC",
-     "correlacion": 0.14045061382638638
-    },
-    "b1_z3SGC": {
-     "marginal": 0.15014193274097348,
-     "condicional": 0.07996213131842572,
-     "D": 1.8776629670246945,
-     "socio": "logA",
-     "correlacion": -0.8373436741837136
-    },
-    "b2_z3SGC": {
-     "marginal": 1.4602173808587058,
-     "condicional": 1.3323909117634534,
-     "D": 1.0959376621130437,
-     "socio": "bs_z3SGC",
-     "correlacion": -0.37965427739286284
-    },
-    "bs_z3SGC": {
-     "marginal": 1.973119965911609,
-     "condicional": 1.8071240114143956,
-     "D": 1.091856426813394,
-     "socio": "b2_z3SGC",
-     "correlacion": -0.37965427739286284
-    }
-   },
-   "combinacion_mejor_medida": "+0.95\u00b7logA +0.21\u00b7b1_z1NGC +0.13\u00b7b1_z2NGC",
-   "sigma_de_esa_combinacion": 0.022851548709425948,
-   "logA_D": 3.9376110275500804
   }
  },
- "alcance": "diagnostico sobre cadenas existentes; lo cita Paper 6 por \\val (2026-10-01)",
+ "alcance": "diagnostico sobre cadenas existentes; lo lee src/p03_cmb/quien_mide_As.py (la parte de KiDS)",
  "_procedencia": {
-  "commit": "50386a5e45db2c227a6e3ff1f12850d31ffdb7ee",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p06_growth/mide_As_o_producto.py"
+  ],
   "script": "src/p06_growth/mide_As_o_producto.py",
-  "script_sha256": "d0e5e8f4433b573855002a93a017ff407829d9fab18c0e2fc4f4e3e9c8cd668d",
+  "script_sha256": "73dde71fdf729b41f6b478d3ede82b62784a982a827b04289be5e7937bd624bf",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt": "ed4d0c1d818775d439726e51a4f38445066ee896d3a2b12a3a436bd393d351d0",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt": "680990c1342bfb000f29b7ef25370a05adba2ee3e97848605ea14c91dbd3841a",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt": "2fe41d979a46279acb23dfa438c6176eb4ef72a3c3f0d248934c82d17281eeb9",
    "/mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt": "595a26fa0d75fceab3885437b0c3992b7cc1813ece925937ef78e3c84872581b",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "ee4294bcb5d30239677d6f7d8e32a77fce295f38dcddcbf9ffec75ef92659861",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "1eaf2dd73137e555e05dab26dbd57f7517ff250a11dc9e44ca86912a9b471259",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "75924e11585b20a06718718ab9214ba89c0026cd41ebc2e2b1ecffc82a35380f",
-   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "117ed994969bb789679c6b5dddf34c86050e77a98a297c9c61c74965b97567da",
    "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt": "b686ae0a89ea9c07ed0b891ae278e12d88050c7f60bb48b184f0c575d89c93f5",
    "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.2.txt": "2954fdbb683b9f1438e9bd5adc4201dfde5ed4457f8e3548191406aba6c20a4a",
    "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.3.txt": "6c3181a88e3b59be21842cc3a0c1b43515b3129799ec3d4791bf7e1f08c0dee3",
-   "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt": "9ec7ab035d4a559db1c07a598ba681f67a1974161c1f1254dc1df70ac0f72be9",
-   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt": "fe26a3506e693d18cf6604843bcdc477d33c33f8ab5d61d4afb21056dec58275",
-   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt": "4ce61f10dc45fbd2262601e36bb174aa967bc2c02b5378800d7012a7dad8e094",
-   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "09f1844192b4bf8d69f5f4a67a21c38d317a41a1021081bc5f77efaee42ca7ef",
-   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "57ef48a9cc1df77c4860acca17143619ba93891ab359516704c62e3e56857157"
+   "/mnt/datos/SSEE_data/chains_p6/kids/lcdm.4.txt": "9ec7ab035d4a559db1c07a598ba681f67a1974161c1f1254dc1df70ac0f72be9"
   },
   "argv": [
    "src/p06_growth/mide_As_o_producto.py"
   ],
-  "fecha": "2026-10-01T13:13:46",
+  "fecha": "2026-10-20T13:57:04",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

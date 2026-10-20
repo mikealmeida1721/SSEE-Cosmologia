@@ -1,0 +1,57 @@
+{
+ "fecha": "2026-10-18",
+ "modelos": {
+  "SSEE": {
+   "chi2_como_es": 47.104687,
+   "chi2_wc_libre": 46.17919396728173,
+   "ganancia": 0.9254930327182649,
+   "control_min_libre_multisonda": 47.105
+  },
+  "LCDM": {
+   "chi2_como_es": 46.995369,
+   "chi2_wc_libre": 44.56311852269456,
+   "ganancia": 2.4322504773054376,
+   "control_min_libre_multisonda": 46.995
+  }
+ },
+ "diferencia_como_es_ssee_menos_lcdm": 0.1093180000000018,
+ "control": {
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/ganancia_wc_libre.py",
+  "script_sha256": "8b9c9cdd63de076c7b77f50ad35fcb379a4149a3c714cccd2456178b568ba5d3",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt": "dd8b63f3da7c7addc9ba0b9ab884cb5106dc29e8f739506932819dc94071be3c",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt": "387dba81f6ff9be5b262dff4ea85300b7d154c7bfc0d645f3ef52959b6539238",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt": "6c73937f3c2112ec536db71a633c347998a6a04fd90bb1336aea0e548d6e2e35",
+   "/mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt": "a212772d9ac721944709dee2755fa58ad4250047474ccfaf5c3119912946cd4c",
+   "results/logs/perfil_wc_boss.json": "c97db71c5664ab1d13119811bd66f9025371bdccd4d2e5b47fc3734f7b9711cd",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt": "febdf2cd6692499fa4fc9ab795a845e8cd6c2c52fea09f4db0b2a87a776e34f4",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt": "f6bbe876f763f72c9cd74e4e1b19d0fbbda74c4044b844bc4213f46ac69f434c",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt": "3ca4b98b911966e79d214dd443cd4a379df0ca1093d6a69c7610602c1013d503",
+   "/mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt": "e5a34a1ed08ab6b1aad109c2684ab439e720481683557ff932df5f775b48d357",
+   "results/logs/perfil_wc_boss_lcdm.json": "992dd1dad67c4c0b1c278b06306fddf3a8d2fe256a884576c8c276e7e12d9617",
+   "results/logs/multisonda_fondo_clavado.log": "c5884d447ace07ee82e163ed5647c582349354e38cbdc961cc0646fa056af8d7"
+  },
+  "argv": [
+   "src/p06_growth/ganancia_wc_libre.py"
+  ],
+  "fecha": "2026-10-18T10:33:52",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

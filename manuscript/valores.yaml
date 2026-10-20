@@ -470,54 +470,55 @@ fs8_4_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.4.t_ssee", form
 fs8_4_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.4.t_lcdm", formato: ".1f"}
 fs8_5_t_ssee: {fuente: "results/logs/fsigma8_canonico.json#filas.5.t_ssee", formato: ".1f"}
 fs8_5_t_lcdm: {fuente: "results/logs/fsigma8_canonico.json#filas.5.t_lcdm", formato: ".1f"}
-# BOSS DR12 R1/R2 (Paper 6 §fsigma8) — src/p06_growth/analiza_boss_R1R2.py, perfil_wc_boss*.py, ganancia_wc_libre.py, mide_As_o_producto.py
-bossR_fs8_ssee_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z1.1", formato: ".4f"}
-bossR_fs8_ssee_z1_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z1.2", formato: ".4f"}
-bossR_pub_ssee_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.ssee.z1.sigma", formato: ".2f"}
-bossR_fs8_ssee_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z2.1", formato: ".4f"}
-bossR_fs8_ssee_z2_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z2.2", formato: ".4f"}
-bossR_pub_ssee_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.ssee.z2.sigma", formato: ".2f"}
-bossR_fs8_ssee_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z3.1", formato: ".4f"}
-bossR_fs8_ssee_z3_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.fs8.z3.2", formato: ".4f"}
-bossR_pub_ssee_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.ssee.z3.sigma", formato: ".2f"}
-bossR_logA_ssee: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.logA", formato: ".4f"}
-bossR_logA_ssee_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.logA_sig", formato: ".4f"}
-bossR_chi2_ssee: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#ssee.chi2_real_min", formato: ".2f"}
-bossR_fs8_lcdm_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z1.1", formato: ".4f"}
-bossR_fs8_lcdm_z1_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z1.2", formato: ".4f"}
-bossR_pub_lcdm_z1: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.lcdm.z1.sigma", formato: ".2f"}
-bossR_fs8_lcdm_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z2.1", formato: ".4f"}
-bossR_fs8_lcdm_z2_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z2.2", formato: ".4f"}
-bossR_pub_lcdm_z2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.lcdm.z2.sigma", formato: ".2f"}
-bossR_fs8_lcdm_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z3.1", formato: ".4f"}
-bossR_fs8_lcdm_z3_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.fs8.z3.2", formato: ".4f"}
-bossR_pub_lcdm_z3: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#vs_publicado.modelos.lcdm.z3.sigma", formato: ".2f"}
-bossR_logA_lcdm: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.logA", formato: ".4f"}
-bossR_logA_lcdm_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.logA_sig", formato: ".4f"}
-bossR_chi2_lcdm: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#lcdm.chi2_real_min", formato: ".2f"}
-bossR_dchi2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#dchi2_real", formato: "+.2f"}
-bossR_perfil_logA: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.perfil_logA", formato: ".4f"}
-bossR_perfil_logA_sigma: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.perfil_sigma", formato: ".4f"}
-bossR_perfil_vs_marg: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.sigmas", formato: ".2f"}
-bossR_perfil_chi2: {fuente: "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json#perfil_vs_marginal.perfil_chi2", formato: ".2f"}
-bossR_D_ssee: {fuente: "results/logs/growth_2026-07/As_medido_o_producto.json#fuentes.BOSS (SSEE).parametros.logA.D", formato: ".2f"}
-bossR_r_ssee: {fuente: "results/logs/growth_2026-07/As_medido_o_producto.json#fuentes.BOSS (SSEE).parametros.logA.correlacion", formato: ".2f"}
+# BOSS DR12 en el montaje de Chen+22 (2026-10-20) — src/p06_growth/analiza_boss_chen21.py: control LCDM libre,
+# SSEE y LCDM-Planck con TODO clavado; chi2 CRUDO de los 144 puntos. Reemplaza a bossR_* (datos Beutler+17, retirados).
+bossC_logA_ssee: {fuente: "results/logs/growth_2026-07/boss_chen21.json#SSEE.fondo.logA", formato: ".5f"}
+bossC_logA_planck: {fuente: "results/logs/growth_2026-07/boss_chen21.json#LCDM_PLANCK.fondo.logA", formato: ".3f"}
+bossC_npts: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.npts", formato: "d"}
+bossC_k_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.k_libre", formato: "d"}
+bossC_k_fijo: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.k_fijo", formato: "d"}
+bossC_gl_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.gl_libre", formato: "d"}
+bossC_gl_fijo: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.gl_fijo", formato: "d"}
+bossC_chi2_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.chi2_libre", formato: ".2f"}
+bossC_chi2_ssee: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.chi2_ssee", formato: ".2f"}
+bossC_chi2_planck: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.chi2_planck", formato: ".2f"}
+bossC_chi2gl_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.chi2gl_libre", formato: ".3f"}
+bossC_chi2gl_ssee: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.chi2gl_ssee", formato: ".3f"}
+bossC_chi2gl_planck: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.chi2gl_planck", formato: ".3f"}
+bossC_dchi2_ssee_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dchi2_ssee_libre", formato: "+.2f"}
+bossC_dchi2_planck_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dchi2_planck_libre", formato: "+.2f"}
+bossC_dchi2_ssee_planck: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dchi2_ssee_planck", formato: "+.2f"}
+bossC_dBIC_ssee_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dBIC_ssee_libre", formato: "+.1f"}
+bossC_dBIC_planck_libre: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dBIC_planck_libre", formato: "+.1f"}
+bossC_dchi2_ssee_planck_z1: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dchi2_ssee_planck_z1", formato: "+.2f"}
+bossC_dchi2_ssee_planck_z3: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.dchi2_ssee_planck_z3", formato: "+.2f"}
+bossC_ctl_Rm1: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_Rm1", formato: ".3f"}
+bossC_ctl_logA: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_logA", formato: ".3f"}
+bossC_ctl_logA_sig: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_logA_sig", formato: ".3f"}
+bossC_ctl_Om: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_Om", formato: ".3f"}
+bossC_ctl_Om_sig: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_Om_sig", formato: ".3f"}
+bossC_ctl_H0: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_H0", formato: ".2f"}
+bossC_ctl_H0_sig: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_H0_sig", formato: ".2f"}
+bossC_ctl_sigma8: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_sigma8", formato: ".3f"}
+bossC_ctl_sigma8_sig: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_sigma8_sig", formato: ".3f"}
+bossC_ctl_logA_dist: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_logA_dist", formato: "+.2f"}
+bossC_ctl_Om_dist: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_Om_dist", formato: "+.2f"}
+bossC_ctl_H0_dist: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_H0_dist", formato: "+.2f"}
+bossC_ctl_sigma8_dist: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.ctl_sigma8_dist", formato: "+.2f"}
+bossC_sigma8_ssee: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.sigma8_ssee", formato: ".4f"}
+bossC_sigma8_planck: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.sigma8_planck", formato: ".4f"}
+bossC_fs8_ssee_z1: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.fs8_ssee_z1", formato: ".3f"}
+bossC_fs8_ssee_z3: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.fs8_ssee_z3", formato: ".3f"}
+bossC_fs8_planck_z1: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.fs8_planck_z1", formato: ".3f"}
+bossC_fs8_planck_z3: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.fs8_planck_z3", formato: ".3f"}
+bossC_s8_ssee_vs_ctl: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.s8_ssee_vs_ctl", formato: "+.2f"}
+bossC_s8_planck_vs_ctl: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.s8_planck_vs_ctl", formato: "+.2f"}
+bossC_logA_ssee_vs_ctl: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.logA_ssee_vs_ctl", formato: "+.2f"}
+bossC_Rm1_ssee: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.Rm1_ssee", formato: ".4f"}
+bossC_Rm1_planck: {fuente: "results/logs/growth_2026-07/boss_chen21.json#resumen.Rm1_planck", formato: ".4f"}
+
+# KiDS-1000: degeneración de logA (src/p06_growth/mide_As_o_producto.py). Las claves bossR_*, pwc_*, gan_wc_* del BOSS de Beutler+2017 salieron el 2026-10-20 (archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/)
 kidsR_D_ssee: {fuente: "results/logs/growth_2026-07/As_medido_o_producto.json#fuentes.KiDS (SSEE).parametros.logA.D", formato: ".2f"}
-pwc_ssee_cmb: {fuente: "results/logs/perfil_wc_boss.json#amplitud_cmb.w_c_parabola", formato: ".6f"}
-pwc_ssee_cmb_sigma: {fuente: "results/logs/perfil_wc_boss.json#amplitud_cmb.sigma_parabola", formato: ".6f"}
-pwc_ssee_cmb_dist: {fuente: "results/logs/perfil_wc_boss.json#amplitud_cmb.dist_sigma", formato: ".2f"}
-pwc_ssee_boss: {fuente: "results/logs/perfil_wc_boss.json#control_amplitud_boss.w_c_parabola", formato: ".6f"}
-pwc_ssee_boss_sigma: {fuente: "results/logs/perfil_wc_boss.json#control_amplitud_boss.sigma_parabola", formato: ".6f"}
-pwc_ssee_boss_dist: {fuente: "results/logs/perfil_wc_boss.json#control_amplitud_boss.dist_sigma", formato: ".2f"}
-pwc_lcdm_cmb: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.w_c_parabola", formato: ".6f"}
-pwc_lcdm_cmb_sigma: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.sigma_parabola", formato: ".6f"}
-pwc_lcdm_cmb_dist: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.dist_sigma", formato: ".2f"}
-pwc_lcdm_boss: {fuente: "results/logs/perfil_wc_boss_lcdm.json#control_amplitud_boss.w_c_parabola", formato: ".6f"}
-pwc_lcdm_boss_sigma: {fuente: "results/logs/perfil_wc_boss_lcdm.json#control_amplitud_boss.sigma_parabola", formato: ".6f"}
-pwc_lcdm_boss_dist: {fuente: "results/logs/perfil_wc_boss_lcdm.json#control_amplitud_boss.dist_sigma", formato: ".2f"}
-pwc_lcdm_ref: {fuente: "results/logs/perfil_wc_boss_lcdm.json#amplitud_cmb.referencia", formato: ".4f"}
-gan_wc_ssee: {fuente: "results/logs/ganancia_wc_libre.json#modelos.SSEE.ganancia", formato: ".3f"}
-gan_wc_lcdm: {fuente: "results/logs/ganancia_wc_libre.json#modelos.LCDM.ganancia", formato: ".3f"}
 # Cumulos de Paper 2 sobre las tablas reales de Zhang+2026 (46 sistemas) — src/p02_mcmc/cumulos_zhang2026.py
 clz_nII: {fuente: "results/logs/cumulos_zhang2026.json#control_lectura.filas_II", formato: "d"}
 clz_nIII: {fuente: "results/logs/cumulos_zhang2026.json#control_lectura.filas_III", formato: "d"}
@@ -809,8 +810,6 @@ leg_logTAGN_s: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_logT_
 leg_Ascale_s: {fuente: "results/logs/kids_publicados.json#nuisance.legacy_A_scale_libre_sigma", formato: ".2f"}
 k1000_control_chi2: {fuente: "results/logs/kids1000_control.json#chi2", formato: ".2f"}
 k1000_control_pct: {fuente: "results/logs/kids1000_control.json#desvio_pct", formato: ".1f"}
-boss_chi2_logA_cmb: {fuente: "results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json#chi2_en_logA_cmb", formato: ".2f"}
-boss_cuesta_clavar: {fuente: "results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json#cuesta_clavar", formato: ".2f"}
 h0alg_planck_sig: {fuente: "results/logs/algebra_derivada.json#algebra.H0alg_sigma_planck.valor", formato: ".2f"}
 F_SCREEN_IR_d4: {fuente: "results/logs/algebra_derivada.json#nucleo.F_SCREEN_IR", formato: ".4f"}
 # cuarta lectura Sealed (2026-10-11)

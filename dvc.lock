@@ -1,8 +1,7 @@
 schema: '2.0'
 stages:
   mcmc_full_posteriores:
-    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
-      src/mcmc_full/leer_mcmc_full.py
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/mcmc_full/leer_mcmc_full.py
     deps:
     - path: /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
       hash: md5
@@ -22,7 +21,7 @@ stages:
       size: 11979011
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: e63fae56369d47a2a1b131d32397f44b
+      md5: 78792f973033f97095ffe75521de41f8
       size: 4435
     - path: src/mcmc_full/leer_mcmc_full.py
       hash: md5
@@ -39,11 +38,10 @@ stages:
     outs:
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 7c381d931266dfcae15637f179aedd2b
+      md5: 5ea8ec715197b1cf52095c2f5e6d38da
       size: 4017
   s8_desde_b1:
-    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
-      src/p06_growth/s8_desde_b1.py
+    cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 src/p06_growth/s8_desde_b1.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -83,8 +81,8 @@ stages:
     deps:
     - path: manuscript/valores.yaml
       hash: md5
-      md5: e769320ab6e8053eb1e561343c480e34
-      size: 101343
+      md5: 05b362b9ddcfa7304b523d902dbcff08
+      size: 100918
     - path: results/logs/algebra_derivada.json
       hash: md5
       md5: c9c970430cf1f8f85617f4488b9bed0e
@@ -95,7 +93,7 @@ stages:
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 638c62e92f9c62992831dbb1142ba582
+      md5: 07f9f34527bfbf1423eb317aafb97f7a
       size: 2052
     - path: results/logs/class_picos.json
       hash: md5
@@ -133,18 +131,10 @@ stages:
       hash: md5
       md5: cb16041849cc21c934dc84da77f6ddbf
       size: 2861
-    - path: results/logs/ganancia_wc_libre.json
-      hash: md5
-      md5: b5f5518380ab5c186029c25550c4e0ba
-      size: 2489
     - path: results/logs/growth_2026-07/As_medido_o_producto.json
       hash: md5
-      md5: ec3810fe92d496c154f6342a7a400ce8
-      size: 16117
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      hash: md5
-      md5: 8b67d50800acab28c90498a75eeeff13
-      size: 4424
+      md5: 5f69a2573ef177468044f63de103d7bc
+      size: 7255
     - path: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
       hash: md5
       md5: 15c1f697ac5859fda420661df543b4eb
@@ -153,10 +143,10 @@ stages:
       hash: md5
       md5: d38e58277f6f57753991b3ec9a9ea262
       size: 2966
-    - path: results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json
+    - path: results/logs/growth_2026-07/boss_chen21.json
       hash: md5
-      md5: da0edbd5cf59b64f91b78e599dd9ca87
-      size: 1786
+      md5: af21208da36c080593155d0e408ce0d4
+      size: 13132
     - path: results/logs/h0_four_priors.json
       hash: md5
       md5: 452a28d03f400637e87b2a7f6ad8c27f
@@ -199,15 +189,15 @@ stages:
       size: 5010
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: 3663eeb2d5baba623d8d2e925d60020b
-      size: 5520
+      md5: 519536415bbec92cf336d5eb76d75fe6
+      size: 5519
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: e63fae56369d47a2a1b131d32397f44b
+      md5: 78792f973033f97095ffe75521de41f8
       size: 4435
     - path: results/logs/mcmc_full_posteriores.json
       hash: md5
-      md5: 7c381d931266dfcae15637f179aedd2b
+      md5: 5ea8ec715197b1cf52095c2f5e6d38da
       size: 4017
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -289,14 +279,6 @@ stages:
       hash: md5
       md5: e735f9d0d183171491d884b98d470b44
       size: 4310
-    - path: results/logs/perfil_wc_boss.json
-      hash: md5
-      md5: 7c7714110c964667ac196670d45fe808
-      size: 4020
-    - path: results/logs/perfil_wc_boss_lcdm.json
-      hash: md5
-      md5: 2225c13f919d70807e8eddefff3343a3
-      size: 4021
     - path: results/logs/ppc_cronometros.json
       hash: md5
       md5: 0053815aacc39562ea5a2160ea384ad9
@@ -327,7 +309,7 @@ stages:
       size: 2645
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 889d99635d81543023e1ca611f02ae12
+      md5: 631743732316269c194dc6cefe69cd99
       size: 8013
     - path: src/valores_tex.py
       hash: md5
@@ -336,12 +318,10 @@ stages:
     outs:
     - path: manuscript/valores_generados.tex
       hash: md5
-      md5: 8e28e53038fcf91219526d18e3e23cb0
-      size: 126012
+      md5: 15f992024bdb866479c79aae3416ca42
+      size: 124678
   p5_IS_perturbations:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p05_IS/ssee_paper5_IS_perturbations.py > 
-      results/logs/p5_IS_perturbations.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_IS/ssee_paper5_IS_perturbations.py > results/logs/p5_IS_perturbations.log 2>&1
     deps:
     - path: src/p05_IS/ssee_paper5_IS_perturbations.py
       hash: md5
@@ -369,16 +349,13 @@ stages:
       md5: 45e7e03977865cac0643a441e4db22e4
       size: 2020
   kids_publicados:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/kids_publicados.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_publicados.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+    - path: /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
       hash: md5
       md5: 38506b7d67a77c4188f3f44971f463ac
       size: 374768
-    - path: 
-        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    - path: /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
       hash: md5
       md5: 14e13ea2c7f3286a0bf220cabdef1373
       size: 105084314
@@ -412,8 +389,7 @@ stages:
       md5: ebd329fe8376eec834469985f0fa6aba
       size: 5010
   p10_uv_fscreen:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p10_uv/ssee_paper10_verification.py > /dev/null
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/ssee_paper10_verification.py > /dev/null
     deps:
     - path: src/p10_uv/ssee_paper10_verification.py
       hash: md5
@@ -433,8 +409,7 @@ stages:
       md5: 6265b437f17d580ff53ea6967a201116
       size: 1390
   prueba_equivalencia_hglob:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/verificacion/prueba_equivalencia_hglob.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/prueba_equivalencia_hglob.py
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -470,15 +445,13 @@ stages:
       md5: 9489dd2de90eec136787d13df1e839b9
       size: 2095
   spt3g_calibrador:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/spt3g_calibra.py lee
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/spt3g_calibra.py lee
     deps:
     - path: /mnt/datos/SSEE_data/cmb_lensing/papers/2608.31136/sec8_summary.tex
       hash: md5
       md5: 3f44f27af911b034a72ab7b9c1fe2146
       size: 6606
-    - path: 
-        /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/base_lens/gmv.yaml
       hash: md5
       md5: c667721e4ad556d5c9f669ac08f8f77f
       size: 486
@@ -536,8 +509,7 @@ stages:
       md5: c9c970430cf1f8f85617f4488b9bed0e
       size: 19505
   kids_legacy_bic:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/kids_legacy_bic.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/kids_legacy_bic.py
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -605,9 +577,7 @@ stages:
       md5: a773f16680e25f3a382db74ecf3f11c9
       size: 3482
   paper3_cmb:
-    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 
-      src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 
-      src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
+    cmd: export OMP_NUM_THREADS=1 MPLBACKEND=Agg; (.venv/bin/python3 src/verificacion/preflight.py && nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_cmb.py) > results/logs/paper3_cmb_reframe.log 2>&1
     deps:
     - path: data/raw/planck2018_EE.txt
       hash: md5
@@ -647,8 +617,7 @@ stages:
       md5: 86dff88591f48210726271c5981b8edf
       size: 3331
   lya_auditoria:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/lya_auditoria.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/lya_auditoria.py
     deps:
     - path: data/raw/desi_dr2_bao.csv
       hash: md5
@@ -656,8 +625,8 @@ stages:
       size: 2650
     - path: results/logs/lcdm_conjunta_control.json
       hash: md5
-      md5: 2a6553e31a6d0bf65c8eb4371e934ce6
-      size: 1298
+      md5: c03cc240adc038eadf8c08255c55bc74
+      size: 1297
     - path: src/bao_camb.py
       hash: md5
       md5: 17e888f2a53c3953da7563d6c7a37e57
@@ -685,14 +654,12 @@ stages:
     outs:
     - path: results/logs/lya_auditoria.json
       hash: md5
-      md5: e63fae56369d47a2a1b131d32397f44b
+      md5: 78792f973033f97095ffe75521de41f8
       size: 4435
   resumen_3modelos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/resumen_3modelos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/resumen_3modelos.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -718,12 +685,9 @@ stages:
       md5: 1190739c3c8ca04ea6bb2543e4932b67
       size: 4779
   savage_cv:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/estadistica/ssee_phase_d_savage_cv.py > 
-      results/logs/phase_d_savage_cv_wmfix.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/estadistica/ssee_phase_d_savage_cv.py > results/logs/phase_d_savage_cv_wmfix.log 2>&1
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -751,8 +715,7 @@ stages:
   dic_from_chains:
     cmd: .venv/bin/python3 src/estadistica/ssee_dic_from_chains.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -774,8 +737,7 @@ stages:
       md5: d78e6dcd0bf0d996ff6713f390f057ef
       size: 1326
   hiclass_campo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/hiclass_campo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/hiclass_campo.py
     deps:
     - path: /mnt/datos/hi_class/class
       hash: md5
@@ -800,8 +762,7 @@ stages:
       md5: 191482341f91d3ecc18f7d00602bf42e
       size: 7817
   R3_rehecho:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/analiza_ssee_R3.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_ssee_R3.py
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
       hash: md5
@@ -819,8 +780,7 @@ stages:
       hash: md5
       md5: a2d11872a162a9ace0cb3a6c91ced64e
       size: 1165455
-    - path: 
-        archive/logs_superados/r3_burnin_concatenado_2026-09-30/R3_ssee_kids_S8.json
+    - path: archive/logs_superados/r3_burnin_concatenado_2026-09-30/R3_ssee_kids_S8.json
       hash: md5
       md5: 9211a986b6e29d54fb1605acdf2a8f57
       size: 2353
@@ -838,9 +798,7 @@ stages:
       md5: 15c1f697ac5859fda420661df543b4eb
       size: 4104
   press_schechter:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/ssee_press_schechter.py > results/logs/press_schechter.log 
-      2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_press_schechter.py > results/logs/press_schechter.log 2>&1
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -880,8 +838,7 @@ stages:
       md5: 3acbba74913fd7e33f3a0220a1243eb6
       size: 2412
   edad_universo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p09_hubble/edad_universo.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/edad_universo.py
     deps:
     - path: src/p09_hubble/edad_universo.py
       hash: md5
@@ -905,8 +862,7 @@ stages:
       md5: 8d287577eefaeaf4f778ba3e1a8769ad
       size: 1187
   class_picos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/class_picos.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/class_picos.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -942,12 +898,9 @@ stages:
       md5: 0ee25ba2b63b76e588302082d9281cdc
       size: 1370
   fondos_exponenciales:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/fondos_exponenciales.py > 
-      results/logs/fondos_exponenciales.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondos_exponenciales.py > results/logs/fondos_exponenciales.log 2>&1
     deps:
-    - path: 
-        archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
+    - path: archive/codigo/investigacion/beta_c_RETIRADO_2026-09-07/fondo_acoplado.py
       hash: md5
       md5: 0e38f1db82e8932f760cc9cc5f7bb67b
       size: 6796
@@ -981,8 +934,7 @@ stages:
       md5: 25689daad318277117e2488ccd79f69d
       size: 1645
   ajuste_conjunto_SSEE:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py SSEE
     deps:
     - path: data/referencias/cmb_ajuste_conjunto_wc_ns_01d4369.json
       hash: md5
@@ -1014,8 +966,7 @@ stages:
       md5: d4cacaa6dd50eae1976979e5810bfff2
       size: 1561
   ajuste_conjunto_LCDM:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ajuste_conjunto_wc_ns.py LCDM
     deps:
     - path: data/referencias/cmb_ajuste_conjunto_wc_ns_01d4369.json
       hash: md5
@@ -1047,8 +998,7 @@ stages:
       md5: 3f3e30d62bda9d0c011d89c4562ba56a
       size: 1423
   hmcode_bariones:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_IS/hmcode_bariones.py > results/logs/hmcode_bariones.log 2>&1
     deps:
     - path: archive/codigo/investigacion/open_problems/ssee_op5_hmcode.py
       hash: md5
@@ -1079,113 +1029,8 @@ stages:
       hash: md5
       md5: 53fba83444c89b1177a3a9a2780c046c
       size: 845
-  perfil_wc_boss:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/perfil_wc_boss.py > results/logs/perfil_wc_boss.log 2>&1
-    deps:
-    - path: results/logs/cmb_ajuste_conjunto_wc_ns_SSEE.json
-      hash: md5
-      md5: d4cacaa6dd50eae1976979e5810bfff2
-      size: 1561
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      hash: md5
-      md5: 8b67d50800acab28c90498a75eeeff13
-      size: 4424
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/minimo_sesgos.py
-      hash: md5
-      md5: 25fb322e3b83df858c6666979cb05afe
-      size: 4825
-    - path: src/p06_growth/perfil_wc_boss.py
-      hash: md5
-      md5: 8ff812b52e207a231158cfbf865b41c9
-      size: 4631
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    outs:
-    - path: results/logs/perfil_wc_boss.json
-      hash: md5
-      md5: 7c7714110c964667ac196670d45fe808
-      size: 4020
-    - path: results/logs/perfil_wc_boss.log
-      hash: md5
-      md5: ceff7baa8804a8f808d415bce6e77c33
-      size: 6896
-  perfil_wc_boss_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/perfil_wc_boss_lcdm.py > 
-      results/logs/perfil_wc_boss_lcdm.log 2>&1
-    deps:
-    - path: results/logs/cmb_ajuste_conjunto_wc_ns_LCDM.json
-      hash: md5
-      md5: 3f3e30d62bda9d0c011d89c4562ba56a
-      size: 1423
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      hash: md5
-      md5: 8b67d50800acab28c90498a75eeeff13
-      size: 4424
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/minimo_sesgos.py
-      hash: md5
-      md5: 25fb322e3b83df858c6666979cb05afe
-      size: 4825
-    - path: src/p06_growth/perfil_wc_boss_lcdm.py
-      hash: md5
-      md5: a20b674faae87f2d043afe117e05b1fd
-      size: 5166
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    outs:
-    - path: results/logs/perfil_wc_boss_lcdm.json
-      hash: md5
-      md5: 2225c13f919d70807e8eddefff3343a3
-      size: 4021
-    - path: results/logs/perfil_wc_boss_lcdm.log
-      hash: md5
-      md5: c77c4c902479ae71ef6afd9a22212442
-      size: 6948
-  ganancia_wc_libre:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/ganancia_wc_libre.py
-    deps:
-    - path: results/logs/multisonda_fondo_clavado.log
-      hash: md5
-      md5: 1661565185281fa4f8f9e83e1435aca8
-      size: 10548
-    - path: results/logs/perfil_wc_boss.json
-      hash: md5
-      md5: 7c7714110c964667ac196670d45fe808
-      size: 4020
-    - path: results/logs/perfil_wc_boss_lcdm.json
-      hash: md5
-      md5: 2225c13f919d70807e8eddefff3343a3
-      size: 4021
-    - path: src/p06_growth/ganancia_wc_libre.py
-      hash: md5
-      md5: cc7eae17b8cd54403eca2fdaa50981ff
-      size: 3377
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    outs:
-    - path: results/logs/ganancia_wc_libre.json
-      hash: md5
-      md5: b5f5518380ab5c186029c25550c4e0ba
-      size: 2489
   s8_kids_legacy_camb:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/s8_kids_legacy_camb.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/s8_kids_legacy_camb.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -1257,9 +1102,7 @@ stages:
       md5: 10a09935854f896915e03a4b47f2d73d
       size: 3512
   cumulos_zhang2026:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 
-      2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/cumulos_zhang2026.py > results/logs/cumulos_zhang2026.log 2>&1
     deps:
     - path: data/raw/zhang2026/tablas_II_III.tex
       hash: md5
@@ -1291,8 +1134,7 @@ stages:
       md5: e519a0c3d63fa961da168d35fd7fed7c
       size: 1727
   paper2_w0wa:
-    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py >
-      results/logs/paper2_analysis.log 2>&1
+    cmd: MPLBACKEND=Agg .venv/bin/python3 src/p02_mcmc/ssee_paper2_analysis.py > results/logs/paper2_analysis.log 2>&1
     deps:
     - path: src/p02_mcmc/ssee_paper2_analysis.py
       hash: md5
@@ -1312,8 +1154,7 @@ stages:
       md5: d276c4b16bc40f500fb09792af1a30e4
       size: 1950
   fsigma8_canonico:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/recalc_fsigma8_canonical.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/recalc_fsigma8_canonical.py
     deps:
     - path: src/p03_cmb/recalc_fsigma8_canonical.py
       hash: md5
@@ -1332,76 +1173,25 @@ stages:
       hash: md5
       md5: cb16041849cc21c934dc84da77f6ddbf
       size: 2861
-  analiza_boss_R1R2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/analiza_boss_R1R2.py ambos > 
-      results/logs/analiza_boss_R1R2.log 2>&1
-    deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-      hash: md5
-      md5: 0dba73f1fe982e0a301fb27c00e3ed88
-      size: 18875962
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      hash: md5
-      md5: eb2b7d09f2dae4038bf178968df70d85
-      size: 10385067
-    - path: archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
-      hash: md5
-      md5: 43edfe16597ddba003bb1a127c89fbbd
-      size: 809
-    - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
-      hash: md5
-      md5: 2b8e5f705e86aa54f5dd5e7b1f428b18
-      size: 10636
-    - path: src/p06_growth/analiza_boss_R1R2.py
-      hash: md5
-      md5: ed3d552860d48719259964e197abc61c
-      size: 6981
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/cobaya_boss.py
-      hash: md5
-      md5: a807fca6bddc23c975f923f69e59c7d4
-      size: 10979
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    outs:
-    - path: results/logs/analiza_boss_R1R2.log
-      hash: md5
-      md5: 70a8494ffac084a05cb26f6896a41bce
-      size: 1504
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      hash: md5
-      md5: 8b67d50800acab28c90498a75eeeff13
-      size: 4424
   multisonda_fondo_clavado:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/multisonda_fondo_clavado.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/multisonda_fondo_clavado.py
     deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      hash: md5
-      md5: eb2b7d09f2dae4038bf178968df70d85
-      size: 10385067
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt
       hash: md5
       md5: 6b0fa9bf9cdb47e54fb87b68d9c3ca6f
       size: 986674
     - path: CANONICAL_VALUES.yaml
       hash: md5
-      md5: d929de59b9527941890a6b330ccd2c0f
-      size: 70253
+      md5: 01ebf3c92ac22788012aff0d710f392c
+      size: 70413
     - path: results/chains/ssee_cmb.1.txt
       hash: md5
       md5: 155b55672adc4aaa597437c0875a4706
       size: 49485923
     - path: src/p06_growth/multisonda_fondo_clavado.py
       hash: md5
-      md5: cab5fb62a9e46303f93f500868038979
-      size: 32914
+      md5: c63955e3e0afd5bfe131ef38a4f690ba
+      size: 28469
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1409,16 +1199,14 @@ stages:
     outs:
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
-      md5: f7c3e22456dd37bbc642a02cc468d458
-      size: 9084
+      md5: b5c017f8174a71830366e9fe2283c795
+      size: 7163
     - path: results/logs/multisonda_fondo_clavado.log
       hash: md5
-      md5: 1661565185281fa4f8f9e83e1435aca8
-      size: 10548
+      md5: 8bdf014619a3c1b3222791ece73fcd70
+      size: 7681
   fnu_tremaine_gunn:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 
-      2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/fnu_tremaine_gunn.py > results/logs/fnu_tremaine_gunn.log 2>&1
     deps:
     - path: src/p02_mcmc/fnu_tremaine_gunn.py
       hash: md5
@@ -1442,42 +1230,8 @@ stages:
       md5: e9f4b769f82d625525f6cb7d17f917de
       size: 1471
   mide_As_o_producto:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/mide_As_o_producto.py > 
-      results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/mide_As_o_producto.py > results/logs/growth_2026-07/As_medido_o_producto.log 2>&1
     deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-      hash: md5
-      md5: 0dba73f1fe982e0a301fb27c00e3ed88
-      size: 18875962
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
-      hash: md5
-      md5: df61445ddf954afd0910ed495b71a872
-      size: 15252867
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
-      hash: md5
-      md5: a9871a357860cdfe761db82add0a5613
-      size: 17425870
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
-      hash: md5
-      md5: 30dfdecff857f40076fede99ec2067db
-      size: 16231978
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      hash: md5
-      md5: eb2b7d09f2dae4038bf178968df70d85
-      size: 10385067
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-      hash: md5
-      md5: 3a558d3fac472d86b7dab3f96ef519ce
-      size: 11298420
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-      hash: md5
-      md5: a989f146d7812d84a2965feaf07f63b3
-      size: 14076909
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
-      hash: md5
-      md5: 8bd8f62e347cda24d3e37e3f458f1e2c
-      size: 11409013
     - path: /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
       hash: md5
       md5: 2af81b95c5479dad220fe01e2755a253
@@ -1512,8 +1266,8 @@ stages:
       size: 1165455
     - path: src/p06_growth/mide_As_o_producto.py
       hash: md5
-      md5: cab4b6161fa3a919f8ecd5f8b2eb857e
-      size: 7837
+      md5: 3ae0f66292535d779e5d4db58764ddf5
+      size: 7984
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -1521,89 +1275,14 @@ stages:
     outs:
     - path: results/logs/growth_2026-07/As_medido_o_producto.json
       hash: md5
-      md5: ec3810fe92d496c154f6342a7a400ce8
-      size: 16117
+      md5: 5f69a2573ef177468044f63de103d7bc
+      size: 7255
     - path: results/logs/growth_2026-07/As_medido_o_producto.log
       hash: md5
-      md5: c84380d793a691fe0057433b1a557aff
-      size: 2550
-  leer_conjunta_b3:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/leer_conjunta.py b3 > results/logs/leer_conjunta_b3.log 
-      2>&1
-    deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
-      hash: md5
-      md5: bfcce5489bffd77ce13b69e4fd45bd0e
-      size: 10256785
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
-      hash: md5
-      md5: 53ec6f3776ffa5a67b48199fdb63cacc
-      size: 11070675
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
-      hash: md5
-      md5: 28e57c11bfc401f506b4a2732c2311bc
-      size: 14593810
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
-      hash: md5
-      md5: ff37d781ae00949b2fbeb2234465c32e
-      size: 17590265
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.1.txt
-      hash: md5
-      md5: 42a4cda10cc580029f85940f025b028d
-      size: 10968111
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.2.txt
-      hash: md5
-      md5: 88c3868bccecfad33774354a2c3f07dd
-      size: 10906401
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.3.txt
-      hash: md5
-      md5: f4718b3cf804569f10c51814e6823b67
-      size: 11309199
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.4.txt
-      hash: md5
-      md5: 8d59cc0a136ca082f2b459c9078e9e73
-      size: 12422223
-    - path: results/logs/cmb_dbic_tau_ajustado.json
-      hash: md5
-      md5: a469b82f9895eedd1c6b677a82056cdd
-      size: 3072
-    - path: results/logs/multisonda_fondo_clavado.json
-      hash: md5
-      md5: f7c3e22456dd37bbc642a02cc468d458
-      size: 9084
-    - path: src/bao_camb.py
-      hash: md5
-      md5: 17e888f2a53c3953da7563d6c7a37e57
-      size: 4547
-    - path: src/p06_growth/leer_conjunta.py
-      hash: md5
-      md5: 666ed92668f00278dca96300fbcc3bec
-      size: 7202
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/rd_camb.py
-      hash: md5
-      md5: b415ae755ec1f801122eb920e7faa797
-      size: 5764
-    - path: src/ssee_core.py
-      hash: md5
-      md5: d6ef8a580870ee72a5de7ca4b2a18632
-      size: 17307
-    outs:
-    - path: results/logs/conjunta_b3_vs_individual.json
-      hash: md5
-      md5: 513ff350ff3af46bc5a3a8142afc6fbd
-      size: 3871
-    - path: results/logs/leer_conjunta_b3.log
-      hash: md5
-      md5: c3c042d1eaf43b5c8b395b0dfc5230d4
-      size: 1488
+      md5: 797d7fc4d403ff647f6473616a64fa40
+      size: 1658
   b1_min_ssee:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py ssee > results/logs/b1_min_ssee.log 2>&1
     deps:
     - path: results/chains/ssee_cmb_k2.1.txt
       hash: md5
@@ -1651,8 +1330,7 @@ stages:
       md5: 442d2516493b13917c5907f6b94b4b79
       size: 4563
   b1_min_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_minimiza.py lcdm > results/logs/b1_min_lcdm.log 2>&1
     deps:
     - path: results/chains/lcdm_cmb.1.txt
       hash: md5
@@ -1688,8 +1366,7 @@ stages:
       md5: 989a95488872e69d877ab79723e1d486
       size: 4616
   b1_k2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py
-      > results/logs/b1_k2.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/b1_k2_lee.py > results/logs/b1_k2.log 2>&1
     deps:
     - path: results/chains/lcdm_cmb.1.txt
       hash: md5
@@ -1753,21 +1430,19 @@ stages:
       md5: 6c80ade97acddc95b947eaf89f97ac6c
       size: 969
   sondas_ssee_vs_lcdm:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/sondas_ssee_vs_lcdm.py > 
-      results/logs/sondas_ssee_vs_lcdm.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/sondas_ssee_vs_lcdm.py > results/logs/sondas_ssee_vs_lcdm.log 2>&1
     deps:
     - path: results/logs/act_dr6_en_el_clavo.json
       hash: md5
-      md5: f1bc64ca0bb2f94c4a3ee1edaef5bcb4
-      size: 2030
+      md5: f1abf8712de6233eeabe1d5f25db111c
+      size: 2029
     - path: results/logs/b1_k2.json
       hash: md5
       md5: 92110af50831bb1faa0a88a5926c3bab
       size: 4205
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 638c62e92f9c62992831dbb1142ba582
+      md5: 07f9f34527bfbf1423eb317aafb97f7a
       size: 2052
     - path: results/logs/cmb_dbic_mnu_propia.json
       hash: md5
@@ -1795,12 +1470,12 @@ stages:
       size: 3482
     - path: results/logs/sn_geometria_en_el_clavo.json
       hash: md5
-      md5: 0f70454cce1948d0c53c2aeb70773c21
-      size: 3697
+      md5: 109afb43ef0932867e9df7c2f309ea81
+      size: 3696
     - path: results/logs/spt3g_kk_en_el_clavo.json
       hash: md5
-      md5: 344e983a07fb0ad80ece6bc0e84aeeed
-      size: 2211
+      md5: 458b57a09f05649da69681f2835103a1
+      size: 2210
     - path: results/logs/union3_en_el_clavo.json
       hash: md5
       md5: 259046eadde0f71ce0396109cd314352
@@ -1816,16 +1491,14 @@ stages:
     outs:
     - path: results/logs/sondas_ssee_vs_lcdm.json
       hash: md5
-      md5: 889d99635d81543023e1ca611f02ae12
+      md5: 631743732316269c194dc6cefe69cd99
       size: 8013
     - path: results/logs/sondas_ssee_vs_lcdm.log
       hash: md5
-      md5: f7a7bbd91a3291dc24c6a46a145f7485
+      md5: b1e987a447273380f9d31e7e2ecea6bd
       size: 1723
   mcmc_paper2_reframe:
-    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 
-      .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 
-      2>&1
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc_reframe.py > /dev/null 2>&1
     deps:
     - path: data/raw/desi_dr2_bao.csv
       hash: md5
@@ -1877,10 +1550,7 @@ stages:
       md5: 958c59ac77a6a2a8307750885a60def4
       size: 4694
   h0_four_priors:
-    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 
-      MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p09_hubble/ssee_h0_prior_experiment.py > 
-      results/logs/h0_four_priors.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p09_hubble/ssee_h0_prior_experiment.py > results/logs/h0_four_priors.log 2>&1
     deps:
     - path: data/raw/desi_dr2_bao.csv
       hash: md5
@@ -1924,9 +1594,7 @@ stages:
       md5: 017017757fe55a7cf4b2bd0e833c6913
       size: 2744
   perfil_h0_ancla:
-    cmd: NUCLEOS=6 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 
-      nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > 
-      results/logs/perfil_h0_ancla.log 2>&1
+    cmd: NUCLEOS=6 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_h0_ancla.py > results/logs/perfil_h0_ancla.log 2>&1
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -1962,8 +1630,7 @@ stages:
       md5: e5413cce565d39c208bc68e840dfeb7d
       size: 8566
   is_growth_gamma:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p05_is/ssee_is_growth.py > results/logs/is_growth_gamma.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p05_is/ssee_is_growth.py > results/logs/is_growth_gamma.log 2>&1
     deps:
     - path: src/p05_is/ssee_is_growth.py
       hash: md5
@@ -1987,8 +1654,7 @@ stages:
       md5: 6317471e3b7631ef8ec1bc08374a16db
       size: 3086
   paper4_toe:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p04_toe/ssee_paper4_toe.py > results/logs/paper4_toe.log 2>&1
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -2028,8 +1694,7 @@ stages:
       md5: 560a45d70e807e61fc04e9a2708acef0
       size: 2471
   cmb_dbic_mnu_propia:
-    cmd: .venv/bin/python3 src/p11_sondas/cmb_dbic_mnu_propia.py > 
-      results/logs/cmb_dbic_mnu_propia.log 2>&1
+    cmd: .venv/bin/python3 src/p11_sondas/cmb_dbic_mnu_propia.py > results/logs/cmb_dbic_mnu_propia.log 2>&1
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -2057,8 +1722,7 @@ stages:
       md5: 5bf8c59a74130eab2a5fbf233343531c
       size: 1293
   bao_lcdm_libre:
-    cmd: OMP_NUM_THREADS=1 .venv/bin/python3 src/p11_sondas/bao_lcdm_libre.py > 
-      results/logs/bao_lcdm_libre.log 2>&1
+    cmd: OMP_NUM_THREADS=1 .venv/bin/python3 src/p11_sondas/bao_lcdm_libre.py > results/logs/bao_lcdm_libre.log 2>&1
     deps:
     - path: data/raw/desi_dr2_bao.csv
       hash: md5
@@ -2066,12 +1730,12 @@ stages:
       size: 2650
     - path: results/logs/bao_camb_control.json
       hash: md5
-      md5: be9b53df631366bef9215fa636f53f1e
-      size: 1401
+      md5: 4174f341de31b2e2b9ddbe4113a81e93
+      size: 1400
     - path: src/p06_growth/multisonda_fondo_clavado.py
       hash: md5
-      md5: cab5fb62a9e46303f93f500868038979
-      size: 32914
+      md5: 8955d2d8e9f821a4802fd0d59a74edea
+      size: 33392
     - path: src/p11_sondas/bao_lcdm_libre.py
       hash: md5
       md5: d1e808a960b7df7d675fde88377e1b74
@@ -2091,16 +1755,14 @@ stages:
     outs:
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 638c62e92f9c62992831dbb1142ba582
+      md5: 07f9f34527bfbf1423eb317aafb97f7a
       size: 2052
     - path: results/logs/bao_lcdm_libre.log
       hash: md5
-      md5: c5ddb903ba96dbe975f7f8d8bf20e667
+      md5: 0dc1efcc17086b419d4d9b061d303a0f
       size: 1259
   des_y3_nla:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/des_y3_en_el_clavo.py ssee_nla && OMP_NUM_THREADS=1 nice -n
-      10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck_nla
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py ssee_nla && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck_nla
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -2132,8 +1794,7 @@ stages:
       md5: 0e568398c14b51f6ec06cf1b8e7e7a66
       size: 1766
   readme_figura:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/ssee_readme_tensions_figure.py
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/ssee_readme_tensions_figure.py
     deps:
     - path: data/raw/planck2018_prior.csv
       hash: md5
@@ -2175,8 +1836,7 @@ stages:
   coteja_crudos:
     cmd: .venv/bin/python3 src/verificacion/coteja_crudos.py
     deps:
-    - path: 
-        /home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat
+    - path: /home/mike/cobaya_packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat
       hash: md5
       md5: 6d07469f5fd6a2ae420bb425ab47de6a
       size: 885
@@ -2246,11 +1906,9 @@ stages:
       md5: 7f3686247b136bbc7b3a41a05fe67640
       size: 4995
   ppc_cronometros:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/ppc_cronometros.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ppc_cronometros.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -2284,11 +1942,9 @@ stages:
       md5: 0053815aacc39562ea5a2160ea384ad9
       size: 2830
   p2_fig7_fig8:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/regenerate_fig7_fig8_p2.py
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/regenerate_fig7_fig8_p2.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -2342,8 +1998,7 @@ stages:
       md5: da6852e5718ea22f0401fe14521509d3
       size: 1305
   cajones_algebra:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/verificacion/cajones_algebra.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/cajones_algebra.py
     deps:
     - path: src/procedencia.py
       hash: md5
@@ -2363,11 +2018,7 @@ stages:
       md5: 412b2508a8663ffdbd7da9811b0ee841
       size: 8299
   paperB_Nstar:
-    cmd: bash -c '( .venv/bin/python3 -c "import 
-      sys;sys.path.insert(0,\"src\");from procedencia import 
-      cabecera;print(cabecera(\"src/pB_inflation/ssee_paperB_Nstar.py\"))"; 
-      OMP_NUM_THREADS=1 .venv/bin/python3 src/pB_inflation/ssee_paperB_Nstar.py 
-      ) > results/logs/paperB_Nstar.log'
+    cmd: bash -c '( .venv/bin/python3 -c "import sys;sys.path.insert(0,\"src\");from procedencia import cabecera;print(cabecera(\"src/pB_inflation/ssee_paperB_Nstar.py\"))"; OMP_NUM_THREADS=1 .venv/bin/python3 src/pB_inflation/ssee_paperB_Nstar.py ) > results/logs/paperB_Nstar.log'
     deps:
     - path: src/pB_inflation/ssee_paperB_Nstar.py
       hash: md5
@@ -2387,11 +2038,9 @@ stages:
       md5: 31a6dd3eac4eb1f0e987adae1ffbee0e
       size: 4517
   p2_corners:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/regenerate_corners_p2.py
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/regenerate_corners_p2.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -2469,8 +2118,7 @@ stages:
       md5: 50a83eb6e725eb0a6da2eaa87984fe83
       size: 2033
   h0_por_profundidad:
-    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p09_hubble/h0_por_profundidad.py
+    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/h0_por_profundidad.py
     deps:
     - path: /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat
       hash: md5
@@ -2506,8 +2154,7 @@ stages:
       md5: 9c5f0932cbdab86c1851b6208f128e74
       size: 4483
   h0_por_metodos:
-    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p09_hubble/h0_por_metodos.py
+    cmd: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p09_hubble/h0_por_metodos.py
     deps:
     - path: /mnt/datos/SSEE_data/literatura/1807.06209/ms.tex
       hash: md5
@@ -2591,8 +2238,7 @@ stages:
       md5: d03f1602af0e03f340f925432913c4ca
       size: 3489
   p9_figura_cascada:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/p09_hubble/ssee_paper9_figures.py
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p09_hubble/ssee_paper9_figures.py
     deps:
     - path: results/logs/h0_por_metodos.json
       hash: md5
@@ -2624,8 +2270,7 @@ stages:
       md5: f37268c2614bc57e879a9582b0fd2d80
       size: 1860
   reframe_obh2:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/reframe_obh2.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/reframe_obh2.py
     deps:
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -2653,10 +2298,7 @@ stages:
       md5: 5e772a3455217f48c22194d565041c10
       size: 1143
   sello_bao_camb_control:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/bao_camb.py && 
-      .venv/bin/python3 src/procedencia_sella.py src/bao_camb.py 
-      results/logs/bao_camb_control.json data/raw/desi_dr2_bao.csv 
-      data/processed/bao_camb_ssee.json results/logs/lcdm_conjunta_control.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/bao_camb.py && .venv/bin/python3 src/procedencia_sella.py src/bao_camb.py results/logs/bao_camb_control.json data/raw/desi_dr2_bao.csv data/processed/bao_camb_ssee.json results/logs/lcdm_conjunta_control.json
     deps:
     - path: data/processed/bao_camb_ssee.json
       hash: md5
@@ -2668,8 +2310,8 @@ stages:
       size: 2650
     - path: results/logs/lcdm_conjunta_control.json
       hash: md5
-      md5: 2a6553e31a6d0bf65c8eb4371e934ce6
-      size: 1298
+      md5: c03cc240adc038eadf8c08255c55bc74
+      size: 1297
     - path: src/bao_camb.py
       hash: md5
       md5: 17e888f2a53c3953da7563d6c7a37e57
@@ -2697,14 +2339,10 @@ stages:
     outs:
     - path: results/logs/bao_camb_control.json
       hash: md5
-      md5: be9b53df631366bef9215fa636f53f1e
-      size: 1401
+      md5: 4174f341de31b2e2b9ddbe4113a81e93
+      size: 1400
   sello_chi2_bao_posterior:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/chi2_bao_posterior.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p02_mcmc/chi2_bao_posterior.py 
-      results/logs/chi2_bao_posterior.log data/raw/desi_dr2_bao.csv 
-      results/logs/mcmc_paper2_reframe.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/chi2_bao_posterior.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/chi2_bao_posterior.py results/logs/chi2_bao_posterior.log data/raw/desi_dr2_bao.csv results/logs/mcmc_paper2_reframe.json
     deps:
     - path: data/raw/desi_dr2_bao.csv
       hash: md5
@@ -2747,114 +2385,14 @@ stages:
       hash: md5
       md5: 236b145ea249adbac85919e6d20d65ff
       size: 1770
-  leer_conjunta:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/leer_conjunta.py > results/logs/leer_conjunta.log && 
-      .venv/bin/python3 src/procedencia_sella.py src/p06_growth/leer_conjunta.py
-      results/logs/leer_conjunta.log results/logs/cmb_dbic_tau_ajustado.json 
-      results/logs/multisonda_fondo_clavado.json 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt 
-      /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
-    deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.1.txt
-      hash: md5
-      md5: bfcce5489bffd77ce13b69e4fd45bd0e
-      size: 10256785
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.2.txt
-      hash: md5
-      md5: 53ec6f3776ffa5a67b48199fdb63cacc
-      size: 11070675
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.3.txt
-      hash: md5
-      md5: 28e57c11bfc401f506b4a2732c2311bc
-      size: 14593810
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/boss_clavado.4.txt
-      hash: md5
-      md5: ff37d781ae00949b2fbeb2234465c32e
-      size: 17590265
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.1.txt
-      hash: md5
-      md5: 5218c61e3f3dab35810393976ee66e9b
-      size: 13503270
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.2.txt
-      hash: md5
-      md5: d0da485983d8750f8a481ef01ca25135
-      size: 4230501
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.3.txt
-      hash: md5
-      md5: d1524b6142bd4af8886799221003b7c2
-      size: 13637349
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta.4.txt
-      hash: md5
-      md5: ba7d8fd2bc7752b825caeb5c5a94a2ea
-      size: 13668765
-    - path: results/logs/cmb_dbic_tau_ajustado.json
-      hash: md5
-      md5: a469b82f9895eedd1c6b677a82056cdd
-      size: 3072
-    - path: results/logs/multisonda_fondo_clavado.json
-      hash: md5
-      md5: f7c3e22456dd37bbc642a02cc468d458
-      size: 9084
-    - path: src/bao_camb.py
-      hash: md5
-      md5: 17e888f2a53c3953da7563d6c7a37e57
-      size: 4547
-    - path: src/p06_growth/leer_conjunta.py
-      hash: md5
-      md5: 666ed92668f00278dca96300fbcc3bec
-      size: 7202
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    - path: src/rd_camb.py
-      hash: md5
-      md5: b415ae755ec1f801122eb920e7faa797
-      size: 5764
-    - path: src/ssee_core.py
-      hash: md5
-      md5: d6ef8a580870ee72a5de7ca4b2a18632
-      size: 17307
-    outs:
-    - path: results/logs/conjunta_vs_individual.json
-      hash: md5
-      md5: 826fde0d3cca77b45a7f3185b090a60f
-      size: 3834
-    - path: results/logs/leer_conjunta.log
-      hash: md5
-      md5: c27a82c63f862efb9923d4b77ccdbe3a
-      size: 1467
   sello_control_legacy:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/control_legacy.py > results/logs/control_legacy.log && 
-      .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/control_legacy.py 
-      results/logs/growth_2026-07/control_legacy.json 
-      /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
-      /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
-      && .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/control_legacy.py results/logs/control_legacy.log 
-      /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
-      /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_legacy.py > results/logs/control_legacy.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/growth_2026-07/control_legacy.json /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/control_legacy.log /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    - path: /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
       hash: md5
       md5: 14e13ea2c7f3286a0bf220cabdef1373
       size: 105084314
-    - path: 
-        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+    - path: /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
       hash: md5
       md5: a17bbed5e3d60774b9d6f91e60d1d526
       size: 1186560
@@ -2888,10 +2426,7 @@ stages:
       md5: ea0d59cb2de0b2333720111c75316298
       size: 5929
   sello_cruce_fantasma:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/cruce_fantasma_quien_lo_lleva.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p07_eft/cruce_fantasma_quien_lo_lleva.py 
-      results/logs/cruce_fantasma_quien_lo_lleva.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/cruce_fantasma_quien_lo_lleva.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/cruce_fantasma_quien_lo_lleva.py results/logs/cruce_fantasma_quien_lo_lleva.json
     deps:
     - path: src/p07_eft/cruce_fantasma_quien_lo_lleva.py
       hash: md5
@@ -2915,10 +2450,7 @@ stages:
       md5: c2b9fe114154adbce081c7630468ffa8
       size: 8422
   sello_deltac:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/spherical_collapse_deltac.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p02_mcmc/spherical_collapse_deltac.py 
-      results/logs/deltac_spherical_collapse.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/spherical_collapse_deltac.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/spherical_collapse_deltac.py results/logs/deltac_spherical_collapse.json
     deps:
     - path: src/p02_mcmc/spherical_collapse_deltac.py
       hash: md5
@@ -2942,11 +2474,7 @@ stages:
       md5: 767b90f3f003143c7e345d4fa7f6b6b3
       size: 1852
   sello_des_y3_barrido:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/des_y3_barrido.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/des_y3_barrido.py 
-      results/logs/des_y3_barrido.json 
-      /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_barrido.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/des_y3_barrido.py results/logs/des_y3_barrido.json /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
     deps:
     - path: /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
       hash: md5
@@ -2978,11 +2506,7 @@ stages:
       md5: 743445de85a2f0aed7b13a1eb34d39cb
       size: 40856
   sello_des_y3_barrido_masa:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/des_y3_barrido_en_masa.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/des_y3_barrido_en_masa.py 
-      results/logs/des_y3_barrido_masa.json results/logs/des_y3_barrido.json 
-      /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_barrido_en_masa.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/des_y3_barrido_en_masa.py results/logs/des_y3_barrido_masa.json results/logs/des_y3_barrido.json /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
     deps:
     - path: /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
       hash: md5
@@ -3014,10 +2538,7 @@ stages:
       md5: 19406fff3ada3c7153ce2fb51b679eaf
       size: 4534
   sello_eft_barrido_potenciales_wa:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/barrido_potenciales_wa.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p07_eft/barrido_potenciales_wa.py 
-      results/logs/eft_barrido_potenciales_wa.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/barrido_potenciales_wa.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/barrido_potenciales_wa.py results/logs/eft_barrido_potenciales_wa.json
     deps:
     - path: src/p07_eft/barrido_potenciales_wa.py
       hash: md5
@@ -3041,10 +2562,7 @@ stages:
       md5: e5015e88626cd4e7448c75879a98a2e3
       size: 24010
   sello_eft_dos_campos_acoplados:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/dos_campos_acoplados.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p07_eft/dos_campos_acoplados.py 
-      results/logs/eft_dos_campos_acoplados.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/dos_campos_acoplados.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/dos_campos_acoplados.py results/logs/eft_dos_campos_acoplados.json
     deps:
     - path: src/p07_eft/dos_campos_acoplados.py
       hash: md5
@@ -3068,10 +2586,7 @@ stages:
       md5: bcc2a0520def7b6c733be630b45355a0
       size: 2379
   sello_eft_dos_campos_genericos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/dos_campos_genericos.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p07_eft/dos_campos_genericos.py 
-      results/logs/eft_dos_campos_genericos.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/dos_campos_genericos.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/dos_campos_genericos.py results/logs/eft_dos_campos_genericos.json
     deps:
     - path: src/p07_eft/dos_campos_genericos.py
       hash: md5
@@ -3095,10 +2610,7 @@ stages:
       md5: ae411117f6fe6a71ae19b46633307cd8
       size: 3065
   sello_eft_dos_campos_phi_pi:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/dos_campos_phi_pi.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p07_eft/dos_campos_phi_pi.py 
-      results/logs/eft_dos_campos_phi_pi.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/dos_campos_phi_pi.py && .venv/bin/python3 src/procedencia_sella.py src/p07_eft/dos_campos_phi_pi.py results/logs/eft_dos_campos_phi_pi.json
     deps:
     - path: src/p07_eft/dos_campos_phi_pi.py
       hash: md5
@@ -3122,12 +2634,7 @@ stages:
       md5: 4ba98807f380242429a93df247aa65a4
       size: 2597
   sello_erosita_completitud:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/erosita_completitud.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/erosita_completitud.py 
-      results/logs/erosita_completitud.json 
-      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
-      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_completitud.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_completitud.py results/logs/erosita_completitud.json /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
     deps:
     - path: /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz
       hash: md5
@@ -3159,10 +2666,7 @@ stages:
       md5: 7fe401b2e9fd69f2323474101adbef5e
       size: 3096
   sello_formula_rd:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/verifica_formula_rd.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p02_mcmc/verifica_formula_rd.py 
-      results/logs/formula_rd_exponentes.log
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/verifica_formula_rd.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/verifica_formula_rd.py results/logs/formula_rd_exponentes.log
     deps:
     - path: src/p02_mcmc/verifica_formula_rd.py
       hash: md5
@@ -3186,12 +2690,7 @@ stages:
       md5: 9be0e8e770d06dc086b250c09a13a6a1
       size: 1457
   sello_h0_distancias:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/h0_distancias.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p02_mcmc/h0_distancias.py 
-      results/logs/h0_distancias_hglob.json 
-      results/logs/mcmc_paper2_reframe.json results/logs/h0_four_priors.json 
-      src/p02_mcmc/ssee_paper2_mcmc.py
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/h0_distancias.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/h0_distancias.py results/logs/h0_distancias_hglob.json results/logs/mcmc_paper2_reframe.json results/logs/h0_four_priors.json src/p02_mcmc/ssee_paper2_mcmc.py
     deps:
     - path: results/logs/h0_four_priors.json
       hash: md5
@@ -3227,10 +2726,7 @@ stages:
       md5: a4d38ab0bee75eb68526d2bf435abf75
       size: 1758
   sello_is_growth_gamma_bg:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p05_is/is_growth_gamma_bg.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p05_is/is_growth_gamma_bg.py 
-      results/logs/is_growth_gamma_bg.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_is/is_growth_gamma_bg.py && .venv/bin/python3 src/procedencia_sella.py src/p05_is/is_growth_gamma_bg.py results/logs/is_growth_gamma_bg.json
     deps:
     - path: src/p05_is/is_growth_gamma_bg.py
       hash: md5
@@ -3254,11 +2750,7 @@ stages:
       md5: 58692e37f8c1ae4b92b70ebda8505e36
       size: 1636
   sello_look_elsewhere_full:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/estadistica/look_elsewhere_full.py > 
-      results/logs/look_elsewhere_full.log && .venv/bin/python3 
-      src/procedencia_sella.py src/estadistica/look_elsewhere_full.py 
-      results/logs/look_elsewhere_full.log
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/estadistica/look_elsewhere_full.py > results/logs/look_elsewhere_full.log && .venv/bin/python3 src/procedencia_sella.py src/estadistica/look_elsewhere_full.py results/logs/look_elsewhere_full.log
     deps:
     - path: src/estadistica/look_elsewhere_full.py
       hash: md5
@@ -3282,11 +2774,7 @@ stages:
       md5: 50cefe7433c9c4df1372cd533abf1700
       size: 1950
   sello_p3_rd_reframe:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/run_p3_rd_reframe.py > results/logs/p3_rd_reframe_omega_m.log 
-      && .venv/bin/python3 src/procedencia_sella.py 
-      src/p03_cmb/run_p3_rd_reframe.py results/logs/p3_rd_reframe_omega_m.log 
-      results/logs/mcmc_paper2_reframe.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/run_p3_rd_reframe.py > results/logs/p3_rd_reframe_omega_m.log && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/run_p3_rd_reframe.py results/logs/p3_rd_reframe_omega_m.log results/logs/mcmc_paper2_reframe.json
     deps:
     - path: results/logs/mcmc_paper2_reframe.json
       hash: md5
@@ -3322,9 +2810,7 @@ stages:
       md5: 9121c372ac87df86bf936af443f3574a
       size: 1310
   sello_rd_camb_control:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/rd_camb.py && 
-      .venv/bin/python3 src/procedencia_sella.py src/rd_camb.py 
-      results/logs/rd_camb_control.json data/processed/rd_camb_tabla.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/rd_camb.py && .venv/bin/python3 src/procedencia_sella.py src/rd_camb.py results/logs/rd_camb_control.json data/processed/rd_camb_tabla.json
     deps:
     - path: data/processed/rd_camb_tabla.json
       hash: md5
@@ -3352,16 +2838,7 @@ stages:
       md5: 8ecbf7fbd44929916809abc35cb8cf5a
       size: 5043
   sello_sn_geometria:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/sn_geometria.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/sn_geometria.py 
-      results/logs/sn_geometria_en_el_clavo.json 
-      results/logs/cmb_dbic_tau_ajustado.json 
-      results/logs/multisonda_fondo_clavado.json 
-      /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat 
-      /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov 
-      /mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv 
-      /mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/sn_geometria.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/sn_geometria.py results/logs/sn_geometria_en_el_clavo.json results/logs/cmb_dbic_tau_ajustado.json results/logs/multisonda_fondo_clavado.json /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES.dat /mnt/datos/SSEE_data/sn_ia/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov /mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv /mnt/datos/SSEE_data/sn_ia/des_sn5yr/STAT+SYS.npz
     deps:
     - path: /mnt/datos/SSEE_data/sn_ia/des_sn5yr/DES-Dovekie_HD.csv
       hash: md5
@@ -3385,8 +2862,8 @@ stages:
       size: 3072
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
-      md5: f7c3e22456dd37bbc642a02cc468d458
-      size: 9084
+      md5: 5ee629e82edb2bc60380e97b5fec39b0
+      size: 9272
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -3410,22 +2887,16 @@ stages:
     outs:
     - path: results/logs/sn_geometria_en_el_clavo.json
       hash: md5
-      md5: 0f70454cce1948d0c53c2aeb70773c21
-      size: 3697
+      md5: 109afb43ef0932867e9df7c2f309ea81
+      size: 3696
   sello_union3_en_el_clavo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/union3_binned.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/union3_binned.py 
-      results/logs/union3_en_el_clavo.json 
-      /mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits 
-      /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/union3_binned.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/union3_binned.py results/logs/union3_en_el_clavo.json /mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
     deps:
     - path: /mnt/datos/SSEE_data/sn_ia/union3/mu_mat_union3_cosmo=2_mu.fits
       hash: md5
       md5: 32e3d3cf934458430b62f13105d322f2
       size: 8640
-    - path: 
-        /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
+    - path: /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
       hash: md5
       md5: f637ec25f2bcffeaa6b83579a50f8a1d
       size: 8640
@@ -3459,16 +2930,9 @@ stages:
       md5: 259046eadde0f71ce0396109cd314352
       size: 2468
   sello_union3_repro_compara:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/union3_repro_compara.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/union3_repro_compara.py 
-      results/logs/union3_repro_compara.json 
-      results/logs/union3_en_el_clavo.json 
-      /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
-      /mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/union3_repro_compara.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/union3_repro_compara.py results/logs/union3_repro_compara.json results/logs/union3_en_el_clavo.json /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits /mnt/datos/SSEE_data/sn_ia/union3/runs/union31_repro/mu_mat.fits
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
+    - path: /mnt/datos/SSEE_data/sn_ia/union3/pipeline/data_release/union31_unity18_binned_mu/mu_mat.fits
       hash: md5
       md5: f637ec25f2bcffeaa6b83579a50f8a1d
       size: 8640
@@ -3514,18 +2978,7 @@ stages:
       md5: 40540ffd8657f083bac74f4999a381a4
       size: 3382
   sello_erosita_conteos_erass1:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 
-      /mnt/datos/SSEE_data/erosita/venv/bin/python 
-      src/p11_sondas/erosita_conteos.py erass1 && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/erosita_conteos.py 
-      results/logs/erosita_conteos_erass1.json 
-      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex 
-      /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html 
-      /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt 
-      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt 
-      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits 
-      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
-      results/logs/cmb_dbic_tau_ajustado.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_conteos.py erass1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_conteos.py results/logs/erosita_conteos_erass1.json /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz results/logs/cmb_dbic_tau_ajustado.json
     deps:
     - path: /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
       hash: md5
@@ -3581,18 +3034,7 @@ stages:
       md5: cf51b692d0155a367ae7128c3ba84f6b
       size: 4686
   sello_erosita_conteos_efeds:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 
-      /mnt/datos/SSEE_data/erosita/venv/bin/python 
-      src/p11_sondas/erosita_conteos.py efeds && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/erosita_conteos.py 
-      results/logs/erosita_conteos_efeds.json 
-      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex 
-      /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html 
-      /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt 
-      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt 
-      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits 
-      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
-      results/logs/cmb_dbic_tau_ajustado.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_conteos.py efeds && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_conteos.py results/logs/erosita_conteos_efeds.json /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz results/logs/cmb_dbic_tau_ajustado.json
     deps:
     - path: /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
       hash: md5
@@ -3648,19 +3090,7 @@ stages:
       md5: 65153160cef82889cb35faa7ca9326cb
       size: 4763
   sello_erosita_cr_v3:
-    cmd: OMP_NUM_THREADS=1 NUCLEOS=1 nice -n 10 
-      /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_cr.py 
-      && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_cr.py
-      results/logs/erosita_cr_v3.json 
-      /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex 
-      /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html 
-      /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt 
-      /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt 
-      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits 
-      /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz 
-      results/logs/cmb_dbic_tau_ajustado.json 
-      /mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex 
-      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
+    cmd: OMP_NUM_THREADS=1 NUCLEOS=1 nice -n 10 /mnt/datos/SSEE_data/erosita/venv/bin/python src/p11_sondas/erosita_cr.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_cr.py results/logs/erosita_cr_v3.json /mnt/datos/SSEE_data/erosita/paper_2602.20483/AA_final.tex /mnt/datos/SSEE_data/erosita/erass1cl_primary_v3.2.html /mnt/datos/SSEE_data/erosita/efeds/Liu2022_abstract.txt /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits /mnt/datos/SSEE_data/erosita/efeds/eFEDS_clusters_V3.2.fits.gz results/logs/cmb_dbic_tau_ajustado.json /mnt/datos/SSEE_data/erosita/paper_ghirardini2024/48852corr.tex /mnt/datos/SSEE_data/erosita/erass1/erass1cl_cosmology_v1.1.fits
     deps:
     - path: /mnt/datos/SSEE_data/erosita/Ghirardini2024_abstract.txt
       hash: md5
@@ -3727,41 +3157,8 @@ stages:
       hash: md5
       md5: 06594a57a0794d252e50d20a958d7b1f
       size: 33595
-  termino_volumen_boss:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/mide_termino_volumen.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p06_growth/mide_termino_volumen.py 
-      results/logs/growth_2026-07/termino_volumen_boss.json 
-      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-    deps:
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      hash: md5
-      md5: 8b67d50800acab28c90498a75eeeff13
-      size: 4424
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/mide_termino_volumen.py
-      hash: md5
-      md5: eeee156ac7ed298b477e061f9686d97c
-      size: 6379
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    outs:
-    - path: results/logs/growth_2026-07/termino_volumen_boss.json
-      hash: md5
-      md5: c174df325995ff726c86c284749848c4
-      size: 2370
   rd_dual:
-    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 
-      src/ssee_resolution_figures.py
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/ssee_resolution_figures.py
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -3817,15 +3214,7 @@ stages:
       md5: 6226e8471891d73f227a1025128c382b
       size: 2446
   b1_analyse:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/ssee_paper3_b1_mcmc.py --mode analyse > 
-      results/logs/b1_analyse.log 2>&1 && .venv/bin/python3 
-      src/procedencia_sella.py src/p03_cmb/ssee_paper3_b1_mcmc.py 
-      results/logs/b1_analyse.log results/chains/ssee_cmb.1.txt 
-      results/chains/lcdm_cmb.1.txt && .venv/bin/python3 
-      src/procedencia_sella.py src/p03_cmb/ssee_paper3_b1_mcmc.py 
-      results/tables/b1_mcmc_constraints.txt results/chains/ssee_cmb.1.txt 
-      results/chains/lcdm_cmb.1.txt
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/ssee_paper3_b1_mcmc.py --mode analyse > results/logs/b1_analyse.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/ssee_paper3_b1_mcmc.py results/logs/b1_analyse.log results/chains/ssee_cmb.1.txt results/chains/lcdm_cmb.1.txt && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/ssee_paper3_b1_mcmc.py results/tables/b1_mcmc_constraints.txt results/chains/ssee_cmb.1.txt results/chains/lcdm_cmb.1.txt
     deps:
     - path: data/raw/planck2018_VI/tabla2.tex
       hash: md5
@@ -3885,11 +3274,7 @@ stages:
       md5: b8eb2b7bc2a1ac6a8a2adb04f2186a31
       size: 2024
   analiza_lcdm_R4:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/analiza_lcdm_R4.py > results/logs/analiza_lcdm_R4.log 2>&1 
-      && .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/analiza_lcdm_R4.py results/logs/analiza_lcdm_R4.log 
-      results/logs/growth_2026-07/R4_lcdm_kids_S8.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/analiza_lcdm_R4.py > results/logs/analiza_lcdm_R4.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/analiza_lcdm_R4.py results/logs/analiza_lcdm_R4.log results/logs/growth_2026-07/R4_lcdm_kids_S8.json
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
       hash: md5
@@ -3948,8 +3333,7 @@ stages:
       md5: d38e58277f6f57753991b3ec9a9ea262
       size: 2966
   cmb_ns_forzado:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/cmb_identidad_forzada.py ns
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/cmb_identidad_forzada.py ns
     deps:
     - path: results/logs/cmb_perfil_wc.json
       hash: md5
@@ -3981,8 +3365,7 @@ stages:
       md5: 50612e5e07ec7978948f51ff30c7d750
       size: 3406
   cmb_wb_forzado:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/cmb_identidad_forzada.py wb
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/cmb_identidad_forzada.py wb
     deps:
     - path: results/logs/cmb_perfil_wc.json
       hash: md5
@@ -4013,178 +3396,70 @@ stages:
       hash: md5
       md5: 200daeebf672068c094291b55264a7c9
       size: 3421
-  marginal_vs_perfil:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/marginal_vs_perfil.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p06_growth/marginal_vs_perfil.py 
-      results/logs/growth_2026-07/marginal_vs_perfil.json 
-      results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json 
-      results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json 
-      /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt 
-      /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt 
-      /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt 
-      /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-    deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      hash: md5
-      md5: eb2b7d09f2dae4038bf178968df70d85
-      size: 10385067
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-      hash: md5
-      md5: 3a558d3fac472d86b7dab3f96ef519ce
-      size: 11298420
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-      hash: md5
-      md5: a989f146d7812d84a2965feaf07f63b3
-      size: 14076909
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
-      hash: md5
-      md5: 8bd8f62e347cda24d3e37e3f458f1e2c
-      size: 11409013
-    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.1.txt
-      hash: md5
-      md5: 191988b7f996f2e0dbe6411042eb2f68
-      size: 1137687
-    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.2.txt
-      hash: md5
-      md5: 5f6f7c6282118c4e1b43c80b0e05a1e5
-      size: 1171863
-    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.3.txt
-      hash: md5
-      md5: 3b4c279ee579b7fe9f9400e368571cf0
-      size: 1153707
-    - path: /mnt/datos/SSEE_data/chains_p6/kids/ssee.4.txt
-      hash: md5
-      md5: a2d11872a162a9ace0cb3a6c91ced64e
-      size: 1165455
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
-      hash: md5
-      md5: 8b67d50800acab28c90498a75eeeff13
-      size: 4424
-    - path: results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json
-      hash: md5
-      md5: 15c1f697ac5859fda420661df543b4eb
-      size: 4104
-    - path: src/p06_growth/marginal_vs_perfil.py
-      hash: md5
-      md5: ce0582114c4d5d3a60ad798c0ca30570
-      size: 8519
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    outs:
-    - path: results/logs/growth_2026-07/marginal_vs_perfil.json
-      hash: md5
-      md5: bbfb4da9cf4e33cbe8c42668b47be3e5
-      size: 4636
   desi_dr2_w0wa_momentos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/momentos_desi_dr2_w0wa.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p02_mcmc/momentos_desi_dr2_w0wa.py 
-      results/logs/desi_dr2_w0wa_momentos.log 
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
-      /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/momentos_desi_dr2_w0wa.py && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/momentos_desi_dr2_w0wa.py results/logs/desi_dr2_w0wa_momentos.log /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
       hash: md5
       md5: 56c97fa67885495073a29b1c91989486
       size: 14457000
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
       hash: md5
       md5: 06ee6b818c9eb8388665e6a3dce205e2
       size: 14562228
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
       hash: md5
       md5: 63e52401a3f0366853782f02a1dcd9a0
       size: 14544216
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
       hash: md5
       md5: 7d89c1022bf45fb6fc7b895c7ae37b14
       size: 14427612
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
       hash: md5
       md5: 600496b75d1f729476b984982a592ccd
       size: 24049386
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
       hash: md5
       md5: 17a86066e421bae8a19e31cbb02cd896
       size: 24118074
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
       hash: md5
       md5: d60d56eb5636e1027019a9cd6d0e2a6f
       size: 23704992
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
       hash: md5
       md5: e1d8b588273c73f3d9e4fdd93edbdb4d
       size: 24407136
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
       hash: md5
       md5: 4d166cf55308f9e1df84de4dde2391e0
       size: 19346836
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
       hash: md5
       md5: 97ac09a65039e67df0c0889799fe78cb
       size: 19727892
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
       hash: md5
       md5: 4b2cd8e729d1d1864064fc259cd474f2
       size: 20007272
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
       hash: md5
       md5: b09fa2161d7d15ff4de2b97d46c39824
       size: 19485152
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
       hash: md5
       md5: 907fd4849d266acd5eab31f1aa43ec6d
       size: 25731564
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
       hash: md5
       md5: 4c088fe456e1d8d0b11bc3c62560a669
       size: 26142996
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
       hash: md5
       md5: 8a309ffe733f91278afd516860958822
       size: 25179828
-    - path: 
-        /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - path: /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
       hash: md5
       md5: cbc42d8307c287aee958a82359449e7d
       size: 26019756
@@ -4206,14 +3481,7 @@ stages:
       md5: c0f562b140c3cf83558e61a601c11509
       size: 10315
   erosita_extlike:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/erosita_extlike.py && OMP_NUM_THREADS=1 nice -n 10 
-      .venv/bin/python3 src/p11_sondas/erosita_extlike.py conjunto && 
-      OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/erosita_extlike.py conjunto_c && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/erosita_extlike.py 
-      results/logs/erosita_extlike.json 
-      /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py conjunto && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/erosita_extlike.py conjunto_c && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/erosita_extlike.py results/logs/erosita_extlike.json /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
     deps:
     - path: /mnt/datos/SSEE_data/erosita/erass1/erass1cl_primary_v3.2.fits
       hash: md5
@@ -4237,18 +3505,7 @@ stages:
       md5: 079edae3234c136569687b0efb0b48ba
       size: 4928
   auditoria_pdfs_zenodo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/verificacion/audita_pdfs_zenodo.py && .venv/bin/python3 
-      src/procedencia_sella.py src/verificacion/audita_pdfs_zenodo.py 
-      results/logs/auditoria_pdfs_zenodo.json CANONICAL_VALUES.yaml 
-      docs/SSEE_Cover.pdf docs/SSEE_Cover_Letter.pdf 
-      docs/SSEE_Endorser_Summary.pdf docs/SSEE_PRD.pdf 
-      docs/SSEE_Paper10_UVCompletion.pdf docs/SSEE_Paper1_Framework.pdf 
-      docs/SSEE_Paper2_MCMC.pdf docs/SSEE_Paper3_CMB.pdf 
-      docs/SSEE_Paper4_ToE.pdf docs/SSEE_Paper5_IS.pdf 
-      docs/SSEE_Paper6_Growth.pdf docs/SSEE_Paper7_EFT.pdf 
-      docs/SSEE_Paper8_StrongGravity.pdf docs/SSEE_Paper9_HubbleTension.pdf 
-      docs/SSEE_Sealed_Journal.pdf docs/SSEE_Unified_Journal.pdf
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/verificacion/audita_pdfs_zenodo.py && .venv/bin/python3 src/procedencia_sella.py src/verificacion/audita_pdfs_zenodo.py results/logs/auditoria_pdfs_zenodo.json CANONICAL_VALUES.yaml docs/SSEE_Cover.pdf docs/SSEE_Cover_Letter.pdf docs/SSEE_Endorser_Summary.pdf docs/SSEE_PRD.pdf docs/SSEE_Paper10_UVCompletion.pdf docs/SSEE_Paper1_Framework.pdf docs/SSEE_Paper2_MCMC.pdf docs/SSEE_Paper3_CMB.pdf docs/SSEE_Paper4_ToE.pdf docs/SSEE_Paper5_IS.pdf docs/SSEE_Paper6_Growth.pdf docs/SSEE_Paper7_EFT.pdf docs/SSEE_Paper8_StrongGravity.pdf docs/SSEE_Paper9_HubbleTension.pdf docs/SSEE_Sealed_Journal.pdf docs/SSEE_Unified_Journal.pdf
     deps:
     - path: CANONICAL_VALUES.yaml
       hash: md5
@@ -4336,21 +3593,7 @@ stages:
       md5: eacd4e5731e28f4a0179bb3fb22dbac1
       size: 17209
   lcdm_conjunta_lee:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/lcdm_conjunta.py lee > results/logs/lcdm_conjunta_lee.log 
-      2>&1 && .venv/bin/python3 src/procedencia_sella.py 
-      src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta.json 
-      results/logs/lcdm_conjunta_cmb.json results/logs/lcdm_conjunta_kids.json 
-      results/logs/lcdm_conjunta_bao.json 
-      results/logs/lcdm_conjunta_conjunta.json results/logs/bao_lcdm_libre.json 
-      results/logs/cmb_dbic_tau_ajustado.json results/logs/kids_legacy_bic.json 
-      data/raw/desi_dr2_bao.csv 
-      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt 
-      /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt && 
-      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
-      results/logs/lcdm_conjunta_lee.log
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py lee > results/logs/lcdm_conjunta_lee.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta.json results/logs/lcdm_conjunta_cmb.json results/logs/lcdm_conjunta_kids.json results/logs/lcdm_conjunta_bao.json results/logs/lcdm_conjunta_conjunta.json results/logs/bao_lcdm_libre.json results/logs/cmb_dbic_tau_ajustado.json results/logs/kids_legacy_bic.json data/raw/desi_dr2_bao.csv /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_lee.log
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
       hash: md5
@@ -4374,7 +3617,7 @@ stages:
       size: 2650
     - path: results/logs/bao_lcdm_libre.json
       hash: md5
-      md5: 638c62e92f9c62992831dbb1142ba582
+      md5: 07f9f34527bfbf1423eb317aafb97f7a
       size: 2052
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -4427,20 +3670,14 @@ stages:
     outs:
     - path: results/logs/lcdm_conjunta.json
       hash: md5
-      md5: 3663eeb2d5baba623d8d2e925d60020b
-      size: 5520
+      md5: 519536415bbec92cf336d5eb76d75fe6
+      size: 5519
     - path: results/logs/lcdm_conjunta_lee.log
       hash: md5
-      md5: e992271e8211ce4ebf4af739f0c8629c
-      size: 1318
+      md5: 5f827e2374b25178743fed35ffe0bd94
+      size: 1317
   lcdm_conjunta_control:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/lcdm_conjunta.py control > 
-      results/logs/lcdm_conjunta_control.log 2>&1; .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py 
-      results/logs/lcdm_conjunta_control.json && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py 
-      results/logs/lcdm_conjunta_control.log
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py control > results/logs/lcdm_conjunta_control.log 2>&1; .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_control.json && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_control.log
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -4480,8 +3717,8 @@ stages:
       size: 13453
     - path: src/p06_growth/multisonda_fondo_clavado.py
       hash: md5
-      md5: cab5fb62a9e46303f93f500868038979
-      size: 32914
+      md5: 8955d2d8e9f821a4802fd0d59a74edea
+      size: 33392
     - path: src/p11_sondas/lcdm_conjunta.py
       hash: md5
       md5: d3addd1e592fae354eb8189ad30dbadb
@@ -4505,18 +3742,14 @@ stages:
     outs:
     - path: results/logs/lcdm_conjunta_control.json
       hash: md5
-      md5: 2a6553e31a6d0bf65c8eb4371e934ce6
-      size: 1298
+      md5: c03cc240adc038eadf8c08255c55bc74
+      size: 1297
     - path: results/logs/lcdm_conjunta_control.log
       hash: md5
-      md5: dd3356d27a4e7266c019e6fc9f725a1b
-      size: 2176
+      md5: f557826c018ceee5d15dd3abfec0aea1
+      size: 2175
   lcdm_conjunta_min_cmb:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/lcdm_conjunta.py cmb > 
-      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_cmb.log 2>&1 && 
-      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
-      results/logs/lcdm_conjunta_cmb.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py cmb > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_cmb.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_cmb.json
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -4576,11 +3809,7 @@ stages:
       md5: 7d0255f5152c79bb087e38597fd143e3
       size: 1234
   lcdm_conjunta_min_kids:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/lcdm_conjunta.py kids > 
-      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_kids.log 2>&1 && 
-      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
-      results/logs/lcdm_conjunta_kids.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py kids > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_kids.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_kids.json
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -4640,11 +3869,7 @@ stages:
       md5: 251335b4e14f4b830c0eba19208d9c9d
       size: 1523
   lcdm_conjunta_min_bao:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/lcdm_conjunta.py bao > 
-      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_bao.log 2>&1 && 
-      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
-      results/logs/lcdm_conjunta_bao.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py bao > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_bao.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_bao.json
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -4704,11 +3929,7 @@ stages:
       md5: 20272f44e65d3fc755663a4a88c1f024
       size: 1147
   lcdm_conjunta_min_conjunta:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/lcdm_conjunta.py conjunta > 
-      /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_conjunta.log 2>&1 && 
-      .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py
-      results/logs/lcdm_conjunta_conjunta.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/lcdm_conjunta.py conjunta > /mnt/datos/SSEE_data/chains_p6/lcdm_conjunta/nm_conjunta.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/lcdm_conjunta.py results/logs/lcdm_conjunta_conjunta.json
     deps:
     - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt
       hash: md5
@@ -4768,11 +3989,7 @@ stages:
       md5: e20025fc15a4a8d2531490dc45117bc3
       size: 1601
   sello_des_y3_calibrador:
-    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/des_y3_calibra.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/des_y3_calibra.py 
-      results/logs/des_y3_calibrador.json 
-      /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
+    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_calibra.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/des_y3_calibra.py results/logs/des_y3_calibrador.json /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
     deps:
     - path: /mnt/datos/SSEE_data/des_y3/cadenas/chain_3x2pt_lcdm_SR_maglim.txt
       hash: md5
@@ -4796,15 +4013,7 @@ stages:
       md5: 2dcee7022ceb6b7fb61cebcb6049e1e5
       size: 3396
   sello_act_dr6_calibrador:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/act_dr6_calibra.py lee && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/act_dr6_calibra.py 
-      results/logs/act_dr6_calibrador.json 
-      /mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex 
-      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt 
-      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt 
-      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt 
-      /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/act_dr6_calibra.py lee && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/act_dr6_calibra.py results/logs/act_dr6_calibrador.json /mnt/datos/SSEE_data/cmb_lensing/papers/2304.05202/main.tex /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.2.txt /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.3.txt /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.4.txt
     deps:
     - path: /mnt/datos/SSEE_data/cmb_lensing/act_dr6_calibrador/act_lcdm.1.txt
       hash: md5
@@ -4848,14 +4057,9 @@ stages:
       md5: bf06c1959451291512d880d1d1a9bff3
       size: 2919
   sello_cmb_dbic_tau_ajustado:
-    cmd: OMP_NUM_THREADS=4 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/dbic_tau_ajustado.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p03_cmb/dbic_tau_ajustado.py 
-      results/logs/cmb_dbic_tau_ajustado.json 
-      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    cmd: OMP_NUM_THREADS=4 nice -n 10 .venv/bin/python3 src/p03_cmb/dbic_tau_ajustado.py && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/dbic_tau_ajustado.py results/logs/cmb_dbic_tau_ajustado.json /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
     deps:
-    - path: 
-        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    - path: /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
       hash: md5
       md5: 690b6b708572bf00486db3250ea988d8
       size: 37393
@@ -4885,11 +4089,7 @@ stages:
       md5: a469b82f9895eedd1c6b677a82056cdd
       size: 3072
   sello_cmb_quien_mide_As:
-    cmd: OMP_NUM_THREADS=4 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/quien_mide_As.py && .venv/bin/python3 src/procedencia_sella.py
-      src/p03_cmb/quien_mide_As.py results/logs/cmb_quien_mide_As.json 
-      results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json 
-      results/logs/growth_2026-07/As_medido_o_producto.json
+    cmd: OMP_NUM_THREADS=4 nice -n 10 .venv/bin/python3 src/p03_cmb/quien_mide_As.py && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/quien_mide_As.py results/logs/cmb_quien_mide_As.json results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json results/logs/growth_2026-07/As_medido_o_producto.json
     deps:
     - path: results/logs/growth_2026-07/As_medido_o_producto.json
       hash: md5
@@ -4925,12 +4125,7 @@ stages:
       md5: e289e10c32c980e6060924505e17bddf
       size: 3386
   sello_act_dr6_en_el_clavo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/act_dr6_lensing.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p11_sondas/act_dr6_lensing.py 
-      results/logs/act_dr6_en_el_clavo.json 
-      results/logs/cmb_dbic_tau_ajustado.json 
-      results/logs/multisonda_fondo_clavado.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/act_dr6_lensing.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/act_dr6_lensing.py results/logs/act_dr6_en_el_clavo.json results/logs/cmb_dbic_tau_ajustado.json results/logs/multisonda_fondo_clavado.json
     deps:
     - path: results/logs/cmb_dbic_tau_ajustado.json
       hash: md5
@@ -4938,8 +4133,8 @@ stages:
       size: 3072
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
-      md5: f7c3e22456dd37bbc642a02cc468d458
-      size: 9084
+      md5: 5ee629e82edb2bc60380e97b5fec39b0
+      size: 9272
     - path: src/p11_sondas/act_dr6_lensing.py
       hash: md5
       md5: dd71f097883c1d3a5087d24f18595f56
@@ -4963,18 +4158,12 @@ stages:
     outs:
     - path: results/logs/act_dr6_en_el_clavo.json
       hash: md5
-      md5: f1bc64ca0bb2f94c4a3ee1edaef5bcb4
-      size: 2030
+      md5: f1abf8712de6233eeabe1d5f25db111c
+      size: 2029
   sello_spt3g_kk_en_el_clavo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/spt3g_kk.py && .venv/bin/python3 src/procedencia_sella.py 
-      src/p11_sondas/spt3g_kk.py results/logs/spt3g_kk_en_el_clavo.json 
-      results/logs/cmb_dbic_tau_ajustado.json 
-      results/logs/multisonda_fondo_clavado.json 
-      /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p11_sondas/spt3g_kk.py && .venv/bin/python3 src/procedencia_sella.py src/p11_sondas/spt3g_kk.py results/logs/spt3g_kk_en_el_clavo.json results/logs/cmb_dbic_tau_ajustado.json results/logs/multisonda_fondo_clavado.json /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml
+    - path: /mnt/datos/SSEE_data/cmb_lensing/spt3g/cobaya/SPT3G_D1_KK/configs/likelihoods/lens/nocmb/gmv.yaml
       hash: md5
       md5: ab8c7d9879004e93403626bc8e1ee72b
       size: 1814
@@ -4984,8 +4173,8 @@ stages:
       size: 3072
     - path: results/logs/multisonda_fondo_clavado.json
       hash: md5
-      md5: f7c3e22456dd37bbc642a02cc468d458
-      size: 9084
+      md5: 5ee629e82edb2bc60380e97b5fec39b0
+      size: 9272
     - path: src/p11_sondas/lcdm_planck.py
       hash: md5
       md5: b3e772d5526f6ffcb61148e439c50b39
@@ -5009,20 +4198,12 @@ stages:
     outs:
     - path: results/logs/spt3g_kk_en_el_clavo.json
       hash: md5
-      md5: 344e983a07fb0ad80ece6bc0e84aeeed
-      size: 2211
+      md5: 458b57a09f05649da69681f2835103a1
+      size: 2210
   sello_cmb_perfil_wc:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p03_cmb/perfil_wc_cmb.py > results/logs/cmb_perfil_wc.log 2>&1 && 
-      .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/perfil_wc_cmb.py 
-      results/logs/cmb_perfil_wc.json 
-      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
-      && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/perfil_wc_cmb.py
-      results/logs/cmb_perfil_wc.log 
-      /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p03_cmb/perfil_wc_cmb.py > results/logs/cmb_perfil_wc.log 2>&1 && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/perfil_wc_cmb.py results/logs/cmb_perfil_wc.json /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat && .venv/bin/python3 src/procedencia_sella.py src/p03_cmb/perfil_wc_cmb.py results/logs/cmb_perfil_wc.log /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
     deps:
-    - path: 
-        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    - path: /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
       hash: md5
       md5: 690b6b708572bf00486db3250ea988d8
       size: 37393
@@ -5055,123 +4236,8 @@ stages:
       hash: md5
       md5: 87c434a7d668511c2369f4a72d424b65
       size: 3181
-  sello_boss_aisla_neutrinos:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/boss_aisla_neutrinos.py > results/logs/cola_boss_aisla.log 
-      2>&1 && .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/boss_aisla_neutrinos.py 
-      results/logs/growth_2026-07/boss_aisla_neutrinos.json 
-      archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json 
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat
-      && .venv/bin/python3 src/procedencia_sella.py 
-      src/p06_growth/boss_aisla_neutrinos.py results/logs/cola_boss_aisla.log 
-      archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json 
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z1_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z2_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_NGC_1_15_1_15_1_10_2045_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_cov_patchy_z3_SGC_1_15_1_15_1_10_2048_60.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_hexadecapole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_monopole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_NGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z1_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z2_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_pk_quadrupole_DR12_SGC_z3_prerecon_120.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z1_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z2_SGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_NGC.dat
-      /mnt/datos/SSEE_data/boss_dr12/public_material_RSD/Beutleretal_window_z3_SGC.dat
-    deps:
-    - path: /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
-      hash: md5
-      md5: a980051fef75199131b1fab7ed87fa0a.dir
-      size: 4717270
-      nfiles: 89
-    - path: archive/logs_superados/R1R2_boss_lpt_cobaya_20260908_mnu006.json
-      hash: md5
-      md5: 43edfe16597ddba003bb1a127c89fbbd
-      size: 809
-    - path: src/p06_growth/boss_aisla_neutrinos.py
-      hash: md5
-      md5: b40e3cd605ac6e7b2208174c9f096104
-      size: 6175
-    - path: src/p06_growth/boss_dr12_data.py
-      hash: md5
-      md5: 0fca273fcf595f2cedf01f92119e251c
-      size: 5156
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    - path: src/ssee_core.py
-      hash: md5
-      md5: d6ef8a580870ee72a5de7ca4b2a18632
-      size: 17307
-    outs:
-    - path: results/logs/cola_boss_aisla.log
-      hash: md5
-      md5: 240551ccf49f277589f0337f03847e7e
-      size: 13572
-    - path: results/logs/growth_2026-07/boss_aisla_neutrinos.json
-      hash: md5
-      md5: 2b8e5f705e86aa54f5dd5e7b1f428b18
-      size: 10636
   p5_estabilidad_IS_completa:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p05_IS/estabilidad_IS_completa.py > 
-      results/logs/p5_estabilidad_IS_completa.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_IS/estabilidad_IS_completa.py > results/logs/p5_estabilidad_IS_completa.log 2>&1
     deps:
     - path: src/p05_IS/estabilidad_IS_completa.py
       hash: md5
@@ -5195,9 +4261,7 @@ stages:
       md5: e850966151bada86edf2cc802f436fb0
       size: 1861
   p5_cruce_fantasma_IS:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p05_IS/cruce_fantasma_IS.py > results/logs/p5_cruce_fantasma_IS.log 
-      2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p05_IS/cruce_fantasma_IS.py > results/logs/p5_cruce_fantasma_IS.log 2>&1
     deps:
     - path: src/p05_IS/cruce_fantasma_IS.py
       hash: md5
@@ -5221,8 +4285,7 @@ stages:
       md5: 785fe3ea0aa0dc2f04a47c34c1f80f8a
       size: 1624
   p7_fondo_campo:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p07_eft/fondo_campo_p7.py > results/logs/p7_fondo_campo.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p07_eft/fondo_campo_p7.py > results/logs/p7_fondo_campo.log 2>&1
     deps:
     - path: src/p07_eft/fondo_campo_p7.py
       hash: md5
@@ -5246,11 +4309,9 @@ stages:
       md5: 695a0b6ea1dee21abb1f29aa3aae182f
       size: 2027
   p2_ssee_fijo_k0:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p02_mcmc/ssee_fijo_k0.py > results/logs/p2_ssee_fijo_k0.log 2>&1
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_fijo_k0.py > results/logs/p2_ssee_fijo_k0.log 2>&1
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
+    - path: /mnt/datos/SSEE_data/mcmc/paper2_3models/mcmc_chains_professional.npz
       hash: md5
       md5: 9284281cfbc0047a92609ab5d2b791ef
       size: 260001506
@@ -5288,8 +4349,7 @@ stages:
       md5: 7c6094b3da90152b61929badb4f9aa17
       size: 1523
   p10_barrido_M4:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/barrido_M4.py
-      > /dev/null
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p10_uv/barrido_M4.py > /dev/null
     deps:
     - path: src/p10_uv/barrido_M4.py
       hash: md5
@@ -5309,11 +4369,9 @@ stages:
       md5: b976f9f348e2ea1496b18d5295d861c6
       size: 1612
   kids1000_control:
-    cmd: cd src/p06_growth && OMP_NUM_THREADS=1 nice -n 10 
-      ../../.venv/bin/python3 control_kids.py
+    cmd: cd src/p06_growth && OMP_NUM_THREADS=1 nice -n 10 ../../.venv/bin/python3 control_kids.py
     deps:
-    - path: 
-        /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
+    - path: /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt
       hash: md5
       md5: 38506b7d67a77c4188f3f44971f463ac
       size: 374768
@@ -5335,11 +4393,7 @@ stages:
       md5: a2f5bce664e7c0562930468c788f7b82
       size: 1165
   des_y3_tatt:
-    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/des_y3_en_el_clavo.py ssee evalua && OMP_NUM_THREADS=2 nice
-      -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck 
-      evalua && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 
-      src/p11_sondas/des_y3_en_el_clavo.py lcdm_libre evalua
+    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py ssee evalua && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_planck evalua && OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p11_sondas/des_y3_en_el_clavo.py lcdm_libre evalua
     deps:
     - path: /mnt/datos/SSEE_data/des_y3/calibrador/clavo_lcdm_libre_mejor.ini
       hash: md5
@@ -5417,8 +4471,7 @@ stages:
   p04_barrido_omega_b:
     cmd: .venv/bin/python3 src/p04_toe/barrido_omega_b.py
     deps:
-    - path: 
-        archive/codigo/investigacion/open_problems/ssee_op1_baryon_density.py
+    - path: archive/codigo/investigacion/open_problems/ssee_op1_baryon_density.py
       hash: md5
       md5: cee426d4d7fa508c6f614847f910783f
       size: 7806
@@ -5440,12 +4493,7 @@ stages:
       md5: 320dfc18ea8d855f15495c65299d7824
       size: 2122
   mcmc_paper2_3models:
-    cmd: rm -f results/logs/mcmc_professional.log && OMP_NUM_THREADS=1 nice -n 
-      10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc.py && mv 
-      results/logs/mcmc_professional.log 
-      results/logs/mcmc_paper2_3models_wmfix.log && .venv/bin/python3 
-      src/procedencia_sella.py src/p02_mcmc/ssee_paper2_mcmc.py 
-      results/logs/mcmc_paper2_3models_wmfix.log
+    cmd: rm -f results/logs/mcmc_professional.log && OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_mcmc.py && mv results/logs/mcmc_professional.log results/logs/mcmc_paper2_3models_wmfix.log && .venv/bin/python3 src/procedencia_sella.py src/p02_mcmc/ssee_paper2_mcmc.py results/logs/mcmc_paper2_3models_wmfix.log
     deps:
     - path: data/raw/cosmic_chronometers.csv
       hash: md5
@@ -5485,23 +4533,17 @@ stages:
       md5: 8cefd62b5e5c1ae47b94319d15d48ce4
       size: 12297
   quien_mide_As_kids:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/quien_mide_As.py && .venv/bin/python3 
-      src/procedencia_sella.py src/p06_growth/quien_mide_As.py 
-      results/logs/growth_2026-07/quien_mide_As.json
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/quien_mide_As.py && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/quien_mide_As.py results/logs/growth_2026-07/quien_mide_As.json
     deps:
-    - path: 
-        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
+    - path: /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
       hash: md5
       md5: 690b6b708572bf00486db3250ea988d8
       size: 37393
-    - path: 
-        /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
+    - path: /mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/data_fits/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits
       hash: md5
       md5: 1ded5c5923caae256d79ddb27d76d2ef
       size: 622080
-    - path: 
-        /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
+    - path: /mnt/datos/SSEE_data/kids1000/kcap/runs/3x2pt/data_iterated_cov/cosmology/multinest_blindC_EE_nE_w/data/KiDS/SOM_cov_multiplied.asc
       hash: md5
       md5: bdfd8d2f1f9eb1931deae9ad2ad1b987
       size: 295
@@ -5538,175 +4580,9 @@ stages:
       hash: md5
       md5: 5c71f08f3c05c863e5bd8b6b4533ec78
       size: 1422
-  boss_lpt_kmax020:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/boss_lpt_R1R2.py 0.20 && .venv/bin/python3 
-      src/procedencia_sella.py src/p06_growth/boss_lpt_R1R2.py 
-      results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
-    deps:
-    - path: /mnt/datos/SSEE_data/boss_dr12/public_material_RSD
-      hash: md5
-      md5: a980051fef75199131b1fab7ed87fa0a.dir
-      size: 4717270
-      nfiles: 89
-    - path: src/p06_growth/boss_dr12_data.py
-      hash: md5
-      md5: 0fca273fcf595f2cedf01f92119e251c
-      size: 5156
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/boss_rsd_model.py
-      hash: md5
-      md5: 1ae9519e52a4fdd45e9b979c53078515
-      size: 11618
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    - path: src/ssee_core.py
-      hash: md5
-      md5: d6ef8a580870ee72a5de7ca4b2a18632
-      size: 17307
-    outs:
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
-      hash: md5
-      md5: e6e71446975205762d775291436c1fc6
-      size: 7141
-  conjunta_control:
-    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
-      src/p06_growth/cobaya_conjunta.py control && .venv/bin/python3 
-      src/procedencia_sella.py src/p06_growth/cobaya_conjunta.py 
-      results/logs/conjunta_control.json
-    deps:
-    - path: 
-        /home/mike/cobaya_packages/data/planck_2018/baseline/plc_3.0/hi_l/plik_lite/plik_lite_v22_TTTEEE.clik/clik/lkl_0/_external/cl_cmb_plik_v22.dat
-      hash: md5
-      md5: 690b6b708572bf00486db3250ea988d8
-      size: 37393
-    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt
-      hash: md5
-      md5: 606983d774a0ce6d0630517423a574fc
-      size: 953310
-    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt
-      hash: md5
-      md5: dc698c71b9f18b62a364521443539b7d
-      size: 931896
-    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt
-      hash: md5
-      md5: 99ced70cd603ef946ebe56a78b93f259
-      size: 930348
-    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt
-      hash: md5
-      md5: 10cee89c7dc3da4d886e5c51da33350f
-      size: 929058
-    - path: 
-        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release
-      hash: md5
-      md5: fcf6c7d3024bdd2e8bcabb6b6d162041.dir
-      size: 281580438
-      nfiles: 42
-    - path: results/logs/cmb_dbic_tau_ajustado.json
-      hash: md5
-      md5: a469b82f9895eedd1c6b677a82056cdd
-      size: 3072
-    - path: src/p03_cmb/cmb_eval.py
-      hash: md5
-      md5: e73f4105b5471f44af1b8f7975e5f491
-      size: 5101
-    - path: src/p06_growth/boss_dr12_data.py
-      hash: md5
-      md5: 0fca273fcf595f2cedf01f92119e251c
-      size: 5156
-    - path: src/p06_growth/boss_lpt_R1R2.py
-      hash: md5
-      md5: 74a053a1b6cee380a21210864b74e19b
-      size: 21274
-    - path: src/p06_growth/boss_rsd_model.py
-      hash: md5
-      md5: 1ae9519e52a4fdd45e9b979c53078515
-      size: 11618
-    - path: src/p06_growth/cobaya_boss.py
-      hash: md5
-      md5: a807fca6bddc23c975f923f69e59c7d4
-      size: 10979
-    - path: src/p06_growth/cobaya_conjunta.py
-      hash: md5
-      md5: b9287af397ad6a248406708f2976bbe0
-      size: 16325
-    - path: src/p06_growth/cobaya_kids_legacy.py
-      hash: md5
-      md5: 4fb3a20f68aefac83de472acad81875e
-      size: 13453
-    - path: src/p06_growth/kids_shear.py
-      hash: md5
-      md5: f9d3dcd78f647eccfc69497ac8b411d6
-      size: 12385
-    - path: src/p11_sondas/lcdm_planck.py
-      hash: md5
-      md5: b3e772d5526f6ffcb61148e439c50b39
-      size: 1243
-    - path: src/procedencia.py
-      hash: md5
-      md5: af9be770989b8f2296c90fdc71efc121
-      size: 5420
-    - path: src/procedencia_sella.py
-      hash: md5
-      md5: 5801950e54b88d692b08360bdef9e6a9
-      size: 1994
-    - path: src/ssee_core.py
-      hash: md5
-      md5: d6ef8a580870ee72a5de7ca4b2a18632
-      size: 17307
-    outs:
-    - path: results/logs/conjunta_control.json
-      hash: md5
-      md5: cce98a85d678281f7ef86902f5d34406
-      size: 969
   coteja_transcripciones:
     cmd: .venv/bin/python3 src/verificacion/coteja_transcripciones.py
     deps:
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.1.txt
-      hash: md5
-      md5: 0dba73f1fe982e0a301fb27c00e3ed88
-      size: 18875962
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.2.txt
-      hash: md5
-      md5: df61445ddf954afd0910ed495b71a872
-      size: 15252867
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.3.txt
-      hash: md5
-      md5: a9871a357860cdfe761db82add0a5613
-      size: 17425870
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/lcdm.4.txt
-      hash: md5
-      md5: 30dfdecff857f40076fede99ec2067db
-      size: 16231978
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.1.txt
-      hash: md5
-      md5: eb2b7d09f2dae4038bf178968df70d85
-      size: 10385067
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.2.txt
-      hash: md5
-      md5: 3a558d3fac472d86b7dab3f96ef519ce
-      size: 11298420
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.3.txt
-      hash: md5
-      md5: a989f146d7812d84a2965feaf07f63b3
-      size: 14076909
-    - path: /mnt/datos/SSEE_data/chains_p6/boss/ssee.4.txt
-      hash: md5
-      md5: 8bd8f62e347cda24d3e37e3f458f1e2c
-      size: 11409013
-    - path: /mnt/datos/SSEE_data/chains_p6/conjunta/conjunta_b3.input.yaml
-      hash: md5
-      md5: 47db584862e7fd5e61927e74ad712ad8
-      size: 4974
     - path: /mnt/datos/SSEE_data/chains_p6/kids/lcdm.1.txt
       hash: md5
       md5: 2af81b95c5479dad220fe01e2755a253
@@ -5811,18 +4687,6 @@ stages:
       hash: md5
       md5: 791863508e10a161ca7739957c9bc044
       size: 93188
-    - path: results/logs/boss_cobaya_lcdm.log
-      hash: md5
-      md5: b485355dc4c1979ce845c956617d958e
-      size: 85106
-    - path: results/logs/boss_cobaya_ssee.log
-      hash: md5
-      md5: 28de185c4c601e4f1057bc3ac91c385e
-      size: 197522
-    - path: results/logs/conjunta_b3_bloques.json
-      hash: md5
-      md5: 483b7c24ddf230d9af4a7205aac70922
-      size: 229
     - path: results/logs/kids_legacy_lcdmfijo.log
       hash: md5
       md5: 4be12bf579e16415212f5a172588b969
@@ -5841,34 +4705,142 @@ stages:
       size: 5420
     - path: src/verificacion/coteja_transcripciones.py
       hash: md5
-      md5: 38a5d5525a57bd973b9846164ab77852
-      size: 7171
+      md5: 582bd7720a0ec02a6f02b7ce892e4a51
+      size: 6288
     outs:
     - path: results/logs/coteja_transcripciones.json
       hash: md5
-      md5: ebc47dfd0eaf6f224f02a5e48cfb0c3b
-      size: 6450
-  boss_chi2_en_logA_cmb:
-    cmd: .venv/bin/python3 src/p06_growth/boss_chi2_en_logA_cmb.py
+      md5: a3fb3a1ebaebf5e5d0f5de919f74465b
+      size: 4979
+  analiza_boss_chen21:
+    cmd: OMP_NUM_THREADS=3 .venv/bin/python3 src/p06_growth/analiza_boss_chen21.py > results/logs/analiza_boss_chen21.log 2>&1
     deps:
-    - path: results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
+    - path: /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z1.dat
       hash: md5
-      md5: e6e71446975205762d775291436c1fc6
-      size: 7141
-    - path: results/logs/growth_2026-07/quien_mide_As.json
+      md5: 78b52a0d6760b21c16656269f08ca631
+      size: 1369066
+    - path: /mnt/datos/SSEE_data/boss_dr12_bm21/chen22_cov/cov_joint_NGCSGCXi_z3.dat
       hash: md5
-      md5: 5c71f08f3c05c863e5bd8b6b4533ec78
-      size: 1422
-    - path: src/p06_growth/boss_chi2_en_logA_cmb.py
+      md5: 4ac951960cd1765833827f51da4eb365
+      size: 1369748
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.1.txt
       hash: md5
-      md5: 970b270aee5a3c9e8e0a2f32eefe8696
-      size: 3776
+      md5: c90c622bdc94e20fc4b21c36775c8156
+      size: 26159400
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.2.txt
+      hash: md5
+      md5: c5071c74241f19cd88b1163ae015846f
+      size: 26611560
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.3.txt
+      hash: md5
+      md5: b32d0a5bcf25a9539d089867b10da34e
+      size: 27135000
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.4.txt
+      hash: md5
+      md5: da94e0d8abecc07cd7dab2c56811916c
+      size: 26721000
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_LCDM_PLANCK.progress
+      hash: md5
+      md5: bda0633892b63e26e80372fe11bc05ed
+      size: 9501
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.1.txt
+      hash: md5
+      md5: b3e85c4305152edf02020ba0115ccbb3
+      size: 31971600
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.2.txt
+      hash: md5
+      md5: e5a40bdd9c329eeffc31ceeda3b0965c
+      size: 31826520
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.3.txt
+      hash: md5
+      md5: 854416a830344953662b2166de64664f
+      size: 32041440
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.4.txt
+      hash: md5
+      md5: 54aaa1dd4026ef558e71f0586279d8ce
+      size: 31968360
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/fijo_SSEE.progress
+      hash: md5
+      md5: 9b05c3fd834c68c2872b0f038a46214b
+      size: 11838
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.1.txt
+      hash: md5
+      md5: 89a22261d6c6383ea0f29a6e7bdd3b74
+      size: 13161209
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.2.txt
+      hash: md5
+      md5: 7a975585fc011367997a4f8952be1df3
+      size: 13073219
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.3.txt
+      hash: md5
+      md5: bf6e1f11e4612190e22e042a72637ba4
+      size: 12904781
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.4.txt
+      hash: md5
+      md5: 51baa4be35223cc29fcd0f62f23db431
+      size: 12924474
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/lcdm_chen21_covchen.progress
+      hash: md5
+      md5: 3db3a4db01ceda437dfb08645213b36f
+      size: 3353
+    - path: CANONICAL_VALUES.yaml
+      hash: md5
+      md5: ddad68954fae61475ec85c15cf16f687
+      size: 70408
+    - path: src/p06_growth/analiza_boss_chen21.py
+      hash: md5
+      md5: e122bed9f8c6c4d5ae5fc46a1624dc63
+      size: 12022
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: cfcb0807436a86f8038d893628d0afd8
+      size: 24614
+    - path: src/p06_growth/cobaya_boss_chen21.py
+      hash: md5
+      md5: 5f5cb066dcf96776ced94aec8e3246ba
+      size: 15433
+    - path: src/p06_growth/cobaya_boss_chen21_fijo.py
+      hash: md5
+      md5: 449514a00cf413d12a353d5e39c69ac6
+      size: 7304
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
       size: 5420
     outs:
-    - path: results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json
+    - path: results/logs/analiza_boss_chen21.log
       hash: md5
-      md5: da0edbd5cf59b64f91b78e599dd9ca87
-      size: 1786
+      md5: ca7c758c2b253f23d282e1a4ab49e298
+      size: 5835
+    - path: results/logs/growth_2026-07/boss_chen21.json
+      hash: md5
+      md5: af21208da36c080593155d0e408ce0d4
+      size: 13132
+  prueba_malla_boss_chen21:
+    cmd: OMP_NUM_THREADS=2 nice -n 10 .venv/bin/python3 src/p06_growth/cobaya_boss_chen21.py prueba > results/logs/boss_chen21_malla.log 2>&1
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/boss_chen21/malla_7x7x13.pkl
+      hash: md5
+      md5: 7ffcc45d0992a5e52f4b11c8806197e3
+      size: 104570607
+    - path: src/p06_growth/boss_lpt_R1R2.py
+      hash: md5
+      md5: ab73f3424616adb67b330c1b2a41f7ef
+      size: 25181
+    - path: src/p06_growth/cobaya_boss_chen21.py
+      hash: md5
+      md5: 059a7ee3c25653ff5a71444fa6cdd675
+      size: 17187
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/boss_chen21_malla.log
+      hash: md5
+      md5: 1d759c4285a298e4dd018c061a7a7f45
+      size: 596
+    - path: results/logs/growth_2026-07/boss_chen21_malla.json
+      hash: md5
+      md5: 6f72a3f23786e34b825caa03a6339c34
+      size: 2164

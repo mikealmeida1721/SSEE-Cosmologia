@@ -630,16 +630,13 @@ At the single-sector level with the Poisson source at $\OmmCMB=\val{OMEGA_M_TOTA
 (Paper~5), the growth factor is $\mathcal{G}=\val{p5_G}$ and the mean $\fsig$
 tension across six RSD surveys is $\val{fs8_tmedia_ssee}\sigma$ --- statistically
 indistinguishable from $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$). Against the \emph{raw}
-BOSS DR12 redshift-space multipoles ($222$ points, one-loop LPT to
-$k_{\max}=0.20\,h\,$Mpc$^{-1}$, Alcock--Paczynski applied to the model), the
-algebraic background and the Planck background reach $\chi^2=\val{bossR_chi2_ssee}$ and
-$\val{bossR_chi2_lcdm}$ with the same $37$ free parameters, each with its own
-$\sum m_\nu$: $\Delta\chi^2=\val{bossR_dchi2}$, a mild, not decisive, preference
-for the algebraic background (Paper~6). Against the \emph{published} BOSS
-$\fsig$ column \citep{Alam2017}, which assumes a $\Lambda$CDM fiducial geometry, the
-order reverses: both pipelines fall low at $z=0.38$, the algebraic background at
-$\val{bossR_pub_ssee_z1}\sigma$ and the Planck one at $\val{bossR_pub_lcdm_z1}\sigma$;
-the comparison that decides is the $\chi^2$ on the raw multipoles above.
+BOSS DR12 redshift-space multipoles ($\val{bossC_npts}$ points, one-loop LPT,
+Alcock--Paczynski applied to the model), and only after a $\Lambda$CDM control with its
+background free reproduces the published full-shape analysis of the same data, the
+algebraic background with every cosmological parameter fixed --- amplitude included ---
+reaches $\chi^2_{\rm min}=\val{bossC_chi2_ssee}$, against $\val{bossC_chi2_libre}$ for $\Lambda$CDM with three
+more free parameters ($\Delta\chi^2=\val{bossC_dchi2_ssee_libre}$, $\Delta\mathrm{BIC}=\val{bossC_dBIC_ssee_libre}$) and
+$\val{bossC_chi2_planck}$ for $\Lambda$CDM fixed at Planck, each with its own $\sum m_\nu$ (Paper~6).
 
 This analysis operates at the linear-growth level for the growth index;
 non-linear effects (baryonic feedback beyond HMcode, halo bias) are not
@@ -967,8 +964,9 @@ across four observational tiers.
   value the model's own CMB fit supplies and no free cosmological parameter,
   a single matter sector predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ from
   raw KiDS-Legacy $\xi_\pm$ (Paper~6). Against raw BOSS DR12 multipoles the
-  algebraic background fits marginally better ($\chi^2=\val{bossR_chi2_ssee}$ vs $\val{bossR_chi2_lcdm}$, same
-  freedom).
+  algebraic background, with nothing fitted, gives $\chi^2_{\rm min}=\val{bossC_chi2_ssee}$ against
+  $\val{bossC_chi2_libre}$ for the published $\Lambda$CDM with three more free parameters
+  ($\Delta\mathrm{BIC}=\val{bossC_dBIC_ssee_libre}$).
 
 \item \textbf{EFT stability.} The two-term $k$-essence of Paper~7 is a ghost
   condensate, ghost-free and gradient-stable with $c_s^2 = \val{cs2_condensado_d6}$;

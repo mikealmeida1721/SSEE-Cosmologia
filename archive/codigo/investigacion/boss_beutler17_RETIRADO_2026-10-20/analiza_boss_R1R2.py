@@ -17,13 +17,25 @@ y entre modelos (lo que cita Paper 6, sin teclear nada):
   dchi2_real          SSEE - LCDM, misma libertad (Delta k = 0)
   vs_publicado        distancia de cada fs8 al consenso BOSS DR12 de Alam+2017,
                       leido de data/raw/fsigma8_rsd.csv, en cuadratura
-  perfil_vs_marginal  el minimo del PERFIL de logA (boss_aisla_neutrinos.json,
-                      A_canonico, ya con el m_nu de SSEE) contra la media
-                      marginal de las cadenas, en sigmas de la marginal
-CONTROL (R53): las cadenas LCDM NO se rehicieron; su resumen tiene que coincidir
-con el del 2026-09-08 dentro de TOL_SIGMA en logA y fs8. El script original no
-se guardo y el burn-in exacto no se conoce: cambiarlo entre 0.2 y 0.5 mueve logA
-unas 0.01 sigma (medido el 2026-10-01), de ahi la tolerancia.
+  perfil_vs_marginal  el minimo del PERFIL de logA (R1R2_boss_lpt_kmax0.200.json,
+                      bloque SSEE, con el m_nu de SSEE y los mismos bines z1+z3)
+                      contra la media marginal de las cadenas, en sigmas de la
+                      marginal. (Hasta el 2026-10-17 se leia de
+                      boss_aisla_neutrinos.json, A_canonico: el mismo perfil, que
+                      queda con los tres bines como medicion historica.)
+BINES (2026-10-17). Desde ese dia solo z1 y z3 (ver BINES DE z en
+boss_lpt_R1R2.py): los tres bines publicos se solapan y se contaban dos veces.
+El resumen de tres bines queda en
+archive/logs_superados/R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json.
+
+CONTROL (R53), por modelo, contra ese resumen de tres bines:
+  (1) cableado: el chi2 re-evaluado en el mejor punto = la columna de la cadena
+      a 1e-4;
+  (2) quitar dato no puede afinar: sigma(logA) con z1+z3 >= la de tres bines;
+  (3) z1+z3 es un subconjunto del mismo dato: logA no se mueve mas de 1 sigma
+      (la de tres bines).
+(El control anterior comparaba LCDM con el resumen del 2026-09-08; dejo de
+aplicar al cambiar el dato.)
 
 Uso: analiza_boss_R1R2.py [lcdm|ssee|ambos]   (lcdm solo = prueba del control)
 Salida: results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json
@@ -47,10 +59,9 @@ import cobaya_boss as CB  # noqa: E402
 CAD = "/mnt/datos/SSEE_data/chains_p6/boss"
 LOGS = os.path.join(_R, "results", "logs", "growth_2026-07")
 RSD = os.path.join(_R, "data", "raw", "fsigma8_rsd.csv")
-AISLA = os.path.join(LOGS, "boss_aisla_neutrinos.json")
-VIEJO = os.path.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20260908_mnu006.json")
+PERFIL = os.path.join(LOGS, "R1R2_boss_lpt_kmax0.200.json")   # perfil de logA (boss_lpt_kmax020), mismos bines
+VIEJO = os.path.join(_R, "archive", "logs_superados", "R1R2_boss_lpt_cobaya_20261015_3bines_solapados.json")
 QUEMA = float(re.search(r"^_QUEMA\s*=\s*([0-9.]+)", open(os.path.join(_R, "src", "p06_growth", "multisonda_fondo_clavado.py")).read(), re.M).group(1))
-TOL_SIGMA = 0.05   # ORIGEN-VALOR: 0.05 — cinco veces lo que mueve el burn-in (0.01 sigma, medido)
 PL = CB.plantilla_fsigma8()
 
 
@@ -76,7 +87,7 @@ def resumen(nombre):
     real, marg = 0.0, 0.0
     for j, st in enumerate(CB.SETS):
         cm, _ = CB.R.chi2_marg_set(st, M, v[0], v[1 + 3 * j: 4 + 3 * j])
-        T = CB.R.templates(st, M) * np.exp(v[0])
+        T = CB.R.templates(st, M, v[0])
         F = T.T @ st["Cinv"] @ T + CB.R._LAMBDA
         real += cm - np.linalg.slogdet(F)[1]
         marg += cm
@@ -97,17 +108,20 @@ out, entradas = {}, [VIEJO]
 for nm in modelos:
     out[nm], fs = resumen(nm)
     entradas += fs
-v = json.load(open(VIEJO))["lcdm"]
-if "lcdm" in out:
-    n = out["lcdm"]
+V = json.load(open(VIEJO))
+assert tuple(st["zb"] for st in CB.SETS[::2]) == ("z1", "z3"), "BOSS no corre con z1+z3"
+out["control"] = {}
+for nm in modelos:
+    n, v = out[nm], V[nm]
+    cab = abs(n["chi2_marg_min"] - n["chi2_marg_reevaluado"])
     d_logA = abs(n["logA"] - v["logA"]) / v["logA_sig"]
-    d_fs8 = max(abs(n["fs8"][z][1] - v["fs8"][z][1]) / v["fs8"][z][2] for z in v["fs8"])
-    pasa = bool(d_logA < TOL_SIGMA and d_fs8 < TOL_SIGMA and abs(n["chi2_marg_min"] - v["chi2_marg_min"]) < 1e-4)
-    out["control_lcdm"] = dict(criterio=f"LCDM (cadenas sin rehacer) = resumen del 2026-09-08 dentro de {TOL_SIGMA} sigma; chi2_marg_min a 1e-4",
-                               d_logA_sigma=float(d_logA), d_fs8_sigma_max=float(d_fs8), pasa=pasa)
-    print(f"  control LCDM: logA {d_logA:.4f} sigma, fs8 {d_fs8:.4f} sigma, chi2 {n['chi2_marg_min']:.6f} vs {v['chi2_marg_min']:.6f} -> {'PASA' if pasa else 'NO PASA'}")
+    pasa = bool(cab < 1e-4 and n["logA_sig"] >= v["logA_sig"] and d_logA < 1.0)
+    out["control"][nm] = dict(criterio="chi2 re-evaluado = cadena a 1e-4; sigma(logA) z1+z3 >= la de 3 bines; |dlogA| < 1 sigma de 3 bines",
+                              dif_cableado=float(cab), logA_sig_3bines=v["logA_sig"], logA_3bines=v["logA"],
+                              d_logA_sigma=float(d_logA), pasa=pasa)
+    print(f"  control {nm.upper()}: cableado {cab:.1e}, sigma {n['logA_sig']:.4f} >= {v['logA_sig']:.4f}, dlogA {d_logA:.2f} sigma -> {'PASA' if pasa else 'NO PASA'}")
     if not pasa:
-        sys.exit("control LCDM no pasa: no se escribe")
+        sys.exit(f"control {nm} no pasa: no se escribe")
 if QUE == "ambos":
     pub = {}
     for ln in open(RSD):
@@ -123,12 +137,17 @@ if QUE == "ambos":
             vp[m][zb] = dict(z=z, publicado=pf, publicado_sigma=ps, sigma=float(abs(pf - f) / np.hypot(ps, sf)))
     out["vs_publicado"] = dict(fuente="Alam et al. 2017 (data/raw/fsigma8_rsd.csv)", modelos=vp)
     out["dchi2_real"] = out["ssee"]["chi2_real_min"] - out["lcdm"]["chi2_real_min"]
-    ac = json.load(open(AISLA))["A_canonico"]
+    out["datos"] = dict(bines=[st["zb"] for st in CB.SETS[::2]], conjuntos=CB.NSET, npts=CB.NPTS,
+                        n_libres=CB.NFREE, n_muestreados=CB.NMUESTRA, n_marginalizados=CB.NMARG,
+                        dof=CB.NPTS - CB.NFREE)
+    ac = dict(json.load(open(PERFIL))["SSEE"])
+    assert ac["npts"] == CB.NPTS, "el perfil no usa los mismos bines que las cadenas"
+    ac["mnu"] = CB.R.COSMO["SSEE"]["mnu"]   # el perfil lo corre boss_lpt_R1R2 con este COSMO
     out["perfil_vs_marginal"] = dict(perfil_logA=ac["logA"], perfil_sigma=ac["sig_logA"], perfil_chi2=ac["chi2"],
                                      mnu_perfil=ac["mnu"], marginal_logA=out["ssee"]["logA"], marginal_sigma=out["ssee"]["logA_sig"],
                                      sigmas=float((ac["logA"] - out["ssee"]["logA"]) / out["ssee"]["logA_sig"]))
     assert abs(ac["mnu"] - CB.R.S.SUM_MNU_EV) < 1e-9, "el perfil no lleva el m_nu de SSEE"
-    entradas += [RSD, AISLA]
+    entradas += [RSD, PERFIL]
     print(f"  dchi2_real SSEE-LCDM {out['dchi2_real']:+.3f}; perfil-marginal {out['perfil_vs_marginal']['sigmas']:.2f} sigma")
     json.dump(con_acta(out, __file__, entradas=entradas), open(os.path.join(LOGS, "R1R2_boss_lpt_cobaya.json"), "w"), indent=1)
     print("  escrito -> results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json")

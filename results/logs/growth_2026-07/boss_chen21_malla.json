@@ -1,0 +1,75 @@
+{
+ "corrida": "malla 7x7x13 de tablas LPT (Om, h, logA) contra tablas exactas",
+ "criterio": "|dchi2| < 0.05 en cada punto (fijado antes de correr); el metodo viejo tiene que errar mas de 10 veces lo que erra la malla",
+ "puntos": [
+  {
+   "Om": 0.2926365097046621,
+   "h": 0.7016885085389581,
+   "logA": 2.6740745828325942,
+   "chi2_exacto": 572.1310336184936,
+   "d_interpolado": 0.02391115251066367,
+   "d_viejo": 281.9239055909393
+  },
+  {
+   "Om": 0.30672628007205854,
+   "h": 0.6782491608565844,
+   "logA": 3.0788500935756926,
+   "chi2_exacto": 4.280557067595069,
+   "d_interpolado": -0.001259297017313088,
+   "d_viejo": -0.9420718695230903
+  },
+  {
+   "Om": 0.3269147370732495,
+   "h": 0.670040530784873,
+   "logA": 2.993770725488185,
+   "chi2_exacto": 12.337966625343626,
+   "d_interpolado": 0.017186697721420785,
+   "d_viejo": 3.988085916880351
+  },
+  {
+   "Om": 0.29986017015151323,
+   "h": 0.6844238901358791,
+   "logA": 2.671792166223354,
+   "chi2_exacto": 697.2082789835872,
+   "d_interpolado": -0.03144474597866065,
+   "d_viejo": 326.20226672554804
+  }
+ ],
+ "peor_interpolado": 0.03144474597866065,
+ "pasa": true,
+ "control_viejo": {
+  "maximo": 326.20226672554804,
+  "pasa": true
+ },
+ "_procedencia": {
+  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "?? src/p06_growth/cobaya_boss_chen21.py"
+  ],
+  "script": "src/p06_growth/cobaya_boss_chen21.py",
+  "script_sha256": "e8570055f6946ac04f2de552bd8f7b18b1dc7eb34f134aeb2e8684d7226ebc4a",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/chains_p6/boss_chen21/malla_7x7x13.pkl": "6d17aee7cf4423b9ce377de5496c2a32d344a089a7a757d138c3b07589998e3c"
+  },
+  "argv": [
+   "src/p06_growth/cobaya_boss_chen21.py",
+   "prueba"
+  ],
+  "fecha": "2026-10-20T13:56:08",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "2",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

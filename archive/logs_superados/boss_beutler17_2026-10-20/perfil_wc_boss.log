@@ -1,0 +1,111 @@
+# ACTA-PROCEDENCIA {"commit": "69cc77392b63e11bed7374cdf3966b8263307b2f", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/perfil_wc_boss.py", "script_sha256": "43cba6f2a98901bb8057649c610ba9343e3191015a6cab2acd94cbd9ff3974a0", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/perfil_wc_boss.py"], "fecha": "2026-10-18T09:01:53", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1", "camb": "1.6.5"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+
+=== perfil w_c  |  logA fijo = 3.0429  (A_s del CMB) ===
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+/home/mike/Proyectos/SSEE/.venv/lib/python3.12/site-packages/mcfit/mcfit.py:130: UserWarning: use backend='jax' if desired
+  warnings.warn("use backend='jax' if desired")
+  [A_s del CMB] 0.090000  P0     65.671  arranques     59.593  [45s]
+  [A_s del CMB] 0.098125  P0     75.007  arranques     49.533  [46s]
+  [A_s del CMB] 0.106250  P0     46.593  arranques     45.415  [47s]
+  [A_s del CMB] 0.114375  P0     47.501  arranques     46.797  [47s]
+  [A_s del CMB] 0.122500  P0     53.079  arranques     52.940  [39s]
+  [A_s del CMB] 0.130625  P0     63.629  arranques     62.635  [41s]
+  [A_s del CMB] 0.138750  P0     77.671  arranques     76.037  [40s]
+  [A_s del CMB] 0.146875  P0     94.427  arranques     92.468  [34s]
+  [A_s del CMB] 0.155000  P0    113.191  arranques    111.293  [37s]
+  [A_s del CMB] barrido 1: mejora maxima 0.0000
+  [A_s del CMB] control azar en 0.090000: baja 0.0000
+  [A_s del CMB] control azar en 0.106250: baja 0.0000
+  [A_s del CMB] control azar en 0.155000: baja 0.0000
+  minimo en w_c = 0.106250   chi2 = 45.415
+  parabola: w_c = 0.108271 +- 0.004899
+  identidad 0.119514  ->  2.29 sigma
+
+=== perfil w_c  |  logA fijo = 2.6812  (CONTROL: A_s de BOSS) ===
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  z1 NGC: 37 puntos  Hartlap=0.9814
+  z1 SGC: 37 puntos  Hartlap=0.9814
+  z3 NGC: 37 puntos  Hartlap=0.9814
+  z3 SGC: 37 puntos  Hartlap=0.9814
+  [CONTROL: A_s de BOSS] 0.090000  P0    117.855  arranques     74.398  [42s]
+  [CONTROL: A_s de BOSS] 0.098125  P0     83.344  arranques     59.988  [42s]
+  [CONTROL: A_s de BOSS] 0.106250  P0     50.976  arranques     50.420  [47s]
+  [CONTROL: A_s de BOSS] 0.114375  P0     46.179  arranques     46.179  [49s]
+  [CONTROL: A_s de BOSS] 0.122500  P0     47.553  arranques     47.553  [44s]
+  [CONTROL: A_s de BOSS] 0.130625  P0     54.133  arranques     54.133  [42s]
+  [CONTROL: A_s de BOSS] 0.138750  P0     64.807  arranques     64.497  [39s]
+  [CONTROL: A_s de BOSS] 0.146875  P0     78.031  arranques     78.031  [42s]
+  [CONTROL: A_s de BOSS] 0.155000  P0     94.195  arranques     94.195  [39s]
+  [CONTROL: A_s de BOSS] barrido 1: mejora maxima 0.0000
+  [CONTROL: A_s de BOSS] control azar en 0.090000: baja 0.0000
+  [CONTROL: A_s de BOSS] control azar en 0.114375: baja 0.0000
+  [CONTROL: A_s de BOSS] control azar en 0.155000: baja 0.0000
+  minimo en w_c = 0.114375   chi2 = 46.179
+  parabola: w_c = 0.116449 +- 0.004849
+  identidad 0.119514  ->  0.63 sigma

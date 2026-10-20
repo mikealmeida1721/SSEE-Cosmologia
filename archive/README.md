@@ -404,3 +404,7 @@ registrado**: vale entonces el de su cajón en el Catálogo de arriba.
 - `SSEE_Paper3_CMB_Confrontation.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
 - `SSEE_Paper3_CMB_Confrontation_v1.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
 - `SSEE_Paper3_CMB_Confrontation_v2.pdf` — llegó en `2dc8729` (2026-06-24): «chore(organización mesa): reorganizar archive/ por tipo + limpiar raíz»
+
+### `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/` y `archive/logs_superados/boss_beutler17_2026-10-20/`
+- BOSS DR12 sobre los espectros de Beutler+2017 (R1/R2, perfiles de logA y de `ω_c`, término de volumen, neutrinos aislados, conjuntas con BOSS): retirado el 2026-10-20 por tres errores de método (bines solapados, A_s lineal a un lazo, normalización de 2017). Lo reemplaza el montaje de Chen+22 con control (`analiza_boss_chen21`). Detalle en el `LEEME.md` de cada carpeta.
+

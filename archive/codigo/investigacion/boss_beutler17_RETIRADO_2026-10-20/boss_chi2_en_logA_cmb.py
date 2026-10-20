@@ -3,8 +3,9 @@
 
 QUÉ MIDE. El χ² del perfil de BOSS (LPT, k ≤ 0.20, fondo de SSEE fijo, un solo
 sector, SIN partícula) en el log(10¹⁰A_s) que mide el CMB del propio modelo, y su
-diferencia con el mínimo del perfil. Es el «0.63» de Paper 6 §BOSS: BOSS no vota
-en la amplitud.
+diferencia con el mínimo del perfil. Es el «cuesta clavar» de Paper 6 §BOSS: BOSS
+no vota en la amplitud. (Era 0.63, luego 0.60, con el perfil de 3 bines solapados
+y A_s escalado; ambos errores se corrigieron el 2026-10-17.)
 
 POR QUÉ EXISTE. Ese número salía de `base_sin_particula.json`, el control sin
 partícula de la rejilla de la cola #28 (`conjunta_tres_sondas.py`, partícula
@@ -17,12 +18,14 @@ CÓMO. El perfil sellado tiene χ²(logA) en una rejilla fija de paso 0.05. Se a
 una parábola a los tres nodos más cercanos al logA del CMB y se evalúa ahí: el
 mismo método con que `boss_lpt_R1R2.run` ubica su mínimo. La incertidumbre del método
 es la diferencia con la parábola de los otros tres nodos que rodean ese logA.
-Control (R53): la interpolación LINEAL del perfil en el nodo 3.045 tiene que dar el
-198.07 de base_sin_particula (así se calculaba allí): prueba que se lee el mismo
-perfil; y la parábola reproduce sus tres nodos.
+Control (R53): sobre el perfil VIEJO archivado (3 bines, A_s escalado), la
+interpolación LINEAL en el nodo 3.045 tiene que dar el 198.07 de base_sin_particula
+(así se calculaba allí): prueba que esta lectura es la de entonces; y la parábola
+reproduce sus tres nodos del perfil nuevo.
 
 ENTRADAS (selladas): results/logs/growth_2026-07/R1R2_boss_lpt_kmax0.200.json
                      results/logs/growth_2026-07/quien_mide_As.json
+                     archive/logs_superados/R1R2_boss_lpt_kmax0.200_20261015_3bines_As_escalado.json (solo el control)
 SALIDA: results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json
 """
 import json
@@ -38,6 +41,7 @@ from procedencia import con_acta  # noqa: E402
 G = REPO / "results" / "logs" / "growth_2026-07"
 BOSS = G / "R1R2_boss_lpt_kmax0.200.json"
 AS = G / "quien_mide_As.json"
+VIEJO = REPO / "archive" / "logs_superados" / "R1R2_boss_lpt_kmax0.200_20261015_3bines_As_escalado.json"
 SALIDA = G / "boss_chi2_en_logA_cmb.json"
 
 
@@ -57,7 +61,8 @@ def main():
     chi2_otra = float(np.polyval(np.polyfit(x[otra], y[otra], 2), l_cmb))
     # control R53
     resid = float(np.max(np.abs(np.polyval(cf, x[i]) - y[i])))
-    lineal_3045 = float(np.interp(3.045, x, y))
+    bv = json.load(open(VIEJO))["SSEE"]["perfil"]
+    lineal_3045 = float(np.interp(3.045, bv["logA"], bv["chi2"]))
     ok = resid < 1e-6 and round(lineal_3045, 2) == 198.07
     out = dict(
         que_mide="chi2 del perfil de BOSS (SSEE, sin particula) en el logA del CMB del modelo",
@@ -68,10 +73,10 @@ def main():
         nodos_usados=x[i].tolist(), parabola=cf.tolist(),
         metodo=dict(nodos_otra_terna=x[otra].tolist(), chi2_otra_terna=chi2_otra,
                     diferencia=chi2_otra - chi2_cmb),
-        control=dict(residuo_en_nodos=resid, lineal_en_nodo_3045=lineal_3045,
+        control=dict(residuo_en_nodos=resid, lineal_en_nodo_3045_perfil_viejo=lineal_3045,
                      referencia_base_sin_particula=198.07, pasa=bool(ok)),
     )
-    json.dump(con_acta(out, __file__, entradas=[BOSS, AS]), open(SALIDA, "w"), indent=1, ensure_ascii=False)
+    json.dump(con_acta(out, __file__, entradas=[BOSS, AS, VIEJO]), open(SALIDA, "w"), indent=1, ensure_ascii=False)
     print(json.dumps(out, indent=1, ensure_ascii=False))
     sys.exit(0 if ok else 1)
 

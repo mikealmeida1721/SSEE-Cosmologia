@@ -1,6 +1,6 @@
 # NO fueron los neutrinos: el 98% del desplazamiento del A_s de BOSS es el MÉTODO
 
-**Corrida:** `src/p06_growth/boss_aisla_neutrinos.py` ·
+**Corrida:** `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/boss_aisla_neutrinos.py` ·
 **Log:** `results/logs/growth_2026-07/boss_aisla_neutrinos.json` · 55 min ·
 **Pedida por Mike:** *«cuando algo cambia así, incluso si son buenas noticias,
 siempre se reverifica antes de pasarlo al paper»*. **No toca ningún paper.**

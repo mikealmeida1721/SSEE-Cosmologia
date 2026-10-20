@@ -1,31 +1,39 @@
 #!/usr/bin/env python3
 
 """
+ESTADO (2026-10-20). Como CORRIDA, este script queda RETIRADO: medía sobre los
+espectros de Beutler+2017 (normalización desajustada ~10 %) y su resultado está en
+archive/logs_superados/boss_beutler17_2026-10-20/. Sigue VIVO como BIBLIOTECA del
+montaje vigente (cobaya_boss_chen21.py): nodos de logA, A_REF, tablas_logA y las
+alphas de Alcock-Paczynski. El resultado de BOSS vigente es
+results/logs/growth_2026-07/boss_chen21.json (etapa analiza_boss_chen21).
+
 R1/R2 — fsigma8 de SSEE y LCDM contra los multipolos CRUDOS de BOSS DR12,
 con modelado LPT (velocileptors) en vez de Kaiser.
 
 QUE MIDE. La misma pregunta que R3/R4 hicieron con la cizalla de KiDS, sobre la
 otra sonda de crecimiento: con el fondo FIJO (algebraico en SSEE, Planck en
 LCDM), que amplitud prefiere el agrupamiento de galaxias, y con que chi2 sobre
-el dato crudo. La prueba es el chi2 sobre los 222 puntos, NO el fsigma8: fsigma8
+el dato crudo. La prueba es el chi2 sobre los 148 puntos (z1+z3; ver BINES DE z), NO el fsigma8: fsigma8
 es SALIDA del ajuste, o sea producto del propio modelo (misma leccion que S8).
 
 POR QUE LPT Y NO KAISER. Kaiser es teoria lineal: sesga 9-15% ya en k~0.1 y
 obliga a cortar en k_max=0.08, tirando la mayoria del dato. velocileptors
 (Chen, Vlah & White 2020) da el espectro en LPT a un lazo con los contra-
-terminos EFT, valido hasta k~0.20 h/Mpc. Se pasa de ~111 a ~222 puntos utiles.
+terminos EFT, valido hasta k~0.20 h/Mpc. Con los tres bines eran ~222 puntos utiles; con z1+z3, 148.
 
 LIBRES, IDENTICOS EN LOS DOS MODELOS (misma cuenta que R3/R4: mismo dato, mismo
 codigo, misma mascara; lo unico que cambia es el fondo):
     logA               (1)   amplitud primordial ln(1e10 A_s)
-    b1  x 6            (6)   bias lineal, uno por (z_bin, hemisferio)
-    b2  x 6            (6)   bias de segundo orden
-    bs  x 6            (6)   bias de marea
-    alpha0 x 6         (6)   contratermino monopolo
-    alpha2 x 6         (6)   contratermino cuadrupolo
-    SN0 x 6            (6)   ruido de disparo residual
+    b1  x 4            (4)   bias lineal, uno por (z_bin, hemisferio)
+    b2  x 4            (4)   bias de segundo orden
+    bs  x 4            (4)   bias de marea
+    alpha0 x 4         (4)   contratermino monopolo
+    alpha2 x 4         (4)   contratermino cuadrupolo
+    SN0 x 4            (4)   ruido de disparo residual
   -----------------------------------------------------------
-                      37 libres contra 222 puntos
+                      25 libres contra 148 puntos (z1 y z3, NGC y SGC;
+                      con los tres bines solapados eran 37 contra 222)
 
 Los 36 nuisance son por-conjunto y entran cuadraticamente salvo b1: se
 marginalizan analiticamente donde se puede y por MCMC el resto.
@@ -58,8 +66,34 @@ from velocileptors.LPT.lpt_rsd_fftw import LPT_RSD
 
 KMAX = float(sys.argv[1]) if len(sys.argv) > 1 else 0.20
 KMIN = 0.01
+# BINES DE z (2026-10-17). Los tres bines publicos de Beutler+2017 SE SOLAPAN
+# (0.2<z<0.5, 0.4<z<0.6, 0.5<z<0.75) y sus covarianzas vienen por bin, sin las
+# cruzadas: usar los tres como independientes contaba DOS VECES las galaxias
+# comunes. Hasta el 2026-10-17 se usaron los tres (6 conjuntos, 222 puntos, 37
+# libres; Delta chi2 SSEE-LCDM -2.03, inflado). Desde entonces solo z1 y z3, que
+# no se tocan --- como los analisis de forma completa publicados: 4 conjuntos,
+# 148 puntos, 25 libres. Las cadenas de 3 bines estan en
+# chains_p6/boss_3bines_solapados_RETIRADO_2026-10-17/ con su nota.
+# La variable de entorno queda solo para reproducir lo archivado; el guardian
+# (R79) falla si el defecto vuelve a juntar z2 con z1 o z3.
+BOSS_ZBINS = tuple(os.environ.get('BOSS_ZBINS', 'z1,z3').split(','))
 OUT = '/home/mike/Proyectos/SSEE/results/logs/growth_2026-07'
 AS_REF = 2.1e-9
+# A_s NO ES UN FACTOR EXACTO DEL LPT (medido 2026-10-17). Hasta ese dia la tabla
+# LPT se construia UNA vez, a A_REF, y la salida se multiplicaba por
+# A_s/A_REF. Eso solo vale para el termino lineal: el espectro a un lazo lleva
+# terminos en P_lin^2 y la resumacion IR exponencia P_lin. Medido en el mejor
+# punto de la cadena SSEE z1+z3 (logA = 2.758, A_s/A_REF = 0.75), mismos bias:
+#     chi2 con la salida escalada 45.510   con la tabla rehecha a ese A_s 49.389
+# (+3.88; +0.14 a +1.90 por conjunto). Ahora la tabla se construye en NODOS de
+# logA (Chebyshev de segunda especie sobre el prior de cobaya_boss, [2, 4]) y
+# se interpola por la formula baricentrica; el error de la interpolacion se
+# mide contra la tabla exacta en la prueba de malla de cobaya_boss_chen21.py
+# (boss_chen21_malla.json; la de mide_interpolacion_logA.py se archivó el 2026-10-20).
+LOGA_MIN, LOGA_MAX, N_NODOS = 2.0, 4.0, 13
+_jn = np.arange(N_NODOS)
+LOGA_NODOS = 0.5 * (LOGA_MIN + LOGA_MAX) + 0.5 * (LOGA_MAX - LOGA_MIN) * np.cos(np.pi * _jn / (N_NODOS - 1))
+_W_NODOS = (-1.0) ** _jn * np.where((_jn == 0) | (_jn == N_NODOS - 1), 0.5, 1.0)
 # FIX 2026-09-08 — SSEE LLEVABA LA MASA DE NEUTRINO DE LCDM. Aqui habia un
 # `MNU = 0.06` suelto que se usaba para LOS DOS modelos. 0.06 eV es el fiducial
 # de Planck; la de SSEE es Sum m_nu = 0.06849 eV, derivada de la clausura
@@ -84,8 +118,9 @@ COSMO = {
 
 
 def camb_lin(c, z):
-    """P_lin(k) y f(z) del fondo fijo, a A_s de referencia. A_s entra despues
-    como factor exacto, asi que CAMB se corre una sola vez por (modelo, z)."""
+    """P_lin(k) y f(z) del fondo fijo, a A_s de referencia. En P_lin, A_s SI es
+    un factor exacto (teoria lineal); CAMB se corre una vez por (modelo, z) y el
+    LPT se rehace en cada nodo de logA (tablas_logA)."""
     p = camb.CAMBparams()
     # Particula termica extra (cola #27). Con om_x = 0 —el defecto— `omch2` y
     # `set_cosmology` son EXACTAMENTE los de antes: el fondo sin particula no
@@ -105,12 +140,46 @@ def camb_lin(c, z):
     return k, pk[0], float(f), float(r.get_sigma8()[-1])
 
 
+_TABLAS = {}
+
+
+def tablas_logA(kl, pl, fz, kmod, a_par, a_per):
+    """Tablas LPT (p0, p2, p4 por termino de bias) en los nodos de logA.
+
+    pl es P_lin a A_REF; en cada nodo se reescala P_lin (eso SI es exacto) y
+    se rehace el LPT entero. Devuelve el objeto LPT_RSD (para combinar) y el
+    arreglo Y[nodo, multipolo, k, termino]."""
+    Y = []
+    for la in LOGA_NODOS:
+        L = LPT_RSD(kl, pl * np.exp(la) * 1e-10 / AS_REF, kIR=0.2, cutoff=10,
+                    extrap_min=-4, extrap_max=3, N=2000, threads=1, jn=5)
+        L.make_pltable(fz, kv=kmod, apar=a_par, aperp=a_per, ngauss=3)
+        Y.append(np.stack([L.p0ktable, L.p2ktable, L.p4ktable]))
+    return L, np.array(Y)
+
+
+def fija_logA(lp, logA):
+    """Pone en el objeto LPT las tablas interpoladas a logA (baricentrica)."""
+    d = logA - LOGA_NODOS
+    j = int(np.argmin(np.abs(d)))
+    if d[j] == 0.0:
+        T = lp['Y'][j]
+    else:
+        c = _W_NODOS / d
+        T = np.tensordot(c, lp['Y'], 1) / c.sum()
+    L = lp['L']
+    L.p0ktable, L.p2ktable, L.p4ktable = T[0], T[1], T[2]
+    return L
+
+
 def build():
     """Un 'conjunto' por (z_bin, hemisferio). Alineacion dato<->covarianza por
     (ell, k) y ventana: identica a la de boss_fit.py, que paso los 16 controles
     de Fase 0 (VERIFICACION_BOSS.md). Lo unico nuevo es el LPT."""
     sets = []
     for zb, z in ZBINS.items():
+        if zb not in BOSS_ZBINS:
+            continue
         for cap in CAPS:
             d, kk, ee = [], [], []
             for ell in (0, 2, 4):
@@ -137,13 +206,16 @@ def build():
             kmod = np.logspace(-3, np.log10(0.5), 180)
             lpt = {}
             for name, c in COSMO.items():
-                kl, pl, fz, s8 = camb_lin(c, z)
-                L = LPT_RSD(kl, pl, kIR=0.2, cutoff=10, extrap_min=-4,
-                            extrap_max=3, N=2000, threads=1, jn=5)
-                a_par, a_per = M.alphas(z, c['Om'], c['w0'], c['wa'])
-                L.make_pltable(fz, kv=kmod, apar=a_par, aperp=a_per, ngauss=3)
-                lpt[name] = dict(L=L, f=fz, sigma8=s8,
-                                 a_par=float(a_par), a_per=float(a_per))
+                # Las tablas dependen de (fondo, z), no del hemisferio: se
+                # construyen una vez y las comparten NGC y SGC.
+                clave = (name, z, tuple(sorted(c.items())))
+                if clave not in _TABLAS:
+                    kl, pl, fz, s8 = camb_lin(c, z)
+                    a_par, a_per = M.alphas(z, c['Om'], c['w0'], c['wa'])
+                    L, Y = tablas_logA(kl, pl, fz, kmod, a_par, a_per)
+                    _TABLAS[clave] = dict(L=L, Y=Y, f=fz, sigma8=s8,
+                                          a_par=float(a_par), a_per=float(a_per))
+                lpt[name] = _TABLAS[clave]
             sets.append(dict(zb=zb, cap=cap, z=z, k=k_all[keep],
                              ell=ell_all[keep], d=P_all[keep], kmod=kmod,
                              Cinv=np.linalg.inv(C) * hart, hartlap=hart,
@@ -183,10 +255,12 @@ def _pega(K, kv, P):
 
 def model_set(st, name, logA, th):
     """Multipolos LPT del conjunto, convolucionados con la ventana e
-    interpolados a los k del dato. A_s entra como factor sobre P_lin."""
+    interpolados a los k del dato. El logA entra por las tablas interpoladas
+    (fija_logA), no como factor sobre la salida."""
     b1, b2, bs, a0, a2, sn = th
-    sc = np.exp(logA) * 1e-10 / AS_REF
-    L = st['lpt'][name]['L']
+    if not (LOGA_MIN <= logA <= LOGA_MAX):
+        return None                  # fuera de los nodos no se extrapola
+    L = fija_logA(st['lpt'][name], logA)
     kv, p0, p2, p4 = L.combine_bias_terms_pkell(
         [b1, b2, bs, 0.0, a0, a2, 0.0, 0.0, sn, 0.0, 0.0])
     # La rejilla del LPT ya es log-espaciada y ancha: se pasa DIRECTA a la
@@ -202,7 +276,7 @@ def model_set(st, name, logA, th):
     # soporte. Corrida del 2026-09-07: sin esto, aborta a los ~3 min.
     if int(ok.sum()) < 10:
         return None
-    ks, q0, q2, q4 = st['win'](kv[ok], sc * p0[ok], sc * p2[ok], sc * p4[ok])
+    ks, q0, q2, q4 = st['win'](kv[ok], p0[ok], p2[ok], p4[ok])
     out = np.empty(len(st['k']))
     for ell, q in ((0, q0), (2, q2), (4, q4)):
         m = st['ell'] == ell
@@ -236,32 +310,34 @@ _LAMBDA = np.diag(1.0 / SIGMA_LIN ** 2)
 _TPL = {}
 
 
-def templates(st, name):
-    """Los tres modelos-plantilla d(modelo)/d(a0,a2,sn), a logA de referencia.
+def templates(st, name, logA):
+    """Los tres modelos-plantilla d(modelo)/d(a0,a2,sn) a ESE logA.
 
-    No dependen de b1/b2/bs (verificado: cambian 1e-12 al pasar b1 de 1 a 2),
-    asi que se calculan UNA vez por conjunto y se escalan por exp(logA).
+    No dependen de b1/b2/bs (verificado: cambian 1e-12 al pasar b1 de 1 a 2).
+    Hasta el 2026-10-17 se calculaban una vez, a logA = 0, y se escalaban por
+    exp(logA); con las tablas rehechas en logA (ver AS_REF) ya no escalan asi
+    y se evaluan en el logA de la llamada. Consecuencia que hay que declarar:
+    (a0, a2, sn) pasan a estar en unidades fisicas, sin el factor A_s/A_REF que
+    llevaban implicito; sus priors (SIGMA_LIN) se aplican a esas unidades.
 
-    PERO SI dependen del FONDO. La clave llevaba solo (zb, cap, name), que es
-    suficiente mientras el fondo no cambie —el caso de la cadena, donde solo
-    varia logA—, y silenciosamente incorrecta en cuanto se barre un parametro
-    del fondo: al reconstruir los conjuntos con otro w_c se reutilizaban las
-    plantillas del PRIMER w_c calculado. Medido (2026-09-08): los mismos tres
-    puntos daban 68.420/80.434/72.461 en un script y 76.828/78.760/81.600 en
-    otro, segun donde hubiera arrancado cada barrido.
-    sigma8 a A_s de referencia es firma del fondo (depende de w_c, h, w_b,
-    n_s, w0, wa), asi que entra en la clave.
+    Dependen tambien del FONDO: la clave lleva sigma8 a A_REF, firma del fondo
+    (medido 2026-09-08: sin ella, al barrer w_c se reutilizaban las plantillas
+    del primer w_c). La cache es chica: en una cadena logA cambia casi siempre.
     """
-    cl = (st['zb'], st['cap'], name,
-          round(st['lpt'][name]['sigma8'], 12))
+    cl = (st['zb'], st['cap'], name, round(st['lpt'][name]['sigma8'], 12),
+          round(float(logA), 12))
     if cl not in _TPL:
+        if len(_TPL) > 256:
+            _TPL.clear()
         z = np.zeros(6)
-        m0 = model_set(st, name, 0.0, z)
+        m0 = model_set(st, name, logA, z)
+        if m0 is None:
+            return None
         T = np.empty((len(m0), 3))
         for j in range(3):
             u = np.zeros(6)
             u[3 + j] = 1.0
-            T[:, j] = model_set(st, name, 0.0, u) - m0
+            T[:, j] = model_set(st, name, logA, u) - m0
         _TPL[cl] = T
     return _TPL[cl]
 
@@ -277,11 +353,9 @@ def chi2_marg_set(st, name, logA, th3):
                                              0.0, 0.0, 0.0]))
     if m0 is None or not np.all(np.isfinite(m0)):
         return CHI2_PARED, None
-    # templates() ya se evaluo a logA=0, o sea con sc(0); el factor que
-    # falta es solo la RAZON sc(logA)/sc(0) = exp(logA). Meter sc(logA)
-    # entero metia un 1e-10/AS_REF = 0.0476 de mas y disparaba lambda_hat
-    # (sn salia -5.5e4 con prior de escala 5e3).
-    T = templates(st, name) * np.exp(logA)
+    # Las plantillas se evaluan en el MISMO logA (ver templates). Hasta el
+    # 2026-10-17 se escalaban desde logA = 0 por exp(logA).
+    T = templates(st, name, logA)
     Ci = st['Cinv']
     r0 = m0 - st['d']
     CT = Ci @ T

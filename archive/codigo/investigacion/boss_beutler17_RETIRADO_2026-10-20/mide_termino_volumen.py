@@ -78,7 +78,7 @@ def main():
                 print("    AVISO: conjunto en la pared a logA=%.3f" % a)
                 continue
             # chi2_marg = c + ln det F  ->  se separa recalculando ln det F
-            T = B.templates(st, 'SSEE') * np.exp(float(a))
+            T = B.templates(st, 'SSEE', float(a))
             F = T.T @ (st['Cinv'] @ T) + B._LAMBDA
             _, l = np.linalg.slogdet(F)
             ld += float(l)

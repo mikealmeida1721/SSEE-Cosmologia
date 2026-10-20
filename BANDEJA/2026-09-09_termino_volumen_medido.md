@@ -1,7 +1,7 @@
 # El efecto de volumen deja de ser analogía: es `ln det F`, y explica el 75%
 
-**Corridas:** `src/p06_growth/marginal_vs_perfil.py` (control FALLA — y por eso
-sirve) y `src/p06_growth/mide_termino_volumen.py` (control PASA) ·
+**Corridas:** `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/marginal_vs_perfil.py` (control FALLA — y por eso
+sirve) y `archive/codigo/investigacion/boss_beutler17_RETIRADO_2026-10-20/mide_termino_volumen.py` (control PASA) ·
 **Logs:** `results/logs/growth_2026-07/marginal_vs_perfil.json`,
 `.../termino_volumen_boss.json` · **No toca ningún paper.**
 

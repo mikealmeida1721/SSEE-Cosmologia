@@ -1234,17 +1234,19 @@ check("V-L3-2sec  [RETIRADO] la resta Om_m,CMB - 0.160 no era fisica",
 # cada modelo). El track quedaba abierto aunque la ficha ya decia MEDIDO; ahora se
 # comprueba que el log exista con acta reproducible y traiga su Delta chi2.
 import json as _json26
-_r1r2 = ROOT.parent / "results/logs/growth_2026-07/R1R2_boss_lpt_cobaya.json"
+# 2026-10-20: el log vigente es boss_chen21.json (montaje de Chen+22, con control);
+# el R1R2 de Beutler+2017 está en archive/logs_superados/boss_beutler17_2026-10-20/.
+_r1r2 = ROOT.parent / "results/logs/growth_2026-07/boss_chen21.json"
 try:
     _r1r2_d = _json26.loads(_r1r2.read_text())
 except (OSError, ValueError):
     _r1r2_d = {}
 _r1r2_acta = _r1r2_d.get("_procedencia") or {}
-_r1r2_dchi2 = _r1r2_d.get("dchi2_real")
+_r1r2_dchi2 = (_r1r2_d.get("resumen") or {}).get("dchi2_ssee_libre")
 check("REFRAME-FaseB  fsigma8 contra BOSS crudo medido (OP-26): log con acta y Delta chi2",
       bool(_r1r2_acta.get("reproducible_desde_commit"))
       and isinstance(_r1r2_dchi2, (int, float)) and math.isfinite(_r1r2_dchi2),
-      f"Delta chi2 SSEE-LCDM = {_r1r2_dchi2} (R1R2_boss_lpt_cobaya.json, por \\val en P6/PRD)")
+      f"Delta chi2 crudo SSEE clavado - LCDM libre = {_r1r2_dchi2} (boss_chen21.json, por \\val en P6/PRD)")
 
 # delta_c (OP-27, abierto 2026-09-25). El Paper 4 postulaba
 # delta_c = delta_c,EdS * n_s = 1.6284 y el Paper 5 colgaba de el un
@@ -7710,6 +7712,119 @@ try:
           "3 casos: «three postulates in total» y «3 postulates (D, S…» marcados; «four» limpio")
 except Exception as _e:            # noqa: BLE001
     check("R78 la capa de conteo de postulados corrió", False, f"excepción: {_e}")
+
+print("\nCapa R79 — BOSS no cuenta dos veces los bines que se solapan")
+# POR QUÉ EXISTE (2026-10-17). Los tres bines públicos de BOSS DR12 (Beutler+2017)
+# se SOLAPAN en redshift (0.2–0.5, 0.4–0.6, 0.5–0.75) y sus covarianzas vienen por
+# bin, sin las cruzadas. El pipeline los usó como independientes desde la primera
+# corrida: 222 puntos, 37 libres, Δχ² SSEE−ΛCDM = −2.03, inflado por contar dos
+# veces las galaxias comunes. Nadie lo vio (ni el guardián ni la auditoría de
+# Nova). Vigente: sólo z1 y z3. Se vigila en los tres sitios donde puede volver:
+# el valor por defecto del núcleo, el log que citan los papers y los propios .tex.
+# 2026-10-20: el BOSS vigente es el montaje de Chen+22 (cobaya_boss_chen21.py, log
+# boss_chen21.json, \val bossC_*); la regla mira ahí. Sus dos muestras son z1 y z3
+# (z_eff 0.38 y 0.61), con la covarianza conjunta NGC+SGC de Chen.
+import re as _re79
+try:
+    _REPO79 = ROOT.parent
+
+    def _boss79(_nucleo, _log, _textos, _cmds):
+        """-> hallazgos. _nucleo: texto de cobaya_boss_chen21.py; _log: dict de boss_chen21.json; _textos: {nombre: tex}; _cmds: {etapa: cmd}."""
+        _out = []
+        _m = _re79.search(r"^MUESTRAS\s*=\s*(.+)$", _nucleo, _re79.M)
+        if not _m:
+            _out.append("cobaya_boss_chen21.py sin MUESTRAS")
+        else:
+            _b = set(_re79.findall(r"'(z\d)'", _m.group(1)))
+            if "z2" in _b and _b & {"z1", "z3"}:
+                _out.append(f"cobaya_boss_chen21.py: MUESTRAS {sorted(_b)} (z2 se solapa con z1 y z3)")
+        for _mod in ("SSEE", "LCDM_PLANCK"):
+            _zs = sorted(((_log.get(_mod) or {}).get("por_z") or {}).keys())
+            if _zs != ["0.38", "0.61"]:
+                _out.append(f"boss_chen21.json: {_mod} por_z {_zs}, no ['0.38', '0.61']")
+        for _n, _tx in _textos.items():
+            for _mm in _re79.finditer(r"\\val\{boss[RC]_\w*_z2\b[^}]*\}", _tx):
+                _out.append(f"{_n}: «{_mm.group(0)}»")
+        for _s, _c in _cmds.items():
+            _mz = _re79.search(r"BOSS_ZBINS=(\S+)", str(_c))
+            if _mz and "z2" in _mz.group(1):
+                _out.append(f"etapa {_s} corre con BOSS_ZBINS={_mz.group(1)}")
+        return _out
+
+    import json as _json79
+    import yaml as _yaml79
+    _nuc79 = (_REPO79 / "src" / "p06_growth" / "cobaya_boss_chen21.py").read_text()
+    _log79 = _json79.loads((_REPO79 / "results" / "logs" / "growth_2026-07" / "boss_chen21.json").read_text())
+    _docs79 = sorted((_REPO79 / "manuscript").glob("*.tex")) + [_REPO79 / "submission_PRD" / "SSEE_PRD.tex"]
+    _tx79 = {_p.name: _p.read_text(errors="ignore") for _p in _docs79
+             if _p.exists() and _p.name != "valores_generados.tex"}
+    _cmd79 = {_k: _v.get("cmd", "") for _k, _v in
+              _yaml79.safe_load((_REPO79 / "dvc.yaml").read_text())["stages"].items()}
+    _hall79 = _boss79(_nuc79, _log79, _tx79, _cmd79)
+    check("R79 BOSS usa sólo los bines que no se solapan (z1, z3) en núcleo, log, papers y etapas",
+          not _hall79, "; ".join(_hall79[:4]) if _hall79 else "z1+z3 en los cuatro sitios")
+    # Control (R53): cada una de las cuatro vías de regreso se marca; lo vigente pasa.
+    _okn79 = "MUESTRAS = (('z1', 0.38), ('z3', 0.61))"
+    _okl79 = {"SSEE": {"por_z": {"0.38": 0, "0.61": 0}}, "LCDM_PLANCK": {"por_z": {"0.38": 0, "0.61": 0}}}
+    _bueno79 = _boss79(_okn79, _okl79, {"x.tex": "\\val{bossC_fs8_ssee_z1}"}, {"a": "python x.py"})
+    _malo79 = _boss79("MUESTRAS = (('z1', 0.38), ('z2', 0.51), ('z3', 0.61))",
+                      {"SSEE": {"por_z": {"0.38": 0, "0.51": 0, "0.61": 0}}, "LCDM_PLANCK": {"por_z": {"0.38": 0, "0.61": 0}}},
+                      {"x.tex": "\\val{bossC_fs8_ssee_z2}"}, {"a": "BOSS_ZBINS=z1,z2,z3 python x.py"})
+    check("R79 el detector marca las cuatro vías de regreso y deja pasar lo vigente",
+          _bueno79 == [] and len(_malo79) == 4,
+          f"vigente {len(_bueno79)} hallazgos (0 esperados); defectuoso {len(_malo79)} (4 esperados)")
+except Exception as _e:            # noqa: BLE001
+    check("R79 la capa de bines de BOSS corrió", False, f"excepción: {_e}")
+
+print("\nCapa R80 — en BOSS, A_s entra por la tabla LPT, no como factor sobre la salida")
+# POR QUÉ EXISTE (2026-10-17). El modelo de BOSS construía la tabla LPT una vez a
+# A_REF y multiplicaba la SALIDA por A_s/A_REF. Eso sólo es cierto para el término
+# lineal: a un lazo hay términos en P_lin² y la resumación IR exponencia P_lin.
+# Error medido contra la tabla rehecha: +3.88 en χ² en el mejor punto de SSEE, y
+# hasta 45 en logA = 3.6 (interpolacion_logA.json). Ahora la tabla se construye
+# en nodos de logA y se interpola. Se vigila que model_set no vuelva a escalar la
+# salida, que use fija_logA, y que la prueba de interpolación pase con su control.
+# 2026-10-20: la prueba vigente es la de la malla (Ω_m, h, logA) del montaje de
+# Chen+22 (cobaya_boss_chen21.py prueba -> boss_chen21_malla.json, criterio 0.05
+# fijado en el script antes de correr); la de interpolacion_logA.json se archivó con
+# el BOSS de Beutler+2017.
+try:
+    import json as _json80
+
+    def _escala80(_src, _prueba):
+        """-> hallazgos. _src: texto de boss_lpt_R1R2.py; _prueba: dict de boss_chen21_malla.json."""
+        _out = []
+        _i = _src.find("def model_set(")
+        _cuerpo = _src[_i:_src.find("\ndef ", _i + 10)] if _i >= 0 else ""
+        if not _cuerpo:
+            _out.append("boss_lpt_R1R2.py sin model_set")
+        if _re79.search(r"\bsc\s*\*\s*p[024]\b|exp\(logA\)\s*\*\s*1e-10\s*/\s*AS_REF", _cuerpo):
+            _out.append("model_set escala la salida del LPT por A_s/A_REF")
+        if _cuerpo and "fija_logA(" not in _cuerpo:
+            _out.append("model_set no pasa logA por fija_logA")
+        if not _prueba.get("pasa") or not _prueba.get("peor_interpolado", 1.0) < 0.05:
+            _out.append(f"boss_chen21_malla.json no pasa (peor {_prueba.get('peor_interpolado')})")
+        if not (_prueba.get("control_viejo") or {}).get("pasa"):
+            _out.append("boss_chen21_malla.json: el control del método viejo no distingue")
+        return _out
+
+    _src80 = (_REPO79 / "src" / "p06_growth" / "boss_lpt_R1R2.py").read_text()
+    _f80 = _REPO79 / "results" / "logs" / "growth_2026-07" / "boss_chen21_malla.json"
+    _pr80 = _json80.loads(_f80.read_text()) if _f80.exists() else {}
+    _hall80 = _escala80(_src80, _pr80)
+    check("R80 A_s entra en BOSS por la tabla LPT interpolada, y la interpolación reproduce la tabla exacta",
+          not _hall80, "; ".join(_hall80) if _hall80 else
+          f"peor |Δχ²| interpolado {_pr80['peor_interpolado']:.1e}; el método viejo erraba hasta {_pr80['control_viejo']['maximo']:.1f}")
+    # Control (R53): el modelo viejo y una prueba que no pasa se marcan; lo vigente pasa.
+    _ok80 = {"pasa": True, "peor_interpolado": 2e-5, "control_viejo": {"pasa": True, "maximo": 45.0}}
+    _bien80 = _escala80("def model_set(st):\n    L = fija_logA(lp, logA)\n\ndef otra():", _ok80)
+    _mal80 = _escala80("def model_set(st):\n    sc = np.exp(logA) * 1e-10 / AS_REF\n    q = sc * p0\n\ndef otra():",
+                       {"pasa": False, "peor_interpolado": 0.5, "control_viejo": {"pasa": False}})
+    check("R80 el detector marca el escalado viejo y deja pasar lo vigente",
+          _bien80 == [] and len(_mal80) == 4,
+          f"vigente {len(_bien80)} hallazgos (0 esperados); viejo {len(_mal80)} (4 esperados)")
+except Exception as _e:            # noqa: BLE001
+    check("R80 la capa de A_s en BOSS corrió", False, f"excepción: {_e}")
 
 print("\nCapa R72 — ninguna saturación ocupa ranura de densidad en los MANUSCRITOS")
 # Por qué existe. R52/R52b vigilan lo mismo pero SÓLO en código .py. El error de
