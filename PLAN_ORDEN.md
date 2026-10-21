@@ -14,6 +14,16 @@
 > Desde hoy el veredicto separa **REGRESIÓN** (¿empeoró algo?) de
 > **MODELO** (¿está en orden?). El titular lo manda el segundo.
 
+> 🟦 **ESTADO AL 2026-10-21.** Las casillas sin marcar de abajo son de septiembre y ya
+> tienen respuesta. El guardián da 0 sitios de deuda y 0 tareas, con R35/R74/R75 en cero.
+> Limpieza: `particula_md` en 0; logs con fuente y acta. Corridas: R4 cerrado el 2026-08-07
+> (`R4_lcdm_kids_S8.json`), `fig_b1_*` por DVC. Tensiones: M⁴ de P7 y P10 → OP-10b
+> disuelto; M⁴ «calibrado a SH0ES» → P10 declara que la cascada NO mide M⁴ (OP-3);
+> c²_s → P5 reescrito el 2026-10-11 (lo estabiliza el campo de P7); MIRA → OP-8b cerrado
+> (MIRA es constante); disformal de P8 contra P1 → disuelto: desde 2026-10-01, P1 tiene
+> materia oscura fría real (ω_c = KAL₀·ω_b·n_s). Las derivaciones (4º) son física abierta
+> y viven en OPEN_PROBLEMS con su severidad: no son deuda del repositorio.
+
 ## Regla de trabajo
 
 Un arreglo no está hecho hasta que:

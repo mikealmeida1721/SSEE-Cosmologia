@@ -6,6 +6,11 @@ compares against Planck 2018 data, and produces chi2 + figures.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import json as _jm_fig, sys as _sm_fig, os as _om_fig  # noqa: E402
+_sm_fig.path.insert(0, _om_fig.path.join(_om_fig.path.dirname(_om_fig.path.abspath(__file__)), ".."))
+from procedencia import acta as _acta_fig  # noqa: E402
+# R75: cada figura lleva su acta en los metadatos del PDF/PNG (2026-10-21, al entrar a DVC)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jm_fig.dumps(_acta_fig(__file__))}
 import matplotlib
 import os
 import urllib.request
@@ -230,7 +235,7 @@ def _spectrum_figure(ells_s, Dl_s, ells_l, Dl_l,
 
     plt.tight_layout()
     out = os.path.join(FIG_DIR, outname)
-    plt.savefig(out, bbox_inches="tight")
+    plt.savefig(out, bbox_inches="tight", metadata=_META)
     plt.close()
     print(f"  Figura guardada: {out}")
 
@@ -314,7 +319,7 @@ def plot_lensing(ells_s, Cl_s, ells_l, Cl_l, ell_obs, Cl_obs, sigma_obs):
 
     plt.tight_layout()
     out = os.path.join(FIG_DIR, "fig_cmb_lensing.pdf")
-    plt.savefig(out, bbox_inches="tight")
+    plt.savefig(out, bbox_inches="tight", metadata=_META)
     plt.close()
     print(f"  Figura guardada: {out}")
 
@@ -344,7 +349,7 @@ def plot_peak_zoom(ells_s, Dl_s, ells_l, Dl_l, ell_obs, Dl_obs, sigma_obs):
     plt.suptitle("SSEE: acoustic-peak zoom vs Planck 2018", fontsize=13)
     plt.tight_layout()
     out = os.path.join(FIG_DIR, "fig_cmb_peaks_zoom.pdf")
-    plt.savefig(out, bbox_inches="tight")
+    plt.savefig(out, bbox_inches="tight", metadata=_META)
     plt.close()
     print(f"  Figura guardada: {out}")
 

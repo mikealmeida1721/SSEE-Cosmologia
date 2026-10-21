@@ -6748,7 +6748,7 @@ try:
     check("R48 ninguna cantidad con dos valores SIN OP que lo declare",
           not _cd_rotos, "; ".join(_cd_rotos[:4]) if _cd_rotos
           else f"{len(_CD)} cantidades cruzadas revisadas")
-    _TOPE_CD = 1          # medido 2026-08-02; sólo puede BAJAR
+    _TOPE_CD = 0          # 1 -> 0 (2026-10-21: cuenta real 0). Medido 2026-08-02; sólo puede BAJAR
     check(f"R48 la deuda de discrepancias no crece (tope {_TOPE_CD})",
           len(_cd_deuda) <= _TOPE_CD,
           f"{len(_cd_deuda)} discrepancia(s) declarada(s) con OP: "
@@ -7174,14 +7174,21 @@ try:
     _VAL  = re.compile(r"0\.4033")
     _EX54 = re.compile(r"s_K|s_k|mal llamado|NO es alpha|etiqueta|R54")
 
+    # 2026-10-21: un nombre de etiqueta LaTeX (\label/\ref/\eqref{eq:alphaK_...}) no
+    # rotula nada, y «$\alpha_K$ is not the constant ...» es justamente la corrección.
+    # Eran los 2 falsos positivos de P7:574 y P9:431 que inflaban el tope.
+    _REF54 = re.compile(r"\\(?:eq)?ref\{[^}]*\}|\\label\{[^}]*\}")
+    _NEG54 = re.compile(r"is not the constant|no es la constante")
+
     def _escanea_r54(_ls):
         _m = []
         for _i, _l in enumerate(_ls):
             if not _VAL.search(_l):
                 continue
-            if not _ETIQ.search(_l):
+            _l2 = _REF54.sub("", _l)
+            if not _ETIQ.search(_l2):
                 continue
-            if _EX54.search(_l):
+            if _EX54.search(_l2) or _NEG54.search(_l2):
                 continue
             _m.append(_i)
         return _m
@@ -7199,7 +7206,7 @@ try:
         for _i in _escanea_r54(_ls):
             _r54.append(f"{_f.relative_to(_REPO)}:{_i+1}")
 
-    _DEUDA_R54 = 17   # 19 -> 17 (2026-10-11: CLAUDE.md deja de rotular 0.4033 como alpha_K de P7, 2 sitios). 20 -> 19 (2026-10-10, cuenta medida tras la tercera lectura). 22 -> 20 (2026-10-03: el Registro y la ficha de MIRA dejan de rotular s_K como alpha_K, propagacion s_m). 23 -> 22 (2026-10-02 noche, cuenta medida). 30 -> 23 (2026-10-02): ssee_eftcamb_validation.py archivado (6 sitios) y AUDIT.md ya no cita el αK de hi_class (1). 47 -> 30 (2026-09-27): alpha_K->s_K/15.591335 en P1, P3, P8, Unified, Sealed, PRD, Endorser; 55 -> 51 al eximir las fixtures del registro (R67); 51 -> 49 (2026-09-19): cuenta real medida tras archivar h0_cascade_audit.py y las anotaciones R65; 49 -> 48 (2026-09-26): G2/G3 corrigieron el mislabel de 0.403302 en Sealed Journal y Paper 1 (alpha_K^eff -> s_K); 48 -> 47 (2026-09-26): el README deja de rotular 0.4033 como kineticidad (P7: alpha_K=15.591335)
+    _DEUDA_R54 = 0   # 17 -> 0 (2026-10-21: los 2 falsos positivos de P7/P9 resueltos en el detector —\\eqref y la negación—; la figura de P10 rotula s_K; 10 sitios de cajones corregidos). 19 -> 17 (2026-10-11: CLAUDE.md deja de rotular 0.4033 como alpha_K de P7, 2 sitios). 20 -> 19 (2026-10-10, cuenta medida tras la tercera lectura). 22 -> 20 (2026-10-03: el Registro y la ficha de MIRA dejan de rotular s_K como alpha_K, propagacion s_m). 23 -> 22 (2026-10-02 noche, cuenta medida). 30 -> 23 (2026-10-02): ssee_eftcamb_validation.py archivado (6 sitios) y AUDIT.md ya no cita el αK de hi_class (1). 47 -> 30 (2026-09-27): alpha_K->s_K/15.591335 en P1, P3, P8, Unified, Sealed, PRD, Endorser; 55 -> 51 al eximir las fixtures del registro (R67); 51 -> 49 (2026-09-19): cuenta real medida tras archivar h0_cascade_audit.py y las anotaciones R65; 49 -> 48 (2026-09-26): G2/G3 corrigieron el mislabel de 0.403302 en Sealed Journal y Paper 1 (alpha_K^eff -> s_K); 48 -> 47 (2026-09-26): el README deja de rotular 0.4033 como kineticidad (P7: alpha_K=15.591335)
     check("R54 la deuda de etiquetas alpha_K/s_K no crece",
           len(_r54) <= _DEUDA_R54,
           f"{len(_r54)} sitios (tope {_DEUDA_R54}): "
@@ -7212,13 +7219,19 @@ try:
     _malo = ["  alpha_K: 0.4033  # Bellini-Sawicki"]
     _bien = ["  s_K: 0.403302  # -(dp/dN)/rho"]
     _otro = ["  alpha_K: 15.591335  # kineticidad"]
+    _tex_malo = [r"the EFT gives $\alpha_K = 0.403302$ today"]
+    _tex_ref = [r"$\sK$ & $3\AURA(\pi-\phiG)/(2\Omega^2)$ & $0.403302$ & Eq.~\eqref{eq:alphaK_algebraic} \\"]
+    _tex_neg = [r"\paragraph{$\alpha_K$ is not the constant $0.403302$.}"]
     check("R54 el detector distingue etiqueta de valor",
           len(_escanea_r54(_malo)) == 1
           and len(_escanea_r54(_bien)) == 0
-          and len(_escanea_r54(_otro)) == 0,
-          "3 casos: 0.4033 rotulado alpha_K marcado; "
-          "el mismo valor como s_K y otro valor "
-          "como alpha_K, limpios")
+          and len(_escanea_r54(_otro)) == 0
+          and len(_escanea_r54(_tex_malo)) == 1
+          and len(_escanea_r54(_tex_ref)) == 0
+          and len(_escanea_r54(_tex_neg)) == 0,
+          "6 casos: 0.4033 rotulado alpha_K marcado (yaml y tex); "
+          "el mismo valor como s_K, otro valor como alpha_K, un nombre de "
+          "etiqueta \\eqref{eq:alphaK_...} y la negación de P7, limpios")
 
 except Exception as _e:
     check("R54 capa operable", False, str(_e))

@@ -166,7 +166,7 @@ la fuente antes de tocar nada.
 ## V3.6 — Session 20: hi_class cross-check + Paper 3 update + endorser doc (2026-05-07)
 
 - **CLASS/hi_class cross-check** (`src/ssee_paper3_hiclass_check.py`):
-  - αK(z=0) = 0.4033 from CLASS background — matches algebraic prediction to **Δ=0.005%**
+  - αK(z=0) = 0.4033 from CLASS background (es s_K, no la kineticidad α_K de P7; R54) — matches algebraic prediction to **Δ=0.005%**
   - αT=αM=αB=0 verified exact (minimal Horndeski construction)
   - Raw SSEE (Ωm,dyn=0.160) gives χ²_r=90.3 vs Planck PR4 — expected without MIRA mapping
   - ΛCDM reference (k=6): χ²_r=1.219 (confirms Planck fits standard cosmology)

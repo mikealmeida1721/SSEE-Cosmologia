@@ -28,6 +28,11 @@ from scipy.integrate import solve_ivp, quad
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import json as _jm_fig, sys as _sm_fig, os as _om_fig  # noqa: E402
+_sm_fig.path.insert(0, _om_fig.path.join(_om_fig.path.dirname(_om_fig.path.abspath(__file__)), ".."))
+from procedencia import acta as _acta_fig  # noqa: E402
+# R75: cada figura lleva su acta en los metadatos del PDF/PNG (2026-10-21, al entrar a DVC)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jm_fig.dumps(_acta_fig(__file__))}
 import os
 
 OUTDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -721,7 +726,7 @@ fig.suptitle(
 fig.tight_layout()
 
 out1 = os.path.join(OUTDIR, 'fig_paper5_IS_stability.pdf')
-fig.savefig(out1, bbox_inches='tight')
+fig.savefig(out1, bbox_inches='tight', metadata=_META)
 print(f"\n  Figure saved: {out1}")
 
 # Figure 3: MIRA_numeric vs k
@@ -752,112 +757,15 @@ if len(results) >= 3:
 
     fig2.tight_layout()
     out2 = os.path.join(OUTDIR, 'fig_paper5_DE_clustering.pdf')
-    fig2.savefig(out2, bbox_inches='tight')
+    fig2.savefig(out2, bbox_inches='tight', metadata=_META)
     print(f"  Figure saved: {out2}")
 
 # ── Q3 FIGURES ───────────────────────────────────────────────────────────────
 if _q3_ok:
-    # Figure 3: Growth rate f(z) and normalized D₁(z) for SSEE vs ΛCDM
-    fig3, axes3 = plt.subplots(1, 2, figsize=(12, 5))
-
-    # Panel A: growth rate f(z)
-    ax = axes3[0]
-    z_plot_mask = z_g <= 3.0
-
-    ax.plot(z_g[z_plot_mask], f_ssee[z_plot_mask],
-            'b-', lw=2.5, label=r'SSEE IS  $(\gamma_{\rm IS}=%s)$' % f'{gamma_IS_val:.3f}')
-    ax.plot(z_g[z_plot_mask], f_lcdm[z_plot_mask],
-            'r--', lw=2, label=r'$\Lambda$CDM  $(\gamma=%s)$' % f'{gamma_LCDM_val:.3f}')
-
-    # Overlay gamma fits
-    Om_fit_s = Om_a_ssee_arr[z_plot_mask]
-    Om_fit_l = Om_a_lcdm_arr[z_plot_mask]
-    ax.plot(z_g[z_plot_mask], Om_fit_s**gamma_IS_val,
-            'b:', lw=1.5, alpha=0.7, label=r'$\Omega_m(z)^{\gamma_{\rm IS}}$ fit')
-    ax.plot(z_g[z_plot_mask], Om_fit_l**gamma_LCDM_val,
-            'r:', lw=1.5, alpha=0.7, label=r'$\Omega_m(z)^{\gamma_\Lambda}$ fit')
-
-    ax.set_xlabel(r'redshift $z$')
-    ax.set_ylabel(r'growth rate $f(z) = d\ln D_1/d\ln a$')
-    ax.set_title('Growth Rate vs Redshift\n(SSEE IS vs ΛCDM)')
-    ax.legend(fontsize=9)
-    ax.set_xlim(0, 3)
-    ax.set_ylim(0, 1.05)
-    ax.grid(True, alpha=0.3)
-
-    # Panel B: normalized growth factor D₁(z)
-    ax = axes3[1]
-    ax.plot(z_g[z_plot_mask], D1_ssee_n[z_plot_mask],
-            'b-', lw=2.5, label=rf'SSEE  ($G={G_factor:.3f}$)')
-    ax.plot(z_g[z_plot_mask], D1_lcdm_n[z_plot_mask],
-            'r--', lw=2, label=r'$\Lambda$CDM')
-
-    # Mark z=0 suppression
-    ax.annotate(rf'$G = {G_factor:.3f}$',
-                xy=(0, G_factor), xytext=(0.4, G_factor - 0.08),
-                arrowprops=dict(arrowstyle='->', color='navy'),
-                color='navy', fontsize=10)
-
-    ax.set_xlabel(r'redshift $z$')
-    ax.set_ylabel(r'$D_1(z)$ (normalized to $D_1(0)=1$)')
-    ax.set_title('Growth Factor\n(normalized)')
-    ax.legend(fontsize=9)
-    ax.set_xlim(0, 3)
-    ax.set_ylim(0, 1.1)
-    ax.grid(True, alpha=0.3)
-
-    fig3.suptitle(
-        r'SSEE Paper 5 (Q3): Linear Growth — IS Suppression'
-        '\n'
-        rf'$\Omega_m={Omm:.3f}$,  '
-        rf'$G={G_factor:.4f}$,  '
-        rf'$\gamma_{{\rm IS}}={gamma_IS_val:.4f}$',
-        fontsize=11
-    )
-    fig3.tight_layout()
-    out3 = os.path.join(OUTDIR, 'fig_paper5_growth_rate.pdf')
-    fig3.savefig(out3, bbox_inches='tight')
-    print(f"\n  Figure saved: {out3}")
-
-    # Figure 4: S₈ comparison bar chart
-    fig4, ax4 = plt.subplots(figsize=(7, 5))
-
-    labels  = [r'Planck 2018 $\Lambda$CDM', r'SSEE IS', 'DES-Y3', 'KiDS-1000']
-    vals    = [S8_LCDM_val,    S8_SSEE_val,    S8_DES,    S8_KIDS]
-    errs    = [0.012,           S8_SSEE_err_val, S8_DES_err, S8_KIDS_err]
-    colors_ = ['tomato', 'steelblue', 'forestgreen', 'darkorange']
-
-    x_pos = np.arange(len(labels))
-    bars = ax4.bar(x_pos, vals, yerr=errs, capsize=6,
-                   color=colors_, alpha=0.8, edgecolor='k', lw=1.2, width=0.55)
-
-    ax4.set_xticks(x_pos)
-    ax4.set_xticklabels(labels, fontsize=10)
-    ax4.set_ylabel(r'$S_8 = \sigma_8\,(\Omega_m/0.3)^{0.5}$', fontsize=12)
-    ax4.set_title(r'$S_8$ Tension: SSEE IS predicts lowered amplitude',
-                  fontsize=11)
-    ax4.set_ylim(0.65, 0.90)
-    ax4.axhline(S8_LCDM_val, color='tomato', ls=':', lw=1, alpha=0.5)
-    ax4.grid(True, axis='y', alpha=0.3)
-
-    # Annotate tensions
-    for xi, (v, e, c) in enumerate(zip(vals, errs, colors_)):
-        ax4.text(xi, v + e + 0.005, f'{v:.3f}', ha='center', va='bottom',
-                 fontsize=9, color=c)
-
-    # Tension annotation for SSEE vs DES
-    ax4.annotate(
-        rf'$\Delta={tens_DES_IS:.1f}\sigma$ (SSEE vs DES)',
-        xy=(1, S8_SSEE_val), xytext=(2.0, S8_SSEE_val + 0.04),
-        arrowprops=dict(arrowstyle='->', color='steelblue'),
-        fontsize=9, color='steelblue'
-    )
-
-    fig4.tight_layout()
-    out4 = os.path.join(OUTDIR, 'fig_paper5_S8_comparison.pdf')
-    fig4.savefig(out4, bbox_inches='tight')
-    print(f"  Figure saved: {out4}")
-
+    # 2026-10-21: aquí iban fig_paper5_growth_rate y fig_paper5_S8_comparison. Ninguna entra
+    # en P5, y la segunda contaba «S8 Tension: SSEE IS predicts lowered amplitude», el relato
+    # retirado el 2026-08-01 (con A_s libre no hay tensión; P6). Se dejan de generar; las
+    # copias que había en results/figures/ van al archivo con nota.
     # Figure 5: fσ₈(z) SSEE vs ΛCDM vs RSD data
     fig5, ax5 = plt.subplots(figsize=(8, 5.5))
 
@@ -923,7 +831,7 @@ if _q3_ok:
 
     fig5.tight_layout()
     out5 = os.path.join(OUTDIR, 'fig_paper5_fsigma8_comparison.pdf')
-    fig5.savefig(out5, bbox_inches='tight')
+    fig5.savefig(out5, bbox_inches='tight', metadata=_META)
     print(f"  Figure saved: {out5}")
 
 # ── FINAL SUMMARY ─────────────────────────────────────────────────────────────

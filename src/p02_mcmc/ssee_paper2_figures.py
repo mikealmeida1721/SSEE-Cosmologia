@@ -1,9 +1,18 @@
 """
-SSEE — Paper 2 Figures
-Fig 1: w0-wa plane con contornos DESI DR2
-Fig 2: Sensibilidad de masas por escenario
-Fig 3: Omega_DE SSEE vs Lambda con contexto estructural
-Fig 4: KAL(x) interpolation — límites Newtoniano y MONDiano
+SSEE — Paper 2 Figures (etapa DVC `p2_figuras`)
+Fig 1: plano w0-wa con los contornos oficiales de DESI DR2
+Fig 3: Omega_DE de SSEE contra las restricciones observacionales
+
+2026-10-21: todo número sale de su fuente, nada tecleado.
+  - SSEE (w0, wa, Omega_m): ssee_core.
+  - Contornos de la fig. 1: results/logs/desi_dr2_w0wa_momentos.log (cadenas oficiales).
+  - Distancia de SSEE en la fig. 1: results/logs/paper2_w0wa.json.
+  - Omega_DE de DESI en la fig. 3: las cadenas oficiales w0wa de DESI DR2 (columna
+    omegal, burn-in 30 %, con pesos); antes eran dos pares tecleados sin fuente.
+Retiradas del script: la fig. 2 (cúmulos con los datos atribuidos a Zhang+2026, que no
+salían de ahí; rehecho en cumulos_zhang2026.json) y la fig. 4 (interpolación KAL(x)
+Newton-MOND, lectura retirada de P2 el 2026-10-01: KAL0 es retención). Ninguna entra en
+un paper.
 """
 # ORIGEN-VALOR: 0.6847 — Omega_Lambda de Planck 2018 (arXiv:1807.06209)
 
@@ -12,6 +21,11 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import json as _jm_fig, sys as _sm_fig, os as _om_fig  # noqa: E402
+_sm_fig.path.insert(0, _om_fig.path.join(_om_fig.path.dirname(_om_fig.path.abspath(__file__)), ".."))
+from procedencia import acta as _acta_fig  # noqa: E402
+# R75: cada figura lleva su acta en los metadatos del PDF/PNG (2026-10-21, al entrar a DVC)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jm_fig.dumps(_acta_fig(__file__))}
 import matplotlib.patches as mpatches
 from matplotlib.patches import Ellipse
 from matplotlib import gridspec
@@ -53,12 +67,17 @@ KAL0 = BETA + PI
 P_sc = PI + PHI + PHI          # P = Ω + Φ = (π+Φ) + Φ
 KV   = PHI + PI + (PI + PHI)   # Kv = Φ+π+Ω  (scaffold: solo como sumando de M_v)
 IGNIS = PI + P_sc              # IGNIS = π+PYROS — denominador de wₐ (R21)
-OMEGA_M_TOTAL = 0.30888087877875237   # ORIGEN: ssee_core.OMEGA_M_TOTAL = omega_m/h^2
+import sys as _sys
+import json as _json
+_R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+_sys.path.insert(0, os.path.join(_R, "src"))
+from ssee_core import OMEGA_M_TOTAL, W0 as _W0, WA as _WA  # noqa: E402
 TR   = 3 * (PHI + BETA)
 MV   = PHI + PI + KV
 
 W0_SSEE       = -TR / MV
 WA_SSEE       = -P_sc / IGNIS   # denominador IGNIS, no el scaffold K_v: mismo valor, entidad distinta
+assert abs(W0_SSEE - _W0) < 1e-12 and abs(WA_SSEE - _WA) < 1e-12   # la figura y el núcleo dicen lo mismo
 # CORREGIDO 2026-09-26 — ERROR DE CATEGORIA en la figura 3.
 # TR/MV = 0.839950 NO es una densidad: es s_DE = |w0|, un numero de la ECUACION
 # DE ESTADO. La figura lo ponia en un eje de Omega_DE frente a Planck y anotaba
@@ -93,20 +112,19 @@ fig1, ax1 = plt.subplots(figsize=(7, 6))
 
 # Contornos w0waCDM OFICIALES DESI DR2 — momentos y ρ MEDIDOS de las cadenas
 # oficiales (Zenodo 16644577, burn-in 30%, pesos). DR1 viejos RETIRADOS (V-L4-DESI).
-pant_kw = dict(w0c=-0.838, wac=-0.617, sig_w0=0.055, sig_wa=0.208, rho=-0.894)
-covariance_ellipse(ax1, **pant_kw, n_sigma=2, color="#2166AC", alpha=0.18, zorder=1)
-covariance_ellipse(ax1, **pant_kw, n_sigma=1, color="#2166AC", alpha=0.35, zorder=2,
-                   label="DESI DR2+CMB+Pantheon+ 1σ/2σ")
-
-desy_kw = dict(w0c=-0.752, wac=-0.861, sig_w0=0.057, sig_wa=0.221, rho=-0.905)
-covariance_ellipse(ax1, **desy_kw, n_sigma=2, color="#4DAF4A", alpha=0.12, zorder=1)
-covariance_ellipse(ax1, **desy_kw, n_sigma=1, color="#4DAF4A", alpha=0.28, zorder=2,
-                   label="DESI DR2+CMB+DESY5 1σ/2σ")
-
-uni_kw = dict(w0c=-0.667, wac=-1.085, sig_w0=0.088, sig_wa=0.293, rho=-0.933)
-covariance_ellipse(ax1, **uni_kw, n_sigma=2, color="#D95F02", alpha=0.12, zorder=1)
-covariance_ellipse(ax1, **uni_kw, n_sigma=1, color="#D95F02", alpha=0.30, zorder=2,
-                   label="DESI DR2+CMB+Union3 1σ/2σ")
+_mom_txt = open(os.path.join(_R, "results/logs/desi_dr2_w0wa_momentos.log")).read()
+_mom_txt = _mom_txt.split("\n", 1)[1]                  # la 1.ª línea es el acta
+_MOM = _json.loads(_mom_txt[_mom_txt.index("{"):_mom_txt.rindex("}") + 1])["combos"]
+def _kw(nombre):
+    c = _MOM[nombre]
+    return dict(w0c=c["w0_bf"], wac=c["wa_bf"], sig_w0=c["sigma_w0"], sig_wa=c["sigma_wa"], rho=c["rho"])
+for _nom, _col, _a2, _a1, _lab in (
+        ("DESI+CMB+Pantheon+ (DR2 ec.26)", "#2166AC", 0.18, 0.35, "DESI DR2+CMB+Pantheon+ 1σ/2σ"),
+        ("DESI+CMB+DESY5 (DR2 ec.28)", "#4DAF4A", 0.12, 0.28, "DESI DR2+CMB+DESY5 1σ/2σ"),
+        ("DESI+CMB+Union3 (DR2 ec.27)", "#D95F02", 0.12, 0.30, "DESI DR2+CMB+Union3 1σ/2σ")):
+    covariance_ellipse(ax1, **_kw(_nom), n_sigma=2, color=_col, alpha=_a2, zorder=1)
+    covariance_ellipse(ax1, **_kw(_nom), n_sigma=1, color=_col, alpha=_a1, zorder=2, label=_lab)
+_SIG_PANT = _json.load(open(os.path.join(_R, "results/logs/paper2_w0wa.json")))["w0wa_ssee_vs_lcdm"]["ec26"]["ssee_sigma"]
 
 # ΛCDM
 ax1.scatter(-1.0, 0.0, marker="+", s=120, color="black", linewidths=2.5,
@@ -119,7 +137,7 @@ ax1.scatter(W0_SSEE, WA_SSEE, marker="*", s=260, color="#E6002B",
 
 # Cruz de incertidumbre SSEE (algebraica → 0, pero indicamos con símbolo)
 ax1.annotate(
-    fr"SSEE: 0.24$\sigma$ (Pantheon+)",
+    fr"SSEE: {_SIG_PANT:.2f}$\sigma$ (Pantheon+)",
     xy=(W0_SSEE, WA_SSEE), xytext=(W0_SSEE + 0.05, WA_SSEE + 0.15),
     fontsize=9, color="#E6002B",
     arrowprops=dict(arrowstyle="->", color="#E6002B", lw=1.2),
@@ -137,93 +155,41 @@ ax1.set_xlim(-1.35, -0.45)
 ax1.set_ylim(-1.6, 0.8)
 ax1.legend(loc="upper left", framealpha=0.9, fontsize=9)
 fig1.tight_layout()
-fig1.savefig(_outpath("fig1_w0wa_plane.pdf"))
-fig1.savefig(_outpath("fig1_w0wa_plane.png"))
+fig1.savefig(_outpath("fig1_w0wa_plane.pdf"), metadata=_META)
+fig1.savefig(_outpath("fig1_w0wa_plane.png"), metadata=_META)
 print("Fig 1 guardada: fig1_w0wa_plane.pdf/.png")
-
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# FIGURA 2 — Sensibilidad de masas en cúmulos
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-FNU = 0.020
-IGIMF_FACTOR = 1.718   # promedio M_IGIMF / M_std de los 4 cúmulos
-
-clusters = {
-    "Coma":         {"M_ig": 1.8, "dM_ig": 0.2, "M_obs": 9.8,  "dM_obs": 1.0, "M_std": 1.0},
-    "A2029":        {"M_ig": 2.2, "dM_ig": 0.2, "M_obs": 12.0, "dM_obs": 1.2, "M_std": 1.3},
-    "A478":         {"M_ig": 1.5, "dM_ig": 0.2, "M_obs": 8.0,  "dM_obs": 1.0, "M_std": 0.9},
-    "Bullet":       {"M_ig": 1.2, "dM_ig": 0.2, "M_obs": 6.5,  "dM_obs": 1.0, "M_std": 0.7},
-}
-
-cnames   = list(clusters.keys())
-x_pos    = np.arange(len(cnames))
-bar_w    = 0.20
-
-scenarios = {
-    "SSEE completo":  lambda c: c["M_ig"] * KAL0 * (1 + FNU),
-    r"$f_\nu=0$":     lambda c: c["M_ig"] * KAL0,
-    "STD IMF":        lambda c: c["M_std"] * KAL0 * (1 + FNU),
-    r"KAL$_0$ solo":  lambda c: c["M_std"] * KAL0,
-}
-
-colors_bar = ["#E6002B", "#F4A261", "#2A9D8F", "#8338EC"]
-
-fig2, ax2 = plt.subplots(figsize=(9, 5.5))
-
-for i, (label, func) in enumerate(scenarios.items()):
-    masses = [func(clusters[c]) for c in cnames]
-    offset = (i - 1.5) * bar_w
-    bars = ax2.bar(x_pos + offset, masses, bar_w,
-                   label=label, color=colors_bar[i], alpha=0.85,
-                   edgecolor="black", linewidth=0.5)
-
-# Puntos observados con barras de error
-for j, c in enumerate(cnames):
-    d = clusters[c]
-    ax2.errorbar(x_pos[j], d["M_obs"], yerr=d["dM_obs"],
-                 fmt="D", color="black", ms=7, capsize=5, zorder=8,
-                 label="$M^{\\rm obs}_{\\rm dyn}$" if j == 0 else "")
-
-ax2.set_xticks(x_pos)
-ax2.set_xticklabels(cnames, fontsize=11)
-ax2.set_ylabel(r"Masa efectiva $[10^{14}\,M_\odot]$")
-ax2.set_title("Cluster-mass sensitivity by SSEE scenario")
-ax2.legend(loc="upper left", ncol=2, framealpha=0.9)
-ax2.set_ylim(0, 17)
-
-# Anotaciones chi2_red
-chi2s = {
-    "SSEE completo": 0.122,
-    r"$f_\nu=0$":    0.032,
-    "STD IMF":       11.927,
-    r"KAL$_0$ solo": 12.646,
-}
-y_annot = 15.5
-for i, (label, c2r) in enumerate(chi2s.items()):
-    color = colors_bar[i]
-    ax2.text(0.02 + i * 0.25, 0.96,
-             f"{label}\n$\\chi^2_r={c2r:.2f}$",
-             transform=ax2.transAxes, fontsize=8.5,
-             color=color, va="top", ha="left",
-             bbox=dict(boxstyle="round,pad=0.2", facecolor="white",
-                       edgecolor=color, alpha=0.7))
-
-fig2.tight_layout()
-fig2.savefig(_outpath("fig2_cluster_sensitivity.pdf"))
-fig2.savefig(_outpath("fig2_cluster_sensitivity.png"))
-print("Fig 2 guardada: fig2_cluster_sensitivity.pdf/.png")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # FIGURA 3 — Omega_DE: SSEE vs observaciones + diagrama estructural
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+_DESI_W0WA = os.path.join(os.environ.get("SSEE_DATA_DIR", "/mnt/datos/SSEE_data"),
+                          "desi_dr2_official/cosmology_chains/cobaya/base_w_wa")
+_PLK = "planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing"
+
+
+def _omega_de_desi(sn):
+    """Omega_DE (columna omegal) de la cadena oficial w0wa de DESI DR2: media y sigma con pesos, burn-in 30 %."""
+    w, x = [], []
+    for k in (1, 2, 3, 4):
+        f = os.path.join(_DESI_W0WA, f"desi-bao-all_{sn}{_PLK}", f"chain.{k}.txt")
+        cols = open(f).readline().lstrip("#").split()
+        a = np.loadtxt(f)
+        a = a[int(0.3 * len(a)):]
+        w.append(a[:, cols.index("weight")]); x.append(a[:, cols.index("omegal")])
+    w, x = np.concatenate(w), np.concatenate(x)
+    m = np.average(x, weights=w)
+    return float(m), float(np.sqrt(np.average((x - m) ** 2, weights=w)))
+
+
+# ORIGEN-VALOR: 0.0073 — sigma de Omega_Lambda de Planck 2018 (arXiv:1807.06209, tabla 2, TT,TE,EE+lowE+lensing)
 omega_obs = {
     "Planck 2018":          (0.6847, 0.0073),
-    "DESI DR2\n+CMB":       (0.6900, 0.0100),
-    "DESI DR2\n+CMB+DESY5": (0.6910, 0.0120),
+    "DESI DR2\n+CMB":       _omega_de_desi(""),
+    "DESI DR2\n+CMB+DESY5": _omega_de_desi("desy5sn_"),
 }
+print("Omega_DE de las cadenas DESI DR2 w0wa:", {k.replace(chr(10), " "): v for k, v in omega_obs.items()})
 
 fig3, axes3 = plt.subplots(1, 2, figsize=(11, 5),
                             gridspec_kw={"width_ratios": [1.4, 1]})
@@ -254,12 +220,12 @@ ax3a.set_yticklabels([k.replace("\n", " ") for k in omega_obs.keys()], fontsize=
 ax3a.set_xlabel(r"$\Omega_{DE}$")
 ax3a.set_title(r"$\Omega_{DE,SSEE}=1-\Omega_m$ vs observational constraints")
 ax3a.set_xlim(0.63, 0.88)
-ax3a.legend(fontsize=9, loc="upper left")
+ax3a.legend(fontsize=8.5, loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2)
 
 # Anotación de la diferencia estructural
 ax3a.annotate(
     "$s_{DE}=T_r/M_v$ is $|w_0|$,\nan equation-of-state\nnumber. It does not\nlive on this axis.",
-    xy=(S_DE_SSEE, 2), xytext=(0.700, 2.55),
+    xy=(S_DE_SSEE, 1.0), xytext=(0.745, 1.25),
     fontsize=8.0, color="#7A5C9E",
     arrowprops=dict(arrowstyle="->", color="#7A5C9E", lw=1.0),
     bbox=dict(boxstyle="round", facecolor="white", edgecolor="#7A5C9E", alpha=0.85)
@@ -308,70 +274,10 @@ ax3b.legend(handles=legend_handles, loc="lower center",
 ax3b.set_title("Energy budget\n(outer=SSEE, inner=ΛCDM)", fontsize=10)
 
 fig3.tight_layout()
-fig3.savefig(_outpath("fig3_omega_de.pdf"))
-fig3.savefig(_outpath("fig3_omega_de.png"))
+fig3.savefig(_outpath("fig3_omega_de.pdf"), metadata=_META)
+fig3.savefig(_outpath("fig3_omega_de.png"), metadata=_META)
 print("Fig 3 guardada: fig3_omega_de.pdf/.png")
 
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# FIGURA 4 — Función de interpolación KAL(x)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-x  = np.logspace(-2, 2, 400)
-
-KAL_x   = (x + KAL0) / (x + 1)
-mu_SSEE = (x + 1) / (x + KAL0)
-
-# MOND estándar (simple): mu(x) = x / (1+x)
-mu_MOND = x / (1 + x)
-KAL_MOND = 1 / mu_MOND   # diverge en x→0, solo para comparar
-
-fig4, (ax4a, ax4b) = plt.subplots(1, 2, figsize=(10, 5))
-
-# Panel izq: KAL(x)
-ax4a.semilogx(x, KAL_x, color="#E6002B", lw=2.5, label=r"$\mathrm{KAL}(x)$ SSEE")
-ax4a.axhline(KAL0, color="#E6002B", ls="--", lw=1.2, alpha=0.7,
-             label=fr"$\mathrm{{KAL}}_0 = {KAL0:.4f}$ (deep-MOND limit)")
-ax4a.axhline(1.0,  color="gray",    ls=":",  lw=1.2, alpha=0.8,
-             label="KAL → 1 (Newtonian limit)")
-ax4a.axvline(1.0,  color="black",   ls="-.", lw=0.8, alpha=0.5,
-             label=r"$x = 1$ (transition)")
-
-# Zonas
-ax4a.axvspan(1e-2, 1.0, alpha=0.06, color="#E6002B",  label="Deep MONDian")
-ax4a.axvspan(1.0, 1e2,  alpha=0.06, color="#2166AC",  label="Newtonian")
-
-ax4a.set_xlabel(r"$x = |\nabla\Phi| / a_0$")
-ax4a.set_ylabel(r"$\mathrm{KAL}(x)$")
-ax4a.set_title(r"Structural retention $\mathrm{KAL}(x)$ — SSEE")
-ax4a.set_ylim(0.8, KAL0 + 0.5)
-ax4a.legend(fontsize=9, loc="center right")
-
-# Panel der: µ_SSEE(x) vs µ_MOND
-ax4b.semilogx(x, mu_SSEE, color="#E6002B", lw=2.5, label=r"$\mu_\mathrm{SSEE}(x)$")
-ax4b.semilogx(x, mu_MOND,  color="#2166AC", lw=2.0, ls="--",
-              label=r"$\mu_\mathrm{MOND}(x) = x/(1+x)$")
-ax4b.axhline(1.0, color="gray", ls=":", lw=1.2, alpha=0.8)
-ax4b.axvline(1.0, color="black", ls="-.", lw=0.8, alpha=0.5)
-
-ax4b.set_xlabel(r"$x = |\nabla\Phi| / a_0$")
-ax4b.set_ylabel(r"$\mu(x)$")
-ax4b.set_title(r"$\mu_\mathrm{SSEE}$ vs $\mu_\mathrm{MOND}$ — asymmetric duality")
-ax4b.set_ylim(-0.05, 1.15)
-ax4b.legend(fontsize=10)
-
-# Anotación asimétrica
-ax4b.annotate(
-    r"$\mu_\mathrm{SSEE}(x) \cdot \mathrm{KAL}(x) \equiv 1$",
-    xy=(0.3, 0.45), xytext=(0.015, 0.78),
-    fontsize=9.5, color="#E6002B",
-    arrowprops=dict(arrowstyle="->", color="#E6002B", lw=1.0),
-    bbox=dict(boxstyle="round", facecolor="white", edgecolor="#E6002B", alpha=0.8)
-)
-
-fig4.tight_layout()
-fig4.savefig(_outpath("fig4_KAL_interpolation.pdf"))
-fig4.savefig(_outpath("fig4_KAL_interpolation.png"))
-print("Fig 4 guardada: fig4_KAL_interpolation.pdf/.png")
-
-print("\nTodas las figuras generadas exitosamente.")
+print("\nFiguras 1 y 3 generadas (las 2 y 4 se retiraron el 2026-10-21, ver docstring).")

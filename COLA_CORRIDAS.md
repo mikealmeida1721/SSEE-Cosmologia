@@ -7,6 +7,22 @@ significa que se vaya a hacer».* Una corrida que no está en esta cola con su
 coste no existe — se olvida. Y como la máquina no puede con todas a la vez,
 hay que **decidir** cuál corre, no lanzarlas según van saliendo.
 
+> 🟦 **ESTADO DE LA COLA AL 2026-10-21 (lectura de cierre).** Lo único que corre es el
+> control ΛCDM de KiDS-Legacy (`cobaya_kids_legacy.py lcdm`). Las corridas numeradas que
+> abajo siguen sin tachar ya tienen respuesta; se conservan como registro:
+>
+> | # | estado | dónde |
+> |---|---|---|
+> | 4 | HECHA de otro modo: ΛCDM con fondo libre en BOSS es el control del montaje de Chen+22 | `boss_chen21.json` |
+> | 5 | HECHA: las 4 `fig_b1_*` salen de la etapa DVC del MCMC de P3 | `dvc.yaml` (`fig_b1_*`) |
+> | 7 | HECHA: prueba de transporte R7 con CMB+KiDS-Legacy+DESI | `lcdm_conjunta.json`, P6 `tab:r7` |
+> | 9 | DECLARADA: los `.ini` rescatados sin neutrinos llevan el aviso; nada vigente los cita | `config/class/README.md` |
+> | 11 | HECHA: la barra del techo sale ahora del log | `p5_IS_perturbations_Q3.json#S8_SSEE_sigma` |
+> | 13, 14 | FÍSICA ABIERTA, no corrida pendiente | OP-24 |
+> | 16–19, 22 | SUPERADAS SIN CORRER: perseguían el déficit de A_s entre KiDS-1000 y el CMB. Con KiDS-Legacy la cizalla pide el A_s del CMB a 0.49σ, y BOSS no vota en amplitud: el déficit no existe | P6 §legacy, `kids_legacy_bic.json` |
+> | 20 | HECHA: el radio k-mouflage se retiró de P8 (fórmula dimensionalmente rota) | OP-4 |
+> | 23 | SUPERADA: la medida de BOSS es el χ² crudo mínimo, no el marginal ni el perfil | OP-26 |
+
 ## ORDEN DE ATAQUE (reordenado 2026-09-09 — lo pidió Mike)
 
 > El número de cada corrida es un **identificador**, no un puesto en la fila:

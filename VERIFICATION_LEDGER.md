@@ -1334,3 +1334,28 @@ lectura de cada cabecera.
 | **citado por CANONICAL** | `mcmc_paper2_3models_om308.log`, `memory_sync_control_2026-09-30.log` | se archivan con el próximo cambio físico de `CANONICAL_VALUES.yaml` (editarlo re-sella ~30 etapas) |
 
 > **2026-10-20.** Los logs de BOSS que nombra esta tabla (`boss_aisla_neutrinos`, `marginal_vs_perfil`, `R1R2_boss_lpt_kmax0.200`, `boss_cobaya_{ssee,lcdm}`, `conjunta_b3_bloques`, `conjunta_control`, `boss_chi2_en_logA_cmb`) salieron con el BOSS de Beutler+2017 a `archive/logs_superados/boss_beutler17_2026-10-20/`; el BOSS vigente es `growth_2026-07/boss_chen21.json` (etapa `analiza_boss_chen21`).
+
+### 2026-10-21 — Figuras de los papers a la cadena (lectura de deuda)
+
+La lectura de cierre encontró 14 figuras citadas en P2, P3, P5 y P10 que no salían de ninguna
+etapa DVC (o de etapas que no las declaraban): un verificador externo no podía regenerarlas.
+Entraron como etapas con acta en sus metadatos: `p2_figuras`, `p2_fig8`, `fig_w0wa_degeneracy`,
+`p10_figuras`, y como salidas declaradas de `paper3_cmb` y `p5_IS_perturbations`. Al revisarlas
+una por una aparecieron defectos dentro de las figuras:
+
+| figura | defecto | arreglo |
+|---|---|---|
+| P2 `fig3_omega_de` | Ω_DE de DESI tecleados (0.690±0.010, 0.691±0.012) sin fuente; el pie describía otra figura (s_DE en rojo, bandas 1σ/2σ, «origen algebraico») | Ω_DE de las cadenas oficiales w₀wₐ de DESI DR2 (0.647±0.021 DESI+CMB, 0.681±0.006 +DESY5); pie reescrito |
+| P2 `fig_w0wa_degeneracy` | punto CPL (−0.731, −0.923) tecleado y sin log; «3.22σ» tecleado | CPL de `resumen_3modelos.json` (−0.819, −0.553); σ de `mcmc_full_posteriores.json`, con comprobación |
+| P2 `fig1_w0wa_plane` | contornos DESI y «0.24σ» tecleados | de `desi_dr2_w0wa_momentos.log` y `paper2_w0wa.json` (mismos valores) |
+| P2 `fig8_bao_residuals` | «χ²» era la suma diagonal de pulls; SSEE 10.9 con r_d viejo | rotulado «Σ pull², diagonal»; SSEE 11.7 |
+| P10 `fig_paper10_alphaK_vs_alpha` | leyenda «α_K^IR» para s_K | «s_K^IR» |
+| P10 `fig_paper10_KX_profile` | «Vainshtein» | «k-mouflage» (como P8) |
+
+Dejaron de generarse (y se archivaron con nota en `archive/figuras/retiradas_2026-10-21/`):
+`fig2_cluster_sensitivity` y `fig4_KAL_interpolation` (P2), `fig_paper5_growth_rate` y
+`fig_paper5_S8_comparison` (P5; la segunda contaba la tensión S₈ retirada). Ninguna entraba
+en un paper. Números de P3 y P5: idénticos tras re-correr. PDF de P2/P3/P5/P10/Sealed/PRD
+recompilados; sólo cambian el pie de la fig. 3 de P2 y el texto dentro de las figuras.
+R54: 17 → 0 (dos falsos positivos del detector resueltos con control; 10 rótulos α_K→s_K
+en cajones). R48: tope 1 → 0.

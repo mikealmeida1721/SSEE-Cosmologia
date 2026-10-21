@@ -12,6 +12,10 @@ descuido — que es exactamente lo que pasó (ver abajo).
 |---|---|---|
 | `fig_paper6_verification.pdf` | Paper 6, versión de dos sectores | Dibuja la partícula φ-DM (`m_φ = 40.70 eV`) y el sector doble, **retirados el 2026-08-01**. Ningún documento vivo la incluye. Archivada el 2026-09-19. |
 | `fig2_cluster_sensitivity.png` … `fig8_tension_summary.png` | figuras de versiones anteriores de Papers 2–5 | superadas por las que hoy genera `src/ssee_*_figures.py` |
+| `retiradas_2026-10-21/fig2_cluster_sensitivity.pdf`, `retiradas_2026-10-21/fig2_cluster_sensitivity.png` | `ssee_paper2_figures.py` (fig. 2) | cúmulos con los datos atribuidos a Zhang+2026, que no salían de ahí (rehecho en `cumulos_zhang2026.json`, 2026-10-01); ningún paper la incluye. Archivada el 2026-10-21 al meter las figuras a DVC. |
+| `retiradas_2026-10-21/fig4_KAL_interpolation.pdf`, `retiradas_2026-10-21/fig4_KAL_interpolation.png` | `ssee_paper2_figures.py` (fig. 4) | interpolación KAL(x) Newton-MOND, lectura retirada de P2 el 2026-10-01 (KAL₀ es retención, no amplificador). Archivada el 2026-10-21. |
+| `retiradas_2026-10-21/fig_paper5_growth_rate.pdf` | `ssee_paper5_IS_perturbations.py` | no entra en P5; el script deja de generarla. Archivada el 2026-10-21. |
+| `retiradas_2026-10-21/fig_paper5_S8_comparison.pdf` | `ssee_paper5_IS_perturbations.py` | «S8 Tension: SSEE IS predicts lowered amplitude», relato retirado el 2026-08-01; no entra en P5. Archivada el 2026-10-21. |
 
 ## La lección que deja la primera fila
 

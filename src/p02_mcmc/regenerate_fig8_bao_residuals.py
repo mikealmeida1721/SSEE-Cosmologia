@@ -7,7 +7,11 @@ data/raw/desi_dr2_bao.csv (NO hardcodear; drift DR1/DR2 corregido 2026-07-02).
 r_d por modelo vía Eisenstein-Hu (eq. 5 del paper). Regenera la figura que estaba
 en DR1 (abril) tras el fix DR2.
 
-Uso: python src/p02_mcmc/regenerate_fig8_bao_residuals.py
+Uso: python src/p02_mcmc/regenerate_fig8_bao_residuals.py   (etapa DVC `p2_fig8`)
+
+2026-10-21: la leyenda decía «χ²» para la suma de pulls al cuadrado SIN covarianza;
+ese número no es el χ² con la covarianza completa que cita P2 (§model_comparison).
+Ahora dice lo que es.
 """
 import os, sys
 import numpy as np
@@ -15,6 +19,11 @@ from scipy.integrate import quad
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import json as _jm_fig, sys as _sm_fig, os as _om_fig  # noqa: E402
+_sm_fig.path.insert(0, _om_fig.path.join(_om_fig.path.dirname(_om_fig.path.abspath(__file__)), ".."))
+from procedencia import acta as _acta_fig  # noqa: E402
+# R75: cada figura lleva su acta en los metadatos del PDF/PNG (2026-10-21, al entrar a DVC)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jm_fig.dumps(_acta_fig(__file__))}
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -105,7 +114,7 @@ for name, m in models.items():
     chi2 = float(np.sum(np.array(pulls) ** 2))
     chi2_by_model[name] = round(chi2, 1)
     ax.plot(x, pulls, "o-", color=m["c"], lw=1.4, ms=6,
-            label=fr"{name} ($\chi^2={chi2:.1f}$)")
+            label=fr"{name} ($\Sigma\,{{\rm pull}}^2={chi2:.1f}$, diagonal)")
 for lvl in (-2, -1, 1, 2):
     ax.axhline(lvl, color="0.8", lw=0.8, ls="--", zorder=0)
 ax.axhline(0, color="0.4", lw=1.0, zorder=0)
@@ -115,5 +124,5 @@ ax.set_title("DESI DR2 BAO residuals (13 points, 2503.14738 Table 4)")
 ax.legend(frameon=False); ax.set_ylim(-3.2, 3.2)
 fig.tight_layout()
 for ext in ("pdf", "png"):
-    fig.savefig(os.path.join(OUT, f"fig8_bao_residuals.{ext}"))
+    fig.savefig(os.path.join(OUT, f"fig8_bao_residuals.{ext}"), metadata=_META)
 print("fig8_bao_residuals regenerada (DR2). χ² por modelo:", chi2_by_model)

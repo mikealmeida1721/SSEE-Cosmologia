@@ -119,7 +119,7 @@ lentitud: es la diferencia entre corregir y romper.
 | valor | frente a σ=0.1 | lectura |
 |---|---|---|
 | α_K^field = 0.072567 | por debajo de la barra de error | indistinguible de cero, **no testeable aún** ✓ |
-| α_K^eff = 0.403302 | ~4σ sobre cero | sería **detección**, no exclusión |
+| s_K = 0.403302 (antes rotulado α_K^eff) | ~4σ sobre cero | sería **detección**, no exclusión |
 
 Nada quedaba «ya excluido». Paper 1 y Paper 7 **coinciden**: ambos ponen
 α_K^field frente a Euclid, y la frase de Paper 1 («el valor usado para el
@@ -184,12 +184,12 @@ cuál de las dos confronta el dato:
 | | valor | qué es |
 |---|---|---|
 | `α_K^field` | 0.072567 | campo desnudo, antes del acoplamiento conformal |
-| `α_K^eff` | 0.403302 | fondo efectivo con el w₀ **observado**; confirmado por hi_class (0.005%) y EFTCAMB |
+| `s_K` (antes `α_K^eff`) | 0.403302 | fondo efectivo con el w₀ **observado**; confirmado por hi_class (0.005%) y EFTCAMB |
 
 - Paper 1 Tabla 1 y Paper 7 §600 ponen **α_K^field** frente al umbral de Euclid
   (σ(α_K,0) < 0.1) → cómodo, 0.073 < 0.1.
 - Pero Paper 7 §508 dice, textual, que «the observationally relevant effective
-  value is α_K^eff = 0.403302».
+  value is α_K^eff = 0.403302» (hoy P7 lo llama s_K: no es α_K).
 
 Si lo observacionalmente relevante es el efectivo y el umbral de Euclid es 0.1,
 **0.403 > 0.1** y la predicción se leería como ya excluida. Si Euclid mide el
@@ -223,7 +223,7 @@ distintos por un factor ≈5.6:
 
 ```
 P7 §525:  α_K = 2X /(H² M_Pl²)        con X = ρ_φ(1+w_φ)/2  →  3Ω_DE(1+w_φ) = 0.072567
-P9 §254:  α_K = 2X /(KAL H² M_Pl²)    →  3·AURA(π−φ)/(2(φ+π)²) = 0.403302
+P9 §254:  α_K = 2X /(KAL H² M_Pl²)    →  3·AURA(π−φ)/(2(φ+π)²) = 0.403302   ← es s_K, no α_K
 ```
 
 La diferencia aparente es el **K_X = 1/KAL** que P9 incluye y P7 (con K(X)=X,
@@ -237,7 +237,7 @@ reproducir y qué significa el 0.005%.
 
 **Ya hecho, y es independiente de cómo se resuelva:** la fórmula
 `f_screen = α_K/(3·MIRA) = (π−φ)/Ω²` se citaba con el símbolo **pelado** en 12
-sitios de 6 documentos. La aritmética no admite duda —sólo α_K^eff = 0.403302
+sitios de 6 documentos. La aritmética no admite duda —sólo s_K = 0.403302 (entonces α_K^eff)
 da 0.067253; α_K^field da 0.012101, factor 5.6 fuera— así que el símbolo se
 marcó `α_K^{\rm eff}` en P1(4), P4(1), P7(1), P8(2), Sealed(2), PRD(2).
 **Paper 9 y 10 NO se tocaron**: son los que *derivan* la fórmula, con el símbolo
@@ -311,7 +311,7 @@ que corregirla no toca el resultado.
    tabla no. Sustituir la celda por «central value to 4 s.f. (cond.)».
 3. **Sealed:585 / PRD:578** — el residuo `4×10⁻⁶ km/s/Mpc` **no se reproduce desde
    ningún número impreso**: reconstruido con las propias ecuaciones de Paper 10
-   (`X_bg^UV = 0.36487`, `M⁴ = 234.89`, `α_K^IR = 0.403302`) da **1.3×10⁻⁵**; con
+   (`X_bg^UV = 0.36487`, `M⁴ = 234.89`, `s_K^IR = 0.403302`) da **1.3×10⁻⁵**; con
    la `f = 0.069522` que imprime el Sealed, **2.4×10⁻⁵**. Recomputar `α_K^full` a
    precisión completa y decidir cuántos dígitos mostrar.
 

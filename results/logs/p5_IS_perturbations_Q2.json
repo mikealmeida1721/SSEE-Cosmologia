@@ -75,17 +75,19 @@
  },
  "nota": "R = Omega_m,eff/Omega_m con las DENSIDADES reales. El blanco 1.998924 era el factor materia retirado el 2026-06-18 (OP-8); se conserva solo como registro.",
  "_procedencia": {
-  "commit": "22d2ad89a11f0026f892a38d33894454b1400620",
-  "reproducible_desde_commit": true,
-  "cambios_sin_commitear": [],
+  "commit": "77834d6fcc48d0b14deb1cac3b79405e227d8986",
+  "reproducible_desde_commit": false,
+  "cambios_sin_commitear": [
+   "M src/p05_IS/ssee_paper5_IS_perturbations.py"
+  ],
   "script": "src/p05_IS/ssee_paper5_IS_perturbations.py",
-  "script_sha256": "f9f3f3c145039b45e7ef338dd8f8c64ab3c6d231c3fb18c36380a002a378031c",
+  "script_sha256": "8fb5542984333bd7df63648e6a0b623a04765563f93de50bc9c59074da6505a4",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p05_IS/ssee_paper5_IS_perturbations.py"
   ],
-  "fecha": "2026-10-11T17:28:09",
+  "fecha": "2026-10-21T08:31:56",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

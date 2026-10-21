@@ -401,7 +401,7 @@ contra `4/3 = 1.333333` (dif 0.0382%). No es cero.
 **Resolución (dos argumentos independientes):**
 
 **Argumento primario — estructura EFT Bellini-Sawicki:**
-Paper 7 establece αB = αM = αT = 0 para SSEE, con αK = 0.4033 único. Esto implica:
+Paper 7 establece αB = αM = αT = 0 para SSEE, con αK como único no nulo (aquí decía «αK = 0.4033», que es s_K y no α_K; el vigente está en P7). Esto implica:
 - μ − 1 = (αB + αM)²/αK = 0 (constante de Newton no modificada)
 - γ_PPN − 1 = −2αT/(1+αT) = 0 (sin lente gravitacional modificada)
 
@@ -2850,7 +2850,7 @@ devuelve wₐ = −P_sc/I_g exacto, la tautología de `fondo_viscoso.py`).
 > OP-23 sigue en pie.** Corregido en `ssee_eft_verification.py:84`.
 >
 > Y la conexión que Mike recordaba es real: los dos Lagrangianos son el IR y el
-> UV, y son los que dan $\alpha_K=0.4033$ / $\alpha_K^{\rm full}=0.41691$, de ahí
+> UV, y son los que dan $s_K=0.4033$ / $s_K^{\rm full}=0.41691$ (antes rotulados $\alpha_K$), de ahí
 > $f_{\rm screen}$ IR/UV y los dos $H_{\rm glob}$ (68.13 con el IR solo, que es
 > el resultado **parcial**; 67.962142 con el completo, que es el canónico). La corrección
 > UV es del 3.4 % — subdominante, coherente con todo lo anterior.

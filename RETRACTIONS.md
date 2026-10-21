@@ -114,7 +114,7 @@ That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of th
 | αT | 0 exact | GW170817 \|αT\| < 10⁻¹⁵ satisfied ✓ |
 | αM | 0 exact | Euclid forecast < 0.05 satisfied ✓ |
 | αB | 0 exact | Euclid forecast < 0.05 satisfied ✓ |
-| αK(z=0) | 3·Ω_DE·Ω_m,dyn = 0.4033 | Algebraic (Euclid will constrain < 0.1) |
+| s_K (rotulado αK(z=0)) | 3·Ω_DE·Ω_m,dyn = 0.4033 | Algebraic (Euclid will constrain < 0.1) |
 | G₂_s (running) | 1.003 | ΛCDM-consistent linear growth @ Ω_m=0.30889 ✓ |
 
 ### CLASS table row

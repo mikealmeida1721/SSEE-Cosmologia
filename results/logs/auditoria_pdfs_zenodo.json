@@ -122,22 +122,22 @@
    ]
   },
   "SSEE_Paper2_MCMC.pdf": {
-   "caracteres": 60985,
+   "caracteres": 61181,
    "vivos": [],
    "narrados": [
     {
      "patron": "67.037",
-     "pos": 32313,
+     "pos": 32449,
      "texto": "CMB anchor therefore agree, Hglob 0 = 67.962 ± 0.968, supersed- ing the earlier MIRA-mapped anchor HMIRA 0 = 67.037. With the total matter den- sity Ωm = 0.308881 in the background geometry, the MCMC posterior reported"
     },
     {
      "patron": "0.31993",
-     "pos": 17109,
+     "pos": 17245,
      "texto": "are likewise not propagated, standard practice for compressed BAO-only comparisons. 7 Ωm,CMB = MIRA Ωm,dyn = 0.31993 is superseded; OP-8 dissolved). Adopting this prior eliminates the otherwise unavoidable cross-framewo"
     },
     {
      "patron": "0.3199",
-     "pos": 17109,
+     "pos": 17245,
      "texto": "are likewise not propagated, standard practice for compressed BAO-only comparisons. 7 Ωm,CMB = MIRA Ωm,dyn = 0.31993 is superseded; OP-8 dissolved). Adopting this prior eliminates the otherwise unavoidable cross-framewo"
     }
    ]
@@ -303,7 +303,7 @@
   }
  },
  "_procedencia": {
-  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
+  "commit": "77834d6fcc48d0b14deb1cac3b79405e227d8986",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/audita_pdfs_zenodo.py",
@@ -314,18 +314,18 @@
    "docs/SSEE_Cover.pdf": "14e84f78d740b1cb071c7cc828e4fa45bd1194e8ef06e7026366345715933d41",
    "docs/SSEE_Cover_Letter.pdf": "f0dec9920b8a735503ed588457ccd7c00d9f436d11b118d51ac6d279cac4f2de",
    "docs/SSEE_Endorser_Summary.pdf": "e6c333c4e9b38cd4fd3656a05d60386cf8ce46d90cb86e22a81c0312c8c49a81",
-   "docs/SSEE_PRD.pdf": "77e969fece641c812e4f35d4ef770bf349a1fb6ef6259dc70e82ba0c94da348e",
-   "docs/SSEE_Paper10_UVCompletion.pdf": "cf4aa5d2131fc160e583db1b99a23c4f421a927fd5259d9cd44a27c11d437308",
+   "docs/SSEE_PRD.pdf": "2d1161176a209c91e048c65deca6a4ffff245929bf01fb2510421ccd54ead5b3",
+   "docs/SSEE_Paper10_UVCompletion.pdf": "07fa61d7ce8ed215b6a8e68f7cf03eb69e0117000418970c936ba699cbeac4bb",
    "docs/SSEE_Paper1_Framework.pdf": "21dab9f7650d24611829db1c9952e7215fcad38d27809c648a263fc6ba0853be",
-   "docs/SSEE_Paper2_MCMC.pdf": "136f096e747af712e1fd4163cfeaf617af76c6b5c808716978fe0d816abaf55e",
-   "docs/SSEE_Paper3_CMB.pdf": "9eaba7a82a0fce174abe540e488c405bebd863621ba0d989973a7cc5abf1ea01",
+   "docs/SSEE_Paper2_MCMC.pdf": "1610c74b367e2d8b1b208ba6c666d5928e52bde92174beda6852dad7195a2130",
+   "docs/SSEE_Paper3_CMB.pdf": "39f2d8d7b5f9f175e6156104a1f1a1a822780b105f82b4fdb3c8a585fad861b0",
    "docs/SSEE_Paper4_ToE.pdf": "058ff926e2aa406363252181bdfbb7b634ceb052b274e23ca7068f8d0e3ef0cb",
-   "docs/SSEE_Paper5_IS.pdf": "a0b657e85f1a2103b43f71a65905e755df4e1e4a698dad570a072e0f645e452e",
+   "docs/SSEE_Paper5_IS.pdf": "ebd2d96e35ec8ccdd7949c0adfb09e0795eea5af610e38b69cd293bb0c534bc7",
    "docs/SSEE_Paper6_Growth.pdf": "11c6ae868743aae41612040e12cf2d12185211987b52cbf0e81919eb7ebba7ed",
    "docs/SSEE_Paper7_EFT.pdf": "30c2637c9f8b376cc37cd8d7635274cb1e3d84b6a0620a9eeb3a6bf2ec6f2a36",
    "docs/SSEE_Paper8_StrongGravity.pdf": "1f0c2093f0153e013ec680a9a23ce2f718ba29bafcb48a61a0377f80a64366dd",
    "docs/SSEE_Paper9_HubbleTension.pdf": "46e72266c7b9af581e577fa1a99ddd962c4946c72af1693b4137ace46c857b27",
-   "docs/SSEE_Sealed_Journal.pdf": "aeb3e382bdd8e32143b1d7f3253eab70490cd17066c815e062098e4e7ec19b07",
+   "docs/SSEE_Sealed_Journal.pdf": "691f34b7d9087c69b19da1c410cc1faeadcfae9f32877bd10db17593474402b4",
    "docs/SSEE_Unified_Journal.pdf": "75bde60a57a19736e4ae065efe1c4147a98d2def7d946c51959adcfe1634ed19"
   },
   "argv": [
@@ -350,7 +350,7 @@
    "docs/SSEE_Sealed_Journal.pdf",
    "docs/SSEE_Unified_Journal.pdf"
   ],
-  "fecha": "2026-10-20T23:35:18",
+  "fecha": "2026-10-21T08:35:07",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

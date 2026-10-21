@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-15",
+ "fecha": "2026-10-21",
  "picos_TT": {
   "ssee": [
    220,
@@ -63,7 +63,7 @@
   "dBIC": -35.03241141722265
  },
  "_procedencia": {
-  "commit": "35938f5ac28c581310646ed9ba38bc02d07b16d6",
+  "commit": "77834d6fcc48d0b14deb1cac3b79405e227d8986",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/ssee_paper3_cmb.py",
@@ -73,7 +73,7 @@
   "argv": [
    "src/p03_cmb/ssee_paper3_cmb.py"
   ],
-  "fecha": "2026-10-15T18:02:25",
+  "fecha": "2026-10-21T08:32:40",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -84,7 +84,7 @@ los consolidados al final**, porque dependen del veredicto de la conjunta.
 | 3 — CMB | 26 | ⬜ (dejar hueco: ACT DR6 / SPT-3G) |
 | 6 — Growth | 17 | ⬜ al final (conjunta) |
 
-Pendiente anotado para cuando se llegue: `α_K(0)=0.403302` rotulado como
+Pendiente anotado para cuando se llegue: `α_K(0)=0.403302` (que es s_K) rotulado como
 kineticidad en P3, P8, Unified, Sealed y PRD, contra P7 (α_K=15.591335).
 
 ### Histórico — tabla de estado de la segunda pasada
@@ -394,7 +394,7 @@ sólo es cierta con uno de los dos:
 
 | | resultado | vs (π−φ)/Ω² = 0.067253 |
 |---|---|---|
-| α_K^eff = 0.403302 | **0.067253** | exacto ✓ |
+| s_K = 0.403302 (antes α_K^eff) | **0.067253** | exacto ✓ |
 | α_K^field = 0.072567 | 0.012101 | factor 5.6 fuera ✗ |
 
 Un lector que tome el α_K de la Tabla 1 —que es el `field`— obtiene un número

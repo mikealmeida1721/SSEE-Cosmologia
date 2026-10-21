@@ -1,5 +1,8 @@
 """
 Figures for SSEE Paper 10: UV completion via K(X) = X/KAL + X^2/M^4.
+(etapa DVC `p10_figuras`; 2026-10-21: la cantidad graficada es s_K, no alpha_K —
+la leyenda decía alpha_K^IR, el eje y el pie ya decían s_K— y el régimen no lineal es
+k-mouflage, no Vainshtein, como dice P8)
 Generates:
   - fig_paper10_KX_profile.pdf   : K(X)/X vs X/M^4 — IR vs UV kinetic regimes
   - fig_paper10_alphaK_vs_alpha.pdf : H0_local vs alpha (cross-epoch falsification)
@@ -8,6 +11,11 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import json as _jm_fig, sys as _sm_fig, os as _om_fig  # noqa: E402
+_sm_fig.path.insert(0, _om_fig.path.join(_om_fig.path.dirname(_om_fig.path.abspath(__file__)), ".."))
+from procedencia import acta as _acta_fig  # noqa: E402
+# R75: cada figura lleva su acta en los metadatos del PDF/PNG (2026-10-21, al entrar a DVC)
+_META = {"Keywords": "ACTA-PROCEDENCIA " + _jm_fig.dumps(_acta_fig(__file__))}
 import os
 
 OUT = os.path.join(os.path.dirname(__file__), '..', '..', 'results', 'figures')
@@ -26,21 +34,21 @@ NUM_ALG   = 3*Omega**2     # ≈ 67.9621  puro, sin unidades
 H0_SHOES  = 73.04          # km/s/Mpc  MEDIDO -> unica entrada legitima
 SIG_SHOES = 1.04
 # UV cutoff: M^4 = 45 alpha^2 rho_c  (Paper 10 Postulate C.1)
-# alphaK_IR = (phi+pi-Omega) already ≈ 0 … use Bellini-Sawicki definition
-alphaK_IR  = 3*AURA*(pi - phi) / (2*Omega**2)   # ≈ 0.40330
-# alphaK_UV quadratic correction:
-# alphaK_full = alphaK_IR * (1 + delta), where delta = 3/(45*alpha_att^2) * (X_bg/rho_c)
+# s_K (tasa de apantallamiento, ecuación de estado) — NO es la kineticidad alpha_K de P7 (R54)
+sK_IR  = 3*AURA*(pi - phi) / (2*Omega**2)   # ≈ 0.40330
+# sK_UV quadratic correction:
+# sK_full = sK_IR * (1 + delta), where delta = 3/(45*alpha_att^2) * (X_bg/rho_c)
 # For background X_bg/rho_c ≈ 2*KAL0*(1+w0)*Omega_DE*H0^2/(3*H0^2) ... algebraic route:
-# alphaK_full = alphaK_IR + (3/M^4) * X_bg^2  → Paper 10 gives 0.41691
+# sK_full = sK_IR + (3/M^4) * X_bg^2  → Paper 10 gives 0.41691
 # s_K^full CALCULADO (no hardcodeado): raiz de la cuadratica
 #   4 X^2/M4 + 2 X/KAL - rho_phi(1+w0) = 0,  rho_c = 1
 _M4  = 45*alpha_att**2
-_rhs = alphaK_IR/3.0
+_rhs = sK_IR/3.0
 _X   = (-2/KAL0 + (4/KAL0**2 + 16*_rhs/_M4)**0.5)/(8/_M4)
-alphaK_UV = alphaK_IR + 24*_X*_X/_M4
+sK_UV = sK_IR + 24*_X*_X/_M4
 
-fscreen_IR = alphaK_IR / (3*MIRA)    # 0.06725
-fscreen_UV = alphaK_UV / (3*MIRA)    # 0.06952
+fscreen_IR = sK_IR / (3*MIRA)    # 0.06725
+fscreen_UV = sK_UV / (3*MIRA)    # 0.06952
 # SH0ES ENTRA, H_global SALE
 H0_UV    = H0_SHOES * (1 - fscreen_UV)   # ≈ 67.96214
 SIG_GLOB = SIG_SHOES * (1 - fscreen_UV)  # ≈ 0.968 (con f completo; 0.970 es el del régimen IR)
@@ -78,7 +86,7 @@ ax.axvline(1.0, color='#1a9641', lw=0.9, ls='--', alpha=0.7,
 ax.fill_betweenx([0.05, 1.5], 1e-5, u_bg*5, alpha=0.06, color='#2166ac',
                  label='Linear (background) regime')
 ax.fill_betweenx([0.05, 1.5], 0.2, 100, alpha=0.06, color='#d6604d',
-                 label='Non-linear (Vainshtein) regime')
+                 label='Non-linear (k-mouflage) regime')
 
 ax.set_xlabel(r'$u \equiv X/M^4$', fontsize=11)
 ax.set_ylabel(r'$K(X)/X$', fontsize=11)
@@ -90,42 +98,42 @@ ax.legend(fontsize=7.5, loc='upper left', ncol=2)
 ax.grid(which='both', lw=0.4, alpha=0.4)
 fig.tight_layout()
 out1 = os.path.join(OUT, 'fig_paper10_KX_profile.pdf')
-fig.savefig(out1, bbox_inches='tight')
-fig.savefig(out1.replace('.pdf', '.png'), dpi=150, bbox_inches='tight')
+fig.savefig(out1, bbox_inches='tight', metadata=_META)
+fig.savefig(out1.replace('.pdf', '.png'), dpi=150, bbox_inches='tight', metadata=_META)
 plt.close(fig)
 print(f"Saved: {out1}")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Figure 2: H0_local vs alpha (cross-epoch falsification test)
 # ─────────────────────────────────────────────────────────────────────────────
-# If LiteBIRD measures r, then alpha changes, M^4 changes, alphaK_full changes,
+# If LiteBIRD measures r, then alpha changes, M^4 changes, sK_full changes,
 # H0_local changes.
-# alphaK_full(alpha) = alphaK_IR + delta_alphaK(alpha)
-# where delta_alphaK ~ 3/(45*alpha^2) * (X_bg/M^4) * (alphaK_IR)
-# More precisely: alphaK_UV - alphaK_IR = 0.41691 - 0.40330 = 0.01361
+# sK_full(alpha) = sK_IR + delta_sK(alpha)
+# where delta_sK ~ 3/(45*alpha^2) * (X_bg/M^4) * (sK_IR)
+# More precisely: sK_UV - sK_IR = 0.41691 - 0.40330 = 0.01361
 # at alpha = phi^4/3 = 2.2847.
-# Scaling: delta_alphaK ∝ 1/alpha^2  (since M^4 ∝ alpha^2 and X_bg is fixed)
-delta_IR = alphaK_UV - alphaK_IR   # 0.01361 at alpha = alpha_att
+# Scaling: delta_sK ∝ 1/alpha^2  (since M^4 ∝ alpha^2 and X_bg is fixed)
+delta_IR = sK_UV - sK_IR   # 0.01361 at alpha = alpha_att
 
 alpha_range = np.linspace(0.5, 6, 400)
 delta_alpha = delta_IR * (alpha_att / alpha_range)**2
-alphaK_full_arr = alphaK_IR + delta_alpha
-fscreen_arr = alphaK_full_arr / (3*MIRA)
+sK_full_arr = sK_IR + delta_alpha
+fscreen_arr = sK_full_arr / (3*MIRA)
 H0_arr = H0_SHOES * (1 - fscreen_arr)   # SH0ES entra, H_global sale
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7, 6), sharex=True)
 
-ax1.plot(alpha_range, alphaK_full_arr, 'k-', lw=2)
+ax1.plot(alpha_range, sK_full_arr, 'k-', lw=2)
 ax1.axvline(alpha_att, color='#1a9641', ls='--', lw=1.3, alpha=0.8,
             label=fr'$\alpha=\varphi^4/3={alpha_att:.4f}$ (this work)')
-ax1.axhline(alphaK_UV, color='gray', ls=':', lw=1, alpha=0.7)
-ax1.axhline(alphaK_IR, color='#2166ac', ls='-.', lw=1, alpha=0.7,
-            label=fr'IR limit $\alpha_K^{{IR}}={alphaK_IR:.5f}$')
+ax1.axhline(sK_UV, color='gray', ls=':', lw=1, alpha=0.7)
+ax1.axhline(sK_IR, color='#2166ac', ls='-.', lw=1, alpha=0.7,
+            label=fr'IR limit $s_K^{{IR}}={sK_IR:.5f}$')
 ax1.set_ylabel(r'$s_K^{\rm full}(\alpha)$', fontsize=10)
 ax1.legend(fontsize=8.5, loc='upper right')
 ax1.grid(lw=0.4, alpha=0.4)
-ax1.annotate(fr'UV value: {alphaK_UV:.5f}',
-             xy=(alpha_att, alphaK_UV), xytext=(alpha_att+0.5, alphaK_UV+0.003),
+ax1.annotate(fr'UV value: {sK_UV:.5f}',
+             xy=(alpha_att, sK_UV), xytext=(alpha_att+0.5, sK_UV+0.003),
              fontsize=8, arrowprops=dict(arrowstyle='->', lw=0.8), color='#1a9641')
 
 ax2.plot(alpha_range, H0_arr, color='#1a9641', lw=2,
@@ -150,16 +158,16 @@ fig.suptitle(r'Cross-epoch falsification: $H_0^{\rm glob}$ vs inflationary $\alp
              fontsize=9.5)
 fig.tight_layout()
 out2 = os.path.join(OUT, 'fig_paper10_alphaK_vs_alpha.pdf')
-fig.savefig(out2, bbox_inches='tight')
-fig.savefig(out2.replace('.pdf', '.png'), dpi=150, bbox_inches='tight')
+fig.savefig(out2, bbox_inches='tight', metadata=_META)
+fig.savefig(out2.replace('.pdf', '.png'), dpi=150, bbox_inches='tight', metadata=_META)
 plt.close(fig)
 print(f"Saved: {out2}")
 
 print(f"\nPaper 10 constants check:")
 print(f"  KAL0         = {KAL0:.6f}")
 print(f"  alpha_att    = {alpha_att:.7f}")
-print(f"  alphaK_IR    = {alphaK_IR:.5f}")
-print(f"  alphaK_UV    = {alphaK_UV:.5f}")
+print(f"  sK_IR    = {sK_IR:.5f}")
+print(f"  sK_UV    = {sK_UV:.5f}")
 print(f"  fscreen_IR   = {fscreen_IR:.6f}")
 print(f"  fscreen_UV   = {fscreen_UV:.6f}")
 print(f"  H0_glob UV (from SH0ES) = {H0_UV:.6f} +/- {SIG_GLOB:.4f}")

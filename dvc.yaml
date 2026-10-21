@@ -8,6 +8,77 @@
 # (src/procedencia.py): commit, hashes, argumentos, nucleos.
 # Se migra aqui, etapa por etapa, lo que hoy vive en PROPAGACION.yaml.
 stages:
+  # 2026-10-21: las figuras de los papers entran a la cadena. Antes 14 figuras citadas en
+  # P2, P3, P5 y P10 salían de scripts sin etapa (o de etapas que no las declaraban), y un
+  # verificador externo no podía regenerarlas con `dvc repro`.
+  p2_figuras:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/ssee_paper2_figures.py > /dev/null
+    deps:
+    - src/p02_mcmc/ssee_paper2_figures.py
+    - src/ssee_core.py
+    - results/logs/desi_dr2_w0wa_momentos.log
+    - results/logs/paper2_w0wa.json
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt
+    - /mnt/datos/SSEE_data/desi_dr2_official/cosmology_chains/cobaya/base_w_wa/desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt
+    outs:
+    - results/figures/fig1_w0wa_plane.pdf:
+        cache: false
+    - results/figures/fig1_w0wa_plane.png:
+        cache: false
+    - results/figures/fig3_omega_de.pdf:
+        cache: false
+    - results/figures/fig3_omega_de.png:
+        cache: false
+  p2_fig8:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/regenerate_fig8_bao_residuals.py > /dev/null
+    deps:
+    - src/p02_mcmc/regenerate_fig8_bao_residuals.py
+    - src/ssee_core.py
+    - src/rd_camb.py
+    - src/desi_dr2_data.py
+    - src/p11_sondas/lcdm_planck.py
+    - data/raw/desi_dr2_bao.csv
+    - results/logs/mcmc_paper2_3models_wmfix.log
+    outs:
+    - results/figures/fig8_bao_residuals.pdf:
+        cache: false
+    - results/figures/fig8_bao_residuals.png:
+        cache: false
+  fig_w0wa_degeneracy:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p02_mcmc/fig_w0wa_degeneracy.py > /dev/null
+    deps:
+    - src/p02_mcmc/fig_w0wa_degeneracy.py
+    - src/ssee_core.py
+    - results/logs/resumen_3modelos.json
+    - results/logs/mcmc_full_posteriores.json
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c1/ssee_full.1.txt
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c2/ssee_full.1.txt
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c3/ssee_full.1.txt
+    - /mnt/datos/SSEE_data/mcmc/mcmc_full/c4/ssee_full.1.txt
+    outs:
+    - results/figures/fig_w0wa_degeneracy.pdf:
+        cache: false
+    - results/figures/fig_w0wa_degeneracy.png:
+        cache: false
+  p10_figuras:
+    cmd: OMP_NUM_THREADS=1 MPLBACKEND=Agg nice -n 10 .venv/bin/python3 src/p10_uv/ssee_paper10_figures.py > /dev/null
+    deps:
+    - src/p10_uv/ssee_paper10_figures.py
+    outs:
+    - results/figures/fig_paper10_KX_profile.pdf:
+        cache: false
+    - results/figures/fig_paper10_KX_profile.png:
+        cache: false
+    - results/figures/fig_paper10_alphaK_vs_alpha.pdf:
+        cache: false
+    - results/figures/fig_paper10_alphaK_vs_alpha.png:
+        cache: false
   mcmc_full_posteriores:
     cmd: OMP_NUM_THREADS=1 nice -n 19 .venv/bin/python3 
       src/mcmc_full/leer_mcmc_full.py
@@ -180,6 +251,12 @@ stages:
         cache: false
     - results/logs/p5_IS_perturbations.log:
         cache: false
+    - results/figures/fig_paper5_IS_stability.pdf:
+        cache: false
+    - results/figures/fig_paper5_DE_clustering.pdf:
+        cache: false
+    - results/figures/fig_paper5_fsigma8_comparison.pdf:
+        cache: false
   p5_cruce_fantasma_IS:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p05_IS/cruce_fantasma_IS.py > results/logs/p5_cruce_fantasma_IS.log 
@@ -330,6 +407,16 @@ stages:
     - results/logs/paper3_cmb_chi2.json:
         cache: false
     - results/logs/paper3_cmb_reframe.log:
+        cache: false
+    - results/figures/fig_cmb_spectrum.pdf:
+        cache: false
+    - results/figures/fig_cmb_te.pdf:
+        cache: false
+    - results/figures/fig_cmb_ee.pdf:
+        cache: false
+    - results/figures/fig_cmb_lensing.pdf:
+        cache: false
+    - results/figures/fig_cmb_peaks_zoom.pdf:
         cache: false
   lya_auditoria:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
