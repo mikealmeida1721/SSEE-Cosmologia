@@ -6,47 +6,47 @@
    "Om": 0.2926365097046621,
    "h": 0.7016885085389581,
    "logA": 2.6740745828325942,
-   "chi2_exacto": 572.1310336184847,
-   "d_interpolado": 0.023911152519531242,
-   "d_viejo": 281.92390559094815
+   "chi2_exacto": 572.1310336184875,
+   "d_interpolado": 0.02391115251668907,
+   "d_viejo": 281.9239055909453
   },
   {
    "Om": 0.30672628007205854,
    "h": 0.6782491608565844,
    "logA": 3.0788500935756926,
-   "chi2_exacto": 4.280557067595282,
-   "d_interpolado": -0.0012592970175262508,
-   "d_viejo": -0.9420718695233035
+   "chi2_exacto": 4.280557067595055,
+   "d_interpolado": -0.001259297017298877,
+   "d_viejo": -0.9420718695230761
   },
   {
    "Om": 0.3269147370732495,
    "h": 0.670040530784873,
    "logA": 2.993770725488185,
-   "chi2_exacto": 12.337966625342169,
-   "d_interpolado": 0.017186697722877398,
-   "d_viejo": 3.9880859168818077
+   "chi2_exacto": 12.337966625343352,
+   "d_interpolado": 0.017186697721694344,
+   "d_viejo": 3.9880859168806246
   },
   {
    "Om": 0.29986017015151323,
    "h": 0.6844238901358791,
    "logA": 2.671792166223354,
-   "chi2_exacto": 697.2082789835931,
-   "d_interpolado": -0.031444745984572364,
-   "d_viejo": 326.20226672554213
+   "chi2_exacto": 697.2082789835631,
+   "d_interpolado": -0.03144474595455904,
+   "d_viejo": 326.20226672557214
   }
  ],
- "peor_interpolado": 0.031444745984572364,
+ "peor_interpolado": 0.03144474595455904,
  "pasa": true,
  "control_viejo": {
-  "maximo": 326.20226672554213,
+  "maximo": 326.20226672557214,
   "pasa": true
  },
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/cobaya_boss_chen21.py",
-  "script_sha256": "924746c4ea2071f6676d7851f2ff771e614206ca8b310549b2290d6f38bbd75a",
+  "script_sha256": "c8dca161d84b9781ed3ea398e4d886e164007af50466022145484eb6d8d17199",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/chains_p6/boss_chen21/malla_7x7x13.pkl": "6d17aee7cf4423b9ce377de5496c2a32d344a089a7a757d138c3b07589998e3c"
@@ -55,7 +55,7 @@
    "src/p06_growth/cobaya_boss_chen21.py",
    "prueba"
   ],
-  "fecha": "2026-10-20T14:29:21",
+  "fecha": "2026-10-20T23:26:57",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

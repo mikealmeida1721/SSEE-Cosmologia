@@ -303,7 +303,7 @@
   }
  },
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/audita_pdfs_zenodo.py",
@@ -314,7 +314,7 @@
    "docs/SSEE_Cover.pdf": "14e84f78d740b1cb071c7cc828e4fa45bd1194e8ef06e7026366345715933d41",
    "docs/SSEE_Cover_Letter.pdf": "f0dec9920b8a735503ed588457ccd7c00d9f436d11b118d51ac6d279cac4f2de",
    "docs/SSEE_Endorser_Summary.pdf": "e6c333c4e9b38cd4fd3656a05d60386cf8ce46d90cb86e22a81c0312c8c49a81",
-   "docs/SSEE_PRD.pdf": "a5f2a37cf393790f41edac2420df5dd29655c7431026e0a4430dc4f4bd5ceec6",
+   "docs/SSEE_PRD.pdf": "77e969fece641c812e4f35d4ef770bf349a1fb6ef6259dc70e82ba0c94da348e",
    "docs/SSEE_Paper10_UVCompletion.pdf": "cf4aa5d2131fc160e583db1b99a23c4f421a927fd5259d9cd44a27c11d437308",
    "docs/SSEE_Paper1_Framework.pdf": "21dab9f7650d24611829db1c9952e7215fcad38d27809c648a263fc6ba0853be",
    "docs/SSEE_Paper2_MCMC.pdf": "136f096e747af712e1fd4163cfeaf617af76c6b5c808716978fe0d816abaf55e",
@@ -350,7 +350,7 @@
    "docs/SSEE_Sealed_Journal.pdf",
    "docs/SSEE_Unified_Journal.pdf"
   ],
-  "fecha": "2026-10-20T14:17:28",
+  "fecha": "2026-10-20T23:35:18",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

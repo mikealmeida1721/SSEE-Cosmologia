@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "37d475c224ccd3154f843b5127a91f478d9f2c29", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/perfil_wc_boss_chen21.py", "script_sha256": "2dd040ccf94640572803db12cb3d8f19f8c1ea50e95859789035f335ea36f2dd", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/perfil_wc_boss_chen21.py"], "fecha": "2026-10-20T23:26:58", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
   z1 NGC: 36 puntos (l=0,2; 0.026-0.195)
   z1 SGC: 36 puntos (l=0,2; 0.026-0.195)
   z3 NGC: 36 puntos (l=0,2; 0.026-0.195)
@@ -13,7 +14,7 @@
   control ΛCDM libre: ω_c=0.1350  χ²=119.305
   control ΛCDM libre: ω_c=0.1400  χ²=124.946
   control ΛCDM libre: ω_c=0.1450  χ²=132.691
-  control ΛCDM libre: ω_c = 0.12377 ± 0.00499  (χ²min parábola 114.265, nodo 114.323)  [2.8 min]
+  control ΛCDM libre: ω_c = 0.12377 ± 0.00499  (χ²min parábola 114.265, nodo 114.323)  [2.7 min]
 CONTROL: ω_c del perfil 0.12377, del mejor punto 0.12364 -> +0.03σ PASA
   SSEE: ω_c=0.0950  χ²=145.711
   SSEE: ω_c=0.1000  χ²=136.758
@@ -26,7 +27,7 @@ CONTROL: ω_c del perfil 0.12377, del mejor punto 0.12364 -> +0.03σ PASA
   SSEE: ω_c=0.1350  χ²=120.278
   SSEE: ω_c=0.1400  χ²=124.396
   SSEE: ω_c=0.1450  χ²=130.765
-  SSEE: ω_c = 0.12416 ± 0.00548  (χ²min parábola 116.351, nodo 116.367)  [3.0 min]
+  SSEE: ω_c = 0.12416 ± 0.00548  (χ²min parábola 116.351, nodo 116.367)  [2.7 min]
 SSEE: BOSS pide ω_c = 0.12416 ± 0.00548; referencia 0.11951 -> +0.85σ
   LCDM_PLANCK: ω_c=0.0950  χ²=138.518
   LCDM_PLANCK: ω_c=0.1000  χ²=130.010
@@ -39,6 +40,6 @@ SSEE: BOSS pide ω_c = 0.12416 ± 0.00548; referencia 0.11951 -> +0.85σ
   LCDM_PLANCK: ω_c=0.1350  χ²=123.077
   LCDM_PLANCK: ω_c=0.1400  χ²=129.535
   LCDM_PLANCK: ω_c=0.1450  χ²=137.906
-  LCDM_PLANCK: ω_c = 0.12032 ± 0.00525  (χ²min parábola 115.321, nodo 115.344)  [2.9 min]
+  LCDM_PLANCK: ω_c = 0.12032 ± 0.00525  (χ²min parábola 115.321, nodo 115.344)  [2.7 min]
 LCDM_PLANCK: BOSS pide ω_c = 0.12032 ± 0.00525; referencia 0.12005 -> +0.05σ
 escrito -> /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/perfil_wc_boss_chen21.json

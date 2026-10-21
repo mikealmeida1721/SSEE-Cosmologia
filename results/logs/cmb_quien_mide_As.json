@@ -67,9 +67,9 @@
   "nota": "tau no puede ser negativa, y la reionizacion se ve en los cuasares (tau >~ 0.04). El suelo fisico convierte la degeneracion en un limite duro"
  },
  "alcance": "no toca ningun paper; diagnostico para saber si la deriva de A_s es una medicion contra otra o una sombra de degeneracion",
- "segundos": 448.3344466686249,
+ "segundos": 359.05044174194336,
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/quien_mide_As.py",
@@ -77,7 +77,7 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
-   "results/logs/growth_2026-07/As_medido_o_producto.json": "7a75aedc2df37624ed83e60e4489c0d5af405ddb8da4ab33c730f393cf104179"
+   "results/logs/growth_2026-07/As_medido_o_producto.json": "65c2beb38611b12bb82a85061494ed29926208b7d4dfa4740fc9b59f9b98628c"
   },
   "argv": [
    "src/procedencia_sella.py",
@@ -86,7 +86,7 @@
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json",
    "results/logs/growth_2026-07/As_medido_o_producto.json"
   ],
-  "fecha": "2026-10-20T14:24:58",
+  "fecha": "2026-10-20T23:41:19",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

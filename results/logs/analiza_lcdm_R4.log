@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/analiza_lcdm_R4.py", "script_sha256": "41a3d147c058b2a8a387696aef995878e0625ea2087b6097044cf4a8464f0835", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "a8a00bace0a3e55cf79a164f03ed1f390e41cf630961ded5b729f9718cf025b2"}, "argv": ["src/procedencia_sella.py", "src/p06_growth/analiza_lcdm_R4.py", "results/logs/analiza_lcdm_R4.log", "results/logs/growth_2026-07/R4_lcdm_kids_S8.json"], "fecha": "2026-10-16T20:04:52", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "37d475c224ccd3154f843b5127a91f478d9f2c29", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/analiza_lcdm_R4.py", "script_sha256": "41a3d147c058b2a8a387696aef995878e0625ea2087b6097044cf4a8464f0835", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {"results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "ee9179681eefa62bbdcc1523491894ccae04d0ae20b7603328ced8a5dbd27045"}, "argv": ["src/procedencia_sella.py", "src/p06_growth/analiza_lcdm_R4.py", "results/logs/analiza_lcdm_R4.log", "results/logs/growth_2026-07/R4_lcdm_kids_S8.json"], "fecha": "2026-10-20T23:20:32", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
 cadena 1: 16788 filas, burn-in 5036, 1469 submuestreadas
 cadena 2: 16808 filas, burn-in 5042, 1471 submuestreadas
 cadena 3: 16867 filas, burn-in 5060, 1476 submuestreadas
@@ -65,7 +65,7 @@ cadena 4: 16640 filas, burn-in 4992, 1456 submuestreadas
     "fuente": "CANONICAL_VALUES.yaml obs_KiDS_S8",
     "tension_sigma": 0.06147497585397447
   },
-  "tiempo_analisis_seg": 28083.63613677025
+  "tiempo_analisis_seg": 30853.92411994934
 }
 
 Guardado en /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/R4_lcdm_kids_S8.json

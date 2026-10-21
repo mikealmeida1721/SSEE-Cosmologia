@@ -2429,6 +2429,15 @@ resultante lleva el prefactor $\mathrm{KAL_0}\cdot n_s$; (c) conectar con la
 UV-completion (OP-10) y la dualidad de transporte (OP-7). Es frontera abierta de la misma
 clase que OP-1/OP-9: puede no cerrar con los recursos actuales, y eso está declarado.
 
+**QUIÉN MIDE `ω_c`: EL CMB (2026-10-20).** La prueba que manda es el perfil de `ω_c` contra
+Planck crudo (plik_lite TTTEEE + lowT + lowE), con TODO el fondo algebraico de SSEE clavado y
+sólo `ln(10¹⁰A_s)` y τ —los dos libres del modelo en el CMB— minimizados en cada nodo: el CMB
+pide `ω_c` = 0.119334 ± 0.000246 y la identidad da 0.119514, **0.73σ**. Control (R53): el mismo
+perfil con el fondo de ΛCDM sale con barra 0.000252, razón de anchuras 0.977 ⟹ la barra la pone
+el dato, no el álgebra. Log `results/logs/cmb_perfil_wc.json` (etapa `sello_cmb_perfil_wc`).
+Esa barra es unas 22 veces más fina que la de BOSS (±0.0055, abajo): en peso estadístico
+(1/σ²) el CMB vale unas 500 veces más. BOSS sólo acompaña.
+
 **RE-MEDIDO 2026-10-20 con el BOSS vigente — la identidad es COMPATIBLE con el dato de
 estructura (0.85σ), pero NO cae más cerca que Planck (0.05σ).** El «refuerzo» de abajo queda
 retirado: corría sobre los espectros de Beutler+2017 (normalización desajustada ~10 %, que

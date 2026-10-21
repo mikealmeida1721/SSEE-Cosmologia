@@ -1,3 +1,4 @@
+# ACTA-PROCEDENCIA {"commit": "37d475c224ccd3154f843b5127a91f478d9f2c29", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/analiza_boss_chen21.py", "script_sha256": "5a32d23b18a6a699792d532023378e55a76b5095a54e6d266aab0c276d5eacd1", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/analiza_boss_chen21.py"], "fecha": "2026-10-20T23:20:39", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4", "scipy": "1.17.1"}, "nucleos": {"OMP_NUM_THREADS": "3", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
   z1 NGC: 36 puntos (l=0,2; 0.026-0.195)
   z1 SGC: 36 puntos (l=0,2; 0.026-0.195)
   z3 NGC: 36 puntos (l=0,2; 0.026-0.195)
@@ -56,56 +57,56 @@ SSEE {
  },
  "k": 12,
  "chi2_cadena": -26.468048,
- "chi2_min": -27.241144731411815,
- "chi2_crudo_min": 117.10227149340596,
+ "chi2_min": -27.24114473180034,
+ "chi2_crudo_min": 117.10227164528135,
  "mejor_crudo": {
-  "bsig8_z1NGC": 1.5373111769892562,
-  "b2_z1NGC": -0.44738782829418544,
-  "bs_z1NGC": -0.31240861228217104,
-  "bsig8_z1SGC": 1.523588530464196,
-  "b2_z1SGC": -0.1211406014525767,
-  "bs_z1SGC": 1.2186862088214283,
-  "bsig8_z3NGC": 1.5880547926039794,
-  "b2_z3NGC": -2.617774841901274,
-  "bs_z3NGC": -0.06858622313690248,
-  "bsig8_z3SGC": 1.614230689059314,
-  "b2_z3SGC": -0.5045186265368719,
-  "bs_z3SGC": -1.5806458884833994
+  "bsig8_z1NGC": 1.5373061868575026,
+  "b2_z1NGC": -0.44746440109328517,
+  "bs_z1NGC": -0.31246725086355237,
+  "bsig8_z1SGC": 1.5236060107016125,
+  "b2_z1SGC": -0.12093183117116935,
+  "bs_z1SGC": 1.2181787229149996,
+  "bsig8_z3NGC": 1.5880578164104686,
+  "b2_z3NGC": -2.6180154655113204,
+  "bs_z3NGC": -0.06832416725883401,
+  "bsig8_z3SGC": 1.6142519014797012,
+  "b2_z3SGC": -0.5043560989579055,
+  "bs_z3SGC": -1.5805166515377407
  },
  "rastro_crudo": [
   {
    "metodo": "Powell",
-   "chi2": 117.10228232169639,
-   "evaluaciones": 140
+   "chi2": 117.10228232060618,
+   "evaluaciones": 141
   },
   {
    "metodo": "L-BFGS-B",
-   "chi2": 117.10228219249453,
+   "chi2": 117.10228219159258,
    "evaluaciones": 39
   },
   {
    "metodo": "Nelder-Mead",
-   "chi2": 117.10227151499987,
-   "evaluaciones": 1036
+   "chi2": 117.10227167563154,
+   "evaluaciones": 782
   },
   {
    "metodo": "Powell",
-   "chi2": 117.10227149340596,
+   "chi2": 117.10227164528135,
    "evaluaciones": 148
   }
  ],
  "k_crudo": 28,
  "chi2_crudo_por_muestra": {
-  "z1": 61.01199438273069,
-  "z3": 56.090277110675274
+  "z1": 61.01199444257586,
+  "z3": 56.09027720270549
  },
- "dchi2_crudo_vs_lcdm_libre": 2.8382139863560667,
- "dBIC_crudo_vs_lcdm_libre": -12.071225912371936,
+ "dchi2_crudo_vs_lcdm_libre": 2.83821413823145,
+ "dBIC_crudo_vs_lcdm_libre": -12.071225760496553,
  "sigma8_vs_control_sigma": 1.9885630143841075,
  "logA_vs_control_sigma": 1.809924016322956,
  "sigma8_vs_publicado_sigma": 1.6100943451910141,
- "dchi2_vs_lcdm_libre": 5.676594601107517,
- "dBIC_vs_lcdm_libre": -9.232845297620486
+ "dchi2_vs_lcdm_libre": 5.6765946007189925,
+ "dBIC_vs_lcdm_libre": -9.23284529800901
 }
 LCDM_PLANCK {
  "Rminus1": 0.009543,
@@ -121,57 +122,57 @@ LCDM_PLANCK {
  },
  "k": 12,
  "chi2_cadena": -29.38801,
- "chi2_min": -30.16878708509728,
- "chi2_crudo_min": 115.34239309991841,
+ "chi2_min": -30.168787086551717,
+ "chi2_crudo_min": 115.34239310381504,
  "mejor_crudo": {
-  "bsig8_z1NGC": 1.5788787073043007,
-  "b2_z1NGC": -0.6281096136431862,
-  "bs_z1NGC": 0.3010034761476557,
-  "bsig8_z1SGC": 1.568258914997234,
-  "b2_z1SGC": -0.44818749049397527,
-  "bs_z1SGC": 1.2071015283253246,
-  "bsig8_z3NGC": 1.6369168692877873,
-  "b2_z3NGC": -2.542188902596018,
-  "bs_z3NGC": 0.09168547772303241,
-  "bsig8_z3SGC": 1.6839042397620527,
-  "b2_z3SGC": 0.4174553167414177,
-  "bs_z3SGC": 1.0635664195349168
+  "bsig8_z1NGC": 1.5788790393307628,
+  "b2_z1NGC": -0.6281045496499871,
+  "bs_z1NGC": 0.30101206763656285,
+  "bsig8_z1SGC": 1.5682593333754924,
+  "b2_z1SGC": -0.4481768822500281,
+  "bs_z1SGC": 1.2070819363367158,
+  "bsig8_z3NGC": 1.6369149536558911,
+  "b2_z3NGC": -2.5421568899186595,
+  "bs_z3NGC": 0.09163140665129564,
+  "bsig8_z3SGC": 1.6839041299487434,
+  "b2_z3SGC": 0.4175418918555272,
+  "bs_z3SGC": 1.0634915847790294
  },
  "rastro_crudo": [
   {
    "metodo": "Powell",
-   "chi2": 115.34239374349372,
-   "evaluaciones": 151
+   "chi2": 115.34239374236464,
+   "evaluaciones": 156
   },
   {
    "metodo": "L-BFGS-B",
-   "chi2": 115.34239361823855,
+   "chi2": 115.34239361733243,
    "evaluaciones": 39
   },
   {
    "metodo": "Nelder-Mead",
-   "chi2": 115.34239310229052,
-   "evaluaciones": 437
+   "chi2": 115.34239310722472,
+   "evaluaciones": 422
   },
   {
    "metodo": "Powell",
-   "chi2": 115.34239309991841,
-   "evaluaciones": 194
+   "chi2": 115.34239310381504,
+   "evaluaciones": 180
   }
  ],
  "k_crudo": 28,
  "chi2_crudo_por_muestra": {
-  "z1": 58.52225485063987,
-  "z3": 56.820138249278536
+  "z1": 58.522254850233736,
+  "z3": 56.820138253581305
  },
- "dchi2_crudo_vs_lcdm_libre": 1.0783355928685125,
- "dBIC_crudo_vs_lcdm_libre": -13.83110430585949,
+ "dchi2_crudo_vs_lcdm_libre": 1.0783355967651431,
+ "dBIC_crudo_vs_lcdm_libre": -13.83110430196286,
  "sigma8_vs_control_sigma": 1.8958006187011873,
  "logA_vs_control_sigma": 1.8031070478530413,
  "sigma8_vs_publicado_sigma": 1.523371800227766,
- "dchi2_vs_lcdm_libre": 2.7489522474220536,
- "dBIC_vs_lcdm_libre": -12.16048765130595
+ "dchi2_vs_lcdm_libre": 2.7489522459676152,
+ "dBIC_vs_lcdm_libre": -12.160487652760388
 }
 crudo: libre 114.264  SSEE 117.102  Planck 115.342
-resumen {"npts": 144, "k_libre": 31, "k_fijo": 28, "chi2_libre": 114.2640575070499, "chi2_ssee": 117.10227149340596, "chi2_planck": 115.34239309991841, "gl_libre": 113, "gl_fijo": 116, "chi2gl_libre": 1.0111863496199105, "chi2gl_ssee": 1.0095023404603962, "chi2gl_planck": 0.9943309749992967, "dchi2_ssee_libre": 2.8382139863560667, "dchi2_planck_libre": 1.0783355928685125, "dchi2_ssee_planck": 1.7598783934875541, "dBIC_ssee_libre": -12.071225912371936, "dBIC_planck_libre": -13.83110430585949, "dchi2_ssee_planck_z1": 2.489739532090823, "dchi2_ssee_planck_z3": -0.7298611386032618, "ctl_Rm1": 0.028296, "ctl_logA": 2.8234012446812558, "ctl_Om": 0.3040025119492465, "ctl_H0": 68.38312066333036, "ctl_sigma8": 0.7260484138745947, "ctl_logA_sig": 0.12234368202454264, "ctl_Om_sig": 0.010221746059652573, "ctl_H0_sig": 1.1126177985765344, "ctl_sigma8_sig": 0.04487467284118824, "ctl_logA_dist": -0.1276827332211085, "ctl_Om_dist": -0.09974880507535033, "ctl_H0_dist": -0.10625394242694595, "ctl_sigma8_dist": -0.24899137761260948, "sigma8_ssee": 0.8152845285691687, "sigma8_planck": 0.8111218464109328, "fs8_ssee_z1": 0.47176912249130665, "fs8_ssee_z3": 0.4708061995793872, "fs8_planck_z1": 0.47725030939833046, "fs8_planck_z3": 0.4701101809224357, "s8_ssee_vs_ctl": 1.9885630143841075, "s8_planck_vs_ctl": 1.8958006187011873, "logA_ssee_vs_ctl": 1.809924016322956, "Rm1_ssee": 0.009566, "Rm1_planck": 0.009543}
+resumen {"npts": 144, "k_libre": 31, "k_fijo": 28, "chi2_libre": 114.2640575070499, "chi2_ssee": 117.10227164528135, "chi2_planck": 115.34239310381504, "gl_libre": 113, "gl_fijo": 116, "chi2gl_libre": 1.0111863496199105, "chi2gl_ssee": 1.0095023417696667, "chi2gl_planck": 0.9943309750328883, "dchi2_ssee_libre": 2.83821413823145, "dchi2_planck_libre": 1.0783355967651431, "dchi2_ssee_planck": 1.759878541466307, "dBIC_ssee_libre": -12.071225760496553, "dBIC_planck_libre": -13.83110430196286, "dchi2_ssee_planck_z1": 2.4897395923421257, "dchi2_ssee_planck_z3": -0.7298610508758188, "ctl_Rm1": 0.028296, "ctl_logA": 2.8234012446812558, "ctl_Om": 0.3040025119492465, "ctl_H0": 68.38312066333036, "ctl_sigma8": 0.7260484138745947, "ctl_logA_sig": 0.12234368202454264, "ctl_Om_sig": 0.010221746059652573, "ctl_H0_sig": 1.1126177985765344, "ctl_sigma8_sig": 0.04487467284118824, "ctl_logA_dist": -0.1276827332211085, "ctl_Om_dist": -0.09974880507535033, "ctl_H0_dist": -0.10625394242694595, "ctl_sigma8_dist": -0.24899137761260948, "sigma8_ssee": 0.8152845285691687, "sigma8_planck": 0.8111218464109328, "fs8_ssee_z1": 0.47176912249130665, "fs8_ssee_z3": 0.4708061995793872, "fs8_planck_z1": 0.47725030939833046, "fs8_planck_z3": 0.4701101809224357, "s8_ssee_vs_ctl": 1.9885630143841075, "s8_planck_vs_ctl": 1.8958006187011873, "logA_ssee_vs_ctl": 1.809924016322956, "Rm1_ssee": 0.009566, "Rm1_planck": 0.009543}
 escrito /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/boss_chen21.json

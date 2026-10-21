@@ -185,11 +185,9 @@
  },
  "alcance": "diagnostico sobre cadenas existentes; lo lee src/p03_cmb/quien_mide_As.py (la parte de KiDS)",
  "_procedencia": {
-  "commit": "69cc77392b63e11bed7374cdf3966b8263307b2f",
-  "reproducible_desde_commit": false,
-  "cambios_sin_commitear": [
-   "M src/p06_growth/mide_As_o_producto.py"
-  ],
+  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
   "script": "src/p06_growth/mide_As_o_producto.py",
   "script_sha256": "73dde71fdf729b41f6b478d3ede82b62784a982a827b04289be5e7937bd624bf",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
@@ -206,7 +204,7 @@
   "argv": [
    "src/p06_growth/mide_As_o_producto.py"
   ],
-  "fecha": "2026-10-20T13:57:04",
+  "fecha": "2026-10-20T14:46:14",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
