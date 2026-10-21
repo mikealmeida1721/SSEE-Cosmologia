@@ -42,7 +42,7 @@
   }
  },
  "_procedencia": {
-  "commit": "77834d6fcc48d0b14deb1cac3b79405e227d8986",
+  "commit": "29dae108c0751cca4611adfe82ecaad722b2e2a3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_press_schechter.py",
@@ -51,13 +51,13 @@
   "entradas": {
    "results/logs/deltac_spherical_collapse.json": "3f6776f1574c618c501d7acc47a5250d30c65a0cca47d96f5f01b7d64efeb012",
    "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5",
-   "results/logs/p5_IS_perturbations_Q3.json": "53dfb97284f0d9dd5f9bfa5c4f3af0206878dfca337568310953d480793c9fe7",
+   "results/logs/p5_IS_perturbations_Q3.json": "5431ebd01e060a9e8ee22dcf07691a9f2729f5a69dbbb3cbcd7aa23c5bfe3d72",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70"
   },
   "argv": [
    "src/p02_mcmc/ssee_press_schechter.py"
   ],
-  "fecha": "2026-10-21T08:34:44",
+  "fecha": "2026-10-21T08:38:45",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -63,17 +63,17 @@
   "dBIC": -35.03241141722265
  },
  "_procedencia": {
-  "commit": "77834d6fcc48d0b14deb1cac3b79405e227d8986",
+  "commit": "29dae108c0751cca4611adfe82ecaad722b2e2a3",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p03_cmb/ssee_paper3_cmb.py",
-  "script_sha256": "8b5aca767c7b5445fec3e70e81001a9211e1cbc86d8d6533490f9eaf23128270",
+  "script_sha256": "56875f2d11d841548a5a1c905ee3db12490eb7adecada74d1f89d1cfad298b96",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
    "src/p03_cmb/ssee_paper3_cmb.py"
   ],
-  "fecha": "2026-10-21T08:32:40",
+  "fecha": "2026-10-21T08:38:28",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
