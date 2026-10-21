@@ -768,11 +768,14 @@ REGLAS = {
         capa="R36 — figura del PRD vs el script que la produce",
         intencion="artefacto-no-mas-viejo-que-su-fuente", ambito="results/figures/*.pdf citadas por el PRD",
         # 2026-10-16: R36 compara fechas de COMMIT; el script mutado tiene que
-        # ser MAS NUEVO que la figura (fig_cmb_spectrum se regenero el 10-15).
+        # ser MAS NUEVO que la figura. 2026-10-21: fig_cmb_spectrum se regeneró
+        # al entrar a DVC (ya es más nueva que el script) y el caso dejó de
+        # disparar R36; se usa fig_corner_ssee_halg_prior (commit 10-01, el
+        # script 10-16). Si esa figura se regenera, elegir otra más vieja.
         archivo="src/p04_toe/barrido_omega_b.py",
         exenciones=[("cambios que solo tocan prosa: se compara el AST", None)],
         mutacion=[("la figura del PRD se atribuye a un script mas nuevo que ella",
-                   "import json\n", "import json\n_FIG36 = 'fig_cmb_spectrum'  # plt.savefig(_FIG36)\n")],
+                   "import json\n", "import json\n_FIG36 = 'fig_corner_ssee_halg_prior'  # plt.savefig(_FIG36)\n")],
     ),
     "R27": dict(
         capa="R27 — look-elsewhere: lo afirmado == lo recomputado",
