@@ -818,8 +818,8 @@ REGLAS = {
         intencion="unicidad-de-la-solucion", ambito="el barrido m·phi^n del guardian",
         archivo="src/verificacion/ssee_verify.py", exenciones=[],
         mutacion=[("la condicion de pureza alterada: la solucion deja de ser unica",
-                   "        _k = -_math.log(1 - (1 - 2 / _N)) / _math.log(phi)",
-                   "        _k = -_math.log(1 - (1 - 3 / _N)) / _math.log(phi)")],
+                   "    _k = -_math.log(1 - (1 - 2 / _N)) / _math.log(phi)",
+                   "    _k = -_math.log(1 - (1 - 3 / _N)) / _math.log(phi)")],
     ),
     "R68": dict(
         capa="R68 — el PDF publicado vs el .tex que lo produce",
