@@ -61,6 +61,11 @@ def portadas():
     return out
 
 
+def bloquea_today(fechas):
+    """True si alguna fecha de portada es \\today (no reproducible)."""
+    return any("\\today" in f for f in fechas)
+
+
 def revision_pendiente():
     """Páginas que la lectura página-por-página aún no cerró."""
     log = _REPO / "LECTURA_PAPERS.md"
@@ -96,7 +101,7 @@ def main() -> int:
     else:
         print(f"  ✓ fecha única en toda la serie: {fechas.pop()}")
 
-    if any("\\today" in f for _, f, _ in docs):
+    if bloquea_today(f for _, f, _ in docs):
         print("  ✗ hay \\today: cambia en cada compilación — dos builds del mismo")
         print("    .tex dan PDFs distintos. No se publica con \\today.")
         listo = False

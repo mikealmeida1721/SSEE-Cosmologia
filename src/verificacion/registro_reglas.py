@@ -697,7 +697,7 @@ REGLAS = {
         intencion="regla-con-control", ambito="los checks del propio guardian",
         archivo="src/verificacion/ssee_verify.py", exenciones=[],
         mutacion=[("el tope de reglas sin control, aflojado",
-                   "_DEUDA_R53 = 25   #", "_DEUDA_R53 = 31   #")],
+                   "_DEUDA_R53 = 0    #", "_DEUDA_R53 = 6    #")],
     ),
     "R47": dict(
         capa="R47 — piezas declaradas como supuesto: ¿rastreadas?",

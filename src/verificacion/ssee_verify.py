@@ -510,6 +510,15 @@ check("V-L3-OP2  identidad r: 12(phi^4/3)/(2phi^7)^2 = phi^-10",
 # UNICO miembro de la familia m·phi^n dentro de [50,60] cuyo n_s (y su r) salen
 # potencia PURA de phi. Es una afirmación de unicidad publicada: se recomputa.
 import math as _math
+
+
+def _r32_puro(_N):
+    """True si n_s = 1-2/N y r = 4φ⁴/N² son potencias ENTERAS de φ."""
+    _k = -_math.log(1 - (1 - 2 / _N)) / _math.log(phi)      # n_s = 1-phi^-k
+    _kr = -_math.log(12 * (phi ** 4 / 3) / _N ** 2) / _math.log(phi)
+    return abs(_k - round(_k)) < 1e-9 and abs(_kr - round(_kr)) < 1e-9
+
+
 _cands, _puros = [], []
 for _m in range(1, 21):
     for _n in range(1, 16):
@@ -517,13 +526,20 @@ for _m in range(1, 21):
         if not (50.0 <= _N <= 60.0):
             continue
         _cands.append((_m, _n))
-        _k = -_math.log(1 - (1 - 2 / _N)) / _math.log(phi)      # n_s = 1-phi^-k
-        _kr = -_math.log(12 * (phi ** 4 / 3) / _N ** 2) / _math.log(phi)
-        if abs(_k - round(_k)) < 1e-9 and abs(_kr - round(_kr)) < 1e-9:
+        if _r32_puro(_N):
             _puros.append((_m, _n))
 check(f"R32 unicidad N_*: solo m=2,n=7 da n_s y r potencia pura de phi en [50,60]",
       _puros == [(2, 7)] and len(_cands) >= 4,
       f"{len(_cands)} candidatos m·phi^n en ventana, puros: {_puros}")
+# CONTROL (R53, 2026-10-21): el criterio de «potencia pura» acepta 2φ⁷ y
+# también 2φ⁸ (fuera de la ventana: su pureza es real, lo que la excluye es el
+# rango), y rechaza N = 55 y 3φ⁶ ≈ 53.8, que caen dentro de [50,60] sin ser
+# potencias de φ. Sin esto, «sólo (2,7)» no distingue unicidad de un criterio
+# que nunca acepta nada salvo por accidente.
+check("R32 el detector acepta la potencia pura y rechaza el N que sólo cae en la ventana",
+      _r32_puro(2 * phi ** 7) and _r32_puro(2 * phi ** 8)
+      and not _r32_puro(55.0) and not _r32_puro(3 * phi ** 6),
+      "4 casos: 2φ⁷ y 2φ⁸ puros; 55 y 3φ⁶ (dentro de la ventana) no")
 
 track_open("V-L3-OP2  N_* = 2phi^7",
            "Conjecture B.1 no derivada; falta el puente de reheating gravitacional",
@@ -3986,7 +4002,7 @@ try:
               (r"[width=0.84\textwidth]", "0.84", False)]
     _bad = [c[0] for c in _CASOS
             if bool(_re.search(r"=\s*-?\s*" + _re.escape(c[1]) + r"(?![0-9])" + _X, c[0])) != c[2]]
-    check("R37 la exclusión de cantidades CON UNIDADES funciona",
+    check("R37 el detector excluye las cantidades CON UNIDADES y marca las adimensionales",
           not _bad, "; ".join(_bad) if _bad
           else "6 casos LaTeX reales: dimensionales y anchos de figura ignorados, adimensionales marcadas")
     check("R37 ninguna igualdad de constante SSEE con menos de 6 decimales",
@@ -4874,10 +4890,33 @@ try:
               else f"{len(_vistos)} portadas cubiertas ({len(_tex)} .tex explorados)")
         # Que la compuerta sepa BLOQUEAR es tan importante como que sepa aplicar:
         # una compuerta que siempre deja pasar no es una compuerta.
+        # 2026-10-21: este check era `check(..., True, ...)` — no podía fallar,
+        # que es justo lo que su propio comentario prohíbe. Ahora se prueba el
+        # criterio de bloqueo de la compuerta en los dos sentidos, y que
+        # portadas() ve un .tex con \\date y se salta uno sin él (sobre un árbol
+        # temporal: no depende de cómo esté hoy la suite).
+        import tempfile as _tf39
+        with _tf39.TemporaryDirectory() as _td39:
+            _q39 = pathlib.Path(_td39)
+            (_q39 / "manuscript").mkdir()
+            (_q39 / "submission_PRD").mkdir()
+            (_q39 / "manuscript" / "A.tex").write_text("\\date{October 2026}\n")
+            (_q39 / "manuscript" / "B.tex").write_text("sin portada\n")
+            (_q39 / "submission_PRD" / "C.tex").write_text("\\date{\\today}\n")
+            _repo_real, _mod._REPO = _mod._REPO, _q39
+            try:
+                _vis39 = sorted(_t.name for _t, _, _ in _mod.portadas())
+            finally:
+                _mod._REPO = _repo_real
         _hoy = [f for _, f, _ in _mod.portadas() if "\\today" in f]
-        check("R39 la compuerta detecta \\today (fecha no reproducible)",
-              True, f"{len(_hoy)} con \\today — se resuelve al publicar, no hoy"
-              if _hoy else "ninguna portada con \\today")
+        check("R39 el detector de la compuerta bloquea \\today y ve cada portada",
+              _vis39 == ["A.tex", "C.tex"]
+              and _mod.bloquea_today(["\\today"])
+              and not _mod.bloquea_today(["October 2026", "2026"]),
+              f"3 casos: ve A y C (con \\date) y salta B; bloquea \\today; deja "
+              f"pasar fechas fijas. Hoy {len(_hoy)} portadas con \\today — se "
+              f"resuelven al publicar"
+              if _vis39 == ["A.tex", "C.tex"] else f"portadas vio {_vis39}")
 except Exception as e:
     check("R39 capa operable", False, str(e))
 
@@ -4905,6 +4944,20 @@ try:
             _m34 = _pat34.search(_code)
             if _m34:
                 _malos.append(f"{_py.relative_to(_REPO)}:{_i} → {_m34.group(1)}")
+    # CONTROL (R53, 2026-10-21): la línea se lee como la lee el barrido
+    # (código antes del «#»). Los valores retirados se marcan; el vigente, la
+    # lectura del núcleo, el retirado sólo en un comentario y un número que
+    # EMPIEZA igual pero es otro (0.0695) pasan.
+    def _r34_marca(_ln):
+        return bool(_pat34.search(_ln.split("#")[0]))
+    _c34 = [("mnu = 0.06902", True), ("C_NU = 94.07", True), ("Smnu=0.069 ", True),
+            ("mnu = 0.06849", False), ("mnu = SUM_MNU_EV", False),
+            ("mnu = 0.06849  # era 0.06902", False), ("m_nu = 0.0695", False)]
+    _f34 = [_l for _l, _e in _c34 if _r34_marca(_l) != _e]
+    check("R34 el detector marca Σm_ν/C_ν retirados y deja pasar el vigente",
+          not _f34, "; ".join(_f34) if _f34
+          else "7 casos: 0.06902, 94.07 y 0.069 marcados; 0.06849, la lectura "
+               "del núcleo, el retirado en comentario y 0.0695 limpios")
     check("R34 ningún .py activo hardcodea Σm_ν/C_ν retirados",
           not _malos,
           "; ".join(_malos) if _malos
@@ -5304,6 +5357,40 @@ try:
         except Exception:
             return False
 
+    def _r36_rancia(_tf, _ts, _solo_prosa, _ver):
+        """¿La figura (commit _tf) es más vieja que su script (commit _ts)?
+        _solo_prosa: callable, se llama SÓLO si hace falta (cuesta un git show).
+        _ver: fecha «AAAA-MM-DD» en que se regeneró y salió byte-idéntica."""
+        if not (_tf and _ts and _ts > _tf):
+            return False
+        if _solo_prosa():
+            return False                                 # sólo prosa
+        # Regenerada y verificada byte-idéntica: el cambio de código no afectaba
+        # a ESTA figura. Vale mientras el script no vuelva a cambiar.
+        if _ver:
+            import datetime as _dt
+            _vts = _dt.datetime.strptime(str(_ver), "%Y-%m-%d").timestamp() + 86400
+            if _vts >= _ts:
+                return False
+        return True
+
+    # CONTROL (R53, 2026-10-21). Antes, el único control de R36 era su caso de
+    # mutación, y ese caso lo terminó atrapando R75 en vez de R36 cuando la
+    # figura se regeneró (be556f2): la regla quedó sin prueba propia sin que
+    # nada lo dijera. Aquí la decisión se prueba sola, sin depender del árbol.
+    import datetime as _dt36
+    _d10 = _dt36.datetime(2026, 10, 10).timestamp()
+    _d16 = _dt36.datetime(2026, 10, 16).timestamp()
+    check("R36 el detector marca la figura vieja y deja pasar la al día, la de prosa y la verificada",
+          _r36_rancia(_d10, _d16, lambda: False, None)
+          and not _r36_rancia(_d16, _d10, lambda: False, None)
+          and not _r36_rancia(_d10, _d16, lambda: True, None)
+          and not _r36_rancia(_d10, _d16, lambda: False, "2026-10-16")
+          and _r36_rancia(_d10, _d16, lambda: False, "2026-10-12"),
+          "5 casos: figura del 10 con script del 16 marcada; figura más nueva "
+          "limpia; cambio sólo de prosa limpio; verificada el 16 limpia; "
+          "verificada el 12 (antes del cambio) marcada")
+
     _fig_prd, _fig_otras = [], []
     for _fg in sorted((_REPO / "results" / "figures").glob("*.pdf")):
         _nm36 = _fg.stem
@@ -5324,21 +5411,15 @@ try:
         _scr = max(_prod36, key=lambda _h: _commit_ts(_h) or 0)
         _tf = _commit_ts(f"results/figures/{_fg.name}")
         _ts36 = _commit_ts(_scr)
-        if not (_tf and _ts36 and _ts36 > _tf):
+
+        def _solo_prosa(_fgn=_fg.name, _s=_scr):
+            _sha36 = _sp.run(["git", "log", "-1", "--format=%H", "--",
+                              f"results/figures/{_fgn}"], cwd=_REPO,
+                             capture_output=True, text=True, timeout=20).stdout.strip()
+            return _ast_igual(_sha36, _s)
+        if not _r36_rancia(_tf, _ts36, _solo_prosa,
+                           (_prop.get("figuras_verificadas") or {}).get(_nm36)):
             continue
-        _sha36 = _sp.run(["git", "log", "-1", "--format=%H", "--",
-                          f"results/figures/{_fg.name}"], cwd=_REPO,
-                         capture_output=True, text=True, timeout=20).stdout.strip()
-        if _ast_igual(_sha36, _scr):
-            continue                                     # sólo prosa
-        # Regenerada y verificada byte-idéntica: el cambio de código no afectaba
-        # a ESTA figura. Vale mientras el script no vuelva a cambiar.
-        _ver = (_prop.get("figuras_verificadas") or {}).get(_nm36)
-        if _ver:
-            import datetime as _dt
-            _vts = _dt.datetime.strptime(str(_ver), "%Y-%m-%d").timestamp() + 86400
-            if _vts >= _ts36:
-                continue
         (_fig_prd if _nm36 in _prd_figs else _fig_otras).append(
             f"{_nm36} ({(_ts36 - _tf) // 86400}d)")
     # 2026-09-08: el mensaje decia «N figuras del PRD al día» y eso promete
@@ -5422,6 +5503,38 @@ try:
     check("manuscritos  R11 sin conteo de serie stale (<10 papers)", not _rser_hits,
           "limpio" if not _rser_hits else "; ".join(_rser_hits[:4]))
 
+    # CONTROL (R53, 2026-10-21) de R1, R2, R10 y R11: las cuatro son listas de
+    # patrones que el barrido aplica con re.search sobre el texto en minúsculas.
+    # Con el repo limpio su «limpio» no distingue «no hay afirmación prohibida»
+    # de «el patrón ya no casa con nada». Cada una marca su frase prohibida y
+    # deja pasar la frase honesta que el comentario de arriba promete exentar.
+    def _marca_lista(_pats, _txt):
+        _lo = _txt.lower()
+        return any(_re2.search(_p, _lo) for _p in _pats)
+    _c_ms = [
+        ("R1", _R1, "SSEE was deposited on Zenodo prior to the DESI DR2 release.", True),
+        ("R1", _R1, "We make no claim of temporal priority: the data predate this work.", False),
+        ("R2", _R2, "See the compendium, doi:10.5281/zenodo.19679049.", True),
+        ("R2", _R2, "See the papers, doi:10.5281/zenodo.20093447.", False),
+        ("R10", _ROVER, "SSEE is a zero-parameter framework for cosmology.", True),
+        ("R10", _ROVER, "a zero-parameter dark-energy sector with $k=2$ at CMB level", False),
+        ("R11", _RSER, "This seven-paper series derives the background.", True),
+        ("R11", _RSER, "Papers~1--7 established the background.", False),
+    ]
+    _f_ms = [f"{_r}:«{_t[:30]}»" for _r, _p, _t, _esp in _c_ms
+             if _marca_lista(_p, _t) != _esp]
+    # Nombres LITERALES, uno por regla: R53 lee el fuente y no ve dentro de
+    # un f-string («{_r} el detector» no le dice qué regla es).
+    def _f_de(_r):
+        _m = [_f for _f in _f_ms if _f.startswith(_r + ":")]
+        return not _m, ("; ".join(_m) if _m else "2 casos: la afirmación prohibida "
+                        "marcada; la honesta (disclaimer, alcance acotado o "
+                        "referencia correcta) limpia")
+    check("R1 el detector marca la prioridad temporal y deja pasar el disclaimer", *_f_de("R1"))
+    check("R2 el detector marca el DOI del compendio y deja pasar el de los papers", *_f_de("R2"))
+    check("R10 el detector marca el zero-parameter global y deja pasar el acotado", *_f_de("R10"))
+    check("R11 el detector marca el conteo de serie viejo y deja pasar la cita de previos", *_f_de("R11"))
+
     # ── R15 — coherencia de la tensión derivada de n_s ──────────────────
     # Remache forjado en la auditoría 2026-07-09 (Paper 1 L334 decía «matches
     # Planck PR4 at 0.24σ» — el 0.24 corresponde a un central 0.9665 que NO es
@@ -5437,8 +5550,11 @@ try:
     _sig_re = r"([+\-−]?)([0-9]\.[0-9]{1,2})\s*\\?sigma"
     _ns_hits = []          # valores citados FUERA de rango (incorrectos)
     _ns_quoted = {}        # {archivo: set(redondeos citados)} para coherencia
-    for t in _texs:
-        txt = t.read_text(errors="ignore")
+
+    def _r15_citas(txt):
+        """Redondeos de la tensión n_s citados en un texto (sin signo, junto a
+        la fórmula 1-φ⁻⁷ o al central de Planck). Lo usa el barrido y su control."""
+        _out = set()
         # Dos anclas: (a) la fórmula 1-φ⁻⁷, (b) el central Planck 0.9649 —
         # porque la tensión a veces se enuncia DESACOPLADA de la fórmula
         # (p.ej. «n_s=0.9649±0.0042 is 0.2σ from the SSEE value»), sin φ⁻⁷ cerca.
@@ -5457,10 +5573,18 @@ try:
             # (p.ej. modulación IS-Eckart), no la tensión n_s-vs-dato: se excluye.
             sm = _re2.search(_sig_re, window)
             if sm and not sm.group(1):
-                _ns_quoted.setdefault(t.name, set()).add(sm.group(2))
-                val = float(sm.group(2))
-                if not (_ns_lo <= val <= _ns_hi):
-                    _ns_hits.append(f"{t.name}:n_s@{val}σ (real {_ns_tens:.2f}σ)")
+                _out.add(sm.group(2))
+        return _out
+
+    def _r15_malas(citas):
+        return sorted(c for c in citas if not (_ns_lo <= float(c) <= _ns_hi))
+
+    for t in _texs:
+        _cit15 = _r15_citas(t.read_text(errors="ignore"))
+        if _cit15:
+            _ns_quoted[t.name] = _cit15
+        for _c15 in _r15_malas(_cit15):
+            _ns_hits.append(f"{t.name}:n_s@{_c15}σ (real {_ns_tens:.2f}σ)")
     # Coherencia de redondeo: un mismo manuscrito no debe citar la tensión n_s
     # con dos redondeos distintos (p.ej. 0.16σ en el cuerpo y 0.2σ en el App).
     # El 0.2 caía DENTRO de la ventana ±0.06 → «correcto» por separado, pero
@@ -5473,6 +5597,21 @@ try:
     elif _ns_incoh:
         _ns_msg = "redondeo incoherente: " + "; ".join(_ns_incoh[:4])
     check("manuscritos  R15 tensión n_s: correcta y con redondeo único", _ns_ok, _ns_msg)
+
+    # CONTROL (R53, 2026-10-21): los tres casos que la regla existe para ver.
+    # El 0.24σ de Paper 1 (fuera de la ventana), el 0.16σ correcto, dos
+    # redondeos en un mismo texto, y el σ con signo de OTRA cantidad.
+    _c15_mal = r"$n_s = 1-\varphi^{-7}$ matches Planck at $0.24\sigma$."
+    _c15_bien = r"$n_s = 1-\varphi^{-7}$ sits $0.16\sigma$ from Planck."
+    _c15_dos = _c15_bien + " Appendix: $n_s=0.9649\\pm0.0042$ is $0.2\\sigma$ away."
+    _c15_signo = r"$1-\varphi^{-7}$ vs Planck: the shift is $+2.9\sigma$ in another quantity."
+    check("R15 el detector marca la tensión n_s mal citada y deja pasar la correcta",
+          _r15_malas(_r15_citas(_c15_mal)) == ["0.24"]
+          and _r15_citas(_c15_bien) == {"0.16"} and not _r15_malas({"0.16"})
+          and len(_r15_citas(_c15_dos)) == 2
+          and _r15_citas(_c15_signo) == set(),
+          "4 casos: 0.24σ marcado; 0.16σ limpio; 0.16 y 0.2 en el mismo "
+          "texto vistos como dos redondeos; el σ con signo excluido")
 
     # ── R17 — la constante de conversión de neutrinos debe ser univaluada ──
     # Remache forjado en la auditoría de Paper 1 (2026-07-10): la suite mezcla
@@ -5580,16 +5719,23 @@ try:
         "compensate for the enlarged": "narrativa vieja: no hay r_d agrandado (148.2≈ΛCDM)",
         "downward to compensate": "posterior COINCIDE con anchor (0.04σ), no baja a compensar",
     }
+    def _r18_sitios(txt):
+        return [pat for pat in _stale_v4 if pat in txt]
     _v4_hits = []
     for t in _texs:
-        txt = t.read_text(errors="ignore")
-        for pat, why in _stale_v4.items():
-            if pat in txt:
-                _v4_hits.append(f"{t.name}«{pat[:22]}»→{why}")
+        for pat in _r18_sitios(t.read_text(errors="ignore")):
+            _v4_hits.append(f"{t.name}«{pat[:22]}»→{_stale_v4[pat]}")
     check("manuscritos  R18 sin narrativa H0-posterior stale (V-L4-DESI)",
           not _v4_hits,
           "posterior coincide con anchor (0.04σ), geometría con Ω_m total"
           if not _v4_hits else "; ".join(_v4_hits[:4]))
+    # CONTROL (R53, 2026-10-21): la frase real que motivó la regla y la vigente.
+    check("R18 el detector marca la narrativa del r_d agrandado y deja pasar la vigente",
+          _r18_sitios("the posterior is pulled downward to compensate for the enlarged $r_d$")
+          and not _r18_sitios("the posterior agrees with the anchor; $r_d$ uses the total "
+                              "matter density"),
+          "2 casos: «downward to compensate for the enlarged r_d» marcada; "
+          "la prosa vigente limpia")
 
     # ── R19 — ningún manuscrito muestra los valores BAO DR1-mislabeled ──
     # Remache forjado en la auditoría de Paper 2 (2026-07-10): la Tabla 1 de P2 y su
@@ -5758,6 +5904,34 @@ try:
           not _cnt_hits,
           "55 named / 25 distinct / 490 ratios univaluado"
           if not _cnt_hits else "; ".join(_cnt_hits[:6]))
+
+    # CONTROL (R53, 2026-10-21) de R21, R22, R23 y R24. Las cuatro aplican sus
+    # patrones con re.search sobre el .tex tal cual (sin pasar a minúsculas).
+    # Cada caso sano es el que el comentario de la regla promete NO marcar:
+    # K_v como sumando de M_v, la precisión plena, MIKAEL sin sufijo, el 378
+    # de P_sc = 6.378.
+    def _marca_tex(_pats, _txt):
+        return any(_re2.search(_p, _txt) for _p in _pats)
+    _c2124 = [
+        ("R21", (r"\}\{K_v", r"/K_v"), r"$w_a = -\frac{P_{\rm sc}}{K_v}$", True),
+        ("R21", (r"\}\{K_v", r"/K_v"), r"$M_v = \varphi+\pi+K_v$, $w_a=-P_{\rm sc}/I_g$", False),
+        ("R22", tuple(_badprec), r"$w_0 = -0.83996$", True),
+        ("R22", tuple(_badprec), r"$w_0 = -0.839950$, $M_v = 14.278879927$", False),
+        ("R23", tuple(_fossils), r"the ceiling $\Sigma_9$ of the five-dimensional integration", True),
+        ("R23", tuple(_fossils), r"MIKAEL closes the chain; $M_v$ is four-dimensional", False),
+        ("R24", tuple(_oldcount), r"only 1 of 378 ratios lands within tolerance", True),
+        ("R24", tuple(_oldcount), r"$P_{\rm sc}=6.378$; 1 of 490 ratios, 55 named, 25 distinct", False),
+    ]
+    _f2124 = [f"{_r}:«{_t[:30]}»" for _r, _p, _t, _esp in _c2124
+              if _marca_tex(_p, _t) != _esp]
+    def _f_de2(_r):
+        _m = [_f for _f in _f2124 if _f.startswith(_r + ":")]
+        return not _m, ("; ".join(_m) if _m else "2 casos: la forma retirada "
+                        "marcada; la vigente (y la que la regla promete exentar) limpia")
+    check("R21 el detector marca K_v como denominador y deja pasar K_v en M_v", *_f_de2("R21"))
+    check("R22 el detector marca el 5-dec falso y deja pasar la precisión plena", *_f_de2("R22"))
+    check("R23 el detector marca Σ₉/5D y deja pasar MIKAEL sin sufijo", *_f_de2("R23"))
+    check("R24 el detector marca 1 of 378 y deja pasar el 6.378 de P_sc", *_f_de2("R24"))
 except Exception as e:
     check("manuscritos  capa operable", False, str(e))
 
@@ -5813,18 +5987,33 @@ try:
         if "MIKE" in _master:
             _master.add("PHOENIX")
     _lf = _root / "src" / "estadistica" / "look_elsewhere_full.py"
-    _fam = set()
-    if _lf.exists():
-        _m = _re.search(r"FAMILY\s*=\s*\{(.*?)\}",
-                        _lf.read_text(errors="ignore"), _re.S)
-        if _m:
-            # incluye nombres con tilde (DÜSTAL/TRÏSTAL/CUÄSTAL) y acento agudo (ÁNGELOS)
-            _fam = {k.upper() for k in _re.findall(r'"([A-ZÁÉÍÓÚÄÖÜÏÑ_]+)"\s*:', _m.group(1))}
-    _spurious = sorted(_fam - _master) if (_master and _fam) else []
+
+    def _r13_familia(_src):
+        """Nombres de FAMILY leídos del fuente del script (no importándolo)."""
+        _m = _re.search(r"FAMILY\s*=\s*\{(.*?)\}", _src, _re.S)
+        # incluye nombres con tilde (DÜSTAL/TRÏSTAL/CUÄSTAL) y acento agudo (ÁNGELOS)
+        return ({k.upper() for k in _re.findall(r'"([A-ZÁÉÍÓÚÄÖÜÏÑ_]+)"\s*:', _m.group(1))}
+                if _m else set())
+
+    def _r13_espurios(_f, _ms):
+        return sorted(_f - _ms) if (_ms and _f) else []
+
+    _fam = _r13_familia(_lf.read_text(errors="ignore")) if _lf.exists() else set()
+    _spurious = _r13_espurios(_fam, _master)
     check("diccionario  R13 look_elsewhere sin nodos ausentes del maestro",
           not _spurious,
           "consistente (script ⊆ maestro)" if not _spurious
           else "ESPURIOS (no en maestro): " + ", ".join(_spurious))
+    # CONTROL (R53, 2026-10-21): el caso que creó la regla, un nodo duplicado por
+    # VALOR con nombre ajeno al maestro, y la familia sana. Incluye un nombre
+    # con diéresis para que el lector de FAMILY no pierda los acentuados.
+    _ms13 = {"KAL", "AURA", "CUÄSTAL"}
+    _ok13 = 'FAMILY = {\n    "KAL": KAL, "CUÄSTAL": 4*OM,\n}'
+    _mal13 = 'FAMILY = {\n    "KAL": KAL, "SOLAR_KRYSTOS_V": 2*OM,\n}'
+    check("R13 el detector marca el nodo ausente del maestro y deja pasar la familia sana",
+          _r13_espurios(_r13_familia(_ok13), _ms13) == []
+          and _r13_espurios(_r13_familia(_mal13), _ms13) == ["SOLAR_KRYSTOS_V"],
+          "2 casos: el nodo espurio marcado; la familia ⊆ maestro (con CUÄSTAL) limpia")
 
     # ── R16 — coherencia interna del look-elsewhere ─────────────────────
     # Remache forjado en la auditoría 2026-07-09 (Paper 1): el script tracked
@@ -5834,16 +6023,30 @@ try:
     # recomputa: (a) docstring == etiqueta-reporte == len(FAMILY); (b) el conteo
     # de razones distintas en (0,5] == 490 (el número robusto que citan los papers,
     # tras la completitud ≤TRIAL a 53 constantes, 2026-07-18).
-    if _lf.exists():
-        _lftxt = _lf.read_text(errors="ignore")
-        _nfam = len(_fam)
+    def _r16_conteo(_lftxt, _nfam):
+        """(coherente, docstring, etiquetas, dinámica) del conteo interno."""
         _ds = _re.search(r"\((\d+)\s+constantes", _lftxt)     # docstring (permite "constantes con nombre")
         _lbl = _re.findall(r"COMPLETO\s*\((?:[^)]*?)(\d+)\s+constantes\)", _lftxt)
         _ds_n = int(_ds.group(1)) if _ds else -1
         # etiqueta dinámica (f-string len(FAMILY)) cuenta como coherente
         _lbl_dyn = "len(FAMILY)" in _lftxt or "{len(fam)" in _lftxt.lower()
         _lbl_ok = _lbl_dyn or all(int(x) == _nfam for x in _lbl)
-        _cnt_ok = (_ds_n == _nfam) and _lbl_ok
+        return (_ds_n == _nfam) and _lbl_ok, _ds_n, _lbl, _lbl_dyn
+
+    # CONTROL (R53, 2026-10-21): el caso real de 2026-07-09 (docstring 29,
+    # etiqueta 31, FAMILY 29) y el mismo script con la etiqueta dinámica.
+    _c16_mal = '"""Look-elsewhere (29 constantes)"""\nprint("COMPLETO (31 constantes)")'
+    _c16_bien = '"""Look-elsewhere (29 constantes)"""\nprint(f"COMPLETO ({len(FAMILY)} constantes)")'
+    check("R16 el detector marca el conteo que se contradice y deja pasar el coherente",
+          not _r16_conteo(_c16_mal, 29)[0] and _r16_conteo(_c16_bien, 29)[0]
+          and not _r16_conteo(_c16_bien, 31)[0],
+          "3 casos: etiqueta 31 contra FAMILY 29 marcada; etiqueta dinámica "
+          "coherente limpia; docstring 29 contra FAMILY 31 marcado")
+
+    if _lf.exists():
+        _lftxt = _lf.read_text(errors="ignore")
+        _nfam = len(_fam)
+        _cnt_ok, _ds_n, _lbl, _lbl_dyn = _r16_conteo(_lftxt, _nfam)
         check("diccionario  R16 look-elsewhere conteo interno coherente",
               _cnt_ok,
               f"docstring={_ds_n}, FAMILY={_nfam}, etiqueta {'dinámica' if _lbl_dyn else _lbl}"
@@ -5889,14 +6092,19 @@ try:
         (2.330, "DH_over_rd",  8.632, 0.101, -0.431),
     ]
     _d = load_desi_dr2()
-    _mism = []
-    for _k, (_z, _q, _v, _s, _c) in enumerate(_DR2_OFICIAL):
-        if not (abs(_d["z"][_k] - _z) < 1e-9 and _d["quantity"][_k] == _q
-                and abs(_d["value"][_k] - _v) < 1e-9
-                and abs(_d["sigma"][_k] - _s) < 1e-9
-                and ((_c is None and _np.isnan(_d["corr"][_k]))
-                     or (_c is not None and abs(_d["corr"][_k] - _c) < 1e-9))):
-            _mism.append(f"fila {_k}: z={_z} {_q}")
+
+    def _r14_difiere(d):
+        """Filas del csv cargado que NO coinciden con la Tabla 4 transcrita."""
+        _out = []
+        for _k, (_z, _q, _v, _s, _c) in enumerate(_DR2_OFICIAL):
+            if not (abs(d["z"][_k] - _z) < 1e-9 and d["quantity"][_k] == _q
+                    and abs(d["value"][_k] - _v) < 1e-9
+                    and abs(d["sigma"][_k] - _s) < 1e-9
+                    and ((_c is None and _np.isnan(d["corr"][_k]))
+                         or (_c is not None and abs(d["corr"][_k] - _c) < 1e-9))):
+                _out.append(f"fila {_k}: z={_z} {_q}")
+        return _out
+    _mism = _r14_difiere(_d)
     check("DESI  R14 csv == DR2 Tabla 4 oficial (13 pts, dígito a dígito)",
           len(_d["value"]) == 13 and not _mism,
           "idéntico" if not _mism else "DIFIERE: " + "; ".join(_mism[:3]))
@@ -5908,11 +6116,34 @@ try:
     _csv_txt = (_root / "data" / "raw" / "desi_dr2_bao.csv").read_text()
     _data_lines = [l for l in _csv_txt.splitlines()
                    if l.strip() and not l.startswith("#") and not l.startswith("z_eff")]
-    _DR1_SENT = ["20.98", "20.08", "16.85", "13.62", "27.79", "13.82",
+    # "7.93" (BGS DV de DR1) lo nombraba el encabezado de esta capa y faltaba
+    # en la lista; lo encontró su control (2026-10-21).
+    _DR1_SENT = ["7.93", "20.98", "20.08", "16.85", "13.62", "27.79", "13.82",
                  "39.71", "8.52", "17.88", "21.71", "30.21", "13.23", "1.491"]
-    _dr1_hits = [s for s in _DR1_SENT if any(s in l for l in _data_lines)]
+    def _r14_centinelas(lineas):
+        return [s for s in _DR1_SENT if any(s in l for l in lineas)]
+    _dr1_hits = _r14_centinelas(_data_lines)
     check("DESI  R14 csv sin valores-centinela DR1/QSO-huérfano",
           not _dr1_hits, "limpio" if not _dr1_hits else "DR1: " + ", ".join(_dr1_hits))
+
+    # CONTROL (R53, 2026-10-21) de los dos candados de procedencia. Una copia
+    # del csv cargado con UN dígito cambiado tiene que salir distinta de la
+    # Tabla 4, y la copia intacta igual; una línea con el 7.93 de DR1 tiene que
+    # marcarse y la línea DR2 de la misma z no. (El canario de geometría de
+    # abajo ya es de dos lados por construcción: la total sana Y el sector
+    # 0.160 doliendo.)
+    _d14 = {_k: (list(_v) if hasattr(_v, "__len__") and not isinstance(_v, str) else _v)
+            for _k, _v in _d.items()}
+    _d14["value"] = _np.array(_d14["value"], dtype=float)
+    _d14["value"][3] = _d14["value"][3] + 0.001
+    check("R14 el detector marca el csv alterado y el centinela DR1, y deja pasar el DR2",
+          _r14_difiere(_d14) == [f"fila 3: z=0.706 DM_over_rd"]
+          and _r14_difiere(_d) == []
+          and _r14_centinelas(["0.295,DV_over_rd,7.93,0.15"]) == ["7.93"]
+          and _r14_centinelas(["0.510,DH_over_rd,20.98,0.61"]) == ["20.98"]
+          and _r14_centinelas(["0.295,DV_over_rd,7.942,0.075"]) == [],
+          "5 casos: un dígito movido en la fila 3 marcado; el csv intacto limpio; "
+          "el 7.93 y el 20.98 de DR1 marcados; la fila DR2 de z=0.295 limpia")
 
     # 3) Consumers: importan del loader y no re-hardcodean datos BAO.
     _consumers = [
@@ -6170,13 +6401,17 @@ try:
         (pathlib.Path(__file__).resolve().parents[2]
          / "CANONICAL_VALUES.yaml").read_text(encoding="utf-8")).get("provenance", {})
     _REQ = ("formula", "origin", "source")
-    _incompletos = []
-    for _k, _v in _P26.items():
-        _falta = [c for c in _REQ if not _v.get(c)]
-        if not (_v.get("depends_on") is not None or _v.get("affects")):
-            _falta.append("depends_on/affects")
-        if _falta:
-            _incompletos.append(f"{_k}«falta {'+'.join(_falta)}»")
+
+    def _r26_incompletos(P):
+        _out = []
+        for _k, _v in P.items():
+            _falta = [c for c in _REQ if not _v.get(c)]
+            if not (_v.get("depends_on") is not None or _v.get("affects")):
+                _falta.append("depends_on/affects")
+            if _falta:
+                _out.append(f"{_k}«falta {'+'.join(_falta)}»")
+        return _out
+    _incompletos = _r26_incompletos(_P26)
     check("R26 todo canónico con procedencia declara formula+origin+source+cadena",
           not _incompletos,
           f"{len(_P26)} nodos completos"
@@ -6192,14 +6427,29 @@ try:
             "R2": Omega / (KAL0 * Tr),
             "tau_Pi_H0": KAL0 * Omega / Tr, "n_s": 1 - phi ** -7,
             "Omega_m_cosm": _omm / _h ** 2}   # _h = H_alg/100, definido en Capa 1
-    _desfasados = [
-        f"{_k}: doc {_P26[_k]['value']} vs recomputado {_r:.7f}"
-        for _k, _r in _REC.items()
-        if _k in _P26 and abs(float(_P26[_k]["value"]) - _r) > 5e-6]
+    def _r26_desfasados(P, rec):
+        return [f"{_k}: doc {P[_k]['value']} vs recomputado {_r:.7f}"
+                for _k, _r in rec.items()
+                if _k in P and abs(float(P[_k]["value"]) - _r) > 5e-6]
+    _desfasados = _r26_desfasados(_P26, _REC)
     check("R26 los valores de procedencia == los que recomputa el guardián",
           not _desfasados,
           f"{len(_REC)} verificados contra el cómputo"
           if not _desfasados else "DOC STALE: " + "; ".join(_desfasados[:5]))
+    # CONTROL (R53, 2026-10-21): un nodo completo, uno sin `source` (el caso
+    # del 0.960318 de OP-20, un número sin fuente) y uno con `depends_on: []`
+    # —lista vacía, que SÍ declara la cadena: es una raíz—; y un valor
+    # documentado a 1e-6 del cómputo (pasa) contra uno de la cadena vieja.
+    _n_ok = dict(formula="a+b", origin="algebra", source="Paper 1", depends_on=[], value=0.022424)
+    _n_mal = dict(formula="a*b", origin="ajuste", source="", affects=["omega_m"], value=0.960318)
+    check("R26 el detector marca el nodo sin fuente y el valor rancio, y deja pasar el sano",
+          _r26_incompletos({"x": _n_ok}) == []
+          and _r26_incompletos({"y": _n_mal}) == ["y«falta source»"]
+          and _r26_desfasados({"x": _n_ok}, {"x": 0.0224245}) == []
+          and len(_r26_desfasados({"x": dict(_n_ok, value=0.06902)}, {"x": 0.06849})) == 1,
+          "4 casos: nodo completo (raíz con depends_on vacío) limpio; nodo sin "
+          "source marcado; valor a 5e-7 del cómputo limpio; Σm_ν de la cadena "
+          "vieja marcado")
 except Exception as e:
     check("R26 capa operable", False, str(e))
 
@@ -6226,14 +6476,26 @@ try:
     # OJO: se excluyen los rangos con «~» (p.ej. «$\sim$1-in-500»), que NO son el
     # look-elsewhere del core sino la gramática del multiplicador φ-DM — una cuenta
     # distinta que el propio PRD declara sin privilegio estadístico (§2.3, scope).
-    _claimed = set()
-    for _t in _texs2:
-        _txt = _t.read_text(errors="ignore")
+    def _r27_citados(_txt):
+        _out = set()
         for _m in _re2.finditer(r"1\$?[- ]in[- ]\$?(\d{3})|1 of (\d{3})|yields \$(\d{3})\$",
                                 _txt):
             if "sim" in _txt[max(0, _m.start() - 10):_m.start()]:
                 continue
-            _claimed.add(int(next(g for g in _m.groups() if g)))
+            _out.add(int(next(g for g in _m.groups() if g)))
+        return _out
+    _claimed = set()
+    for _t in _texs2:
+        _claimed |= _r27_citados(_t.read_text(errors="ignore"))
+    # CONTROL (R53, 2026-10-21): las tres formas en que un paper cita el
+    # denominador se leen, y el rango «~1-in-500» de la gramática del
+    # multiplicador NO cuenta como cita del look-elsewhere.
+    check("R27 el detector lee las tres formas de cita y excluye el rango con ~",
+          _r27_citados(r"only 1-in-490 ratios") == {490}
+          and _r27_citados(r"1 of 378 hits; the scan yields $490$ ratios") == {378, 490}
+          and _r27_citados(r"a $\sim$1-in-500 coincidence") == set(),
+          "3 casos: «1-in-490» leído; «1 of 378» y «yields $490$» leídos (el 378 "
+          "lo marcaría la comparación); «$\\sim$1-in-500» excluido")
     _bad = _claimed - {_n_rat}
     check("R27 look-elsewhere: 55/25/490 y 1-de-490 == lo que recomputa el script",
           _n_names == 55 and _n_vals == 25 and _n_rat == 490
@@ -6277,13 +6539,34 @@ try:
                         _out.append(f"{_t.id}={_ast.dump(_n.value)}")
         return _out
 
+    def _r28_deriva(pa, pb):
+        _a, _b = _codigo(pa), _codigo(pb)
+        return [x for x in _b if x not in _a], [x for x in _a if x not in _b]
+
+    # CONTROL (R53, 2026-10-21): dos copias que sólo difieren en prosa y
+    # comentarios son el MISMO código; la copia con el denominador viejo de wₐ
+    # (el caso real de 2026-07-25) no lo es. Archivos temporales: el detector
+    # lee rutas, así que se le dan rutas.
+    import tempfile as _tf28
+    with _tf28.TemporaryDirectory() as _td28:
+        _q = pathlib.Path(_td28)
+        (_q / "a.py").write_text('"""Docstring A."""\nWA = -PYROS / IGNIS  # wa\n')
+        (_q / "b.py").write_text('"""Otra prosa, CUÄSTAL=4Ω; su continuación."""\n'
+                                 '# comentario distinto\nWA = -PYROS / IGNIS\n')
+        (_q / "c.py").write_text('WA = -PYROS / KRYSTOS_V\n')
+        _ab28 = _r28_deriva(_q / "a.py", _q / "b.py")
+        _ac28 = _r28_deriva(_q / "a.py", _q / "c.py")
+    check("R28 el detector ignora la prosa y marca la constante distinta",
+          _ab28 == ([], []) and _ac28[0] and _ac28[1],
+          "2 casos: misma asignación con docstring y comentarios distintos → "
+          "idénticos; wₐ = −PYROS/KRYSTOS_V contra −PYROS/IGNIS → deriva")
+
     if not _cit.exists():
         check("R28 espejo diccionario citable (zenodo_dictionary ausente)", True,
               "gitignoreado; en un clon limpio no aplica — verificar en la máquina de trabajo")
     else:
-        _a, _b = _codigo(_mir), _codigo(_cit)
-        _falta = [x for x in _b if x not in _a]
-        _sobra = [x for x in _a if x not in _b]
+        _falta, _sobra = _r28_deriva(_mir, _cit)
+        _b = _codigo(_cit)
         check("R28 look_elsewhere_full.py del repo == el del diccionario citable",
               not _falta and not _sobra,
               f"{len(_b)} definiciones idénticas (espejo verbatim de v1.5)"
@@ -6319,8 +6602,12 @@ _SIMBOLOS = {
 }
 try:
     import math as _math
+    def _r29_dups(tabla_sim):
+        """Entidades que llevan más de un símbolo."""
+        _es = [e for e, _ in tabla_sim.values() if e != "—"]
+        return {e for e in _es if _es.count(e) > 1}
     _ents = [e for e, _ in _SIMBOLOS.values() if e != "—"]
-    _dup_ent = {e for e in _ents if _ents.count(e) > 1}
+    _dup_ent = _r29_dups(_SIMBOLOS)
     _dup_sim = len(_SIMBOLOS) != len({s for s in _SIMBOLOS})
 
     _d = {}
@@ -6367,19 +6654,40 @@ try:
     # tienen PADRES distintos y la misma reducción 2(φ+π) — por eso comparten valor.
     # Si la reducción fuera decorativa (copiada, no verificada) la tabla mentiría
     # justo donde promete transparencia.
-    _pura_mal = []
-    for _sim, _nom, _pura, _val in _tabla:
+    def _r29_reduce(_pura):
+        """Evalúa la columna «reduced form in φ,π» de una fila LaTeX."""
         _e = _pura.replace("$", "").replace(r"\varphi", "PHI").replace(r"\pi", "PI")
         _e = _e.replace(r"\sqrt5", "(5**0.5)").replace(r"\sqrt{5}", "(5**0.5)")
         _e = _re2.sub(r"(\d)\(", r"\1*(", _e)          # 2( -> 2*(
         _e = _re2.sub(r"(\d)(PHI|PI)", r"\1*\2", _e)   # 3PHI -> 3*PHI
         _e = _re2.sub(r"\)(PHI|PI)", r")*\1", _e)
+        return eval(_e, {"__builtins__": {}}, {"PHI": _d["φ"], "PI": _d["π"]})
+
+    def _r29_fila_mal(_sim, _pura, _val):
         try:
-            _got = eval(_e, {"__builtins__": {}}, {"PHI": _d["φ"], "PI": _d["π"]})
+            _got = _r29_reduce(_pura)
             if abs(_got - float(_val.replace("$", "").replace("\\\\", "").strip())) > 5e-5:
-                _pura_mal.append(f"{_sim}: {_pura}={_got:.5f}≠{_val}")
+                return f"{_sim}: {_pura}={_got:.5f}≠{_val}"
         except Exception:
-            _pura_mal.append(f"{_sim}: reducción ilegible «{_pura}»")
+            return f"{_sim}: reducción ilegible «{_pura}»"
+        return None
+    _pura_mal = [_x for _x in (_r29_fila_mal(_s, _p, _v) for _s, _n, _p, _v in _tabla) if _x]
+
+    # CONTROL (R53, 2026-10-21) de las dos mitades de la biyección y de la
+    # columna de reducción. I_g y K_v comparten 2(φ+π) = 9.519253: la reducción
+    # correcta pasa en las dos filas; la de PYROS escrita en la fila de IGNIS
+    # se marca. Y una tabla con una entidad bajo dos símbolos (Ω y Ω_DNAV, el
+    # caso real de Paper 1) se marca; la tabla vigente no.
+    _dup_mal = dict(_SIMBOLOS, **{r"\Omega_{\rm DNAV}": ("OMEGA", lambda d: d["Ω"])})
+    check("R29 el detector marca la reducción falsa y la entidad con dos símbolos",
+          _r29_fila_mal("I_g", r"$2(\varphi+\pi)$", "9.51925") is None
+          and _r29_fila_mal("K_v", r"$2(\varphi+\pi)$", "9.51925") is None
+          and _r29_fila_mal("I_g", r"$2\varphi+\pi$", "9.51925") is not None
+          and _r29_fila_mal("X", r"$\varphi+$", "1") is not None
+          and _r29_dups(_SIMBOLOS) == set() and _r29_dups(_dup_mal) == {"OMEGA"},
+          "6 casos: 2(φ+π) en I_g y en K_v limpio; 2φ+π (=PYROS) en la fila de "
+          "I_g marcado; reducción ilegible marcada; tabla vigente sin "
+          "duplicados; Ω y Ω_DNAV para OMEGA marcado")
     _falta_tab = []
     for _sim, _nom, _pura, _val in _tabla:
         _esp = {e for s, (e, _) in _SIMBOLOS.items()
@@ -6551,19 +6859,39 @@ try:
     import ast as _ast31
     import importlib as _il31
     _src31 = (_REPO2 / "src" / "ssee_core.py").read_text(errors="ignore")
-    _fuente = {}
-    for _n in _ast31.parse(_src31).body:
-        if isinstance(_n, _ast31.Assign) and isinstance(_n.value, _ast31.Constant):
-            for _t in _n.targets:
-                if isinstance(_t, _ast31.Name) and isinstance(_n.value.value, float):
-                    _fuente[_t.id] = _n.value.value
+
+    def _r31_fuente(src):
+        """Constantes float literales del fuente, leídas por AST."""
+        _out = {}
+        for _n in _ast31.parse(src).body:
+            if isinstance(_n, _ast31.Assign) and isinstance(_n.value, _ast31.Constant):
+                for _t in _n.targets:
+                    if isinstance(_t, _ast31.Name) and isinstance(_n.value.value, float):
+                        _out[_t.id] = _n.value.value
+        return _out
+
+    def _r31_discrepa(fuente, mod):
+        return [f"{_k}: import={getattr(mod, _k)} fuente={_v}"
+                for _k, _v in fuente.items()
+                if hasattr(mod, _k) and abs(getattr(mod, _k) - _v) > 1e-12]
+    _fuente = _r31_fuente(_src31)
     _il31.invalidate_caches()
     if str(_REPO2 / "src") not in sys.path:
         sys.path.insert(0, str(_REPO2 / "src"))
     _imp31 = _il31.import_module("ssee_core")
-    _discrepa = [f"{_k}: import={getattr(_imp31, _k)} fuente={_v}"
-                 for _k, _v in _fuente.items()
-                 if hasattr(_imp31, _k) and abs(getattr(_imp31, _k) - _v) > 1e-12]
+    _discrepa = _r31_discrepa(_fuente, _imp31)
+    # CONTROL (R53, 2026-10-21): el caso real del 2026-07-25. Fuente con
+    # 0.06849; un módulo «importado» que trae 0.06902 (bytecode rancio) se
+    # marca, el que trae 0.06849 no. Y una constante calculada (no literal)
+    # queda fuera del cotejo, como promete la lectura por AST.
+    import types as _ty31
+    _f31 = _r31_fuente("SUM_MNU_EV = 0.06849\nOMEGA = PHI + PI\n")
+    check("R31 el detector marca el bytecode rancio y deja pasar el fresco",
+          _f31 == {"SUM_MNU_EV": 0.06849}
+          and len(_r31_discrepa(_f31, _ty31.SimpleNamespace(SUM_MNU_EV=0.06902))) == 1
+          and _r31_discrepa(_f31, _ty31.SimpleNamespace(SUM_MNU_EV=0.06849)) == [],
+          "3 casos: sólo la constante literal se lee del fuente; el import con "
+          "0.06902 marcado; el import con 0.06849 limpio")
     check("R31 bytecode: ssee_core importado == ssee_core del fuente",
           not _discrepa,
           f"{len(_fuente)} constantes literales coinciden import↔fuente"
@@ -6774,29 +7102,46 @@ print("\nCapa R49 — el `source` declarado apunta a un documento real")
 try:
     _TEX = {f.name: f.read_text(errors="ignore")
             for f in (_REPO / "manuscript").glob("*.tex")}
-    _malas = []
-    for _k, _v in _P26.items():
-        _src = str(_v.get("source", ""))
-        _m = _re.search(r"Paper\s*(\d+)", _src)
-        if not _m:
-            continue                      # sin puntero a paper: fuera de alcance
-        _cands = [n for n in _TEX if f"Paper{_m.group(1)}" in n]
-        if not _cands:
-            _malas.append(f"{_k}: cita «Paper {_m.group(1)}» y no hay .tex")
-            continue
-        # el valor declarado debe aparecer en ese paper (aunque sea redondeado)
-        _val = _v.get("value")
-        if _val is None:
-            continue
-        # Un paper puede escribir el mismo número a distinta precisión
-        # (4.76 · 4.7596 · 4.759627). Basta que APAREZCA en alguna forma:
-        # buscar «no aparece a 3 decimales» daba falsos positivos en Omega,
-        # n_s, R2 y omega_m — todos escritos con más cifras. Medido, no supuesto.
-        _formas = {f"{float(_val):.{_d}f}".rstrip("0").rstrip(".")
-                   for _d in range(2, 8)}
-        if not any(_f in _TEX[c] for _f in _formas for c in _cands):
-            _malas.append(f"{_k}: {_val} no aparece en {_cands[0]} "
-                          f"(probadas {len(_formas)} precisiones)")
+
+    def _r49_malas(P, TEX):
+        _out = []
+        for _k, _v in P.items():
+            _src = str(_v.get("source", ""))
+            _m = _re.search(r"Paper\s*(\d+)", _src)
+            if not _m:
+                continue                      # sin puntero a paper: fuera de alcance
+            _cands = [n for n in TEX if f"Paper{_m.group(1)}" in n]
+            if not _cands:
+                _out.append(f"{_k}: cita «Paper {_m.group(1)}» y no hay .tex")
+                continue
+            # el valor declarado debe aparecer en ese paper (aunque sea redondeado)
+            _val = _v.get("value")
+            if _val is None:
+                continue
+            # Un paper puede escribir el mismo número a distinta precisión
+            # (4.76 · 4.7596 · 4.759627). Basta que APAREZCA en alguna forma:
+            # buscar «no aparece a 3 decimales» daba falsos positivos en Omega,
+            # n_s, R2 y omega_m — todos escritos con más cifras. Medido, no supuesto.
+            _formas = {f"{float(_val):.{_d}f}".rstrip("0").rstrip(".")
+                       for _d in range(2, 8)}
+            if not any(_f in TEX[c] for _f in _formas for c in _cands):
+                _out.append(f"{_k}: {_val} no aparece en {_cands[0]} "
+                            f"(probadas {len(_formas)} precisiones)")
+        return _out
+    _malas = _r49_malas(_P26, _TEX)
+    # CONTROL (R53, 2026-10-21): el caso que creó la regla. Un `source` que
+    # apunta a un paper que sólo USA el valor con otra cifra se marca; el que
+    # apunta al paper que lo escribe (a otra precisión) pasa; el que cita un
+    # paper inexistente se marca; uno sin puntero a paper queda fuera.
+    _T49 = {"SSEE_Paper4_ToE.tex": r"the relaxation time enters as $\tau$",
+            "SSEE_Paper1_Framework.tex": r"$\Omega = \varphi+\pi = 4.7596$"}
+    check("R49 el detector marca el `source` que no contiene el valor y deja pasar el que sí",
+          _r49_malas({"Omega": dict(source="Paper 1 L388", value=4.759627)}, _T49) == []
+          and len(_r49_malas({"tau": dict(source="Paper 4 L686", value=1.40)}, _T49)) == 1
+          and len(_r49_malas({"x": dict(source="Paper 12", value=1.0)}, _T49)) == 1
+          and _r49_malas({"y": dict(source="ssee_core.py", value=9.9)}, _T49) == [],
+          "4 casos: Ω=4.759627 hallado como 4.7596 en P1 limpio; τ ausente de P4 "
+          "marcado; Paper 12 inexistente marcado; source sin paper fuera de alcance")
     check("R49 todo `source` que cita un paper apunta a uno que contiene el valor",
           not _malas, "; ".join(_malas[:4]) if _malas
           else f"{len(_P26)} procedencias con puntero verificado")
@@ -7287,7 +7632,8 @@ try:
     # 31 al abrir la capa (2026-09-05). Baja a 28 el mismo día con los
     # controles de R17, R25 y R30 — las tres que vigilan números
     # canónicos, por eso primero. SÓLO puede BAJAR.
-    _DEUDA_R53 = 25   # 26 -> 25: R33 y R68 ganaron control (2026-09-30)
+    _DEUDA_R53 = 0    # 25 -> 0 (2026-10-21): las 25 que faltaban ganaron
+                      # control de dos lados; 26 -> 25 el 2026-09-30 (R33, R68)
     _lista53 = " ".join("R%d" % _r for _r in sorted(_sin53))
 
     check("R53 la deuda de reglas sin control no crece",
@@ -7297,7 +7643,10 @@ try:
           if _sin53 else "todas las reglas tienen control")
 
     check("R53 el tope de deuda está apretado",
-          len(_sin53) >= _DEUDA_R53 - 0 or len(_sin53) == 0,
+          # sin el «or len(_sin53) == 0» de antes: con la deuda en cero esa
+          # cláusula aceptaba CUALQUIER tope, y un tope de 6 sobre 0 reglas
+          # sin control dejaba entrar seis nuevas en VERDE (2026-10-21).
+          len(_sin53) >= _DEUDA_R53,
           f"tope {_DEUDA_R53} = cuenta real {len(_sin53)}"
           if len(_sin53) == _DEUDA_R53 else
           f"BAJAR el tope a {len(_sin53)}: sobran {_DEUDA_R53 - len(_sin53)}")
@@ -8053,13 +8402,36 @@ except Exception as _e:            # noqa: BLE001
           f"excepción: {_e}", nivel=5)
 
 print("\nCapa R46 — el guardián hizo todo el trabajo que dice hacer")
-_PISO_CHECKS = 345          # 278 -> 345 (2026-10-16): con 350 ejecutadas, el piso
+_PISO_CHECKS = 375          # 345 -> 375 (2026-10-21): +30 con los controles R53
+                            # de las 25 reglas que no tenian; ahora R46 exige
+                            # ademas que el piso este a <= 5 de lo ejecutado.
+                            # 278 -> 345 (2026-10-16): con 350 ejecutadas, el piso
                             # viejo dejaba 72 de holgura y la mutacion R46 (la seccion
                             # B del Registro sin recorrer: 350 -> 330) pasaba VERDE.
                             # Margen 5 para checks condicionales; solo SUBE
                             # +4 procedencia (JSON + redondeo + control); solo SUBE
                             # control, -1 R53; +2 R61 antes; solo SUBE
                             # (2026-09-05); sólo SUBE
+
+def _r46_veredicto(_n, _piso, _holgura=5):
+    """(alcanza el piso, piso apretado): el piso sirve si una capa entera que
+    deja de correr lo perfora; con más de _holgura de margen, no lo perfora."""
+    return _n >= _piso, _n - _piso <= _holgura
+
+
+# CONTROL (R53, 2026-10-21): el caso real del 2026-10-16. Con 350 ejecutadas y
+# piso 278, una sección del Registro sin recorrer (350 → 330) seguía VERDE: el
+# piso flojo no veía la pérdida. El detector tiene que decir «flojo» a ese
+# piso, «perforado» a 330 contra 345, y aceptar 350 contra 345.
+check("R46 el detector marca la caída de comprobaciones y el piso flojo",
+      _r46_veredicto(350, 345) == (True, True)
+      and _r46_veredicto(330, 345)[0] is False
+      and _r46_veredicto(350, 278)[1] is False,
+      "3 casos: 350 sobre piso 345 pasa y apretado; 330 perfora 345; "
+      "piso 278 con 350 ejecutadas marcado como flojo")
+check("R46 el piso de comprobaciones está apretado (holgura ≤ 5)",
+      _r46_veredicto(checks + 2, _PISO_CHECKS)[1],
+      f"{checks + 2} ejecutadas contando ésta y la de abajo, piso {_PISO_CHECKS}")
 check(f"R46 se ejecutaron al menos {_PISO_CHECKS} comprobaciones",
       checks + 1 >= _PISO_CHECKS,
       f"{checks + 1} ejecutadas (piso {_PISO_CHECKS})"
