@@ -1283,6 +1283,22 @@ stages:
     outs:
     - results/logs/chi2_bao_posterior.log:
         cache: false
+  control_lcdm_legacy:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_lcdm_legacy.py > results/logs/control_lcdm_legacy.log 2>&1
+    deps:
+    - src/p06_growth/control_lcdm_legacy.py
+    - src/procedencia.py
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.1.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.2.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.3.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.4.txt
+    - /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.progress
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    outs:
+    - results/logs/growth_2026-07/control_lcdm_legacy.json:
+        cache: false
+    - results/logs/control_lcdm_legacy.log:
+        cache: false
   sello_control_legacy:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_legacy.py > results/logs/control_legacy.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/growth_2026-07/control_legacy.json
       /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits

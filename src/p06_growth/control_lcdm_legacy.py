@@ -65,8 +65,9 @@ def sigma8(fila):
     p.set_matter_power(redshifts=[0.0], kmax=2.0, nonlinear=False)
     r = camb.get_results(p)
     om = (p.omch2 + p.ombh2 + p.omnuh2) / h0 ** 2
+    omnu = p.omnuh2 / h0 ** 2
     s8 = float(r.get_sigma8_0())
-    return s8, om, s8 * math.sqrt(om / 0.3)
+    return s8, om, s8 * math.sqrt(om / 0.3), s8 * math.sqrt((om - omnu) / 0.3)
 
 
 def media_sigma(x, w):
@@ -91,7 +92,7 @@ def main():
     filas = [tuple(float(c[n][i]) for n in ('ombh2', 'omch2', 'h0', 'ns', 'logA')) for i in idx]
     with Pool(int(os.environ.get('CTL_NWORK', '4'))) as pool:
         res = np.array(pool.map(sigma8, filas))
-    s8s, oms, S8s = res[:, 0], res[:, 1], res[:, 2]
+    s8s, oms, S8s, S8cb = res[:, 0], res[:, 1], res[:, 2], res[:, 3]
     uno = np.ones(N_SUB)
 
     la_full = media_sigma(c['logA'], w)
@@ -106,11 +107,17 @@ def main():
                                  'COSMOLOGICAL_PARAMETERS--OMEGA_M', 'log_weight', 'post', 'prior')]
     o = o[np.isfinite(o[:, uso]).all(axis=1)]
     ow = np.exp(o[:, oc.index('log_weight')] - o[:, oc.index('log_weight')].max())
-    of = dict(S8=media_sigma(o[:, uso[0]], ow), sigma8=media_sigma(o[:, uso[1]], ow),
-              Om=media_sigma(o[:, uso[2]], ow))
+    # S8 con Ω_m TOTAL (con ν): la definición de este pipeline y de SSEE, y la
+    # de kids_publicados.py (0.8265). s_8_input de KiDS usa Ω_m SIN ν: se
+    # compara aparte, contra nuestro S8 también sin ν. (La primera corrida de
+    # este script, 2026-10-21, mezcló las dos: S8 total contra s_8_input.)
+    s8tot = o[:, uso[1]] * np.sqrt(o[:, uso[2]] / 0.3)
+    of = dict(S8=media_sigma(s8tot, ow), S8_sin_nu=media_sigma(o[:, uso[0]], ow),
+              sigma8=media_sigma(o[:, uso[1]], ow), Om=media_sigma(o[:, uso[2]], ow))
     chi2_of = float(-2.0 * (o[:, oc.index('post')] - o[:, oc.index('prior')]).max())
 
-    nu = dict(S8=media_sigma(S8s, uno), sigma8=media_sigma(s8s, uno), Om=media_sigma(oms, uno))
+    nu = dict(S8=media_sigma(S8s, uno), S8_sin_nu=media_sigma(S8cb, uno),
+              sigma8=media_sigma(s8s, uno), Om=media_sigma(oms, uno))
     dist = {k: (nu[k][0] - of[k][0]) / of[k][1] for k in nu}
 
     prog = [l.split() for l in open(f'{CAD}/lcdm.progress') if not l.startswith('#') and l.strip()]
@@ -134,7 +141,7 @@ def main():
               open(SALIDA, 'w'), indent=1)
     print(f'R-1 {rm1:.4f} (bordes {rm1_cl:.3f}); submuestra logA a {ctl_sub:.3f}σ de la cadena '
           f'-> {"PASA" if ctl_sub < 0.1 else "NO PASA"}')
-    for k in ('S8', 'sigma8', 'Om'):
+    for k in ('S8', 'S8_sin_nu', 'sigma8', 'Om'):
         print(f'{k:7s} nuestro {nu[k][0]:.4f} ± {nu[k][1]:.4f}   oficial {of[k][0]:.4f} ± {of[k][1]:.4f}'
               f'   -> {dist[k]:+.2f}σ')
     print(f'chi2_min {c["chi2"].min():.3f}  vs max-like oficial {chi2_of:.3f}  (Δ {c["chi2"].min() - chi2_of:+.3f})')

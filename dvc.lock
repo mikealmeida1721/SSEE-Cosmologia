@@ -5769,3 +5769,50 @@ stages:
       hash: md5
       md5: 438ec75e1bf4535f68db36f77cd7897c
       size: 224580
+  control_lcdm_legacy:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/control_lcdm_legacy.py > 
+      results/logs/control_lcdm_legacy.log 2>&1
+    deps:
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.1.txt
+      hash: md5
+      md5: 98fb1935530c8ebf50f8310eb67127a7
+      size: 15003482
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.2.txt
+      hash: md5
+      md5: ff8a58c908d99da68214a7906cb33592
+      size: 14939938
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.3.txt
+      hash: md5
+      md5: 95918f05a5c3016db83706337925a4c6
+      size: 14821976
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.4.txt
+      hash: md5
+      md5: b50d3fbfdad954fc31ca27de0df00f70
+      size: 15034578
+    - path: /mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.progress
+      hash: md5
+      md5: 939633e57289eea247279a0005d57d50
+      size: 5478
+    - path: 
+        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+      hash: md5
+      md5: 14e13ea2c7f3286a0bf220cabdef1373
+      size: 105084314
+    - path: src/p06_growth/control_lcdm_legacy.py
+      hash: md5
+      md5: 9d8201228cc653e67302c7cf61cef07c
+      size: 7625
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/control_lcdm_legacy.log
+      hash: md5
+      md5: 67c4e2436150cd3a5984b5b6a847a7c0
+      size: 1202
+    - path: results/logs/growth_2026-07/control_lcdm_legacy.json
+      hash: md5
+      md5: 19b0f2bcb72c5bd1165dcc3dd23919c4
+      size: 3277
