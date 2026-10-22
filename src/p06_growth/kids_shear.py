@@ -247,23 +247,149 @@ def cl_shear(D, res, pars, kh, z_pk, pk, growth, A_IA, deltaz, nell=60,
     return ells, Cl, idx
 
 
+# REJILLA EN l DE LA INTEGRAL DE HANKEL (2026-10-22). Era 4000 puntos log en
+# [1, 3e4]. A theta grande J(l theta) oscila con periodo 2 pi/theta en l (~72 a
+# 300') y la rejilla log a l alto es mucho mas gruesa: la integral NO
+# convergia. Medido en el maximo de verosimilitud oficial de KiDS-Legacy,
+# contra 200000 puntos: error 0.4 % a 75', 3 % a 130', 6 % a 227', 50 % a 299'
+# (con 40000, igual a 200000 en los digitos mostrados). Afecta a TODO
+# resultado de cizalla calculado antes de esta fecha, KiDS-1000 incluido.
+N_LGRID = 40000
+
+
 def xi_pm(ells, Cl, theta_arcmin, kind):
     """xi_pm(theta) = 1/(2pi) int dl l C_l J_{0,4}(l theta)."""
     th = theta_arcmin * (np.pi / 180.0 / 60.0)
     order = 0 if kind == 'p' else 4
-    lgrid = np.logspace(np.log10(ells[0]), np.log10(ells[-1]), 4000)
+    lgrid = np.logspace(np.log10(ells[0]), np.log10(ells[-1]), N_LGRID)
     spl = IUS(np.log(ells), np.log(np.maximum(Cl, 1e-40)), k=3)
     Cl_f = np.exp(spl(np.log(lgrid)))
     return simpson(lgrid * Cl_f * jv(order, lgrid * th), x=lgrid) / (2 * np.pi)
 
 
+# ---------------------------------------------------------------- binning pesado por pares
+# (2026-10-22) El pipeline oficial de KiDS-Legacy NO evalua xi(theta) en el
+# centro del bin: el modulo bin_xi (KiDS_Legacy_xipm_pipeline.ini, [xip_binned]
+# y [xim_binned], weighted_binning = 1) PROMEDIA xi sobre los 1000 angulos finos
+# de treecorr dentro de cada uno de los 9 bins logaritmicos entre 2' y 300',
+# pesando con npairs_weighted y evaluando en meanr. El ANG del FITS es el centro
+# GEOMETRICO del bin; el meanr pesado cae ~6 % mas afuera (2.80' contra 2.64'
+# en el primero). Evaluar en el centro era la unica diferencia declarada en
+# control_legacy.py que seguia abierta, y el control por repesado
+# (control_legacy_repesado.json) mostro que el sesgo de -0.42 sigma en S8 era
+# del evaluador y no del alineamiento.
+# Sin load_npairs(D) todo queda IGUAL que antes: theory_vector solo cambia de
+# camino si D trae 'fino'.
+NPAIRS_LEGACY = ('/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/'
+                 'data/cosmosis_xipm/XI_KiDS_Legacy_NScomb_nBins_6_Bin{}_Bin{}.ascii')
+THETA_BORDES_LEGACY = np.logspace(np.log10(2.0), np.log10(300.0), 10)   # theta_min, theta_max, ntheta = 9 del .ini
+
+
+def load_npairs(D, plantilla=NPAIRS_LEGACY, bordes=THETA_BORDES_LEGACY):
+    """Adjunta a D, por punto de datos, los angulos finos (meanr) y pesos
+    (npairs_weighted) de su bin angular. Devuelve D."""
+    fino = []
+    tablas = {}
+    for n in range(len(D['d'])):
+        b = (min(D['b1'][n], D['b2'][n]), max(D['b1'][n], D['b2'][n]))
+        if b not in tablas:
+            with open(plantilla.format(*b)) as f:
+                col = f.readline().split()
+            a = np.loadtxt(plantilla.format(*b), skiprows=1)
+            tablas[b] = (a[:, col.index('r_nom')], a[:, col.index('meanr')],
+                         a[:, col.index('npairs_weighted')])
+        rnom, meanr, w = tablas[b]
+        D['theta_nom'] = rnom
+        k = int(np.searchsorted(bordes, D['ang'][n]) - 1)
+        s = (rnom >= bordes[k]) & (rnom < bordes[k + 1])
+        fino.append((meanr[s], w[s] / w[s].sum()))
+    D['fino'] = fino
+    return D
+
+
+_JCACHE = {}
+
+
+def xi_pm_tabla(ells, Cl, theta_arcmin, kind):
+    """xi_pm en MUCHOS angulos a la vez: la misma integral de xi_pm (misma
+    rejilla en l, mismo spline de C_l, Simpson) hecha como producto matricial."""
+    th = np.asarray(theta_arcmin, float) * (np.pi / 180.0 / 60.0)
+    order = 0 if kind == 'p' else 4
+    lgrid = np.logspace(np.log10(ells[0]), np.log10(ells[-1]), N_LGRID)
+    spl = IUS(np.log(ells), np.log(np.maximum(Cl, 1e-40)), k=3)
+    Cl_f = np.exp(spl(np.log(lgrid)))
+    clave = (order, float(ells[0]), float(ells[-1]), th.tobytes())
+    if clave not in _JCACHE:
+        if len(_JCACHE) > 64:
+            _JCACHE.clear()
+        _JCACHE[clave] = jv(order, np.outer(lgrid, th))
+    return simpson((lgrid * Cl_f)[:, None] * _JCACHE[clave], x=lgrid, axis=0) / (2 * np.pi)
+
+
 def theory_vector(D, ells, Cl, idx, delta_c=0.0):
+    if 'fino' in D:
+        return _theory_vector_pesado(D, ells, Cl, idx, delta_c)
     t = np.zeros(len(D['d']))
     for n in range(len(D['d'])):
         p_ = idx[(min(D['b1'][n], D['b2'][n]), max(D['b1'][n], D['b2'][n]))]
         t[n] = xi_pm(ells, Cl[p_], D['ang'][n], D['kind'][n])
         if D['kind'][n] == 'p':
             t[n] += delta_c**2          # termino c aditivo (xip_add_c_term = 1)
+    return t
+
+
+_WCACHE = {}
+
+
+def _xi_nom(ells, Cl, theta_arcmin, kind):
+    """xi en los angulos nominales comunes como UN producto matriz-vector: los
+    pesos de la regla del trapecio en l, el factor l y J(l theta) van dentro de
+    una matriz que se arma una vez por (orden, rango de l). Con la rejilla de
+    N_LGRID = 40000 ya convergida, trapecio y Simpson coinciden en chi2 (medido
+    en control_legacy_repesado.py); Simpson con axis=0 armaba una temporal de
+    320 MB por par y tardaba 32 s por vector de teoria."""
+    order = 0 if kind == 'p' else 4
+    clave = (order, float(ells[0]), float(ells[-1]), np.asarray(theta_arcmin).tobytes())
+    lgrid = np.logspace(np.log10(ells[0]), np.log10(ells[-1]), N_LGRID)
+    if clave not in _WCACHE:
+        if len(_WCACHE) > 4:
+            _WCACHE.clear()
+        th = np.asarray(theta_arcmin, float) * (np.pi / 180.0 / 60.0)
+        w = np.zeros(N_LGRID)
+        dl = np.diff(lgrid)
+        w[:-1] += dl / 2
+        w[1:] += dl / 2
+        _WCACHE[clave] = (w * lgrid)[:, None] * jv(order, np.outer(lgrid, th)) / (2 * np.pi)
+    spl = IUS(np.log(ells), np.log(np.maximum(Cl, 1e-40)), k=3)
+    return np.exp(spl(np.log(lgrid))) @ _WCACHE[clave]
+
+
+def _theory_vector_pesado(D, ells, Cl, idx, delta_c=0.0):
+    """Como theory_vector, pero cada punto es el promedio de xi sobre los
+    angulos finos de su bin, pesado por npairs_weighted (bin_xi oficial)."""
+    t = np.zeros(len(D['d']))
+    grupos = {}
+    for n in range(len(D['d'])):
+        p_ = idx[(min(D['b1'][n], D['b2'][n]), max(D['b1'][n], D['b2'][n]))]
+        grupos.setdefault((p_, D['kind'][n]), []).append(n)
+    for (p_, kind), ns in grupos.items():
+        th = np.concatenate([D['fino'][n][0] for n in ns])
+        # Los 1000 angulos NOMINALES de treecorr (r_nom) son los mismos para
+        # los 21 pares: la matriz de Bessel se arma UNA vez por orden y se
+        # reusa. meanr difiere de r_nom hasta 3e-4 relativo; se pasa con
+        # interpolacion lineal en log(theta). Medido en el maximo oficial:
+        # una rejilla maestra de 300 angulos con spline movia chi2 en 0.41
+        # (407.26 contra 407.67 del calculo directo en cada meanr) — no sirve
+        # para un control; esta forma se mide igual en control_legacy_repesado.py.
+        xi_c = _xi_nom(ells, Cl[p_], D['theta_nom'], kind)
+        xi = np.interp(np.log(th), np.log(D['theta_nom']), xi_c)
+        i = 0
+        for n in ns:
+            th_n, w_n = D['fino'][n]
+            t[n] = float(np.dot(w_n, xi[i:i + len(th_n)]))
+            i += len(th_n)
+            if kind == 'p':
+                t[n] += delta_c**2
     return t
 
 

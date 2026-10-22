@@ -1309,6 +1309,7 @@ stages:
     - results/logs/growth_2026-07/control_legacy.json
     - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
     - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/cosmosis_xipm
     outs:
     - results/logs/growth_2026-07/control_legacy_repesado.json:
         cache: false

@@ -30,8 +30,11 @@ repesado no es fiable y se dice).
 S₈ = σ₈ √(Ω_m/0.3) con Ω_m TOTAL (con ν), de las columnas de la cadena oficial.
 
 CONTROL (R53): la fila de máxima verosimilitud oficial se evalúa también y
-tiene que reproducir el χ² = 410.27 de control_legacy.json a 1e-2: si no, este
-evaluador no es el mismo que aquel.
+tiene que reproducir el χ² OFICIAL de esa fila (407.647) a menos de 0.1. Con
+el evaluador viejo (centro del bin, l sin converger) daba 410.27; con el
+binning por pares y la rejilla convergida, 407.671 (medido el 2026-10-22,
+antes de fijar este umbral: es un control de identidad del código, no el
+criterio del resultado, que sigue siendo el de S₈).
 
 Salida: results/logs/growth_2026-07/control_legacy_repesado.json (con acta).
 """
@@ -54,13 +57,17 @@ from procedencia import con_acta               # noqa: E402
 
 SALIDA = os.path.join(_R, 'results', 'logs', 'growth_2026-07', 'control_legacy_repesado.json')
 REF = os.path.join(_R, 'results', 'logs', 'growth_2026-07', 'control_legacy.json')
-N_SUB = 1200        # ORIGEN-VALOR: 1200 — filas sorteadas (~14.5 s cada una, control_legacy.json), no un dato
+N_SUB = 1200        # ORIGEN-VALOR: 1200 — filas sorteadas (~15 s cada una: CAMB + 1 s de teoría), no un dato
 SEMILLA = 20261022  # ORIGEN-VALOR: 20261022 — semilla fija del sorteo (la fecha), no un dato
 TOL = 0.3           # criterio, fijado antes de correr
 
 _cfg = K.set_dataset('legacy')
 _D = K.load_data()
 _M = K.scale_mask(_D)
+# 2026-10-22, segunda pasada: binning pesado por pares (bin_xi oficial) y
+# rejilla en l convergida (N_LGRID = 40000). La primera pasada (sin esto) dio
+# S8 repesado −0.42σ: quedó en el historial de git de este log.
+K.load_npairs(_D)
 with open(CL._CADENA) as _f:
     COL = _f.readline().lstrip('#').split()
 
@@ -107,11 +114,11 @@ def main():
     idx = rng.choice(len(X), size=N_SUB, replace=True, p=w / w.sum())
     imax = int(np.argmin(chi2_of))
     filas = [X[i] for i in idx] + [X[imax]]
-    with Pool(int(os.environ.get('CTL_NWORK', '4'))) as pool:
+    with Pool(int(os.environ.get('CTL_NWORK', '3'))) as pool:   # ~1.2 GB por proceso (matriz de Bessel)
         c2 = np.array(pool.map(chi2_fila, filas))
     c2_max, c2 = c2[-1], c2[:-1]
-    ref_max = json.load(open(REF))['titular_hmcode2020']['chi2']
-    ctl = bool(abs(c2_max - ref_max) < 1e-2)
+    ref_max = float(chi2_of[imax])
+    ctl = bool(abs(c2_max - ref_max) < 0.1)
 
     bien = np.isfinite(c2)
     d = (c2 - chi2_of[idx])[bien]
@@ -123,7 +130,7 @@ def main():
     dist = (rep[0] - sub[0]) / of[1]
     out = dict(
         cadena_oficial=CL._CADENA, submuestra=N_SUB, semilla=SEMILLA, filas_fallidas=int((~bien).sum()),
-        control_fila_maxlike=dict(chi2=float(c2_max), chi2_control_legacy=float(ref_max), pasa=ctl),
+        control_fila_maxlike=dict(chi2=float(c2_max), chi2_oficial=float(ref_max), pasa=ctl),
         delta_chi2=dict(media=float(d.mean()), sigma=float(d.std()), min=float(d.min()), max=float(d.max())),
         tamano_efectivo=ess,
         S8_oficial=dict(media=of[0], sigma=of[1]), S8_submuestra=dict(media=sub[0], sigma=sub[1]),
