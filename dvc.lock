@@ -5801,8 +5801,8 @@ stages:
       size: 105084314
     - path: src/p06_growth/control_lcdm_legacy.py
       hash: md5
-      md5: 9d8201228cc653e67302c7cf61cef07c
-      size: 7625
+      md5: f1cce8e91ad3176ba14b964ca4b72e59
+      size: 8171
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -5810,9 +5810,9 @@ stages:
     outs:
     - path: results/logs/control_lcdm_legacy.log
       hash: md5
-      md5: 67c4e2436150cd3a5984b5b6a847a7c0
-      size: 1202
+      md5: b775242d17d8ea5e45b6223edbaa96ec
+      size: 1277
     - path: results/logs/growth_2026-07/control_lcdm_legacy.json
       hash: md5
-      md5: 19b0f2bcb72c5bd1165dcc3dd23919c4
-      size: 3277
+      md5: 39f23887fe6e69ec1b6545b54ad7762b
+      size: 3485
