@@ -2532,8 +2532,8 @@ stages:
       size: 8294
     - path: src/p06_growth/kids_shear.py
       hash: md5
-      md5: f9d3dcd78f647eccfc69497ac8b411d6
-      size: 12385
+      md5: f43859a31c519c2fd543e3be0cf699de
+      size: 18572
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -2549,12 +2549,12 @@ stages:
     outs:
     - path: results/logs/control_legacy.log
       hash: md5
-      md5: 307ac5b5e13217922e23ddc4324f9a82
+      md5: 0280dfbdd45e01976730e392b1a3a33b
       size: 2929
     - path: results/logs/growth_2026-07/control_legacy.json
       hash: md5
-      md5: ea0d59cb2de0b2333720111c75316298
-      size: 5929
+      md5: 40c9d18d199da3bbe5be892398e2d22d
+      size: 5925
   sello_cruce_fantasma:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
       src/p07_eft/cruce_fantasma_quien_lo_lleva.py && .venv/bin/python3 
@@ -5831,22 +5831,28 @@ stages:
       hash: md5
       md5: a17bbed5e3d60774b9d6f91e60d1d526
       size: 1186560
+    - path: 
+        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/cosmosis_xipm
+      hash: md5
+      md5: 088a2ce6f37854071aef18e0665737fe.dir
+      size: 4686505
+      nfiles: 21
     - path: results/logs/growth_2026-07/control_legacy.json
       hash: md5
-      md5: ea0d59cb2de0b2333720111c75316298
-      size: 5929
+      md5: 40c9d18d199da3bbe5be892398e2d22d
+      size: 5925
     - path: src/p06_growth/control_legacy.py
       hash: md5
       md5: 79d8a4201f364aafda41db5083dd2024
       size: 8294
     - path: src/p06_growth/control_legacy_repesado.py
       hash: md5
-      md5: 2265ef6cb7b43621ecdd011fac7915ab
-      size: 7252
+      md5: 38d0c5f0b9c5f7cad829f1ac95007eb5
+      size: 7732
     - path: src/p06_growth/kids_shear.py
       hash: md5
-      md5: f9d3dcd78f647eccfc69497ac8b411d6
-      size: 12385
+      md5: f43859a31c519c2fd543e3be0cf699de
+      size: 18572
     - path: src/procedencia.py
       hash: md5
       md5: af9be770989b8f2296c90fdc71efc121
@@ -5854,9 +5860,9 @@ stages:
     outs:
     - path: results/logs/control_legacy_repesado.log
       hash: md5
-      md5: 981d77060951be3d643831223a8ce0aa
-      size: 1106
+      md5: 7dbf24ae24c26ebb88a3309b551460b7
+      size: 1102
     - path: results/logs/growth_2026-07/control_legacy_repesado.json
       hash: md5
-      md5: a3399e42c3465aaeb42a066f503adc4d
-      size: 1969
+      md5: 758d56e140cb02e21462968f094dca4e
+      size: 1959
