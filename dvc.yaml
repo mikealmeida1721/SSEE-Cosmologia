@@ -1299,6 +1299,21 @@ stages:
         cache: false
     - results/logs/control_lcdm_legacy.log:
         cache: false
+  control_legacy_repesado:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_legacy_repesado.py > results/logs/control_legacy_repesado.log 2>&1
+    deps:
+    - src/p06_growth/control_legacy_repesado.py
+    - src/p06_growth/control_legacy.py
+    - src/p06_growth/kids_shear.py
+    - src/procedencia.py
+    - results/logs/growth_2026-07/control_legacy.json
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+    - /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+    outs:
+    - results/logs/growth_2026-07/control_legacy_repesado.json:
+        cache: false
+    - results/logs/control_legacy_repesado.log:
+        cache: false
   sello_control_legacy:
     cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 src/p06_growth/control_legacy.py > results/logs/control_legacy.log && .venv/bin/python3 src/procedencia_sella.py src/p06_growth/control_legacy.py results/logs/growth_2026-07/control_legacy.json
       /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits

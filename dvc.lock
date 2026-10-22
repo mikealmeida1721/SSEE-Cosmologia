@@ -5816,3 +5816,47 @@ stages:
       hash: md5
       md5: 39f23887fe6e69ec1b6545b54ad7762b
       size: 3485
+  control_legacy_repesado:
+    cmd: OMP_NUM_THREADS=1 nice -n 10 .venv/bin/python3 
+      src/p06_growth/control_legacy_repesado.py > 
+      results/logs/control_legacy_repesado.log 2>&1
+    deps:
+    - path: 
+        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt
+      hash: md5
+      md5: 14e13ea2c7f3286a0bf220cabdef1373
+      size: 105084314
+    - path: 
+        /mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/KiDS_Legacy_xipm.fits
+      hash: md5
+      md5: a17bbed5e3d60774b9d6f91e60d1d526
+      size: 1186560
+    - path: results/logs/growth_2026-07/control_legacy.json
+      hash: md5
+      md5: ea0d59cb2de0b2333720111c75316298
+      size: 5929
+    - path: src/p06_growth/control_legacy.py
+      hash: md5
+      md5: 79d8a4201f364aafda41db5083dd2024
+      size: 8294
+    - path: src/p06_growth/control_legacy_repesado.py
+      hash: md5
+      md5: 2265ef6cb7b43621ecdd011fac7915ab
+      size: 7252
+    - path: src/p06_growth/kids_shear.py
+      hash: md5
+      md5: f9d3dcd78f647eccfc69497ac8b411d6
+      size: 12385
+    - path: src/procedencia.py
+      hash: md5
+      md5: af9be770989b8f2296c90fdc71efc121
+      size: 5420
+    outs:
+    - path: results/logs/control_legacy_repesado.log
+      hash: md5
+      md5: 981d77060951be3d643831223a8ce0aa
+      size: 1106
+    - path: results/logs/growth_2026-07/control_legacy_repesado.json
+      hash: md5
+      md5: a3399e42c3465aaeb42a066f503adc4d
+      size: 1969
