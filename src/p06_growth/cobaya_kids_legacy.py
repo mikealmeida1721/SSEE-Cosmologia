@@ -58,6 +58,12 @@ np.seterr(all='ignore')
 K.set_dataset('legacy')
 D = K.load_data()
 MASK = K.scale_mask(D)
+# 2026-10-22: binning pesado por pares, como bin_xi oficial (y en kids_shear la
+# integral de Hankel convergida, N_LGRID = 40000). Validado con el control por
+# repesado de la cadena oficial (control_legacy_repesado.json: S8 +0.26σ, chi2
+# en el maximo oficial 407.671 contra 407.647). Las cadenas de septiembre
+# (chains_p6/kids_legacy) se hicieron SIN esto; las nuevas van a kids_legacy_v2.
+K.load_npairs(D)
 CINV = np.linalg.inv(D['C'][np.ix_(MASK, MASK)])
 
 RAIZ = ('/mnt/datos/SSEE_data/kids_legacy/'
