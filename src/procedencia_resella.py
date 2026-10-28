@@ -45,7 +45,7 @@ def resella(commit, log):
     if a.get("reproducible_desde_commit"):
         return f"{log}: ya es reproducible, no se toca"
     permitidos = {a["script"], "src/ssee_core.py"}
-    sucios = [ln[3:].strip() for ln in a.get("cambios_sin_commitear", [])]
+    sucios = [ln.split()[-1] for ln in a.get("cambios_sin_commitear", []) if ln.strip()]
     if not sucios or not set(sucios) <= permitidos:
         return f"{log}: lo sucio {sucios} no es sólo script/núcleo, NO se re-sella"
     if hashlib.sha256(_show(commit, a["script"])).hexdigest() != a["script_sha256"]:
