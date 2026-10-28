@@ -280,7 +280,7 @@ if __name__ == '__main__':
     from cobaya.run import run
     modelo = sys.argv[1] if len(sys.argv) > 1 else 'ssee'
     chains_dir = (sys.argv[2] if len(sys.argv) > 2
-                  else '/mnt/datos/SSEE_data/chains_p6/kids_legacy')
+                  else '/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2')   # 2026-10-26: v2 = evaluador corregido
     cov = sys.argv[3] if len(sys.argv) > 3 else None
     info = {'ssee': info_ssee, 'lcdm': info_lcdm,
             'lcdmfijo': info_lcdmfijo,

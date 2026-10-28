@@ -115,7 +115,7 @@ h_S    = H0_S / 100
 #     vez en el CMB y no se vuelve a cobrar en el crecimiento. Para la
 #     pregunta "¿acomoda SSEE halos masivos tempranos?" el ancla correcta
 #     es la prediccion propia del modelo, no lo que preferia un dato
-#     ya recalibrado. (Con A_s libre en Legacy: 0.8075 ± 0.0160.)
+#     ya recalibrado. (Con A_s libre en Legacy: 0.8192 ± 0.0157, evaluador corregido 2026-10-26; era 0.8075.)
 # (2026-09-30) se LEEN de su fuente, no se teclean: sigma8 del modelo unificado
 # (CANONICAL sigma8_ssee_unif) y gamma_IS del log de Paper 5 (Q3).
 import yaml as _yaml

@@ -7,7 +7,7 @@ Planck) y CANONICAL citan estos numeros, pero ningun log propio los
 calculaba: aparecian copiados en logs de otras corridas (multisonda, conjunta).
 Este script los saca de las cadenas.
 
-COMO: cadenas /mnt/datos/SSEE_data/chains_p6/kids_legacy/{sseefijo,ssee,
+COMO: cadenas /mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/{sseefijo,ssee,
 lcdmfijo}.{1-4}.txt; chi2_min = minimo de la columna chi2 tras quitar el
 burn-in del 30 % de cada cadena — la MISMA convencion de R3/R4 (KiDS-1000) y la
 que tiene CANONICAL. Medido el 2026-09-30: en la corrida con A_s libre el
@@ -33,7 +33,7 @@ _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
 from procedencia import con_acta  # noqa: E402
 
-CAD = "/mnt/datos/SSEE_data/chains_p6/kids_legacy"
+CAD = "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2"   # 2026-10-26: cadenas v2 (evaluador corregido, commit 74a8af0, control por repesado PASA). Las de kids_legacy/ son del evaluador viejo: históricas.
 BURN = 0.30
 N_DATOS = 357   # ORIGEN-VALOR: 357 — puntos xi+- de KiDS-Legacy (Wright+2025, A&A 703, A158)
 C = yaml.safe_load(open(os.path.join(_R, "CANONICAL_VALUES.yaml")))["canonical"]
@@ -59,9 +59,13 @@ pasa = all(abs(v["log"] - v["canonical"]) < 1e-3 for v in ctl.values())
 out = dict(fecha=str(__import__("datetime").date.today()), corridas=res,
            deltaBIC=dict(libre_menos_unif=res["ssee"]["BIC"] - res["sseefijo"]["BIC"],
                          lcdm_menos_unif=res["lcdmfijo"]["BIC"] - res["sseefijo"]["BIC"]),
-           # 2026-10-11: el Δχ² fijo − libre (negativo = ruido del muestreo) que
+           # 2026-10-11: el Δχ² fijo − libre (con la v2, +0.60: el costo de clavar A_s) que
            # Paper 6 tecleaba a mano (-0.365) y que necesita su tabla de transporte.
-           delta_chi2=dict(unif_menos_libre=res["sseefijo"]["chi2_min"] - res["ssee"]["chi2_min"]),
+           # 2026-10-27: + el rango de los tres χ²_min, que siete documentos tecleaban
+           # como «1.0» (evaluador viejo) y quedó rancio con la v2 (0.74).
+           delta_chi2=dict(unif_menos_libre=res["sseefijo"]["chi2_min"] - res["ssee"]["chi2_min"],
+                           rango_tres=max(r["chi2_min"] for r in res.values())
+                           - min(r["chi2_min"] for r in res.values())),
            control=dict(contra_canonical=ctl, pasa=pasa))
 json.dump(con_acta(out, __file__, entradas=entradas + [os.path.join(_R, "CANONICAL_VALUES.yaml")]),
           open(os.path.join(_R, "results", "logs", "kids_legacy_bic.json"), "w"), indent=1)

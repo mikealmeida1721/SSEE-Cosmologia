@@ -149,7 +149,7 @@ def mejor_cmb():
 
 def mejor_kids_planck():
     """Mejor punto de la cadena LCDM fondo-Planck de KiDS-Legacy (lcdmfijo)."""
-    base = "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo."
+    base = "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/lcdmfijo."   # 2026-10-26: cadenas v2 (evaluador corregido, commit 74a8af0, control por repesado PASA). Las de kids_legacy/ son del evaluador viejo: históricas.
     cab = open(base + "1.txt").readline().split()[1:]
     a = np.vstack([np.atleast_2d(np.loadtxt(base + f"{k}.txt")) for k in range(1, 5)])
     j = a[:, cab.index("chi2")].argmin()
@@ -345,7 +345,7 @@ def lee():
     # que su conjunta es la suma (la MCMC de cobaya_conjunta.py lo comprueba).
     from ssee_core import H0_GLOBAL, OMEGA_B_H2, OMEGA_C_H2, SUM_MNU_EV, W0, WA
     s_cmb = json.load(open(os.path.join(LOGS, "cmb_dbic_tau_ajustado.json")))["SSEE"]["chi2_min"]
-    base = "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo."
+    base = "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/sseefijo."
     cab = open(base + "1.txt").readline().split()[1:]
     a = np.vstack([np.atleast_2d(np.loadtxt(base + f"{k}.txt")) for k in range(1, 5)])
     s_kids = float(a[:, cab.index("chi2")].min())

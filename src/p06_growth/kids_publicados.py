@@ -103,7 +103,7 @@ la, sla = r3["logA"]["media"], r3["logA"]["sigma"]
 # logA de las dos cadenas de KiDS-Legacy con A_s libre, leido de las propias cadenas (cuarta
 # lectura 2026-10-10: antes el de SSEE venia de CANONICAL tecleado y el del control con fondo
 # Planck no estaba en ningun log). Burn-in 30 % por cadena, pesos de Cobaya (columna 0).
-CADENAS_LEG = "/mnt/datos/SSEE_data/chains_p6/kids_legacy"
+CADENAS_LEG = "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2"   # 2026-10-26: cadenas v2 (evaluador corregido, commit 74a8af0, control por repesado PASA). Las de kids_legacy/ son del evaluador viejo: históricas.
 
 
 def _logA_cadena(nombre, burn=0.3):
@@ -206,7 +206,9 @@ out = dict(
                      n_muestras=int(len(w)), n_eff=float(1.0 / np.sum(w ** 2)),
                      control_pasa=bool(desvio_identidad < 1e-9),
                      fuente="Wright+2025 (arXiv:2503.19441), cadena nautilus oficial"),
-    kids1000_maxpost=dict(like=like, chi2=-2.0 * like, fuente="Asgari+2021, maxpost_multinest_start_C"),
+    # 2026-10-27: el «0.9 %» del mínimo ΛCDM (R4) sobre el χ² publicado, que P6 tecleaba a mano.
+    kids1000_maxpost=dict(like=like, chi2=-2.0 * like, fuente="Asgari+2021, maxpost_multinest_start_C",
+                          lcdm_min_sobre_publicado_pct=100.0 * (r4["chi2_min"] + 2.0 * like) / (-2.0 * like)),
     seleccion_kids1000=seleccion,
     PTE=dict(ssee=dict(chi2=r3["chi2_min"], dof=r3["dof"], PTE=float(_chi2.sf(r3["chi2_min"], r3["dof"])),
                        z=(r3["chi2_min"] - r3["dof"]) / math.sqrt(2 * r3["dof"])),

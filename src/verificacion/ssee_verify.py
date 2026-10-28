@@ -2619,11 +2619,17 @@ def _md5_75(p):
     return _h.hexdigest()
 
 
-def _lock_75(lock_txt, base):
-    """-> lista de problemas del lock contra el disco (vacia = todo cuadra)."""
+def _lock_75(lock_txt, base, congeladas=()):
+    """-> lista de problemas del lock contra el disco (vacia = todo cuadra).
+
+    Una etapa CONGELADA (frozen, 2026-10-28) es historial: sus dependencias
+    siguen su vida (el evaluador se corrigio, CANONICAL cambia) y eso es lo que
+    congelar significa. De ella se exige que la SALIDA siga byte a byte como el
+    lock dice; sus entradas se cotejan por el acta EN SU COMMIT (_verifica_congelada75).
+    """
     _mal = []
     for _st, _d in ((_y75.safe_load(lock_txt) or {}).get("stages") or {}).items():
-        for _tipo in ("deps", "outs"):
+        for _tipo in (("outs",) if _st in congeladas else ("deps", "outs")):
             for _e in _d.get(_tipo) or []:
                 _p = pathlib.Path(_e["path"])
                 _p = _p if _p.is_absolute() else base / _p
@@ -2651,7 +2657,9 @@ def _md5dir_75(d):
 
 _REPO75 = ROOT.parent
 _lk75 = (_REPO75 / "dvc.lock")
-_mal75 = _lock_75(_lk75.read_text(), _REPO75) if _lk75.exists() else ["no hay dvc.lock"]
+_etcong75 = {_n for _n, _d in ((_y75.safe_load((_REPO75 / "dvc.yaml").read_text()) or {}).get("stages") or {}).items()
+             if _d.get("frozen")}
+_mal75 = _lock_75(_lk75.read_text(), _REPO75, _etcong75) if _lk75.exists() else ["no hay dvc.lock"]
 check("R75 cada resultado de la cadena es el que su lock dice (nadie lo edito, sus entradas intactas)",
       not _mal75, "; ".join(_mal75[:6]) if _mal75 else "dvc.lock cuadra byte a byte con el disco")
 # CONTROL (R53), 2026-10-16: una carpeta de datos intacta pasa; la misma con un
@@ -2666,6 +2674,21 @@ with _tfd75.TemporaryDirectory() as _dd75:
     _bien75 = _lock_75(_lkd75, pathlib.Path(_dd75))
     (_cd75 / "sub" / "b.dat").write_text("4 5 7\n")
     _malo75 = _lock_75(_lkd75, pathlib.Path(_dd75))
+# CONTROL (R53), 2026-10-28: en una etapa congelada, una entrada que cambio no se marca;
+# su salida alterada SI se marca (y en una etapa normal se marcan las dos).
+with _tfd75.TemporaryDirectory() as _dc75:
+    _dc75 = pathlib.Path(_dc75)
+    (_dc75 / "ent.txt").write_text("v1\n"); (_dc75 / "sal.txt").write_text("r1\n")
+    _lkc75 = _y75.safe_dump({"stages": {"s": {"deps": [{"path": "ent.txt", "md5": _md5_75(_dc75 / "ent.txt")}],
+                                               "outs": [{"path": "sal.txt", "md5": _md5_75(_dc75 / "sal.txt")}]}}})
+    (_dc75 / "ent.txt").write_text("v2\n")
+    _cg_dep75 = _lock_75(_lkc75, _dc75, {"s"})
+    _no_dep75 = _lock_75(_lkc75, _dc75)
+    (_dc75 / "sal.txt").write_text("r2\n")
+    _cg_out75 = _lock_75(_lkc75, _dc75, {"s"})
+check("R75 una etapa congelada no se marca por sus entradas, si por su salida (control)",
+      _cg_dep75 == [] and len(_no_dep75) == 1 and len(_cg_out75) == 1 and "out" in _cg_out75[0],
+      f"congelada/entrada cambiada={_cg_dep75 or 'ok'}; normal={_no_dep75}; congelada/salida alterada={_cg_out75}")
 check("R75 una carpeta de datos se verifica por su hash de arbol (control: intacta pasa, alterada falla)",
       not _bien75 and any("cambiado" in _m for _m in _malo75),
       f"intacta={_bien75 or 'ok'}; alterada={_malo75 or 'NO DETECTADA'}")
@@ -2719,7 +2742,56 @@ def _verifica75(p):
     return _pr75.verifica(p)
 
 
-_sinacta75 = [f"{o}: {m}" for o in _outs75 for ok, m in [_verifica75(_REPO75 / o)] if not ok]
+# 2026-10-27. Etapas CONGELADAS (frozen: true, con su nota en dvc.yaml): son registro de lo
+# superado (KiDS-1000) y no se vuelven a correr. Su acta guarda la huella de archivos del repo
+# (CANONICAL_VALUES.yaml entero) que siguen cambiando; exigir la huella ACTUAL las dejaria en
+# ROJO para siempre o obligaria a re-correr lo superado. Para ellas la entrada del repo se
+# coteja contra el archivo EN EL COMMIT DEL ACTA: sigue siendo bit a bit y verificable, solo que
+# contra lo que de verdad leyo. Entradas fuera del repo (cadenas en /mnt) se cotejan igual que siempre.
+_congeladas75 = {o if isinstance(o, str) else list(o)[0]
+                 for _d in ((_y75.safe_load((_REPO75 / "dvc.yaml").read_text()) or {}).get("stages") or {}).values()
+                 if _d.get("frozen") for o in (_d.get("outs") or [])} if (_REPO75 / "dvc.yaml").exists() else set()
+
+
+def _verifica_congelada75(p):
+    ok, m = _verifica75(p)
+    if ok or not m.startswith("entrada cambiada desde la corrida: "):
+        return ok, m
+    a = _pr75.lee_acta(p)
+    for e, h in (a or {}).get("entradas", {}).items():
+        if pathlib.Path(e).is_absolute():
+            f = pathlib.Path(e)
+            if not f.is_file() or _h75.sha256(f.read_bytes()).hexdigest() != h:
+                return False, f"entrada cambiada desde la corrida: {e}"
+            continue
+        _v = _sp68.run(["git", "show", f"{a['commit']}:{e}"], cwd=_REPO75, capture_output=True).stdout
+        if _h75.sha256(_v).hexdigest() != h:
+            return False, f"entrada distinta de la de su commit {a['commit'][:9]}: {e}"
+    return True, "ok (congelada: entradas del repo cotejadas en su commit)"
+
+
+_sinacta75 = [f"{o}: {m}" for o in _outs75
+              for ok, m in [(_verifica_congelada75 if o in _congeladas75 else _verifica75)(_REPO75 / o)] if not ok]
+# CONTROL (R53): el acta real de una etapa congelada pasa; la misma con la huella del archivo
+# del repo alterada NO pasa (ni por la via normal ni por la congelada).
+try:
+    # la primera acta congelada que tenga alguna entrada del repo (las hay que sólo leen /mnt)
+    _c75 = [o for o in sorted(o for o in _congeladas75 if o.endswith(".json"))
+            if any(not pathlib.Path(e).is_absolute()
+                   for e in ((_pr75.lee_acta(_REPO75 / o) or {}).get("entradas") or {}))]
+    _a75c = _pr75.lee_acta(_REPO75 / _c75[0])
+    _e75c = next(e for e in _a75c["entradas"] if not pathlib.Path(e).is_absolute())
+    with _tf75.TemporaryDirectory() as _d75c:
+        _jb = pathlib.Path(_d75c) / "bueno.json"
+        _jb.write_text(_js75.dumps({"_procedencia": _a75c}))
+        _jm = pathlib.Path(_d75c) / "malo.json"
+        _jm.write_text(_js75.dumps({"_procedencia": dict(_a75c, entradas=dict(_a75c["entradas"], **{_e75c: "0" * 64}))}))
+        _rc75 = [_verifica_congelada75(_jb)[0], _verifica_congelada75(_jm)[0]]
+    check("R75 una etapa congelada se coteja contra su commit, y una huella alterada no pasa",
+          _rc75 == [True, False], f"{_c75[0]} ({_e75c}): real/alterada -> {_rc75} (esperado [True, False])")
+except Exception as _e75c2:
+    check("R75 una etapa congelada se coteja contra su commit, y una huella alterada no pasa", False,
+          f"excepcion: {_e75c2}")
 # CONTROL (R53), 2026-10-01: una figura con acta valida en sus metadatos pasa;
 # la misma sin metadatos, y la misma con el sha del script alterado, no.
 try:
@@ -6930,7 +7002,7 @@ _PREF_NIVEL = [
     (("DESI", "canon", "R26", "R31", "R32", "R20"), 1),
     (("V-L2", "V-L3", "L1 ", "L2 ", "V-L3"), 2),
     (("R33", "R34", "R35", "R36", "R52", "R65", "R66", "R68", "R72",
-      "R73", "R74", "R75", "R76",
+      "R73", "R74", "R75", "R76", "R81",
       "procedencia", "Procedencia"), 3),
     (("V-L4", "R25"), 4),
     (("R37", "R38", "R40", "R41", "R42", "R43", "R44", "R45",
@@ -8188,6 +8260,143 @@ try:
 except Exception as _e:            # noqa: BLE001
     check("R80 la capa de A_s en BOSS corrió", False, f"excepción: {_e}")
 
+print("\nCapa R81 — ninguna cadena ni minimización sin control PUNTUAL aprobado antes")
+# POR QUÉ EXISTE (2026-10-28, Mike). Las cadenas de KiDS-Legacy (~78 h) se lanzaron
+# en septiembre con un evaluador de cizalla nunca cotejado; el control se hizo
+# después como MCMC (101 h) y no pasó. La prueba que lo habría atrapado cuesta
+# SEGUNDOS: χ² del evaluador en el máximo de la cadena oficial contra el χ²
+# publicado (410.27 contra 407.647). Hubo que repetir todo (≈ dos semanas de
+# calendario). Regla (memoria feedback_control_barato_antes_de_cadena): toda etapa
+# que LANZA un muestreador/minimizador o LEE cadenas propias depende, por sonda,
+# de un acta de control puntual que pasa (|χ² − χ²_publicado| ≤ 0.1 %). Lo que ya
+# existía sin ese control queda como DEUDA declarada (sonda + causa) con
+# trinquete: sólo puede bajar. Una etapa NUEVA sin control ⟹ ROJO, antes de lanzar.
+try:
+    import json as _json81
+    import yaml as _yaml81
+    _REPO81 = ROOT.parent
+    _LANZA81 = _re78.compile(r"import emcee|emcee\.|cobaya\.run|from cobaya import run|run\(info|"
+                             r"minimize\(|nautilus|Sampler\(")
+    # Sondas que cada etapa evalúa, DECLARADAS (no adivinadas por palabras). Una etapa
+    # nueva que lanza o lee cadenas y no está aquí ⟹ ROJO: declarar sondas y control.
+    # Las etapas que SON controles (producen el acta) o sólo transcriben quedan fuera.
+    _EXENTAS81 = {"control_lcdm_legacy", "control_legacy_repesado", "sello_control_legacy",
+                  "lcdm_conjunta_control", "coteja_transcripciones"}
+    _SONDAS_DE81 = {
+        "kids_legacy_bic": {"kids"}, "kids_publicados": {"kids"},
+        "lcdm_conjunta_min_kids": {"kids"}, "lcdm_conjunta_min_cmb": {"cmb"}, "lcdm_conjunta_min_bao": {"bao"},
+        "lcdm_conjunta_min_conjunta": {"kids", "cmb", "bao"}, "lcdm_conjunta_lee": {"kids", "cmb", "bao"},
+        "multisonda_fondo_clavado": {"kids", "cmb"},
+        "analiza_boss_chen21": {"boss"}, "prueba_malla_boss_chen21": {"boss"},
+        "b1_min_ssee": {"cmb"}, "b1_min_lcdm": {"cmb"}, "b1_analyse": {"cmb"}, "cmb_ns_forzado": {"cmb"},
+        "cmb_wb_forzado": {"cmb"}, "sello_cmb_dbic_tau_ajustado": {"cmb"}, "sello_cmb_perfil_wc": {"cmb"},
+        "perfil_h0_ancla": {"cmb"}, "sello_cmb_quien_mide_As": {"cmb"},
+        "ajuste_conjunto_SSEE": {"cmb"}, "ajuste_conjunto_LCDM": {"cmb"},
+        "mcmc_paper2_3models": {"bao"}, "mcmc_paper2_reframe": {"bao"}, "bao_lcdm_libre": {"bao"},
+        "h0_four_priors": {"bao"}, "savage_cv": {"bao"}, "sello_h0_distancias": {"bao"},
+        "sello_erosita_conteos_efeds": {"erosita"}, "sello_erosita_conteos_erass1": {"erosita"},
+        "sello_erosita_cr_v3": {"erosita"}, "erosita_extlike": {"erosita"}, "sello_erosita_completitud": {"erosita"},
+        "sello_spt3g_kk_en_el_clavo": {"spt3g"}, "spt3g_calibrador": {"spt3g"}, "sello_act_dr6_calibrador": {"act"},
+    }
+    # Actas de control PUNTUAL reconocidas: ruta -> (sonda, función que da (χ², χ²_publicado))
+    _CONTROLES81 = {
+        "results/logs/growth_2026-07/control_legacy_repesado.json":
+            ("kids", lambda d: (d["control_fila_maxlike"]["chi2"], d["control_fila_maxlike"]["chi2_oficial"])),
+        "results/logs/kids1000_control.json":      # histórico: NO pasa (0.35 %); ninguna etapa vigente puede colgar de él
+            ("kids", lambda d: (d["chi2"], d["chi2_publicado"])),
+    }
+    # DEUDA (2026-10-28): etapas que ya existían sin control puntual de esa sonda.
+    # Trinquete: la lista sólo baja; si una etapa gana su control, se saca de aquí.
+    _DEUDA81 = {
+        # P2 / BAO: controlado contra CAMB (bao_camb_control, rd_camb_control), no contra un χ² publicado
+        ("mcmc_paper2_3models", "bao"), ("mcmc_paper2_reframe", "bao"), ("sello_h0_distancias", "bao"),
+        ("bao_lcdm_libre", "bao"), ("h0_four_priors", "bao"), ("savage_cv", "bao"),
+        ("lcdm_conjunta_min_bao", "bao"), ("lcdm_conjunta_min_conjunta", "bao"), ("lcdm_conjunta_lee", "bao"),
+        # CMB: plik es el código oficial, pero falta el acta del χ² en el mejor punto de Planck contra el publicado
+        ("b1_min_ssee", "cmb"), ("b1_min_lcdm", "cmb"), ("b1_analyse", "cmb"),
+        ("ajuste_conjunto_SSEE", "cmb"), ("ajuste_conjunto_LCDM", "cmb"), ("cmb_ns_forzado", "cmb"),
+        ("cmb_wb_forzado", "cmb"), ("sello_cmb_dbic_tau_ajustado", "cmb"), ("perfil_h0_ancla", "cmb"),
+        ("sello_cmb_quien_mide_As", "cmb"), ("sello_cmb_perfil_wc", "cmb"), ("lcdm_conjunta_min_cmb", "cmb"),
+        ("lcdm_conjunta_min_conjunta", "cmb"), ("lcdm_conjunta_lee", "cmb"), ("multisonda_fondo_clavado", "cmb"),
+        # BOSS: control por reproducción de los parámetros de Chen+22 (< 0.3σ), sin acta de χ² puntual
+        ("analiza_boss_chen21", "boss"), ("prueba_malla_boss_chen21", "boss"),
+        # eROSITA / SPT-3G / ACT: control por calibrador (reproduce lo publicado), sin acta de χ² puntual registrada
+        ("sello_erosita_conteos_efeds", "erosita"), ("sello_erosita_conteos_erass1", "erosita"),
+        ("sello_erosita_cr_v3", "erosita"), ("erosita_extlike", "erosita"), ("sello_erosita_completitud", "erosita"),
+        ("sello_spt3g_kk_en_el_clavo", "spt3g"), ("spt3g_calibrador", "spt3g"), ("sello_act_dr6_calibrador", "act"),
+        # lee las cadenas PUBLICADAS de KiDS (no nuestro evaluador); su parte KiDS-1000 es historial
+        ("kids_publicados", "kids"),
+    }
+
+    def _etapas81(_stages, _leer_py):
+        """-> {(etapa, sonda): [deps de control reconocidas]} para las etapas no congeladas que lanzan o leen cadenas."""
+        _out = {}
+        for _n, _s in _stages.items():
+            if _s.get("frozen"):
+                continue
+            _cmd = _s["cmd"] if isinstance(_s["cmd"], str) else " ".join(_s["cmd"])
+            _deps = [_x if isinstance(_x, str) else list(_x)[0] for _x in _s.get("deps", [])]
+            _propias = [_x for _x in _deps if _x.startswith("/mnt/datos/SSEE_data/chains")]
+            _lanza = [_p for _p in _re78.findall(r"(src/\S+\.py)", _cmd) if _LANZA81.search(_leer_py(_p))]
+            if not (_propias or _lanza):
+                continue
+            if _n in _EXENTAS81:
+                continue
+            for _so in sorted(_SONDAS_DE81.get(_n, {"SIN DECLARAR"})):
+                _out[(_n, _so)] = [_d for _d in _deps if _d in _CONTROLES81 and _CONTROLES81[_d][0] == _so]
+        return _out
+
+    def _acta_pasa81(_ruta, _leer_json):
+        _so, _f = _CONTROLES81[_ruta]
+        _d = _leer_json(_ruta)
+        _c, _p = _f(_d)
+        return abs(_c - _p) / abs(_p) <= 1e-3, 100 * abs(_c - _p) / abs(_p)
+
+    def _hallazgos81(_stages, _leer_py, _leer_json, _deuda):
+        _hall, _salda = [], []
+        for (_n, _so), _ctl in sorted(_etapas81(_stages, _leer_py).items()):
+            _buenos = [_c for _c in _ctl if _acta_pasa81(_c, _leer_json)[0]]
+            if _buenos and (_n, _so) in _deuda:
+                _salda.append(f"{_n}/{_so}")
+            elif not _buenos and (_n, _so) not in _deuda:
+                _malos = [f"{_c} ({_acta_pasa81(_c, _leer_json)[1]:.2f} %)" for _c in _ctl]
+                _hall.append(f"{_n}/{_so}: " + ("acta que NO pasa: " + ", ".join(_malos) if _malos
+                                                 else "sin acta de control puntual"))
+        return _hall, _salda
+
+    def _py81(_p):
+        _f = _REPO81 / _p
+        return _f.read_text(errors="ignore") if _f.exists() else ""
+
+    def _js81(_r):
+        return _json81.loads((_REPO81 / _r).read_text())
+
+    _st81 = _yaml81.safe_load((_REPO81 / "dvc.yaml").read_text())["stages"]
+    _hall81, _salda81 = _hallazgos81(_st81, _py81, _js81, _DEUDA81)
+    _vivas81 = _etapas81(_st81, _py81)
+    _muerta81 = sorted(f"{_n}/{_so}" for _n, _so in _DEUDA81 if (_n, _so) not in _vivas81)
+    check("R81 toda cadena o minimización depende de un control puntual aprobado (deuda sólo baja)",
+          not _hall81 and not _salda81 and not _muerta81,
+          "; ".join(_hall81[:3] + [f"salda la deuda, sacarla: {_x}" for _x in _salda81[:2]]
+                    + [f"deuda de etapa que ya no existe: {_x}" for _x in _muerta81[:2]])
+          or f"{len(_vivas81)} (etapa, sonda) vigiladas; deuda declarada {len(_DEUDA81)}")
+    # Control (R53): una etapa nueva sin acta, y otra colgada del acta de KiDS-1000
+    # (0.35 %), se marcan; la misma con el acta de KiDS-Legacy pasa.
+    _base81 = {"kids_legacy_bic": {"cmd": "python src/p06_growth/kids_legacy_bic.py",
+                     "deps": ["/mnt/datos/SSEE_data/chains_p6/kids_legacy_v9/x.1.txt"]}}
+    _sin81 = _hallazgos81(_base81, _py81, _js81, set())[0]
+    _k1k81 = _hallazgos81({"kids_legacy_bic": dict(_base81["kids_legacy_bic"], deps=_base81["kids_legacy_bic"]["deps"] + ["results/logs/kids1000_control.json"])},
+                          _py81, _js81, set())[0]
+    _bien81 = _hallazgos81({"kids_legacy_bic": dict(_base81["kids_legacy_bic"], deps=_base81["kids_legacy_bic"]["deps"]
+                                      + ["results/logs/growth_2026-07/control_legacy_repesado.json"])},
+                           _py81, _js81, set())[0]
+    _nueva81 = _hallazgos81({"etapa_nueva": _base81["kids_legacy_bic"]}, _py81, _js81, set())[0]
+    check("R81 el detector marca la cadena sin control y la colgada de un control que no pasa; deja pasar la controlada",
+          len(_sin81) == 1 and "sin acta" in _sin81[0] and len(_k1k81) == 1 and "NO pasa" in _k1k81[0] and _bien81 == [] and len(_nueva81) == 1 and "SIN DECLARAR" in _nueva81[0],
+          "4 casos: sin acta → marcada; acta KiDS-1000 (0.35 %) → marcada; etapa nueva sin sondas declaradas → marcada; acta KiDS-Legacy (0.006 %) → limpia")
+except Exception as _e:            # noqa: BLE001
+    check("R81 la capa de control puntual corrió", False, f"excepción: {_e}")
+
 print("\nCapa R72 — ninguna saturación ocupa ranura de densidad en los MANUSCRITOS")
 # Por qué existe. R52/R52b vigilan lo mismo pero SÓLO en código .py. El error de
 # categoría vive igual —y más tiempo— en los .tex, donde nadie lo ejecuta:
@@ -8402,7 +8611,11 @@ except Exception as _e:            # noqa: BLE001
           f"excepción: {_e}", nivel=5)
 
 print("\nCapa R46 — el guardián hizo todo el trabajo que dice hacer")
-_PISO_CHECKS = 375          # 345 -> 375 (2026-10-21): +30 con los controles R53
+_PISO_CHECKS = 381          # 378 -> 381 (2026-10-28): 384 ejecutadas con R81 (2) y el control
+                            # de locks de etapas congeladas (1); queda 3 para condicionales.
+                            # 375 -> 378 (2026-10-27): 381 ejecutadas tras el
+                            # rehecho de KiDS-Legacy (holgura 6 > 5); queda 3 para condicionales.
+                            # 345 -> 375 (2026-10-21): +30 con los controles R53
                             # de las 25 reglas que no tenian; ahora R46 exige
                             # ademas que el piso este a <= 5 de lo ejecutado.
                             # 278 -> 345 (2026-10-16): con 350 ejecutadas, el piso

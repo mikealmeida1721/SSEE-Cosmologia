@@ -66,8 +66,8 @@ estadistico no discrimina y no se puede concluir nada de el.
 DE DONDE SALE CADA NUMERO — nada tecleado (R65)
 ===========================================================================
   CMB           results/chains/ssee_cmb.[1-4].txt         col logA, col chi2
-  KiDS-Legacy   chains_p6/kids_legacy/ssee.[1-4].txt      col logA, col chi2
-  KiDS clavado  chains_p6/kids_legacy/sseefijo.[1-4].txt  logA FIJO -> chi2
+  KiDS-Legacy   chains_p6/kids_legacy_v2/ssee.[1-4].txt   col logA, col chi2
+  KiDS clavado  chains_p6/kids_legacy_v2/sseefijo.[1-4].txt logA FIJO -> chi2
   BAO           chi2_bao_posterior.chi2_bao(H0, obh2), 13 pts DESI DR2
   logA clavado  CANONICAL_VALUES.yaml : logA_cmb_ssee
 
@@ -98,6 +98,7 @@ sys.path.insert(0, os.path.join(_REPO, "src"))
 sys.path.insert(0, os.path.join(_REPO, "src", "p02_mcmc"))
 
 _CAD = "/mnt/datos/SSEE_data/chains_p6"
+# 2026-10-26: cadenas v2 (evaluador corregido, commit 74a8af0, control por repesado PASA). Las de kids_legacy/ son del evaluador viejo: históricas.
 _QUEMA = 0.3          # burn-in descartado, fraccion de cada cadena
 _LOG = os.path.join(_REPO, "results", "logs", "multisonda_fondo_clavado.json")
 
@@ -299,7 +300,7 @@ def main():
     # ── eje AMPLITUD: las que ven A_s ──────────────────────────────────
     global PATRONES
     PATRONES = [os.path.join(_REPO, "results", "chains", "ssee_cmb.[0-9].txt"),
-                f"{_CAD}/kids_legacy/ssee.[0-9].txt"]
+                f"{_CAD}/kids_legacy_v2/ssee.[0-9].txt"]
     ETIQ = ["CMB (plik_lite TTTEEE+lowl+lensing)", "KiDS-Legacy xi_pm"]
     med = [medida(p_, e_) for p_, e_ in zip(PATRONES, ETIQ)]
     di("EJE AMPLITUD — cada sonda mide logA con el MISMO fondo clavado")
@@ -393,7 +394,7 @@ def main():
     clav = [
         chi2_en_el_clavo(os.path.join(_REPO, "results", "chains", "ssee_cmb.[0-9].txt"),
                          "CMB (plik_lite TTTEEE+lowl+lensing)"),
-        chi2_en_el_clavo(f"{_CAD}/kids_legacy/sseefijo.[0-9].txt", "KiDS-Legacy xi_pm"),
+        chi2_en_el_clavo(f"{_CAD}/kids_legacy_v2/sseefijo.[0-9].txt", "KiDS-Legacy xi_pm"),
         bao_en_el_clavo(),
     ]
     di("BONDAD DE AJUSTE con logA EN EL CLAVO, sonda por sonda")
@@ -424,7 +425,7 @@ def main():
         for _et, _pat in (
                 ("CMB (plik_lite TTTEEE+lowl+lensing)",
                  os.path.join(_REPO, "results", "chains", "lcdm_cmb.[0-9].txt")),
-                ("KiDS-Legacy xi_pm", f"{_CAD}/kids_legacy/lcdmfijo.[0-9].txt")):
+                ("KiDS-Legacy xi_pm", f"{_CAD}/kids_legacy_v2/lcdmfijo.[0-9].txt")):
             _c, _a, _ = lee(_pat)
             # MISMA REGLA EN LOS DOS LADOS. Si el chi2 de SSEE se lee CON logA
             # clavado, el de LCDM tambien tiene que leerse clavado. Comparar
@@ -515,7 +516,7 @@ def main():
         med_c = [
             medida(os.path.join(_REPO, "results", "chains", "lcdm_cmb.[0-9].txt"),
                    "CMB (fondo LCDM)"),
-            medida(f"{_CAD}/kids_legacy/lcdmfijo.[0-9].txt", "KiDS-Legacy (fondo LCDM)"),
+            medida(f"{_CAD}/kids_legacy_v2/lcdmfijo.[0-9].txt", "KiDS-Legacy (fondo LCDM)"),
         ]
         for m in med_c:
             di(f"  {m['sonda']:38s} {m['logA']:10.5f} {m['sigma']:8.5f}")

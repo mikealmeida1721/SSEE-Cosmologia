@@ -18,7 +18,7 @@ DE DONDE SALE CADA BLOQUE --- y ninguno del resultado que se quiere medir:
   tau   (1)  curvatura de chi2_CMB(tau) con logA clavado, MEDIDA aqui:
              sigma^2 = 2 / (d2chi2/dtau2). No es un numero tecleado.
   KiDS  (8)  kids_legacy/sseefijo.covmat --- la corrida INDIVIDUAL de KiDS con
-             A_s clavado, la misma que da el 417.971 de referencia.
+             A_s clavado, la misma que da el 417.971 de referencia (evaluador viejo; 415.594 con el corregido, 2026-10-26).
   BOSS (18)  boss/ssee.covmat --- la corrida convergida de BOSS, quitando su
              columna logA (aqui logA no se muestrea).
 

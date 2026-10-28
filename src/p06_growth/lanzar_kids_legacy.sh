@@ -20,7 +20,7 @@ COVMAT="${2:-}"
 case "$MODELO" in ssee|sseefijo|lcdmfijo|lcdm) ;; *) echo "modelo desconocido: $MODELO" >&2; exit 2 ;; esac
 
 ROOT=/home/mike/Proyectos/SSEE
-BASE=/mnt/datos/SSEE_data/chains_p6/kids_legacy      # HDD, nunca el SSD
+BASE=/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2   # HDD, nunca el SSD; v2 = evaluador corregido (2026-10-26)
 LOGDIR=$ROOT/results/logs
 mkdir -p "$BASE" "$LOGDIR"
 
