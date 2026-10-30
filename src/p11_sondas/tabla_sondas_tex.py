@@ -25,11 +25,12 @@ import sys
 
 _R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(_R, "src"))
-from procedencia import cabecera  # noqa: E402
+from procedencia import cabecera, con_acta  # noqa: E402
 
 LOG = os.path.join(_R, "results", "logs", "sondas_ssee_vs_lcdm.json")
 BAO = os.path.join(_R, "results", "logs", "bao_lcdm_libre.json")
 OUT = os.path.join(_R, "manuscript", "tabla_sondas_generada.tex")
+RES = os.path.join(_R, "results", "logs", "sondas_resumen.json")
 
 d = json.load(open(LOG))
 b = json.load(open(BAO))
@@ -90,5 +91,24 @@ assert not abs(leidos[0] + 0.01 - escritos[0][0]) <= 0.5 * 10 ** -2 + 1e-12
 with open(OUT, "w") as t:
     t.write(cabecera(__file__, entradas=[LOG, BAO], comentario="%") + "\n")
     t.write(cuerpo + "\n")
+# --- resumen para la prosa (2026-10-29) ---------------------------------------
+# La frase «empata en cada sonda; sólo DESI separa» necesita sus números desde el
+# log, no tecleados: cuántas sondas, cuántas bajo el umbral, el mayor |dchi2| de las
+# que empatan y el contraste DESI. Una fila por sonda: DESI cuenta una vez (clavada).
+umbral = d["umbral_discrimina_dchi2"]
+porsonda = [(r["sonda"], r["dchi2"], 0) for r in clav] + \
+           [(r["sonda"], r["dchi2"], r["ajustados_lcdm"]) for r in d["filas_lcdm_ajusta"]]
+empatan = [x for x in porsonda if abs(x[1]) < umbral]
+separan = [x for x in porsonda if abs(x[1]) >= umbral]
+assert [x[0] for x in separan] == d["discriminan"], (separan, d["discriminan"])
+peor = max(empatan, key=lambda x: abs(x[1]))
+resumen = dict(n_sondas=len(porsonda), n_empatan=len(empatan), n_separan=len(separan),
+               umbral=umbral, max_abs_dchi2_empate=abs(peor[1]), sonda_max_empate=peor[0],
+               max_ajustados_lcdm=max(x[2] for x in porsonda),
+               desi_dchi2_clavado=desi["dchi2"], desi_dchi2_lcdm_libre=bl["dchi2"],
+               sondas_empatan=[x[0] for x in empatan], nota_suma=d["nota_suma"])
+json.dump(con_acta(resumen, __file__, entradas=[LOG, BAO]), open(RES, "w"), indent=1, ensure_ascii=False)
+print(f"{RES}: {len(empatan)}/{len(porsonda)} sondas bajo |dchi2|<{umbral:g} "
+      f"(máx {abs(peor[1]):.2f}, {peor[0]}); separa: {[x[0] for x in separan]}")
 print(f"{OUT}: {len(clav)} filas clavadas + {1 + len(d['filas_lcdm_ajusta'])} con LCDM ajustando; "
       f"control: {len(leidos)} números releídos = log; dígito alterado rechazado")
