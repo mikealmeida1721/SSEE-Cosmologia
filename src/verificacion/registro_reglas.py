@@ -225,10 +225,14 @@ REGLAS = {
                      "(KRYSTOS_V, ATLAS, PHOENIX) mientras el maestro no se resincroniza",
                      None)],
         archivo="src/estadistica/look_elsewhere_full.py",
-        prefijos=["diccionario", "R13"],
+        prefijos=["diccionario", "R13", "R16"],
         mutacion=[("un nodo del script que no existe en el maestro",
                    '"IGNIS": IGNIS, "KRYSTOS_V": KRYSTOS_V,',
-                   '"IGNIS": IGNIS, "KRYSTOS_V": KRYSTOS_V, "NODO_FANTASMA": IGNIS,')],
+                   '"IGNIS": IGNIS, "KRYSTOS_V": KRYSTOS_V, "NODO_FANTASMA": IGNIS,'),
+                  # R16 (2026-11-01): el docstring cuenta una constante menos que FAMILY.
+                  ("R16 el docstring del look-elsewhere se contradice con FAMILY",
+                   "COMPLETO (55 constantes con nombre).",
+                   "COMPLETO (54 constantes con nombre).")],
     ),
     "memorias": dict(
         capa="Memorias — coherencia de las 3 memorias",
@@ -244,13 +248,18 @@ REGLAS = {
         intencion="prosa-sin-cronologia-ni-multidominio",
         ambito="manuscript/*.tex y README.md",
         exenciones=[],
-        prefijos=["R1 ", "R2 ", "manuscritos", "R17", "R19"],
+        prefijos=["R1 ", "R2 ", "manuscritos", "R10", "R11", "R14", "R15", "R17", "R18",
+                  "R19", "R21", "R22", "R23", "R24"],
         probada_en="test_guardian.py",
         # R17 y R19 viven bajo esta entrada y test_guardian.py YA las
         # prueba (lineas 152 y 164). Escribi casos propios para ambas y
         # los verifique antes de descubrirlo: eran duplicados. M7 los
         # cazo. La deuda real de M9 era 22, no 24 — los contaba como
         # descubiertos por leer la CLAVE del registro y no sus prefijos.
+        # 2026-11-01: R10 R11 R14 R15 R18 R21–R24 ganaron su autocontrol en el
+        # guardián (be6b7e0, «R53 25 -> 0») y M9 empezó a verlas como reglas sin
+        # caso. test_guardian.py ya las rompe a propósito (líneas 109–193): se
+        # declaran aquí, como R17 y R19, en vez de duplicar sus casos.
         mutacion=[],
     ),
     "R25": dict(
@@ -581,6 +590,37 @@ REGLAS = {
         mutacion=[("el conteo de postulados vuelve a tres en Paper 1",
                    "\\textbf{four postulates in total}",
                    "\\textbf{three postulates in total}")],
+    ),
+    "R79": dict(
+        capa="R79 — BOSS no cuenta dos veces los bines que se solapan",
+        intencion="boss-sin-bines-solapados",
+        ambito="núcleo de BOSS, su log, los papers y las etapas de dvc.yaml",
+        archivo="src/p06_growth/cobaya_boss_chen21.py",
+        exenciones=[],
+        mutacion=[("el bin z2, que se solapa con z1 y z3, vuelve al núcleo",
+                   "MUESTRAS = (('z1', 0.38), ('z3', 0.61))",
+                   "MUESTRAS = (('z1', 0.38), ('z2', 0.51), ('z3', 0.61))")],
+    ),
+    "R80": dict(
+        capa="R80 — en BOSS, A_s entra por la tabla LPT, no como factor sobre la salida",
+        intencion="boss-As-por-tabla-lpt",
+        ambito="model_set de boss_lpt_R1R2.py y la prueba de malla boss_chen21_malla.json",
+        archivo="src/p06_growth/boss_lpt_R1R2.py",
+        exenciones=[],
+        mutacion=[("model_set deja de pasar logA por fija_logA",
+                   "    L = fija_logA(st['lpt'][name], logA)",
+                   "    L = st['lpt'][name]")],
+    ),
+    "R81": dict(
+        capa="R81 — ninguna cadena ni minimización sin control PUNTUAL aprobado antes",
+        intencion="cadena-con-control-puntual",
+        ambito="etapas de dvc.yaml que lanzan o leen cadenas, contra las actas de control",
+        archivo="dvc.yaml",
+        exenciones=[],
+        mutacion=[("la etapa de KiDS-Legacy pierde su acta de control puntual",
+                   "    # 2026-10-28 (R81): depende del acta de control PUNTUAL de KiDS-Legacy; no la lee, la exige antes.\n"
+                   "    - results/logs/growth_2026-07/control_legacy_repesado.json\n",
+                   "    # 2026-10-28 (R81): depende del acta de control PUNTUAL de KiDS-Legacy; no la lee, la exige antes.\n")],
     ),
     "R59": dict(
         capa="R59 — ninguna ruta de script citada en la prosa apunta al vacío",
