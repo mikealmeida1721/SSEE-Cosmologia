@@ -400,6 +400,13 @@ bitacoras:
   - cola_1020b
   - cola_1016
   - cola_1017
+  # 2026-11-01: colas de la cascada KiDS-Legacy v2 y de las minimizaciones conjuntas (10-22…10-31)
+  - cola_1022
+  - cola_1026
+  - cola_1026b
+  - cola_1027
+  - cola_1027_conjunta
+  - cola_1027b
   - cola_act_spt
   - cola_boss2
   - cola_boss2_dvc
