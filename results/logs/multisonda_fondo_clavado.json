@@ -1,249 +1,257 @@
 {
-  "clavo_logA": 3.0448340130228546,
-  "burn_in": 0.3,
-  "eje_amplitud": [
-    {
-      "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
-      "logA": 3.042246654116871,
-      "sigma": 0.013125658689892638,
-      "chi2_min": 2770.443,
-      "n_muestras": 53872,
-      "n_cadenas": 1,
-      "logA_en_min": 3.0505846
-    },
-    {
-      "sonda": "KiDS-Legacy xi_pm",
-      "logA": 3.025533766478688,
-      "sigma": 0.03957854912064725,
-      "chi2_min": 418.33606,
-      "n_muestras": 10312,
-      "n_cadenas": 4,
-      "logA_en_min": 3.0409284
-    }
-  ],
-  "estadisticos": {
-    "logA_comun": 3.040590663214685,
-    "sigma_comun": 0.012458423685176214,
-    "T_sondas": 0.16064500481920524,
-    "gl_sondas": 1,
-    "p_sondas": 0.688563369640537,
-    "sigmas_sondas": 0.40080544509675164,
-    "T_modelo": 0.11600894510849517,
-    "gl_modelo": 1,
-    "p_modelo": 0.733404082734759,
-    "sigmas_modelo": 0.3406008589368136
+ "clavo_logA": 3.0448340130228546,
+ "burn_in": 0.3,
+ "eje_amplitud": [
+  {
+   "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
+   "logA": 3.042246654116871,
+   "sigma": 0.013125658689892638,
+   "chi2_min": 2770.443,
+   "n_muestras": 53872,
+   "n_cadenas": 1,
+   "logA_en_min": 3.0505846
   },
-  "estadisticos_perfil": {
-    "logA_comun": 3.050426451950579,
-    "sigma_comun": 0.0006583494280628601,
-    "T_sondas": 0.7691463577576156,
-    "gl_sondas": 1,
-    "p_sondas": 0.38048126298609364,
-    "sigmas_sondas": 0.8770098960431494,
-    "T_modelo": 72.15884530199833,
-    "gl_modelo": 1,
-    "p_modelo": 1.9855372358325954e-17,
-    "sigmas_modelo": 8.494636266609556
-  },
-  "perfil_sirve": false,
-  "degeneracion": [
-    {
-      "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
-      "marginal": 0.0131258192271367,
-      "condicional": 0.0011840162468865346,
-      "D": 11.085843848555365,
-      "enredado_con": [
-        [
-          "tau",
-          0.9288664834921557
-        ],
-        [
-          "A_planck",
-          0.21884763225720394
-        ]
-      ]
-    },
-    {
-      "sonda": "KiDS-Legacy xi_pm",
-      "marginal": 0.03958096462368073,
-      "condicional": 0.027816818803033015,
-      "D": 1.422914852483599,
-      "enredado_con": [
-        [
-          "logT_AGN",
-          0.5543444603394994
-        ],
-        [
-          "A_scale",
-          0.33316087177599346
-        ]
-      ]
-    }
-  ],
-  "perfiles": [
-    {
-      "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
-      "logA": 3.0504554576923075,
-      "chi2_min": 2770.443,
-      "sigma": 0.0006591796586923326,
-      "lados": 2
-    },
-    {
-      "sonda": "KiDS-Legacy xi_pm",
-      "logA": 3.0389333320512826,
-      "chi2_min": 418.33606,
-      "sigma": 0.013121418222542092,
-      "lados": 2
-    }
-  ],
-  "tirones": [
-    {
-      "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
-      "logA": 3.042246654116871,
-      "sigma": 0.013125658689892638,
-      "delta": -0.0025873589059837165,
-      "sigmas": -0.19712221436750463,
-      "direccion": "abajo"
-    },
-    {
-      "sonda": "KiDS-Legacy xi_pm",
-      "logA": 3.025533766478688,
-      "sigma": 0.03957854912064725,
-      "delta": -0.019300246544166733,
-      "sigmas": -0.48764411462718893,
-      "direccion": "abajo"
-    }
-  ],
-  "bondad_en_el_clavo": [
-    {
-      "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
-      "chi2": 2771.4994,
-      "modo": "perfil leido de la cadena, banda +-0.0020",
-      "exacto": false,
-      "n_en_banda": 7105
-    },
-    {
-      "sonda": "KiDS-Legacy xi_pm",
-      "chi2": 417.9706,
-      "modo": "logA fijo en la corrida",
-      "exacto": true,
-      "n_en_banda": 10158
-    },
-    {
-      "sonda": "BAO DESI DR2",
-      "chi2": 11.406503768936682,
-      "n_datos": 13,
-      "modo": "fondo clavado H0=67.962142, Om derivado=0.308881",
-      "exacto": true
-    }
-  ],
-  "chi2_total": 3200.876503768937,
-  "gl_total": 2692,
-  "PTE_total": 2.8804296310496833e-11,
-  "tabla_gl": [
-    {
-      "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
-      "chi2": 2771.4994,
-      "N": 2354,
-      "libres": 24,
-      "gl": 2330,
-      "chi2_red": 1.189484721030043,
-      "PTE": 5.026042906242625e-10,
-      "procedencia": "N: plik TTTEEE 2289 + lowT 28 + lowE 28 + lensing 9; libres = tau + 23 nuisances Planck (logA CLAVADO)",
-      "chi2_lcdm": 2772.9172,
-      "delta_vs_lcdm": -1.4177999999997155
-    },
-    {
-      "sonda": "KiDS-Legacy xi_pm",
-      "chi2": 417.9706,
-      "N": 357,
-      "libres": 8,
-      "gl": 349,
-      "chi2_red": 1.1976234957020058,
-      "PTE": 0.0065524665870625555,
-      "procedencia": "N: 357 puntos xi_pm; libres = logT_AGN, A_scale, dz1..dz6",
-      "chi2_lcdm": 418.95467,
-      "delta_vs_lcdm": -0.9840700000000311
-    },
-    {
-      "sonda": "BAO DESI DR2",
-      "chi2": 11.406503768936682,
-      "N": 13,
-      "libres": 0,
-      "gl": 13,
-      "chi2_red": 0.8774233668412832,
-      "PTE": 0.5768037005617437,
-      "procedencia": "N: 13 puntos DESI DR2; CERO libres, el fondo va clavado",
-      "chi2_lcdm": null,
-      "delta_vs_lcdm": null
-    }
-  ],
-  "control_lcdm": {
-    "logA_comun": 3.039667585023087,
-    "sigma_comun": 0.013209109118977483,
-    "T_sondas": 0.9119961405257315,
-    "gl_sondas": 1,
-    "p_sondas": 0.3395853380972747,
-    "sigmas_sondas": 0.9549848902080762,
-    "T_modelo": 0.15297966551774753,
-    "gl_modelo": 1,
-    "p_modelo": 0.6957039919956943,
-    "sigmas_modelo": 0.39112615038852555
-  },
-  "control_disponible": true,
-  "control_positivo": [
-    {
-      "inyectado": 0.0,
-      "T": 0.16064500481920524,
-      "sigmas": 0.40080544509675164
-    },
-    {
-      "inyectado": 0.05,
-      "T": 0.6372597415615343,
-      "sigmas": 0.7982855012848059
-    },
-    {
-      "inyectado": 0.1,
-      "T": 3.9895126736923463,
-      "sigmas": 1.9973764476663738
-    },
-    {
-      "inyectado": 0.2,
-      "T": 19.32093312411935,
-      "sigmas": 4.395558340429502
-    }
-  ],
-  "control_positivo_ve": true,
-  "_procedencia": {
-    "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
-    "reproducible_desde_commit": true,
-    "cambios_sin_commitear": [],
-    "script": "src/p06_growth/multisonda_fondo_clavado.py",
-    "script_sha256": "2084188dcd859bcd7136c69064ba31c8753663720b6957b8d74c08ac9f26b40c",
-    "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
-    "entradas": {
-      "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d",
-      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt": "346f5d737f80b1c0c6dcf5f2716767129700dcf17c748592f98e34e4ece22207",
-      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47",
-      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188",
-      "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2",
-      "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5"
-    },
-    "argv": [
-      "src/p06_growth/multisonda_fondo_clavado.py"
-    ],
-    "fecha": "2026-10-20T14:13:04",
-    "host": "mike-System-Product-Name",
-    "python": "3.12.3",
-    "versiones": {
-      "numpy": "2.4.4",
-      "scipy": "1.17.1"
-    },
-    "nucleos": {
-      "OMP_NUM_THREADS": "1",
-      "MKL_NUM_THREADS": null,
-      "OPENBLAS_NUM_THREADS": null,
-      "OMPI_COMM_WORLD_SIZE": null
-    }
+  {
+   "sonda": "KiDS-Legacy xi_pm",
+   "logA": 3.054392659145505,
+   "sigma": 0.038279504201468494,
+   "chi2_min": 414.99289,
+   "n_muestras": 13237,
+   "n_cadenas": 4,
+   "logA_en_min": 3.055745
   }
+ ],
+ "estadisticos": {
+  "logA_comun": 3.0435244660818066,
+  "sigma_comun": 0.012416038512517213,
+  "T_sondas": 0.09008618444696861,
+  "gl_sondas": 1,
+  "p_sondas": 0.7640676185397717,
+  "sigmas_sondas": 0.30014360637363013,
+  "T_modelo": 0.01112438571780467,
+  "gl_modelo": 1,
+  "p_modelo": 0.9160011253129128,
+  "sigmas_modelo": 0.10547220353156879
+ },
+ "estadisticos_perfil": {
+  "logA_comun": 3.0504602635057094,
+  "sigma_comun": 0.0006587093912687613,
+  "T_sondas": 0.03726576694039336,
+  "gl_sondas": 1,
+  "p_sondas": 0.8469249533318004,
+  "sigmas_sondas": 0.19304343278234923,
+  "T_modelo": 72.95421956781483,
+  "gl_modelo": 1,
+  "p_modelo": 1.326923213880751e-17,
+  "sigmas_modelo": 8.54132422799971
+ },
+ "perfil_sirve": false,
+ "degeneracion": [
+  {
+   "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
+   "marginal": 0.0131258192271367,
+   "condicional": 0.0011840162468865346,
+   "D": 11.085843848555365,
+   "enredado_con": [
+    [
+     "tau",
+     0.9288664834921557
+    ],
+    [
+     "A_planck",
+     0.21884763225720394
+    ]
+   ]
+  },
+  {
+   "sonda": "KiDS-Legacy xi_pm",
+   "marginal": 0.038281303660136254,
+   "condicional": 0.026783928410933657,
+   "D": 1.4292639628064856,
+   "enredado_con": [
+    [
+     "logT_AGN",
+     0.5678322959899381
+    ],
+    [
+     "A_scale",
+     0.3210091527963486
+    ]
+   ]
+  }
+ ],
+ "perfiles": [
+  {
+   "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
+   "logA": 3.0504554576923075,
+   "chi2_min": 2770.443,
+   "sigma": 0.0006591796586923326,
+   "lados": 2
+  },
+  {
+   "sonda": "KiDS-Legacy xi_pm",
+   "logA": 3.0538248435897435,
+   "chi2_min": 414.99289,
+   "sigma": 0.017441578222931353,
+   "lados": 2
+  }
+ ],
+ "tirones": [
+  {
+   "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
+   "logA": 3.042246654116871,
+   "sigma": 0.013125658689892638,
+   "delta": -0.0025873589059837165,
+   "sigmas": -0.19712221436750463,
+   "direccion": "abajo"
+  },
+  {
+   "sonda": "KiDS-Legacy xi_pm",
+   "logA": 3.054392659145505,
+   "sigma": 0.038279504201468494,
+   "delta": 0.009558646122650227,
+   "sigmas": 0.2497066334073244,
+   "direccion": "arriba"
+  }
+ ],
+ "bondad_en_el_clavo": [
+  {
+   "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
+   "chi2": 2771.4994,
+   "modo": "perfil leido de la cadena, banda +-0.0020",
+   "exacto": false,
+   "n_en_banda": 7105
+  },
+  {
+   "sonda": "KiDS-Legacy xi_pm",
+   "chi2": 415.59352,
+   "modo": "logA fijo en la corrida",
+   "exacto": true,
+   "n_en_banda": 10220
+  },
+  {
+   "sonda": "BAO DESI DR2",
+   "chi2": 11.406503768936682,
+   "n_datos": 13,
+   "modo": "fondo clavado H0=67.962142, Om derivado=0.308881",
+   "exacto": true
+  }
+ ],
+ "chi2_total": 3198.4994237689366,
+ "gl_total": 2692,
+ "PTE_total": 3.493878367359688e-11,
+ "tabla_gl": [
+  {
+   "sonda": "CMB (plik_lite TTTEEE+lowl+lensing)",
+   "chi2": 2771.4994,
+   "N": 2354,
+   "libres": 24,
+   "gl": 2330,
+   "chi2_red": 1.189484721030043,
+   "PTE": 5.026042906242625e-10,
+   "procedencia": "N: plik TTTEEE 2289 + lowT 28 + lowE 28 + lensing 9; libres = tau + 23 nuisances Planck (logA CLAVADO)",
+   "chi2_lcdm": 2772.9172,
+   "delta_vs_lcdm": -1.4177999999997155
+  },
+  {
+   "sonda": "KiDS-Legacy xi_pm",
+   "chi2": 415.59352,
+   "N": 357,
+   "libres": 8,
+   "gl": 349,
+   "chi2_red": 1.1908123782234958,
+   "PTE": 0.0081770738087718,
+   "procedencia": "N: 357 puntos xi_pm; libres = logT_AGN, A_scale, dz1..dz6",
+   "chi2_lcdm": 415.87391,
+   "delta_vs_lcdm": -0.28039000000001124
+  },
+  {
+   "sonda": "BAO DESI DR2",
+   "chi2": 11.406503768936682,
+   "N": 13,
+   "libres": 0,
+   "gl": 13,
+   "chi2_red": 0.8774233668412832,
+   "PTE": 0.5768037005617437,
+   "procedencia": "N: 13 puntos DESI DR2; CERO libres, el fondo va clavado",
+   "chi2_lcdm": null,
+   "delta_vs_lcdm": null
+  }
+ ],
+ "control_lcdm": {
+  "logA_comun": 3.0436910559338615,
+  "sigma_comun": 0.013256003683052065,
+  "T_sondas": 0.027776993467825906,
+  "gl_sondas": 1,
+  "p_sondas": 0.8676341862637339,
+  "sigmas_sondas": 0.16666431372020196,
+  "T_modelo": 0.007434206478629498,
+  "gl_modelo": 1,
+  "p_modelo": 0.9312900659255647,
+  "sigmas_modelo": 0.08622184455594474
+ },
+ "control_disponible": true,
+ "control_positivo": [
+  {
+   "inyectado": 0.0,
+   "T": 0.09008618444696861,
+   "sigmas": 0.30014360637363013
+  },
+  {
+   "inyectado": 0.05,
+   "T": 2.358401332203384,
+   "sigmas": 1.535708739378461
+  },
+  {
+   "inyectado": 0.1,
+   "T": 7.679958875754355,
+   "sigmas": 2.7712738723833046
+  },
+  {
+   "inyectado": 0.2,
+   "T": 27.482801150239833,
+   "sigmas": 5.242404138392979
+  }
+ ],
+ "control_positivo_ve": true,
+ "_procedencia": {
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/multisonda_fondo_clavado.py",
+  "script_sha256": "6e8b8a7e9a23d58ad78c8ac97ae0bd236a04b7af729a66d429583f1b8fd8df7a",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "results/chains/ssee_cmb.1.txt": "f667eade4142d6fd3cb268209a0c8b0ef8c97ef1ca90fdca6b84acc1da83916d",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.1.txt": "1d4b8fd85a7de65021966a012adeae2ceba1fc955ccf02c39f88d895dcc473d6",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.2.txt": "86c4b59441b38bc5c0dce7a812a4d1885b663a23e60f4f32b79c9e5cb726cf07",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.3.txt": "dc3731eb9491b1e20f11f9a9de3ab7a967385c0b34ec4a9a5de847ffafc55e76",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.4.txt": "5e94533769cbeb30609c3a53e40f5bb9f2e42663c7b807b60b26de481088fd19",
+   "CANONICAL_VALUES.yaml": "af709f824c43cda272c539aab46d268f010bec5793dfc16a01dc0adc1ece935a"
+  },
+  "argv": [
+   "src/p06_growth/multisonda_fondo_clavado.py"
+  ],
+  "fecha": "2026-10-27T22:02:41",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  },
+  "resellado": {
+   "commit_original": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
+   "cambios_originales": [
+    "M src/p06_growth/multisonda_fondo_clavado.py"
+   ],
+   "fecha": "2026-10-28T12:52:53",
+   "motivo": "el script que corrió quedó commiteado sin cambios; sha256 cotejado contra el commit nuevo"
+  }
+ }
 }

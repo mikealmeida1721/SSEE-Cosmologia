@@ -1,41 +1,39 @@
 {
  "fecha": "2026-09-28",
  "modo": "kids",
- "chi2": 415.7750615667839,
+ "chi2": 414.1867318215983,
  "por_sonda": {
-  "kids": 415.7750615667839
+  "kids": 414.1867318215983
  },
  "params": {
-  "ombh2": 0.02235157268927651,
-  "omch2": 0.13745247349433304,
-  "h0": 0.8199971348235566,
-  "ns": 0.8876153738563523,
-  "logA": 3.1118182032736112,
-  "logT_AGN": 8.038749726721495,
-  "A_scale": 0.9699734727368828,
-  "dz1": 0.02502739404128623,
-  "dz2": 2.6053307759779307e-06,
-  "dz3": -0.008408580662354836,
-  "dz4": -0.008840896736420812,
-  "dz5": 0.0164232284337081,
-  "dz6": 0.05163209020760669
+  "ombh2": 0.022342878360481273,
+  "omch2": 0.11998251965159747,
+  "h0": 0.7274108354657832,
+  "ns": 0.9791732407236658,
+  "logA": 3.1762373603151084,
+  "logT_AGN": 8.03899805438763,
+  "A_scale": 1.721007152957994,
+  "dz1": 0.02494296663558574,
+  "dz2": 7.050537172322013e-09,
+  "dz3": -0.007756980191462544,
+  "dz4": -0.00888345106386822,
+  "dz5": 0.016084667284602224,
+  "dz6": 0.05195499514024024
  },
- "arranque": 419.95407097145306,
+ "arranque": 415.74258749807603,
  "historia": [
-  418.22984401830746,
-  418.0403550825364,
-  415.81592824810895,
-  415.77581854921425,
-  415.7750615667839
+  415.21937301400783,
+  414.1882890634066,
+  414.1867318215983
  ],
  "convergido": true,
  "control_no_peor_que_arranque": true,
  "_procedencia": {
-  "commit": "27b3b72b69eb46f6c1fbf593088e2dfc94fc1922",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
-  "script_sha256": "ea2d0fcc83aaa45471015db4c03950106bafd77269d415cc797774d03b9f4670",
+  "script_sha256": "963b138dc907782194ea07dcbfe0266239ee99ecf50c2b57c601435286d812bb",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
@@ -43,7 +41,7 @@
    "src/p11_sondas/lcdm_conjunta.py",
    "results/logs/lcdm_conjunta_kids.json"
   ],
-  "fecha": "2026-10-12T22:28:01",
+  "fecha": "2026-10-28T10:25:46",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
@@ -52,6 +50,14 @@
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
+  },
+  "resellado": {
+   "commit_original": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
+   "cambios_originales": [
+    "M src/p11_sondas/lcdm_conjunta.py"
+   ],
+   "fecha": "2026-10-28T12:52:53",
+   "motivo": "el script que corrió quedó commiteado sin cambios; sha256 cotejado contra el commit nuevo"
   }
  }
 }

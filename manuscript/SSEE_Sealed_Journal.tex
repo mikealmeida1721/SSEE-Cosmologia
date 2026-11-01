@@ -60,7 +60,9 @@ global rate of the screening cascade as prior ($H_0^{\rm glob}=\val{H0_GLOBAL_d3
 ($\val{h0_p2_dplanck}\sigma$ from Planck, $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). With the
 background of both models fixed in advance, DESI~DR2 BAO gives $\chi^2=\val{desi_clav_ssee}$ for SSEE and
 $\val{desi_clav_lcdm}$ for $\Lambda$CDM at its Planck values ($\val{desi_N}$ points); $\Lambda$CDM reaches
-$\val{desi_libre_chi2}$ only by lowering $\Omega_m$ to $\val{desi_libre_Om}$. The
+$\val{desi_libre_chi2}$ only by lowering $\Omega_m$ to $\val{desi_libre_Om}$.
+Probe by probe, with the background of both models fixed in advance, SSEE matches $\Lambda$CDM within $|\Delta\chi^2|\le\val{sondas_max_empate}$ in $\val{sondas_n_empatan}$ of $\val{sondas_n}$ comparisons---the supernova compilations, ACT and SPT CMB lensing, DES~Y3, Planck and KiDS-Legacy---even where $\Lambda$CDM fits up to $\val{sondas_max_k_lcdm}$ parameters against SSEE's $\{A_s,\tau\}$, and BOSS full-shape gives $\Delta\chi^2=\val{bossC_dchi2_ssee_libre}$ with SSEE fully fixed against $\Lambda$CDM with its cosmology free; DESI~DR2 BAO is the only probe that separates the two models, by $\Delta\chi^2=\val{sondas_desi_clavado}$ in favour of SSEE.
+The
 effective-field-theory description is canonical---$\alpha_T=\alpha_M=\alpha_B=0$
 with $\alpha_K=\val{alpha_K_z0_d6}$ and a ghost-free sound speed $c_s^2=\val{cs2_condensado_d6}$---and the inflationary sector predicts
 $n_s=1-\varphi^{-7}=\val{N_S_d6}$ and a tensor-to-scalar ratio $r=\varphi^{-10}=
@@ -75,8 +77,7 @@ against the $357$ raw KiDS-Legacy $\xi_\pm$ points, with a single matter sector,
 the background fixed by the algebra and $A_s$ fixed to the value the model's own
 CMB fit gives --- \emph{no} free cosmological parameter --- it predicts
 $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured ($\val{S8_leg_tension}\sigma$); the amplitude
-the shear would ask for on its own sits $\val{logA_leg_vs_cmb}\sigma$ from the CMB one. The earlier
-test against raw KiDS-1000, with $A_s$ fitted, gave $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, statistically indistinguishable from the $\Lambda$CDM control on the same raw data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$), with $\Delta\chi^2=\val{dchi2_k1000}$ for four \emph{fewer} free parameters ($\Delta\mathrm{BIC}=\val{dBIC_k1000}$ favouring SSEE). The $\varphi$-dark-matter
+the shear would ask for on its own sits $\val{logA_leg_vs_cmb}\sigma$ from the CMB one. (The earlier KiDS-1000 release, superseded by KiDS-Legacy, gave $\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ with $A_s$ fitted.) The $\varphi$-dark-matter
 extension that was formerly kept outside the core register is retracted. Both core forward predictions bear on
 \emph{unreleased} data: the $(w_0,w_a)$ point is pre-registered to be excluded at
 $>3\sigma$ if DESI~DR3 shifts it, and $r=\varphi^{-10}=\val{r_tensor_mil_d6}\times10^{-3}$ is
@@ -894,40 +895,20 @@ withdrawn here}, for two independent reasons.
 First, fixing $A_s$ to Planck is not a neutral choice: $A_s$ is one of the two
 free parameters this model retains at CMB level, so a number obtained that way
 reports the Planck--shear disagreement rather than a property of the model.
-That disagreement is real and is not resolved here --- asking this model's own
-CMB fit to set $A_s$, rather than borrowing Planck's, still leaves the
-amplitude the KiDS-1000 shear asks for, $\log(10^{10}A_s)=\val{logA_k1000}\pm\val{logA_k1000_sigma}$,
-$\val{logA_k1000_vs_b1_dif}\pm\val{logA_k1000_vs_b1_dif_sigma}$ below the CMB value ($\val{logA_k1000_vs_b1}\sigma$, a
-separation in $\log A_s$, not in $S_8$). Second, the target itself was model-conditioned: the published $S_8$
+Second, the target itself was model-conditioned: the published $S_8$
 is a compressed statistic whose data-reduction pipeline assumes a $\Lambda$CDM
 background, so fitting to it compares a non-$\Lambda$CDM model against a
 partly-$\Lambda$CDM number.
 
-Measured instead against the 225 \emph{raw} KiDS-1000 $\xi_\pm$ data points,
-with the background fixed entirely by the algebra, a \emph{single}
-unpartitioned matter sector $\Omega_m=\val{OMEGA_M_TOTAL_d6}$, and only $A_s$ and the eight
-official nuisance parameters free, a converged MCMC ($R-1=\val{Rm1_k1000}$,
-$\val{neff_k1000}$ effective samples) gives
-\begin{equation}
-  \sigma_8 = \val{sigma8_k1000_ssee}\pm\val{sigma8_k1000_ssee_sigma}, \qquad S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma},
-\end{equation}
-i.e.\ $\val{S8_k1000_ssee_tension}\sigma$ from the KiDS-1000 value $\val{S8_k1000_dato}\pm\val{S8_k1000_dato_sigma}$ --- and, in the like-for-like comparison, $\Delta S_8=\val{S8_k1000_dS8}$ from the $\Lambda$CDM control run through the same pipeline ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$), with
-$\chi^2_{\rm min}=\val{chi2_k1000_ssee}$ over $216$ degrees of freedom. In absolute terms this fit is
-poor (probability to exceed $\val{PTE_k1000_ssee}$), and so is the $\Lambda$CDM control
-($\chi^2=\val{chi2_k1000_lcdm}$, PTE $\val{PTE_k1000_lcdm}$) and the best fit published by
-KiDS itself ($\chi^2=\val{chi2_k1000_publicado}$): the excess belongs to the data set and its
-likelihood, shared by every model run through it, not to SSEE. \textbf{There is no
-$S_8$ tension to resolve, and therefore nothing for a second sector to do.}
-
-\paragraph{The same test against KiDS-Legacy.}
-The measurement above uses KiDS-1000.  Repeating it against the KiDS-Legacy
-release---357 raw $\xi_\pm$ points, Wright et al.\ (2025) (arXiv:2503.19441),
-published sixteen months before the present analysis, over which we claim no
-temporal priority---closes the sector.  With the same algebraic background and
-$A_s$ free, the shear asks for $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, against the
-$\val{leg_logA_cmb}$ that the CMB fixes \emph{under that same background}: a distance of
-$\val{logA_leg_vs_cmb}\sigma$.  The control with the Planck background held equally rigid gives
-$\val{leg_lcdm_vs_planck}\sigma$.  Fixing $A_s$ to the CMB value therefore costs nothing:
+Measured instead against the 357 \emph{raw} KiDS-Legacy $\xi_\pm$ points
+(Wright et al.\ 2025, arXiv:2503.19441, published sixteen months before the
+present analysis, over which we claim no temporal priority), with the background
+fixed entirely by the algebra and a \emph{single} unpartitioned matter sector
+$\Omega_m=\val{OMEGA_M_TOTAL_d6}$, the shear with $A_s$ free asks for
+$\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, against the $\val{leg_logA_cmb}$ that the CMB fixes
+\emph{under that same background}: a distance of $\val{logA_leg_vs_cmb}\sigma$.  The control with
+the Planck background held equally rigid gives $\val{leg_lcdm_vs_planck}\sigma$.  Fixing $A_s$ to
+the CMB value therefore costs almost nothing:
 \begin{equation}
   \chi^2 = \val{chi2_leg_unif} \ \ (\text{8 free, all nuisance, \emph{none} cosmological})
   \quad\text{vs.}\quad
@@ -937,16 +918,20 @@ over the same 357 points, giving $\Delta\mathrm{BIC}=+\val{dBIC_leg_libre}$ in f
 fixed-amplitude model, and $+\val{dBIC_leg_lcdm}$ against the $\Lambda$CDM-background control
 ($\val{chi2_leg_lcdm}$).  With no free cosmological parameter left, $S_8=\val{S8_leg_pred}$ is computed
 rather than fitted, against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured---$\val{S8_leg_tension}\sigma$.
+\textbf{There is no $S_8$ tension to resolve, and therefore nothing for a second
+sector to do.}
 
-Two cautions belong with this result.  The three $\chi^2$ values span $1.0$
+Two cautions belong with this result.  The three $\chi^2$ values span $\val{chi2_leg_rango}$
 over 357 points: \textbf{the shear does not discriminate between these
 models}, and we do not claim that it does.  What separates them is the number
 of parameters each had to spend and whether $A_s$ stays consistent between the
-CMB and the growth epoch.  And the earlier KiDS-1000 release asked for
+CMB and the growth epoch.  And the earlier KiDS-1000 release, now superseded, asked for
 $\log(10^{10}A_s)=\val{logA_k1000}\pm\val{logA_k1000_sigma}$, $\val{logA_k1000_vs_cmb}\sigma$ from the same target; the two
 releases differ from each other by $\val{logA_entre_entregas}\sigma$.  What changed is the data---the
 $n(z)$ calibration, by the collaboration's own Appendix~I---not the model.  A
 future release returning to the lower amplitude would reopen the sector.
+(With $A_s$ fitted, that earlier release gave $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, indistinguishable
+from the $\Lambda$CDM control on the same data, $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$.)
 
 The $\varphi$-DM component and its particle are retracted independently of
 this: the subtraction that defined the second sector's density,
@@ -1189,8 +1174,7 @@ prediction. OP-10, OP-11 and OP-12 close the same way.
 The growth-of-structure status of \S\ref{sec:growth} no longer mirrors this
 structure. The $S_8$ ``tension'' at $\val{p3_S8_techo}$ was an artefact of holding $A_s$ at
 the Planck value while comparing against a $\Lambda$CDM-conditioned summary
-statistic; fitted to raw shear data with a single sector it is
-$\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, matching the $\Lambda$CDM control on the same data ($\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$) with four fewer free parameters. Against the later KiDS-Legacy release the growth sector needs no free amplitude either: the $A_s$ the shear asks for sits $\val{logA_leg_vs_cmb}\sigma$ from the one the CMB fixes under the same background, and fixing it predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. No extension sector is required, and the one
+statistic. Against the raw KiDS-Legacy shear the growth sector needs no free amplitude: the $A_s$ the shear asks for sits $\val{logA_leg_vs_cmb}\sigma$ from the one the CMB fixes under the same background, and fixing it predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. No extension sector is required, and the one
 proposed is retracted. The non-linear treatment required to settle the matter
 definitively still demands $N$-body simulations beyond this work's scope.
 

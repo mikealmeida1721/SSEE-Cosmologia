@@ -1,17 +1,17 @@
 {
  "_procedencia": {
   "script": "src/verificacion/manifiesto_externos.py",
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
-  "fecha_utc": "2026-10-20T18:29:04+00:00",
+  "commit": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
+  "fecha_utc": "2026-10-27T18:41:51+00:00",
   "fuente_de_origenes": "notes/lectura_tercera/MANIFIESTO_EXTERNOS.md"
  },
  "resumen": {
-  "rutas": 138,
+  "rutas": 144,
   "sin_origen": [],
   "no_existen": [],
   "por_clase": {
-   "A": 54,
-   "B": 67,
+   "A": 55,
+   "B": 72,
    "C": 16,
    "S": 1,
    "?": 0
@@ -42,10 +42,10 @@
    "hi_class": 1,
    "kcap": 1,
    "kids1000": 2,
-   "kids_legacy": 2,
+   "kids_legacy": 3,
    "pantheon_cov": 1,
    "pantheon_dat": 1,
-   "paquete_ssee": 70,
+   "paquete_ssee": 75,
    "planck_lensing": 1,
    "planck_plik_lite": 1,
    "spt3g": 2,
@@ -1083,7 +1083,92 @@
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.1.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "control_lcdm_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.1.txt",
+     "bytes": 15003482,
+     "sha256": "dc4d86e42acafdaa020b0f77f2aa91aa12e7d3dbccadd2d2f216595a0412359d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.2.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "control_lcdm_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.2.txt",
+     "bytes": 14939938,
+     "sha256": "f389075f5cc9f7f784595b8eb9020d5e2eee61df47f9a413a6755fcd82dd03c2"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.3.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "control_lcdm_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.3.txt",
+     "bytes": 14821976,
+     "sha256": "fe1c43b269a3cd60200ede97a6f813b644b0ac55b24d4e6f22ef764854e7317d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.4.txt",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "control_lcdm_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.4.txt",
+     "bytes": 15034578,
+     "sha256": "4d2380096b6603ab7ab35a93f82e757ae5421fe72a845985c37ca7997fe6ed0e"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.progress",
+   "clase": "B",
+   "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
+   "cita": "paquete de datos de SSEE",
+   "receta": "paquete_ssee",
+   "etapas": [
+    "control_lcdm_legacy"
+   ],
+   "archivos": [
+    {
+     "rel": "lcdm.progress",
+     "bytes": 5478,
+     "sha256": "226784172c5351096feccc1673c884ec6b50291321b5c8898b9c82c36e6cd65a"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/lcdmfijo.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1100,13 +1185,13 @@
    "archivos": [
     {
      "rel": "lcdmfijo.1.txt",
-     "bytes": 1647428,
-     "sha256": "13d256438ee02ae3fc26cf94b7c050ca54eab4e5936d92858cbe6d925cf9be92"
+     "bytes": 1732496,
+     "sha256": "c0a997d88204813ea69d2c0b271d8798a69a2e4fe6d012d56a4b5be99581f333"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/lcdmfijo.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1123,13 +1208,13 @@
    "archivos": [
     {
      "rel": "lcdmfijo.2.txt",
-     "bytes": 1804220,
-     "sha256": "82efa4b86e1caf9e07aeb6090a898dc19b25b9def7f4fe2df77bb86453050f6d"
+     "bytes": 1718874,
+     "sha256": "7f2f460d1e2cf08fe041d98c4f08125f1e4a99039fb6cb23b59a79099132f5d9"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/lcdmfijo.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1146,13 +1231,13 @@
    "archivos": [
     {
      "rel": "lcdmfijo.3.txt",
-     "bytes": 1751400,
-     "sha256": "a460b97b9fbda5787a612598aaf2ea2fb0e4678274df3ce0244eb7e2372d2e88"
+     "bytes": 1701638,
+     "sha256": "26908af0c5cfd9cfb20635cb593f0283a3699cd47b1620301a69988edbb71dec"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/lcdmfijo.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1169,13 +1254,13 @@
    "archivos": [
     {
      "rel": "lcdmfijo.4.txt",
-     "bytes": 1701638,
-     "sha256": "3494b8183bdb85bbd18e8cd9c742c43cd4de0d217d7b7ed525169ea4e7e35715"
+     "bytes": 1725824,
+     "sha256": "32c3b9fa2c98d0a47c690cd865ae0cfebee1670c2bb00547a0022f863a863179"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1188,13 +1273,13 @@
    "archivos": [
     {
      "rel": "ssee.1.txt",
-     "bytes": 986674,
-     "sha256": "346f5d737f80b1c0c6dcf5f2716767129700dcf17c748592f98e34e4ece22207"
+     "bytes": 1300952,
+     "sha256": "1d4b8fd85a7de65021966a012adeae2ceba1fc955ccf02c39f88d895dcc473d6"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1206,13 +1291,13 @@
    "archivos": [
     {
      "rel": "ssee.2.txt",
-     "bytes": 1012430,
-     "sha256": "124273b33da2c9f5314a9e07166ecca2b18b5c57d43bb9a9ac20e44c12894c47"
+     "bytes": 1297116,
+     "sha256": "86c4b59441b38bc5c0dce7a812a4d1885b663a23e60f4f32b79c9e5cb726cf07"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1224,13 +1309,13 @@
    "archivos": [
     {
      "rel": "ssee.3.txt",
-     "bytes": 1002292,
-     "sha256": "12f36d2a76d25bb30abbb9b8882ee6ace53b59d4897a3c6b7a8ce28aecc22188"
+     "bytes": 1282594,
+     "sha256": "dc3731eb9491b1e20f11f9a9de3ab7a967385c0b34ec4a9a5de847ffafc55e76"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1242,13 +1327,13 @@
    "archivos": [
     {
      "rel": "ssee.4.txt",
-     "bytes": 1035994,
-     "sha256": "df85ce204374adba11ffa327888e632b72492340c4ddecbaf3055e51c141d8d2"
+     "bytes": 1301226,
+     "sha256": "5e94533769cbeb30609c3a53e40f5bb9f2e42663c7b807b60b26de481088fd19"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.1.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/sseefijo.1.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1261,13 +1346,13 @@
    "archivos": [
     {
      "rel": "sseefijo.1.txt",
-     "bytes": 953310,
-     "sha256": "b330443c5e1b55afd1b8419e8a6f56763bc68ef8b267dfbbb7ae4e97e30d084b"
+     "bytes": 936024,
+     "sha256": "57e2e2eac37da1c40de0ab838cb3b3ce664a6ff41e52a8a3e06c97ffc527cc12"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.2.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/sseefijo.2.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1280,13 +1365,13 @@
    "archivos": [
     {
      "rel": "sseefijo.2.txt",
-     "bytes": 931896,
-     "sha256": "cacfb3906fbddf1dea2e095c240c99adcae5ed4f5d8a029680aa798863640b54"
+     "bytes": 958986,
+     "sha256": "321eccde0b193b4046bf3436a7a55ea911181f8018be737a6b438c15d36d997e"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.3.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/sseefijo.3.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1299,13 +1384,13 @@
    "archivos": [
     {
      "rel": "sseefijo.3.txt",
-     "bytes": 930348,
-     "sha256": "56fa05db7add1f7072e2baea035dd47a8d485ddc1fb10abeadd674cbf03061ea"
+     "bytes": 929058,
+     "sha256": "64ce1ce17790d7a56ba5cd8707add1369e7542e245451c8ac1d748a8801b61c6"
     }
    ]
   },
   {
-   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo.4.txt",
+   "ruta": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/sseefijo.4.txt",
    "clase": "B",
    "origen": "producto propio: cadenas MCMC de Paper 6 (src/p06_growth/)",
    "cita": "paquete de datos de SSEE",
@@ -1318,8 +1403,8 @@
    "archivos": [
     {
      "rel": "sseefijo.4.txt",
-     "bytes": 929058,
-     "sha256": "ee5f2aa8130675cfb954b15bcbd8b1d3fa4d0430e8a604f7b3d7fe4ed27fd7ca"
+     "bytes": 943248,
+     "sha256": "b47e9ec2152f44b3bd6302c53c3a463868ee1b503945f3cc4afea132dbe2b38b"
     }
    ]
   },
@@ -1621,7 +1706,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1638,7 +1724,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1655,7 +1742,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1672,7 +1760,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1757,7 +1846,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1774,7 +1864,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1791,7 +1882,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -1808,7 +1900,8 @@
    "cita": "DESI DR2 cadenas oficiales (Abdul-Karim et al. 2025, arXiv:2503.14738)",
    "receta": "desi_dr2",
    "etapas": [
-    "desi_dr2_w0wa_momentos"
+    "desi_dr2_w0wa_momentos",
+    "p2_figuras"
    ],
    "archivos": [
     {
@@ -2096,6 +2189,8 @@
    "cita": "Wright et al. 2025 (arXiv:2503.19441)",
    "receta": "kids_legacy",
    "etapas": [
+    "control_lcdm_legacy",
+    "control_legacy_repesado",
     "kids_publicados",
     "sello_control_legacy"
    ],
@@ -2114,6 +2209,7 @@
    "cita": "Wright et al. 2025 (arXiv:2503.19441)",
    "receta": "kids_legacy",
    "etapas": [
+    "control_legacy_repesado",
     "sello_control_legacy"
    ],
    "archivos": [
@@ -2121,6 +2217,123 @@
      "rel": "KiDS_Legacy_xipm.fits",
      "bytes": 1186560,
      "sha256": "aeedfec802c83f468a7459b11be7b9978029fd87985c9e3930cd3d8be38a664d"
+    }
+   ]
+  },
+  {
+   "ruta": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/cosmosis_xipm",
+   "clase": "A",
+   "origen": "https://kids.strw.leidenuniv.nl/DR5/legacy_wl.php",
+   "cita": "Wright et al. 2025 (arXiv:2503.19441)",
+   "receta": "kids_legacy",
+   "etapas": [
+    "control_legacy_repesado"
+   ],
+   "archivos": [
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin1.ascii",
+     "bytes": 223333,
+     "sha256": "072a36b954c05b06bebf7c79b081fab27c97de819d437c8186ead005717f167f"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin2.ascii",
+     "bytes": 223183,
+     "sha256": "c1c187ea2ca25a79a9187c3fd9481b317028252755ca982161e45bce9bc68aac"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin3.ascii",
+     "bytes": 223247,
+     "sha256": "6b265eca649bdf98d2615be4e0489b37cc52d36ab9d77b530328d26b8433f16a"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin4.ascii",
+     "bytes": 223387,
+     "sha256": "d5ad8193d8b4213b3687fa86a96e2064f8c3b0f6f76b4a9b1ed0971c8c3c3c7b"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin5.ascii",
+     "bytes": 223296,
+     "sha256": "9f3f053b039e5959e98c50c5e4a43bfa7e6f500bff0825f5be03b46435d50a11"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin1_Bin6.ascii",
+     "bytes": 223209,
+     "sha256": "fe3c5f91c0c702b3a3ea68161362bc9c8ea22e08827cc2de94a8a8a79b3ae4bc"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin2.ascii",
+     "bytes": 223222,
+     "sha256": "ff13ddab5e8417910ec6bf969600ed682d1fafe01571e1059ca2220e4c79dc9e"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin3.ascii",
+     "bytes": 223222,
+     "sha256": "01dfa7637f01eebb00960e5f61b6d8741555f7ccb1907e61d5db23efcff84960"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin4.ascii",
+     "bytes": 223091,
+     "sha256": "b457ab4779ccaaebcebe5c2bf1241c26bc3a8400a0fc51213d1374ac5d610d41"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin5.ascii",
+     "bytes": 223155,
+     "sha256": "89ec03afe05b5109f1a8f0cf92c8fce5f3dc165223a1a430bef531345572256b"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin2_Bin6.ascii",
+     "bytes": 223188,
+     "sha256": "7f682cd8a62ce0c39fa1f9196e56b71a01702469f3d1abf78f22032614a84b23"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin3.ascii",
+     "bytes": 223359,
+     "sha256": "a0aedbae56365a104c5c28a3b7ce9480fff4083f52f8b810c3b42aa25d6eb66d"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin4.ascii",
+     "bytes": 223042,
+     "sha256": "c8d004c4bf4b30bf670f0c936dae548acc445bc72f6162cc70cbb5837ec5b571"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin5.ascii",
+     "bytes": 223094,
+     "sha256": "f4e92040ec75a71aa1d5497728665d87dca619e6e60de998fff22153bbe4c64b"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin3_Bin6.ascii",
+     "bytes": 223255,
+     "sha256": "e379e1c319f48ac408e3a5b16f5e191b8075e7d5b229c607fbcd39342d25e779"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin4.ascii",
+     "bytes": 223146,
+     "sha256": "8a3d8502acb24fcee5ab169c73e97279ec771ddac0e05e772d7f4a0b380026da"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin5.ascii",
+     "bytes": 222961,
+     "sha256": "ce3d811b0b59218a15447bdffe04b261dd69a394a116196e7feaf6349a1c4cc4"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin4_Bin6.ascii",
+     "bytes": 223047,
+     "sha256": "79163717938e5490416898bb37ec3cd3b352948ea1c10afb83fa6acf0cd07ac1"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin5_Bin5.ascii",
+     "bytes": 223089,
+     "sha256": "9b80615890b2f5fcfb41d011c9842e7272a31c356e644ef35df14befe1286239"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin5_Bin6.ascii",
+     "bytes": 222921,
+     "sha256": "25da22b3111ed47d7cb08af20c7087b0ba6350eab809e2b269e80205de48ca94"
+    },
+    {
+     "rel": "XI_KiDS_Legacy_NScomb_nBins_6_Bin6_Bin6.ascii",
+     "bytes": 223058,
+     "sha256": "03e11d46edecb4667834f9947291d6c07f8645d6f28e23b81e86ea6c267847a5"
     }
    ]
   },
@@ -2267,6 +2480,7 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
+    "fig_w0wa_degeneracy",
     "mcmc_full_posteriores"
    ],
    "archivos": [
@@ -2284,6 +2498,7 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
+    "fig_w0wa_degeneracy",
     "mcmc_full_posteriores"
    ],
    "archivos": [
@@ -2301,6 +2516,7 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
+    "fig_w0wa_degeneracy",
     "mcmc_full_posteriores"
    ],
    "archivos": [
@@ -2318,6 +2534,7 @@
    "cita": "paquete de datos de SSEE",
    "receta": "paquete_ssee",
    "etapas": [
+    "fig_w0wa_degeneracy",
     "mcmc_full_posteriores"
    ],
    "archivos": [

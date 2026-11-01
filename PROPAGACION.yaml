@@ -115,6 +115,8 @@ logs:
   # `lcdmfijo` = fondo clavado en Planck). Se declaran las dos al mismo
   # script: es su fuente real, y asi R35 vigila ambas.
   control_legacy:             src/p06_growth/control_legacy.py
+  control_lcdm_legacy:        src/p06_growth/control_lcdm_legacy.py
+  control_legacy_repesado:    src/p06_growth/control_legacy_repesado.py
   kids_legacy_ssee:           src/p06_growth/cobaya_kids_legacy.py
   kids_legacy_lcdmfijo:       src/p06_growth/cobaya_kids_legacy.py
   # 2026-09-20: la tercera configuracion, `sseefijo` — fondo algebraico Y
@@ -123,7 +125,8 @@ logs:
   kids_legacy_sseefijo:       src/p06_growth/cobaya_kids_legacy.py
   # El registro de la COLA (que corrida entra y cuando) no lo escribe el
   # muestreador sino el lanzador que lo invoca; ahi vive su fuente.
-  cola_kids_legacy:           src/p06_growth/lanzar_kids_legacy.sh
+  # cola_kids_legacy (nota de cola de la v1) archivada 2026-11-01 en
+  # archive/logs_superados/kids_legacy_evaluador_viejo_2026-09-20/ (README).
   multisonda_fondo_clavado:   src/p06_growth/multisonda_fondo_clavado.py
   # 2026-10-20: BOSS en el montaje de Chen+22. Los logs del BOSS de Beutler+2017
   # (R1/R2, perfiles, conjuntas con BOSS, cola_boss_aisla…) salieron a
@@ -282,9 +285,14 @@ muestreo_certificado:
   # No se re-corre: emcee va sin semilla y movería la 3a cifra de H0 sin causa fisica.
   mcmc_paper2_3models_wmfix: 2026-10-02
   paper3_cmb_reframe: 2026-09-30
-  kids_legacy_ssee: 2026-09-30
-  kids_legacy_sseefijo: 2026-09-30
-  kids_legacy_lcdmfijo: 2026-09-30
+  # 2026-10-27 — los tres logs son ahora las transcripciones v2 (evaluador corregido, cadenas
+  # kids_legacy_v2, corridas 10-22…25; las de septiembre en archive/logs_superados/
+  # kids_legacy_evaluador_viejo_2026-09-20/). Después de muestrear, cobaya_kids_legacy.py sólo
+  # cambió el directorio POR DEFECTO de las cadenas (L283; las corridas lo recibieron por argv).
+  # Cotejo: coteja_transcripciones PASA (N aceptados == filas en disco, convergidas).
+  kids_legacy_ssee: 2026-10-27
+  kids_legacy_sseefijo: 2026-10-27
+  kids_legacy_lcdmfijo: 2026-10-27
   # 2026-09-19: R35 ahora respeta la FECHA del certificado (antes eximia para
   # siempre). Eso destapo dos cambios posteriores al 07-27 en
   # ssee_paper3_b1_mcmc.py, y se revisaron:

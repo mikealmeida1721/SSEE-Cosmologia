@@ -1,4 +1,4 @@
-# ACTA-PROCEDENCIA {"commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p11_sondas/lcdm_conjunta.py", "script_sha256": "ea2d0fcc83aaa45471015db4c03950106bafd77269d415cc797774d03b9f4670", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/procedencia_sella.py", "src/p11_sondas/lcdm_conjunta.py", "results/logs/lcdm_conjunta_control.log"], "fecha": "2026-10-20T14:05:57", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+# ACTA-PROCEDENCIA {"commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p11_sondas/lcdm_conjunta.py", "script_sha256": "963b138dc907782194ea07dcbfe0266239ee99ecf50c2b57c601435286d812bb", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/procedencia_sella.py", "src/p11_sondas/lcdm_conjunta.py", "results/logs/lcdm_conjunta_control.log"], "fecha": "2026-10-26T18:47:24", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {}, "nucleos": {"OMP_NUM_THREADS": null, "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}, "resellado": {"commit_original": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4", "cambios_originales": ["M src/p11_sondas/lcdm_conjunta.py"], "fecha": "2026-10-28T12:52:53", "motivo": "el script que corrió quedó commiteado sin cambios; sha256 cotejado contra el commit nuevo"}}
 [camb] `camb` module loaded successfully from /home/mike/Proyectos/SSEE/eftcamb_ssee/camb
 [planck_2018_highl_plik.ttteee_lite] `clipy` module loaded successfully from /home/mike/cobaya_packages/code/planck/clipy/clipy
 ----
@@ -17,6 +17,6 @@ before crop : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
 after crop  : TT 30 -> 2508, TE 30 -> 1996, EE 30 -> 1996
   C1 CMB  mejor LCDM, mnu SSEE : 1003.7686  publicado 1003.7686  OK
           mismo punto, mnu LCDM (0.06) : 1004.2926  (dif +0.5240)
-  C2 KiDS fondo Planck: lcdmfijo 418.9547  lcdm 418.9547  cadena 418.9547  OK
+  C2 KiDS fondo Planck: lcdmfijo 415.7351  lcdm 415.7351  cadena 415.7351  OK
   C3 BAO  SSEE por CAMB 11.4067  por chi2_bao_posterior 11.4065  OK   (Om 0.308883, r_d 147.174)
      BAO  LCDM-Planck por CAMB 31.9819  (Om 0.315193, r_d 147.101)

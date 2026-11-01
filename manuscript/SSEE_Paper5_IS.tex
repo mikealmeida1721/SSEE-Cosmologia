@@ -135,9 +135,8 @@ conservative CLASS ceiling is higher still, $S_8^{\mathrm{ceiling}} = \val{p3_S8
 Both are \emph{ceilings under an imported normalisation}, not predictions:
 $A_s$ is one of the two free CMB parameters of the model, and fixing it to
 Planck imports the Planck--KiDS offset instead of predicting it.  With $A_s$
-free and this same background, the fit to the raw KiDS-1000 $\xi_\pm$ gives
-$S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000; against the later
-\textsc{KiDS-Legacy} release (357 raw $\xi_\pm$ points) the amplitude the shear
+free and this same background, against the raw \textsc{KiDS-Legacy} $\xi_\pm$
+(357 points) the amplitude the shear
 asks for lies $\val{logA_leg_vs_cmb}\sigma$ from the one the model's own CMB fit supplies, so
 $A_s$ can be fixed there as well, and with \emph{no} free cosmological parameter
 the model predicts $S_8=\val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured
@@ -146,7 +145,7 @@ published sixteen months before this analysis; no temporal priority is
 claimed. Its recalibration of the source redshift distributions dissolves the
 Planck--shear disagreement in the data themselves: re-running the KiDS-1000
 analysis under blinding, the collaboration's Appendix~I finds
-$2.39\sigma\to1.42\sigma$ from the $n(z)$ calibration alone. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear
+$2.39\sigma\to1.42\sigma$ from the $n(z)$ calibration alone. The three $\chi^2$ compared span $\val{chi2_leg_rango}$ over 357 points, so the shear
 does \emph{not} discriminate between the models; what separates them is the
 parameter count. See Paper~6.}  What this
 paper establishes is the growth \emph{shape}, $\mathcal{G}$ and
@@ -1064,9 +1063,9 @@ The all-cold limit therefore predicts \emph{more} structure than the data
 require. A $\varphi$-DM two-sector was once proposed to resolve this; it is
 retracted in Paper~6. The ceiling quoted here is computed with $A_s$
 \emph{fixed} to Planck, which imports the Planck--shear discrepancy; with
-$A_s$ free, as it is in the model, the same single sector fits the raw
-KiDS-1000 $\xi_\pm$ at $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ and there is no challenge to
-resolve.
+$A_s$ fixed instead to the model's own CMB fit, the same single sector predicts
+$S_8=\val{S8_leg_pred}$ against the raw KiDS-Legacy $\xi_\pm$ ($\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured,
+Paper~6) and there is no challenge to resolve.
 
 \begin{table}[h!]
 \centering
@@ -1103,10 +1102,10 @@ The values quoted in this section hold $A_s$ fixed at the Planck-preferred
 value. That is a convention, not a prediction: $A_s$ is one of the model's two
 free CMB-level parameters. Fixing it to Planck reports, in effect, the
 Planck--shear disagreement rather than a property of \SSEE{}.
-Paper~6 instead fits $A_s$ to the \emph{raw} KiDS-1000 $\xi_\pm$ data with this
-same background held fixed and a \emph{single} matter sector, obtaining
-$\sigma_8=\val{sigma8_k1000_ssee}\pm\val{sigma8_k1000_ssee_sigma}$ and $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ (the $\Lambda$CDM control on the same raw data gives $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$) --- $\val{S8_k1000_ssee_tension}\sigma$ from
-KiDS-1000. The $\phi$-DM two-sector split once described here is retracted.
+Paper~6 instead confronts the \emph{raw} KiDS-Legacy $\xi_\pm$ data with this
+same background held fixed and a \emph{single} matter sector: the amplitude the
+shear asks for lies $\val{logA_leg_vs_cmb}\sigma$ from the model's own CMB value, so $A_s$ is
+fixed there too. The $\phi$-DM two-sector split once described here is retracted.
 A baryonic-feedback figure of $S_8^{\rm bar}=0.758$ was once quoted here; it is
 \emph{retracted}. It applied the suppression factor of the matter power spectrum
 ($B_{\rm eff}=\val{p5_Beff_mayo}$, a $\val{p5_Beff_mayo_pct}\%$ suppression of $P(k)$) to the retired
@@ -1118,8 +1117,8 @@ The single-sector value of this paper ($S_8=\val{p3_S8_techo}$) is obtained with
 fixed to Planck. With $A_s$ fixed instead to the model's own CMB fit --- no free
 cosmological parameter --- \SSEE{} predicts $S_8=\val{S8_leg_pred}$, $\val{S8_leg_tension}\sigma$
 from KiDS-Legacy (Paper~6); the two agree because the model's CMB amplitude lands on
-Planck's. Fitting $A_s$ to the raw KiDS-1000 shear instead gave
-$S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ (antecedent).
+Planck's. (The earlier KiDS-1000 release, superseded, gave
+$S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$ with $A_s$ fitted.)
 Figure~\ref{fig:s8_resolution} shows these determinations on the same background.
 
 \begin{figure}[h!]
@@ -1272,9 +1271,10 @@ an echo, is a ratio between objects of different kinds and carries no informatio
 Independently, the tension that motivated the second sector does not survive
 contact with raw data.  It was measured against the compressed statistic $S_8$,
 which is derived under $\Lambda$CDM assumptions, and with $A_s$ fixed to
-Planck.  Fitting $A_s$ --- a free parameter of the model --- to the raw
-KiDS-1000 $\xi_\pm$ with a single matter sector gives
-$S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, $\val{S8_k1000_ssee_tension}\sigma$ from KiDS-1000 (Paper~6).
+Planck.  Against the raw KiDS-Legacy $\xi_\pm$, with $A_s$ fixed to the model's
+own CMB fit and a single matter sector, the model predicts
+$S_8 = \val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured, with no free cosmological
+parameter (Paper~6).
 
 The consequence for this paper is confined to \S\ref{subsec:MIRA_background}:
 $\mathrm{MIRA}$ retains its algebraic value $(3\varphi+\pi)/4 = \val{MIRA_d6}$ and
@@ -1339,8 +1339,8 @@ $\delta_c$.
 
 \paragraph{The amplitude convention is not a detail.} This ratio compares two
 cosmologies and is only meaningful if both are evaluated at the same epoch's
-amplitude. Giving SSEE the amplitude it prefers when fitted to raw KiDS-1000
-shear ($\sigma_8=\val{ps_inv_s8}$, Paper~6) while leaving $\Lambda$CDM at Planck's
+amplitude. Giving SSEE the amplitude the earlier, superseded fit to raw KiDS-1000
+shear preferred ($\sigma_8=\val{ps_inv_s8}$) while leaving $\Lambda$CDM at Planck's
 $0.811$ inverts the result to a deficit ($\val{ps_inv_m11}$ at $10^{11}M_\odot$ and $\val{ps_inv_m12}$ at $10^{12}M_\odot$, $z=10$). That
 inversion is not a statement about collapse physics: it is the
 CMB-versus-late-time amplitude disagreement entering through the back door,
@@ -1364,9 +1364,9 @@ $f\sigma_8$ predictions align closely with $\Lambda$CDM:
           error treatment; the conservative CLASS amplitude ceiling is
           $S_8 = \val{p3_S8_techo}$ ($\val{tension_s8_kids1000_techo}\sigma$ KiDS-1000).
         Both numbers hold $A_s$ \emph{fixed} to Planck, which imports the
-        Planck--shear discrepancy; $A_s$ is free in the model, and fitting it
-        to the raw KiDS-1000 $\xi_\pm$ leaves $S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$,
-        $\val{S8_k1000_ssee_tension}\sigma$ (Paper~6). There is no weak-lensing tension for the
+        Planck--shear discrepancy; with $A_s$ fixed instead to the model's own
+        CMB fit, the raw KiDS-Legacy $\xi_\pm$ give $S_8 = \val{S8_leg_pred}$ predicted
+        against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured (Paper~6). There is no weak-lensing tension for the
         single-sector IS framework to resolve.
 
   \item \textbf{$f\sigma_8$ (RSD growth rate):}
@@ -1386,9 +1386,9 @@ translates to a marginally different $S_8$.
 The apparent weak-lensing tension does not survive contact with the raw data.
 A two-sector $\phi$-DM construction was once proposed to remove it by
 free-streaming suppression; Paper~6 retracts that construction and shows the
-tension was an artefact of holding $A_s$ at its Planck value. With $A_s$ free,
-the single sector fits the 225 raw KiDS-1000 $\xi_\pm$ points at
-$S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$.
+tension was an artefact of holding $A_s$ at its Planck value. With $A_s$ fixed
+to the model's own CMB fit, the single sector predicts $S_8 = \val{S8_leg_pred}$ against
+the 357 raw KiDS-Legacy $\xi_\pm$ points ($\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured).
 
 \subsection{The $H_0$ tension and SSEE}
 \label{subsec:H0}
@@ -1485,7 +1485,7 @@ essentially identical to $\Lambda$CDM ($\val{fs8_tmedia_lcdm}\sigma$).
 There is no weak-lensing tension left for the IS sector to resolve: against
 the raw KiDS-Legacy $\xi_\pm$, with $A_s$ fixed to the value the model's own CMB
 fit supplies, a single matter sector with no free cosmological parameter
-predicts $S_8 = \val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured; the earlier fit to
+predicts $S_8 = \val{S8_leg_pred}$ against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured; the earlier, superseded fit to
 KiDS-1000 with $A_s$ free gave $S_8 = \val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$, $\val{S8_k1000_ssee_tension}\sigma$
 (Paper~6).  The $S_8 = \val{p3_S8_IS}$ quoted above is a ceiling obtained with $A_s$
 fixed to Planck, which imports the Planck--KiDS offset rather than predicting

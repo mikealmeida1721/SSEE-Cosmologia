@@ -76,9 +76,9 @@
   "results/logs/kids_legacy_ssee.log": {
    "segmentos": [
     {
-     "prefijo": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/ssee",
-     "N_declarado": 14731,
-     "filas": 14731,
+     "prefijo": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/ssee",
+     "N_declarado": 18908,
+     "filas": 18908,
      "convergio": true,
      "etapas_que_leen": [
       "coteja_transcripciones",
@@ -94,9 +94,9 @@
   "results/logs/kids_legacy_sseefijo.log": {
    "segmentos": [
     {
-     "prefijo": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/sseefijo",
-     "N_declarado": 14510,
-     "filas": 14510,
+     "prefijo": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/sseefijo",
+     "N_declarado": 14598,
+     "filas": 14598,
      "convergio": true,
      "etapas_que_leen": [
       "coteja_transcripciones",
@@ -112,9 +112,9 @@
   "results/logs/kids_legacy_lcdmfijo.log": {
    "segmentos": [
     {
-     "prefijo": "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdmfijo",
-     "N_declarado": 24833,
-     "filas": 24833,
+     "prefijo": "/mnt/datos/SSEE_data/chains_p6/kids_legacy_v2/lcdmfijo",
+     "N_declarado": 24740,
+     "filas": 24740,
      "convergio": true,
      "etapas_que_leen": [
       "coteja_transcripciones",
@@ -153,7 +153,7 @@
  "control": true,
  "pasa": true,
  "_procedencia": {
-  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
+  "commit": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/coteja_transcripciones.py",
@@ -163,15 +163,15 @@
    "results/logs/b1_full_run.log": "7368c2d67205e7c9cf9d658ded3c004febf39400bdf41fcb4fd5e4e39b3257a5",
    "results/logs/b1_lcdm_run.log": "9c7d46861862f8c4898418270d1cc6ffd84c3bd12ec5941d3bb763629c627e72",
    "results/logs/b1_k2_run.log": "fae95466612de1d9c4c9499efd3189e69e25485fc184714ca86a07d6db603b0b",
-   "results/logs/kids_legacy_ssee.log": "893621f3cc5c4e29dfd76e08e190a108135102a51db7bc3873a557da48037198",
-   "results/logs/kids_legacy_sseefijo.log": "56897b2b75103db4393ae9029f7e41a4e5d46b8eb946557048cd51b09355b686",
-   "results/logs/kids_legacy_lcdmfijo.log": "4aaa3294b886068506b5ccfa3733f18bc1e7341e0c5e409271b60a4175c068fa",
+   "results/logs/kids_legacy_ssee.log": "9cc38ea19adf1195843234b2a00986c4b26905ce1a1695b9f84ed2d7b5665e24",
+   "results/logs/kids_legacy_sseefijo.log": "a2a08196a86a2cbf146ba63baf41cf468a19713f91532babdb78daa7739be41c",
+   "results/logs/kids_legacy_lcdmfijo.log": "5fe92f136a9e5cb16884d3a8d6f4baa1478220d51de2e20422ce6f08bf6e16fa",
    "results/logs/R4_lcdm_resume_20260805.log": "7a50998b005232cc39744ef9e3120a3809d5d593b4c4f57289ae5b8e9ee50b84"
   },
   "argv": [
    "src/verificacion/coteja_transcripciones.py"
   ],
-  "fecha": "2026-10-20T14:46:12",
+  "fecha": "2026-10-27T11:23:43",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},

@@ -36,13 +36,13 @@ Moved here verbatim when the README was rewritten to lead with the current model
 > **Closed 2026-09-20 against KiDS-Legacy** (357 raw ξ± points; Wright et al.
 > 2025, [arXiv:2503.19441](https://arxiv.org/abs/2503.19441) — published sixteen
 > months before this analysis, **no temporal priority is claimed**). The shear
-> asks for log(10¹⁰A_s) = 3.0255 ± 0.0396 against the 3.04483 the CMB fixes
-> *under the same algebraic background*: **0.49σ** (Planck background, held
-> equally rigid: 1.01σ). So A_s need not be refitted at all — fixing it costs
-> nothing (χ² = 417.97 with **eight free parameters, all nuisance, none
-> cosmological**, vs 418.34 with A_s free; ΔBIC = +6.24), and S₈ = 0.8273
+> asks for log(10¹⁰A_s) = 3.0544 ± 0.0383 against the 3.04483 the CMB fixes
+> *under the same algebraic background*: **0.25σ** (Planck background, held
+> equally rigid: 0.16σ). So A_s need not be refitted at all — fixing it costs
+> nothing (χ² = 415.59 with **eight free parameters, all nuisance, none
+> cosmological**, vs 414.99 with A_s free; ΔBIC = +5.28), and S₈ = 0.8273
 > becomes a *prediction* against 0.8265 ± 0.0176 measured. **Two cautions, in
-> the open:** the three χ² compared span 1.0 over 357 points, so the shear does
+> the open:** the three χ² compared span 0.74 over 357 points, so the shear does
 > **not** discriminate between these models — what separates them is the
 > parameter count; and KiDS-1000 had asked for log(10¹⁰A_s) = 2.863 ± 0.051,
 > 3.5σ away, with the two releases differing from each other by 2.5σ. What
@@ -56,7 +56,7 @@ Moved here verbatim when the README was rewritten to lead with the current model
 | Mean fσ₈ tension (6 surveys, single-sector) | 0.70σ | the two-sector variant (0.93σ) is RETIRED with the particle (2026-08-01); raw BOSS is now measured with a control (2026-10-20, see the BOSS row below) |
 
 **Diagnostic:** with A_s *fixed* to Planck the model predicts an S₈ above weak-lensing surveys.
-That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of the model (k=2), and with A_s free the MCMC against raw KiDS-1000 ξ± gives S₈ = 0.7555 ± 0.0192 — **0.11σ, no tension**. The two-sector φ-DM extension that formerly closed it (S₈ = 0.758) is RETIRED. **Update 2026-09-20:** against KiDS-Legacy the amplitude the shear asks for lands 0.49σ from the one the CMB fixes under the same background, so A_s need not be free either — fixed, the sector predicts S₈ = 0.8273 against 0.8265 ± 0.0176 measured, with **no free cosmological parameter**.
+That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of the model (k=2), and with A_s free the MCMC against raw KiDS-1000 ξ± gives S₈ = 0.7555 ± 0.0192 — **0.11σ, no tension**. The two-sector φ-DM extension that formerly closed it (S₈ = 0.758) is RETIRED. **Update 2026-09-20:** against KiDS-Legacy the amplitude the shear asks for lands 0.25σ (0.49σ before the 2026-10-26 evaluator fix) from the one the CMB fixes under the same background, so A_s need not be free either — fixed, the sector predicts S₈ = 0.8273 against 0.8265 ± 0.0176 measured, with **no free cosmological parameter**.
 
 ### Paper 6 section as it stood
 
@@ -168,7 +168,7 @@ That gap was RETIRED as an artefact on 2026-08-01: A_s is a free parameter of th
 
 ### Roadmap fragment
 
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 - [x] ~~OP-9 residual — UV origin of the multiplier 594.28 (SOLAR² · KRYSTOS_V)~~ —
       **closed by dissolution 2026-08-01**: with the particle retracted there is no
       multiplier left whose UV origin to derive.

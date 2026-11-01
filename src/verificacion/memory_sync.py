@@ -4,7 +4,7 @@ memory_sync.py — el sincronizador de las 3 memorias de SSEE.
 
 Las 3 memorias deben concordar SIEMPRE (regla de Mike):
   • Guardián  — VERIFICATION_LEDGER.md (resultados/valores)
-  • Obsidian  — /home/mike/SSEE-Vault (conexiones/cadenas)
+  • Obsidian  — /home/mike/Documentos/SSEE/SSEE-Vault (conexiones/cadenas)
   • CLAUDE.md — contexto/estado
 
 Este script lee CANONICAL_VALUES.yaml (fuente única de verdad) y revisa que
@@ -28,9 +28,9 @@ import sys
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-# Vault personal (Obsidian); configurable con SSEE_VAULT, default ~/SSEE-Vault.
+# Vault personal (Obsidian); configurable con SSEE_VAULT, default ~/Documentos/SSEE/SSEE-Vault (movido 2026-10-30).
 # Si no existe, el sync de vault se omite con gracia (no rompe en otra PC).
-VAULT = pathlib.Path(os.environ.get("SSEE_VAULT", pathlib.Path.home() / "SSEE-Vault"))
+VAULT = pathlib.Path(os.environ.get("SSEE_VAULT", pathlib.Path.home() / "Documentos" / "SSEE" / "SSEE-Vault"))
 CANON = ROOT / "CANONICAL_VALUES.yaml"
 # Memoria de Claude Code para este proyecto; configurable con SSEE_MEMCLAUDE.
 MEMCLAUDE = pathlib.Path(os.environ.get(

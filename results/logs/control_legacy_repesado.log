@@ -1,0 +1,7 @@
+# ACTA-PROCEDENCIA {"commit": "282c08390e60ac0b67dc316c4d41c09e109bb1d9", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/control_legacy_repesado.py", "script_sha256": "f03683f899f009977aff186f7b7c58cca7220c38dab11fa5e5664d48eeedd1a6", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/control_legacy_repesado.py"], "fecha": "2026-10-22T03:51:28", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+control fila max-like: chi2 407.671 vs 407.647 -> PASA
+Δχ² nuestro−oficial: -0.296 ± 1.155  (min -7.24, max +2.60); filas fallidas 0
+tamaño efectivo del repesado: 501 de 1200
+S8 oficial 0.8265 ± 0.0176 | submuestra 0.8261 | repesado 0.8306 ± 0.0172
+CONTROL: S8 repesado a +0.26σ de la submuestra (criterio 0.3σ) -> PASA
+escrito -> /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/control_legacy_repesado.json

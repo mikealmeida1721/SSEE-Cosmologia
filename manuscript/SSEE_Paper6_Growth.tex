@@ -66,19 +66,16 @@ shear prefers $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, $\val{logA_l
 $\val{leg_logA_cmb}$ that \SSEE{}'s own CMB fit supplies (under the identical pipeline
 with the Planck background, $\val{leg_lcdm_vs_planck}\sigma$). Fixing the amplitude to the CMB
 value leaves the growth sector with \emph{no free cosmological parameter} and
-costs nothing: $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$ with the amplitude
+costs almost nothing: $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$ with the amplitude
 free, $\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of fixing it, and the nuisance parameters do not move to
 compensate. $S_8=\val{S8_leg_pred}$ is then an output of the algebra and the CMB, against
 a measured $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. KiDS-Legacy predates this analysis by sixteen
 months and no temporal priority is claimed: the result is a consistency of
 $A_s$ between epochs. We state against our own interest that the three
-$\chi^2$ values compared span less than $1.0$: cosmic shear does not
+$\chi^2$ values compared span only $\val{chi2_leg_rango}$: cosmic shear does not
 discriminate between these backgrounds, and what separates them is the
-parameter count. On the earlier KiDS-1000 release (225 raw points, amplitude
-free), \SSEE{} gives $\chi^2_{\rm min}=\val{chi2_k1000_ssee}$ against $\val{chi2_k1000_lcdm}$ for
-$\Lambda$CDM run through the identical pipeline with its background free: four
-extra parameters buy $\Delta\chi^2=\val{dchi2_k1000}$, less than the $4$ they would return
-by chance ($\Delta\mathrm{BIC}=\val{dBIC_k1000}$ in favour of \SSEE{}). Against the raw
+parameter count. (The earlier KiDS-1000 release is superseded and kept only as
+the record of how the retraction was reached.) Against the raw
 BOSS DR12 multipoles ($\val{bossC_npts}$ points, one-loop LPT), after a $\Lambda$CDM control with its
 background free reproduces the published full-shape analysis of the same data (every parameter within the
 pre-set $0.3\sigma$), \SSEE{} with every cosmological parameter fixed --- amplitude
@@ -124,9 +121,9 @@ Chevallier--Polarski--Linder \citep{ChevallierPolarski2001,Linder2003}
 equation of state $w_0=\val{W0_d6}$, not $-1$) imports part of the $\Lambda$CDM
 background into the comparison itself.
 
-This paper re-does both measurements on the raw data products --- the KiDS-1000
-and KiDS-Legacy $\xi_\pm(\theta)$ (Asgari et al.~2021 \citep{Asgari2021}; Wright et
-al.~2025 \citep{Wright2025}) and BOSS DR12 power-spectrum multipoles
+This paper re-does both measurements on the raw data products --- the KiDS-Legacy
+$\xi_\pm(\theta)$ (Wright et al.~2025 \citep{Wright2025}; the superseded KiDS-1000 release,
+Asgari et al.~2021 \citep{Asgari2021}, is kept for the record) and BOSS DR12 power-spectrum multipoles
 $P_0,P_2(k)$ (Beutler \& McDonald 2021 \citep{BeutlerMcDonald2021}) --- applying the model-dependent
 deformation (Alcock--Paczynski for BOSS; the non-linear matter power spectrum
 template for KiDS) to the \emph{theory prediction}, never to the data. This
@@ -269,13 +266,17 @@ loss $\val{perdida_lcdm_conj}$ for $\val{gl_lcdm_conj}$ degrees of freedom
  & CMB (Planck) & shear (KiDS-Legacy) & BAO (DESI DR2) \\
 \midrule
 $\Lambda$CDM, $\Delta\chi^2$ & $\val{costo_cmb_conj}$ & $\val{costo_kids_conj}$ & $\val{costo_bao_conj}$ \\
-\SSEE{}, $\Delta\chi^2$ & 0 (own fit) & $\val{dchi2_leg_unif_libre}$ (sampling noise) & 0 (no $A_s$) \\
+\SSEE{}, $\Delta\chi^2$ & 0 (own fit) & $\val{dchi2_leg_unif_libre}$ (fixing $A_s$) & 0 (no $A_s$) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Raw KiDS-1000 cosmic shear likelihood}
+\subsection{Raw KiDS-1000 cosmic shear likelihood (superseded release)}
 \label{sec:kids-method}
+
+The current $S_8$ result is on KiDS-Legacy, whose likelihood settings and
+control are given in \S\ref{sec:legacy}. This subsection describes the setup of
+the earlier KiDS-1000 analysis, kept for the record (\S\ref{sec:s8}).
 
 We evaluate $\chi^2$ against the 225 (of 270) scale-cut $\xi_\pm(\theta)$ data
 points from the KiDS-1000 Blind~C release (Asgari et al.~2021 \citep{Asgari2021}), using the flat-sky
@@ -322,9 +323,136 @@ published result (\S\ref{sec:fsigma8}). An earlier linear-Kaiser pass is describ
 in \S\ref{sec:limitation-kaiser} and does not publish.
 
 % ============================================================================
-\section{$S_8$ against raw cosmic shear}
+\section{$S_8$ against raw cosmic shear: KiDS-Legacy}
+\label{sec:legacy}
+% ============================================================================
+
+The $S_8$ measurement of this paper is made on the KiDS-Legacy release. The
+earlier KiDS-1000 release, on which the retraction was first reached, is
+superseded and kept only as the record in \S\ref{sec:s8}. The Planck--shear
+disagreement it showed was resolved by the KiDS collaboration itself, and not in
+the model's favour or against it: in the data. KiDS-Legacy
+\citep{Wright2025} recalibrates the source redshift distributions and re-analyses
+the complete survey, and its Appendix~I re-runs the KiDS-1000 analysis end to
+end with the new methods under blinding. The tension against Planck dissolves in
+steps, quoted there as signed consistencies in $S_8$ (negative meaning KiDS
+below Planck): $-2.39\sigma \to -1.42\sigma$ from the $n(z)$ calibration
+alone, then $-1.12\sigma$, $-0.85\sigma$ and $-0.74\sigma$ as tomography,
+alignment model and sky area are updated. Their stated threshold is
+``the typical KiDS threshold for consistency of $2.3\sigma$ (equivalent to a
+one-sided probability to exceed of $0.01$)''; every step with the new
+calibration falls below it.
+
+\paragraph{Chronology, stated plainly.} KiDS-Legacy appeared on arXiv on
+2025 March 25, sixteen months before this analysis was written.
+\textbf{We claim no temporal priority over it.} What we report here is an
+internal consistency test of this model, run on the raw Legacy data vector, and
+the reader should weigh it as such.
+
+We measure on the 357 unmasked $\xi_\pm$ points
+of the Legacy release, in three configurations that differ only in what is held
+fixed. All three use the same likelihood, the same scale cuts
+($\xi_+$: $2'$--$300'$, $\xi_-$: $4'$--$300'$) and the same eight nuisance
+parameters.
+
+\paragraph{The control comes first.} Before any \SSEE{} number, the shear
+evaluator is checked against the collaboration's own result, in two steps that
+cost seconds and hours rather than days. (a) At the maximum-likelihood point of
+the official chain, with the official intrinsic-alignment model (NLA amplitude
+per redshift bin), the evaluator returns $\chi^2=\val{leg_ctl_chi2}$ against the
+published $\val{leg_ctl_chi2_of}$. (b) Re-weighting a sub-sample of the official
+posterior ($\val{leg_ctl_neff}$ effective samples) by the ratio of our likelihood to
+theirs moves the mean $S_8$ from $\val{leg_ctl_S8_of}$ to $\val{leg_ctl_S8_rep}$,
+$\val{leg_ctl_dist}\sigma$, inside the $\val{leg_ctl_crit}\sigma$ criterion fixed before
+the test. This control exposed two defects in an earlier version of the
+evaluator --- model correlation functions taken at the geometric bin centre
+instead of the pair-weighted bin average of the release, and a Hankel integral
+not converged at the largest separations --- which together shifted $\chi^2$ at
+that point by $2.6$;
+% ORIGEN-VALOR: 2.6 — 410.27 (evaluador viejo) − 407.671 (corregido) en el máximo oficial; commit 282c083
+the three configurations below were run with the corrected evaluator.
+On KiDS-1000 the same correction moves the official-point $\chi^2$ by only $0.05$,
+% ORIGEN-VALOR: 0.05 — kids1000_control.json: 261.267 (evaluador viejo, git e708dab) → 261.214 (corregido, 2026-10-26)
+so the superseded KiDS-1000 chains of \S\ref{sec:s8}, run before it, are kept as the record they are and not re-run.
+
+\begin{center}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+Configuration & background & $A_s$ & free & $\chi^2_{\rm min}$ & BIC \\
+\midrule
+\SSEE{} unified & algebraic & from CMB & 8 & $\val{chi2_leg_unif}$ & $\val{BIC_leg_unif}$ \\
+\SSEE{}         & algebraic & free     & 9 & $\val{chi2_leg_libre}$ & $\val{BIC_leg_libre}$ \\
+$\Lambda$CDM-fixed & Planck 2018 & free & 9 & $\val{chi2_leg_lcdm}$ & $\val{BIC_leg_lcdm}$ \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{center}
+
+Three results follow, and they answer different questions.
+
+\paragraph{(i) The amplitude the shear asks for is the one the CMB fixes.}
+With the background held by the algebra and $\log A$ free, the Legacy data
+prefer $\log(10^{10}A_s) = \val{leg_logA}\pm\val{leg_logA_s}$, against the value \SSEE{}'s own CMB
+fit supplies, $\val{leg_logA_cmb}$: a separation of $\val{logA_leg_vs_cmb}\sigma$. Under the identical
+pipeline with the Planck background held fixed instead, the same data prefer
+$\val{leg_lcdm_logA}\pm\val{leg_lcdm_logA_s}$ against that background's own CMB value, $\val{leg_lcdm_vs_planck}\sigma$ away.
+The difference has a mechanism rather than being noise: \SSEE{}'s $\Omega_m$ is
+$\val{leg_Om_bajo_planck_pct}\%$ lower than Planck's, and the shear asks it for an $A_s$ $\val{leg_As_sobre_planck_pct}\%$
+higher --- less matter requires more amplitude to produce the same observed
+clustering. Each background \emph{forces} a different $A_s$, and the one the
+algebraic background forces is the one its own CMB predicts. Both $\log A$
+values come from the same 357 points and are therefore correlated; no clean
+significance can be quoted for their difference, and $\val{leg_lcdm_vs_planck}\sigma$ is not a
+tension either. What can be stated is the direction, and that it has an
+identified physical cause.
+
+\paragraph{(ii) Fixing $A_s$ costs almost nothing, and could have cost a great deal.}
+Removing the only cosmological parameter from a fit removes its ability to
+accommodate: if either the algebraic background or the CMB amplitude were wrong,
+$\chi^2$ rises with nowhere to hide it. It rose by less than one unit. With one parameter
+fewer, $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$, and
+$\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of the unified configuration
+($\val{dBIC_leg_lcdm}$ against $\Lambda$CDM-fixed). A second, independent indication points
+the same way: the nuisance parameters do not move to compensate. Had the fixed
+$A_s$ been wrong, $\log T_{\rm AGN}$ and $A_{\rm scale}$ would have run to cover
+the gap; they shift by $\val{leg_dlogTAGN}$ and $\val{leg_dAscale}$, well inside their own posterior
+widths ($\val{leg_logTAGN_s}$ and $\val{leg_Ascale_s}$). Removing the parameter raises the
+minimum by $\Delta\chi^2=\val{dchi2_leg_unif_libre}$, less than one unit: the data do not need $A_s$ as a
+free parameter. The honest statement is that the cost is small, not that fixing
+improves the fit.
+
+\paragraph{(iii) $S_8$ becomes a prediction.} With both background and amplitude
+supplied, $S_8=\val{S8_leg_pred}$ is an output of the algebra and the CMB, with no free
+cosmological parameter behind it and therefore no posterior width of its own.
+The official Legacy $\xi_\pm$ posterior, computed from its own published chain
+as $\sigma_8\sqrt{\Omega_m/0.3}$, gives $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. Two caveats bound
+what this establishes: the agreement in $S_8$ and the $\val{logA_leg_vs_cmb}\sigma$ in $\log A$
+are the same fact in two variables and do not compound, and the $\pm\val{S8_legacy_dato_sigma}$
+width means any prediction within one such width of the measured value would have agreed. The
+test is not sharp. What it does establish is that the growth sector takes its
+amplitude from the CMB and describes cosmic shear without adjusting anything.
+
+\paragraph{What this closes.} The gap that the retracted light particle was
+introduced to fill is $\val{logA_leg_vs_cmb}\sigma$ wide. There is no work left for it to do, and
+it is withdrawn as unnecessary --- not excluded by a bound. Two things follow
+that are worth stating against our own interest. First, a particle that is not
+needed may still exist; this is not a constraint on its mass. Second, the three
+$\chi^2$ values above span only $\val{chi2_leg_rango}$, so cosmic shear does not discriminate
+between these backgrounds: what separates them is the parameter count (BIC) and
+the cross-epoch consistency of $A_s$, neither of which is a goodness-of-fit
+statement. \textbf{The result is not that \SSEE{} describes cosmic shear better;
+it is that \SSEE{} describes it equally well without being allowed to fit it.}
+
+% ============================================================================
+\section{The earlier KiDS-1000 release (superseded, for the record)}
 \label{sec:s8}
 % ============================================================================
+
+This section records the measurement on the earlier KiDS-1000 release, on
+which the retraction of \S\ref{sec:retraction} was first reached. It is
+superseded by KiDS-Legacy (\S\ref{sec:legacy}); nothing below is re-run, and no
+current result of this paper rests on it.
 
 The \SSEE{} chain (R3) samples nine free parameters --- the primordial
 amplitude $\log A$ plus the eight KiDS-1000 nuisance parameters (the baryonic
@@ -389,7 +517,7 @@ gives a comparable $p\sim0.01$--$0.03$. The excess is a property of the
 $\xi_\pm$ data vector --- plausibly residual small-scale modelling or
 covariance calibration --- and it is inherited identically by every model
 fitted to it. We flag it rather than absorb it, and note that our control's
-reproduction of the official value ($\val{chi2_k1000_lcdm}$ vs.\ $\val{chi2_k1000_publicado}$, $0.9\%$) is what
+reproduction of the official value ($\val{chi2_k1000_lcdm}$ vs.\ $\val{chi2_k1000_publicado}$, $\val{k1000_lcdm_sobre_pub_pct}\%$) is what
 demonstrates the excess is not introduced by our implementation.
 
 \paragraph{What this does and does not claim.} It would be wrong to read this
@@ -437,106 +565,6 @@ data--data disagreement to the model --- reporting it as ``\SSEE{}'s $S_8$
 tension'' --- and then to build a second matter sector and a particle to close
 it. The disagreement was never the model's to close, and the KiDS
 collaboration's own recalibration dissolved it in the data (\S\ref{sec:legacy}).
-
-% ============================================================================
-\section{The same test against KiDS-Legacy}
-\label{sec:legacy}
-% ============================================================================
-
-The disagreement reported above was resolved by the KiDS collaboration itself,
-and not in the model's favour or against it: in the data. KiDS-Legacy
-\citep{Wright2025} recalibrates the source redshift distributions and re-analyses
-the complete survey, and its Appendix~I re-runs the KiDS-1000 analysis end to
-end with the new methods under blinding. The tension against Planck dissolves in
-steps, quoted there as signed consistencies in $S_8$ (negative meaning KiDS
-below Planck): $-2.39\sigma \to -1.42\sigma$ from the $n(z)$ calibration
-alone, then $-1.12\sigma$, $-0.85\sigma$ and $-0.74\sigma$ as tomography,
-alignment model and sky area are updated. Their stated threshold is
-``the typical KiDS threshold for consistency of $2.3\sigma$ (equivalent to a
-one-sided probability to exceed of $0.01$)''; every step with the new
-calibration falls below it.
-
-\paragraph{Chronology, stated plainly.} KiDS-Legacy appeared on arXiv on
-2025 March 25, sixteen months before the analysis of \S\ref{sec:s8} was written.
-\textbf{We claim no temporal priority over it.} What we report here is an
-internal consistency test of this model, run on the raw Legacy data vector, and
-the reader should weigh it as such.
-
-We repeat the measurement of \S\ref{sec:s8} on the 357 unmasked $\xi_\pm$ points
-of the Legacy release, in three configurations that differ only in what is held
-fixed. All three use the same likelihood, the same scale cuts
-($\xi_+$: $2'$--$300'$, $\xi_-$: $4'$--$300'$) and the same eight nuisance
-parameters.
-
-\begin{center}
-\footnotesize
-\begin{tabular}{lccccc}
-\toprule
-Configuration & background & $A_s$ & free & $\chi^2_{\rm min}$ & BIC \\
-\midrule
-\SSEE{} unified & algebraic & from CMB & 8 & $\val{chi2_leg_unif}$ & $\val{BIC_leg_unif}$ \\
-\SSEE{}         & algebraic & free     & 9 & $\val{chi2_leg_libre}$ & $\val{BIC_leg_libre}$ \\
-$\Lambda$CDM-fixed & Planck 2018 & free & 9 & $\val{chi2_leg_lcdm}$ & $\val{BIC_leg_lcdm}$ \\
-\bottomrule
-\end{tabular}
-\normalsize
-\end{center}
-
-Three results follow, and they answer different questions.
-
-\paragraph{(i) The amplitude the shear asks for is the one the CMB fixes.}
-With the background held by the algebra and $\log A$ free, the Legacy data
-prefer $\log(10^{10}A_s) = \val{leg_logA}\pm\val{leg_logA_s}$, against the value \SSEE{}'s own CMB
-fit supplies, $\val{leg_logA_cmb}$: a separation of $\val{logA_leg_vs_cmb}\sigma$. Under the identical
-pipeline with the Planck background held fixed instead, the same data prefer
-$\val{leg_lcdm_logA}\pm\val{leg_lcdm_logA_s}$ against that background's own CMB value, $\val{leg_lcdm_vs_planck}\sigma$ away.
-The difference has a mechanism rather than being noise: \SSEE{}'s $\Omega_m$ is
-$\val{leg_Om_bajo_planck_pct}\%$ lower than Planck's, and the shear asks it for an $A_s$ $\val{leg_As_sobre_planck_pct}\%$
-higher --- less matter requires more amplitude to produce the same observed
-clustering. Each background \emph{forces} a different $A_s$, and the one the
-algebraic background forces is the one its own CMB predicts. Both $\log A$
-values come from the same 357 points and are therefore correlated; no clean
-significance can be quoted for their difference, and $\val{leg_lcdm_vs_planck}\sigma$ is not a
-tension either. What can be stated is the direction, and that it has an
-identified physical cause.
-
-\paragraph{(ii) Fixing $A_s$ costs nothing, and could have cost a great deal.}
-Removing the only cosmological parameter from a fit removes its ability to
-accommodate: if either the algebraic background or the CMB amplitude were wrong,
-$\chi^2$ rises with nowhere to hide it. It did not rise. With one parameter
-fewer, $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$, and
-$\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of the unified configuration
-($\val{dBIC_leg_lcdm}$ against $\Lambda$CDM-fixed). A second, independent indication points
-the same way: the nuisance parameters do not move to compensate. Had the fixed
-$A_s$ been wrong, $\log T_{\rm AGN}$ and $A_{\rm scale}$ would have run to cover
-the gap; they shift by $\val{leg_dlogTAGN}$ and $\val{leg_dAscale}$, well inside their own posterior
-widths ($\val{leg_logTAGN_s}$ and $\val{leg_Ascale_s}$). We note for completeness that $\Delta\chi^2$ is formally negative
-($\val{dchi2_leg_unif_libre}$), which cannot be a true improvement --- the fixed-parameter space is
-contained in the free one --- and measures the MCMC sampling noise: eight
-dimensions are explored more efficiently than nine. The honest statement is
-that the cost is indistinguishable from zero, not that fixing improves the fit.
-
-\paragraph{(iii) $S_8$ becomes a prediction.} With both background and amplitude
-supplied, $S_8=\val{S8_leg_pred}$ is an output of the algebra and the CMB, with no free
-cosmological parameter behind it and therefore no posterior width of its own.
-The official Legacy $\xi_\pm$ posterior, computed from its own published chain
-as $\sigma_8\sqrt{\Omega_m/0.3}$, gives $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$. Two caveats bound
-what this establishes: the agreement in $S_8$ and the $\val{logA_leg_vs_cmb}\sigma$ in $\log A$
-are the same fact in two variables and do not compound, and the $\pm\val{S8_legacy_dato_sigma}$
-width means any prediction within one such width of the measured value would have agreed. The
-test is not sharp. What it does establish is that the growth sector takes its
-amplitude from the CMB and describes cosmic shear without adjusting anything.
-
-\paragraph{What this closes.} The gap that the retracted light particle was
-introduced to fill is $\val{logA_leg_vs_cmb}\sigma$ wide. There is no work left for it to do, and
-it is withdrawn as unnecessary --- not excluded by a bound. Two things follow
-that are worth stating against our own interest. First, a particle that is not
-needed may still exist; this is not a constraint on its mass. Second, the three
-$\chi^2$ values above span less than $1.0$, so cosmic shear does not discriminate
-between these backgrounds: what separates them is the parameter count (BIC) and
-the cross-epoch consistency of $A_s$, neither of which is a goodness-of-fit
-statement. \textbf{The result is not that \SSEE{} describes cosmic shear better;
-it is that \SSEE{} describes it equally well without being allowed to fit it.}
 
 \begin{table}[h]
 \centering
@@ -623,10 +651,10 @@ constrain does not exist in the current model.
 %   derivados (perfil de A_s, perfil de omega_c, ganancia_wc, D y r), que corrian sobre
 %   los espectros de Beutler+2017 con su normalizacion desajustada: retirados.
 
-The clustering counterpart of \S\ref{sec:s8} asks the same question of the other
+The clustering counterpart of \S\ref{sec:legacy} asks the same question of the other
 growth probe, and the answer is the $\chi^2$ over the $\val{bossC_npts}$ raw multipole
 points, \emph{not} $f\sigma_8$: $f\sigma_8$ is an output of each model, the lesson
-$S_8$ taught in \S\ref{sec:s8}.
+$S_8$ taught in \S\ref{sec:legacy}.
 
 \paragraph{The control comes first.} Before any \SSEE{} number, $\Lambda$CDM with its
 background free ($\Omega_m$, $H_0$, $\ln(10^{10}A_s)$ sampled; $\omega_b$, $n_s$ and
@@ -666,7 +694,7 @@ number derived from those runs, are withdrawn.
 \paragraph{The comparison.} With the pipeline validated, \SSEE{} is run with
 \emph{every} cosmological parameter fixed: the algebraic background and the
 amplitude its own CMB fit supplies, $\ln(10^{10}A_s)=\val{bossC_logA_ssee}$, exactly as
-for KiDS-Legacy in \S\ref{sec:s8}. Only the galaxy nuisance parameters are fitted.
+for KiDS-Legacy in \S\ref{sec:legacy}. Only the galaxy nuisance parameters are fitted.
 It is compared with the published model, $\Lambda$CDM with its background free, and,
 as a comparison of backgrounds rather than a control, with $\Lambda$CDM fixed at
 Planck 2018 \citep{Planck2020} ($\ln(10^{10}A_s)=\val{bossC_logA_planck}$). For each, $\chi^2_{\rm min}$ is the raw
@@ -752,11 +780,10 @@ parameter. Measured against raw survey data --- rather than against
 $\Lambda$CDM-conditioned summary statistics --- it has no $S_8$ tension. On
 KiDS-Legacy the amplitude the shear asks for lies $\val{logA_leg_vs_cmb}\sigma$ from the one
 the model's own CMB fit supplies; with that amplitude fixed the growth sector
-has no free cosmological parameter, the fit costs nothing
+has no free cosmological parameter, the fit costs almost nothing
 ($\chi^2_{\rm min}=\val{chi2_leg_unif}$ against $\val{chi2_leg_libre}$), and $S_8=\val{S8_leg_pred}$ is predicted
-against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. On the earlier KiDS-1000 release the
-algebraic background matches $\Lambda$CDM run through the same pipeline with
-four more free parameters ($\Delta\chi^2=\val{dchi2_k1000}$, $\Delta\mathrm{BIC}=\val{dBIC_k1000}$).
+against $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured. (The earlier KiDS-1000 release, superseded, is kept as the record of how the
+retraction was reached.)
 Against raw BOSS DR12 clustering, once a free $\Lambda$CDM control reproduces the
 published analysis, \SSEE{} with every cosmological parameter fixed fits the
 multipoles with $\Delta\chi^2=\val{bossC_dchi2_ssee_libre}$ against that model's three extra

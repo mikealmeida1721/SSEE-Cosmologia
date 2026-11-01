@@ -1,0 +1,10 @@
+# ACTA-PROCEDENCIA {"commit": "a50367fe5533068e67129b000077d8b3ff81d61d", "reproducible_desde_commit": true, "cambios_sin_commitear": [], "script": "src/p06_growth/control_lcdm_legacy.py", "script_sha256": "fcc1062a02d7512ae5ccc01cce6aafb14e9591a4e7114c878d2d7be6f40c2c32", "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993", "entradas": {}, "argv": ["src/p06_growth/control_lcdm_legacy.py"], "fecha": "2026-10-21T21:39:33", "host": "mike-System-Product-Name", "python": "3.12.3", "versiones": {"numpy": "2.4.4"}, "nucleos": {"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": null, "OPENBLAS_NUM_THREADS": null, "OMPI_COMM_WORLD_SIZE": null}}
+R-1 0.0299 (bordes 0.171); submuestra logA a 0.047σ de la cadena -> PASA
+S8      nuestro 0.8178 ± 0.0170   oficial 0.8265 ± 0.0176   -> -0.50σ
+S8_sin_nu nuestro 0.8158 ± 0.0169   oficial 0.8247 ± 0.0174   -> -0.51σ
+sigma8  nuestro 0.9062 ± 0.0814   oficial 0.8825 ± 0.0793   -> +0.30σ
+Om      nuestro 0.2497 ± 0.0427   oficial 0.2686 ± 0.0432   -> -0.44σ
+chi2_min 416.741  vs max-like oficial 407.647  (Δ +9.094)
+logA 3.3134 ± 0.4183
+CONTROL S8: -0.50σ de la cadena oficial (criterio 0.3σ) -> NO PASA
+escrito -> /home/mike/Proyectos/SSEE/results/logs/growth_2026-07/control_lcdm_legacy.json

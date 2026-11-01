@@ -1,0 +1,114 @@
+{
+ "corrida": "\u039bCDM libre (ombh2, omch2, h, n_s, logA + logT_AGN, A_IA, 6 dz) sobre \u03be\u00b1 KiDS-Legacy crudo",
+ "cadenas": [
+  "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.1.txt",
+  "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.2.txt",
+  "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.3.txt",
+  "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.4.txt"
+ ],
+ "burn_in": 0.3,
+ "filas_post_burnin": 123844,
+ "submuestra": 1200,
+ "semilla": 20261021,
+ "convergencia": {
+  "Rminus1": 0.029918,
+  "Rminus1_cl": 0.170899,
+  "pasos_aceptados": 176919
+ },
+ "control_submuestra": {
+  "logA_cadena": [
+   3.3133927053981447,
+   0.41832212588733575
+  ],
+  "logA_submuestra": [
+   3.293889870166667,
+   0.4060154960772473
+  ],
+  "distancia_sigma": 0.046621572287406265,
+  "pasa": true
+ },
+ "nuestro": {
+  "S8": {
+   "media": 0.8177608343771137,
+   "sigma": 0.016972474699896187
+  },
+  "S8_sin_nu": {
+   "media": 0.8158173247943367,
+   "sigma": 0.016885911362950635
+  },
+  "sigma8": {
+   "media": 0.9062296328896211,
+   "sigma": 0.08139530892626994
+  },
+  "Om": {
+   "media": 0.2497334424573216,
+   "sigma": 0.04271526357595722
+  }
+ },
+ "oficial": {
+  "S8": {
+   "media": 0.8265382678450317,
+   "sigma": 0.017560626824937125
+  },
+  "S8_sin_nu": {
+   "media": 0.824696586490606,
+   "sigma": 0.01740951092046084
+  },
+  "sigma8": {
+   "media": 0.8824630631840562,
+   "sigma": 0.07932796443376144
+  },
+  "Om": {
+   "media": 0.26858742475551445,
+   "sigma": 0.04323768299926192
+  }
+ },
+ "distancia_sigma_oficial": {
+  "S8": -0.499835999900275,
+  "S8_sin_nu": -0.5100236150708737,
+  "sigma8": 0.2995988851498881,
+  "Om": -0.43605440880157
+ },
+ "chi2_min": 416.74146,
+ "chi2_maxlike_oficial": 407.6469809441163,
+ "delta_chi2_min": 9.09447905588371,
+ "logA": {
+  "media": 3.3133927053981447,
+  "sigma": 0.41832212588733575
+ },
+ "criterio_sigma": 0.3,
+ "pasa": false,
+ "_procedencia": {
+  "commit": "a50367fe5533068e67129b000077d8b3ff81d61d",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/control_lcdm_legacy.py",
+  "script_sha256": "fcc1062a02d7512ae5ccc01cce6aafb14e9591a4e7114c878d2d7be6f40c2c32",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.1.txt": "dc4d86e42acafdaa020b0f77f2aa91aa12e7d3dbccadd2d2f216595a0412359d",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.2.txt": "f389075f5cc9f7f784595b8eb9020d5e2eee61df47f9a413a6755fcd82dd03c2",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.3.txt": "fe1c43b269a3cd60200ede97a6f813b644b0ac55b24d4e6f22ef764854e7317d",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.4.txt": "4d2380096b6603ab7ab35a93f82e757ae5421fe72a845985c37ca7997fe6ed0e",
+   "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
+   "/mnt/datos/SSEE_data/chains_p6/kids_legacy/lcdm.progress": "226784172c5351096feccc1673c884ec6b50291321b5c8898b9c82c36e6cd65a"
+  },
+  "argv": [
+   "src/p06_growth/control_lcdm_legacy.py"
+  ],
+  "fecha": "2026-10-21T22:03:51",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

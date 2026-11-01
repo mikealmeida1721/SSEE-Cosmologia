@@ -1,11 +1,11 @@
 {
- "chi2": 261.2668205722528,
+ "chi2": 261.2144862090311,
  "ndata": 225,
  "chi2_publicado": 260.3147,
- "desvio_pct": 0.36575751283073726,
+ "desvio_pct": 0.3456532454875218,
  "punto": "maxima posterior de la cadena oficial KiDS-1000 xi_pm, Blind C",
  "_procedencia": {
-  "commit": "306f18df1081972981d2b675a1db8e10a86e0f06",
+  "commit": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/control_kids.py",
@@ -17,7 +17,7 @@
   "argv": [
    "control_kids.py"
   ],
-  "fecha": "2026-10-12T22:16:33",
+  "fecha": "2026-10-26T21:51:01",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

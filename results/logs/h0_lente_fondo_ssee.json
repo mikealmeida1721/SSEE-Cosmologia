@@ -98,19 +98,19 @@
   "nota": "la ventana de cada centro es de ~+-4 meses (incertidumbre del modelo de lente)"
  },
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p09_hubble/h0_lente_fondo_ssee.py",
   "script_sha256": "ae8daa18e5b89e87b4308a78350f849ecc549881b5e86badc6f8ab3d981e5045",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5"
+   "CANONICAL_VALUES.yaml": "af709f824c43cda272c539aab46d268f010bec5793dfc16a01dc0adc1ece935a"
   },
   "argv": [
    "src/p09_hubble/h0_lente_fondo_ssee.py"
   ],
-  "fecha": "2026-10-20T14:15:04",
+  "fecha": "2026-10-27T21:49:41",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

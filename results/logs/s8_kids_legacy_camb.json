@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-20",
+ "fecha": "2026-10-27",
  "fondo": "SSEE_BG (cobaya_kids_legacy)",
  "Omega_m_camb": 0.3088825088809709,
  "control_Omega_m": {
@@ -22,29 +22,29 @@
   "S8": 0.8272981513472748
  },
  "libre": {
-  "logA": 3.0255,
-  "logA_sigma": 0.0396,
-  "sigma8": 0.8074724163804458,
-  "sigma8_sigma": 0.015988998517714514,
-  "S8": 0.8193391863953321,
-  "S8_sigma": 0.016223975916730304
+  "logA": 3.0544,
+  "logA_sigma": 0.0383,
+  "sigma8": 0.819225101448301,
+  "sigma8_sigma": 0.01568911957723551,
+  "S8": 0.8312645911845405,
+  "S8_sigma": 0.015919689897635647
  },
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/s8_kids_legacy_camb.py",
   "script_sha256": "0ddf9da141bdae553fd75b9aae458cd8d18bf133f846df37273729ca59d58653",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5",
-   "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21",
-   "src/p06_growth/kids_shear.py": "02f1d23d74c1f6a8e76e8d6e0d73aec4b777a617c54adaf4d6a0aff69c047063"
+   "CANONICAL_VALUES.yaml": "af709f824c43cda272c539aab46d268f010bec5793dfc16a01dc0adc1ece935a",
+   "src/p06_growth/cobaya_kids_legacy.py": "d8fccfb453c01e9e2d3ff87a994d288ad089dc74e6cb49448835bb9b72b40d40",
+   "src/p06_growth/kids_shear.py": "04dac930366cf5199be04778ab61e6ac4087b944b57f4a5bdb139f6f96888d7a"
   },
   "argv": [
    "src/p06_growth/s8_kids_legacy_camb.py"
   ],
-  "fecha": "2026-10-20T14:12:25",
+  "fecha": "2026-10-27T21:51:24",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-16",
+ "fecha": "2026-10-27",
  "H_viejo": 67.96213732340931,
  "H_nuevo": 67.96214152203791,
  "dH": 4.198628602125609e-06,
@@ -20,16 +20,16 @@
    "control_ve_H": true
   },
   "KiDS": {
-   "chi2_viejo": 476.41566302550734,
-   "chi2_nuevo": 476.4156601025561,
-   "dchi2": -2.9229512392703327e-06,
-   "dchi2_control_salto_x1000": -0.008767061630010176,
+   "chi2_viejo": 472.52192859167894,
+   "chi2_nuevo": 472.52193033412607,
+   "dchi2": 1.7424471252525109e-06,
+   "dchi2_control_salto_x1000": 0.0011466293047988074,
    "control_ve_H": true
   }
  },
  "pasa": true,
  "_procedencia": {
-  "commit": "910f1d0dc226a371de75bb896f8cfaef9d5f5db7",
+  "commit": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/verificacion/prueba_equivalencia_hglob.py",
@@ -39,12 +39,12 @@
    "results/logs/cmb_dbic_tau_ajustado.json": "9dd8a1362c85bf8c46075bcafb9b9eb1d71a5e0a30445f4adb76e3a45f2d6b64",
    "src/p03_cmb/cmb_eval.py": "9332f3ad6c16eb27dad9c5de66ad18fa4f7db9c27e821112147ce584dc99da36",
    "src/p02_mcmc/chi2_bao_posterior.py": "c3523a50d562bfec7d6ab4b96750cabd5e6af7642e8406aaa1b6358dd5341dab",
-   "src/p06_growth/cobaya_kids_legacy.py": "40d0e9493dda8ecb525d5c28db6e283e3764fe5287193fda35094f1daa4c5f21"
+   "src/p06_growth/cobaya_kids_legacy.py": "d8fccfb453c01e9e2d3ff87a994d288ad089dc74e6cb49448835bb9b72b40d40"
   },
   "argv": [
    "src/verificacion/prueba_equivalencia_hglob.py"
   ],
-  "fecha": "2026-10-16T21:55:11",
+  "fecha": "2026-10-27T11:16:15",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

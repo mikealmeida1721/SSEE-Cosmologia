@@ -44,13 +44,13 @@
 > **S₈ against KiDS-Legacy (2026-09-20)** (357 raw ξ± points; Wright et al.
 > 2025, [arXiv:2503.19441](https://arxiv.org/abs/2503.19441) — published sixteen
 > months before this analysis, **no temporal priority is claimed**). The shear
-> asks for log(10¹⁰A_s) = 3.0255 ± 0.0396 against the 3.04483 the CMB fixes
-> *under the same algebraic background*: **0.49σ** (Planck background, held
-> equally rigid: 1.01σ). So A_s need not be refitted at all — fixing it costs
-> nothing (χ² = 417.97 with **eight free parameters, all nuisance, none
-> cosmological**, vs 418.34 with A_s free; ΔBIC = +6.24), and S₈ = 0.8273
+> asks for log(10¹⁰A_s) = 3.0544 ± 0.0383 against the 3.04483 the CMB fixes
+> *under the same algebraic background*: **0.25σ** (Planck background, held
+> equally rigid: 0.16σ). So A_s need not be refitted at all — fixing it costs
+> nothing (χ² = 415.59 with **eight free parameters, all nuisance, none
+> cosmological**, vs 414.99 with A_s free; ΔBIC = +5.28), and S₈ = 0.8273
 > becomes a *prediction* against 0.8265 ± 0.0176 measured. **Two cautions, in
-> the open:** the three χ² compared span 1.0 over 357 points, so the shear does
+> the open:** the three χ² compared span 0.74 over 357 points, so the shear does
 > **not** discriminate between these models — what separates them is the
 > parameter count; and KiDS-1000 had asked for log(10¹⁰A_s) = 2.864 ± 0.050,
 > 3.6σ away, with the two releases differing from each other by 2.5σ. What
@@ -280,8 +280,8 @@ Both backgrounds are fixed before looking at each probe — SSEE at its algebrai
 |---|---|---|
 | Ω_m = ω_m/h² (one matter sector, no partition) | 0.308881 | ω_m-direct; the same value enters background and growth |
 | Σm_ν = R₂ · ω_b · C_ν / (τ_Π · H₀) (chain of Paper 4) | 0.0685 eV | R₂ = Ω/(KAL·TRIAL) = 0.071875 (ν-closure C=93.14) |
-| **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 417.97 on 357 points, 8 free parameters (all nuisance); ΔBIC = +6.24 over A_s free |
-| log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0255 ± 0.0396 | 0.49σ from the 3.04483 fixed by the CMB under the same background (Planck background: 1.01σ) |
+| **S₈, A_s fixed to the model's own CMB fit (no free cosmological parameter), raw KiDS-Legacy ξ±** | **0.8273 predicted** | **0.8265 ± 0.0176 measured — 0.04σ.** χ² = 415.59 on 357 points, 8 free parameters (all nuisance); ΔBIC = +5.28 over A_s free, +6.02 over the Planck background |
+| log(10¹⁰A_s) asked by the shear, A_s free (KiDS-Legacy) | 3.0544 ± 0.0383 | 0.25σ from the 3.04483 fixed by the CMB under the same background (Planck background: 0.16σ) |
 | σ₈, S₈ (A_s free, MCMC vs raw KiDS-1000 ξ±) | 0.7449 ± 0.0186, 0.7559 ± 0.0189 | 0.10σ; ΛCDM control on the same raw data: 0.7571 ± 0.0194 |
 | fσ₈ vs raw BOSS DR12 multipoles (one-loop LPT, Chen+22 setup) | SSEE with every cosmological parameter fixed: χ² = 117.10 vs 114.26 for free ΛCDM (Δχ² = +2.84, ΔBIC −12.1); Planck-fixed ΛCDM 115.34 | 144 points; a free-ΛCDM control first reproduces Chen, Vlah & White 2022 (all four parameters within 0.3σ) — `results/logs/growth_2026-07/boss_chen21.json` |
 

@@ -7,7 +7,7 @@ propósito (no se duplican):
 | Memoria | Qué guarda | Dónde |
 |---|---|---|
 | **Guardián** | Resultados y valores (recomputa la física) | `VERIFICATION_LEDGER.md` + `src/verificacion/ssee_verify.py` |
-| **Obsidian** | Conexiones, cadenas, dependencias (el *porqué* y *hasta dónde* de cada cambio) | `/home/mike/SSEE-Vault` |
+| **Obsidian** | Conexiones, cadenas, dependencias (el *porqué* y *hasta dónde* de cada cambio) | `/home/mike/Documentos/SSEE/SSEE-Vault` |
 | **CLAUDE.md** | Contexto/estado (continuar sin releer todo) | `CLAUDE.md` |
 
 La fuente ÚNICA de los números es **`CANONICAL_VALUES.yaml`**. Si los tres no

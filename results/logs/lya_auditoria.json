@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-20",
+ "fecha": "2026-10-28",
  "dato_lya": {
   "z": 2.33,
   "DH_rd": 8.632,
@@ -188,7 +188,7 @@
   "pasa": true
  },
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/lya_auditoria.py",
@@ -196,12 +196,12 @@
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "data/raw/desi_dr2_bao.csv": "fcd346364f0f9b3e06922e8f7927aeca6aec2a11bbea64be91f635a8ff924e2b",
-   "results/logs/lcdm_conjunta_control.json": "7d4758d0d8f5d5c959b485916b66315c4b1447d3f34672997a30515ebd080ff1"
+   "results/logs/lcdm_conjunta_control.json": "4324480b94d25f83b2cf422b1c36407f769f28cff2035141ffc49db78cf6bac5"
   },
   "argv": [
    "src/p02_mcmc/lya_auditoria.py"
   ],
-  "fecha": "2026-10-20T14:06:00",
+  "fecha": "2026-10-28T12:55:21",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

@@ -100,6 +100,7 @@ $\val{h0_p2_dhglob}\sigma$ from $H_0^{\rm glob}$). Model selection favours \SSEE
 $\Delta\mathrm{BIC}=\val{p2_k0_dBIC_lcdm}$ over \LCDM\ and $\val{p2_k0_dBIC_cpl}$ over CPL with nothing free
 ($k=0$), and $\val{p2_dBIC_lcdm}$ and $\val{p2_dBIC_cpl}$ in the conservative version that samples
 $H_0$ and $\Omega_b h^2$ ($k=2$).
+Probe by probe, with the background of both models fixed in advance, SSEE matches $\Lambda$CDM within $|\Delta\chi^2|\le\val{sondas_max_empate}$ in $\val{sondas_n_empatan}$ of $\val{sondas_n}$ comparisons---the supernova compilations, ACT and SPT CMB lensing, DES~Y3, Planck and KiDS-Legacy---even where $\Lambda$CDM fits up to $\val{sondas_max_k_lcdm}$ parameters against SSEE's $\{A_s,\tau\}$, and BOSS full-shape gives $\Delta\chi^2=\val{bossC_dchi2_ssee_libre}$ with SSEE fully fixed against $\Lambda$CDM with its cosmology free; DESI~DR2 BAO is the only probe that separates the two models, by $\Delta\chi^2=\val{sondas_desi_clavado}$ in favour of SSEE.
 A complementary full-likelihood multi-probe MCMC (CAMB $+$ Planck
 \texttt{plik\_lite} $+$ lensing $+$ DESI~DR2 $+$ $f\sigma_8$, $w_0,w_a$ free and
 $H_0$ under a flat prior) places the model at $\val{mf_w0wa_ssee}\sigma$ in the $w_0$--$w_a$
@@ -133,7 +134,7 @@ Planck--shear disagreement in the data themselves: re-running the KiDS-1000
 analysis under blinding, the collaboration's Appendix~I finds
 $2.39\sigma\to1.42\sigma$ from the $n(z)$ calibration alone. With $A_s$ left free, the amplitude the shear asks for lies
 $\val{logA_leg_vs_cmb}\sigma$ from the one the CMB fixes under the \emph{same} algebraic
-background. The three $\chi^2$ compared span $1.0$ over 357 points, so the shear
+background. The three $\chi^2$ compared span $\val{chi2_leg_rango}$ over 357 points, so the shear
 does \emph{not} discriminate between the models; what separates them is the
 parameter count.} \textbf{There is no $S_8$ tension}
 (\S\ref{sec:growth_raw}).
@@ -484,6 +485,40 @@ surviving log and no number from it is quoted here.)
 
 
 % ─────────────────────────────────────────────────────────────────────────────
+\subsection{Probe by probe: a tie everywhere, a separation in DESI}
+\label{sec:sondas}
+The model-selection numbers above weigh parsimony; Table~\ref{tab:sondas} shows the
+fit itself. Each probe is read with the background of both models fixed in
+advance---SSEE at its algebraic point, $\Lambda$CDM at the Planck~2018 best fit---and,
+in block~B, with $\Lambda$CDM fitting parameters that SSEE does not have. SSEE stays
+within $|\Delta\chi^2|\le\val{sondas_max_empate}$ of $\Lambda$CDM in $\val{sondas_n_empatan}$ of the
+$\val{sondas_n}$ comparisons, below the $\Delta\chi^2=\val{sondas_umbral}$ we take as separating, and
+BOSS full-shape (\S\ref{sec:growth_raw}) gives $\Delta\chi^2=\val{bossC_dchi2_ssee_libre}$ with SSEE fully fixed
+against $\Lambda$CDM with its cosmology free. DESI~DR2 BAO is the only probe that
+separates the models: $\chi^2=\val{desi_clav_ssee}$ for SSEE against $\val{desi_clav_lcdm}$ for
+$\Lambda$CDM at Planck ($\val{desi_N}$ points); $\Lambda$CDM recovers $\val{desi_libre_chi2}$ only by
+lowering $\Omega_m$ to $\val{desi_libre_Om}$. The supernova compilations share objects and
+the two CMB-lensing probes share sky, so the rows are not summed.
+\begin{table}[h]
+\centering
+\caption{$\chi^2$ of SSEE and $\Lambda$CDM probe by probe, read from the analysis
+logs. Block A: background fixed in both models in advance ($\Lambda$CDM at the Planck~2018 best fit). Block B: $\Lambda$CDM
+fits cosmological parameters that SSEE does not have (column ``fitted'', SSEE /
+$\Lambda$CDM). $\Delta\chi^2=\chi^2_{\rm SSEE}-\chi^2_{\Lambda\rm CDM}$. ``$N$'' is the
+number of degrees of freedom where the log records it.
+$^{a}$Seven nuisance parameters minimised identically in both models.
+$^{b}$TATT intrinsic alignments (the survey's baseline); with NLA the difference
+is $\Delta\chi^2=\val{sondas_desy3_nla}$.}
+\label{tab:sondas}
+\small
+\begin{tabular}{llccccc}
+\toprule
+Probe & Type & $N$ & fitted & $\chi^2_{\rm SSEE}$ & $\chi^2_{\Lambda\rm CDM}$ & $\Delta\chi^2$ \\
+\midrule
+\csname @@input\endcsname tabla_sondas_generada.tex % primitivo expandible: \multicolumn debe ser lo primero de la celda
+\end{tabular}
+\end{table}
+
 \section{CMB Angular Spectrum: CLASS Boltzmann Validation}
 \label{sec:cmb}
 % ─────────────────────────────────────────────────────────────────────────────
@@ -607,7 +642,7 @@ background fixed by the algebra and the amplitude free, the shear asks for
 $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$, $\val{logA_leg_vs_cmb}\sigma$ from the $\val{leg_logA_cmb}$ that the
 model's own CMB fit supplies. Fixing $A_s$ to that CMB value leaves the growth
 sector with \emph{no} free cosmological parameter --- only the eight survey
-nuisance parameters --- and costs nothing: $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against
+nuisance parameters --- and costs almost nothing: $\chi^2_{\rm min}=\val{chi2_leg_unif}$ against
 $\val{chi2_leg_libre}$ with $A_s$ free ($\Delta\mathrm{BIC}=\val{dBIC_leg_libre}$ in favour of fixing it). The
 amplitude is then an output,
 \begin{equation}
@@ -619,7 +654,7 @@ amplitude is then an output,
 with no posterior width of its own. KiDS-Legacy predates this analysis by
 sixteen months, and no temporal priority is claimed: the result is a
 consistency of $A_s$ between the CMB and the growth epoch. The three $\chi^2$
-compared (fixed $A_s$, free $A_s$, Planck background) span less than $1.0$, so
+compared (fixed $A_s$, free $A_s$, Planck background) span only $\val{chi2_leg_rango}$, so
 cosmic shear does not discriminate between the backgrounds; what separates
 them is the parameter count.
 

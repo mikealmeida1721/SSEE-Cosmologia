@@ -19,7 +19,7 @@ hay que **decidir** cuál corre, no lanzarlas según van saliendo.
 > | 9 | DECLARADA: los `.ini` rescatados sin neutrinos llevan el aviso; nada vigente los cita | `config/class/README.md` |
 > | 11 | HECHA: la barra del techo sale ahora del log | `p5_IS_perturbations_Q3.json#S8_SSEE_sigma` |
 > | 13, 14 | FÍSICA ABIERTA, no corrida pendiente | OP-24 |
-> | 16–19, 22 | SUPERADAS SIN CORRER: perseguían el déficit de A_s entre KiDS-1000 y el CMB. Con KiDS-Legacy la cizalla pide el A_s del CMB a 0.49σ, y BOSS no vota en amplitud: el déficit no existe | P6 §legacy, `kids_legacy_bic.json` |
+> | 16–19, 22 | SUPERADAS SIN CORRER: perseguían el déficit de A_s entre KiDS-1000 y el CMB. Con KiDS-Legacy la cizalla pide el A_s del CMB a 0.25σ (0.49σ antes de corregir el evaluador), y BOSS no vota en amplitud: el déficit no existe | P6 §legacy, `kids_legacy_bic.json` |
 > | 20 | HECHA: el radio k-mouflage se retiró de P8 (fórmula dimensionalmente rota) | OP-4 |
 > | 23 | SUPERADA: la medida de BOSS es el χ² crudo mínimo, no el marginal ni el perfil | OP-26 |
 
@@ -527,7 +527,7 @@ sólo entra con `MemAvailable ≥ 5.5 GB`.
 **Cómo se cumple sin depender de acordarse:** `src/p06_growth/encolar_kids_legacy_lcdm.sh`
 queda en espera (con `setsid`) y cada 5 minutos comprueba las dos condiciones;
 cuando se cumplen **las dos**, lanza `lcdm` con el lanzador de siempre. Cada
-decisión queda en `results/logs/cola_kids_legacy.log`. Encolada 2026-09-19 08:49.
+decisión queda en `archive/logs_superados/kids_legacy_evaluador_viejo_2026-09-20/cola_kids_legacy.log` (archivada 2026-11-01). Encolada 2026-09-19 08:49.
 
 **Choque declarado con la regla 5** («escribir el resultado en el Registro antes
 de lanzar la siguiente»): el vigilante lanza `lcdm` en cuanto se libera un

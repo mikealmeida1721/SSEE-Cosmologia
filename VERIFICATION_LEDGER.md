@@ -458,7 +458,7 @@ dropeado. OP-3 NO está "RESUELTO". **ABIERTO.**
    *(Actualizado 2026-09-08: era 0.8335 → 0.846 → 3.5σ. Aquella corrida de CLASS
    no llevaba neutrinos masivos; con ellos sobra un 2.3% menos de grumo. Y NO es
    un baseline que el modelo deba resolver: el 2.74σ es artefacto de fijar A_s.)*
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 3. ~~**✓ two-sector φ-DM (TITULAR, forward):** el free-streaming en k_fs=0.754
    h/Mpc (de m_φ=40.70 eV SOLAR²·KRYSTOS, cero fiteo) baja σ₈_eff a 0.7470 → **S₈_eff=0.758
    = 0.04σ KiDS-1000**. RESUELVE la tensión S₈, sin parámetros libres.~~
@@ -1008,7 +1008,7 @@ Usa Ω_m,CMB=0.308881 → √(Ω_m,CMB/0.3)=1.0147 (S₈ es amplitud gravitacion
    S₈ = 0.814854·1.0147 = 0.826827 → **2.74σ KiDS-1000** (DES-Y3 2.82σ).
    *(2026-09-08: era σ₈=0.8335 → S₈=0.846 → 3.5σ, de una corrida sin `.ini`,
    fuera del repo y sin neutrinos masivos. Ver la fila del techo en §B.)*
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7559 ± 0.0189` (0.10σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 2. ~~**✓ two-sector φ-DM (TITULAR, forward):** σ₈_eff = 0.7470 (free-streaming
    CLASS, k_fs=0.754 de m_φ=40.70 eV SOLAR²·KRYSTOS, cero fiteo). S₈_eff = 0.7470·1.0147 =
    **0.758 → 0.04σ KiDS-1000**. RESUELVE la tensión.~~ **RETIRADO 2026-08-01.**
@@ -1040,8 +1040,53 @@ siempre: documentos llamando canon a un valor ya superado. Rehecha siguiendo
 **Titular vigente:** un solo sector, Ω_m=0.308881. Contra KiDS-1000 crudo con
 A_s libre, S₈=0.7559 ± 0.0189 (0.10σ). Contra KiDS-Legacy con A_s **clavado** al
 del CMB —cero libres cosmológicos— S₈=0.8273 predicho contra 0.8265±0.0176
-medido (0.05σ). Las dos cadenas viejas, la two-sector (0.758) y la G=0.866 →
+medido (0.04σ). Las dos cadenas viejas, la two-sector (0.758) y la G=0.866 →
 σ₈ y S₈ con fuente Ω_m,dyn (cifras en git; ninguna corrida guardó log), están **retiradas**. **Verificado.**
+
+**Rehecho con el evaluador de cizalla corregido (2026-10-26/27).** El evaluador de ξ± tenía dos
+defectos (ξ en el centro geométrico del bin en vez del promedio por pares de `bin_xi`; integral de
+Hankel sin converger a θ grande), corregidos en `282c083`; el control por repesado de la cadena
+oficial de KiDS-Legacy pasa con él (`69f87ec`). Las tres corridas se rehicieron
+(`chains_p6/kids_legacy_v2`, 78.4 h sumadas de los logs) y se propagaron por niveles:
+
+| nivel | artefacto | estado |
+|---|---|---|
+| N6 | `src/ssee_core.py` | n/a |
+| N7 | `CANONICAL_VALUES.yaml` | ✅ χ² 415.594 / 414.993 / 415.735; logA 3.0544±0.0383 (0.25σ del CMB de SSEE), Planck 3.0378±0.0379 (0.16σ); σ₈/S₈ con A_s libre 0.8192/0.8313; valores viejos en `retired:` |
+| N8 | `results/logs/` | ✅ transcripciones v2 (`kids_legacy_{sseefijo,ssee,lcdmfijo}.log`, cotejadas); las de septiembre en `archive/logs_superados/kids_legacy_evaluador_viejo_2026-09-20/`; `dvc repro` de lo que las lee |
+| N10 | `manuscript/*.tex` | ✅ por `\val`; prosa de P6 rehecha donde dependía del signo de Δχ² (antes −0.365, «ruido de muestreo»; ahora +0.60, el costo real de clavar A_s); «costs nothing» → «costs almost nothing» en P6, Unified, Sealed, Endorser y carta |
+| N11 | `docs/*.pdf` | recompilar tras `valores_tex` |
+| N12 | este Registro | ✅ esta entrada |
+| N13 | guardián + memorias | patrones retirados en CANONICAL; `memory_sync` |
+
+Lectura: ΔBIC +5.28 sobre A_s libre (era +6.24) y +6.02 sobre ΛCDM-Planck (era +6.86); S₈=0.8273
+contra 0.8265±0.0176 sigue a 0.04σ. Los tres χ² caben en 0.74: la cizalla no separa modelos; separa el
+conteo de parámetros y la coherencia de A_s entre épocas. `analiza_lcdm_R4` (antecedente KiDS-1000)
+quedó **congelada** en DVC: de `kids_shear.py` sólo usa la máscara de escalas, que el arreglo no tocó.
+
+**Auditoría de cierre (2026-10-27):** los documentos se leyeron contra todo lo cambiado desde la lectura
+del 2026-10-16 (cbf4000). Hallazgos, todos corregidos:
+- «the three χ² span 1.0» estaba **tecleado a mano en 9 lugares** (P5, P6 ×2, P7, EFT section,
+  Unified ×2, Endorser, Sealed) y en PRD; con la v2 vale 0.74. Ahora sale de
+  `kids_legacy_bic.json#delta_chi2.rango_tres` por `\val{chi2_leg_rango}`; el patrón `span $1.0$` está
+  en `retired:`.
+- P6 §legacy **no reportaba su control** (regla «el control primero»). Ahora sí: χ² en el máximo
+  oficial 407.67 contra 407.65 publicado, y el repesado de la cadena oficial con S₈ a +0.26σ
+  (criterio 0.3σ fijado antes), por `\val` de `control_legacy_repesado.json`. Además dice qué
+  defectos encontró el control y que en KiDS-1000 la corrección mueve el χ² del punto oficial
+  sólo 0.05 (261.267 → 261.214); por eso R3/R4 **no se rehacen** (y desde el 10-27 tampoco después: KiDS-1000 es historial). <!-- R74: git:e708dab:results/logs/kids1000_control.json -->
+- P6 (ii) decía «χ² … It did not rise», que era cierto con el evaluador viejo (−0.365) pero ya no
+  (+0.60) → «It rose by less than one unit».
+- P6 «0.9 %» tecleado → `\val{k1000_lcdm_sobre_pub_pct}` (`kids_publicados.json`).
+- P6 citaba KiDS-Legacy como `\S\ref{sec:s8}` en vez de `sec:legacy`.
+- PRD (`submission_PRD/SSEE_PRD.tex`): «costs nothing» y «span 1.0», igual que Sealed.
+- KiDS-1000 en el punto oficial queda a 0.35 % (Δχ² 0.9) del publicado (P6 lo dice tal cual).
+  **No se investiga ni se rehace** (Mike, 2026-10-27): KiDS-1000 está superado por KiDS-Legacy.
+  Sus 4 etapas propias (kids1000_control, quien_mide_As_kids, R3_rehecho, analiza_lcdm_R4)
+  quedan congeladas; kids_publicados no, porque lleva los números vigentes de KiDS-Legacy.
+  Texto: KiDS-Legacy pasa a ser LA medición de S₈ en P5, P6, P7, EFT, Sealed, PRD; P6 reordenado
+  (§legacy antes; §s8 = «The earlier KiDS-1000 release (superseded, for the record)», con su tabla,
+  que estaba metida dentro de §legacy). KiDS-1000 queda sólo como historial como registro; nada las vuelve a correr.
 
 ## V-L4-DES — referencia DES-Y3 inconsistente entre scripts — **ABIERTO**
 
@@ -1266,7 +1311,7 @@ erosita_cr_v3 (925/925). Con diferencia EXPLICADA aguas arriba (ningún número 
   p3_rd_reframe_omega_m (**θ* al posterior 0.32σ→0.34σ**; r_d 147.174 igual).
 - union3_en_el_clavo rehecho con ΛCDM con sus parámetros (09-27 19:22): union3_repro_compara
   citaba el de las 12:03 (χ² ΛCDM 28.820→28.834). <!-- R74: git:7852453:results/logs/union3_en_el_clavo.json -->
-- multisonda con un decimal más (417.971→417.9706): conjunta_vs_individual (ΔKiDS cambia en la cuarta cifra; vigente 0.6335). <!-- R74: git:69cc773:results/logs/conjunta_vs_individual.json -->
+- multisonda con un decimal más (417.971→417.9706, evaluador viejo): conjunta_vs_individual (ΔKiDS cambia en la cuarta cifra; vigente 0.6335). <!-- R74: git:69cc773:results/logs/conjunta_vs_individual.json -->
 - Ruido de la EDO: eft_barrido_potenciales_wa (≤2e-4 relativo en w_a ~1e-11; ≤5e-6 en el resto).
 
 **No se sellan — declarados:**
@@ -1308,7 +1353,7 @@ lectura de cada cabecera.
 
 **1. Archivados (58 logs y 17 scripts), cada carpeta con su README:**
 - `archive/logs_superados/particula_colas_24_29_2026-09/` (b): colas #24–#29, la partícula que
-  pedía KiDS-1000; innecesaria con KiDS-Legacy (0.49σ). 10 logs + 7 scripts.
+  pedía KiDS-1000; innecesaria con KiDS-Legacy (0.49σ entonces; 0.25σ con el evaluador corregido, 2026-10-26). 10 logs + 7 scripts.
 - `archive/logs_superados/punto_de_fuga_2026-09-08/` (b): qué soltaría el CMB para aceptar el
   A_s de KiDS-1000; sin tensión que localizar con KiDS-Legacy. 9 logs + 5 scripts.
 - `archive/logs_superados/p6_exploracion_2026-07-30/` (a): ajustes por minimización del 07-30;
@@ -1327,7 +1372,7 @@ lectura de cada cabecera.
 |---|---|---|
 | ~~**vigente, por sellar (ligero)**~~ ✅ **2026-10-03** | `rd_dual.json` (etapa `rd_dual`), `growth_2026-07/marginal_vs_perfil.json` (archivado 2026-10-20), `analiza_lcdm_R4.log` + `growth_2026-07/R4_lcdm_kids_S8.json` (etapa `analiza_lcdm_R4`, sin literales), `b1_analyse.log` (etapa `b1_analyse`, con figuras y tabla), `auditoria_pdfs_zenodo.json`, `desi_dr2_w0wa_momentos.log`, `erosita_extlike.json` | sellados con etapa + acta (los cuatro últimos vía `procedencia_sella`). `R3_ssee_kids_S8.json` (burn-in sobre cadenas pegadas) → `archive/logs_superados/r3_burnin_concatenado_2026-09-30/`, entrada del control de `R3_rehecho`. `datos_crudos_T2.json` era un manifiesto de entrada → `data/manifiesto_descargas_T2.json`. Comparados con lo viejo: b1 y R3 idénticos salvo acta/fecha |
 | **vigente, por sellar (pesado, cola)** | ~~`growth_2026-07/boss_aisla_neutrinos.json`~~ (archivado 2026-10-20 con el BOSS de 2017), `base_sin_particula.log` + `growth_2026-07/base_sin_particula.json` (χ² BOSS 198.07 en P6; ARCHIVADOS 2026-10-17 con la partícula, ese número también se retiró el 2026-10-20 con el BOSS de 2017), `cmb_perfil_wc.json` + `.log` (P8), `cmb_dbic_tau_ajustado.json` (ΔBIC −26.03), `cmb_quien_mide_As.json`, `p3_h0anchor_reframe.log`, `paper2_analysis_dr2official.log`, sondas `act_dr6_calibrador`, `act_dr6_en_el_clavo`, `des_y3_calibrador`, `des_y3_en_el_clavo_{ssee,lcdm_planck,lcdm_libre}`, `spt3g_kk_en_el_clavo`, `bao_lcdm_planck`, ~~`conjunta_b3_bloques`, `conjunta_control`~~ (archivados 2026-10-20) | re-corrida con núcleos declarados + etapa; varias horas cada una | <!-- R74: git:69cc773:results/logs/growth_2026-07/boss_chi2_en_logA_cmb.json -->
-| **en curso** | `lcdm_conjunta.json`, `lcdm_conjunta_{cmb,kids,bao,control}.json` y su bitácora `cola_lcdm_conjunta.log` (renombrada 2026-10-16) | la conjunta ΛCDM (PID 491592) sigue minimizando; se sella al terminar |
+| ~~**en curso**~~ ✅ **2026-11-01** | `lcdm_conjunta.json`, `lcdm_conjunta_{cmb,kids,bao,conjunta,control}.json`; bitácora `cola_1027_conjunta.log` | min_conjunta terminó (86.3 h, convergida, rc=0) con KiDS-Legacy v2; sellada (b3a87f4, reproducible), `dvc commit` y `lcdm_conjunta_lee` re-corrida; P6 lo lee por \val (`tab:r7`) |
 | **entrada de código vigente, sin script propio** | `cmb_ajuste_conjunto_wc_ns.json` (dep. de `ajuste_conjunto_{SSEE,LCDM}`), `cmb_tau_flotado.json` (lo leen `cmb_eval`, `perfil_wc_cmb` y el guardián), `growth_2026-07/quien_mide_As.json`, ~~`growth_2026-07/R1R2_boss_lpt_kmax0.200.json`~~ (archivado 2026-10-20), `growth_2026-07/conjunta_tres_sondas.json`, `growth_2026-07/particula_que_prefiere_kids.json` (su script lo nombran docstrings de `cmb_eval`/`kids_shear`) | se archivan cuando su lector cambie por física; tocar al lector invalida actas |
 | ~~**útil, sin script (c)**~~ ✅ **2026-10-03** | `cmb_ns_forzado.json`, `cmb_wb_forzado.json` | script re-escrito (`src/p03_cmb/cmb_identidad_forzada.py`) con control del método y control ΛCDM; re-medido con la misma rejilla: pendientes −0.0422 / +0.4295 (antes −0.0422 / +0.4295), cada punto a <0.3σ; ΛCDM da −0.046 / +0.44 ⟹ degeneración de Planck, no del álgebra (OP-19) |
 | **transcripción de cadena** | `b1_full_run`, `b1_lcdm_run`, `b1_k2_run`, ~~`boss_cobaya_{ssee,lcdm}`~~ (archivadas 2026-10-20), `kids_legacy_{ssee,sseefijo,lcdmfijo}`, `kids_lcdm_fondofijo_reparto`, `kids_ssee_wc_h`, `R4_lcdm_resume_20260805`, `mcmc_paper2_3models_wmfix`, `mcmc_professional`, `mcmc_paper2_lcdm_baseline` (.log) | ninguno es fuente: los números salen de etapas selladas que leen las CADENAS (`kids_legacy_bic`, `s8_kids_legacy_camb`, `b1_k2`, MCMC P2…). Se quedan como registro de la corrida |

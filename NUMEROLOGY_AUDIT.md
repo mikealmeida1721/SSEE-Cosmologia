@@ -46,7 +46,7 @@ con propiedades verificables. Siguiendo a Popper, su rasgo **definitorio** es la
   es un espacio abierto donde "todo cabe".
 
 **A favor de la acusación (dónde el referí anota — y el modelo lo CONCEDE):**
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 - *(Histórico — la partícula y su multiplicador quedaron retirados el 2026-08-01.)*
   El coeficiente de masa de la partícula φ-DM (594.28, OP-9) tenía look-elsewhere
   **dependiente de la gramática**: 1/537 permisiva, 1/192 "volúmenes", ~1/16 estricta. Para
@@ -106,7 +106,7 @@ opuesto exacto a la numerología.
 > **NO se puede probar que SSEE es numerología.**
 
 El intento de prueba **falla en el criterio definitorio (N4)**: la numerología es
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 infalsable y post-hoc; SSEE **apuesta predicciones falsables (r=φ⁻¹⁰, y en su día
 el retirado k_fs=0.754) sobre
 datos que aún no existen**. Un sistema que una medición de 2027 puede matar **no es
@@ -137,7 +137,7 @@ k_fs. Lo que lo mataría: k_fs ≠ 0.754, o descartar la evolución w₀wₐ.
 (Distinción clave: una *frontera* es hasta dónde llega un reclamo bien acotado; una *debilidad*
 sería un reclamo fuerte que falló. Estas son fronteras — el modelo no afirmó de más y luego
 falló, afirmó lo justo y aquí termina lo derivado.)
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 1. **OP-9 (frontera de profundidad)** — ~~la partícula está adoptada y es falseable
    (OP-17); lo abierto es derivar el *origen* del coeficiente 594.28 desde un V(φ)
    (→OP-10). Es una predicción forward con origen-por-profundizar, no una derivación
@@ -169,7 +169,7 @@ modelo científico y **no** un sistema numerológico.
 ## 6. El hallazgo más fuerte de dos auditorías externas (2026-07-12): la gramática del multiplicador
 
 Dos auditorías externas independientes coincidieron en que el punto más vulnerable es el
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 look-elsewhere del multiplicador de masa —hoy retirado con la partícula—
 $m_\phi=\mathrm{SOLAR}^2\cdot\mathrm{KRYSTOS}_V=594.28$:
 **1/537** bajo gramática permisiva, **1/192** bajo "volúmenes", **1/3** bajo la gramática de
@@ -185,7 +185,7 @@ vs extensión) y que aquí se formaliza:
 | ¿El look-elsewhere ES el argumento? | **Sí** | **No** (y no lo reclamamos) |
 | Fuerza de la selección | 1/490 individual + conjunto restrictivo | débil, grammar-dependiente (1/3–1/537) — **CONCEDIDO** |
 | ¿Gramática fijada antes del dato? | **Sí** — por reglas de construcción del diccionario (no-auto-suma + copia), anteriores y ajenas a w₀wₐ | Irrelevante: el peso no está aquí |
-> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.05σ), χ²=417.97/357 (2026-09-20; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
+> 🔴 **RETIRADO 2026-08-01.** La partícula φ-DM y el segundo sector fueron retirados: `Ω_φDM` salía de restar una densidad medida menos `1+w₀`, que es un número de la ecuación de estado. **Canónico hoy:** un solo sector, `Ω_m=0.308881`. Contra KiDS-1000 crudo con `A_s` libre, `S₈=0.7555±0.0192` (0.11σ). Y contra **KiDS-Legacy con `A_s` CLAVADO al del CMB** —cero libres cosmológicos— `S₈=0.8273` predicho vs `0.8265±0.0176` medido (0.04σ), χ²=415.59/357 (2026-09-20, rehecho 2026-10-26 con el evaluador corregido; KiDS-Legacy es de 2025-03-25, dieciséis meses anterior: no se reclama prioridad). Lo de abajo es histórico.
 | ¿Cuál es el argumento real? | La rigidez estadística de un esqueleto que da los DOS números a la vez | ~~**La falsabilidad**: k_fs=0.754 h/Mpc, pre-registrado~~ — **RETIRADO 2026-08-01** con la partícula. Y la lección que dejó: la falsabilidad es requisito mínimo de una hipótesis, **no evidencia de que la entidad exista** |
 
 **El movimiento honesto:** un coeficiente débilmente seleccionado pero **falsable** no es

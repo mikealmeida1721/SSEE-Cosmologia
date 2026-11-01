@@ -14,8 +14,8 @@
     null
    ],
    "SSEE, $A_s$ fitted to raw KiDS-Legacy $\\xi_\\pm$": [
-    0.8193391863953321,
-    0.016223975916730304
+    0.8312645911845405,
+    0.015919689897635647
    ],
    "SSEE, $A_s$ fitted to raw KiDS-1000 $\\xi_\\pm$\n(antecedent)": [
     0.7558882227821322,
@@ -53,22 +53,22 @@
  },
  "script": "src/ssee_resolution_figures.py",
  "_procedencia": {
-  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/ssee_resolution_figures.py",
   "script_sha256": "6aba51a5d93087eca9cf4bb7916f7946b4e270b146776e06de36b6acf8b0b1bc",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/kids_publicados.json": "9c40f2c311b851cf6685cdea1ecd22a77f975c9cafeff3d15192e12df71a1ef1",
-   "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5",
+   "results/logs/kids_publicados.json": "8fddc441ae3a3faca7702ef759f920a9bc360125b6af166bf38f2c52083ddd7a",
+   "CANONICAL_VALUES.yaml": "af709f824c43cda272c539aab46d268f010bec5793dfc16a01dc0adc1ece935a",
    "data/raw/planck2018_VI/tabla2.tex": "4f97257907334fc1bd4b80b7575685482e2ffd3fef5c77eb76601c5d9ca99099",
-   "results/logs/s8_kids_legacy_camb.json": "181438c8b9833595d30698652ea37becb897869d8c02146c4ea4c19fc68a0152"
+   "results/logs/s8_kids_legacy_camb.json": "658a09688008dd17d99ca54c4eaeecb68444e90b28008139b59719296b84f7fb"
   },
   "argv": [
    "src/ssee_resolution_figures.py"
   ],
-  "fecha": "2026-10-20T23:25:14",
+  "fecha": "2026-10-28T12:55:25",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

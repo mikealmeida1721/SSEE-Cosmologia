@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-21",
+ "fecha": "2026-10-27",
  "umbral": "derivado",
  "delta_c": {
   "ssee": 1.6763371290815952,
@@ -42,22 +42,22 @@
   }
  },
  "_procedencia": {
-  "commit": "29dae108c0751cca4611adfe82ecaad722b2e2a3",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p02_mcmc/ssee_press_schechter.py",
-  "script_sha256": "6242b9ff5a25ad6dc5b2f5f18df687d50c64ccd0cec31ed1ee90e028202ae53d",
+  "script_sha256": "99a3bf9b55a81453f881126bf2de290a435038fffd67f70ddb5e0d780525b7be",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "results/logs/deltac_spherical_collapse.json": "3f6776f1574c618c501d7acc47a5250d30c65a0cca47d96f5f01b7d64efeb012",
-   "CANONICAL_VALUES.yaml": "5829d871dd936cc623dd4ce025129ed18a51fe42d1ec61cedbbdf3a0d9e2b3b5",
+   "CANONICAL_VALUES.yaml": "af709f824c43cda272c539aab46d268f010bec5793dfc16a01dc0adc1ece935a",
    "results/logs/p5_IS_perturbations_Q3.json": "5431ebd01e060a9e8ee22dcf07691a9f2729f5a69dbbb3cbcd7aa23c5bfe3d72",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70"
   },
   "argv": [
    "src/p02_mcmc/ssee_press_schechter.py"
   ],
-  "fecha": "2026-10-21T08:38:45",
+  "fecha": "2026-10-27T21:49:44",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -69,6 +69,14 @@
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
+  },
+  "resellado": {
+   "commit_original": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
+   "cambios_originales": [
+    "M src/p02_mcmc/ssee_press_schechter.py"
+   ],
+   "fecha": "2026-10-28T12:52:53",
+   "motivo": "el script que corrió quedó commiteado sin cambios; sha256 cotejado contra el commit nuevo"
   }
  }
 }

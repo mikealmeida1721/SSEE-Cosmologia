@@ -1,0 +1,62 @@
+{
+ "cadena_oficial": "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt",
+ "submuestra": 1200,
+ "semilla": 20261022,
+ "filas_fallidas": 0,
+ "control_fila_maxlike": {
+  "chi2": 407.67088987572487,
+  "chi2_oficial": 407.6469809441163,
+  "pasa": true
+ },
+ "delta_chi2": {
+  "media": -0.29574225799054266,
+  "sigma": 1.154578421231191,
+  "min": -7.241787018118885,
+  "max": 2.5971094813067452
+ },
+ "tamano_efectivo": 500.9547805129746,
+ "S8_oficial": {
+  "media": 0.8265382678450317,
+  "sigma": 0.017560626824937125
+ },
+ "S8_submuestra": {
+  "media": 0.8260619361043532,
+  "sigma": 0.017651824047598824
+ },
+ "S8_repesado": {
+  "media": 0.830597030663492,
+  "sigma": 0.017238510710610194
+ },
+ "distancia_sigma": 0.2582535694397142,
+ "criterio_sigma": 0.3,
+ "pasa": true,
+ "_procedencia": {
+  "commit": "282c08390e60ac0b67dc316c4d41c09e109bb1d9",
+  "reproducible_desde_commit": true,
+  "cambios_sin_commitear": [],
+  "script": "src/p06_growth/control_legacy_repesado.py",
+  "script_sha256": "f03683f899f009977aff186f7b7c58cca7220c38dab11fa5e5664d48eeedd1a6",
+  "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
+  "entradas": {
+   "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
+   "results/logs/growth_2026-07/control_legacy.json": "32ed9bc4a9b0db8b7ff3c9a4b8b392e06db17253135633e60ee045a26ee43c4f"
+  },
+  "argv": [
+   "src/p06_growth/control_legacy_repesado.py"
+  ],
+  "fecha": "2026-10-22T05:29:56",
+  "host": "mike-System-Product-Name",
+  "python": "3.12.3",
+  "versiones": {
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "camb": "1.6.5"
+  },
+  "nucleos": {
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "OMPI_COMM_WORLD_SIZE": null
+  }
+ }
+}

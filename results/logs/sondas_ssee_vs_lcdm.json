@@ -230,15 +230,15 @@
    "ajustados_lcdm": 1,
    "ajustados_ssee": 0,
    "SSEE": {
-    "chi2": 417.9706,
-    "BIC": 464.9924862542371
+    "chi2": 415.59352,
+    "BIC": 462.61540625423714
    },
    "LCDM": {
-    "chi2": 418.95467,
-    "BIC": 471.8542920360168
+    "chi2": 415.73507,
+    "BIC": 468.63469203601676
    },
-   "dchi2": -0.9840700000000311,
-   "dBIC": -6.861805781779651,
+   "dchi2": -0.14154999999999518,
+   "dBIC": -6.019285781779615,
    "nota": "ajustados = los cosmologicos que LCDM ajusta de mas (A_s); los nuisance de KiDS son los mismos en los dos"
   }
  ],
@@ -248,30 +248,30 @@
  ],
  "nota_suma": "las supernovas comparten objetos y las dos lentes del CMB el cielo: no se suman",
  "_procedencia": {
-  "commit": "c777ff95bf94cc0a5f27a7c913524cf53fe501c3",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/sondas_ssee_vs_lcdm.py",
   "script_sha256": "a9fd9d3afe8f01a13163f5b6f0dcefd9cc7f8d84bc52aeb2db1ed524552029f9",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
-   "results/logs/sn_geometria_en_el_clavo.json": "975b26ca82311bb077590bfcaa8b4d22904b18a16918711ab43448bb39d16944",
+   "results/logs/sn_geometria_en_el_clavo.json": "58f998c893c12a25e5be199550d007e684e2e70482072a9e7f063a30eec6c461",
    "results/logs/union3_en_el_clavo.json": "9dd986eec0c917116a3b0e7f2cbf8fb59b6d311dc010b12027adcb8f07258f6a",
-   "results/logs/act_dr6_en_el_clavo.json": "91b73fd78a6a88963d4670538a4347ee7b045b4498cda5fefd5fb6a1a1394dd6",
-   "results/logs/spt3g_kk_en_el_clavo.json": "02a8cd1dc149bcb8ef57492a773b188c2c95ca4445bc97fd2d5c3e845e58a16e",
-   "results/logs/bao_lcdm_libre.json": "9026d1ed6d36ab92afd29f8b2b44e9f425902f5c50c08db4db6a2c065c6ea119",
+   "results/logs/act_dr6_en_el_clavo.json": "46ae596a30043d9a4d316a92064b0f2f0e0ae17b8f20f98922de65d300d4a126",
+   "results/logs/spt3g_kk_en_el_clavo.json": "ee3df6d191758ea67f56647daa84fe4632462604621360b5c666cf40c2dd886a",
+   "results/logs/bao_lcdm_libre.json": "f696648b6cb5178b629462582144a44a64d2f37ebeff27e80714a6ce0a22545a",
    "results/logs/des_y3_en_el_clavo_ssee.json": "5134279d5c047ebac673855297dcaba38f4cffddcc2f7aab17f0d53f2d58df39",
    "results/logs/des_y3_en_el_clavo_lcdm_planck.json": "128afbcca0d6d1f3c79ce2fb02383669935e2c20e63078d4c32740cd247f8167",
    "results/logs/des_y3_en_el_clavo_ssee_nla.json": "b5f247f6acc4866bba81590113dd06c421d8f3c42b2119cd11284d6db7b899e8",
    "results/logs/des_y3_en_el_clavo_lcdm_planck_nla.json": "e33d2d66ca85668fb586fe498152b4ffcb0f0734142e62060f07610afc59be96",
-   "results/logs/cmb_dbic_mnu_propia.json": "7b3c6d74bfed8f46ea202b92e4845e274dbe6b797f7345a82ce018287aee6383",
+   "results/logs/cmb_dbic_mnu_propia.json": "1f2b0315b2c7e85370e2a32200d58438b939749d38e443938216102cfd699a1b",
    "results/logs/b1_k2.json": "948a4a6e4108e14e560fe35c8a3c5e8d378a5b7669b4c5e56f648aec257225f9",
-   "results/logs/kids_legacy_bic.json": "53fb382fa4767ba3d233f43be38452d158d41a5cfe44c73cc6a1ba08179de911"
+   "results/logs/kids_legacy_bic.json": "adbd46c80d4babef818edf9b0c39b6d38f44e002583c4fc5b555c596bb8679d2"
   },
   "argv": [
    "src/p11_sondas/sondas_ssee_vs_lcdm.py"
   ],
-  "fecha": "2026-10-20T14:15:00",
+  "fecha": "2026-10-28T12:59:13",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {

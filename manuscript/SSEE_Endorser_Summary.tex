@@ -57,6 +57,15 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
 \end{tabularx}
 \end{center}
 
+\subsection*{The result in one line: it ties everywhere, and DESI separates}
+With the background of both models fixed in advance, nothing fitted outside the CMB and only $\{A_s,\tau\}$ in it, SSEE ties
+$\Lambda$CDM probe by probe: $|\Delta\chi^2|\le\val{sondas_max_empate}$ in $\val{sondas_n_empatan}$ of $\val{sondas_n}$ comparisons
+(supernova compilations, ACT and SPT CMB lensing, DES~Y3, Planck, KiDS-Legacy), even where $\Lambda$CDM fits up
+to $\val{sondas_max_k_lcdm}$ parameters against SSEE's $\{A_s,\tau\}$; BOSS full-shape gives $\Delta\chi^2=\val{bossC_dchi2_ssee_libre}$ against $\Lambda$CDM with
+its cosmology free. DESI~DR2 BAO is the only probe that separates the models: $\chi^2=\val{desi_clav_ssee}$ for SSEE
+against $\val{desi_clav_lcdm}$ for $\Lambda$CDM at Planck ($\Delta\chi^2=\val{sondas_desi_clavado}$, $\val{desi_N}$ points).
+Supernova rows share objects and CMB-lensing rows share sky, so they are not summed.
+
 \subsection*{Ten-paper series (all reproducible)}
 
 \subsubsection*{I. Derived Algebraic Background}
@@ -80,11 +89,11 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
   $\log(10^{10}A_s)=\val{leg_logA}\pm\val{leg_logA_s}$ against the $\val{leg_logA_cmb}$ that the CMB fixes
   under the \emph{same} algebraic background: $\val{logA_leg_vs_cmb}\sigma$ (Planck background,
   held equally rigid: $\val{leg_lcdm_vs_planck}\sigma$). Fixing $A_s$ to that CMB value therefore
-  costs nothing --- $\chi^2=\val{chi2_leg_unif}$ with \textbf{eight free parameters, all
+  costs almost nothing --- $\chi^2=\val{chi2_leg_unif}$ with \textbf{eight free parameters, all
   nuisance, none cosmological}, against $\val{chi2_leg_libre}$ with $A_s$ free
   ($\Delta\mathrm{BIC}=+\val{dBIC_leg_libre}$) and $\val{chi2_leg_lcdm}$ for the $\Lambda$CDM-background
   control ($+\val{dBIC_leg_lcdm}$). $S_8=\val{S8_leg_pred}$ is then predicted, not fitted, against
-  $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured: $\val{S8_leg_tension}\sigma$. The three $\chi^2$ span $1.0$, so
+  $\val{S8_legacy_dato}\pm\val{S8_legacy_dato_sigma}$ measured: $\val{S8_leg_tension}\sigma$. The three $\chi^2$ span $\val{chi2_leg_rango}$, so
   the shear does \emph{not} discriminate between the models; what separates
   them is the parameter count. (Earlier, against KiDS-1000: $S_8=\val{S8_k1000_ssee}\pm\val{S8_k1000_ssee_sigma}$
   with $A_s$ free, matching the $\Lambda$CDM control $\val{S8_k1000_lcdm}\pm\val{S8_k1000_lcdm_sigma}$ run
@@ -136,7 +145,7 @@ $S_8$ & $\val{S8_leg_pred}$ (predicted; \emph{no} free cosmological parameter) &
     placing $S_8$ more than $3\sigma$ away falsifies it outright, with nowhere
     to absorb the discrepancy (KiDS, DES, Euclid).
   \item $\log(10^{10}A_s)$ — the amplitude the shear asks for must keep
-    agreeing with the one the CMB fixes. KiDS-1000 asked for $\val{logA_k1000}\pm\val{logA_k1000_sigma}$
+    agreeing with the one the CMB fixes. The earlier, superseded KiDS-1000 release asked for $\val{logA_k1000}\pm\val{logA_k1000_sigma}$
     ($\val{logA_k1000_vs_cmb}\sigma$ away) and KiDS-Legacy for $\val{leg_logA}\pm\val{leg_logA_s}$ ($\val{logA_leg_vs_cmb}\sigma$);
     the two releases differ from each other by $\val{logA_entre_entregas}\sigma$. A future release
     returning to the lower value reopens the sector.

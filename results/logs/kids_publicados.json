@@ -20,29 +20,29 @@
    "tension_sigma": 0.06147497585397447
   },
   "logA": {
-   "legacy_cadena": 3.025533766478688,
-   "legacy_cadena_sigma": 0.03957854912064725,
-   "legacy_lcdmfijo": 3.006852246889641,
-   "legacy_lcdmfijo_sigma": 0.03681356014507351,
+   "legacy_cadena": 3.054392659145505,
+   "legacy_cadena_sigma": 0.038279504201468494,
+   "legacy_lcdmfijo": 3.037779340128662,
+   "legacy_lcdmfijo_sigma": 0.037866858516303156,
    "planck_blanco": 3.044,
-   "legacy_lcdmfijo_vs_planck": 1.0090779855023126,
-   "control_legacy_cadena_vs_canonical": 3.376647868780225e-05,
+   "legacy_lcdmfijo_vs_planck": 0.1642771572577026,
+   "control_legacy_cadena_vs_canonical": -7.3408544949415955e-06,
    "k1000": 2.8636678493268715,
    "k1000_sigma": 0.04992161344169711,
-   "legacy": 3.0255,
-   "legacy_sigma": 0.0396,
+   "legacy": 3.0544,
+   "legacy_sigma": 0.0383,
    "cmb_blanco": 3.0448340130228546,
    "k1000_vs_cmb_blanco": 3.629012590059115,
-   "legacy_vs_cmb_blanco": 0.48823265209228617,
+   "legacy_vs_cmb_blanco": -0.24976467303251093,
    "b1": 3.0422466541168727,
    "b1_sigma": 0.013125658689892619,
    "k1000_vs_b1_dif": 0.1785788047900012,
    "k1000_vs_b1_dif_sigma": 0.0516183146244217,
    "k1000_vs_b1": 3.459601617940309,
-   "entre_entregas": 2.53971084846696,
+   "entre_entregas": 3.0312935946340067,
    "Om_planck_bg": 0.315191849347291,
    "Om_ssee_bajo_planck_bg_pct": 2.002275359045247,
-   "As_legacy_sobre_planck_bg_pct": 1.8857110909314967
+   "As_legacy_sobre_planck_bg_pct": 1.6752087605083954
   },
   "k1000_dS8_lcdm_menos_ssee": 0.0012163972564288583,
   "k1000_dato": {
@@ -56,18 +56,18 @@
   "k1000_A_baryon_sigma": 0.30627261536786415,
   "k1000_A_IA": 0.5422179581972616,
   "k1000_A_IA_sigma": 0.2883730343249875,
-  "legacy_logT_AGN_libre": 7.90927495172843,
-  "legacy_logT_AGN_libre_sigma": 0.19709213606048323,
-  "legacy_logT_AGN_fijo": 7.9753007872846595,
-  "legacy_logT_AGN_fijo_sigma": 0.16571066385683178,
-  "legacy_logT_AGN_corrimiento": 0.06602583555622932,
-  "legacy_A_scale_libre": 1.3149639700668556,
-  "legacy_A_scale_libre_sigma": 0.7470906623829874,
-  "legacy_A_scale_fijo": 1.4135079434725102,
-  "legacy_A_scale_fijo_sigma": 0.6547519567998019,
-  "legacy_A_scale_corrimiento": 0.09854397340565457
+  "legacy_logT_AGN_libre": 7.893014657898649,
+  "legacy_logT_AGN_libre_sigma": 0.20897796684618378,
+  "legacy_logT_AGN_fijo": 7.834472561976449,
+  "legacy_logT_AGN_fijo_sigma": 0.19328113341442477,
+  "legacy_logT_AGN_corrimiento": 0.058542095922200055,
+  "legacy_A_scale_libre": 1.218418827412222,
+  "legacy_A_scale_libre_sigma": 0.7195918606527294,
+  "legacy_A_scale_fijo": 1.2549746897863319,
+  "legacy_A_scale_fijo_sigma": 0.7084815698363114,
+  "legacy_A_scale_corrimiento": 0.03655586237410979
  },
- "fecha": "2026-10-20",
+ "fecha": "2026-10-27",
  "kids_legacy": {
   "S8": 0.8265382678450317,
   "S8_sigma": 0.017560626824937125,
@@ -81,7 +81,8 @@
  "kids1000_maxpost": {
   "like": -130.15735,
   "chi2": 260.3147,
-  "fuente": "Asgari+2021, maxpost_multinest_start_C"
+  "fuente": "Asgari+2021, maxpost_multinest_start_C",
+  "lcdm_min_sobre_publicado_pct": 0.9340617337399583
  },
  "seleccion_kids1000": {
   "N": 225,
@@ -107,24 +108,24 @@
   }
  },
  "_procedencia": {
-  "commit": "37d475c224ccd3154f843b5127a91f478d9f2c29",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p06_growth/kids_publicados.py",
-  "script_sha256": "c5b5e688f2c66f1bf935c0dfc3869df312f27402c06128e382c9991876040c2e",
+  "script_sha256": "e1e1bca6e369dc0c9eec52e5443d99d4ec74827cd8946dfd4389f163aa75a6c1",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {
    "/mnt/datos/SSEE_data/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/xipm/output_nautilus_xipm_Fiducial.txt": "206f99295e4a654e513d1d09bfcd2f1f03b4707ec12a74eb9ed860688cc581ac",
    "/mnt/datos/SSEE_data/kids1000/KiDS1000_cosmis_shear_data_release/chains_and_config_files/main_chains_iterative_covariance/xipm/chain/maxpost_multinest_start_C.txt": "e16081488aa39d9327f6c7853f511b88ad011cc2c9e39035597b8d3894405568",
    "results/logs/growth_2026-07/R3_ssee_kids_S8_rehecho.json": "62e8e7c817bb5831c06d171fe50170a35cbba60bcdc1c82ea21808729d4e7b70",
    "results/logs/growth_2026-07/R4_lcdm_kids_S8.json": "ee9179681eefa62bbdcc1523491894ccae04d0ae20b7603328ced8a5dbd27045",
-   "results/logs/s8_kids_legacy_camb.json": "181438c8b9833595d30698652ea37becb897869d8c02146c4ea4c19fc68a0152",
-   "results/logs/s8_desde_b1.json": "baf57e8acd1c8889f66552fa712f681c368d757024ada4d5fbbb617b40026eeb"
+   "results/logs/s8_kids_legacy_camb.json": "658a09688008dd17d99ca54c4eaeecb68444e90b28008139b59719296b84f7fb",
+   "results/logs/s8_desde_b1.json": "751dfa1b378edba7b7a97828ba6a1108dab9570612ec3eccc43d9ab99c9f1b55"
   },
   "argv": [
    "src/p06_growth/kids_publicados.py"
   ],
-  "fecha": "2026-10-20T23:25:10",
+  "fecha": "2026-10-27T22:03:14",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {
@@ -136,6 +137,14 @@
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
+  },
+  "resellado": {
+   "commit_original": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
+   "cambios_originales": [
+    "M src/p06_growth/kids_publicados.py"
+   ],
+   "fecha": "2026-10-28T12:52:53",
+   "motivo": "el script que corrió quedó commiteado sin cambios; sha256 cotejado contra el commit nuevo"
   }
  }
 }

@@ -22,6 +22,15 @@ dAIC_k1000:        {fuente: "results/logs/kids_publicados.json#seleccion_kids100
 dBIC_k1000:        {fuente: "results/logs/kids_publicados.json#seleccion_kids1000.delta_BIC", formato: ".1f"}
 p_dchi2_k1000:     {fuente: "results/logs/kids_publicados.json#seleccion_kids1000.p_delta_chi2", formato: ".2f"}
 chi2_k1000_publicado: {fuente: "results/logs/kids_publicados.json#kids1000_maxpost.chi2", formato: ".2f"}
+k1000_lcdm_sobre_pub_pct: {fuente: "results/logs/kids_publicados.json#kids1000_maxpost.lcdm_min_sobre_publicado_pct", formato: ".1f"}
+# Control del evaluador de cizalla en KiDS-Legacy (P6 §legacy, 2026-10-27): punto oficial + repesado
+leg_ctl_chi2:    {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#control_fila_maxlike.chi2", formato: ".2f"}
+leg_ctl_chi2_of: {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#control_fila_maxlike.chi2_oficial", formato: ".2f"}
+leg_ctl_neff:    {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#tamano_efectivo", formato: ".0f"}
+leg_ctl_S8_of:   {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#S8_oficial.media", formato: ".4f"}
+leg_ctl_S8_rep:  {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#S8_repesado.media", formato: ".4f"}
+leg_ctl_dist:    {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#distancia_sigma", formato: "+.2f"}
+leg_ctl_crit:    {fuente: "results/logs/growth_2026-07/control_legacy_repesado.json#criterio_sigma", formato: ".1f"}
 S8_legacy_dato:    {fuente: "results/logs/kids_publicados.json#kids_legacy.S8", formato: ".4f"}
 S8_legacy_dato_sigma: {fuente: "results/logs/kids_publicados.json#kids_legacy.S8_sigma", formato: ".4f"}
 # S8: titular KiDS-Legacy (prediccion) y antecedente KiDS-1000 (R3 vigente = burn-in por cadena) — 2026-10-02
@@ -651,6 +660,14 @@ desi_libre_Om_s:      {fuente: "results/logs/bao_lcdm_libre.json#lcdm_libre.Om_e
 desi_libre_dchi2:     {fuente: "results/logs/bao_lcdm_libre.json#delta_chi2_camb_ssee_menos_lcdm_libre", formato: ".2f"}
 sondas_umbral:        {fuente: "results/logs/sondas_ssee_vs_lcdm.json#umbral_discrimina_dchi2", formato: ".0f"}
 sondas_desy3_nla:     {fuente: "results/logs/sondas_ssee_vs_lcdm.json#des_y3.dchi2_NLA", formato: "+.2f"}
+# Resumen sonda por sonda (2026-10-29) — src/p11_sondas/tabla_sondas_tex.py: cuántas comparaciones
+# empatan bajo el umbral, la mayor |dchi2| entre ellas y el contraste DESI (la única que separa).
+sondas_n:          {fuente: "results/logs/sondas_resumen.json#n_sondas", formato: "d"}
+sondas_n_empatan:  {fuente: "results/logs/sondas_resumen.json#n_empatan", formato: "d"}
+sondas_max_empate: {fuente: "results/logs/sondas_resumen.json#max_abs_dchi2_empate", formato: ".1f"}
+sondas_max_k_lcdm: {fuente: "results/logs/sondas_resumen.json#max_ajustados_lcdm", formato: "d"}
+sondas_desi_clavado: {fuente: "results/logs/sondas_resumen.json#desi_dchi2_clavado", formato: ".1f"}
+sondas_desi_libre: {fuente: "results/logs/sondas_resumen.json#desi_dchi2_lcdm_libre", formato: "+.2f"}
 # SN Requiem: H0 que leería un análisis LCDM plano bajo la lectura P (lente ve el valor local) y bajo C (global) — P9 criterio 5 (2026-10-03)
 requiem_P_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.json#requiem_fecha.P_plano_leida_LCDM.H0", formato: ".1f"}
 requiem_C_H0:   {fuente: "results/logs/h0_lente_fondo_ssee.json#requiem_fecha.SSEE_leida_LCDM.H0", formato: ".1f"}
@@ -974,6 +991,7 @@ p5_cruce_rmax: {fuente: "results/logs/p5_cruce_fantasma_IS.json#perturbaciones_c
 p5_cruce_ctrl_k100: {fuente: "results/logs/p5_cruce_fantasma_IS.json#control_c2_w0.5.r", formato: "tex.1e"}
 tension_s8_desy3_techo: {fuente: "results/logs/p5_techo_sigma8_As_fijo.json#tensiones_S8_sigmas.DES-Y3", formato: ".2f"}
 dchi2_leg_unif_libre: {fuente: "results/logs/kids_legacy_bic.json#delta_chi2.unif_menos_libre", formato: "+.3f"}
+chi2_leg_rango:       {fuente: "results/logs/kids_legacy_bic.json#delta_chi2.rango_tres", formato: ".2f"}
 # quinta lectura P7 (2026-10-11): el campo rueda; fondo con la viscosidad de Eckart
 p7_Xbg_pct: {fuente: "results/logs/algebra_derivada.json#algebra.p7_Xbg_pct.valor", formato: ".1f"}
 p7_norm_err_pct: {fuente: "results/logs/algebra_derivada.json#algebra.p7_norm_err_pct.valor", formato: ".1f"}

@@ -18,11 +18,11 @@
  "convergido": true,
  "control_no_peor_que_arranque": true,
  "_procedencia": {
-  "commit": "27b3b72b69eb46f6c1fbf593088e2dfc94fc1922",
+  "commit": "d6d3c6522ed444345cbc6605ad7e59fa2701935d",
   "reproducible_desde_commit": true,
   "cambios_sin_commitear": [],
   "script": "src/p11_sondas/lcdm_conjunta.py",
-  "script_sha256": "ea2d0fcc83aaa45471015db4c03950106bafd77269d415cc797774d03b9f4670",
+  "script_sha256": "963b138dc907782194ea07dcbfe0266239ee99ecf50c2b57c601435286d812bb",
   "nucleo_sha256": "5cec8af72d88f154116c5a532e42a9b6ff7a5b4c3d86bcc6921eabb246698993",
   "entradas": {},
   "argv": [
@@ -30,7 +30,7 @@
    "src/p11_sondas/lcdm_conjunta.py",
    "results/logs/lcdm_conjunta_bao.json"
   ],
-  "fecha": "2026-10-12T22:28:11",
+  "fecha": "2026-10-27T11:13:09",
   "host": "mike-System-Product-Name",
   "python": "3.12.3",
   "versiones": {},
@@ -39,6 +39,14 @@
    "MKL_NUM_THREADS": null,
    "OPENBLAS_NUM_THREADS": null,
    "OMPI_COMM_WORLD_SIZE": null
+  },
+  "resellado": {
+   "commit_original": "74a8af0fd1ce0fd9a16a9e1687b5fd64933b8ab4",
+   "cambios_originales": [
+    "M src/p11_sondas/lcdm_conjunta.py"
+   ],
+   "fecha": "2026-10-28T12:52:53",
+   "motivo": "el script que corrió quedó commiteado sin cambios; sha256 cotejado contra el commit nuevo"
   }
  }
 }
