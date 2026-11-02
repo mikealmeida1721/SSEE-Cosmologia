@@ -58,6 +58,15 @@ cerradas.
 
 ## Estado
 
+> **CIERRE (2026-11-02).** Las tablas de abajo quedaron en la tercera pasada y no se
+> actualizaron: la serie completa (P1–P10, PRD, Sealed, Unified, Endorser, portada) se
+> leyó después, hoja por hoja, en la **cuarta** (`notes/lectura_cuarta/`, cada número
+> reproducido), la **quinta** (`notes/lectura_quinta/`) y la **lectura fría** sin
+> contexto (`notes/lectura_fria/`, commits 871db3c, d5c1a15, aa5912e, cbf4000), y
+> Nova la auditó dos veces el 2026-11-02 (OK a 5705a02, Notion «SSEE · Cosmología →
+> Auditorías»). Mike decidió publicar esa versión el 2026-11-02. Las casillas que
+> estaban vacías se marcan ⏭ = **superada por esas lecturas**; no quedan páginas pendientes.
+
 ## 🔁🔁 TERCERA PASADA — desde Paper 1, página 1 (2026-09-26)
 
 Mike: la lectura **empieza de nuevo**, porque desde que se inició el modelo
@@ -74,15 +83,15 @@ los consolidados al final**, porque dependen del veredicto de la conjunta.
 | Paper | Páginas (pdfinfo, 2026-09-26) | Estado |
 |---|---|---|
 | 1 — Framework | 35 | 🔵 siguiente: pág. 1 |
-| 4 — ToE | 19 | ⬜ |
-| 5 — IS | 33 | ⬜ |
-| 7 — EFT | 17 | ⬜ |
-| 8 — Strong gravity | 19 | ⬜ |
-| 9 — Hubble | 22 | ⬜ |
-| 10 — UV | 16 | ⬜ |
-| 2 — MCMC | 32 | ⬜ (dejar hueco: SNe nuevas) |
-| 3 — CMB | 26 | ⬜ (dejar hueco: ACT DR6 / SPT-3G) |
-| 6 — Growth | 17 | ⬜ al final (conjunta) |
+| 4 — ToE | 19 | ⏭ |
+| 5 — IS | 33 | ⏭ |
+| 7 — EFT | 17 | ⏭ |
+| 8 — Strong gravity | 19 | ⏭ |
+| 9 — Hubble | 22 | ⏭ |
+| 10 — UV | 16 | ⏭ |
+| 2 — MCMC | 32 | ⏭ (dejar hueco: SNe nuevas) |
+| 3 — CMB | 26 | ⏭ (dejar hueco: ACT DR6 / SPT-3G) |
+| 6 — Growth | 17 | ⏭ al final (conjunta) |
 
 Pendiente anotado para cuando se llegue: `α_K(0)=0.403302` (que es s_K) rotulado como
 kineticidad en P3, P8, Unified, Sealed y PRD, contra P7 (α_K=15.591335).
@@ -93,15 +102,15 @@ kineticidad en P3, P8, Unified, Sealed y PRD, contra P7 (α_K=15.591335).
 | Paper | Páginas | Estado |
 |---|---|---|
 | **1 — Framework** | 33 | 🔵 EN CURSO |
-| 2 — MCMC | 26 | ⬜ |
-| 3 — CMB | 24 | ⬜ |
-| 4 — ToE | 16 | ⬜ |
-| 5 — IS | 25 | ⬜ |
-| 6 — φ-DM | 24 | ⬜ |
-| 7 — EFT | 16 | ⬜ |
-| 8 — Strong gravity | 20 | ⬜ |
-| 9 — Hubble | 18 | ⬜ |
-| 10 — UV | 14 | ⬜ |
+| 2 — MCMC | 26 | ⏭ |
+| 3 — CMB | 24 | ⏭ |
+| 4 — ToE | 16 | ⏭ |
+| 5 — IS | 25 | ⏭ |
+| 6 — φ-DM | 24 | ⏭ |
+| 7 — EFT | 16 | ⏭ |
+| 8 — Strong gravity | 20 | ⏭ |
+| 9 — Hubble | 18 | ⏭ |
+| 10 — UV | 14 | ⏭ |
 
 ## 🔁 SEGUNDA PASADA — desde la página 1 (2026-07-27)
 
@@ -124,7 +133,7 @@ no es «el número es correcto» sino **«se comprueba de un vistazo»**.
 | 4 | **Tabla 1** — Predictive Register | ✅→reabierta | ✅ **5 defectos + contradicción** |
 | 5 | §1.2 Principios axiomáticos | ✅ | ✅ **un axioma que era tautología** |
 | 6 | §1.3 Postulados D y S | ✅ | ✅ **overclaim + 3 precisiones de H₀** |
-| 7 | §1.3 (cont.) Postulado I | ⬜ | 🔵 SIGUIENTE |
+| 7 | §1.3 (cont.) Postulado I | ⏭ | 🔵 SIGUIENTE |
 
 ### 🔁 Página 3 · addendum — `=` vs `≈` (pregunta de Mike)
 Mike preguntó por qué las siete constantes llevan «casi igual» si él las lee como
@@ -378,7 +387,7 @@ Compila exit=0, 33 pp., docs/ sincronizado, guardián VERDE 172.
 | 5 | Principio 3 + §1.3 alcance + **Postulados D y S** | ✅ |
 | 6 | endpoints de S + **Postulados M (retirado) e I** | ✅ |
 | 7 | — | 🔵 SIGUIENTE |
-| 8–33 | — | ⬜ |
+| 8–33 | — | ⏭ |
 
 ### Página 6 · Postulado M retirado, Postulado I, y f_screen
 Ocho afirmaciones verificadas, **todas correctas**, dos de ellas identidades

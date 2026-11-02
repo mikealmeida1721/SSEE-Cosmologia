@@ -1,45 +1,46 @@
 cff-version: 1.2.0
 message: "If you use this software or results, please cite it as below."
 type: software
-title: "SSEE — Structural Self-Energy Expansion (V3.6)"
+title: "SSEE cosmology — Structural Self-Energy Expansion"
 abstract: >
-  A minimal-parameter dark energy framework derived algebraically from φ (golden ratio)
-  and π. Ten papers spanning: algebraic framework (w₀, wₐ, EFT, Predictive Register),
-  Bayesian MCMC validation (DESI DR2 + Planck + clusters), CMB confrontation (Planck PR4
-  TT+TE+EE+lensing; full plik MCMC ΔBIC=−32.9, k=2 vs k=6), algebraic derivation of CMB observables from φ and π,
-  Israel-Stewart causal perturbation theory (gradient stability, ΛCDM-consistent growth, S₈),
-  φ-Dark Matter two-sector model (m_φ=40.70 eV algebraic via SOLAR²·KRYSTOS, S₈=0.758 at 0.04σ KiDS, fσ₈ 0.93σ two-sector),
-  canonical EFT (β_c=−AURA exact, αT=αM=αB=0 exact, αK=0.403 algebraic),
-  strong-gravity regime (disformal geodesics, k-mouflage screening),
-  Hubble-tension screening fraction f_screen=αK/(3·MIRA), and UV completion
-  K(X)=X/KAL+X²/M⁴ with M=9.68 meV.
+  A minimal-parameter dark-energy framework whose background is fixed algebraically
+  from φ (golden ratio) and π, with two free parameters at CMB level {A_s, τ}.
+  One matter sector, unmodified gravity. Ten papers: algebraic framework and
+  Predictive Register; Bayesian comparison against DESI DR2 BAO; full Planck CMB
+  likelihood; algebraic derivation of CMB observables; Israel-Stewart causal
+  perturbations; growth sector against raw cosmic-shear (KiDS-Legacy) and BOSS
+  full-shape data with the background held fixed; canonical EFT (ghost-condensate
+  k-essence); strong-gravity regime; Hubble-tension screening cascade (SH0ES in,
+  global H out); UV completion. Every number in the papers is generated from a
+  logged run (DVC pipeline with provenance); see AUDIT.md and CANONICAL_VALUES.yaml.
+  Open problems are listed in OPEN_PROBLEMS.md.
 authors:
   - family-names: Almeida Vallejo
     given-names: Mike Edison
     email: mike.almeida1721@gmail.com
     orcid: "https://orcid.org/0009-0008-2195-7836"
-version: "3.6"
-date-released: "2026-05-17"
+version: "2026-11-02"
+date-released: "2026-11-02"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19654118
+    description: "Concept DOI (always resolves to the latest version)"
 license: Apache-2.0
 repository-code: "https://github.com/mikealmeida1721/SSEE-Cosmologia"
 keywords:
   - dark energy
   - cosmology
   - w0-wa parametrization
-  - CPL
   - DESI DR2
-  - Planck PR4
-  - Israel-Stewart viscosity
+  - Planck
+  - KiDS-Legacy
+  - BOSS
   - golden ratio
   - minimal-parameter model
   - CMB power spectrum
-  - Bayesian MCMC
+  - Bayesian model comparison
   - EFT of dark energy
-  - Horndeski scalar-tensor
+  - k-essence
   - Bellini-Sawicki alpha functions
-  - phi dark matter
-  - free-streaming scale
-  - fσ₈ tension
-  - GW170817
-  - Euclid forecast
-  - alpha-attractor inflation
+  - Hubble tension
+  - reproducibility
