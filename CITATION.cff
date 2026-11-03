@@ -19,12 +19,15 @@ authors:
     given-names: Mike Edison
     email: mike.almeida1721@gmail.com
     orcid: "https://orcid.org/0009-0008-2195-7836"
-version: "2026-11-02"
-date-released: "2026-11-02"
+version: "2026-11-03"
+date-released: "2026-11-03"
 identifiers:
   - type: doi
     value: 10.5281/zenodo.19654118
     description: "Concept DOI (always resolves to the latest version)"
+  - type: doi
+    value: 10.5281/zenodo.23909184
+    description: "This version (2026-11-03): papers, source archive and data package"
 license: Apache-2.0
 repository-code: "https://github.com/mikealmeida1721/SSEE-Cosmologia"
 keywords:

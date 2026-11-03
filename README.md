@@ -194,7 +194,7 @@ everything else, about 6 minutes.
 - **SSEE data package** (Zenodo): what no third party can provide — the project's own
   MCMC chains (Papers 2, 3, 6 and the ACT/SPT calibrators), the DES nuisance best fit,
   the Union3 reproduction, the exact dictionary copy, and two arXiv abstracts and one
-  catalogue page quoted by the eROSITA stages. 176 files, 336 MB compressed; built
+  catalogue page quoted by the eROSITA stages. 168 files, 454 MB compressed; built
   deterministically by
   [`src/verificacion/empaqueta_datos_propios.py`](src/verificacion/empaqueta_datos_propios.py).
 
@@ -429,14 +429,13 @@ Full development history in [CHANGELOG.md](CHANGELOG.md).
 - [x] Paper 1 Postulates D (SH0ES as the single dimensional input) & S (saturation correspondence)
 - [x] Hostile-referee overclaim sweep across all 10 papers
 - [x] Zenodo — earlier versions archived (concept DOI 10.5281/zenodo.19654118)
+- [x] New Zenodo version (2026-11-03, 10.5281/zenodo.23909184) — Papers 1–10 + Unified + Sealed + PRD manuscript + source archive (`src/verificacion/armar_zenodo.py`) + SSEE data package (`17_ssee_datos_propios.tar.gz`, `src/verificacion/empaqueta_datos_propios.py`)
 - [x] Fifth page-by-page reading (2026-10-12): every paper and consolidated document read whole and cross-checked against the others; every number traced to its log
 - [x] Third page-by-page reading (2026-10-10): every paper, citation checked against arXiv/Crossref, reproducibility manifest of all external data (`data/manifiesto_externos.json`)
 - [x] Internal hostile-referee audit — guardian fully green; figure-level
       pdftotext sweep across all compiled PDFs; arXiv source tarballs (10/10)
 
 **Pending**
-- [ ] SSEE data package on Zenodo (own MCMC chains, 336 MB; `src/verificacion/empaqueta_datos_propios.py`)
-- [ ] New Zenodo version — Papers 1–10 + Unified + Sealed + PRD manuscript (`src/verificacion/armar_zenodo.py`)
 - [ ] Journal submission — Physical Review D (`submission_PRD/`)
 - [ ] Paper B — ab-initio baryogenesis (OP-1 closure)
 - [ ] Full non-linear N-body growth (BAHAMAS / IllustrisTNG-SSEE) — desirable, not a rescue

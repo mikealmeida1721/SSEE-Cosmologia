@@ -198,8 +198,9 @@
   },
   "paquete_ssee": {
    "tipo": "paquete",
-   "url": null,
-   "nota": "paquete de datos de SSEE en Zenodo; la URL se fija al publicarlo"
+   "url": "https://zenodo.org/records/23909184/files/17_ssee_datos_propios.tar.gz?download=1",
+   "sha256": "3d36fbe9e46439e37ef3e6349dd0fe98a263bd896631a598ec8093ab142fbe19",
+   "nota": "paquete de datos de SSEE en Zenodo, versión 2026-11-03 (10.5281/zenodo.23909184)"
   }
  },
  "entornos": {
